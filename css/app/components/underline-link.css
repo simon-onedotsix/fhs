@@ -1,0 +1,60 @@
+/* 
+    --uLinkUnderline
+*/
+
+:root {
+    --uLinkUnderline: 1px;
+}
+
+.uLink,
+.uLink-thin,
+.uLink-thick {
+    text-decoration: none;
+    padding-bottom: 4px;
+    margin-bottom: -2px;
+    
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% calc(var(--uLinkUnderline) * 1);
+    transition: background-size .3s;
+}
+@media(hover:hover){
+    .uLink:hover, a:focus {
+        background-size: 100% calc(var(--uLinkUnderline) * 1);
+    }
+}
+.uLink.here {
+    cursor: default;
+    background-size: 100% calc(var(--uLinkUnderline) * 1);
+}
+
+
+
+.uLink-thin {
+    background-size: 0% 1px;
+}
+@media(hover:hover){
+    .uLink-thin:hover, a:focus {
+        background-size: 100% 1px;
+    }
+}
+.uLink-thin.here {
+    cursor: default;
+    background-size: 100% 1px;
+}
+
+.uLink-thick {
+    padding-bottom: 6px;
+    margin-bottom: -2px;
+    background-size: 0% calc(var(--uLinkUnderline) * 2);
+}
+@media(hover:hover){
+    .uLink-thick:hover, a:focus {
+        background-size: 100% calc(var(--uLinkUnderline) * 2);
+    }
+}
+.uLink-thick.here {
+    cursor: default;
+    background-size: 100% calc(var(--uLinkUnderline) * 2);
+}

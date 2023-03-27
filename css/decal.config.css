@@ -1,0 +1,81 @@
+:root {
+
+    /* colour */
+
+    --primary: #4F2F9B;
+    --secondary: #1B1C58;
+    --accent: #65FFDB;
+
+    --bg-global: rgb(255, 255, 255);
+
+    --default-text-color: rgb(71, 71, 71);
+    --default-heading-color: var(--primary);
+
+    --wash: #F9F9FA;
+    --light: #E1E2EA;
+    --medium: #827e88;
+    --dark: #202B64;
+
+    --error: rgb(255, 68, 0);
+    --success: rgb(121, 173, 0);
+    --warning: rgb(255, 166, 0);
+
+
+    /* spacing */
+
+    --container-max-width: 100rem;
+    --container-adjacent-spacing-factor: 0.5;
+
+    --unit-xxs: .5rem;
+    --unit-xs: 1rem;
+    --unit-sm: 2rem;
+    --unit-md: 4rem;
+    --unit-lg: 6rem;
+    --unit-xl: 8rem;
+
+
+    /* type */
+
+    --default-font-family: 'Outfit', sans-serif;
+    --default-font-weight: 200;
+    --default-font-size: 1rem;
+    --default-line-height: 1.4;
+
+    --default-heading-line-height: 1.1;
+    --default-heading-weight: 600;
+
+
+    /* global UI styling */
+
+    --default-radius: 0;
+    --default-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    --default-shadow-size: 20px;
+    --default-shadow-opacity: 0.2;
+
+    --default-button-radius: 0;
+
+    --gap-divider-color: currentColor;
+
+    /* header */
+
+    --header-height: 12.5rem;
+    --header-height-compact: 6.875rem;
+    --header-height-mobile: 8.5rem;
+    --header-height-compact-mobile: 8.5rem;
+
+}
+
+
+
+/* FORMS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+.global .bg-primary .form input[type='submit'] {
+	border: 1px solid var(--accent);
+	background-color: transparent;
+}
+
+.global .bg-primary .form input[type='submit']:hover {
+    border: 1px solid var(--accent);
+	background-color: var(--accent);
+}

@@ -1,0 +1,195 @@
+/* SA theme */
+
+
+.sa .c-primary { color: var(--primary-sa); }
+.sa .c-secondary { color: var(--secondary-sa); }
+.sa .c-accent { color: var(--accent-sa); }
+
+.sa .c-p { color: var(--default-text-color-sa); }
+.sa .c-h { color: var(--default-heading-color-sa); }
+
+.sa .c-black { color: black; }
+.sa .c-white { color: white; }
+
+.sa .c-light { color: var(--light-sa) }
+.sa .c-medium { color: var(--medium-sa) }
+
+
+
+
+.sa .bg-global { background-color: var(--bg-global-sa); }
+
+.sa .bg-primary { background-color: var(--primary-sa); }
+.sa .bg-secondary { background-color: var(--secondary-sa); }
+.sa .bg-accent { background-color: var(--accent-sa); }
+
+.sa .bg-theme { 
+    background: var(--primary-sa);
+    background: linear-gradient(90deg, #7A4AFF 0%, var(--secondary-sa) 73%);
+}
+
+.sa .bg-wash { background-color: var(--wash-sa);}
+.sa .bg-light { background-color: var(--light-sa);}
+.sa .bg-medium { background-color: var(--medium-sa);}
+.sa .bg-dark { background-color: var(--dark-sa);}
+
+
+
+/* BACKGROUNDS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* default */
+
+.sa .bg-default .formatted .h,
+.sa .bg-default .formatted h1,
+.sa .bg-default .formatted h2,
+.sa .bg-default .formatted h3,
+.sa .bg-default .formatted h4,
+.sa .bg-default .formatted h5,
+.sa .bg-default .formatted h6 {
+    color: var(--primary-sa);
+}
+
+/* white */
+
+.sa .bg-white.formatted {
+	color: var(--default-text-color-sa);
+}
+.sa .bg-white .formatted .h,
+.sa .bg-white .formatted h1,
+.sa .bg-white .formatted h2,
+.sa .bg-white .formatted h3,
+.sa .bg-white .formatted h4,
+.sa .bg-white .formatted h5,
+.sa .bg-white .formatted h6 {
+    color: var(--primary-sa);
+}
+
+/* wash */
+
+.sa .bg-wash {
+    color: var(--default-text-color-sa);
+}
+.sa .bg-wash .formatted h1,
+.sa .bg-wash .formatted h2,
+.sa .bg-wash .formatted h3,
+.sa .bg-wash .formatted h4,
+.sa .bg-wash .formatted h5,
+.sa .bg-wash .formatted h6 {
+    color: var(--primary-sa);
+}
+
+
+/* light */
+
+.sa .bg-light {
+    color: var(--default-text-color-sa);
+}
+.sa .bg-light .formatted h1,
+.sa .bg-light .formatted h2,
+.sa .bg-light .formatted h3,
+.sa .bg-light .formatted h4,
+.sa .bg-light .formatted h5,
+.sa .bg-light .formatted h6 {
+    color: var(--primary-sa);
+}
+
+/* primary */
+
+
+.sa .bg-primary .form input[type='submit'] {
+    background-color: var(--dark-sa);
+    border-color: var(--dark-sa);
+    color: white;
+}
+.sa .bg-primary .form input[type='submit']:hover {
+    background-color: white;
+    border-color: white;
+    color: var(--dark-sa);
+}
+
+
+/* medium */
+
+.sa .bg-medium .formatted h1,
+.sa .bg-medium .formatted h2,
+.sa .bg-medium .formatted h3,
+.sa .bg-medium .formatted h4,
+.sa .bg-medium .formatted h5,
+.sa .bg-medium .formatted h6 {
+    color: var(--primary-sa);
+}
+
+
+/* theme */
+
+.sa .bg-theme,
+.sa .bg-theme .formatted h1,
+.sa .bg-theme .formatted h2,
+.sa .bg-theme .formatted h3,
+.sa .bg-theme .formatted h4,
+.sa .bg-theme .formatted h5,
+.sa .bg-theme .formatted h6 {
+    color: white;
+}
+
+
+
+/* BUTTONS ------------------------------------------------- */
+
+
+.sa .button {
+	border: 1px solid var(--primary-sa);
+	background-color: var(--primary-sa);
+	color: white;
+}
+
+.sa .button:hover {
+	background-color: var(--accent-sa);
+	border-color: var(--accent-sa);
+	color: white;
+}
+.sa .button.inverse:hover {
+	color: var(--secondary-sa);
+}
+
+.sa .button.outline {
+	border-color: var(--secondary);
+}
+.sa .button.outline:hover {
+	background-color: var(--secondary);
+	border-color: var(--secondary);
+	color: white;
+}
+
+.sa .button.outline.inverse {
+	color: white;
+	background-color: transparent;
+	border-color: var(--primary-sa);
+}
+.sa .button.outline.inverse:hover {
+	background-color: var(--primary-sa);
+	color: var(--secondary-sa);
+}
+
+
+
+/* FORMS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+.sa .form input[type='submit'] {
+	border: 1px solid var(--secondary-sa);
+	background-color: var(--secondary-sa);
+}
+
+.sa .form input[type='submit']:hover {
+    border: 1px solid var(--accent-sa);
+	background-color: var(--accent-sa);
+}
+
+
+/* BORDERS ------------------------------------------------ */
+
+.bc-primary { border-color: var(--primary-sa);}
+.bc-secondary { border-color: var(--secondary-sa);}
+.bc-accent { border-color: var(--accent-sa);}

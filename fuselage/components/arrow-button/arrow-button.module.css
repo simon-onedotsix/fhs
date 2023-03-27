@@ -1,0 +1,146 @@
+.arrowButton {
+    cursor: pointer;
+    display: inline-grid;
+    grid-template-columns: 3rem 1fr;
+    
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    
+    height: 3rem;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+    white-space: nowrap;
+    line-height: 1;
+
+    transition: all 550ms cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+
+
+.labelContainer {
+    grid-area: 1/2 / 2/3;
+    z-index: 1;
+    padding: .75rem 2.25rem .75rem 1.25rem;
+}
+
+.arrowContainer {
+    grid-area: 1/1 / 2/2;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.box {
+    display: block;
+    z-index: 0;
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    background-color: transparent;
+    border: 1px solid currentColor;
+
+    transition: all 550ms cubic-bezier(0.65, 0, 0.076, 1);
+}
+.arrowButton:hover .box {
+    width: 100%;
+}
+.arrowButton.solid .box {
+    background-color: var(--accent);
+}
+
+
+
+.arrow {
+    width: 2rem;
+    height: 1rem;
+    stroke: currentColor;
+    transition: all 550ms cubic-bezier(0.65, 0, 0.076, 1);
+}
+.arrowButton:hover .arrow {
+    transform: translateX(1rem);
+}
+
+
+
+/* large */
+
+.arrowButton.lg {
+    grid-template-columns: 3.6rem 1fr;
+    height: 3.6rem;
+    font-size: 1.6rem;
+}
+.arrowButton.lg .box {
+    width: 3.6rem;
+    height: 3.6rem;
+}
+.arrowButton.lg:hover .box {
+    width: 100%;
+}
+
+
+
+/* small */
+.arrowButton.sm {
+    grid-template-columns: 2.6rem 1fr;
+    height: 2.6rem;
+    font-size: 1rem;
+}
+.arrowButton.sm .box {
+    width: 2.6rem;
+    height: 2.6rem;
+}
+.arrowButton.sm:hover .box {
+    width: 100%;
+}
+/* .arrowButton.sm .labelContainer {
+    padding: .75rem 2.25rem .75rem 1.25rem;
+} */
+
+
+
+
+
+/* flipped */
+
+.flipped {
+    grid-template-columns: 1fr 3rem;
+}
+
+.flipped .labelContainer {
+    grid-area: 1/1 / 2/2;
+    padding: 1rem 1.25rem 1rem 2.25rem;
+}
+
+.flipped .arrowContainer {
+    grid-area: 1/2 / 2/3;
+}
+.flipped .box {
+    right: 0;
+}
+
+.flipped:hover .arrow {
+    transform: translateX(-1rem);
+}
+
+
+/* flipped (large) */
+
+.flipped.arrowButton.lg {
+    grid-template-columns: 1fr 3.6rem;
+    height: 3.6rem;
+    font-size: 1.6rem;
+}
+
+/* flipped (small) */
+
+.flipped.sm {
+    grid-template-columns: 1fr 2.6rem;
+}
+.flipped.sm .labelContainer {
+    grid-area: 1/1 / 2/2;
+    padding: .75rem 1rem .75rem 2rem;
+}

@@ -1,0 +1,23 @@
+:root {
+
+    /* colour */
+
+    --primary-ae: #33408b;
+    --secondary-ae: #ff00de;
+    --accent-ae: #ff00de;
+
+    --bg-global-ae: rgb(255, 255, 255);
+
+    --default-text-color-ae: rgb(71, 71, 71);
+    --default-heading-color-ae: var(--primary-ae);
+
+    --wash-ae: #F9F9FA;
+    --light-ae: #E1E2EA;
+    --medium-ae: #827e88;
+    --dark-ae: #202B64;
+
+    --error-ae: rgb(255, 68, 0);
+    --success-ae: rgb(121, 173, 0);
+    --warning-ae: rgb(255, 166, 0);
+
+}

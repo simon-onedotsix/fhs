@@ -1,0 +1,25 @@
+.layout {
+    position: fixed;
+    z-index: 50;
+    top: var(--header-height-compact-mobile);
+    width: 100%;
+
+    transform: translateY(-115%);
+    transition: all 450ms cubic-bezier(.7, .1, .2, 1);
+}
+.layout.active {
+    transform: translateY(0);
+}
+
+.actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: var(--space-sm) var(--space-sm) 0 0;
+}
+
+@media(min-width:600px){
+    .layout {
+        top: var(--header-height-compact);
+    }
+}

@@ -1,0 +1,22 @@
+.container {
+    margin: var(--space-md) 0;
+}
+
+
+.person {
+    width: 2rem;
+    height: 2.25rem;
+}
+
+@media(min-width:600px) {
+    .person {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+@media(min-width:900px) {
+    .person {
+        width: 4rem;
+        height: 4.5rem;
+    }
+}

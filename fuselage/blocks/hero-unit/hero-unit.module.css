@@ -1,0 +1,87 @@
+.layout {
+    overflow: hidden;
+    height: 100vh;
+}
+.hero {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+}
+.heroDesktop, .heroMobile {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.heroMobile {
+    display: none;
+}
+
+.container {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: var(--space-md);
+}
+
+
+
+
+.tagline {
+    display: block;
+    max-width: 100%;
+}
+@media (max-width:599px) {
+    .desktopOnly {
+        display: none;
+    }
+}
+@media (min-width:600px) {
+    .mobileOnly {
+        display: none;
+    }
+}
+
+
+
+.subBrands {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 0 var(--space-md) var(--space-sm);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+.grif,
+.ahic,
+.ahif {
+    width: 130px;
+}
+.aviadev {
+    width: 250px;
+}
+
+@media (max-width:599px) {
+    .grif,
+    .ahic,
+    .ahif {
+        width: 70px;
+    }
+    .aviadev {
+        width: 150px;
+    } 
+}

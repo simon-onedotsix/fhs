@@ -1,0 +1,112 @@
+.toggleContainer {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.501);
+}
+.toggleLabel {
+    padding: 0 1.25rem;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--primary);
+    transition: all .35s ease 400ms;
+}
+
+.toggle {
+    position: relative;
+    cursor: pointer;
+    height: 48px;
+    width: 48px;
+
+    background-color: var(--accent);
+}
+.toggle span {
+    background-color: var(--primary);
+    border: none;
+    height: 2px;
+    width: 16px;
+    position: absolute;
+    top: 24px;
+    left: 16px;
+    transition: all .35s ease 400ms;
+    cursor: pointer;
+}
+.toggle span:nth-of-type(2) {transform: translateY(6px) rotate(0); }
+.toggle span:nth-of-type(3) {transform: translateY(-6px) rotate(0); }
+
+.toggle.active span:nth-of-type(1) {opacity: 0;}
+.toggle.active span:nth-of-type(2) {transform: translateY(0) rotate(45deg);}
+.toggle.active span:nth-of-type(3) {transform: translateY(0) rotate(-45deg);}
+
+.toggle.active span {
+    /* background-color: white; */
+    transition: all .35s ease;
+}
+
+/* .toggle.active + .toggleLabel {
+    color: white;
+    transition: all .35s ease;
+} */
+
+@media(max-width:899px){
+    .toggleLabel {
+        display: none;
+    }
+    /* .toggle {
+        background-color: var(--primary);
+    }
+    .toggle span {
+        background-color: white;
+    } */
+}
+
+
+
+/* overlay */
+
+.overlay {
+    z-index: 1;
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    /* background-color: var(--medium); */
+    color: var(--secondary-ae);
+
+    overflow-y: scroll;
+
+    padding: var(--unit-sm);
+    padding-top: calc(var(--unit-lg) * 1.5);
+
+    pointer-events: none;
+    transition: all 500ms cubic-bezier(.7, .1, .2, 1);
+}
+.overlay.active {
+    top: 0;
+    pointer-events: all;
+}
+.overlay ul {
+    list-style: none;
+    margin-bottom: .75rem;
+}
+.overlay ul li {
+    margin-bottom: .75rem;
+}
+
+@media(min-width:900px) {
+    .overlay {
+        /* left: -40vw;
+        width: 40vw; */
+        padding: calc(var(--unit-lg) * 1.5) var(--unit-lg) var(--unit-lg);
+    }
+    .overlay ul {
+        list-style: none;
+        margin-bottom: .75rem;
+    }
+    .overlay ul li {
+        margin-bottom: .75rem;
+    }
+}

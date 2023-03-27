@@ -1,0 +1,131 @@
+.heroUnit {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    padding: var(--unit-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+/* @media (min-width: 600px) {
+    .heroUnit { padding: var(--unit-md) var(--unit-md); }
+} */
+@media (min-width: 800px) {
+    .heroUnit { padding: var(--unit-md) var(--unit-md); }
+}
+@media (min-width: 1200px) {
+    .heroUnit { padding: var(--unit-md) var(--unit-lg); }
+}
+@media (min-width: 1800px) {
+    .heroUnit { padding: var(--unit-md) var(--unit-xl); }
+}
+
+
+.background {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.background img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+}
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+/* theme tagline (animated) */
+
+.taglineContainer {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 10vw);
+    gap: .75rem;
+    margin-bottom: var(--unit-xs);
+}
+
+.taglineImg01,
+.taglineImg02,
+.taglineImg03 {
+    display: block;
+    height: 100%;
+    transform: translateX(15rem);
+    opacity: 0;
+    transition: all 500ms ease-out;
+}
+
+@media(max-width: 599px) {
+    .container {
+        padding-bottom: 6vh;
+    }
+}
+@media(min-width:600px) {
+    .taglineContainer {
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+        margin-bottom: var(--unit-sm);
+    }
+}
+/* @media(min-width:1200px) {
+    .taglineContainer {
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+        margin-bottom: var(--unit-sm);
+    }
+} */
+
+@media(min-width:1600x) {
+    .taglineContainer {
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+        margin-bottom: var(--unit-md);
+    }
+}
+
+
+/* actions (animated) */
+
+.actions {
+    transform: translateY(8rem);
+    opacity: 0;
+    transition: all 400ms ease-out;
+}
+
+
+
+/* background video */
+
+.bgVideo {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.background::after {
+    content: '';
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(0,0,0,0) 55%, rgba(0,0,0,0.85) 100%);
+}

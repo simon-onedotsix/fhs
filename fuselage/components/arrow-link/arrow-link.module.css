@@ -1,0 +1,20 @@
+.arrowLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.arrowLink svg {
+    transition: all 200ms ease-in-out;
+}
+
+.arrowLink.left:hover svg {
+    transform: translateX(-5px);
+    transition: all 200ms ease-in-out;
+}
+
+.arrowLink.right:hover svg {
+    transform: translateX(5px);
+    transition: all 200ms ease-in-out;
+}

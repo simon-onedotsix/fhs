@@ -1,0 +1,91 @@
+/* above the fold */
+
+.layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 60vw;
+
+    background-color: var(--secondary);
+}
+.content {
+    grid-area: 1/1 / 2/3;
+    z-index: 2;
+    align-self: center;
+}
+.message {
+    max-width: 70vw;
+}
+
+.tri {
+    grid-area: 1/2 / 2/3;
+    aspect-ratio: 1;
+    width: 60vw;
+    height: 60vw;
+    clip-path: polygon(0 0, 100% 100%, 100% 0);
+    background-color: var(--secondary);
+}
+
+.triCorner {
+    grid-area: 1/2 / 2/3;
+    z-index: 1;
+    
+    align-self: flex-end;
+    justify-self: flex-end;
+
+    aspect-ratio: 1;
+    width: 30vw;
+    height: 30vw;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    background-color: rgba(79, 47, 155, 0.5);
+}
+
+
+
+@media(min-width:600px) {
+    .message {
+        max-width: 55vw;
+    }
+}
+@media(min-width:900px) {
+    .content {
+        max-width: 80vw;
+    }
+    .message {
+        max-width: 45vw;
+    }
+}
+
+
+/* featured events */
+
+.featuredEvents {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+
+/* below the fold */
+
+.triThree {
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 1;
+    width: 70vw;
+    height: 70vw;
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+    
+    background-color: var(--secondary);
+}
+.triThreeDeco {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    aspect-ratio: 1;
+    width: 30vw;
+    height: 30vw;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+    
+    background-color: rgba(79, 47, 155, 0.4);
+}

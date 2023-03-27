@@ -1,0 +1,23 @@
+:root {
+
+    /* colour */
+
+    --primary-sa: #794DF6;
+    --secondary-sa: #3f058b;
+    --accent-sa: #55B164;
+
+    --bg-global-sa: rgb(255, 255, 255);
+
+    --default-text-color-sa: rgb(71, 71, 71);
+    --default-heading-color-sa: var(--primary-sa);
+
+    --wash-sa: #F9F9FA;
+    --light-sa: #E4E1EA;
+    --medium-sa: #6D687C;
+    --dark-sa: #31136B;
+
+    --error-sa: rgb(255, 68, 0);
+    --success-sa: rgb(121, 173, 0);
+    --warning-sa: rgb(255, 166, 0);
+
+}

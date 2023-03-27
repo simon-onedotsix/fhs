@@ -1,0 +1,85 @@
+.button {
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	font-family: var(--default-font-family);
+	padding: .75rem 2.5rem;
+	border: 1px solid var(--primary);
+	border-radius: var(--default-button-radius);
+	background-color: var(--primary);
+	color: white;
+	transition: all 500ms ease-in-out;
+	font-weight: 600;
+}
+
+.button:hover {
+	transition: all 250ms ease-in-out;
+	background-color: var(--secondary);
+	border-color: var(--secondary);
+	color: white;
+}
+.button.inverse:hover {
+	transition: all 250ms ease-in-out;
+	background-color: white;
+	border-color: white;
+	color: var(--secondary);
+}
+
+
+
+.button.outline {
+	background-color: transparent;
+	border-color: var(--secondary);
+}
+.button.outline:hover {
+	background-color: var(--secondary);
+	border-color: var(--secondary);
+	color: white;
+}
+
+.button.outline.inverse {
+	color: white;
+	background-color: transparent;
+	border-color: var(--primary);
+}
+.button.outline.inverse:hover {
+	background-color: var(--primary);
+	color: var(--secondary);
+}
+
+
+.accent {
+	background-color: var(--accent);
+	border-color: var(--accent);
+}
+.accent:hover {
+	background-color: var(--secondary);
+	border-color: var(--secondary);
+}
+.accent.outline,
+.accent.outline.inverse {
+	border-color: var(--accent);
+}
+.accent.outline:hover,
+.accent.outline.inverse:hover {
+	border-color: var(--accent);
+	background-color: var(--accent);
+}
+
+.secondary {
+	background-color: var(--secondary);
+	border-color: var(--secondary);
+	color: white;
+}
+.secondary:hover {
+	background-color: var(--primary);
+	border-color: var(--primary);
+	color: white;
+}
+
+
+
+.disabled {
+	pointer-events: none;
+	opacity: .5;
+}

@@ -1,0 +1,154 @@
+/* * { background-color: rgba(0, 255, 255, 0.258);} */
+
+/* GLOBAL */
+
+.highlight span {
+    color: white;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    color: white;
+    font-size: 2rem !important;
+}
+.swiper-button-prev,
+.swiper-button-next {
+    height: 1rem !important;
+}
+
+@media (max-width: 900px) {
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 1rem !important;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        height: 1rem !important;
+    }
+    .swiper-button-prev {
+        left: 0 !important;
+    }
+    .swiper-button-next {
+        right: 0 !important;
+    }
+}
+
+
+/* default */
+
+.bg-default .formatted h1,
+.bg-default .formatted h2,
+.bg-default .formatted h3,
+.bg-default .formatted h4,
+.bg-default .formatted h5,
+.bg-default .formatted h6 {
+    color: var(--primary);
+}
+
+/* wash */
+
+.bg-wash {
+    color: var(--default-text-color);
+}
+.bg-wash .formatted h1,
+.bg-wash .formatted h2,
+.bg-wash .formatted h3,
+.bg-wash .formatted h4,
+.bg-wash .formatted h5,
+.bg-wash .formatted h6 {
+    color: var(--primary);
+}
+
+
+/* light */
+
+.bg-light {
+    color: var(--default-text-color);
+}
+.bg-light .formatted h1,
+.bg-light .formatted h2,
+.bg-light .formatted h3,
+.bg-light .formatted h4,
+.bg-light .formatted h5,
+.bg-light .formatted h6 {
+    color: var(--primary);
+}
+
+/* primary */
+
+.bg-primary {
+    color: white;
+}
+
+.bg-primary .formatted h1,
+.bg-primary .formatted h2,
+.bg-primary .formatted h3,
+.bg-primary .formatted h4,
+.bg-primary .formatted h5,
+.bg-primary .formatted h6 {
+    color: white;
+}
+
+.bg-primary .form label {
+    color: white;
+}
+.bg-primary .form input[type='submit'] {
+    background-color: var(--dark);
+    border-color: var(--dark);
+    color: white;
+}
+.bg-primary .form input[type='submit']:hover {
+    background-color: white;
+    border-color: white;
+    color: var(--dark);
+}
+
+.bg-secondary {
+    color: white;
+}
+
+
+/* medium */
+
+.bg-medium,
+.bg-medium a {
+    color: white;
+}
+.bg-medium .formatted h1,
+.bg-medium .formatted h2,
+.bg-medium .formatted h3,
+.bg-medium .formatted h4,
+.bg-medium .formatted h5,
+.bg-medium .formatted h6 {
+    color: var(--primary);
+}
+
+
+/* dark */
+
+.bg-dark {
+    color: white
+}
+.bg-dark .formatted h1,
+.bg-dark .formatted h2,
+.bg-dark .formatted h3,
+.bg-dark .formatted h4,
+.bg-dark .formatted h5,
+.bg-dark .formatted h6 {
+    color: white;
+}
+
+
+/* theme */
+
+.bg-theme {
+    color: white;
+}
+.bg-theme .formatted h1,
+.bg-theme .formatted h2,
+.bg-theme .formatted h3,
+.bg-theme .formatted h4,
+.bg-theme .formatted h5,
+.bg-theme .formatted h6 {
+    color: white;
+}

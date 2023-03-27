@@ -1,0 +1,73 @@
+.layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+
+    height: 100%;
+}
+
+.hero {
+    grid-area: 1/1 / 2/3;
+    aspect-ratio: 1;
+    width: 100%;
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+}
+
+.tri {
+    grid-area: 1/1 / 2/3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    aspect-ratio: 1;
+    width: 60%;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+    
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.content {
+    grid-area: 1/2 / 2/4;
+    z-index: 2;
+    padding: var(--space-sm);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: var(--space-md);
+    
+}
+
+.ctaButton {
+    display: inline-grid;
+    grid-template-columns: 1fr auto;
+    gap: .75rem;
+    align-items: center;
+
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+.arrowContainer {
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid white;
+    padding: .5rem;
+
+    transition: all 450ms ease-in-out;
+}
+.arrow {
+    stroke: white;
+    transition: all 250ms ease-in-out;
+}
+
+@media(hover:hover) {
+    .ctaButton:hover .arrowContainer {
+        background-color: var(--dark);
+        border-color: var(--dark);
+        transition: all 250ms ease-in-out;
+    }
+    .ctaButton:hover .arrow {
+        stroke: var(--accent);
+        transition: all 250ms ease-in-out;
+    }
+}

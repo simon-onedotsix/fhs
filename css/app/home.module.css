@@ -1,0 +1,25 @@
+.eventCardGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+}
+
+.eventCard {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 9rem 1fr;
+    gap: var(--space-sm);
+}
+
+.eventCardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (min-width:600px) {
+    .eventCardGrid {
+        grid-template-columns: repeat(2, 50%);
+    }
+}

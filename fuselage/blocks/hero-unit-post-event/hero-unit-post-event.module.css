@@ -1,0 +1,45 @@
+.layout {
+    overflow: hidden;
+}
+
+.container {
+    padding: var(--space-md) var(--space-md) var(--space-md) var(--space-md);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+.logoGrid {
+    display: grid;
+    grid-template-columns: 2.1fr 1fr 1.8fr;
+    align-items: center;
+    gap: 2rem;
+    max-width: 100%;
+}
+
+
+
+@media (max-width:599px) {
+    .message {
+        padding-right: var(--space-md);
+    }
+}
+@media (min-width:600px) {
+    .container {
+        padding: var(--space-lg) var(--space-md) var(--space-md) var(--space-md);
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+        align-items: center;
+    }
+    .logoGrid {
+        display: grid;
+        /* grid-template-columns: 2fr 1.35fr 2.5fr; */
+        align-items: center;
+        gap: 2.75rem;
+        max-width: 35rem;
+    }
+
+
+}
+
+

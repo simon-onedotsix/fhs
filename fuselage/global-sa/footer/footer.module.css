@@ -1,0 +1,52 @@
+
+.hosts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.partnerLogo {
+    display: block;
+    max-width: 10rem;
+    max-height: 9rem;
+    margin: 0 auto;
+}
+
+@media(max-width:799px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 35rem;
+    }
+    .section {
+        padding: var(--space-md) 0;
+    }
+    .divider {
+        border-top: 1px solid var(--accent-ksa);
+    }
+}
+
+@media(min-width:800px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .divider {
+        border-left: 1px solid var(--accent-ksa);
+    }
+    .section {
+        padding: 0 var(--space-md);
+    }
+    .section:nth-child(1) {
+        padding-left: 0;
+    }
+    .section:nth-child(3) {
+        padding-right: 0;
+    }
+    
+}
+
+
+@media print {
+    .container {display: none}
+}

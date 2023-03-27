@@ -1,0 +1,43 @@
+.impactFigures  {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+@media(min-width:800px) {
+    .impactFigures  {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: var(--space-md);
+    }
+}
+
+@media(min-width:1000px) {
+    .impactFigures  {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+
+.impactFigure {
+    display: inline-block;
+    text-align: center;
+}
+.impactFigureValue {
+    display: inline-block;
+    font-size: calc(1.75rem + 3vw);
+    position: relative;
+}
+.bar {
+    display: block;
+    height: .25rem;
+}
+.impactFigureLabel {
+    text-transform: uppercase;
+    margin-top: calc(var(--space-xs) * 0.75);
+}
