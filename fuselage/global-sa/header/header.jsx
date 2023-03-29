@@ -13,7 +13,7 @@ export const Header = ({ compact, shim, shimMobile }) => {
 	})
 
     return (
-        <>
+        <>            
             <header className={`
                 ${CSS.header} 
                 ${ compact ? CSS.compact : '' }

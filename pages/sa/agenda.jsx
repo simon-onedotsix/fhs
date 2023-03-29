@@ -126,10 +126,13 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
         function renderSessions ( sessions ) {
 
+            // console.log('currentFilter:', currentFilter)
+
             // filter sessions
             if ( currentFilter ) {
                 let filteredSessions = sessions.filter( session => {
                     if (session.filters) {
+                        // console.log('session filters:', session.filters)
                         if ( 
                             session.filters[0].tags.includes(parseInt(currentFilter)) || 
                             session.filters[1] && session.filters[1].tags.includes(parseInt(currentFilter)) 
@@ -142,44 +145,58 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
             if ( sessions.length ) {
                 return (
                     sessions.map( session => {
-                        let tag = session.filters ? getSessionTagTitle(session.filters[0].tags[0]) : null
-                        // console.log('tag:',tag)
-                        let tags = []
-                        // let tagIds = []
+
+                        let sessionTags = []
     
                         if ( session.filters ) {
+
+                            // console.log('session filters:', session.filters)
+
                             session.filters.forEach( filter => {
-                                tags.push(getSessionTagTitle(filter.tags[0]))
-                                // tagIds.push(filter.tags[0])
+                                // filter.tags.forEach( tag => console.log('TAG:', getSessionTagTitle(tag)) )                                
+                                filter.tags.forEach( tag =>  sessionTags.push(getSessionTagTitle(tag)) )
                             })
+
+                            // console.log('-------------------------')
                         }
 
-                        // console.log('tags:', tags)
-                        console.log('description:', session.descriptionHtml)
-    
+                        
                         return (
-                            <Session
-                                id={session.id}
-                                key={session.id}
-                                startTime={toHoursAndMinutes(session.startMinute)}
-                                endTime={toHoursAndMinutes(session.endMinute)}
-                                tags={tags}
-                                theme={getSessionTheme(tags)}
-                            >   
-                                
-                                <p className='h3 c-primary'>{ session.title }</p>
-                                
-                                {/* <div className="mb-xs" style={{ whiteSpace: `pre-wrap` }}>{ session.description }</div> */}
+                            <>
                                 {
-                                    session.descriptionHtml &&
-                                    <div dangerouslySetInnerHTML={{__html: session.descriptionHtml}} className="mb-xs formatted" />
+                                    session.id === 1122241 ?
+                                    <p key={`banner${session.id}`} className='fs-4 fw-600 c-primary bg-theme px-sm py-xs mb-xs'>Welcome to Future Hospitality Summit</p>
+                                    : ''
                                 }
 
-                                {addSessionCta( session.id )}
+                                {
+                                    session.id === 1120633 && !currentFilter ?
+                                    <p key={`banner${session.id}`} className='fs-4 fw-600 c-primary bg-theme px-sm py-xs mb-xs mt-xs'>Global Restaurant Investment Forum (GRIF) Culinary Tours</p>
+                                    : ''
+                                }
 
-                                <div>{getAllSessionSpeakers(session.speakers)}</div>
-    
-                            </Session>
+                                <Session
+                                    id={session.id}
+                                    key={session.id}
+                                    startTime={toHoursAndMinutes(session.startMinute)}
+                                    endTime={toHoursAndMinutes(session.endMinute)}
+                                    tags={sessionTags}
+                                    theme={getSessionTheme(sessionTags)}
+                                >   
+                                    
+                                    <p className='h3 c-primary'>{ session.title }</p>
+                                    
+                                    {
+                                        session.descriptionHtml &&
+                                        <div dangerouslySetInnerHTML={{__html: session.descriptionHtml}} className="mb-xs formatted" />
+                                    }
+
+                                    {addSessionCta( session.id )}
+
+                                    <div>{getAllSessionSpeakers(session.speakers)}</div>
+        
+                                </Session>
+                            </>
     
                         )
                     })
@@ -328,6 +345,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
             obj.tags.forEach( tag => mergedTags.push(tag))
         })
     }
+
     const getSessionTagTitle = ( id ) => {
         let tag = mergedTags.filter( tag => tag.id == id )
         if ( tag.length ) return tag[0].name
@@ -370,9 +388,10 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
 
             <section className="block">
+                {/* filter */}
                 <div className="container">
                     <p className="fs-0 fw-600 c-primary">Agenda</p>
-                    
+
                     <div className={CSS.filterLayout}>
                         <section className={CSS.filterLayoutButtons}>
                             <button 
@@ -435,6 +454,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                     </div>
                 </div>
 
+                {/* programme */}
                 <div className="container">
                     {outputAgenda( sessions )}
                 </div>
