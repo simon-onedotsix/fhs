@@ -6,13 +6,13 @@ import { Button } from '../../components/button/button'
 
 import CSS from './main-menu.module.css'
 
-export const MainMenu = ({ mainMenu }) => {
+export const MainMenu = ({ fixToggle, mainMenu }) => {
 
     const [ active, setActive ] = useState( false )
 
     return (
         <>
-            <div className={CSS.toggleContainer}>
+            <div className={`${CSS.toggleContainer} ${fixToggle && CSS.fixed}`}>
                 <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
                     <span></span>
                     <span></span>
@@ -139,46 +139,6 @@ export const MainMenu = ({ mainMenu }) => {
                     
                 </div>
   
-
-                {/* {
-                    mainMenu.map( node => {
-                        
-                            return (
-                                <ul key={node.id}>
-                                    { 
-                                        !node.url ? 
-                                            <li><span className='c-secondary fw-600'>{node.title}</span></li>
-                                        : 
-                                            <li key={node.id}>
-                                                <Link href={node.url}>
-                                                    <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>
-                                                        {node.title}
-                                                    </a>
-                                                </Link>
-                                            </li> 
-                                    }
-                                    
-                                    {
-                                        node.children.map( childNode => (
-                                            <li key={childNode.id} className='mt-xs'>
-                                                <Link href={childNode.url}>
-                                                    <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>
-                                                        {childNode.title}
-                                                    </a>
-                                                </Link>
-                                            </li>
-                                        )
-                                    )}
-                                </ul>
-                            )
-                        }
-                    
-                    )
-                } */}
-
-                {/* <div className='mt-md'>
-                    <Button href="/register-interest" decal="fw-700 fs-5" secondary>Register interest</Button>
-                </div> */}
             </div>
         </>
     )

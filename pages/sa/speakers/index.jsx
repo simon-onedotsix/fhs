@@ -10,6 +10,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Header } from '../../../fuselage/global-sa/header/header'
+import { Footer } from '../../../fuselage/global-sa/footer/footer'
 import { SpeakerGrid } from "../../../fuselage/layout/speaker-grid/speaker-grid"
 
 import handleSeomaticMeta from '../../../lib/seomatic'
@@ -100,6 +101,8 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 				</div>
 				
 			</section>
+
+			<Footer />
 
 		</div>
 	)

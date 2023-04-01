@@ -28,6 +28,7 @@
     z-index: -1;
     inset: 0;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.155);
+
     
     opacity: 0;
     transition: opacity 350ms ease-in-out;
@@ -75,14 +76,22 @@
 }
 
 @media (max-width:599px) {
+    .header {
+        position: relative;
+    }
+    /* .header.fixed {
+        position: fixed;
+        top: 0;
+        margin-top: 0;
+    } */
     .header.compact {
         height: var(--header-height-compact-mobile);
     }
     .shim {
-        height: var(--header-height-compact-mobile);
+        /* height: var(--header-height-compact-mobile); */
     }
     .shimMobile {
-        height: var(--header-height-compact-mobile);
+        /* height: var(--header-height-compact-mobile); */
     }
 
     .brand {
@@ -98,20 +107,32 @@
         margin-left: 4rem; /* <–––––––––  makes space for fixed-position mobile hamburger */
         width: 9rem
     }
+    .underlay {
+        opacity: 1;
+        background-color: var(--primary);
+    }
     
 }
 @media (min-width: 600px) {
     .header {
-        position: fixed;
+        position: absolute;
         height: var(--header-height);
         padding: var(--space-sm) var(--space-md);
+        margin-top: 2.2rem;
+    }
+    .header.fixed {
+        position: fixed;
+        top: 0;
+        margin-top: 0;
     }
     .shim {
         height: var(--header-height);
+        margin-bottom: -1px;
     }
     .header.compact,
     .shim {
         height: var(--header-height-compact);
+        margin-bottom: -1px;
     }
     .venue {
         display: flex;

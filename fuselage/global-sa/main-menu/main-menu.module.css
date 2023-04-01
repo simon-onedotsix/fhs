@@ -1,11 +1,13 @@
 .toggleContainer {
-    position: fixed;
+    position: absolute;
     /* z-index: 2; */
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.501);
 }
+
+
 .toggleLabel {
     padding: 0 1.25rem;
     text-align: center;
@@ -50,6 +52,14 @@
     transition: all .35s ease;
 } */
 
+
+@media(max-width:800px){
+    .toggleContainer.fixed {
+        position: fixed;
+        top: var(--space-sm);
+    }
+}
+
 @media(max-width:899px){
     .toggleLabel {
         display: none;
@@ -79,7 +89,7 @@
     overflow-y: scroll;
 
     padding: var(--unit-sm);
-    padding-top: calc(var(--unit-lg) * 1.5);
+    padding-top: calc(var(--unit-lg) * 2.5);
 
     pointer-events: none;
     transition: all 500ms cubic-bezier(.7, .1, .2, 1);
@@ -104,7 +114,7 @@
     .overlay {
         /* left: -40vw;
         width: 40vw; */
-        padding: calc(var(--unit-lg) * 1.5) var(--unit-lg) var(--unit-lg);
+        padding: calc(var(--unit-lg) * 2.5) var(--unit-lg) var(--unit-lg);
     }
     .overlay ul {
         list-style: none;

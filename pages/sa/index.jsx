@@ -10,8 +10,6 @@ import Head from 'next/head'
 
 import { Header } from '../../fuselage/global-sa/header/header'
 import { Footer } from "../../fuselage/global-sa/footer/footer"
-import { PortalPopup } from "../../fuselage/components/portal-popup/portal-popup"
-import { LocalesTab } from '../../fuselage/components/locales-tab/locales-tab'
 
 import handleContentBlocks from "../../lib/content-blocks"
 
@@ -37,7 +35,7 @@ import handleSeomaticMeta from '../../lib/seomatic'
 import { HeroUnitVideo } from '../../fuselage/blocks-sa/hero-unit-video/hero-unit-video'
 
 
-export default function Home({ entry, seomatic, contentBlocks, speakerData, partnerData }) {
+export default function Home({ seomatic, contentBlocks, speakerData, partnerData }) {
 
 	const { globals } = useContext(GlobalsContext)
     // console.log('globals from template MAIN:', globals.ksa)
@@ -47,7 +45,11 @@ export default function Home({ entry, seomatic, contentBlocks, speakerData, part
     // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))
 	
     // console.log('speakerData:', speakerData)
-	const selectedSpeakers = []
+	// const selectedSpeakers = []
+
+	// const [menuTrigger, inView, entry] = useInView({
+	// 	threshold: 0.15,
+	// })
 
 	return (
 		<div className="bg-theme">
@@ -55,12 +57,9 @@ export default function Home({ entry, seomatic, contentBlocks, speakerData, part
 				{ handleSeomaticMeta( seomatic ) }
 			</Head>
 
-			<Header shimMobile/>
+			<Header shimMobile />
 
 			<HeroUnitVideo />
-
-			{/* <LocalesTab /> */}
-			{/* <PortalPopup /> */}
 
 			{ handleContentBlocks( contentBlocks, null, partnerData, 'sa' ) }
 

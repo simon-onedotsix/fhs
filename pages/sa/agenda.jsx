@@ -149,20 +149,14 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                         let sessionTags = []
     
                         if ( session.filters ) {
-
-                            // console.log('session filters:', session.filters)
-
                             session.filters.forEach( filter => {
-                                // filter.tags.forEach( tag => console.log('TAG:', getSessionTagTitle(tag)) )                                
                                 filter.tags.forEach( tag =>  sessionTags.push(getSessionTagTitle(tag)) )
                             })
-
-                            // console.log('-------------------------')
                         }
 
                         
                         return (
-                            <>
+                            <div key={session.id}>
                                 {
                                     session.id === 1122241 ?
                                     <p key={`banner${session.id}`} className='fs-4 fw-600 c-primary bg-theme px-sm py-xs mb-xs'>Welcome to Future Hospitality Summit</p>
@@ -177,7 +171,6 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
                                 <Session
                                     id={session.id}
-                                    key={session.id}
                                     startTime={toHoursAndMinutes(session.startMinute)}
                                     endTime={toHoursAndMinutes(session.endMinute)}
                                     tags={sessionTags}
@@ -196,8 +189,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                     <div>{getAllSessionSpeakers(session.speakers)}</div>
         
                                 </Session>
-                            </>
-    
+                            </div>
                         )
                     })
                 )

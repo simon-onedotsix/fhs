@@ -6,13 +6,13 @@ import { Button } from '../../components/button/button'
 
 import CSS from './main-menu.module.css'
 
-export const MainMenu = ({ mainMenu }) => {
+export const MainMenu = ({ fixToggle, mainMenu }) => {
 
     const [ active, setActive ] = useState( false )
 
     return (
         <>
-            <div className={CSS.toggleContainer}>
+            <div className={`${CSS.toggleContainer} ${fixToggle && CSS.fixed}`}>
                 <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
                     <span></span>
                     <span></span>
