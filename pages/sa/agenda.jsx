@@ -126,13 +126,10 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
         function renderSessions ( sessions ) {
 
-            // console.log('currentFilter:', currentFilter)
-
             // filter sessions
             if ( currentFilter ) {
                 let filteredSessions = sessions.filter( session => {
                     if (session.filters) {
-                        // console.log('session filters:', session.filters)
                         if ( 
                             session.filters[0].tags.includes(parseInt(currentFilter)) || 
                             session.filters[1] && session.filters[1].tags.includes(parseInt(currentFilter)) 
@@ -418,7 +415,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                         <section className={CSS.filterLayoutButtons}>
                             <p className={`${CSS.desktopOnly} fw-400 c-primary`}>Filter:&emsp;</p>
                             <select
-                                className={CSS.filterSelect} 
+                                className={CSS.filterSelect}
+                                value={currentFilter}
                                 defaultValue=""
                                 onChange={ (e) => {
                                     setCurrentFilter( e.target.value )
