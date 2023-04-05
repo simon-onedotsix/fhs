@@ -28,10 +28,11 @@ export default function Community () {
 			<Header compact shim />
 
             <section className="block bg-theme">
-
+				<div className="container center">
+					<p className='fs-1 fw-600'>FHS Community</p>
+				</div>
                 <div className="container">
-				<div name="bizzabo-web-community" data-unique-name="437114" data-internal-website-base-url="https://events.bizzabo.com/437114"></div>
-                    
+					<div name="bizzabo-web-community" data-unique-name="437114" data-internal-website-base-url="https://events.bizzabo.com/437114"></div>
                 </div>
             </section> 
 
