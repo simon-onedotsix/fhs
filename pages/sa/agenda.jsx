@@ -31,14 +31,13 @@ import CSS from '../../css/app/agenda.module.css'
 export default function Agenda ({ agendaSettings, sessions, speakers, speakersOverflow, cmsAgendaData }) {
 
     const [ currentDay, setCurrentDay ] = useState (null)
-    const [ currentFilter, setCurrentFilter ] = useState (null)
+    const [ currentFilter, setCurrentFilter ] = useState (389592)
+    // 389592 = fhs sessions
 
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: ''})
 
     const router = useRouter()
-
-
     
     useEffect( () => {
         if ( router.query.filter ) {
@@ -55,6 +54,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
     
     // cms entry data
+
+    let mainStreamIds = [ 388496, 388497, 388115, 389592, 394512 ]
 
     const entry = cmsAgendaData.data.entry
     const sessionThemes = entry.bizzaboAgendaTheme
@@ -86,7 +87,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
     function outputAgenda ( sessions ) {
 
-        let agenda = sortSessions(sessions)
+        let agenda = groupSessionsIntoDays(sessions)
 
         // console.log('agenda:', agenda)
 
@@ -128,13 +129,24 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
             // filter sessions
             if ( currentFilter ) {
+
+                // check for global (and untagged) sessions
+                let globalSessions = ( findGlobalSessions( sessions, mainStreamIds ) )
+
                 let filteredSessions = sessions.filter( session => {
+                    // for sessions with filter + tags
                     if (session.filters) {
                         if ( 
                             session.filters[0].tags.includes(parseInt(currentFilter)) || 
-                            session.filters[1] && session.filters[1].tags.includes(parseInt(currentFilter)) 
+                            session.filters[1] && session.filters[1].tags.includes(parseInt(currentFilter)) ||
+                            globalSessions && globalSessions.includes(session)
                         ) return session
+                    } 
+                    // for sessions without filters
+                    else if ( globalSessions && globalSessions.includes(session) ) {
+                        return session
                     }
+                    
                 })
                 sessions = filteredSessions
             }
@@ -194,9 +206,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
             } else {
                 return <p className="fs-6 fw-400">No { getSessionTagTitle(currentFilter) } sessions available on this day.</p>
             }
-
             
-        }
+        }    
 
         function getAllSessionSpeakers( speakerIds ) {
             
@@ -305,8 +316,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
         }
     }
    
-   
-    function sortSessions ( sessions ) {
+    function groupSessionsIntoDays ( sessions ) {
+
         const orderedSessions = _.orderBy(sessions, [ 'startMinute', 'asc'])
         // console.log('orderedSessions:', orderedSessions)
     
@@ -364,6 +375,39 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     }
 
 
+    // find global sessions ( to be included in all main streams )
+    
+    function findGlobalSessions ( sessionIds, streamIds ) {
+
+        if ( !sessionIds ) return
+        
+        let globalSessionIds = []
+    
+        sessionIds.forEach( session => {
+            // check for filters
+            if (session.filters) {                
+                session.filters.forEach( filter => {
+                    // check for tags
+                    if (filter.tags) {
+                        // check for main stream tags
+                        let checker = (arr, target) => target.some(value => arr.includes(value))
+                        // if no main stream tags are found, push into array
+                        if ( !checker(filter.tags, streamIds) ) globalSessionIds.push(session)
+                    }
+                })
+            }
+    
+            if (!session.filters) {
+                // if no filters + tags are found, push into array
+                globalSessionIds.push(session)
+            }
+        })
+        
+        return globalSessionIds
+        
+    }
+    
+
 
 
     return (
@@ -382,19 +426,47 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                     <p className="fs-0 fw-600 c-primary">Agenda</p>
 
                     <div className={CSS.filterLayout}>
+
+                        {/* buttons */}
                         <section className={CSS.filterLayoutButtons}>
+
                             <button 
-                                className={`
-                                    ${CSS.filterButton} 
-                                    ${ currentDay === null ? CSS.active : null }
-                                `} 
+                                className={`${CSS.filterButton} ${ currentFilter === 389592 ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentFilter(389592)
+                                    clearQuery()
+                                }}
+                            >FHS</button>
+
+                            <button 
+                                className={`${CSS.filterButton} ${ currentFilter === 388115 ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentFilter(388115)
+                                    clearQuery()
+                                }}
+                            >GRIF</button>
+                           
+                            <button 
+                                className={`${CSS.filterButton} ${ currentFilter === 394512 ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentFilter(394512)
+                                    clearQuery()
+                                }}
+                            >Experiences</button>
+
+                        </section>
+
+                        <section className={CSS.filterLayoutButtons}>
+
+                            <button 
+                                className={`${CSS.filterButton} ${ currentDay === null ? CSS.active : null }`} 
                                 onClick={ () => {
                                     setCurrentDay(null)
                                     clearQuery()
                                 }}
                             >All</button>
                             {
-                                sortSessions(sessions).map( (day, index) => {
+                                groupSessionsIntoDays(sessions).map( (day, index) => {
                                     return (
                                         <button 
                                             className={`
@@ -410,9 +482,11 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                     )
                                 })
                             }
+
                         </section>
 
-                        <section className={CSS.filterLayoutButtons}>
+                        {/* dropdown */}
+                        {/* <section className={CSS.filterLayoutButtons}>
                             <p className={`${CSS.desktopOnly} fw-400 c-primary`}>Filter:&emsp;</p>
                             <select
                                 className={CSS.filterSelect}
@@ -421,7 +495,6 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                 onChange={ (e) => {
                                     setCurrentFilter( e.target.value )
                                     clearQuery()
-                                    // console.log('selected filter:', e.target.value)
                                 }}
                             >
                                 <option value="">All sessions</option>
@@ -440,7 +513,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                     })
                                 }
                             </select>
-                        </section>                
+                        </section>                 */}
                     </div>
                 </div>
 
