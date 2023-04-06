@@ -44,6 +44,12 @@ export const Header = ({ compact, shim, shimMobile }) => {
             title: 'AviaDev',
             url: 'https://www.aviationdevelop.com',
             target: true
+        },
+        {
+            id: 3,
+            title: 'SAHIC',
+            url: 'https://www.sahic.com',
+            target: true
         }
     ]
 

@@ -333,9 +333,6 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     }
 
 
-    
-
-
     // tags
 
     let mergedTags = []
