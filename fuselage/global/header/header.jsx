@@ -23,24 +23,30 @@ const otherEvents = [
     },
     {
         id: 3,
+        title: 'FHS & AHIC',
+        url: '/ae',
+        target: false
+    },
+    {
+        id: 4,
         title: 'IDEEA',
         url: 'https://www.ideea-forum.com',
         target: true
     },
     {
-        id: 4,
+        id: 5,
         title: 'AHIF',
         url: 'https://www.ahif.com',
         target: true
     },
     {
-        id: 5,
+        id: 6,
         title: 'AviaDev',
         url: 'https://www.aviationdevelop.com',
         target: true
     },
     {
-        id: 6,
+        id: 7,
         title: 'SAHIC',
         url: 'https://www.sahic.com',
         target: true
@@ -64,7 +70,11 @@ export const Header = ({ compact, overlaid, inverse }) => {
     return (
         <>
             <span ref={pinHeaderTrigger}>
-                <EventsBar hidden={ !headerInView ? true : false } events={otherEvents} />
+                <EventsBar 
+                    hidden={ !headerInView ? true : false } 
+                    thisEvent={`FHS`}
+                    eventsLabel={`Our events:`}
+                    events={otherEvents} />
             </span>
         
             <header ref={hideEventsBarTrigger} className={`${CSS.layout} ${overlaid && CSS.overlaid}`}>
