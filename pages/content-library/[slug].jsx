@@ -172,7 +172,7 @@ export default function Article ({ entry }) {
 
     return (
         <>
-            <Header shim />
+            <Header compact />
             
 
             <section className="block bg-default pt-0">

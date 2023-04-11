@@ -9,6 +9,7 @@
 }
 
 .brand {
+    z-index: 100;
     width: 9rem;
     padding: var(--space-md);
 }

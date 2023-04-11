@@ -70,7 +70,7 @@ export default function Homepage ({ data, seomatic }) {
             </Head>
 
 
-            <Header overlaid />
+            <Header overlaid inverse />
 
             <AboveTheFold hero={{ url: `/assets/img/global/homepage/hero.jpg`, width: 2100, height: 2100}}>
 

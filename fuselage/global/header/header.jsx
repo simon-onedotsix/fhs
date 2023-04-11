@@ -48,7 +48,7 @@ const otherEvents = [
 ]
 
 
-export const Header = ({ compact, overlaid }) => {
+export const Header = ({ compact, overlaid, inverse }) => {
 
     const [pinHeaderTrigger, inView, eventsBar] = useInView({
 		threshold: 0,
@@ -70,7 +70,7 @@ export const Header = ({ compact, overlaid }) => {
             <header ref={hideEventsBarTrigger} className={`${CSS.layout} ${overlaid && CSS.overlaid}`}>
 
                 <div className={`${CSS.brand} ${compact && CSS.compact}`}>
-                    <Link href={`/`}><FhsLogo inverse /></Link>
+                    <Link href={`/`}><FhsLogo inverse={inverse} /></Link>
                 </div>
 
                 <div className={`${CSS.nav} ${ !inView && CSS.fixed}`}>

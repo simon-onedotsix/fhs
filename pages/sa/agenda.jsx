@@ -168,13 +168,23 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                             <div key={session.id}>
                                 {
                                     session.id === 1122241 ?
-                                    <p key={`banner${session.id}`} className='fs-4 fw-600 c-primary bg-theme px-sm py-xs mb-xs'>Welcome to Future Hospitality Summit</p>
+                                        <p key={`banner${session.id}`} className='fs-4 fw-600 c-primary bg-theme px-sm py-xs mb-xs'>Welcome to Future Hospitality Summit</p>
+                                    : ''
+                                }
+
+                                {
+                                    session.id === 1108935 ?
+                                        <div key={`banner${session.id}`} className='pb-sm formatted mb-xs bg-light'>
+                                            <p className='fs-4 fw-600 c-primary bg-theme px-sm py-xs mb-xs mt-xs'>FHS Intelligence Den Talks</p>
+                                            <p className='fs-4 fw-600 c-primary pt-xs px-sm'>The Evolution and Trends Facing the Saudi Hospitality Sector</p>
+                                            <p className='fw-400 px-sm'>A market snapshot of key trends as they relate to the hospitality sector. Understanding the fundamentals underpinning the market from performance, pipeline, costs, staffing and contracts in line with Vision 2030.  The Den Talks allows each speaker 10 minutes presentation followed by q&a.</p>
+                                        </div>
                                     : ''
                                 }
 
                                 {
                                     session.id === 1120633 && !currentFilter ?
-                                    <p key={`banner${session.id}`} className='fs-4 fw-600 c-primary bg-theme px-sm py-xs mb-xs mt-xs'>Global Restaurant Investment Forum (GRIF) Culinary Tours</p>
+                                        <p key={`banner${session.id}`} className='fs-4 fw-600 c-primary bg-theme px-sm py-xs mb-xs mt-xs'>Global Restaurant Investment Forum (GRIF) Culinary Tours</p>
                                     : ''
                                 }
 

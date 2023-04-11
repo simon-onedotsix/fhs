@@ -76,18 +76,18 @@ export default function ContentLibrary ({ articles, categories }) {
 
     return (
         <>
-            <Header inverse />
+            <Header overlaid inverse />
 
             <section className="block bg-secondary pt-0">
                 <StickySidebar size='small'>
                     <aside>
-                        <HeaderShim/>
+                        {/* <HeaderShim/> */}
                         <p className="fs-6 fw-600 c-accent mb-sm">Filter</p>
                         { handleCategoryMenu() }
                     </aside>
 
                     <main>
-                        <HeaderShim/>
+                        {/* <HeaderShim/> */}
                         <p className="fs-0 fw-600 c-white">Content Library</p>
 
                         { handleCategorisedArticles() }
