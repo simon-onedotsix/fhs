@@ -41,8 +41,7 @@ export default function Home({ seomatic, contentBlocks, speakerData, partnerData
     // console.log('globals from template MAIN:', globals.ksa)
 
 	// console.log('entry:', entry)
-	// console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
-    // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))
+	// console.log('seomatic:', seomatic)
 	
     // console.log('speakerData:', speakerData)
 	// const selectedSpeakers = []

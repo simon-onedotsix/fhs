@@ -20,7 +20,7 @@ import CSS from '../../../css/app/speakers.module.css'
 function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 
 
-	// console.log('bizzabo speakers found:', bizzaboSpeakers.length)
+	console.log('bizzabo speakers found:', bizzaboSpeakers.length)
 	// console.log('bizzabo speaker data:', bizzaboSpeakers)
 	// console.log('cms profile data:', craftCmsProfiles)
 	
@@ -29,26 +29,27 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 	// reorder speakers alphabetically by lastname
 
 	let orderedSpeakers = _.orderBy( bizzaboSpeakers, [ speaker => speaker.lastname.toLowerCase()], ['asc'])
-	console.log('ordered:', orderedSpeakers)
+	// console.log('ordered:', orderedSpeakers)
 
+	// customise order (move al saud into first place)
+	let customSpeakers = _.sortBy(orderedSpeakers, speaker => speaker.lastname === 'Al Saud' ? 0 : 1 )
 
-	// customise order
 
 	// find index of specific speaker	
-	let targetSpeaker = orderedSpeakers.map( speaker => speaker.lastname ).indexOf("Al Saud")
-	console.log( 'speaker index:', targetSpeaker )
+	// let targetSpeaker = orderedSpeakers.map( speaker => speaker.lastname ).indexOf("Al Saud")
+	// console.log( 'speaker index:', targetSpeaker )
 
 	// create array containing above speaker
-	let firstPlaceSpeaker = orderedSpeakers.splice(targetSpeaker, 1)
-	console.log('firstPlaceSpeaker:', firstPlaceSpeaker)
+	// let firstPlaceSpeaker = orderedSpeakers.splice(targetSpeaker, 1)
+	// console.log('firstPlaceSpeaker:', firstPlaceSpeaker)
 	
 	// remove above speaker from master array
-	orderedSpeakers.splice(targetSpeaker, 1)
-	console.log('ordered (pruned):', orderedSpeakers)
+	// orderedSpeakers.splice(targetSpeaker, 1)
+	// console.log('ordered (pruned):', orderedSpeakers)
 	
 	// add speaker back in first place
-	let customSpeakers = firstPlaceSpeaker.concat(orderedSpeakers)
-	console.log('customSpeakers:', customSpeakers)
+	// let customSpeakers = firstPlaceSpeaker.concat(orderedSpeakers)
+	// console.log('customSpeakers:', customSpeakers)
 
 
 
