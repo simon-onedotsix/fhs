@@ -11,7 +11,7 @@ import {
 } from "../graphql/queries"
 import handleSeomaticMeta from '../lib/seomatic'
 
-import { Header, HeaderShim } from '../fuselage/global/header/header'
+import { Header } from '../fuselage/global/header/header'
 import { Footer } from '../fuselage/global/footer/footer'
 import { AboveTheFold, BelowTheFold } from '../fuselage/blocks/hero-unit-events/hero-unit-events'
 import { EventCard } from '../fuselage/components/event-card/event-card'
@@ -70,7 +70,7 @@ export default function Homepage ({ data, seomatic }) {
             </Head>
 
 
-            <Header inverse />
+            <Header overlaid />
 
             <AboveTheFold hero={{ url: `/assets/img/global/homepage/hero.jpg`, width: 2100, height: 2100}}>
 

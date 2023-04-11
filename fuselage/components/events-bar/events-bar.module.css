@@ -1,6 +1,5 @@
 .wrapper {
     position: relative;
-    z-index: 110;
     background-color: var(--primary);
     padding: .5rem var(--unit-sm);
 }
@@ -17,10 +16,25 @@
     display: flex;
 }
 
+/* mobile */
+
 @media (max-width: 599px) {
+    .wrapper {
+        position: fixed;
+        z-index: 10;
+        bottom: 0;
+        left: 0;
+
+        transition: opacity 350ms ease-in-out;
+    }
+    .wrapper.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+    
     .layout {
         font-size: .75rem;
-
+        padding: .5rem 3rem .5rem .5rem;
         gap: var(--space-xxs);
     }
     .layout section:first-child {
@@ -30,16 +44,11 @@
         flex-wrap: wrap;  
         column-gap: .5rem;      
     }
-    .events span {
-        display: block;
-        width: 100%;
-    }
 }
 
+/* tablet portrait */
+
 @media (min-width: 600px) and (max-width:1200px) {
-    .wrapper {
-        padding: .5rem 2.5rem;
-    }
     .layout section:first-child {
         display: none;
     }
@@ -48,9 +57,11 @@
     }
 }
 
+/* desktop */
+
 @media (min-width: 1200px) {
     .wrapper {
-        padding: .5rem var(--unit-md);
+        z-index: 190;
     }
     .layout {
         flex-direction: row;
@@ -64,14 +75,12 @@
 
 
 
-/* button ––––––––––––––––––––––––––––––––––– */
+/* buttons ––––––––––––––––––––––––––––––––––– */
 
 .event {
     display: inline-block;
     text-decoration: none;
 }
-
-
 .event {
     text-decoration: none;
     padding-bottom: 1px;

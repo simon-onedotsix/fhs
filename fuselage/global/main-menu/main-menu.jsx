@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 
-import { ArrowButton } from '../../components/arrow-button/arrow-button'
 import { Button } from '../../components/button/button'
+import { ArrowButton } from '../../components/arrow-button/arrow-button'
 
 import CSS from './main-menu.module.css'
 
@@ -18,11 +18,11 @@ export const MainMenu = ({ mainMenu }) => {
                     <span></span>
                     <span></span>
                 </div>
-                {/* <p className={`${CSS.toggleLabel} fw-600`}>MENU</p> */}
+                {/* <div className={`${CSS.toggleActions} ${ active && CSS.active } fw-600 caps`}><Button href={`#`} accent>Stay Updated</Button></div> */}
             </div>
 
 
-            <div className={`${CSS.overlay} ${ active && CSS.active } bg-secondary p-lg`}>
+            <div className={`${CSS.overlay} ${ active && CSS.active } bg-secondary`}>
                 
                 <div className="columns-3 gap-md mt-sm">
                     <section>
@@ -53,47 +53,8 @@ export const MainMenu = ({ mainMenu }) => {
                     </section>
 
                 </div>
-  
 
-                {/* {
-                    mainMenu.map( node => {
-                        
-                            return (
-                                <ul key={node.id}>
-                                    { 
-                                        !node.url ? 
-                                            <li><span className='c-secondary fw-600'>{node.title}</span></li>
-                                        : 
-                                            <li key={node.id}>
-                                                <Link href={node.url}>
-                                                    <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>
-                                                        {node.title}
-                                                    </a>
-                                                </Link>
-                                            </li> 
-                                    }
-                                    
-                                    {
-                                        node.children.map( childNode => (
-                                            <li key={childNode.id} className='mt-xs'>
-                                                <Link href={childNode.url}>
-                                                    <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>
-                                                        {childNode.title}
-                                                    </a>
-                                                </Link>
-                                            </li>
-                                        )
-                                    )}
-                                </ul>
-                            )
-                        }
-                    
-                    )
-                } */}
-
-                {/* <div className='mt-md'>
-                    <Button href="/register-interest" decal="fw-700 fs-5" secondary>Register interest</Button>
-                </div> */}
+               
             </div>
         </>
     )

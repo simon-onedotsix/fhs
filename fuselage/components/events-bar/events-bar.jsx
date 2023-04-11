@@ -2,10 +2,10 @@ import Link from 'next/link'
 
 import CSS from './events-bar.module.css'
 
-export const EventsBar = ({ thisEvent, events, theme }) => {
+export const EventsBar = ({ hidden, thisEvent, events, theme }) => {
 
     return (
-        <div className={CSS.wrapper} style={{ background: theme ? theme.background : `var(--primary)` }}>
+        <div className={`${CSS.wrapper} ${hidden && CSS.hidden}`} style={{ background: theme ? theme.background : `var(--primary)` }}>
             <div className={CSS.layout}>
                 <section>
                     { thisEvent ? thisEvent : 'This event ' } is brought to you by <EventBarButton href={`https://www.thebench.com`} title={`The Bench`} target stroke={ theme ? theme.accent : `var(--accent)`} />

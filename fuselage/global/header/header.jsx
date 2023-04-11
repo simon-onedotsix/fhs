@@ -1,54 +1,83 @@
+import Link from 'next/link'
+
 import { useInView } from 'react-intersection-observer'
 
-import Link from 'next/link'
 import { MainMenu } from '../main-menu/main-menu'
-import LogoInverseSVG from './img/FHS-logo-inverse.svg'
-import LogoSVG from './img/FHS-logo.svg'
+import { EventsBar } from '../../components/events-bar/events-bar'
+import { FhsLogo } from '../../components/fhs-logo/fhs-logo'
+
 import CSS from './header.module.css'
 
+const otherEvents = [
+    {
+        id: 1,
+        title: 'FHS Saudi Arabia',
+        url: '/sa',
+        target: false
+    },
+    {
+        id: 2,
+        title: 'GRIF Saudi Arabia',
+        url: '/sa/grif',
+        target: false
+    },
+    {
+        id: 3,
+        title: 'IDEEA',
+        url: 'https://www.ideea-forum.com',
+        target: true
+    },
+    {
+        id: 4,
+        title: 'AHIF',
+        url: 'https://www.ahif.com',
+        target: true
+    },
+    {
+        id: 5,
+        title: 'AviaDev',
+        url: 'https://www.aviationdevelop.com',
+        target: true
+    },
+    {
+        id: 6,
+        title: 'SAHIC',
+        url: 'https://www.sahic.com',
+        target: true
+    }
+]
 
-export const Header = ({ compact, shim, inverse }) => {
 
-	const [headerTrigger, inView, entry] = useInView({
+export const Header = ({ compact, overlaid }) => {
+
+    const [pinHeaderTrigger, inView, eventsBar] = useInView({
 		threshold: 0,
+        initialInView: true
 	})
+    
+    const [hideEventsBarTrigger, headerInView, header] = useInView({
+		threshold: 0,
+        initialInView: true
+	})
+
 
     return (
         <>
-            <header className={`
-                ${CSS.header} 
-                ${ compact ? CSS.compact : '' }
-                ${ !inView ? CSS.compact : '' }
-            `}>
-                
-                <div className={CSS.underlay}></div>
-                
-                <div className={CSS.venue}>
-                    <MainMenu />
-                    
-                    {/* <Link href="/register-interest">
-                        <a className={`${CSS.ctaButton} fw-600 caps`}>Register Interest</a>
-                    </Link> */}
-                    
-                    {/* <p><span className='fw-600 fs-6'>2023</span> <br/>Global</p> */}
+            <span ref={pinHeaderTrigger}>
+                <EventsBar hidden={ !headerInView ? true : false } events={otherEvents} />
+            </span>
+        
+            <header ref={hideEventsBarTrigger} className={`${CSS.layout} ${overlaid && CSS.overlaid}`}>
+
+                <div className={`${CSS.brand} ${compact && CSS.compact}`}>
+                    <Link href={`/`}><FhsLogo inverse /></Link>
                 </div>
-                
-                <div className={CSS.logoContainer}>
-                    <a href={'/'} aria-label='FHS Home'>
-                        {
-                            inverse ? 
-                                <LogoInverseSVG className={CSS.brand}/>
-                            :
-                                <LogoSVG className={CSS.brand}/>
-                        }
-                    </a>
+
+                <div className={`${CSS.nav} ${ !inView && CSS.fixed}`}>
+                    <MainMenu mainMenu={null} />
                 </div>
-                
             </header>
 
-            <div ref={headerTrigger} className={shim ? CSS.shim : ''}></div>
         </>
     )
 }
-
-export const HeaderShim = () => <div className={CSS.shim}></div>

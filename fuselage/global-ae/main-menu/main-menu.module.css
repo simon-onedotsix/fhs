@@ -1,6 +1,6 @@
 .toggleContainer {
     position: absolute;
-    /* z-index: 2; */
+    z-index: 20;
     display: grid;
     grid-template-columns: auto auto;
     align-items: center;
@@ -77,7 +77,7 @@
 /* overlay */
 
 .overlay {
-    z-index: -1;
+    z-index: 10;
     position: fixed;
     top: -100vh;
     left: 0;
@@ -89,7 +89,7 @@
     overflow-y: scroll;
 
     padding: var(--unit-sm);
-    padding-top: calc(var(--unit-lg) * 2);
+    padding-top: var(--space-xl);
 
     pointer-events: none;
     transition: all 500ms cubic-bezier(.7, .1, .2, 1);

@@ -50,6 +50,8 @@
 }
 
 .brand {
+    position: relative;
+    z-index: 250;
     height: 8rem;
     transition: all 350ms ease-in-out;
 }

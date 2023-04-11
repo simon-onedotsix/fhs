@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { IconButton } from '../icon-button/icon-button'
 
-import FhsLogoSVG from '../../global/header/img/FHS-logo-white.svg'
+import FhsLogoSVG from '../../global/header-legacy/img/FHS-logo-white.svg'
 import CSS from './content-card.module.css'
 
 export const ContentCard = ({ url, heroUrl, heading, excerpt, type }) => {

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { HeaderShim } from '../../global/header/header'
+import { HeaderShim } from '../../global/header-legacy/header'
 
 import CSS from './hero-unit-events.module.css'
 

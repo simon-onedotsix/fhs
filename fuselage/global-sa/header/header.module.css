@@ -78,6 +78,7 @@
 @media (max-width:599px) {
     .header {
         position: relative;
+        z-index: 50;
     }
     /* .header.fixed {
         position: fixed;

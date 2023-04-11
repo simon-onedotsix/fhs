@@ -1,0 +1,143 @@
+.header {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100vw;
+
+    padding: var(--space-sm) var(--space-md);
+    display: flex;
+    justify-content: space-between;
+    color: white;
+
+    transition: height 350ms ease-in-out;
+    
+}
+.header.compact {
+    height: var(--header-height-compact);
+}
+
+.shim {
+    position: relative;
+    pointer-events: none;
+    transition: height 350ms ease-in-out;
+    
+}
+
+.underlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    /* background: rgb(64,64,138);
+    background: linear-gradient(90deg, rgba(168,58,144,1) 0%, rgba(64,64,138,1) 73%);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.155); */
+    
+    opacity: 0;
+    transition: opacity 350ms ease-in-out;
+}
+
+.layout {
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+}
+
+.compact .underlay {
+    opacity: 1;
+}
+
+.compact .brand {
+    height: 3rem;
+}
+
+.brand {
+    height: 8rem;
+    transition: all 350ms ease-in-out;
+}
+
+
+
+.ctaButton {
+    text-decoration: none;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 5px 30px;
+    background-color: rgba(255, 255, 255, 0.501);
+    font-size: 1rem;
+    color: var(--primary);
+    text-align: center;
+    line-height: 1;
+    transition: all .35s ease;
+}
+@media(hover:hover){
+    .ctaButton:hover {
+        background-color: rgba(255, 255, 255, 1);
+    }
+}
+
+@media (max-width:599px) {
+    .header.compact {
+        height: var(--header-height-compact-mobile);
+    }
+    .shim {
+        height: var(--header-height-compact-mobile);
+    }
+    /* .venue {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: var(--space-sm);
+        align-items: flex-start;
+    } */
+    .brand {
+        height: 3rem;
+    }
+    .venue {
+        display: flex;
+        gap: var(--space-sm);
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .ctaButton {
+        width: 9rem
+    }
+    
+}
+@media (min-width: 600px) {
+    .header {
+        height: var(--header-height);
+        padding: var(--space-sm) var(--space-md);
+    }
+    .shim {
+        height: var(--header-height);
+    }
+    .header.compact,
+    .shim {
+        height: var(--header-height-compact);
+    }
+    .venue {
+        display: flex;
+        gap: var(--space-sm);
+        align-items: flex-start;
+    }
+}
+
+
+
+
+
+@media print {
+    .header, 
+    .shim {
+        display: none;
+    }
+}
+
+
+
+.header {
+    pointer-events: none;
+}
+.venue,
+.logoContainer {
+    pointer-events: all;
+}

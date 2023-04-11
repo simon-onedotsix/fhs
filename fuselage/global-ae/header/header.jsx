@@ -18,6 +18,11 @@ export const Header = ({ compact, shim, shimMobile }) => {
 		threshold: 0.1,
 	})
 
+    const [hideEventsBarTrigger, headerInView, header] = useInView({
+		threshold: 0,
+        initialInView: true
+	})
+
     const otherEvents = [
         {
             id: 1,
@@ -61,6 +66,7 @@ export const Header = ({ compact, shim, shimMobile }) => {
         <>
             <span ref={menuTrigger}>
                 <EventsBar 
+                    hidden={ !headerInView ? true : false }
                     thisEvent={'FHS & AHIC'} 
                     events={otherEvents} 
                     theme={{
@@ -71,12 +77,14 @@ export const Header = ({ compact, shim, shimMobile }) => {
                 />
             </span>
 
-            <header className={`
-                ${CSS.header} 
-                ${ compact ? CSS.compact : '' }
-                ${ !inView ? CSS.compact : '' }
-                ${!inView && CSS.fixed}
-            `}>
+            <header ref={hideEventsBarTrigger} 
+                className={`
+                    ${CSS.header} 
+                    ${ compact ? CSS.compact : '' }
+                    ${ !inView ? CSS.compact : '' }
+                    ${!inView && CSS.fixed}
+                `}
+            >
                 
                 
                 <div className={CSS.venue}>
