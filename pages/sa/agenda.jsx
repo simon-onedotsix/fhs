@@ -31,8 +31,11 @@ import CSS from '../../css/app/agenda.module.css'
 export default function Agenda ({ agendaSettings, sessions, speakers, speakersOverflow, cmsAgendaData }) {
 
     const [ currentDay, setCurrentDay ] = useState (null)
-    const [ currentFilter, setCurrentFilter ] = useState (389592)
+    const [ currentFilter, setCurrentFilter ] = useState (null)
     // 389592 = fhs sessions
+    // 388115 = grif sessions
+    // #session-1120700
+    const [ currentStage, setCurrentStage ] = useState(null)
 
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: ''})
@@ -41,11 +44,11 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     
     useEffect( () => {
         if ( router.query.filter ) {
-            setCurrentFilter(router.query.filter)
+            setCurrentFilter(parseInt(router.query.filter))
         }
     
         if ( router.query.day ) {
-            setCurrentDay(router.query.day - 1)
+            setCurrentDay(parseInt(router.query.day) - 1)
         }
     
     }, [ router ])
@@ -127,18 +130,29 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
         function renderSessions ( sessions ) {
 
-            // filter sessions
+            // check for global (and untagged) sessions and dump in array
+            let globalSessions = ( findGlobalSessions( sessions, mainStreamIds ) )
+
+            // filter sessions (by track)
             if ( currentFilter ) {
+                let filteredSessions = filterBxSessions( sessions, currentFilter )
+                sessions = filteredSessions
+            }
 
-                // check for global (and untagged) sessions
-                let globalSessions = ( findGlobalSessions( sessions, mainStreamIds ) )
+            // filter sessions (by stage)
+            if ( currentStage ) {
+                let subFilteredSessions = filterBxSessions( sessions, currentStage )
+                sessions = _.intersection(sessions, subFilteredSessions)
+            }
 
-                let filteredSessions = sessions.filter( session => {
+            // helper filter
+            function filterBxSessions ( bxSessions, bxFilterId ) {
+                let snapshot = bxSessions.filter( session => {
                     // for sessions with filter + tags
                     if (session.filters) {
                         if ( 
-                            session.filters[0].tags.includes(parseInt(currentFilter)) || 
-                            session.filters[1] && session.filters[1].tags.includes(parseInt(currentFilter)) ||
+                            session.filters[0].tags.includes(parseInt(bxFilterId)) || 
+                            session.filters[1] && session.filters[1].tags.includes(parseInt(bxFilterId)) ||
                             globalSessions && globalSessions.includes(session)
                         ) return session
                     } 
@@ -148,9 +162,10 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                     }
                     
                 })
-                sessions = filteredSessions
+                return snapshot
             }
 
+            // render sessions
             if ( sessions.length ) {
                 return (
                     sessions.map( session => {
@@ -214,7 +229,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                 )
 
             } else {
-                return <p className="fs-6 fw-400">No { getSessionTagTitle(currentFilter) } sessions available on this day.</p>
+                return <p className="fs-6 fw-400">No { getSessionTagTitle(currentFilter) } {currentStage === 388496 && 'Summit Stage'}{currentStage === 389592 && 'Future Stage'} sessions available on this day.</p>
             }
             
         }    
@@ -382,6 +397,22 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     }
 
 
+    // check bz agenda settings data for specific tag group
+
+    function searchBzFilters( filterData, targetFilterName ) {
+
+        if ( !filterData || !targetFilterName ) return
+
+        let isolatedFilter = []
+
+        filterData.some( arr => {
+            if ( arr.name === targetFilterName ) isolatedFilter = arr.tags
+        })
+        
+        return isolatedFilter
+    }
+
+
     // find global sessions ( to be included in all main streams )
     
     function findGlobalSessions ( sessionIds, streamIds ) {
@@ -409,6 +440,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                 globalSessionIds.push(session)
             }
         })
+
+        // console.log('global sessions: ', globalSessionIds)
         
         return globalSessionIds
         
@@ -434,8 +467,15 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
                     <div className={CSS.filterLayout}>
 
-                        {/* buttons */}
+                        {/* track buttons */}
                         <section className={CSS.filterLayoutButtons}>
+                            <button 
+                                className={`${CSS.filterButton} ${ currentFilter === null ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentFilter(null)
+                                    clearQuery()
+                                }}
+                            >All</button>
 
                             <button 
                                 className={`${CSS.filterButton} ${ currentFilter === 389592 ? CSS.active : null }`} 
@@ -463,6 +503,37 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
                         </section>
 
+                        {/* stage buttons */}
+                        <section className={CSS.filterLayoutButtons}>
+
+                            <button 
+                                className={`${CSS.filterButton} ${ currentStage === null ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentStage(null)
+                                    clearQuery()
+                                }}
+                            >All</button>
+                            {
+                               searchBzFilters( agendaSettings.filters, 'Stages').map( (stage, index) => {
+                                    return (
+                                        <button 
+                                            className={`
+                                                ${CSS.filterButton} 
+                                                ${ currentStage === stage.id ? CSS.active : null }
+                                            `}
+                                            key={index} 
+                                            onClick={ () => {
+                                                setCurrentStage(stage.id)
+                                                clearQuery()
+                                            }}
+                                        >{ stage.name }</button>
+                                    )
+                                })
+                            }
+
+                        </section>
+
+                        {/* day buttons */}
                         <section className={CSS.filterLayoutButtons}>
 
                             <button 
@@ -491,36 +562,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                             }
 
                         </section>
-
-                        {/* dropdown */}
-                        {/* <section className={CSS.filterLayoutButtons}>
-                            <p className={`${CSS.desktopOnly} fw-400 c-primary`}>Filter:&emsp;</p>
-                            <select
-                                className={CSS.filterSelect}
-                                value={currentFilter}
-                                defaultValue=""
-                                onChange={ (e) => {
-                                    setCurrentFilter( e.target.value )
-                                    clearQuery()
-                                }}
-                            >
-                                <option value="">All sessions</option>
-                                {
-                                    agendaSettings &&
-                                    agendaSettings.filters.slice(0).reverse().map( filter => {
-                                        return (
-                                            <optgroup key={filter.id} label={filter.name}>
-                                                {filter.tags.map( (tag) => (
-                                                    <option key={tag.id} value={tag.id}>
-                                                        {tag.name}
-                                                    </option>
-                                                ))}
-                                            </optgroup>
-                                        )
-                                    })
-                                }
-                            </select>
-                        </section>                 */}
+  
                     </div>
                 </div>
 
