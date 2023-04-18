@@ -17,16 +17,19 @@ export const Session = ({ id, children, startTime, endTime, tags, theme }) => {
                 <div className={CSS.timings} style={{ backgroundColor: theme}}>
                     <p className='fw-500'>{ startTime } - { endTime }</p>
 
-                    {
-                        tags ? 
-                        tags.map((tag, index) => {
-                            if ( tag ) return (
-                                <p key={index} className={`${CSS.tag} fw-600`} style={{ color: theme}}>
-                                    <TagIcon className={CSS.icon} style={{ fill: theme}} />{ tag }
-                                </p>
-                            )
-                        }) : null
-                    }
+                    <div className={CSS.tagGroup}>
+                        {
+                            tags ? 
+                            tags.map((tag, index) => {
+                                if ( tag ) return (
+                                    <p key={index} className={`${CSS.tag} fw-600`} style={{ color: theme}}>
+                                        <TagIcon className={CSS.icon} style={{ fill: theme}} />{ tag }
+                                    </p>
+                                )
+                            }) : null
+                        }
+
+                    </div>
 
                 </div>
 

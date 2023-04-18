@@ -63,12 +63,26 @@
         padding: .5rem 0;
         background-color: transparent !important;
 
-        display: flex;
-        gap: var(--space-xs);
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var(--space-sm);
     }
     .content {
         /* margin-top: .5rem; */
     }
+
+    .tag {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .tagGroup {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: var(--space-xs)
+    }
+
 }
 
 
