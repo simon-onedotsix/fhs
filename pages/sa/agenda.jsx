@@ -30,8 +30,8 @@ import CSS from '../../css/app/agenda.module.css'
 
 export default function Agenda ({ agendaSettings, sessions, speakers, speakersOverflow, cmsAgendaData }) {
 
+    const [ currentFilter, setCurrentFilter ] = useState (389592)
     const [ currentDay, setCurrentDay ] = useState (null)
-    const [ currentFilter, setCurrentFilter ] = useState (null)
     const [ currentStage, setCurrentStage ] = useState(null)
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: ''})
@@ -479,14 +479,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
                         {/* track buttons */}
                         <section className={CSS.filterLayoutButtons}>
-                            <button 
-                                className={`${CSS.filterButton} ${ currentFilter === null ? CSS.active : null }`} 
-                                onClick={ () => {
-                                    setCurrentFilter(null)
-                                    clearQuery()
-                                }}
-                            >All</button>
-
+                            
                             <button 
                                 className={`${CSS.filterButton} ${ currentFilter === 389592 ? CSS.active : null }`} 
                                 onClick={ () => {
@@ -510,6 +503,14 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                     clearQuery()
                                 }}
                             >Experiences</button>
+
+                            <button 
+                                className={`${CSS.filterButton} ${ currentFilter === null ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentFilter(null)
+                                    clearQuery()
+                                }}
+                            >All</button>
                            
                             {/* <button 
                                 className={`${CSS.filterButton} ${ currentFilter === 399371 ? CSS.active : null }`} 
@@ -553,14 +554,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
                         {/* day buttons */}
                         <section className={CSS.filterLayoutButtons}>
-
-                            <button 
-                                className={`${CSS.filterButton} ${ currentDay === null ? CSS.active : null }`} 
-                                onClick={ () => {
-                                    setCurrentDay(null)
-                                    clearQuery()
-                                }}
-                            >All</button>
+                            
                             {
                                 groupSessionsIntoDays(sessions).map( (day, index) => {
                                     return (
@@ -578,6 +572,13 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                     )
                                 })
                             }
+                            <button 
+                                className={`${CSS.filterButton} ${ currentDay === null ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentDay(null)
+                                    clearQuery()
+                                }}
+                            >All</button>
 
                         </section>
 

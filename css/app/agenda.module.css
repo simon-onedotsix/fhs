@@ -14,7 +14,7 @@
     .filterButton {
         width: 100%;
     }
-    .filterLayoutButtons .filterButton:first-child {
+    .filterLayoutButtons .filterButton:last-child {
         flex: 1;
     }
     .filterLayoutButtons {
