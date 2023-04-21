@@ -25,7 +25,7 @@ export const Footer = () => {
                     {
                         hubspotForm &&
                         <section className={CSS.section}>
-                            <h5>Want to stay updated on FHIS?</h5>
+                            <h5>Want to stay updated on FHS?</h5>
                             <p>If you haven&apos;t already registered your interest, simply submit your name and email and we&apos;ll make sure to keep you posted on all the exciting announcements we have in store for the event.</p>
                             <HubspotForm portalId={hubspotForm.portalId} formId={hubspotForm.formId} />
                         </section>
