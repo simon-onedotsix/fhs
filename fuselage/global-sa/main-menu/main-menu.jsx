@@ -86,8 +86,8 @@ export const MainMenu = ({ fixToggle, mainMenu }) => {
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/sa/venue-and-accommodation'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Venue &amp; Accommodation</a>
+                            <Link href={'/sa/travel-guide'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Travel Guide</a>
                             </Link>
                         </p>
 
