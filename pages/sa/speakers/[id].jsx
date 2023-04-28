@@ -17,7 +17,7 @@ import CSS from '../../../css/app/speakers.module.css'
 
 function Speaker({ speaker, sessions }) {
 
-	// console.log('bizzabo speaker data:', speaker)
+	console.log('bizzabo speaker data:', speaker)
 	// console.log('bizzabo sessions data:', sessions)
 
 	const handleLinkedIn = () => {

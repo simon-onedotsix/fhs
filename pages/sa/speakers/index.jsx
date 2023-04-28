@@ -21,7 +21,7 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 
 
 	console.log('bizzabo speakers found:', bizzaboSpeakers.length)
-	// console.log('bizzabo speaker data:', bizzaboSpeakers)
+	console.log('bizzabo speaker data:', bizzaboSpeakers)
 	// console.log('cms profile data:', craftCmsProfiles)
 	
 

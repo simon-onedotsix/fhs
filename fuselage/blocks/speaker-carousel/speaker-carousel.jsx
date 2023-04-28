@@ -13,7 +13,7 @@ export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, de
         <section className={`block ${decal}`}>
             
             <div className='container center'>
-                <p className="fs-2 fw-700 lh-1 caps">{ heading }</p>
+                <p className="fs-1 fw-700 lh-1 caps">{ heading }</p>
                 <div className='fs-5'>
                     { text }
                 </div>
@@ -56,11 +56,14 @@ export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, de
                 </Splide>
             </div>
 
-            <div className='container center'>
-                <p className='mt-sm'>
-                    <ArrowButton href={ ctaLink } theme={{ arrow: `var(--accent-sa)`, border: `var(--accent-sa)`, label: `white`}} >{ ctaLabel }</ArrowButton>
-                </p>
-            </div>
+            {
+                ctaLink &&
+                <div className='container center'>
+                    <p className='mt-sm'>
+                        <ArrowButton href={ ctaLink } theme={{ arrow: `var(--accent-sa)`, border: `var(--accent-sa)`, label: `white`}} >{ ctaLabel }</ArrowButton>
+                    </p>
+                </div>
+            }
 
 
         </section>
