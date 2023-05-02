@@ -73,8 +73,9 @@ function PurchasePass({ seomatic }) {
 							currency={`US$`}
 							price={290000}
 							availableFrom={`2023-05-01T00:00:00+0000`}
-							availableTo={`2023-05-09T00:00:00+0000`}
+							availableTo={`2023-05-12T00:00:00+0000`}
 							// buttonLink={'https://fhs.marcomevent.net/'}
+							hideAvailability
 						/>
 					</PassBoxGrid>
 
