@@ -9,6 +9,7 @@
 @import './decal.theme-global.css';
 @import './decal.theme-sa.css';
 @import './decal.theme-ae.css';
+@import './decal.theme-ae-2023.css';
 
 @import './app/components/underline-link.css';
 @import './app/components/button.css';

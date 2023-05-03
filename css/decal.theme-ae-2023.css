@@ -1,0 +1,257 @@
+/* AE theme */
+
+
+[data-theme='ae'] {
+
+	--primary-ae: #4B433F;
+	--secondary-ae: #A09488;
+	--accent-ae: rgb(255, 22, 80);
+	--dark-ae: #A09488;
+	
+	--secondary-sa: #A09488;
+
+	--default-text-color: #4B433F;
+	--default-heading-color: var(--default-text-color);
+
+    --wash: #F9F9FA;
+    --light: #E1E2EA;
+    --medium: #827e88;
+    --dark: #202B64;
+
+    --error: rgb(255, 68, 0);
+    --success: rgb(121, 173, 0);
+    --warning: rgb(255, 166, 0);
+
+	/* type */
+
+    --default-font-family: 'Outfit', sans-serif;
+    --default-font-weight: 200;
+    --default-font-size: 1rem;
+    --default-line-height: 1.4;
+
+    --default-heading-line-height: 1.1;
+    --default-heading-weight: 600;
+
+
+    /* global UI styling */
+
+    --default-radius: 0;
+    --default-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    --default-shadow-size: 20px;
+    --default-shadow-opacity: 0.2;
+
+    --default-button-radius: 3rem;
+
+    /* header */
+
+    --header-height: 12.5rem;
+    --header-height-compact: 6.875rem;
+    --header-height-mobile: 8.5rem;
+    --header-height-compact-mobile: 8.5rem;
+
+}
+
+[data-theme='ae'] .container {
+	position: relative;
+	z-index: 2;
+}
+
+[data-theme='ae'] .c-primary { color: var(--primary-ae); }
+[data-theme='ae'] .c-secondary { color: var(--secondary-ae); }
+[data-theme='ae'] .c-accent { color: var(--accent-ae); }
+
+[data-theme='ae'] .c-p { color: var(--default-text-color-ae); }
+[data-theme='ae'] .c-h { color: var(--default-heading-color-ae); }
+
+[data-theme='ae'] .c-black { color: black; }
+[data-theme='ae'] .c-white { color: white; }
+
+[data-theme='ae'] .c-light { color: var(--light-ae) }
+[data-theme='ae'] .c-medium { color: var(--medium-ae) }
+
+
+
+[data-theme='ae'] .bg-global { background-color: var(--bg-global-ae, white); }
+
+[data-theme='ae'] .bg-primary { background-color: var(--primary-ae); }
+[data-theme='ae'] .bg-secondary { background-color: var(--secondary-ae); }
+[data-theme='ae'] .bg-accent { background-color: var(--accent-ae); }
+
+[data-theme='ae'] .bg-theme { 
+    background: var(--primary-ae);
+    background: linear-gradient(90deg, rgb(104, 187, 83) 0%, rgb(194, 138, 95) 73%);
+	background-image: url('/assets/theme/ae-2023/kv-pinstripes.png');
+	background-size: 100%;
+}
+
+[data-theme='ae'] .bg-wash { background-color: var(--wash-ae);}
+[data-theme='ae'] .bg-light { background-color: var(--light-ae);}
+[data-theme='ae'] .bg-medium { background-color: var(--medium-ae);}
+[data-theme='ae'] .bg-dark { background-color: var(--dark-ae);}
+
+
+
+[data-theme='ae'] .bc-primary { border-color: var(--primary-ae);}
+[data-theme='ae'] .bc-secondary { border-color: var(--secondary-ae);}
+[data-theme='ae'] .bc-accent { border-color: var(--accent-ae);}
+
+
+
+/* BACKGROUNDS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* default */
+
+[data-theme='ae'] .bg-default .h,
+[data-theme='ae'] .bg-default .formatted h1,
+[data-theme='ae'] .bg-default .formatted h2,
+[data-theme='ae'] .bg-default .formatted h3,
+[data-theme='ae'] .bg-default .formatted h4,
+[data-theme='ae'] .bg-default .formatted h5,
+[data-theme='ae'] .bg-default .formatted h6 {
+    color: var(--primary-ae);
+}
+
+/* wash */
+
+[data-theme='ae'] .bg-wash {
+    color: var(--default-text-color-ae);
+}
+[data-theme='ae'] .bg-wash .formatted h1,
+[data-theme='ae'] .bg-wash .formatted h2,
+[data-theme='ae'] .bg-wash .formatted h3,
+[data-theme='ae'] .bg-wash .formatted h4,
+[data-theme='ae'] .bg-wash .formatted h5,
+[data-theme='ae'] .bg-wash .formatted h6 {
+    color: var(--primary-ae);
+}
+
+
+/* light */
+
+[data-theme='ae'] .bg-light {
+    color: var(--default-text-color-ae);
+}
+[data-theme='ae'] .bg-light .formatted h1,
+[data-theme='ae'] .bg-light .formatted h2,
+[data-theme='ae'] .bg-light .formatted h3,
+[data-theme='ae'] .bg-light .formatted h4,
+[data-theme='ae'] .bg-light .formatted h5,
+[data-theme='ae'] .bg-light .formatted h6 {
+    color: var(--primary-ae);
+}
+
+/* primary */
+
+[data-theme='ae'] .bg-primary,
+[data-theme='ae'] .bg-primary .formatted h1,
+[data-theme='ae'] .bg-primary .formatted h2,
+[data-theme='ae'] .bg-primary .formatted h3,
+[data-theme='ae'] .bg-primary .formatted h4,
+[data-theme='ae'] .bg-primary .formatted h5,
+[data-theme='ae'] .bg-primary .formatted h6 {
+    color: white;
+}
+
+[data-theme='ae'] .bg-primary .form input[type='submit'] {
+    background-color: var(--dark-ae);
+    border-color: var(--dark-ae);
+    color: white;
+}
+[data-theme='ae'] .bg-primary .form input[type='submit']:hover {
+    background-color: white;
+    border-color: white;
+    color: var(--dark-ae);
+}
+
+
+/* medium */
+
+[data-theme='ae'] .bg-medium .formatted h1,
+[data-theme='ae'] .bg-medium .formatted h2,
+[data-theme='ae'] .bg-medium .formatted h3,
+[data-theme='ae'] .bg-medium .formatted h4,
+[data-theme='ae'] .bg-medium .formatted h5,
+[data-theme='ae'] .bg-medium .formatted h6 {
+    color: var(--primary-ae);
+}
+
+
+/* theme */
+
+/* [data-theme='ae'] .bg-theme,
+[data-theme='ae'] .bg-theme .formatted h1,
+[data-theme='ae'] .bg-theme .formatted h2,
+[data-theme='ae'] .bg-theme .formatted h3,
+[data-theme='ae'] .bg-theme .formatted h4,
+[data-theme='ae'] .bg-theme .formatted h5,
+[data-theme='ae'] .bg-theme .formatted h6 {
+    color: white;
+}
+
+[data-theme='ae'] .bg-theme .bg-white,
+[data-theme='ae'] .bg-theme .bg-white .formatted h1,
+[data-theme='ae'] .bg-theme .bg-white .formatted h2,
+[data-theme='ae'] .bg-theme .bg-white .formatted h3,
+[data-theme='ae'] .bg-theme .bg-white .formatted h4,
+[data-theme='ae'] .bg-theme .bg-white .formatted h5,
+[data-theme='ae'] .bg-theme .bg-white .formatted h6 {
+    color: var(--default-text-color-ae);
+} */
+
+
+/* BUTTONS ------------------------------------------------- */
+
+
+[data-theme='ae'] .button {
+	border: 1px solid var(--secondary-ae);
+	background-color: var(--secondary-ae);
+	color: white;
+}
+
+[data-theme='ae'] .button:hover {
+	background-color: var(--primary-ae);
+	border-color: var(--primary-ae);
+	color: white;
+}
+[data-theme='ae'] .button.inverse:hover {
+	color: var(--secondary-ae);
+}
+
+[data-theme='ae'] .button.outline {
+	border-color: var(--secondary-ae);
+}
+[data-theme='ae'] .button.outline:hover {
+	background-color: var(--secondary-ae);
+	border-color: var(--secondary-ae);
+	color: white;
+}
+
+[data-theme='ae'] .button.outline.inverse {
+	color: white;
+	background-color: transparent;
+	border-color: var(--primary-ae);
+}
+[data-theme='ae'] .button.outline.inverse:hover {
+	background-color: var(--primary-ae);
+	color: var(--secondary-ae);
+}
+
+
+
+
+
+
+
+/* FORMS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+[data-theme='ae'] .form input[type='submit'] {
+	border: 1px solid var(--secondary-ae);
+	background-color: var(--secondary-ae);
+}
+
+[data-theme='ae'] .form input[type='submit']:hover {
+    border: 1px solid var(--accent-ae);
+	background-color: var(--accent-ae);
+}
