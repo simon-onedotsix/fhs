@@ -1,0 +1,29 @@
+.wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1.5rem;
+    width: 6rem;
+    max-width: 100%;
+    aspect-ratio: 1;
+    border-radius: 6rem;
+    background-color: var(--primary-ae);
+
+    color: lime;
+}
+
+
+.grid {
+    display: flex;
+    gap: var(--space-xs)
+}
+
+@media(min-width:600px){
+    .wrapper {
+        padding: 2.75rem;
+        width: 12rem;
+        border-radius: 12rem;
+        max-width: 100%;
+    }
+}

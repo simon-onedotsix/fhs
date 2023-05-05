@@ -72,7 +72,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
                 <title>FHS | Content Library</title>
             </Head>
 
-            <Header compact />
+            <Header compact theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
 
             <section className="block bg-default pt-0">
                 <StickySidebar size='small'>

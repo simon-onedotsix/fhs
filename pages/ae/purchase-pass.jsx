@@ -29,7 +29,7 @@ export default function Register ({ entry, passes, bizzaboPassData }) {
                 {/* { handleSeomaticMeta( seomatic ) }  */}
             </Head>
 
-            <Header compact shim />
+            <Header compact shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
 
             <section className="block bg-theme"> 
 

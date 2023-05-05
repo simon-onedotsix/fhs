@@ -5,10 +5,8 @@
 
 	--primary-ae: #4B433F;
 	--secondary-ae: #A09488;
-	--accent-ae: rgb(255, 22, 80);
+	--accent-ae: #A09488;
 	--dark-ae: #A09488;
-	
-	--secondary-sa: #A09488;
 
 	--default-text-color: #4B433F;
 	--default-heading-color: var(--default-text-color);
@@ -22,6 +20,7 @@
     --success: rgb(121, 173, 0);
     --warning: rgb(255, 166, 0);
 
+
 	/* type */
 
     --default-font-family: 'Outfit', sans-serif;
@@ -33,6 +32,19 @@
     --default-heading-weight: 600;
 
 
+    /* spacing */
+
+    --container-max-width: 1000rem;
+    --container-adjacent-spacing-factor: 0.5;
+
+    --unit-xxs: .5rem;
+    --unit-xs: 1rem;
+    --unit-sm: 2rem;
+    --unit-md: 4rem;
+    --unit-lg: 6rem;
+    --unit-xl: 8rem;
+
+
     /* global UI styling */
 
     --default-radius: 0;
@@ -42,6 +54,7 @@
 
     --default-button-radius: 3rem;
 
+
     /* header */
 
     --header-height: 12.5rem;
@@ -50,6 +63,9 @@
     --header-height-compact-mobile: 8.5rem;
 
 }
+
+
+
 
 [data-theme='ae'] .container {
 	position: relative;
@@ -78,7 +94,7 @@
 [data-theme='ae'] .bg-accent { background-color: var(--accent-ae); }
 
 [data-theme='ae'] .bg-theme { 
-    background: var(--primary-ae);
+    background: white;
     background: linear-gradient(90deg, rgb(104, 187, 83) 0%, rgb(194, 138, 95) 73%);
 	background-image: url('/assets/theme/ae-2023/kv-pinstripes.png');
 	background-size: 100%;

@@ -13,7 +13,7 @@ export default function Register () {
 
     return (
         <>
-            <Header compact shim />
+            <Header compact shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
 
             <section className="block bg-theme">
 

@@ -6,23 +6,32 @@ import { Button } from '../../components/button/button'
 
 import CSS from './main-menu.module.css'
 
-export const MainMenu = ({ fixToggle, mainMenu }) => {
+export const MainMenu = ({ fixToggle, mainMenu, theme }) => {
+
+    console.log('main-menu theme:', theme)
 
     const [ active, setActive ] = useState( false )
 
     return (
         <>
             <div className={`${CSS.toggleContainer} ${fixToggle && CSS.fixed}`}>
-                <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div 
+                    className={`${CSS.toggle} ${ active && CSS.active }`} 
+                    onClick={ () => setActive(!active) } 
+                    style={{ 
+                        background: theme ? theme.buttons : 'white',
+                        color: `white`
+                    }}
+                >
+                    <span style={{ background: theme ? theme.buttonText : 'white', }}></span>
+                    <span style={{ background: theme ? theme.buttonText : 'white', }}></span>
+                    <span style={{ background: theme ? theme.buttonText : 'white', }}></span>
                 </div>
-                <p className={`${CSS.toggleLabel} fw-600`}>MENU</p>
+                {/* <p className={`${CSS.toggleLabel} fw-600`}>MENU</p> */}
             </div>
 
 
-            <div className={`${CSS.overlay} ${ active && CSS.active } bg-theme p-lg`}>
+            <div className={`${CSS.overlay} ${ active && CSS.active } p-lg`} style={{ background: theme ? theme.overlayBg : 'var(--dark)' }}>
                 
                 <div className="columns-3 gap-md mt-md">
                     <section>

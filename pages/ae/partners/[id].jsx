@@ -76,7 +76,7 @@ function Partner({ partner }) {
 	return (
 
 		<div className="bg-theme">
-			<Header compact />
+			<Header compact shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
 
 			<section className="block pt-0">
 				<div className="container">

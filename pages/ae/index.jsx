@@ -52,7 +52,7 @@ export default function Home({ globals, entry, seomatic, speakerData, partnerDat
 				{ handleSeomaticMeta( seomatic ) }
 			</Head>
 
-			<Header shim />
+			<Header shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
 
 			{/* <LocalesTab />
 			<PortalPopup /> */}

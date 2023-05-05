@@ -7,7 +7,7 @@
     padding: var(--space-sm) var(--space-md);
     display: flex;
     justify-content: space-between;
-    color: white;
+    /* color: white; */
 
     transition: height 350ms ease-in-out;
     
@@ -64,6 +64,7 @@
     display: flex;
     align-items: center;
     padding: 5px 30px;
+    border-radius: var(--default-button-radius);
     background-color: rgba(255, 255, 255, 0.501);
     font-size: 1rem;
     color: var(--secondary-sa);

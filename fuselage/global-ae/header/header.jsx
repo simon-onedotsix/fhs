@@ -6,13 +6,12 @@ import Link from 'next/link'
 import { MainMenu } from '../main-menu/main-menu'
 import LogoInverseSVG from './img/FHS-AE-logo-inverse.svg'
 import CSS from './header.module.css'
+import { FhsLogo } from '../../components/fhs-logo/fhs-logo'
 
 
-export const Header = ({ compact, shim, shimMobile }) => {
+export const Header = ({ compact, shim, shimMobile, theme }) => {
 
-	// const [headerTrigger, inView, entry] = useInView({
-	// 	threshold: 0,
-	// })
+	console.log('header theme:', theme)
 
     const [menuTrigger, inView, entry] = useInView({
 		threshold: 0.1,
@@ -72,7 +71,7 @@ export const Header = ({ compact, shim, shimMobile }) => {
                     theme={{
                         background: 'var(--dark-ae)',
                         text: 'white',
-                        accent: 'var(--accent-ae)'
+                        accent: 'white'
                     }}
                 />
             </span>
@@ -87,21 +86,30 @@ export const Header = ({ compact, shim, shimMobile }) => {
             >
                 
                 
-                <div className={CSS.venue}>
-                    <MainMenu fixToggle={!inView} />
+                <div className={CSS.venue} style={{ color: theme ? theme.text : 'var(--default-text-color'}}>
+                    <MainMenu fixToggle={!inView} theme={theme} />
                     
                     <Link href="/ae/purchase-pass">
-                        <a className={`${CSS.ctaButton} fw-600 caps`}>Purchase Pass</a>
+                        <a 
+                            className={`${CSS.ctaButton} fw-600 caps`} 
+                            style={{ 
+                                background: theme ? theme.buttons : 'white',
+                                color: theme ? theme.buttonText : 'var(--primary-ae)',
+                            }}
+                        >Purchase Pass</a>
                     </Link>
                     
                     <p><span className='fw-600 fs-6'>25-27 September 2023</span> <br/>Hilton Abu Dhabi Yas Island</p>
                 </div>
                 
-                <a href={'/ae'} aria-label='FHS Home'>
-                    <LogoInverseSVG className={CSS.brand}/>
+                <a className={CSS.brand} href={'/ae'} aria-label='FHS Home'>
+                    <FhsLogo 
+                        primary={theme ? theme.primary : `var(--primary-ae)`} 
+                        secondary={theme ? theme.secondary : `var(--secondary-ae)`} 
+                    />
                 </a>
 
-                <div className={`${CSS.underlay} bg-theme`}></div>
+                <div className={`${CSS.underlay} `} style={{ background: theme ? theme.headerBg : `bg-theme` }}></div>
                 
             </header>
 

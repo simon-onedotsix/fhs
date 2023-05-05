@@ -77,7 +77,7 @@ export default function ContentLibrary ({ articles, categories }) {
 
     return (
         <>
-            <Header compact />
+            <Header compact theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
 
             <section className="block bg-default pt-0">
                 <StickySidebar size='small'>

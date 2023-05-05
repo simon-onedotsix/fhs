@@ -31,6 +31,9 @@
 .block.bg-white + .block.bg-white  { padding-top: 0; }
 
 
+
+.block.flush { padding-right: 0; padding-left: 0; }
+
 @media (min-width: 600px) {
     .block.flush-r { padding-right: 0; }
     .block.flush-l { padding-left: 0; }
@@ -49,3 +52,4 @@
 @media (min-width: 1800px) {
     .flush-r { margin-right: calc(var(--unit-xl, 8rem) * -2); }
 }
+

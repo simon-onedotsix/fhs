@@ -4,28 +4,31 @@ import { GlobalsContext } from '../../../pages/_app'
 import Link from 'next/link'
 import Image from 'next/image'
 
+import { BenchLogo } from '../../components/bench-logo/bench-logo'
 import HubspotForm from '../../components/hubspot-form/hubspot-form'
 import { ButtonSocial } from  '../../components/button-social/button-social'
 
 import CSS from './footer.module.css'
 
-export const Footer = () => {
+export const Footer = ({ theme }) => {
 
     const { globals } = useContext(GlobalsContext)
     // console.log('globals from FOOTER:', globals.me)
+    
+    console.log('footer-theme:', theme)
 
     const hubspotForm = globals.me.hubspotForm[0]
     const contactInfo = globals.me.contactDetails[0].body
     const socialConnections = globals.me.socialConnections
 
     return (
-        <footer className="footer block bg-theme">
-            <div className={`${CSS.container} container formatted c-white`}>
+        <footer className={`footer block ${ theme ? theme.footerBg : 'bg-theme'}`} style={{ position: `relative`}}>
+            <div className={`${CSS.container} container formatted`}>
 
                     {
                         hubspotForm &&
                         <section className={CSS.section}>
-                            <h5>Want to stay updated on FHIS?</h5>
+                            <h5>Want to stay updated on FHS?</h5>
                             <p>If you haven&apos;t already registered your interest, simply submit your name and email and we&apos;ll make sure to keep you posted on all the exciting announcements we have in store for the event.</p>
                             <HubspotForm portalId={hubspotForm.portalId} formId={hubspotForm.formId} />
                         </section>
@@ -58,26 +61,14 @@ export const Footer = () => {
                     </section>
         
                     <section className={`${CSS.section} ${CSS.hosts} ${CSS.divider} center`}>
-                        {/* <div>
-                            <h5>Host Partner</h5>
-                            <a className={CSS.partnerLogo} href="https://www.neom.com/en-us" target='_blank' rel='noreferrer' aria-label="Host Partner">
-                                <Image width={198} height={214} src="/assets/site/neom-inverse@2x.png" alt="" />
-                            </a>
-                        </div> */}
                         <div>
                             <h5>Organisers</h5>
                             <div className="mt-sm flex flex-wrap gap-sm jc-center">
                                 <p>
                                     <a className={CSS.partnerLogo} href="https://www.thebench.com" target='_blank' rel='noreferrer' aria-label="Organiser">
-                                        <Image width={221} height={92} src="/assets/site/the-bench-inverse@2x.png" alt="" />
+                                        <BenchLogo />
                                     </a>
                                 </p>
-                                {/* <p>
-                                    <a className={CSS.partnerLogo} href="https://www.meed.com" target='_blank' rel='noreferrer' aria-label="Organiser">
-                                        <Image width={588} height={287} src="/assets/site/aeed-inverse.png" alt="" />
-                                    </a>
-                                </p> */}
-
                             </div>
                         </div>
 
