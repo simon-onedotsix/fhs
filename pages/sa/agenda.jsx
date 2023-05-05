@@ -58,6 +58,9 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     // 388496 = summit stage
     // 388497 = future stage
     // 399370 = exhibition stage
+    // 403735 = najd room
+    // 403736 = yanbou room
+    // 403737 = ballroom B
 
     // #session-1120700
     
@@ -217,7 +220,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
             
             } else {
-                return <p className="fs-6 fw-400">No { getSessionTagTitle(currentFilter) } sessions available on {currentStage === 388496 && 'the Summit Stage for'}{currentStage === 388497 && 'the Future Stage for'}{currentStage === 399370 && 'the Exhibition Stage for'} this day.</p>
+                return <p className="fs-6 fw-400">No { getSessionTagTitle(currentFilter) } sessions available {currentStage === 388496 && 'on the Summit Stage for'}{currentStage === 388497 && 'on the Future Stage for'}{currentStage === 399370 && 'on the Exhibition Stage for'}{currentStage === 403735 && 'in the Najd Room for'}{currentStage === 403736 && 'in the Yanbou Room for'}{currentStage === 403737 && 'in the Al Omsiat Ballroom B for'} this day.</p>
             }
             
         }    
@@ -416,9 +419,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                     // check for tags
                     if (filter.tags) {
                         // check for main stream tags
-                        let checker = (arr, target) => target.some(value => arr.includes(value))
                         // if no main stream tags are found, push into array
-                        if ( !checker(filter.tags, streamIds) ) globalSessionIds.push(session)
+                        if ( !_.intersection(filter.tags, streamIds) ) globalSessionIds.push(session)
                     }
                 })
             }
