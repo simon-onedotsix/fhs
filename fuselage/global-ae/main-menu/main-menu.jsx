@@ -8,7 +8,7 @@ import CSS from './main-menu.module.css'
 
 export const MainMenu = ({ fixToggle, mainMenu, theme }) => {
 
-    console.log('main-menu theme:', theme)
+    // console.log('main-menu theme:', theme)
 
     const [ active, setActive ] = useState( false )
 

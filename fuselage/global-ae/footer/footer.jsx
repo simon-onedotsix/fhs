@@ -15,7 +15,7 @@ export const Footer = ({ theme }) => {
     const { globals } = useContext(GlobalsContext)
     // console.log('globals from FOOTER:', globals.me)
     
-    console.log('footer-theme:', theme)
+    // console.log('footer-theme:', theme)
 
     const hubspotForm = globals.me.hubspotForm[0]
     const contactInfo = globals.me.contactDetails[0].body

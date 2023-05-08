@@ -11,7 +11,7 @@ import { FhsLogo } from '../../components/fhs-logo/fhs-logo'
 
 export const Header = ({ compact, shim, shimMobile, theme }) => {
 
-	console.log('header theme:', theme)
+	// console.log('header theme:', theme)
 
     const [menuTrigger, inView, entry] = useInView({
 		threshold: 0.1,
