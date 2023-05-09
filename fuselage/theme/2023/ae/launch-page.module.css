@@ -43,10 +43,12 @@
 .hostSponsorGrid {
     display: grid;
     grid-template-columns: 5.5rem 6rem 4rem;
+    gap: 1rem;
     align-items: flex-end;
 }
 @media(min-width:800px) {
     .hostSponsorGrid {
-        grid-template-columns: 8.5rem 9rem 7rem;
+        grid-template-columns: 8.5rem 11rem 7rem;
+        gap: 2rem;
     }
 }

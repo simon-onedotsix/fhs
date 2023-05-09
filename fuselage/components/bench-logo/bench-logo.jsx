@@ -3,7 +3,7 @@ export const BenchLogo = ({ fill }) => {
     let fillColor = fill ? fill : 'currentColor'
 
     return (
-        <div style={{ aspectRatio: `211/88`, width: `100%`, height: `100%` }}>
+        <span style={{ aspectRatio: `211/88`, width: `100%`, height: `100%` }}>
             <svg width="100%" height="100%" viewBox="0 0 211 88" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeLinejoin:`round`, strokeMiterlimit: 2 }}>
                 <g transform="matrix(1,0,0,1,-752,-612)">
                     <g transform="matrix(1,0,0,2.38095,0,0)">
@@ -13,6 +13,6 @@ export const BenchLogo = ({ fill }) => {
                     </g>
                 </g>
             </svg>
-        </div>
+        </span>
     )
 }
