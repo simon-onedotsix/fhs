@@ -10,6 +10,10 @@
     font-family: monospace;
 }
 
+.ff-oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
 
 /* mobile size adjuster */
 @media(max-width:599px) {

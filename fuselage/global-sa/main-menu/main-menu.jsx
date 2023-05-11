@@ -18,7 +18,7 @@ export const MainMenu = ({ fixToggle, mainMenu }) => {
                     <span></span>
                     <span></span>
                 </div>
-                <p className={`${CSS.toggleLabel} fw-600`}>MENU</p>
+                {/* <p className={`${CSS.toggleLabel} fw-600`}>MENU</p> */}
             </div>
 
 

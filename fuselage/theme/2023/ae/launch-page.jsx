@@ -5,16 +5,6 @@ import bubbleCSS from './launch-page-bubble.module.css'
 
 
 
-export const Container = ({ children, decal, flushRight }) => {
-    return (
-        <div className={`${CSS.container} ${decal} ${flushRight && CSS.flushRight}`}>
-            { children }
-        </div>
-    )
-}
-
-
-
 
 export const LogoBubble = ({ children }) => {
     return (

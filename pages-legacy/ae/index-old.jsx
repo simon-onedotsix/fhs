@@ -1,20 +1,19 @@
-import Layout from '../../fuselage/templates/ae/layout'
-
 import { gql } from "@apollo/client"
-import craftApolloClient from "../api/apollo"
+import craftApolloClient from "../../pages/api/apollo"
 
 import Head from 'next/head'
 
+import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
+
 import { Header } from '../../fuselage/global-ae/header/header'
 import { Footer } from "../../fuselage/global-ae/footer/footer"
-import { HeroUnitPostEvent } from '../../fuselage/blocks/hero-unit-post-event/hero-unit-post-event'
-import { PortalPopup } from "../../fuselage/components/portal-popup/portal-popup"
-import { LocalesTab } from '../../fuselage/components/locales-tab/locales-tab'
 
-import { SpeakerCarousel } from '../../fuselage/blocks/speaker-carousel/speaker-carousel'
-import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
+import { Container } from '../../fuselage/theme/2023/ae/launch-page'
+import { LogoBubble, LogoBubbleGrid, HostSponsorLogo, HostSponsorGrid } from '../../fuselage/theme/2023/ae/launch-page'
+import { FhsLogo } from '../../fuselage/components/fhs-logo/fhs-logo'
+import { AhicLogo } from '../../fuselage/components/ahic-logo/ahic-logo'
+import { GrifLogo } from '../../fuselage/components/grif-logo/grif-logo'
 
-import { GetBizzaboPartersByLevel } from '../../lib/bizzabo-partner-levels'
 import handleContentBlocks from "../../lib/content-blocks"
 
 import { 
@@ -47,31 +46,71 @@ export default function Home({ globals, entry, seomatic, speakerData, partnerDat
 	const selectedSpeakers = []
 
 	return (
-		<div className="bg-theme">
+		<>
 			<Head>
 				{ handleSeomaticMeta( seomatic ) }
 			</Head>
 
-			<Header shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
+			<ThemeBg />
 
-			{/* <LocalesTab />
-			<PortalPopup /> */}
-			<HeroUnitPostEvent />
+			<Header compact shim theme={{ 
+                primary: 'var(--primary)', 
+                secondary: 'var(--secondary)', 
+                text: 'var(--primary)',
+                buttons: 'var(--primary)',
+                buttonText: 'white',
+                headerBg: '#ffffffee',
+                overlayBg: 'var(--primary)',
+            }} />
+
+
+			<section className="block flush">
+
+				<Container decal={`bg-white-90 p-md`}>
+					<p className='fs-3 fw-300 caps'>25-27 September 2023</p>
+					<p className="fs-xl caps maxw-50 my-sm" style={{ lineHeight: 0.9}}>Focus on Investment</p>
+					<p className='fs-5 fw-300 caps mb-lg'>Hilton Abu Dhabi Yas Island</p>
+					
+					<LogoBubbleGrid>
+						<LogoBubble><FhsLogo primary={`white`} secondary={`white`} /></LogoBubble>
+						<LogoBubble><AhicLogo primary={`white`} secondary={`white`} /></LogoBubble>
+						<LogoBubble><GrifLogo primary={`white`} secondary={`white`}  /></LogoBubble>
+					</LogoBubbleGrid>
+				</Container>
+
+
+				<Container flushRight decal={`bg-white-90 p-md`}>
+					<div className="formatted">
+						<h1 className='lh-1'>FHS & AHIC 2023</h1>
+						<h3 className='maxw-40'> Join Us As We Transform Yas Island into a Global Epicenter for Hospitality Investment</h3>
+						<p className='fs-6 fw-300 maxw-40 mt-md'>Experience the highly anticipated Future Hospitality Summit 2023 alongside the 19th edition of The Bench&apos;s flagship AHIC - Arabian Hospitality Investment Conference, in Abu Dhabi for the very first time! </p>
+						<p className='fs-6 fw-300 maxw-40'>Experience three extraordinary days of dealmaking and impactful industry discussions at the Yas Island, thanks to our host sponsors - Abu Dhabi Convention & Exhibition Bureau, Miral, and Hilton Abu Dhabi Yas Island. </p>
+						<p className='fs-6 fw-300 maxw-40'>Explore innovative investment trends, groundbreaking insights, and unparalleled networking opportunities in the world of hospitality. </p>
+						<p className='fs-6 fw-300 maxw-40'>Don&apos;t miss this unique opportunity to shape the industry&apos;s future.</p>
+					</div>
+
+					<div className="mt-md bt-1 bc-grey-10 pt-sm">
+						<p className='fw-600 caps mb-sm'>Host Sponsors</p>
+
+						<HostSponsorGrid>
+							<HostSponsorLogo hero={{url: `/assets/site/ae/abu-dhabi.png`}}/>
+							<HostSponsorLogo hero={{url: `/assets/site/ae/miral.png`}}/>
+							<HostSponsorLogo hero={{url: `/assets/site/ae/hilton.png`}}/>
+						</HostSponsorGrid>
+					</div>
+				</Container>
+
+			</section> 
+
 
 			{handleContentBlocks( entry.fhisContentBlocks )}
 
-			<Footer />
-		</div>
-	)
-}
 
-Home.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
+			<Footer theme={{ footerBg: 'bg-white-90' }} />
+		</>
 	)
 }
+Home.theme = 'ae'
 
 
 export async function getStaticProps({ params, preview, previewData }) {

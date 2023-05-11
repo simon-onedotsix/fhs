@@ -11,7 +11,7 @@
     padding: 0 1.25rem;
     text-align: center;
     font-size: 1rem;
-    color: var(--secondary-sa);
+    color: var(--secondary);
     transition: all .35s ease 400ms;
     border-radius: var(--default-button-radius);
 }
@@ -21,12 +21,15 @@
     cursor: pointer;
     height: 48px;
     width: 48px;
-
-    background-color: white;
     border-radius: var(--default-button-radius);
+    background-color: var(--primary);
+    transition: all 350ms ease-in-out;
+}
+.toggle:hover {
+    background-color: var(--secondary);
 }
 .toggle span {
-    background-color: var(--secondary-sa);
+    background-color: var(--secondary);
     border: none;
     height: 2px;
     width: 16px;

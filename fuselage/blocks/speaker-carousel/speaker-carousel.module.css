@@ -9,6 +9,14 @@
     background-color: var(--secondary);
     width: 3.6rem;
     height: 3.6rem;
+    opacity: 1;
+    transition: all 350ms ease-in-out;
+}
+@media(hover:hover){
+    .sliderButton:hover {
+        background-color: var(--primary);
+        opacity: 1 !important;
+    }
 }
 .sliderButton svg {
     width: 1.4rem;

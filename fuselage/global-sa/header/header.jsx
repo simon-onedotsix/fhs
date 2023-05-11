@@ -85,8 +85,9 @@ export const Header = ({ compact, shim, shimMobile }) => {
                 <div className={CSS.venue}>
                     <MainMenu fixToggle={!inView} />
                                         
-                    <Link href="/sa/purchase-pass">
-                        <a className={`${CSS.ctaButton} fw-600 caps`}>Purchase Pass</a>
+                    <Link href="/sa/register-interest">
+                        <a className={`${CSS.ctaButton} fw-600 caps`}>Register Interest <span className='mobileHide'>for 2024</span></a>
+                        {/* <a className={`${CSS.ctaButton} fw-600 caps`}>Purchase Pass</a> */}
                     </Link>
                     
                     <p><span className='fw-600 fs-6'>7-9 May 2023</span> <br/>Al Faisaliah Hotel, Riyadh</p>

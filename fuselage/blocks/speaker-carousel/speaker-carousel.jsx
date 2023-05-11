@@ -7,7 +7,7 @@ import Chevron from './img/slider-chevron-right.svg'
 
 import CSS from './speaker-carousel.module.css'
 
-export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, decal }) => {
+export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, ctaTheme, decal }) => {
     return (
 
         <section className={`block ${decal}`}>
@@ -60,7 +60,7 @@ export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, de
                 ctaLink &&
                 <div className='container center'>
                     <p className='mt-sm'>
-                        <ArrowButton href={ ctaLink } theme={{ arrow: `var(--accent-sa)`, border: `var(--accent-sa)`, label: `white`}} >{ ctaLabel }</ArrowButton>
+                        <ArrowButton href={ ctaLink } theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `var(--accent)`}} >{ ctaLabel }</ArrowButton>
                     </p>
                 </div>
             }

@@ -1,5 +1,3 @@
-import Layout from '../../../fuselage/templates/ae/layout'
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../../api/apollo"
 
@@ -43,24 +41,25 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-			<Header compact shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
+			<Header compact shim theme={{ 
+                primary: 'var(--primary)', 
+                secondary: 'var(--secondary)', 
+                text: 'var(--primary)',
+                buttons: 'var(--primary)',
+                buttonText: 'white',
+                headerBg: '#ffffffee',
+                overlayBg: 'var(--primary)',
+            }} />
 
 			{ handleContentBlocks( contentBlocks, null, partnerData, '/ae' ) }
 
-			<Footer />
+			<Footer theme={{ footerBg: 'bg-white-90' }} />
 		
 		</div>
 	)
 }
 
-Partners.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
-
+Partners.theme = 'ae'
 
 
 

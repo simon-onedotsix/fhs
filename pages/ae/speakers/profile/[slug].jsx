@@ -1,4 +1,4 @@
-import Layout from '../../../../fuselage/templates/ae/layout'
+import { ThemeBg } from "../../../../fuselage/theme/2023/ae/theme-bg"
 
 import { gql } from "@apollo/client"
 import craftApolloClient from '../../../api/apollo'
@@ -7,9 +7,11 @@ import Image from "next/image"
 
 import { Header, HeaderShim } from '../../../../fuselage/global-ae/header/header'
 import { Footer } from '../../../../fuselage/global-ae/footer/footer'
-import { StickySidebar } from '../../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
+import { Sidebar } from '../../../../fuselage/layout/sidebar/sidebar'
 import { ArrowLink } from '../../../../fuselage/components/arrow-link/arrow-link'
 // import { ButtonSocial } from  '../../../../fuselage/components/button-social/button-social'
+
+import { Container } from "../../../../fuselage/theme/2023/ae/layout/container/container"
 
 import CSS from '../../../../css/app/speakers.module.css'
 
@@ -19,32 +21,41 @@ export default function Profile ({ profile }) {
     // console.log('profile data:', profile)
 
     return (
-        <div className="bg-theme">
-			<Header compact shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
+        <>
+			<ThemeBg />
 
-			<section className="block pt-0">
-				<div className="container">
+            <Header compact shim theme={{ 
+                primary: 'var(--primary)', 
+                secondary: 'var(--secondary)', 
+                text: 'var(--primary)',
+                buttons: 'var(--primary)',
+                buttonText: 'white',
+                headerBg: '#ffffffee',
+                overlayBg: 'var(--primary)',
+            }} />
 
-					<StickySidebar size='medium'>
+
+            <section className="block flush">
+				<Container flushRight maxWidth={`85%`} decal={`bg-white-90 p-md`}>
+					<Sidebar size='medium'>
 
 						<aside className="formatted">
-                            <HeaderShim/>
 							<p className="fw-600">
-                                <ArrowLink 
-                                    theme={{ color: `white`, stroke: `var(--accent-ae)` }} 
-                                    href="/ae/speakers"
-                                >
-                                    View All Speakers
-                                </ArrowLink>
-                            </p>
+								<ArrowLink 
+									theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
+									href="/ae/speakers"
+								>
+									View All Speakers
+								</ArrowLink>
+							</p>
 							<p className="fw-600">
-                                <ArrowLink 
-                                    theme={{ color: `white`, stroke: `var(--accent-ae)` }} 
-                                    href="/ae/advisory-board"
-                                >
-                                    View Advisory Board
-                                </ArrowLink>
-                            </p>
+								<ArrowLink 
+									theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
+									href="/ae/advisory-board"
+								>
+									View Advisory Board
+								</ArrowLink>
+							</p>
 							<div className={`${CSS.avatar} mt-sm`}>
                                 {
                                     profile.avatar.length ?
@@ -53,12 +64,11 @@ export default function Profile ({ profile }) {
                                         <Image className={CSS.photo} src={`/assets/ui/avatar-fallback.png`} layout='fill' alt=""/>
                                 }
                             </div>
+							
 						</aside>
-						
+
 						<main className="maxw-60">
-                            <HeaderShim/>
-							<p className='fs-1 fw-600 lh-1 c-secondary maxw-40'>Profile</p>
-                            <p className="fs-3 fw-600 caps mt-sm">{profile.title}</p>
+							<p className="fs-3 fw-600 caps">{profile.title}</p>
 							
                             {
                                 profile.positions.map( position => (
@@ -68,27 +78,20 @@ export default function Profile ({ profile }) {
                                     </p>
                                 ))
                             }
-							
-                            <div className="formatted mt-sm maxw-50" dangerouslySetInnerHTML={{__html: profile.profile }} />
+							<div className="formatted mt-sm maxw-50" dangerouslySetInnerHTML={{__html: profile.profile }} />
 						</main>
 
-					</StickySidebar>
-
-				</div>
+					</Sidebar>
+				</Container>
 			</section>
 
-            <Footer />
-		</div>
+
+            <Footer theme={{ footerBg: 'bg-white-90' }} />
+		</>
     )
 }
 
-Profile.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
+Profile.theme = 'ae'
 
 
 export async function getStaticPaths() {

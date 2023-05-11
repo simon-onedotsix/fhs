@@ -1,4 +1,4 @@
-import Layout from '../../../fuselage/templates/ae/layout'
+import { ThemeBg } from "../../../fuselage/theme/2023/ae/theme-bg"
 
 import { gql } from "@apollo/client"
 import craftApolloClient from '../../api/apollo'
@@ -173,41 +173,56 @@ export default function Article ({ entry }) {
 
     return (
         <>
-            <Header compact theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
-            
+            <ThemeBg />
 
-            <section className="block bg-default pt-0">
+            <Header compact theme={{ 
+                primary: 'var(--primary)', 
+                secondary: 'var(--secondary)', 
+                text: 'var(--primary)',
+                buttons: 'var(--primary)',
+                buttonText: 'white',
+                headerBg: '#ffffffee',
+                overlayBg: 'var(--primary)',
+            }} />
+                        
+
+            <section className="block flush pt-0">
                 <div className="container">
                     <StickySidebar size='large' flipped>
 
                         <main>
                             <HeaderShim/>
-                            <div className="mb-sm pb-xs bb-1 bc-secondary flex jc-between">
-                               <ArrowLink href="/ae/content-library" decal='fw-600'>Content library</ArrowLink>
-                               {handleCategories()}                                
+                            <div className="bg-white-90 p-md">
+                                <div className="mb-sm pb-xs bb-1 bc-secondary flex jc-between">
+                                <ArrowLink href="/ae/content-library" decal='fw-600'>Content library</ArrowLink>
+                                {handleCategories()}                                
+                                </div>
+
+                                <p className="fs-1 fw-600 lh-1 c-primary mb-sm">{entry.title}</p>
+                                
+                                {handleHero()}
+
+                                {handleContentLibraryBlocks( entry )}
+
                             </div>
-
-                            <p className="fs-1 fw-600 lh-1 c-primary mb-sm">{entry.title}</p>
-                            
-                            {handleHero()}
-
-                            {handleContentLibraryBlocks( entry )}
                         </main>
 
                         <aside>
                             <HeaderShim/>
-                            <div className="mb-sm pb-xs bb-1 bc-secondary">
-                                <p className="fw-600">Published: { format(new Date(entry.postDate), 'd MMMM yyyy') }</p>
-                            </div>
-                            
-                            {handleProfileGroups()}
+                            <div className="bg-white-90 p-md">
+                                <div className="mb-sm pb-xs bb-1 bc-secondary">
+                                    <p className="fw-600">Published: { format(new Date(entry.postDate), 'd MMMM yyyy') }</p>
+                                </div>
+                                
+                                {handleProfileGroups()}
 
-                            <div className="py-xs">
-                                <p className="fw-600 pb-xs">Share this article</p>
-                                <div className="flex gap-xxs">
-                                    <ButtonSocial icon='linkedin' decal='bg-secondary' />
-                                    <ButtonSocial icon='facebook' decal='bg-secondary' />
-                                    <ButtonSocial icon='twitter' decal='bg-secondary' />
+                                <div className="py-xs">
+                                    <p className="fw-600 pb-xs">Share this article</p>
+                                    <div className="flex gap-xxs">
+                                        <ButtonSocial icon='linkedin' decal='bg-secondary' />
+                                        <ButtonSocial icon='facebook' decal='bg-secondary' />
+                                        <ButtonSocial icon='twitter' decal='bg-secondary' />
+                                    </div>
                                 </div>
                             </div>
 
@@ -217,20 +232,13 @@ export default function Article ({ entry }) {
                 </div>                
             </section>
 
-            <Footer />
+            <Footer theme={{ footerBg: 'bg-white-90' }} />
         </>
     )
 
 }
 
-Article.getLayout = function getLayout( page ) {
-	return (
-		<Layout>
-			{ page }
-		</Layout>
-	)
-}
-
+Article.theme = 'ae'
 
 
 

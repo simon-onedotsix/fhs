@@ -18,10 +18,10 @@ export const MainMenu = ({ fixToggle, mainMenu, theme }) => {
                 <div 
                     className={`${CSS.toggle} ${ active && CSS.active }`} 
                     onClick={ () => setActive(!active) } 
-                    style={{ 
-                        background: theme ? theme.buttons : 'white',
-                        color: `white`
-                    }}
+                    // style={{ 
+                    //     background: theme ? theme.buttons : 'white',
+                    //     color: `white`
+                    // }}
                 >
                     <span style={{ background: theme ? theme.buttonText : 'white', }}></span>
                     <span style={{ background: theme ? theme.buttonText : 'white', }}></span>
@@ -130,13 +130,13 @@ export const MainMenu = ({ fixToggle, mainMenu, theme }) => {
                     </section>
 
                     <section className='c-white'>
-                        <p className="fs-4 fw-600">FHS 2022</p>
+                        {/* <p className="fs-4 fw-600">FHS 2022</p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/agenda'}>
                                 <a className='uLink fw-400 fs-5' onClick={ () => setActive(false)}>2022 programme</a>
                             </Link>
-                        </p>
-                        <p className="fs-4 fw-600 mt-md">Future Hospitality events</p>
+                        </p> */}
+                        <p className="fs-4 fw-600">Future Hospitality events</p>
                         <p className="mt-xs">
                             <ArrowButton href={`/sa`} theme={{ arrow: `white`, border: `white`, label: `white`}}>FHS Saudi Arabia</ArrowButton>
                         </p>

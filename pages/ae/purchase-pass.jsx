@@ -1,7 +1,7 @@
-import Layout from '../../fuselage/templates/ae/layout'
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
+
+import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
 
 import Head from "next/head"
 
@@ -29,7 +29,17 @@ export default function Register ({ entry, passes, bizzaboPassData }) {
                 {/* { handleSeomaticMeta( seomatic ) }  */}
             </Head>
 
-            <Header compact shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
+            <ThemeBg />
+
+			<Header compact shim theme={{ 
+                primary: 'var(--primary)', 
+                secondary: 'var(--secondary)', 
+                text: 'var(--primary)',
+                buttons: 'var(--primary)',
+                buttonText: 'white',
+                headerBg: '#ffffffee',
+                overlayBg: 'var(--primary)',
+            }} />
 
             <section className="block bg-theme"> 
 
@@ -90,20 +100,12 @@ export default function Register ({ entry, passes, bizzaboPassData }) {
 
             </section>
 
-            <Footer />
+            <Footer theme={{ footerBg: 'bg-white-90' }} />
 
         </>
     )
 }
-
-
-Register.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
+Register.theme = 'ae'
 
 
 

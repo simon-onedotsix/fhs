@@ -69,7 +69,7 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
                     thisEvent={'FHS & AHIC'} 
                     events={otherEvents} 
                     theme={{
-                        background: 'var(--dark-ae)',
+                        background: 'var(--secondary)',
                         text: 'white',
                         accent: 'white'
                     }}
@@ -92,10 +92,10 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
                     <Link href="/ae/purchase-pass">
                         <a 
                             className={`${CSS.ctaButton} fw-600 caps`} 
-                            style={{ 
-                                background: theme ? theme.buttons : 'white',
-                                color: theme ? theme.buttonText : 'var(--primary-ae)',
-                            }}
+                            // style={{ 
+                            //     background: theme ? theme.buttons : 'white',
+                            //     color: theme ? theme.buttonText : 'var(--primary-ae)',
+                            // }}
                         >Purchase Pass</a>
                     </Link>
                     

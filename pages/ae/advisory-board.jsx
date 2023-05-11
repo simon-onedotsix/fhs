@@ -1,4 +1,4 @@
-import Layout from '../../fuselage/templates/ae/layout'
+import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
 
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
@@ -13,6 +13,8 @@ import { StickySidebar } from '../../fuselage/layout/sticky-sidebar/sticky-sideb
 import { SpeakerGrid } from '../../fuselage/layout/speaker-grid/speaker-grid'
 import HubspotForm from'../../fuselage/components/hubspot-form/hubspot-form'
 
+import { Container } from "../../fuselage/theme/2023/ae/layout/container/container"
+
 import handleSeomaticMeta from '../../lib/seomatic'
 
 import CSS from '../../css/app/speakers.module.css'
@@ -22,16 +24,26 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 	// console.log('cms profile data:', craftCmsProfiles)
 
 	return (
-		<div className='bg-secondary'>
+		<>
 
 			<Head>
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-			<Header compact shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
+			<ThemeBg />
 
-			<section className="block bg-theme">
-				<div className="container">
+            <Header compact shim theme={{ 
+                primary: 'var(--primary)', 
+                secondary: 'var(--secondary)', 
+                text: 'var(--primary)',
+                buttons: 'var(--primary)',
+                buttonText: 'white',
+                headerBg: '#ffffffee',
+                overlayBg: 'var(--primary)',
+            }} />
+
+			<section className="block flush">
+				<Container flushRight maxWidth={`85%`} decal={`bg-white-90 p-md`}>
 
 					{/* <HeaderShim /> */}
 
@@ -62,21 +74,15 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 						))}
 					</SpeakerGrid>
 
-				</div>
+				</Container>
 			</section>
 						
-			<Footer />
-		</div>
+			<Footer theme={{ footerBg: 'bg-white-90' }} />
+		</>
 	)
 }
 
-Speakers.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
+Speakers.theme = 'ae'
 
 export async function getStaticProps() {
 

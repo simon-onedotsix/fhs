@@ -12,7 +12,7 @@ export const Session = ({ id, children, startTime, endTime, tags, theme }) => {
     return (
         <>
             <div id={`session-${id}`} className={`scrollShim no-print`}></div>
-            <div className={`${CSS.layout} ${tags}`} style={{ borderLeftColor: theme }}>
+            <div className={`${CSS.layout} ${tags} bg-white-90`} style={{ borderLeftColor: theme }}>
 
                 <div className={CSS.timings} style={{ backgroundColor: theme}}>
                     <p className='fw-500'>{ startTime } - { endTime }</p>

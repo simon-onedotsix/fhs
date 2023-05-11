@@ -1,5 +1,3 @@
-import Layout from '../../../fuselage/templates/ae/layout'
-
 import Image from "next/image"
 
 import { GetBizzaboPartnerLevelTitle } from "../../../lib/bizzabo-partner-levels"
@@ -15,7 +13,7 @@ import CSS from '../../../css/app/partners.module.css'
 
 function Partner({ partner }) {
 
-	console.log('bizzabo partner data:', partner)
+	// console.log('bizzabo partner data:', partner)
 
 	const handleLinkedIn = () => {
 		if ( partner.linkedin ) {
@@ -75,8 +73,16 @@ function Partner({ partner }) {
 
 	return (
 
-		<div className="bg-theme">
-			<Header compact shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
+		<>
+			<Header compact shim theme={{ 
+                primary: 'var(--primary)', 
+                secondary: 'var(--secondary)', 
+                text: 'var(--primary)',
+                buttons: 'var(--primary)',
+                buttonText: 'white',
+                headerBg: '#ffffffee',
+                overlayBg: 'var(--primary)',
+            }} />
 
 			<section className="block pt-0">
 				<div className="container">
@@ -85,7 +91,11 @@ function Partner({ partner }) {
 
 						<aside className="formatted">
 							<HeaderShim/>
-							<p className="fw-600"><ArrowLink href="/ae/partners">View all partners</ArrowLink></p>
+							<p className="fw-600">
+								<ArrowLink href="/ae/partners" theme={{ color: `var(--dark)`, stroke: `var(--accent)` }}>
+									View all partners
+								</ArrowLink>
+							</p>
 
 							<div className="bg-white p-sm mt-sm center">
 								<div className={CSS.logo}>
@@ -120,18 +130,14 @@ function Partner({ partner }) {
 				</div>
 			</section>
 
-			<Footer />
-		</div>
+			<Footer theme={{ footerBg: 'bg-white-90' }} />
+		</>
 	)
 }
+Partner.theme = 'ae'
 
-Partner.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
+
+
 
 export async function getStaticPaths() {
 

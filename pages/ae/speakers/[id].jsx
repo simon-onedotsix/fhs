@@ -1,17 +1,18 @@
-import Layout from '../../../fuselage/templates/ae/layout'
+import { ThemeBg } from "../../../fuselage/theme/2023/ae/theme-bg"
 
 import Image from "next/image"
 import Link from "next/link"
 
 import { Header, HeaderShim } from '../../../fuselage/global-ae/header/header'
 import { Footer } from "../../../fuselage/global-ae/footer/footer"
-import { StickySidebar } from '../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
+import { Sidebar } from "../../../fuselage/layout/sidebar/sidebar"
 import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
 import { OffsiteLink } from "../../../fuselage/components/offsite-link/offsite-link"
 import { ButtonSocial } from  '../../../fuselage/components/button-social/button-social'
 
 import { sortSessions, toHoursAndMinutes } from "../../../lib/agenda-utils"
 import { formatInTimeZone } from 'date-fns-tz'
+import { Container } from "../../../fuselage/theme/2023/ae/layout/container/container"
 
 import CSS from '../../../css/app/speakers.module.css'
 
@@ -118,10 +119,86 @@ function Speaker({ speaker, sessions }) {
 
 	return (
 
-		<div className="bg-theme">
-			<Header compact shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
+		<>
+			<ThemeBg />
 
-			<section className="block pt-0">
+			<Header compact shim theme={{ 
+				primary: 'var(--primary)', 
+				secondary: 'var(--secondary)', 
+				text: 'var(--primary)',
+				buttons: 'var(--primary)',
+				buttonText: 'white',
+				headerBg: '#ffffffee',
+				overlayBg: 'var(--primary)',
+			}} />
+
+
+
+			<section className="block flush">
+				<Container flushRight maxWidth={`85%`} decal={`bg-white-90 p-md`}>
+					<Sidebar size='medium'>
+
+						<aside className="formatted">
+							<p className="fw-600">
+								<ArrowLink 
+									theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
+									href="/ae/speakers"
+								>
+									View All Speakers
+								</ArrowLink>
+							</p>
+							<p className="fw-600">
+								<ArrowLink 
+									theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
+									href="/ae/advisory-board"
+								>
+									View Advisory Board
+								</ArrowLink>
+							</p>
+							<p className="mt-sm maxw-15">
+								{
+									speaker.photoSet ? 
+									<Image 
+										src={speaker.photoSet.large} 
+										width={370} 
+										height={370} 
+										alt=""
+									/>
+									: 
+									<Image 
+										src='/assets/ui/avatar-fallback.png' 
+										width={370} 
+										height={370} 
+										alt=""
+									/>
+								}
+							</p>
+							{ handleLinkedIn() }
+							{ handleTwitter() }
+						</aside>
+
+						<main className="maxw-60">
+							{/* <p className='fs-1 fw-600 lh-1 c-secondary maxw-40'>SPEAKER</p> */}
+							<p className="fs-3 fw-600 caps">{speaker.firstname} {speaker.lastname}</p>
+							<p>
+								{speaker.title}
+								<br/>
+								<span className="fw-500">
+									{ handleCompany() }
+								</span>
+							</p>
+							<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{speaker.bio}</p>
+
+							{/* { handleRelatedSessions() } */}
+						</main>
+
+					</Sidebar>
+				</Container>
+			</section>
+
+
+
+			{/* <section className="block pt-0">
 				<div className="container">
 
 					<StickySidebar size='medium'>
@@ -130,7 +207,7 @@ function Speaker({ speaker, sessions }) {
 							<HeaderShim/>
 							<p className="fw-600">
                                 <ArrowLink 
-                                    theme={{ color: `white`, stroke: `var(--accent-ae)` }} 
+                                    theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
                                     href="/ae/speakers"
                                 >
                                     View All Speakers
@@ -138,7 +215,7 @@ function Speaker({ speaker, sessions }) {
                             </p>
 							<p className="fw-600">
                                 <ArrowLink 
-                                    theme={{ color: `white`, stroke: `var(--accent-ae)` }} 
+                                    theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
                                     href="/ae/advisory-board"
                                 >
                                     View Advisory Board
@@ -179,27 +256,21 @@ function Speaker({ speaker, sessions }) {
 							</p>
 							<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{speaker.bio}</p>
 
-							{/* { handleRelatedSessions() } */}
+							{ handleRelatedSessions() }
 						</main>
 
 					</StickySidebar>
 
 				</div>
-			</section>
+			</section> */}
 			
-			<Footer />
+			<Footer theme={{ footerBg: 'bg-white-90' }} />
 		
-		</div>
+		</>
 	)
 }
 
-Speaker.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
+Speaker.theme = 'ae'
 
 
 export async function getStaticPaths() {

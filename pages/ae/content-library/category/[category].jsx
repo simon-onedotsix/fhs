@@ -1,4 +1,4 @@
-import Layout from '../../../../fuselage/templates/ae/layout'
+import { ThemeBg } from "../../../../fuselage/theme/2023/ae/theme-bg"
 
 import { gql } from "@apollo/client"
 import craftApolloClient from "../../../api/apollo"
@@ -44,8 +44,8 @@ export default function ContentLibraryCategory ({ categories, category, articles
         if ( articles.length ) {
 
             return (
-                <section>                    
-                    <p className="fs-2 fw-600 caps c-secondary mt-md">{category.title}</p>
+                <section className="bg-white-90 p-md">                    
+                    <p className="fs-2 fw-600 caps c-secondary">{category.title}</p>
                     <div className="columns-3 gap-sm mt-sm">
                         {
                             articles.map( entry => (
@@ -55,8 +55,8 @@ export default function ContentLibraryCategory ({ categories, category, articles
                                     heroUrl={entry.contentLibraryHero && entry.contentLibraryHero[0] ? entry.contentLibraryHero[0].url : null}
                                     heading={entry.title}
                                     excerpt={entry.excerpt}
-                                    contentTypes={entry.contentTypes}
                                     postDate={entry.postDate}
+                                    type={entry.contentTypes[0].slug}
                                 />
                             ))
                         }
@@ -72,40 +72,48 @@ export default function ContentLibraryCategory ({ categories, category, articles
                 <title>FHS | Content Library</title>
             </Head>
 
-            <Header compact theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
+            <ThemeBg />
 
-            <section className="block bg-default pt-0">
+            <Header compact theme={{ 
+                primary: 'var(--primary)', 
+                secondary: 'var(--secondary)', 
+                text: 'var(--primary)',
+                buttons: 'var(--primary)',
+                buttonText: 'white',
+                headerBg: '#ffffffee',
+                overlayBg: 'var(--primary)',
+            }} />
+
+            <section className="block flush bg-default pt-0">
                 <StickySidebar size='small'>
                     <aside>
                         <HeaderShim/>
-                        <p className="fs-6 fw-600 c-secondary mb-sm">Filter</p>
-                        { handleCategoryMenu() }
-                        <p className="mt-sm">
-                            <a className="uLink fs-sm caps fw-400 c-medium" href={`/ae/content-library`}>Clear filter</a>
-                        </p>
+                        <div className="bg-white-90 p-md">
+                            <p className="fs-6 fw-600 c-secondary mb-sm">Filter</p>
+                            { handleCategoryMenu() }
+                            <p className="mt-sm">
+                                <a className="uLink fs-sm caps fw-400 c-medium" href={`/ae/content-library`}>Clear filter</a>
+                            </p>
+                        </div>
                     </aside>
 
                     <main>
                         <HeaderShim/>
-                        <p className="fs-0 fw-600 c-primary">Content Library</p>
+                        <div className="bg-white-90 p-md">
+                            <p className="fs-0 fw-600 c-primary">Content Library</p>
+                        </div>
 
                         { handleArticles() }
                     </main>
                 </StickySidebar>
             </section>
 
-            <Footer />
+            <Footer theme={{ footerBg: 'bg-white-90' }} />
         </>
     )
 }
 
-ContentLibraryCategory.getLayout = function getLayout( page ) {
-	return (
-		<Layout>
-			{ page }
-		</Layout>
-	)
-}
+ContentLibraryCategory.theme = 'ae'
 
 
 

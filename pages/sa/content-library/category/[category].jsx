@@ -55,7 +55,6 @@ export default function ContentLibraryCategory ({ categories, category, articles
                                     heroUrl={entry.contentLibraryHero && entry.contentLibraryHero[0] ? entry.contentLibraryHero[0].url : null}
                                     heading={entry.title}
                                     excerpt={entry.excerpt}
-                                    contentTypes={entry.contentTypes}
                                     postDate={entry.postDate}
                                     type={entry.contentTypes[0].slug}
                                 />

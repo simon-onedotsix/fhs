@@ -1,7 +1,7 @@
-import Layout from '../../fuselage/templates/ae/layout'
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
+
+import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
@@ -15,6 +15,7 @@ import { toHoursAndMinutes } from "../../lib/agenda-utils"
 
 import { Header } from '../../fuselage/global-ae/header/header'
 import { Footer } from '../../fuselage/global-ae/footer/footer'
+import { Container } from '../../fuselage/theme/2023/ae/layout/container/container'
 import { Session, SessionSpeaker, SessionSpeakerGrid } from '../../fuselage/components/session/session'
 import { Button } from "../../fuselage/components/button/button"
 import { Modal } from "../../fuselage/components/modal/modal"
@@ -121,7 +122,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
         function renderDivider ( day ) {
             return (
-                <p className='fs-4 fw-600 c-primary bg-theme px-sm py-xs mb-xs'>
+                <p className='fs-4 fw-600 c-white bg-primary px-sm py-xs mb-xs'>
                     { day && formatInTimeZone(new Date( day ), 'Asia/Dubai', 'EEEE dd MMMM') }
                 </p>
             )
@@ -370,8 +371,6 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     }
 
 
-
-
     return (
         <>
 
@@ -379,11 +378,21 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                 { handleSeomaticMeta( cmsAgendaData.seomatic ) }
 			</Head>
 
-            <Header compact shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
+            <ThemeBg />
+
+            <Header compact shim theme={{ 
+                primary: 'var(--primary)', 
+                secondary: 'var(--secondary)', 
+                text: 'var(--primary)',
+                buttons: 'var(--primary)',
+                buttonText: 'white',
+                headerBg: '#ffffffee',
+                overlayBg: 'var(--primary)',
+            }} />
 
 
-            <section className="block">
-                <div className="container">
+            <section className="block flush">
+                <Container flushRight maxWidth={`90%`} decal={`bg-white-90 p-md`}>
                     <p className="fs-0 fw-600 c-primary">2022 Agenda</p>
                     
                     <div className={CSS.filterLayout}>
@@ -446,11 +455,11 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                             </select>
                         </section>                
                     </div>
-                </div>
-
-                <div className="container">
-                    {outputAgenda( sessions )}
-                </div>
+                    
+                    <div className="mt-sm">
+                        {outputAgenda( sessions )}
+                    </div>
+                </Container>
             </section>
 
 
@@ -477,19 +486,13 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
             </Modal>
 
-            <Footer />
+            <Footer theme={{ footerBg: 'bg-white-90' }} />
 
         </>
     )
 }
 
-Agenda.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
+Agenda.theme = 'ae'
 
 
 

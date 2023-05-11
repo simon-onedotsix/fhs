@@ -1,4 +1,4 @@
-import Layout from '../../../fuselage/templates/ae/layout'
+import { ThemeBg } from "../../../fuselage/theme/2023/ae/theme-bg"
 
 import { gql } from "@apollo/client"
 import craftApolloClient from "../../api/apollo"
@@ -14,6 +14,8 @@ import { Footer } from '../../../fuselage/global-ae/footer/footer'
 import { StickySidebar } from '../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
 import { SpeakerGrid } from "../../../fuselage/layout/speaker-grid/speaker-grid"
 import HubspotForm from'../../../fuselage/components/hubspot-form/hubspot-form'
+
+import { Container } from "../../../fuselage/theme/2023/ae/layout/container/container"
 
 import handleSeomaticMeta from '../../../lib/seomatic'
 
@@ -31,16 +33,26 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 	// console.log('ordered:', orderedSpeakers)
 
 	return (
-		<div className='bg-secondary'>
+		<>
 
 			<Head>
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-			<Header compact shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
+			<ThemeBg />
 
-			<section className="block bg-theme">
-				<div className="container">
+            <Header compact shim theme={{ 
+                primary: 'var(--primary)', 
+                secondary: 'var(--secondary)', 
+                text: 'var(--primary)',
+                buttons: 'var(--primary)',
+                buttonText: 'white',
+                headerBg: '#ffffffee',
+                overlayBg: 'var(--primary)',
+            }} />
+
+			<section className="block flush">
+				<Container flushRight maxWidth={`85%`} decal={`bg-white-90 p-md`}>
 
 					{/* bizzabo speakers */}
 
@@ -70,28 +82,26 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 									</a>
 								</Link>
 								<div>
-									<p className='mt-xs'><span className='fw-600'>{speaker.firstname} {speaker.lastname}</span> <br/>{speaker.title} <br/>{speaker.company}</p>
+									<p className='mt-xs fw-300'>
+										<span className='fw-600'>{speaker.firstname} {speaker.lastname}</span> 
+										<br/>{speaker.title} 
+										<br/>{speaker.company}
+									</p>
 								</div>
 							</div>
 						))}
 					</SpeakerGrid>
 			
-				</div>
+				</Container>
 				
 			</section>
 			
-			<Footer />
-		</div>
+			<Footer theme={{ footerBg: 'bg-white' }} />
+		</>
 	)
 }
 
-Speakers.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
+Speakers.theme = 'ae'
 
 
 

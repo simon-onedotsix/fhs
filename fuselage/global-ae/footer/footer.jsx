@@ -47,7 +47,7 @@ export const Footer = ({ theme }) => {
                                             icon={connection.icon} 
                                             url={connection.hyperlink} 
                                             alt={connection.label}
-                                            decal={'bg-secondary'}
+                                            decal={'secondary'}
                                         />
                                     )
                                 })

@@ -8,7 +8,7 @@
     max-width: 100%;
     aspect-ratio: 1;
     border-radius: 6rem;
-    background-color: var(--primary-ae);
+    background-color: var(--primary);
 
     color: lime;
 }

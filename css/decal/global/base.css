@@ -35,6 +35,12 @@ a {color: currentColor;}
 }
 
 
+@media(max-width:600px){
+    .mobileHide {
+        display: none;
+    }
+}
+
 
 /* scrollshim */
 

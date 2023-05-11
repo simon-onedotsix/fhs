@@ -1,4 +1,4 @@
-import Layout from '../../fuselage/templates/ae/layout'
+import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
 
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
@@ -39,23 +39,27 @@ export default function Page ({ entry, seomatic }) {
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-            <Header compact shim theme={{ primary: 'white', secondary: 'var(--accent-ae)', overlayBg: `var(--secondary)`, text: 'white' }} />
+            <ThemeBg />
+
+            <Header compact shim theme={{ 
+                primary: 'var(--primary)', 
+                secondary: 'var(--secondary)', 
+                text: 'var(--primary)',
+                buttons: 'var(--primary)',
+                buttonText: 'white',
+                headerBg: '#ffffffee',
+                overlayBg: 'var(--primary)',
+            }} />
             
             {handleContentBlocks( entry.fhisContentBlocks )}
 
-            <Footer />
+            <Footer theme={{ footerBg: 'bg-light' }} />
 
         </>
     )
 }
 
-Page.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
+Page.theme = 'ae'
 
 
 export async function getStaticPaths() {

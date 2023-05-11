@@ -51,7 +51,7 @@
 
 .brand {
     position: relative;
-    z-index: 250;
+    z-index: 2;
     height: 8rem;
     transition: all 350ms ease-in-out;
 }
@@ -65,16 +65,16 @@
     align-items: center;
     padding: 5px 30px;
     border-radius: var(--default-button-radius);
-    background-color: rgba(255, 255, 255, 0.501);
+    background-color: var(--primary);
     font-size: 1rem;
-    color: var(--secondary-sa);
+    color: white;
     text-align: center;
     line-height: 1;
     transition: all .35s ease;
 }
 @media(hover:hover){
     .ctaButton:hover {
-        background-color: rgba(255, 255, 255, 1);
+        background-color: var(--secondary);
     }
 }
 
