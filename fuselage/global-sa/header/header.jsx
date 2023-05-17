@@ -86,7 +86,7 @@ export const Header = ({ compact, shim, shimMobile }) => {
                     <MainMenu fixToggle={!inView} />
                                         
                     <Link href="/sa/register-interest">
-                        <a className={`${CSS.ctaButton} fw-600 caps`}>Register Interest<span className='mobileHide'>&#20;for 2024</span></a>
+                        <a className={`${CSS.ctaButton} fw-600 caps`}>Register Interest <span className='mobileHide'>&thinsp;for 2024</span></a>
                         {/* <a className={`${CSS.ctaButton} fw-600 caps`}>Purchase Pass</a> */}
                     </Link>
                     

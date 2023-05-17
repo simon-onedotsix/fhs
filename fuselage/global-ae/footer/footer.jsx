@@ -85,7 +85,7 @@ export const Footer = ({ theme }) => {
 
             </div>
                 
-            <div className="container c-white center">
+            <div className="container center">
                 <p><small>
                     © {new Date().getFullYear()} The Bench
                 </small></p>
