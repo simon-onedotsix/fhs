@@ -126,27 +126,6 @@ const profiles = [
     },
     {
         "__typename": "profiles_profile_Entry",
-        "id": "109992",
-        "title": "Drummond Money-Coutts",
-        "slug": "drummond-money-coutts",
-        "positions": [
-            {
-                "__typename": "positions_BlockType",
-                "jobTitle": "The World's Finest Magician & Mentalist",
-                "organisation": null
-            }
-        ],
-        "avatar": [
-            {
-                "__typename": "avatars_Asset",
-                "height": 3372,
-                "width": 2943,
-                "url": "https://cms.thebench.com/assets/img/avatars/Money-Coutts_Drummond_photo_sm.jpg"
-            }
-        ]
-    },
-    {
-        "__typename": "profiles_profile_Entry",
         "id": "109966",
         "title": "Gilda Perez-Alvarado",
         "slug": "gilda-perez-alvarado",
