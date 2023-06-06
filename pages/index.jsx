@@ -4,19 +4,20 @@ import { gql } from "@apollo/client"
 import craftApolloClient from "./api/apollo"
 
 import Head from 'next/head'
-import Image from 'next/image'
 
-import { 
-    QuerySEO
-} from "../graphql/queries"
+import { QuerySEO } from "../graphql/queries"
 import handleSeomaticMeta from '../lib/seomatic'
 
 import { Header } from '../fuselage/global/header/header'
 import { Footer } from '../fuselage/global/footer/footer'
-import { AboveTheFold, BelowTheFold } from '../fuselage/blocks/hero-unit-events/hero-unit-events'
-import { EventCard } from '../fuselage/components/event-card/event-card'
+import { HeroUnitVideo } from '../fuselage/blocks/hero-unit-video/hero-unit-video'
+import { UpcomingEvents, EventGroupCard, EventCard } from '../fuselage/blocks/upcoming-events/upcoming-events'
 import { ArrowButton } from '../fuselage/components/arrow-button/arrow-button'
 import { ContentCard } from "../fuselage/components/content-card/content-card"
+import { AngledSection } from '../fuselage/blocks/angled-section/angled-section'
+import { SectionDivider } from '../fuselage/blocks/section-divider/section-divider'
+import { Floater, Floaters, FloaterLogo, FloaterWebsiteButton } from '../fuselage/blocks/floater/floater'
+import { SpeakerCard } from '../fuselage/components/speaker-card/speaker-card'
 
 export default function Homepage ({ data, seomatic }) {
 
@@ -24,13 +25,75 @@ export default function Homepage ({ data, seomatic }) {
     // console.log('seomatic:', seomatic)
     // console.log('contentLibraryPosts:', data.contentLibraryPosts)
 
+
+    const handleUpcomingEvents = ( events ) => {
+        
+        if ( ! events ) return
+
+        // console.log('upocoming events:', events)
+
+        return (
+            <UpcomingEvents landscape={true}>
+                {
+                    events.map( event => {
+                        return (
+                            <EventGroupCard
+                                key={event.id}
+                                theme={event.theme} 
+                                location={event.heading} 
+                                dates={{ startDate: event.startDate, endDate: event.endDate}}
+                                venue={event.venue}
+                            >
+                                {
+                                    event.streams &&
+                                    event.streams.map( stream => (
+                                        <EventCard
+                                            key={stream.id}
+                                            title={stream.heading}
+                                            logo={stream.logo[0]}
+                                            passLink={stream.purchasePassLink} 
+                                            websiteLink={stream.websiteLink} 
+                                            theme={event.theme} 
+                                        />
+                                    ))
+                                }
+                            </EventGroupCard>
+                        )
+                    })
+                }
+            </UpcomingEvents>
+        )
+    }
+
+    const handleEvents = ( events ) => {
+        
+        if ( !events || !events.length ) return
+
+        // console.log('focussed events:', events)
+
+        return events.map( (event, index) => {
+            return <Floater key={index} hero={event.hero[0]}>
+                {
+                    event.logo &&
+                    <FloaterLogo logo={event.logo[0]} />
+                    
+                }
+                <div className='formatted mt-sm' dangerouslySetInnerHTML={{__html: event.body }} />
+                {
+                    event.websiteUrl &&
+                    <p className='mt-sm'><FloaterWebsiteButton href={event.websiteUrl} /></p>
+                }
+            </Floater>
+        })
+    }
+
     const handleContentGroup = ( id, data ) => {
 
         // console.log('content-group:', data)
 
         return (
             <section key={id} className={`c-white`}>
-                <p className='fs-2 fw-600 lh-1 c-accent'>{ data.heading }</p>
+                <p className='ff-space fs-1 fw-200 lh-1 caps c-white'>{ data.heading }</p>
 
                 <div className="columns-4 gap-sm mt-md">
                     {
@@ -51,7 +114,7 @@ export default function Homepage ({ data, seomatic }) {
 
                 {
                     data.ctaButtonLink && data.ctaButtonLabel ?
-                        <div className='mt-md'>
+                        <div className='mt-md mb-xl'>
                             <ArrowButton href={ data.ctaButtonLink } theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}>{ data.ctaButtonLabel }</ArrowButton>
                         </div>
                     :
@@ -62,9 +125,26 @@ export default function Homepage ({ data, seomatic }) {
         )
     }
 
+    const handleCmsSpeakerProfiles = ( profiles ) => {
 
+        if ( ! profiles ) return
+
+        return profiles.map( profile => (
+            <SpeakerCard
+                key={profile.id}
+                // url={`/speakers/profile/${profile.slug}`} 
+                photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
+                fullName={profile.title}
+                jobTitle={profile.positions[0].jobTitle}
+                company={profile.positions[0].organisation}
+            />
+        ))
+    }
+
+
+    
     return (
-        <>
+        <div className='bg-primary' style={{ backgroundColor: `var(--secondary)`, backgroundImage: `url('/assets/theme/fhs-2023-global-bg.svg')` }}>
             <Head>
                 { handleSeomaticMeta( seomatic ) }
             </Head>
@@ -72,32 +152,65 @@ export default function Homepage ({ data, seomatic }) {
 
             <Header overlaid inverse />
 
-            <AboveTheFold hero={{ url: `/assets/img/global/homepage/hero.jpg`, width: 2100, height: 2100}}>
-                
-                <EventCard background={`var(--accent-ae)`} ctaUrl={`/ae`} hero={{ url: `/assets/img/global/homepage/hero-ae.jpg`, width: 2100, height: 2100 }}>
-                    <p className='fs-3 fw-600'>Abu Dhabi</p>
-                    <p className="fw-500">25-27 September 2023<br/>Hilton Abu Dhabi Yas Island</p>
-                    <p className="fw-300 fs-sm">From Dubai in 2022, to Abu Dhabi 2023! FHIS takes place at the Hilton Abu Dhabi Yas Island for the first time. Building upon 19 years of our legacy with the Arabian Hotel Investment Conference (AHIC), our Abu Dhabi event focuses on exciting new international hospitality investment opportunities, sustainable and innovative concepts from around the world, and leading global hotel brands that are shaping the industry.</p>
-                </EventCard>
 
-                <EventCard background={`var(--primary-sa)`} ctaUrl={`/sa`} hero={{ url: `/assets/img/global/homepage/hero-sa.jpg`, width: 2100, height: 2100 }}>
-                    <p className='fs-3 fw-600'>Saudi Arabia</p>
-                    <p className="fw-500">29 April - 01 May 2024<br/>Al Faisaliah Hotel, Riyadh</p>
-                    <p className="fw-300 fs-sm">FHIS returns to Saudi Arabia after an incredible and sold-out event in 2022. The conference programme will include tracks from the Saudi Arabian Hospitality Investment Conference (SHIC), Global Restaurant Investment Forum (GRIF) with a continued focus on sustainability, innovation, startups and human capital development.</p>
-                </EventCard>
-
-            </AboveTheFold>
+            <HeroUnitVideo hero={{ url: `/assets/img/global/homepage/hero.jpg`, width: 2100, height: 2100}} />
 
 
+            { handleUpcomingEvents( data.events )}
+
+            
+            <AngledSection innerBg={`white`} transitions={`var(--primary)`}>
+                <SectionDivider 
+                    theme={{ heading: `var(--primary)`, body: `var(--default-text-color)`, keyline: `var(--accent)` }}
+                    heading={`Focussed events`} 
+                    description={`Future Hospitality Summit series includes conference tracks from the Arabian Hospitality Investment Conference (AHIC) and Global Restaurant Investment Forum (GRIF) to create an unrivalled platform for holistic hospitality investment strategies.`}
+                />
+                <div className="container">
+                    <Floaters flipped>
+                        { handleEvents( data.eventFloaters ) }
+                    </Floaters>
+                </div>
+            </AngledSection>
+
+          
+            {
+                data.profiles.length &&
+                <>
+                    <section className="block bg-primary" style={{ background: `transparent`}}>
+                        <div className="container">
+                            <SectionDivider 
+                                heading={`Thought Leadership`} 
+                                description={`With an unparalleled lineup of global hospitality leaders taking the stage every year, FHS promises to provide valuable insights and the latest industry knowledge through panel talks and round-table discussions with experts.`}
+                            />
+                        </div>
+                    </section>
+
+                    <section className="block bg-primary" style={{ background: `transparent`}}>
+                        <div className="container columns-4 gap-md">
+                            { handleCmsSpeakerProfiles( data.profiles )}
+                        </div>
+                    </section>
+                </>
+            }
+
+            
+            <section className="block bg-primary mt-lg" style={{ background: `transparent`}}>
+                <div className="container">
+                    <SectionDivider 
+                        heading={`News and Insights`} 
+                        description={`With an international media frenzy, FHS takes center stage as the ultimate platform for the industry's hottest deal signings and groundbreaking announcements. Global hospitality leaders use the digital FHS platform to share invaluable industry intelligence.`}
+                    />
+                </div>
+            </section>
 
 
-            <BelowTheFold>
+            <section className="block bg-primary" style={{ background: `transparent`}}>
                 { data.contentLibraryPosts.map( (group, index) => handleContentGroup(index, group) ) }
-            </BelowTheFold>
-
+            </section>
+         
 
             <Footer />
-        </>
+        </div>
     )
 }
 
@@ -122,13 +235,79 @@ export async function getStaticProps() {
                         id
                         title
                         theme
+                        events {
+                            ... on events_BlockType {
+                                id
+                                heading
+                                startDate
+                                endDate
+                                venue
+                                theme
+                                streams {
+                                    ... on streams_stream_BlockType {
+                                        id
+                                        logo {
+                                            id
+                                            url
+                                            width
+                                            height
+                                        }
+                                        heading
+                                        purchasePassLink
+                                        websiteLink
+                                    }
+                                }
+                            }
+                        }
+                        eventFloaters {
+                            ... on eventFloaters_event_BlockType {
+                                id
+                                hero {
+                                    id
+                                    url
+                                    width
+                                    height
+                                }
+                                logo {
+                                    id
+                                    url
+                                    width
+                                    height
+                                }
+                                body
+                                websiteUrl
+                                opensInNewWindow
+                            }
+                        }
+                        profiles {
+                            ... on profiles_profile_Entry {
+                                id
+                                slug
+                                title
+                                avatar {
+                                    ... on avatars_Asset {
+                                        id
+                                        url
+                                        width
+                                        height
+                                    }
+                                }
+                                positions {
+                                    ... on positions_BlockType {
+                                        id
+                                        jobTitle
+                                        organisation
+                                    }
+                                }
+                            }
+                        }
                         contentLibraryPosts {
                             ... on contentLibraryPosts_BlockType {
                                 id
                                 heading
                                 ctaButtonLink
                                 ctaButtonLabel
-                                posts (section: "contentLibrary" site:["${process.env.SITE_HANDLE}","${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}"]) {
+                                posts (section: "contentLibrary" site:["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}"]) {
                                     ... on contentLibrary_article_Entry {
                                         id
                                         slug

@@ -40,6 +40,7 @@
     position: absolute;
     height: 3rem;
     width: 3rem;
+    border-radius: var(--default-button-radius);
     background-color: transparent;
     border: 1px solid currentColor;
 
@@ -47,6 +48,7 @@
 }
 .arrowButton:hover .box {
     width: 100%;
+    transition: all 300ms cubic-bezier(0.65, 0, 0.076, 1);
 }
 .arrowButton.solid .box {
     background-color: var(--accent);
@@ -62,6 +64,7 @@
 }
 .arrowButton:hover .arrow {
     transform: translateX(1rem);
+    transition: all 300ms cubic-bezier(0.65, 0, 0.076, 1);
 }
 
 

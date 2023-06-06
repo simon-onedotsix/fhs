@@ -1,14 +1,8 @@
 .floaters {
-    padding-bottom: var(--space-md);
+    padding: var(--space-md) 0;
 }
 
-
-.container {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-
-    padding-bottom: var(--space-md);
-
+.container {    
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -36,36 +30,105 @@
     .container {
         grid-template-columns: 1fr;
         gap: var(--space-md);
-
-        padding-bottom: var(--space-lg);
     }
     .floaters {
-        padding-bottom: var(--space-md);
+        padding: var(--space-md) 0;
     }
 }
 
 @media(min-width:1000px) {
 
+    .image {
+        width: 100%;
+        border-radius: calc(var(--default-radius) * 2);
+    }
+
     .container { 
-        grid-template-columns: 1fr 1fr; 
+        grid-template-columns: 2fr 3fr; 
     }
 
     .hero { grid-area: 1/1 / 2/2; }
 
-    .body { grid-area: 1/2 / 2/3; }
+    .body { grid-area: 1/2 / 2/3; text-align: right;}
 
-    .floater:nth-child(even) .hero { grid-area: 1/2 / 2/3; }
+    .floater:nth-child(even) .hero { grid-area: 1/2 / 2/3;}
 
     .floater:nth-child(even) .body { grid-area: 1/1 / 2/2; }
+    
 
     /* flipped */
+
+    .flipped .floater:nth-child(even) .container {
+        grid-template-columns: 3fr 2fr; 
+    }
     
     .flipped .floater .hero { grid-area: 1/2 / 2/3; }
 
     .flipped .floater .body { grid-area: 1/1 / 2/2; }
+    
+    .flipped .floater:nth-child(odd) .body { align-items: flex-end; }
 
     .flipped .floater:nth-child(even) .hero { grid-area: 1/1 / 2/2; }
 
-    .flipped .floater:nth-child(even) .body { grid-area:  1/2 / 2/3; }
+    .flipped .floater:nth-child(even) .body { grid-area:  1/2 / 2/3; text-align: left; }
 
+}
+
+
+
+/* logo box ---------------------- */
+
+.logoBox {
+    position: relative;
+    display: inline-block;
+    max-width: 30vw;
+    max-height: 30vw;
+}
+.logoBox img {
+    object-fit: contain;
+    object-position: center bottom;
+}
+@media (min-width:800px){
+    .logoBox {
+        max-width: 15vw;
+        max-height: 15vw;
+    }
+}
+@media (min-width:1200px){
+    .logoBox {
+        max-width: 10vw;
+        max-height: 10vw;
+    }
+}
+
+
+
+/* website button ---------------------- */
+
+.websiteButton {
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+    padding: .25rem 1.5rem;
+    border: 2px solid var(--accent);
+    border-radius: 3rem;
+
+    color: var(--primary);
+    font-weight: 600;
+
+    transition: all 250ms ease-in-out;
+}
+.websiteButton svg {
+    width: .9rem;
+    height: .9rem;
+    margin-left: 5px;
+    stroke: var(--primary);
+
+    transition: all 250ms ease-in-out;
+}
+
+@media(hover:hover){
+    .websiteButton:hover {
+        background-color: var(--accent);
+    }
 }

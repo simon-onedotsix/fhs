@@ -51,7 +51,7 @@ export default function Page ({ entry, seomatic }) {
                 overlayBg: 'var(--primary)',
             }} />
             
-            {handleContentBlocks( entry.fhisContentBlocks )}
+            {handleContentBlocks( entry.fhisContentBlocks, null, null, 'ae' )}
 
             <Footer theme={{ footerBg: 'bg-light' }} />
 

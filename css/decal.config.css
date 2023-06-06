@@ -3,7 +3,7 @@
     /* colour */
 
     --primary: #4F2F9B;
-    --secondary: #1B1C58;
+    --secondary: #3b2075;
     --accent: #65FFDB;
 
     --bg-global: rgb(255, 255, 255);
@@ -37,7 +37,7 @@
     /* type */
 
     --default-font-family: 'Outfit', sans-serif;
-    --default-font-weight: 300;
+    --default-font-weight: 200;
     --default-font-size: 1rem;
     --default-line-height: 1.4;
 
@@ -47,12 +47,12 @@
 
     /* global UI styling */
 
-    --default-radius: 0;
+    --default-radius: .75rem;
     --default-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
     --default-shadow-size: 20px;
     --default-shadow-opacity: 0.2;
 
-    --default-button-radius: 0;
+    --default-button-radius: 4rem;
 
     --gap-divider-color: currentColor;
 

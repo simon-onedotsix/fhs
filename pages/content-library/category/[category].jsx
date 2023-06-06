@@ -7,6 +7,7 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 
 import { Header, HeaderShim } from "../../../fuselage/global/header/header"
+import { Footer } from '../../../fuselage/global/footer/footer'
 import { StickySidebar } from "../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
 import { ContentCard } from "../../../fuselage/components/content-card/content-card"
 import { ArrowLink } from "../../../fuselage/components/arrow-link/arrow-link"
@@ -67,7 +68,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
     }
 
     return (
-        <>
+        <div className='bg-secondary'>
             <Head>
                 <title>FHS | Content Library</title>
             </Head>
@@ -77,7 +78,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
             <section className="block bg-secondary pt-0">
                 <StickySidebar size='small'>
                     <aside>
-                        {/* <HeaderShim/> */}
+                        <HeaderShim/>
                         <p className="fs-6 fw-600 c-accent mb-sm">Filter</p>
                         { handleCategoryMenu() }
                         <p className="mt-sm">
@@ -86,7 +87,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
                     </aside>
 
                     <main>
-                        {/* <HeaderShim/> */}
+                        <HeaderShim/>
                         <p className="fs-0 fw-600 c-white">Content library</p>
 
                         { handleArticles() }
@@ -94,7 +95,8 @@ export default function ContentLibraryCategory ({ categories, category, articles
                 </StickySidebar>
             </section>
 
-        </>
+            <Footer />
+        </div>
     )
 }
 

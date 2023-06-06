@@ -91,3 +91,6 @@ export const Header = ({ compact, overlaid, inverse }) => {
         </>
     )
 }
+
+
+export const HeaderShim = () => <div className={CSS.shim}></div>

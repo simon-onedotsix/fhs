@@ -18,7 +18,7 @@ export const MainMenu = ({ mainMenu }) => {
                     <span></span>
                     <span></span>
                 </div>
-                {/* <div className={`${CSS.toggleActions} ${ active && CSS.active } fw-600 caps`}><Button href={`#`} accent>Stay Updated</Button></div> */}
+                <div className={`${CSS.toggleActions} ${ active && CSS.active } fw-600 caps`}><Button href={`#`} accent>Stay Updated</Button></div>
             </div>
 
 

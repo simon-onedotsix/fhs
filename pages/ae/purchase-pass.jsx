@@ -21,7 +21,7 @@ export default function Register ({ entry, passes, bizzaboPassData }) {
 
     // console.log('pageData:', entry)
     // console.log('passes:', passes)
-    // console.log('bizzaboPassData:', bizzaboPassData)
+    console.log('bizzaboPassData:', bizzaboPassData)
 
     return (
         <>

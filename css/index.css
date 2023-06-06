@@ -7,8 +7,7 @@
 @import './decal/decal.css';
 @import './decal.fonts.css';
 
-/* @import './decal.theme.css'; */
-@import './decal.theme-global.css';
+@import './decal.theme.css';
 @import './decal.theme-sa.css';
 @import './decal.theme-ae.css';
 @import './decal.theme-ae-2023.css';

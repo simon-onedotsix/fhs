@@ -4,6 +4,7 @@ import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
 import { Header, HeaderShim } from '../../fuselage/global/header/header'
+import { Footer } from '../../fuselage/global/footer/footer'
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 
 import { StickySidebar } from "../../fuselage/layout/sticky-sidebar/sticky-sidebar"
@@ -75,26 +76,28 @@ export default function ContentLibrary ({ articles, categories }) {
     }
 
     return (
-        <>
+        <div className='bg-secondary'>
             <Header overlaid inverse />
 
             <section className="block bg-secondary pt-0">
                 <StickySidebar size='small'>
                     <aside>
-                        {/* <HeaderShim/> */}
+                        <HeaderShim/>
                         <p className="fs-6 fw-600 c-accent mb-sm">Filter</p>
                         { handleCategoryMenu() }
                     </aside>
 
                     <main>
-                        {/* <HeaderShim/> */}
+                        <HeaderShim/>
                         <p className="fs-0 fw-600 c-white">Content Library</p>
 
                         { handleCategorisedArticles() }
                     </main>
                 </StickySidebar>
             </section>
-        </>
+
+            <Footer />
+        </div>
     )
     
 }

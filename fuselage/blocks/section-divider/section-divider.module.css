@@ -1,0 +1,29 @@
+/* .overlay {
+    width: 100%;
+    overflow-x: hidden;
+} */
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    align-items: flex-end;
+}
+.headline {
+    font-size: 10vw;
+    line-height: .95;
+}
+
+@media(min-width:800px){
+    .content {
+        grid-template-columns: 2fr 1fr;
+        gap: var(--space-xl);
+    }
+    .headline {
+        font-size: 7vw;
+        line-height: .95;
+    }
+    .body {
+        text-align: right;
+    }
+}

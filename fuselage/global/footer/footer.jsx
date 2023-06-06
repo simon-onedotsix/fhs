@@ -9,7 +9,7 @@ import { ButtonSocial } from  '../../components/button-social/button-social'
 
 import CSS from './footer.module.css'
 
-export const Footer = () => {
+export const Footer = ({ background }) => {
 
     const { globals } = useContext(GlobalsContext)
     // console.log('globals from FOOTER:', globals)
@@ -19,7 +19,7 @@ export const Footer = () => {
     const socialConnections = globals.global.socialConnections
 
     return (
-        <footer className="footer block bg-primary">
+        <footer className="footer block bg-primary" style={{ background: background ? background : `transparent`}}>
             <div className={`${CSS.container} container formatted c-white`}>
 
                     {

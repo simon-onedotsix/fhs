@@ -8,6 +8,8 @@ import Link from "next/link"
 import {format} from 'date-fns'
 
 import { Header, HeaderShim } from '../../fuselage/global/header/header'
+import { Footer } from '../../fuselage/global/footer/footer'
+
 import { StickySidebar } from "../../fuselage/layout/sticky-sidebar/sticky-sidebar"
 import { ProfileCard } from "../../fuselage/components/profile-card/profile-card"
 import { ArrowLink } from '../../fuselage/components/arrow-link/arrow-link'
@@ -215,6 +217,8 @@ export default function Article ({ entry }) {
                     </StickySidebar>
                 </div>                
             </section>
+
+            <Footer background={`bg-primary`} />
         </>
     )
 
