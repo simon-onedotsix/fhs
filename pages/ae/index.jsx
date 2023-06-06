@@ -39,156 +39,6 @@ import {
 import handleSeomaticMeta from '../../lib/seomatic'
 
 
-const profiles = [
-    {
-        "__typename": "profiles_profile_Entry",
-        "id": "5974",
-        "title": "Sébastien Bazin",
-        "slug": "sébastien-bazin",
-        "positions": [
-            {
-                "__typename": "positions_BlockType",
-                "jobTitle": "Chairman & CEO",
-                "organisation": "Accor"
-            }
-        ],
-        "avatar": [
-            {
-                "__typename": "avatars_Asset",
-                "height": 2276,
-                "width": 2276,
-                "url": "https://cms.thebench.com/assets/img/avatars/Bazin_Sebastien_cropped.jpg"
-            }
-        ]
-    },
-    {
-        "__typename": "profiles_profile_Entry",
-        "id": "109975",
-        "title": "Andrew Gilmour",
-        "slug": "andrew-gilmour",
-        "positions": [
-            {
-                "__typename": "positions_BlockType",
-                "jobTitle": "Principal Economist",
-                "organisation": "The Economist Group"
-            }
-        ],
-        "avatar": [
-            {
-                "__typename": "avatars_Asset",
-                "height": 1880,
-                "width": 1592,
-                "url": "https://cms.thebench.com/assets/img/avatars/Gilmour_Andrew_photo-sm.jpg"
-            }
-        ]
-    },
-    {
-        "__typename": "profiles_profile_Entry",
-        "id": "10267",
-        "title": "Guy Hutchinson",
-        "slug": "guy-hutchinson",
-        "positions": [
-            {
-                "__typename": "positions_BlockType",
-                "jobTitle": "President & CEO",
-                "organisation": "Rotana"
-            }
-        ],
-        "avatar": [
-            {
-                "__typename": "avatars_Asset",
-                "height": 2620,
-                "width": 2374,
-                "url": "https://cms.thebench.com/assets/img/avatars/Hutchinson_Guy_photo.jpg"
-            }
-        ]
-    },
-    {
-        "__typename": "profiles_profile_Entry",
-        "id": "109958",
-        "title": "Kevin Jacobs",
-        "slug": "kevin-jacobs",
-        "positions": [
-            {
-                "__typename": "positions_BlockType",
-                "jobTitle": "Chief Financial Officer and President, Global Development",
-                "organisation": "Hilton"
-            }
-        ],
-        "avatar": [
-            {
-                "__typename": "avatars_Asset",
-                "height": 5200,
-                "width": 3467,
-                "url": "https://cms.thebench.com/assets/img/avatars/Jacobs_Kevin_photo.jpg"
-            }
-        ]
-    },
-    {
-        "__typename": "profiles_profile_Entry",
-        "id": "109966",
-        "title": "Gilda Perez-Alvarado",
-        "slug": "gilda-perez-alvarado",
-        "positions": [
-            {
-                "__typename": "positions_BlockType",
-                "jobTitle": "Global CEO",
-                "organisation": "JLL Hotels & Hospitality"
-            }
-        ],
-        "avatar": [
-            {
-                "__typename": "avatars_Asset",
-                "height": 7991,
-                "width": 5732,
-                "url": "https://cms.thebench.com/assets/img/avatars/Perez-Alvarado_Gilda_photo.jpg"
-            }
-        ]
-    },
-    {
-        "__typename": "profiles_profile_Entry",
-        "id": "100482",
-        "title": "Stephen Sackur",
-        "slug": "stephen-sackur",
-        "positions": [
-            {
-                "__typename": "positions_BlockType",
-                "jobTitle": "Presenter",
-                "organisation": "HARDTalk"
-            }
-        ],
-        "avatar": [
-            {
-                "__typename": "avatars_Asset",
-                "height": 776,
-                "width": 827,
-                "url": "https://cms.thebench.com/assets/img/avatars/Sackur_Stephen_cr.jpeg"
-            }
-        ]
-    },
-    {
-        "__typename": "profiles_profile_Entry",
-        "id": "109984",
-        "title": "Cenk Sidar",
-        "slug": "cenk-sidar",
-        "positions": [
-            {
-                "__typename": "positions_BlockType",
-                "jobTitle": "CEO & Co-Founder",
-                "organisation": "Enquire AI"
-            }
-        ],
-        "avatar": [
-            {
-                "__typename": "avatars_Asset",
-                "height": 3174,
-                "width": 2862,
-                "url": "https://cms.thebench.com/assets/img/avatars/Sidar_Cenk_photo-sm.jpg"
-            }
-        ]
-    }
-]
-
 const photos = [
     {
         "__typename": "slides_BlockType",
@@ -278,14 +128,15 @@ const photos = [
 
 
 
-
-
 export default function PreLaunch ({ globals, entry, seomatic, speakerData, partnerData }) {
 
-    // console.log('entry:', entry)
+    console.log('entry:', entry)
 	// console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
     // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))	
     // console.log('speakerData:', speakerData)
+
+    let selectedCmsSpeakers = entry.fhisContentBlocks.find( obj => obj.__typename === 'fhisContentBlocks_profilesCarousel_BlockType')
+    // console.log('selectedCmsSpeakers:', selectedCmsSpeakers)
 
     return (
         <>
@@ -341,27 +192,30 @@ export default function PreLaunch ({ globals, entry, seomatic, speakerData, part
             </section>
 
 
-            <SpeakerCarousel 
-                heading={`confirmed speakers`} 
-                text={``}
-                decal={'bg-light'}
-                ctaLink={``}
-                ctaLabel={``}
-                anchorId={``}
-            >
-                {
-                    profiles.map( profile => (
-                        <SpeakerCard
-                            key={profile.id}
-                            url={`ae/speakers/profile/${profile.slug}`}
-                            photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
-                            fullName={profile.title}
-                            jobTitle={profile.positions[0].jobTitle}
-                            company={profile.positions[0].organisation}
-                        />
-                    ))
-                }
-            </SpeakerCarousel>
+            {
+                selectedCmsSpeakers &&
+                <SpeakerCarousel 
+                    heading={`confirmed speakers`} 
+                    text={``}
+                    decal={'bg-light'}
+                    ctaLink={``}
+                    ctaLabel={``}
+                    anchorId={``}
+                >
+                    {
+                        selectedCmsSpeakers.profiles.map( profile => (
+                            <SpeakerCard
+                                key={profile.id}
+                                url={`ae/speakers/profile/${profile.slug}`}
+                                photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
+                                fullName={profile.title}
+                                jobTitle={profile.positions[0].jobTitle}
+                                company={profile.positions[0].organisation}
+                            />
+                        ))
+                    }
+                </SpeakerCarousel>
+            }
 
 
             <section className="block flush">
