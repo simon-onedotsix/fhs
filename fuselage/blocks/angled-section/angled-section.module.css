@@ -1,5 +1,7 @@
 .layout {
     clip-path: polygon(0 4rem, 100% 0%, 100% calc(100% - 4rem), 0% 100%);
+    width: 100%;
+    overflow: hidden;
 }
 .wrapper {
     padding: 4rem 0;

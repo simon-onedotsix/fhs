@@ -176,7 +176,7 @@ export default function Homepage ({ data, seomatic }) {
             {
                 data.profiles.length &&
                 <>
-                    <section className="block bg-primary" style={{ background: `transparent`}}>
+                    <section className="block bg-primary" style={{ background: `transparent`, width: `100%`, overflow: `hidden` }}>
                         <div className="container">
                             <SectionDivider 
                                 heading={`Thought Leadership`} 
@@ -194,7 +194,7 @@ export default function Homepage ({ data, seomatic }) {
             }
 
             
-            <section className="block bg-primary mt-lg" style={{ background: `transparent`}}>
+            <section className="block bg-primary mt-lg" style={{ background: `transparent`, width: `100%`, overflow: `hidden` }}>
                 <div className="container">
                     <SectionDivider 
                         heading={`News and Insights`} 
@@ -204,7 +204,7 @@ export default function Homepage ({ data, seomatic }) {
             </section>
 
 
-            <section className="block bg-primary" style={{ background: `transparent`}}>
+            <section className="block bg-primary" style={{ background: `transparent`, width: `100%`, overflow: `hidden` }}>
                 { data.contentLibraryPosts.map( (group, index) => handleContentGroup(index, group) ) }
             </section>
          
