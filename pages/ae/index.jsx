@@ -130,7 +130,7 @@ const photos = [
 
 export default function PreLaunch ({ globals, entry, seomatic, speakerData, partnerData }) {
 
-    console.log('entry:', entry)
+    // console.log('entry:', entry)
 	// console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
     // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))	
     // console.log('speakerData:', speakerData)

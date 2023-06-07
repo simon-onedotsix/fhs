@@ -32,7 +32,7 @@ export const HeroUnitVideo = ({ children, hero }) => {
 
             <div className={`${CSS.overlay} block`}>
                 <SectionDivider 
-                    heading={`Reimagining our industry`} 
+                    heading={`Reimagining Investment`} 
                     description={`Future Hospitality is an international platform where the world's most influential hospitality investment decision makers connect, exchange knowledge and explore new partnerships.`}
                 />
             </div>

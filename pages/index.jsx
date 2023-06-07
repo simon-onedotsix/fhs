@@ -162,7 +162,7 @@ export default function Homepage ({ data, seomatic }) {
             <AngledSection innerBg={`white`} transitions={`var(--primary)`}>
                 <SectionDivider 
                     theme={{ heading: `var(--primary)`, body: `var(--default-text-color)`, keyline: `var(--accent)` }}
-                    heading={`Focussed events`} 
+                    heading={`Our Event Brands`} 
                     description={`Future Hospitality Summit series includes conference tracks from the Arabian Hospitality Investment Conference (AHIC) and Global Restaurant Investment Forum (GRIF) to create an unrivalled platform for holistic hospitality investment strategies.`}
                 />
                 <div className="container">
