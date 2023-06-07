@@ -225,7 +225,6 @@ Homepage.getLayout = function getLayout( page ) {
 
 
 
-
 export async function getStaticProps() {
     const { data } = await craftApolloClient().query({
         query: gql`
