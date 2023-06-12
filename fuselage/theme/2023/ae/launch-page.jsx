@@ -1,3 +1,5 @@
+import { motion } from "framer-motion"
+
 import Image from 'next/image'
 
 import CSS from './launch-page.module.css'
@@ -5,12 +7,17 @@ import bubbleCSS from './launch-page-bubble.module.css'
 
 
 
-
-export const LogoBubble = ({ children }) => {
+export const LogoBubble = ({ children, delay }) => {
     return (
-        <div className={bubbleCSS.wrapper}>
+        <motion.div 
+            className={bubbleCSS.wrapper}
+
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ type: "spring", bounce: 0.25, delay }}
+        >
             { children }
-        </div>
+        </motion.div>
     )
 }
 

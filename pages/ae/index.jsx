@@ -1,6 +1,7 @@
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
+
+import { motion } from "framer-motion"
 
 import Head from "next/head"
 import Image from "next/image"
@@ -159,14 +160,24 @@ export default function PreLaunch ({ globals, entry, seomatic, speakerData, part
 
             <section className="block flush">
                 <Container decal={`bg-white-90 p-md`}>
-                    <p className='fs-3 fw-300 caps'>25-27 September 2023</p>
+                    <motion.p 
+                        className='fs-3 fw-300 caps'
+                        initial={{ x: 50, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ type: "spring", bounce: 0.25, delay: 0.25 }}
+                    >25-27 September 2023</motion.p>
                     <Headline />
-                    <p className='fs-5 fw-300 caps mb-lg'>Hilton Abu Dhabi Yas Island</p>
+                    <motion.p 
+                        className='fs-5 fw-300 caps mb-lg'
+                        initial={{ x: 50, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ type: "spring", bounce: 0.25, delay: 0.5 }}
+                    >Hilton Abu Dhabi Yas Island</motion.p>
                     
                     <LogoBubbleGrid>
-                        <LogoBubble><FhsLogo primary={`white`} secondary={`white`} /></LogoBubble>
-                        <LogoBubble><AhicLogo primary={`white`} secondary={`white`} /></LogoBubble>
-                        <LogoBubble><GrifLogo primary={`white`} secondary={`white`}  /></LogoBubble>
+                        <LogoBubble delay={0.5}><FhsLogo primary={`white`} secondary={`white`} /></LogoBubble>
+                        <LogoBubble delay={0.75}><AhicLogo primary={`white`} secondary={`white`} /></LogoBubble>
+                        <LogoBubble delay={1}><GrifLogo primary={`white`} secondary={`white`}  /></LogoBubble>
                     </LogoBubbleGrid>
                 </Container>
                 
