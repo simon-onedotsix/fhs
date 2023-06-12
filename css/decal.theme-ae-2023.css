@@ -64,6 +64,19 @@
     --header-height-mobile: 8.5rem;
     --header-height-compact-mobile: 8.5rem;
 
+
+    /* component specifics */
+
+    --headline-height: 6.5vw;
+    --headline-offset: .6vw;
+    
+}
+
+@media(max-width:600px){
+    :root {
+        --headline-height: 8.5vw;
+        --headline-offset: .85vw;
+    }
 }
 
 

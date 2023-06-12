@@ -12,6 +12,7 @@ import { Footer } from '../../fuselage/global-ae/footer/footer'
 
 import { Container } from '../../fuselage/theme/2023/ae/layout/container/container'
 import { LogoBubble, LogoBubbleGrid, HostSponsorLogo, HostSponsorGrid } from '../../fuselage/theme/2023/ae/launch-page'
+import { Headline } from "../../fuselage/theme/2023/ae/headline/headline"
 import { FhsLogo } from '../../fuselage/components/fhs-logo/fhs-logo'
 import { AhicLogo } from '../../fuselage/components/ahic-logo/ahic-logo'
 import { GrifLogo } from '../../fuselage/components/grif-logo/grif-logo'
@@ -159,7 +160,7 @@ export default function PreLaunch ({ globals, entry, seomatic, speakerData, part
             <section className="block flush">
                 <Container decal={`bg-white-90 p-md`}>
                     <p className='fs-3 fw-300 caps'>25-27 September 2023</p>
-                    <p className="fs-xl caps maxw-50 my-sm" style={{ lineHeight: 0.9}}>Focus on Investment</p>
+                    <Headline />
                     <p className='fs-5 fw-300 caps mb-lg'>Hilton Abu Dhabi Yas Island</p>
                     
                     <LogoBubbleGrid>

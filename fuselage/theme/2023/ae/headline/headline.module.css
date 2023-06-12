@@ -1,0 +1,65 @@
+.focusWrapper,
+.focusWrapper span,
+.topicWrapper,
+.topicWrapper span {
+    position: relative;
+    display: block;
+    font-size: calc(var(--headline-height) + var(--headline-offset));
+    text-transform: uppercase;
+}
+
+.focusWrapper,
+.topicWrapper {
+    height: var(--headline-height);
+    overflow: hidden;
+}
+
+
+.focusWrapper span {
+    position: absolute;
+    top: 100%;
+    animation: focus 600ms cubic-bezier(.7, .1, .2, 1) forwards;
+}
+
+
+@keyframes focus {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 0%
+    }
+}
+
+.topics {
+    position: absolute;
+    top: var(--headline-height);
+    animation: 
+        innovation 600ms 125ms cubic-bezier(.7, .1, .2, 1) forwards,
+        growth 600ms 1s cubic-bezier(.7, .1, .2, 1) forwards,
+        sustainability 600ms 2s cubic-bezier(.7, .1, .2, 1) forwards,
+        future 600ms 3s cubic-bezier(.7, .1, .2, 1) forwards,
+        investment 600ms 4s cubic-bezier(.7, .1, .2, 1) forwards;
+}
+
+@keyframes innovation {
+    0% { top: var(--headline-height); }
+    100% { top: 0; }
+}
+@keyframes growth {
+    0% { top: 0; }
+    100% { top: calc( var(--headline-height) * -1); }
+}
+@keyframes sustainability {
+    0% { top: calc( var(--headline-height) * -1); }
+    100% { top: calc( var(--headline-height) * -2); }
+}
+@keyframes future {
+    0% { top: calc( var(--headline-height) * -2); }
+    100% { top: calc( var(--headline-height) * -3); }
+}
+@keyframes investment {
+    0% { top: calc( var(--headline-height) * -3); }
+    100% { top: calc( var(--headline-height) * -4); }
+}
+
