@@ -92,10 +92,16 @@ export const EventCard = ({ theme, title, logo, passLink, websiteLink }) => {
         >
 
             <div className={CSS.eventCardContent}>
-                <p className='fs-4 lh-1 fw-600'>{ title }</p>
+                <p className='fs-4 lh-1 fw-600 pb-xs'>{ title }</p>
                 <div>
-                    <p className='mt-sm'><a className={`${CSS.purchasePassButton} uLink`} href={ passLink } target='_blank'><PassIcon />Purchase Pass</a></p>
-                    <p className='mt-xs'><a className={CSS.websiteButton} href={ websiteLink } target='_blank'>Website <ExternalLinkIcon /></a></p>
+                    {
+                        passLink &&
+                        <p className='mt-xs'><a className={`${CSS.purchasePassButton} uLink`} href={ passLink } target='_blank'><PassIcon />Purchase Pass</a></p>
+                    }
+                    {
+                        websiteLink &&
+                        <p className='mt-xs'><a className={CSS.websiteButton} href={ websiteLink } target='_blank'>Website <ExternalLinkIcon /></a></p>
+                    }
                 </div>
             </div>
             {
