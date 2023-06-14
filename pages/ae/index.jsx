@@ -223,7 +223,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             <section className="block flush">
                 <Container decal={`bg-white-90 p-md`}>
-                    <p className="fs-0 caps lh-1 maxw-50 mb-md" style={{ lineHeight: 0.9}}>2022 in numbers</p>
+                    <Slide><p className="fs-0 caps lh-1 maxw-50 mb-md" style={{ lineHeight: 0.9}}>2022 in numbers</p></Slide>
                     
                     <div className='columns-2 gap-sm'>
                         <ImpactFigure value={`1072`} label={`attendees from across the globe`} />
@@ -234,19 +234,21 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 </Container>
 
                 <Container flushRight decal={`bg-light`}>
-                    <p className='fs-0 caps p-md lh-1'>Highlights from FHS&nbsp;2022</p>
+                    <Slide><p className='fs-0 caps p-md lh-1'>Highlights from FHS&nbsp;2022</p></Slide>
                     <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/4w6h8gXKpvg`} />
                 </Container>
 
                 <Container decal={``}>
-                    <p className='bg-light fs-0 caps p-md lh-1'>2022 in photos</p>
+                    <Slide><p className='bg-light fs-0 caps p-md lh-1'>2022 in photos</p></Slide>
                     
                     <div className="p-md bg-white-90 columns-3 gap-xs">
                         {
                             photos.map( photo => (
-                                <div key={photo.id} style={{ position: `relative`}}>
-                                    <Image src={photo.hero[0].url} width={photo.hero[0].width} height={photo.hero[0].height} layout={`responsive`} />
-                                </div>
+                                <Pop>
+                                    <div key={photo.id} style={{ position: `relative`}}>
+                                        <Image src={photo.hero[0].url} width={photo.hero[0].width} height={photo.hero[0].height} layout={`responsive`} />
+                                    </div>
+                                </Pop>
                             ))
                         }
                         <p className="mt-xs">
