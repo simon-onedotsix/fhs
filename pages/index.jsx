@@ -153,7 +153,7 @@ export default function Homepage ({ data, seomatic }) {
             <Header overlaid inverse />
 
 
-            <HeroUnitVideo hero={{ url: `/assets/img/global/homepage/hero.jpg`, width: 2100, height: 2100}} />
+            <HeroUnitVideo />
 
 
             { handleUpcomingEvents( data.events )}

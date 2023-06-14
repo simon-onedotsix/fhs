@@ -7,17 +7,16 @@ import { SectionDivider } from '../section-divider/section-divider'
 
 import CSS from './hero-unit-video.module.css'
 
-export const HeroUnitVideo = ({ children, hero }) => {
+export const HeroUnitVideo = ({ children, hero, poster }) => {
     return (
         <section>
                 
             <div className={CSS.video}>
                 <Parallax speed={-20}>
                     <div className={CSS.videoWrapper}>
-                        {/* <Image src={`/assets/temp/video-placeholder.jpg`} layout={`responsive`} width={1680} height={1050} /> */}
-
                         <ReactPlayer
                             url={`/assets/video/fhs-2022-opt.mp4`}
+                            config={{ attributes: { poster: '/assets/video/fhs-2022-opt-poster.jpg' } }}
                             width='100%'
                             height='100%'
                             controls={false}
