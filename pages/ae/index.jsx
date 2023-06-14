@@ -23,6 +23,7 @@ import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 import { Form } from '../../fuselage/blocks/form/form'
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
+import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 
 import { 
     QueryText, 
@@ -130,7 +131,7 @@ const photos = [
 
 
 
-export default function PreLaunch ({ globals, entry, seomatic, speakerData, partnerData }) {
+export default function Home ({ globals, entry, seomatic, speakerData, partnerData }) {
 
     // console.log('entry:', entry)
 	// console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
@@ -160,44 +161,34 @@ export default function PreLaunch ({ globals, entry, seomatic, speakerData, part
 
             <section className="block flush">
                 <Container decal={`bg-white-90 p-md`}>
-                    <motion.p 
-                        className='fs-3 fw-300 caps'
-                        initial={{ x: 50, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ type: "spring", bounce: 0.25, delay: 0.25 }}
-                    >25-27 September 2023</motion.p>
+                    <Slide><p className='fs-3 fw-300 caps mb-xs'>25-27 September 2023</p></Slide>
                     <Headline />
-                    <motion.p 
-                        className='fs-5 fw-300 caps mb-lg'
-                        initial={{ x: 50, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ type: "spring", bounce: 0.25, delay: 0.5 }}
-                    >Hilton Abu Dhabi Yas Island</motion.p>
+                    <Slide delay={.5}><p className='fs-5 fw-300 caps mb-lg'>Hilton Abu Dhabi Yas Island</p></Slide>
                     
                     <LogoBubbleGrid>
-                        <LogoBubble delay={0.5}><FhsLogo primary={`white`} secondary={`white`} /></LogoBubble>
-                        <LogoBubble delay={0.75}><AhicLogo primary={`white`} secondary={`white`} /></LogoBubble>
-                        <LogoBubble delay={1}><GrifLogo primary={`white`} secondary={`white`}  /></LogoBubble>
+                        <LogoBubble delay={0.2}><FhsLogo primary={`white`} secondary={`white`} /></LogoBubble>
+                        <LogoBubble delay={0.4}><AhicLogo primary={`white`} secondary={`white`} /></LogoBubble>
+                        <LogoBubble delay={0.6}><GrifLogo primary={`white`} secondary={`white`}  /></LogoBubble>
                     </LogoBubbleGrid>
                 </Container>
                 
                 <Container flushRight decal={`bg-white-90 p-md`}>
                     <div className="formatted">
-                        <h1 className='lh-1'>FHS & AHIC 2023</h1>
-                        <h3 className='maxw-40'> Join Us As We Transform Yas Island into a Global Epicenter for Hospitality Investment</h3>
-                        <p className='fs-6 fw-300 maxw-40 mt-md'>Experience the highly anticipated Future Hospitality Summit 2023 alongside the 19th edition of The Bench&apos;s flagship AHIC - Arabian Hospitality Investment Conference, in Abu Dhabi for the very first time! </p>
+                        <Slide><h1 className='lh-1'>FHS & AHIC 2023</h1></Slide>
+                        <Slide delay={.2}><h3 className='maxw-40'> Join Us As We Transform Yas Island into a Global Epicenter for Hospitality Investment</h3></Slide>
+                        <Fade delay={.4}><p className='fs-6 fw-300 maxw-40 mt-md'>Experience the highly anticipated Future Hospitality Summit 2023 alongside the 19th edition of The Bench&apos;s flagship AHIC - Arabian Hospitality Investment Conference, in Abu Dhabi for the very first time! </p>
                         <p className='fs-6 fw-300 maxw-40'>Experience three extraordinary days of dealmaking and impactful industry discussions at the Yas Island, thanks to our host sponsors - Abu Dhabi Convention & Exhibition Bureau, Miral, and Hilton Abu Dhabi Yas Island. </p>
                         <p className='fs-6 fw-300 maxw-40'>Explore innovative investment trends, groundbreaking insights, and unparalleled networking opportunities in the world of hospitality. </p>
-                        <p className='fs-6 fw-300 maxw-40'>Don&apos;t miss this unique opportunity to shape the industry&apos;s future.</p>
+                        <p className='fs-6 fw-300 maxw-40'>Don&apos;t miss this unique opportunity to shape the industry&apos;s future.</p></Fade>
                     </div>
 
                     <div className="mt-md bt-1 bc-grey-10 pt-sm">
-                        <p className='fw-600 caps mb-sm'>Host Sponsors</p>
+                        <Slide><p className='fw-600 caps mb-sm'>Host Sponsors</p></Slide>
 
                         <HostSponsorGrid>
-                            <HostSponsorLogo hero={{url: `/assets/site/ae/abu-dhabi.png`}}/>
-                            <HostSponsorLogo hero={{url: `/assets/site/ae/miral.png`}}/>
-                            <HostSponsorLogo hero={{url: `/assets/site/ae/hilton.png`}}/>
+                            <Pop><HostSponsorLogo hero={{url: `/assets/site/ae/abu-dhabi.png`}}/></Pop>
+                            <Pop delay={.2}><HostSponsorLogo hero={{url: `/assets/site/ae/miral.png`}}/></Pop>
+                            <Pop delay={.4}><HostSponsorLogo hero={{url: `/assets/site/ae/hilton.png`}}/></Pop>
                         </HostSponsorGrid>
                     </div>
                 </Container>
@@ -289,7 +280,7 @@ export default function PreLaunch ({ globals, entry, seomatic, speakerData, part
         </>
     )
 }
-PreLaunch.theme = 'ae'
+Home.theme = 'ae-2023'
 
 
 export async function getStaticProps({ params, preview, previewData }) {

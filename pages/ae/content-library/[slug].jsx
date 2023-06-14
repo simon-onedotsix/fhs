@@ -238,7 +238,7 @@ export default function Article ({ entry }) {
 
 }
 
-Article.theme = 'ae'
+Article.theme = 'ae-2023'
 
 
 

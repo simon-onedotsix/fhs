@@ -40,4 +40,4 @@ export default function Register () {
         </>
     )
 }
-Register.theme = 'ae'
+Register.theme = 'ae-2023'

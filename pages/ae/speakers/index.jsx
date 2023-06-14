@@ -101,7 +101,7 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 	)
 }
 
-Speakers.theme = 'ae'
+Speakers.theme = 'ae-2023'
 
 
 

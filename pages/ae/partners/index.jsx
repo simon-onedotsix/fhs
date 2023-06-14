@@ -59,7 +59,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 	)
 }
 
-Partners.theme = 'ae'
+Partners.theme = 'ae-2023'
 
 
 

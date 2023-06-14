@@ -115,7 +115,7 @@ export default function ContentLibrary ({ articles, categories }) {
     
 }
 
-ContentLibrary.theme = 'ae'
+ContentLibrary.theme = 'ae-2023'
 
 
 

@@ -82,7 +82,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 	)
 }
 
-Speakers.theme = 'ae'
+Speakers.theme = 'ae-2023'
 
 export async function getStaticProps() {
 

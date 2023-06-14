@@ -59,7 +59,7 @@ export default function Page ({ entry, seomatic }) {
     )
 }
 
-Page.theme = 'ae'
+Page.theme = 'ae-2023'
 
 
 export async function getStaticPaths() {

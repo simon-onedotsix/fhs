@@ -492,7 +492,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     )
 }
 
-Agenda.theme = 'ae'
+Agenda.theme = 'ae-2023'
 
 
 

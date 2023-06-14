@@ -105,7 +105,7 @@ export default function Register ({ entry, passes, bizzaboPassData }) {
         </>
     )
 }
-Register.theme = 'ae'
+Register.theme = 'ae-2023'
 
 
 

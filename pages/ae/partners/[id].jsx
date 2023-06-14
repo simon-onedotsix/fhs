@@ -134,7 +134,7 @@ function Partner({ partner }) {
 		</>
 	)
 }
-Partner.theme = 'ae'
+Partner.theme = 'ae-2023'
 
 
 

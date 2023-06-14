@@ -13,7 +13,7 @@ export const LogoBubble = ({ children, delay }) => {
             className={bubbleCSS.wrapper}
 
             initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            whileInView={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring", bounce: 0.25, delay }}
         >
             { children }

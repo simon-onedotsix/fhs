@@ -91,7 +91,7 @@ export default function Profile ({ profile }) {
     )
 }
 
-Profile.theme = 'ae'
+Profile.theme = 'ae-2023'
 
 
 export async function getStaticPaths() {

@@ -270,7 +270,7 @@ function Speaker({ speaker, sessions }) {
 	)
 }
 
-Speaker.theme = 'ae'
+Speaker.theme = 'ae-2023'
 
 
 export async function getStaticPaths() {
