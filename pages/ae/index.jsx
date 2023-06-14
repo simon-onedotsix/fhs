@@ -243,10 +243,10 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     
                     <div className="p-md bg-white-90 columns-3 gap-xs">
                         {
-                            photos.map( photo => (
-                                <Pop>
+                            photos.map( (photo, index) => (
+                                <Pop key={index}>
                                     <div key={photo.id} style={{ position: `relative`}}>
-                                        <Image src={photo.hero[0].url} width={photo.hero[0].width} height={photo.hero[0].height} layout={`responsive`} />
+                                        <Image src={photo.hero[0].url} width={photo.hero[0].width} height={photo.hero[0].height} layout={`responsive`} alt="" />
                                     </div>
                                 </Pop>
                             ))
