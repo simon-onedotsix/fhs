@@ -6,7 +6,6 @@ import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import Head from "next/head"
-import Image from "next/image"
 
 import { formatInTimeZone } from 'date-fns-tz'
 
@@ -15,7 +14,6 @@ import { toHoursAndMinutes } from "../../lib/agenda-utils"
 
 import { Header } from '../../fuselage/global-ae/header/header'
 import { Footer } from '../../fuselage/global-ae/footer/footer'
-import { Container } from '../../fuselage/theme/2023/ae/layout/container/container'
 import { Session, SessionSpeaker, SessionSpeakerGrid } from '../../fuselage/components/session/session'
 import { Button } from "../../fuselage/components/button/button"
 import { Modal } from "../../fuselage/components/modal/modal"
@@ -32,28 +30,46 @@ import CSS from '../../css/app/agenda.module.css'
 
 export default function Agenda ({ agendaSettings, sessions, speakers, speakersOverflow, cmsAgendaData }) {
 
-    const [ currentDay, setCurrentDay ] = useState (null)
     const [ currentFilter, setCurrentFilter ] = useState (null)
-
+    const [ currentDay, setCurrentDay ] = useState (null)
+    const [ currentStage, setCurrentStage ] = useState(null)
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: ''})
 
     const router = useRouter()
-
-
     
     useEffect( () => {
         if ( router.query.filter ) {
-            setCurrentFilter(router.query.filter)
+            setCurrentFilter(parseInt(router.query.filter))
         }
     
         if ( router.query.day ) {
-            setCurrentDay(router.query.day - 1)
+            setCurrentDay(parseInt(router.query.day) - 1)
         }
     
     }, [ router ])
     
     
+    // 414721 = fhs sessions
+    // 414720 = grif sessions
+    // 414722 = ahic sessions
+    // 414723 = experiences
+    // 414723 = workshops + pitches
+
+    // 388496 = summit stage
+    // 388497 = future stage
+    // 399370 = exhibition stage
+    // 403735 = najd room
+    // 403736 = yanbou room
+    // 403737 = ballroom B
+
+    // #session-1120700
+    
+    let mainStreamIds = [ 414721, 414720, 414722, 414723, 414723 ]
+
+    // check for global (and untagged) sessions and dump in array
+
+    let globalSessions = ( findGlobalBzSessions( sessions, mainStreamIds ) )
 
     
     // cms entry data
@@ -68,12 +84,12 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     
     // handle 200+ speakers ( requires separate api requests )
 
-    if ( speakersOverflow && speakersOverflow.content.length ) {
+    if ( speakersOverflow && speakersOverflow.content ) {
         speakers.content = [].concat( speakers.content, speakersOverflow.content )
     }
     
-    
-    
+  
+
     
     // console.log('agenda data:', cmsAgendaData)
     // console.log('settings:', agendaSettings)
@@ -85,12 +101,11 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
 
 
-
     // build agenda
 
     function outputAgenda ( sessions ) {
 
-        let agenda = sortSessions(sessions)
+        let agenda = groupSessionsIntoDays(sessions)
 
         // console.log('agenda:', agenda)
 
@@ -122,7 +137,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
         function renderDivider ( day ) {
             return (
-                <p className='fs-4 fw-600 c-white bg-primary px-sm py-xs mb-xs'>
+                <p className='fs-4 fw-600 c-primary bg-light px-sm py-xs mb-xs'>
                     { day && formatInTimeZone(new Date( day ), 'Asia/Dubai', 'EEEE dd MMMM') }
                 </p>
             )
@@ -130,60 +145,66 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
         function renderSessions ( sessions ) {
 
-            // filter sessions
+            // filter sessions (by track)
             if ( currentFilter ) {
-                let filteredSessions = sessions.filter( session => {
-                    if (session.filters) {
-                        if ( 
-                            session.filters[0].tags.includes(parseInt(currentFilter)) || 
-                            session.filters[1] && session.filters[1].tags.includes(parseInt(currentFilter)) 
-                        ) return session
-                    }
-                })
-                sessions = filteredSessions
+                let filteredSessionsByTrack = checkForMainBzSessions( sessions, currentFilter )
+                sessions = filteredSessionsByTrack
             }
 
+            // filter sessions (by stage)
+            if ( currentStage ) {
+                let filteredSessionsByStage = checkForMainBzSessions( sessions, currentStage )
+                sessions = _.intersection(sessions, filteredSessionsByStage)
+            }
+
+            // render sessions
             if ( sessions.length ) {
                 return (
                     sessions.map( session => {
-                        let tag = session.filters ? getSessionTagTitle(session.filters[0].tags[0]) : null
-                        let tags = []
-                        let tagIds = []
+
+                        let sessionTags = []
     
                         if ( session.filters ) {
                             session.filters.forEach( filter => {
-                                tags.push(getSessionTagTitle(filter.tags[0]))
-                                tagIds.push(filter.tags[0])
+                                filter.tags.forEach( tag =>  sessionTags.push(getSessionTagTitle(tag)) )
                             })
                         }
-    
+
+                        
                         return (
-                            <Session
-                                id={session.id}
-                                key={session.id}
-                                startTime={toHoursAndMinutes(session.startMinute)}
-                                endTime={toHoursAndMinutes(session.endMinute)}
-                                tags={tags}
-                                theme={getSessionTheme(tag)}
-                            >   
-                                
-                                <p className='h3 c-primary'>{ session.title }</p>
-                                <p className="mb-xs" style={{ whiteSpace: `pre-wrap` }}>{ session.description }</p>
-                                {addSessionCta( session.id )}
-                                <div>{getAllSessionSpeakers(session.speakers)}</div>
-    
-                            </Session>
-    
+                           
+
+                                <Session
+                                    key={session.id}
+                                    id={session.id}
+                                    startTime={toHoursAndMinutes(session.startMinute)}
+                                    endTime={toHoursAndMinutes(session.endMinute)}
+                                    tags={sessionTags}
+                                    theme={getSessionTheme(sessionTags)}
+                                >   
+                                    <p className='h3 c-primary'>{ session.title }</p>
+                                    
+                                    {
+                                        session.descriptionHtml &&
+                                        <div dangerouslySetInnerHTML={{__html: session.descriptionHtml}} className="mb-xs formatted" />
+                                    }
+
+                                    {addSessionCta( session.id )}
+
+                                    <div>{getAllSessionSpeakers(session.speakers)}</div>
+        
+                                </Session>
+                           
                         )
                     })
                 )
 
-            } else {
-                return <p className="fs-6 fw-400">No { getSessionTagTitle(currentFilter) } sessions available on this day.</p>
-            }
-
             
-        }
+            } else {
+                return <p className="fs-6 fw-400">No { getSessionTagTitle(currentFilter) } sessions available {currentStage === 388496 && 'on the Summit Stage for'}{currentStage === 388497 && 'on the Future Stage for'}{currentStage === 399370 && 'on the Exhibition Stage for'}{currentStage === 403735 && 'in the Najd Room for'}{currentStage === 403736 && 'in the Yanbou Room for'}{currentStage === 403737 && 'in the Al Omsiat Ballroom B for'} this day.</p>
+            }
+            
+        }    
 
         function getAllSessionSpeakers( speakerIds ) {
             
@@ -235,19 +256,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
             const selectedSessions = [
                 { id: 968557, href: "/ae/site-tours#farm", target: '' },
-                { id: 968558, href: "/ae/site-tours#lagoon", target: '' },
-                { id: 956648, href: "/ae/lead-the-change", target: '' },
-                { id: 956649, href: "/ae/startup-den", target: '' },
-                { id: 958016, href: "https://forms.office.com/pages/responsepage.aspx?id=CynbjH5LUUqIhntljO8w5dWMsPcd5IpFpf8wtnYUOZZUMElKU0lQN1pLNURCWlQ2TUhCUUNMMEdIOC4u", target: '_blank' },
-                { id: 956524, href: "https://forms.office.com/pages/responsepage.aspx?id=CynbjH5LUUqIhntljO8w5dWMsPcd5IpFpf8wtnYUOZZUM1pIVDE1NTc4VUwxSDNBT0ZIWlVHQlM1Wi4u", target: '_blank' },
-                { id: 968559, href: "/ae/sports#fitness", target: '' },
-                { id: 968560, href: "/ae/sports#yoga", target: '' },
-                { id: 790696, href: "/ae/sustainable-hospitality-challenge", target: '' },
-                { id: 956645, href: "/ae/the-knight-frank-investors-briefing", target: '' },
-                { id: 980614, href: "/ae/sports#golf", target: '' },
-                { id: 971946, href: "/ae/sports#tennis", target: '' },
-                { id: 980500, href: "/ae/site-tours#fish", target: '' },
-                { id: 980612, href: "/ae/site-tours#museum", target: '' },
+                { id: 968558, href: "/ae/site-tours#lagoon", target: '' }
             ]
 
             let selectedSession = selectedSessions.find( session => session.id === id)
@@ -304,8 +313,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
         }
     }
    
-   
-    function sortSessions ( sessions ) {
+    function groupSessionsIntoDays ( sessions ) {
+
         const orderedSessions = _.orderBy(sessions, [ 'startMinute', 'asc'])
         // console.log('orderedSessions:', orderedSessions)
     
@@ -321,33 +330,16 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     }
 
 
-
-    //  filters
-
-    // function filterSessionsById ( sessions, id ) {
-    //     id = parseInt(id)
-    //     let filteredSessions = sessions.filter( session => {
-    //         if (session.filters ) {
-    //             if ( 
-    //                 session.filters[0].tags.includes(id) || 
-    //                 session.filters[1] && session.filters[1].tags.includes(id) 
-    //             ) return session
-    //         }
-    //     })
-    //     setAgenda(sortSessions(filteredSessions))
-    // }
-
-
     // tags
 
     let mergedTags = []
 
-    if ( agendaSettings ) {
+    if ( agendaSettings && agendaSettings.filters ) {
         agendaSettings.filters.forEach( obj => {
             obj.tags.forEach( tag => mergedTags.push(tag))
         })
-    
     }
+
     const getSessionTagTitle = ( id ) => {
         let tag = mergedTags.filter( tag => tag.id == id )
         if ( tag.length ) return tag[0].name
@@ -357,18 +349,98 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     
     // session theme
 
-    const getSessionTheme = ( bizzaboAgendaTagName ) => {
-        let theme = sessionThemes.filter( color => color.bizzaboAgendaTag == bizzaboAgendaTagName )
-        if ( theme.length ) return theme[0].color
-        return 'var(--accent)'
+    const getSessionTheme = ( bizzaboAgendaTags ) => {
+
+        // check if a cms sessionThemes object exists for bz tag
+        const found = sessionThemes.filter( obj => bizzaboAgendaTags.includes( obj.bizzaboAgendaTag ))
+
+        // if yes, return the theme color
+        if ( found.length ) return found[0].color
+        
+        // otherwise return a fallback
+        return '#ff9500'
     }
 
     
-    // filter
+    // filter query reset
 
     function clearQuery() {
         router.replace('/ae/agenda', undefined, { shallow: true })
     }
+
+
+    // check bz agenda settings data for specific tag group
+
+    function searchBzFilters( filterData, targetFilterName ) {
+
+        if ( !filterData || !targetFilterName ) return
+
+        let isolatedFilter = []
+
+        filterData.some( arr => {
+            if ( arr.name === targetFilterName ) isolatedFilter = arr.tags
+        })
+        
+        return isolatedFilter
+    }
+
+
+    // find global sessions ( to be included in all main streams )
+    
+    function findGlobalBzSessions ( sessionIds, streamIds ) {
+
+        if ( !sessionIds ) return
+        
+        let globalSessionIds = []
+    
+        sessionIds.forEach( session => {
+            // check for filters
+            if (session.filters) {                
+                session.filters.forEach( filter => {
+                    // check for tags
+                    if (filter.tags) {
+                        // check for main stream tags
+                        // if no main stream tags are found, push into array
+                        if ( !_.intersection(filter.tags, streamIds) ) globalSessionIds.push(session)
+                    }
+                })
+            }
+    
+            if (!session.filters) {
+                // if no filters + tags are found, push into array
+                globalSessionIds.push(session)
+            }
+        })
+
+        // console.log('global sessions: ', globalSessionIds)
+        
+        return globalSessionIds
+        
+    }
+
+
+    // check if bz filter is allocated as main (for filtering)
+
+    function checkForMainBzSessions ( bxSessions, bxFilterId ) {
+        let snapshot = bxSessions.filter( session => {
+            // for sessions with filter + tags
+            if (session.filters) {
+                if ( 
+                    session.filters[0].tags.includes(parseInt(bxFilterId)) || 
+                    session.filters[1] && session.filters[1].tags.includes(parseInt(bxFilterId)) ||
+                    globalSessions && globalSessions.includes(session)
+                ) return session
+            } 
+            // for sessions without filters
+            else if ( globalSessions && globalSessions.includes(session) ) {
+                return session
+            }
+            
+        })
+        return snapshot
+    }
+    
+
 
 
     return (
@@ -377,8 +449,6 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
             <Head>
                 { handleSeomaticMeta( cmsAgendaData.seomatic ) }
 			</Head>
-
-            <ThemeBg />
 
             <Header compact shim theme={{ 
                 primary: 'var(--primary)', 
@@ -391,24 +461,64 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
             }} />
 
 
-            <section className="block flush">
-                <Container flushRight maxWidth={`90%`} decal={`bg-white-90 p-md`}>
-                    <p className="fs-0 fw-600 c-primary">2022 Agenda</p>
-                    
+            <section className="block">
+                {/* filter */}
+                <div className="container">
+                    <p className="fs-0 fw-600 c-primary">2023 Agenda</p>
+
                     <div className={CSS.filterLayout}>
+
+                        {/* track buttons */}
                         <section className={CSS.filterLayoutButtons}>
+                            
                             <button 
-                                className={`
-                                    ${CSS.filterButton} 
-                                    ${ currentDay === null ? CSS.active : null }
-                                `} 
+                                className={`${CSS.filterButton} ${ currentFilter === 414721 ? CSS.active : null }`} 
                                 onClick={ () => {
-                                    setCurrentDay(null)
+                                    setCurrentFilter(414721)
+                                    clearQuery()
+                                }}
+                            >FHS</button>
+
+                            <button 
+                                className={`${CSS.filterButton} ${ currentFilter === 414722 ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentFilter(414722)
+                                    clearQuery()
+                                }}
+                            >AHIC</button>
+
+                            <button 
+                                className={`${CSS.filterButton} ${ currentFilter === 414720 ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentFilter(414720)
+                                    clearQuery()
+                                }}
+                            >GRIF</button>
+                           
+                            {/* <button 
+                                className={`${CSS.filterButton} ${ currentFilter === 414723 ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentFilter(414723)
+                                    clearQuery()
+                                }}
+                            >Experiences</button> */}
+
+                            <button 
+                                className={`${CSS.filterButton} ${ currentFilter === null ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentFilter(null)
                                     clearQuery()
                                 }}
                             >All</button>
+
+                        </section>
+
+
+                        {/* day buttons */}
+                        <section className={CSS.filterLayoutButtons}>
+                            
                             {
-                                sortSessions(sessions).map( (day, index) => {
+                                groupSessionsIntoDays(sessions).map( (day, index) => {
                                     return (
                                         <button 
                                             className={`
@@ -424,42 +534,49 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                     )
                                 })
                             }
+                            <button 
+                                className={`${CSS.filterButton} ${ currentDay === null ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentDay(null)
+                                    clearQuery()
+                                }}
+                            >All</button>
+
                         </section>
 
+                        {/* stage select dropdown */}
                         <section className={CSS.filterLayoutButtons}>
-                            <p className={`${CSS.desktopOnly} fw-400 c-primary`}>Filter:&emsp;</p>
+                            {/* <p className={`${CSS.desktopOnly} fw-400 c-primary`}>Filter:&emsp;</p> */}
                             <select
                                 className={CSS.filterSelect} 
                                 defaultValue=""
                                 onChange={ (e) => {
-                                    setCurrentFilter( e.target.value )
+                                    setCurrentStage( parseInt(e.target.value) )
                                     clearQuery()
-                                    console.log('selected filter:', e.target.value)
+                                    // console.log('selected filter:', e.target.value)
                                 }}
                             >
-                                <option value="">All sessions</option>
+                                <option value="">All stages</option>
                                 {
-                                    agendaSettings &&
-                                    agendaSettings.filters.slice(0).reverse().map( filter => {
+                                    agendaSettings.filters &&
+                                    searchBzFilters( agendaSettings.filters, 'Stages').map( filter => {
                                         return (
-                                            <optgroup key={filter.id} label={filter.name}>
-                                                {filter.tags.map( (tag) => (
-                                                    <option key={tag.id} value={tag.id}>
-                                                        {tag.name}
-                                                    </option>
-                                                ))}
-                                            </optgroup>
+                                            <option key={filter.id} value={filter.id}>
+                                                {filter.name}
+                                            </option>
                                         )
                                     })
                                 }
                             </select>
-                        </section>                
+                        </section> 
+  
                     </div>
-                    
-                    <div className="mt-sm">
-                        {outputAgenda( sessions )}
-                    </div>
-                </Container>
+                </div>
+
+                {/* programme */}
+                <div className="container">
+                    {outputAgenda( sessions )}
+                </div>
             </section>
 
 
@@ -486,7 +603,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
             </Modal>
 
-            <Footer theme={{ footerBg: 'bg-white-90' }} />
+            <Footer theme={{ footerBg: 'bg-white' }} />
 
         </>
     )
@@ -524,7 +641,7 @@ export async function getStaticProps() {
     })
 
 
-    const sessionsRes = await fetch(`https://api.bizzabo.com/api/agenda/sessions?eventId=${process.env.BIZZABO_EVENT_ID}&size=200`, {
+    const sessionsRes = await fetch(`https://api.bizzabo.com/api/agenda/sessions?eventId=${process.env.BIZZABO_EVENT_ID_AE}&size=200`, {
 		"method": "GET",
 		"headers": {
 			"Content-Type": "application/json",
@@ -535,7 +652,7 @@ export async function getStaticProps() {
     const sessions = sessionsData.content
     
 
-    const agendaSettingsRes = await fetch(`https://api.bizzabo.com/api/agenda/settings?eventId=${process.env.BIZZABO_EVENT_ID}&size=200`, {
+    const agendaSettingsRes = await fetch(`https://api.bizzabo.com/api/agenda/settings?eventId=${process.env.BIZZABO_EVENT_ID_AE}&size=200`, {
 		"method": "GET",
 		"headers": {
 			"Content-Type": "application/json",
@@ -546,7 +663,7 @@ export async function getStaticProps() {
 
 
     // speakers – beware of 200 max per page + each page requires a separate call
-    const bizzaboSpeakers = await fetch(`https://api.bizzabo.com/api/speakers?eventId=${process.env.BIZZABO_EVENT_ID}&page=0&size=200`, {
+    const bizzaboSpeakers = await fetch(`https://api.bizzabo.com/api/speakers?eventId=${process.env.BIZZABO_EVENT_ID_AE}&page=0&size=200`, {
 		"method": "GET",
 		"headers": {
 			"Content-Type": "application/json",
@@ -556,7 +673,7 @@ export async function getStaticProps() {
 	const speakers = await bizzaboSpeakers.json()
     
     // speaker overflow ( when there are more than 200 )
-    const bizzaboSpeakersOverflow = await fetch(`https://api.bizzabo.com/api/speakers?eventId=${process.env.BIZZABO_EVENT_ID}&page=1&size=200`, {
+    const bizzaboSpeakersOverflow = await fetch(`https://api.bizzabo.com/api/speakers?eventId=${process.env.BIZZABO_EVENT_ID_AE}&page=1&size=200`, {
 		"method": "GET",
 		"headers": {
 			"Content-Type": "application/json",

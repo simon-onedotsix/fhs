@@ -1,9 +1,7 @@
-import { ThemeBg } from "../../../../fuselage/theme/2023/ae/theme-bg"
-
 import Image from "next/image"
 import Link from "next/link"
 
-import { Header, HeaderShim } from '../../../../fuselage/global-ae/header/header'
+import { Header } from '../../../../fuselage/theme/2022/ae/global/header/header'
 import { Footer } from "../../../../fuselage/global-ae/footer/footer"
 import { Sidebar } from "../../../../fuselage/layout/sidebar/sidebar"
 import { ArrowLink } from '../../../../fuselage/components/arrow-link/arrow-link'
@@ -121,15 +119,20 @@ function Speaker({ speaker, sessions }) {
 
 		<>
 
-			<Header compact shim theme={{ 
-                primary: 'white', 
-                secondary: 'var(--accent)', 
-                text: 'white',
-                buttons: 'var(--primary)',
-                buttonText: 'white',
-                headerBg: 'bg-theme',
-                overlayBg: 'var(--primary)',
-            }} />
+			<Header 
+				compact 
+				shim
+				path={'/speakers'}
+				theme={{ 
+					primary: 'white', 
+					secondary: 'var(--accent)', 
+					text: 'white',
+					buttons: 'var(--primary)',
+					buttonText: 'white',
+					headerBg: 'bg-theme',
+					overlayBg: 'var(--primary)',
+				}} 
+			/>
 
 
 

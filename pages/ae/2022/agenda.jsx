@@ -4,14 +4,13 @@ import craftApolloClient from "../../api/apollo"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import Head from "next/head"
-import Image from "next/image"
 
 import { formatInTimeZone } from 'date-fns-tz'
 
 import _ from 'lodash'
 import { toHoursAndMinutes } from "../../../lib/agenda-utils"
 
-import { Header } from '../../../fuselage/global-ae/header/header'
+import { Header } from '../../../fuselage/theme/2022/ae/global/header/header'
 import { Footer } from '../../../fuselage/global-ae/footer/footer'
 import { Session, SessionSpeaker, SessionSpeakerGrid } from '../../../fuselage/components/session/session'
 import { Button } from "../../../fuselage/components/button/button"
@@ -432,15 +431,20 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                 { handleSeomaticMeta( cmsAgendaData.seomatic ) }
 			</Head>
 
-            <Header compact shim theme={{ 
-                primary: 'white', 
-                secondary: 'var(--accent)', 
-                text: 'white',
-                buttons: 'var(--primary)',
-                buttonText: 'white',
-                headerBg: 'bg-theme',
-                overlayBg: 'var(--primary)',
-            }} />
+            <Header 
+                compact
+                shim 
+                path={'/agenda'}
+                theme={{ 
+                    primary: 'white', 
+                    secondary: 'var(--accent)', 
+                    text: 'white',
+                    buttons: 'var(--primary)',
+                    buttonText: 'white',
+                    headerBg: 'bg-theme',
+                    overlayBg: 'var(--primary)',
+                }} 
+            />
 
 
             <section className="block">
@@ -450,16 +454,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                     {/* filters */}
                     <div className={CSS.filterLayout}>
                         <section className={CSS.filterLayoutButtons}>
-                            <button 
-                                className={`
-                                    ${CSS.filterButton} 
-                                    ${ currentDay === null ? CSS.active : null }
-                                `} 
-                                onClick={ () => {
-                                    setCurrentDay(null)
-                                    clearQuery()
-                                }}
-                            >All</button>
+                            
                             {
                                 sortSessions(sessions).map( (day, index) => {
                                     return (
@@ -477,6 +472,18 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                     )
                                 })
                             }
+
+                            <button 
+                                className={`
+                                    ${CSS.filterButton} 
+                                    ${ currentDay === null ? CSS.active : null }
+                                `} 
+                                onClick={ () => {
+                                    setCurrentDay(null)
+                                    clearQuery()
+                                }}
+                            >All</button>
+
                         </section>
 
                         <section className={CSS.filterLayoutButtons}>

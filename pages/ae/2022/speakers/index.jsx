@@ -1,5 +1,3 @@
-import { ThemeBg } from "../../../../fuselage/theme/2023/ae/theme-bg"
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../../../api/apollo"
 
@@ -9,13 +7,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Header, HeaderShim } from '../../../../fuselage/global-ae/header/header'
+import { Header } from '../../../../fuselage/theme/2022/ae/global/header/header'
 import { Footer } from '../../../../fuselage/global-ae/footer/footer'
-import { StickySidebar } from '../../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
 import { SpeakerGrid } from "../../../../fuselage/layout/speaker-grid/speaker-grid"
-import HubspotForm from'../../../../fuselage/components/hubspot-form/hubspot-form'
-
-import { Container } from "../../../../fuselage/theme/2023/ae/layout/container/container"
 
 import handleSeomaticMeta from '../../../../lib/seomatic'
 
@@ -39,15 +33,20 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-            <Header compact shim theme={{ 
-                primary: 'white', 
-                secondary: 'var(--accent)', 
-                text: 'white',
-                buttons: 'var(--primary)',
-                buttonText: 'white',
-                headerBg: 'bg-theme',
-                overlayBg: 'var(--primary)',
-            }} />
+            <Header 
+				compact 
+				shim
+				path={'/speakers'}
+				theme={{ 
+					primary: 'white', 
+					secondary: 'var(--accent)', 
+					text: 'white',
+					buttons: 'var(--primary)',
+					buttonText: 'white',
+					headerBg: 'bg-theme',
+					overlayBg: 'var(--primary)',
+				}} 
+			/>
 
 			<section className="block">
 				<div className="container">
