@@ -85,7 +85,7 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
                 
                 
                 <div className={CSS.venue} style={{ color: theme ? theme.text : 'var(--default-text-color'}}>
-                    <MainMenu fixToggle={!inView} theme={theme} />
+                    {/* <MainMenu fixToggle={!inView} theme={theme} /> */}
                     
                     <Link href={`/ae${ path ? path : '' }`}>
                         <a className={`${CSS.ctaButton} fw-600`}>Go to 2023</a>
