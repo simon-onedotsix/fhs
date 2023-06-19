@@ -56,7 +56,7 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 
 					{/* bizzabo speakers */}
 
-					<p className='fs-1 fw-600 lh-1 maxw-40'>2022 SPEAKERS</p>
+					<p className='fs-1 fw-600 lh-1 maxw-40'>2023 SPEAKERS</p>
 					
 					<SpeakerGrid decal="gap-sm mt-md">
 						{orderedSpeakers.map( speaker => (
@@ -107,7 +107,7 @@ Speakers.theme = 'ae-2023'
 
 export async function getStaticProps() {
 
-	const bizzaboSpeakers = await fetch(`https://api.bizzabo.com/api/speakers?eventId=${process.env.BIZZABO_EVENT_ID}&size=200`, {
+	const bizzaboSpeakers = await fetch(`https://api.bizzabo.com/api/speakers?eventId=${process.env.BIZZABO_EVENT_ID_AE}&size=200`, {
 		"method": "GET",
 		"headers": {
 			"Content-Type": "application/json",

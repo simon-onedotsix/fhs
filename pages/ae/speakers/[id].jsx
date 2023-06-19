@@ -275,7 +275,7 @@ Speaker.theme = 'ae-2023'
 
 export async function getStaticPaths() {
 
-	const res = await fetch(`https://api.bizzabo.com/api/speakers?eventId=${process.env.BIZZABO_EVENT_ID}&size=200`, {
+	const res = await fetch(`https://api.bizzabo.com/api/speakers?eventId=${process.env.BIZZABO_EVENT_ID_AE}&size=200`, {
 		"method": "GET",
 		"headers": {
 			"Content-Type": "application/json",
@@ -295,7 +295,7 @@ export async function getStaticProps({ params }) {
 
 	// console.log('params',params)
 	
-	const res = await fetch(`https://api.bizzabo.com/api/speakers/${params.id}?eventId=${process.env.BIZZABO_EVENT_ID}`, {
+	const res = await fetch(`https://api.bizzabo.com/api/speakers/${params.id}?eventId=${process.env.BIZZABO_EVENT_ID_AE}`, {
 		"method": "GET",
 		"headers": {
 			"Content-Type": "application/json",
@@ -304,7 +304,7 @@ export async function getStaticProps({ params }) {
 	})
 	const speakerData = await res.json()
 
-	const sessionsRes = await fetch(`https://api.bizzabo.com/api/agenda/sessions?eventId=${process.env.BIZZABO_EVENT_ID}&size=200`, {
+	const sessionsRes = await fetch(`https://api.bizzabo.com/api/agenda/sessions?eventId=${process.env.BIZZABO_EVENT_ID_AE}&size=200`, {
 		"method": "GET",
 		"headers": {
 			"Content-Type": "application/json",
