@@ -168,7 +168,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     <LogoBubbleGrid>
                         <LogoBubble delay={0.2}><FhsLogo primary={`white`} secondary={`white`} /></LogoBubble>
                         <LogoBubble delay={0.4}><AhicLogo primary={`white`} secondary={`white`} /></LogoBubble>
-                        <LogoBubble delay={0.6}><GrifLogo primary={`white`} secondary={`white`}  /></LogoBubble>
+                        {/* <LogoBubble delay={0.6}><GrifLogo primary={`white`} secondary={`white`}  /></LogoBubble> */}
                     </LogoBubbleGrid>
                 </Container>
                 
