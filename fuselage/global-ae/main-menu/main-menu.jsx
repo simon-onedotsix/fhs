@@ -47,7 +47,7 @@ export const MainMenu = ({ fixToggle, mainMenu, theme }) => {
                         </p>
 
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/programme'}>
+                            <Link href={'/ae/agenda'}>
                                 <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>2023 Agenda</a>
                             </Link>
                         </p>

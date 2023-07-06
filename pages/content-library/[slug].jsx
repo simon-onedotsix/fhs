@@ -20,7 +20,7 @@ import { Button } from "../../fuselage/components/button/button"
 
 export default function Article ({ entry }) {
 
-    // console.log(entry)
+    console.log(entry)
 
     const handleHero = () => {
         if ( entry.hero ) {
