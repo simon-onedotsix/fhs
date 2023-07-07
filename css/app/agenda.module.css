@@ -14,17 +14,23 @@
     .filterButton {
         width: 100%;
     }
-    .filterLayoutButtons .filterButton:last-child {
-        flex: 1;
+    .filterLayoutButtons .filterButton:first-child {
+        flex: 1;;
     }
     .filterLayoutButtons {
         margin-bottom: .2rem;
     }
 }
-@media(min-width:1080px){
+@media(min-width:800px){
     .filterLayout {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
+    }
+    .filterLayoutButtons {
+        margin-right: 1.5rem;
+    }
+    .filterButton {
+        width: auto;
     }
 }
 

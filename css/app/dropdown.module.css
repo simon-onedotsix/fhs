@@ -1,0 +1,136 @@
+.button {
+	cursor: pointer;
+	appearance:none;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: var(--primary);
+	padding: .75rem 1rem;
+	border: 1px #f0f0f2 solid;
+	border-radius: var(--standard-field-radius, 0);
+	background-color: #f0f0f2;
+
+	min-width: 10rem;
+
+	transition: all 350ms ease-in-out;
+}
+
+.button svg {
+	stroke: var(--primary);
+	transition: all 350ms ease-in-out;
+}
+
+
+@media(hover: hover){
+	.button:hover {
+		border: 1px var(--primary) solid;
+		background-color: var(--primary);
+		color: white;
+	}
+	.button:hover svg {
+		stroke: white
+	}
+}
+
+
+
+
+
+@keyframes menuShow {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes menuHide {
+	to {
+		opacity: 0;
+	}
+}
+
+.menu {
+	-webkit-font-smoothing: antialiased;
+	box-sizing: border-box;
+	z-index: 100;
+	list-style: none;
+	user-select: none;
+	padding: 0;
+	color: white;
+	font-family: var(--default-font-family);
+	font-size: var(--default-font-size);
+	border-radius: var(--standard-field-radius, 0);
+	background-color: transparent;
+	min-width: max-content;
+	
+}
+
+.menuOpening {
+	composes: menu;
+	animation: menuShow 0.15s ease-out;
+}
+
+.menuClosing {
+	composes: menu;
+	animation: menuHide 0.2s ease-out forwards;
+}
+
+.menuItem {
+	cursor: pointer;
+	padding: 1rem;
+	border-radius: var(--standard-field-radius, 0);
+	background-color: var(--dark);
+	margin-top: 1px;
+
+	min-width: 10rem;
+
+	transition: all 350ms ease-in-out;
+}
+
+.menuItemHover {
+	composes: menuItem;
+	color: #fff;
+	background-color: var(--medium);
+}
+
+.menuItemDisabled {
+	composes: menuItem;
+	cursor: default;
+	color: #aaa;
+}
+
+.menu:focus,
+.menuItem:focus {
+	outline: none;
+}
+
+.submenuItem {
+	position: relative;
+}
+
+.submenuItem::after {
+	/* content: url("chevron-right-solid.svg"); */
+	content: '>';
+	position: absolute;
+	width: 7px;
+	right: 0.625rem;
+}
+
+.menuDivider {
+	height: 1px;
+	margin: 0.5rem 0.625rem;
+	background-color: rgba(0, 0, 0, 0.12);
+}
+
+
+@media(max-width:799px){
+	.button {
+		width: 100%;
+	}
+	.menu {
+		width: 100vw;
+		padding: 0 var(--space-md);
+	}
+	.menuItem {
+		text-align: center;
+	}
+}
