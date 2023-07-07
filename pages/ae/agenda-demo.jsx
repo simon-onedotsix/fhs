@@ -466,7 +466,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     // filter query reset
 
     function clearQuery() {
-        router.replace('/ae/agenda', undefined, { shallow: true })
+        router.replace('/ae/agenda-demo', undefined, { shallow: true })
     }
 
 
