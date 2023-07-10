@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client"
-import craftApolloClient from "../api/apollo"
+import craftApolloClient from "../../pages/api/apollo"
 
 import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
 
@@ -25,16 +25,6 @@ import handleSeomaticMeta from '../../lib/seomatic'
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
 
-import { 
-	Menu,
-	MenuButton,
-	MenuDivider,
-	MenuItem as MenuItemInner,
-	SubMenu as SubMenuInner 
-} from '@szhsin/react-menu'
-import DROPDOWN from '../../css/app/dropdown.module.css'
-import '@szhsin/react-menu/dist/transitions/slide.css'
-
 import CSS from '../../css/app/agenda.module.css'
 
 
@@ -58,44 +48,11 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
         }
     
     }, [ router ])
-
-
-    // dropdown ui classes
-
-	const menuClassName = ({ state }) => (
-		state === "opening"
-		? DROPDOWN.menuOpening
-		: state === "closing"
-		? DROPDOWN.menuClosing
-		: DROPDOWN.menu
-	)
-	const menuItemClassName = ({ hover, disabled }) => ( 
-		disabled
-		? DROPDOWN.menuItemDisabled
-		: hover
-		? DROPDOWN.menuItemHover
-		: DROPDOWN.menuItem
-	)
-	const submenuItemClassName = (modifiers) => ( 
-		`${DROPDOWN.submenuItem} ${menuItemClassName(modifiers)}`
-	)
-	const MenuItem = (props) => (
-		<MenuItemInner {...props} className={menuItemClassName} />
-	)
-	const SubMenu = (props) => (
-		<SubMenuInner
-			{...props}
-			menuClassName={menuClassName}
-			itemProps={{ className: submenuItemClassName }}
-			offsetY={-7}
-		/>
-	)
-
     
     
     // 414721 = fhs sessions
-    // 414722 = ahic sessions
     // 414720 = grif sessions
+    // 414722 = ahic sessions
     // 414723 = experiences
     // 414723 = workshops + pitches
 
@@ -107,64 +64,6 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     // 403737 = ballroom B
 
     // #session-1120700
-
-    const findTrackName = ( trackId ) => {
-
-        let tracks = [
-            { 
-                id: 414721,
-                name: "FHS"
-            },
-            { 
-                id: 414722,
-                name: "AHIC"
-            },
-            { 
-                id: 414720,
-                name: "GRIF"
-            },
-            { 
-                id: 414723,
-                name: "Experiences"
-            },
-            { 
-                id: 414723,
-                name: "Workshop & Pitches"
-            },
-        ]
-
-        let { name } = tracks.find( obj => obj.id === trackId )
-        if ( !name ) return
-        return name
-
-    }
-
-    const findStageName = ( stageId ) => {
-
-        let stages = [
-            { 
-                id: 414717,
-                name: "Summit Stage"
-            },
-            { 
-                id: 414718,
-                name: "Future Stage"
-            },
-            { 
-                id: 414719,
-                name: "Exhibition Stage"
-            },
-            { 
-                id: 414726,
-                name: "Sunset Stage"
-            },
-        ]
-
-        let { name } = stages.find( obj => obj.id === stageId )
-        if ( !name ) return
-        return name
-    }
-
     
     let mainStreamIds = [ 414721, 414720, 414722, 414723, 414723 ]
 
@@ -466,7 +365,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     // filter query reset
 
     function clearQuery() {
-        router.replace('/ae/agenda-demo', undefined, { shallow: true })
+        router.replace('/ae/agenda', undefined, { shallow: true })
     }
 
 
@@ -564,20 +463,60 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
             <section className="block">
                 {/* filter */}
-                <div className="container" style={{ zIndex: 3 }}>
+                <div className="container">
                     <p className="fs-0 fw-600 c-primary">2023 Agenda</p>
 
                     <div className={CSS.filterLayout}>
 
-                        {/* day buttons */}
+                        {/* track buttons */}
                         <section className={CSS.filterLayoutButtons}>
+                            
                             <button 
-                                className={`${CSS.filterButton} ${ currentDay === null ? CSS.active : null }`} 
+                                className={`${CSS.filterButton} ${ currentFilter === 414721 ? CSS.active : null }`} 
                                 onClick={ () => {
-                                    setCurrentDay(null)
+                                    setCurrentFilter(414721)
+                                    clearQuery()
+                                }}
+                            >FHS</button>
+
+                            <button 
+                                className={`${CSS.filterButton} ${ currentFilter === 414722 ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentFilter(414722)
+                                    clearQuery()
+                                }}
+                            >AHIC</button>
+
+                            <button 
+                                className={`${CSS.filterButton} ${ currentFilter === 414720 ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentFilter(414720)
+                                    clearQuery()
+                                }}
+                            >GRIF</button>
+                           
+                            {/* <button 
+                                className={`${CSS.filterButton} ${ currentFilter === 414723 ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentFilter(414723)
+                                    clearQuery()
+                                }}
+                            >Experiences</button> */}
+
+                            <button 
+                                className={`${CSS.filterButton} ${ currentFilter === null ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentFilter(null)
                                     clearQuery()
                                 }}
                             >All</button>
+
+                        </section>
+
+
+                        {/* day buttons */}
+                        <section className={CSS.filterLayoutButtons}>
+                            
                             {
                                 groupSessionsIntoDays(sessions).map( (day, index) => {
                                     return (
@@ -595,74 +534,40 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                     )
                                 })
                             }
-                        </section>
+                            <button 
+                                className={`${CSS.filterButton} ${ currentDay === null ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setCurrentDay(null)
+                                    clearQuery()
+                                }}
+                            >All</button>
 
-                        {/* track buttons */}
-                        <section className={CSS.filterLayoutButtons}>
-                            <Menu 
-                                menuButton={
-                                    <MenuButton className={DROPDOWN.button}>{ currentFilter ? findTrackName(currentFilter) : 'All tracks' } <Chevron /></MenuButton>
-                                } 
-                                transition 
-                                menuClassName={menuClassName}
-                            >
-                                <MenuItem onClick={ () => {
-                                    setCurrentFilter(null)
-                                    clearQuery()
-                                }}>All tracks</MenuItem>
-
-                                <MenuItem onClick={ () => {
-                                    setCurrentFilter(414721)
-                                    clearQuery()
-                                }}>FHS</MenuItem>
-                                
-                                <MenuItem onClick={ () => {
-                                    setCurrentFilter(414722)
-                                    clearQuery()
-                                }}>AHIC</MenuItem>
-                                
-                                <MenuItem onClick={ () => {
-                                    setCurrentFilter(414720)
-                                    clearQuery()
-                                }}>GRIF</MenuItem>
-                            </Menu>
                         </section>
 
                         {/* stage select dropdown */}
                         <section className={CSS.filterLayoutButtons}>
-                            <Menu 
-                                menuButton={
-                                    <MenuButton className={DROPDOWN.button}>
-                                        { currentStage ? findStageName(currentStage) : 'All stages' } <Chevron />
-                                    </MenuButton>
-                                } 
-                                transition 
-                                menuClassName={menuClassName}
+                            {/* <p className={`${CSS.desktopOnly} fw-400 c-primary`}>Filter:&emsp;</p> */}
+                            <select
+                                className={CSS.filterSelect} 
+                                defaultValue=""
+                                onChange={ (e) => {
+                                    setCurrentStage( parseInt(e.target.value) )
+                                    clearQuery()
+                                    // console.log('selected filter:', e.target.value)
+                                }}
                             >
-                                <MenuItem 
-                                    onClick={ () => {
-                                        setCurrentStage('')
-                                        clearQuery()
-                                    }}
-                                >All stages</MenuItem>
-                                
+                                <option value="">All stages</option>
                                 {
                                     agendaSettings.filters &&
                                     searchBzFilters( agendaSettings.filters, 'Stages').map( filter => {
                                         return (
-                                            <MenuItem
-                                                key={filter.id}
-                                                onClick={ () => {
-                                                    setCurrentStage( parseInt(filter.id) )
-                                                    clearQuery()
-                                                }}
-                                            >
+                                            <option key={filter.id} value={filter.id}>
                                                 {filter.name}
-                                            </MenuItem>
+                                            </option>
                                         )
                                     })
                                 }
-                            </Menu>
+                            </select>
                         </section> 
   
                     </div>
@@ -705,22 +610,6 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 }
 
 Agenda.theme = 'ae-2023'
-
-
-
-const Chevron = () => {
-	return (
-		<span style={{ display: `inline-block`, height: 12, marginLeft: 6 }}>
-			<svg width="100%" height="100%" viewBox="0 0 28 20" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeLinecap:`square`, strokeMiterlimit:3 }}>
-				<g transform="matrix(1,0,0,1,-4176,-535)">
-					<g transform="matrix(0.5,0,0,0.5,2065,250)">
-						<path id="dropdown-chevron" d="M4230,580L4250,600L4270,580" style={{ fill:`none`, strokeWidth:`8px` }}/>
-					</g>
-				</g>
-			</svg>
-		</span>
-	)
-}
 
 
 
@@ -805,6 +694,4 @@ export async function getStaticProps() {
         } 
     }
 }
-
-
 
