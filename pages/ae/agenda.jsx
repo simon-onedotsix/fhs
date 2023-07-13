@@ -158,6 +158,10 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                 id: 414726,
                 name: "Sunset Stage"
             },
+            { 
+                id: 421062,
+                name: "Think Tanks"
+            },
         ]
 
         let { name } = stages.find( obj => obj.id === stageId )
@@ -193,7 +197,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
     
     // console.log('agenda data:', cmsAgendaData)
-    // console.log('settings:', agendaSettings)
+    console.log('settings:', agendaSettings)
     // console.log('sessions:', sessions)
     // console.log('speakers:', speakers.content)
     // console.log('speakers found:', speakers.content.length)

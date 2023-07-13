@@ -105,6 +105,7 @@ function Partner({ partner }) {
 										height={400}
 										layout='responsive'
 										alt=""
+										unoptimized
 									/>
 								</div>
 							</div>
