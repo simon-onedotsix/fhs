@@ -242,7 +242,6 @@ export const QueryPartners = `
         body
         anchorId
         partners {
-            id
             ... on partners_partner_Entry {
                 id
                 title

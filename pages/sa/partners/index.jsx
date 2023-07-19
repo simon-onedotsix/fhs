@@ -23,6 +23,7 @@ import {
     QueryProfileCarousel,
     QuerySEO,
 	QueryCards,
+	QueryPartners,
 	BizzaboPartners
 } from "../../../graphql/queries"
 
@@ -85,6 +86,7 @@ export async function getStaticProps() {
 							${QueryCards}
 							${QueryProfileCarousel}
 							${QueryForm}
+							${QueryPartners}
 							${BizzaboPartners}
 						}
 					}
