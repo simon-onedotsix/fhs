@@ -28,9 +28,10 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 	// console.log('bizzabo speakers found:', bizzaboSpeakers.length)
 	// console.log('bizzabo speaker data:', bizzaboSpeakers)
 	// console.log('cms profile data:', craftCmsProfiles)
-
+	
 	let orderedSpeakers = _.orderBy( bizzaboSpeakers, [ speaker => speaker.lastname.toLowerCase()], ['asc'])
 	// console.log('ordered:', orderedSpeakers)
+
 
 	return (
 		<>
