@@ -200,8 +200,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
   
 
     
-    console.log('agenda data:', cmsAgendaData)
-    console.log('settings:', agendaSettings)
+    // console.log('agenda data:', cmsAgendaData)
+    // console.log('settings:', agendaSettings)
     // console.log('sessions:', sessions)
     // console.log('speakers:', speakers.content)
     // console.log('speakers found:', speakers.content.length)
@@ -280,26 +280,39 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                         }
 
                         return (
-                            <Session
-                                key={session.id}
-                                id={session.id}
-                                startTime={toHoursAndMinutes(session.startMinute)}
-                                endTime={toHoursAndMinutes(session.endMinute)}
-                                tags={sessionTags}
-                                theme={getSessionTheme(sessionTags)}
-                            >   
-                                <p className='h3 c-primary'>{ session.title }</p>
-                                
+                            <div key={session.id}>
+
                                 {
-                                    session.descriptionHtml &&
-                                    <div dangerouslySetInnerHTML={{__html: session.descriptionHtml}} className="mb-xs formatted" />
+                                    session.id === 1180597 ?
+                                        <div key={`banner${session.id}`} className='pb-sm formatted mb-xs bg-light'>
+                                            <p className='fs-4 fw-600 c-primary bg-primary px-sm py-xs mb-xs mt-xs' style={{ background: `#4c83bd`}}>FHS Intelligence Talks: Datafication for Resilient Tourism Investment</p>
+                                            <p className='fs-5 fw-600 c-primary pt-xs px-sm'>A market snapshot of key trends as they relate to the hospitality sector. Understanding the fundamentals underpinning the market from performance, pipeline, costs, staffing and contracts. The Talks allows each speaker 10 minutes presentation followed by q&a.</p>
+                                        </div>
+                                    : ''
                                 }
 
-                                {addSessionCta( session.id )}
+                                <Session
+                                    id={session.id}
+                                    startTime={toHoursAndMinutes(session.startMinute)}
+                                    endTime={toHoursAndMinutes(session.endMinute)}
+                                    tags={sessionTags}
+                                    theme={getSessionTheme(sessionTags)}
+                                >   
+                                    <p>{ session.id }</p>
+                                    <p className='h3 c-primary'>{ session.title }</p>
+                                    
+                                    {
+                                        session.descriptionHtml &&
+                                        <div dangerouslySetInnerHTML={{__html: session.descriptionHtml}} className="mb-xs formatted" />
+                                    }
 
-                                <div>{getAllSessionSpeakers(session.speakers)}</div>
-    
-                            </Session>
+                                    {addSessionCta( session.id )}
+
+                                    <div>{getAllSessionSpeakers(session.speakers)}</div>
+        
+                                </Session>
+
+                            </div>
                         )
                     })
                 )
