@@ -162,6 +162,10 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                 id: 421062,
                 name: "Think Tanks"
             },
+            { 
+                id: 422590,
+                name: "Innovation Stage"
+            },
         ]
 
         let { name } = stages.find( obj => obj.id === stageId )
@@ -196,7 +200,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
   
 
     
-    // console.log('agenda data:', cmsAgendaData)
+    console.log('agenda data:', cmsAgendaData)
     console.log('settings:', agendaSettings)
     // console.log('sessions:', sessions)
     // console.log('speakers:', speakers.content)
@@ -275,31 +279,27 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                             })
                         }
 
-                        
                         return (
-                           
+                            <Session
+                                key={session.id}
+                                id={session.id}
+                                startTime={toHoursAndMinutes(session.startMinute)}
+                                endTime={toHoursAndMinutes(session.endMinute)}
+                                tags={sessionTags}
+                                theme={getSessionTheme(sessionTags)}
+                            >   
+                                <p className='h3 c-primary'>{ session.title }</p>
+                                
+                                {
+                                    session.descriptionHtml &&
+                                    <div dangerouslySetInnerHTML={{__html: session.descriptionHtml}} className="mb-xs formatted" />
+                                }
 
-                                <Session
-                                    key={session.id}
-                                    id={session.id}
-                                    startTime={toHoursAndMinutes(session.startMinute)}
-                                    endTime={toHoursAndMinutes(session.endMinute)}
-                                    tags={sessionTags}
-                                    theme={getSessionTheme(sessionTags)}
-                                >   
-                                    <p className='h3 c-primary'>{ session.title }</p>
-                                    
-                                    {
-                                        session.descriptionHtml &&
-                                        <div dangerouslySetInnerHTML={{__html: session.descriptionHtml}} className="mb-xs formatted" />
-                                    }
+                                {addSessionCta( session.id )}
 
-                                    {addSessionCta( session.id )}
-
-                                    <div>{getAllSessionSpeakers(session.speakers)}</div>
-        
-                                </Session>
-                           
+                                <div>{getAllSessionSpeakers(session.speakers)}</div>
+    
+                            </Session>
                         )
                     })
                 )
@@ -459,8 +459,11 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
         // check if a cms sessionThemes object exists for bz tag
         const found = sessionThemes.filter( obj => bizzaboAgendaTags.includes( obj.bizzaboAgendaTag ))
 
+        
         // if yes, return the theme color
-        if ( found.length ) return found[0].color
+        if ( found.length ) {
+            return found[0].color
+        }
         
         // otherwise return a fallback
         return '#ff9500'
@@ -601,7 +604,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                             }
                         </section>
 
-                        {/* track buttons */}
+                        {/* track dropdown */}
                         <section className={CSS.filterLayoutButtons}>
                             <Menu 
                                 menuButton={
@@ -632,7 +635,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                             </Menu>
                         </section>
 
-                        {/* stage select dropdown */}
+                        {/* stage dropdown */}
                         <section className={CSS.filterLayoutButtons}>
                             <Menu 
                                 menuButton={
