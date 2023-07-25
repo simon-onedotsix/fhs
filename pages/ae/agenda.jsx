@@ -306,8 +306,6 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                         <div dangerouslySetInnerHTML={{__html: session.descriptionHtml}} className="mb-xs formatted" />
                                     }
 
-                                    {addSessionCta( session.id )}
-
                                     <div>{getAllSessionSpeakers(session.speakers)}</div>
         
                                 </Session>
