@@ -298,13 +298,14 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                     tags={sessionTags}
                                     theme={getSessionTheme(sessionTags)}
                                 >   
-                                    <p>{ session.id }</p>
                                     <p className='h3 c-primary'>{ session.title }</p>
                                     
                                     {
                                         session.descriptionHtml &&
                                         <div dangerouslySetInnerHTML={{__html: session.descriptionHtml}} className="mb-xs formatted" />
                                     }
+
+                                    {addSessionCta( session.id )}
 
                                     <div>{getAllSessionSpeakers(session.speakers)}</div>
         
