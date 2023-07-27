@@ -150,10 +150,10 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                 id: 414718,
                 name: "Future Stage"
             },
-            { 
-                id: 414719,
-                name: "Exhibition Stage"
-            },
+            // { 
+            //     id: 414719,
+            //     name: "Exhibition Stage"
+            // },
             { 
                 id: 414726,
                 name: "Sunset Stage"

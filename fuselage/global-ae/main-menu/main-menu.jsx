@@ -111,6 +111,11 @@ export const MainMenu = ({ fixToggle, mainMenu, theme }) => {
                             </Link>
                         </p>
                         <p className='c-white mt-xs pl-sm'>
+                            <Link href={'/ae/fnb-tour'}>
+                                <a className='uLink fw-400' onClick={ () => setActive(false)}>F&B Concepts Tour</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs pl-sm'>
                             <Link href={'/ae/sports'}>
                                 <a className='uLink fw-400' onClick={ () => setActive(false)}>Sports &amp; Wellness</a>
                             </Link>

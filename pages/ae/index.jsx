@@ -201,8 +201,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     heading={`confirmed speakers`} 
                     text={``}
                     decal={'bg-light'}
-                    ctaLink={``}
-                    ctaLabel={``}
+                    ctaLink={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLink : ''}
+                    ctaLabel={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLabel : ''}
                     anchorId={``}
                 >
                     {
