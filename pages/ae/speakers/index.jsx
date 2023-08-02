@@ -31,6 +31,10 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 	
 	let orderedSpeakers = _.orderBy( bizzaboSpeakers, [ speaker => speaker.lastname.toLowerCase()], ['asc'])
 	// console.log('ordered:', orderedSpeakers)
+	
+	// customise order (move al saud into first place)
+	let customSpeakers = _.sortBy(orderedSpeakers, speaker => speaker.lastname === 'Alabbar' ? 0 : 1 )
+	console.log('customSpeakers:', customSpeakers)
 
 
 	return (
@@ -60,7 +64,7 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 					<p className='fs-1 fw-600 lh-1 maxw-40'>2023 SPEAKERS</p>
 					
 					<SpeakerGrid decal="gap-sm mt-md">
-						{orderedSpeakers.map( speaker => (
+						{customSpeakers.map( speaker => (
 							<div key={speaker.id}>
 								<Link href={`/ae/speakers/${speaker.id}`}>
 									<a className={CSS.avatar}>
