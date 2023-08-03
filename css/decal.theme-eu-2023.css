@@ -1,0 +1,235 @@
+/* SA theme */
+
+
+[data-theme='eu-2023'] {
+
+    /* colour */
+
+    --primary: #3e28e6;
+    --secondary: #0e0e70;
+    --accent: #00ffea;
+
+    --bg-global: rgb(255, 255, 255);
+
+    --default-text-color: rgb(71, 71, 71);
+    --default-heading-color: var(--primary);
+
+    --wash: #F9F9FA;
+    --light: #E4E1EA;
+    --medium: #6D687C;
+    --dark: #0a1656;
+
+    --error: rgb(255, 68, 0);
+    --success: rgb(121, 173, 0);
+    --warning: rgb(255, 166, 0);
+
+}
+
+
+
+[data-theme='eu-2023'] .c-primary { color: var(--primary); }
+[data-theme='eu-2023'] .c-secondary { color: var(--secondary); }
+[data-theme='eu-2023'] .c-accent { color: var(--accent); }
+
+[data-theme='eu-2023'] .c-p { color: var(--default-text-color); }
+[data-theme='eu-2023'] .c-h { color: var(--default-heading-color); }
+
+[data-theme='eu-2023'] .c-black { color: black; }
+[data-theme='eu-2023'] .c-white { color: white; }
+
+[data-theme='eu-2023'] .c-light { color: var(--light) }
+[data-theme='eu-2023'] .c-medium { color: var(--medium) }
+
+
+
+
+[data-theme='eu-2023'] .bg-global { background-color: var(--bg-global); }
+
+[data-theme='eu-2023'] .bg-primary { background-color: var(--primary); }
+[data-theme='eu-2023'] .bg-secondary { background-color: var(--secondary); }
+[data-theme='eu-2023'] .bg-accent { background-color: var(--accent); }
+
+[data-theme='eu-2023'] .bg-theme { 
+    background: var(--primary);
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 73%);
+}
+
+[data-theme='eu-2023'] .bg-wash { background-color: var(--wash);}
+[data-theme='eu-2023'] .bg-light { background-color: var(--light);}
+[data-theme='eu-2023'] .bg-medium { background-color: var(--medium);}
+[data-theme='eu-2023'] .bg-dark { background-color: var(--dark);}
+
+
+
+/* BACKGROUNDS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+/* default */
+
+[data-theme='eu-2023'] .bg-default .formatted .h,
+[data-theme='eu-2023'] .bg-default .formatted h1,
+[data-theme='eu-2023'] .bg-default .formatted h2,
+[data-theme='eu-2023'] .bg-default .formatted h3,
+[data-theme='eu-2023'] .bg-default .formatted h4,
+[data-theme='eu-2023'] .bg-default .formatted h5,
+[data-theme='eu-2023'] .bg-default .formatted h6 {
+    color: var(--primary);
+}
+
+/* white */
+
+[data-theme='eu-2023'] .bg-white.formatted {
+	color: var(--default-text-color);
+}
+[data-theme='eu-2023'] .bg-white .formatted .h,
+[data-theme='eu-2023'] .bg-white .formatted h1,
+[data-theme='eu-2023'] .bg-white .formatted h2,
+[data-theme='eu-2023'] .bg-white .formatted h3,
+[data-theme='eu-2023'] .bg-white .formatted h4,
+[data-theme='eu-2023'] .bg-white .formatted h5,
+[data-theme='eu-2023'] .bg-white .formatted h6 {
+    color: var(--primary);
+}
+
+/* wash */
+
+[data-theme='eu-2023'] .bg-wash {
+    color: var(--default-text-color);
+}
+[data-theme='eu-2023'] .bg-wash .formatted h1,
+[data-theme='eu-2023'] .bg-wash .formatted h2,
+[data-theme='eu-2023'] .bg-wash .formatted h3,
+[data-theme='eu-2023'] .bg-wash .formatted h4,
+[data-theme='eu-2023'] .bg-wash .formatted h5,
+[data-theme='eu-2023'] .bg-wash .formatted h6 {
+    color: var(--primary);
+}
+
+
+/* light */
+
+[data-theme='eu-2023'] .bg-light {
+    color: var(--default-text-color);
+}
+[data-theme='eu-2023'] .bg-light .formatted h1,
+[data-theme='eu-2023'] .bg-light .formatted h2,
+[data-theme='eu-2023'] .bg-light .formatted h3,
+[data-theme='eu-2023'] .bg-light .formatted h4,
+[data-theme='eu-2023'] .bg-light .formatted h5,
+[data-theme='eu-2023'] .bg-light .formatted h6 {
+    color: var(--primary);
+}
+
+/* primary */
+
+
+[data-theme='eu-2023'] .bg-primary .form input[type='submit'] {
+    background-color: var(--dark);
+    border-color: var(--dark);
+    color: white;
+}
+[data-theme='eu-2023'] .bg-primary .form input[type='submit']:hover {
+    background-color: white;
+    border-color: white;
+    color: var(--dark);
+}
+
+
+/* medium */
+
+[data-theme='eu-2023'] .bg-medium .formatted h1,
+[data-theme='eu-2023'] .bg-medium .formatted h2,
+[data-theme='eu-2023'] .bg-medium .formatted h3,
+[data-theme='eu-2023'] .bg-medium .formatted h4,
+[data-theme='eu-2023'] .bg-medium .formatted h5,
+[data-theme='eu-2023'] .bg-medium .formatted h6 {
+    color: var(--primary);
+}
+
+
+/* dark */
+[data-theme='eu-2023'] .bg-dark {
+    color: white;
+}
+[data-theme='eu-2023'] .bg-dark .formatted h1,
+[data-theme='eu-2023'] .bg-dark .formatted h2,
+[data-theme='eu-2023'] .bg-dark .formatted h3,
+[data-theme='eu-2023'] .bg-dark .formatted h4,
+[data-theme='eu-2023'] .bg-dark .formatted h5,
+[data-theme='eu-2023'] .bg-dark .formatted h6 {
+    color: var(--accent);
+}
+
+
+/* theme */
+
+[data-theme='eu-2023'] .bg-theme,
+[data-theme='eu-2023'] .bg-theme .formatted h1,
+[data-theme='eu-2023'] .bg-theme .formatted h2,
+[data-theme='eu-2023'] .bg-theme .formatted h3,
+[data-theme='eu-2023'] .bg-theme .formatted h4,
+[data-theme='eu-2023'] .bg-theme .formatted h5,
+[data-theme='eu-2023'] .bg-theme .formatted h6 {
+    color: white;
+}
+
+
+
+/* BUTTONS ------------------------------------------------- */
+
+
+[data-theme='eu-2023'] .button {
+	border: 1px solid var(--primary);
+	background-color: var(--primary);
+	color: white;
+}
+
+[data-theme='eu-2023'] .button:hover {
+	background-color: var(--accent);
+	border-color: var(--accent);
+	color: white;
+}
+[data-theme='eu-2023'] .button.inverse:hover {
+	color: var(--secondary);
+}
+
+[data-theme='eu-2023'] .button.outline {
+	border-color: var(--secondary);
+}
+[data-theme='eu-2023'] .button.outline:hover {
+	background-color: var(--secondary);
+	border-color: var(--secondary);
+	color: white;
+}
+
+[data-theme='eu-2023'] .button.outline.inverse {
+	color: white;
+	background-color: transparent;
+	border-color: var(--primary);
+}
+[data-theme='eu-2023'] .button.outline.inverse:hover {
+	background-color: var(--primary);
+	color: var(--secondary);
+}
+
+
+
+/* FORMS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+[data-theme='eu-2023'] .form input[type='submit'] {
+	border: 1px solid var(--secondary);
+	background-color: var(--secondary);
+}
+
+[data-theme='eu-2023'] .form input[type='submit']:hover {
+    border: 1px solid var(--accent);
+	background-color: var(--accent);
+}
+
+
+/* BORDERS ------------------------------------------------ */
+
+.bc-primary { border-color: var(--primary);}
+.bc-secondary { border-color: var(--secondary);}
+.bc-accent { border-color: var(--accent);}
