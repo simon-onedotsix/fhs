@@ -33,7 +33,10 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 	// console.log('ordered:', orderedSpeakers)
 	
 	// customise order (move al saud into first place)
-	let customSpeakers = _.sortBy(orderedSpeakers, speaker => speaker.lastname === 'Alabbar' ? 0 : 1 )
+	let customSpeakers = _.sortBy(orderedSpeakers, [
+		(speaker => speaker.lastname === 'Alabbar' ? 0 : 1),
+		(speaker => speaker.lastname === 'Al Zaabi' ? 0 : 1)
+	] )
 	console.log('customSpeakers:', customSpeakers)
 
 
