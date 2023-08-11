@@ -285,8 +285,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                 {
                                     session.id === 1180597 ?
                                         <div key={`banner${session.id}`} className='pb-sm formatted mb-xs bg-light'>
-                                            <p className='fs-4 fw-600 c-primary bg-primary px-sm py-xs mb-xs mt-xs' style={{ background: `#4c83bd`}}>FHS Intelligence Talks: Datafication for Resilient Tourism Investment</p>
-                                            <p className='fs-5 fw-600 c-primary pt-xs px-sm'>A market snapshot of key trends as they relate to the hospitality sector. Understanding the fundamentals underpinning the market from performance, pipeline, costs, staffing and contracts. The Talks allows each speaker 10 minutes presentation followed by q&a.</p>
+                                            <p className='fs-4 fw-600 c-primary bg-primary px-sm py-xs mb-xs mt-xs' style={{ background: `#4c83bd`}}>FHS Intelligence Talks</p>
+                                            <p className='fs-5 fw-600 c-primary pt-xs px-sm'>A market snapshot of key trends as they relate to the hospitality sector. Understanding the fundamentals underpinning the market from performance, pipeline, costs, AI and contracts. The Talks allows each speaker 10 minutes presentation followed by q&a.</p>
                                         </div>
                                     : ''
                                 }
