@@ -4,9 +4,8 @@ import { EventsBar } from '../../../../../components/events-bar/events-bar'
 
 import Link from 'next/link'
 import { MainMenu } from '../main-menu/main-menu'
-import LogoInverseSVG from './img/FHS-AE-logo-inverse.svg'
 import CSS from './header.module.css'
-import { FhsLogo } from '../../../../../components/fhs-logo/fhs-logo'
+import { FhsEuLogo } from '../../../../../components/fhs-eu-logo/fhs-eu-logo'
 
 
 export const Header = ({ compact, shim, shimMobile, theme }) => {
@@ -92,7 +91,7 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
             >
                 
                 
-                <div className={CSS.venue} style={{ color: theme ? theme.text : 'var(--default-text-color'}}>
+                <div className={CSS.venue} style={{ color: theme ? ( !inView ? theme.textCompact : theme.text) : 'var(--default-text-color' }}>
                     <MainMenu fixToggle={!inView} theme={theme} />
                     
                     <Link href="/eu/keep-me-updated">
@@ -109,7 +108,7 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
                 </div>
                 
                 <a className={CSS.brand} href={'/eu'} aria-label='FHS Home'>
-                    <FhsLogo 
+                    <FhsEuLogo 
                         primary={theme ? theme.primary : `white`} 
                         secondary={theme ? theme.secondary : `var(--accent)`} 
                     />
