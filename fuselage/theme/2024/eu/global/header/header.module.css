@@ -1,0 +1,150 @@
+.header {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    width: 100vw;
+
+    padding: var(--space-sm) var(--space-md);
+    display: flex;
+    justify-content: space-between;
+    transition: height 350ms ease-in-out;
+    
+}
+.header.compact {
+    height: var(--header-height-compact);
+    transition: color 350ms ease-in-out;
+}
+
+.shim {
+    position: relative;
+    pointer-events: none;
+    transition: height 350ms ease-in-out;
+    
+}
+
+.underlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.155);
+    
+    opacity: 0;
+    transition: opacity 350ms ease-in-out;
+}
+
+.layout {
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+}
+
+.compact .underlay {
+    opacity: 1;
+    background-color: var(--primary);
+}
+
+.compact .brand {
+    height: 3rem;
+}
+
+.brand {
+    position: relative;
+    z-index: 2;
+    height: 8rem;
+    transition: all 350ms ease-in-out;
+}
+
+.venue {
+    color: white;
+}
+
+.ctaButton {
+    text-decoration: none;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 5px 30px;
+    border-radius: var(--default-button-radius);
+    background-color: var(--accent);
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    line-height: 1;
+    transition: all .35s ease;
+}
+@media(hover:hover){
+    .ctaButton:hover {
+        background-color: var(--secondary);
+    }
+    /* .header.compact .ctaButton:hover {
+        background-color: white;
+        color: var(--primary);
+    } */
+}
+
+@media (max-width:599px) {
+    .header {
+        position: relative;
+    }
+    .header.compact {
+        height: var(--header-height-compact-mobile);
+    }
+
+    .brand {
+        height: 3rem;
+    }
+    .venue {
+        display: flex;
+        gap: var(--space-sm);
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .ctaButton {
+        margin-left: 4rem; /* <–––––––––  makes space for fixed-position mobile hamburger */
+        width: 9rem
+    }
+    .underlay {
+        opacity: 1;
+        background-color: var(--primary);
+    }
+    
+}
+@media (min-width: 600px) {
+    .header {
+        position: absolute;
+        height: var(--header-height);
+        padding: var(--space-sm) var(--space-md) var(--space-sm) var(--space-sm);
+        margin-top: 2.2rem;
+    }
+    .header.fixed {
+        position: fixed;
+        top: 0;
+        margin-top: 0;
+    }
+    .shim {
+        height: var(--header-height);
+        margin-bottom: -1px;
+    }
+    .header.compact,
+    .shim {
+        height: var(--header-height-compact);
+        margin-bottom: -1px;
+    }
+    .venue {
+        display: flex;
+        gap: var(--space-xs);
+        align-items: flex-start;
+        color: var(--primary);
+    }
+    .header.compact .venue {
+        color: white;
+    }
+}
+
+
+
+
+
+@media print {
+    .header, .shim {display: none}
+}
