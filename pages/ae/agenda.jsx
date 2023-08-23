@@ -60,6 +60,9 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     }, [ router ])
 
 
+    
+
+
     // dropdown ui classes
 
 	const menuClassName = ({ state }) => (
@@ -139,35 +142,11 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
     }
 
+    
+    let stageObject = agendaSettings.filters.find( obj => obj.name === 'Stages')
+    let stages = stageObject.tags
+
     const findStageName = ( stageId ) => {
-
-        let stages = [
-            { 
-                id: 414717,
-                name: "Summit Stage"
-            },
-            { 
-                id: 414718,
-                name: "Future Stage"
-            },
-            // { 
-            //     id: 414719,
-            //     name: "Exhibition Stage"
-            // },
-            { 
-                id: 414726,
-                name: "Sunset Stage"
-            },
-            { 
-                id: 421062,
-                name: "Think Tanks"
-            },
-            { 
-                id: 422590,
-                name: "Innovation Stage"
-            },
-        ]
-
         let { name } = stages.find( obj => obj.id === stageId )
         if ( !name ) return
         return name
@@ -201,7 +180,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
     
     // console.log('agenda data:', cmsAgendaData)
-    // console.log('settings:', agendaSettings)
+    console.log('BZ settings:', agendaSettings)
     // console.log('sessions:', sessions)
     // console.log('speakers:', speakers.content)
     // console.log('speakers found:', speakers.content.length)
