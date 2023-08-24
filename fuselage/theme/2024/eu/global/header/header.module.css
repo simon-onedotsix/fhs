@@ -107,7 +107,6 @@
         opacity: 1;
         background-color: var(--primary);
     }
-    
 }
 @media (min-width: 600px) {
     .header {

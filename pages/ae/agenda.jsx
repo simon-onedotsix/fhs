@@ -143,8 +143,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     }
 
     
-    let stageObject = agendaSettings.filters.find( obj => obj.name === 'Stages')
-    let stages = stageObject.tags
+    let stagesObject = agendaSettings.filters.find( obj => obj.name === 'Stages')
+    let stages = stagesObject.tags
 
     const findStageName = ( stageId ) => {
         let { name } = stages.find( obj => obj.id === stageId )

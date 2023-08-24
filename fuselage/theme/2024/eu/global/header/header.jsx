@@ -68,7 +68,7 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
 
     return (
         <>
-            <span ref={menuTrigger}>
+            <span ref={menuTrigger} style={{ position: `relative`, zIndex: 100 }}>
                 <EventsBar 
                     hidden={ !headerInView ? true : false }
                     thisEvent={'FHS Europe'} 
