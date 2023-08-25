@@ -110,9 +110,9 @@
     .layout:not(:first-of-type) .content {
         border-bottom: 1px solid var(--light);
     }
-    .layout:last-of-type .content {
+    /* .layout:last-of-type .content {
         border-bottom: none;
-    }
+    } */
 }
 
 

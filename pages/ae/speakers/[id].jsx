@@ -63,6 +63,10 @@ function Speaker({ speaker, sessions }) {
 
 
 	const handleRelatedSessions = () => {
+
+		// speaker id: 3098821
+		// session id: 1198611
+
 		let relatedSessions = []
 
 		sessions.map( session => {
@@ -73,7 +77,6 @@ function Speaker({ speaker, sessions }) {
 		
 		if ( relatedSessions.length ) {
 			let sessions = sortSessions(relatedSessions)
-			console.log(sessions)
 			return (
 				<div className="mt-sm bt-1 bc-secondary pt-sm">
 					<p className="fs-5 fw-400 mb-xs">See {speaker.firstname} {speaker.lastname} speak in the following sessions:</p>
@@ -108,7 +111,7 @@ function Speaker({ speaker, sessions }) {
 								{ session.startMinute && toHoursAndMinutes(session.startMinute) }
 								{ session.endMinute && ` - ${toHoursAndMinutes(session.endMinute)}` }
 							</p>
-							<Link href={`/ae/agenda#session-${session.id}`}><a className='fw-600 c-white'>{ session.title }</a></Link>
+							<Link href={`/ae/agenda#session-${session.id}`}><a className='fw-600'>{ session.title }</a></Link>
 						</div>
 					)
 				})
@@ -191,7 +194,7 @@ function Speaker({ speaker, sessions }) {
 							</p>
 							<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{speaker.bio}</p>
 
-							{/* { handleRelatedSessions() } */}
+							{ handleRelatedSessions() }
 						</main>
 
 					</Sidebar>
@@ -199,72 +202,6 @@ function Speaker({ speaker, sessions }) {
 			</section>
 
 
-
-			{/* <section className="block pt-0">
-				<div className="container">
-
-					<StickySidebar size='medium'>
-
-						<aside className="formatted">
-							<HeaderShim/>
-							<p className="fw-600">
-                                <ArrowLink 
-                                    theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
-                                    href="/ae/speakers"
-                                >
-                                    View All Speakers
-                                </ArrowLink>
-                            </p>
-							<p className="fw-600">
-                                <ArrowLink 
-                                    theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
-                                    href="/ae/advisory-board"
-                                >
-                                    View Advisory Board
-                                </ArrowLink>
-                            </p>
-							<p className="mt-sm">
-								{
-									speaker.photoSet ? 
-									<Image 
-										src={speaker.photoSet.large} 
-										width={370} 
-										height={370} 
-										alt=""
-									/>
-									: 
-									<Image 
-										src='/assets/ui/avatar-fallback.png' 
-										width={370} 
-										height={370} 
-										alt=""
-									/>
-								}
-							</p>
-							{ handleLinkedIn() }
-							{ handleTwitter() }
-						</aside>
-						
-						<main className="maxw-60">
-							<HeaderShim/>
-							<p className='fs-1 fw-600 lh-1 c-secondary maxw-40'>SPEAKER</p>
-							<p className="fs-3 fw-600 caps mt-sm">{speaker.firstname} {speaker.lastname}</p>
-							<p>
-								{speaker.title}
-								<br/>
-								<span className="fw-500">
-									{ handleCompany() }
-								</span>
-							</p>
-							<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{speaker.bio}</p>
-
-							{ handleRelatedSessions() }
-						</main>
-
-					</StickySidebar>
-
-				</div>
-			</section> */}
 			
 			<Footer theme={{ footerBg: 'bg-white-90' }} />
 		
@@ -273,6 +210,10 @@ function Speaker({ speaker, sessions }) {
 }
 
 Speaker.theme = 'ae-2023'
+
+
+
+
 
 
 export async function getStaticPaths() {
@@ -317,7 +258,10 @@ export async function getStaticProps({ params }) {
     const sessions = sessionsData.content
 
 	return {
-		props: { speaker: speakerData, sessions }
+		props: { 
+			speaker: speakerData, 
+			sessions 
+		}
 	}
 }
 

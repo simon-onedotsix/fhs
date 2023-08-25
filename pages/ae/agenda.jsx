@@ -180,7 +180,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
     
     // console.log('agenda data:', cmsAgendaData)
-    console.log('BZ settings:', agendaSettings)
+    // console.log('BZ settings:', agendaSettings)
     // console.log('sessions:', sessions)
     // console.log('speakers:', speakers.content)
     // console.log('speakers found:', speakers.content.length)
@@ -259,7 +259,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                         }
 
                         return (
-                            <div key={session.id}>
+                            <div key={session.id} className={CSS.sessionWrapper}>
+                                <span id={`session-${session.id}`} className={CSS.anchorOffset} />
 
                                 {
                                     session.id === 1180597 ?
