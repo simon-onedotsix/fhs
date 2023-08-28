@@ -3,8 +3,16 @@
     width: 100%;
     overflow: hidden;
 }
+
+.topOnly.layout {
+    clip-path: polygon(0 4rem, 100% 0%, 100% 100%, 0% 100%);
+}
+
 .wrapper {
     padding: 4rem 0;
+}
+.topOnly.wrapper {
+    padding: 4rem 0 0 0;
 }
 
 @media(min-width:800px){
@@ -13,6 +21,13 @@
     }
     .wrapper {
         padding: 6rem 0;
+    }
+
+    .topOnly.layout {
+        clip-path: polygon(0 6rem, 100% 0%, 100% 100%, 0% 100%);
+    }
+    .topOnly.wrapper {
+        padding: 6rem 0 0 0;
     }
 }
 
@@ -23,6 +38,13 @@
     .wrapper {
         padding: 8rem 0;
     }
+
+    .topOnly.layout {
+        clip-path: polygon(0 8rem, 100% 0%, 100% 100%, 0% 100%);
+    }
+    .topOnly.wrapper {
+        padding: 8rem 0 0 0;
+    }
 }
 
 @media(min-width:1600px){
@@ -32,4 +54,13 @@
     .wrapper {
         padding: 10rem 0;
     }
+
+    .topOnly.layout {
+        clip-path: polygon(0 10rem, 100% 0%, 100% 100%, 0% 100%);
+    }
+    .topOnly.wrapper {
+        padding: 10rem 0 0 0;
+    }
 }
+
+

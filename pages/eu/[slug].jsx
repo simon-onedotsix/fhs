@@ -3,8 +3,8 @@ import craftApolloClient from "../api/apollo"
 
 import Head from "next/head"
 
-import { Header } from '../../fuselage/theme/2023/eu/global/header/header'
-import { Footer } from "../../fuselage/theme/2023/eu/global/footer/footer"
+import { Header, HeaderShim } from '../../fuselage/theme/2024/eu/global/header/header'
+import { Footer } from "../../fuselage/theme/2024/eu/global/footer/footer"
 
 import handleContentBlocks from "../../lib/content-blocks"
 
@@ -31,31 +31,25 @@ export default function Page ({ entry, seomatic }) {
     // console.log('entry:', entry) 
   
     return (
-        <>
+        <div className='bg-primary' style={{ backgroundColor: `var(--primary)`, backgroundImage: `url('/assets/theme/eu-2024/fhs-2024-eu-bg.svg')`, backgroundSize: `100%` }}>
 
             <Head>
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-            <Header compact shim theme={{ 
-                // primary: 'var(--primary)', 
-                // secondary: 'var(--secondary)', 
-                text: 'white',
-                buttons: 'var(--accent)',
-                buttonText: 'var(--primary)',
-                headerBg: 'var(--primary)',
-                overlayBg: 'var(--primary)',
-            }} />
+            <Header compact shimMobile={true} />
+
+            <HeaderShim />
             
             {handleContentBlocks( entry.fhisContentBlocks, null, null, 'eu' )}
 
             <Footer />
 
-        </>
+        </div>
     )
 }
 
-Page.theme = 'eu-2023'
+Page.theme = 'eu-2024'
 
 
 export async function getStaticPaths() {
