@@ -132,6 +132,7 @@ export const QueryForm = `
         theme
         body
         anchorId
+        maxWidth
         hubspotForm {
             ... on hubspotForm_BlockType {
                 id
