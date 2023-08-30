@@ -37,7 +37,22 @@ export const MainMenu = ({ fixToggle, mainMenu, theme }) => {
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/eu/keep-me-updated'}>
+                            <Link href={'/eu/agenda'}>
+                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Agenda</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/eu/investor-registration'}>
+                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Investor Registration</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/eu/become-a-sponsor'}>
+                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Become a Sponsor</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/eu/register-your-interest'}>
                                 <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Register interest</a>
                             </Link>
                         </p>
