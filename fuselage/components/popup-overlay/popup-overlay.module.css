@@ -1,0 +1,97 @@
+.modal {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 350ms ease-in-out;
+
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.container {
+    position: relative;
+}
+
+
+.content {
+    position: relative;
+    overflow: hidden;
+
+    padding: var(--space-md);
+    background-color: white;
+
+    transform: scale(.9);
+    transition: transform 350ms ease-in-out;
+    overflow-y: scroll;
+
+    /* hide scrollbar in edge */
+    -ms-overflow-style: none;
+    /* hide scrollbar in firefox */
+    scrollbar-width: none;
+}
+
+/* hide scrollbar chrome+safari */
+.content::-webkit-scrollbar{
+    display: none;
+  }
+
+  
+.modal.active .content {
+    transform: scale(1);
+    transition: transform 250ms ease-in-out;
+}
+
+
+@media(max-width:599px){
+    .content {
+        width: calc(100vw - var(--space-md) * 2);
+        max-height: calc(100vh - var(--space-md) * 2);
+    }
+}
+@media(min-width:600px){
+    .content {
+        width: calc(100vw - var(--space-lg) * 2);
+        max-width: 60rem;;
+        max-height: calc(100vh - var(--space-md) * 2);
+    }
+}
+
+
+
+
+.closeButton {
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    top: var(--space-xs);
+    right: var(--space-xs);
+
+    padding: .5rem;
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    background-color: transparent;
+}
+.closeButton svg {
+    stroke: grey;
+    stroke-width: 3.5px;
+
+    transition: all 350ms ease-in-out;
+}
+
+@media(hover:hover) {
+    .closeButton:hover svg {
+        stroke: black
+    }
+}

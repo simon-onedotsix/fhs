@@ -33,6 +33,7 @@
 
     transform: scale(.9);
     transition: transform 350ms ease-in-out;
+    /* overflow-y: scroll; */
 }
 
 .modal.active .content {

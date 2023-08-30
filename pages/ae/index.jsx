@@ -23,11 +23,11 @@ import { SpeakerCarousel } from "../../fuselage/blocks/speaker-carousel/speaker-
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 import { Form } from '../../fuselage/blocks/form/form'
-import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 import { Button } from "../../fuselage/components/button/button"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
-import { Modal } from "../../fuselage/components/modal/modal"
+import { PopupOverlay } from "../../fuselage/components/popup-overlay/popup-overlay"
+import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 
 import { 
     QueryText, 
@@ -44,6 +44,8 @@ import {
 } from "../../graphql/queries"
 
 import handleSeomaticMeta from '../../lib/seomatic'
+
+import CSS from '../../fuselage/theme/2023/ae/homepage.module.css'
 
 
 const photos = [
@@ -300,11 +302,16 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
 
-            <Modal onClose={() => setShowModal(false)} show={showModal}>
-            
+            <PopupOverlay onClose={() => setShowModal(false)} show={showModal}>
+
+                <div className={CSS.popupHeader}>
+                    <p className="fs-4 fw-600 lh-1 mb-sm">Download Event Brochure</p>
+                    <img className={CSS.popupHeaderImage} src="/assets/site/ae/ae-2024-brochure.png" alt=""/>
+                </div>
+
                 <HubspotForm portalId={`14527187`} formId={`80e983ed-37fc-4343-bbf3-52e3d8021c82`} />
 
-            </Modal>
+            </PopupOverlay>
 
 
             
