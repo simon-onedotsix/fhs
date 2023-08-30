@@ -68,7 +68,7 @@ export default function Home({ seomatic, contentBlocks, speakerData, partnerData
 						<Floater hero={{ url: '/assets/theme/eu-2024/homepage/floater-02.jpg', width: 1000, height: 664 }}>
 							<p className='fs-1 caps c-accent-light ff-space lh-1'>Networking Platform For Investors</p>
 							<p className='fs-6 fw-300 mt-xs'>Our objective is to bring the key capital market investors together to create a platform to connect, network and address industry challenges. We will also discuss cross-sector innovations that will shape the future of a rapidly transforming hospitality real estate sector. Companies wishing to sponsor will be restricted to ensure relevance and delegates will be invited on an invitation basis.</p>
-							<p className='mt-sm'><Button href={`https://share.hsforms.com/1crNFT2dCSLGkhgATKI-yOQ8nd8z`} accent outline decal={`c-white fw-600`}>Become a Sponsor</Button></p>
+							<p className='mt-sm'><Button href={`/eu/become-a-sponsor`} accent outline decal={`c-white fw-600`}>Become a Sponsor</Button></p>
 						</Floater>
 						
 						<Floater hero={{ url: '/assets/theme/eu-2024/homepage/floater-03.jpg', width: 1000, height: 664 }}>

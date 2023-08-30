@@ -94,7 +94,7 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
                 <div className={CSS.venue}>
                     <MainMenu fixToggle={!inView} theme={theme} />
                     
-                    <Link href="/eu/keep-me-updated">
+                    <Link href="/eu/register-your-interest">
                         <a className={`${CSS.ctaButton} fw-600 caps`}>Register Interest</a>
                     </Link>
                     

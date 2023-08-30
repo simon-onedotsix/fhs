@@ -56,8 +56,8 @@ export const HeroUnit = ({ children, hero, poster }) => {
                         transition={{ type: "spring", bounce: 0.25 }}
                         className={CSS.actions}
                     >
-                        <Button href={`https://share.hsforms.com/1EkSiRbuqSsSQEdXBD2C08Q8nd8z`} accent decal={`c-white fw-600 fs-5`}>Investor Registration</Button>
-                        <Button href={`https://share.hsforms.com/1crNFT2dCSLGkhgATKI-yOQ8nd8z`} accent decal={`c-white fw-600 fs-5`}>Become a Sponsor</Button>
+                        <Button href={`/eu/investor-registration`} accent decal={`c-white fw-600 fs-5`}>Investor Registration</Button>
+                        <Button href={`/eu/become-a-sponsor`} accent decal={`c-white fw-600 fs-5`}>Become a Sponsor</Button>
                     </motion.div>
                 </div>
             </div>

@@ -1,6 +1,8 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
+import { useState } from "react"
+
 import { motion } from "framer-motion"
 
 import Head from "next/head"
@@ -16,14 +18,16 @@ import { LogoBubble, LogoBubbleGrid, HostSponsorLogo, HostSponsorGrid } from '..
 import { Headline } from "../../fuselage/theme/2023/ae/headline/headline"
 import { FhsLogo } from '../../fuselage/components/fhs-logo/fhs-logo'
 import { AhicLogo } from '../../fuselage/components/ahic-logo/ahic-logo'
-import { GrifLogo } from '../../fuselage/components/grif-logo/grif-logo'
 import { ImpactFigure } from "../../fuselage/theme/2023/ae/impact-figure"
 import { SpeakerCarousel } from "../../fuselage/blocks/speaker-carousel/speaker-carousel"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 import { Form } from '../../fuselage/blocks/form/form'
+import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
+import { Button } from "../../fuselage/components/button/button"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
+import { Modal } from "../../fuselage/components/modal/modal"
 
 import { 
     QueryText, 
@@ -133,6 +137,9 @@ const photos = [
 
 export default function Home ({ globals, entry, seomatic, speakerData, partnerData }) {
 
+    const [ showModal, setShowModal ] = useState(false)
+    const [ modalContent, setModalContent ] = useState()
+
     // console.log('entry:', entry)
 	// console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
     // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))	
@@ -181,6 +188,20 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         <p className='fs-6 fw-300 maxw-40'>Explore innovative investment trends, groundbreaking insights, and unparalleled networking opportunities in the world of hospitality. </p>
                         <p className='fs-6 fw-300 maxw-40'>Don&apos;t miss this unique opportunity to shape the industry&apos;s future.</p></Fade>
                     </div>
+
+                    {/* download prospectus */}
+
+                    {/* <div className="mt-md">
+                        <span 
+                            onClick={() => {
+                                console.log('modal button clicked')
+                                    setModalContent('content')
+                                    setShowModal(true)
+                               
+                            }}>
+                            <Button decal={`fs-5 fw-600`}>Download Event Brochure</Button>
+                        </span>
+                    </div> */}
 
                     <div className="mt-md bt-1 bc-grey-10 pt-sm">
                         <Slide><p className='fw-600 caps mb-sm'>Host Sponsors</p></Slide>
@@ -276,6 +297,14 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
             <Footer theme={{ footerBg: 'bg-white' }} />
+
+
+
+            <Modal onClose={() => setShowModal(false)} show={showModal}>
+            
+                <HubspotForm portalId={`14527187`} formId={`80e983ed-37fc-4343-bbf3-52e3d8021c82`} />
+
+            </Modal>
 
 
             
