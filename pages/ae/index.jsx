@@ -193,7 +193,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
                     {/* download prospectus */}
 
-                    {/* <div className="mt-md">
+                    <div className="mt-md">
                         <span 
                             onClick={() => {
                                 console.log('modal button clicked')
@@ -203,7 +203,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                             }}>
                             <Button decal={`fs-5 fw-600`}>Download Event Brochure</Button>
                         </span>
-                    </div> */}
+                    </div>
 
                     <div className="mt-md bt-1 bc-grey-10 pt-sm">
                         <Slide><p className='fw-600 caps mb-sm'>Host Sponsors</p></Slide>
