@@ -87,8 +87,20 @@ export default function Register ({ entry, passes, bizzaboPassData }) {
                         })
                     }
                     <PassBox
+                        key={945867}
+                        title={'Plus'}
+                        availableFrom={'2023-07-12 13:36:00'}
+                        availableTo={'2023-07-12 13:36:00'}
+                        hideAvailability
+                        quantity={0}
+                        currency={'USD'}
+                        price={330000}
+                        description={ '<p>*expires on September 25th</p><p><strong><span class="c-primary">Includes:</span></strong></p><ul><li>Full Event Access</li><li>Networking App</li><li>Post Event Resources</li><li>2 Nights Accommodation at <strong>DoubleTree by Hilton</strong></li></ul>' }
+                        buttonLink={'/ae/register'}
+                    />
+                    <PassBox
                         key={392847}
-                        title={'Premium Pass'}
+                        title={'Premium'}
                         availableFrom={'2023-07-12 13:36:00'}
                         availableTo={'2023-07-12 13:36:00'}
                         hideAvailability
