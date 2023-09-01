@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 
-import PropTypes from 'prop-types'
 import { format, parseISO } from 'date-fns'
 
 import { formatPrice } from '../../../lib/format-price'
@@ -93,20 +92,17 @@ export const PassBox = ({ title, availableFrom, availableTo, hideAvailability, p
                     </Button>
                 </div>
             }
+
+            {
+                handleButtonStatus(availableFrom, availableTo) &&
+                <div className={CSS.flash}>
+                    <div className={CSS.flashContent}>
+                        <p className='fs-3 fw-600 center lh-1'>SOLD OUT!</p>
+                    </div>
+                </div>
+            }
         </div>
     )
-}
-
-
-
-PassBox.propTypes = {
-    title: PropTypes.string,
-    availableFrom: PropTypes.string,
-    availableTo: PropTypes.string,
-    quantity: PropTypes.number,
-    price: PropTypes.number,
-    currency: PropTypes.string,
-    description: PropTypes.string,
 }
 
 

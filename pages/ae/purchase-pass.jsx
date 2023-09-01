@@ -86,6 +86,18 @@ export default function Register ({ entry, passes, bizzaboPassData }) {
                 
                         })
                     }
+                    <PassBox
+                        key={392847}
+                        title={'Premium Pass'}
+                        availableFrom={'2023-07-12 13:36:00'}
+                        availableTo={'2023-07-12 13:36:00'}
+                        hideAvailability
+                        quantity={0}
+                        currency={'USD'}
+                        price={340000}
+                        description={ '<p>*expires on September 25th</p><p><strong><span class="c-primary">Includes:</span></strong></p><ul><li>Full Event Access</li><li>Networking App</li><li>Post Event Resources</li><li>2 Nights Accommodation at <strong>Hilton Abu Dhabi Yas Island</strong></li><li>Complimentary Theme Park Access (One from Ferrari World Abu Dhabi, Warner Bros World Abu Dhabi, Yas Waterworld Abu Dhabi)</li></ul>' }
+                        buttonLink={'/ae/register'}
+                    />
                 </div>
 
 
