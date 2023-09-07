@@ -37,6 +37,7 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 		(speaker => speaker.lastname === 'Alabbar' ? 0 : 1),
 		(speaker => speaker.lastname === 'Al Zaabi' ? 0 : 1),
 		(speaker => speaker.lastname === 'Zubiran' ? 0 : 1),
+		(speaker => speaker.lastname === 'Shalaby' ? 0 : 1),
 	] )
 	// console.log('customSpeakers:', customSpeakers)
 
