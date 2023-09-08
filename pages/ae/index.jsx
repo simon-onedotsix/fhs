@@ -12,6 +12,7 @@ import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
 
 import { Header } from '../../fuselage/global-ae/header/header'
 import { Footer } from '../../fuselage/global-ae/footer/footer'
+import { CtaTab } from "../../fuselage/components/cta-tab/cta-tab"
 
 import { Container } from '../../fuselage/theme/2023/ae/layout/container/container'
 import { LogoBubble, LogoBubbleGrid, HostSponsorLogo, HostSponsorGrid } from '../../fuselage/theme/2023/ae/launch-page'
@@ -300,6 +301,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             <Footer theme={{ footerBg: 'bg-white' }} />
 
+            
+            <CtaTab iconColor={`white`} buttonColor={`var(--primary)`} />
 
 
             <PopupOverlay onClose={() => setShowModal(false)} show={showModal}>

@@ -1,0 +1,66 @@
+.layout {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    bottom: 0;
+    padding: 0 var(--space-sm) var(--space-sm) 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xxs);
+}
+
+
+.button {
+    position: relative;
+    text-decoration: none;
+    height: 48px;
+    width: 48px;
+    border-radius: 3rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: .6rem;
+    background-color: var(--accent);
+
+}
+
+.label {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    height: 48px;
+    max-width: 48px;
+    border-radius: 3rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    opacity: 0;
+    transition: all 750ms cubic-bezier(.7, .1, .2, 1);
+}
+
+@media (max-width:800px) {
+    .label {
+        display: none;
+    }
+}
+
+@media(hover:hover){
+    .button:hover .label {
+        max-width: 30vw;
+        opacity: 1;
+    }
+}
+
+.labelContentWrapper {
+    color: white;
+    padding: 0 calc( var(--space-sm) + 48px) 0 var(--space-sm);
+}

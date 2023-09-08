@@ -10,6 +10,7 @@ import Head from 'next/head'
 
 import { Header } from '../../fuselage/global-sa/header/header'
 import { Footer } from "../../fuselage/global-sa/footer/footer"
+import { CtaTab } from '../../fuselage/components/cta-tab/cta-tab'
 
 import handleContentBlocks from "../../lib/content-blocks"
 
@@ -63,6 +64,8 @@ export default function Home({ seomatic, contentBlocks, speakerData, partnerData
 			{ handleContentBlocks( contentBlocks, null, partnerData, 'sa' ) }
 
 			<Footer />
+
+			<CtaTab />
 
 		</div>
 	)

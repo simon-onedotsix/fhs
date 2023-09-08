@@ -10,6 +10,7 @@ import handleSeomaticMeta from '../lib/seomatic'
 
 import { Header } from '../fuselage/global/header/header'
 import { Footer } from '../fuselage/global/footer/footer'
+import { CtaTab } from '../fuselage/components/cta-tab/cta-tab'
 import { HeroUnitVideo } from '../fuselage/blocks/hero-unit-video/hero-unit-video'
 import { UpcomingEvents, EventGroupCard, EventCard } from '../fuselage/blocks/upcoming-events/upcoming-events'
 import { ArrowButton } from '../fuselage/components/arrow-button/arrow-button'
@@ -210,6 +211,8 @@ export default function Homepage ({ data, seomatic }) {
          
 
             <Footer />
+
+            <CtaTab />
         </div>
     )
 }
