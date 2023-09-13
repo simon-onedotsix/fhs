@@ -422,7 +422,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
    
     function groupSessionsIntoDays ( sessions ) {
 
-        const orderedSessions = _.orderBy(sessions, [ 'startMinute', 'asc'])
+        const orderedSessions = _.orderBy(sessions, [ 'startMinute', 'endMinute'], [ 'asc', 'asc'])
         // console.log('orderedSessions:', orderedSessions)
     
         const groupedSessions = _
