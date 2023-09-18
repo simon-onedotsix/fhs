@@ -1,0 +1,36 @@
+.layout {
+    display: block;
+    text-decoration: none;
+}
+.award {
+    display: grid;
+    grid-template-columns: 1.25rem 1fr;
+    align-items: flex-start;
+    gap: .5rem;
+
+    min-height: 5.5rem;
+    border: 1px solid var(--accent);
+    border-radius: var(--default-radius);
+    padding: .5rem .75rem;
+
+    margin: .5rem 0;
+}
+.award svg {
+    width: 1.25rem;
+    height: 1.8rem;
+}
+
+.photoContainer {
+    position: relative;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: var(--default-radius);
+}
+
+.photo {
+    display: block;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+}
