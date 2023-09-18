@@ -255,7 +255,7 @@ export async function getStaticProps({ params }) {
 		}
 	})
     const sessionsData = await sessionsRes.json()
-    const sessions = sessionsData.content
+    const sessions = sessionsData.content || null
 
 	return {
 		props: { 
