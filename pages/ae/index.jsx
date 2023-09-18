@@ -247,13 +247,13 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             <section className="block flush">
                 <Container decal={`bg-white-90 p-md`}>
-                    <Slide><p className="fs-0 caps lh-1 maxw-50 mb-md" style={{ lineHeight: 0.9}}>2022 in numbers</p></Slide>
+                    <Slide><p className="fs-0 caps lh-1 maxw-50 mb-md" style={{ lineHeight: 0.9}}>2023 in numbers</p></Slide>
                     
                     <div className='columns-2 gap-sm'>
-                        <ImpactFigure value={`1072`} label={`attendees from across the globe`} />
-                        <ImpactFigure value={`63`} label={`sponsors and partners`} />
-                        <ImpactFigure value={`74`} label={`media and press attending`} />
-                        <ImpactFigure value={`200`} label={`speakers`} />
+                        <ImpactFigure value={`1000`} label={`attendees from across the globe`} />
+                        <ImpactFigure value={`83`} label={`sponsors and partners`} />
+                        <ImpactFigure value={`75`} label={`media and press attending`} />
+                        <ImpactFigure value={`185`} label={`speakers`} />
                     </div>
                 </Container>
 
