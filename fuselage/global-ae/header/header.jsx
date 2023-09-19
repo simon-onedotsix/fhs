@@ -66,7 +66,7 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
             <span ref={menuTrigger}>
                 <EventsBar 
                     hidden={ !headerInView ? true : false }
-                    thisEvent={'FHS & AHIC'} 
+                    thisEvent={'FHS'} 
                     events={otherEvents} 
                     theme={{
                         background: 'var(--secondary)',

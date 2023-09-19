@@ -177,16 +177,15 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     
                     <LogoBubbleGrid>
                         <LogoBubble delay={0.2}><FhsLogo primary={`white`} secondary={`white`} /></LogoBubble>
-                        <LogoBubble delay={0.4}><AhicLogo primary={`white`} secondary={`white`} /></LogoBubble>
+                        {/* <LogoBubble delay={0.4}><AhicLogo primary={`white`} secondary={`white`} /></LogoBubble> */}
                         {/* <LogoBubble delay={0.6}><GrifLogo primary={`white`} secondary={`white`}  /></LogoBubble> */}
                     </LogoBubbleGrid>
                 </Container>
                 
                 <Container flushRight decal={`bg-white-90 p-md`}>
                     <div className="formatted">
-                        <Slide><h1 className='lh-1'>FHS & AHIC 2023</h1></Slide>
-                        <Slide delay={.2}><h3 className='maxw-40'> Join Us As We Transform Yas Island into a Global Epicenter for Hospitality Investment</h3></Slide>
-                        <Fade delay={.4}><p className='fs-6 fw-300 maxw-40 mt-md'>Experience the highly anticipated Future Hospitality Summit 2023 alongside the 19th edition of The Bench&apos;s flagship AHIC - Arabian Hospitality Investment Conference, in Abu Dhabi for the very first time! </p>
+                        <Slide delay={.2}><h2 className='maxw-40'> Join us as we transform Yas Island into a global epicenter for hospitality investment</h2></Slide>
+                        <Fade delay={.4}><p className='fs-6 fw-300 maxw-40 mt-sm'>Experience the highly anticipated Future Hospitality Summit 2023, in Abu Dhabi for the very first time! </p>
                         <p className='fs-6 fw-300 maxw-40'>Experience three extraordinary days of dealmaking and impactful industry discussions at the Yas Island, thanks to our host sponsors - Abu Dhabi Convention & Exhibition Bureau, Miral, and Hilton Abu Dhabi Yas Island. </p>
                         <p className='fs-6 fw-300 maxw-40'>Explore innovative investment trends, groundbreaking insights, and unparalleled networking opportunities in the world of hospitality. </p>
                         <p className='fs-6 fw-300 maxw-40'>Don&apos;t miss this unique opportunity to shape the industry&apos;s future.</p></Fade>

@@ -41,7 +41,7 @@ export const MainMenu = ({ mainMenu }) => {
                     <section className='c-white'>
                         <p className="fs-4 fw-600 c-accent">Future Hospitality events</p>
                         <p className="mt-xs">
-                            <ArrowButton href={`/ae`} theme={{ arrow: `var(--accent-ae)`, border: `var(--accent-ae)`, label: `white`}}>FHS & AHIC 2023</ArrowButton>
+                            <ArrowButton href={`/ae`} theme={{ arrow: `var(--accent-ae)`, border: `var(--accent-ae)`, label: `white`}}>FHS 2023</ArrowButton>
                         </p>
                         <p className="mt-xs">
                             <ArrowButton href={`/sa`} theme={{ arrow: `var(--primary-sa)`, border: `var(--primary-sa)`, label: `white`}}>FHS Saudi Arabia</ArrowButton>

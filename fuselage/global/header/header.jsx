@@ -17,7 +17,7 @@ const otherEvents = [
     },
     {
         id: 3,
-        title: 'FHS & AHIC',
+        title: 'FHS',
         url: '/ae',
         target: false
     },

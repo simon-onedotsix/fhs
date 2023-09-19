@@ -28,7 +28,7 @@ export const Header = ({ compact, shim, shimMobile }) => {
         },
         {
             id: 1,
-            title: 'FHS & AHIC',
+            title: 'FHS',
             url: '/ae',
             target: false
         },
