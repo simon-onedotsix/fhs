@@ -22,7 +22,7 @@ export default function AwardWinners ({ data }) {
 
             <Header overlaid inverse />
 
-            <HeroUnitImage />
+            <HeroUnitImage heading={data.title} description={data.description} />
 
             {
                 data.awardWinners.length &&
@@ -80,6 +80,7 @@ export async function getStaticProps() {
                     ... on fhsAwardWinners_fhsAwardWinners_Entry {
                         id
                         title
+                        description
                         awardWinners {
                             ... on awardWinners_yearGroup_BlockType {
                                 id

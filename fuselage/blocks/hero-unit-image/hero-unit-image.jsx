@@ -7,7 +7,7 @@ import { SectionDivider } from '../section-divider/section-divider'
 
 import CSS from './hero-unit-image.module.css'
 
-export const HeroUnitImage = ({ children, hero, poster }) => {
+export const HeroUnitImage = ({ children, hero, heading, description }) => {
     return (
         <section>
                 
@@ -22,8 +22,8 @@ export const HeroUnitImage = ({ children, hero, poster }) => {
 
             <div className={`${CSS.overlay} block`}>
                 <SectionDivider 
-                    heading={`Award Winners`} 
-                    description={`Aliquam vel quam ut tellus gravida faucibus. Vivamus justo est, elementum vitae, malesuada eu, fermentum in, sapien. Donec sit amet justo. In velit. Vivamus turpis pede, dignissim sed, scelerisque.`}
+                    heading={heading} 
+                    description={description}
                 />
             </div>
 
