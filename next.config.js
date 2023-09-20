@@ -13,7 +13,17 @@ const nextConfig = {
 		});
 	
 		return config
-	}
+	},
+
+	async redirects() {
+		return [
+		  {
+			source: '/2024',
+			destination: 'https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1',
+			permanent: false,
+		  },
+		]
+	},
 }
 
 module.exports = nextConfig
