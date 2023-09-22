@@ -34,6 +34,7 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 	
 	// customise order (move al saud into first place)
 	let customSpeakers = _.sortBy(orderedSpeakers, [
+		(speaker => speaker.lastname === 'Al Marri' ? 0 : 1),
 		(speaker => speaker.lastname === 'Alabbar' ? 0 : 1),
 		(speaker => speaker.lastname === 'Al Zaabi' ? 0 : 1),
 		(speaker => speaker.lastname === 'Zubiran' ? 0 : 1),
