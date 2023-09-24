@@ -164,16 +164,16 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             <section className="block flush">
                 <Container decal={`bg-white-90 p-md`}>
                     <Slide>
-                        <h1 className="fs-xl caps" style={{ lineHeight: 0.9}}>Welcome to FHS&nbsp;2023</h1>
+                        <h1 className="fs-xl caps" style={{ lineHeight: 0.9}}>FHS&nbsp;2023 is Live</h1>
                     </Slide>
-                    <Slide>
-                        <p className="fs-2 lh-2">Explore innovative investment trends, groundbreaking insights, and unparalleled networking opportunities in the world of hospitality.</p>
-                    </Slide>
+                   
                     
-                    <div className="columns-2 gap-sm mt-lg">
-                        <Button href={`https://onelink.to/sv3c73`} target={`_blank`} decal={`fs-5 fw-600`}><Pop>Download Event Brochure</Pop></Button>
-                        <Button href={`/ae/agenda`} target={`_blank`} decal={`fs-5 fw-600`}><Pop>Download Event App</Pop></Button>
-                        <Button href={`https://www.linkedin.com/showcase/future-hospitality-summit/?viewAsMember=true`} target={`_blank`} decal={`fs-5 fw-600`}><Pop>View Live Programme</Pop></Button>
+                    <div className="columns-2 gap-sm mt-md">
+                        
+                        <Button href={`https://onelink.to/sv3c73`} target={`_blank`} decal={`fs-5 fw-600`}><Pop>Download Event App</Pop></Button>
+                        
+                        <Button href={`/ae/agenda`} target={`_blank`} decal={`fs-5 fw-600`}><Pop>Programme</Pop></Button>
+                        
                         <span
                             style={{ display: `inline-flex` }}
                             onClick={() => {
@@ -184,8 +184,16 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                             }}>
                             <Button decal={`fs-5 fw-600 minw-100pc`}><Pop>Download Event Brochure</Pop></Button>
                         </span>
-                        <Button href={`https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1`} target={`_blank`} decal={`fs-5 fw-600`}><Pop>FHS 2024 Preview</Pop></Button>
+                        
+                        <Button href={`https://www.linkedin.com/showcase/future-hospitality-summit/?viewAsMember=true`} target={`_blank`} decal={`fs-5 fw-600`}><Pop>Join the LinkedIn Livestream</Pop></Button>
+
+                        {/* <Button href={`https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1`} target={`_blank`} decal={`fs-5 fw-600`}><Pop>FHS 2024 Preview</Pop></Button> */}
+
                     </div>
+
+                    <Slide>
+                        <p className="fs-2 lh-2 mt-md">Explore innovative investment trends, groundbreaking insights, and unparalleled networking opportunities in the world of hospitality.</p>
+                    </Slide>
 
                 </Container>
                 
