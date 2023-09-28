@@ -15,9 +15,17 @@ import { Footer } from '../../fuselage/global-ae/footer/footer'
 import { CtaTab } from "../../fuselage/components/cta-tab/cta-tab"
 
 import { Container } from '../../fuselage/theme/2023/ae/layout/container/container'
-import { HostSponsorLogo, HostSponsorGrid } from '../../fuselage/theme/2023/ae/launch-page'
+import { LogoBubble, LogoBubbleGrid, HostSponsorLogo, HostSponsorGrid } from '../../fuselage/theme/2023/ae/launch-page'
+import { Headline } from "../../fuselage/theme/2023/ae/headline/headline"
+import { FhsLogo } from '../../fuselage/components/fhs-logo/fhs-logo'
+import { AhicLogo } from '../../fuselage/components/ahic-logo/ahic-logo'
+import { ImpactFigure } from "../../fuselage/theme/2023/ae/impact-figure"
+import { SpeakerCarousel } from "../../fuselage/blocks/speaker-carousel/speaker-carousel"
+import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
+import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
+import { Form } from '../../fuselage/blocks/form/form'
 import { Button } from "../../fuselage/components/button/button"
-import { ButtonSocial } from "../../fuselage/components/button-social/button-social"
+import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 import { PopupOverlay } from "../../fuselage/components/popup-overlay/popup-overlay"
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
@@ -163,108 +171,136 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             <section className="block flush">
                 <Container decal={`bg-white-90 p-md`}>
-                    <Slide>
-                        <h1 className="fs-xl caps" style={{ lineHeight: 0.9}}>FHS&nbsp;2023 is Live</h1>
-                    </Slide>
-                   
+                    <Slide><p className='fs-3 fw-300 caps mb-xs'>25-27 September 2023</p></Slide>
+                    <Headline />
+                    <Slide delay={.5}><p className='fs-5 fw-300 caps mb-lg'>Hilton Abu Dhabi Yas Island</p></Slide>
                     
-                    <div className="columns-2 gap-sm mt-md">
-                        
-                        <Button href={`https://onelink.to/sv3c73`} target={`_blank`} decal={`fs-5 fw-600`}><Pop>Download Event App</Pop></Button>
-                        
-                        <Button href={`/ae/agenda`} target={`_blank`} decal={`fs-5 fw-600`}><Pop>Programme</Pop></Button>
-                        
-                        <span
-                            style={{ display: `inline-flex` }}
-                            onClick={() => {
-                                console.log('modal button clicked')
-                                setModalContent('content')
-                                setShowModal(true)
-                                
-                            }}>
-                            <Button decal={`fs-5 fw-600 minw-100pc`}><Pop>Download Event Brochure</Pop></Button>
-                        </span>
-                        
-                        <Button href={`https://www.linkedin.com/showcase/future-hospitality-summit/?viewAsMember=true`} target={`_blank`} decal={`fs-5 fw-600`}><Pop>Join the LinkedIn Livestream</Pop></Button>
-
-                        {/* <Button href={`https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1`} target={`_blank`} decal={`fs-5 fw-600`}><Pop>FHS 2024 Preview</Pop></Button> */}
-
-                    </div>
-
-                    <Slide>
-                        <p className="fs-2 lh-2 mt-md">Explore innovative investment trends, groundbreaking insights, and unparalleled networking opportunities in the world of hospitality.</p>
-                    </Slide>
-
+                    <LogoBubbleGrid>
+                        <LogoBubble delay={0.2}><FhsLogo primary={`white`} secondary={`white`} /></LogoBubble>
+                    </LogoBubbleGrid>
                 </Container>
                 
                 <Container flushRight decal={`bg-white-90 p-md`}>
                     <div className="formatted">
-                        <Slide delay={.2}><h2 className='maxw-40'>Share your FHS experience by using #FutureHospitalitySummit</h2></Slide>
-                        <div className="flex gap-xs mt-sm">
-                            <Pop>
-                                <ButtonSocial 
-                                    icon={`twitter`} 
-                                    url={`https://twitter.com/FuturHospSummit`} 
-                                    alt={`twitter`}
-                                    decal={'secondary'}
-                                />
-                            </Pop>
-                            <Pop delay={.1}>
-                                <ButtonSocial 
-                                    icon={`instagram`} 
-                                    url={`https://www.instagram.com/futurehospitalitysummit/`} 
-                                    alt={`instagram`}
-                                    decal={'secondary'}
-                                />
-                            </Pop>
-                            <Pop delay={.2}>
-                                <ButtonSocial 
-                                    icon={`facebook`} 
-                                    url={`https://twitter.com/FuturHospSummit`} 
-                                    alt={`facebook`}
-                                    decal={'secondary'}
-                                />
-                            </Pop>
-                            <Pop delay={.3}>
-                                <ButtonSocial 
-                                    icon={`linkedin`} 
-                                    url={`https://twitter.com/FuturHospSummit`} 
-                                    alt={`linkedin`}
-                                    decal={'secondary'}
-                                />
-                            </Pop>
-                        </div>
+                        <Slide delay={.2}><p className='fs-1 fw-600 lh-1 maxw-40'>Thank you for making FHS 2023 a success!</p></Slide>
+                        <Fade delay={.4}><p className='fs-4 fw-300 maxw-40 mt-sm'>For <strong>Future Hospitality Summit 2024</strong>, we&apos;re creating an intersection for the world of hospitality where the industry invests in its future. We are returning to Dubai to a much bigger, bolder space - Madinat Jumeirah. A more personalised and immersive experience with new features like Investors Lounge, ESG Lab, Country Pavilions, an Expanded Exhibition Area, and much more.</p>
+                        </Fade>
                     </div>
 
+                    {/* download prospectus */}
 
-                    <div className="mt-md bt-1 bc-grey-10 pt-sm">
-                        <Slide><p className='fw-600 caps mb-sm'>Host Partners</p></Slide>
-
-                        <HostSponsorGrid>
-                            <Pop><HostSponsorLogo hero={{url: `/assets/site/ae/abu-dhabi.png`}}/></Pop>
-                            <Pop delay={.2}><HostSponsorLogo hero={{url: `/assets/site/ae/miral.png`}}/></Pop>
-                            <Pop delay={.4}><HostSponsorLogo hero={{url: `/assets/site/ae/hilton.png`}}/></Pop>
-                        </HostSponsorGrid>
+                    <div className="mt-md">
+                        <span 
+                            onClick={() => {
+                                console.log('modal button clicked')
+                                    setModalContent('content')
+                                    setShowModal(true)
+                               
+                            }}>
+                            <Button decal={`fs-5 fw-600`}>Register Interest</Button>
+                        </span>
                     </div>
+
+                </Container>
+            </section>
+
+
+            {
+                selectedCmsSpeakers &&
+                <SpeakerCarousel 
+                    heading={`Featured Speakers`} 
+                    text={``}
+                    decal={'bg-light'}
+                    ctaLink={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLink : ''}
+                    ctaLabel={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLabel : ''}
+                    anchorId={``}
+                >
+                    {
+                        selectedCmsSpeakers.profiles.map( profile => (
+                            <SpeakerCard
+                                key={profile.id}
+                                url={`ae/speakers/profile/${profile.slug}`}
+                                photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
+                                fullName={profile.title}
+                                jobTitle={profile.positions[0].jobTitle}
+                                company={profile.positions[0].organisation}
+                            />
+                        ))
+                    }
+                </SpeakerCarousel>
+            }
+
+
+            <section className="block flush">
+                <Container decal={`bg-white-90 p-md`}>
+                    <Slide><p className="fs-0 caps lh-1 maxw-50 mb-md" style={{ lineHeight: 0.9}}>2023 in numbers</p></Slide>
+                    
+                    <div className='columns-2 gap-sm'>
+                        <ImpactFigure value={`1000`} label={`attendees from across the globe`} />
+                        <ImpactFigure value={`83`} label={`sponsors and partners`} />
+                        <ImpactFigure value={`75`} label={`media and press attending`} />
+                        <ImpactFigure value={`185`} label={`speakers`} />
+                    </div>
+                </Container>
+
+                <Container flushRight decal={`bg-light`}>
+                    <Slide><p className='fs-0 caps p-md lh-1'>Highlights from FHS&nbsp;2022</p></Slide>
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/4w6h8gXKpvg`} />
+                </Container>
+
+                <Container decal={``}>
+                    <Slide><p className='bg-light fs-0 caps p-md lh-1'>2022 in photos</p></Slide>
+                    
+                    <div className="p-md bg-white-90 columns-3 gap-xs">
+                        {
+                            photos.map( (photo, index) => (
+                                <Pop key={index}>
+                                    <div key={photo.id} style={{ position: `relative`}}>
+                                        <Image src={photo.hero[0].url} width={photo.hero[0].width} height={photo.hero[0].height} layout={`responsive`} alt="" />
+                                    </div>
+                                </Pop>
+                            ))
+                        }
+                        <p className="mt-xs">
+                            <ArrowButton href={`https://flic.kr/s/aHBqjAbKY7`} target='_blank' theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>View all photos</ArrowButton>
+                        </p>
+                    </div>
+
                 </Container>
             </section>
 
 
 
-            <PopupOverlay onClose={() => setShowModal(false)} show={showModal}>
-                <div className={CSS.popupHeader}>
-                    <p className="fs-4 fw-600 lh-1 mb-sm">Download Event Brochure</p>
-                    <img className={CSS.popupHeaderImage} src="/assets/site/ae/ae-2024-brochure.png" alt=""/>
-                </div>
+            <Form 
+                theme={`light`} 
+                maxWidth={`block.maxWidth`}
+                portalId={`14527187`}
+                formId={`f2335c74-d011-4635-830c-8d44ec22bb58`}
+            >
+                {`<h1>BECOME A SPONSOR</h1>
+                <p>For over two decades - government leaders, tourism ministries, global travel &amp; tourism associations, the world&apos;s most influential hospitality brands, hotel owners &amp; investors, renowned restaurant groups, airlines &amp; aviation authorities, destination developers, asset managers, financial groups and consultants - have been participating in The Bench&apos;s events for their respective objectives. These include AHIF, GRIF, FHS, AHF, IDEEA, AviaDev and RENEW - where industry players showcase their brands, position themselves as thought leaders or innovators, and connect with the right opportunities and knowledge. Speak with one of our sales team members to understand how you can make the most of this unique opportunity!<br /></p>`}
+            </Form>
 
-                <HubspotForm portalId={`14527187`} formId={`80e983ed-37fc-4343-bbf3-52e3d8021c82`} />
-            </PopupOverlay>
+
 
 
 
             <Footer theme={{ footerBg: 'bg-white' }} />
 
+            
             <CtaTab iconColor={`white`} buttonColor={`var(--primary)`} />
+
+
+            <PopupOverlay onClose={() => setShowModal(false)} show={showModal}>
+
+                <div className={CSS.popupHeader}>
+                    <p className="fs-4 fw-600 lh-1 mb-sm">Register interest</p>
+                </div>
+
+                <HubspotForm portalId={`14527187`} formId={`ad1a19c2-b5ac-4290-8b46-57979532c947`} />
+
+            </PopupOverlay>
+
 
             
         </>
