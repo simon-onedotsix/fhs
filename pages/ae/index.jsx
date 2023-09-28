@@ -171,9 +171,9 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             <section className="block flush">
                 <Container decal={`bg-white-90 p-md`}>
-                    <Slide><p className='fs-3 fw-300 caps mb-xs'>25-27 September 2023</p></Slide>
+                    <Slide><p className='fs-3 fw-300 caps mb-xs'>30 September - 02 October 2024</p></Slide>
                     <Headline />
-                    <Slide delay={.5}><p className='fs-5 fw-300 caps mb-lg'>Hilton Abu Dhabi Yas Island</p></Slide>
+                    <Slide delay={.5}><p className='fs-5 fw-300 caps mb-lg'>Madinat Jumeirah, Dubai</p></Slide>
                     
                     <LogoBubbleGrid>
                         <LogoBubble delay={0.2}><FhsLogo primary={`white`} secondary={`white`} /></LogoBubble>
@@ -236,16 +236,16 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     <Slide><p className="fs-0 caps lh-1 maxw-50 mb-md" style={{ lineHeight: 0.9}}>2023 in numbers</p></Slide>
                     
                     <div className='columns-2 gap-sm'>
-                        <ImpactFigure value={`1000`} label={`attendees from across the globe`} />
-                        <ImpactFigure value={`83`} label={`sponsors and partners`} />
-                        <ImpactFigure value={`75`} label={`media and press attending`} />
-                        <ImpactFigure value={`185`} label={`speakers`} />
+                        <ImpactFigure value={`1100`} label={`Delegates`} />
+                        <ImpactFigure value={`40`} label={`Countries`} />
+                        <ImpactFigure value={`400`} label={`Companies`} />
+                        <ImpactFigure value={`200`} label={`Speakers`} />
                     </div>
                 </Container>
 
                 <Container flushRight decal={`bg-light`}>
-                    <Slide><p className='fs-0 caps p-md lh-1'>Highlights from FHS&nbsp;2022</p></Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/4w6h8gXKpvg`} />
+                    <Slide><p className='fs-0 caps p-md lh-1'>Highlights from FHS&nbsp;2023</p></Slide>
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/IZmpLNnii5o`} />
                 </Container>
 
                 <Container decal={``}>

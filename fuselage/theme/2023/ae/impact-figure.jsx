@@ -6,7 +6,7 @@ export const ImpactFigure = ({ value, label }) => {
     return (
         <div className={CSS.wrapper}>
             <Pop><p className={`${CSS.value} fs-0 ff-oswald`}>{ value }</p></Pop>
-            <Slide delay={.2}><p className={`${CSS.label} fs-5`}>{ label }</p></Slide>
+            <Slide delay={.2}><p className={`${CSS.label} fs-3`}>{ label }</p></Slide>
         </div>
     )
 }

@@ -99,7 +99,7 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
                         >Register interest</a>
                     </Link>
                     
-                    <p><span className='fw-600 fs-6'>25-27 September 2023</span> <br/>Hilton Abu Dhabi Yas Island</p>
+                    <p><span className='fw-600 fs-6'>30 September - 02 October 2024</span> <br/>Madinat Jumeirah, Dubai</p>
                 </div>
                 
                 <a className={CSS.brand} href={'/ae'} aria-label='FHS Home'>
