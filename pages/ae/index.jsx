@@ -288,7 +288,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             <Footer theme={{ footerBg: 'bg-white' }} />
 
             
-            <CtaTab iconColor={`white`} buttonColor={`var(--primary)`} />
+            {/* <CtaTab iconColor={`white`} buttonColor={`var(--primary)`} /> */}
 
 
             <PopupOverlay onClose={() => setShowModal(false)} show={showModal}>

@@ -212,7 +212,7 @@ export default function Homepage ({ data, seomatic }) {
 
             <Footer />
 
-            <CtaTab />
+            {/* <CtaTab /> */}
         </div>
     )
 }

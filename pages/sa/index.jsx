@@ -65,7 +65,7 @@ export default function Home({ seomatic, contentBlocks, speakerData, partnerData
 
 			<Footer />
 
-			<CtaTab />
+			{/* <CtaTab /> */}
 
 		</div>
 	)
