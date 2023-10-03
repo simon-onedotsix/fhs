@@ -236,7 +236,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     <Slide><p className="fs-0 caps lh-1 maxw-50 mb-md" style={{ lineHeight: 0.9}}>2023 in numbers</p></Slide>
                     
                     <div className='columns-2 gap-sm'>
-                        <ImpactFigure value={`1100`} label={`Delegates`} />
+                        <ImpactFigure value={`1200`} label={`Delegates`} />
                         <ImpactFigure value={`40`} label={`Countries`} />
                         <ImpactFigure value={`400`} label={`Companies`} />
                         <ImpactFigure value={`200`} label={`Speakers`} />
@@ -245,7 +245,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
                 <Container flushRight decal={`bg-light`}>
                     <Slide><p className='fs-0 caps p-md lh-1'>Highlights from FHS&nbsp;2023</p></Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/IZmpLNnii5o`} />
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/CG9LX_7DyI0?si=AbFpHM0lcUhWQIbH`} />
                 </Container>
 
                 <Container decal={``}>
