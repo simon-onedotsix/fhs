@@ -51,88 +51,70 @@ import CSS from '../../fuselage/theme/2023/ae/homepage.module.css'
 
 const photos = [
     {
-        "__typename": "slides_BlockType",
         "id": "13864",
         "hero": [
             {
-                "__typename": "site_Asset",
                 "id": "50183",
-                "url": "https://cms.thebench.com/assets/img/site/FHIS-AE/52403116903_1d48520bbf_o.jpg",
-                "width": 2000,
-                "height": 1303
+                "url": "/assets/img/ae/2023/photo-01.jpg",
+                "width": 1000,
+                "height": 588
             }
-        ],
-        "body": null
+        ]
     },
     {
-        "__typename": "slides_BlockType",
         "id": "13865",
         "hero": [
             {
-                "__typename": "site_Asset",
                 "id": "50184",
-                "url": "https://cms.thebench.com/assets/img/site/FHIS-AE/52403147170_d7199b639e_o.jpg",
-                "width": 2000,
-                "height": 1331
+                "url": "/assets/img/ae/2023/photo-02.jpg",
+                "width": 1000,
+                "height": 588
             }
-        ],
-        "body": null
+        ]
     },
     {
-        "__typename": "slides_BlockType",
         "id": "13867",
         "hero": [
             {
-                "__typename": "site_Asset",
                 "id": "50186",
-                "url": "https://cms.thebench.com/assets/img/site/FHIS-AE/52401819031_2e8f739388_o.jpg",
-                "width": 2000,
-                "height": 1333
+                "url": "/assets/img/ae/2023/photo-03.jpg",
+                "width": 1000,
+                "height": 588
             }
-        ],
-        "body": null
+        ]
     },
     {
-        "__typename": "slides_BlockType",
         "id": "13868",
         "hero": [
             {
-                "__typename": "site_Asset",
                 "id": "50187",
-                "url": "https://cms.thebench.com/assets/img/site/FHIS-AE/52402232115_08fca076d0_o.jpg",
-                "width": 2000,
-                "height": 1334
+                "url": "/assets/img/ae/2023/photo-04.jpg",
+                "width": 1000,
+                "height": 588
             }
-        ],
-        "body": null
+        ]
     },
     {
-        "__typename": "slides_BlockType",
         "id": "50206",
         "hero": [
             {
-                "__typename": "site_Asset",
                 "id": "50189",
-                "url": "https://cms.thebench.com/assets/img/site/FHIS-AE/52402260675_9d6a6dd392_o.jpg",
-                "width": 2000,
-                "height": 1331
+                "url": "/assets/img/ae/2023/photo-05.jpg",
+                "width": 1000,
+                "height": 588
             }
-        ],
-        "body": null
+        ]
     },
     {
-        "__typename": "slides_BlockType",
         "id": "50207",
         "hero": [
             {
-                "__typename": "site_Asset",
                 "id": "50193",
-                "url": "https://cms.thebench.com/assets/img/site/FHIS-AE/52402603181_c0c7457343_o.jpg",
-                "width": 2000,
-                "height": 1334
+                "url": "/assets/img/ae/2023/photo-06.jpg",
+                "width": 1000,
+                "height": 588
             }
-        ],
-        "body": null
+        ]
     }
 ]
 
@@ -249,7 +231,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 </Container>
 
                 <Container decal={``}>
-                    <Slide><p className='bg-light fs-0 caps p-md lh-1'>2022 in photos</p></Slide>
+                    <Slide><p className='bg-light fs-0 caps p-md lh-1'>2023 in photos</p></Slide>
                     
                     <div className="p-md bg-white-90 columns-3 gap-xs">
                         {
@@ -262,7 +244,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                             ))
                         }
                         <p className="mt-xs">
-                            <ArrowButton href={`https://flic.kr/s/aHBqjAbKY7`} target='_blank' theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>View all photos</ArrowButton>
+                            <ArrowButton href={`https://flic.kr/s/aHBqjAXaGC`} target='_blank' theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>View all photos</ArrowButton>
                         </p>
                     </div>
 
