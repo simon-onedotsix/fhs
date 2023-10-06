@@ -33,10 +33,10 @@ import CSS from '../../../css/app/agenda.module.css'
 
 // legacy data imports
 
-import { bzAgendaSettings } from "./data/bz-agenda-settings"
-import { bzAgendaSessions } from "./data/bz-agenda-sessions"
-import { bzSpeakers } from "./data/bz-speakers"
-import { cmsAgendaSettings } from "./data/cms-agenda-settings"
+import { bzAgendaSettings } from "../../../data/bz-agenda-settings"
+import { bzAgendaSessions } from "../../../data/bz-agenda-sessions"
+import { bzSpeakers } from "../../../data/bz-speakers"
+import { cmsAgendaSettings } from "../../../data/cms-agenda-settings"
 
 
 export default function Agenda () {
