@@ -67,6 +67,7 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 												width={370} 
 												height={370} 
 												alt=""
+												unoptimized
 											/>
 											: 
 											<Image 
@@ -74,6 +75,7 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 												width={370} 
 												height={370} 
 												alt=""
+												unoptimized
 											/>
 										}
 									</a>

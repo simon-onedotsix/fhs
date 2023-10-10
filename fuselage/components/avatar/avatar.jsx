@@ -5,7 +5,7 @@ import CSS from './avatar.module.css'
 export const Avatar = ({ src, alt }) => {
     return (
         <div className={CSS.avatar}>
-            <Image src={src} layout='fill' alt={alt} />
+            <Image src={src} layout='fill' alt={alt} unoptimized />
         </div>
     )
 }

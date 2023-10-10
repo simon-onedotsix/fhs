@@ -165,6 +165,7 @@ function Speaker({ speaker, sessions }) {
 										width={370} 
 										height={370} 
 										alt=""
+										unoptimized
 									/>
 									: 
 									<Image 
@@ -172,6 +173,7 @@ function Speaker({ speaker, sessions }) {
 										width={370} 
 										height={370} 
 										alt=""
+										unoptimized
 									/>
 								}
 							</p>

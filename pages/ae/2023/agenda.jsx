@@ -31,6 +31,7 @@ import '@szhsin/react-menu/dist/transitions/slide.css'
 
 import CSS from '../../../css/app/agenda.module.css'
 
+
 // legacy data imports
 
 import { bzAgendaSettings } from "../../../data/bz-agenda-settings"

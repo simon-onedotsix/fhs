@@ -76,18 +76,20 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 									<a className={CSS.avatar}>
 										{
 											speaker.photoSet ? 
-											<img 
+											<Image 
 												src={speaker.photoSet.large} 
 												width={370} 
 												height={370} 
 												alt=""
+												unoptimized
 											/>
 											: 
-											<img 
+											<Image 
 												src='/assets/ui/avatar-fallback.png' 
 												width={370} 
 												height={370} 
 												alt=""
+												unoptimized
 											/>
 										}
 									</a>
