@@ -1,9 +1,5 @@
-import { gql } from "@apollo/client"
-import craftApolloClient from "../../api/apollo"
-
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
-import Head from "next/head"
 
 import { formatInTimeZone } from 'date-fns-tz'
 
@@ -18,15 +14,21 @@ import { Modal } from "../../../fuselage/components/modal/modal"
 import { Sidebar } from "../../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../../fuselage/components/avatar/avatar'
 
-import handleSeomaticMeta from '../../../lib/seomatic'
-
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
 
 import CSS from '../../../css/app/agenda.module.css'
 
 
-export default function Agenda ({ agendaSettings, sessions, speakers, speakersOverflow, cmsAgendaData }) {
+// legacy data imports
+
+import { bzAgendaSettings } from "../../../data/legacy/ae/2022/bz-agenda-settings"
+import { bzAgendaSessions } from "../../../data/legacy/ae/2022/bz-agenda-sessions"
+import { bzSpeakers } from "../../../data/legacy/ae/2022/bz-speakers"
+import { cmsAgendaSettings } from "../../../data/legacy/ae/2022/cms-agenda-settings"
+
+
+export default function Agenda () {
 
     const [ currentDay, setCurrentDay ] = useState (null)
     const [ currentFilter, setCurrentFilter ] = useState (null)
@@ -54,26 +56,12 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     
     // cms entry data
 
-    const entry = cmsAgendaData.data.entry
-    // const sessionThemes = entry.bizzaboAgendaTheme <- overridden (see line 88)
-
-    let metaTitle = JSON.parse(entry.seomatic.metaTitleContainer)
-    let metaTags = JSON.parse(entry.seomatic.metaTagContainer)  
-
+    const entry = cmsAgendaSettings.data.entry
     
     
-    // handle 200+ speakers ( requires separate api requests )
-
-    if ( speakersOverflow && speakersOverflow.content ) {
-        speakers.content = [].concat( speakers.content, speakersOverflow.content )
-    }
-    
-    
-    
-    
-    // console.log('agenda data:', cmsAgendaData)
-    // console.log('settings:', agendaSettings)
-    // console.log('sessions:', sessions)
+    // console.log('agenda data:', cmsAgendaSettings)
+    // console.log('settings:', bzAgendaSettings)
+    // console.log('bzAgendaSessions:', bzAgendaSessions)
     // console.log('speakers:', speakers.content)
     // console.log('speakers found:', speakers.content.length)
     // console.log('combined speakers:', speakers)
@@ -262,7 +250,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
             let profiles = []
 
             speakerIds.forEach( speaker => {
-                const speakerProfile = speakers.content.find( obj => obj.id === speaker.speakerId )
+                const speakerProfile = bzSpeakers.content.find( obj => obj.id === speaker.speakerId )
 
                 if ( speakerProfile ) {
                     const profile = new SessionSpeakerProfile( 
@@ -395,8 +383,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
     let mergedTags = []
 
-    if ( agendaSettings ) {
-        agendaSettings.filters.forEach( obj => {
+    if ( bzAgendaSettings ) {
+        bzAgendaSettings.filters.forEach( obj => {
             obj.tags.forEach( tag => mergedTags.push(tag))
         })
     
@@ -427,10 +415,6 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     return (
         <>
 
-            <Head>
-                { handleSeomaticMeta( cmsAgendaData.seomatic ) }
-			</Head>
-
             <Header 
                 compact
                 shim 
@@ -456,7 +440,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                         <section className={CSS.filterLayoutButtons}>
                             
                             {
-                                sortSessions(sessions).map( (day, index) => {
+                                sortSessions(bzAgendaSessions).map( (day, index) => {
                                     return (
                                         <button 
                                             className={`
@@ -499,8 +483,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                             >
                                 <option value="">All sessions</option>
                                 {
-                                    agendaSettings &&
-                                    agendaSettings.filters.slice(0).reverse().map( filter => {
+                                    bzAgendaSettings &&
+                                    bzAgendaSettings.filters.slice(0).reverse().map( filter => {
                                         return (
                                             <optgroup key={filter.id} label={filter.name}>
                                                 {filter.tags.map( (tag) => (
@@ -518,7 +502,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                     
                     {/* main agenda */}
                     <div className="mt-sm">
-                        {outputAgenda( sessions )}
+                        {outputAgenda( bzAgendaSessions )}
                     </div>
                 </div>
             </section>
@@ -555,87 +539,4 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
 Agenda.theme = 'ae-2022'
 
-
-
-export async function getStaticProps() {
-
-
-    const cmsAgendaData = await craftApolloClient().query({
-        query: gql`
-			query SEO {
-				entry(site: "${process.env.SITE_HANDLE_AE}", id: "14740") {
-					title
-                    ... on ${process.env.SITE_HANDLE_AE}Agenda_${process.env.SITE_HANDLE_AE}Agenda_Entry {
-                        id
-                        bizzaboAgendaTheme {
-                            ... on bizzaboAgendaTheme_BlockType {
-                                id
-                                color
-                                bizzaboAgendaTag
-                            }
-                        }
-                    }
-					seomatic (asArray: true) {
-						metaTitleContainer
-						metaTagContainer
-					}
-				}
-			}
-        `
-    })
-
-
-    const sessionsRes = await fetch(`https://api.bizzabo.com/api/agenda/sessions?eventId=378241&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-    const sessionsData = await sessionsRes.json()
-    const sessions = sessionsData.content
-    
-
-    const agendaSettingsRes = await fetch(`https://api.bizzabo.com/api/agenda/settings?eventId=378241&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-    const agendaSettings = await agendaSettingsRes.json()
-
-
-    // speakers – beware of 200 max per page + each page requires a separate call
-    const bizzaboSpeakers = await fetch(`https://api.bizzabo.com/api/speakers?eventId=378241&page=0&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-	const speakers = await bizzaboSpeakers.json()
-    
-    // speaker overflow ( when there are more than 200 )
-    const bizzaboSpeakersOverflow = await fetch(`https://api.bizzabo.com/api/speakers?eventId=378241&page=1&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-	const speakersOverflow = await bizzaboSpeakersOverflow.json()
-  
-
-
-    return { 
-        props: { 
-            sessions, 
-            agendaSettings, 
-            speakers, 
-            speakersOverflow, 
-            cmsAgendaData
-        } 
-    }
-}
 

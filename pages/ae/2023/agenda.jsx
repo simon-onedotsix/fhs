@@ -7,7 +7,7 @@ import { formatInTimeZone } from 'date-fns-tz'
 import _ from 'lodash'
 import { toHoursAndMinutes } from "../../../lib/agenda-utils"
 
-import { Header } from '../../../fuselage/global-ae/header/header'
+import { Header, HeaderShim } from '../../../fuselage/theme/2022/ae/global/header/header'
 import { Footer } from '../../../fuselage/global-ae/footer/footer'
 import { Session, SessionSpeaker, SessionSpeakerGrid } from '../../../fuselage/components/session/session'
 import { Button } from "../../../fuselage/components/button/button"
@@ -34,10 +34,10 @@ import CSS from '../../../css/app/agenda.module.css'
 
 // legacy data imports
 
-import { bzAgendaSettings } from "../../../data/bz-agenda-settings"
-import { bzAgendaSessions } from "../../../data/bz-agenda-sessions"
-import { bzSpeakers } from "../../../data/bz-speakers"
-import { cmsAgendaSettings } from "../../../data/cms-agenda-settings"
+import { bzAgendaSettings } from "../../../data/legacy/ae/2023/bz-agenda-settings"
+import { bzAgendaSessions } from "../../../data/legacy/ae/2023/bz-agenda-sessions"
+import { bzSpeakers } from "../../../data/legacy/ae/2023/bz-speakers"
+import { cmsAgendaSettings } from "../../../data/legacy/ae/2023/cms-agenda-settings"
 
 
 export default function Agenda () {
@@ -550,15 +550,20 @@ export default function Agenda () {
                 { handleSeomaticMeta( cmsAgendaSettings.seomatic ) }
 			</Head>
 
-            <Header compact shim theme={{ 
-                primary: 'var(--primary)', 
-                secondary: 'var(--secondary)', 
-                text: 'var(--primary)',
-                buttons: 'var(--primary)',
-                buttonText: 'white',
-                headerBg: '#ffffffee',
-                overlayBg: 'var(--primary)',
-            }} />
+            <Header 
+                compact 
+                shim 
+                theme={{ 
+                    primary: 'var(--primary)', 
+                    secondary: 'var(--secondary)', 
+                    text: 'var(--primary)',
+                    buttons: 'var(--primary)',
+                    buttonText: 'white',
+                    headerBg: '#ffffffee',
+                    overlayBg: 'var(--primary)',
+                }}
+                path={`/agenda`}
+            />
 
 
             <section className="block">

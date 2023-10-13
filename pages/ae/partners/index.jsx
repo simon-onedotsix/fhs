@@ -31,7 +31,7 @@ import {
 function Partners({ seomatic, contentBlocks, partnerData }) {
 
 
-	// console.log('bizzabo partner data:', partnerData)
+	console.log('bizzabo partner data:', partnerData)
 
 
 	return (

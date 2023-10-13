@@ -1,3 +1,4 @@
+import { useRouter } from "next/router"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -10,11 +11,21 @@ import { ButtonSocial } from  '../../../../fuselage/components/button-social/but
 
 import { sortSessions, toHoursAndMinutes } from "../../../../lib/agenda-utils"
 import { formatInTimeZone } from 'date-fns-tz'
-import { Container } from "../../../../fuselage/theme/2023/ae/layout/container/container"
 
 import CSS from '../../../../css/app/speakers.module.css'
 
-function Speaker({ speaker, sessions }) {
+
+// import legacy data
+import { bzSpeakers } from "../../../../data/legacy/ae/2022/bz-speakers"
+import { bzAgendaSessions } from "../../../../data/legacy/ae/2022/bz-agenda-sessions"
+
+
+
+function Speaker() {
+
+	const router = useRouter()
+
+	let speaker = bzSpeakers.content.find( speaker => speaker.id === parseInt(router.query.id))
 
 	// console.log('bizzabo speaker data:', speaker)
 	// console.log('bizzabo sessions data:', sessions)
@@ -58,12 +69,10 @@ function Speaker({ speaker, sessions }) {
 		return speaker.company
 		
 	}
-
-
 	const handleRelatedSessions = () => {
 		let relatedSessions = []
 
-		sessions.map( session => {
+		bzAgendaSessions.map( session => {
 			if ( session.speakers && session.speakers.find( item => item.speakerId === speaker.id ) ){
 				relatedSessions.push(session)
 			}
@@ -115,7 +124,7 @@ function Speaker({ speaker, sessions }) {
 	}
 	
 
-	return (
+	if (speaker) return (
 
 		<>
 
@@ -136,68 +145,58 @@ function Speaker({ speaker, sessions }) {
 
 
 
-			<section className="block flush">
-				<Container flushRight maxWidth={`85%`} decal={`bg-white-90 p-md`}>
-					<Sidebar size='medium'>
+			<section className="block">
+				<Sidebar size='medium'>
 
-						<aside className="formatted">
-							<p className="fw-600">
-								<ArrowLink 
-									theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
-									href="/ae/2022/speakers"
-								>
-									View All 2022 Speakers
-								</ArrowLink>
-							</p>
-							{/* <p className="fw-600">
-								<ArrowLink 
-									theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
-									href="/ae/advisory-board"
-								>
-									View Advisory Board
-								</ArrowLink>
-							</p> */}
-							<p className="mt-sm maxw-15">
-								{
-									speaker.photoSet ? 
-									<Image 
-										src={speaker.photoSet.large} 
-										width={370} 
-										height={370} 
-										alt=""
-										unoptimized
-									/>
-									: 
-									<Image 
-										src='/assets/ui/avatar-fallback.png' 
-										width={370} 
-										height={370} 
-										alt=""
-										unoptimized
-									/>
-								}
-							</p>
-							{ handleLinkedIn() }
-							{ handleTwitter() }
-						</aside>
+					<aside className="formatted">
+						<p className="fw-600">
+							<ArrowLink 
+								theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
+								href="/ae/2022/speakers"
+							>
+								View All 2022 Speakers
+							</ArrowLink>
+						</p>
+						<p className="mt-sm maxw-15">
+							{
+								speaker.photoSet ? 
+								<Image 
+									src={speaker.photoSet.large} 
+									width={370} 
+									height={370} 
+									alt=""
+									unoptimized
+								/>
+								: 
+								<Image 
+									src='/assets/ui/avatar-fallback.png' 
+									width={370} 
+									height={370} 
+									alt=""
+									unoptimized
+								/>
+							}
+						</p>
+						{ handleLinkedIn() }
+						{ handleTwitter() }
+					</aside>
 
-						<main className="maxw-60">
-							{/* <p className='fs-1 fw-600 lh-1 c-secondary maxw-40'>SPEAKER</p> */}
-							<p className="fs-3 fw-600 caps">{speaker.firstname} {speaker.lastname}</p>
-							<p>
-								{speaker.title}
-								<br/>
-								<span className="fw-500">
-									{ handleCompany() }
-								</span>
-							</p>
-							<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{speaker.bio}</p>
+					<main className="maxw-60">
+						{/* <p className='fs-1 fw-600 lh-1 c-secondary maxw-40'>SPEAKER</p> */}
+						<p className="fs-3 fw-600 caps">{speaker.firstname} {speaker.lastname}</p>
+						<p>
+							{speaker.title}
+							<br/>
+							<span className="fw-500">
+								{ handleCompany() }
+							</span>
+						</p>
+						<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{speaker.bio}</p>
 
-							{/* { handleRelatedSessions() } */}
-						</main>
+						{/* { handleRelatedSessions() } */}
+					</main>
 
-					</Sidebar>
-				</Container>
+				</Sidebar>
 			</section>
 
 			
@@ -205,57 +204,13 @@ function Speaker({ speaker, sessions }) {
 		
 		</>
 	)
+
+	return <p>[error!]</p>
 }
 
 Speaker.theme = 'ae-2022'
 
 
-export async function getStaticPaths() {
-
-	const res = await fetch(`https://api.bizzabo.com/api/speakers?eventId=378241&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-	const allSpeakers = await res.json()
-	// console.log('hello:',allSpeakers)
-
-	return {
-		paths: allSpeakers.content.map( entry => ({ params: { id: String(entry.id) } })),
-		fallback: 'blocking'
-	}
-}
-
-export async function getStaticProps({ params }) {
-
-	// console.log('params',params)
-	
-	const res = await fetch(`https://api.bizzabo.com/api/speakers/${params.id}?eventId=378241`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-	const speakerData = await res.json()
-
-	const sessionsRes = await fetch(`https://api.bizzabo.com/api/agenda/sessions?eventId=378241&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-    const sessionsData = await sessionsRes.json()
-    const sessions = sessionsData.content
-
-	return {
-		props: { speaker: speakerData, sessions },
-		revalidate: 86400
-	}
-}
 
 export default Speaker
 

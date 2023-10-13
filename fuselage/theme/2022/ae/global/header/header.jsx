@@ -88,7 +88,7 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
                     {/* <MainMenu fixToggle={!inView} theme={theme} /> */}
                     
                     <Link href={`/ae${ path ? path : '' }`}>
-                        <a className={`${CSS.ctaButton} fw-600`}>Go to 2023</a>
+                        <a className={`${CSS.ctaButton} fw-600`}>Go to current</a>
                     </Link>
                     
                     <p><span className='fw-600 fs-6'>19-21 September 2022</span> <br/>Hilton Abu Dhabi Yas Island</p>
