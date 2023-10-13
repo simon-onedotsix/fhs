@@ -48,6 +48,7 @@ export default function Home({ seomatic, contentBlocks, speakerData, partnerData
 		<div className='bg-primary' style={{ backgroundColor: `var(--primary)`, backgroundImage: `url('/assets/theme/eu-2024/fhs-2024-eu-bg.svg')`, backgroundSize: `100%` }}>
 			<Head>
 				{ handleSeomaticMeta( seomatic ) }
+				<meta name="robots" content="noindex" />
 			</Head>
 
 			<Header shimMobile={true} />

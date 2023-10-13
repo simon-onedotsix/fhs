@@ -35,6 +35,7 @@ export default function Page ({ entry, seomatic }) {
 
             <Head>
 				{ handleSeomaticMeta( seomatic ) }
+                <meta name="robots" content="noindex" />
             </Head>
 
             <Header compact shimMobile={true} />

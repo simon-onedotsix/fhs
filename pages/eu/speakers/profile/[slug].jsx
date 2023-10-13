@@ -1,8 +1,8 @@
-import { ThemeBg } from "../../../../fuselage/theme/2023/ae/theme-bg"
 
 import { gql } from "@apollo/client"
 import craftApolloClient from '../../../api/apollo'
 
+import Head from 'next/head'
 import Image from "next/image"
 
 import { Header, HeaderShim } from '../../../../fuselage/theme/2024/eu/global/header/header'
@@ -19,65 +19,71 @@ export default function Profile ({ profile }) {
     // console.log('profile data:', profile)
 
     return (
-        <div className='bg-primary'>
-			<Header compact shimMobile={true} />
+        <>
+            <Head>
+				<meta name="robots" content="noindex" />
+            </Head>
 
-            <HeaderShim />
+            <div className='bg-primary'>
+                <Header compact shimMobile={true} />
+
+                <HeaderShim />
 
 
-            <section className="block">
+                <section className="block">
 
-					<Sidebar size='medium'>
+                        <Sidebar size='medium'>
 
-						<aside className="formatted">
-							{/* <p className="fw-600">
-								<ArrowLink 
-									theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
-									href="/eu/speakers"
-								>
-									View All Speakers
-								</ArrowLink>
-							</p> */}
-							<p className="fw-600">
-								<ArrowLink 
-									theme={{ color: `white`, stroke: `var(--accent)` }} 
-									href="/eu/advisory-board"
-								>
-									View Advisory Board
-								</ArrowLink>
-							</p>
-							<div className={`${CSS.avatar} mt-sm`}>
+                            <aside className="formatted">
+                                {/* <p className="fw-600">
+                                    <ArrowLink 
+                                        theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
+                                        href="/eu/speakers"
+                                    >
+                                        View All Speakers
+                                    </ArrowLink>
+                                </p> */}
+                                <p className="fw-600">
+                                    <ArrowLink 
+                                        theme={{ color: `white`, stroke: `var(--accent)` }} 
+                                        href="/eu/advisory-board"
+                                    >
+                                        View Advisory Board
+                                    </ArrowLink>
+                                </p>
+                                <div className={`${CSS.avatar} mt-sm`}>
+                                    {
+                                        profile.avatar.length ?
+                                            <Image className={CSS.photo} src={profile.avatar[0].url} layout='fill' alt=""/>
+                                        :
+                                            <Image className={CSS.photo} src={`/assets/ui/avatar-fallback.png`} layout='fill' alt=""/>
+                                    }
+                                </div>
+                                
+                            </aside>
+
+                            <main className="maxw-60">
+                                <p className="fs-3 fw-600 caps">{profile.title}</p>
+                                
                                 {
-                                    profile.avatar.length ?
-                                        <Image className={CSS.photo} src={profile.avatar[0].url} layout='fill' alt=""/>
-                                    :
-                                        <Image className={CSS.photo} src={`/assets/ui/avatar-fallback.png`} layout='fill' alt=""/>
+                                    profile.positions.map( position => (
+                                        <p key={position.id} className='mt-xxs'>
+                                            { position.jobTitle }<br/>
+                                            <span className="fw-600">{ position.organisation }</span>
+                                        </p>
+                                    ))
                                 }
-                            </div>
-							
-						</aside>
+                                <div className="formatted mt-sm maxw-50" dangerouslySetInnerHTML={{__html: profile.profile }} />
+                            </main>
 
-						<main className="maxw-60">
-							<p className="fs-3 fw-600 caps">{profile.title}</p>
-							
-                            {
-                                profile.positions.map( position => (
-                                    <p key={position.id} className='mt-xxs'>
-                                        { position.jobTitle }<br/>
-                                        <span className="fw-600">{ position.organisation }</span>
-                                    </p>
-                                ))
-                            }
-							<div className="formatted mt-sm maxw-50" dangerouslySetInnerHTML={{__html: profile.profile }} />
-						</main>
+                        </Sidebar>
 
-					</Sidebar>
-
-			</section>
+                </section>
 
 
-            <Footer theme={{ footerBg: 'bg-white-90' }} />
-		</div>
+                <Footer theme={{ footerBg: 'bg-white-90' }} />
+            </div>
+        </>
     )
 }
 

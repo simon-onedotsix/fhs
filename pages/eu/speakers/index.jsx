@@ -47,6 +47,7 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 
 			<Head>
 				{ handleSeomaticMeta( seomatic ) }
+				<meta name="robots" content="noindex" />
             </Head>
 
 			<ThemeBg />

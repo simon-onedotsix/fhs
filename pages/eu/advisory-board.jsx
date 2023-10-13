@@ -1,6 +1,7 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
+import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -15,46 +16,53 @@ function Speakers({ craftCmsProfiles }) {
 	// console.log('cms profile data:', craftCmsProfiles)
 
 	return (
-		<div className='bg-primary'>
+		<>
+			<Head>
+				<meta name="robots" content="noindex" />
+            </Head>
 
-            <Header compact shimMobile={true} />
 
-            <HeaderShim />
+			<div className='bg-primary'>
 
-			<section className="block">
+				<Header compact shimMobile={true} />
 
-				<p className='fs-1 fw-600 lh-1 c-accent'>Advisory Board</p>
+				<HeaderShim />
 
-				<SpeakerGrid decal="gap-sm mt-md">
-					{craftCmsProfiles.map( speaker => (
-						<div key={speaker.id}>
-							<Link href={`/eu/speakers/profile/${speaker.slug}`}>
-								<a className={CSS.avatar}>
-									<Image 
-										src={speaker.avatar[0].url} 
-										layout='fill'
-										alt="profile picture"
-									/>
-								</a>
-							</Link>
-							<div>
-								<p className='mt-xs'>
-									<span className='fw-600'>
-									{speaker.title}</span> <br/>
-									{speaker.positions[0] && speaker.positions[0].jobTitle} <br/>
-									{speaker.positions[0] && speaker.positions[0].organisation} <br/>
-									
-								</p>
+				<section className="block">
+
+					<p className='fs-1 fw-600 lh-1 c-accent'>Advisory Board</p>
+
+					<SpeakerGrid decal="gap-sm mt-md">
+						{craftCmsProfiles.map( speaker => (
+							<div key={speaker.id}>
+								<Link href={`/eu/speakers/profile/${speaker.slug}`}>
+									<a className={CSS.avatar}>
+										<Image 
+											src={speaker.avatar[0].url} 
+											layout='fill'
+											alt="profile picture"
+										/>
+									</a>
+								</Link>
+								<div>
+									<p className='mt-xs'>
+										<span className='fw-600'>
+										{speaker.title}</span> <br/>
+										{speaker.positions[0] && speaker.positions[0].jobTitle} <br/>
+										{speaker.positions[0] && speaker.positions[0].organisation} <br/>
+										
+									</p>
+								</div>
 							</div>
-						</div>
-					))}
-				</SpeakerGrid>
+						))}
+					</SpeakerGrid>
 
 
-			</section>
-						
-			<Footer />
-		</div>
+				</section>
+							
+				<Footer />
+			</div>
+		</>
 	)
 }
 

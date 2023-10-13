@@ -1,5 +1,6 @@
 import { ThemeBg } from "../../../fuselage/theme/2023/ae/theme-bg"
 
+import Head from 'next/head'
 import Image from "next/image"
 import Link from "next/link"
 
@@ -60,8 +61,6 @@ function Speaker({ speaker, sessions }) {
 		return speaker.company
 		
 	}
-
-
 	const handleRelatedSessions = () => {
 
 		// speaker id: 3098821
@@ -123,6 +122,10 @@ function Speaker({ speaker, sessions }) {
 	return (
 
 		<>
+			<Head>
+				<meta name="robots" content="noindex" />
+            </Head>
+
 			<ThemeBg />
 
 			<Header compact shim theme={{ 
