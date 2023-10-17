@@ -21,22 +21,16 @@ export const Header = ({ compact, shim, shimMobile }) => {
 
     const otherEvents = [
         {
-            id: 3,
-            title: 'IDEEA',
-            url: 'https://www.ideea-forum.com',
-            target: true
-        },
-        {
-            id: 1,
-            title: 'FHS',
-            url: '/ae',
-            target: false
-        },
-        {
             id: 2,
             title: 'GRIF Saudi Arabia',
             url: '/sa/grif',
             target: false
+        },
+        {
+            id: 5,
+            title: 'AviaDev',
+            url: 'https://www.aviationdevelop.com',
+            target: true
         },
         {
             id: 4,
@@ -45,10 +39,16 @@ export const Header = ({ compact, shim, shimMobile }) => {
             target: true
         },
         {
-            id: 5,
-            title: 'AviaDev',
-            url: 'https://www.aviationdevelop.com',
+            id: 3,
+            title: 'IDEEA',
+            url: 'https://www.ideea-forum.com',
             target: true
+        },
+        {
+            id: 1,
+            title: 'FHS World',
+            url: '/ae',
+            target: false
         },
         {
             id: 6,

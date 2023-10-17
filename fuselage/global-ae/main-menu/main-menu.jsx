@@ -152,22 +152,24 @@ export const MainMenu = ({ fixToggle, mainMenu, theme }) => {
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Agenda</a>
                             </Link>
                         </p>
+
+                        {/* <p className='fs-5 fw-700 c-white mt-sm'>FHS 2023</p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/2023/speakers'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Speakers</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/2023/agenda'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Agenda</a>
+                            </Link>
+                        </p> */}
                     </section>
 
                     <section className='c-white'>
-                        {/* <p className="fs-4 fw-600">FHS 2022</p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/ae/agenda'}>
-                                <a className='uLink fw-400 fs-5' onClick={ () => setActive(false)}>2022 programme</a>
-                            </Link>
-                        </p> */}
                         <p className="fs-4 fw-600">Future Hospitality events</p>
                         <p className="mt-xs">
-                            <ArrowButton href={`/sa`} theme={{ arrow: `white`, border: `white`, label: `white`}}>FHS Saudi Arabia</ArrowButton>
-                        </p>
-                        <p className="fs-4 fw-600 mt-md">Related events</p>
-                        <p className="mt-xs">
-                            <ArrowButton href={`https://ahic.com`} target='_blank' theme={{ arrow: `white`, border: `white`, label: `white`}}>AHIC 2021</ArrowButton>
+                            <ArrowButton href={`/sa`} theme={{ arrow: `white`, border: `white`, label: `white`}}>FHS Saudi Arabia 2024</ArrowButton>
                         </p>
                     </section>
                     

@@ -41,14 +41,10 @@ export const MainMenu = ({ mainMenu }) => {
                     <section className='c-white'>
                         <p className="fs-4 fw-600 c-accent">Future Hospitality events</p>
                         <p className="mt-xs">
-                            <ArrowButton href={`/ae`} theme={{ arrow: `var(--accent-ae)`, border: `var(--accent-ae)`, label: `white`}}>FHS 2023</ArrowButton>
+                            <ArrowButton href={`/ae`} theme={{ arrow: `var(--accent-ae)`, border: `var(--accent-ae)`, label: `white`}}>FHS World 2024</ArrowButton>
                         </p>
                         <p className="mt-xs">
-                            <ArrowButton href={`/sa`} theme={{ arrow: `var(--primary-sa)`, border: `var(--primary-sa)`, label: `white`}}>FHS Saudi Arabia</ArrowButton>
-                        </p>
-                        <p className="fs-4 fw-600 c-accent mt-md">Related events</p>
-                        <p className="mt-xs">
-                            <ArrowButton href={`https://ahic.com`} target='_blank' theme={{ arrow: `orangered`, border: `orangered`, label: `white`}}>AHIC 2021</ArrowButton>
+                            <ArrowButton href={`/sa`} theme={{ arrow: `var(--primary-sa)`, border: `var(--primary-sa)`, label: `white`}}>FHS Saudi Arabia 2024</ArrowButton>
                         </p>
                     </section>
 

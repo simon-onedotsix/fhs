@@ -10,18 +10,6 @@ import CSS from './header.module.css'
 
 const otherEvents = [
     {
-        id: 4,
-        title: 'IDEEA',
-        url: 'https://www.ideea-forum.com',
-        target: true
-    },
-    {
-        id: 3,
-        title: 'FHS',
-        url: '/ae',
-        target: false
-    },
-    {
         id: 1,
         title: 'FHS Saudi Arabia',
         url: '/sa',
@@ -34,16 +22,28 @@ const otherEvents = [
         target: false
     },
     {
+        id: 6,
+        title: 'AviaDev',
+        url: 'https://www.aviationdevelop.com',
+        target: true
+    },
+    {
         id: 5,
         title: 'AHIF',
         url: 'https://www.ahif.com',
         target: true
     },
     {
-        id: 6,
-        title: 'AviaDev',
-        url: 'https://www.aviationdevelop.com',
+        id: 4,
+        title: 'IDEEA',
+        url: 'https://www.ideea-forum.com',
         target: true
+    },
+    {
+        id: 3,
+        title: 'FHS World',
+        url: '/ae',
+        target: false
     },
     {
         id: 7,
