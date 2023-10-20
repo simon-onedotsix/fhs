@@ -21,6 +21,12 @@ export const Header = ({ compact, shim, shimMobile }) => {
 
     const otherEvents = [
         {
+            id: 1,
+            title: 'FHS World',
+            url: '/ae',
+            target: false
+        },
+        {
             id: 2,
             title: 'GRIF Saudi Arabia',
             url: '/sa/grif',
@@ -43,12 +49,6 @@ export const Header = ({ compact, shim, shimMobile }) => {
             title: 'IDEEA',
             url: 'https://www.ideea-forum.com',
             target: true
-        },
-        {
-            id: 1,
-            title: 'FHS World',
-            url: '/ae',
-            target: false
         },
         {
             id: 6,

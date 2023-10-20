@@ -16,6 +16,12 @@ const otherEvents = [
         target: false
     },
     {
+        id: 3,
+        title: 'FHS World',
+        url: '/ae',
+        target: false
+    },
+    {
         id: 2,
         title: 'GRIF Saudi Arabia',
         url: '/sa/grif',
@@ -38,12 +44,6 @@ const otherEvents = [
         title: 'IDEEA',
         url: 'https://www.ideea-forum.com',
         target: true
-    },
-    {
-        id: 3,
-        title: 'FHS World',
-        url: '/ae',
-        target: false
     },
     {
         id: 7,

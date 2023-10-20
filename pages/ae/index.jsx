@@ -157,9 +157,12 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     <Headline />
                     <Slide delay={.5}><p className='fs-5 fw-300 caps mb-lg'>Madinat Jumeirah, Dubai</p></Slide>
                     
-                    <LogoBubbleGrid>
+                    <Fade>
+                        <Button href={`https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1`} decal={`fs-4 fw-600`} target={`_blank`}>FHS World 2024 Brochure</Button>
+                    </Fade>
+                    {/* <LogoBubbleGrid>
                         <LogoBubble delay={0.2}><FhsLogo primary={`white`} secondary={`white`} /></LogoBubble>
-                    </LogoBubbleGrid>
+                    </LogoBubbleGrid> */}
                 </Container>
                 
                 <Container flushRight decal={`bg-white-90 p-md`}>

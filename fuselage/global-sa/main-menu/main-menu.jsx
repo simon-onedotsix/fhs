@@ -133,7 +133,7 @@ export const MainMenu = ({ fixToggle, mainMenu }) => {
 
                         <p className="fs-4 fw-600 mt-md">Future Hospitality events</p>
                         <p className="mt-xs">
-                            <ArrowButton href={`/ae`} theme={{ arrow: `white`, border: `white`, label: `white`}}>FHS World 2024</ArrowButton>
+                            <ArrowButton href={`/ae`} theme={{ arrow: `white`, border: `white`, label: `white`}}>FHS World</ArrowButton>
                         </p>
                     </section>
                 </div>

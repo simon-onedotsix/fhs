@@ -169,7 +169,10 @@ export const MainMenu = ({ fixToggle, mainMenu, theme }) => {
                     <section className='c-white'>
                         <p className="fs-4 fw-600">Future Hospitality events</p>
                         <p className="mt-xs">
-                            <ArrowButton href={`/sa`} theme={{ arrow: `white`, border: `white`, label: `white`}}>FHS Saudi Arabia 2024</ArrowButton>
+                            <ArrowButton href={`https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1`} target={`_blank`} theme={{ arrow: `white`, border: `white`, label: `white`}}>FHS World 2024 Brochure</ArrowButton>
+                        </p>
+                        <p className="mt-xs">
+                            <ArrowButton href={`/sa`} theme={{ arrow: `white`, border: `white`, label: `white`}}>FHS Saudi Arabia</ArrowButton>
                         </p>
                     </section>
                     
