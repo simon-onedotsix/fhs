@@ -15,8 +15,8 @@ export const HeroUnitVideo = ({ children, hero, poster }) => {
                 <Parallax speed={-20}>
                     <div className={CSS.videoWrapper}>
                         <ReactPlayer
-                            url={`/assets/video/fhs-2022-opt.mp4`}
-                            config={{ attributes: { poster: '/assets/video/fhs-2022-opt-poster.jpg' } }}
+                            url={`/assets/video/fhs-2023-opt.mp4`}
+                            config={{ attributes: { poster: '/assets/video/fhs-2023-opt-poster.jpg' } }}
                             width='100%'
                             height='100%'
                             controls={false}

@@ -230,7 +230,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
                 <Container flushRight decal={`bg-light`}>
                     <Slide><p className='fs-0 caps p-md lh-1'>Highlights from FHS&nbsp;2023</p></Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/CG9LX_7DyI0?si=AbFpHM0lcUhWQIbH`} />
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=7Ar-CT0z23k&t=2s`} />
                 </Container>
 
                 <Container decal={``}>
