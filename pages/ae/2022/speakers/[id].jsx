@@ -83,7 +83,7 @@ function Speaker() {
 			console.log(sessions)
 			return (
 				<div className="mt-sm bt-1 bc-secondary pt-sm">
-					<p className="fs-5 fw-400 mb-xs">See {speaker.firstname} {speaker.lastname} speak in the following sessions:</p>
+					<p className="fs-5 fw-400 mb-xs">See {speaker.firstname} {speaker.lastname} speak in the following 2022 sessions:</p>
 					{
 						sessions.map( (day, index) => (
 							<div key={index} className='mb-xs'>
