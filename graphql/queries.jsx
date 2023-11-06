@@ -260,6 +260,40 @@ export const QueryPartners = `
 `
 
 
+export const QueryPartnerGroups = `
+    ... on ${blocksHandle}ContentBlocks_partnerGroups_BlockType {
+        id
+        partnerGroups {
+            id
+            title
+            ... on partnerGroups_default_Entry {
+                id
+                size
+                partners {
+                    ... on partners_partner_Entry {
+                        id
+                        slug
+                        title
+                        website
+                        partnerProfile
+                        partnerLogo {
+                            id
+                            url
+                            width
+                            height
+                        }
+                    }
+                }
+            }
+        }
+    }
+`
+
+
+
+
+
+
 // bizzabo related
 
 export const BizzaboPasses = `

@@ -1,6 +1,14 @@
+import { gql } from "@apollo/client"
+import craftApolloClient from "../../api/apollo"
+
+import parse from 'html-react-parser'
+
 import Image from "next/image"
 
-import { GetBizzaboPartnerLevelTitle } from "../../../lib/bizzabo-partner-levels"
+import { 
+    QuerySEO,
+	QueryPartnerGroups,
+} from "../../../graphql/queries"
 
 import { Header, HeaderShim } from '../../../fuselage/global-ae/header/header'
 import { Footer } from "../../../fuselage/global-ae/footer/footer"
@@ -11,9 +19,11 @@ import { ButtonSocial } from  '../../../fuselage/components/button-social/button
 
 import CSS from '../../../css/app/partners.module.css'
 
+
+
 function Partner({ partner }) {
 
-	// console.log('bizzabo partner data:', partner)
+	// console.log('partner data:', partner)
 
 	const handleLinkedIn = () => {
 		if ( partner.linkedin ) {
@@ -74,7 +84,7 @@ function Partner({ partner }) {
 	return (
 
 		<>
-			<Header compact shim theme={{ 
+			<Header compact theme={{ 
                 primary: 'var(--primary)', 
                 secondary: 'var(--secondary)', 
                 text: 'var(--primary)',
@@ -97,17 +107,17 @@ function Partner({ partner }) {
 								</ArrowLink>
 							</p>
 
-							<div className="bg-white p-sm mt-sm center">
-								<div className={CSS.logo}>
-									<Image 
-										src={partner.logo} 
-										width={500}
-										height={400}
-										layout='responsive'
-										alt=""
-										unoptimized
-									/>
-								</div>
+							<div className={CSS.profileLogo}>
+								{
+									partner.partnerLogo.length &&
+									<div className={CSS.profileLogoWrapper}>
+										<Image 
+											src={partner.partnerLogo[0].url} 
+											layout='fill'
+											alt=""
+										/>
+									</div>
+								}
 							</div>
 
 							<div className="mt-sm">
@@ -120,9 +130,11 @@ function Partner({ partner }) {
 						
 						<main className="maxw-60">
 							<HeaderShim/>
-							{/* <p className='fs-2 fw-600 lh-1 c-secondary maxw-40'>{GetBizzaboPartnerLevelTitle(partner.level)}</p> */}
-							<p className="fs-3 fw-600 caps">{partner.name}</p>	
-							<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{partner.description}</p>
+							<p className="fs-3 fw-600 caps">{ partner.title }</p>	
+							{
+								partner.partnerProfile &&
+								<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{ parse(String(partner.partnerProfile)) }</p>
+							}
 							<p className="mt-md fw-600">{ handleWebsite() }</p>
 						</main>
 
@@ -142,38 +154,73 @@ Partner.theme = 'ae-2023'
 
 export async function getStaticPaths() {
 
-	const res = await fetch(`https://api.bizzabo.com/api/partners?eventId=${process.env.BIZZABO_EVENT_ID_AE}&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-	const allPartners = await res.json()
-	// console.log('hello:',allPartners)
+	const cmsData = await craftApolloClient().query({
+        query: gql`
+			query Page {
+				entry(site: "${process.env.SITE_HANDLE_AE}", id: 11544) {
+					title
+					... on ${process.env.SITE_HANDLE_AE}Partners_${process.env.SITE_HANDLE_AE}Partners_Entry {
+						id
+						title
+						slug
+						${process.env.SITE_HANDLE}ContentBlocks {
+							${QueryPartnerGroups}
+						}
+					}
+					${QuerySEO}
+				}
+			}
+        `
+    })
+	
+	// get partner page content-blocks	
+	let blocks = cmsData.data.entry.fhisContentBlocks
+
+	// find partner-group content-blocks
+	let groupData = blocks.find( group => group.__typename === "fhisContentBlocks_partnerGroups_BlockType")
+
+	// search each group for individual partner slugs
+	let slugs = []
+	groupData.partnerGroups.forEach( group => group.partners.forEach( partner => slugs.push(partner.slug)) )
+
 
 	return {
-		paths: allPartners.content.map( entry => ({ params: { id: String(entry.id) } })),
+		paths: slugs.map( slug => ({ params: { slug: slug } })),
 		fallback: false
 	}
+
 }
 
 export async function getStaticProps({ params }) {
 
 	// console.log('params',params)
 	
-	const res = await fetch(`https://api.bizzabo.com/api/partners/${params.id}?eventId=${process.env.BIZZABO_EVENT_ID_AE}`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-	const partnerData = await res.json()
+	const partner = await craftApolloClient().query({
+        query: gql`
+			query Page {
+				entry(site: "${process.env.SITE_HANDLE}", slug: "${params.slug}" ) {
+					... on partners_partner_Entry {
+						id
+						slug
+						title
+						website
+						partnerProfile
+						partnerLogo {
+							id
+							url
+							width
+							height
+						}
+					}
+				}
+			}
+        `
+    })
 
 	return {
-		props: { partner: partnerData }
+		props: { partner: partner.data.entry }
 	}
+
 }
 
 export default Partner
