@@ -24,6 +24,7 @@ import {
     QuerySEO,
 	QueryCards,
 	QueryPartners,
+	QueryPartnerGroups,
 	BizzaboPartners
 } from "../../../graphql/queries"
 
@@ -34,7 +35,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 
 	// console.log('bizzabo partner data:', partnerData)
-	// console.log('content-blocks:', contentBlocks)
+	console.log('content-blocks:', contentBlocks)
 
 
 	return (
@@ -87,6 +88,7 @@ export async function getStaticProps() {
 							${QueryProfileCarousel}
 							${QueryForm}
 							${QueryPartners}
+							${QueryPartnerGroups}
 							${BizzaboPartners}
 						}
 					}
