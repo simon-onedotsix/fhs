@@ -5,6 +5,25 @@ import craftApolloClient from "../api/apollo"
 
 import Head from 'next/head'
 
+import { 
+    QueryText, 
+    QueryFlipFlops, 
+    QueryFloaters, 
+    QueryBillboards, 
+    QueryBillboardSliders, 
+    QueryImpactFigures, 
+    QueryVideos,
+    QueryForm,
+    QueryProfileCarousel,
+    QuerySEO,
+    QueryImages,
+    Passes,
+    QueryPartners,
+	BizzaboPartners
+} from "../../graphql/queries"
+
+import handleContentBlocks from "../../lib/content-blocks"
+
 import { Header } from '../../fuselage/global-sa/header/header'
 import { Footer } from '../../fuselage/global-sa/footer/footer'
 import { PassBox, PassBoxGrid, PassBoxActions } from '../../fuselage/components/pass-box/pass-box' 
@@ -12,7 +31,9 @@ import { Button } from '../../fuselage/components/button/button'
 
 import handleSeomaticMeta from '../../lib/seomatic'
 
-function PurchasePass({ seomatic }) {
+function PurchasePass({ seomatic, entry }) {
+
+	// console.log('entry:', entry )
 
 	return (
 		<div className='bg-secondary'>
@@ -22,6 +43,11 @@ function PurchasePass({ seomatic }) {
             </Head>
 
 			<Header compact shim />
+
+
+			{/* { handleContentBlocks( entry.fhisContentBlocks, null, null, 'sa' ) } */}
+
+
 
 			<section className="block bg-theme">
 				<div className="container">
@@ -117,23 +143,38 @@ export async function getStaticProps() {
 
 	const cmsData = await craftApolloClient().query({
         query: gql`
-			query SEO {
-				entry(site: "${process.env.SITE_HANDLE_SA}", id: "63858") {
-					title
-					seomatic (asArray: true) {
-						KSAtaTitleContainer
-						metaTagContainer
+			query Page {
+				entry(site: "${process.env.SITE_HANDLE_SA}", id: "63865") {
+					... on ${process.env.SITE_HANDLE_SA}PurchasePass_${process.env.SITE_HANDLE_SA}PurchasePass_Entry {
+						id
+						slug
+						title
+						${process.env.CONTENT_BLOCKS_HANDLE}ContentBlocks {
+							${QueryText}
+							${QueryFlipFlops}
+							${QueryFloaters}
+							${QueryBillboards}
+							${QueryBillboardSliders}
+							${QueryImpactFigures}
+							${QueryVideos}
+							${QueryProfileCarousel}
+							${QueryForm}
+							${QueryImages}
+							${QueryPartners}
+							${Passes}
+							${BizzaboPartners}
+						}
+						${QuerySEO}
 					}
 				}
 			}
         `
     })
 
-
-
 	return {
 		props: { 
-			// seomatic: cmsData.data.entry.seomatic,
+			seomatic: cmsData.data.entry.seomatic,
+			entry: cmsData.data.entry,
 		}
 	}
 }

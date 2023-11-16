@@ -22,6 +22,7 @@ import {
     QueryProfileCarousel,
     QuerySEO,
     QueryImages,
+    Passes,
     QueryPartners,
 	BizzaboPartners
 } from "../../graphql/queries"
@@ -30,7 +31,7 @@ import handleSeomaticMeta from '../../lib/seomatic'
 
 export default function Page ({ entry, seomatic }) {
 
-    // console.log('entry:', entry)
+    console.log('entry:', entry)
     
   
     return (
@@ -105,6 +106,7 @@ export async function getStaticProps({ params, preview, previewData }) {
                             ${QueryForm}
                             ${QueryImages}
                             ${QueryPartners}
+                            ${Passes}
                             ${BizzaboPartners}
                         }
                         ${QuerySEO}

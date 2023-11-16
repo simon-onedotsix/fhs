@@ -5,6 +5,10 @@
     --primary-sa: #794DF6;
     --secondary-sa: #3f058b;
     --accent-sa: #55B164;
+    
+    --primary: #794DF6;
+    --secondary: #3f058b;
+    --accent: #55B164;
 
     --bg-global-sa: rgb(255, 255, 255);
 
@@ -19,5 +23,7 @@
     --error-sa: rgb(255, 68, 0);
     --success-sa: rgb(121, 173, 0);
     --warning-sa: rgb(255, 166, 0);
+
+    --default-button-radius: 0;
 
 }
