@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 
 import Head from "next/head"
 import Image from "next/image"
+import Script from "next/script"
 
 import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
 
@@ -287,7 +288,24 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </PopupOverlay>
 
 
-            
+            <Script id="chatbot" strategy="afterInteractive">
+                {`
+                    (function(d,t) {
+                        var BASE_URL="https://app.chatlyn.com";
+                        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                        g.src=BASE_URL+"/packs/js/sdk.js";
+                        g.defer = true;
+                        g.async = true;
+                        s.parentNode.insertBefore(g,s);
+                        g.onload=function(){
+                        window.chatwootSDK.run({
+                        websiteToken: 'M83YXfr8QveNibKc6eFniAuA',
+                        baseUrl: BASE_URL
+                        })
+                        }
+                    })(document,"script");;
+                `}
+            </Script>
         </>
     )
 }
