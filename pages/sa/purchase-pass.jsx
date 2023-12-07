@@ -45,11 +45,11 @@ function PurchasePass({ seomatic, entry }) {
 			<Header compact shim />
 
 
-			{/* { handleContentBlocks( entry.fhisContentBlocks, null, null, 'sa' ) } */}
+			{ handleContentBlocks( entry.fhisContentBlocks, null, null, 'sa' ) }
 
 
 
-			<section className="block bg-theme">
+			{/* <section className="block bg-theme">
 				<div className="container">
 					<p className='fs-0 fw-600 lh-1'>Purchase Pass</p>
 				</div>
@@ -121,7 +121,7 @@ function PurchasePass({ seomatic, entry }) {
 						</Button>
 					</div>
 				</div>
-			</section>
+			</section> */}
 
 			<Footer />
 

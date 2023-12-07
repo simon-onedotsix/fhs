@@ -117,7 +117,10 @@ function Partner({ partner }) {
 							<HeaderShim/>
 							{/* <p className='fs-2 fw-600 lh-1 c-secondary maxw-40'>{GetBizzaboPartnerLevelTitle(partner.level)}</p> */}
 							<p className="fs-3 fw-600 caps">{partner.title}</p>	
-							<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{ parse(String(partner.partnerProfile)) }</p>
+							{
+								partner.partnerProfile &&
+								<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{ parse(String(partner.partnerProfile)) }</p>
+							}
 							<p className="mt-md fw-600">{ handleWebsite() }</p>
 						</main>
 
