@@ -71,11 +71,11 @@ export const MainMenu = ({ fixToggle, mainMenu }) => {
                                 <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Content Library</a>
                             </Link>
                         </p>
-                        <p className='c-white mt-xs'>
+                        {/* <p className='c-white mt-xs'>
                             <Link href={'/sa/purchase-pass'}>
                                 <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Register Now</a>
                             </Link>
-                        </p>
+                        </p> */}
                     </section>
 
                     <section>
