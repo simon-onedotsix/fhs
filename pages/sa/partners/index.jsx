@@ -24,12 +24,8 @@ import {
     QuerySEO,
 	QueryCards,
 	QueryPartners,
-	QueryPartnerGroups,
-	BizzaboPartners
+	QueryPartnerGroups
 } from "../../../graphql/queries"
-
-import { GetAllBizzaboPartners, GetBizzaboPartners } from "../../../lib/bizzabo-partners"
-
 
 function Partners({ seomatic, contentBlocks, partnerData }) {
 
@@ -89,7 +85,6 @@ export async function getStaticProps() {
 							${QueryForm}
 							${QueryPartners}
 							${QueryPartnerGroups}
-							${BizzaboPartners}
 						}
 					}
 					${QuerySEO}
@@ -97,21 +92,11 @@ export async function getStaticProps() {
 			}
         `
     })
-
-	const partners = await fetch(`https://api.bizzabo.com/api/partners?eventId=${process.env.BIZZABO_EVENT_ID_SA}&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-	const partnerData = await partners.json()
 	
 	return {
 		props: { 
 			seomatic: cmsData.data.entry.seomatic,
 			contentBlocks: cmsData.data.entry.fhisContentBlocks,
-			partnerData: partnerData.content 
 		}
 	}
 }

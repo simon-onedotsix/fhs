@@ -1,0 +1,23 @@
+.layout {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-color: #1C1B3A;
+
+    display: grid;
+}
+.bg, .overlay {
+    grid-area: 1/1 / 2/2;
+    position: fixed;
+}
+.bg img, .overlay img {
+    object-fit: cover;
+    
+}
+
+.bg {
+    inset: 0 0 -20vh 0;
+}
+.overlay {
+    inset: 0 0 -40vh 0;
+}
