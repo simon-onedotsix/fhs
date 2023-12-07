@@ -23,6 +23,8 @@
     --success: rgb(121, 173, 0);
     --warning: rgb(255, 166, 0);
 
+    --default-button-radius: 0;
+
 }
 
 
@@ -167,6 +169,7 @@
 [data-theme='sa-2023'] .button {
 	border: 1px solid var(--primary);
 	background-color: var(--primary);
+    border-radius: var(--default-button-radius);
 	color: white;
 }
 

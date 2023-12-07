@@ -4,13 +4,16 @@ import { GlobalsContext } from '../_app'
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+
 import Head from 'next/head'
 import Image from 'next/image'
 
 import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../fuselage/global-sa/footer/footer"
+import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
 
-import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme-bg/theme-bg'
+import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
 import handleContentBlocks from "../../lib/content-blocks"
 
@@ -31,6 +34,8 @@ import {
 } from "../../graphql/queries"
 
 import handleSeomaticMeta from '../../lib/seomatic'
+import { HomepageHero } from '../../fuselage/theme/2024/sa/blocks/homepage-hero/homepage-hero'
+
 
 
 
@@ -41,7 +46,7 @@ export default function Home({ seomatic, contentBlocks, partnerData }) {
 
 
 	return (
-		<div>
+		<>
 
 			<Head>
 				{ handleSeomaticMeta( seomatic ) }
@@ -49,37 +54,23 @@ export default function Home({ seomatic, contentBlocks, partnerData }) {
 
 			<Header shimMobile />
 
+
+
             <ThemeBg />
 
+			<ThemeFg />
 
-            <div style={{ height: `90vh`, padding: `var(--space-md)` }}> 
-                <div className='maxw-50 pt-xl'>
-                    <Image src='/assets/theme/sa-2024/theme-headline.svg' layout='responsive' width={1113} height={464} alt='' />
-                </div>
-            </div>
-
-            <div style={{ minHeight: `275vh`, padding: `var(--space-md)`, color:`white` }}>
-
-                <div className="columns-1 gap-md">
-                    <p className='fs-4 maxw-50'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, accusamus reprehenderit? Error voluptate alias, ipsum saepe cumque, nihil vero quasi vel dolore dolorem quisquam, minima iusto rem eligendi ratione adipisci.</p>
-                    <p className='fs-4 maxw-50'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, accusamus reprehenderit? Error voluptate alias, ipsum saepe cumque, nihil vero quasi vel dolore dolorem quisquam, minima iusto rem eligendi ratione adipisci.</p>
-                    <p className='fs-4 maxw-50'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, accusamus reprehenderit? Error voluptate alias, ipsum saepe cumque, nihil vero quasi vel dolore dolorem quisquam, minima iusto rem eligendi ratione adipisci.</p>
-                </div>
-                
-                <div className="columns-1 gap-md mt-xl">
-                    <p className='fs-4 maxw-50'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, accusamus reprehenderit? Error voluptate alias, ipsum saepe cumque, nihil vero quasi vel dolore dolorem quisquam, minima iusto rem eligendi ratione adipisci.</p>
-                    <p className='fs-4 maxw-50'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, accusamus reprehenderit? Error voluptate alias, ipsum saepe cumque, nihil vero quasi vel dolore dolorem quisquam, minima iusto rem eligendi ratione adipisci.</p>
-                    <p className='fs-4 maxw-50'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum, accusamus reprehenderit? Error voluptate alias, ipsum saepe cumque, nihil vero quasi vel dolore dolorem quisquam, minima iusto rem eligendi ratione adipisci.</p>
-                </div>
-            </div>
+			<HomepageHero />
 
 
 
-			{/* { handleContentBlocks( contentBlocks, null, partnerData, 'sa' ) } */}
+			{ handleContentBlocks( contentBlocks, null, partnerData, 'sa' ) }
 
-			{/* <Footer /> */}
+			<Footer />
 
-		</div>
+			<LenisScroller />
+
+		</>
 	)
 }
 

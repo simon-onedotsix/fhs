@@ -71,13 +71,7 @@ export default function Home({ seomatic, contentBlocks, speakerData, partnerData
 	)
 }
 
-Home.getLayout = function getLayout( page ) {
-	return (
-		<Layout>
-			{ page }
-		</Layout>
-	)
-}
+Home.theme = 'sa-2023'
 
 
 export async function getStaticProps({ preview, previewData }) {

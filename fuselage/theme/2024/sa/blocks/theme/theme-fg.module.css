@@ -1,0 +1,55 @@
+.layout {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+
+    display: grid;
+    overflow: hidden;
+}
+
+
+.flower, .square {
+    position: absolute;
+    aspect-ratio: 1;
+}
+
+@media(max-width:599px){
+    .flower {
+        width: 100vw;
+        top: 10vh;
+        right: -25vw;
+    }
+    
+    .square {
+        width: 40vw;
+        top: 60vh;
+        left: -20vw;
+    }
+}
+
+@media(min-width:600px) and (orientation:portrait) {
+    .flower {
+        width: 85vw;
+        top: 0;
+        right: -20vw;
+    }
+    
+    .square {
+        width: 40vw;
+        top: 60vh;
+        left: -20vw;
+    }
+}
+@media(min-width:900px){
+    .flower {
+        width: 65vw;
+        top: 0;
+        right: -10vw;
+    }
+    
+    .square {
+        width: 30vw;
+        top: 60vh;
+        left: -15vw;
+    }
+}

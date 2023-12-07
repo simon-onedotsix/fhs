@@ -21,6 +21,6 @@
     --success-sa: rgb(121, 173, 0);
     --warning-sa: rgb(255, 166, 0);
 
-    --default-button-radius: 0;
+    --default-button-radius: 3rem;
 
 }

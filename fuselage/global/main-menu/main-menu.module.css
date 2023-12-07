@@ -3,7 +3,7 @@
     cursor: pointer;
     height: 48px;
     width: 48px;
-    /* border-radius: var(--default-button-radius); */
+    border-radius: var(--default-button-radius);
     border-radius: 3rem;
     background-color: var(--accent);
     transition: all .35s ease;

@@ -11,8 +11,8 @@
 
     --bg-global: rgb(255, 255, 255);
 
-    --default-text-color: rgb(71, 71, 71);
-    --default-heading-color: var(--primary);
+    --default-text-color: rgb(255, 255, 255);
+    --default-heading-color: var(--accent);
 
     --wash: #F9F9FA;
     --light: #E4E1EA;
@@ -73,7 +73,7 @@
 [data-theme='sa-2024'] .bg-default .formatted h4,
 [data-theme='sa-2024'] .bg-default .formatted h5,
 [data-theme='sa-2024'] .bg-default .formatted h6 {
-    color: var(--primary);
+    color: white;
 }
 
 /* white */
@@ -204,13 +204,19 @@
 
 
 [data-theme='sa-2024'] .form input[type='submit'] {
-	border: 1px solid var(--secondary);
-	background-color: var(--secondary);
+	border: 1px solid var(--accent);
+	background-color: var(--accent);
+    color: var(--secondary);
 }
 
 [data-theme='sa-2024'] .form input[type='submit']:hover {
-    border: 1px solid var(--accent);
-	background-color: var(--accent);
+    border: 1px solid white;
+	background-color: white;
+}
+
+[data-theme='sa-2024'] .form input[type='text'],
+[data-theme='sa-2024'] .form input[type='email'] {
+    border-radius: .5rem;
 }
 
 

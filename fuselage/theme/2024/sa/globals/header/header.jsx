@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import Link from 'next/link'
 
 import { EventsBar } from '../../../../../components/events-bar/events-bar'
-import { MainMenu } from '../../../../../global-sa/main-menu/main-menu'
+import { MainMenu } from '../main-menu/main-menu'
 
 import { FhsSaLogo } from '../../../../../components/fhs-sa-logo/fhs-sa-logo'
 
@@ -68,7 +68,7 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
                     thisEvent={'FHS Saudi Arabia'} 
                     events={otherEvents} 
                     theme={{
-                        background: 'var(--dark)',
+                        background: '#2A2865',
                         text: 'white',
                         accent: 'var(--accent-sa)'
                     }}
@@ -96,10 +96,9 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
                 
                 <a href={'/sa'} aria-label='FHS Saudi Arabia Home'>
                     <FhsSaLogo />
-
                 </a>
 
-                <div className={`${CSS.underlay} bg-theme`}></div>
+                <div className={`${CSS.underlay}`}></div>
                 
             </header>
 
