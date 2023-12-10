@@ -2,7 +2,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: var(--space-xs)
+    gap: var(--space-xs);
+    border-radius: var(--default-radius);
+    
 }
 
 .pass.expired {
@@ -17,21 +19,21 @@
 
     padding: 1rem 2rem;
     border-radius: var(--default-button-radius);
-    background-color: var(--primary);
-    color: white;
+    background-color: var(--accent);
+    color: var(--dark);
 
     transition: all 350ms ease-in-out;
 }
 .button.disabled  {
     pointer-events: none;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--accent);
     background-color: transparent;
-    color: var(--primary);
+    color: var(--accent);
 }
 
 @media(hover:hover){
     .button:hover {
-        background-color: var(--secondary);
+        background-color: white;
         transition: all 200ms ease-in-out;
     }
 }

@@ -1,0 +1,139 @@
+.filterLayout {
+    margin-top: var(--space-sm);
+}
+.filterLayoutButtons {
+    display: flex;
+    gap: .2rem;
+    align-items: center;
+}
+
+@media(max-width:1079px){
+    .desktopOnly {
+        display: none;
+    }
+    .filterButton {
+        width: 100%;
+    }
+    .filterLayoutButtons .filterButton:first-child {
+        flex: 1;;
+    }
+    .filterLayoutButtons {
+        margin-bottom: .2rem;
+    }
+}
+@media(min-width:800px){
+    .filterLayout {
+        display: flex;
+        justify-content: flex-start;
+    }
+    .filterLayoutButtons {
+        margin-right: 1.5rem;
+    }
+    .filterButton {
+        width: auto;
+    }
+}
+
+
+/* button */
+
+.filterButton {
+    cursor: pointer;
+    appearance:none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    padding: .75rem 1rem;
+    border: 1px solid var(--accent);
+    border-radius: calc(var(--default-radius) * 0.5);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+
+    transition: all 350ms ease-in-out;
+}
+
+@media(hover:hover) {
+    .filterButton:hover{
+        background-color: var(--accent);
+        border-color: var(--accent);
+        color: var(--secondary);
+    }
+}
+
+.filterButton:focus {
+    border-color: var(--accent);
+    color: var(--secondary);
+    outline: none;
+}
+.filterButton.active {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: var(--secondary);
+}
+
+
+/* select */
+
+.filterSelect {
+    cursor: pointer;
+    appearance:none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    width: 100%;
+    padding: .75rem 2.5rem .75rem 1rem;
+    border: 1px solid var(--accent);
+    border-radius: calc(var(--default-radius) * 0.5);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+
+    background-image: url('/assets/ui/select-chevron-sa-2024.svg');
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem);
+}
+
+.filterSelect:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+
+
+/* speaker profile modal trigger */
+
+.modalTrigger {
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    font: inherit;
+}
+
+
+
+
+@media print {
+    .filterLayout { display: none; }
+}
+
+
+
+
+/* anchor hash handling */
+
+.sessionWrapper {
+    position: relative;
+}
+.anchorOffset {
+    display: block;
+    position: absolute;
+    top: calc( var(--header-height-compact-mobile) * -1 );
+}
+@media(min-width:600px){
+    .anchorOffset {
+        top: calc( var(--header-height-compact) * -1 );
+    }
+}

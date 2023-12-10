@@ -1,0 +1,31 @@
+.themeGraphic {
+    position: absolute;
+    z-index: 0;
+    top: 15vh;
+    right: var(--space-lg);
+    opacity: .25;
+    max-width: 50vw;
+
+}
+@media (min-width:600px) {
+    .themeGraphic {
+        max-width: 35vh;
+    } 
+}
+
+.avatar {
+    position: relative;
+    display: block;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background-color: var(--medium);
+    border-radius: var(--default-radius);
+}
+
+.avatar img {
+    display: block;
+    object-fit: cover;
+    object-position: top center;
+    width: 100%;
+    height: 100%;
+}

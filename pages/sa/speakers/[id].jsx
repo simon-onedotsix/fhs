@@ -3,8 +3,16 @@ import Layout from '../../../fuselage/templates/sa/layout'
 import Image from "next/image"
 import Link from "next/link"
 
-import { Header, HeaderShim } from '../../../fuselage/global-sa/header/header'
-import { Footer } from '../../../fuselage/global-sa/footer/footer'
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
+
+import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
+
+import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+
+import { HeaderShim } from '../../../fuselage/global-sa/header/header'
+
 import { StickySidebar } from '../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
 import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
 import { OffsiteLink } from "../../../fuselage/components/offsite-link/offsite-link"
@@ -59,8 +67,6 @@ function Speaker({ speaker, sessions }) {
 		return speaker.company
 		
 	}
-
-
 	const handleRelatedSessions = () => {
 		let relatedSessions = []
 
@@ -75,7 +81,7 @@ function Speaker({ speaker, sessions }) {
 			console.log(sessions)
 			return (
 				<div className="mt-sm bt-1 bc-accent pt-sm">
-					<p className="fs-5 fw-400 mb-xs">See {speaker.firstname} {speaker.lastname} speak in the following sessions:</p>
+					<p className="fs-5 fw-400 c-accent mb-xs">See {speaker.firstname} {speaker.lastname} speak in the following sessions:</p>
 					{
 						sessions.map( (day, index) => (
 							<div key={index} className='mb-xs'>
@@ -92,7 +98,7 @@ function Speaker({ speaker, sessions }) {
 		
 		function renderDivider ( day ) {
 			return (
-				<p className='fs-6 fw-400 c-accent'>
+				<p className='fs-6 fw-400 c-white'>
 					{formatInTimeZone(new Date( day ), 'Asia/Dubai', 'EEEE dd MMMM')}
 				</p>
 			)
@@ -103,7 +109,7 @@ function Speaker({ speaker, sessions }) {
 				sessions.map( session => {
 					return (
 						<div key={session.id} className="mt-xs">
-							<p>
+							<p className='c-accent'>
 								{ session.startMinute && toHoursAndMinutes(session.startMinute) }
 								{ session.endMinute && ` - ${toHoursAndMinutes(session.endMinute)}` }
 							</p>
@@ -118,8 +124,10 @@ function Speaker({ speaker, sessions }) {
 
 	return (
 
-		<div className="bg-theme">
+		<>
 			<Header compact />
+
+			<ThemeBg />
 
 			<section className="block pt-0">
 				<div className="container">
@@ -130,7 +138,7 @@ function Speaker({ speaker, sessions }) {
 							<HeaderShim/>
 							<p className="fw-600">
                                 <ArrowLink 
-                                    theme={{ color: `white`, stroke: `var(--accent-sa)` }} 
+                                    theme={{ color: `white`, stroke: `var(--accent)` }} 
                                     href="/sa/speakers"
                                 >
                                     View All Speakers
@@ -138,7 +146,7 @@ function Speaker({ speaker, sessions }) {
                             </p>
 							<p className="fw-600">
                                 <ArrowLink 
-                                    theme={{ color: `white`, stroke: `var(--accent-sa)` }} 
+                                    theme={{ color: `white`, stroke: `var(--accent)` }} 
                                     href="/sa/advisory-board"
                                 >
                                     View Advisory Board
@@ -169,15 +177,15 @@ function Speaker({ speaker, sessions }) {
 						<main className="maxw-60">
 							<HeaderShim/>
 							<p className='fs-4 fw-600 lh-1 c-accent maxw-40'>Profile</p>
-							<p className="fs-3 fw-600 caps mt-sm">{speaker.firstname} {speaker.lastname}</p>
-							<p>
+							<p className="fs-3 fw-600 c-white caps mt-sm">{speaker.firstname} {speaker.lastname}</p>
+							<p className='c-white'>
 								{speaker.title}
 								<br/>
 								<span className="fw-500">
 									{ handleCompany() }
 								</span>
 							</p>
-							<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{speaker.bio}</p>
+							<p className="mt-sm maxw-50 c-white" style={{ whiteSpace: `pre-line` }}>{speaker.bio}</p>
 
 							{ handleRelatedSessions() }
 						</main>
@@ -188,18 +196,13 @@ function Speaker({ speaker, sessions }) {
 			</section>
 
 			<Footer />
-		</div>
+			<LenisScroller />
+		</>
 	)
 }
 
 
-Speaker.getLayout = function getLayout( page ) {
-	return (
-		<Layout>
-			{ page }
-		</Layout>
-	)
-}
+Speaker.theme = 'sa-2014'
 
 
 

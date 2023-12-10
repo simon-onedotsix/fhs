@@ -3,6 +3,8 @@ import Layout from '../../fuselage/templates/sa/layout'
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import Head from "next/head"
@@ -12,9 +14,13 @@ import { formatInTimeZone } from 'date-fns-tz'
 import _ from 'lodash'
 import { toHoursAndMinutes } from "../../lib/agenda-utils"
 
-import { Header } from '../../fuselage/global-sa/header/header'
-import { Footer } from '../../fuselage/global-sa/footer/footer'
-import { Session, SessionSpeaker, SessionSpeakerGrid } from '../../fuselage/components/session/session'
+import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
+
+import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+
+import { Session, SessionSpeaker, SessionSpeakerGrid } from '../../fuselage/theme/2024/sa/components/session/session'
 import { Button } from "../../fuselage/components/button/button"
 import { Modal } from "../../fuselage/components/modal/modal"
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
@@ -25,7 +31,7 @@ import handleSeomaticMeta from '../../lib/seomatic'
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
 
-import CSS from '../../css/app/agenda.module.css'
+import CSS from '../../css/app/agenda-sa-2024.module.css'
 
 
 export default function Agenda ({ agendaSettings, sessions, speakers, speakersOverflow, cmsAgendaData }) {
@@ -74,10 +80,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     // cms entry data
 
     const entry = cmsAgendaData.data.entry
-    const sessionThemes = entry.bizzaboAgendaTheme
-
-    let metaTitle = JSON.parse(entry.seomatic.metaTitleContainer)
-    let metaTags = JSON.parse(entry.seomatic.metaTagContainer)  
+    const sessionThemes = entry.bizzaboAgendaTheme  
 
     
     
@@ -136,7 +139,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
         function renderDivider ( day ) {
             return (
-                <p className='fs-4 fw-600 c-primary bg-theme px-sm py-xs mb-xs'>
+                <p className='fs-4 fw-600 c-dark bg-accent rad-sm px-sm py-xs mb-xs'>
                     { day && formatInTimeZone(new Date( day ), 'Asia/Dubai', 'EEEE dd MMMM') }
                 </p>
             )
@@ -174,15 +177,15 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                             <div key={session.id}>
                                 {
                                     session.id === 1122241 ?
-                                        <p key={`banner${session.id}`} className='fs-4 fw-600 c-primary bg-theme px-sm py-xs mb-xs'>Welcome to Future Hospitality Summit</p>
+                                        <p key={`banner${session.id}`} className='fs-4 fw-600 c-accent bg-glass px-sm py-xs mb-xs'>Welcome to Future Hospitality Summit</p>
                                     : ''
                                 }
 
                                 {
                                     session.id === 1108935 ?
-                                        <div key={`banner${session.id}`} className='pb-sm formatted mb-xs bg-light'>
-                                            <p className='fs-4 fw-600 c-primary bg-theme px-sm py-xs mb-xs mt-xs'>FHS Intelligence Talks</p>
-                                            <p className='fs-4 fw-600 c-primary pt-xs px-sm'>The Evolution and Trends Facing the Saudi Hospitality Sector</p>
+                                        <div key={`banner${session.id}`} className='pb-sm formatted mb-xs bg-glass rad-md'>
+                                            <p className='fs-3 fw-600 c-accent px-sm pt-xs mb-xs mt-xs'>FHS Intelligence Talks</p>
+                                            <p className='fs-5 fw-600 c-white px-sm'>The Evolution and Trends Facing the Saudi Hospitality Sector</p>
                                             <p className='fw-400 px-sm'>A market snapshot of key trends as they relate to the hospitality sector. Understanding the fundamentals underpinning the market from performance, pipeline, costs, staffing and contracts in line with Vision 2030.  The Den Talks allows each speaker 10 minutes presentation followed by q&a.</p>
                                         </div>
                                     : ''
@@ -201,7 +204,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                     tags={sessionTags}
                                     theme={getSessionTheme(sessionTags)}
                                 >   
-                                    <p className='h3 c-primary'>{ session.title }</p>
+                                    <p className='h3 c-accent'>{ session.title }</p>
                                     
                                     {
                                         session.descriptionHtml &&
@@ -257,7 +260,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                 <SessionSpeakerGrid>
                                     { moderators.map( (moderator, index) => handleSpeakerCard( moderator, index) ) }
                                 </SessionSpeakerGrid>
-                                <p className="fw-500 my-xs c-primary">In conversation with</p>
+                                <p className="fw-500 my-xs c-accent">In conversation with</p>
                             </div>
                         : null
                     }
@@ -468,14 +471,15 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
             <Head>
                 { handleSeomaticMeta( cmsAgendaData.seomatic ) }
 			</Head>
-
             <Header compact shim />
 
+            <ThemeBg />
+			<ThemeFg />
 
             <section className="block">
                 {/* filter */}
                 <div className="container">
-                    <p className="fs-0 fw-600 c-primary">Agenda</p>
+                    <p className="fs-0 fw-600 c-accent">2023 Agenda</p>
 
                     <div className={CSS.filterLayout}>
 
@@ -523,36 +527,6 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                             >Workshops &amp; Pitches</button> */}
 
                         </section>
-
-                        {/* stage buttons */}
-                        {/* <section className={CSS.filterLayoutButtons}>
-
-                            <button 
-                                className={`${CSS.filterButton} ${ currentStage === null ? CSS.active : null }`} 
-                                onClick={ () => {
-                                    setCurrentStage(null)
-                                    clearQuery()
-                                }}
-                            >All</button>
-                            {
-                               searchBzFilters( agendaSettings.filters, 'Stages').map( (stage, index) => {
-                                    return (
-                                        <button 
-                                            className={`
-                                                ${CSS.filterButton} 
-                                                ${ currentStage === stage.id ? CSS.active : null }
-                                            `}
-                                            key={index} 
-                                            onClick={ () => {
-                                                setCurrentStage(stage.id)
-                                                clearQuery()
-                                            }}
-                                        >{ stage.name }</button>
-                                    )
-                                })
-                            }
-
-                        </section> */}
 
                         {/* day buttons */}
                         <section className={CSS.filterLayoutButtons}>
@@ -631,7 +605,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                 :
                                 <Avatar src={`/assets/ui/avatar-fallback.png`}/>
                         }
-                        <p className="fs-5 fw-600 c-primary mt-sm lh-1">{ modalContent.name }</p>
+                        <p className="fs-5 fw-600 c-accent mt-sm lh-1">{ modalContent.name }</p>
                         <p className="fs-sm fw-400 mt-xs">{modalContent.title} <br/>{modalContent.company}</p>
                     </aside>
                     
@@ -644,19 +618,14 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
             </Modal>
 
             <Footer />
+            <LenisScroller />
 
         </>
     )
 }
 
 
-Agenda.getLayout = function getLayout( page ) {
-	return (
-		<Layout>
-			{ page }
-		</Layout>
-	)
-}
+Agenda.theme = 'sa-2024'
 
 
 export async function getStaticProps() {

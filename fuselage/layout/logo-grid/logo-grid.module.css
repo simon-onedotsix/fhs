@@ -5,4 +5,8 @@
     column-gap: var(--space-md);
     row-gap: var(--space-sm);
     flex-wrap: wrap;
+
+    background-color: white;
+    padding: var(--space-sm);
+    border-radius: var(--default-radius);
 }

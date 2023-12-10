@@ -5,8 +5,13 @@ import craftApolloClient from "../../api/apollo"
 
 import Head from 'next/head'
 
-import { Header } from '../../../fuselage/global-sa/header/header'
-import { Footer } from '../../../fuselage/global-sa/footer/footer'
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
+
+import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
+
+import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
 import handleContentBlocks from "../../../lib/content-blocks"
 import handleSeomaticMeta from '../../../lib/seomatic'
@@ -35,29 +40,24 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 
 	return (
-		<div className='bg-white'>
+		<>
 
 			<Head>
 				{ handleSeomaticMeta( seomatic ) }  
             </Head>
 
 			<Header compact shim />
+			<ThemeBg />
 
 			{ handleContentBlocks( contentBlocks, null, partnerData, '/sa' ) }
 
 			<Footer />
-		
-		</div>
+			<LenisScroller />
+		</>
 	)
 }
 
-Partners.getLayout = function getLayout( page ) {
-	return (
-		<Layout>
-			{ page }
-		</Layout>
-	)
-}
+Partners.theme = 'sa-2024'
 
 
 

@@ -3,8 +3,16 @@ import Layout from '../../../fuselage/templates/sa/layout'
 import { gql } from "@apollo/client"
 import craftApolloClient from "../../api/apollo"
 
-import { Header, HeaderShim } from '../../../fuselage/global-sa/header/header'
-import { Footer } from '../../../fuselage/global-sa/footer/footer'
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
+
+import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
+
+import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+
+import { HeaderShim } from '../../../fuselage/global-sa/header/header'
+
 import { ArrowButton } from "../../../fuselage/components/arrow-button/arrow-button"
 
 import { StickySidebar } from "../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
@@ -22,7 +30,7 @@ export default function ContentLibrary ({ articles, categories }) {
                 categories.map( category => {
                     return (
                         <section key={category.id} id={category.slug} className="mb-xxs">
-                            <a className="uLink fs-6 fw-600 c-primary" href={`/sa/content-library/category/${category.slug}`}>{category.title}</a>
+                            <a className="uLink fs-6 fw-600 c-white" href={`/sa/content-library/category/${category.slug}`}>{category.title}</a>
                         </section>
                     )
                 })
@@ -48,7 +56,7 @@ export default function ContentLibrary ({ articles, categories }) {
 
                     return (
                         <section key={category.id} id={category.slug} className="mt-md">
-                            <p className="fs-2 fw-600 caps c-secondary">{category.title}</p>
+                            <p className="fs-2 fw-600 caps c-accent">{category.title}</p>
                             
                             <div className="columns-3 gap-sm mt-sm">
                                 {
@@ -68,7 +76,7 @@ export default function ContentLibrary ({ articles, categories }) {
                             </div>
     
                             <p className="mt-sm">
-                                <ArrowButton href={`/sa/content-library/category/${category.slug}`} theme={{ arrow: `var(--accent-sa)`, border: `var(--accent-sa)`, label: `var(--primary)`}}>See all in {category.title}</ArrowButton>
+                                <ArrowButton href={`/sa/content-library/category/${category.slug}`} theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}>See all in {category.title}</ArrowButton>
                             </p>
                         </section>
                     )
@@ -81,17 +89,19 @@ export default function ContentLibrary ({ articles, categories }) {
         <>
             <Header compact />
 
+            <ThemeBg />
+
             <section className="block bg-default pt-0">
                 <StickySidebar size='small'>
                     <aside>
                         <HeaderShim/>
-                        <p className="fs-6 fw-600 c-secondary mb-sm">Filter</p>
+                        <p className="fs-6 fw-600 c-accent mb-sm">Filter</p>
                         { handleCategoryMenu() }
                     </aside>
 
                     <main>
                         <HeaderShim/>
-                        <p className="fs-0 fw-600 c-primary">Content library</p>
+                        <p className="fs-0 fw-600 c-accent">Content library</p>
 
                         { handleCategorisedArticles() }
                     </main>
@@ -99,18 +109,14 @@ export default function ContentLibrary ({ articles, categories }) {
             </section>
 
             <Footer />
+
+            <LenisScroller />
         </>
     )
     
 }
 
-ContentLibrary.getLayout = function getLayout( page ) {
-	return (
-		<Layout>
-			{ page }
-		</Layout>
-	)
-}
+ContentLibrary.theme = 'sa-2024'
 
 export async function getStaticProps() {
     const { data } = await craftApolloClient().query({

@@ -5,8 +5,16 @@ import craftApolloClient from '../../../api/apollo'
 
 import Image from "next/image"
 
-import { Header, HeaderShim } from '../../../../fuselage/global-sa/header/header'
-import { Footer } from '../../../../fuselage/global-sa/footer/footer'
+import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller'
+
+import { Header } from '../../../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../../../fuselage/theme/2024/sa/globals/footer/footer"
+
+import { ThemeBg } from '../../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+
+import { HeaderShim } from '../../../../fuselage/global-sa/header/header'
+
 import { StickySidebar } from '../../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
 import { ArrowLink } from '../../../../fuselage/components/arrow-link/arrow-link'
 
@@ -18,8 +26,10 @@ export default function Profile ({ profile }) {
     // console.log('profile data:', profile)
 
     return (
-        <div className="bg-theme">
+        <>
 			<Header compact />
+
+            <ThemeBg />
 
 			<section className="block pt-0">
 				<div className="container">
@@ -31,7 +41,7 @@ export default function Profile ({ profile }) {
                             
 							<p className="fw-600">
                                 <ArrowLink 
-                                    theme={{ color: `white`, stroke: `var(--accent-sa)` }} 
+                                    theme={{ color: `white`, stroke: `var(--accent)` }} 
                                     href="/sa/speakers"
                                 >
                                     View All Speakers
@@ -39,14 +49,14 @@ export default function Profile ({ profile }) {
                             </p>
 							<p className="fw-600">
                                 <ArrowLink 
-                                    theme={{ color: `white`, stroke: `var(--accent-sa)` }} 
+                                    theme={{ color: `white`, stroke: `var(--accent)` }} 
                                     href="/sa/advisory-board"
                                 >
                                     View Advisory Board
                                 </ArrowLink>
                             </p>
 							
-                            <div className={`${CSS.avatar} mt-sm`}>
+                            <div className={`${CSS.avatar} mt-sm rad-md`}>
                                 {
                                     profile.avatar.length ?
                                         <Image className={CSS.photo} src={profile.avatar[0].url} layout='fill' alt=""/>
@@ -79,17 +89,12 @@ export default function Profile ({ profile }) {
 			</section>
 
             <Footer />
-		</div>
+            <LenisScroller />
+		</>
     )
 }
 
-Profile.getLayout = function getLayout( page ) {
-	return (
-		<Layout>
-			{ page }
-		</Layout>
-	)
-}
+Profile.theme = 'sa-2024'
 
 
 

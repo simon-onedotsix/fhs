@@ -5,8 +5,14 @@ import craftApolloClient from "../api/apollo"
 
 import Head from 'next/head'
 
-import { Header } from '../../fuselage/global-sa/header/header'
-import { Footer } from '../../fuselage/global-sa/footer/footer'
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+
+import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
+
+import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+
 import { SpeakerGrid } from '../../fuselage/layout/speaker-grid/speaker-grid'
 import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
 
@@ -19,13 +25,15 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 	// console.log('cms profile data:', craftCmsProfiles)
 
 	return (
-		<div className='bg-secondary'>
+		<>
 
 			<Head>
 				{ handleSeomaticMeta( seomatic ) } 
             </Head>
 
 			<Header compact shim />
+
+			<ThemeBg />
 
 			<section className="block bg-theme">
 				<div className="container">
@@ -50,18 +58,13 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 			</section>
 
 			<Footer />
+			<LenisScroller />
 
-		</div>
+		</>
 	)
 }
 
-Speakers.getLayout = function getLayout( page ) {
-	return (
-		<Layout>
-			{ page }
-		</Layout>
-	)
-}
+Speakers.theme = 'sa-2024'
 
 
 

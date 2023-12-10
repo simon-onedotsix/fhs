@@ -35,15 +35,15 @@ export const Pass = ({ title, description, currency, value, from, to, href }) =>
 
 
     return (
-        <div className={`${CSS.pass} ${ !status && CSS.expired } bg-light p-sm`}>
+        <div className={`${CSS.pass} ${ !status && CSS.expired } bg-glass p-sm`}>
             <section>
-                <p className='fs-2 fw-600 lh-1 c-primary mb-xs'>{ title }</p>
+                <p className='fs-2 fw-600 lh-1 c-accent mb-xs'>{ title }</p>
                 <div className="formatted" dangerouslySetInnerHTML={{__html: description }} />
             </section>
 
             <section>
                 {/* { handlePassStatus( from, to ) } */}
-                <p className='fs-2 fw-600 c-primary mb-xs'>{ currency } { value }</p>
+                <p className='fs-2 fw-600 c-white mb-xs'>{ currency } { value }</p>
                 { handleButtonLabel( from, to )}
             </section>
         </div>

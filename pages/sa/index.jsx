@@ -1,5 +1,3 @@
-import Layout from '../../fuselage/templates/sa/layout'
-
 import { useContext } from 'react'
 import { GlobalsContext } from '../_app'
 
@@ -7,10 +5,15 @@ import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
 import Head from 'next/head'
+import Image from 'next/image'
 
-import { Header } from '../../fuselage/global-sa/header/header'
-import { Footer } from "../../fuselage/global-sa/footer/footer"
-import { CtaTab } from '../../fuselage/components/cta-tab/cta-tab'
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+
+import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
+
+import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
 import handleContentBlocks from "../../lib/content-blocks"
 
@@ -31,47 +34,52 @@ import {
 } from "../../graphql/queries"
 
 import handleSeomaticMeta from '../../lib/seomatic'
+import { HomepageHero } from '../../fuselage/theme/2024/sa/blocks/homepage-hero/homepage-hero'
 
 
-import { HeroUnitVideo } from '../../fuselage/blocks-sa/hero-unit-video/hero-unit-video'
 
 
-export default function Home({ seomatic, contentBlocks, speakerData, partnerData }) {
+
+export default function Home({ seomatic, contentBlocks, partnerData }) {
 
 	const { globals } = useContext(GlobalsContext)
-    // console.log('globals from template MAIN:', globals.ksa)
 
-	// console.log('entry:', entry)
-	// console.log('seomatic:', seomatic)
-	
-    // console.log('speakerData:', speakerData)
-	// const selectedSpeakers = []
-
-	// const [menuTrigger, inView, entry] = useInView({
-	// 	threshold: 0.15,
-	// })
 
 	return (
-		<div className="bg-theme">
+		<>
+
 			<Head>
 				{ handleSeomaticMeta( seomatic ) }
 			</Head>
-
 			<Header shimMobile />
 
-			<HeroUnitVideo />
+            <ThemeBg />
+			<ThemeFg />
+			<HomepageHero />
+
+			<section className="block">
+                <div className="container center">
+                    <p className="fs-2 fw-600 caps">Host Sponsors</p>
+                </div>
+                <div className="container flex gap-md jc-center">
+                    <Image src={`/assets/site/sa/al-faisaliah-logo.png`} width={200} height={200}/>
+                    <Image src={`/assets/site/sa/al-khozama-logo.png`} width={200} height={200}/>
+                </div>
+            </section>
 
 			{ handleContentBlocks( contentBlocks, null, partnerData, 'sa' ) }
 
 			<Footer />
+			<LenisScroller />
 
-			{/* <CtaTab /> */}
-
-		</div>
+		</>
 	)
 }
 
-Home.theme = 'sa-2023'
+Home.theme = 'sa-2024'
+
+
+
 
 
 export async function getStaticProps({ preview, previewData }) {
@@ -135,33 +143,12 @@ export async function getStaticProps({ preview, previewData }) {
     const pageData = data
 
 
-	const speakers = await fetch(`https://api.bizzabo.com/api/speakers?eventId=${process.env.BIZZABO_EVENT_ID_SA}&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-	const speakerData = await speakers.json()
-
-	
-	const partners = await fetch(`https://api.bizzabo.com/api/partners?eventId=${process.env.BIZZABO_EVENT_ID_SA}&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-	const partnerData = await partners.json()
-
     return { 
 		props: { 
 			globals: pageData.data.globalSet,
 			entry: pageData.data.entry,
 			seomatic: pageData.data.entry.seomatic,
-			// speakerData: speakerData.content, 
 			contentBlocks: pageData.data.entry.fhisContentBlocks,
-			partnerData: partnerData.content
 		}
 	}
 }

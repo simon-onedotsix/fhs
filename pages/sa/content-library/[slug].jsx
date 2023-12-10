@@ -7,8 +7,16 @@ import Image from "next/image"
 import Link from "next/link"
 import {format} from 'date-fns'
 
-import { Header, HeaderShim } from '../../../fuselage/global-sa/header/header'
-import { Footer } from '../../../fuselage/global-sa/footer/footer'
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
+
+import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
+
+import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+
+import { HeaderShim } from '../../../fuselage/global-sa/header/header'
+
 import { StickySidebar } from "../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
 import { ProfileCard } from "../../../fuselage/components/profile-card/profile-card"
 import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
@@ -149,14 +157,14 @@ export default function Article ({ entry }) {
         // console.log('profileGroups:', entry.profileGroups)
 
         return (
-            <div className="pb-sm bb-1 bc-secondary columns-1 gap-xs">
+            <div className="pb-sm bb-1 bc-accent columns-1 gap-xs">
                 {
                     entry.profileGroups.map( group => {
                         return (
                             <div key={group.id} className="columns-1 gap-xs">
                                 {
                                     group.heading &&
-                                    <p className="mb-xs fw-600">{group.heading}</p>
+                                    <p className="mb-xs fw-600 c-accent">{group.heading}</p>
                                 }
                                 {
                                     group.profiles.length &&
@@ -174,20 +182,22 @@ export default function Article ({ entry }) {
     return (
         <>
             <Header compact />
+
+            <ThemeBg />
             
 
-            <section className="block bg-default pt-0">
+            <section className="block pt-0">
                 <div className="container">
                     <StickySidebar size='large' flipped>
 
                         <main>
                             <HeaderShim/>
-                            <div className="mb-sm pb-xs bb-1 bc-secondary flex jc-between">
+                            <div className="mb-sm pb-xs bb-1 bc-accent flex jc-between">
                                <ArrowLink href="/sa/content-library" decal='fw-600'>Content library</ArrowLink>
                                {handleCategories()}                                
                             </div>
 
-                            <p className="fs-1 fw-600 lh-1 c-primary mb-sm">{entry.title}</p>
+                            <p className="fs-1 fw-600 lh-1 c-accent mb-sm">{entry.title}</p>
                             
                             {handleHero()}
 
@@ -196,7 +206,7 @@ export default function Article ({ entry }) {
 
                         <aside>
                             <HeaderShim/>
-                            <div className="mb-sm pb-xs bb-1 bc-secondary">
+                            <div className="mb-sm pb-xs bb-1 bc-accent">
                                 <p className="fw-600">Published: { format(new Date(entry.postDate), 'd MMMM yyyy') }</p>
                             </div>
                             
@@ -205,9 +215,9 @@ export default function Article ({ entry }) {
                             <div className="py-xs">
                                 <p className="fw-600 pb-xs">Share this article</p>
                                 <div className="flex gap-xxs">
-                                    <ButtonSocial icon='linkedin' decal='bg-secondary' />
-                                    <ButtonSocial icon='facebook' decal='bg-secondary' />
-                                    <ButtonSocial icon='twitter' decal='bg-secondary' />
+                                    <ButtonSocial icon='linkedin' decal='bg-accent' />
+                                    <ButtonSocial icon='facebook' decal='bg-accent' />
+                                    <ButtonSocial icon='twitter' decal='bg-accent' />
                                 </div>
                             </div>
 
@@ -218,18 +228,14 @@ export default function Article ({ entry }) {
             </section>
 
             <Footer />
+
+            <LenisScroller />
         </>
     )
 
 }
 
-Article.getLayout = function getLayout( page ) {
-	return (
-		<Layout>
-			{ page }
-		</Layout>
-	)
-}
+Article.theme = 'sa-2024'
 
 export async function getStaticPaths() {
 

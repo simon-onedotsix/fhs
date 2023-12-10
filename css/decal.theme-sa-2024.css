@@ -9,7 +9,7 @@
     --secondary: #3f058b;
     --accent: #00ffe1;
 
-    --bg-global: rgb(255, 255, 255);
+    --bg-global: #3f058b;
 
     --default-text-color: rgb(255, 255, 255);
     --default-heading-color: var(--accent);
@@ -23,8 +23,15 @@
     --success: rgb(121, 173, 0);
     --warning: rgb(255, 166, 0);
 
+    --default-radius: 1rem;
+
 }
 
+
+.bg-glass {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.25) !important;
+}
 
 
 [data-theme='sa-2024'] .c-primary { color: var(--primary); }
@@ -50,15 +57,27 @@
 [data-theme='sa-2024'] .bg-accent { background-color: var(--accent); }
 
 [data-theme='sa-2024'] .bg-theme { 
-    background: var(--primary);
-    background: linear-gradient(90deg, #7A4AFF 0%, var(--secondary) 73%);
+    background: transparent !important;
+}
+[data-theme='sa-2024'] .bg-wash,
+[data-theme='sa-2024'] .bg-light { 
+    background: var(--accent);
+    border-radius: var(--default-radius);
+}
+[data-theme='sa-2024'] .bg-medium,
+[data-theme='sa-2024'] .bg-dark { 
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.25) !important;
+    border-radius: var(--default-radius);
 }
 
-[data-theme='sa-2024'] .bg-wash { background-color: var(--wash);}
-[data-theme='sa-2024'] .bg-light { background-color: var(--light);}
-[data-theme='sa-2024'] .bg-medium { background-color: var(--medium);}
-[data-theme='sa-2024'] .bg-dark { background-color: var(--dark);}
 
+
+/* LAYOUT BLOCKS ––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+[data-theme='sa-2024'] .block {
+    margin: var(--space-sm);
+}
 
 
 /* BACKGROUNDS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -88,7 +107,7 @@
 [data-theme='sa-2024'] .bg-white .formatted h4,
 [data-theme='sa-2024'] .bg-white .formatted h5,
 [data-theme='sa-2024'] .bg-white .formatted h6 {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 /* wash */
@@ -102,7 +121,7 @@
 [data-theme='sa-2024'] .bg-wash .formatted h4,
 [data-theme='sa-2024'] .bg-wash .formatted h5,
 [data-theme='sa-2024'] .bg-wash .formatted h6 {
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 
@@ -117,7 +136,10 @@
 [data-theme='sa-2024'] .bg-light .formatted h4,
 [data-theme='sa-2024'] .bg-light .formatted h5,
 [data-theme='sa-2024'] .bg-light .formatted h6 {
-    color: var(--primary);
+    color: var(--secondary);
+}
+[data-theme='sa-2024'] .bg-light .formatted {
+    color: var(--secondary);
 }
 
 /* primary */
@@ -143,7 +165,7 @@
 [data-theme='sa-2024'] .bg-medium .formatted h4,
 [data-theme='sa-2024'] .bg-medium .formatted h5,
 [data-theme='sa-2024'] .bg-medium .formatted h6 {
-    color: var(--primary);
+    color: white;
 }
 
 

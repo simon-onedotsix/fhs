@@ -5,10 +5,15 @@ import craftApolloClient from "../api/apollo"
 
 import Head from "next/head"
 
-import { Header } from '../../fuselage/global-sa/header/header'
-import { Footer } from '../../fuselage/global-sa/footer/footer'
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
-import handleContentBlocks from "../../lib/content-blocks"
+import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
+
+import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+
+import handleContentBlocks from "../../lib/content-blocks-sa"
 
 import { 
     QueryText, 
@@ -40,25 +45,20 @@ export default function Page ({ entry, seomatic }) {
             <Head>
                 { handleSeomaticMeta( seomatic ) }
             </Head>
+            <ThemeBg />
 
             <Header compact shim />
             
             { handleContentBlocks( entry.fhisContentBlocks, null, null, 'sa' ) }
 
             <Footer />
-
+            <LenisScroller />
         </>
     )
 }
 
 
-Page.getLayout = function getLayout( page ) {
-	return (
-		<Layout>
-			{ page }
-		</Layout>
-	)
-}
+Page.theme = 'sa-2024'
 
 
 

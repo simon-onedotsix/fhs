@@ -2,7 +2,7 @@ import { useInView } from 'react-intersection-observer'
 
 import Link from 'next/link'
 
-import { EventsBar } from '../../../../../components/events-bar/events-bar'
+import { EventsBar } from '../../components/events-bar/events-bar'
 import { MainMenu } from '../main-menu/main-menu'
 
 import { FhsSaLogo } from '../../../../../components/fhs-sa-logo/fhs-sa-logo'
@@ -24,7 +24,7 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
     const otherEvents = [
         {
             id: 1,
-            title: 'FHS & AHIC',
+            title: 'FHS World',
             url: '/ae',
             target: false
         },

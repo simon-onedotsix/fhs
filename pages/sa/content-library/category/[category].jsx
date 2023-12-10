@@ -6,8 +6,16 @@ import craftApolloClient from "../../../api/apollo"
 import Head from "next/head"
 import { useRouter } from "next/router"
 
-import { Header, HeaderShim } from "../../../../fuselage/global-sa/header/header"
-import { Footer } from "../../../../fuselage/global-sa/footer/footer"
+import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller'
+
+import { Header } from '../../../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../../../fuselage/theme/2024/sa/globals/footer/footer"
+
+import { ThemeBg } from '../../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+
+import { HeaderShim } from "../../../../fuselage/global-sa/header/header"
+
 import { StickySidebar } from "../../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
 import { ContentCard } from "../../../../fuselage/components/content-card/content-card"
 import { ArrowLink } from "../../../../fuselage/components/arrow-link/arrow-link"
@@ -28,7 +36,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
                     return (
                         <section key={category.id} id={category.slug} className="mb-xxs">
                             <a 
-                                className={`uLink fs-6 fw-600 c-primary ${ router.query.category === category.slug ? 'here' : '' }`} 
+                                className={`uLink fs-6 fw-600 c-white ${ router.query.category === category.slug ? 'here' : '' }`} 
                                 href={`/sa/content-library/category/${category.slug}`}
                             >
                                 {category.title}
@@ -45,7 +53,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
 
             return (
                 <section>                    
-                    <p className="fs-2 fw-600 caps c-secondary mt-md">{category.title}</p>
+                    <p className="fs-2 fw-600 caps c-accent mt-md">{category.title}</p>
                     <div className="columns-3 gap-sm mt-sm">
                         {
                             articles.map( entry => (
@@ -74,20 +82,22 @@ export default function ContentLibraryCategory ({ categories, category, articles
 
             <Header compact />
 
+            <ThemeBg />
+
             <section className="block bg-default pt-0">
                 <StickySidebar size='small'>
                     <aside>
                         <HeaderShim/>
-                        <p className="fs-6 fw-600 c-secondary mb-sm">Filter</p>
+                        <p className="fs-6 fw-600 c-accent mb-sm">Filter</p>
                         { handleCategoryMenu() }
                         <p className="mt-sm">
-                            <a className="uLink fs-sm caps fw-400 c-medium" href={`/sa/content-library`}>Clear filter</a>
+                            <a className="uLink fs-sm caps fw-400 c-accent" href={`/sa/content-library`}>Clear filter</a>
                         </p>
                     </aside>
 
                     <main>
                         <HeaderShim/>
-                        <p className="fs-0 fw-600 c-primary">Content library</p>
+                        <p className="fs-0 fw-600 c-accent">Content library</p>
 
                         { handleArticles() }
                     </main>
@@ -96,17 +106,13 @@ export default function ContentLibraryCategory ({ categories, category, articles
 
             <Footer />
 
+            <LenisScroller />
+
         </>
     )
 }
 
-ContentLibraryCategory.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
+ContentLibraryCategory.theme = 'sa-2024'
 
 
 

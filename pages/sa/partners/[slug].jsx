@@ -12,8 +12,16 @@ import {
 	QueryPartnerGroups,
 } from "../../../graphql/queries"
 
-import { Header, HeaderShim } from '../../../fuselage/global-sa/header/header'
-import { Footer } from "../../../fuselage/global-sa/footer/footer"
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
+
+import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
+
+import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+
+import { HeaderShim } from '../../../fuselage/global-sa/header/header'
+
 import { OffsiteLink } from '../../../fuselage/components/offsite-link/offsite-link'
 import { StickySidebar } from '../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
 import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
@@ -83,8 +91,10 @@ function Partner({ partner }) {
 
 	return (
 
-		<div className="bg-white">
+		<>
 			<Header compact />
+
+			<ThemeBg />
 
 			<section className="block pt-0">
 				<div className="container">
@@ -93,7 +103,7 @@ function Partner({ partner }) {
 
 						<aside className="formatted">
 							<HeaderShim/>
-							<p className="fw-600"><ArrowLink href="/sa/partners">View all partners</ArrowLink></p>
+							<p className="fw-600 c-white"><ArrowLink href="/sa/partners">View all partners</ArrowLink></p>
 
 							<div className="bg-white p-sm mt-sm center">
 								<div className={CSS.profileLogoWrapper}>
@@ -113,7 +123,7 @@ function Partner({ partner }) {
 							
 						</aside>
 						
-						<main className="maxw-60">
+						<main className="maxw-60 c-white">
 							<HeaderShim/>
 							{/* <p className='fs-2 fw-600 lh-1 c-secondary maxw-40'>{GetBizzaboPartnerLevelTitle(partner.level)}</p> */}
 							<p className="fs-3 fw-600 caps">{partner.title}</p>	
@@ -130,17 +140,13 @@ function Partner({ partner }) {
 			</section>
 
 			<Footer />
-		</div>
+
+			<LenisScroller />
+		</>
 	)
 }
 
-Partner.getLayout = function getLayout( page ) {
-	return (
-		<Layout>
-			{ page }
-		</Layout>
-	)
-}
+Partner.theme = 'sa-2024'
 
 
 
