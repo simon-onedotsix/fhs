@@ -32,6 +32,11 @@ import {
 	QueryPartnerGroups
 } from "../../../graphql/queries"
 
+import { Quote, QuoteGrid } from '../../../fuselage/theme/2024/sa/components/quote/quote'
+
+
+
+
 function Partners({ seomatic, contentBlocks, partnerData }) {
 
 
@@ -48,6 +53,28 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 			<Header compact shim />
 			<ThemeBg />
+			<ThemeFg />
+
+			<QuoteGrid>
+				<Quote 
+					quote={`“Great quality content and senior influential leadership under one roof!”`}
+					name={`Imran Changezi`}
+					title={`Executive Director Development`}
+					company={`Hospitality, Diriyah Company`}
+				/>
+				<Quote 
+					quote={`“Great insight into the Saudi Arabia tourism business development and valuable contacts. A very well-organised conference with ample opportunity to network.”`}
+					name={`Elisabeth Ixmeier`}
+					title={`Co-Founder and Managing Partner`}
+					company={`Healing Hotels of the World`}
+				/>
+				<Quote 
+					quote={`“Very informative, relevant to our business, engaging and necessary! It has become a must do.”`}
+					name={`Najee Syriani`}
+					title={`Corporate Vice President - Projects`}
+					company={`Rotana`}
+				/>
+			</QuoteGrid>
 
 			{ handleContentBlocks( contentBlocks, null, partnerData, '/sa' ) }
 
