@@ -8,7 +8,7 @@
 .form label {
     display: block;
     margin-bottom: .5rem;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .form input[type='text'],
@@ -119,7 +119,11 @@
 
 .hs-form-field {
     display: block;
-    margin-bottom: .75rem;
+    margin-bottom: 1.5rem;
+}
+
+.hs-form-field > label {
+    font-weight: 500;
 }
 
 .hs-form-field textarea,
@@ -127,6 +131,8 @@
 .hs-form-field input[type='email'] {
     width: 100% !important;
 }
+
+
 
 .hs_submit, .hs-submit {
     margin-top: var(--space-sm);

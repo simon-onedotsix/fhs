@@ -25,6 +25,8 @@
 
     --default-radius: 1rem;
 
+    --standard-field-radius: .5rem;
+
 }
 
 
@@ -244,6 +246,29 @@
     border-radius: .5rem;
 }
 
+[data-theme='sa-2024'] .form input[type='checkbox'] {
+    accent-color: var(--accent);
+}
+
+/* hubspot-specific */
+
+[data-theme='sa-2024'] .hs-form-field select {
+    margin-top: var(--space-xxs);
+    cursor: pointer;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    color: inherit !important;
+    width: 100%;
+    padding: .75rem 1rem;
+    border: 1px var(--accent) solid !important;
+    border-radius: var(--standard-field-radius) !important;
+    background-color: var(--standard-field-bg) !important;
+
+    background-image: url('/assets/ui/select-chevron-sa-2024.svg');
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem);
+}
 
 /* BORDERS ------------------------------------------------ */
 
