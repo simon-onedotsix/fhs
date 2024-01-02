@@ -97,7 +97,13 @@ export const MainMenu = ({ fixToggle, mainMenu }) => {
                                 <a className='uLink fw-400' onClick={ () => setActive(false)}>GRIF Saudi Arabia</a>
                             </Link>
                         </p>
+
                         <p className='c-white mt-xs fs-6 fw-400'>Experiences</p>
+                        <p className='c-white mt-xs pl-sm'>
+                            <Link href={'/sa/networking'}>
+                                <a className='uLink fw-400' onClick={ () => setActive(false)}>The Networking Experience</a>
+                            </Link>
+                        </p>
                         <p className='c-white mt-xs pl-sm'>
                             <Link href={'/sa/networking-receptions'}>
                                 <a className='uLink fw-400' onClick={ () => setActive(false)}>Networking Receptions</a>
