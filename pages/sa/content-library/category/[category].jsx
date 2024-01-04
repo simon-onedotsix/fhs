@@ -135,8 +135,9 @@ export async function getStaticPaths() {
     // console.log('cats: ',categories)
 
     return {
-        paths: categories,
-        fallback: false
+        // paths: categories,
+        paths: [],
+        fallback: 'blocking'
     }
 
 }

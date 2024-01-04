@@ -105,7 +105,7 @@ function Partner({ partner }) {
 							<HeaderShim/>
 							<p className="fw-600 c-white"><ArrowLink href="/sa/partners">View all partners</ArrowLink></p>
 
-							<div className="bg-white p-sm mt-sm center">
+							<div className="bg-white p-sm mt-sm center rad-sm">
 								<div className={CSS.profileLogoWrapper}>
 									<Image 
 										src={partner.partnerLogo[0].url} 
@@ -185,8 +185,9 @@ export async function getStaticPaths() {
 
 
 	return {
-		paths: slugs.map( slug => ({ params: { slug: slug } })),
-		fallback: false
+		// paths: slugs.map( slug => ({ params: { slug: slug } })),
+		paths: [],
+		fallback: 'blocking'
 	}
 
 }

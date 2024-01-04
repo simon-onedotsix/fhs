@@ -82,7 +82,7 @@ export default function Article ({ entry }) {
                     //image
                     if ( block.__typename === 'contentLibraryContentBlocks_image_BlockType' ) {
                         return (
-                            <div key={block.id} className="mt-sm">
+                            <div key={block.id} className="mt-sm" style={{ borderRadius: `var(--default-radius)`, overflow: `hidden`}}>
                                 <Image 
                                     src={block.hero[0].url}
                                     width={block.hero[0].width}
@@ -248,8 +248,9 @@ export async function getStaticPaths() {
     const entries = await res.data.entries
 
     return {
-        paths: entries.map( entry => ({ params: { slug: entry.slug } })),
-        fallback: false
+        // paths: entries.map( entry => ({ params: { slug: entry.slug } })),
+        paths: [],
+        fallback: 'blocking'
     }
 
 }

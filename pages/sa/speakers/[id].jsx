@@ -219,8 +219,9 @@ export async function getStaticPaths() {
 	console.log('hello:',allSpeakers)
 
 	return {
-		paths: allSpeakers.content.map( entry => ({ params: { id: String(entry.id) } })),
-		fallback: false
+		// paths: allSpeakers.content.map( entry => ({ params: { id: String(entry.id) } })),
+		paths: [],
+		fallback: 'blocking'
 	}
 }
 
