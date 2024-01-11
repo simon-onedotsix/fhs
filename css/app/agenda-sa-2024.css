@@ -1,0 +1,105 @@
+:root {
+    --agenda-radius: .5rem
+}
+
+.agenda, .day {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+}
+
+.dayDivider {
+    background-color: aqua;
+    border-radius: var(--agenda-radius);
+    padding: .5rem 1rem;
+    color: black;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.timeSlot {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+    /* padding: .5rem;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: var(--agenda-radius); */
+}
+.timingsAndTags {
+    background-color: var(--secondary);
+    border-radius: calc(var(--agenda-radius) * 1);
+    padding: .5rem 1rem;
+}
+@media(min-width:600px){
+    .timeSlot {
+        grid-template-columns: 9rem auto;
+    }
+    .timingsAndTags {
+        padding: 1rem;
+    }
+}
+
+
+.sessions {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.session {
+    flex: 1;
+    padding: 1rem;
+    /* border: 1px solid rgba(0, 255, 255, 0.267); */
+    border-radius: calc(var(--agenda-radius) * 1);
+}
+
+.sessionTitle {
+    max-width: 50rem;
+}
+
+.sessionTagGrid {
+    display: flex;
+    align-items: center;
+    gap: .25rem
+}
+
+/* speakerGrid */
+
+.sessionSpeakerGrid {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--space-md);
+    row-gap: var(--space-sm);
+}
+
+@media(min-width:1200px) {
+    .sessionSpeakerGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.sessionTag {
+    display: inline-block;
+    padding: 2px 8px;
+    /* border: 1px solid aqua; */
+    border-radius: calc(var(--agenda-radius) * 2);
+    background-color: rgba(0, 0, 0, 0.298);
+    background-color: var(--primary);
+    font-size: .8rem;
+}
+
+.test {
+    border: 1px solid rgb(255, 0, 208);
+}
+
+.speakerTag {
+    display: inline-block;
+    margin-bottom: .5rem;
+    padding: 2px 8px;
+    border-radius: calc(var(--agenda-radius) * 2);
+    background-color: var(--accent);
+    color: black;
+    font-size: .8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}

@@ -1,5 +1,7 @@
 /* SA theme */
 
+@import './app/agenda-sa-2024.css';
+
 
 [data-theme='sa-2024'] {
 
@@ -80,8 +82,10 @@
 
 /* LAYOUT BLOCKS ––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-[data-theme='sa-2024'] .block {
-    margin: var(--space-sm);
+@media(min-width:600px){
+    [data-theme='sa-2024'] .block {
+        margin: var(--space-sm);
+    }
 }
 
 
