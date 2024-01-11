@@ -41,6 +41,11 @@ export const MainMenu = ({ fixToggle, mainMenu, theme }) => {
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
+                            <Link href={'/ae/advisory-board'}>
+                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Advisory Board</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
                             <Link href={'/ae/partners'}>
                                 <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Sponsors &amp; Partners</a>
                             </Link>
@@ -75,11 +80,7 @@ export const MainMenu = ({ fixToggle, mainMenu, theme }) => {
                                 <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Agenda</a>
                             </Link>
                         </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/ae/advisory-board'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Advisory Board</a>
-                            </Link>
-                        </p>
+                        
    
 
                         {/* <p className='fs-5 fw-700 c-white mt-sm'>Event Features</p>

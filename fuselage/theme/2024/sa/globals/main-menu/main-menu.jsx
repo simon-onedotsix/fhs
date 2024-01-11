@@ -136,6 +136,17 @@ export const MainMenu = ({ fixToggle, mainMenu }) => {
                             <a className='uLink fs-5 fw-400' href={'https://ksa.futurehospitalitysummit.com/speakers'} target="_blank">2022 speakers</a>
                         </p>
                         
+                        <p className="fs-4 fw-600 mt-md">FHS Saudi Arabia 2023</p>
+                        <p className='c-white mt-xs'>
+                            <a className='uLink fs-5 fw-400' href={'/sa/2023/agenda'}>2023 programme</a>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <a className='uLink fs-5 fw-400' href={'/sa/2023/speakers'}>2023 speakers</a>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <a className='uLink fs-5 fw-400' href={'/sa/2023/partners'}>2023 partners</a>
+                        </p>
+                        
 
                         <p className="fs-4 fw-600 mt-md">Future Hospitality events</p>
                         <p className="mt-xs">

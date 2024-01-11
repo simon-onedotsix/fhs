@@ -1,35 +1,47 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
-import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
-import Head from "next/head"
+import Head from 'next/head'
+
+import { 
+    QueryText, 
+    QueryFlipFlops, 
+    QueryFloaters, 
+    QueryBillboards, 
+    QueryBillboardSliders, 
+    QueryImpactFigures, 
+    QueryVideos,
+    QueryForm,
+    QueryProfileCarousel,
+    QuerySEO,
+    QueryImages,
+    Passes,
+    QueryPartners,
+	BizzaboPartners
+} from "../../graphql/queries"
+
+import handleContentBlocks from "../../lib/content-blocks"
 
 import { Header } from '../../fuselage/global-ae/header/header'
 import { Footer } from '../../fuselage/global-ae/footer/footer'
-import { PassBox } from '../../fuselage/components/pass-box/pass-box'
+
+import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
+
 
 import handleSeomaticMeta from '../../lib/seomatic'
 
-const TICKET_DATA = [
-    'January - February (Standard Pass)',
-    'January - February (Plus Pass)',
-    'January - February (Premium Pass)'
-]
+function PurchasePass({ seomatic, entry }) {
 
-export default function Register ({ entry, passes, bizzaboPassData }) {
+	// console.log('entry:', entry )
 
-    // console.log('pageData:', entry)
-    // console.log('passes:', passes)
-    console.log('bizzaboPassData:', bizzaboPassData)
+	return (
+		<>
 
-    return (
-        <>
-            <Head>
-                {/* { handleSeomaticMeta( seomatic ) }  */}
+			<Head>
+				{ handleSeomaticMeta( seomatic ) } 
             </Head>
-
-            <ThemeBg />
 
 			<Header compact shim theme={{ 
                 primary: 'var(--primary)', 
@@ -41,146 +53,61 @@ export default function Register ({ entry, passes, bizzaboPassData }) {
                 overlayBg: 'var(--primary)',
             }} />
 
-            <section className="block bg-theme"> 
+			<ThemeBg />
 
-                <div className="container">
-                    <p className="fs-0 fw-600">Purchase Pass</p>
-                </div>
+			{ handleContentBlocks( entry.fhisContentBlocks, null, null, 'ae' ) }
 
-                {
-                    entry && entry.bodyHeader ?
-                    <div className="container">
-                        <div className=" maxw-50 formatted" dangerouslySetInnerHTML={{__html: entry.bodyHeader }} />
-                    </div>
-                    : null
-                }
+			<Footer theme={{ footerBg: 'bg-white-90' }} />
+			<LenisScroller />
 
-
-
-
-                {/* main passes */}
-
-                <div className="container columns-3 gap-sm">
-                    { 
-                        passes &&
-                        passes.map( pass => {
-                            let bizzPass = bizzaboPassData.find( bzPass => bzPass.name === pass.ticketName )
-                
-                            if ( bizzPass ) {
-                                console.log(`CMS pass: ${pass.passName} US$${bizzPass.price / 100}`)
-                                return (
-                                    <PassBox
-                                        key={pass.id}
-                                        title={ pass.passName ? pass.passName : bizzPass.name }
-                                        availableFrom={bizzPass.availabilityStartTimestamp}
-                                        availableTo={bizzPass.availabilityEndTimestamp}
-                                        hideAvailability
-                                        quantity={bizzPass.quantity}
-                                        currency={bizzPass.currencyCode}
-                                        price={bizzPass.price}
-                                        description={ pass.description ? pass.description : bizzPass.description }
-                                        buttonLink={'/ae/register'}
-                                    />
-                                )
-                            }
-                
-                        })
-                    }
-                    <PassBox
-                        key={945867}
-                        title={'Plus'}
-                        availableFrom={'2023-07-12 13:36:00'}
-                        availableTo={'2023-07-12 13:36:00'}
-                        hideAvailability
-                        quantity={0}
-                        currency={'USD'}
-                        price={330000}
-                        description={ '<p>*expires on September 25th</p><p><strong><span class="c-primary">Includes:</span></strong></p><ul><li>Full Event Access</li><li>Networking App</li><li>Post Event Resources</li><li>2 Nights Accommodation at <strong>DoubleTree by Hilton</strong></li></ul>' }
-                        buttonLink={'/ae/register'}
-                    />
-                    <PassBox
-                        key={392847}
-                        title={'Premium'}
-                        availableFrom={'2023-07-12 13:36:00'}
-                        availableTo={'2023-07-12 13:36:00'}
-                        hideAvailability
-                        quantity={0}
-                        currency={'USD'}
-                        price={340000}
-                        description={ '<p>*expires on September 25th</p><p><strong><span class="c-primary">Includes:</span></strong></p><ul><li>Full Event Access</li><li>Networking App</li><li>Post Event Resources</li><li>2 Nights Accommodation at <strong>Hilton Abu Dhabi Yas Island</strong></li><li>Complimentary Theme Park Access (One from Ferrari World Abu Dhabi, Warner Bros World Abu Dhabi, Yas Waterworld Abu Dhabi)</li></ul>' }
-                        buttonLink={'/ae/register'}
-                    />
-                </div>
-
-
-
-                {
-                    entry && entry.bodyFooter ?
-                    <div className="container">
-                        <div className=" maxw-50 formatted" dangerouslySetInnerHTML={{__html: entry.bodyFooter }} />
-                    </div>
-                    : null
-                }
-
-            </section>
-
-            <Footer theme={{ footerBg: 'bg-white-90' }} />
-
-        </>
-    )
+		</>
+	)
 }
-Register.theme = 'ae-2023'
+
+PurchasePass.theme = 'ae-2023'
 
 
 
-export async function getStaticProps({ params, preview, previewData }) {
+export async function getStaticProps() {
 
-    const cmsEntryData = await craftApolloClient( preview, previewData ).query({
+	const cmsData = await craftApolloClient().query({
         query: gql`
-			query Homepage {
-                entry(site: "${process.env.SITE_HANDLE_AE}", id: "10624") {
-                    id
-                    title
-                    slug
-                    seomatic(asArray: true) {
-                        metaTitleContainer
-                        metaTagContainer
-                    }
-                    ... on fhisAePurchasePass_fhisAePurchasePass_Entry {
-                        id
-                        bodyHeader
-                        bizzaboPasses {
-                            ... on bizzaboPasses_BlockType {
-                                id
-                                ticketName
-                                passName
-                                description
-                            }
-                        }
-                        bodyFooter
-                    }
-                }
+			query Page {
+				entry(site: "${process.env.SITE_HANDLE_AE}", id: "10624") {
+					... on ${process.env.SITE_HANDLE_AE}PurchasePass_${process.env.SITE_HANDLE_AE}PurchasePass_Entry {
+						id
+						slug
+						title
+						${process.env.CONTENT_BLOCKS_HANDLE}ContentBlocks {
+							${QueryText}
+							${QueryFlipFlops}
+							${QueryFloaters}
+							${QueryBillboards}
+							${QueryBillboardSliders}
+							${QueryImpactFigures}
+							${QueryVideos}
+							${QueryProfileCarousel}
+							${QueryForm}
+							${QueryImages}
+							${QueryPartners}
+							${Passes}
+							${BizzaboPartners}
+						}
+						${QuerySEO}
+					}
+				}
 			}
         `
     })
-    const pageData = cmsEntryData
 
-
-    const res = await fetch(`https://api.bizzabo.com/api/registrationTypes?eventId=${process.env.BIZZABO_EVENT_ID_AE}`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
+	return {
+		props: { 
+			seomatic: cmsData.data.entry.seomatic,
+			entry: cmsData.data.entry,
 		}
-	})
-    const bizzaboPassData = await res.json()
-  
-
-    return { 
-        props: { 
-            bizzaboPassData: bizzaboPassData.content,
-            passes: pageData.data.entry.bizzaboPasses,
-            entry: pageData.data.entry
-        }
-    }
+	}
 }
+
+export default PurchasePass
+
+

@@ -24,7 +24,7 @@ import {
 	BizzaboPartners
 } from "../../graphql/queries"
 
-import handleContentBlocks from "../../lib/content-blocks"
+import handleContentBlocks from "../../lib/content-blocks-sa"
 
 import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
 import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
