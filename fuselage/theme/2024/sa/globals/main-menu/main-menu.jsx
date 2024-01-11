@@ -38,7 +38,7 @@ export const MainMenu = ({ fixToggle, mainMenu }) => {
                         </p>
                         <p className='c-white mt-xs'>
                             <Link href={'/sa/agenda'}>
-                                <a className='uLink fs-5 fw-400'>2023 Programme</a>
+                                <a className='uLink fs-5 fw-400'>2024 Programme</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>

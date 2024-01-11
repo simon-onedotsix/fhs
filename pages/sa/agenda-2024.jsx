@@ -246,7 +246,7 @@ const SpeakerCard = ({ speaker, type }) => {
 			{
 				speaker.photoUrl ?
 					<img src={speaker.photoUrl} alt="" style={{ maxWidth: 100, maxHeight: 100, borderRadius: 100, marginBottom: 10 }} />
-				: <div style={{ width: 100, height: 100, maxWidth: 100, maxHeight: 100, borderRadius: 100, marginBottom: 10, backgroundColor: `white` }} />
+				: <img src={`/assets/ui/avatar-fallback.png`} alt="" style={{ maxWidth: 100, maxHeight: 100, borderRadius: 100, marginBottom: 10 }} />
 
 			}
 			<p className="fw-600">{ speaker.firstName } { speaker.lastName }</p>

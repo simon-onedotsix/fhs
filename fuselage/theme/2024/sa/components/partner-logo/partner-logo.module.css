@@ -1,8 +1,17 @@
 .logo {
     width: 8rem;
-    height: 3rem;
+    height: 4rem;
     position: relative;
 }
+.logo.sm {
+    width: 8rem;
+    height: 4rem;
+}
+.logo.lg {
+    width: 15rem;
+    height: 10rem;
+}
+
 .logo img {
     display: block;
     object-fit: contain;
@@ -27,9 +36,18 @@
 @media(min-width:800px) {
     .logo {
         width: 15rem;
-        height: 5rem;
+        height: 7rem;
         position: relative;
     }
+    .logo.sm {
+        width: 8rem;
+        height: 4rem;
+    }
+    .logo.lg {
+        width: 20rem;
+        height: 15rem;
+    }
+
     .grid {
         row-gap: var(--space-md);
     }
