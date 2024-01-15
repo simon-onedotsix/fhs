@@ -176,7 +176,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     {/* download prospectus */}
 
                     <div className="mt-md">
-                        <span 
+                        {/* <span 
                             onClick={() => {
                                 console.log('modal button clicked')
                                     setModalContent('content')
@@ -184,7 +184,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                                
                             }}>
                             <Button decal={`fs-5 fw-600`}>Register Interest</Button>
-                        </span>
+                        </span> */}
+                        <Button href={'ae/purchase-pass'} decal={`fs-5 fw-600`}>Purchase Pass</Button>
                     </div>
 
                 </Container>

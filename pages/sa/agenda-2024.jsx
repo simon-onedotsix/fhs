@@ -21,14 +21,14 @@ import { Avatar } from '../../fuselage/components/avatar/avatar'
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
 
-
+import CSS from '../../css/app/agenda-sa-2024.module.css'
 
 
 export default function Agenda ({ agenda }) {
 
-	const [ filter, setFilter ] = useState (null)
-    const [ day, setDay ] = useState (null)
-    const [ location, setLocation ] = useState(null)
+	const [ selectedTopic, setSelectedTopic ] = useState (null)
+    const [ selectedDay, setSelectedDay ] = useState (null)
+    const [ selectedLocation, setSelectedLocation ] = useState(null)
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: ''})
 
@@ -43,6 +43,125 @@ export default function Agenda ({ agenda }) {
     const getDayFromDateTimeString = (timestring) => format( new Date(timestring), "eeee" )
 	const days = _.groupBy(slots, getDayFromDateTimeString)
 	const dayKeys = Object.keys(days)
+
+
+
+	// FILTERS
+
+	const legacyFilterDays = ( dayArray ) => {
+		if ( selectedDay ) {
+			dayArray = [dayKeys.at(selectedDay - 1)]
+			return dayArray
+		}
+		return dayArray
+	}
+
+	const filterSession = ( sessionData ) => {
+		if ( selectedTopic ) {
+			// console.log('selectedTopic',selectedTopic)
+			// console.log(sessionData.fields.some(field => field.id === selectedTopic))
+			return sessionData.fields.some(field => field.id === selectedTopic) ? true : false
+		}
+		// console.log('session:', sessionData.fields)
+		return true
+	}
+
+
+
+
+
+
+	const filterDays = ( sessionData ) => {
+
+		const groupedStartTimes = _.groupBy(sessionData, 'beginsAt')
+		const timeCodes = Object.keys(groupedStartTimes)
+
+		console.log('unique days:', _.uniqBy( timeCodes, string => string.slice(0, 10) ) )
+
+
+
+		const filteredDays = []
+
+		if ( selectedDay ) {
+			console.log('selectedDay:', selectedDay)
+
+		}
+
+		console.log('days:', filteredDays.length ? filteredDays.length : sessionData.length )
+		return filteredDays.length ? filteredDays : sessionData
+	}
+	filterDays( sessions )
+
+
+	const filterTopics = ( sessionData ) => {
+		
+		const filteredSessions = []
+		
+		if ( selectedTopic ) {
+			// console.log('selectedTopic', selectedTopic)
+			sessionData.forEach( session => {
+				if ( session.fields.some( field => field.id == selectedTopic )) filteredSessions.push(session)
+			})
+		}
+
+		console.log('filters (topic)', filteredSessions.length ? filteredSessions.length : sessionData.length )
+		return filteredSessions.length ? filteredSessions : sessionData
+		
+		
+	}	
+	
+	const filterLocations = ( sessionData ) => {
+		
+		const filteredSessions = []
+		
+		if ( selectedLocation ) {
+			// console.log('selectedLocation', selectedLocation)
+			sessionData.forEach( session => {
+				if ( session.fields.some( field => field.id == selectedLocation )) filteredSessions.push(session)
+			})
+		}
+
+		console.log('locations:', filteredSessions.length ? filteredSessions.length : sessionData.length )
+		return filteredSessions.length ? filteredSessions : sessionData
+		
+		
+	}
+
+	const filterSessions = ( sessionData ) => {
+		// console.log('filter intersection:', _.intersection( filterLocations(sessionData), filterTopics(sessionData) ))
+		return _.intersection( filterLocations(sessionData), filterTopics(sessionData) )
+	}
+
+
+
+	// BUILD AGENDA
+
+	const buildAgenda = ( sessionData ) => {
+
+		if ( !sessionData ) return
+
+		const groupedSessions = _.groupBy(sessionData, 'beginsAt')
+		const timeSlots = Object.keys(groupedSessions)
+		const daySessions = _.groupBy(timeSlots, getDayFromDateTimeString)
+		const days = Object.keys(daySessions)
+
+		console.log('–––––––––––––––––––––––––––––––––––––––––––––––')
+		
+		console.log('days:', days)
+		console.dir(groupedSessions, { depth: null })
+
+	}
+	buildAgenda( filterSessions( sessions ) )
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -81,6 +200,8 @@ export default function Agenda ({ agenda }) {
 
 		return distilledFieldObjects
 	}
+
+
 
 	// HANDLE SPEAKERS PER SESSION (pick out moderators)
 
@@ -125,6 +246,8 @@ export default function Agenda ({ agenda }) {
 		)
 	}
 
+
+
     return (
         <>
 
@@ -140,60 +263,143 @@ export default function Agenda ({ agenda }) {
                     <p className="fs-0 fw-500">2024 Agenda</p>
                 </div>
 
+				{/* FILTERS */}
+                <div className="container">
+                    <div className={CSS.filterLayout}>
+
+                        {/* topics */}
+                        <section className={CSS.filterLayoutButtons}>
+							{
+								groupFieldGroupsByName( sessions, 'Topics').map( (loc, index) => (
+									<button
+										key={index}
+										className={`${CSS.filterButton} ${ selectedTopic === loc.id ? CSS.active : null }`} 
+										onClick={ () => {
+											setSelectedTopic(loc.id)
+										}
+									}
+									>{loc.name}</button>
+								 ))
+							}
+                            <button 
+                                className={`${CSS.filterButton} ${ selectedTopic === null ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setSelectedTopic(null)
+                                }}
+                            >All</button>
+    
+                        </section>
+
+                        {/* days */}
+                        <section className={CSS.filterLayoutButtons}>
+                            {
+                                dayKeys.map( (day, index) => {
+                                    return (
+                                        <button 
+                                            className={`
+                                                ${CSS.filterButton} 
+                                                ${ selectedDay === index + 1 ? CSS.active : null }
+                                            `}
+                                            key={index} 
+                                            onClick={ () => {
+                                                setSelectedDay(index + 1)
+                                            }}
+                                        >Day { index + 1 }</button>
+                                    )
+                                })
+                            }
+                            <button 
+                                className={`${CSS.filterButton} ${ selectedDay === null ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setSelectedDay(null)
+                                }}
+                            >All</button>
+                        </section>
+
+                        {/* locations */}
+                        <section className={CSS.filterLayoutButtons}>
+                            {/* <p className={`${CSS.desktopOnly} fw-400 c-primary`}>Filter:&emsp;</p> */}
+                            <select
+                                className={CSS.filterSelect} 
+                                defaultValue=""
+                                onChange={ (e) => {
+                                    setSelectedLocation( e.target.value )
+                                    // clearQuery()
+                                    // console.log('selected filter:', e.target.value)
+                                }}
+                            >
+                                <option value="">All locations</option>
+                                {
+                                    groupFieldGroupsByName( sessions, 'Location').map( filter => {
+                                        return (
+                                            <option key={filter.id} value={filter.id}>
+                                                {filter.name}
+                                            </option>
+                                        )
+                                    })
+                                }
+
+                            </select>
+                        </section> 
+  
+                    </div>
+
+					{/* TESTING */}
+					<p className="mt-md">selectedTopic: { selectedTopic ? selectedTopic : "all" } | day: { selectedDay ? selectedDay : "all" } | selectedLocation: { selectedLocation ? selectedLocation : "all" }</p>
+                </div>
+
+				{/* AGENDA */}
                 <div className="agenda | section columns-1 gap-sm mt-md">
+					{
+						legacyFilterDays(dayKeys).map( (day, index) => {							
+							return (
+								<section key={index} className='day'>
+									<div className='dayDivider'>{ day }</div>
+									{
+										days[day].map( (slot, index) => {									
+											return (
+												<div key={index} className='timeSlot'>
 
-                {
-					dayKeys.map( (day, index) => {
-						return (
-							<section key={index} className='day'>
-								<div className='dayDivider'>Day { index + 1 }: { day }</div>
-								{
-									days[day].map( (slot, index) => {									
-										return (
-											<div key={index} className='timeSlot'>
+													<div className='timingsAndTags'>
+														{format( new Date(slot), "HH:mm" )} - { format( new Date(groups[slot][0].endsAt), "HH:mm" ) }
+													</div>
+													
+													<div className="sessions">
+														{
+															groups[slot].map( (session) => {
+																return (
+																	<div key={session.id} className='session | bg-glass columns-1 gap-xs'>
+																		<p className="sessionTitle | fs-4 fw-600 lh-1 c-accent">{ session.titleTranslations[0].value }</p>
+																		
+																		<div className='sessionTagGrid'>
+																			{getSessionFields( session, 'Topics').length ? <TagIcon fill={`var(--primary)`} /> : null}
+																			{getSessionFields( session, 'Topics')}
+																		
+																			{getSessionFields( session, 'Location').length ? <CompassIcon fill={`var(--primary)`} /> : null}
+																			{getSessionFields( session, 'Location')}
+																		</div>
 
-												<div className='timingsAndTags'>
-													{format( new Date(slot), "HH:mm" )} - { format( new Date(groups[slot][0].endsAt), "HH:mm" ) }
-												</div>
-												
-												<div className="sessions">
-													{
-														groups[slot].map( (session) => {
-
-															return (
-																<div key={session.id} className='session | bg-glass columns-1 gap-xs'>
-																	<p className="sessionTitle | fs-4 fw-600 lh-1 c-accent">{ session.titleTranslations[0].value }</p>
-																	
-																	<div className='sessionTagGrid'>
-																		{getSessionFields( session, 'Topics').length ? <TagIcon fill={`var(--primary)`} /> : null}
-																		{getSessionFields( session, 'Topics')}
-																	
-																		{getSessionFields( session, 'Location').length ? <CompassIcon fill={`var(--primary)`} /> : null}
-																		{getSessionFields( session, 'Location')}
+																		{
+																			session.descriptionTranslations.length ?
+																				<p>{ session.descriptionTranslations[0].value }</p>
+																			: null
+																		}
+																		
+																		{ sortSpeakers(session.speakers) }
 																	</div>
+																)
+															})
+														}
+													</div>
 
-																	{
-																		session.descriptionTranslations.length ?
-																			<p>{ session.descriptionTranslations[0].value }</p>
-																		: null
-																	}
-																	
-																	{ sortSpeakers(session.speakers) }
-																</div>
-															)
-															
-														})
-													}
 												</div>
-
-											</div>
-										)
-									})
-								}
-							</section>
-						)
-					})
-				}
+											)
+										})
+									}
+								</section>
+							)
+						})
+					}
 
                 </div>
             </section>

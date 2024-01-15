@@ -89,14 +89,10 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
                 <div className={CSS.venue} style={{ color: theme ? theme.text : 'var(--default-text-color'}}>
                     <MainMenu fixToggle={!inView} theme={theme} />
                     
-                    <Link href="/ae/register-interest">
+                    <Link href="/ae/purchase-pass">
                         <a 
                             className={`${CSS.ctaButton} fw-600 caps`} 
-                            // style={{ 
-                            //     background: theme ? theme.buttons : 'white',
-                            //     color: theme ? theme.buttonText : 'var(--primary-ae)',
-                            // }}
-                        >Register interest</a>
+                        >Purchase Pass</a>
                     </Link>
                     
                     <p><span className='fw-600 fs-6'>30 September - 02 October 2024</span> <br/>Madinat Jumeirah, Dubai</p>
