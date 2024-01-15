@@ -47,7 +47,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 
 					{/* <HeaderShim /> */}
 
-					<p className='fs-0 fw-600 lh-1'>2023 Advisory Board</p>
+					<p className='fs-0 fw-600 lh-1'>2024 Advisory Board</p>
 
 					<SpeakerGrid decal="gap-sm mt-md">
 						{craftCmsProfiles.map( speaker => (
