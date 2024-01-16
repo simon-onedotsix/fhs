@@ -382,7 +382,7 @@ export default function Agenda ({ sessions }) {
 							console.log('selected:', selectedDay)
 							
 							return (
-								<section keu={index} className='day'>
+								<section key={index} className='day'>
 									<div className='dayDivider'>{ day.day }</div>
 									{
 										day.timeSlots &&
