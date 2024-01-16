@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/router"
 
 import _ from 'lodash'
@@ -24,7 +24,10 @@ import 'simplebar-react/dist/simplebar.min.css'
 import CSS from '../../css/app/agenda-sa-2024.module.css'
 
 
-export default function Agenda ({ agenda }) {
+export default function Agenda ({ sessions }) {
+
+	// const [ agendaSessions, setAgendaSessions ] = useState (null)
+	// const [ agendaTimeSlots, setAgendaTimeSlots ] = useState (null)
 
 	const [ selectedTopic, setSelectedTopic ] = useState (null)
     const [ selectedDay, setSelectedDay ] = useState (null)
@@ -32,66 +35,41 @@ export default function Agenda ({ agenda }) {
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: ''})
 
+	const locationSelect = useRef()
+
+    // console.log('agenda:', agenda)
 
 
-    // console.log(agenda)
 
-    const sessions = agenda.data.plannings
+	
+    const getDayFromDateTimeString = (timestring) => format( new Date(timestring), "eeee" )
+	
 	const groups = _.groupBy(sessions, 'beginsAt')
 	const slots = Object.keys(groups)
-
-    const getDayFromDateTimeString = (timestring) => format( new Date(timestring), "eeee" )
 	const days = _.groupBy(slots, getDayFromDateTimeString)
 	const dayKeys = Object.keys(days)
 
 
 
+
 	// FILTERS
+	
 
-	const legacyFilterDays = ( dayArray ) => {
-		if ( selectedDay ) {
-			dayArray = [dayKeys.at(selectedDay - 1)]
-			return dayArray
-		}
-		return dayArray
+	const resetFilters = () => {
+		setSelectedDay(null)
+		setSelectedLocation(null)
+		setSelectedTopic(null)
+		locationSelect.current.value = 'All locations'
 	}
 
-	const filterSession = ( sessionData ) => {
-		if ( selectedTopic ) {
-			// console.log('selectedTopic',selectedTopic)
-			// console.log(sessionData.fields.some(field => field.id === selectedTopic))
-			return sessionData.fields.some(field => field.id === selectedTopic) ? true : false
-		}
-		// console.log('session:', sessionData.fields)
-		return true
-	}
-
-
-
-
-
-
-	const filterDays = ( sessionData ) => {
+	const getUniqueDays = ( sessionData ) => {
 
 		const groupedStartTimes = _.groupBy(sessionData, 'beginsAt')
 		const timeCodes = Object.keys(groupedStartTimes)
+		const eventDays = _.uniqBy( timeCodes, string => string.slice(0, 10) )
 
-		console.log('unique days:', _.uniqBy( timeCodes, string => string.slice(0, 10) ) )
-
-
-
-		const filteredDays = []
-
-		if ( selectedDay ) {
-			console.log('selectedDay:', selectedDay)
-
-		}
-
-		console.log('days:', filteredDays.length ? filteredDays.length : sessionData.length )
-		return filteredDays.length ? filteredDays : sessionData
+		return eventDays
 	}
-	filterDays( sessions )
-
 
 	const filterTopics = ( sessionData ) => {
 		
@@ -104,7 +82,7 @@ export default function Agenda ({ agenda }) {
 			})
 		}
 
-		console.log('filters (topic)', filteredSessions.length ? filteredSessions.length : sessionData.length )
+		// console.log('filters (topic)', filteredSessions.length ? filteredSessions.length : sessionData.length )
 		return filteredSessions.length ? filteredSessions : sessionData
 		
 		
@@ -121,7 +99,7 @@ export default function Agenda ({ agenda }) {
 			})
 		}
 
-		console.log('locations:', filteredSessions.length ? filteredSessions.length : sessionData.length )
+		// console.log('locations:', filteredSessions.length ? filteredSessions.length : sessionData.length )
 		return filteredSessions.length ? filteredSessions : sessionData
 		
 		
@@ -134,35 +112,72 @@ export default function Agenda ({ agenda }) {
 
 
 
+
 	// BUILD AGENDA
 
 	const buildAgenda = ( sessionData ) => {
 
 		if ( !sessionData ) return
 
-		const groupedSessions = _.groupBy(sessionData, 'beginsAt')
-		const timeSlots = Object.keys(groupedSessions)
-		const daySessions = _.groupBy(timeSlots, getDayFromDateTimeString)
-		const days = Object.keys(daySessions)
-
-		console.log('–––––––––––––––––––––––––––––––––––––––––––––––')
+		// if day is selected isolate the appropriate sessions
 		
-		console.log('days:', days)
-		console.dir(groupedSessions, { depth: null })
+		if ( selectedDay ) {
+			const dayTimstamps = getUniqueDays( sessionData )
+			const sessionsIsolatedByDay = []
+			if ( dayTimstamps[selectedDay - 1] ) {
+				sessionData.map( session => {
+					if ( getDayFromDateTimeString(session.beginsAt) === getDayFromDateTimeString(dayTimstamps[selectedDay - 1]) ) {
+						sessionsIsolatedByDay.push(session)
+					}
+				})
+			}
+			sessionData = sessionsIsolatedByDay
+		}
 
+		// console.log('sessions:', sessionData.length)
+
+
+		// check for sessions
+
+		if ( !sessionData.length ) {
+			// console.log('NO SESSIONS FOUND')
+			return null
+
+		} else {
+
+			// group sessions into timeslots and group by day
+	
+			const groupedSessions = _.groupBy(sessionData, 'beginsAt')
+			const timeSlots = Object.keys(groupedSessions)
+			const daySlots = _.groupBy(timeSlots, getDayFromDateTimeString)
+	
+			// console.log('groupedSessions:', (groupedSessions))
+			// console.log('dayslots:', daySlots)
+
+			const builtAgenda = []
+	
+			for ( const key in daySlots ) {
+
+				const slot = daySlots[key].map ( slot => {
+					return (
+						{ beginsAt: String(slot), sessions: groupedSessions[slot] }
+					)
+					
+				})
+
+				builtAgenda.push( { day: key, timeSlots: slot } )
+
+			}
+
+			console.log('builtAgenda', builtAgenda)
+
+			return builtAgenda
+		
+		}
+		
 	}
-	buildAgenda( filterSessions( sessions ) )
 
-
-
-
-
-
-
-
-
-
-
+	
 
 
 	// HANDLE SESSION TAGS
@@ -200,6 +215,7 @@ export default function Agenda ({ agenda }) {
 
 		return distilledFieldObjects
 	}
+
 
 
 
@@ -248,6 +264,7 @@ export default function Agenda ({ agenda }) {
 
 
 
+
     return (
         <>
 
@@ -291,7 +308,7 @@ export default function Agenda ({ agenda }) {
                         </section>
 
                         {/* days */}
-                        <section className={CSS.filterLayoutButtons}>
+                        {/* <section className={CSS.filterLayoutButtons}>
                             {
                                 dayKeys.map( (day, index) => {
                                     return (
@@ -314,21 +331,18 @@ export default function Agenda ({ agenda }) {
                                     setSelectedDay(null)
                                 }}
                             >All</button>
-                        </section>
+                        </section> */}
 
                         {/* locations */}
                         <section className={CSS.filterLayoutButtons}>
-                            {/* <p className={`${CSS.desktopOnly} fw-400 c-primary`}>Filter:&emsp;</p> */}
                             <select
+								ref={locationSelect}
                                 className={CSS.filterSelect} 
-                                defaultValue=""
                                 onChange={ (e) => {
                                     setSelectedLocation( e.target.value )
-                                    // clearQuery()
-                                    // console.log('selected filter:', e.target.value)
                                 }}
                             >
-                                <option value="">All locations</option>
+                                <option value={null}>All locations</option>
                                 {
                                     groupFieldGroupsByName( sessions, 'Location').map( filter => {
                                         return (
@@ -341,32 +355,46 @@ export default function Agenda ({ agenda }) {
 
                             </select>
                         </section> 
+
+						{/* reset filters */}
+						{
+							selectedDay || selectedLocation || selectedTopic ?
+								<section className={CSS.agendaFilterResetWrapper}>
+									<button className={CSS.agendaFilterReset} onClick={resetFilters}>Reset <span>&times;</span></button>
+								</section>
+							: null
+						}
   
                     </div>
-
-					{/* TESTING */}
-					<p className="mt-md">selectedTopic: { selectedTopic ? selectedTopic : "all" } | day: { selectedDay ? selectedDay : "all" } | selectedLocation: { selectedLocation ? selectedLocation : "all" }</p>
                 </div>
 
-				{/* AGENDA */}
-                <div className="agenda | section columns-1 gap-sm mt-md">
-					{
-						legacyFilterDays(dayKeys).map( (day, index) => {							
+
+				{/* <p>selectedDay: { selectedDay ? selectedDay : 'no day selected' }</p> */}
+
+
+				<div className="agenda | section columns-1 gap-sm mt-md">
+
+					{ 
+						buildAgenda( filterSessions(sessions) ) ?
+						buildAgenda( filterSessions(sessions) ).map( day => {
+
+							console.log('day:', day.day)
+							console.log('selected:', selectedDay)
+							
 							return (
-								<section key={index} className='day'>
-									<div className='dayDivider'>{ day }</div>
+								<section className='day'>
+									<div className='dayDivider'>{ day.day }</div>
 									{
-										days[day].map( (slot, index) => {									
+										day.timeSlots &&
+										day.timeSlots.map( (slot, index) => {
 											return (
 												<div key={index} className='timeSlot'>
-
 													<div className='timingsAndTags'>
-														{format( new Date(slot), "HH:mm" )} - { format( new Date(groups[slot][0].endsAt), "HH:mm" ) }
+														{format( new Date(slot.beginsAt), "HH:mm" )} - { format( new Date(slot.sessions[0].endsAt), "HH:mm" ) }
 													</div>
-													
 													<div className="sessions">
 														{
-															groups[slot].map( (session) => {
+															slot.sessions.map( session => { 
 																return (
 																	<div key={session.id} className='session | bg-glass columns-1 gap-xs'>
 																		<p className="sessionTitle | fs-4 fw-600 lh-1 c-accent">{ session.titleTranslations[0].value }</p>
@@ -391,17 +419,23 @@ export default function Agenda ({ agenda }) {
 															})
 														}
 													</div>
-
 												</div>
 											)
 										})
 									}
 								</section>
 							)
-						})
+							
+						}) : 
+						<section>
+							<p className="fs-4 fw-500">No sessions found for the currently selected filters!</p>
+							<p>Please try a different combination or <span onClick={resetFilters}>reset</span> all filters.</p>
+						</section>
+
 					}
 
-                </div>
+				</div>
+
             </section>
 
 
@@ -545,7 +579,7 @@ export async function getStaticProps() {
 
     return { 
         props: { 
-            agenda
+            sessions: agenda.data.plannings
         } 
     }
 }

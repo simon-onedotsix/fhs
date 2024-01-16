@@ -15,10 +15,13 @@
         width: 100%;
     }
     .filterLayoutButtons .filterButton:first-child {
-        flex: 1;;
+        /* flex: 1;; */
     }
     .filterLayoutButtons {
         margin-bottom: .2rem;
+    }
+    .agendaFilterResetWrapper {
+        margin-top: var(--space-sm);
     }
 }
 @media(min-width:800px){
@@ -100,6 +103,50 @@
     outline: none;
 }
 
+
+
+.agendaFilterReset {
+    cursor: pointer;
+    appearance:none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    background-color: transparent;
+    
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    gap: 1rem
+}
+.agendaFilterReset span {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    border: 1px solid var(--accent);
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 350ms ease-in-out;
+}
+.agendaFilterReset:hover span {
+    background-color: var(--accent);
+    color: var(--secondary);
+}
+
+.agendaFilterResetWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
 
 
 /* speaker profile modal trigger */
