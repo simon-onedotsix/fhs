@@ -37,7 +37,8 @@ export default function Agenda ({ sessions }) {
 
 	const locationSelect = useRef()
 
-    // console.log('agenda:', agenda)
+    console.log('sessions found:', sessions.length)
+    // console.log('sessions:', sessions)
 
 
 
@@ -372,7 +373,7 @@ export default function Agenda ({ sessions }) {
 				{/* <p>selectedDay: { selectedDay ? selectedDay : 'no day selected' }</p> */}
 
 
-				<div className="agenda | section columns-1 gap-sm mt-md">
+				{/* <div className="agenda | section columns-1 gap-sm mt-md">
 
 					{ 
 						buildAgenda( filterSessions(sessions) ) ?
@@ -434,7 +435,7 @@ export default function Agenda ({ sessions }) {
 
 					}
 
-				</div>
+				</div> */}
 
             </section>
 

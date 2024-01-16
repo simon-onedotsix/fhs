@@ -376,13 +376,13 @@ export default function Agenda ({ sessions }) {
 
 					{ 
 						buildAgenda( filterSessions(sessions) ) ?
-						buildAgenda( filterSessions(sessions) ).map( day => {
+						buildAgenda( filterSessions(sessions) ).map( (day, index) => {
 
 							console.log('day:', day.day)
 							console.log('selected:', selectedDay)
 							
 							return (
-								<section className='day'>
+								<section key={index} className='day'>
 									<div className='dayDivider'>{ day.day }</div>
 									{
 										day.timeSlots &&
