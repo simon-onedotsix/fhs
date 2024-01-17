@@ -3,19 +3,20 @@
 }
 .filterLayoutButtons {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     gap: .2rem;
-    align-items: center;
+    /* align-items: center; */
 }
 
 @media(max-width:1079px){
     .desktopOnly {
         display: none;
     }
-    .filterButton {
-        width: 100%;
-    }
-    .filterLayoutButtons .filterButton:first-child {
-        /* flex: 1;; */
+    .filterLayout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
     .filterLayoutButtons {
         margin-bottom: .2rem;
@@ -55,6 +56,8 @@
     border-radius: calc(var(--default-radius) * 0.5);
     background-color: transparent;
     backdrop-filter: blur(10px);
+
+    
 
     transition: all 350ms ease-in-out;
 }
