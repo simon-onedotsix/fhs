@@ -37,38 +37,15 @@ export default function Agenda ({ sessions }) {
 
 	const locationSelect = useRef()
 
-    // console.log('agenda:', agenda)
-
-
-
-	
-    const getDayFromDateTimeString = (timestring) => format( new Date(timestring), "eeee" )
-	
-	const groups = _.groupBy(sessions, 'beginsAt')
-	const slots = Object.keys(groups)
-	const days = _.groupBy(slots, getDayFromDateTimeString)
-	const dayKeys = Object.keys(days)
-
-
 
 
 	// FILTERS
-	
 
 	const resetFilters = () => {
 		setSelectedDay(null)
 		setSelectedLocation(null)
 		setSelectedTopic(null)
 		locationSelect.current.value = 'All locations'
-	}
-
-	const getUniqueDays = ( sessionData ) => {
-
-		const groupedStartTimes = _.groupBy(sessionData, 'beginsAt')
-		const timeCodes = Object.keys(groupedStartTimes)
-		const eventDays = _.uniqBy( timeCodes, string => string.slice(0, 10) )
-
-		return eventDays
 	}
 
 	const filterTopics = ( sessionData ) => {
@@ -112,75 +89,67 @@ export default function Agenda ({ sessions }) {
 
 
 
-
 	// BUILD AGENDA
-
-	const buildAgenda = ( sessionData ) => {
-
-		if ( !sessionData ) return
-
-		// if day is selected isolate the appropriate sessions
 		
-		if ( selectedDay ) {
-			const dayTimstamps = getUniqueDays( sessionData )
-			const sessionsIsolatedByDay = []
-			if ( dayTimstamps[selectedDay - 1] ) {
-				sessionData.map( session => {
-					if ( getDayFromDateTimeString(session.beginsAt) === getDayFromDateTimeString(dayTimstamps[selectedDay - 1]) ) {
-						sessionsIsolatedByDay.push(session)
-					}
-				})
-			}
-			sessionData = sessionsIsolatedByDay
-		}
+	const buildAgenda = ( sessionsData ) => {
 
-		// console.log('sessions:', sessionData.length)
-
-
-		// check for sessions
-
-		if ( !sessionData.length ) {
-			// console.log('NO SESSIONS FOUND')
-			return null
-
-		} else {
-
-			// group sessions into timeslots and group by day
-	
-			const groupedSessions = _.groupBy(sessionData, 'beginsAt')
-			const timeSlots = Object.keys(groupedSessions)
-			const daySlots = _.groupBy(timeSlots, getDayFromDateTimeString)
-	
-			// console.log('groupedSessions:', (groupedSessions))
-			// console.log('dayslots:', daySlots)
-
-			const builtAgenda = []
-	
-			for ( const key in daySlots ) {
-
-				const slot = daySlots[key].map ( slot => {
-					return (
-						{ beginsAt: String(slot), sessions: groupedSessions[slot] }
-					)
-					
-				})
-
-				builtAgenda.push( { day: key, timeSlots: slot } )
-
-			}
-
-			console.log('builtAgenda', builtAgenda)
-
-			return builtAgenda
+		if ( !sessionsData ) return 
 		
+		const timeslots = _.groupBy(sessionsData, 'beginsAt')
+		
+
+		// calculate event days
+
+		const getUniqueDays = ( sessionData ) => {
+
+			const groupedStartTimes = _.groupBy(sessionData, 'beginsAt')
+			const timeCodes = Object.keys(groupedStartTimes)
+			const eventDays = _.uniqBy( timeCodes, string => string.slice(0, 10) )
+	
+			return eventDays
 		}
 		
+		const agendaDays = []
+		getUniqueDays( sessionsData ).map((timestring, index) => {
+			agendaDays.push({ 
+				day: format( new Date(timestring), "eeee dd MMMM" ), 
+				time: timestring.slice(0, 10), 
+				timeslots: [] 
+			})
+		})
+		
+
+		// apply filters to sessions
+
+		const filteredTimeslots = _.groupBy(filterSessions(sessionsData), 'beginsAt')
+		
+	
+		// build agenda
+	
+		const agenda = []
+		agendaDays.map( day => {
+			let slots = []
+			for ( const key in filteredTimeslots ) {
+				if ( key.slice(0, 10) === day.time.slice(0, 10) ) {
+					slots.push({ 
+						beginsAt: filteredTimeslots[key][0].beginsAt, 
+						endsAt: filteredTimeslots[key][0].endsAt, 
+						sessions: filteredTimeslots[key]
+					})
+				}
+			}
+	
+			agenda.push( { ...day , timeslots: slots } )
+		})
+
+		console.log('agenda:', agenda)
+		return agenda
 	}
 
+
+
 	
-
-
-	// HANDLE SESSION TAGS
+	// HANDLE SESSION FIELDS (TAGS)
 
 	const getSessionFields = ( sessionData, fieldHandle ) => {
 		if ( !sessionData.fields || !fieldHandle ) return
@@ -216,8 +185,12 @@ export default function Agenda ({ sessions }) {
 		return distilledFieldObjects
 	}
 
-
-
+	const getFieldGroupNameById = ( sessionData, fieldId ) => {
+		if ( !fieldId ) return
+		let array = groupFieldGroupsByName( sessionData, 'Topics' )
+		let obj = array.find( topic => topic.id === fieldId)
+		return obj.name
+	}
 
 	// HANDLE SPEAKERS PER SESSION (pick out moderators)
 
@@ -281,7 +254,7 @@ export default function Agenda ({ sessions }) {
                 </div>
 
 				{/* FILTERS */}
-                <div className="container">
+				<div className="container">
                     <div className={CSS.filterLayout}>
 
                         {/* topics */}
@@ -304,22 +277,21 @@ export default function Agenda ({ sessions }) {
                                     setSelectedTopic(null)
                                 }}
                             >All</button>
-    
                         </section>
 
                         {/* days */}
-                        {/* <section className={CSS.filterLayoutButtons}>
+                        <section className={CSS.filterLayoutButtons}>
                             {
-                                dayKeys.map( (day, index) => {
+                                buildAgenda( sessions ).map( (day, index) => {
                                     return (
                                         <button 
                                             className={`
                                                 ${CSS.filterButton} 
-                                                ${ selectedDay === index + 1 ? CSS.active : null }
+                                                ${ selectedDay === day.time.slice(0, 10) ? CSS.active : null }
                                             `}
                                             key={index} 
                                             onClick={ () => {
-                                                setSelectedDay(index + 1)
+                                                setSelectedDay(day.time.slice(0, 10))
                                             }}
                                         >Day { index + 1 }</button>
                                     )
@@ -331,7 +303,7 @@ export default function Agenda ({ sessions }) {
                                     setSelectedDay(null)
                                 }}
                             >All</button>
-                        </section> */}
+                        </section>
 
                         {/* locations */}
                         <section className={CSS.filterLayoutButtons}>
@@ -360,7 +332,7 @@ export default function Agenda ({ sessions }) {
 						{
 							selectedDay || selectedLocation || selectedTopic ?
 								<section className={CSS.agendaFilterResetWrapper}>
-									<button className={CSS.agendaFilterReset} onClick={resetFilters}>Reset <span>&times;</span></button>
+									<button className={CSS.agendaFilterReset} onClick={resetFilters}>Reset all filters <span>&times;</span></button>
 								</section>
 							: null
 						}
@@ -369,36 +341,36 @@ export default function Agenda ({ sessions }) {
                 </div>
 
 
-				{/* <p>selectedDay: { selectedDay ? selectedDay : 'no day selected' }</p> */}
+				{/* <p className="my-sm">selectedTopic: { selectedTopic ? selectedTopic : 'x' } | selectedDay: { selectedDay ? selectedDay : 'x' } |  selectedLocation: { selectedLocation }</p> */}
 
 
-				<div className="agenda | section columns-1 gap-sm mt-md">
 
-					{ 
-						buildAgenda( filterSessions(sessions) ) ?
-						buildAgenda( filterSessions(sessions) ).map( (day, index) => {
-
-							console.log('day:', day.day)
-							console.log('selected:', selectedDay)
+				{/* AGENDA */}
+				<div className="agenda | section columns-1 gap-sm mt-md">				
+					{
+						buildAgenda( sessions ).map( (day, index) => {
 							
+							if ( selectedDay && selectedDay !== day.time ) return
+
 							return (
 								<section key={index} className='day'>
-									<div className='dayDivider'>{ day.day }</div>
+									<p key={index} className='dayDivider'> { day.day }</p>
 									{
-										day.timeSlots &&
-										day.timeSlots.map( (slot, index) => {
+										day.timeslots.length ?
+										day.timeslots.map( (slot, index) => {
 											return (
 												<div key={index} className='timeSlot'>
+
 													<div className='timingsAndTags'>
 														{format( new Date(slot.beginsAt), "HH:mm" )} - { format( new Date(slot.sessions[0].endsAt), "HH:mm" ) }
 													</div>
+													
 													<div className="sessions">
 														{
-															slot.sessions.map( session => { 
+															slot.sessions.map( (session, index) => {
 																return (
-																	<div key={session.id} className='session | bg-glass columns-1 gap-xs'>
+																	<div key={index} className='session | bg-glass columns-1 gap-xs'>
 																		<p className="sessionTitle | fs-4 fw-600 lh-1 c-accent">{ session.titleTranslations[0].value }</p>
-																		
 																		<div className='sessionTagGrid'>
 																			{getSessionFields( session, 'Topics').length ? <TagIcon fill={`var(--primary)`} /> : null}
 																			{getSessionFields( session, 'Topics')}
@@ -419,29 +391,20 @@ export default function Agenda ({ sessions }) {
 															})
 														}
 													</div>
+
 												</div>
 											)
-										})
+										}) : <p className="fs-5 fw-400 py-xs">No { getFieldGroupNameById( sessions, selectedTopic ) } sessions available { selectedLocation  ? 'at this location' : null } on this day.</p>
 									}
 								</section>
 							)
-							
-						}) : 
-						<section>
-							<p className="fs-4 fw-500">No sessions found for the currently selected filters!</p>
-							<p>Please try a different combination or <span onClick={resetFilters}>reset</span> all filters.</p>
-						</section>
-
+						})
 					}
 
 				</div>
 
+
             </section>
-
-
-
-
-
 
 
 
