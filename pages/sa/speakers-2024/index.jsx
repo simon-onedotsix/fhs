@@ -50,37 +50,39 @@ function Speakers({ seomatic, speakers }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
 							speakers.length &&
-							speakers.map( speaker => (
-								<div key={speaker.id}>
-									<Link href={`/sa/speakers-2024/${speaker.id}`}>
-										<a className={CSS.avatar}>
-											{
-												speaker.photoUrl ? 
-												<Image 
-													src={speaker.photoUrl} 
-													width={370} 
-													height={370} 
-													alt=""
-												/>
-												: 
-												<Image 
-													src='/assets/ui/avatar-fallback.png' 
-													width={370} 
-													height={370} 
-													alt=""
-												/>
-											}
-										</a>
-									</Link>
-									<div>
-										<p className='mt-xs'>
-											<span className='fw-600'>{speaker.firstName} {speaker.lastName}</span> 
-											<br/>{speaker.jobTitle} 
-											<br/>{speaker.organization}
-										</p>
+							speakers.map( speaker => {
+								if ( speaker.type ) return (
+									<div key={speaker.id}>
+										<Link href={`/sa/speakers-2024/${speaker.id}`}>
+											<a className={CSS.avatar}>
+												{
+													speaker.photoUrl ? 
+													<Image 
+														src={speaker.photoUrl} 
+														width={370} 
+														height={370} 
+														alt=""
+													/>
+													: 
+													<Image 
+														src='/assets/ui/avatar-fallback.png' 
+														width={370} 
+														height={370} 
+														alt=""
+													/>
+												}
+											</a>
+										</Link>
+										<div>
+											<p className='mt-xs'>
+												<span className='fw-600'>{speaker.firstName} {speaker.lastName}</span> 
+												<br/>{speaker.jobTitle} 
+												<br/>{speaker.organization}
+											</p>
+										</div>
 									</div>
-								</div>
-							))
+								)
+							})
 						}
 					</SpeakerGrid>
 			

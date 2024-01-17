@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from "react"
-import { useRouter } from "next/router"
+import { useState, useRef } from "react"
 
 import _ from 'lodash'
 import { format } from 'date-fns'
@@ -14,10 +13,10 @@ import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
 import { TagIcon, CompassIcon } from "../../fuselage/components/icons/icons"
 
-
 import { Modal } from "../../fuselage/components/modal/modal"
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
+
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
 
@@ -25,9 +24,6 @@ import CSS from '../../css/app/agenda-sa-2024.module.css'
 
 
 export default function Agenda ({ sessions }) {
-
-	// const [ agendaSessions, setAgendaSessions ] = useState (null)
-	// const [ agendaTimeSlots, setAgendaTimeSlots ] = useState (null)
 
 	const [ selectedTopic, setSelectedTopic ] = useState (null)
     const [ selectedDay, setSelectedDay ] = useState (null)
@@ -142,7 +138,7 @@ export default function Agenda ({ sessions }) {
 			agenda.push( { ...day , timeslots: slots } )
 		})
 
-		console.log('agenda:', agenda)
+		// console.log('agenda:', agenda)
 		return agenda
 	}
 
@@ -344,7 +340,6 @@ export default function Agenda ({ sessions }) {
 				{/* <p className="my-sm">selectedTopic: { selectedTopic ? selectedTopic : 'x' } | selectedDay: { selectedDay ? selectedDay : 'x' } |  selectedLocation: { selectedLocation }</p> */}
 
 
-
 				{/* AGENDA */}
 				<div className="agenda | section columns-1 gap-sm mt-md">				
 					{
@@ -405,8 +400,6 @@ export default function Agenda ({ sessions }) {
 
 
             </section>
-
-
 
 
             <Modal onClose={() => setShowModal(false)} show={showModal}>
