@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import useSWR from 'swr'
 
 export default function Client () {
 
@@ -49,6 +48,7 @@ export default function Client () {
             }
             const result = await response.json()
             setData(result)
+            console.log(result)
           }
        
           fetchData().catch((e) => {
@@ -61,6 +61,8 @@ export default function Client () {
 
     // if (loading) return <p>Loading...</p>
     // if (error) return <p>No profile data</p>
+
+
 
     return (
             <h1>loaded!</h1>

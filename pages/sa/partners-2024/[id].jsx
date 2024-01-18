@@ -1,19 +1,19 @@
 import parse from 'html-react-parser'
 
-import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
+import { LenisScroller } from '../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
+import { Header } from '../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../fuselage/theme/2024/sa/globals/footer/footer"
 
-import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+import { ThemeBg } from '../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
-import { HeaderShim } from '../../../fuselage/global-sa/header/header'
+import { HeaderShim } from '../fuselage/global-sa/header/header'
 
-import { OffsiteLink } from '../../../fuselage/components/offsite-link/offsite-link'
-import { StickySidebar } from '../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
-import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
-import { ButtonSocial } from  '../../../fuselage/components/button-social/button-social'
+import { OffsiteLink } from '../fuselage/components/offsite-link/offsite-link'
+import { StickySidebar } from '../fuselage/layout/sticky-sidebar/sticky-sidebar'
+import { ArrowLink } from '../fuselage/components/arrow-link/arrow-link'
+import { ButtonSocial } from  '../fuselage/components/button-social/button-social'
 
 import CSS from '../../../css/app/partners.module.css'
 
