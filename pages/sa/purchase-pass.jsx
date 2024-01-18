@@ -47,6 +47,12 @@ function PurchasePass({ seomatic, entry }) {
 			<Header compact shim />
 
 			<ThemeBg />
+			
+			<section className="block bg-default pb-0">
+				<div className="container">
+					<p className='fs-1 fw-600'>Purchase Pass</p>
+				</div>
+			</section>
 
 			{ handleContentBlocks( entry.fhisContentBlocks, null, null, 'sa' ) }
 

@@ -305,6 +305,20 @@ export const Passes = `
                 expires
                 hyperlink
             }
+            ... on passes_sectionHeading_BlockType {
+                id
+                heading
+            }
+            ... on passes_specialPass_BlockType {
+                id
+                specialPassTitle
+                specialPassDescription
+                specialPassValue
+                specialPassAvailableFrom
+                specialPassExpires
+                specialPassButtonLabel
+                specialPassHyperlink
+            }
         }
     }
 `
