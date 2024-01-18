@@ -4,6 +4,7 @@ import { gql } from "@apollo/client"
 import craftApolloClient from "../../api/apollo"
 
 import Head from 'next/head'
+import Link from 'next/link'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
@@ -154,6 +155,15 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 					}
 				</div>
 				
+			</section>
+
+
+			<section className="block pt-0">
+				<div className="container center">
+
+					<p><Link href="/sa/2023/partners"><a class="button secondary">2023 Sponsors & Partners</a></Link> <Link href="/sa/get-in-touch"><a class="button secondary">Get in Touch</a></Link></p>
+
+				</div>
 			</section>
 
 

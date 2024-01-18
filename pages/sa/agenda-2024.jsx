@@ -2,6 +2,7 @@ import { useState, useRef } from "react"
 
 import _ from 'lodash'
 import { format } from 'date-fns'
+import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
@@ -44,45 +45,6 @@ export default function Agenda ({ sessions }) {
 		locationSelect.current.value = 'All locations'
 	}
 
-	const filterTopics = ( sessionData ) => {
-		
-		const filteredSessions = []
-		
-		if ( selectedTopic ) {
-			// console.log('selectedTopic', selectedTopic)
-			sessionData.forEach( session => {
-				if ( session.fields.some( field => field.id == selectedTopic )) filteredSessions.push(session)
-			})
-		}
-
-		// console.log('filters (topic)', filteredSessions.length ? filteredSessions.length : sessionData.length )
-		return filteredSessions.length ? filteredSessions : sessionData
-		
-		
-	}	
-	
-	const filterLocations = ( sessionData ) => {
-		
-		const filteredSessions = []
-		
-		if ( selectedLocation ) {
-			// console.log('selectedLocation', selectedLocation)
-			sessionData.forEach( session => {
-				if ( session.fields.some( field => field.id == selectedLocation )) filteredSessions.push(session)
-			})
-		}
-
-		// console.log('locations:', filteredSessions.length ? filteredSessions.length : sessionData.length )
-		return filteredSessions.length ? filteredSessions : sessionData
-		
-		
-	}
-
-	const filterSessions = ( sessionData ) => {
-		// console.log('filter intersection:', _.intersection( filterLocations(sessionData), filterTopics(sessionData) ))
-		return _.intersection( filterLocations(sessionData), filterTopics(sessionData) )
-	}
-
 
 
 	// BUILD AGENDA
@@ -113,9 +75,53 @@ export default function Agenda ({ sessions }) {
 				timeslots: [] 
 			})
 		})
+
+
+
+		// filters
+
+		const filterTopics = ( sessionData ) => {
+		
+			const filteredSessions = []
+			
+			if ( selectedTopic ) {
+				// console.log('selectedTopic', selectedTopic)
+				sessionData.forEach( session => {
+					if ( session.fields.some( field => field.id == selectedTopic )) filteredSessions.push(session)
+				})
+			}
+	
+			// console.log('filters (topic)', filteredSessions.length ? filteredSessions.length : sessionData.length )
+			return filteredSessions.length ? filteredSessions : sessionData
+			
+			
+		}	
+		
+		const filterLocations = ( sessionData ) => {
+			
+			const filteredSessions = []
+			
+			if ( selectedLocation ) {
+				// console.log('selectedLocation', selectedLocation)
+				sessionData.forEach( session => {
+					if ( session.fields.some( field => field.id == selectedLocation )) filteredSessions.push(session)
+				})
+			}
+	
+			// console.log('locations:', filteredSessions.length ? filteredSessions.length : sessionData.length )
+			return filteredSessions.length ? filteredSessions : sessionData
+			
+			
+		}
+	
+		const filterSessions = ( sessionData ) => {
+			// console.log('filter intersection:', _.intersection( filterLocations(sessionData), filterTopics(sessionData) ))
+			return _.intersection( filterLocations(sessionData), filterTopics(sessionData) )
+		}
+	
 		
 
-		// apply filters to sessions
+		// group sessions (and apply filters)
 
 		const filteredTimeslots = _.groupBy(filterSessions(sessionsData), 'beginsAt')
 		
@@ -141,7 +147,6 @@ export default function Agenda ({ sessions }) {
 		// console.log('agenda:', agenda)
 		return agenda
 	}
-
 
 
 	
@@ -187,6 +192,8 @@ export default function Agenda ({ sessions }) {
 		let obj = array.find( topic => topic.id === fieldId)
 		return obj.name
 	}
+
+
 
 	// HANDLE SPEAKERS PER SESSION (pick out moderators)
 
@@ -376,7 +383,7 @@ export default function Agenda ({ sessions }) {
 
 																		{
 																			session.descriptionTranslations.length ?
-																				<p>{ session.descriptionTranslations[0].value }</p>
+																				parse( session.descriptionTranslations[0].value )
 																			: null
 																		}
 																		

@@ -1,5 +1,3 @@
-import Layout from '../../../fuselage/templates/sa/layout'
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../../api/apollo"
 
@@ -50,7 +48,7 @@ function Speakers({ seomatic, speakers }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
 							speakers.length &&
-							speakers.map( speaker => {
+							_.orderBy(speakers, 'lastName').map( speaker => {
 								if ( speaker.type ) return (
 									<div key={speaker.id}>
 										<Link href={`/sa/speakers-2024/${speaker.id}`}>
