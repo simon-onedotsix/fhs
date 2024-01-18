@@ -161,7 +161,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 			<section className="block pt-0">
 				<div className="container center">
 
-					<p><Link href="/sa/2023/partners"><a class="button secondary">2023 Sponsors & Partners</a></Link> <Link href="/sa/get-in-touch"><a class="button secondary">Get in Touch</a></Link></p>
+					<p><Link href="/sa/2023/partners"><a className="button secondary">2023 Sponsors & Partners</a></Link> <Link href="/sa/get-in-touch"><a className="button secondary">Get in Touch</a></Link></p>
 
 				</div>
 			</section>
