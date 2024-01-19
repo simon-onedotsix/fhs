@@ -62,7 +62,7 @@ export default function Home({ seomatic, contentBlocks, partnerData }) {
                     <p className="fs-2 fw-600 caps">Host Sponsors</p>
                 </div>
                 <div className="container flex gap-md jc-center">
-                    <Image src={`/assets/site/sa/al-faisaliah-logo.png`} width={200} height={200}/>
+                    <Image src={`/assets/site/sa/mandarin-oriental-al-faisaliah-logo.png`} width={200} height={200}/>
                     <Image src={`/assets/site/sa/al-khozama-logo.png`} width={200} height={200}/>
                 </div>
             </section>
