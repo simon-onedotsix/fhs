@@ -225,14 +225,14 @@ export async function getStaticProps() {
 			body: JSON.stringify({
 				query: `
 					query {
-						event(id: "${process.env.SWAPCARD_EVENT_ID}") {
+						event(id: "${process.env.SWAPCARD_EVENT_ID_SA}") {
 							exhibitorsTypes {
 								name
 								id
 								position
 							}
 						}
-						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID}", page:1, pageSize: 200) {
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}", page:1, pageSize: 200) {
 							id
 							name
 							logoUrl
@@ -247,7 +247,7 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID,
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA,
 					"page": 1
 				}
 			})

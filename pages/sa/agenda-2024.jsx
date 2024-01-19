@@ -387,7 +387,7 @@ export default function Agenda ({ sessions }) {
 																			: null
 																		}
 																		
-																		{ sortSpeakers(session.speakers) }
+																		{/* { sortSpeakers(session.speakers) } */}
 																	</div>
 																)
 															})
@@ -517,7 +517,7 @@ export async function getStaticProps() {
 								lastName
 								photoUrl
 								organization
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID}") {
+								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}") {
 									eventProfile {
 										type
 									}
@@ -528,7 +528,7 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID,
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA,
 					"page": 1
 				}
 			})
