@@ -138,7 +138,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 										<PartnerLogoGrid>
 											{
 												_.orderBy(group, 'name').map(partner => (
-													<a key={partner.id} href={`/sa/partners-2024/${partner.id}`}>
+													<a key={partner.id} href={`/sa/partners/${partner.id}`}>
 														<PartnerLogo 
 															hero={{ url: partner.logoUrl }} 
 															size={ category.size }
