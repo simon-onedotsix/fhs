@@ -44,11 +44,11 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents }) => {
                                 <a className='uLink fs-5 fw-400'>2024 Programme</a>
                             </Link>
                         </p> */}
-                        {/* <p className='c-white mt-xs'>
+                        <p className='c-white mt-xs'>
                             <Link href={'/sa/agenda'}>
                                 <a className='uLink fw-400 ml-sm'>Full Programme</a>
                             </Link>
-                        </p> */}
+                        </p>
                         <p className='c-white mt-xs'>
                             <Link href={'/sa/schedule-at-a-glance'}>
                                 <a className='uLink fw-400 ml-sm'>Schedule at a Glance</a>
