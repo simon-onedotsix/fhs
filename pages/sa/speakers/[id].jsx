@@ -1,5 +1,3 @@
-import Layout from '../../../fuselage/templates/sa/layout'
-
 import Image from "next/image"
 import Link from "next/link"
 
@@ -15,7 +13,6 @@ import { HeaderShim } from '../../../fuselage/global-sa/header/header'
 
 import { StickySidebar } from '../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
 import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
-import { OffsiteLink } from "../../../fuselage/components/offsite-link/offsite-link"
 import { ButtonSocial } from  '../../../fuselage/components/button-social/button-social'
 
 import { sortSessions, toHoursAndMinutes } from "../../../lib/agenda-utils"
@@ -25,8 +22,7 @@ import CSS from '../../../css/app/speakers.module.css'
 
 function Speaker({ speaker, sessions }) {
 
-	console.log('bizzabo speaker data:', speaker)
-	// console.log('bizzabo sessions data:', sessions)
+	console.log('speaker data:', speaker)
 
 	const handleLinkedIn = () => {
 		if  ( speaker.linkedIn ) {
@@ -55,17 +51,6 @@ function Speaker({ speaker, sessions }) {
 				/>
 			)
 		}
-	}
-	const handleCompany = () => {
-		if( speaker.web ) {
-			return (
-				<OffsiteLink href={speaker.web} direction='right' target='_blank'>
-					{speaker.company}
-				</OffsiteLink>
-			)
-		}
-		return speaker.company
-		
 	}
 	const handleRelatedSessions = () => {
 		let relatedSessions = []
@@ -144,22 +129,15 @@ function Speaker({ speaker, sessions }) {
                                     View All Speakers
                                 </ArrowLink>
                             </p>
-							<p className="fw-600">
-                                <ArrowLink 
-                                    theme={{ color: `white`, stroke: `var(--accent)` }} 
-                                    href="/sa/advisory-board"
-                                >
-                                    View Advisory Board
-                                </ArrowLink>
-                            </p>
-							<p className="mt-sm">
+							<p className={`${CSS.avatar} mt-sm`}>
 								{
-									speaker.photoSet ? 
+									speaker.photoUrl ? 
 									<Image 
-										src={speaker.photoSet.large} 
+										src={speaker.photoUrl} 
 										width={370} 
 										height={370} 
 										alt=""
+										unoptimized
 									/>
 									: 
 									<Image 
@@ -177,17 +155,15 @@ function Speaker({ speaker, sessions }) {
 						<main className="maxw-60">
 							<HeaderShim/>
 							<p className='fs-4 fw-600 lh-1 c-accent maxw-40'>Profile</p>
-							<p className="fs-3 fw-600 c-white caps mt-sm">{speaker.firstname} {speaker.lastname}</p>
+							<p className="fs-3 fw-600 c-white caps mt-sm">{speaker.firstName} {speaker.lastName}</p>
 							<p className='c-white'>
-								{speaker.title}
+								{speaker.jobTitle}
 								<br/>
 								<span className="fw-500">
-									{ handleCompany() }
+									{ speaker.organization }
 								</span>
 							</p>
-							<p className="mt-sm maxw-50 c-white" style={{ whiteSpace: `pre-line` }}>{speaker.bio}</p>
-
-							{ handleRelatedSessions() }
+							<p className="mt-sm maxw-50 c-white" style={{ whiteSpace: `pre-line` }}>{ speaker.biography }</p>
 						</main>
 
 					</StickySidebar>
@@ -207,19 +183,7 @@ Speaker.theme = 'sa-2014'
 
 
 export async function getStaticPaths() {
-
-	const res = await fetch(`https://api.bizzabo.com/api/speakers?eventId=${process.env.BIZZABO_EVENT_ID_SA}&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-	const allSpeakers = await res.json()
-	console.log('hello:',allSpeakers)
-
 	return {
-		// paths: allSpeakers.content.map( entry => ({ params: { id: String(entry.id) } })),
 		paths: [],
 		fallback: 'blocking'
 	}
@@ -227,29 +191,48 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
 
-	// console.log('params',params)
+	console.log('params',params)
 	
-	const res = await fetch(`https://api.bizzabo.com/api/speakers/${params.id}?eventId=${process.env.BIZZABO_EVENT_ID_SA}`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
+	const result = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query eventPerson($eventId: ID!, $filters: [EventPersonFilter!]) {
+						eventPerson(eventId: $eventId, filters: $filters) {
+							nodes {
+								createdAt
+								firstName
+								id
+								lastName
+								jobTitle
+								organization
+								userId
+								biography
+								photoUrl
+							}
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA,
+					"filters": {
+						"eventPeopleIds": [ params.id ]
+					}
+				}
+			})
 		}
-	})
-	const speakerData = await res.json()
+	)
 
-	const sessionsRes = await fetch(`https://api.bizzabo.com/api/agenda/sessions?eventId=${process.env.BIZZABO_EVENT_ID_SA}&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-    const sessionsData = await sessionsRes.json()
-    const sessions = sessionsData.content
+	const speakerData = await result.json()
 
 	return {
-		props: { speaker: speakerData, sessions }
+		props: { speaker: speakerData.data.eventPerson.nodes[0] }
 	}
 }
 

@@ -1,5 +1,3 @@
-import Layout from '../../../fuselage/templates/sa/layout'
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../../api/apollo"
 
@@ -23,41 +21,13 @@ import handleSeomaticMeta from '../../../lib/seomatic'
 
 import CSS from '../../../css/app/speakers-sa-2024.module.css'
 
-function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 
 
-	console.log('bizzabo speakers found:', bizzaboSpeakers.length)
-	console.log('bizzabo speaker data:', bizzaboSpeakers)
-	// console.log('cms profile data:', craftCmsProfiles)
-	
 
 
-	// reorder speakers alphabetically by lastname
+function Speakers({ seomatic, speakers }) {
 
-	let orderedSpeakers = _.orderBy( bizzaboSpeakers, [ speaker => speaker.lastname.toLowerCase()], ['asc'])
-	// console.log('ordered:', orderedSpeakers)
-
-	// customise order (move al saud into first place)
-	let customSpeakers = _.sortBy(orderedSpeakers, speaker => speaker.lastname === 'Al Saud' ? 0 : 1 )
-
-
-	// find index of specific speaker	
-	// let targetSpeaker = orderedSpeakers.map( speaker => speaker.lastname ).indexOf("Al Saud")
-	// console.log( 'speaker index:', targetSpeaker )
-
-	// create array containing above speaker
-	// let firstPlaceSpeaker = orderedSpeakers.splice(targetSpeaker, 1)
-	// console.log('firstPlaceSpeaker:', firstPlaceSpeaker)
-	
-	// remove above speaker from master array
-	// orderedSpeakers.splice(targetSpeaker, 1)
-	// console.log('ordered (pruned):', orderedSpeakers)
-	
-	// add speaker back in first place
-	// let customSpeakers = firstPlaceSpeaker.concat(orderedSpeakers)
-	// console.log('customSpeakers:', customSpeakers)
-
-
+	console.log('speakers:', speakers)
 
 	return (
 		<>
@@ -73,38 +43,45 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 			<section className="block bg-theme">
 				<div className="container">
 
-					{/* bizzabo speakers */}
-
-					<p className='fs-1 fw-600 lh-1 maxw-40'>2023 SPEAKERS</p>
+					<p className='fs-1 fw-600 lh-1 maxw-40'>2024 SPEAKERS</p>
 					
 					<SpeakerGrid decal="gap-sm mt-md">
-						{customSpeakers.map( speaker => (
-							<div key={speaker.id}>
-								<Link href={`/sa/speakers/${speaker.id}`}>
-									<a className={CSS.avatar}>
-										{
-											speaker.photoSet ? 
-											<Image 
-												src={speaker.photoSet.large} 
-												width={370} 
-												height={370} 
-												alt=""
-											/>
-											: 
-											<Image 
-												src='/assets/ui/avatar-fallback.png' 
-												width={370} 
-												height={370} 
-												alt=""
-											/>
-										}
-									</a>
-								</Link>
-								<div>
-									<p className='mt-xs'><span className='fw-600'>{speaker.firstname} {speaker.lastname}</span> <br/>{speaker.title} <br/>{speaker.company}</p>
-								</div>
-							</div>
-						))}
+						{
+							speakers.length &&
+							_.orderBy(speakers, 'lastName').map( speaker => {
+								if ( speaker.type ) return (
+									<div key={speaker.id}>
+										<Link href={`/sa/speakers/${speaker.id}`}>
+											<a className={CSS.avatar}>
+												{
+													speaker.photoUrl ? 
+													<Image 
+														src={speaker.photoUrl} 
+														width={370} 
+														height={370} 
+														alt=""
+													/>
+													: 
+													<Image 
+														src='/assets/ui/avatar-fallback.png' 
+														width={370} 
+														height={370} 
+														alt=""
+													/>
+												}
+											</a>
+										</Link>
+										<div>
+											<p className='mt-xs'>
+												<span className='fw-600'>{speaker.firstName} {speaker.lastName}</span> 
+												<br/>{speaker.jobTitle} 
+												<br/>{speaker.organization}
+											</p>
+										</div>
+									</div>
+								)
+							})
+						}
 					</SpeakerGrid>
 			
 				</div>
@@ -125,14 +102,90 @@ Speakers.theme = 'sa-2024'
 
 export async function getStaticProps() {
 
-	const bizzaboSpeakers = await fetch(`https://api.bizzabo.com/api/speakers?eventId=${process.env.BIZZABO_EVENT_ID_SA}&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
+	const swapcardData = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+				query eventPerson($eventId: ID!, $cursor: CursorPaginationInput) {
+					eventPerson(eventId: $eventId, cursor: $cursor) {
+					pageInfo {
+						hasNextPage
+						endCursor
+						totalItems
+						startCursor
+						lastPage
+						hasPreviousPage
+						currentPage
+					}
+					totalCount
+					nodes {
+						id
+						type
+						clientIds
+						email
+						firstName
+						lastName
+						jobTitle
+						organization
+						photoUrl
+						websiteUrl
+						biography
+						socialNetworks {
+							profile
+							type
+						}
+						groups {
+							id
+							name
+						}
+						source
+						withEvent(eventId: $eventId) {
+						fields {
+							... on SelectField {
+								translations {
+									value
+									language
+								}
+								definition {
+									id
+									translations {
+										name
+										language
+									}
+										}
+									}
+								}
+								badges {
+									... on BadgeBarcode {
+										__typename
+										barcode
+										createdAt
+									}
+								}
+							}
+						}
+					}
+				}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA,
+					"cursor": {
+						"first": 300
+					}
+				}
+			})
 		}
-	})
-	const json = await bizzaboSpeakers.json()
+	)
+
+	// console.log(swapcardData)
+	
+	const speakerData =  await swapcardData.json()
 
 
 	const cmsData = await craftApolloClient().query({
@@ -151,8 +204,8 @@ export async function getStaticProps() {
 
 	return {
 		props: { 
-			bizzaboSpeakers: json.content,
-			seomatic: cmsData.data.entry.seomatic
+			seomatic: cmsData.data.entry.seomatic,
+			speakers: speakerData.data.eventPerson.nodes
 		}
 	}
 }

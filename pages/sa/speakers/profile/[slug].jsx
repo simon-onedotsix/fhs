@@ -39,20 +39,20 @@ export default function Profile ({ profile }) {
 						<aside className="formatted">
                             <HeaderShim/>
                             
-							<p className="fw-600">
+							{/* <p className="fw-600">
                                 <ArrowLink 
                                     theme={{ color: `white`, stroke: `var(--accent)` }} 
                                     href="/sa/speakers"
                                 >
                                     View All Speakers
                                 </ArrowLink>
-                            </p>
+                            </p> */}
 							<p className="fw-600">
                                 <ArrowLink 
                                     theme={{ color: `white`, stroke: `var(--accent)` }} 
                                     href="/sa/advisory-board"
                                 >
-                                    View Advisory Board
+                                    Advisory Board
                                 </ArrowLink>
                             </p>
 							
