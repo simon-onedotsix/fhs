@@ -1,24 +1,24 @@
-import Layout from '../../../fuselage/templates/sa/layout'
+import Layout from '../../fuselage/templates/sa/layout'
 
 import Image from "next/image"
 import Link from "next/link"
 
-import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
+import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
 
-import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
-import { HeaderShim } from '../../../fuselage/global-sa/header/header'
+import { HeaderShim } from '../../fuselage/global-sa/header/header'
 
-import { StickySidebar } from '../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
-import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
-import { OffsiteLink } from "../../../fuselage/components/offsite-link/offsite-link"
-import { ButtonSocial } from  '../../../fuselage/components/button-social/button-social'
+import { StickySidebar } from '../../fuselage/layout/sticky-sidebar/sticky-sidebar'
+import { ArrowLink } from '../../fuselage/components/arrow-link/arrow-link'
+import { OffsiteLink } from "../../fuselage/components/offsite-link/offsite-link"
+import { ButtonSocial } from  '../../fuselage/components/button-social/button-social'
 
-import { sortSessions, toHoursAndMinutes } from "../../../lib/agenda-utils"
+import { sortSessions, toHoursAndMinutes } from "../../lib/agenda-utils"
 import { formatInTimeZone } from 'date-fns-tz'
 
 import CSS from '../../../css/app/speakers.module.css'
