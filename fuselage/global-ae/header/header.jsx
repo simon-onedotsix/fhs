@@ -87,7 +87,7 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
                 
                 
                 <div className={CSS.venue} style={{ color: theme ? theme.text : 'var(--default-text-color'}}>
-                    <MainMenu fixToggle={!inView} theme={theme} />
+                    <MainMenu fixToggle={!inView} theme={theme} otherEvents={otherEvents}  />
                     
                     <Link href="/ae/purchase-pass">
                         <a 

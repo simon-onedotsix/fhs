@@ -84,7 +84,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                 </div>
 
                 <div className={`${CSS.nav} ${ !inView && CSS.fixed}`}>
-                    <MainMenu mainMenu={null} />
+                    <MainMenu mainMenu={null} otherEvents={otherEvents} />
                 </div>
             </header>
 

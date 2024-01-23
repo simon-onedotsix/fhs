@@ -6,7 +6,7 @@ import { ArrowButton } from '../../components/arrow-button/arrow-button'
 
 import CSS from './main-menu.module.css'
 
-export const MainMenu = ({ mainMenu }) => {
+export const MainMenu = ({ mainMenu, otherEvents }) => {
 
     const [ active, setActive ] = useState( false )
 
@@ -41,11 +41,33 @@ export const MainMenu = ({ mainMenu }) => {
                     <section className='c-white'>
                         <p className="fs-4 fw-600 c-accent">Future Hospitality events</p>
                         <p className="mt-xs">
-                            <ArrowButton href={`/ae`} theme={{ arrow: `var(--accent-ae)`, border: `var(--accent-ae)`, label: `white`}}>FHS World</ArrowButton>
+                            <ArrowButton href={`/ae`} theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}>FHS World</ArrowButton>
                         </p>
                         <p className="mt-xs">
-                            <ArrowButton href={`/sa`} theme={{ arrow: `var(--primary-sa)`, border: `var(--primary-sa)`, label: `white`}}>FHS Saudi Arabia</ArrowButton>
+                            <ArrowButton href={`/sa`} theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}>FHS Saudi Arabia</ArrowButton>
                         </p>
+                    </section>
+                    
+                    <section className='c-white'>
+                        <p className="fs-4 fw-600 c-accent">Our other events</p>
+                        {
+                            otherEvents.length &&
+                            otherEvents.map( event => {
+                                if ( event.id == 1 || event.id == 3 ) return
+                                return (
+                                    <p key={ event.id} className="mt-xs">
+                                        <ArrowButton 
+                                            href={event.url} 
+                                            theme={{ arrow: `var(--accent)`, 
+                                            border: `var(--accent)`, 
+                                            label: `white`}}
+                                        >   
+                                            { event.title }
+                                        </ArrowButton>
+                                    </p>
+                                )
+                            })
+                        }
                     </section>
 
                 </div>

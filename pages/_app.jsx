@@ -48,8 +48,8 @@ App.getInitialProps = async () => {
 
 	const global = await craftApolloClient().query({
 		query: gql`
-			query Globals {
-				globalSet(site: "fhis") {
+			query fhsGlobals {
+				globalSets(site: "fhis") {
 					... on footer_GlobalSet {
 						id
 						name
@@ -81,10 +81,34 @@ App.getInitialProps = async () => {
 		`
 	})
 
-	const ksa = await craftApolloClient().query({
+	const sa = await craftApolloClient().query({
 		query: gql`
 			query KsaGlobals {
-				globalSet(site: "fhisSa") {
+				globalSets(site: "fhisSa") {
+					... on header_GlobalSet {
+						id
+						name
+						mainMenu {
+							... on mainMenu_BlockType {
+								id
+								menuColumns {
+									... on menuColumns_heading_BlockType {
+										id
+										heading
+										headingSize
+									}
+									... on menuColumns_menuLinksGroup_BlockType {
+										id
+										menuLink {
+										label
+										hyperlink
+										size
+										}
+									}
+								}
+							}
+						}
+					}
 					... on footer_GlobalSet {
 						id
 						name
@@ -118,8 +142,8 @@ App.getInitialProps = async () => {
 
 	const me = await craftApolloClient().query({
 		query: gql`
-			query MeGlobals {
-				globalSet(site: "fhisAe") {
+			query meGlobals {
+				globalSets(site: "fhisAe") {
 					... on footer_GlobalSet {
 						id
 						name
@@ -151,13 +175,13 @@ App.getInitialProps = async () => {
 		`
 	})
 
-	// console.log('FOOTER DATA:', (data.globalSet))
+	// console.log('FOOTER DATA:', (global))
 
 	return { 
 		globals: {
-			global: global.data.globalSet,
-			ksa: ksa.data.globalSet,
-			me: me.data.globalSet,
+			global: global.data.globalSets,
+			sa: sa.data.globalSets,
+			me: me.data.globalSets,
 		}
 	}
 

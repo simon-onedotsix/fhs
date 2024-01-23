@@ -6,7 +6,7 @@ import { Button } from '../../../../../components/button/button'
 
 import CSS from './main-menu.module.css'
 
-export const MainMenu = ({ fixToggle, mainMenu }) => {
+export const MainMenu = ({ fixToggle, mainMenu, otherEvents }) => {
 
     const [ active, setActive ] = useState( false )
 
@@ -24,7 +24,7 @@ export const MainMenu = ({ fixToggle, mainMenu }) => {
 
             <div className={`${CSS.overlay} ${ active && CSS.active }`}>
                 
-                <div className="columns-3 gap-md">
+                <div className="columns-4 gap-md">
                     <section>
                         <p className='c-white'>
                             <Link href={'/sa/'}>
@@ -82,7 +82,7 @@ export const MainMenu = ({ fixToggle, mainMenu }) => {
                     </section>
 
                     <section>
-                        <p className='fs-5 fw-700 c-white'>Get Involved</p>
+                        <p className='fs-5 fw-700 c-accent'>Get Involved</p>
                         <p className='c-white mt-xs'>
                             <Link href={'/sa/contact-us'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Contact Us</a>
@@ -94,7 +94,7 @@ export const MainMenu = ({ fixToggle, mainMenu }) => {
                             </Link>
                         </p>
 
-                        <p className='fs-5 fw-700 c-white mt-sm'>Event Features</p>
+                        <p className='fs-5 fw-700 c-accent mt-sm'>Event Features</p>
                         <p className='c-white mt-xs pl-sm'>
                             <Link href={'/sa/grif'}>
                                 <a className='uLink fw-400' onClick={ () => setActive(false)}>GRIF Saudi Arabia</a>
@@ -131,30 +131,42 @@ export const MainMenu = ({ fixToggle, mainMenu }) => {
                     </section>
 
                     <section className='c-white'>
-                        <p className="fs-4 fw-600">FHS Saudi Arabia 2022</p>
+                        <p className="fs-5 fw-600 c-accent">FHS Saudi Arabia 2022</p>
                         <p className='c-white mt-xs'>
-                            <a className='uLink fs-5 fw-400' href={'https://ksa.futurehospitalitysummit.com/episode/future-hospitality-summit/programme'} target="_blank">2022 programme</a>
+                            <a className='uLink fs-6 fw-400' href={'https://ksa.futurehospitalitysummit.com/episode/future-hospitality-summit/programme'} target="_blank">2022 programme</a>
                         </p>
                         <p className='c-white mt-xs'>
-                            <a className='uLink fs-5 fw-400' href={'https://ksa.futurehospitalitysummit.com/speakers'} target="_blank">2022 speakers</a>
-                        </p>
-                        
-                        <p className="fs-4 fw-600 mt-md">FHS Saudi Arabia 2023</p>
-                        <p className='c-white mt-xs'>
-                            <a className='uLink fs-5 fw-400' href={'/sa/2023/agenda'}>2023 programme</a>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <a className='uLink fs-5 fw-400' href={'/sa/2023/speakers'}>2023 speakers</a>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <a className='uLink fs-5 fw-400' href={'/sa/2023/partners'}>2023 partners</a>
+                            <a className='uLink fs-6 fw-400' href={'https://ksa.futurehospitalitysummit.com/speakers'} target="_blank">2022 speakers</a>
                         </p>
                         
+                        <p className="fs-5 fw-600 c-accent mt-md">FHS Saudi Arabia 2023</p>
+                        <p className='c-white mt-xs'>
+                            <a className='uLink fs-6 fw-400' href={'/sa/2023/agenda'}>2023 programme</a>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <a className='uLink fs-6 fw-400' href={'/sa/2023/speakers'}>2023 speakers</a>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <a className='uLink fs-6 fw-400' href={'/sa/2023/partners'}>2023 partners</a>
+                        </p>
+                    </section>
 
-                        <p className="fs-4 fw-600 mt-md">Future Hospitality events</p>
-                        <p className="mt-xs">
-                            <ArrowButton href={`/ae`} theme={{ arrow: `white`, border: `white`, label: `white`}}>FHS World</ArrowButton>
-                        </p>
+                    <section className="c-white">
+                        <p className="fs-4 fw-600 c-accent">Our Other Events</p>
+                        {
+                            otherEvents.length &&
+                            otherEvents.map( event => (
+                                <p key={event.id} className="mt-xs">
+                                    <ArrowButton 
+                                        href={ event.url } 
+                                        theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
+                                        target={ event.target && '_blank' }
+                                    >
+                                        { event.title }
+                                    </ArrowButton>
+                                </p>
+                            ))
+                        }
                     </section>
                 </div>
 

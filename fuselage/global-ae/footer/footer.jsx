@@ -17,9 +17,9 @@ export const Footer = ({ theme }) => {
     
     // console.log('footer-theme:', theme)
 
-    const hubspotForm = globals.me.hubspotForm[0]
-    const contactInfo = globals.me.contactDetails[0].body
-    const socialConnections = globals.me.socialConnections
+    const hubspotForm = globals.me[2].hubspotForm[0]
+    const contactInfo = globals.me[2].contactDetails[0].body
+    const socialConnections = globals.me[2].socialConnections
 
     return (
         <footer className={`footer block ${ theme ? theme.footerBg : 'bg-theme'}`} style={{ position: `relative`}}>

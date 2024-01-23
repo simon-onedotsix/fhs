@@ -12,11 +12,11 @@ import CSS from './footer.module.css'
 export const Footer = ({ background }) => {
 
     const { globals } = useContext(GlobalsContext)
-    // console.log('globals from FOOTER:', globals)
+    console.log('globals from FOOTER:', globals)
 
-    const hubspotForm = globals.global.hubspotForm[0]
-    const contactInfo = globals.global.contactDetails[0].body
-    const socialConnections = globals.global.socialConnections
+    const hubspotForm = globals.global[2].hubspotForm[0]
+    const contactInfo = globals.global[2].contactDetails[0].body
+    const socialConnections = globals.global[2].socialConnections
 
     return (
         <footer className="footer block bg-primary" style={{ background: background ? background : `transparent`}}>
