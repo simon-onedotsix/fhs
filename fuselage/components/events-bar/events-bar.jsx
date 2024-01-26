@@ -53,6 +53,6 @@ const EventBarButton = ({ href, title, target, stroke }) => {
         <a href={href} className={`${CSS.event} fw-600`} target="_blank" rel="noreferrer" style={style}>{ title }</a>
     )
     return (
-        <Link href={href}><a className={`${CSS.event} fw-600`} style={style}>{ title }</a></Link>
+        <a href={href} className={`${CSS.event} fw-600`} style={style}>{ title }</a>
     )
 }

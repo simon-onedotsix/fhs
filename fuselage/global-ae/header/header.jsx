@@ -27,13 +27,13 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
             id: 1,
             title: 'FHS Saudi Arabia',
             url: '/sa',
-            target: false
+            target: true
         },
         {
             id: 2,
             title: 'GRIF Saudi Arabia',
             url: '/sa/grif',
-            target: false
+            target: true
         },
         {
             id: 5,
