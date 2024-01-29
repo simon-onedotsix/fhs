@@ -108,14 +108,14 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 								return (
 									<div key={type.id}>
-										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category.name }</h4>
+										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category && category.name }</h4>
 										<PartnerLogoGrid>
 											{
 												_.orderBy(group, 'name').map(partner => (
 													<a key={partner.id} href={`/ae/partners-2024/${partner.id}`}>
 														<PartnerLogo 
 															hero={{ url: partner.logoUrl }} 
-															size={ category.size }
+															size={ category && category.size }
 														/>
 													</a>
 												))
