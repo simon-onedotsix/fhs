@@ -79,6 +79,11 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents }) => {
                                 <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Register Now</a>
                             </Link>
                         </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/sa/saudi-women-in-hospitality'}>
+                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>#FHSWomenPower</a>
+                            </Link>
+                        </p>
                     </section>
 
                     <section>
