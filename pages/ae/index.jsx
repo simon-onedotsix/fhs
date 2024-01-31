@@ -161,33 +161,41 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     <Fade>
                         <Button href={`https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1`} decal={`fs-4 fw-600`} target={`_blank`}>FHS World 2024 Brochure</Button>
                     </Fade>
-                    {/* <LogoBubbleGrid>
-                        <LogoBubble delay={0.2}><FhsLogo primary={`white`} secondary={`white`} /></LogoBubble>
-                    </LogoBubbleGrid> */}
                 </Container>
                 
-                <Container flushRight decal={`bg-white-90 p-md`}>
-                    <div className="formatted">
-                        <Slide delay={.2}><p className='fs-1 fw-600 lh-1 maxw-40'>Thank you for making FHS 2023 a success!</p></Slide>
-                        <Fade delay={.4}><p className='fs-4 fw-300 maxw-40 mt-sm'>For <strong>Future Hospitality Summit 2024</strong>, we&apos;re creating an intersection for the world of hospitality where the industry invests in its future. We are returning to Dubai to a much bigger, bolder space - Madinat Jumeirah. A more personalised and immersive experience with new features like Investors Lounge, ESG Lab, Country Pavilions, an Expanded Exhibition Area, and much more.</p>
-                        </Fade>
-                    </div>
+                <Container flushRight decal={`bg-white-90`}>
+              
+                        <div className="bg-dark p-md">
+                            <Slide><p className='fs-1 fw-600 lh-1'>Join the FHS 2024 Launch Reception!</p></Slide>
+                        </div>
 
-                    {/* download prospectus */}
+                        <Image src="/assets/site/ae/2024-world-lauch-reception.jpg" layout={'responsive'} width={2200} height={1467}/>
 
-                    <div className="mt-md">
-                        {/* <span 
-                            onClick={() => {
-                                console.log('modal button clicked')
-                                    setModalContent('content')
-                                    setShowModal(true)
-                               
-                            }}>
-                            <Button decal={`fs-5 fw-600`}>Register Interest</Button>
-                        </span> */}
-                        <Button href={'ae/purchase-pass'} decal={`fs-5 fw-600`}>Purchase Pass</Button>
-                    </div>
+                        <div className="p-md formatted">
+                            <Fade>
+                                <p className='fs-4 fw-500 maxw-45'>Registrations for our flagship Future Hospitality Summit 2024, now transformed and titled &apos;FHS World&apos; are now open.</p>
+                                <p className='fs-5 fw-300 maxw-45 mb-sm'>Purchasing your ticket now provides access to the FHS launch reception hosted at XU Dubai on the 27th of February. Get a chance to meet and interact with the FHS Advisory Board and start making connections ahead of the event!</p>
+                            </Fade>
+                            <Fade>
+                                <Button href={`/ae/purchase-pass`} decal={`fs-4 fw-600`}>
+                                    Purchase Pass
+                                </Button>
+                            </Fade>
+                        </div>
+                  
+                </Container>
 
+                <Container decal={`bg-white-90 p-md`}>
+                    <Slide><p className='fs-1 fw-600 lh-1 maxw-45'>What&apos;s new for FHS World 2024</p></Slide>
+                    <Fade>
+                        <p className='fs-5 fw-500 maxw-45 mt-sm'>This year we are creating an intersection for the world of hospitality where the industry invests in its future. We are returning to Dubai to a much bigger, bolder space - Madinat Jumeirah. A more personalised and immersive experience with new features like Investors Lounge, ESG Lab, Country Pavilions, an Expanded Exhibition Area, and much more.</p>
+                        <p className='fs-5 fw-300 maxw-45 mt-xs mb-sm'>Sponsorship spaces at the event are limited and are selling out fast. If you are interested in booking a stand or a pavilion, please feel free to reach out to our sponsorship team.</p>
+                    </Fade>
+                    <Fade>
+                        <Button href={`/ae/get-in-touch`} decal={`fs-4 fw-600`}>
+                            Get in touch
+                        </Button>
+                    </Fade>
                 </Container>
             </section>
 

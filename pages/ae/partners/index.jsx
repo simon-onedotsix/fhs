@@ -120,12 +120,12 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 			<section className="block">
 				<div className="container maxw-40">
-				<Quote 
-					quote={`“Great to have a balance between connecting with quality industry people and keeping up with what the industry is doing as a whole.”`}
-					name={`Sandeep Walia`}
-					title={`Chief Operations Officer, Middle East`}
-					company={`Marriott International`}
-				/>
+					<Quote 
+						quote={`“Great to have a balance between connecting with quality industry people and keeping up with what the industry is doing as a whole.”`}
+						name={`Sandeep Walia`}
+						title={`Chief Operations Officer, Middle East`}
+						company={`Marriott International`}
+					/>
 				</div>
 			</section>
 
