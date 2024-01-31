@@ -211,17 +211,17 @@
 
 /* theme */
 
-/* [data-theme='ae-2023'] .bg-theme,
-[data-theme='ae-2023'] .bg-theme .formatted h1,
-[data-theme='ae-2023'] .bg-theme .formatted h2,
-[data-theme='ae-2023'] .bg-theme .formatted h3,
-[data-theme='ae-2023'] .bg-theme .formatted h4,
-[data-theme='ae-2023'] .bg-theme .formatted h5,
-[data-theme='ae-2023'] .bg-theme .formatted h6 {
+[data-theme='ae-2023'] .bg-dark,
+[data-theme='ae-2023'] .bg-dark .formatted h1,
+[data-theme='ae-2023'] .bg-dark .formatted h2,
+[data-theme='ae-2023'] .bg-dark .formatted h3,
+[data-theme='ae-2023'] .bg-dark .formatted h4,
+[data-theme='ae-2023'] .bg-dark .formatted h5,
+[data-theme='ae-2023'] .bg-dark .formatted h6 {
     color: white;
 }
 
-[data-theme='ae-2023'] .bg-theme .bg-white,
+/* [data-theme='ae-2023'] .bg-theme .bg-white,
 [data-theme='ae-2023'] .bg-theme .bg-white .formatted h1,
 [data-theme='ae-2023'] .bg-theme .bg-white .formatted h2,
 [data-theme='ae-2023'] .bg-theme .bg-white .formatted h3,

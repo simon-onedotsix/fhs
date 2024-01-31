@@ -33,7 +33,7 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
 
             <div className={`${CSS.overlay} ${ active && CSS.active } p-lg`} style={{ background: theme ? theme.overlayBg : 'var(--dark)' }}>
                 
-                <div className="columns-3 gap-md mt-md">
+                <div className="columns-4 gap-md mt-md">
                     <section>
                         <p className='c-white'>
                             <Link href={'/ae'}>
@@ -63,6 +63,20 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/contact-us'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Contact Us</a>
+                            </Link>
+                        </p>
+                    </section>
+
+                    <section>
+                        <p className='fs-5 fw-700 c-accent'>Event Features</p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/stages-and-tracks'}>
+                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Summit Tracks</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/country-pavilions'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Coutnry Pavilions</a>
                             </Link>
                         </p>
                     </section>
