@@ -76,7 +76,7 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
                         </p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/country-pavilions'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Coutnry Pavilions</a>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Country Pavilions</a>
                             </Link>
                         </p>
                     </section>

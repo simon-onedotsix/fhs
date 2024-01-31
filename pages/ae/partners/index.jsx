@@ -10,7 +10,9 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
 import { Header } from '../../../fuselage/global-ae/header/header'
 import { Footer } from '../../../fuselage/global-ae/footer/footer'
+import { ThemeBg } from '../../../fuselage/theme/2023/ae/theme-bg'
 
+import { Button } from '../../../fuselage/components/button/button'
 
 import handleContentBlocks from "../../../lib/content-blocks"
 import handleSeomaticMeta from "../../../lib/seomatic"
@@ -53,20 +55,6 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 	const typesArray = _.uniqBy(allTypesArray, obj => obj.id)
 
-
-	
-	// hard-coded array of exhibitor types
-
-	// const typesArray = [
-	// 	{ id: "RmllbGRWYWx1ZV8xNTAzNDczOQ==", name: "Host Sponsor", size: "lg"},
-	// 	{ id: "RmllbGRWYWx1ZV8xNTAzNDc0Mw==", name: "Platinum Sponsor", size: ""},
-	// 	{ id: "RmllbGRWYWx1ZV8yMDg1NjkwMg==", name: "Emerald Sponsor", size: ""},
-	// 	{ id: "RmllbGRWYWx1ZV8xNTAzNDczMg==", name: "Gold Sponsor", size: ""},
-	// 	{ id: "RmllbGRWYWx1ZV8xNTAzNDcyNw==", name: "Silver Sponsor", size: ""},
-	// 	{ id: "RmllbGRWYWx1ZV8xNTAzNDczMQ==", name: "GRIF - Data Partner", size: ""},
-	// 	{ id: "RmllbGRWYWx1ZV8yMDc3MjE1MQ==", name: "Culinary & Concept Tour Partners", size: ""}
-	// ]
-
 	
 
 	return (
@@ -86,6 +74,55 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
                 overlayBg: 'var(--primary)',
             }} />
 
+			<ThemeBg />
+
+
+			{/* INTRO */}
+
+			<section className="block">
+				<div className="bg-white p-md">
+
+					<div className="container center formatted">
+						<p className='fs-0 fw-600'>Become a sponsor!</p>
+					</div>
+
+					<div className='container columns-2 gap-md maxw-60 formatted'>
+
+						<section>
+							<p className='fs-5 fw-500'>FHS World 2024 is the ideal platform to showcase your brand&apos;s leadership and expertise, connect with industry thought leaders and investment decision-makers, and shape the future of hospitality investment. FHS provides a platform for nurturing relationships, igniting innovation, and creating lasting and meaningful experiences.</p>
+						</section>
+
+						<section>
+							<p>By sponsoring FHS, you have the opportunity to be part of a dynamic platform that not only promotes your brand but also contributes to the collective shaping of the future of the hospitality industry. As a sponsor, you get access to:</p>
+							
+							<ul className='fw-600'>
+								<li>Exhibition Floor Space</li>
+								<li>Speaking Slots on the FHS Programme</li>
+								<li>Marketing and Branding Opportunities (Digital & On-site)</li>
+								<li>Attendee Lists</li>
+								<li>Investor Meetings</li>
+								<li>Closed Door Workshops and Roundtable</li>
+							</ul>
+						</section>
+
+					</div>
+
+					<div className="container center">
+						<p><Button href={'/ae/get-in-touch'} decal={`fs-5 fw-600`}>Get in touch</Button></p>
+					</div>
+
+				</div>
+			</section>
+
+
+			{/* TESTIMONIALS */}
+
+			{/* <section className="block">
+
+			</section> */}
+
+
+			{/* PARTNERS */}
 
 			<section className='block'>
 
@@ -132,20 +169,13 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 			</section>
 
 
-			{/* <section className="block pt-0">
-				<div className="container center">
-
-					<p><Link href="/sa/2023/partners"><a className="button secondary">2023 Sponsors & Partners</a></Link> <Link href="/sa/get-in-touch"><a className="button secondary">Get in Touch</a></Link></p>
-
-				</div>
-			</section> */}
 
 
 
 			{/* { handleContentBlocks( contentBlocks, null, partnerData, '/ae' ) } */}
 
 
-			<Footer />
+			<Footer theme={{ footerBg: 'bg-white' }} />
 			<LenisScroller />
 		</>
 	)
