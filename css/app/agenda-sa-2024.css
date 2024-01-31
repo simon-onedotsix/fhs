@@ -39,10 +39,12 @@
     }
 }
 
-
 .sessions {
     display: flex;
-    flex-direction: column;
+
+    /* comment-out flex-direction to display sessions in columns */
+    /* flex-direction: column; */
+
     gap: .5rem;
 }
 
@@ -103,3 +105,39 @@
     font-weight: 500;
     text-transform: uppercase;
 }
+
+
+
+
+/* updated layout (columns) */
+
+.sessionsWrapper {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.sessionStream {
+    padding: .5rem 1rem;
+    border-radius: calc(var(--agenda-radius) * 1);
+    background-color: var(--primary);
+}
+
+.session {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/* updated layout (rows) */
+
+/* .sessions {
+    flex-direction: column;
+}
+.sessionsWrapper {
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+} */
