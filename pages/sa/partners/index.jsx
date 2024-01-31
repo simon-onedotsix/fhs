@@ -56,20 +56,6 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 	const typesArray = _.uniqBy(allTypesArray, obj => obj.id)
 
-
-
-	// hard-coded array of exhibitor types
-
-	// const typesArray = [
-	// 	{ id: "RmllbGRWYWx1ZV8xNTAzNDczOQ==", name: "Host Sponsor", size: "lg"},
-	// 	{ id: "RmllbGRWYWx1ZV8xNTAzNDc0Mw==", name: "Platinum Sponsor", size: ""},
-	// 	{ id: "RmllbGRWYWx1ZV8yMDg1NjkwMg==", name: "Emerald Sponsor", size: ""},
-	// 	{ id: "RmllbGRWYWx1ZV8xNTAzNDczMg==", name: "Gold Sponsor", size: ""},
-	// 	{ id: "RmllbGRWYWx1ZV8xNTAzNDcyNw==", name: "Silver Sponsor", size: ""},
-	// 	{ id: "RmllbGRWYWx1ZV8xNTAzNDczMQ==", name: "GRIF - Data Partner", size: ""},
-	// 	{ id: "RmllbGRWYWx1ZV8yMDc3MjE1MQ==", name: "Culinary & Concept Tour Partners", size: ""}
-	// ]
-
 	
 
 	return (
@@ -82,6 +68,8 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 			<Header compact shim />
 			<ThemeBg />
 			<ThemeFg />
+
+			
 
 			<QuoteGrid>
 				<Quote 
