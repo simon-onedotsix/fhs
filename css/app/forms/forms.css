@@ -5,7 +5,8 @@
     margin-bottom: var(--space-xs);
 }
 
-.form label {
+.form label,
+.form legend {
     display: block;
     margin-bottom: .5rem;
     font-weight: 300;
