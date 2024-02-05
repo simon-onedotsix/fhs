@@ -90,13 +90,14 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 					<div className='container columns-2 gap-md maxw-60 formatted'>
 
 						<section>
-							<p className='fs-5 fw-500'>FHS World 2024 is the ideal platform to showcase your brand&apos;s leadership and expertise, connect with industry thought leaders and investment decision-makers, and shape the future of hospitality investment. FHS provides a platform for nurturing relationships, igniting innovation, and creating lasting and meaningful experiences.</p>
+							<p className='fs-6'>FHS World 2024 is the ideal platform to showcase your brand&apos;s leadership and expertise, connect with industry thought leaders and investment decision-makers, and shape the future of hospitality investment. </p>
+							<p className='fs-6'>FHS provides a platform for nurturing relationships, igniting innovation, and creating lasting and meaningful experiences.</p>
 						</section>
 
 						<section>
-							<p>By sponsoring FHS, you have the opportunity to be part of a dynamic platform that not only promotes your brand but also contributes to the collective shaping of the future of the hospitality industry. As a sponsor, you get access to:</p>
+							<p className='fs-6'>By sponsoring FHS, you have the opportunity to be part of a dynamic platform that not only promotes your brand but also contributes to the collective shaping of the future of the hospitality industry. As a sponsor, you get access to:</p>
 							
-							<ul className='fw-600'>
+							<ul className='fs-6 fw-600'>
 								<li>Exhibition Floor Space</li>
 								<li>Speaking Slots on the FHS Programme</li>
 								<li>Marketing and Branding Opportunities (Digital & On-site)</li>
@@ -118,16 +119,32 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 			{/* TESTIMONIALS */}
 
-			<section className="block">
-				<div className="container maxw-40">
-					<Quote 
-						quote={`“Great to have a balance between connecting with quality industry people and keeping up with what the industry is doing as a whole.”`}
-						name={`Sandeep Walia`}
-						title={`Chief Operations Officer, Middle East`}
-						company={`Marriott International`}
-					/>
-				</div>
-			</section>
+			<QuoteGrid>
+				<Quote 
+					quote={`“Great to have a balance between connecting with quality industry people and keeping up with what the industry is doing as a whole.”`}
+					name={`Sandeep Walia`}
+					title={`Chief Operations Officer, Middle East`}
+					company={`Marriott International`}
+				/>
+				<Quote 
+					quote={`“FHS gives us the opportunity to network with owners, with investors, and with colleagues in the industry. It's always excellent to understand what's next and how we can collaborate to achieve that.”`}
+					name={`Carlos Khneisser`}
+					title={`Vice President Development Middle East & Africa`}
+					company={`Hilton`}
+				/>
+				<Quote 
+					quote={`“A top notch event and a great opportunity to 'lead the change!' The only way to make a change in the hospitality sector is to shake it from within!”`}
+					name={`Najee Syriani`}
+					title={`CVP Projects`}
+					company={`Rotana Hotels`}
+				/>
+				<Quote 
+					quote={`“The Future Hospitality Summit by The Bench was a great event to speak with industry leaders from the region and learn from those that have witnessed hospitality develop over centuries.”`}
+					name={`Fritz Dickamp`}
+					title={`Managing Director`}
+					company={`Studio 49`}
+				/>
+			</QuoteGrid>
 
 
 			{/* PARTNERS */}

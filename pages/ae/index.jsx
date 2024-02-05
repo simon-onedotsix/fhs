@@ -185,11 +185,12 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                   
                 </Container>
 
-                <Container decal={`bg-white-90 p-md`}>
+                <Container decal={`bg-white-90 p-md formatted`}>
                     <Slide><p className='fs-1 fw-600 lh-1 maxw-45'>What&apos;s new for FHS World 2024</p></Slide>
                     <Fade>
-                        <p className='fs-5 fw-500 maxw-45 mt-sm'>This year we are creating an intersection for the world of hospitality where the industry invests in its future. We are returning to Dubai to a much bigger, bolder space - Madinat Jumeirah. A more personalised and immersive experience with new features like Investors Lounge, ESG Lab, Country Pavilions, an Expanded Exhibition Area, and much more.</p>
-                        <p className='fs-5 fw-300 maxw-45 mt-xs mb-sm'>Sponsorship spaces at the event are limited and are selling out fast. If you are interested in booking a stand or a pavilion, please feel free to reach out to our sponsorship team.</p>
+                        <p className='fs-5 fw-500 maxw-45 mt-sm'>This year we are creating an intersection for the world of hospitality where the industry invests in its future. </p>
+                        <p className='fs-6 fw-300 maxw-45'>We are returning to <strong>Dubai</strong> to a much bigger, bolder space - Madinat Jumeirah. A more personalised and immersive experience with new features like <strong>Investors Lounge</strong>, <strong>ESG Lab</strong>, <strong>Country Pavilions</strong>, an <strong>Expanded Exhibition Area</strong>, and much more.</p>
+                        <p className='fs-6 fw-300 maxw-45 mt-xs mb-sm'>Sponsorship spaces at the event are limited and are selling out fast. If you are interested in booking a stand or a pavilion, please feel free to reach out to our sponsorship team.</p>
                     </Fade>
                     <Fade>
                         <Button href={`/ae/get-in-touch`} decal={`fs-4 fw-600`}>

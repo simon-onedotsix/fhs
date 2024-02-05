@@ -71,7 +71,7 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
                         <p className='fs-5 fw-700 c-accent'>Event Features</p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/stages-and-tracks'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Summit Tracks</a>
+                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Stages &amp; Tracks</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
