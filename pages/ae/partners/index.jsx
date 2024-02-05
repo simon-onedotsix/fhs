@@ -108,7 +108,8 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 				</Floaters>
 
 				<div className="container center">
-					<p><Button href={'/ae/get-in-touch'} decal={`fs-5 fw-600`}>Get in touch</Button></p>
+					<Button href={'/ae/get-in-touch'} decal={`fs-5 fw-600`}>Get in touch</Button>&emsp;
+					<Button href={'/ae/floor-plan'} decal={`fs-5 fw-600`}>View Floor Plan</Button>
 				</div>
 			</section>
 
