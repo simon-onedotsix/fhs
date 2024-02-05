@@ -372,23 +372,30 @@ export default function Agenda ({ sessions }) {
 														{
 															slot.sessions.map( (session, index) => {
 																return (
-																	<div key={index} className='session | bg-glass columns-1 gap-xs'>
-																		<p className="sessionTitle | fs-4 fw-600 lh-1 c-accent">{ session.titleTranslations[0].value }</p>
-																		<div className='sessionTagGrid'>
-																			{getSessionFields( session, 'Topics').length ? <TagIcon fill={`var(--primary)`} /> : null}
-																			{getSessionFields( session, 'Topics')}
-																		
-																			{getSessionFields( session, 'Location').length ? <CompassIcon fill={`var(--primary)`} /> : null}
-																			{getSessionFields( session, 'Location')}
-																		</div>
-
+																	<div key={index} className="sessionsWrapper">
 																		{
-																			session.descriptionTranslations.length ?
-																				parse( session.descriptionTranslations[0].value )
-																			: null
+																			slot.sessions.length > 1 &&
+																			<div className="sessionStream | fw-600">Stream {index + 1}</div>
 																		}
-																		
-																		{/* { sortSpeakers(session.speakers) } */}
+
+																		<div className='session | bg-glass columns-1 gap-xs'>
+																			<p className="sessionTitle | fs-4 fw-600 lh-1 c-accent">{ session.titleTranslations[0].value }</p>
+																			<div className='sessionTagGrid'>
+																				{getSessionFields( session, 'Topics').length ? <TagIcon fill={`var(--primary)`} /> : null}
+																				{getSessionFields( session, 'Topics')}
+																			
+																				{getSessionFields( session, 'Location').length ? <CompassIcon fill={`var(--primary)`} /> : null}
+																				{getSessionFields( session, 'Location')}
+																			</div>
+
+																			{
+																				session.descriptionTranslations.length ?
+																					parse( session.descriptionTranslations[0].value )
+																				: null
+																			}
+																			
+																			{/* { sortSpeakers(session.speakers) } */}
+																		</div>
 																	</div>
 																)
 															})
