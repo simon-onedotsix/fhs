@@ -13,6 +13,7 @@ import { Footer } from '../../../fuselage/global-ae/footer/footer'
 import { ThemeBg } from '../../../fuselage/theme/2023/ae/theme-bg'
 
 import { Button } from '../../../fuselage/components/button/button'
+import { Floaters, Floater } from '../../../fuselage/blocks/floater/floater'
 
 import handleContentBlocks from "../../../lib/content-blocks"
 import handleSeomaticMeta from "../../../lib/seomatic"
@@ -75,26 +76,24 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
                 overlayBg: 'var(--primary)',
             }} />
 
-			<ThemeBg />
+			{/* <ThemeBg /> */}
 
 
 			{/* INTRO */}
 
 			<section className="block">
-				<div className="bg-white p-md">
+				<div className="container center formatted">
+					<p className='fs-0 fw-600'>Become a sponsor!</p>
+				</div>
 
-					<div className="container center formatted">
-						<p className='fs-0 fw-600'>Become a sponsor!</p>
-					</div>
-
-					<div className='container columns-2 gap-md maxw-60 formatted'>
-
-						<section>
-							<p className='fs-6'>FHS World 2024 is the ideal platform to showcase your brand&apos;s leadership and expertise, connect with industry thought leaders and investment decision-makers, and shape the future of hospitality investment. </p>
+				<Floaters theme={``} flipped={true}>
+					
+						<Floater hero={{ url: '/assets/img/ae/2023/partners/exhibition-01.jpg', width: 1000, height: 600 }}>
+							<p className='fs-6 mt-xs'>FHS World 2024 is the ideal platform to showcase your brand&apos;s leadership and expertise, connect with industry thought leaders and investment decision-makers, and shape the future of hospitality investment. </p>
 							<p className='fs-6'>FHS provides a platform for nurturing relationships, igniting innovation, and creating lasting and meaningful experiences.</p>
-						</section>
-
-						<section>
+						</Floater>
+						
+						<Floater hero={{ url: '/assets/img/ae/2023/partners/exhibition-02.jpg', width: 1000, height: 600 }}>
 							<p className='fs-6'>By sponsoring FHS, you have the opportunity to be part of a dynamic platform that not only promotes your brand but also contributes to the collective shaping of the future of the hospitality industry. As a sponsor, you get access to:</p>
 							
 							<ul className='fs-6 fw-600'>
@@ -105,16 +104,14 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 								<li>Investor Meetings</li>
 								<li>Closed Door Workshops and Roundtable</li>
 							</ul>
-						</section>
+						</Floater>
+				</Floaters>
 
-					</div>
-
-					<div className="container center">
-						<p><Button href={'/ae/get-in-touch'} decal={`fs-5 fw-600`}>Get in touch</Button></p>
-					</div>
-
+				<div className="container center">
+					<p><Button href={'/ae/get-in-touch'} decal={`fs-5 fw-600`}>Get in touch</Button></p>
 				</div>
 			</section>
+
 
 
 			{/* TESTIMONIALS */}
