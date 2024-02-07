@@ -27,7 +27,7 @@ import CSS from '../../../css/app/speakers-sa-2024.module.css'
 
 function Speakers({ seomatic, speakers }) {
 
-	console.log('speakers:', speakers)
+	// console.log('speakers:', speakers)
 
 	return (
 		<>
@@ -48,7 +48,7 @@ function Speakers({ seomatic, speakers }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
 							speakers.length &&
-							_.orderBy(speakers, 'lastName').map( speaker => {
+							_.orderBy(speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc']).map( speaker => {
 								if ( speaker.type ) return (
 									<div key={speaker.id}>
 										<Link href={`/sa/speakers/${speaker.id}`}>
