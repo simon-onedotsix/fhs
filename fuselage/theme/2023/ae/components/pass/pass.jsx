@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { format, parseISO } from 'date-fns'
 
+import Link from 'next/link'
+
 import CSS from './pass.module.css'
 
 export const Pass = ({ title, description, currency, value, from, to, href }) => {
@@ -47,6 +49,40 @@ export const Pass = ({ title, description, currency, value, from, to, href }) =>
                 { handleButtonLabel( from, to )}
             </section>
         </div>
+    )
+}
+
+
+export const SpecialPass = ({ title, description, currency, value, from, to, label, href }) => {
+
+    return (
+        <div className={`${CSS.pass} bg-white p-sm`}>
+            <section>
+                <p className='fs-2 fw-600 lh-1 c-primary mb-xs'>{ title }</p>
+                <div className="formatted" dangerouslySetInnerHTML={{__html: description }} />
+            </section>
+
+            <section>
+                {/* { handlePassStatus( from, to ) } */}
+                {
+                    value &&
+                    <p className='fs-2 fw-600 c-primary mb-xs'>{ value }</p>
+                }
+                {
+                    href &&
+                    <Link href={ href }>
+                        <a className={`${CSS.button} fs-6 fw-600 mt-xxs`}>{ label }</a>
+                    </Link>
+                }
+            </section>
+        </div>
+    )
+}
+
+
+export const PassGridSectionHeading = ({ heading }) => {
+    return (
+        <p className={`${CSS.sectionHeading} fs-2 fw-400 mt-sm mb-xxs`}>{ heading }</p>
     )
 }
 
