@@ -21,6 +21,16 @@ import { Avatar } from '../../fuselage/components/avatar/avatar'
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
 
+import { 
+	Menu,
+	MenuButton,
+	MenuDivider,
+	MenuItem as MenuItemInner,
+	SubMenu as SubMenuInner 
+} from '@szhsin/react-menu'
+import DROPDOWN from '../../css/app/dropdown.module.css'
+import '@szhsin/react-menu/dist/transitions/slide.css'
+
 import CSS from '../../css/app/agenda-sa-2024.module.css'
 
 
@@ -42,7 +52,7 @@ export default function Agenda ({ sessions }) {
 		setSelectedDay(null)
 		setSelectedLocation(null)
 		setSelectedTopic(null)
-		locationSelect.current.value = 'All locations'
+		// locationSelect.current.value = 'All locations'
 	}
 
 
@@ -185,10 +195,10 @@ export default function Agenda ({ sessions }) {
 
 		return distilledFieldObjects
 	}
-
-	const getFieldGroupNameById = ( sessionData, fieldId ) => {
+	
+	const getFieldGroupNameById = ( sessionData, fieldId, handle ) => {
 		if ( !fieldId ) return
-		let array = groupFieldGroupsByName( sessionData, 'Topics' )
+		let array = groupFieldGroupsByName( sessionData, handle )
 		let obj = array.find( topic => topic.id === fieldId)
 		return obj.name
 	}
@@ -239,6 +249,37 @@ export default function Agenda ({ sessions }) {
 	}
 
 
+
+	// dropdown ui classes
+
+	const menuClassName = ({ state }) => (
+		state === "opening"
+		? DROPDOWN.menuOpening
+		: state === "closing"
+		? DROPDOWN.menuClosing
+		: DROPDOWN.menu
+	)
+	const menuItemClassName = ({ hover, disabled }) => ( 
+		disabled
+		? DROPDOWN.menuItemDisabled
+		: hover
+		? DROPDOWN.menuItemHover
+		: DROPDOWN.menuItem
+	)
+	const submenuItemClassName = (modifiers) => ( 
+		`${DROPDOWN.submenuItem} ${menuItemClassName(modifiers)}`
+	)
+	const MenuItem = (props) => (
+		<MenuItemInner {...props} className={menuItemClassName} />
+	)
+	const SubMenu = (props) => (
+		<SubMenuInner
+			{...props}
+			menuClassName={menuClassName}
+			itemProps={{ className: submenuItemClassName }}
+			offsetY={-7}
+		/>
+	)
 
 
     return (
@@ -311,25 +352,19 @@ export default function Agenda ({ sessions }) {
 
                         {/* locations */}
                         <section className={CSS.filterLayoutButtons}>
-                            <select
-								ref={locationSelect}
-                                className={CSS.filterSelect} 
-                                onChange={ (e) => {
-                                    setSelectedLocation( e.target.value )
-                                }}
-                            >
-                                <option value={null}>All locations</option>
-                                {
-                                    groupFieldGroupsByName( sessions, 'Location').map( filter => {
-                                        return (
-                                            <option key={filter.id} value={filter.id}>
-                                                {filter.name}
-                                            </option>
-                                        )
-                                    })
-                                }
-
-                            </select>
+							<Menu 
+								menuButton={
+									<MenuButton className={DROPDOWN.button}>{ selectedLocation ?  getFieldGroupNameById(sessions, selectedLocation, 'Location') : `All locations` } <Chevron /></MenuButton>
+								} 
+								transition 
+								menuClassName={menuClassName}
+							>
+								<MenuItem key={0} onClick={() => setSelectedLocation('')}>All locations</MenuItem>
+								{
+									sessions &&
+									groupFieldGroupsByName( sessions, 'Location').map( filter => <MenuItem key={filter.id} onClick={() => setSelectedLocation(filter.id)}>{ filter.name }</MenuItem> )
+								}
+							</Menu>
                         </section> 
 
 						{/* reset filters */}
@@ -345,7 +380,7 @@ export default function Agenda ({ sessions }) {
                 </div>
 
 
-				{/* <p className="my-sm">selectedTopic: { selectedTopic ? selectedTopic : 'x' } | selectedDay: { selectedDay ? selectedDay : 'x' } |  selectedLocation: { selectedLocation }</p> */}
+				{/* <p className="my-sm">selectedTopic: { selectedTopic ? selectedTopic : 'x' } | selectedDay: { selectedDay ? selectedDay : 'x' } |  selectedLocation: { getFieldGroupNameFromId(sessions, selectedLocation, 'Location') }</p> */}
 
 
 				{/* AGENDA */}
@@ -404,7 +439,7 @@ export default function Agenda ({ sessions }) {
 
 												</div>
 											)
-										}) : <p className="fs-5 fw-400 py-xs">No { getFieldGroupNameById( sessions, selectedTopic ) } sessions available { selectedLocation  ? 'at this location' : null } on this day.</p>
+										}) : <p className="fs-5 fw-400 py-xs">No { getFieldGroupNameById( sessions, selectedTopic, 'Topics' ) } sessions available { selectedLocation  ? 'at this location' : null } on this day.</p>
 									}
 								</section>
 							)
@@ -465,6 +500,23 @@ const SpeakerCard = ({ speaker, type }) => {
 		</div>
 	)
 }
+
+const Chevron = () => {
+	return (
+		<span style={{ display: `inline-block`, height: 12, marginLeft: 6 }}>
+			<svg width="100%" height="100%" viewBox="0 0 28 20" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeLinecap:`square`, strokeMiterlimit:3 }}>
+				<g transform="matrix(1,0,0,1,-4176,-535)">
+					<g transform="matrix(0.5,0,0,0.5,2065,250)">
+						<path id="dropdown-chevron" d="M4230,580L4250,600L4270,580" style={{ fill:`none`, strokeWidth:`8px` }}/>
+					</g>
+				</g>
+			</svg>
+		</span>
+	)
+}
+
+
+
 
 
 
