@@ -69,8 +69,26 @@ function Partner({ partner }) {
 	}
 	const handleWebsite = () => {
 		if( partner.websiteUrl ) {
+
+			// check for protocol
+			function getProtocol(url) {
+
+				let protocol = url.startsWith("http://") ? 1 : 0
+
+				if (protocol == 0) protocol = url.startsWith("https://") ? 2 : 0
+				
+				switch (protocol) {
+					case 1:
+						return url
+					case 2:
+						return url
+					case 0:
+						return `http://${url}`
+				}
+			}
+
 			return (
-				<OffsiteLink href={partner.websiteUrl} direction='right' target='_blank'>
+				<OffsiteLink href={ getProtocol(partner.websiteUrl) } direction='right' target='_blank'>
 					Learn more
 				</OffsiteLink>
 			)
