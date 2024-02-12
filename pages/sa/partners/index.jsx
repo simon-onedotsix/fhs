@@ -71,36 +71,15 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 			
 
-			<QuoteGrid>
-				<Quote 
-					quote={`“Great quality content and senior influential leadership under one roof!”`}
-					name={`Imran Changezi`}
-					title={`Executive Director Development`}
-					company={`Hospitality, Diriyah Company`}
-				/>
-				<Quote 
-					quote={`“Great insight into the Saudi Arabia tourism business development and valuable contacts. A very well-organised conference with ample opportunity to network.”`}
-					name={`Elisabeth Ixmeier`}
-					title={`Co-Founder and Managing Partner`}
-					company={`Healing Hotels of the World`}
-				/>
-				<Quote 
-					quote={`“Very informative, relevant to our business, engaging and necessary! It has become a must do.”`}
-					name={`Najee Syriani`}
-					title={`Corporate Vice President - Projects`}
-					company={`Rotana`}
-				/>
-			</QuoteGrid>
 
-
-
-			<section className='block pt-0'>
+			<section className='block'>
 
 				<div className='container center formatted'>
 					<p className='fs-1 fw-600'>2024 Sponsors &amp; Partners</p>
+					<p><Link href="/sa/get-in-touch"><a className="button secondary">Become A Sponsor</a></Link></p>
 				</div>
 
-				<div className='container columns-1 gap-md center'>
+				<div className='container columns-1 gap-md center pt-lg'>
 					{
 						partnerData &&
 						partnerData.event.exhibitorsTypes.map( type => {
@@ -146,6 +125,29 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 				</div>
 			</section>
+
+
+
+			<QuoteGrid>
+				<Quote 
+					quote={`“Great quality content and senior influential leadership under one roof!”`}
+					name={`Imran Changezi`}
+					title={`Executive Director Development`}
+					company={`Hospitality, Diriyah Company`}
+				/>
+				<Quote 
+					quote={`“Great insight into the Saudi Arabia tourism business development and valuable contacts. A very well-organised conference with ample opportunity to network.”`}
+					name={`Elisabeth Ixmeier`}
+					title={`Co-Founder and Managing Partner`}
+					company={`Healing Hotels of the World`}
+				/>
+				<Quote 
+					quote={`“Very informative, relevant to our business, engaging and necessary! It has become a must do.”`}
+					name={`Najee Syriani`}
+					title={`Corporate Vice President - Projects`}
+					company={`Rotana`}
+				/>
+			</QuoteGrid>
 
 
 

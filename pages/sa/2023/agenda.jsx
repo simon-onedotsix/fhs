@@ -372,7 +372,7 @@ export default function Agenda () {
     // filter query reset
 
     function clearQuery() {
-        router.replace('/sa/agenda', undefined, { shallow: true })
+        router.replace('/sa/2023/agenda', undefined, { shallow: true })
     }
 
 
