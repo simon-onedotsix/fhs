@@ -21,7 +21,7 @@ import { ContentCard } from "../../../fuselage/components/content-card/content-c
 export default function ContentLibrary ({ articles, categories }) {
 
     // console.log('categories:', categories)
-    console.log('articles:', articles.map(article => article.contentTypes[0]))
+    // console.log('articles:', articles.map(article => article.contentTypes[0]))
 
 
     const handleCategoryMenu = () => {        
@@ -118,11 +118,15 @@ export default function ContentLibrary ({ articles, categories }) {
 
 ContentLibrary.theme = 'sa-2024'
 
+
+
+
+
 export async function getStaticProps() {
     const { data } = await craftApolloClient().query({
         query: gql`
             query Articles {
-                entries(site: "${process.env.SITE_HANDLE_SA}", section: "contentLibrary") {
+                entries(site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}"], section: "contentLibrary") {
                     ... on contentLibrary_article_Entry {
                         id
                         slug

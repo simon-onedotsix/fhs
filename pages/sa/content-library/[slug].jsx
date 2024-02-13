@@ -264,7 +264,7 @@ export async function getStaticProps({ params, preview, previewData }) {
     const entryQuery = await craftApolloClient( preview, previewData ).query({
         query: gql`
             query Entry {
-                entries(site: "${process.env.SITE_HANDLE_SA}", slug: "${params.slug}") {
+                entries(site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}"], slug: "${params.slug}") {
                     ... on contentLibrary_article_Entry {
                         id
                         slug

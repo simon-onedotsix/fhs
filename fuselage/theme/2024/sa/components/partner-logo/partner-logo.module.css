@@ -27,28 +27,57 @@
     align-items: center;
     column-gap: var(--space-md);
     row-gap: var(--space-sm);
+
     flex-wrap: wrap;
+    
     background-color: white;
     border-radius: var(--default-radius);
-    padding: var(--space-md);
+    
+    padding: 4vw;
 }
+
+.categoryGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+
 
 @media(min-width:800px) {
     .logo {
-        width: 15rem;
-        height: 7rem;
+        width: 15vw;
+        height: 7vw;
         position: relative;
     }
     .logo.sm {
-        width: 8rem;
-        height: 4rem;
+        width: 8vw;
+        height: 4vw;
     }
     .logo.lg {
-        width: 20rem;
-        height: 15rem;
+        width: 20vw;
+        height: 15vw;
     }
 
     .grid {
         row-gap: var(--space-md);
+    }
+
+    .category {
+        grid-area: span 1 / span 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+    }
+    
+    .category.single {
+        grid-area: span 1 / span 1;
+    }
+
+    .categoryGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-md);
     }
 }

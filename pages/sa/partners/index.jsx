@@ -34,7 +34,7 @@ import {
 } from "../../../graphql/queries"
 
 import { Quote, QuoteGrid } from '../../../fuselage/theme/2024/sa/components/quote/quote'
-import { PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
+import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
 
 
 
@@ -42,8 +42,8 @@ import { PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/co
 function Partners({ seomatic, contentBlocks, partnerData }) {
 
 
-	console.log('swapcard partner data:', partnerData)
-	console.log('content-blocks:', contentBlocks)
+	// console.log('swapcard partner data:', partnerData)
+	// console.log('content-blocks:', contentBlocks)
 
 
 	// programatically build array of unique types pulled from exhibitor data
@@ -79,7 +79,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 					<p><Link href="/sa/get-in-touch"><a className="button secondary">Become A Sponsor</a></Link></p>
 				</div>
 
-				<div className='container columns-1 gap-md center pt-lg'>
+				<PartnerCategoryGrid>
 					{
 						partnerData &&
 						partnerData.event.exhibitorsTypes.map( type => {
@@ -92,8 +92,17 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 								let category = typesArray.find( obj => obj.id === type.id )
 
+								console.log(`GROUP: ${category.id} - ${category.name}`)
+
+								let specialCategories = [
+									'RmllbGRWYWx1ZV8xNTAzNDczNw==',
+									'RmllbGRWYWx1ZV8xNTAzNDczMQ==',
+									'RmllbGRWYWx1ZV8yMDc3MjE1MQ=='
+								]
+
 								return (
-									<div key={type.id}>
+									<PartnerCategory key={type.id} width={ specialCategories.includes( category.id ) ? 1 : null }>
+
 										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category && category.name }</h4>
 										<PartnerLogoGrid>
 											{
@@ -107,23 +116,15 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 												))
 											}
 										</PartnerLogoGrid>
-									</div>
+										
+									</PartnerCategory>
 								)
 							}
 							
 						})
 					}
-				</div>
+				</PartnerCategoryGrid>
 				
-			</section>
-
-
-			<section className="block pt-0">
-				<div className="container center">
-
-					<p><Link href="/sa/2023/partners"><a className="button secondary">2023 Sponsors & Partners</a></Link> <Link href="/sa/get-in-touch"><a className="button secondary">Get in Touch</a></Link></p>
-
-				</div>
 			</section>
 
 
@@ -148,6 +149,16 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 					company={`Rotana`}
 				/>
 			</QuoteGrid>
+
+
+
+			<section className="block pt-0">
+				<div className="container flex jc-center flex-wrap gap-xs">
+
+					<Link href="/sa/2023/partners"><a className="button secondary">2023 Sponsors & Partners</a></Link> <Link href="/sa/get-in-touch"><a className="button secondary">Get in Touch</a></Link>
+
+				</div>
+			</section>
 
 
 

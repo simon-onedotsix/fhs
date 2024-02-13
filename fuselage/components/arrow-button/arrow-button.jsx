@@ -16,7 +16,7 @@ export const ArrowButton = ({ href, target, rel, children, flipped, large, small
                     ${solid ? CSS.solid : ''}
                     ${flipped && CSS.flipped}
                 `}
-                target={target}
+                target={target ? target : '_self'}
                 rel={rel}
                 style={{ color: theme ? theme.border : 'var(--primary)' }}
             >

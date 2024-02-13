@@ -115,6 +115,9 @@
 	background-image: url('/assets/theme/ae-2023/kv-pinstripes.png');
 	background-size: 100%;
 }
+[data-theme='ae-2023'] .bg-theme.bg-glass { 
+    background: var(--secondary);
+}
 
 [data-theme='ae-2023'] .bg-wash { background-color: var(--wash);}
 [data-theme='ae-2023'] .bg-light { background-color: var(--light);}

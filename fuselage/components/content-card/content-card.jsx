@@ -14,7 +14,7 @@ export const ContentCard = ({ url, heroUrl, heading, excerpt, type }) => {
         <div className={CSS.layout}>
 
             <Link href={url}>
-                <a className={`${CSS.hero} bg-theme`}>
+                <a className={`${CSS.hero} bg-theme bg-glass`}>
                     {
                         heroUrl ?
                         <Image src={ heroUrl } layout='fill' alt="" />

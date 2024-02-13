@@ -31,3 +31,11 @@ export const PartnerLogo = ({ hero, size, alt }) => {
 export const PartnerLogoGrid = ({ children }) => {
     return <div className={CSS.grid}>{ children }</div>
 }
+
+export const PartnerCategoryGrid = ({ children }) => {
+    return <section className={`container center pt-lg ${CSS.categoryGrid}`}>{ children }</section>
+}
+
+export const PartnerCategory = ({ children, width }) => {
+    return <section className={`${CSS.category} ${ width ? CSS.single : '' }`}>{ children }</section>
+}

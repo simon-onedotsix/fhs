@@ -19,7 +19,7 @@ import CSS from '../../../css/app/partners.module.css'
 
 function Partner({ partner }) {
 
-	console.log('partner:', partner)
+	// console.log('partner:', partner)
 
 	const handleLinkedIn = () => {
 		if ( partner.linkedin ) {
