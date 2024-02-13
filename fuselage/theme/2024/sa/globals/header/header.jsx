@@ -88,7 +88,7 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
                     <MainMenu fixToggle={!inView} otherEvents={otherEvents}  />
                                         
                     <Link href="/sa/purchase-pass">
-                        <a className={`${CSS.ctaButton} fw-600 caps`}>Purchase Pass</a>
+                        <a className={`${CSS.ctaButton} fw-600 caps`}>Register Now</a>
                     </Link>
                     
                     <p><span className='fw-600 fs-6'>29 April - 01 May 2024</span> <br/>Mandarin Oriental Al Faisaliah, Riyadh</p>
