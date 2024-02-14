@@ -95,9 +95,9 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 								console.log(`GROUP: ${category.id} - ${category.name}`)
 
 								let specialCategories = [
-									'RmllbGRWYWx1ZV8xNTAzNDczNw==',
-									'RmllbGRWYWx1ZV8xNTAzNDczMQ==',
-									'RmllbGRWYWx1ZV8yMDc3MjE1MQ=='
+									'RmllbGRWYWx1ZV8yMjM5NDE1NA==',
+									'RmllbGRWYWx1ZV8yMjM5NDE1Mg==',
+									'RmllbGRWYWx1ZV8yMjM5NDE0OQ=='
 								]
 
 								return (
