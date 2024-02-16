@@ -122,7 +122,13 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents }) => {
                                 <a className='uLink fw-400' onClick={ () => setActive(false)}>Site Tours</a>
                             </Link>
                         </p>
+                        
                         <p className='c-white mt-xs fs-6 fw-400'>Pitch Sessions</p>
+                        <p className='c-white mt-xs pl-sm'>
+                            <Link href={'/sa/startup-den'}>
+                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Startup Den</a>
+                            </Link>
+                        </p>
                         <p className='c-white mt-xs pl-sm'>
                             <Link href={'/sa/destination-tomorrow'}>
                                 <a className='uLink fw-400' onClick={ () => setActive(false)}>Destination Tomorrow</a>
@@ -131,11 +137,6 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents }) => {
                         <p className='c-white mt-xs pl-sm'>
                             <Link href={'/sa/speakers-corner'}>
                                 <a className='uLink fw-400' onClick={ () => setActive(false)}>Speakers Corner</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs pl-sm'>
-                            <Link href={'/sa/startup-den'}>
-                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Startup Den</a>
                             </Link>
                         </p>
                     </section>
