@@ -1,0 +1,136 @@
+.toggle {
+    position: relative;
+    cursor: pointer;
+    height: 48px;
+    width: 48px;
+    border-radius: var(--default-button-radius);
+    border-radius: 3rem;
+    background-color: var(--primary-2);
+    transition: all .35s ease;
+}
+
+.toggle span {
+    background-color: white;
+    border: none;
+    height: 2px;
+    width: 16px;
+    position: absolute;
+    top: 24px;
+    left: 16px;
+    transition: all .35s ease;
+    cursor: pointer;
+}
+.toggle span:nth-of-type(2) {transform: translateY(6px) rotate(0); }
+.toggle span:nth-of-type(3) {transform: translateY(-6px) rotate(0); }
+
+.toggle.active span:nth-of-type(1) {opacity: 0;}
+.toggle.active span:nth-of-type(2) {transform: translateY(0) rotate(45deg);}
+.toggle.active span:nth-of-type(3) {transform: translateY(0) rotate(-45deg);}
+
+@media(hover:hover) {
+    .toggle:hover {
+        background-color: var(--primary-3);
+    }
+    .toggle:hover span {
+        background-color: white;
+    }
+}
+
+
+
+
+
+.toggleActions {
+    padding: 0 1.25rem;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--primary);
+}
+
+
+@media(max-width:799px){
+    .toggleContainer {
+        position: fixed;
+        z-index: 200;
+        top: 2rem;
+        right: 2rem;
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+    }
+    .toggle {
+        justify-self: flex-end;
+    }
+    .toggleActions {
+        opacity: 0;
+        pointer-events: none;
+        transition: all .35s ease 400ms;
+    }
+    .toggleActions.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+
+@media (min-width:800px) {
+    .toggleContainer {
+        position: relative;
+        z-index: 200;
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+    }
+}
+
+
+
+/* overlay ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.overlay {
+    z-index: 180;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+
+    /* inset: var(--space-sm);
+    border-radius: calc(var(--default-radius) * 3); */
+
+    padding: var(--space-md);
+    padding-top: calc(var(--space-lg) * 2);
+    overflow-y: scroll;
+    
+    
+    color: var(--secondary);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 500ms cubic-bezier(.7, .1, .2, 1) 250ms;
+}
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+    transition: all 500ms cubic-bezier(.7, .1, .2, 1);
+}
+.overlay ul {
+    list-style: none;
+    margin-bottom: .75rem;
+}
+.overlay ul li {
+    margin-bottom: .75rem;
+}
+
+@media(min-width:900px) {
+    .overlay {
+        padding: calc(var(--space-lg) * 1.5) var(--space-lg) var(--space-lg);
+    }
+    .overlay ul {
+        list-style: none;
+        margin-bottom: .75rem;
+    }
+    .overlay ul li {
+        margin-bottom: .75rem;
+    }
+}

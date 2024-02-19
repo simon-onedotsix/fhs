@@ -1,0 +1,298 @@
+[data-theme='world-2024'] {
+
+    /* colour */
+
+    --primary: #3C1A52;
+    --primary-1: #3C1A52;
+    --primary-2: #6E439A;
+    --primary-3: #9972AB;
+
+    --secondary: #71CFEB;
+    --secondary-1: #71CFEB;
+    --secondary-2: #EF3742;
+
+    --accent: #EF3742;
+
+    --bg-global: rgb(255, 255, 255);
+
+    --default-text-color: rgb(71, 71, 71);
+    --default-heading-color: var(--primary);
+
+    --wash: #F9F9FA;
+    --light: #E1E2EA;
+    --medium: #827e88;
+    --dark: #202B64;
+
+    --error: rgb(255, 68, 0);
+    --success: rgb(121, 173, 0);
+    --warning: rgb(255, 166, 0);
+
+
+    /* spacing */
+
+    --container-max-width: 100rem;
+    --container-adjacent-spacing-factor: 0.5;
+
+    --unit-xxs: .5rem;
+    --unit-xs: 1rem;
+    --unit-sm: 2rem;
+    --unit-md: 4rem;
+    --unit-lg: 6rem;
+    --unit-xl: 8rem;
+
+
+    /* type */
+
+    --default-font-family: 'Roboto', sans-serif;
+    --default-font-weight: 400;
+    --default-font-size: 1rem;
+    --default-line-height: 1.4;
+
+    --default-heading-line-height: 1.1;
+    --default-heading-weight: 600;
+
+
+    /* global UI styling */
+
+    --default-radius: 0;
+    --default-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    --default-shadow-size: 20px;
+    --default-shadow-opacity: 0.2;
+
+    --default-button-radius: 4rem;
+
+    --gap-divider-color: currentColor;
+
+    /* header */
+
+    --header-height: 12.5rem;
+    --header-height-compact: 6.875rem;
+    --header-height-mobile: 8.5rem;
+    --header-height-compact-mobile: 8.5rem;
+
+}
+
+
+
+/* GLOBAL theme */
+
+.ff-roboto { font-family: 'Roboto' !important;}
+
+[data-theme='world-2024'] .c-primary { color: var(--primary); }
+[data-theme='world-2024'] .c-primary-2 { color: var(--primary-2); }
+[data-theme='world-2024'] .c-primary-3 { color: var(--primary-3); }
+[data-theme='world-2024'] .c-secondary { color: var(--secondary); }
+[data-theme='world-2024'] .c-accent { color: var(--accent); }
+
+[data-theme='world-2024'] .c-p { color: var(--default-text-color); }
+[data-theme='world-2024'] .c-h { color: var(--default-heading-color); }
+
+[data-theme='world-2024'] .c-black { color: black; }
+[data-theme='world-2024'] .c-white { color: white; }
+
+[data-theme='world-2024'] .c-light { color: var(--light) }
+[data-theme='world-2024'] .c-medium { color: var(--medium) }
+
+
+
+
+[data-theme='world-2024'] .bg-global { background-color: var(--bg-global); }
+
+[data-theme='world-2024'] .bg-primary { background-color: var(--primary); }
+[data-theme='world-2024'] .bg-secondary { background-color: var(--secondary); }
+[data-theme='world-2024'] .bg-accent { background-color: var(--accent); }
+
+[data-theme='world-2024'] .bg-theme { 
+    background: var(--primary, --primary);
+    background: linear-gradient(90deg, rgb(10, 64, 82) 0%, rgb(64, 107, 138) 73%);
+}
+
+[data-theme='world-2024'] .bg-wash { background-color: var(--wash);}
+[data-theme='world-2024'] .bg-light { background-color: var(--light);}
+[data-theme='world-2024'] .bg-medium { background-color: var(--medium);}
+[data-theme='world-2024'] .bg-dark { background-color: var(--dark);}
+
+
+
+[data-theme='world-2024'] .formatted h1,
+[data-theme='world-2024'] .formatted h2,
+[data-theme='world-2024'] .formatted h3,
+[data-theme='world-2024'] .formatted h4,
+[data-theme='world-2024'] .formatted h5,
+[data-theme='world-2024'] .formatted h6 {
+    color: var(--accent);
+}
+[data-theme='world-2024'] {
+    color: white;
+}
+
+/* * { background-color: rgba(0, 255, 255, 0.258);} */
+
+
+[data-theme='world-2024'] .highlight span {
+    color: white;
+}
+
+[data-theme='world-2024'] .swiper-button-prev::after,
+[data-theme='world-2024'] .swiper-button-next::after {
+    color: white;
+    font-size: 2rem !important;
+}
+[data-theme='world-2024'] .swiper-button-prev,
+[data-theme='world-2024'] .swiper-button-next {
+    height: 1rem !important;
+}
+
+@media (max-width: 900px) {
+    [data-theme='world-2024'] .swiper-button-prev::after,
+    [data-theme='world-2024'] .swiper-button-next::after {
+        font-size: 1rem !important;
+    }
+    [data-theme='world-2024'] .swiper-button-prev,
+    [data-theme='world-2024'] .swiper-button-next {
+        height: 1rem !important;
+    }
+    [data-theme='world-2024'] .swiper-button-prev {
+        left: 0 !important;
+    }
+    [data-theme='world-2024'] .swiper-button-next {
+        right: 0 !important;
+    }
+}
+
+
+/* default */
+
+[data-theme='world-2024'] .bg-default {
+    color: var(--default-text-color);
+}
+[data-theme='world-2024'] .bg-default .formatted h1,
+[data-theme='world-2024'] .bg-default .formatted h2,
+[data-theme='world-2024'] .bg-default .formatted h3,
+[data-theme='world-2024'] .bg-default .formatted h4,
+[data-theme='world-2024'] .bg-default .formatted h5,
+[data-theme='world-2024'] .bg-default .formatted h6 {
+    color: var(--primary);
+}
+
+/* wash */
+
+[data-theme='world-2024'] .bg-wash {
+    color: var(--default-text-color);
+}
+[data-theme='world-2024'] .bg-wash .formatted h1,
+[data-theme='world-2024'] .bg-wash .formatted h2,
+[data-theme='world-2024'] .bg-wash .formatted h3,
+[data-theme='world-2024'] .bg-wash .formatted h4,
+[data-theme='world-2024'] .bg-wash .formatted h5,
+[data-theme='world-2024'] .bg-wash .formatted h6 {
+    color: var(--primary);
+}
+
+
+/* light */
+
+[data-theme='world-2024'] .bg-light {
+    color: var(--default-text-color);
+}
+[data-theme='world-2024'] .bg-light .formatted h1,
+[data-theme='world-2024'] .bg-light .formatted h2,
+[data-theme='world-2024'] .bg-light .formatted h3,
+[data-theme='world-2024'] .bg-light .formatted h4,
+[data-theme='world-2024'] .bg-light .formatted h5,
+[data-theme='world-2024'] .bg-light .formatted h6 {
+    color: var(--primary);
+}
+
+/* primary */
+
+[data-theme='world-2024'] .bg-primary {
+    color: white;
+}
+
+[data-theme='world-2024'] .bg-primary .formatted h1,
+[data-theme='world-2024'] .bg-primary .formatted h2,
+[data-theme='world-2024'] .bg-primary .formatted h3,
+[data-theme='world-2024'] .bg-primary .formatted h4,
+[data-theme='world-2024'] .bg-primary .formatted h5,
+[data-theme='world-2024'] .bg-primary .formatted h6 {
+    color: white;
+}
+
+[data-theme='world-2024'] .bg-primary .form label {
+    color: white;
+}
+[data-theme='world-2024'] .bg-primary .form input[type='submit'] {
+    background-color: var(--dark);
+    border-color: var(--dark);
+    color: white;
+}
+[data-theme='world-2024'] .bg-primary .form input[type='submit']:hover {
+    background-color: white;
+    border-color: white;
+    color: var(--dark);
+}
+
+[data-theme='world-2024'] .bg-secondary {
+    color: white;
+}
+
+
+/* medium */
+
+[data-theme='world-2024'] .bg-medium,
+[data-theme='world-2024'] .bg-medium a {
+    color: white;
+}
+[data-theme='world-2024'] .bg-medium .formatted h1,
+[data-theme='world-2024'] .bg-medium .formatted h2,
+[data-theme='world-2024'] .bg-medium .formatted h3,
+[data-theme='world-2024'] .bg-medium .formatted h4,
+[data-theme='world-2024'] .bg-medium .formatted h5,
+[data-theme='world-2024'] .bg-medium .formatted h6 {
+    color: var(--primary);
+}
+
+
+/* dark */
+
+[data-theme='world-2024'] .bg-dark {
+    color: white
+}
+[data-theme='world-2024'] .bg-dark .formatted h1,
+[data-theme='world-2024'] .bg-dark .formatted h2,
+[data-theme='world-2024'] .bg-dark .formatted h3,
+[data-theme='world-2024'] .bg-dark .formatted h4,
+[data-theme='world-2024'] .bg-dark .formatted h5,
+[data-theme='world-2024'] .bg-dark .formatted h6 {
+    color: white;
+}
+
+
+/* theme */
+
+[data-theme='world-2024'] .bg-theme {
+    color: white;
+}
+[data-theme='world-2024'] .bg-theme .formatted h1,
+[data-theme='world-2024'] .bg-theme .formatted h2,
+[data-theme='world-2024'] .bg-theme .formatted h3,
+[data-theme='world-2024'] .bg-theme .formatted h4,
+[data-theme='world-2024'] .bg-theme .formatted h5,
+[data-theme='world-2024'] .bg-theme .formatted h6 {
+    color: white;
+}
+
+
+/* FORMS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+[data-theme='world-2024'] [data-theme='world-2024'] .bg-primary .form input[type='submit'] {
+	border: 1px solid var(--accent);
+	background-color: transparent;
+}
+
+[data-theme='world-2024'] [data-theme='world-2024'] .bg-primary .form input[type='submit']:hover {
+    border: 1px solid var(--accent);
+	background-color: var(--accent);
+}

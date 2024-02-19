@@ -1,0 +1,50 @@
+.video {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    /* opacity: .25; */
+    mix-blend-mode: hard-light;
+}
+.video img {
+    width: 100%;
+}
+.videoWrapper {
+    position: relative;
+    /* background-color: var(--accent); */
+    background-color: transparent;
+    mask-image: linear-gradient(to top, transparent 5%, black 100%);
+
+}
+
+.overlay {
+    position: relative;
+    z-index: 2;
+    min-height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    overflow-x: hidden;
+}
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-xl);
+    align-items: flex-end;
+}
+.headline {
+    font-size: 7vw;
+    line-height: .95;
+}
+
+@media(min-width:800px){
+    .overlay {
+        min-height: 60vh;
+    }
+}
+@media(min-width:1200px){
+    .overlay {
+        min-height: 94vh;
+    }
+}
