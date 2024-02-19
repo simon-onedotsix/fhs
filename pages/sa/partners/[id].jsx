@@ -134,8 +134,8 @@ function Partner({ partner }) {
 							{/* <p className='fs-2 fw-600 lh-1 c-secondary maxw-40'>{GetBizzaboPartnerLevelTitle(partner.level)}</p> */}
 							<p className="fs-3 fw-600 caps">{partner.name}</p>	
 							{
-								partner.description &&
-								<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{ parse(String(partner.description)) }</p>
+								partner.htmlDescription &&
+								<div className="mt-sm maxw-50 formatted">{ parse(String(partner.htmlDescription)) }</div>
 							}
 							<p className="mt-md fw-600">{ handleWebsite() }</p>
 						</main>
@@ -186,7 +186,7 @@ export async function getStaticProps({ params }) {
                             name
                             logoUrl
                             websiteUrl
-                            description
+                            htmlDescription
                         }
                     }
 				`,

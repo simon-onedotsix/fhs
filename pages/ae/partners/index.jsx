@@ -262,8 +262,6 @@ export async function getStaticProps() {
 							id
 							name
 							logoUrl
-							websiteUrl
-							description
 							type
 							typeLabel {
 								id
