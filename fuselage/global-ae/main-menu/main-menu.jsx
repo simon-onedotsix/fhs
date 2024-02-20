@@ -37,32 +37,37 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
                     <section>
                         <p className='c-white'>
                             <Link href={'/ae'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Home</a>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Home</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/advisory-board'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Advisory Board</a>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Advisory Board</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/partners'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Sponsors &amp; Partners</a>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Sponsors &amp; Partners</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/content-library'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Content Library</a>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Content Library</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/purchase-pass'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Purchase Pass</a>
+                            <Link href={'/ae/venue'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Venue &amp; Accommodation</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/contact-us'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Contact Us</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/purchase-pass'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Purchase Pass</a>
                             </Link>
                         </p>
                     </section>
@@ -71,7 +76,7 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
                         <p className='fs-5 fw-700 c-accent'>Event Features</p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/stages-and-tracks'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Stages &amp; Tracks</a>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Stages &amp; Tracks</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
@@ -85,7 +90,7 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
                         <p className='fs-5 fw-700 c-accent'>FHS 2024</p>
                         <p className='c-white mt-xs'>
                             <Link href={'https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>FHS World 2024 Brochure</a>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>FHS World 2024 Brochure</a>
                             </Link>
                         </p>
 
@@ -93,12 +98,12 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
 
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/speakers'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Speakers</a>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Speakers</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/agenda'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Agenda</a>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Agenda</a>
                             </Link>
                         </p>
 
