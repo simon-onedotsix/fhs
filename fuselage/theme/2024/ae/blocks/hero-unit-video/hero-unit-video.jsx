@@ -1,18 +1,19 @@
-import { Parallax } from 'react-scroll-parallax'
+import { motion, useScroll, useTransform } from 'framer-motion'
+
 import ReactPlayer from 'react-player'
-
-import Image from 'next/image'
-
-import { SectionDivider } from '../section-divider/section-divider'
 
 import CSS from './hero-unit-video.module.css'
 
-export const HeroUnitVideo = ({ children, hero, poster }) => {
+export const HeroUnitVideo = ({ children }) => {
+
+    let  scroll  = useScroll()
+    let y = useTransform( scroll.scrollY, [0, 1000], ["0%", "30vh"])
+
     return (
         <section>
                 
-            <div className={CSS.video}>
-                <Parallax speed={-20}>
+            <motion.div className={CSS.video} style={{ y }}>
+
                     <div className={CSS.videoWrapper}>
                         <ReactPlayer
                             url={`/assets/video/fhs-2023-opt.mp4`}
@@ -25,15 +26,12 @@ export const HeroUnitVideo = ({ children, hero, poster }) => {
                             loop={true}
                         />
                     </div>
-                </Parallax>
-            </div>
+
+            </motion.div>
 
 
             <div className={`${CSS.overlay} block`}>
-                <SectionDivider 
-                    heading={`Future Hospitality Summit`} 
-                    description={`Future Hospitality is an international platform where the world's most influential hospitality investment decision-makers connect, exchange knowledge and explore new partnerships.`}
-                />
+                { children }
             </div>
 
         </section>

@@ -1,6 +1,6 @@
 .video {
     position: absolute;
-    top: 0;
+    top: 6.5rem;
     width: 100%;
     /* opacity: .25; */
     mix-blend-mode: hard-light;
@@ -19,7 +19,7 @@
 .overlay {
     position: relative;
     z-index: 2;
-    min-height: 70vh;
+    min-height: 55vh;
 
     display: flex;
     flex-direction: column;
@@ -38,6 +38,11 @@
     line-height: .95;
 }
 
+@media(min-width:600px){
+    .video {
+        top: 0;
+    }
+}
 @media(min-width:800px){
     .overlay {
         min-height: 60vh;

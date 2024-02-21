@@ -34,6 +34,10 @@ a {color: currentColor;}
     display: block;
 }
 
+.o-hidden {
+    overflow-x: hidden;
+}
+
 
 @media(max-width:600px){
     .mobileHide {

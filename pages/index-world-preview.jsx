@@ -12,6 +12,7 @@ import { CtaTab } from '../fuselage/components/cta-tab/cta-tab'
 
 import { HeroUnitVideo } from '../fuselage/theme/2024/ae/blocks/hero-unit-video/hero-unit-video'
 import { SectionDivider } from '../fuselage/theme/2024/ae/blocks/section-divider/section-divider'
+
 import { UpcomingEvents, EventGroupCard, EventCard } from '../fuselage/theme/2024/ae/blocks/upcoming-events/upcoming-events'
 
 import { ArrowButton } from '../fuselage/components/arrow-button/arrow-button'
@@ -154,7 +155,12 @@ export default function Home ({ data, seomatic }) {
             <Header overlaid inverse />
 
 
-            <HeroUnitVideo />
+            <HeroUnitVideo>
+                <SectionDivider 
+                    heading={`Future Hospitality Summit`} 
+                    description={`Future Hospitality is an international platform where the world's most influential hospitality investment decision-makers connect, exchange knowledge and explore new partnerships.`}
+                />
+            </HeroUnitVideo>
 
 
             { handleUpcomingEvents( data.events )}

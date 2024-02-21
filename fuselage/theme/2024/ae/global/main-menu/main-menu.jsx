@@ -14,7 +14,7 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
         <>
             <div className={CSS.toggleContainer}>
                 <div className={`${CSS.toggleActions} ${ active && CSS.active } fw-600 caps`}>
-                    <Button href={`#`} theme={{ background: `var(--primary-2)`, hover: `var(--primary-3)`, color: `white`}}>Register Now</Button>
+                    <Button href={`#`} theme={{ background: `var(--primary-2)`, hover: `var(--primary-2-dark)`, color: `white`}}>Register Now</Button>
                 </div>
 
                 <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>

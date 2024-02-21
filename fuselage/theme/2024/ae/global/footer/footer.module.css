@@ -16,11 +16,11 @@
         grid-template-columns: 1fr;
         max-width: 35rem;
     }
-    .section {
-        padding: var(--space-md) 0;
-    }
-    .divider {
-        border-top: 1px solid var(--secondary);
+}
+
+@media(min-width:800px) and (max-width:900px) {
+    .section:first-child {
+        grid-column: 1 / span 2;
     }
 }
 
@@ -28,21 +28,7 @@
     .container {
         display: grid;
         grid-template-columns: repeat(3, auto);
-    }
-    
-    .divider {
-        border-left: 1px solid var(--secondary);
-    }
-    .section {
-        padding: 0 var(--space-md);
-    }
-    .section:nth-child(1) {
-        padding-left: 0;
-    }
-    .section:nth-child(3) {
-        padding-right: 0;
-    }
-    
+    }    
 }
 
 

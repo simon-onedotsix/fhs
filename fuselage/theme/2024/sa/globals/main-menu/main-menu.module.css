@@ -112,16 +112,19 @@
     margin-bottom: .75rem;
 }
 
+.overlay p {
+    margin-bottom: 10px;
+}
 
 @media(min-width:800px) {
     .toggleContainer {
         position: relative;
     }
     .overlay {
-        /* left: -40vw;
-        width: 40vw; */
-        padding: calc(var(--unit-lg) * 2) var(--unit-lg) var(--unit-lg);
+        padding: calc(var(--unit-lg) * 1.5) var(--unit-lg) var(--unit-lg);
     }
+
+
     .overlay ul {
         list-style: none;
         margin-bottom: .75rem;

@@ -13,8 +13,8 @@ export const Button = ({ children, href, target, rel, disabled, theme, decal, si
 		setIsHovered(false)
 	}
 	const buttonStyle = {
-		background: isHovered ? ( theme.hover ? theme.hover : 'var(--primary-3') : ( theme.background ? theme.background : 'var(--primary-2'),
-		color: theme.color ? theme.color : 'white',
+		background: isHovered ? ( theme ? theme.hover : 'var(--primary-3') : ( theme ? theme.background : 'var(--primary-2'),
+		color: theme ? theme.color : 'white',
 	}
 
 	return (

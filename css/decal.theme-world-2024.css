@@ -3,15 +3,22 @@
     /* colour */
 
     --primary: #3C1A52;
+    --secondary: #71CFEB;
+    --accent: #EF3742;
+    
     --primary-1: #3C1A52;
+    
     --primary-2: #6E439A;
+    --primary-2-dark: #5a3182;
+    
     --primary-3: #9972AB;
 
-    --secondary: #71CFEB;
     --secondary-1: #71CFEB;
+    --secondary-1-dark: #47a6c3;
+    
     --secondary-2: #EF3742;
+    --secondary-2-dark: #c61b27;
 
-    --accent: #EF3742;
 
     --bg-global: rgb(255, 255, 255);
 
@@ -74,9 +81,8 @@
 
 
 
-/* GLOBAL theme */
+/* GLOBAL theme colors */
 
-.ff-roboto { font-family: 'Roboto' !important;}
 
 [data-theme='world-2024'] .c-primary { color: var(--primary); }
 [data-theme='world-2024'] .c-primary-2 { color: var(--primary-2); }
@@ -94,7 +100,9 @@
 [data-theme='world-2024'] .c-medium { color: var(--medium) }
 
 
+/* GLOBAL theme backgrounds */
 
+[data-theme='world-2024'] body { background-color: var(--primary); }
 
 [data-theme='world-2024'] .bg-global { background-color: var(--bg-global); }
 
@@ -113,6 +121,7 @@
 [data-theme='world-2024'] .bg-dark { background-color: var(--dark);}
 
 
+/* GLOBAL theme text colors */
 
 [data-theme='world-2024'] .formatted h1,
 [data-theme='world-2024'] .formatted h2,
@@ -125,8 +134,6 @@
 [data-theme='world-2024'] {
     color: white;
 }
-
-/* * { background-color: rgba(0, 255, 255, 0.258);} */
 
 
 [data-theme='world-2024'] .highlight span {
@@ -172,6 +179,20 @@
 [data-theme='world-2024'] .bg-default .formatted h4,
 [data-theme='world-2024'] .bg-default .formatted h5,
 [data-theme='world-2024'] .bg-default .formatted h6 {
+    color: var(--primary);
+}
+
+/* white */
+
+[data-theme='world-2024'] .bg-white {
+    color: var(--default-text-color);
+}
+[data-theme='world-2024'] .bg-white .formatted h1,
+[data-theme='world-2024'] .bg-white .formatted h2,
+[data-theme='world-2024'] .bg-white .formatted h3,
+[data-theme='world-2024'] .bg-white .formatted h4,
+[data-theme='world-2024'] .bg-white .formatted h5,
+[data-theme='world-2024'] .bg-white .formatted h6 {
     color: var(--primary);
 }
 
@@ -234,7 +255,7 @@
 }
 
 [data-theme='world-2024'] .bg-secondary {
-    color: white;
+    color: var(--primary);
 }
 
 
@@ -287,12 +308,12 @@
 /* FORMS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 
-[data-theme='world-2024'] [data-theme='world-2024'] .bg-primary .form input[type='submit'] {
-	border: 1px solid var(--accent);
-	background-color: transparent;
+[data-theme='world-2024'] .form input[type='submit'] {
+	background-color: var(--secondary-2);
+    border: none;
 }
 
-[data-theme='world-2024'] [data-theme='world-2024'] .bg-primary .form input[type='submit']:hover {
-    border: 1px solid var(--accent);
-	background-color: var(--accent);
+[data-theme='world-2024'] .form input[type='submit']:hover {
+	background-color: var(--secondary-2-dark);
+    color: white;
 }
