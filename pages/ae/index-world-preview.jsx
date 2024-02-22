@@ -349,7 +349,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             {/* SPONSORSHIP FORM */}
 
-            <section className="block bg-white">
+            <section className="block bg-white o-hidden">
                 <div className="container columns-2 gap-lg">
                     <div className="formatted">
                         <Slide><h1>Become a <span className='c-secondary'>Sponsor</span></h1></Slide>
