@@ -324,6 +324,22 @@ export const Passes = `
 `
 
 
+export const QueryTestimonials = `
+    ... on ${blocksHandle}ContentBlocks_testimonials_BlockType {
+        id
+        testimonials {
+            ... on testimonials_testimonial_BlockType {
+                id
+                quote
+                fullName
+                jobTitle
+                organisation
+            }
+        }
+    }
+`
+
+
 
 
 

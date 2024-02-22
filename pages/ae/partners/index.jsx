@@ -14,6 +14,8 @@ import { ThemeBg } from '../../../fuselage/theme/2023/ae/theme-bg'
 
 import { Button } from '../../../fuselage/components/button/button'
 import { Floaters, Floater } from '../../../fuselage/blocks/floater/floater'
+import { PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
+import { Quote, QuoteGrid } from '../../../fuselage/theme/2023/ae/components/quote/quote'
 
 import handleContentBlocks from "../../../lib/content-blocks"
 import handleSeomaticMeta from "../../../lib/seomatic"
@@ -31,11 +33,10 @@ import {
     QuerySEO,
 	QueryCards,
 	QueryPartners,
-	QueryPartnerGroups
+	QueryPartnerGroups,
+	QueryTestimonials
 } from "../../../graphql/queries"
 
-import { PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
-import { Quote, QuoteGrid } from '../../../fuselage/theme/2023/ae/components/quote/quote'
 
 
 
@@ -44,7 +45,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 
 	// console.log('swapcard partner data:', partnerData)
-	// console.log('content-blocks:', contentBlocks)
+	console.log('content-blocks:', contentBlocks)
 
 
 	// programatically build array of unique types pulled from exhibitor data
@@ -130,7 +131,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 			{/* TESTIMONIALS */}
 
-			<QuoteGrid>
+			{/* <QuoteGrid>
 				<Quote 
 					quote={`“Great to have a balance between connecting with quality industry people and keeping up with what the industry is doing as a whole.”`}
 					name={`Sandeep Walia`}
@@ -155,13 +156,13 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 					title={`Managing Director`}
 					company={`Studio 49`}
 				/>
-			</QuoteGrid>
+			</QuoteGrid> */}
 
 
 
-			{/* INTRO */}
+			{/* BECOME A SPONSOR */}
 
-			<section className="block">
+			{/* <section className="block">
 				<div className="container center formatted">
 					<p className='fs-0 fw-600'>Become a sponsor!</p>
 				</div>
@@ -191,7 +192,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 					<Button href={'/ae/get-in-touch'} decal={`fs-5 fw-600`}>Get in touch</Button>&emsp;
 					<Button href={'/ae/floor-plan'} decal={`fs-5 fw-600`}>View Floor Plan</Button>
 				</div>
-			</section>
+			</section> */}
 
 
 
@@ -231,6 +232,7 @@ export async function getStaticProps() {
 							${QueryProfileCarousel}
 							${QueryForm}
 							${QueryPartnerGroups}
+							${QueryTestimonials}
 						}
 					}
 					${QuerySEO}

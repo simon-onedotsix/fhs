@@ -56,6 +56,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-lg);
+    align-items: flex-start;
 }
 
 @media(min-width: 800px){

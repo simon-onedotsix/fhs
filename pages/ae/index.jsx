@@ -124,7 +124,7 @@ const photos = [
 export default function Home ({ globals, entry, seomatic, speakerData, partnerData }) {
 
     const [ showModal, setShowModal ] = useState(false)
-    const [ modalContent, setModalContent ] = useState()
+    const [ modalContent, setModalContent ] = useState(null)
 
     // console.log('entry:', entry)
 	// console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
@@ -152,6 +152,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 overlayBg: 'var(--primary)',
             }} />
 
+
+
             <section className="block flush">
                 <Container decal={`bg-white-90 p-md`}>
                     <Slide><p className='fs-3 fw-300 caps mb-xs'>30 September - 02 October 2024</p></Slide>
@@ -159,7 +161,47 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     <Slide delay={.5}><p className='fs-5 fw-300 caps mb-lg'>Madinat Jumeirah, Dubai</p></Slide>
                     
                     <Fade>
-                        <Button href={`https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1`} decal={`fs-4 fw-600`} target={`_blank`}>FHS World 2024 Brochure</Button>
+                        <div className="flex flex-wrap gap-xxs">
+                            <span 
+                                onClick={() => {
+                                    console.log('modal button clicked')
+                                        setModalContent(
+                                            <>
+                                                <div className={CSS.popupHeader}>
+                                                    <p className="fs-4 fw-600 lh-1 mb-sm">Download Event Brochure</p>
+                                                </div>
+
+                                                <HubspotForm portalId={`14527187`} formId={'40f2dd9c-9f5a-41c2-9d78-f35a170107d4'} />
+                                            </>
+                                        )
+                                        setShowModal(true)
+                                
+                                }}>
+                                <Button decal={`fs-4 fw-600`} target={`_blank`}>Download Event Brochure</Button>
+                            </span>
+                            
+                            <span 
+                                onClick={() => {
+                                    console.log('modal button clicked')
+                                        setModalContent(
+                                            <>
+                                                <div className={CSS.popupHeader}>
+                                                    <p className="fs-4 fw-600 lh-1 mb-sm">Download FHS 2023 Post-event Report</p>
+                                                    <img className={CSS.popupHeaderImage} src="/assets/site/ae/ae-2024-brochure.png" alt=""/>
+                                                </div>
+
+                                                <HubspotForm portalId={`14527187`} formId={'c2b14f19-e6b6-478f-83ac-e76e9facc2c6'} />
+                                            </>
+                                        )
+                                        setShowModal(true)
+                                
+                                }}>
+                                <Button decal={`fs-4 fw-600`} target={`_blank`}>Download FHS 2023 Post-event Report</Button>
+                            </span>
+
+                        </div>
+
+                        {/* <Button href={`https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1`} decal={`fs-4 fw-600`} target={`_blank`}>FHS World 2024 Brochure</Button> */}
                     </Fade>
                 </Container>
                 
@@ -177,9 +219,14 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                                 <p className='fs-5 fw-300 maxw-45 mb-sm'>Purchasing your ticket now provides access to the FHS launch reception hosted at XU Dubai on the 27th of February. Get a chance to meet and interact with the FHS Advisory Board and start making connections ahead of the event!</p>
                             </Fade>
                             <Fade>
-                                <Button href={`/ae/purchase-pass`} decal={`fs-4 fw-600`}>
-                                    Purchase Pass
-                                </Button>
+                                <div className="flex flex-wrap gap-xxs">
+                                    <Button href={`/ae/purchase-pass`} decal={`fs-4 fw-600`}>
+                                        Purchase Pass
+                                    </Button>
+                                    <Button href={`/ae/partner-with-us`} decal={`fs-4 fw-600`}>
+                                        Partner With Us
+                                    </Button>
+                                </div>
                             </Fade>
                         </div>
                   
@@ -193,7 +240,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         <p className='fs-6 fw-300 maxw-45 mt-xs mb-sm'>Sponsorship spaces at the event are limited and are selling out fast. If you are interested in booking a stand or a pavilion, please feel free to reach out to our sponsorship team.</p>
                     </Fade>
                     <Fade>
-                        <Button href={`/ae/get-in-touch`} decal={`fs-4 fw-600`}>
+                        <Button href={`/ae#footer`} decal={`fs-4 fw-600`}>
                             Get in touch
                         </Button>
                     </Fade>
@@ -280,7 +327,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
 
-
+            <span id="footer"/>
             <Footer theme={{ footerBg: 'bg-white' }} />
 
             
@@ -289,11 +336,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             <PopupOverlay onClose={() => setShowModal(false)} show={showModal}>
 
-                <div className={CSS.popupHeader}>
-                    <p className="fs-4 fw-600 lh-1 mb-sm">Register interest</p>
-                </div>
-
-                <HubspotForm portalId={`14527187`} formId={`ad1a19c2-b5ac-4290-8b46-57979532c947`} />
+                { modalContent } 
 
             </PopupOverlay>
 
