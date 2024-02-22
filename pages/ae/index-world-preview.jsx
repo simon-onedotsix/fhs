@@ -1,9 +1,10 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 
-import { motion } from "framer-motion"
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+import { motion, useScroll, useTransform } from "framer-motion"
 
 import Head from "next/head"
 import Image from "next/image"
@@ -133,6 +134,12 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
     let selectedCmsSpeakers = entry.fhisContentBlocks.find( obj => obj.__typename === 'fhisContentBlocks_profilesCarousel_BlockType')
     // console.log('selectedCmsSpeakers:', selectedCmsSpeakers)
 
+
+    // scroll animation
+    let ref = useRef(null)
+    let  scroll  = useScroll()
+    let y = useTransform( scroll.scrollY, [0, 1000], ["-30%", "0%"])
+
     return (
         <>
             <Head>
@@ -177,10 +184,10 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             {/* INTRO */}
 
-            <section className="block o-hidden">
+            <section ref={ref} className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className="container columns-2 gap-md">
               
-                    <section>
+                    <section className={CSS.introHeadline}>
                         <Slide><p className='fs-0 fw-600 lh-1 maxw-20'>Join the <span className="c-secondary">FHS 2024</span> Launch Reception!</p></Slide>
                     </section>
 
@@ -210,21 +217,28 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                   
                 </div>
 
-                <div style={{ width: 200, height: 200}}>
+                <motion.div className={CSS.introGraphicWapper} style={{ y }}>
                     <FhsIconKeyline inverse />
-                </div>
+                </motion.div>
             </section>
 
             
             {/* LAUNCH STATEMENT */}
 
-            <section className="block bg-white">
+            <section className="block bg-white o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className="container columns-2 gap-md formatted">
 
-                    <section>
-                        <div style={{ width: 200, height: 200}}>
+                    <section className="flex jc-center ai-center">
+                        <motion.div 
+                            className={CSS.fhsGraphicWrapper}
+
+                            initial={{ x: 0 , y: 0, rotate: -45, scale: 0.1, opacity: 0 }}
+                            whileInView={{ x: 0, y: 0, rotate: 0, scale: 1, opacity: 1 }}
+                            // viewport={'once'}
+                            transition={{ type: "spring", bounce: 0.25 }}
+                        >
                             <FhsIcon />
-                        </div>
+                        </motion.div>
                     </section>
 
                     <section>
@@ -352,7 +366,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
             <Footer theme={{ footerBg: 'bg-primary' }} />
-
+            <LenisScroller />
 
 
             {/* <Script id="chatbot" strategy="afterInteractive">

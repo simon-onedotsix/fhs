@@ -1,0 +1,43 @@
+.layout {
+    /* display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xs); */
+}
+
+.meta {
+    margin-top: var(--space-xs);
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero {
+    display: flex;
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--default-radius);
+}
+.hero img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.titleLink {
+    display: block;
+    text-decoration: none;
+    transition: all 350ms ease-in-out;
+}
+/* @media(hover:hover) {
+    .titleLink:hover {
+        color: var(--accent);
+    }
+} */
+
+.placeholderLogo {
+    width: 50%;
+    height: 50%;
+}

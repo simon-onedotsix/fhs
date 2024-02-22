@@ -3,19 +3,21 @@ import craftApolloClient from "./api/apollo"
 
 import Head from 'next/head'
 
+import { LenisScroller } from '../fuselage/animation/lenis-scroller'
+
 import { QuerySEO } from "../graphql/queries"
 import handleSeomaticMeta from '../lib/seomatic'
 
 import { Header } from '../fuselage/theme/2024/global/common/header/header'
-import { Footer } from '../fuselage/global/footer/footer'
+import { Footer } from '../fuselage/theme/2024/global/common/footer/footer'
 
 import { HeroUnitVideo } from '../fuselage/theme/2024/ae/blocks/hero-unit-video/hero-unit-video'
 import { SectionDivider } from '../fuselage/theme/2024/ae/blocks/section-divider/section-divider'
-
 import { UpcomingEvents, EventGroupCard, EventCard } from '../fuselage/theme/2024/ae/blocks/upcoming-events/upcoming-events'
+import { ContentCard } from "../fuselage/theme/2024/ae/components/content-card/content-card"
+
 
 import { ArrowButton } from '../fuselage/components/arrow-button/arrow-button'
-import { ContentCard } from "../fuselage/components/content-card/content-card"
 import { AngledSection } from '../fuselage/blocks/angled-section/angled-section'
 import { Floater, Floaters, FloaterLogo, FloaterWebsiteButton } from '../fuselage/blocks/floater/floater'
 import { SpeakerCard } from '../fuselage/components/speaker-card/speaker-card'
@@ -216,6 +218,7 @@ export default function Home ({ data, seomatic }) {
          
 
             <Footer />
+            <LenisScroller />
 
             {/* <CtaTab /> */}
         </div>

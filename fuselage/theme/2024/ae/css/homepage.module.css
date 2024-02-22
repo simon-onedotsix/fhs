@@ -18,3 +18,37 @@
         grid-template-columns: 1fr 3fr;
     }
 }
+
+/* intro section */
+
+.introHeadline {
+    @media(min-width:600px) {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.introGraphicWapper {
+    position: absolute;
+    left: -10vw;
+    bottom: -8vw;
+
+    width: 50vw;
+    aspect-ratio: 1;
+
+    @media(max-width:599px) {
+        display: none;
+    }
+}
+
+
+/* what's new section */
+
+.fhsGraphicWrapper {
+   width: 30vw;
+   aspect-ratio: 1;
+
+   @media(max-width:599px) {
+        width: 50vw;
+    }
+}

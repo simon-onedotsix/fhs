@@ -1,0 +1,18 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 200ms ease-in-out;
+}
+
+.iconContainer {
+    display: inline-block;
+    height: 1.3rem;
+    width: 1.3rem;
+    margin-right: .5rem;
+}
+
+.iconContainer svg {
+    stroke: currentColor;
+}

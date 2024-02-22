@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-924,-85)">
+        <g transform="matrix(1,0,0,8.4781,845.925,-3999.94)">
+            <g id="icon-podcast">
+                <g transform="matrix(-0.740953,0.0873961,-0.740953,-0.0873961,3194.54,833.461)">
+                    <path d="M100,4097.5C100,4102.19 96.191,4106 91.5,4106C86.809,4106 83,4102.19 83,4097.5C83,4092.81 86.809,4089 91.5,4089" style="fill:none;stroke-width:1.91px;"/>
+                </g>
+                <g transform="matrix(-0.407503,0.0480654,-0.407503,-0.0480654,1797.72,675.903)">
+                    <path d="M100,4097.5C100,4102.19 96.191,4106 91.5,4106C86.809,4106 83,4102.19 83,4097.5C83,4092.81 86.809,4089 91.5,4089" style="fill:none;stroke-width:3.47px;"/>
+                </g>
+                <g transform="matrix(0.824632,0,0,0.0972661,15.6448,84.8142)">
+                    <path d="M91,4097L91,4106" style="fill:none;stroke-width:2.43px;"/>
+                </g>
+                <g transform="matrix(1,0,0,0.117951,-2016.41,449.085)">
+                    <circle cx="2107.05" cy="290.586" r="1.365" style="fill:none;stroke-width:1.5px;stroke-linecap:butt;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
