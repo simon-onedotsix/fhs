@@ -1,0 +1,160 @@
+import React, { useState } from 'react'
+import Link from 'next/link'
+
+import { Button } from "../../../../../../fuselage/theme/2024/ae/components/button/button"
+import { ArrowButton } from '../../../../../components/arrow-button/arrow-button'
+
+import CSS from './main-menu.module.css'
+
+export const MainMenu = ({ mainMenu, otherEvents }) => {
+
+    const [ active, setActive ] = useState( false )
+
+    return (
+        <>
+            <div className={CSS.toggleContainer}>
+                <div className={`${CSS.toggleActions} ${ active && CSS.active }`}>
+                    <Button 
+                        href={`/ae/purchase-pass`} 
+                        theme={{ 
+                            color: `var(--primary)`,
+                            background: `var(--secondary-1)`, 
+                            hover: `var(--secondary-1-dark)`, 
+                        }} 
+                        decal={`fw-600`}
+                    >
+                        Register Now
+                    </Button>
+                </div>
+                <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+
+            <div className={`${CSS.overlay} ${ active && CSS.active } bg-primary`}>
+                
+            <div className="columns-4 gap-md mt-md">
+                    <section>
+                        <p className='c-white'>
+                            <Link href={'/ae'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Home</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/advisory-board'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Advisory Board</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/partners'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Sponsors &amp; Partners</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/content-library'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Content Library</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/venue'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Venue &amp; Accommodation</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/contact-us'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Contact Us</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/purchase-pass'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Purchase Pass</a>
+                            </Link>
+                        </p>
+                    </section>
+
+                    <section>
+                        <p className='fs-5 fw-700 c-secondary'>Event Features</p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/stages-and-tracks'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Stages &amp; Tracks</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/country-pavilions'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Country Pavilions</a>
+                            </Link>
+                        </p>
+                    </section>
+
+                    <section>
+                        <p className='fs-5 fw-700 c-secondary'>FHS 2024</p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>FHS World 2024 Brochure</a>
+                            </Link>
+                        </p>
+
+                        <p className='fs-5 fw-700 c-secondary mt-md'>FHS 2023</p>
+
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/speakers'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Speakers</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/agenda'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Agenda</a>
+                            </Link>
+                        </p>
+
+                        <p className='fs-5 fw-700 c-secondary mt-md'>FHS 2022</p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/2022/speakers'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Speakers</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/2022/agenda'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Agenda</a>
+                            </Link>
+                        </p>
+                    </section>
+
+                    {/* <section className='c-white'>
+                        <p className="fs-4 fw-600">Future Hospitality events</p>
+                        <p className="mt-xs">
+                            <ArrowButton href={`https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1`} target={`_blank`} theme={{ arrow: `white`, border: `white`, label: `white`}}>FHS World 2024 Brochure</ArrowButton>
+                        </p>
+                        <p className="mt-xs">
+                            <ArrowButton href={`/sa`} theme={{ arrow: `white`, border: `white`, label: `white`}}>FHS Saudi Arabia</ArrowButton>
+                        </p>
+                    </section> */}
+
+                    <section className="c-white">
+                        <p className="fs-4 fw-600 c-secondary">Our Other Events</p>
+                        {
+                            otherEvents.length &&
+                            otherEvents.map( event => (
+                                <p key={event.id} className="mt-xs">
+                                    <ArrowButton 
+                                        href={ event.url } 
+                                        theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `white`}}
+                                        target={ event.target && '_blank' }
+                                    >
+                                        { event.title }
+                                    </ArrowButton>
+                                </p>
+                            ))
+                        }
+                    </section>
+                    
+                </div>
+
+               
+            </div>
+        </>
+    )
+}

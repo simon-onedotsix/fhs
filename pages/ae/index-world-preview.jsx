@@ -9,15 +9,18 @@ import Head from "next/head"
 import Image from "next/image"
 import Script from "next/script"
 
-import { Header } from '../../fuselage/theme/2024/ae/global/header/header'
-import { Footer } from '../../fuselage/theme/2024/ae/global/footer/footer'
+import { Header } from '../../fuselage/theme/2024/ae/common/header/header'
+import { Footer } from '../../fuselage/theme/2024/ae/common/footer/footer'
 
 import { HeroUnitVideo } from "../../fuselage/theme/2024/ae/blocks/hero-unit-video/hero-unit-video"
 
+import { FhsIcon, FhsIconKeyline } from "../../fuselage/theme/2024/ae/components/logos/fhs-brand"
+
+import { SpeakerCarousel } from "../../fuselage/theme/2024/ae/blocks/speaker-carousel/speaker-carousel"
+import { ImpactFigure } from "../../fuselage/theme/2024/ae/components/impact-figure/impact-figure"
+
 import { Container } from '../../fuselage/theme/2023/ae/layout/container/container'
 import { Headline } from "../../fuselage/theme/2023/ae/headline/headline"
-import { ImpactFigure } from "../../fuselage/theme/2023/ae/impact-figure"
-import { SpeakerCarousel } from "../../fuselage/blocks/speaker-carousel/speaker-carousel"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 import { Form } from '../../fuselage/blocks/form/form'
@@ -43,7 +46,7 @@ import {
 
 import handleSeomaticMeta from '../../lib/seomatic'
 
-import CSS from '../../fuselage/theme/2023/ae/homepage.module.css'
+import CSS from '../../fuselage/theme/2024/ae/css/homepage.module.css'
 
 
 const photos = [
@@ -171,6 +174,9 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </HeroUnitVideo>
 
 
+
+            {/* INTRO */}
+
             <section className="block o-hidden">
                 <div className="container columns-2 gap-md">
               
@@ -203,14 +209,22 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     </section>
                   
                 </div>
+
+                <div style={{ width: 200, height: 200}}>
+                    <FhsIconKeyline inverse />
+                </div>
             </section>
 
+            
+            {/* LAUNCH STATEMENT */}
 
             <section className="block bg-white">
                 <div className="container columns-2 gap-md formatted">
 
                     <section>
-                        [icon]
+                        <div style={{ width: 200, height: 200}}>
+                            <FhsIcon />
+                        </div>
                     </section>
 
                     <section>
@@ -243,6 +257,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </section>
 
 
+            {/* SPEAKER HIGHLIGHTS */}
+
             {
                 selectedCmsSpeakers &&
                 <SpeakerCarousel 
@@ -269,27 +285,36 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             }
 
 
-            <section className="block o-hidden">
+            {/* IMPACT FIGURES */}
+
+            <section className="block bg-white o-hidden">
                 <div className="container">
-                    <Slide><p className="fs-0 fw-700 lh-1 maxw-50 mb-md" style={{ lineHeight: 0.9}}>2023 in numbers</p></Slide>
-                    
-                    <div className='columns-2 gap-sm'>
-                        <ImpactFigure value={`1200`} label={`Delegates`} />
-                        <ImpactFigure value={`40`} label={`Countries`} />
-                        <ImpactFigure value={`400`} label={`Companies`} />
-                        <ImpactFigure value={`200`} label={`Speakers`} />
+                    <div className={CSS.impactFiguresGrid}>
+                        <Slide><p className="fs-0 fw-700 c-primary lh-1">2023 in Numbers</p></Slide>
+                        
+                        <div className='columns-4 gap-sm'>
+                            <ImpactFigure value={`1200`} label={`Delegates`} />
+                            <ImpactFigure value={`40`} label={`Countries`} />
+                            <ImpactFigure value={`400`} label={`Companies`} />
+                            <ImpactFigure value={`200`} label={`Speakers`} />
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <div className="container">
-                    <Slide><p className='fs-0 fw-700 lh-1'>Highlights from FHS&nbsp;2023</p></Slide>
+
+            {/* VIDEO + PHOTO HIGHLIGHTS */}
+
+            <section className="block o-hidden">
+                <div className={`${CSS.highlightVideoGrid} container`}>
+                    <Slide><p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS&nbsp;2023</span></p></Slide>
                     <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=7Ar-CT0z23k&t=2s`} />
                 </div>
 
                 <div className="container">
-                    <Slide><p className='fs-0 fw-700 lh-1'>2023 in photos</p></Slide>
+                    <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2023 in <span className='c-secondary'>Photos</span></p></Slide>
                     
-                    <div className="columns-3 gap-xs">
+                    <div className="columns-3 gap-xs mt-md">
                         {
                             photos.map( (photo, index) => (
                                 <Pop key={index}>
@@ -308,17 +333,20 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </section>
 
 
+            {/* SPONSORSHIP FORM */}
 
-            <Form 
-                theme={`light`} 
-                maxWidth={`block.maxWidth`}
-                portalId={`14527187`}
-                formId={`f2335c74-d011-4635-830c-8d44ec22bb58`}
-            >
-                {`<h1>Become a Sponsor</h1>
-                <p>For over two decades - government leaders, tourism ministries, global travel &amp; tourism associations, the world&apos;s most influential hospitality brands, hotel owners &amp; investors, renowned restaurant groups, airlines &amp; aviation authorities, destination developers, asset managers, financial groups and consultants - have been participating in The Bench&apos;s events for their respective objectives. These include AHIF, GRIF, FHS, AHF, IDEEA, AviaDev and RENEW - where industry players showcase their brands, position themselves as thought leaders or innovators, and connect with the right opportunities and knowledge. Speak with one of our sales team members to understand how you can make the most of this unique opportunity!<br /></p>`}
-            </Form>
+            <section className="block bg-white">
+                <div className="container columns-2 gap-lg">
+                    <div className="formatted">
+                        <Slide><h1>Become a <span className='c-secondary'>Sponsor</span></h1></Slide>
+                        <Fade><p>For over two decades - government leaders, tourism ministries, global travel &amp; tourism associations, the world&apos;s most influential hospitality brands, hotel owners &amp; investors, renowned restaurant groups, airlines &amp; aviation authorities, destination developers, asset managers, financial groups and consultants - have been participating in The Bench&apos;s events for their respective objectives. These include AHIF, GRIF, FHS, AHF, IDEEA, AviaDev and RENEW - where industry players showcase their brands, position themselves as thought leaders or innovators, and connect with the right opportunities and knowledge. Speak with one of our sales team members to understand how you can make the most of this unique opportunity!<br /></p></Fade>
+                    </div>
 
+                    <div>
+                        <HubspotForm portalId={`14527187`} formId={`f2335c74-d011-4635-830c-8d44ec22bb58`} />
+                    </div>
+                </div>
+            </section>
 
 
 
@@ -327,7 +355,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
 
-            <Script id="chatbot" strategy="afterInteractive">
+            {/* <Script id="chatbot" strategy="afterInteractive">
                 {`
                     (function(d,t) {
                         var BASE_URL="https://app.chatlyn.com";
@@ -344,11 +372,11 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         }
                     })(document,"script");;
                 `}
-            </Script>
+            </Script> */}
         </>
     )
 }
-Home.theme = 'world-2024'
+Home.theme = 'ae-2024'
 
 
 

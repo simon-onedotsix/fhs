@@ -5,12 +5,12 @@
     width: 48px;
     border-radius: var(--default-button-radius);
     border-radius: 3rem;
-    background-color: var(--primary-2);
+    background-color: var(--secondary-1);
     transition: all .35s ease;
 }
 
 .toggle span {
-    background-color: white;
+    background-color: var(--primary);
     border: none;
     height: 2px;
     width: 16px;
@@ -29,10 +29,10 @@
 
 @media(hover:hover) {
     .toggle:hover {
-        background-color: var(--primary-2-dark);
+        background-color: var(--secondary-1-dark);
     }
     .toggle:hover span {
-        background-color: white;
+        /* background-color: white; */
     }
 }
 
@@ -53,7 +53,7 @@
         position: fixed;
         z-index: 200;
         top: 2rem;
-        right: 2rem;
+        left: 2rem;
         display: grid;
         grid-template-columns: auto auto;
         align-items: center;

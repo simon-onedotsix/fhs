@@ -429,7 +429,7 @@ export default function Agenda ({ sessions }) {
 																				: null
 																			}
 																			
-																			{/* { sortSpeakers(session.speakers) } */}
+																			{ sortSpeakers(session.speakers) }
 																		</div>
 																	</div>
 																)

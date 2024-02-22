@@ -68,9 +68,9 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
                     hidden={ !headerInView ? true : false }
                     thisEvent={'FHS'} 
                     events={otherEvents} 
-                    theme={{
+                    theme={{ 
                         background: 'var(--secondary)',
-                        text: 'white',
+                        color: 'white',
                         accent: 'white'
                     }}
                 />

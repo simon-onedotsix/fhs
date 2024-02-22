@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: space-between;
     
-    color: white;
+    /* color: white; */
 }
 
 .events {
@@ -85,7 +85,6 @@
     text-decoration: none;
     padding-bottom: 1px;
     margin-bottom: -1px;
-    
     background-image: linear-gradient(var(--accent), var(--accent));
     background-position: 50% 100%;
     background-repeat: no-repeat;

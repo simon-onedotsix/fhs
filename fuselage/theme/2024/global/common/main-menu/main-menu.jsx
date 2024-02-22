@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 
-import { Button } from '../../components/button/button'
+import { Button } from '../../../../../components/button/button'
 import { ArrowButton } from '../../../../../components/arrow-button/arrow-button'
 
 import CSS from './main-menu.module.css'
@@ -13,15 +13,12 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
     return (
         <>
             <div className={CSS.toggleContainer}>
-                <div className={`${CSS.toggleActions} ${ active && CSS.active } fw-600 caps`}>
-                    <Button href={`#`} theme={{ background: `var(--primary-2)`, hover: `var(--primary-2-dark)`, color: `white`}}>Register Now</Button>
-                </div>
-
                 <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
+                {/* <div className={`${CSS.toggleActions} ${ active && CSS.active } fw-600 caps`}><Button href={`#`} accent>Stay Updated</Button></div> */}
             </div>
 
 

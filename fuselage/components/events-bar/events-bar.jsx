@@ -7,7 +7,7 @@ export const EventsBar = ({ hidden, thisEvent, eventsLabel, events, theme }) => 
     return (
         <div className={`${CSS.wrapper} ${hidden && CSS.hidden}`} style={{ background: theme ? theme.background : `var(--primary)` }}>
 
-            <div className={CSS.layout}>
+            <div className={CSS.layout} style={{ color: theme ? theme.color : 'inherit'}}>
                 <section>
                     { thisEvent ? thisEvent : 'This event ' } is brought to you by <EventBarButton href={`https://www.thebench.com`} title={`The Bench`} target stroke={ theme ? theme.accent : `var(--accent)`} />
                 </section>
@@ -30,6 +30,7 @@ export const EventsBar = ({ hidden, thisEvent, eventsLabel, events, theme }) => 
                                     title={event.title} 
                                     target={event.target} 
                                     stroke={ theme ? theme.accent : `var(--accent)`} 
+                                    color={ theme ? theme.color : 'inherit' }
                                 /> 
                             )) }
                         </>
@@ -44,10 +45,13 @@ export const EventsBar = ({ hidden, thisEvent, eventsLabel, events, theme }) => 
 
 
 
-const EventBarButton = ({ href, title, target, stroke }) => {
+const EventBarButton = ({ href, title, target, stroke, color }) => {
 
-
-    let style = { backgroundImage: `linear-gradient(${stroke ? stroke : `var(--accent)`}, ${stroke ? stroke : `var(--accent)`}` }
+    let style = { 
+        color: color ? color : 'inherit',
+        backgroundImage: `linear-gradient(${stroke ? 
+        stroke : `var(--accent)`}, ${stroke ? stroke : `var(--accent)`}` 
+    }
 
     if ( target ) return (
         <a href={href} className={`${CSS.event} fw-600`} target="_blank" rel="noreferrer" style={style}>{ title }</a>

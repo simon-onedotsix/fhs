@@ -6,9 +6,8 @@ import Head from 'next/head'
 import { QuerySEO } from "../graphql/queries"
 import handleSeomaticMeta from '../lib/seomatic'
 
-import { Header } from '../fuselage/theme/2024/ae/global/header/header'
+import { Header } from '../fuselage/theme/2024/global/common/header/header'
 import { Footer } from '../fuselage/global/footer/footer'
-import { CtaTab } from '../fuselage/components/cta-tab/cta-tab'
 
 import { HeroUnitVideo } from '../fuselage/theme/2024/ae/blocks/hero-unit-video/hero-unit-video'
 import { SectionDivider } from '../fuselage/theme/2024/ae/blocks/section-divider/section-divider'
@@ -222,7 +221,7 @@ export default function Home ({ data, seomatic }) {
         </div>
     )
 }
-Home.theme = 'world-2024'
+Home.theme = 'global-2024'
 
 
 
