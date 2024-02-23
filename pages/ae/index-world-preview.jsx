@@ -293,9 +293,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 >
                     {
                         selectedCmsSpeakers.profiles.map( profile => (
-                            <Pop>
+                            <Pop key={profile.id}>
                                 <SpeakerCard
-                                    key={profile.id}
                                     url={`ae/speakers/profile/${profile.slug}`}
                                     photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
                                     fullName={profile.title}
