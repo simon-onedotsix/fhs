@@ -353,7 +353,7 @@
 
 
 [data-theme='global-2024'] footer .form input {
-    border-bottom-color: rgba(255, 255, 255, 0.257) !important;
+    border-bottom-color: var(--primary-2) !important;
     color: white;
 }
 [data-theme='global-2024'] footer .form input:focus {

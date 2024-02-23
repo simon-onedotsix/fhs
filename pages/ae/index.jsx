@@ -221,7 +221,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                             <Fade>
                                 <div className="flex flex-wrap gap-xxs">
                                     <Button href={`/ae/purchase-pass`} decal={`fs-4 fw-600`}>
-                                        Purchase Pass
+                                        Register Now
                                     </Button>
                                     <Button href={`/ae/partner-with-us`} decal={`fs-4 fw-600`}>
                                         Partner With Us

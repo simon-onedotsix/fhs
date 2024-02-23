@@ -10,6 +10,8 @@
 }
 
 .highlightVideoGrid {
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-md);
@@ -17,6 +19,11 @@
     @media(min-width: 900px) {
         grid-template-columns: 1fr 3fr;
     }
+}
+
+.photoGrid {
+    position: relative;
+    z-index: 2;
 }
 
 /* intro section */
@@ -50,5 +57,21 @@
 
    @media(max-width:599px) {
         width: 50vw;
+    }
+}
+
+
+/* 2023 highlights section */
+
+.highlightsGraphicWapper {
+    position: absolute;
+    right: -16vw;
+    bottom: -8vw;
+
+    width: 70vw;
+    aspect-ratio: 1;
+
+    @media(max-width:599px) {
+        display: none;
     }
 }

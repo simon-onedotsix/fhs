@@ -51,7 +51,7 @@ export const Footer = () => {
                     {
                         hubspotForm &&
                         <section className={CSS.section}>
-                            <p className='fs-5 fw-600 c-secondary'>Want to stay updated on FHS?</p>
+                            <p className='fs-5 fw-600 '>Want to stay updated on FHS?</p>
                             <p className='pb-xs'>If you haven&apos;t already registered your interest, simply submit your name and email and we&apos;ll make sure to keep you posted on all the exciting announcements we have in store for the event.</p>
                             <HubspotForm portalId={hubspotForm.portalId} formId={hubspotForm.formId} />
                         </section>
@@ -59,7 +59,7 @@ export const Footer = () => {
 
                     <section className={`${CSS.section}`}>
                         <div>
-                            <p className='fs-5 fw-600 c-secondary'>Organisers</p>
+                            <p className='fs-5 fw-600'>Organisers</p>
                             <div className="mt-sm maxw-40">
                                 <p>
                                     <a className={CSS.partnerLogo} href="https://www.thebench.com" target='_blank' rel='noreferrer' aria-label="Organiser">

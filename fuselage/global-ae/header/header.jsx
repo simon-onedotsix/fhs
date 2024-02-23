@@ -92,7 +92,7 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
                     <Link href="/ae/purchase-pass">
                         <a 
                             className={`${CSS.ctaButton} fw-600 caps`} 
-                        >Purchase Pass</a>
+                        >Register Now</a>
                     </Link>
                     
                     <p><span className='fw-600 fs-6'>30 Sep - 02 Oct 2024</span> <br/>Madinat Jumeirah, Dubai</p>

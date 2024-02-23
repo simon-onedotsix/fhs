@@ -1,12 +1,13 @@
 import { motion } from "framer-motion"
 
-export const Pop = ({ children, delay, once }) => {
+export const Pop = ({ children, delay, once, inline }) => {
     return (
         <motion.div 
             initial={{ scale: .25, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once }}
             transition={{ type: "spring", bounce: 0.25, delay }}
+            style={{ display: inline ? `inline-block` : `block` }}
         >
             { children }
         </motion.div>

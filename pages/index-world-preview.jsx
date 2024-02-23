@@ -147,7 +147,7 @@ export default function Home ({ data, seomatic }) {
 
     
     return (
-        <div className='bg-primary'>
+        <div className='bg-primary' style={{ backgroundColor: `var(--primary)`, backgroundImage: `url('/assets/theme/fhs-2024-global-bg.svg')` }}>
             <Head>
                 { handleSeomaticMeta( seomatic ) }
             </Head>

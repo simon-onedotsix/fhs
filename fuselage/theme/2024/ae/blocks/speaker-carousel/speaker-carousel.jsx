@@ -10,7 +10,7 @@ import CSS from './speaker-carousel.module.css'
 export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, decal }) => {
     return (
 
-        <section className={`block ${decal}`}>
+        <section className={`block ${decal} bg-fhs-pattern-blue`}>
             
             <div className='container center'>
                 <p className="fs-0 fw-700 lh-1">{ heading }</p>

@@ -136,9 +136,13 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
     // scroll animation
-    let ref = useRef(null)
-    let  scroll  = useScroll()
-    let y = useTransform( scroll.scrollY, [0, 1000], ["-30%", "0%"])
+    let introRef = useRef(null)
+    let { scrollYProgress } = useScroll({ 
+        target: introRef,
+        offset: ["start 75%", "end 0%"]
+    })
+
+    let y = useTransform( scrollYProgress, [0, 1], ["-15%", "5%"])
 
     return (
         <>
@@ -175,7 +179,9 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
                 <Fade>
                     <div className="mt-sm center">
-                        <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Now</Button>
+                        <Pop inline>
+                            <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Now</Button>
+                        </Pop>
                     </div>
                 </Fade>
             </HeroUnitVideo>
@@ -184,7 +190,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             {/* INTRO */}
 
-            <section ref={ref} className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
+            <section ref={introRef} className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className="container columns-2 gap-md">
               
                     <section className={CSS.introHeadline}>
@@ -192,14 +198,16 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     </section>
 
                     <section>
-                        <Image src="/assets/site/ae/2024-world-lauch-reception.jpg" layout={'responsive'} width={2200} height={1467}/>
+                        <Fade>
+                            <Image src="/assets/site/ae/2024-world-lauch-reception.jpg" layout={'responsive'} width={2200} height={1467}/>
+                        </Fade>
 
                         <div className="formatted mt-md">
                             <Fade>
                                 <p className='fs-4 fw-500 maxw-45'>Registrations for our flagship <span className="c-secondary">Future Hospitality Summit 2024</span>, now transformed and titled &apos;FHS World&apos; are now open.</p>
                                 <p className='fs-5 fw-300 maxw-45 mb-sm'>Purchasing your ticket now provides access to the FHS launch reception hosted at XU Dubai on the 27th of February. Get a chance to meet and interact with the FHS Advisory Board and start making connections ahead of the event!</p>
                             </Fade>
-                            <Fade>
+                            <Pop inline>
                                 <Button 
                                     href={`/ae/purchase-pass`} 
                                     theme={{ 
@@ -211,7 +219,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                                 >
                                     Register Now
                                 </Button>
-                            </Fade>
+                            </Pop>
                         </div>
                     </section>
                   
@@ -252,7 +260,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                             <p className='fs-6 fw-300 maxw-45'>We are returning to <strong>Dubai</strong> to a much bigger, bolder space - Madinat Jumeirah. A more personalised and immersive experience with new features like <strong>Investors Lounge</strong>, <strong>ESG Lab</strong>, <strong>Country Pavilions</strong>, an <strong>Expanded Exhibition Area</strong>, and much more.</p>
                             <p className='fs-6 fw-300 maxw-45 mt-xs mb-sm'>Sponsorship spaces at the event are limited and are selling out fast. If you are interested in booking a stand or a pavilion, please feel free to reach out to our sponsorship team.</p>
                         </Fade>
-                        <Fade>
+                        <Pop inline>
                             <Button 
                                 href={`/ae/get-in-touch`} 
                                 theme={{ 
@@ -264,7 +272,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                             >
                                 Get in touch
                             </Button>
-                        </Fade>
+                        </Pop>
                     </section>
 
                 </div>
@@ -285,14 +293,16 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 >
                     {
                         selectedCmsSpeakers.profiles.map( profile => (
-                            <SpeakerCard
-                                key={profile.id}
-                                url={`ae/speakers/profile/${profile.slug}`}
-                                photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
-                                fullName={profile.title}
-                                jobTitle={profile.positions[0].jobTitle}
-                                company={profile.positions[0].organisation}
-                            />
+                            <Pop>
+                                <SpeakerCard
+                                    key={profile.id}
+                                    url={`ae/speakers/profile/${profile.slug}`}
+                                    photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
+                                    fullName={profile.title}
+                                    jobTitle={profile.positions[0].jobTitle}
+                                    company={profile.positions[0].organisation}
+                                />
+                            </Pop>
                         ))
                     }
                 </SpeakerCarousel>
@@ -319,13 +329,13 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             {/* VIDEO + PHOTO HIGHLIGHTS */}
 
-            <section className="block o-hidden">
+            <section className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className={`${CSS.highlightVideoGrid} container`}>
                     <Slide><p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS&nbsp;2023</span></p></Slide>
                     <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=7Ar-CT0z23k&t=2s`} />
                 </div>
 
-                <div className="container">
+                <div className={`${CSS.photoGrid} container`}>
                     <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2023 in <span className='c-secondary'>Photos</span></p></Slide>
                     
                     <div className="columns-3 gap-xs mt-md">
@@ -344,6 +354,10 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     </div>
 
                 </div>
+
+                <motion.div className={CSS.highlightsGraphicWapper} style={{ y }}>
+                    <FhsIconKeyline inverse />
+                </motion.div>
             </section>
 
 

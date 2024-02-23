@@ -120,6 +120,18 @@
 [data-theme='ae-2024'] .bg-medium { background-color: var(--medium);}
 [data-theme='ae-2024'] .bg-dark { background-color: var(--dark);}
 
+[data-theme='ae-2024'] .bg-fhs-pattern-blue { 
+    background-image: url('/assets/theme/ae-2024/fhs-pattern-blue-top.png'), url('/assets/theme/ae-2024/fhs-pattern-blue-bottom.png');
+    background-size: 100%;
+    background-position: top center, bottom center;
+    background-repeat: no-repeat;
+
+    @media(max-width:600px) {
+        background-size: 250%;
+    }
+}
+
+
 
 /* GLOBAL theme text colors */
 
@@ -355,7 +367,7 @@
 
 
 [data-theme='ae-2024'] footer .form input {
-    border-bottom-color: rgba(255, 255, 255, 0.257) !important;
+    border-bottom-color: var(--primary-2) !important;
     color: white;
 }
 [data-theme='ae-2024'] footer .form input:focus {

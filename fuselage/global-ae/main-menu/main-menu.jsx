@@ -67,7 +67,7 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
                         </p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/purchase-pass'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Purchase Pass</a>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Register Now</a>
                             </Link>
                         </p>
                     </section>
@@ -82,6 +82,18 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/country-pavilions'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Country Pavilions</a>
+                            </Link>
+                        </p>
+
+                        <p className='fs-5 fw-700 c-secondary mt-md'>Sponsorship</p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/partner-with-us'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Partner With Us for FHS 2024</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/tech'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Technology &amp; Innovation Partnerships</a>
                             </Link>
                         </p>
                     </section>

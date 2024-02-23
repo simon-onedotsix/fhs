@@ -6,7 +6,7 @@
 }
 .partnerLogo {
     display: block;
-    max-width: 10rem;
+    max-width: 12rem;
     max-height: 9rem;
 }
 
@@ -28,7 +28,12 @@
     .container {
         display: grid;
         grid-template-columns: repeat(3, auto);
-    }    
+    }
+
+    .section:last-child {
+        border-left: 1px solid var(--primary-2);
+        padding-left: var(--space-md);
+    }
 }
 
 

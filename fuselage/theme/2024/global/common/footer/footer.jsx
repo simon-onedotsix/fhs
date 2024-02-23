@@ -35,7 +35,7 @@ export const Footer = () => {
                                             icon={connection.icon} 
                                             url={connection.hyperlink} 
                                             alt={connection.label}
-                                            decal={'bg-primary-3'}
+                                            decal={'bg-white'}
                                         />
                                     )
                                 })
