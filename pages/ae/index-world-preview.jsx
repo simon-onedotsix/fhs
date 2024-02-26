@@ -187,6 +187,19 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </HeroUnitVideo>
 
 
+            {/* HOST SPONSOR */}
+
+            <section className="block bg-default">
+                <div className="container center">
+                    <p className="fs-3 fw-600 c-secondary caps">Host Sponsor</p>
+                    <div className="maxw-20 mt-xs mx-auto">
+                        <Pop>
+                            <Image src={`/assets/site/ae/jumeirah.png`} layout={`responsive`} width={923} height={354} />
+                        </Pop>
+                    </div>
+                </div>
+            </section>
+
 
             {/* INTRO */}
 
