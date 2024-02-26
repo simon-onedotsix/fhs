@@ -190,7 +190,6 @@ export const QuerySEO = `
     }
 `
 
-
 export const QueryImages = `
     ... on ${blocksHandle}ContentBlocks_images_BlockType {
         id
@@ -207,7 +206,6 @@ export const QueryImages = `
         }
     }
 `
-
 
 export const QueryCards = `
     ... on ${blocksHandle}ContentBlocks_cards_BlockType {
@@ -235,7 +233,6 @@ export const QueryCards = `
     }
 `
 
-
 export const QueryPartners = `
     ... on ${blocksHandle}ContentBlocks_partners_BlockType {
         id
@@ -258,7 +255,6 @@ export const QueryPartners = `
         }
     }
 `
-
 
 export const QueryPartnerGroups = `
     ... on ${blocksHandle}ContentBlocks_partnerGroups_BlockType {
@@ -288,7 +284,6 @@ export const QueryPartnerGroups = `
         }
     }
 `
-
 
 export const Passes = `
     ... on ${blocksHandle}ContentBlocks_passes_BlockType {
@@ -323,7 +318,6 @@ export const Passes = `
     }
 `
 
-
 export const QueryTestimonials = `
     ... on ${blocksHandle}ContentBlocks_testimonials_BlockType {
         id
@@ -339,7 +333,19 @@ export const QueryTestimonials = `
     }
 `
 
-
+export const QueryTickers = `
+    ... on ${blocksHandle}ContentBlocks_ticker_BlockType {
+        id
+        ticker {
+            ... on ticker_BlockType {
+                id
+                text
+                weight
+                color
+            }
+        }
+    }
+`
 
 
 

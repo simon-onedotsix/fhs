@@ -46,11 +46,6 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/partners'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Sponsors &amp; Partners</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
                             <Link href={'/ae/content-library'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Content Library</a>
                             </Link>
@@ -79,11 +74,6 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Stages &amp; Tracks</a>
                             </Link>
                         </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/ae/country-pavilions'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Country Pavilions</a>
-                            </Link>
-                        </p>
 
                         <p className='fs-5 fw-700 c-secondary mt-md'>Sponsorship</p>
                         <p className='c-white mt-xs'>
@@ -93,7 +83,17 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
                         </p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/tech'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Technology &amp; Innovation Partnerships</a>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Technology &amp; Innovation</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/country-pavilions'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Country Pavilions</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/partners'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Sponsors &amp; Partners</a>
                             </Link>
                         </p>
                     </section>
