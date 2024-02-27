@@ -49,11 +49,6 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/partners'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Sponsors &amp; Partners</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
                             <Link href={'/ae/content-library'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Content Library</a>
                             </Link>
@@ -70,7 +65,7 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                         </p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/purchase-pass'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Purchase Pass</a>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Register Now</a>
                             </Link>
                         </p>
                     </section>
@@ -82,12 +77,7 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Stages &amp; Tracks</a>
                             </Link>
                         </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/ae/country-pavilions'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Country Pavilions</a>
-                            </Link>
-                        </p>
-                        
+
                         <p className='fs-5 fw-700 c-secondary mt-md'>Sponsorship</p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/partner-with-us'}>
@@ -96,20 +86,23 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                         </p>
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/tech'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Technology &amp; Innovation Partnerships</a>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Technology &amp; Innovation</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/country-pavilions'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Country Pavilions</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/ae/partners'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Sponsors &amp; Partners</a>
                             </Link>
                         </p>
                     </section>
 
                     <section>
-                        <p className='fs-5 fw-700 c-secondary'>FHS 2024</p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>FHS World 2024 Brochure</a>
-                            </Link>
-                        </p>
-
-                        <p className='fs-5 fw-700 c-secondary mt-md'>FHS 2023</p>
+                        <p className='fs-5 fw-700 c-secondary'>FHS 2023</p>
 
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/speakers'}>

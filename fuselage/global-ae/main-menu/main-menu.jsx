@@ -99,14 +99,7 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents, theme }) => {
                     </section>
 
                     <section>
-                        <p className='fs-5 fw-700 c-accent'>FHS 2024</p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>FHS World 2024 Brochure</a>
-                            </Link>
-                        </p>
-
-                        <p className='fs-5 fw-700 c-accent mt-md'>FHS 2023</p>
+                        <p className='fs-5 fw-700 c-accent'>FHS 2023</p>
 
                         <p className='c-white mt-xs'>
                             <Link href={'/ae/speakers'}>
