@@ -87,7 +87,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
             <header ref={hideEventsBarTrigger} className={`${CSS.layout} ${overlaid && CSS.overlaid}`}>
 
                 <div className={`${CSS.brand} ${compact && CSS.compact}`}>
-                    <Link href={`/`}><FhsLockup inverse /></Link>
+                    <Link href={`/ae`}><a><FhsLockup inverse /></a></Link>
                 </div>
                 
                 <div className={`${CSS.nav} ${ !inView && CSS.fixed}`}>

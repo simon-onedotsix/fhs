@@ -25,7 +25,20 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                     >
                         Register Now
                     </Button>
+                    
+                    <Button 
+                        href={`/ae/partner-with-us`} 
+                        theme={{ 
+                            color: `var(--primary)`,
+                            background: `var(--secondary-1)`, 
+                            hover: `var(--secondary-1-dark)`, 
+                        }} 
+                        decal={`fw-600`}
+                    >
+                        Partner With Us
+                    </Button>
                 </div>
+                    
                 <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
                     <span></span>
                     <span></span>

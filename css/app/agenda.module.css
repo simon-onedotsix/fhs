@@ -43,30 +43,30 @@
     border: none;
     font-family: inherit;
     font-size: inherit;
-    color: var(--primary);
+    color: white;
     padding: .75rem 1rem;
-    border: 1px #f0f0f2 solid;
+    border: 1px var(--accent) solid;
     border-radius: var(--standard-field-radius, 0);
-    background-color: #f0f0f2;
+    background-color: transparent;
 
     transition: all 350ms ease-in-out;
 }
 
 @media(hover:hover) {
     .filterButton:hover{
-        background-color: var(--primary);
-        border-color: var(--primary);
+        background-color: var(--accent);
+        border-color: var(--accent);
         color: white;
     }
 }
 
 .filterButton:focus {
-    border-color: var(--primary);
+    border-color: var(--accent);
     outline: none;
 }
 .filterButton.active {
-    border-color: var(--primary);
-    background-color: var(--primary);
+    border-color: var(--accent);
+    background-color: var(--accent);
     color: white;
 }
 

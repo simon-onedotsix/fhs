@@ -1,28 +1,26 @@
+import Layout from '../fuselage/templates/layout'
+
 import { gql } from "@apollo/client"
 import craftApolloClient from "./api/apollo"
 
 import Head from 'next/head'
 
-import { LenisScroller } from '../fuselage/animation/lenis-scroller'
-
 import { QuerySEO } from "../graphql/queries"
 import handleSeomaticMeta from '../lib/seomatic'
 
-import { Header } from '../fuselage/theme/2024/global/common/header/header'
-import { Footer } from '../fuselage/theme/2024/global/common/footer/footer'
-
-import { HeroUnitVideo } from '../fuselage/theme/2024/ae/blocks/hero-unit-video/hero-unit-video'
-import { SectionDivider } from '../fuselage/theme/2024/ae/blocks/section-divider/section-divider'
-import { UpcomingEvents, EventGroupCard, EventCard } from '../fuselage/theme/2024/ae/blocks/upcoming-events/upcoming-events'
-import { ContentCard } from "../fuselage/theme/2024/ae/components/content-card/content-card"
-
-
+import { Header } from '../fuselage/global/header/header'
+import { Footer } from '../fuselage/global/footer/footer'
+import { CtaTab } from '../fuselage/components/cta-tab/cta-tab'
+import { HeroUnitVideo } from '../fuselage/blocks/hero-unit-video/hero-unit-video'
+import { UpcomingEvents, EventGroupCard, EventCard } from '../fuselage/blocks/upcoming-events/upcoming-events'
 import { ArrowButton } from '../fuselage/components/arrow-button/arrow-button'
+import { ContentCard } from "../fuselage/components/content-card/content-card"
 import { AngledSection } from '../fuselage/blocks/angled-section/angled-section'
+import { SectionDivider } from '../fuselage/blocks/section-divider/section-divider'
 import { Floater, Floaters, FloaterLogo, FloaterWebsiteButton } from '../fuselage/blocks/floater/floater'
 import { SpeakerCard } from '../fuselage/components/speaker-card/speaker-card'
 
-export default function Home ({ data, seomatic }) {
+export default function Homepage ({ data, seomatic }) {
 
     // console.log('data:', data)
     // console.log('seomatic:', seomatic)
@@ -33,7 +31,7 @@ export default function Home ({ data, seomatic }) {
         
         if ( ! events ) return
 
-        console.log('upocoming events:', events)
+        // console.log('upocoming events:', events)
 
         return (
             <UpcomingEvents landscape={true}>
@@ -96,7 +94,7 @@ export default function Home ({ data, seomatic }) {
 
         return (
             <section key={id} className={`c-white`}>
-                <p className='fs-1 fw-500 lh-1 c-white'>{ data.heading }</p>
+                <p className='ff-space fs-1 fw-200 lh-1 caps c-white'>{ data.heading }</p>
 
                 <div className="columns-4 gap-sm mt-md">
                     {
@@ -118,7 +116,7 @@ export default function Home ({ data, seomatic }) {
                 {
                     data.ctaButtonLink && data.ctaButtonLabel ?
                         <div className='mt-md mb-xl'>
-                            <ArrowButton href={ data.ctaButtonLink } theme={{ arrow: `var(--primary-3)`, border: `var(--primary-3)`, label: `white`}}>{ data.ctaButtonLabel }</ArrowButton>
+                            <ArrowButton href={ data.ctaButtonLink } theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}>{ data.ctaButtonLabel }</ArrowButton>
                         </div>
                     :
                         <></>
@@ -147,7 +145,7 @@ export default function Home ({ data, seomatic }) {
 
     
     return (
-        <div className='bg-primary' style={{ backgroundColor: `var(--primary)`, backgroundImage: `url('/assets/theme/fhs-2024-global-bg.svg')` }}>
+        <div className='bg-primary' style={{ backgroundColor: `var(--secondary)`, backgroundImage: `url('/assets/theme/fhs-2023-global-bg.svg')` }}>
             <Head>
                 { handleSeomaticMeta( seomatic ) }
             </Head>
@@ -156,18 +154,13 @@ export default function Home ({ data, seomatic }) {
             <Header overlaid inverse />
 
 
-            <HeroUnitVideo>
-                <SectionDivider 
-                    heading={`Future Hospitality Summit`} 
-                    description={`Future Hospitality is an international platform where the world's most influential hospitality investment decision-makers connect, exchange knowledge and explore new partnerships.`}
-                />
-            </HeroUnitVideo>
+            <HeroUnitVideo />
 
 
             { handleUpcomingEvents( data.events )}
 
             
-            {/* <AngledSection innerBg={`white`} transitions={`var(--primary)`}>
+            <AngledSection innerBg={`white`} transitions={`var(--primary)`}>
                 <SectionDivider 
                     theme={{ heading: `var(--primary)`, body: `var(--default-text-color)`, keyline: `var(--accent)` }}
                     heading={`Our Event Brands`} 
@@ -178,7 +171,7 @@ export default function Home ({ data, seomatic }) {
                         { handleEvents( data.eventFloaters ) }
                     </Floaters>
                 </div>
-            </AngledSection> */}
+            </AngledSection>
 
           
             {
@@ -218,16 +211,20 @@ export default function Home ({ data, seomatic }) {
          
 
             <Footer />
-            <LenisScroller />
 
             {/* <CtaTab /> */}
         </div>
     )
 }
-Home.theme = 'global-2024'
 
 
-
+Homepage.getLayout = function getLayout( page ) {
+	return (
+	<Layout>
+		{ page }
+	</Layout>
+	)
+}
 
 
 

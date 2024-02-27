@@ -19,6 +19,9 @@
     width: 9rem;
     padding: 1.5rem var(--space-md);
 }
+.brand * {
+    text-decoration: none;
+}
 
 @media(min-width:600px){
     .layout {

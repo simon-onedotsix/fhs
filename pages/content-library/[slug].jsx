@@ -3,12 +3,14 @@ import Layout from '../../fuselage/templates/layout'
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+
 import Image from "next/image"
 import Link from "next/link"
 import {format} from 'date-fns'
 
-import { Header, HeaderShim } from '../../fuselage/global/header/header'
-import { Footer } from '../../fuselage/global/footer/footer'
+import { Header } from '../../fuselage/theme/2024/global/common/header/header'
+import { Footer } from '../../fuselage/theme/2024/global/common/footer/footer'
 
 import { StickySidebar } from "../../fuselage/layout/sticky-sidebar/sticky-sidebar"
 import { ProfileCard } from "../../fuselage/components/profile-card/profile-card"
@@ -175,20 +177,19 @@ export default function Article ({ entry }) {
     return (
         <>
             <Header compact />
-            
 
-            <section className="block bg-default pt-0">
+            <section className="block pt-0">
                 <div className="container">
                     <StickySidebar size='large' flipped>
 
                         <main>
                             {/* <HeaderShim/> */}
-                            <div className="mb-sm pb-xs bb-1 bc-primary flex jc-between">
+                            <div className="mb-sm pb-xs bb-1 bc-secondary flex jc-between">
                                <ArrowLink href="/content-library" decal='fw-600'>Content library</ArrowLink>
                                {handleCategories()}                                
                             </div>
 
-                            <p className="fs-1 fw-600 lh-1 c-primary mb-sm">{entry.title}</p>
+                            <p className="fs-1 fw-600 lh-1 mb-sm">{entry.title}</p>
                             
                             {handleHero()}
 
@@ -197,7 +198,7 @@ export default function Article ({ entry }) {
 
                         <aside>
                             {/* <HeaderShim/> */}
-                            <div className="mb-sm pb-xs bb-1 bc-primary">
+                            <div className="mb-sm pb-xs bb-1 bc-secondary">
                                 <p className="fw-600">Published: { format(new Date(entry.postDate), 'd MMMM yyyy') }</p>
                             </div>
                             
@@ -206,9 +207,9 @@ export default function Article ({ entry }) {
                             <div className="py-xs">
                                 <p className="fw-600 pb-xs">Share this article</p>
                                 <div className="flex gap-xxs">
-                                    <ButtonSocial icon='linkedin' decal='bg-primary' />
-                                    <ButtonSocial icon='facebook' decal='bg-primary' />
-                                    <ButtonSocial icon='twitter' decal='bg-primary' />
+                                    <ButtonSocial icon='linkedin' decal='bg-secondary' />
+                                    <ButtonSocial icon='facebook' decal='bg-secondary' />
+                                    <ButtonSocial icon='twitter' decal='bg-secondary' />
                                 </div>
                             </div>
 
@@ -218,19 +219,14 @@ export default function Article ({ entry }) {
                 </div>                
             </section>
 
-            <Footer background={`bg-primary`} />
+            <Footer />
+            <LenisScroller />
         </>
     )
 
 }
 
-Article.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
+Article.theme = 'ae-2024'
 
 
 export async function getStaticPaths() {

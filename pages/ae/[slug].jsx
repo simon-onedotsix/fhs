@@ -1,12 +1,12 @@
-import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+
 import Head from "next/head"
 
-import { Header } from '../../fuselage/global-ae/header/header'
-import { Footer } from '../../fuselage/global-ae/footer/footer'
+import { Header } from '../../fuselage/theme/2024/ae/common/header/header'
+import { Footer } from '../../fuselage/theme/2024/ae/common/footer/footer'
 
 import handleContentBlocks from "../../lib/content-blocks"
 
@@ -42,27 +42,18 @@ export default function Page ({ entry, seomatic }) {
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-            <ThemeBg />
-
-            <Header compact shim theme={{ 
-                primary: 'var(--primary)', 
-                secondary: 'var(--secondary)', 
-                text: 'var(--primary)',
-                buttons: 'var(--primary)',
-                buttonText: 'white',
-                headerBg: '#ffffffee',
-                overlayBg: 'var(--primary)',
-            }} />
+            <Header inverse />
             
             {handleContentBlocks( entry.fhisContentBlocks, null, null, 'ae' )}
 
-            <Footer theme={{ footerBg: 'bg-light' }} />
+            <Footer />
+            <LenisScroller />
 
         </>
     )
 }
 
-Page.theme = 'ae-2023'
+Page.theme = 'ae-2024'
 
 
 

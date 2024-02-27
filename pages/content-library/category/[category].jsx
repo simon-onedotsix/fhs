@@ -1,13 +1,13 @@
-import Layout from '../../../fuselage/templates/layout'
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../../api/apollo"
+
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
 import Head from "next/head"
 import { useRouter } from "next/router"
 
-import { Header, HeaderShim } from "../../../fuselage/global/header/header"
-import { Footer } from '../../../fuselage/global/footer/footer'
+import { Header } from '../../../fuselage/theme/2024/global/common/header/header'
+import { Footer } from '../../../fuselage/theme/2024/global/common/footer/footer'
 import { StickySidebar } from "../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
 import { ContentCard } from "../../../fuselage/components/content-card/content-card"
 import { ArrowLink } from "../../../fuselage/components/arrow-link/arrow-link"
@@ -45,7 +45,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
 
             return (
                 <section>                    
-                    <p className="fs-2 fw-600 caps c-accent mt-md">{category.title}</p>
+                    <p className="fs-2 fw-600 caps c-primary-3 mt-md">{category.title}</p>
                     <div className="columns-3 gap-sm mt-sm">
                         {
                             articles.map( entry => (
@@ -68,26 +68,24 @@ export default function ContentLibraryCategory ({ categories, category, articles
     }
 
     return (
-        <div className='bg-secondary'>
+        <>
             <Head>
                 <title>FHS | Content Library</title>
             </Head>
 
             <Header overlaid inverse />
 
-            <section className="block bg-secondary pt-0">
+            <section className="block pt-0">
                 <StickySidebar size='small'>
                     <aside>
-                        <HeaderShim/>
-                        <p className="fs-6 fw-600 c-accent mb-sm">Filter</p>
+                        <p className="fs-6 fw-600 c-primary-3 mb-sm">Filter</p>
                         { handleCategoryMenu() }
                         <p className="mt-sm">
-                            <a className="uLink fs-sm caps fw-400 c-accent" href={`/content-library`}>Clear filter</a>
+                            <a className="uLink fs-sm caps fw-400 c-primary-3" href={`/content-library`}>Clear filter</a>
                         </p>
                     </aside>
 
                     <main>
-                        <HeaderShim/>
                         <p className="fs-0 fw-600 c-white">Content library</p>
 
                         { handleArticles() }
@@ -96,17 +94,14 @@ export default function ContentLibraryCategory ({ categories, category, articles
             </section>
 
             <Footer />
-        </div>
+            <LenisScroller />
+        </>
     )
 }
 
-ContentLibraryCategory.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
+ContentLibraryCategory.theme = 'ae-2024'
+
+
 
 export async function getStaticPaths() {
 

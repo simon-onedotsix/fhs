@@ -19,7 +19,7 @@
 .overlay {
     position: relative;
     z-index: 2;
-    min-height: 55vh;
+    min-height: 70vh;
 
     display: flex;
     flex-direction: column;

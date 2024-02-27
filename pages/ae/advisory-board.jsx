@@ -1,5 +1,3 @@
-import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
@@ -7,13 +5,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Header, HeaderShim } from '../../fuselage/global-ae/header/header'
-import { Footer } from '../../fuselage/global-ae/footer/footer'
-import { StickySidebar } from '../../fuselage/layout/sticky-sidebar/sticky-sidebar'
-import { SpeakerGrid } from '../../fuselage/layout/speaker-grid/speaker-grid'
-import HubspotForm from'../../fuselage/components/hubspot-form/hubspot-form'
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
-import { Container } from "../../fuselage/theme/2023/ae/layout/container/container"
+import { Header } from '../../fuselage/theme/2024/ae/common/header/header'
+import { Footer } from '../../fuselage/theme/2024/ae/common/footer/footer'
+import { SpeakerGrid } from '../../fuselage/layout/speaker-grid/speaker-grid'
 
 import handleSeomaticMeta from '../../lib/seomatic'
 
@@ -30,22 +26,10 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-			<ThemeBg />
+            <Header inverse />
 
-            <Header compact shim theme={{ 
-                primary: 'var(--primary)', 
-                secondary: 'var(--secondary)', 
-                text: 'var(--primary)',
-                buttons: 'var(--primary)',
-                buttonText: 'white',
-                headerBg: '#ffffffee',
-                overlayBg: 'var(--primary)',
-            }} />
-
-			<section className="block flush">
-				<Container flushRight maxWidth={`85%`} decal={`bg-white-90 p-md`}>
-
-					{/* <HeaderShim /> */}
+			<section className="block">
+				<div className="container">
 
 					<p className='fs-0 fw-600 lh-1'>2024 Advisory Board</p>
 
@@ -74,15 +58,19 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 						))}
 					</SpeakerGrid>
 
-				</Container>
+				</div>
 			</section>
 						
-			<Footer theme={{ footerBg: 'bg-white-90' }} />
+			<Footer />
+			<LenisScroller />
 		</>
 	)
 }
 
-Speakers.theme = 'ae-2023'
+Speakers.theme = 'ae-2024'
+
+
+
 
 export async function getStaticProps() {
 

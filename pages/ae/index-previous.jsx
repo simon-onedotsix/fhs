@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 
 import Head from "next/head"
 import Image from "next/image"
+import Script from "next/script"
 
 import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
 
@@ -51,88 +52,70 @@ import CSS from '../../fuselage/theme/2023/ae/homepage.module.css'
 
 const photos = [
     {
-        "__typename": "slides_BlockType",
         "id": "13864",
         "hero": [
             {
-                "__typename": "site_Asset",
                 "id": "50183",
-                "url": "https://cms.thebench.com/assets/img/site/FHIS-AE/52403116903_1d48520bbf_o.jpg",
-                "width": 2000,
-                "height": 1303
+                "url": "/assets/img/ae/2023/photo-01.jpg",
+                "width": 1000,
+                "height": 588
             }
-        ],
-        "body": null
+        ]
     },
     {
-        "__typename": "slides_BlockType",
         "id": "13865",
         "hero": [
             {
-                "__typename": "site_Asset",
                 "id": "50184",
-                "url": "https://cms.thebench.com/assets/img/site/FHIS-AE/52403147170_d7199b639e_o.jpg",
-                "width": 2000,
-                "height": 1331
+                "url": "/assets/img/ae/2023/photo-02.jpg",
+                "width": 1000,
+                "height": 588
             }
-        ],
-        "body": null
+        ]
     },
     {
-        "__typename": "slides_BlockType",
         "id": "13867",
         "hero": [
             {
-                "__typename": "site_Asset",
                 "id": "50186",
-                "url": "https://cms.thebench.com/assets/img/site/FHIS-AE/52401819031_2e8f739388_o.jpg",
-                "width": 2000,
-                "height": 1333
+                "url": "/assets/img/ae/2023/photo-03.jpg",
+                "width": 1000,
+                "height": 588
             }
-        ],
-        "body": null
+        ]
     },
     {
-        "__typename": "slides_BlockType",
         "id": "13868",
         "hero": [
             {
-                "__typename": "site_Asset",
                 "id": "50187",
-                "url": "https://cms.thebench.com/assets/img/site/FHIS-AE/52402232115_08fca076d0_o.jpg",
-                "width": 2000,
-                "height": 1334
+                "url": "/assets/img/ae/2023/photo-04.jpg",
+                "width": 1000,
+                "height": 588
             }
-        ],
-        "body": null
+        ]
     },
     {
-        "__typename": "slides_BlockType",
         "id": "50206",
         "hero": [
             {
-                "__typename": "site_Asset",
                 "id": "50189",
-                "url": "https://cms.thebench.com/assets/img/site/FHIS-AE/52402260675_9d6a6dd392_o.jpg",
-                "width": 2000,
-                "height": 1331
+                "url": "/assets/img/ae/2023/photo-05.jpg",
+                "width": 1000,
+                "height": 588
             }
-        ],
-        "body": null
+        ]
     },
     {
-        "__typename": "slides_BlockType",
         "id": "50207",
         "hero": [
             {
-                "__typename": "site_Asset",
                 "id": "50193",
-                "url": "https://cms.thebench.com/assets/img/site/FHIS-AE/52402603181_c0c7457343_o.jpg",
-                "width": 2000,
-                "height": 1334
+                "url": "/assets/img/ae/2023/photo-06.jpg",
+                "width": 1000,
+                "height": 588
             }
-        ],
-        "body": null
+        ]
     }
 ]
 
@@ -141,7 +124,7 @@ const photos = [
 export default function Home ({ globals, entry, seomatic, speakerData, partnerData }) {
 
     const [ showModal, setShowModal ] = useState(false)
-    const [ modalContent, setModalContent ] = useState()
+    const [ modalContent, setModalContent ] = useState(null)
 
     // console.log('entry:', entry)
 	// console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
@@ -169,51 +152,98 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 overlayBg: 'var(--primary)',
             }} />
 
+
+
             <section className="block flush">
                 <Container decal={`bg-white-90 p-md`}>
-                    <Slide><p className='fs-3 fw-300 caps mb-xs'>25-27 September 2023</p></Slide>
+                    <Slide><p className='fs-3 fw-300 caps mb-xs'>30 September - 02 October 2024</p></Slide>
                     <Headline />
-                    <Slide delay={.5}><p className='fs-5 fw-300 caps mb-lg'>Hilton Abu Dhabi Yas Island</p></Slide>
+                    <Slide delay={.5}><p className='fs-5 fw-300 caps mb-lg'>Madinat Jumeirah, Dubai</p></Slide>
                     
-                    <LogoBubbleGrid>
-                        <LogoBubble delay={0.2}><FhsLogo primary={`white`} secondary={`white`} /></LogoBubble>
-                        {/* <LogoBubble delay={0.4}><AhicLogo primary={`white`} secondary={`white`} /></LogoBubble> */}
-                        {/* <LogoBubble delay={0.6}><GrifLogo primary={`white`} secondary={`white`}  /></LogoBubble> */}
-                    </LogoBubbleGrid>
+                    <Fade>
+                        <div className="flex flex-wrap gap-xxs">
+                            <span 
+                                onClick={() => {
+                                    console.log('modal button clicked')
+                                        setModalContent(
+                                            <>
+                                                <div className={CSS.popupHeader}>
+                                                    <p className="fs-4 fw-600 lh-1 mb-sm">Download Event Brochure</p>
+                                                </div>
+
+                                                <HubspotForm portalId={`14527187`} formId={'40f2dd9c-9f5a-41c2-9d78-f35a170107d4'} />
+                                            </>
+                                        )
+                                        setShowModal(true)
+                                
+                                }}>
+                                <Button decal={`fs-4 fw-600`} target={`_blank`}>Download Event Brochure</Button>
+                            </span>
+                            
+                            <span 
+                                onClick={() => {
+                                    console.log('modal button clicked')
+                                        setModalContent(
+                                            <>
+                                                <div className={CSS.popupHeader}>
+                                                    <p className="fs-4 fw-600 lh-1 mb-sm">Download FHS 2023 Post-event Report</p>
+                                                    <img className={CSS.popupHeaderImage} src="/assets/site/ae/ae-2024-brochure.png" alt=""/>
+                                                </div>
+
+                                                <HubspotForm portalId={`14527187`} formId={'c2b14f19-e6b6-478f-83ac-e76e9facc2c6'} />
+                                            </>
+                                        )
+                                        setShowModal(true)
+                                
+                                }}>
+                                <Button decal={`fs-4 fw-600`} target={`_blank`}>Download FHS 2023 Post-event Report</Button>
+                            </span>
+
+                        </div>
+
+                        {/* <Button href={`https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1`} decal={`fs-4 fw-600`} target={`_blank`}>FHS World 2024 Brochure</Button> */}
+                    </Fade>
                 </Container>
                 
-                <Container flushRight decal={`bg-white-90 p-md`}>
-                    <div className="formatted">
-                        <Slide delay={.2}><h2 className='maxw-40'> Join us as we transform Yas Island into a global epicenter for hospitality investment</h2></Slide>
-                        <Fade delay={.4}><p className='fs-6 fw-300 maxw-40 mt-sm'>Experience the highly anticipated Future Hospitality Summit 2023, in Abu Dhabi for the very first time! </p>
-                        <p className='fs-6 fw-300 maxw-40'>Experience three extraordinary days of dealmaking and impactful industry discussions at the Yas Island, thanks to our host sponsors - Abu Dhabi Convention & Exhibition Bureau, Miral, and Hilton Abu Dhabi Yas Island. </p>
-                        <p className='fs-6 fw-300 maxw-40'>Explore innovative investment trends, groundbreaking insights, and unparalleled networking opportunities in the world of hospitality. </p>
-                        <p className='fs-6 fw-300 maxw-40'>Don&apos;t miss this unique opportunity to shape the industry&apos;s future.</p></Fade>
-                    </div>
+                <Container flushRight decal={`bg-white-90`}>
+              
+                        <div className="bg-dark p-md">
+                            <Slide><p className='fs-1 fw-600 lh-1'>Join the FHS 2024 Launch Reception!</p></Slide>
+                        </div>
 
-                    {/* download prospectus */}
+                        <Image src="/assets/site/ae/2024-world-lauch-reception.jpg" layout={'responsive'} width={2200} height={1467}/>
 
-                    <div className="mt-md">
-                        <span 
-                            onClick={() => {
-                                console.log('modal button clicked')
-                                    setModalContent('content')
-                                    setShowModal(true)
-                               
-                            }}>
-                            <Button decal={`fs-5 fw-600`}>Download Event Brochure</Button>
-                        </span>
-                    </div>
+                        <div className="p-md formatted">
+                            <Fade>
+                                <p className='fs-4 fw-500 maxw-45'>Registrations for our flagship Future Hospitality Summit 2024, now transformed and titled &apos;FHS World&apos; are now open.</p>
+                                <p className='fs-5 fw-300 maxw-45 mb-sm'>Purchasing your ticket now provides access to the FHS launch reception hosted at XU Dubai on the 27th of February. Get a chance to meet and interact with the FHS Advisory Board and start making connections ahead of the event!</p>
+                            </Fade>
+                            <Fade>
+                                <div className="flex flex-wrap gap-xxs">
+                                    <Button href={`/ae/purchase-pass`} decal={`fs-4 fw-600`}>
+                                        Register Now
+                                    </Button>
+                                    <Button href={`/ae/partner-with-us`} decal={`fs-4 fw-600`}>
+                                        Partner With Us
+                                    </Button>
+                                </div>
+                            </Fade>
+                        </div>
+                  
+                </Container>
 
-                    <div className="mt-md bt-1 bc-grey-10 pt-sm">
-                        <Slide><p className='fw-600 caps mb-sm'>Host Sponsors</p></Slide>
-
-                        <HostSponsorGrid>
-                            <Pop><HostSponsorLogo hero={{url: `/assets/site/ae/abu-dhabi.png`}}/></Pop>
-                            <Pop delay={.2}><HostSponsorLogo hero={{url: `/assets/site/ae/miral.png`}}/></Pop>
-                            <Pop delay={.4}><HostSponsorLogo hero={{url: `/assets/site/ae/hilton.png`}}/></Pop>
-                        </HostSponsorGrid>
-                    </div>
+                <Container decal={`bg-white-90 p-md formatted`}>
+                    <Slide><p className='fs-1 fw-600 lh-1 maxw-45'>What&apos;s new for FHS World 2024</p></Slide>
+                    <Fade>
+                        <p className='fs-5 fw-500 maxw-45 mt-sm'>This year we are creating an intersection for the world of hospitality where the industry invests in its future. </p>
+                        <p className='fs-6 fw-300 maxw-45'>We are returning to <strong>Dubai</strong> to a much bigger, bolder space - Madinat Jumeirah. A more personalised and immersive experience with new features like <strong>Investors Lounge</strong>, <strong>ESG Lab</strong>, <strong>Country Pavilions</strong>, an <strong>Expanded Exhibition Area</strong>, and much more.</p>
+                        <p className='fs-6 fw-300 maxw-45 mt-xs mb-sm'>Sponsorship spaces at the event are limited and are selling out fast. If you are interested in booking a stand or a pavilion, please feel free to reach out to our sponsorship team.</p>
+                    </Fade>
+                    <Fade>
+                        <Button href={`/ae#footer`} decal={`fs-4 fw-600`}>
+                            Get in touch
+                        </Button>
+                    </Fade>
                 </Container>
             </section>
 
@@ -249,20 +279,20 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     <Slide><p className="fs-0 caps lh-1 maxw-50 mb-md" style={{ lineHeight: 0.9}}>2023 in numbers</p></Slide>
                     
                     <div className='columns-2 gap-sm'>
-                        <ImpactFigure value={`1000`} label={`attendees from across the globe`} />
-                        <ImpactFigure value={`83`} label={`sponsors and partners`} />
-                        <ImpactFigure value={`75`} label={`media and press attending`} />
-                        <ImpactFigure value={`185`} label={`speakers`} />
+                        <ImpactFigure value={`1200`} label={`Delegates`} />
+                        <ImpactFigure value={`40`} label={`Countries`} />
+                        <ImpactFigure value={`400`} label={`Companies`} />
+                        <ImpactFigure value={`200`} label={`Speakers`} />
                     </div>
                 </Container>
 
                 <Container flushRight decal={`bg-light`}>
-                    <Slide><p className='fs-0 caps p-md lh-1'>Highlights from FHS&nbsp;2022</p></Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/4w6h8gXKpvg`} />
+                    <Slide><p className='fs-0 caps p-md lh-1'>Highlights from FHS&nbsp;2023</p></Slide>
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=7Ar-CT0z23k&t=2s`} />
                 </Container>
 
                 <Container decal={``}>
-                    <Slide><p className='bg-light fs-0 caps p-md lh-1'>2022 in photos</p></Slide>
+                    <Slide><p className='bg-light fs-0 caps p-md lh-1'>2023 in photos</p></Slide>
                     
                     <div className="p-md bg-white-90 columns-3 gap-xs">
                         {
@@ -275,7 +305,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                             ))
                         }
                         <p className="mt-xs">
-                            <ArrowButton href={`https://flic.kr/s/aHBqjAbKY7`} target='_blank' theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>View all photos</ArrowButton>
+                            <ArrowButton href={`https://flic.kr/s/aHBqjAXaGC`} target='_blank' theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>View all photos</ArrowButton>
                         </p>
                     </div>
 
@@ -297,26 +327,38 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
 
-
+            <span id="footer"/>
             <Footer theme={{ footerBg: 'bg-white' }} />
 
             
-            <CtaTab iconColor={`white`} buttonColor={`var(--primary)`} />
+            {/* <CtaTab iconColor={`white`} buttonColor={`var(--primary)`} /> */}
 
 
             <PopupOverlay onClose={() => setShowModal(false)} show={showModal}>
 
-                <div className={CSS.popupHeader}>
-                    <p className="fs-4 fw-600 lh-1 mb-sm">Download Event Brochure</p>
-                    <img className={CSS.popupHeaderImage} src="/assets/site/ae/ae-2024-brochure.png" alt=""/>
-                </div>
-
-                <HubspotForm portalId={`14527187`} formId={`80e983ed-37fc-4343-bbf3-52e3d8021c82`} />
+                { modalContent } 
 
             </PopupOverlay>
 
 
-            
+            <Script id="chatbot" strategy="afterInteractive">
+                {`
+                    (function(d,t) {
+                        var BASE_URL="https://app.chatlyn.com";
+                        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                        g.src=BASE_URL+"/packs/js/sdk.js";
+                        g.defer = true;
+                        g.async = true;
+                        s.parentNode.insertBefore(g,s);
+                        g.onload=function(){
+                        window.chatwootSDK.run({
+                        websiteToken: 'M83YXfr8QveNibKc6eFniAuA',
+                        baseUrl: BASE_URL
+                        })
+                        }
+                    })(document,"script");;
+                `}
+            </Script>
         </>
     )
 }

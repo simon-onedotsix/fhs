@@ -145,6 +145,22 @@
     color: white;
 }
 
+[data-theme='ae-2024'] .formatted .button {
+    color: var(--primary);
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+[data-theme='ae-2024'] .formatted .button:hover {
+    background-color: white;
+    border-color: white;
+}
+[data-theme='ae-2024'] .formatted .button.secondary {
+    color: var(--primary);
+}
+[data-theme='ae-2024'] .formatted .button.secondary:hover {
+    background-color: white;
+}
+
 
 [data-theme='ae-2024'] .highlight span {
     color: white;
@@ -379,6 +395,9 @@
     border-right: none;
     padding-left: 0;
     padding-right: 0;
+    color: white;
+    font-family: inherit;
+    border-bottom-color: var(--primary-2) !important;
 }
 
 [data-theme='ae-2024'] footer.footer .hs-form-field textarea,

@@ -1,14 +1,14 @@
-import { ThemeBg } from "../../../fuselage/theme/2023/ae/theme-bg"
-
 import { gql } from "@apollo/client"
 import craftApolloClient from '../../api/apollo'
+
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
 import Image from "next/image"
 import Link from "next/link"
 import {format} from 'date-fns'
 
-import { Header, HeaderShim } from '../../../fuselage/global-ae/header/header'
-import { Footer } from '../../../fuselage/global-ae/footer/footer'
+import { Header } from '../../../fuselage/theme/2024/ae/common/header/header'
+import { Footer } from '../../../fuselage/theme/2024/ae/common/footer/footer'
 import { StickySidebar } from "../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
 import { ProfileCard } from "../../../fuselage/components/profile-card/profile-card"
 import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
@@ -173,17 +173,7 @@ export default function Article ({ entry }) {
 
     return (
         <>
-            <ThemeBg />
-
-            <Header compact theme={{ 
-                primary: 'var(--primary)', 
-                secondary: 'var(--secondary)', 
-                text: 'var(--primary)',
-                buttons: 'var(--primary)',
-                buttonText: 'white',
-                headerBg: '#ffffffee',
-                overlayBg: 'var(--primary)',
-            }} />
+            <Header inverse />
                         
 
             <section className="block flush pt-0">
@@ -191,14 +181,13 @@ export default function Article ({ entry }) {
                     <StickySidebar size='large' flipped>
 
                         <main>
-                            <HeaderShim/>
-                            <div className="bg-white-90 p-md">
+                            <div className="p-md pt-0">
                                 <div className="mb-sm pb-xs bb-1 bc-secondary flex jc-between">
                                 <ArrowLink href="/ae/content-library" decal='fw-600'>Content library</ArrowLink>
                                 {handleCategories()}                                
                                 </div>
 
-                                <p className="fs-1 fw-600 lh-1 c-primary mb-sm">{entry.title}</p>
+                                <p className="fs-1 fw-600 lh-1 mb-sm">{entry.title}</p>
                                 
                                 {handleHero()}
 
@@ -208,8 +197,7 @@ export default function Article ({ entry }) {
                         </main>
 
                         <aside>
-                            <HeaderShim/>
-                            <div className="bg-white-90 p-md">
+                            <div className="p-md pt-0">
                                 <div className="mb-sm pb-xs bb-1 bc-secondary">
                                     <p className="fw-600">Published: { format(new Date(entry.postDate), 'd MMMM yyyy') }</p>
                                 </div>
@@ -232,13 +220,14 @@ export default function Article ({ entry }) {
                 </div>                
             </section>
 
-            <Footer theme={{ footerBg: 'bg-white-90' }} />
+            <Footer />
+            <LenisScroller />
         </>
     )
 
 }
 
-Article.theme = 'ae-2023'
+Article.theme = 'ae-2024'
 
 
 

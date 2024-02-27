@@ -21,6 +21,14 @@
     }
 }
 
+.hostSponsorLogoWrapper {
+    max-width: 60vw;
+
+    @media(min-width:600px){
+        max-width: 20rem;
+    }
+}
+
 .photoGrid {
     position: relative;
     z-index: 2;

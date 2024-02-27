@@ -1,12 +1,12 @@
-import { ThemeBg } from "../../../../fuselage/theme/2023/ae/theme-bg"
-
 import { gql } from "@apollo/client"
 import craftApolloClient from '../../../api/apollo'
 
 import Image from "next/image"
 
-import { Header, HeaderShim } from '../../../../fuselage/global-ae/header/header'
-import { Footer } from '../../../../fuselage/global-ae/footer/footer'
+import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller'
+
+import { Header } from '../../../../fuselage/theme/2024/ae/common/header/header'
+import { Footer } from '../../../../fuselage/theme/2024/ae/common/footer/footer'
 import { Sidebar } from '../../../../fuselage/layout/sidebar/sidebar'
 import { ArrowLink } from '../../../../fuselage/components/arrow-link/arrow-link'
 // import { ButtonSocial } from  '../../../../fuselage/components/button-social/button-social'
@@ -22,8 +22,6 @@ export default function Profile ({ profile }) {
 
     return (
         <>
-			<ThemeBg />
-
             <Header compact shim theme={{ 
                 primary: 'var(--primary)', 
                 secondary: 'var(--secondary)', 
@@ -35,14 +33,14 @@ export default function Profile ({ profile }) {
             }} />
 
 
-            <section className="block flush">
-				<Container flushRight maxWidth={`85%`} decal={`bg-white-90 p-md`}>
+            <section className="block">
+                <div className="container">
 					<Sidebar size='medium'>
 
 						<aside className="formatted">
 							<p className="fw-600">
 								<ArrowLink 
-									theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
+									theme={{ color: `white`, stroke: `var(--secondary)` }} 
 									href="/ae/speakers"
 								>
 									View All Speakers
@@ -50,7 +48,7 @@ export default function Profile ({ profile }) {
 							</p>
 							<p className="fw-600">
 								<ArrowLink 
-									theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
+									theme={{ color: `white`, stroke: `var(--secondary)` }} 
 									href="/ae/advisory-board"
 								>
 									View Advisory Board
@@ -82,16 +80,17 @@ export default function Profile ({ profile }) {
 						</main>
 
 					</Sidebar>
-				</Container>
+				</div>
 			</section>
 
 
-            <Footer theme={{ footerBg: 'bg-white-90' }} />
+            <Footer />
+            <LenisScroller />
 		</>
     )
 }
 
-Profile.theme = 'ae-2023'
+Profile.theme = 'ae-2024'
 
 
 export async function getStaticPaths() {

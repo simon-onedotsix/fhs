@@ -1,10 +1,10 @@
-import Layout from '../../fuselage/templates/layout'
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
-import { Header, HeaderShim } from '../../fuselage/global/header/header'
-import { Footer } from '../../fuselage/global/footer/footer'
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+
+import { Header } from '../../fuselage/theme/2024/global/common/header/header'
+import { Footer } from '../../fuselage/theme/2024/global/common/footer/footer'
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 
 import { StickySidebar } from "../../fuselage/layout/sticky-sidebar/sticky-sidebar"
@@ -48,7 +48,7 @@ export default function ContentLibrary ({ articles, categories }) {
 
                     return (
                         <section key={category.id} id={category.slug} className="mt-md">
-                            <p className="fs-2 fw-600 caps c-accent">{category.title}</p>
+                            <p className="fs-2 fw-600 caps c-primary-3">{category.title}</p>
                             
                             <div className="columns-3 gap-sm mt-sm">
                                 {
@@ -67,7 +67,7 @@ export default function ContentLibrary ({ articles, categories }) {
                                 }
                             </div>
     
-                            <p className="mt-sm"><ArrowButton href={`/content-library/category/${category.slug}`} theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}>See all in {category.title}</ArrowButton></p>
+                            <p className="mt-sm"><ArrowButton href={`/content-library/category/${category.slug}`} theme={{ arrow: `var(--primary-3)`, border: `var(--primary-3)`, label: `white`}}>See all in {category.title}</ArrowButton></p>
                         </section>
                     )
                 }
@@ -76,19 +76,19 @@ export default function ContentLibrary ({ articles, categories }) {
     }
 
     return (
-        <div className='bg-secondary'>
+        <>
             <Header overlaid inverse />
 
-            <section className="block bg-secondary pt-0">
+            <section className="block bg-primary pt-0">
                 <StickySidebar size='small'>
                     <aside>
-                        <HeaderShim/>
-                        <p className="fs-6 fw-600 c-accent mb-sm">Filter</p>
+                        {/* <HeaderShim/> */}
+                        <p className="fs-6 fw-600 c-primary-3 mb-sm">Filter</p>
                         { handleCategoryMenu() }
                     </aside>
 
                     <main>
-                        <HeaderShim/>
+                        {/* <HeaderShim/> */}
                         <p className="fs-0 fw-600 c-white">Content Library</p>
 
                         { handleCategorisedArticles() }
@@ -97,18 +97,15 @@ export default function ContentLibrary ({ articles, categories }) {
             </section>
 
             <Footer />
-        </div>
+            <LenisScroller />
+        </>
     )
     
 }
 
-ContentLibrary.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
+ContentLibrary.theme = 'ae-2024'
+
+
 
 export async function getStaticProps() {
     const { data } = await craftApolloClient().query({

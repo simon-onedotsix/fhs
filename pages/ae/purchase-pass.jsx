@@ -24,8 +24,8 @@ import {
 
 import handleContentBlocks from "../../lib/content-blocks"
 
-import { Header } from '../../fuselage/global-ae/header/header'
-import { Footer } from '../../fuselage/global-ae/footer/footer'
+import { Header } from '../../fuselage/theme/2024/ae/common/header/header'
+import { Footer } from '../../fuselage/theme/2024/ae/common/footer/footer'
 
 import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
 
@@ -43,28 +43,20 @@ function PurchasePass({ seomatic, entry }) {
 				{ handleSeomaticMeta( seomatic ) } 
             </Head>
 
-			<Header compact shim theme={{ 
-                primary: 'var(--primary)', 
-                secondary: 'var(--secondary)', 
-                text: 'var(--primary)',
-                buttons: 'var(--primary)',
-                buttonText: 'white',
-                headerBg: '#ffffffee',
-                overlayBg: 'var(--primary)',
-            }} />
+			<Header inverse />
 
 			<ThemeBg />
 
 			{ handleContentBlocks( entry.fhisContentBlocks, null, null, 'ae' ) }
 
-			<Footer theme={{ footerBg: 'bg-white-90' }} />
+			<Footer />
 			<LenisScroller />
 
 		</>
 	)
 }
 
-PurchasePass.theme = 'ae-2023'
+PurchasePass.theme = 'ae-2024'
 
 
 

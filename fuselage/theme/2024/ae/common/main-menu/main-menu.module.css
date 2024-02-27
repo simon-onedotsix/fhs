@@ -45,6 +45,9 @@
     text-align: center;
     font-size: 1rem;
     color: var(--primary);
+
+    display: flex;
+    gap: .5rem;
 }
 
 
@@ -54,9 +57,10 @@
         z-index: 200;
         top: 2rem;
         right: 2rem;
+        left: 2rem;
         display: grid;
         grid-template-columns: auto auto;
-        align-items: center;
+        align-items: flex-start;
     }
     .toggle {
         justify-self: flex-end;
@@ -65,6 +69,12 @@
         opacity: 0;
         pointer-events: none;
         transition: all .35s ease 400ms;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem;
+        padding: 0;
     }
     .toggleActions.active {
         opacity: 1;
@@ -99,7 +109,7 @@
     border-radius: calc(var(--default-radius) * 3); */
 
     padding: var(--space-md);
-    padding-top: calc(var(--space-lg) * 2);
+    padding-top: calc(var(--space-lg) * 2.75);
     overflow-y: scroll;
     
     
@@ -122,6 +132,11 @@
     margin-bottom: .75rem;
 }
 
+@media(min-width:600px) {
+    .overlay {
+        padding-top: calc(var(--space-lg) * 2);
+    }
+}
 @media(min-width:900px) {
     .overlay {
         padding: calc(var(--space-lg) * 1.5) var(--space-lg) var(--space-lg);

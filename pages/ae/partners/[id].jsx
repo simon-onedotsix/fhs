@@ -2,8 +2,8 @@ import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/global-ae/header/header'
-import { Footer } from '../../../fuselage/global-ae/footer/footer'
+import { Header } from '../../../fuselage/theme/2024/ae/common/header/header'
+import { Footer } from '../../../fuselage/theme/2024/ae/common/footer/footer'
 
 import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
 import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
@@ -159,7 +159,7 @@ function Partner({ partner }) {
 	)
 }
 
-Partner.theme = 'ae-2023'
+Partner.theme = 'ae-2024'
 
 
 

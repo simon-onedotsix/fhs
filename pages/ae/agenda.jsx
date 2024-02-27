@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
-import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
@@ -12,11 +12,12 @@ import { formatInTimeZone } from 'date-fns-tz'
 import _ from 'lodash'
 import { toHoursAndMinutes } from "../../lib/agenda-utils"
 
-import { Header } from '../../fuselage/global-ae/header/header'
-import { Footer } from '../../fuselage/global-ae/footer/footer'
-import { Session, SessionSpeaker, SessionSpeakerGrid } from '../../fuselage/components/session/session'
+import { Header } from '../../fuselage/theme/2024/ae/common/header/header'
+import { Footer } from '../../fuselage/theme/2024/ae/common/footer/footer'
+import { Session, SessionSpeaker, SessionSpeakerGrid } from '../../fuselage/theme/2024/ae/components/session/session'
+import { Modal } from "../../fuselage/theme/2024/ae/components/modal/modal"
+
 import { Button } from "../../fuselage/components/button/button"
-import { Modal } from "../../fuselage/components/modal/modal"
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
 
@@ -32,7 +33,7 @@ import {
 	MenuItem as MenuItemInner,
 	SubMenu as SubMenuInner 
 } from '@szhsin/react-menu'
-import DROPDOWN from '../../css/app/dropdown.module.css'
+import DROPDOWN from '../../css/app/dropdown-ae-2023.module.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
 
 import CSS from '../../css/app/agenda.module.css'
@@ -225,7 +226,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
         function renderDivider ( day ) {
             return (
-                <p className='fs-4 fw-600 c-primary bg-light px-sm py-xs mb-xs'>
+                <p className='fs-4 fw-600 c-primary bg-secondary px-sm py-xs mb-xs'>
                     { day && formatInTimeZone(new Date( day ), 'Asia/Dubai', 'EEEE dd MMMM') }
                 </p>
             )
@@ -296,7 +297,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                     tags={sessionTags}
                                     theme={getSessionTheme(sessionTags)}
                                 >   
-                                    <p className='h3 c-primary'>{ session.title }</p>
+                                    <p className='h3'>{ session.title }</p>
                                     {/* <small style={{ color: `orangered`}}>{ session.id }</small> */}
                                     
                                     {
@@ -569,21 +570,13 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                 { handleSeomaticMeta( cmsAgendaData.seomatic ) }
 			</Head>
 
-            <Header compact shim theme={{ 
-                primary: 'var(--primary)', 
-                secondary: 'var(--secondary)', 
-                text: 'var(--primary)',
-                buttons: 'var(--primary)',
-                buttonText: 'white',
-                headerBg: '#ffffffee',
-                overlayBg: 'var(--primary)',
-            }} />
+            <Header inverse />
 
 
-            <section className="block">
+            <section className="block pt-0">
                 {/* filter */}
                 <div className="container" style={{ zIndex: 3 }}>
-                    <p className="fs-0 fw-600 c-primary">2023 Agenda</p>
+                    <p className="fs-0 fw-600">2023 Agenda</p>
 
                     <div className={CSS.filterLayout}>
 
@@ -704,8 +697,8 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                                 :
                                 <Avatar src={`/assets/ui/avatar-fallback.png`}/>
                         }
-                        <p className="fs-5 fw-600 c-primary mt-sm lh-1">{ modalContent.name }</p>
-                        <p className="fs-sm fw-400 mt-xs">{modalContent.title} <br/>{modalContent.company}</p>
+                        <p className="fs-5 fw-600 c-white mt-sm lh-1">{ modalContent.name }</p>
+                        <p className="fs-sm fw-400 c-secondary mt-xs">{modalContent.title} <br/>{modalContent.company}</p>
                     </aside>
                     
                     <SimpleBar style={{ maxHeight: 300 }}>
@@ -716,13 +709,14 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
             </Modal>
 
-            <Footer theme={{ footerBg: 'bg-white' }} />
+            <Footer />
+            <LenisScroller />
 
         </>
     )
 }
 
-Agenda.theme = 'ae-2023'
+Agenda.theme = 'ae-2024'
 
 
 

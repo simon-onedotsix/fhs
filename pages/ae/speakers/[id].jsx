@@ -1,10 +1,10 @@
-import { ThemeBg } from "../../../fuselage/theme/2023/ae/theme-bg"
-
 import Image from "next/image"
 import Link from "next/link"
 
-import { Header, HeaderShim } from '../../../fuselage/global-ae/header/header'
-import { Footer } from "../../../fuselage/global-ae/footer/footer"
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
+
+import { Header } from '../../../fuselage/theme/2024/ae/common/header/header'
+import { Footer } from '../../../fuselage/theme/2024/ae/common/footer/footer'
 import { Sidebar } from "../../../fuselage/layout/sidebar/sidebar"
 import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
 import { OffsiteLink } from "../../../fuselage/components/offsite-link/offsite-link"
@@ -123,28 +123,16 @@ function Speaker({ speaker, sessions }) {
 	return (
 
 		<>
-			<ThemeBg />
+			<Header />
 
-			<Header compact shim theme={{ 
-				primary: 'var(--primary)', 
-				secondary: 'var(--secondary)', 
-				text: 'var(--primary)',
-				buttons: 'var(--primary)',
-				buttonText: 'white',
-				headerBg: '#ffffffee',
-				overlayBg: 'var(--primary)',
-			}} />
-
-
-
-			<section className="block flush">
-				<Container flushRight maxWidth={`85%`} decal={`bg-white-90 p-md`}>
+			<section className="block">
+				<div className="container">
 					<Sidebar size='medium'>
 
 						<aside className="formatted">
 							<p className="fw-600">
 								<ArrowLink 
-									theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
+									theme={{ color: `white`, stroke: `var(--secondary)` }} 
 									href="/ae/speakers"
 								>
 									View All Speakers
@@ -152,7 +140,7 @@ function Speaker({ speaker, sessions }) {
 							</p>
 							<p className="fw-600">
 								<ArrowLink 
-									theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
+									theme={{ color: `white`, stroke: `var(--secondary)` }} 
 									href="/ae/advisory-board"
 								>
 									View Advisory Board
@@ -198,18 +186,19 @@ function Speaker({ speaker, sessions }) {
 						</main>
 
 					</Sidebar>
-				</Container>
+				</div>
 			</section>
 
 
 			
-			<Footer theme={{ footerBg: 'bg-white-90' }} />
+			<Footer />
+			<LenisScroller />
 		
 		</>
 	)
 }
 
-Speaker.theme = 'ae-2023'
+Speaker.theme = 'ae-2024'
 
 
 

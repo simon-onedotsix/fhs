@@ -1,34 +1,28 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 
-import { motion } from "framer-motion"
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+import { motion, useScroll, useTransform } from "framer-motion"
 
 import Head from "next/head"
 import Image from "next/image"
-import Script from "next/script"
 
-import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
+import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 
-import { Header } from '../../fuselage/global-ae/header/header'
-import { Footer } from '../../fuselage/global-ae/footer/footer'
-import { CtaTab } from "../../fuselage/components/cta-tab/cta-tab"
+import { Header } from '../../fuselage/theme/2024/ae/common/header/header'
+import { Footer } from '../../fuselage/theme/2024/ae/common/footer/footer'
+import { HeroUnitVideo } from "../../fuselage/theme/2024/ae/blocks/hero-unit-video/hero-unit-video"
+import { FhsIcon, FhsIconKeyline } from "../../fuselage/theme/2024/ae/components/logos/fhs-brand"
+import { SpeakerCarousel } from "../../fuselage/theme/2024/ae/blocks/speaker-carousel/speaker-carousel"
+import { ImpactFigure } from "../../fuselage/theme/2024/ae/components/impact-figure/impact-figure"
+import { Button } from "../../fuselage/theme/2024/ae/components/button/button"
 
-import { Container } from '../../fuselage/theme/2023/ae/layout/container/container'
-import { LogoBubble, LogoBubbleGrid, HostSponsorLogo, HostSponsorGrid } from '../../fuselage/theme/2023/ae/launch-page'
-import { Headline } from "../../fuselage/theme/2023/ae/headline/headline"
-import { FhsLogo } from '../../fuselage/components/fhs-logo/fhs-logo'
-import { AhicLogo } from '../../fuselage/components/ahic-logo/ahic-logo'
-import { ImpactFigure } from "../../fuselage/theme/2023/ae/impact-figure"
-import { SpeakerCarousel } from "../../fuselage/blocks/speaker-carousel/speaker-carousel"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
-import { Form } from '../../fuselage/blocks/form/form'
-import { Button } from "../../fuselage/components/button/button"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
-import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
-import { PopupOverlay } from "../../fuselage/components/popup-overlay/popup-overlay"
+
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 
 import { 
@@ -47,7 +41,7 @@ import {
 
 import handleSeomaticMeta from '../../lib/seomatic'
 
-import CSS from '../../fuselage/theme/2023/ae/homepage.module.css'
+import CSS from '../../fuselage/theme/2024/ae/css/homepage.module.css'
 
 
 const photos = [
@@ -124,7 +118,7 @@ const photos = [
 export default function Home ({ globals, entry, seomatic, speakerData, partnerData }) {
 
     const [ showModal, setShowModal ] = useState(false)
-    const [ modalContent, setModalContent ] = useState(null)
+    const [ modalContent, setModalContent ] = useState()
 
     // console.log('entry:', entry)
 	// console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
@@ -134,167 +128,223 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
     let selectedCmsSpeakers = entry.fhisContentBlocks.find( obj => obj.__typename === 'fhisContentBlocks_profilesCarousel_BlockType')
     // console.log('selectedCmsSpeakers:', selectedCmsSpeakers)
 
+
+    // scroll animation
+    let introRef = useRef(null)
+    let { scrollYProgress } = useScroll({ 
+        target: introRef,
+        offset: ["start 75%", "end 0%"]
+    })
+
+    let y = useTransform( scrollYProgress, [0, 1], ["-15%", "5%"])
+
     return (
         <>
             <Head>
 				{ handleSeomaticMeta( seomatic ) }
 			</Head>
         
-            <ThemeBg />
 
-            <Header compact shim theme={{ 
-                primary: 'var(--primary)', 
-                secondary: 'var(--secondary)', 
-                text: 'var(--primary)',
-                buttons: 'var(--primary)',
-                buttonText: 'white',
-                headerBg: '#ffffffee',
-                overlayBg: 'var(--primary)',
-            }} />
+            <Header overlaid inverse />
 
 
+            <HeroUnitVideo>
+                <motion.p 
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    // viewport={{ once: true }}
+                    transition={{ type: "spring", bounce: 0.25 }}
 
-            <section className="block flush">
-                <Container decal={`bg-white-90 p-md`}>
-                    <Slide><p className='fs-3 fw-300 caps mb-xs'>30 September - 02 October 2024</p></Slide>
-                    <Headline />
-                    <Slide delay={.5}><p className='fs-5 fw-300 caps mb-lg'>Madinat Jumeirah, Dubai</p></Slide>
-                    
-                    <Fade>
-                        <div className="flex flex-wrap gap-xxs">
-                            <span 
-                                onClick={() => {
-                                    console.log('modal button clicked')
-                                        setModalContent(
-                                            <>
-                                                <div className={CSS.popupHeader}>
-                                                    <p className="fs-4 fw-600 lh-1 mb-sm">Download Event Brochure</p>
-                                                </div>
+                    className={`fs-0 fw-700 c-white lh-1 center`} 
+                >
+                    Invest in Our Future
+                </motion.p>
 
-                                                <HubspotForm portalId={`14527187`} formId={'40f2dd9c-9f5a-41c2-9d78-f35a170107d4'} />
-                                            </>
-                                        )
-                                        setShowModal(true)
-                                
-                                }}>
-                                <Button decal={`fs-4 fw-600`} target={`_blank`}>Download Event Brochure</Button>
-                            </span>
-                            
-                            <span 
-                                onClick={() => {
-                                    console.log('modal button clicked')
-                                        setModalContent(
-                                            <>
-                                                <div className={CSS.popupHeader}>
-                                                    <p className="fs-4 fw-600 lh-1 mb-sm">Download FHS 2023 Post-event Report</p>
-                                                    <img className={CSS.popupHeaderImage} src="/assets/site/ae/ae-2024-brochure.png" alt=""/>
-                                                </div>
+                <motion.p 
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    // viewport={{ once: true }}
+                    transition={{ type: "spring", bounce: 0.25 }}
 
-                                                <HubspotForm portalId={`14527187`} formId={'c2b14f19-e6b6-478f-83ac-e76e9facc2c6'} />
-                                            </>
-                                        )
-                                        setShowModal(true)
-                                
-                                }}>
-                                <Button decal={`fs-4 fw-600`} target={`_blank`}>Download FHS 2023 Post-event Report</Button>
-                            </span>
+                    className={`fs-5 fw-500 c-white center mt-xs`} 
+                >
+                    30 SEP - 02 OCT 2024, Madinat Jumeirah, Dubai
+                </motion.p>
 
-                        </div>
+                <Fade>
+                    <div className="mt-sm center">
+                        <Pop inline>
+                            <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Now</Button>
+                        </Pop>
+                    </div>
+                </Fade>
+            </HeroUnitVideo>
 
-                        {/* <Button href={`https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1`} decal={`fs-4 fw-600`} target={`_blank`}>FHS World 2024 Brochure</Button> */}
-                    </Fade>
-                </Container>
-                
-                <Container flushRight decal={`bg-white-90`}>
-              
-                        <div className="bg-dark p-md">
-                            <Slide><p className='fs-1 fw-600 lh-1'>Join the FHS 2024 Launch Reception!</p></Slide>
-                        </div>
 
-                        <Image src="/assets/site/ae/2024-world-lauch-reception.jpg" layout={'responsive'} width={2200} height={1467}/>
+            {/* HOST SPONSOR */}
 
-                        <div className="p-md formatted">
-                            <Fade>
-                                <p className='fs-4 fw-500 maxw-45'>Registrations for our flagship Future Hospitality Summit 2024, now transformed and titled &apos;FHS World&apos; are now open.</p>
-                                <p className='fs-5 fw-300 maxw-45 mb-sm'>Purchasing your ticket now provides access to the FHS launch reception hosted at XU Dubai on the 27th of February. Get a chance to meet and interact with the FHS Advisory Board and start making connections ahead of the event!</p>
-                            </Fade>
-                            <Fade>
-                                <div className="flex flex-wrap gap-xxs">
-                                    <Button href={`/ae/purchase-pass`} decal={`fs-4 fw-600`}>
-                                        Register Now
-                                    </Button>
-                                    <Button href={`/ae/partner-with-us`} decal={`fs-4 fw-600`}>
-                                        Partner With Us
-                                    </Button>
-                                </div>
-                            </Fade>
-                        </div>
-                  
-                </Container>
-
-                <Container decal={`bg-white-90 p-md formatted`}>
-                    <Slide><p className='fs-1 fw-600 lh-1 maxw-45'>What&apos;s new for FHS World 2024</p></Slide>
-                    <Fade>
-                        <p className='fs-5 fw-500 maxw-45 mt-sm'>This year we are creating an intersection for the world of hospitality where the industry invests in its future. </p>
-                        <p className='fs-6 fw-300 maxw-45'>We are returning to <strong>Dubai</strong> to a much bigger, bolder space - Madinat Jumeirah. A more personalised and immersive experience with new features like <strong>Investors Lounge</strong>, <strong>ESG Lab</strong>, <strong>Country Pavilions</strong>, an <strong>Expanded Exhibition Area</strong>, and much more.</p>
-                        <p className='fs-6 fw-300 maxw-45 mt-xs mb-sm'>Sponsorship spaces at the event are limited and are selling out fast. If you are interested in booking a stand or a pavilion, please feel free to reach out to our sponsorship team.</p>
-                    </Fade>
-                    <Fade>
-                        <Button href={`/ae#footer`} decal={`fs-4 fw-600`}>
-                            Get in touch
-                        </Button>
-                    </Fade>
-                </Container>
+            <section className="block bg-default">
+                <div className="container center">
+                    <p className="fs-3 fw-600 c-secondary caps">Host Sponsor</p>
+                    <div className={`${CSS.hostSponsorLogoWrapper} mt-xs mx-auto`}>
+                        <Pop>
+                            <Image src={`/assets/site/ae/jumeirah.png`} layout={`responsive`} width={923} height={354} />
+                        </Pop>
+                    </div>
+                </div>
             </section>
 
+
+            {/* INTRO */}
+
+            <section ref={introRef} className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
+                <div className="container columns-2 gap-md">
+              
+                    <section className={CSS.introHeadline}>
+                        <Slide><p className='fs-0 fw-600 lh-1 maxw-20'>Join the <span className="c-secondary">FHS 2024</span> Launch Reception!</p></Slide>
+                    </section>
+
+                    <section>
+                        <Fade>
+                            <Image src="/assets/site/ae/2024-world-lauch-reception.jpg" layout={'responsive'} width={2200} height={1467}/>
+                        </Fade>
+
+                        <div className="formatted mt-md">
+                            <Fade>
+                                <p className='fs-4 fw-500 maxw-45'>Registrations for our flagship <span className="c-secondary">Future Hospitality Summit 2024</span>, now transformed and titled &apos;FHS World&apos; are now open.</p>
+                                <p className='fs-5 fw-300 maxw-45 mb-sm'>Purchasing your ticket now provides access to the FHS launch reception hosted at XU Dubai on the 27th of February. Get a chance to meet and interact with the FHS Advisory Board and start making connections ahead of the event!</p>
+                            </Fade>
+                            <Pop inline>
+                                <Button 
+                                    href={`/ae/purchase-pass`} 
+                                    theme={{ 
+                                        background: `var(--secondary-2)`, 
+                                        hover: `var(--secondary-2-dark)`, 
+                                        color: `white`
+                                    }} 
+                                    decal={`fs-5 fw-600`}
+                                >
+                                    Register Now
+                                </Button>
+                            </Pop>
+                        </div>
+                    </section>
+                  
+                </div>
+
+                <motion.div className={CSS.introGraphicWapper} style={{ y }}>
+                    <FhsIconKeyline inverse />
+                </motion.div>
+            </section>
+
+            
+            {/* LAUNCH STATEMENT */}
+
+            <section className="block bg-white o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
+                <div className="container columns-2 gap-md formatted">
+
+                    <section className="flex jc-center ai-center">
+                        <motion.div 
+                            className={CSS.fhsGraphicWrapper}
+
+                            initial={{ x: 0 , y: 0, rotate: -45, scale: 0.1, opacity: 0 }}
+                            whileInView={{ x: 0, y: 0, rotate: 0, scale: 1, opacity: 1 }}
+                            // viewport={'once'}
+                            transition={{ type: "spring", bounce: 0.25 }}
+                        >
+                            <FhsIcon />
+                        </motion.div>
+                    </section>
+
+                    <section>
+                        <Fade>
+                            <p className='fs-0 fw-600 lh-1 maxw-45 c-primary'>
+                                What&apos;s new for <span className="c-secondary">Future Hospitality Summit</span> <span className="c-accent">2024</span>
+                            </p>
+                        </Fade>
+                        <Fade>
+                            <p className='fs-5 fw-500 maxw-45 mt-sm'>This year we are creating an intersection for the world of hospitality where the industry invests in its future. </p>
+                            <p className='fs-6 fw-300 maxw-45'>We are returning to <strong>Dubai</strong> to a much bigger, bolder space - Madinat Jumeirah. A more personalised and immersive experience with new features like <strong>Investors Lounge</strong>, <strong>ESG Lab</strong>, <strong>Country Pavilions</strong>, an <strong>Expanded Exhibition Area</strong>, and much more.</p>
+                            <p className='fs-6 fw-300 maxw-45 mt-xs mb-sm'>Sponsorship spaces at the event are limited and are selling out fast. If you are interested in booking a stand or a pavilion, please feel free to reach out to our sponsorship team.</p>
+                        </Fade>
+                        <Pop inline>
+                            <Button 
+                                href={`/ae/get-in-touch`} 
+                                theme={{ 
+                                    background: `var(--secondary-2)`, 
+                                    hover: `var(--secondary-2-dark)`, 
+                                    color: `white`
+                                }} 
+                                decal={`fs-5 fw-600`}
+                            >
+                                Get in touch
+                            </Button>
+                        </Pop>
+                    </section>
+
+                </div>
+            </section>
+
+
+            {/* SPEAKER HIGHLIGHTS */}
 
             {
                 selectedCmsSpeakers &&
                 <SpeakerCarousel 
                     heading={`Featured Speakers`} 
                     text={``}
-                    decal={'bg-light'}
+                    decal={'bg-secondary'}
                     ctaLink={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLink : ''}
                     ctaLabel={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLabel : ''}
                     anchorId={``}
                 >
                     {
                         selectedCmsSpeakers.profiles.map( profile => (
-                            <SpeakerCard
-                                key={profile.id}
-                                url={`ae/speakers/profile/${profile.slug}`}
-                                photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
-                                fullName={profile.title}
-                                jobTitle={profile.positions[0].jobTitle}
-                                company={profile.positions[0].organisation}
-                            />
+                            <Pop key={profile.id}>
+                                <SpeakerCard
+                                    url={`ae/speakers/profile/${profile.slug}`}
+                                    photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
+                                    fullName={profile.title}
+                                    jobTitle={profile.positions[0].jobTitle}
+                                    company={profile.positions[0].organisation}
+                                />
+                            </Pop>
                         ))
                     }
                 </SpeakerCarousel>
             }
 
 
-            <section className="block flush">
-                <Container decal={`bg-white-90 p-md`}>
-                    <Slide><p className="fs-0 caps lh-1 maxw-50 mb-md" style={{ lineHeight: 0.9}}>2023 in numbers</p></Slide>
-                    
-                    <div className='columns-2 gap-sm'>
-                        <ImpactFigure value={`1200`} label={`Delegates`} />
-                        <ImpactFigure value={`40`} label={`Countries`} />
-                        <ImpactFigure value={`400`} label={`Companies`} />
-                        <ImpactFigure value={`200`} label={`Speakers`} />
+            {/* IMPACT FIGURES */}
+
+            <section className="block bg-white o-hidden">
+                <div className="container">
+                    <div className={CSS.impactFiguresGrid}>
+                        <Slide><p className="fs-0 fw-700 c-primary lh-1">2023 in Numbers</p></Slide>
+                        
+                        <div className='columns-4 gap-sm'>
+                            <ImpactFigure value={`1200`} label={`Delegates`} />
+                            <ImpactFigure value={`40`} label={`Countries`} />
+                            <ImpactFigure value={`400`} label={`Companies`} />
+                            <ImpactFigure value={`200`} label={`Speakers`} />
+                        </div>
                     </div>
-                </Container>
+                </div>
+            </section>
 
-                <Container flushRight decal={`bg-light`}>
-                    <Slide><p className='fs-0 caps p-md lh-1'>Highlights from FHS&nbsp;2023</p></Slide>
+
+            {/* VIDEO + PHOTO HIGHLIGHTS */}
+
+            <section className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
+                <div className={`${CSS.highlightVideoGrid} container`}>
+                    <Slide><p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS&nbsp;2023</span></p></Slide>
                     <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=7Ar-CT0z23k&t=2s`} />
-                </Container>
+                </div>
 
-                <Container decal={``}>
-                    <Slide><p className='bg-light fs-0 caps p-md lh-1'>2023 in photos</p></Slide>
+                <div className={`${CSS.photoGrid} container`}>
+                    <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2023 in <span className='c-secondary'>Photos</span></p></Slide>
                     
-                    <div className="p-md bg-white-90 columns-3 gap-xs">
+                    <div className="columns-3 gap-xs mt-md">
                         {
                             photos.map( (photo, index) => (
                                 <Pop key={index}>
@@ -309,39 +359,37 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         </p>
                     </div>
 
-                </Container>
+                </div>
+
+                <motion.div className={CSS.highlightsGraphicWapper} style={{ y }}>
+                    <FhsIconKeyline inverse />
+                </motion.div>
+            </section>
+
+
+            {/* SPONSORSHIP FORM */}
+
+            <section className="block bg-white o-hidden">
+                <div className="container columns-2 gap-lg">
+                    <div className="formatted">
+                        <Slide><h1>Become a <span className='c-secondary'>Sponsor</span></h1></Slide>
+                        <Fade><p>For over two decades - government leaders, tourism ministries, global travel &amp; tourism associations, the world&apos;s most influential hospitality brands, hotel owners &amp; investors, renowned restaurant groups, airlines &amp; aviation authorities, destination developers, asset managers, financial groups and consultants - have been participating in The Bench&apos;s events for their respective objectives. These include AHIF, GRIF, FHS, AHF, IDEEA, AviaDev and RENEW - where industry players showcase their brands, position themselves as thought leaders or innovators, and connect with the right opportunities and knowledge. Speak with one of our sales team members to understand how you can make the most of this unique opportunity!<br /></p></Fade>
+                    </div>
+
+                    <div>
+                        <HubspotForm portalId={`14527187`} formId={`f2335c74-d011-4635-830c-8d44ec22bb58`} />
+                    </div>
+                </div>
             </section>
 
 
 
-            <Form 
-                theme={`light`} 
-                maxWidth={`block.maxWidth`}
-                portalId={`14527187`}
-                formId={`f2335c74-d011-4635-830c-8d44ec22bb58`}
-            >
-                {`<h1>BECOME A SPONSOR</h1>
-                <p>For over two decades - government leaders, tourism ministries, global travel &amp; tourism associations, the world&apos;s most influential hospitality brands, hotel owners &amp; investors, renowned restaurant groups, airlines &amp; aviation authorities, destination developers, asset managers, financial groups and consultants - have been participating in The Bench&apos;s events for their respective objectives. These include AHIF, GRIF, FHS, AHF, IDEEA, AviaDev and RENEW - where industry players showcase their brands, position themselves as thought leaders or innovators, and connect with the right opportunities and knowledge. Speak with one of our sales team members to understand how you can make the most of this unique opportunity!<br /></p>`}
-            </Form>
+
+            <Footer theme={{ footerBg: 'bg-primary' }} />
+            <LenisScroller />
 
 
-
-
-            <span id="footer"/>
-            <Footer theme={{ footerBg: 'bg-white' }} />
-
-            
-            {/* <CtaTab iconColor={`white`} buttonColor={`var(--primary)`} /> */}
-
-
-            <PopupOverlay onClose={() => setShowModal(false)} show={showModal}>
-
-                { modalContent } 
-
-            </PopupOverlay>
-
-
-            <Script id="chatbot" strategy="afterInteractive">
+            {/* <Script id="chatbot" strategy="afterInteractive">
                 {`
                     (function(d,t) {
                         var BASE_URL="https://app.chatlyn.com";
@@ -358,11 +406,13 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         }
                     })(document,"script");;
                 `}
-            </Script>
+            </Script> */}
         </>
     )
 }
-Home.theme = 'ae-2023'
+Home.theme = 'ae-2024'
+
+
 
 
 export async function getStaticProps({ params, preview, previewData }) {
