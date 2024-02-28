@@ -197,7 +197,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             {/* INTRO */}
 
-            <section ref={introRef} className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
+            {/* <section ref={introRef} className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className="container columns-2 gap-md">
               
                     <section className={CSS.introHeadline}>
@@ -235,7 +235,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 <motion.div className={CSS.introGraphicWapper} style={{ y }}>
                     <FhsIconKeyline inverse />
                 </motion.div>
-            </section>
+            </section> */}
 
             
             {/* LAUNCH STATEMENT */}
