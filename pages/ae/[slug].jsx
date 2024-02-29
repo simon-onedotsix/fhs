@@ -42,7 +42,7 @@ export default function Page ({ entry, seomatic }) {
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-            <Header inverse />
+            <Header compact />
             
             {handleContentBlocks( entry.fhisContentBlocks, null, null, 'ae' )}
 

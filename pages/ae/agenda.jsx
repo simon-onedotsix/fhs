@@ -570,10 +570,10 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
                 { handleSeomaticMeta( cmsAgendaData.seomatic ) }
 			</Head>
 
-            <Header inverse />
+            <Header compact />
 
 
-            <section className="block pt-0">
+            <section className="block">
                 {/* filter */}
                 <div className="container" style={{ zIndex: 3 }}>
                     <p className="fs-0 fw-600">2023 Agenda</p>

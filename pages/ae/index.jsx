@@ -145,7 +145,6 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 				{ handleSeomaticMeta( seomatic ) }
 			</Head>
         
-
             <Header overlaid inverse />
 
 
@@ -243,6 +242,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     </Fade>
                 </div>
             </section>
+
 
             {/* INTRO */}
 

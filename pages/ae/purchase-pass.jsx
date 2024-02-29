@@ -43,7 +43,7 @@ function PurchasePass({ seomatic, entry }) {
 				{ handleSeomaticMeta( seomatic ) } 
             </Head>
 
-			<Header inverse />
+			<Header compact />
 
 			<ThemeBg />
 

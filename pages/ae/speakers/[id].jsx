@@ -123,7 +123,7 @@ function Speaker({ speaker, sessions }) {
 	return (
 
 		<>
-			<Header />
+			<Header compact />
 
 			<section className="block">
 				<div className="container">

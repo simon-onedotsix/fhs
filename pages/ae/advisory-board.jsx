@@ -26,7 +26,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-            <Header inverse />
+            <Header compact />
 
 			<section className="block">
 				<div className="container">

@@ -63,7 +63,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 				{ handleSeomaticMeta( seomatic ) }  
             </Head>
 
-			<Header inverse/>
+			<Header compact/>
 
 
 			{/* PARTNERS */}

@@ -72,7 +72,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
                 <title>FHS | Content Library</title>
             </Head>
 
-            <Header inverse />
+            <Header compact />
 
             <section className="block flush bg-default pt-0">
                 <StickySidebar size='small'>

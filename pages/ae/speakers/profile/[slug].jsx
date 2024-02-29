@@ -22,15 +22,7 @@ export default function Profile ({ profile }) {
 
     return (
         <>
-            <Header compact shim theme={{ 
-                primary: 'var(--primary)', 
-                secondary: 'var(--secondary)', 
-                text: 'var(--primary)',
-                buttons: 'var(--primary)',
-                buttonText: 'white',
-                headerBg: '#ffffffee',
-                overlayBg: 'var(--primary)',
-            }} />
+            <Header compact  />
 
 
             <section className="block">

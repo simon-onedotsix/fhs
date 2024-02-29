@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 3.5rem auto;
     align-items: center;
-    gap: var(--space-xs)
+    gap: var(--space-xs);
 }
 .brand {
     text-transform: uppercase;

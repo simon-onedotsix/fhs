@@ -98,15 +98,7 @@ function Partner({ partner }) {
 	return (
 
 		<>
-			<Header compact shim theme={{ 
-                primary: 'var(--primary)', 
-                secondary: 'var(--secondary)', 
-                text: 'var(--primary)',
-                buttons: 'var(--primary)',
-                buttonText: 'white',
-                headerBg: '#ffffffee',
-                overlayBg: 'var(--primary)',
-            }} />
+			<Header compact />
 
 
 			<section className="block pt-0">
@@ -115,7 +107,6 @@ function Partner({ partner }) {
 					<StickySidebar size='medium'>
 
 						<aside className="formatted">
-							<HeaderShim/>
 							<p className="fw-600"><ArrowLink href="/ae/partners">View all partners</ArrowLink></p>
 
 							<div className="bg-white p-sm mt-sm center rad-sm">
@@ -137,7 +128,6 @@ function Partner({ partner }) {
 						</aside>
 						
 						<main className="maxw-60">
-							<HeaderShim/>
 							{/* <p className='fs-2 fw-600 lh-1 c-secondary maxw-40'>{GetBizzaboPartnerLevelTitle(partner.level)}</p> */}
 							<p className="fs-3 fw-600 caps">{partner.name}</p>	
 							{

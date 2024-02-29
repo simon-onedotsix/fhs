@@ -173,7 +173,7 @@ export default function Article ({ entry }) {
 
     return (
         <>
-            <Header inverse />
+            <Header compact />
                         
 
             <section className="block flush pt-0">

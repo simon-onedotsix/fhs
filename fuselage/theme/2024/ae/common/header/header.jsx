@@ -84,12 +84,16 @@ export const Header = ({ compact, overlaid, inverse }) => {
                 />
             </span>
         
-            <header ref={hideEventsBarTrigger} className={`${CSS.layout} ${overlaid && CSS.overlaid}`}>
+            <header ref={hideEventsBarTrigger} className={`${CSS.layout} ${overlaid && CSS.overlaid} ${compact && CSS.compact}`}>
 
-                <div className={`${CSS.brand} ${compact && CSS.compact}`}>
-                    <Link href={`/ae`}><a><FhsLockup inverse /></a></Link>
-                </div>
-                
+                <section className='flex jc-center flex-wrap gap-sm ai-center'>
+                    <div className={`${CSS.brand}`}>
+                        <Link href={`/ae`}><a className={CSS.logo}><FhsLockup inverse /></a></Link>
+                    </div>
+                    <div className={CSS.venue}>
+                        <p className='lh-2'><span className='fw-600'>30 SEP - 02 OCT 2024</span> <br/>Madinat Jumeirah, Dubai</p>
+                    </div>
+                </section>
                 <div className={`${CSS.nav} ${ !inView && CSS.fixed}`}>
                     <MainMenu mainMenu={null} otherEvents={otherEvents} />
                 </div>

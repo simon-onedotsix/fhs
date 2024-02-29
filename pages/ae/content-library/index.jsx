@@ -78,7 +78,7 @@ export default function ContentLibrary ({ articles, categories }) {
     return (
         <>
 
-            <Header inverse />
+            <Header compact />
 
             <section className="block flush pt-0">
                 <StickySidebar size='small'>
