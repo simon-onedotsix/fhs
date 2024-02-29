@@ -16,12 +16,12 @@ const otherEvents = [
         url: '/sa',
         target: false
     },
-    {
-        id: 3,
-        title: 'FHS World',
-        url: '/ae',
-        target: false
-    },
+    // {
+    //     id: 3,
+    //     title: 'FHS World',
+    //     url: '/ae',
+    //     target: false
+    // },
     {
         id: 2,
         title: 'GRIF Saudi Arabia',

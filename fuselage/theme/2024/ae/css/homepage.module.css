@@ -83,3 +83,30 @@
         display: none;
     }
 }
+
+
+/* modal popup */
+
+.popupHeader {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    margin-bottom: var(--space-sm);
+}
+
+.popupHeaderImage {
+    display: block;
+    max-width: 14rem;
+}
+
+@media(min-width:800px){
+    .popupHeader {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .popupHeaderImage {
+        max-width: 18rem;
+    }
+    
+}

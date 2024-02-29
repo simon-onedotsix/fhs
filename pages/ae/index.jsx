@@ -22,6 +22,7 @@ import { Button } from "../../fuselage/theme/2024/ae/components/button/button"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
+import { PopupOverlay } from "../../fuselage/components/popup-overlay/popup-overlay"
 
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 
@@ -194,6 +195,54 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 </div>
             </section>
 
+
+            {/* DOWNLOADS */}
+
+            <section className="block">
+                <div className="container">
+                    <Fade>
+                        <div className="flex flex-wrap jc-center gap-xs">
+                            <span 
+                                onClick={() => {
+                                    console.log('modal button clicked')
+                                        setModalContent(
+                                            <>
+                                                <div className={CSS.popupHeader}>
+                                                    <p className="fs-5 fw-600 lh-1 mb-sm">Download Event Brochure</p>
+                                                </div>
+
+                                                <HubspotForm portalId={`14527187`} formId={'40f2dd9c-9f5a-41c2-9d78-f35a170107d4'} />
+                                            </>
+                                        )
+                                        setShowModal(true)
+                                
+                                }}>
+                                <Button decal={`fs-5 fw-600`} theme={{ background: `var(--secondary-1)`, hover: `white`, color: `var(--primary)`}} target={`_blank`}>Download Event Brochure</Button>
+                            </span>
+                            
+                            <span 
+                                onClick={() => {
+                                    console.log('modal button clicked')
+                                        setModalContent(
+                                            <>
+                                                <div className={CSS.popupHeader}>
+                                                    <p className="fs-4 fw-600 lh-1 mb-sm">Download FHS 2023 Post-event Report</p>
+                                                    <img className={CSS.popupHeaderImage} src="/assets/site/ae/ae-2024-brochure.png" alt=""/>
+                                                </div>
+
+                                                <HubspotForm portalId={`14527187`} formId={'c2b14f19-e6b6-478f-83ac-e76e9facc2c6'} />
+                                            </>
+                                        )
+                                        setShowModal(true)
+                                
+                                }}>
+                                <Button decal={`fs-5 fw-600`} theme={{ background: `var(--secondary-1)`, hover: `white`, color: `var(--primary)`}} target={`_blank`}>Download FHS 2023 Post-event Report</Button>
+                            </span>
+
+                        </div>
+                    </Fade>
+                </div>
+            </section>
 
             {/* INTRO */}
 
@@ -385,8 +434,15 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
 
-            <Footer theme={{ footerBg: 'bg-primary' }} />
+            <Footer />
             <LenisScroller />
+
+
+            <PopupOverlay onClose={() => setShowModal(false)} show={showModal}>
+
+                { modalContent } 
+
+            </PopupOverlay>
 
 
             {/* <Script id="chatbot" strategy="afterInteractive">

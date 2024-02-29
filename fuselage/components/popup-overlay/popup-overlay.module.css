@@ -29,7 +29,6 @@
     overflow: hidden;
 
     padding: var(--space-md);
-    background-color: white;
 
     transform: scale(.9);
     transition: transform 350ms ease-in-out;
@@ -84,10 +83,10 @@
     background-color: transparent;
 }
 .closeButton svg {
-    stroke: grey;
+    stroke: rgb(152, 152, 152);
     stroke-width: 3.5px;
 
-    transition: all 350ms ease-in-out;
+    transition: all 250ms ease-in-out;
 }
 
 @media(hover:hover) {

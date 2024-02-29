@@ -298,8 +298,8 @@
     color: white;
 }
 [data-theme='ae-2024'] .bg-primary .form input[type='submit'] {
-    background-color: var(--dark);
-    border-color: var(--dark);
+    background-color: var(--accent);
+    border-color: var(--accent);
     color: white;
 }
 [data-theme='ae-2024'] .bg-primary .form input[type='submit']:hover {
