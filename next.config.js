@@ -19,6 +19,16 @@ const nextConfig = {
 		return config
 	},
 
+	async redirects() {
+		return [
+		  {
+			source: '/ae/:path*',
+			destination: '/world/:path*',
+			permanent: true,
+		  },
+		]
+	}
+
 }
 
 module.exports = nextConfig
