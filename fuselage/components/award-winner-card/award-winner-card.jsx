@@ -7,11 +7,11 @@ export const AwardWinnerCard = ({ index, year, award, url, photoUrl, fullName, j
     return (
         <a href={url} className={CSS.layout}>
 
-            <p className='fs-2 ff-space' style={{ opacity: index < 1 ? 1 : 0 }}>{ year }</p>
+            <p className='fs-2' style={{ opacity: index < 1 ? 1 : 0 }}>{ year }</p>
                                             
             <div className={CSS.award}>
-                <Award />
-                <p className='fs-6 fw-300 lh-1 c-accent caps ff-space'>{ award }</p>
+                <Award fill={`var(--secondary)`} />
+                <p className='fs-6 fw-400 lh-1 c-secondary caps'>{ award }</p>
             </div>
 
             <div className={CSS.photoContainer}>
@@ -25,8 +25,16 @@ export const AwardWinnerCard = ({ index, year, award, url, photoUrl, fullName, j
 
             <div className='pt-xs'>
                 <p className='fs-5 fw-600 lh-1 caps'>{ fullName }</p>
-                <p className='fs-sm fw-300 mt-xxs'>{ jobTitle }</p>
-                <p className='fs-sm fw-500'>{ company }</p>
+                {
+                    jobTitle ?
+                        <p className='fs-sm fw-300 mt-xxs'>{ jobTitle }</p>
+                    : null
+                }
+                {
+                    company ?
+                        <p className='fs-sm fw-500'>{ company }</p>
+                    : null
+                }
             </div>
 
         </a>

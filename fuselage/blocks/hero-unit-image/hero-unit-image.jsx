@@ -1,23 +1,25 @@
-import { Parallax } from 'react-scroll-parallax'
-import ReactPlayer from 'react-player'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 import Image from 'next/image'
 
-import { SectionDivider } from '../section-divider/section-divider'
+import { SectionDivider } from '../../theme/2024/ae/blocks/section-divider/section-divider'
 
 import CSS from './hero-unit-image.module.css'
 
 export const HeroUnitImage = ({ children, hero, heading, description }) => {
+
+    let  scroll  = useScroll()
+    let y = useTransform( scroll.scrollY, [0, 1000], ["0%", "30vh"])
+
+
     return (
         <section>
                 
-            <div className={CSS.hero}>
-                <Parallax speed={-20}>
-                    <div className={CSS.heroWrapper}>
-                        <Image src={`/assets/img/global/award-winners/hero-award-winners.jpg`} layout={`responsive`} width={1920} height={1200} alt=''/>
-                    </div>
-                </Parallax>
-            </div>
+            <motion.div className={CSS.hero} style={{ y }}>
+                <div className={CSS.heroWrapper}>
+                    <Image src={`/assets/img/global/award-winners/hero-award-winners.jpg`} layout={`responsive`} width={1920} height={1200} alt=''/>
+                </div>
+            </motion.div>
 
 
             <div className={`${CSS.overlay} block`}>

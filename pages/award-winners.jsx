@@ -5,8 +5,9 @@ import craftApolloClient from "./api/apollo"
 
 import Image from 'next/image'
 
-import { Header } from '../fuselage/global/header/header'
-import { Footer } from '../fuselage/global/footer/footer'
+import { Header } from '../fuselage/theme/2024/global/common/header/header'
+import { Footer } from '../fuselage/theme/2024/global/common/footer/footer'
+
 import { CtaTab } from '../fuselage/components/cta-tab/cta-tab'
 import { HeroUnitImage } from '../fuselage/blocks/hero-unit-image/hero-unit-image'
 import { AwardWinnerCard } from '../fuselage/components/award-winner-card/award-winner-card'
@@ -14,11 +15,11 @@ import { AwardWinnerCard } from '../fuselage/components/award-winner-card/award-
 
 export default function AwardWinners ({ data }) {
 
-    console.log('data.awardWinners:', data.awardWinners)
+    // console.log('data.awardWinners:', data.awardWinners)
 
     
     return (
-        <div className='bg-primary' style={{ backgroundColor: `var(--secondary)`, backgroundImage: `url('/assets/theme/fhs-2023-global-bg.svg')`, backgroundSize: `100%` }}>
+        <div className='bg-primary' style={{ backgroundColor: `var(--primary)`, backgroundImage: `url('/assets/theme/fhs-2024-global-bg.svg')` }}>
 
             <Header overlaid inverse />
 
@@ -42,8 +43,8 @@ export default function AwardWinners ({ data }) {
                                             // url={`/speakers/profile/${winner.recipientProfile[0].slug}`} 
                                             photoUrl={winner.recipientProfile[0].avatar[0] ? winner.recipientProfile[0].avatar[0].url : null }
                                             fullName={winner.recipientProfile[0].title}
-                                            jobTitle={winner.recipientProfile[0].positions[0].jobTitle}
-                                            company={winner.recipientProfile[0].positions[0].organisation}
+                                            jobTitle={winner.recipientProfile[0]?.positions.length && winner.recipientProfile[0].positions[0].jobTitle}
+                                            company={winner.recipientProfile[0]?.positions.length && winner.recipientProfile[0].positions[0].organisation}
                                         />
                                     ))
                                 )
@@ -62,13 +63,7 @@ export default function AwardWinners ({ data }) {
 }
 
 
-AwardWinners.getLayout = function getLayout( page ) {
-	return (
-	<Layout>
-		{ page }
-	</Layout>
-	)
-}
+AwardWinners.theme='global-2024'
 
 
 

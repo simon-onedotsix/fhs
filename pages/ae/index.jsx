@@ -439,9 +439,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
             <PopupOverlay onClose={() => setShowModal(false)} show={showModal}>
-
                 { modalContent } 
-
             </PopupOverlay>
 
 

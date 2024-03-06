@@ -34,7 +34,7 @@ import '@szhsin/react-menu/dist/transitions/slide.css'
 import CSS from '../../css/app/agenda-sa-2024.module.css'
 
 
-export default function Agenda ({ sessions }) {
+export default function Agenda ({ sessions, locations }) {
 
 	const [ selectedTopic, setSelectedTopic ] = useState (null)
     const [ selectedDay, setSelectedDay ] = useState (null)
@@ -46,7 +46,7 @@ export default function Agenda ({ sessions }) {
 
 
 
-	// FILTERS
+	// FILTER UTILS
 
 	const resetFilters = () => {
 		setSelectedDay(null)
@@ -280,6 +280,51 @@ export default function Agenda ({ sessions }) {
 			offsetY={-7}
 		/>
 	)
+
+
+
+
+	// STREAM PRIORITISING
+
+	const streamPriority = [
+		{
+			id: "RmllbGRWYWx1ZV8xOTEwNTI2NA==",
+			name: "Summit Stage",
+			priority: 1
+		},
+		{
+			id: "RmllbGRWYWx1ZV8yMDYxOTUyNA==",
+			name: "Exhibition Stage",
+			priority: 3
+		},
+		{
+			id: "RmllbGRWYWx1ZV8yMjQ1NzUyOA==",
+			name: "Al Omsiat B Workshop Room",
+			priority: 4
+		},
+		{
+			id: "RmllbGRWYWx1ZV8xOTEwNTI2NQ==",
+			name: "Future Stage",
+			priority: 2
+		},
+		{
+			id: "RmllbGRWYWx1ZV8yMjU3Nzc5NQ==",
+			name: "Yanbu Workshop Room",
+			priority: 4
+		},
+		{
+			id: "RmllbGRWYWx1ZV8yMjU3ODg2Ng==",
+			name: "Mansard Riyadh, a Radisson Collection Hotel",
+			priority: 4
+		}
+	]
+	
+
+
+
+	console.log('sessions:', sessions)
+	console.log('locations [swc]:', locations)
+	console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 
 
     return (
@@ -522,7 +567,7 @@ const Chevron = () => {
 
 export async function getStaticProps() {
 
-    const result = await fetch(
+	const eventQuery = await fetch(
 		"https://developer.swapcard.com/event-admin/graphql",
 		{
 			method: "POST",
@@ -532,8 +577,17 @@ export async function getStaticProps() {
 			},
 			body: JSON.stringify({
 				query: `
-					query plannings($eventId: String!, $page: Int!) {
-						plannings(eventId: $eventId, page: $page, pageSize: 100) {
+					query EventById($eventId: ID!) {
+
+						event(id: $eventId) {
+							planningsPlaces {
+								id
+								name
+								value
+							}
+						}
+
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}", page: 1, pageSize: 100) {
 							id
 							titleTranslations {
 								value
@@ -595,14 +649,16 @@ export async function getStaticProps() {
 		}
 	)
 
-	// console.log(result)
-
-	const agenda = await result.json()
+	const result = await eventQuery.json()
+	
+	// console.log('TEST plannings', result.data.event.planningsPlaces)
+	// console.log('TEST sessions', result.data.plannings)
   
 
     return { 
         props: { 
-            sessions: agenda.data.plannings
+            sessions: result.data.plannings,
+			locations: result.data.event.planningsPlaces
         } 
     }
 }
