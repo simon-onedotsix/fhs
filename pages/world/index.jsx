@@ -11,13 +11,13 @@ import Image from "next/image"
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 
-import { Header } from '../../fuselage/theme/2024/ae/common/header/header'
-import { Footer } from '../../fuselage/theme/2024/ae/common/footer/footer'
-import { HeroUnitVideo } from "../../fuselage/theme/2024/ae/blocks/hero-unit-video/hero-unit-video"
-import { FhsIcon, FhsIconKeyline } from "../../fuselage/theme/2024/ae/components/logos/fhs-brand"
-import { SpeakerCarousel } from "../../fuselage/theme/2024/ae/blocks/speaker-carousel/speaker-carousel"
-import { ImpactFigure } from "../../fuselage/theme/2024/ae/components/impact-figure/impact-figure"
-import { Button } from "../../fuselage/theme/2024/ae/components/button/button"
+import { Header } from '../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
+import { HeroUnitVideo } from "../../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video"
+import { FhsIcon, FhsIconKeyline } from "../../fuselage/theme/2024/world/components/logos/fhs-brand"
+import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
+import { ImpactFigure } from "../../fuselage/theme/2024/world/components/impact-figure/impact-figure"
+import { Button } from "../../fuselage/theme/2024/world/components/button/button"
 
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
@@ -42,7 +42,7 @@ import {
 
 import handleSeomaticMeta from '../../lib/seomatic'
 
-import CSS from '../../fuselage/theme/2024/ae/css/homepage.module.css'
+import CSS from '../../fuselage/theme/2024/world/css/homepage.module.css'
 
 
 const photos = [
@@ -244,48 +244,6 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </section>
 
 
-            {/* INTRO */}
-
-            {/* <section ref={introRef} className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
-                <div className="container columns-2 gap-md">
-              
-                    <section className={CSS.introHeadline}>
-                        <Slide><p className='fs-0 fw-600 lh-1 maxw-20'>Join the <span className="c-secondary">FHS 2024</span> Launch Reception!</p></Slide>
-                    </section>
-
-                    <section>
-                        <Fade>
-                            <Image src="/assets/site/ae/2024-world-lauch-reception.jpg" layout={'responsive'} width={2200} height={1467}/>
-                        </Fade>
-
-                        <div className="formatted mt-md">
-                            <Fade>
-                                <p className='fs-4 fw-500 maxw-45'>Registrations for our flagship <span className="c-secondary">Future Hospitality Summit 2024</span>, now transformed and titled &apos;FHS World&apos; are now open.</p>
-                                <p className='fs-5 fw-300 maxw-45 mb-sm'>Purchasing your ticket now provides access to the FHS launch reception hosted at XU Dubai on the 27th of February. Get a chance to meet and interact with the FHS Advisory Board and start making connections ahead of the event!</p>
-                            </Fade>
-                            <Pop inline>
-                                <Button 
-                                    href={`/ae/purchase-pass`} 
-                                    theme={{ 
-                                        background: `var(--secondary-2)`, 
-                                        hover: `var(--secondary-2-dark)`, 
-                                        color: `white`
-                                    }} 
-                                    decal={`fs-5 fw-600`}
-                                >
-                                    Register Now
-                                </Button>
-                            </Pop>
-                        </div>
-                    </section>
-                  
-                </div>
-
-                <motion.div className={CSS.introGraphicWapper} style={{ y }}>
-                    <FhsIconKeyline inverse />
-                </motion.div>
-            </section> */}
-
             
             {/* LAUNCH STATEMENT */}
 
@@ -318,7 +276,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         </Fade>
                         <Pop inline>
                             <Button 
-                                href={`/ae/get-in-touch`} 
+                                href={`/world/get-in-touch`} 
                                 theme={{ 
                                     background: `var(--secondary-2)`, 
                                     hover: `var(--secondary-2-dark)`, 
@@ -351,7 +309,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         selectedCmsSpeakers.profiles.map( profile => (
                             <Pop key={profile.id}>
                                 <SpeakerCard
-                                    url={`ae/speakers/profile/${profile.slug}`}
+                                    url={`world/speakers/profile/${profile.slug}`}
                                     photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
                                     fullName={profile.title}
                                     jobTitle={profile.positions[0].jobTitle}
@@ -464,7 +422,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
         </>
     )
 }
-Home.theme = 'ae-2024'
+Home.theme = 'world-2024'
 
 
 

@@ -115,7 +115,7 @@ function Speaker() {
 								{ session.startMinute && toHoursAndMinutes(session.startMinute) }
 								{ session.endMinute && ` - ${toHoursAndMinutes(session.endMinute)}` }
 							</p>
-							<Link href={`/ae/agenda#session-${session.id}`}><a className='fw-600 c-white'>{ session.title }</a></Link>
+							<Link href={`/world/agenda#session-${session.id}`}><a className='fw-600 c-white'>{ session.title }</a></Link>
 						</div>
 					)
 				})
@@ -152,7 +152,7 @@ function Speaker() {
 						<p className="fw-600">
 							<ArrowLink 
 								theme={{ color: `var(--dark)`, stroke: `var(--accent)` }} 
-								href="/ae/2022/speakers"
+								href="/world/2022/speakers"
 							>
 								View All 2022 Speakers
 							</ArrowLink>

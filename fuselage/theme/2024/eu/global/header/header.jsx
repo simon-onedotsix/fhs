@@ -30,8 +30,8 @@ export const Header = ({ compact, shim, shimMobile, theme }) => {
         },
         {
             id: 7,
-            title: 'FHS & AHIC',
-            url: '/eu',
+            title: 'FHS World',
+            url: '/world',
             target: false
         },
         {

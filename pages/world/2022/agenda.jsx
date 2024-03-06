@@ -291,20 +291,20 @@ export default function Agenda () {
         function addSessionCta( id ) {
 
             const selectedSessions = [
-                { id: 968557, href: "/ae/site-tours#farm", target: '' },
-                { id: 968558, href: "/ae/site-tours#lagoon", target: '' },
-                { id: 956648, href: "/ae/lead-the-change", target: '' },
-                { id: 956649, href: "/ae/startup-den", target: '' },
+                { id: 968557, href: "/world/site-tours#farm", target: '' },
+                { id: 968558, href: "/world/site-tours#lagoon", target: '' },
+                { id: 956648, href: "/world/lead-the-change", target: '' },
+                { id: 956649, href: "/world/startup-den", target: '' },
                 { id: 958016, href: "https://forms.office.com/pages/responsepage.aspx?id=CynbjH5LUUqIhntljO8w5dWMsPcd5IpFpf8wtnYUOZZUMElKU0lQN1pLNURCWlQ2TUhCUUNMMEdIOC4u", target: '_blank' },
                 { id: 956524, href: "https://forms.office.com/pages/responsepage.aspx?id=CynbjH5LUUqIhntljO8w5dWMsPcd5IpFpf8wtnYUOZZUM1pIVDE1NTc4VUwxSDNBT0ZIWlVHQlM1Wi4u", target: '_blank' },
-                { id: 968559, href: "/ae/sports#fitness", target: '' },
-                { id: 968560, href: "/ae/sports#yoga", target: '' },
-                { id: 790696, href: "/ae/sustainable-hospitality-challenge", target: '' },
-                { id: 956645, href: "/ae/the-knight-frank-investors-briefing", target: '' },
-                { id: 980614, href: "/ae/sports#golf", target: '' },
-                { id: 971946, href: "/ae/sports#tennis", target: '' },
-                { id: 980500, href: "/ae/site-tours#fish", target: '' },
-                { id: 980612, href: "/ae/site-tours#museum", target: '' },
+                { id: 968559, href: "/world/sports#fitness", target: '' },
+                { id: 968560, href: "/world/sports#yoga", target: '' },
+                { id: 790696, href: "/world/sustainable-hospitality-challenge", target: '' },
+                { id: 956645, href: "/world/the-knight-frank-investors-briefing", target: '' },
+                { id: 980614, href: "/world/sports#golf", target: '' },
+                { id: 971946, href: "/world/sports#tennis", target: '' },
+                { id: 980500, href: "/world/site-tours#fish", target: '' },
+                { id: 980612, href: "/world/site-tours#museum", target: '' },
             ]
 
             let selectedSession = selectedSessions.find( session => session.id === id)
@@ -408,7 +408,7 @@ export default function Agenda () {
     // filter
 
     function clearQuery() {
-        router.replace('/ae/2022/agenda', undefined, { shallow: true })
+        router.replace('/world/2022/agenda', undefined, { shallow: true })
     }
 
 

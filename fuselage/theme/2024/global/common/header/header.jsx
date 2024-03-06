@@ -18,7 +18,7 @@ const otherEvents = [
     {
         id: 3,
         title: 'FHS World',
-        url: '/ae',
+        url: '/world',
         target: false
     },
     {

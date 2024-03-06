@@ -3,7 +3,6 @@ import { useInView } from 'react-intersection-observer'
 import { EventsBar } from '../../../../../components/events-bar/events-bar'
 
 import Link from 'next/link'
-import { MainMenu } from '../../../../../global-ae/main-menu/main-menu'
 import { FhsLogo } from '../../../../../components/fhs-logo/fhs-logo'
 
 import CSS from './header.module.css'
@@ -61,7 +60,7 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
 
     return (
         <>
-            <span ref={menuTrigger}>
+            {/* <span ref={menuTrigger}>
                 <EventsBar 
                     hidden={ !headerInView ? true : false }
                     thisEvent={'FHS & AHIC'} 
@@ -72,7 +71,7 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
                         accent: 'white'
                     }}
                 />
-            </span>
+            </span> */}
 
             <header ref={hideEventsBarTrigger} 
                 className={`

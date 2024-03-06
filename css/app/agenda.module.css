@@ -43,7 +43,7 @@
     border: none;
     font-family: inherit;
     font-size: inherit;
-    color: white;
+    color: inherit;
     padding: .75rem 1rem;
     border: 1px var(--accent) solid;
     border-radius: var(--standard-field-radius, 0);

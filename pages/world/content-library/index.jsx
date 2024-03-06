@@ -3,8 +3,8 @@ import craftApolloClient from "../../api/apollo"
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/theme/2024/ae/common/header/header'
-import { Footer } from '../../../fuselage/theme/2024/ae/common/footer/footer'
+import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 import { ArrowButton } from "../../../fuselage/components/arrow-button/arrow-button"
 
 import { StickySidebar } from "../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
@@ -22,7 +22,7 @@ export default function ContentLibrary ({ articles, categories }) {
                 categories.map( category => {
                     return (
                         <section key={category.id} id={category.slug} className="mb-xxs">
-                            <a className="uLink fs-6 fw-600" href={`/ae/content-library/category/${category.slug}`}>{category.title}</a>
+                            <a className="uLink fs-6 fw-600" href={`/world/content-library/category/${category.slug}`}>{category.title}</a>
                         </section>
                     )
                 })
@@ -55,7 +55,7 @@ export default function ContentLibrary ({ articles, categories }) {
                                     entries.slice(0, 3).map( entry => (
                                         <ContentCard
                                             key={entry.id}
-                                            url={`/ae/content-library/${entry.slug}`}
+                                            url={`/world/content-library/${entry.slug}`}
                                             heroUrl={entry.contentLibraryHero && entry.contentLibraryHero[0] ? entry.contentLibraryHero[0].url : null}
                                             heading={entry.title}
                                             excerpt={entry.excerpt}
@@ -66,7 +66,7 @@ export default function ContentLibrary ({ articles, categories }) {
                                 }
                             </div>
     
-                            <p className="mt-sm"><ArrowButton href={`/ae/content-library/category/${category.slug}`} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `white`}}>See all in {category.title}</ArrowButton></p>
+                            <p className="mt-sm"><ArrowButton href={`/world/content-library/category/${category.slug}`} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `white`}}>See all in {category.title}</ArrowButton></p>
                             
                         </section>
                     )
@@ -108,7 +108,7 @@ export default function ContentLibrary ({ articles, categories }) {
     
 }
 
-ContentLibrary.theme = 'ae-2024'
+ContentLibrary.theme = 'world-2024'
 
 
 

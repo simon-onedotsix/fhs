@@ -72,7 +72,7 @@ function Speakers() {
 						{
 							customSpeakers.map( (speaker, index) => (
 								<div key={speaker.id}>
-									<Link href={`/ae/2023/speakers/${speaker.id}`}>
+									<Link href={`/world/2023/speakers/${speaker.id}`}>
 										<a className={CSS.avatar}>
 											{
 												speaker.photoSet ? 

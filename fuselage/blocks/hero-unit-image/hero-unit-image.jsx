@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 
 import Image from 'next/image'
 
-import { SectionDivider } from '../../theme/2024/ae/blocks/section-divider/section-divider'
+import { SectionDivider } from '../../theme/2024/world/blocks/section-divider/section-divider'
 
 import CSS from './hero-unit-image.module.css'
 

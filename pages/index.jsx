@@ -11,10 +11,10 @@ import handleSeomaticMeta from '../lib/seomatic'
 import { Header } from '../fuselage/theme/2024/global/common/header/header'
 import { Footer } from '../fuselage/theme/2024/global/common/footer/footer'
 
-import { HeroUnitVideo } from '../fuselage/theme/2024/ae/blocks/hero-unit-video/hero-unit-video'
-import { SectionDivider } from '../fuselage/theme/2024/ae/blocks/section-divider/section-divider'
-import { UpcomingEvents, EventGroupCard, EventCard } from '../fuselage/theme/2024/ae/blocks/upcoming-events/upcoming-events'
-import { ContentCard } from "../fuselage/theme/2024/ae/components/content-card/content-card"
+import { HeroUnitVideo } from '../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video'
+import { SectionDivider } from '../fuselage/theme/2024/world/blocks/section-divider/section-divider'
+import { UpcomingEvents, EventGroupCard, EventCard } from '../fuselage/theme/2024/world/blocks/upcoming-events/upcoming-events'
+import { ContentCard } from "../fuselage/theme/2024/world/components/content-card/content-card"
 
 
 import { ArrowButton } from '../fuselage/components/arrow-button/arrow-button'

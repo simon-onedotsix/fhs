@@ -12,10 +12,10 @@ import { formatInTimeZone } from 'date-fns-tz'
 import _ from 'lodash'
 import { toHoursAndMinutes } from "../../lib/agenda-utils"
 
-import { Header } from '../../fuselage/theme/2024/ae/common/header/header'
-import { Footer } from '../../fuselage/theme/2024/ae/common/footer/footer'
-import { Session, SessionSpeaker, SessionSpeakerGrid } from '../../fuselage/theme/2024/ae/components/session/session'
-import { Modal } from "../../fuselage/theme/2024/ae/components/modal/modal"
+import { Header } from '../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
+import { Session, SessionSpeaker, SessionSpeakerGrid } from '../../fuselage/theme/2024/world/components/session/session'
+import { Modal } from "../../fuselage/theme/2024/world/components/modal/modal"
 
 import { Button } from "../../fuselage/components/button/button"
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
@@ -485,7 +485,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     // filter query reset
 
     function clearQuery() {
-        router.replace('/ae/agenda', undefined, { shallow: true })
+        router.replace('/world/agenda', undefined, { shallow: true })
     }
 
 
@@ -574,6 +574,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
 
 
             <section className="block">
+
                 {/* filter */}
                 <div className="container" style={{ zIndex: 3 }}>
                     <p className="fs-0 fw-600">2023 Agenda</p>
@@ -716,7 +717,7 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     )
 }
 
-Agenda.theme = 'ae-2024'
+Agenda.theme = 'world-2024'
 
 
 

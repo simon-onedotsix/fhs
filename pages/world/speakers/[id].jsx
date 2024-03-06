@@ -3,8 +3,8 @@ import Link from "next/link"
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/theme/2024/ae/common/header/header'
-import { Footer } from '../../../fuselage/theme/2024/ae/common/footer/footer'
+import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 import { Sidebar } from "../../../fuselage/layout/sidebar/sidebar"
 import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
 import { OffsiteLink } from "../../../fuselage/components/offsite-link/offsite-link"
@@ -12,9 +12,7 @@ import { ButtonSocial } from  '../../../fuselage/components/button-social/button
 
 import { sortSessions, toHoursAndMinutes } from "../../../lib/agenda-utils"
 import { formatInTimeZone } from 'date-fns-tz'
-import { Container } from "../../../fuselage/theme/2023/ae/layout/container/container"
 
-import CSS from '../../../css/app/speakers.module.css'
 
 function Speaker({ speaker, sessions }) {
 
@@ -133,7 +131,7 @@ function Speaker({ speaker, sessions }) {
 							<p className="fw-600">
 								<ArrowLink 
 									theme={{ color: `white`, stroke: `var(--secondary)` }} 
-									href="/ae/speakers"
+									href="/world/speakers"
 								>
 									View All Speakers
 								</ArrowLink>
@@ -141,7 +139,7 @@ function Speaker({ speaker, sessions }) {
 							<p className="fw-600">
 								<ArrowLink 
 									theme={{ color: `white`, stroke: `var(--secondary)` }} 
-									href="/ae/advisory-board"
+									href="/world/advisory-board"
 								>
 									View Advisory Board
 								</ArrowLink>
@@ -198,7 +196,7 @@ function Speaker({ speaker, sessions }) {
 	)
 }
 
-Speaker.theme = 'ae-2024'
+Speaker.theme = 'world-2024'
 
 
 

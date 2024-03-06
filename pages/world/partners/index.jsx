@@ -8,8 +8,8 @@ import Link from 'next/link'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/theme/2024/ae/common/header/header'
-import { Footer } from '../../../fuselage/theme/2024/ae/common/footer/footer'
+import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 
 import { PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
 
@@ -93,7 +93,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 										<PartnerLogoGrid>
 											{
 												_.orderBy(group, 'name').map(partner => (
-													<a key={partner.id} href={`/ae/partners/${partner.id}`}>
+													<a key={partner.id} href={`/world/partners/${partner.id}`}>
 														<PartnerLogo 
 															hero={{ url: partner.logoUrl }} 
 															size={ category && category.size }
@@ -120,7 +120,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 	)
 }
 
-Partners.theme = 'ae-2024'
+Partners.theme = 'world-2024'
 
 
 

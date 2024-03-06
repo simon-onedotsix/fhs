@@ -24,8 +24,8 @@ import {
 
 import handleContentBlocks from "../../lib/content-blocks"
 
-import { Header } from '../../fuselage/theme/2024/ae/common/header/header'
-import { Footer } from '../../fuselage/theme/2024/ae/common/footer/footer'
+import { Header } from '../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 
 import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
 
@@ -56,7 +56,7 @@ function PurchasePass({ seomatic, entry }) {
 	)
 }
 
-PurchasePass.theme = 'ae-2024'
+PurchasePass.theme = 'world-2024'
 
 
 

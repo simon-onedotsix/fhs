@@ -29,7 +29,7 @@ import {
 import DROPDOWN from '../../../css/app/dropdown.module.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
 
-import CSS from '../../../css/app/agenda.module.css'
+import CSS from '../../../css/app/agenda-ae-2023.module.css'
 
 
 // legacy data imports
@@ -352,8 +352,8 @@ export default function Agenda () {
         function addSessionCta( id ) {
 
             const selectedSessions = [
-                { id: 968557, href: "/ae/site-tours#farm", target: '' },
-                { id: 968558, href: "/ae/site-tours#lagoon", target: '' }
+                { id: 968557, href: "/world/site-tours#farm", target: '' },
+                { id: 968558, href: "/world/site-tours#lagoon", target: '' }
             ]
 
             let selectedSession = selectedSessions.find( session => session.id === id)
@@ -465,7 +465,7 @@ export default function Agenda () {
     // filter query reset
 
     function clearQuery() {
-        router.replace('/ae/agenda', undefined, { shallow: true })
+        router.replace('/world/2023/agenda', undefined, { shallow: true })
     }
 
 

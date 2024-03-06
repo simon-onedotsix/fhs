@@ -7,8 +7,8 @@ import Link from 'next/link'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../fuselage/theme/2024/ae/common/header/header'
-import { Footer } from '../../fuselage/theme/2024/ae/common/footer/footer'
+import { Header } from '../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 import { SpeakerGrid } from '../../fuselage/layout/speaker-grid/speaker-grid'
 
 import handleSeomaticMeta from '../../lib/seomatic'
@@ -36,7 +36,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{craftCmsProfiles.map( speaker => (
 							<div key={speaker.id}>
-								<Link href={`/ae/speakers/profile/${speaker.slug}`}>
+								<Link href={`/world/speakers/profile/${speaker.slug}`}>
 									<a className={CSS.avatar}>
 										<Image 
 											src={speaker.avatar[0].url} 
@@ -67,7 +67,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 	)
 }
 
-Speakers.theme = 'ae-2024'
+Speakers.theme = 'world-2024'
 
 
 

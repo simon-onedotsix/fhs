@@ -9,8 +9,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Header } from '../../../fuselage/theme/2024/ae/common/header/header'
-import { Footer } from '../../../fuselage/theme/2024/ae/common/footer/footer'
+import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 import { SpeakerGrid } from "../../../fuselage/layout/speaker-grid/speaker-grid"
 
 import handleSeomaticMeta from '../../../lib/seomatic'
@@ -58,7 +58,7 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{customSpeakers.map( speaker => (
 							<div key={speaker.id}>
-								<Link href={`/ae/speakers/${speaker.id}`}>
+								<Link href={`/world/speakers/${speaker.id}`}>
 									<a className={CSS.avatar}>
 										{
 											speaker.photoSet ? 
@@ -101,7 +101,7 @@ function Speakers({ seomatic, bizzaboSpeakers, craftCmsProfiles }) {
 	)
 }
 
-Speakers.theme = 'ae-2024'
+Speakers.theme = 'world-2024'
 
 
 

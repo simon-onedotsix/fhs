@@ -5,8 +5,8 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import Head from "next/head"
 
-import { Header } from '../../fuselage/theme/2024/ae/common/header/header'
-import { Footer } from '../../fuselage/theme/2024/ae/common/footer/footer'
+import { Header } from '../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 
 import handleContentBlocks from "../../lib/content-blocks"
 
@@ -53,7 +53,7 @@ export default function Page ({ entry, seomatic }) {
     )
 }
 
-Page.theme = 'ae-2024'
+Page.theme = 'world-2024'
 
 
 

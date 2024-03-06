@@ -6,8 +6,9 @@ import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller'
 import Head from "next/head"
 import { useRouter } from "next/router"
 
-import { Header } from '../../../../fuselage/theme/2024/ae/common/header/header'
-import { Footer } from '../../../../fuselage/theme/2024/ae/common/footer/footer'
+import { Header } from '../../../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from '../../../../fuselage/theme/2024/world/common/footer/footer'
+
 import { StickySidebar } from "../../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
 import { ContentCard } from "../../../../fuselage/components/content-card/content-card"
 import { ArrowLink } from "../../../../fuselage/components/arrow-link/arrow-link"
@@ -29,7 +30,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
                         <section key={category.id} id={category.slug} className="mb-xxs">
                             <a 
                                 className={`uLink fs-6 fw-600 ${ router.query.category === category.slug ? 'here' : '' }`} 
-                                href={`/ae/content-library/category/${category.slug}`}
+                                href={`/world/content-library/category/${category.slug}`}
                             >
                                 {category.title}
                             </a>
@@ -51,7 +52,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
                             articles.map( entry => (
                                 <ContentCard
                                     key={entry.id}
-                                    url={`/ae/content-library/${entry.slug}`}
+                                    url={`/world/content-library/${entry.slug}`}
                                     heroUrl={entry.contentLibraryHero && entry.contentLibraryHero[0] ? entry.contentLibraryHero[0].url : null}
                                     heading={entry.title}
                                     excerpt={entry.excerpt}
@@ -81,7 +82,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
                             <p className="fs-6 fw-600 mb-sm">Filter</p>
                             { handleCategoryMenu() }
                             <p className="mt-sm">
-                                <a className="uLink fs-sm caps fw-400 c-secondary" href={`/ae/content-library`}>Clear filter</a>
+                                <a className="uLink fs-sm caps fw-400 c-secondary" href={`/world/content-library`}>Clear filter</a>
                             </p>
                         </div>
                     </aside>
@@ -102,7 +103,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
     )
 }
 
-ContentLibraryCategory.theme = 'ae-2024'
+ContentLibraryCategory.theme = 'world-2024'
 
 
 

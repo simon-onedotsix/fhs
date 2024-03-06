@@ -2,13 +2,8 @@ import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/theme/2024/ae/common/header/header'
-import { Footer } from '../../../fuselage/theme/2024/ae/common/footer/footer'
-
-import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
-
-import { HeaderShim } from '../../../fuselage/global-sa/header/header'
+import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 
 import { OffsiteLink } from '../../../fuselage/components/offsite-link/offsite-link'
 import { StickySidebar } from '../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
@@ -107,7 +102,7 @@ function Partner({ partner }) {
 					<StickySidebar size='medium'>
 
 						<aside className="formatted">
-							<p className="fw-600"><ArrowLink href="/ae/partners">View all partners</ArrowLink></p>
+							<p className="fw-600"><ArrowLink href="/world/partners">View all partners</ArrowLink></p>
 
 							<div className="bg-white p-sm mt-sm center rad-sm">
 								<div className={CSS.profileLogoWrapper}>
@@ -149,7 +144,7 @@ function Partner({ partner }) {
 	)
 }
 
-Partner.theme = 'ae-2024'
+Partner.theme = 'world-2024'
 
 
 

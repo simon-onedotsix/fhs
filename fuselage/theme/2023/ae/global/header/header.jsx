@@ -63,7 +63,7 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
 
     return (
         <>
-            <span ref={menuTrigger}>
+            {/* <span ref={menuTrigger}>
                 <EventsBar 
                     hidden={ !headerInView ? true : false }
                     thisEvent={'FHS'} 
@@ -74,7 +74,7 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
                         accent: 'white'
                     }}
                 />
-            </span>
+            </span> */}
 
             <header ref={hideEventsBarTrigger} 
                 className={`

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 
-import { Button } from "../../../../../../fuselage/theme/2024/ae/components/button/button"
+import { Button } from "../../../../../../fuselage/theme/2024/world/components/button/button"
 import { ArrowButton } from '../../../../../components/arrow-button/arrow-button'
 
 import CSS from './main-menu.module.css'
@@ -15,7 +15,7 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
             <div className={CSS.toggleContainer}>
                 <div className={`${CSS.toggleActions} ${ active && CSS.active }`}>
                     <Button 
-                        href={`/ae/purchase-pass`} 
+                        href={`/world/purchase-pass`} 
                         theme={{ 
                             color: `var(--primary)`,
                             background: `var(--secondary-1)`, 
@@ -27,7 +27,7 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                     </Button>
                     
                     <Button 
-                        href={`/ae/partner-with-us`} 
+                        href={`/world/partner-with-us`} 
                         theme={{ 
                             color: `var(--primary)`,
                             background: `var(--secondary-1)`, 
@@ -52,32 +52,32 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
             <div className="columns-4 gap-md mt-md">
                     <section>
                         <p className='c-white'>
-                            <Link href={'/ae'}>
+                            <Link href={'/world'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Home</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/advisory-board'}>
+                            <Link href={'/world/advisory-board'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Advisory Board</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/content-library'}>
+                            <Link href={'/world/content-library'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Content Library</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/venue'}>
+                            <Link href={'/world/venue'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Venue &amp; Accommodation</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/contact-us'}>
+                            <Link href={'/world/contact-us'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Contact Us</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/purchase-pass'}>
+                            <Link href={'/world/purchase-pass'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Register Now</a>
                             </Link>
                         </p>
@@ -86,29 +86,29 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                     <section>
                         <p className='fs-5 fw-700 c-secondary'>Event Features</p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/stages-and-tracks'}>
+                            <Link href={'/world/stages-and-tracks'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Stages &amp; Tracks</a>
                             </Link>
                         </p>
 
                         <p className='fs-5 fw-700 c-secondary mt-md'>Sponsorship</p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/partner-with-us'}>
+                            <Link href={'/world/partner-with-us'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Partner With Us for FHS 2024</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/tech'}>
+                            <Link href={'/world/tech'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Technology &amp; Innovation</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/country-pavilions'}>
+                            <Link href={'/world/country-pavilions'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Country Pavilions</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/partners'}>
+                            <Link href={'/world/partners'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Sponsors &amp; Partners</a>
                             </Link>
                         </p>
@@ -118,24 +118,24 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                         <p className='fs-5 fw-700 c-secondary'>FHS 2023</p>
 
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/speakers'}>
+                            <Link href={'/world/speakers'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Speakers</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/agenda'}>
+                            <Link href={'/world/agenda'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Agenda</a>
                             </Link>
                         </p>
 
                         <p className='fs-5 fw-700 c-secondary mt-md'>FHS 2022</p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/2022/speakers'}>
+                            <Link href={'/world/2022/speakers'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Speakers</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/ae/2022/agenda'}>
+                            <Link href={'/world/2022/agenda'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Agenda</a>
                             </Link>
                         </p>

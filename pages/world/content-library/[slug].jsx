@@ -7,8 +7,9 @@ import Image from "next/image"
 import Link from "next/link"
 import {format} from 'date-fns'
 
-import { Header } from '../../../fuselage/theme/2024/ae/common/header/header'
-import { Footer } from '../../../fuselage/theme/2024/ae/common/footer/footer'
+import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
+
 import { StickySidebar } from "../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
 import { ProfileCard } from "../../../fuselage/components/profile-card/profile-card"
 import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
@@ -183,7 +184,7 @@ export default function Article ({ entry }) {
                         <main>
                             <div className="p-md pt-0">
                                 <div className="mb-sm pb-xs bb-1 bc-secondary flex jc-between">
-                                <ArrowLink href="/ae/content-library" decal='fw-600'>Content library</ArrowLink>
+                                <ArrowLink href="/world/content-library" decal='fw-600'>Content library</ArrowLink>
                                 {handleCategories()}                                
                                 </div>
 
@@ -227,7 +228,7 @@ export default function Article ({ entry }) {
 
 }
 
-Article.theme = 'ae-2024'
+Article.theme = 'world-2024'
 
 
 

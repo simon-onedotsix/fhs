@@ -90,7 +90,7 @@ function Partner({ partner }) {
 						<aside className="formatted">
 							<HeaderShim/>
 							<p className="fw-600">
-								<ArrowLink href="/ae/partners" theme={{ color: `var(--dark)`, stroke: `var(--accent)` }}>
+								<ArrowLink href="/world/partners" theme={{ color: `var(--dark)`, stroke: `var(--accent)` }}>
 									View all partners
 								</ArrowLink>
 							</p>

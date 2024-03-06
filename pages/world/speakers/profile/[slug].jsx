@@ -5,13 +5,11 @@ import Image from "next/image"
 
 import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../../fuselage/theme/2024/ae/common/header/header'
-import { Footer } from '../../../../fuselage/theme/2024/ae/common/footer/footer'
+import { Header } from '../../../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from '../../../../fuselage/theme/2024/world/common/footer/footer'
 import { Sidebar } from '../../../../fuselage/layout/sidebar/sidebar'
 import { ArrowLink } from '../../../../fuselage/components/arrow-link/arrow-link'
-// import { ButtonSocial } from  '../../../../fuselage/components/button-social/button-social'
 
-import { Container } from "../../../../fuselage/theme/2023/ae/layout/container/container"
 
 import CSS from '../../../../css/app/speakers.module.css'
 
@@ -33,7 +31,7 @@ export default function Profile ({ profile }) {
 							<p className="fw-600">
 								<ArrowLink 
 									theme={{ color: `white`, stroke: `var(--secondary)` }} 
-									href="/ae/speakers"
+									href="/world/speakers"
 								>
 									View All Speakers
 								</ArrowLink>
@@ -41,7 +39,7 @@ export default function Profile ({ profile }) {
 							<p className="fw-600">
 								<ArrowLink 
 									theme={{ color: `white`, stroke: `var(--secondary)` }} 
-									href="/ae/advisory-board"
+									href="/world/advisory-board"
 								>
 									View Advisory Board
 								</ArrowLink>
@@ -82,7 +80,7 @@ export default function Profile ({ profile }) {
     )
 }
 
-Profile.theme = 'ae-2024'
+Profile.theme = 'world-2024'
 
 
 export async function getStaticPaths() {

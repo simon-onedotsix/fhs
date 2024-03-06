@@ -25,7 +25,7 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
         {
             id: 1,
             title: 'FHS World',
-            url: '/ae',
+            url: '/world',
             target: false
         },
         {
