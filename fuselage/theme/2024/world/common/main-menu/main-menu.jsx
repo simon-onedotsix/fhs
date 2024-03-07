@@ -27,7 +27,7 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                     </Button>
                     
                     <Button 
-                        href={`/world/partner-with-us`} 
+                        href={`/world/become-a-sponsor`} 
                         theme={{ 
                             color: `var(--primary)`,
                             background: `var(--secondary-1)`, 
@@ -35,7 +35,7 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                         }} 
                         decal={`fw-600`}
                     >
-                        Partner With Us
+                        Become A Sponsor
                     </Button>
                 </div>
                     
@@ -93,8 +93,8 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
 
                         <p className='fs-5 fw-700 c-secondary mt-md'>Sponsorship</p>
                         <p className='c-white mt-xs'>
-                            <Link href={'/world/partner-with-us'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Partner With Us for FHS 2024</a>
+                            <Link href={'/world/become-a-sponsor'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Become A Sponsor for 2024</a>
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
