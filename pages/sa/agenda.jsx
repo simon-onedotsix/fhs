@@ -286,45 +286,54 @@ export default function Agenda ({ sessions, locations }) {
 
 	// STREAM PRIORITISING
 
-	const streamPriority = [
-		{
-			id: "RmllbGRWYWx1ZV8xOTEwNTI2NA==",
-			name: "Summit Stage",
-			priority: 1
-		},
-		{
-			id: "RmllbGRWYWx1ZV8yMDYxOTUyNA==",
-			name: "Exhibition Stage",
-			priority: 3
-		},
-		{
-			id: "RmllbGRWYWx1ZV8yMjQ1NzUyOA==",
-			name: "Al Omsiat B Workshop Room",
-			priority: 4
-		},
-		{
-			id: "RmllbGRWYWx1ZV8xOTEwNTI2NQ==",
-			name: "Future Stage",
-			priority: 2
-		},
-		{
-			id: "RmllbGRWYWx1ZV8yMjU3Nzc5NQ==",
-			name: "Yanbu Workshop Room",
-			priority: 4
-		},
-		{
-			id: "RmllbGRWYWx1ZV8yMjU3ODg2Ng==",
-			name: "Mansard Riyadh, a Radisson Collection Hotel",
-			priority: 4
+	const prioriseStreams = ( sessionsData, locationsData ) => {
+
+		if ( !sessionsData || !locationsData ) return
+
+		const sortedStreams = []
+
+		if ( sessionsData.length > 1 ) {
+
+			// console.log('sorting')
+			
+			sessionsData.forEach( session => {
+				if ( session.fields.find( (field) => field.definition.name === 'Location' ) ) {
+
+					let location = session.fields.find( (field) => field.definition.name === 'Location' )
+					session.priority = locationsData.map( i => i.id ).indexOf(location?.id)
+
+					sortedStreams.push(session)
+
+				} else {
+					session.priority = 100
+					sortedStreams.push(session)
+				}
+				
+				
+			})
+			
+			// console.log('–––––––––––––––––––-')
+			// console.log( _.orderBy(sortedStreams, ['priority'], ['asc']) )
+			
+			return _.orderBy(sortedStreams, ['priority'], ['asc'])
 		}
-	]
+
+		// console.log('passing session back unchanged')
+
+		return sessionsData
+
+	}
+
+
+	// console.log('sessions:', sessions)
+	// console.log('locations [swc]:', locations)
+	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
+
+	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
+	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))
+
+
 	
-
-
-
-	console.log('sessions:', sessions)
-	console.log('locations [swc]:', locations)
-	console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 
 
     return (
@@ -450,7 +459,7 @@ export default function Agenda ({ sessions, locations }) {
 													
 													<div className="sessions">
 														{
-															slot.sessions.map( (session, index) => {
+															prioriseStreams( slot.sessions, locations ).map( (session, index) => {
 																return (
 																	<div key={index} className="sessionsWrapper">
 																		{

@@ -90,6 +90,11 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Stages &amp; Tracks</a>
                             </Link>
                         </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/world/sports'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Sports &amp; Wellness</a>
+                            </Link>
+                        </p>
 
                         <p className='fs-5 fw-700 c-secondary mt-md'>Sponsorship</p>
                         <p className='c-white mt-xs'>
