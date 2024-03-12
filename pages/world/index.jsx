@@ -8,6 +8,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 
 import Head from "next/head"
 import Image from "next/image"
+import Script from "next/script"
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 
@@ -401,7 +402,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </PopupOverlay>
 
 
-            {/* <Script id="chatbot" strategy="afterInteractive">
+            <Script id="chatbot" strategy="afterInteractive">
                 {`
                     (function(d,t) {
                         var BASE_URL="https://app.chatlyn.com";
@@ -418,7 +419,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         }
                     })(document,"script");;
                 `}
-            </Script> */}
+            </Script>
         </>
     )
 }

@@ -4,6 +4,7 @@ import { gql } from "@apollo/client"
 import craftApolloClient from '../../api/apollo'
 
 import Image from "next/image"
+import Head from 'next/head'
 import Link from "next/link"
 import {format} from 'date-fns'
 
@@ -24,10 +25,15 @@ import { ButtonSocial } from '../../../fuselage/components/button-social/button-
 import { VideoPlayer } from "../../../fuselage/components/video-player/video-player"
 import { Button } from "../../../fuselage/components/button/button"
 
+import { QuerySEO } from "../../../graphql/queries"
+import handleSeomaticMeta from '../../../lib/seomatic'
+
 
 export default function Article ({ entry }) {
 
     // console.log(entry)
+
+    
 
     const handleHero = () => {
         if ( entry.hero ) {
@@ -181,6 +187,10 @@ export default function Article ({ entry }) {
 
     return (
         <>
+
+            <Head>{ handleSeomaticMeta( entry.seomatic ) }</Head>
+            
+            
             <Header compact />
 
             <ThemeBg />
@@ -277,6 +287,7 @@ export async function getStaticProps({ params, preview, previewData }) {
                             width
                             height
                         }
+                        ${QuerySEO}
                         contentLibraryContentBlocks {
                             ... on contentLibraryContentBlocks_text_BlockType {
                                 id
