@@ -18,7 +18,7 @@ import { AwardWinnerCard } from '../../fuselage/components/award-winner-card/awa
 
 export default function AwardWinners ({ data }) {
 
-    console.log('data.awardWinners:', data.awardWinners)
+    // console.log('data.awardWinners:', data.awardWinners)
 
     
     return (
