@@ -173,7 +173,7 @@ export default function Agenda ({ sessions, locations }) {
 	}
 
 	const groupFieldGroupsByName = ( sessionsData, fieldHandle ) => {
-		if ( !sessionsData || !fieldHandle ) return
+		if ( !sessionsData || !fieldHandle ) return []
 
 		const fieldIds = []
 		const fieldObjects = []
@@ -381,6 +381,7 @@ export default function Agenda ({ sessions, locations }) {
                         {/* days */}
                         <section className={CSS.filterLayoutButtons}>
                             {
+								sessions &&
                                 buildAgenda( sessions ).map( (day, index) => {
                                     return (
                                         <button 
@@ -440,6 +441,7 @@ export default function Agenda ({ sessions, locations }) {
 				{/* AGENDA */}
 				<div className="agenda | section columns-1 gap-sm mt-md">				
 					{
+						sessions &&
 						buildAgenda( sessions ).map( (day, index) => {
 							
 							if ( selectedDay && selectedDay !== day.time ) return
@@ -660,14 +662,18 @@ export async function getStaticProps() {
 
 	const result = await eventQuery.json()
 	
+
+	console.log('RESULT', result)
 	// console.log('TEST plannings', result.data.event.planningsPlaces)
 	// console.log('TEST sessions', result.data.plannings)
   
 
-    return { 
+    if ( result.data ) return { 
         props: { 
             sessions: result.data.plannings,
 			locations: result.data.event.planningsPlaces
         } 
     }
+
+	return { props: {} }
 }

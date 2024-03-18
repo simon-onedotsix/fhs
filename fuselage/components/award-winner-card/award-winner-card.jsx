@@ -3,15 +3,19 @@ import Image from 'next/image'
 import CSS from './award-winner-card.module.css'
 import { Award } from '../../icons/award'
 
-export const AwardWinnerCard = ({ index, year, award, url, photoUrl, fullName, jobTitle, company }) => {
+export const AwardWinnerCard = ({ event, year, award, url, photoUrl, fullName, jobTitle, company }) => {
     return (
         <a href={url} className={CSS.layout}>
 
-            <p className='fs-2' style={{ opacity: index < 1 ? 1 : 0 }}>{ year }</p>
+            <p className='fs-2' style={{ opacity: year ? 1 : 0 }}>{ year ? year : '_' }</p>
                                             
             <div className={CSS.award}>
                 <Award fill={`var(--secondary)`} />
-                <p className='fs-6 fw-400 lh-1 c-secondary caps'>{ award }</p>
+                <div>
+                    { event ? <p className='fs-sm fw-600 c-secondary' style={{ marginBottom: 2 }}>{ event }</p> : null }
+                    <p className='fs-6 fw-400 lh-1 c-secondary caps'>{ award }</p>
+                </div>
+                
             </div>
 
             <div className={CSS.photoContainer}>

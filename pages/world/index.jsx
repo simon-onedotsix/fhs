@@ -209,6 +209,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                                             <>
                                                 <div className={CSS.popupHeader}>
                                                     <p className="fs-5 fw-600 lh-1 mb-sm">Download Event Brochure</p>
+                                                    <img className={CSS.popupHeaderImage} src="/assets/site/ae/FHSWorld-brochure-mockup.png" alt=""/>
                                                 </div>
 
                                                 <HubspotForm portalId={`14527187`} formId={'40f2dd9c-9f5a-41c2-9d78-f35a170107d4'} />
@@ -226,8 +227,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                                         setModalContent(
                                             <>
                                                 <div className={CSS.popupHeader}>
-                                                    <p className="fs-4 fw-600 lh-1 mb-sm">Download FHS 2023 Post-event Report</p>
-                                                    <img className={CSS.popupHeaderImage} src="/assets/site/ae/ae-2024-brochure.png" alt=""/>
+                                                    <p className="fs-4 fw-600 lh-1">Download FHS 2023 Post-event Report</p>
+                                                    <img className={CSS.popupHeaderImage} src="/assets/site/ae/FHS2023-post-show-report.png" alt=""/>
                                                 </div>
 
                                                 <HubspotForm portalId={`14527187`} formId={'c2b14f19-e6b6-478f-83ac-e76e9facc2c6'} />

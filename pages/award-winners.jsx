@@ -3,6 +3,8 @@ import Layout from '../fuselage/templates/layout'
 import { gql } from "@apollo/client"
 import craftApolloClient from "./api/apollo"
 
+import { LenisScroller } from '../fuselage/animation/lenis-scroller'
+
 import Image from 'next/image'
 
 import { Header } from '../fuselage/theme/2024/global/common/header/header'
@@ -15,7 +17,7 @@ import { AwardWinnerCard } from '../fuselage/components/award-winner-card/award-
 
 export default function AwardWinners ({ data }) {
 
-    // console.log('data.awardWinners:', data.awardWinners)
+    console.log('data.awardWinners:', data.awardWinners)
 
     
     return (
@@ -37,8 +39,8 @@ export default function AwardWinners ({ data }) {
                                     group.winners.map( (winner, index) => (
                                         <AwardWinnerCard
                                             key={winner.id}
-                                            index={index}
-                                            year={group.year}
+                                            event={ winner.event === 'fhisAe' ? 'FHS World' : 'FHS Saudi Arabia'}
+                                            year={ index < 1 ? group.year: null }
                                             award={winner.award}
                                             // url={`/speakers/profile/${winner.recipientProfile[0].slug}`} 
                                             photoUrl={winner.recipientProfile[0].avatar[0] ? winner.recipientProfile[0].avatar[0].url : null }
@@ -56,6 +58,7 @@ export default function AwardWinners ({ data }) {
             }
 
             <Footer />
+            <LenisScroller />
 
             <CtaTab />
         </div>
@@ -84,6 +87,7 @@ export async function getStaticProps() {
                                     ... on winners_BlockType {
                                         id
                                         award
+                                        event
                                         recipientProfile {
                                             ... on profiles_profile_Entry {
                                                 id
