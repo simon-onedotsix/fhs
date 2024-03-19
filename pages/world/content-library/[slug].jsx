@@ -1,6 +1,9 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from '../../api/apollo'
 
+import Head from "next/head"
+import { useRouter } from 'next/router'
+
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
 import Image from "next/image"
@@ -17,10 +20,18 @@ import { ButtonSocial } from '../../../fuselage/components/button-social/button-
 import { VideoPlayer } from "../../../fuselage/components/video-player/video-player"
 import { Button } from "../../../fuselage/components/button/button"
 
+import { QuerySEO } from "../../../graphql/queries"
+import handleSeomaticMeta from '../../../lib/seomatic'
+import { buildShareUrl } from '../../../lib/build-share-url'
+
 
 export default function Article ({ entry }) {
 
     // console.log(entry)
+
+    const router = useRouter()
+
+
 
     const handleHero = () => {
         if ( entry.hero ) {
@@ -174,6 +185,9 @@ export default function Article ({ entry }) {
 
     return (
         <>
+
+            <Head>{ handleSeomaticMeta( entry.seomatic ) }</Head>
+            
             <Header compact />
                         
 
@@ -208,9 +222,9 @@ export default function Article ({ entry }) {
                                 <div className="py-xs">
                                     <p className="fw-600 pb-xs">Share this article</p>
                                     <div className="flex gap-xxs">
-                                        <ButtonSocial icon='linkedin' decal='bg-secondary' />
-                                        <ButtonSocial icon='facebook' decal='bg-secondary' />
-                                        <ButtonSocial icon='twitter' decal='bg-secondary' />
+                                        <ButtonSocial url={buildShareUrl(`https://www.linkedin.com/sharing/share-offsite/?url=`, router)} icon='linkedin' decal='bg-secondary' />
+                                        <ButtonSocial url={buildShareUrl(`https://www.facebook.com/sharer.php?u=`, router)} icon='facebook' decal='bg-secondary' />
+                                        <ButtonSocial url={buildShareUrl(`https://twitter.com/intent/tweet?url=`, router)} icon='twitter' decal='bg-secondary' />
                                     </div>
                                 </div>
                             </div>
@@ -272,6 +286,7 @@ export async function getStaticProps({ params, preview, previewData }) {
                             width
                             height
                         }
+                        ${QuerySEO}
                         contentLibraryContentBlocks {
                             ... on contentLibraryContentBlocks_text_BlockType {
                                 id

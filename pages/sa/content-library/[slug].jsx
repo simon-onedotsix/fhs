@@ -1,5 +1,7 @@
 import Layout from '../../../fuselage/templates/sa/layout'
 
+import { useRouter } from 'next/router'
+
 import { gql } from "@apollo/client"
 import craftApolloClient from '../../api/apollo'
 
@@ -28,11 +30,14 @@ import { Button } from "../../../fuselage/components/button/button"
 import { QuerySEO } from "../../../graphql/queries"
 import handleSeomaticMeta from '../../../lib/seomatic'
 
+import { buildShareUrl } from '../../../lib/build-share-url'
+
 
 export default function Article ({ entry }) {
 
     // console.log(entry)
 
+    const router = useRouter()
     
 
     const handleHero = () => {
@@ -225,9 +230,9 @@ export default function Article ({ entry }) {
                             <div className="py-xs">
                                 <p className="fw-600 pb-xs">Share this article</p>
                                 <div className="flex gap-xxs">
-                                    <ButtonSocial icon='linkedin' decal='bg-accent' />
-                                    <ButtonSocial icon='facebook' decal='bg-accent' />
-                                    <ButtonSocial icon='twitter' decal='bg-accent' />
+                                    <ButtonSocial url={buildShareUrl(`https://www.linkedin.com/sharing/share-offsite/?url=`, router)} icon='linkedin' decal='bg-accent' />
+                                    <ButtonSocial url={buildShareUrl(`https://www.facebook.com/sharer.php?u=`, router)} icon='facebook' decal='bg-accent' />
+                                    <ButtonSocial url={buildShareUrl(`https://twitter.com/intent/tweet?url=`, router)} icon='twitter' decal='bg-accent' />
                                 </div>
                             </div>
 
@@ -246,6 +251,9 @@ export default function Article ({ entry }) {
 }
 
 Article.theme = 'sa-2024'
+
+
+
 
 export async function getStaticPaths() {
 
