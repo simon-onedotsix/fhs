@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import { useContext } from 'react'
+import { GlobalsContext } from '../../../../../../pages/_app'
 
 import { useInView } from 'react-intersection-observer'
 
@@ -57,14 +58,21 @@ const otherEvents = [
 export const Header = ({ compact, overlaid, inverse }) => {
 
     const [pinHeaderTrigger, inView, eventsBar] = useInView({
-		threshold: 0,
+        threshold: 0,
         initialInView: true
 	})
     
     const [hideEventsBarTrigger, headerInView, header] = useInView({
-		threshold: 0,
+        threshold: 0,
         initialInView: true
 	})
+    
+    
+    // get main-menu from context to pass into component
+
+    const { globals } = useContext(GlobalsContext)
+
+    const { mainMenu } = globals.global.find( data => data.__typename === 'header_GlobalSet' )
 
 
     return (
@@ -90,7 +98,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                 </div>
                 
                 <div className={`${CSS.nav} ${ !inView && CSS.fixed}`}>
-                    <MainMenu mainMenu={null} otherEvents={otherEvents} />
+                    <MainMenu mainMenu={mainMenu} otherEvents={otherEvents} />
                 </div>
 
             </header>

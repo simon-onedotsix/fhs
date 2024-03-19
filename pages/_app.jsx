@@ -47,6 +47,29 @@ App.getInitialProps = async () => {
 		query: gql`
 			query fhsGlobals {
 				globalSets(site: "fhis") {
+					... on header_GlobalSet {
+						id
+						name
+						mainMenu {
+							... on mainMenu_BlockType {
+								id
+								columnData {
+									... on columnData_heading_BlockType {
+										id
+										heading
+									}
+									... on columnData_menuLinksGroup_BlockType {
+										id
+										menuLinks {
+											hyperlink
+											label
+											size
+										}
+									}
+								}
+							}
+						}
+					}
 					... on footer_GlobalSet {
 						id
 						name
@@ -82,30 +105,6 @@ App.getInitialProps = async () => {
 		query: gql`
 			query KsaGlobals {
 				globalSets(site: "fhisSa") {
-					... on header_GlobalSet {
-						id
-						name
-						mainMenu {
-							... on mainMenu_BlockType {
-								id
-								menuColumns {
-									... on menuColumns_heading_BlockType {
-										id
-										heading
-										headingSize
-									}
-									... on menuColumns_menuLinksGroup_BlockType {
-										id
-										menuLink {
-										label
-										hyperlink
-										size
-										}
-									}
-								}
-							}
-						}
-					}
 					... on footer_GlobalSet {
 						id
 						name

@@ -10,6 +10,42 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
 
     const [ active, setActive ] = useState( false )
 
+
+
+    // render main-menu
+
+    // console.log('MAIN MENU:', mainMenu.length)
+
+    // const renderMainMenu = () => {
+
+    //     mainMenu.forEach( column => {
+    //         console.log('--column:', column.columnData.length)
+
+    //         column.columnData.forEach( item => {
+
+    //             switch (item.__typename) {
+    //                 case "columnData_heading_BlockType":
+    //                     console.log('----', item.heading)
+    //                     break
+
+    //                 case "columnData_menuLinksGroup_BlockType":
+    //                     item.menuLinks.forEach( link => {
+    //                         console.log('----', link.label)
+    //                     })
+    //                     break
+                
+    //                 default:
+    //                     break
+    //             }
+    //         })
+
+    //     })
+
+    // }
+    // renderMainMenu(mainMenu)
+
+
+
     return (
         <>
             <div className={CSS.toggleContainer}>
