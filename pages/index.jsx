@@ -22,12 +22,14 @@ import { AngledSection } from '../fuselage/blocks/angled-section/angled-section'
 import { Floater, Floaters, FloaterLogo, FloaterWebsiteButton } from '../fuselage/blocks/floater/floater'
 import { SpeakerCard } from '../fuselage/components/speaker-card/speaker-card'
 
-export default function Home ({ data, seomatic }) {
+export default function Home ({ data, seomatic, podcasts, industryNews }) {
 
     // console.log('data:', data)
     // console.log('seomatic:', seomatic)
     // console.log('contentLibraryPosts:', data.contentLibraryPosts)
-
+    // console.log('podcasts:', podcasts)
+    // console.log('industryNews:', industryNews)
+    
 
     const handleUpcomingEvents = ( events ) => {
         
@@ -92,7 +94,7 @@ export default function Home ({ data, seomatic }) {
 
     const handleContentGroup = ( id, data ) => {
 
-        // console.log('content-group:', data)
+        console.log('content-group:', data)
 
         return (
             <section key={id} className={`c-white`}>
@@ -124,6 +126,39 @@ export default function Home ({ data, seomatic }) {
                         <></>
 
                 }
+            </section>
+        )
+    }
+    
+    const handleContentGroupFallback = ( heading, data, ctaButtonLink, ctaButtonLabel ) => {
+
+        console.log('content-group:', data)
+
+        return (
+            <section className={`c-white`}>
+                <p className='fs-1 fw-500 lh-1 c-white'>{ heading }</p>
+
+                <div className="columns-4 gap-sm mt-md">
+                    {
+                        data.map( (entry, index) => (
+                            <ContentCard
+                                key={index}
+                                url={`/content-library/${entry.slug}`}
+                                heroUrl={entry.contentLibraryHero && entry.contentLibraryHero[0] ? entry.contentLibraryHero[0].url : null}
+                                heading={entry.title}
+                                excerpt={entry.excerpt}
+                                contentTypes={entry.contentTypes}
+                                postDate={entry.postDate}
+                                type={entry.contentTypes[0].slug}
+                            />
+                        ))
+                    }
+                </div>
+
+                <div className='mt-md mb-xl'>
+                    <ArrowButton href={ ctaButtonLink } theme={{ arrow: `var(--primary-3)`, border: `var(--primary-3)`, label: `white`}}>{ ctaButtonLabel }</ArrowButton>
+                </div>
+
             </section>
         )
     }
@@ -212,8 +247,13 @@ export default function Home ({ data, seomatic }) {
             </section>
 
 
-            <section className="block bg-primary" style={{ background: `transparent`, width: `100%`, overflow: `hidden` }}>
+            {/* <section className="block bg-primary" style={{ background: `transparent`, width: `100%`, overflow: `hidden` }}>
                 { data.contentLibraryPosts.map( (group, index) => handleContentGroup(index, group) ) }
+            </section> */}
+            
+            <section className="block bg-primary" style={{ background: `transparent`, width: `100%`, overflow: `hidden` }}>
+                { handleContentGroupFallback('Latest Podcasts', podcasts, '/content-library/category/podcast', 'See more podcasts') }
+                { handleContentGroupFallback('Latest Industry News', industryNews, '/content-library/category/industry-news', 'See more industry news') }
             </section>
          
 
@@ -232,6 +272,7 @@ Home.theme = 'global-2024'
 
 
 export async function getStaticProps() {
+
     const { data } = await craftApolloClient().query({
         query: gql`
             query LandingPage {
@@ -339,6 +380,60 @@ export async function getStaticProps() {
                         ${QuerySEO}
                     }
                 }
+                podcasts: entries(
+                    section: "contentLibrary"
+                    site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}"]
+                    limit: 4
+                    relatedTo: "7701"
+                ){
+                    ... on contentLibrary_article_Entry {
+                        id
+                        slug
+                        title
+                        postDate
+                        excerpt
+                        contentLibraryHero {
+                            id
+                            url
+                            width
+                            height
+                        }
+                        contentTypes {
+                            ... on contentLibrary_Category {
+                                id
+                                title
+                                slug
+                            }
+                        }
+                    }
+                }
+                industryNews: entries(
+                    section: "contentLibrary"
+                    site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}"]
+                    limit: 4
+                    relatedTo: "7703"
+                ){
+                    ... on contentLibrary_article_Entry {
+                        id
+                        slug
+                        title
+                        postDate
+                        excerpt
+                        contentLibraryHero {
+                            id
+                            url
+                            width
+                            height
+                        }
+                        contentTypes {
+                            ... on contentLibrary_Category {
+                                id
+                                title
+                                slug
+                            }
+                        }
+                    }
+                }
             }
           
         `
@@ -347,6 +442,8 @@ export async function getStaticProps() {
         return {
         props: {
             data: data.entry,
+            podcasts: data.podcasts,
+            industryNews: data.industryNews,
             seomatic: data.entry.seomatic
         },
     }

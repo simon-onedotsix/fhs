@@ -47,13 +47,14 @@ export default function AwardWinners ({ data }) {
                                     }
                                 })
                                 
-                                console.log('localisedWinners:', localisedWinners)
+                                // console.log('localisedWinners:', localisedWinners)
 
                                 return (
                                     localisedWinners?.map( (winner, index) => {
                                         if ( winner.event === process.env.NEXT_PUBLIC_SITE_HANDLE_SA ) return (
                                             <AwardWinnerCard
                                                 key={winner.id}
+                                                theme={`var(--accent)`}
                                                 year={ index < 1 ? group.year: null }
                                                 award={winner.award}
                                                 // url={`/speakers/profile/${winner.recipientProfile[0].slug}`} 

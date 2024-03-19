@@ -72,6 +72,11 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                                 <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Content Library</a>
                             </Link>
                         </p>
+                        <p className='c-white mt-xs'>
+                            <Link href={'/award-winners'}>
+                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Award Winners</a>
+                            </Link>
+                        </p>
                     </section>
 
                     <section className='c-white'>

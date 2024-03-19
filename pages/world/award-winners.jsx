@@ -19,7 +19,7 @@ export default function AwardWinners ({ data }) {
 
     
     return (
-        <div className='bg-primary' style={{ backgroundColor: `var(--primary)`, backgroundImage: `url('/assets/theme/fhs-2024-global-bg.svg')` }}>
+        <div className='bg-primary' style={{ backgroundColor: `var(--primary)`, backgroundImage: `url('/assets/theme/fhs-2024-global-bg.svg')`, backgroundSize: `100%` }}>
 
             <Header overlaid inverse />
 
@@ -41,7 +41,7 @@ export default function AwardWinners ({ data }) {
                                     }
                                 })
                                 
-                                console.log('localisedWinners:', localisedWinners)
+                                // console.log('localisedWinners:', localisedWinners)
 
                                 return (
                                     localisedWinners?.map( (winner, index) => {
