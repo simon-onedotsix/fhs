@@ -118,6 +118,18 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents }) => {
                             </Link>
                         </p>
                         
+                        <p className='c-white fs-6 fw-400'>Awards</p>
+                        <p className='c-white pl-sm'>
+                            <Link href={'/sa/leaders-of-tomorrow-award'}>
+                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Leaders of Tomorrow</a>
+                            </Link>
+                        </p>
+                        <p className='c-white pl-sm'>
+                            <Link href={'/sa/industry-pioneer-award'}>
+                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Industry Pioneer</a>
+                            </Link>
+                        </p>
+                        
                         <p className='c-white fs-6 fw-400'>Pitch Sessions</p>
                         <p className='c-white pl-sm'>
                             <Link href={'/sa/startup-den'}>
