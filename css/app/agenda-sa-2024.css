@@ -43,7 +43,7 @@
     display: flex;
 
     /* comment-out flex-direction to display sessions in columns +++++++++++++++++++++++++++++++++++++++++ */
-    flex-direction: column;
+    /* flex-direction: column; */
 
     gap: .5rem;
 }
@@ -115,7 +115,7 @@
     flex:1;
     display: flex;
     /* comment-out flex-direction to display sessions in rows +++++++++++++++++++++++++++++++++++++++++ */
-    /* flex-direction: column; */
+    flex-direction: column;
     gap: .5rem;
 }
 .sessionStream {
@@ -142,7 +142,8 @@
     .sessionsWrapper {
         flex:1;
         display: flex;
-        flex-direction: row;
+        /* comment-out flex-direction to display sessions in rows +++++++++++++++++++++++++++++++++++++++++ */
+        /* flex-direction: row; */
         gap: .5rem;
     }
 

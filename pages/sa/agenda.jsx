@@ -417,7 +417,9 @@ export default function Agenda ({ sessions, locations }) {
 								<MenuItem key={0} onClick={() => setSelectedLocation('')}>All locations</MenuItem>
 								{
 									sessions &&
-									groupFieldGroupsByName( sessions, 'Location').map( filter => <MenuItem key={filter.id} onClick={() => setSelectedLocation(filter.id)}>{ filter.name }</MenuItem> )
+									groupFieldGroupsByName( sessions, 'Location').map( 
+										filter => <MenuItem key={filter.id} onClick={() => setSelectedLocation(filter.id)}>{ filter.name }</MenuItem> 
+									)
 								}
 							</Menu>
                         </section> 
