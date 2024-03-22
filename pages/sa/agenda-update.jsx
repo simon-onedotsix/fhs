@@ -350,8 +350,8 @@ export default function Agenda ({ sessions, locations }) {
 					<div className="formatted mt-md">
 						<ul>
 							<li>FHS - tracks covering hospitality investment, industry entrepreneurship, sustainable development and human capital</li>
-							<li>GRIF - tracks covering F&B investment & workshops</li>
-							<li>All times listed are in Saudi Arabia's GMT+3 timezone</li>
+							<li>GRIF - tracks covering F&amp;B investment &amp; workshops</li>
+							<li>All times listed are in Saudi Arabia&apos;s GMT+3 timezone</li>
 						</ul>
 						<p>Programme is subject to change.</p>
 					</div>
