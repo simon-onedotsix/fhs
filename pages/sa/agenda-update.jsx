@@ -34,6 +34,22 @@ import '@szhsin/react-menu/dist/transitions/slide.css'
 import CSS from '../../css/app/agenda-sa-2024.module.css'
 
 
+
+
+
+const FILTER_TRACKS = [
+	{
+		id: "RmllbGRWYWx1ZV8xOTE1MDcwOQ==",
+		name: "FHS"
+	},
+    {
+        id: "RmllbGRWYWx1ZV8xOTEwNTI2Mg==",
+        name: "GRIF"
+    },
+]
+
+
+
 export default function Agenda ({ sessions, locations }) {
 
 	const [ selectedTopic, setSelectedTopic ] = useState (null)
@@ -326,12 +342,20 @@ export default function Agenda ({ sessions, locations }) {
 	// console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
-
+	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
+	
 	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
 	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))
-
-
 	
+	// console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
+
+
+
+	const breakTitle = ( trigger, titleString, splitPoint ) => {
+		if ( !titleString.includes(trigger) ) return titleString
+		let lines = titleString.split(splitPoint)
+		return `${lines[0]}:<br/>${lines[1]}`		
+	}
 
 
     return (
@@ -374,13 +398,13 @@ export default function Agenda ({ sessions, locations }) {
 								transition 
 								menuClassName={menuClassName}
 							>
-								<MenuItem key={0} onClick={() => setSelectedTopic('')}>All tracks</MenuItem>
 								{
 									sessions &&
-									groupFieldGroupsByName( sessions, 'Topics').map( 
+									FILTER_TRACKS.map( 
 										filter => <MenuItem key={filter.id} onClick={() => setSelectedTopic(filter.id)}>{ filter.name }</MenuItem> 
 									)
 								}
+								<MenuItem key={0} onClick={() => setSelectedTopic('')}>All tracks</MenuItem>
 							</Menu>
                         </section>
 
@@ -394,18 +418,13 @@ export default function Agenda ({ sessions, locations }) {
 								transition 
 								menuClassName={menuClassName}
 							>
-								<MenuItem key={0} onClick={() => setSelectedDay(null)}>All days</MenuItem>
 								{
 									sessions &&
 									buildAgenda( sessions ).map( 
-										(day, index) => {
-											console.log(day)
-											return (
-												<MenuItem key={index} onClick={() => setSelectedDay(day.day)}>{ day.day }</MenuItem>
-											)
-										} 
+										(day, index) => <MenuItem key={index} onClick={() => setSelectedDay(day.day)}>{ day.day }</MenuItem>
 									)
 								}
+								<MenuItem key={0} onClick={() => setSelectedDay(null)}>All days</MenuItem>
 							</Menu>
                         </section>
 
@@ -421,13 +440,13 @@ export default function Agenda ({ sessions, locations }) {
 								transition 
 								menuClassName={menuClassName}
 							>
-								<MenuItem key={0} onClick={() => setSelectedLocation('')}>All stages</MenuItem>
 								{
 									sessions &&
-									groupFieldGroupsByName( sessions, 'Location').map( 
+									_.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc']).map( 
 										filter => <MenuItem key={filter.id} onClick={() => setSelectedLocation(filter.id)}>{ filter.name }</MenuItem> 
 									)
 								}
+								<MenuItem key={0} onClick={() => setSelectedLocation('')}>All stages</MenuItem>
 							</Menu>
                         </section> 
 
@@ -490,7 +509,13 @@ export default function Agenda ({ sessions, locations }) {
 																		}
 
 																		<div className='session | bg-glass columns-1 gap-xs'>
-																			<p className="sessionTitle | fs-4 fw-600 lh-1 c-accent">{ session.titleTranslations[0].value }</p>
+
+																			<p className="sessionTitle | fs-4 fw-600 lh-1 c-accent">
+																				{ parse(breakTitle("in 10:", session.titleTranslations[0].value, ": ")) }
+																			</p>
+																			
+																			{/* <p className="sessionTitle | fs-4 fw-600 lh-1 c-accent">{ session.titleTranslations[0].value }</p> */}
+																			
 																			<div className='sessionTagGrid'>
 																				{getSessionFields( session, 'Topics').length ? <TagIcon fill={`var(--primary)`} /> : null}
 																				{getSessionFields( session, 'Topics')}

@@ -42,7 +42,7 @@
 .sessions {
     display: flex;
 
-    /* comment-out flex-direction to display sessions in columns +++++++++++++++++++++++++++++++++++++++++ */
+    /* comment-out flex-direction to display SESSIONS in columns +++++++++++++++++++++++++++++++++++++++++ */
     /* flex-direction: column; */
 
     gap: .5rem;
@@ -57,6 +57,9 @@
 
 .sessionTitle {
     max-width: 50rem;
+    /* font-variant: small-caps; */
+    /* text-transform: uppercase;
+    font-size: 1.3rem; */
 }
 
 .sessionTagGrid {
@@ -114,7 +117,7 @@
 .sessionsWrapper {
     flex:1;
     display: flex;
-    /* comment-out flex-direction to display sessions in rows +++++++++++++++++++++++++++++++++++++++++ */
+    /* comment-out flex-direction to display STREAMS in rows +++++++++++++++++++++++++++++++++++++++++ */
     flex-direction: column;
     gap: .5rem;
 }
