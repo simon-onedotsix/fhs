@@ -18,6 +18,8 @@ import { Modal } from "../../fuselage/components/modal/modal"
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
 
+import { AgendaLayout } from '../../fuselage/layout/agenda-layout/agenda-layout'
+
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
 
@@ -229,7 +231,7 @@ export default function Agenda ({ sessions, locations }) {
         let speakers = []
 
 		speakerData.forEach( speaker => {
-			speaker.withEvent.eventProfile.type !== 'Speaker' ? moderators.push( speaker ) : speakers.push( speaker )
+			speaker.withEvent.eventProfile.type === 'Moderator' ? moderators.push( speaker ) : speakers.push( speaker )
 		})
 
 
@@ -369,6 +371,8 @@ export default function Agenda ({ sessions, locations }) {
 
             <section className="block">
                 
+				{/* INTRO */}
+				
                 <div className="section">
                     <p className="fs-0 fw-500">2024 Agenda</p>
 					<div className="formatted mt-md">
@@ -382,172 +386,164 @@ export default function Agenda ({ sessions, locations }) {
                 </div>
 
 
+				<AgendaLayout>
 
-				{/* FILTERS */}
-				<div className="container pt-sm">
-                    <div className={CSS.filterLayout}>
+					{/* FILTERS */}
+					<aside className="">
+						<div className={CSS.filterLayout}>
 
-						{/* tracks (topics) */}
-						<section className={CSS.filterLayoutButtons}>
-							<Menu 
-								menuButton={
-									<MenuButton className={DROPDOWN.button}>
-										<strong>{ selectedTopic ?  getFieldGroupNameById(sessions, selectedTopic, 'Topics') : `Tracks` }</strong> <Chevron />
-									</MenuButton>
-								} 
-								transition 
-								menuClassName={menuClassName}
-							>
-								{
-									sessions &&
-									FILTER_TRACKS.map( 
-										filter => <MenuItem key={filter.id} onClick={() => setSelectedTopic(filter.id)}>{ filter.name }</MenuItem> 
-									)
-								}
-								<MenuItem key={0} onClick={() => setSelectedTopic('')}>All tracks</MenuItem>
-							</Menu>
-                        </section>
-
-
-						{/* days */}
-						<section className={CSS.filterLayoutButtons}>
-							<Menu 
-								menuButton={
-									<MenuButton className={DROPDOWN.button}><strong>{ selectedDay ?  selectedDay : `Days` }</strong> <Chevron /></MenuButton>
-								} 
-								transition 
-								menuClassName={menuClassName}
-							>
-								{
-									sessions &&
-									buildAgenda( sessions ).map( 
-										(day, index) => <MenuItem key={index} onClick={() => setSelectedDay(day.day)}>{ day.day }</MenuItem>
-									)
-								}
-								<MenuItem key={0} onClick={() => setSelectedDay(null)}>All days</MenuItem>
-							</Menu>
-                        </section>
-
-
-                        {/* locations */}
-                        <section className={CSS.filterLayoutButtons}>
-							<Menu 
-								menuButton={
-									<MenuButton className={DROPDOWN.button}>
-										<strong>{ selectedLocation ?  getFieldGroupNameById(sessions, selectedLocation, 'Location') : `Stages` }</strong> <Chevron />
-									</MenuButton>
-								} 
-								transition 
-								menuClassName={menuClassName}
-							>
-								{
-									sessions &&
-									_.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc']).map( 
-										filter => <MenuItem key={filter.id} onClick={() => setSelectedLocation(filter.id)}>{ filter.name }</MenuItem> 
-									)
-								}
-								<MenuItem key={0} onClick={() => setSelectedLocation('')}>All stages</MenuItem>
-							</Menu>
-                        </section> 
-
-
-						{/* reset filters */}
-						{
-							selectedDay || selectedLocation || selectedTopic ?
-								<section className={CSS.agendaFilterResetWrapper}>
-									<button className={CSS.agendaFilterReset} onClick={resetFilters}>Reset all filters <span>&times;</span></button>
-								</section>
-							: null
-						}
-  
-                    </div>
-                </div>
-
-
-
-				{/* AGENDA */}
-				<div className="agenda | section columns-1 gap-sm mt-sm">				
-					{
-						sessions &&
-						buildAgenda( sessions ).map( (day, index) => {
-							
-							if ( selectedDay && selectedDay !== day.day ) return
-
-							return (
-								<section key={index} className='day'>
-									<p key={index} className='dayDivider'> { day.day }</p>
+							{/* tracks (topics) */}
+							<section className={CSS.filterLayoutButtons}>
+								<Menu 
+									menuButton={
+										<MenuButton className={DROPDOWN.button}>
+											<strong className="left">{ selectedTopic ?  getFieldGroupNameById(sessions, selectedTopic, 'Topics') : `Tracks` }</strong> <Chevron />
+										</MenuButton>
+									} 
+									transition 
+									menuClassName={menuClassName}
+								>
 									{
-										day.timeslots.length ?
-										day.timeslots.map( (slot, index) => {
-											return (
-												<div key={index} className='timeSlot'>
+										sessions &&
+										FILTER_TRACKS.map( 
+											filter => <MenuItem key={filter.id} onClick={() => setSelectedTopic(filter.id)}>{ filter.name }</MenuItem> 
+										)
+									}
+									<MenuItem key={0} onClick={() => setSelectedTopic('')}>All tracks</MenuItem>
+								</Menu>
+							</section>
 
-													<div className='timingsAndTags'>
-														{format( new Date(slot.beginsAt), "HH:mm" )} - { format( new Date(slot.sessions[0].endsAt), "HH:mm" ) }
-													</div>
-													
-													<div className="sessions">
-														{
-															prioriseStreams( slot.sessions, locations ).map( (session, index) => {
-																return (
-																	<div key={index} className="sessionsWrapper">
-																		{
-																			slot.sessions.length > 1 &&
-																			<div className="sessionStream | fw-600">
+
+							{/* days */}
+							<section className={CSS.filterLayoutButtons}>
+								<Menu 
+									menuButton={
+										<MenuButton className={DROPDOWN.button}><strong className="left">{ selectedDay ?  selectedDay : `Days` }</strong> <Chevron /></MenuButton>
+									} 
+									transition 
+									menuClassName={menuClassName}
+								>
+									{
+										sessions &&
+										buildAgenda( sessions ).map( 
+											(day, index) => <MenuItem key={index} onClick={() => setSelectedDay(day.day)}>{ day.day }</MenuItem>
+										)
+									}
+									<MenuItem key={0} onClick={() => setSelectedDay(null)}>All days</MenuItem>
+								</Menu>
+							</section>
+
+
+							{/* locations */}
+							<section className={CSS.filterLayoutButtons}>
+								<Menu 
+									menuButton={
+										<MenuButton className={DROPDOWN.button}>
+											<strong className="left">{ selectedLocation ?  getFieldGroupNameById(sessions, selectedLocation, 'Location') : `Stages` }</strong> <Chevron />
+										</MenuButton>
+									} 
+									transition 
+									menuClassName={menuClassName}
+								>
+									{
+										sessions &&
+										_.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc']).map( 
+											filter => <MenuItem key={filter.id} onClick={() => setSelectedLocation(filter.id)}>{ filter.name }</MenuItem> 
+										)
+									}
+									<MenuItem key={0} onClick={() => setSelectedLocation('')}>All stages</MenuItem>
+								</Menu>
+							</section> 
+
+
+							{/* reset filters */}
+							{
+								selectedDay || selectedLocation || selectedTopic ?
+									<section className={CSS.agendaFilterResetWrapper}>
+										<button className={CSS.agendaFilterReset} onClick={resetFilters}><span>&times;</span> Reset all filters</button>
+									</section>
+								: null
+							}
+	
+						</div>
+					</aside>
+
+
+					{/* AGENDA */}
+					<main className="agenda | section columns-1 gap-sm">				
+						{
+							sessions &&
+							buildAgenda( sessions ).map( (day, index) => {
+								
+								if ( selectedDay && selectedDay !== day.day ) return
+
+								return (
+									<section key={index} className='day'>
+										<p key={index} className='dayDivider'> { day.day }</p>
+										{
+											day.timeslots.length ?
+											day.timeslots.map( (slot, index) => {
+												return (
+													<div key={index} className='timeSlot'>
+
+														<div className='timingsAndTags'>
+															{format( new Date(slot.beginsAt), "HH:mm" )} - { format( new Date(slot.sessions[0].endsAt), "HH:mm" ) }
+														</div>
+														
+														<div className="sessions">
+															{
+																prioriseStreams( slot.sessions, locations ).map( (session, index) => {
+																	return (
+																		<div key={index} className="sessionsWrapper">
+																			<div className='session | bg-glass'>
+
 																				{
 																					getSessionFields( session, 'Location').length ?
-																						<div className='sessionTagGrid'>
+																						<div className='sessionLocation sessionTagGrid'>
 																							{getSessionFields( session, 'Location').length ? <CompassIcon fill={`white`} /> : null}
 																							{getSessionFields( session, 'Location')}
 																						</div>
-																					: 
-																						<div className='sessionTagGrid c-primary'>
-																							stream
-																						</div>
+																					: null
 																				}
+
+																				<div className="sessionContent | columns-1 gap-xs">
+																					<p className="sessionTitle | fs-4 fw-600 lh-1 c-accent caps">
+																						{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
+																					</p>
+																																										
+																					<div className='sessionTagGrid'>
+																						{getSessionFields( session, 'Topics').length ? <TagIcon fill={`var(--primary)`} /> : null}
+																						{getSessionFields( session, 'Topics')}
+																					</div>
+
+																					{
+																						session.descriptionTranslations.length ?
+																							parse( session.descriptionTranslations[0].value )
+																						: null
+																					}
+																					
+																					{ sortSpeakers(session.speakers) }
+																				</div>
 																			</div>
-																		}
-
-																		<div className='session | bg-glass columns-1 gap-xs'>
-
-																			<p className="sessionTitle | fs-4 fw-600 lh-1 c-accent">
-																				{ parse(breakTitle("in 10:", session.titleTranslations[0].value, ": ")) }
-																			</p>
-																			
-																			{/* <p className="sessionTitle | fs-4 fw-600 lh-1 c-accent">{ session.titleTranslations[0].value }</p> */}
-																			
-																			<div className='sessionTagGrid'>
-																				{getSessionFields( session, 'Topics').length ? <TagIcon fill={`var(--primary)`} /> : null}
-																				{getSessionFields( session, 'Topics')}
-																			
-																				{/* {getSessionFields( session, 'Location').length ? <CompassIcon fill={`var(--primary)`} /> : null}
-																				{getSessionFields( session, 'Location')} */}
-																			</div>
-
-																			{
-																				session.descriptionTranslations.length ?
-																					parse( session.descriptionTranslations[0].value )
-																				: null
-																			}
-																			
-																			{ sortSpeakers(session.speakers) }
 																		</div>
-																	</div>
-																)
-															})
-														}
+																	)
+																})
+															}
+														</div>
+
 													</div>
+												)
+											}) : <p className="fs-5 fw-400 py-xs">No { getFieldGroupNameById( sessions, selectedTopic, 'Topics' ) } sessions available { selectedLocation  ? 'at this location' : null } on this day.</p>
+										}
+									</section>
+								)
+							})
+						}
 
-												</div>
-											)
-										}) : <p className="fs-5 fw-400 py-xs">No { getFieldGroupNameById( sessions, selectedTopic, 'Topics' ) } sessions available { selectedLocation  ? 'at this location' : null } on this day.</p>
-									}
-								</section>
-							)
-						})
-					}
+					</main>
 
-				</div>
+				</AgendaLayout>
+
 
 
             </section>
@@ -708,7 +704,7 @@ export async function getStaticProps() {
 	const result = await eventQuery.json()
 	
 
-	console.log('RESULT', result)
+	// console.log('RESULT', result)
 	// console.log('TEST plannings', result.data.event.planningsPlaces)
 	// console.log('TEST sessions', result.data.plannings)
   

@@ -1,0 +1,30 @@
+.layout {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+@media(max-width:899px){
+    .layout {
+        margin-top: var(--space-md);
+    }
+}
+
+@media(min-width:900px) {
+    .layout {
+        position: relative;
+        display: grid;
+        grid-template-columns: 15rem auto;
+        gap: var(--space-sm);
+    }
+    .layout > * {
+        padding-top: var(--space-md);
+    }
+    .layout aside {
+        align-self: flex-start;
+        position: sticky;
+        top: 5rem;
+    }
+
+}

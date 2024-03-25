@@ -11,6 +11,7 @@
 	background-color: transparent;
 
 	min-width: 12rem;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 
@@ -63,7 +64,7 @@
 	font-size: var(--default-font-size);
 	padding: 0;
 
-	min-width: 12rem;
+	min-width: 15rem;
 	
 	border: 1px solid var(--accent);
 	border-radius: calc(var(--default-radius) * 0.5);

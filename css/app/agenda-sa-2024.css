@@ -5,6 +5,7 @@
 .agenda, .day {
     display: grid;
     grid-template-columns: 1fr;
+    align-items: flex-start;
     gap: .5rem;
 }
 
@@ -29,6 +30,7 @@
     background-color: var(--secondary);
     border-radius: calc(var(--agenda-radius) * 1);
     padding: .5rem 1rem;
+    /* border: 1px solid var(--primary); */
 }
 @media(min-width:600px){
     .timeSlot {
@@ -43,16 +45,32 @@
     display: flex;
 
     /* comment-out flex-direction to display SESSIONS in columns +++++++++++++++++++++++++++++++++++++++++ */
-    /* flex-direction: column; */
+    flex-direction: column;
 
     gap: .5rem;
 }
 
 .session {
     flex: 1;
-    padding: 1rem;
-    /* border: 1px solid rgba(0, 255, 255, 0.267); */
+    /* padding: 1rem; */
+    /* border: 1px solid var(--primary); */
     border-radius: calc(var(--agenda-radius) * 1);
+    overflow: hidden;
+}
+
+.sessionLocation {
+    width: 100%;
+    padding: .35rem .5rem;
+    background-color: var(--primary);
+}
+
+.sessionContent {
+    padding: 1rem;
+}
+@media(min-width:600px){
+    .sessionContent {
+        padding: 1.5rem;
+    }
 }
 
 .sessionTitle {
@@ -121,6 +139,7 @@
     flex-direction: column;
     gap: .5rem;
 }
+
 .sessionStream {
     padding: .5rem 1rem;
     border-radius: calc(var(--agenda-radius) * 1);
