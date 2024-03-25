@@ -1,5 +1,3 @@
-import Layout from '../../../../fuselage/templates/sa/layout'
-
 import { gql } from "@apollo/client"
 import craftApolloClient from '../../../api/apollo'
 
@@ -17,6 +15,7 @@ import { HeaderShim } from '../../../../fuselage/global-sa/header/header'
 
 import { StickySidebar } from '../../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
 import { ArrowLink } from '../../../../fuselage/components/arrow-link/arrow-link'
+import { ArrowLinkBack } from '../../../../fuselage/components/arrow-link-back/arrow-link-back'
 
 import CSS from '../../../../css/app/speakers.module.css'
 
@@ -39,21 +38,18 @@ export default function Profile ({ profile }) {
 						<aside className="formatted">
                             <HeaderShim/>
                             
-							{/* <p className="fw-600">
-                                <ArrowLink 
-                                    theme={{ color: `white`, stroke: `var(--accent)` }} 
-                                    href="/sa/speakers"
-                                >
-                                    View All Speakers
-                                </ArrowLink>
-                            </p> */}
 							<p className="fw-600">
-                                <ArrowLink 
+                                {/* <ArrowLink 
                                     theme={{ color: `white`, stroke: `var(--accent)` }} 
                                     href="/sa/advisory-board"
                                 >
                                     Advisory Board
-                                </ArrowLink>
+                                </ArrowLink> */}
+                                <ArrowLinkBack 
+                                    theme={{ color: `white`, stroke: `var(--accent)` }} 
+                                >
+                                    Back
+                                </ArrowLinkBack>
                             </p>
 							
                             <div className={`${CSS.avatar} mt-sm rad-md`}>
