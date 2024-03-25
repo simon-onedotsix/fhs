@@ -1,11 +1,7 @@
-.filterLayoutButtons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: .2rem;
-}
-
 @media(max-width:1079px){
+    .filters {
+        padding-bottom: var(--space-sm);
+    }
     .desktopOnly {
         display: none;
     }
@@ -19,18 +15,37 @@
     }
 }
 @media(min-width:800px){
+    .filters {
+        height: 3rem;
+    }
+
     .filterLayout {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        z-index: 10;
+        position: absolute;
+
+        display: inline-grid;
+        grid-template-columns: repeat(4, auto);
         flex-wrap: wrap;
         gap: 1rem;
     }
-    .filterLayoutButtons {
-        /* margin-right: 1.5rem; */
+
+    .filterLayout.fixed {
+        position: fixed;
+        top: 150px
     }
+
     .filterButton {
         width: auto;
     }
+}
+
+
+
+.filterLayoutButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: .2rem;
 }
 
 

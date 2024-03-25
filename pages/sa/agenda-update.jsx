@@ -1,5 +1,7 @@
 import { useState, useRef } from "react"
 
+import { useInView } from 'react-intersection-observer'
+
 import _ from 'lodash'
 import { format } from 'date-fns'
 import parse from 'html-react-parser'
@@ -18,7 +20,7 @@ import { Modal } from "../../fuselage/components/modal/modal"
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
 
-import { AgendaLayout } from '../../fuselage/layout/agenda-layout/agenda-layout'
+import { Pop, Fade } from '../../fuselage/animation/animation'
 
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
@@ -61,6 +63,11 @@ export default function Agenda ({ sessions, locations }) {
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: ''})
 
 
+	// filter menu pinning
+	const [filterTrigger, inView, entry] = useInView({
+		threshold: 1,
+		rootMargin: '-150px 0px 0px 0px'
+	})
 
 
 	// FILTER UTILS
@@ -372,7 +379,7 @@ export default function Agenda ({ sessions, locations }) {
             <section className="block">
                 
 				{/* INTRO */}
-                <div className="section">
+                <div className="section mb-sm">
                     <p className="fs-0 fw-500">2024 Agenda</p>
 					<div className="formatted mt-md">
 						<ul>
@@ -386,8 +393,9 @@ export default function Agenda ({ sessions, locations }) {
 
 				
 				{/* FILTERS */}
-				<aside className="my-sm">
-					<div className={CSS.filterLayout}>
+				<div ref={filterTrigger} className={CSS.filters}>
+
+					<div className={`${CSS.filterLayout} ${ !inView && CSS.fixed }`}>
 
 						{/* tracks (topics) */}
 						<section className={CSS.filterLayoutButtons}>
@@ -410,7 +418,6 @@ export default function Agenda ({ sessions, locations }) {
 							</Menu>
 						</section>
 
-
 						{/* days */}
 						<section className={CSS.filterLayoutButtons}>
 							<Menu 
@@ -429,7 +436,6 @@ export default function Agenda ({ sessions, locations }) {
 								<MenuItem key={0} onClick={() => setSelectedDay(null)}>All days</MenuItem>
 							</Menu>
 						</section>
-
 
 						{/* locations */}
 						<section className={CSS.filterLayoutButtons}>
@@ -452,7 +458,6 @@ export default function Agenda ({ sessions, locations }) {
 							</Menu>
 						</section> 
 
-
 						{/* reset filters */}
 						{
 							selectedDay || selectedLocation || selectedTopic ?
@@ -463,11 +468,11 @@ export default function Agenda ({ sessions, locations }) {
 						}
 
 					</div>
-				</aside>
+				</div>
 
 
 				{/* AGENDA */}
-				<main className="agenda | section columns-1 gap-sm">				
+				<main className="agenda | section columns-1 gap-sm mt-sm">				
 					{
 						sessions &&
 						buildAgenda( sessions ).map( (day, index) => {
@@ -539,7 +544,7 @@ export default function Agenda ({ sessions, locations }) {
 
 				</main>
 
-
+				
             </section>
 
 

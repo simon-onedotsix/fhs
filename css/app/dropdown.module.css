@@ -10,14 +10,15 @@
 	border-radius: var(--standard-field-radius, 0);
 	background-color: transparent;
 
-	min-width: 12rem;
+	/* min-width: 12rem; */
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 
 	transition: all 350ms ease-in-out;
 
-	
+	backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.25) !important;
 }
 
 .button svg {
@@ -28,8 +29,8 @@
 
 @media(hover: hover){
 	.button:hover {
-		background-color: var(--accent);
-		color: var(--dark);
+		background-color: var(--accent)!important;
+		color: var(--dark)!important;
 	}
 	.button:hover svg {
 		stroke: var(--dark);
