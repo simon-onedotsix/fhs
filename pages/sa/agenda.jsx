@@ -353,8 +353,8 @@ export default function Agenda ({ sessions, locations }) {
                 </div>
 
 				{/* FILTERS */}
-				<div className="container">
-                    <div className={CSS.filterLayout}>
+				<div className="container pt-sm">
+                    <div className={CSS.filterLayout} style={{ display: 'flex'}}>
 
                         {/* topics */}
                         <section className={CSS.filterLayoutButtons}>
@@ -406,7 +406,7 @@ export default function Agenda ({ sessions, locations }) {
                         </section>
 
                         {/* locations */}
-                        <section className={CSS.filterLayoutButtons}>
+                        <section className={CSS.filterLayoutButtons} style={{ maxWidth: 400 }}>
 							<Menu 
 								menuButton={
 									<MenuButton className={DROPDOWN.button}>{ selectedLocation ?  getFieldGroupNameById(sessions, selectedLocation, 'Location') : `All locations` } <Chevron /></MenuButton>
