@@ -1,27 +1,22 @@
 import { useState, useRef } from "react"
 
-import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
-import { useInView } from 'react-intersection-observer'
-
 import _ from 'lodash'
 import { format } from 'date-fns'
 import parse from 'html-react-parser'
 
-import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+import { LenisScroller } from '../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
+import { Header } from '../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../fuselage/theme/2024/sa/globals/footer/footer"
 
-import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+import { ThemeBg } from '../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
-import { TagIcon, CompassIcon } from "../../fuselage/components/icons/icons"
+import { TagIcon, CompassIcon } from "../fuselage/components/icons/icons"
 
-import { Modal } from "../../fuselage/components/modal/modal"
-import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
-import { Avatar } from '../../fuselage/components/avatar/avatar'
-
-import { Pop, Fade } from '../../fuselage/animation/animation'
+import { Modal } from "../fuselage/components/modal/modal"
+import { Sidebar } from "../fuselage/layout/sidebar/sidebar"
+import { Avatar } from '../fuselage/components/avatar/avatar'
 
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
@@ -39,29 +34,7 @@ import '@szhsin/react-menu/dist/transitions/slide.css'
 import CSS from '../../css/app/agenda-sa-2024.module.css'
 
 
-
-
-
-const FILTER_TRACKS = [
-	{
-		id: "RmllbGRWYWx1ZV8xOTE1MDcwOQ==",
-		name: "FHS"
-	},
-    {
-        id: "RmllbGRWYWx1ZV8xOTEwNTI2Mg==",
-        name: "GRIF"
-    },
-]
-
-
-
 export default function Agenda ({ sessions, locations }) {
-
-	const lenis = useLenis()
-
-	// const lenis = useLenis(({ scroll }) => {
-	// 	console.log(scroll)
-	// })
 
 	const [ selectedTopic, setSelectedTopic ] = useState (null)
     const [ selectedDay, setSelectedDay ] = useState (null)
@@ -69,14 +42,8 @@ export default function Agenda ({ sessions, locations }) {
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: ''})
 
+	const locationSelect = useRef()
 
-
-
-	// filter menu pinning
-	const [filterTrigger, inView, entry] = useInView({
-		threshold: 1,
-		rootMargin: '-150px 0px 0px 0px'
-	})
 
 
 	// FILTER UTILS
@@ -85,6 +52,7 @@ export default function Agenda ({ sessions, locations }) {
 		setSelectedDay(null)
 		setSelectedLocation(null)
 		setSelectedTopic(null)
+		// locationSelect.current.value = 'All locations'
 	}
 
 
@@ -247,7 +215,7 @@ export default function Agenda ({ sessions, locations }) {
         let speakers = []
 
 		speakerData.forEach( speaker => {
-			speaker.withEvent.eventProfile.type === 'Moderator' ? moderators.push( speaker ) : speakers.push( speaker )
+			speaker.withEvent.eventProfile.type !== 'Speaker' ? moderators.push( speaker ) : speakers.push( speaker )
 		})
 
 
@@ -360,24 +328,16 @@ export default function Agenda ({ sessions, locations }) {
 	// console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
-	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
-	
+
 	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
 	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))
+
+
 	
-	// console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
-
-
-
-	const breakTitle = ( trigger, titleString, splitPoint ) => {
-		if ( !titleString.includes(trigger) ) return titleString
-		let lines = titleString.split(splitPoint)
-		return `${lines[0]}:<br/>${lines[1]}`		
-	}
 
 
     return (
-        <ReactLenis root>
+        <>
 
             <Header compact shim />
 
@@ -387,126 +347,106 @@ export default function Agenda ({ sessions, locations }) {
 
             <section className="block">
                 
-				<span id="agenda"/>
-
-				{/* INTRO */}
-                <div className="section mb-sm">
+                <div className="section">
                     <p className="fs-0 fw-500">2024 Agenda</p>
-					<div className="formatted mt-md">
-						<ul>
-							<li>FHS - tracks covering hospitality investment, industry entrepreneurship, sustainable development and human capital</li>
-							<li>GRIF - tracks covering F&amp;B investment &amp; workshops</li>
-							<li>All times listed are in Saudi Arabia&apos;s GMT+3 timezone</li>
-						</ul>
-						<p>Programme is subject to change.</p>
-					</div>
+					<p className="mt-md">Programme is subject to change.</p>
                 </div>
 
-				
 				{/* FILTERS */}
-				<div ref={filterTrigger} className={CSS.filters}>
+				<div className="container pt-sm">
+                    <div className={CSS.filterLayout} style={{ display: 'flex'}}>
 
-					<div className={`${CSS.filterLayout} ${ !inView && CSS.fixed }`}>
+                        {/* topics */}
+                        <section className={CSS.filterLayoutButtons}>
+							{
+								groupFieldGroupsByName( sessions, 'Topics').map( (loc, index) => (
+									<button
+										key={index}
+										className={`${CSS.filterButton} ${ selectedTopic === loc.id ? CSS.active : null }`} 
+										onClick={ () => {
+											setSelectedTopic(loc.id)
+										}
+									}
+									>{loc.name}</button>
+								 ))
+							}
+                            <button 
+                                className={`${CSS.filterButton} ${ selectedTopic === null ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setSelectedTopic(null)
+                                }}
+                            >All</button>
+                        </section>
 
-						{/* tracks (topics) */}
-						<section className={CSS.filterLayoutButtons}>
+                        {/* days */}
+                        <section className={CSS.filterLayoutButtons}>
+                            {
+								sessions &&
+                                buildAgenda( sessions ).map( (day, index) => {
+                                    return (
+                                        <button 
+                                            className={`
+                                                ${CSS.filterButton} 
+                                                ${ selectedDay === day.time.slice(0, 10) ? CSS.active : null }
+                                            `}
+                                            key={index} 
+                                            onClick={ () => {
+                                                setSelectedDay(day.time.slice(0, 10))
+                                            }}
+                                        >Day { index + 1 }</button>
+                                    )
+                                })
+                            }
+                            <button 
+                                className={`${CSS.filterButton} ${ selectedDay === null ? CSS.active : null }`} 
+                                onClick={ () => {
+                                    setSelectedDay(null)
+                                }}
+                            >All</button>
+                        </section>
+
+                        {/* locations */}
+                        <section className={CSS.filterLayoutButtons} style={{ maxWidth: 400 }}>
 							<Menu 
 								menuButton={
-									<MenuButton className={DROPDOWN.button}>
-										<strong className="left">{ selectedTopic ?  getFieldGroupNameById(sessions, selectedTopic, 'Topics') : `Tracks` }</strong> <Chevron />
-									</MenuButton>
+									<MenuButton className={DROPDOWN.button}>{ selectedLocation ?  getFieldGroupNameById(sessions, selectedLocation, 'Location') : `All locations` } <Chevron /></MenuButton>
 								} 
 								transition 
 								menuClassName={menuClassName}
 							>
+								<MenuItem key={0} onClick={() => setSelectedLocation('')}>All locations</MenuItem>
 								{
 									sessions &&
-									FILTER_TRACKS.map( 
-										filter => <MenuItem key={filter.id} onClick={() => {
-											setSelectedTopic(filter.id)
-											lenis.scrollTo('#agenda', { duration: 1 })
-										}}>{ filter.name }</MenuItem> 
+									groupFieldGroupsByName( sessions, 'Location').map( 
+										filter => <MenuItem key={filter.id} onClick={() => setSelectedLocation(filter.id)}>{ filter.name }</MenuItem> 
 									)
 								}
-								<MenuItem key={0} onClick={() => {
-									setSelectedTopic('')
-									lenis.scrollTo('#agenda', { duration: 1 })
-								}}>All tracks</MenuItem>
 							</Menu>
-						</section>
-
-						{/* days */}
-						<section className={CSS.filterLayoutButtons}>
-							<Menu 
-								menuButton={
-									<MenuButton className={DROPDOWN.button}><strong className="left">{ selectedDay ?  selectedDay : `Days` }</strong> <Chevron /></MenuButton>
-								} 
-								transition 
-								menuClassName={menuClassName}
-							>
-								{
-									sessions &&
-									buildAgenda( sessions ).map( 
-										(day, index) => <MenuItem key={index} onClick={() => {
-											setSelectedDay(day.day)
-											lenis.scrollTo('#agenda', { duration: 1 })
-										}}>{ day.day }</MenuItem>
-									)
-								}
-								<MenuItem key={0} onClick={() => {
-									setSelectedDay(null)
-									lenis.scrollTo('#agenda', { duration: 1 })
-								}}>All days</MenuItem>
-							</Menu>
-						</section>
-
-						{/* locations */}
-						<section className={CSS.filterLayoutButtons}>
-							<Menu 
-								menuButton={
-									<MenuButton className={DROPDOWN.button}>
-										<strong className="left">{ selectedLocation ?  getFieldGroupNameById(sessions, selectedLocation, 'Location') : `Stages` }</strong> <Chevron />
-									</MenuButton>
-								} 
-								transition 
-								menuClassName={menuClassName}
-							>
-								{
-									sessions &&
-									_.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc']).map( 
-										filter => <MenuItem key={filter.id} onClick={() => {
-											setSelectedLocation(filter.id)
-											lenis.scrollTo('#agenda', { duration: 1 })
-										}}>{ filter.name }</MenuItem> 
-									)
-								}
-								<MenuItem key={0} onClick={() => {
-									setSelectedLocation('')
-									lenis.scrollTo('#agenda', { duration: 1 })
-								}}>All stages</MenuItem>
-							</Menu>
-						</section> 
+                        </section> 
 
 						{/* reset filters */}
 						{
 							selectedDay || selectedLocation || selectedTopic ?
 								<section className={CSS.agendaFilterResetWrapper}>
-									<button className={CSS.agendaFilterReset} onClick={resetFilters}><span>&times;</span> Reset all filters</button>
+									<button className={CSS.agendaFilterReset} onClick={resetFilters}>Reset all filters <span>&times;</span></button>
 								</section>
 							: null
 						}
+  
+                    </div>
+                </div>
 
-					</div>
-				</div>
+
+				{/* <p className="my-sm">selectedTopic: { selectedTopic ? selectedTopic : 'x' } | selectedDay: { selectedDay ? selectedDay : 'x' } |  selectedLocation: { getFieldGroupNameFromId(sessions, selectedLocation, 'Location') }</p> */}
 
 
 				{/* AGENDA */}
-				<main className="agenda | section columns-1 gap-sm mt-sm">				
+				<div className="agenda | section columns-1 gap-sm mt-md">				
 					{
 						sessions &&
 						buildAgenda( sessions ).map( (day, index) => {
 							
-							if ( selectedDay && selectedDay !== day.day ) return
+							if ( selectedDay && selectedDay !== day.time ) return
 
 							return (
 								<section key={index} className='day'>
@@ -521,42 +461,33 @@ export default function Agenda ({ sessions, locations }) {
 														{format( new Date(slot.beginsAt), "HH:mm" )} - { format( new Date(slot.sessions[0].endsAt), "HH:mm" ) }
 													</div>
 													
-													{/* SESSIONS */}
-
 													<div className="sessions">
 														{
 															prioriseStreams( slot.sessions, locations ).map( (session, index) => {
 																return (
 																	<div key={index} className="sessionsWrapper">
-																		<div className='session | bg-glass'>
+																		{
+																			slot.sessions.length > 1 &&
+																			<div className="sessionStream | fw-600">Stream {index + 1}</div>
+																		}
+
+																		<div className='session | bg-glass columns-1 gap-xs'>
+																			<p className="sessionTitle | fs-4 fw-600 lh-1 c-accent">{ session.titleTranslations[0].value }</p>
+																			<div className='sessionTagGrid'>
+																				{getSessionFields( session, 'Topics').length ? <TagIcon fill={`var(--primary)`} /> : null}
+																				{getSessionFields( session, 'Topics')}
+																			
+																				{getSessionFields( session, 'Location').length ? <CompassIcon fill={`var(--primary)`} /> : null}
+																				{getSessionFields( session, 'Location')}
+																			</div>
 
 																			{
-																				getSessionFields( session, 'Location').length ?
-																					<div className='sessionLocation sessionTagGrid'>
-																						{getSessionFields( session, 'Location').length ? <CompassIcon fill={`white`} /> : null}
-																						{getSessionFields( session, 'Location')}
-																					</div>
+																				session.descriptionTranslations.length ?
+																					parse( session.descriptionTranslations[0].value )
 																				: null
 																			}
-
-																			<div className="sessionContent | columns-1 gap-xs">
-																				<p className="sessionTitle | fs-5 fw-600 lh-1 c-accent caps">
-																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
-																				</p>
-																																									
-																				<div className='sessionTagGrid'>
-																					{getSessionFields( session, 'Topics').length ? <TagIcon fill={`var(--primary)`} /> : null}
-																					{getSessionFields( session, 'Topics')}
-																				</div>
-
-																				{
-																					session.descriptionTranslations.length ?
-																						parse( session.descriptionTranslations[0].value )
-																					: null
-																				}
-																				
-																				{ sortSpeakers(session.speakers) }
-																			</div>
+																			
+																			{ sortSpeakers(session.speakers) }
 																		</div>
 																	</div>
 																)
@@ -573,17 +504,10 @@ export default function Agenda ({ sessions, locations }) {
 						})
 					}
 
-				</main>
+				</div>
 
-				
+
             </section>
-
-			<div className={CSS.actions}>
-				<button className={CSS.scrollButton} onClick={() => { lenis.scrollTo('#agenda', { duration: 1 }) }}>
-					<ChevronUp/>
-				</button>
-			</div>
-
 
 
             <Modal onClose={() => setShowModal(false)} show={showModal}>
@@ -611,7 +535,7 @@ export default function Agenda ({ sessions, locations }) {
             <Footer theme={{ footerBg: 'bg-white' }} />
             <LenisScroller />
 
-        </ReactLenis>
+        </>
     )
 }
 Agenda.theme = 'sa-2024'
@@ -632,18 +556,6 @@ const SpeakerCard = ({ speaker, type }) => {
 			<p className="fw-600">{ speaker.firstName } { speaker.lastName }</p>
 			<p className="fs-sm lh-1">{ speaker.jobTitle }<br />{ speaker.organization }</p>
 		</div>
-	)
-}
-
-const ChevronUp = () => {
-	return (
-			<svg width="100%" height="100%" viewBox="0 0 32 20" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeLinecap:`square`, strokeMiterlimit:1.5 }}>
-				<g transform="matrix(1,0,0,1,-2137,-269)">
-					<g id="chevron-up" transform="matrix(-1.3,-1.3,-1.3,1.3,3687.02,662.598)">
-						<path d="M730,440L740,440L740,450" style={{ fill:`none`, strokeWidth:`2px` }}/>
-					</g>
-				</g>
-			</svg>
 	)
 }
 
@@ -753,7 +665,7 @@ export async function getStaticProps() {
 	const result = await eventQuery.json()
 	
 
-	// console.log('RESULT', result)
+	console.log('RESULT', result)
 	// console.log('TEST plannings', result.data.event.planningsPlaces)
 	// console.log('TEST sessions', result.data.plannings)
   
