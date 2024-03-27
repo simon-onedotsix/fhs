@@ -1,5 +1,6 @@
 import { useState, useRef } from "react"
 
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 import { useInView } from 'react-intersection-observer'
 
 import _ from 'lodash'
@@ -56,11 +57,19 @@ const FILTER_TRACKS = [
 
 export default function Agenda ({ sessions, locations }) {
 
+	const lenis = useLenis()
+
+	// const lenis = useLenis(({ scroll }) => {
+	// 	console.log(scroll)
+	// })
+
 	const [ selectedTopic, setSelectedTopic ] = useState (null)
     const [ selectedDay, setSelectedDay ] = useState (null)
     const [ selectedLocation, setSelectedLocation ] = useState(null)
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: ''})
+
+
 
 
 	// filter menu pinning
@@ -368,7 +377,7 @@ export default function Agenda ({ sessions, locations }) {
 
 
     return (
-        <>
+        <ReactLenis root>
 
             <Header compact shim />
 
@@ -378,6 +387,8 @@ export default function Agenda ({ sessions, locations }) {
 
             <section className="block">
                 
+				<span id="agenda"/>
+
 				{/* INTRO */}
                 <div className="section mb-sm">
                     <p className="fs-0 fw-500">2024 Agenda</p>
@@ -411,10 +422,16 @@ export default function Agenda ({ sessions, locations }) {
 								{
 									sessions &&
 									FILTER_TRACKS.map( 
-										filter => <MenuItem key={filter.id} onClick={() => setSelectedTopic(filter.id)}>{ filter.name }</MenuItem> 
+										filter => <MenuItem key={filter.id} onClick={() => {
+											setSelectedTopic(filter.id)
+											lenis.scrollTo('#agenda', { duration: 1 })
+										}}>{ filter.name }</MenuItem> 
 									)
 								}
-								<MenuItem key={0} onClick={() => setSelectedTopic('')}>All tracks</MenuItem>
+								<MenuItem key={0} onClick={() => {
+									setSelectedTopic('')
+									lenis.scrollTo('#agenda', { duration: 1 })
+								}}>All tracks</MenuItem>
 							</Menu>
 						</section>
 
@@ -430,10 +447,16 @@ export default function Agenda ({ sessions, locations }) {
 								{
 									sessions &&
 									buildAgenda( sessions ).map( 
-										(day, index) => <MenuItem key={index} onClick={() => setSelectedDay(day.day)}>{ day.day }</MenuItem>
+										(day, index) => <MenuItem key={index} onClick={() => {
+											setSelectedDay(day.day)
+											lenis.scrollTo('#agenda', { duration: 1 })
+										}}>{ day.day }</MenuItem>
 									)
 								}
-								<MenuItem key={0} onClick={() => setSelectedDay(null)}>All days</MenuItem>
+								<MenuItem key={0} onClick={() => {
+									setSelectedDay(null)
+									lenis.scrollTo('#agenda', { duration: 1 })
+								}}>All days</MenuItem>
 							</Menu>
 						</section>
 
@@ -451,10 +474,16 @@ export default function Agenda ({ sessions, locations }) {
 								{
 									sessions &&
 									_.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc']).map( 
-										filter => <MenuItem key={filter.id} onClick={() => setSelectedLocation(filter.id)}>{ filter.name }</MenuItem> 
+										filter => <MenuItem key={filter.id} onClick={() => {
+											setSelectedLocation(filter.id)
+											lenis.scrollTo('#agenda', { duration: 1 })
+										}}>{ filter.name }</MenuItem> 
 									)
 								}
-								<MenuItem key={0} onClick={() => setSelectedLocation('')}>All stages</MenuItem>
+								<MenuItem key={0} onClick={() => {
+									setSelectedLocation('')
+									lenis.scrollTo('#agenda', { duration: 1 })
+								}}>All stages</MenuItem>
 							</Menu>
 						</section> 
 
@@ -492,6 +521,8 @@ export default function Agenda ({ sessions, locations }) {
 														{format( new Date(slot.beginsAt), "HH:mm" )} - { format( new Date(slot.sessions[0].endsAt), "HH:mm" ) }
 													</div>
 													
+													{/* SESSIONS */}
+
 													<div className="sessions">
 														{
 															prioriseStreams( slot.sessions, locations ).map( (session, index) => {
@@ -547,6 +578,13 @@ export default function Agenda ({ sessions, locations }) {
 				
             </section>
 
+			<div className={CSS.actions}>
+				<button className={CSS.scrollButton} onClick={() => { lenis.scrollTo('#agenda', { duration: 1 }) }}>
+					<ChevronUp/>
+				</button>
+			</div>
+
+
 
             <Modal onClose={() => setShowModal(false)} show={showModal}>
 
@@ -573,7 +611,7 @@ export default function Agenda ({ sessions, locations }) {
             <Footer theme={{ footerBg: 'bg-white' }} />
             <LenisScroller />
 
-        </>
+        </ReactLenis>
     )
 }
 Agenda.theme = 'sa-2024'
@@ -594,6 +632,18 @@ const SpeakerCard = ({ speaker, type }) => {
 			<p className="fw-600">{ speaker.firstName } { speaker.lastName }</p>
 			<p className="fs-sm lh-1">{ speaker.jobTitle }<br />{ speaker.organization }</p>
 		</div>
+	)
+}
+
+const ChevronUp = () => {
+	return (
+			<svg width="100%" height="100%" viewBox="0 0 32 20" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeLinecap:`square`, strokeMiterlimit:1.5 }}>
+				<g transform="matrix(1,0,0,1,-2137,-269)">
+					<g id="chevron-up" transform="matrix(-1.3,-1.3,-1.3,1.3,3687.02,662.598)">
+						<path d="M730,440L740,440L740,450" style={{ fill:`none`, strokeWidth:`2px` }}/>
+					</g>
+				</g>
+			</svg>
 	)
 }
 

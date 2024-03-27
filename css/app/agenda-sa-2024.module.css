@@ -201,3 +201,53 @@
         top: calc( var(--header-height-compact) * -1 );
     }
 }
+
+
+
+
+/* ACTIONS */
+
+.actions {
+    position: fixed;
+    z-index: 5;
+    bottom: var(--space-sm);
+    right: var(--space-sm)
+}
+
+@media(min-width:600px){
+    .actions {
+        display: none;
+    }
+}
+
+.scrollButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--accent);
+    border-radius: 3rem;
+
+    padding: .8rem;
+
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.25);
+
+    transition: all 350ms ease-in-out;
+}
+.scrollButton svg {
+    stroke: white;
+}
+
+
+@media(hover:hover){
+    .scrollButton:hover {
+        background-color: var(--accent);
+    }
+    .scrollButton:hover svg {
+        stroke: var(--dark);
+    }
+}
