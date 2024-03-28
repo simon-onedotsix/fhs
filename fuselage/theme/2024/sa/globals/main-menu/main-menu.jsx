@@ -59,6 +59,11 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents }) => {
                                 <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Sponsors and Partners</a>
                             </Link>
                         </p>
+                            <p className='c-white'>
+                                <Link href={'https://fhsksa24.expofp.com/'} target='_blank'>
+                                    <a className='uLink fw-400 ml-sm'>Floor Plan</a>
+                                </Link>
+                            </p>
                         <p className='c-white'>
                             <Link href={'/sa/networking'}>
                                 <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Networking</a>

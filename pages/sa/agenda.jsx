@@ -17,7 +17,7 @@ import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
 import { TagIcon, CompassIcon } from "../../fuselage/components/icons/icons"
 
-import { Modal } from "../../fuselage/components/modal/modal"
+import { Modal } from "../../fuselage/theme/2024/sa/components/modal/modal"
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
 
@@ -256,8 +256,9 @@ export default function Agenda ({ sessions, locations }) {
 				{
 					moderators.length ?
 						<div>
+							<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Modorator' }</p>
 							<div className='sessionSpeakerGrid'>
-								{ moderators.map( moderator => <SpeakerCard key={moderator.id} speaker={moderator} type={moderator.withEvent.eventProfile.type} /> ) }
+								{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
 							</div>
 							{
 								speakers.length ?
@@ -268,17 +269,38 @@ export default function Agenda ({ sessions, locations }) {
 					: null
 				}
 				<div className='sessionSpeakerGrid'>
-					{ speakers.map( speaker => <SpeakerCard key={speaker.id} speaker={speaker} /> ) }
+					{ speakers.map( speaker => renderSpeakerCard(speaker) ) }
 				</div>
 			</>
 		)
 
 		return (
 			<div className='sessionSpeakerGrid'>
-				{ speakerData.map( speaker => <SpeakerCard key={speaker.id} speaker={speaker} /> ) }
+				{ speakerData.map( speaker => renderSpeakerCard(speaker) ) }
 			</div>
 		)
 	}
+
+	const renderSpeakerCard = ( speaker ) => {
+		return (
+			<span
+				key={speaker.id} 
+				onClick={() => {
+					if ( speaker.biography ) {
+						setModalContent({
+							avatar: speaker.photoUrl,
+							name: `${speaker.firstName} ${speaker.lastName}`,
+							title: speaker.jobTitle,
+							company: speaker.organization,
+							bio: speaker.biography
+						})
+						setShowModal(true)
+					}
+				}
+			}><SpeakerCard key={speaker.id} speaker={speaker}/></span>
+		)
+	}
+
 
 
 
@@ -596,11 +618,11 @@ export default function Agenda ({ sessions, locations }) {
                                 :
                                 <Avatar src={`/assets/ui/avatar-fallback.png`}/>
                         }
-                        <p className="fs-5 fw-600 c-primary mt-sm lh-1">{ modalContent.name }</p>
-                        <p className="fs-sm fw-400 mt-xs">{modalContent.title} <br/>{modalContent.company}</p>
+                        <p className="fs-5 fw-600 c-white mt-xs lh-1">{ modalContent.name }</p>
+                        <p className="fs-sm fw-400 c-accent mt-xs">{modalContent.title} <br/>{modalContent.company}</p>
                     </aside>
                     
-                    <SimpleBar style={{ maxHeight: 300 }}>
+                    <SimpleBar style={{ maxHeight: `50vh` }}>
                         <div className="formatted pr-xs" dangerouslySetInnerHTML={{ __html: modalContent.bio }}></div>
                     </SimpleBar>                            
                     
@@ -622,13 +644,17 @@ const SpeakerCard = ({ speaker, type }) => {
 
 	return (
 		<div key={speaker.id} className='sessionSpeaker'>
-			{ type ? <p className="c-accent pb-xs">{ type }</p> : null }
-			{
-				speaker.photoUrl ?
-					<img src={speaker.photoUrl} alt="" style={{ maxWidth: 100, maxHeight: 100, borderRadius: 100, marginBottom: 10 }} />
-				: <img src={`/assets/ui/avatar-fallback.png`} alt="" style={{ maxWidth: 100, maxHeight: 100, borderRadius: 100, marginBottom: 10 }} />
 
-			}
+			<span style={{ cursor: speaker.biography ? 'pointer' : 'default' }}>
+				{
+					speaker.photoUrl ?
+						<img src={speaker.photoUrl} alt="" style={{ maxWidth: 100, maxHeight: 100, borderRadius: 100, marginBottom: 10 }} />
+					: 
+						<img src={`/assets/ui/avatar-fallback.png`} alt="" style={{ maxWidth: 100, maxHeight: 100, borderRadius: 100, marginBottom: 10 }} />
+
+				}
+			</span>
+
 			<p className="fw-600">{ speaker.firstName } { speaker.lastName }</p>
 			<p className="fs-sm lh-1">{ speaker.jobTitle }<br />{ speaker.organization }</p>
 		</div>
@@ -732,6 +758,7 @@ export async function getStaticProps() {
 								lastName
 								photoUrl
 								organization
+								biography
 								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}") {
 									eventProfile {
 										type
