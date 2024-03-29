@@ -27,7 +27,7 @@ import CSS from '../../../css/app/speakers-sa-2024.module.css'
 
 function Speakers({ seomatic, speakers }) {
 
-	// console.log('speakers:', speakers)
+	console.log('speakers:', speakers)
 
 	// sort speakers by lastName
 	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
@@ -124,8 +124,8 @@ export async function getStaticProps() {
 			},
 			body: JSON.stringify({
 				query: `
-				query eventPerson($eventId: ID!, $cursor: CursorPaginationInput) {
-					eventPerson(eventId: $eventId, cursor: $cursor) {
+				query eventPerson($eventId: ID!, $cursor: CursorPaginationInput, $filters: [EventPersonFilter!] ) {
+					eventPerson(eventId: $eventId, cursor: $cursor, filters:$filters ) {
 					pageInfo {
 						hasNextPage
 						endCursor
@@ -189,6 +189,9 @@ export async function getStaticProps() {
 					"eventId": process.env.SWAPCARD_EVENT_ID_SA,
 					"cursor": {
 						"first": 300
+					},
+					"filters": {
+						"shouldBeInGroups": "RXZlbnRHcm91cF8zOTI4MDg="
 					}
 				}
 			})

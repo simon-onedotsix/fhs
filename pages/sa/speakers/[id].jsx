@@ -22,7 +22,7 @@ import CSS from '../../../css/app/speakers.module.css'
 
 function Speaker({ speaker, sessions }) {
 
-	console.log('speaker data:', speaker)
+	// console.log('speaker data:', speaker)
 
 	const handleLinkedIn = () => {
 		if  ( speaker.linkedIn ) {
@@ -222,7 +222,8 @@ export async function getStaticProps({ params }) {
 				variables: {
 					"eventId": process.env.SWAPCARD_EVENT_ID_SA,
 					"filters": {
-						"eventPeopleIds": [ params.id ]
+						"eventPeopleIds": [ params.id ],
+						"shouldBeInGroups": "RXZlbnRHcm91cF8zOTI4MDg="
 					}
 				}
 			})
