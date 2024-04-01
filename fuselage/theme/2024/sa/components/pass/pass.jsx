@@ -70,9 +70,13 @@ export const SpecialPass = ({ title, description, currency, value, from, to, lab
                     value &&
                     <p className='fs-2 fw-600 c-white mb-xs'>{ value }</p>
                 }
-                <Link href={ href }>
-                    <a className={`${CSS.button} fs-6 fw-600 mt-xxs`}>{ label }</a>
-                </Link>
+                {
+                    href && label ?
+                        <Link href={ href }>
+                            <a className={`${CSS.button} fs-6 fw-600 mt-xxs`}>{ label }</a>
+                        </Link>
+                    : null
+                }
             </section>
         </div>
     )
