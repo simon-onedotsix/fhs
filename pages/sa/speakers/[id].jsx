@@ -22,7 +22,7 @@ import CSS from '../../../css/app/speakers.module.css'
 
 function Speaker({ speaker, sessions }) {
 
-	// console.log('speaker data:', speaker)
+	console.log('speaker data:', speaker)
 
 	const handleLinkedIn = () => {
 		if  ( speaker.linkedIn ) {
@@ -52,58 +52,26 @@ function Speaker({ speaker, sessions }) {
 			)
 		}
 	}
-	const handleRelatedSessions = () => {
-		let relatedSessions = []
+	const handleRelatedSessions = ( speakerData) => {
 
-		sessions.map( session => {
-			if ( session.speakers && session.speakers.find( item => item.speakerId === speaker.id ) ){
-				relatedSessions.push(session)
-			}
-		})
-		
-		if ( relatedSessions.length ) {
-			let sessions = sortSessions(relatedSessions)
-			console.log(sessions)
-			return (
-				<div className="mt-sm bt-1 bc-accent pt-sm">
-					<p className="fs-5 fw-400 c-accent mb-xs">See {speaker.firstname} {speaker.lastname} speak in the following sessions:</p>
-					{
-						sessions.map( (day, index) => (
-							<div key={index} className='mb-xs'>
-								{ renderDivider( day[0].startDate ) }
-								{ renderSessions( day ) }
-							</div>
-						))
-					}
-				</div>
-			)
-		}
-		
-		// helpers
-		
-		function renderDivider ( day ) {
-			return (
-				<p className='fs-6 fw-400 c-white'>
-					{formatInTimeZone(new Date( day ), 'Asia/Dubai', 'EEEE dd MMMM')}
-				</p>
-			)
-		}
-		
-		function renderSessions ( sessions ) {
-			return (
-				sessions.map( session => {
-					return (
-						<div key={session.id} className="mt-xs">
-							<p className='c-accent'>
-								{ session.startMinute && toHoursAndMinutes(session.startMinute) }
-								{ session.endMinute && ` - ${toHoursAndMinutes(session.endMinute)}` }
+		// if ( !speakerData.speakerOnPlannings.length ) return
+
+		return (
+			<div className="mt-sm bt-1 bc-accent pt-sm">
+				<p className="fs-5 fw-400 c-accent mb-xs">See {speaker.firstName} {speaker.lastName} speak in the following sessions:</p>
+				{
+					speakerData.speakerOnPlannings.map( (day, index) => (
+						<div key={index} className='mb-xs'>
+							<p className="c-accent">
+								{formatInTimeZone(new Date( day.beginsAt ), 'Asia/Dubai', 'EEEE dd MMMM: HH:mm')} - {formatInTimeZone(new Date( day.endsAt ), 'Asia/Dubai', 'HH:mm')}
 							</p>
-							<Link href={`/sa/agenda#session-${session.id}`}><a className='fw-600 c-white'>{ session.title }</a></Link>
+							<p className="fs-5 fw-600 c-white">{ day.title }</p>
 						</div>
-					)
-				})
-			)
-		}
+					))
+				}
+			</div>
+		)
+
 	}
 	
 
@@ -164,6 +132,11 @@ function Speaker({ speaker, sessions }) {
 								</span>
 							</p>
 							<p className="mt-sm maxw-50 c-white" style={{ whiteSpace: `pre-line` }}>{ speaker.biography }</p>
+
+
+
+							{ handleRelatedSessions( speaker ) }
+
 						</main>
 
 					</StickySidebar>
@@ -215,6 +188,12 @@ export async function getStaticProps({ params }) {
 								userId
 								biography
 								photoUrl
+								speakerOnPlannings {
+									id
+									title
+									beginsAt
+									endsAt
+								}
 							}
 						}
 					}

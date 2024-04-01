@@ -29,11 +29,7 @@
     overflow: hidden;
 
     padding: var(--space-md);
-    /* backdrop-filter: blur(10px); */
-    /* background-color: rgba(0, 0, 0, 0.25) !important; */
-
     background-color: var(--secondary);
-
     border-radius: var(--default-radius);
 
     transform: scale(.9);
@@ -47,15 +43,15 @@
 
 @media(max-width:599px){
     .content {
-        width: calc(100vw - var(--space-md) * 2);
-        max-height: calc(100vh - var(--space-md) * 2);
+        width: calc(100vw - var(--space-md) * 1);
+        max-height: calc(100vh - var(--space-md) * 1);
     }
 }
 @media(min-width:600px){
     .content {
         width: calc(100vw - var(--space-lg) * 2);
         max-width: 60rem;;
-        max-height: calc(100vh - var(--space-lg) * 2);
+        max-height: calc(100vh - var(--space-lg) * 1);
     }
 }
 

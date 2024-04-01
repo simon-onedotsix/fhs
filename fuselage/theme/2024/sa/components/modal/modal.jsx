@@ -18,7 +18,7 @@ export function Modal({ show, onClose, children }) {
     }
 
     const modalContent = (
-        <div className={`${CSS.modal} ${show && CSS.active}`} onClick={handleCloseClick}>
+        <div className={`${CSS.modal} ${show && CSS.active}`}>
                 
             <div className={CSS.content}>
                 <button className={CSS.closeButton} onClick={handleCloseClick}><CloseIcon/></button>

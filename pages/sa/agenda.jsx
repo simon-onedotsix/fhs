@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer'
 
 import _ from 'lodash'
 import { format } from 'date-fns'
+import { formatInTimeZone } from 'date-fns-tz'
 import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
@@ -67,7 +68,7 @@ export default function Agenda ({ sessions, locations }) {
     const [ selectedDay, setSelectedDay ] = useState (null)
     const [ selectedLocation, setSelectedLocation ] = useState(null)
     const [ showModal, setShowModal ] = useState(false)
-    const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: ''})
+    const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: '', speakingOn: null })
 
 
 
@@ -256,7 +257,7 @@ export default function Agenda ({ sessions, locations }) {
 				{
 					moderators.length ?
 						<div>
-							<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Modorator' }</p>
+							<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
 							<div className='sessionSpeakerGrid'>
 								{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
 							</div>
@@ -292,7 +293,8 @@ export default function Agenda ({ sessions, locations }) {
 							name: `${speaker.firstName} ${speaker.lastName}`,
 							title: speaker.jobTitle,
 							company: speaker.organization,
-							bio: speaker.biography
+							bio: speaker.biography,
+							speakingOn: speaker.withEvent?.eventProfile.speakerOnPlannings
 						})
 						setShowModal(true)
 					}
@@ -379,7 +381,7 @@ export default function Agenda ({ sessions, locations }) {
 	}
 
 
-	// console.log('sessions:', sessions)
+	console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
@@ -622,9 +624,26 @@ export default function Agenda ({ sessions, locations }) {
                         <p className="fs-sm fw-400 c-accent mt-xs">{modalContent.title} <br/>{modalContent.company}</p>
                     </aside>
                     
-                    <SimpleBar style={{ maxHeight: `50vh` }}>
-                        <div className="formatted pr-xs" dangerouslySetInnerHTML={{ __html: modalContent.bio }}></div>
-                    </SimpleBar>                            
+					<section>
+						<SimpleBar style={{ maxHeight: `50vh` }}>
+							<div className="formatted pr-xs" dangerouslySetInnerHTML={{ __html: modalContent.bio }}></div>
+						</SimpleBar> 
+
+						{/* <div className="mt-sm">
+							<p className="fs-6 fw-400 c-accent mb-xs">See { modalContent.name } speak in the following sessions:</p>                         
+							{
+								modalContent.speakingOn?.map( (day, index) => (
+									<div key={index} className='mb-xs'>
+										<p className="c-accent fs-sm">
+											{formatInTimeZone(new Date( day.beginsAt ), 'Asia/Dubai', 'EEEE dd MMMM: HH:mm')} - {formatInTimeZone(new Date( day.endsAt ), 'Asia/Dubai', 'HH:mm')}
+										</p>
+										<p className="fs-6 fw-600 c-white">{ day.title }</p>
+									</div>
+								))
+							}
+						</div> */}
+					</section>
+
                     
                 </Sidebar>
 
@@ -762,6 +781,12 @@ export async function getStaticProps() {
 								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}") {
 									eventProfile {
 										type
+										speakerOnPlannings {
+											id
+											title
+											beginsAt
+											endsAt
+										}
 									}
 								}
 							}
