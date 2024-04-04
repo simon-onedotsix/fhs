@@ -1,0 +1,110 @@
+.modal {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 350ms ease-in-out;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+
+.content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--secondary);
+
+    overflow: scroll;
+
+    transform: translateX(100%);
+    transition: transform 450ms cubic-bezier(.7, .1, .2, 1);
+}
+
+.modal.active .content {
+    transform: translateX(0);
+    transition: transform 350ms cubic-bezier(.7, .1, .2, 1);
+}
+
+
+
+@media(max-width:899px){
+    .content {
+        width: 100vw;
+    }
+    .content aside {
+        padding: var(--space-md) var(--space-md) 0 var(--space-md);
+    }
+    .content main {
+        padding: var(--space-md);
+    }
+}
+@media(min-width:800px){
+    .content {
+        width: 80vw;
+    }
+    .content aside {
+        max-width: 50vw;
+    }
+}
+@media(min-width:900px){
+    .content {
+        width: 70vw;
+        display: grid;
+        grid-template-columns: 20rem auto;
+    }
+    .content aside {
+        padding: var(--space-md) 0 var(--space-md) var(--space-md);
+    }
+    .content main {
+        padding: var(--space-md);
+        overflow: scroll;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* close button */
+
+.closeButton {
+    cursor: pointer;
+    position: fixed;
+    z-index: 10;
+    top: var(--space-xs);
+    right: var(--space-xs);
+
+    padding: .5rem;
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    background-color: transparent;
+}
+.closeButton svg {
+    stroke: var(--accent);
+    stroke-width: 3.5px;
+
+    transition: all 350ms ease-in-out;
+}
+
+@media(hover:hover) {
+    .closeButton:hover svg {
+        stroke: white;
+    }
+}
