@@ -44,10 +44,10 @@
         width: 100vw;
     }
     .content aside {
-        padding: var(--space-md) var(--space-md) 0 var(--space-md);
+        padding: var(--space-md) var(--space-lg) 0 var(--space-md);
     }
     .content main {
-        padding: var(--space-md);
+        padding: var(--space-md) var(--space-lg) var(--space-md) var(--space-md);
     }
 }
 @media(min-width:800px){
@@ -63,9 +63,13 @@
         width: 70vw;
         display: grid;
         grid-template-columns: 20rem auto;
+        overflow-y: scroll;
     }
     .content aside {
         padding: var(--space-md) 0 var(--space-md) var(--space-md);
+        align-self: flex-start;
+        position: sticky;
+        top: 0;
     }
     .content main {
         padding: var(--space-md);

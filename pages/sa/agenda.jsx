@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 
+import { useRouter } from "next/router"
+
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 import { useInView } from 'react-intersection-observer'
 
@@ -22,8 +24,6 @@ import { Modal } from "../../fuselage/theme/2024/sa/components/modal/modal"
 import { AgendaModal } from "../../fuselage/theme/2024/sa/components/agenda-modal/agenda-modal"
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
-
-import { Pop, Fade } from '../../fuselage/animation/animation'
 
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
@@ -70,6 +70,23 @@ export default function Agenda ({ sessions, locations }) {
     const [ selectedLocation, setSelectedLocation ] = useState(null)
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: '', speakingOn: null })
+
+
+
+	// if query param is provided, scroll to session
+
+	const router = useRouter()
+
+	useEffect(() => {
+		if ( router.isReady && router.query.session ) {
+			lenis.scrollTo(`#${router.query.session}`, { duration: 1 })
+
+			router.replace({
+				pathname: router.pathname,
+				search: new URLSearchParams(router.search).delete('session'),
+			})
+		}
+	})
 
 
 	// filter menu pinning
@@ -293,7 +310,7 @@ export default function Agenda ({ sessions, locations }) {
 							title: speaker.jobTitle,
 							company: speaker.organization,
 							bio: speaker.biography,
-							speakingOn: speaker.withEvent?.eventProfile.speakerOnPlannings
+							speakingOn: speaker.withEvent?.eventProfile.withEvent.speakerOnPlannings
 						})
 						setShowModal(true)
 					}
@@ -380,7 +397,10 @@ export default function Agenda ({ sessions, locations }) {
 	}
 
 
-	console.log('sessions:', sessions)
+
+
+
+	// console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
@@ -551,6 +571,7 @@ export default function Agenda ({ sessions, locations }) {
 															prioriseStreams( slot.sessions, locations ).map( (session, index) => {
 																return (
 																	<div key={index} className="sessionsWrapper">
+																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
 																		<div className='session | bg-glass'>
 
 																			{
@@ -672,12 +693,18 @@ export default function Agenda ({ sessions, locations }) {
 						{/* <div className="mt-sm">
 							<p className="fs-6 fw-400 c-accent mb-xs">See { modalContent.name } speak in the following sessions:</p>                         
 							{
-								modalContent.speakingOn?.map( (day, index) => (
+								modalContent.speakingOn &&
+								_.orderBy(modalContent.speakingOn, 'beginsAt').map( (day, index) => (
 									<div key={index} className='mb-xs'>
 										<p className="c-accent fs-sm">
 											{formatInTimeZone(new Date( day.beginsAt ), 'Asia/Dubai', 'EEEE dd MMMM: HH:mm')} - {formatInTimeZone(new Date( day.endsAt ), 'Asia/Dubai', 'HH:mm')}
 										</p>
-										<p className="fs-6 fw-600 c-white">{ day.title }</p>
+										<p className="fs-6 fw-600 c-white" 
+											onClick={() => {
+												lenis.scrollTo(`#${day.id.slice(0, -2)}`, { duration: 1 })
+												setShowModal(false)
+											}}
+										><span className="uLink">{ day.title }</span></p>
 									</div>
 								))
 							}
@@ -776,7 +803,7 @@ export async function getStaticProps() {
 							}
 						}
 
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}", page: 1, pageSize: 100) {
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}", page: 1, pageSize: 500) {
 							id
 							titleTranslations {
 								value
@@ -824,11 +851,13 @@ export async function getStaticProps() {
 								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}") {
 									eventProfile {
 										type
-										speakerOnPlannings {
-											id
-											title
-											beginsAt
-											endsAt
+										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
+											speakerOnPlannings {
+												id
+												title
+												beginsAt
+												endsAt
+											}
 										}
 									}
 								}

@@ -9,6 +9,7 @@
 .uLink,
 .uLink-thin,
 .uLink-thick {
+    cursor: pointer;
     text-decoration: none;
     padding-bottom: 4px;
     margin-bottom: -2px;

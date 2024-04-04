@@ -1,13 +1,14 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import _ from 'lodash'
+
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
 import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
 import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
 
 import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
 import { HeaderShim } from '../../../fuselage/global-sa/header/header'
 
@@ -15,14 +16,13 @@ import { StickySidebar } from '../../../fuselage/layout/sticky-sidebar/sticky-si
 import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
 import { ButtonSocial } from  '../../../fuselage/components/button-social/button-social'
 
-import { sortSessions, toHoursAndMinutes } from "../../../lib/agenda-utils"
 import { formatInTimeZone } from 'date-fns-tz'
 
 import CSS from '../../../css/app/speakers.module.css'
 
 function Speaker({ speaker, sessions }) {
 
-	console.log('speaker data:', speaker)
+	// console.log('speaker data:', speaker)
 
 	const handleLinkedIn = () => {
 		if  ( speaker.linkedIn ) {
@@ -54,18 +54,20 @@ function Speaker({ speaker, sessions }) {
 	}
 	const handleRelatedSessions = ( speakerData) => {
 
-		// if ( !speakerData.speakerOnPlannings.length ) return
+		if ( !speakerData.withEvent.speakerOnPlannings.length ) return
 
 		return (
 			<div className="mt-sm bt-1 bc-accent pt-sm">
 				<p className="fs-5 fw-400 c-accent mb-xs">See {speaker.firstName} {speaker.lastName} speak in the following sessions:</p>
 				{
-					speakerData.speakerOnPlannings.map( (day, index) => (
+					speakerData.withEvent.speakerOnPlannings.length &&
+					_.orderBy(speakerData.withEvent.speakerOnPlannings, 'beginsAt').map( (day, index) => (
 						<div key={index} className='mb-xs'>
 							<p className="c-accent">
 								{formatInTimeZone(new Date( day.beginsAt ), 'Asia/Dubai', 'EEEE dd MMMM: HH:mm')} - {formatInTimeZone(new Date( day.endsAt ), 'Asia/Dubai', 'HH:mm')}
 							</p>
-							<p className="fs-5 fw-600 c-white">{ day.title }</p>
+							{/* <p>{day.id} ---> {day.id.slice(0, -2)}</p> */}
+							<Link href={`/sa/agenda?session=${day.id.slice(0, -2)}`}><span className="fs-5 fw-600 c-white uLink">{ day.title }</span></Link>
 						</div>
 					))
 				}
@@ -133,8 +135,6 @@ function Speaker({ speaker, sessions }) {
 							</p>
 							<p className="mt-sm maxw-50 c-white" style={{ whiteSpace: `pre-line` }}>{ speaker.biography }</p>
 
-
-
 							{ handleRelatedSessions( speaker ) }
 
 						</main>
@@ -164,7 +164,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
 
-	console.log('params',params)
+	// console.log('params',params)
 	
 	const result = await fetch(
 		"https://developer.swapcard.com/event-admin/graphql",
@@ -188,11 +188,13 @@ export async function getStaticProps({ params }) {
 								userId
 								biography
 								photoUrl
-								speakerOnPlannings {
-									id
-									title
-									beginsAt
-									endsAt
+								withEvent(eventId: $eventId) {
+									speakerOnPlannings {
+									  id
+									  title
+									  beginsAt
+									  endsAt
+									}
 								}
 							}
 						}
