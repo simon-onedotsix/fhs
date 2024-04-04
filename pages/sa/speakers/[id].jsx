@@ -135,7 +135,7 @@ function Speaker({ speaker, sessions }) {
 							</p>
 							<p className="mt-sm maxw-50 c-white" style={{ whiteSpace: `pre-line` }}>{ speaker.biography }</p>
 
-							{ handleRelatedSessions( speaker ) }
+							{/* { handleRelatedSessions( speaker ) } */}
 
 						</main>
 
