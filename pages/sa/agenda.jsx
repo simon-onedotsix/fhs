@@ -14,7 +14,6 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
 import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
-
 import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
 import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
@@ -42,8 +41,6 @@ import CSS from '../../css/app/agenda-sa-2024.module.css'
 
 
 
-
-
 const FILTER_TRACKS = [
 	{
 		id: "RmllbGRWYWx1ZV8xOTE1MDcwOQ==",
@@ -60,6 +57,7 @@ const FILTER_TRACKS = [
 export default function Agenda ({ sessions, locations }) {
 
 	const lenis = useLenis()
+	const router = useRouter()
 
 	// const lenis = useLenis(({ scroll }) => {
 	// 	console.log(scroll)
@@ -74,11 +72,9 @@ export default function Agenda ({ sessions, locations }) {
 
 
 	// if query param is provided, scroll to session
-
-	const router = useRouter()
-
 	useEffect(() => {
-		if ( router.isReady && router.query.session ) {
+		if ( lenis && router.isReady && router.query.session ) {
+			
 			lenis.scrollTo(`#${router.query.session}`, { duration: 1 })
 
 			router.replace({

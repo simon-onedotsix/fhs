@@ -102,7 +102,7 @@ function Speaker({ speaker, sessions }) {
 							<p className={`${CSS.avatar} mt-sm`}>
 								{
 									speaker.photoUrl ? 
-									<Image 
+									<img 
 										src={speaker.photoUrl} 
 										width={370} 
 										height={370} 
@@ -110,7 +110,7 @@ function Speaker({ speaker, sessions }) {
 										unoptimized
 									/>
 									: 
-									<Image 
+									<img 
 										src='/assets/ui/avatar-fallback.png' 
 										width={370} 
 										height={370} 
@@ -135,7 +135,7 @@ function Speaker({ speaker, sessions }) {
 							</p>
 							<p className="mt-sm maxw-50 c-white" style={{ whiteSpace: `pre-line` }}>{ speaker.biography }</p>
 
-							{/* { handleRelatedSessions( speaker ) } */}
+							{ handleRelatedSessions( speaker ) }
 
 						</main>
 

@@ -126,37 +126,18 @@ export async function getStaticProps() {
 				query: `
 				query eventPerson($eventId: ID!, $cursor: CursorPaginationInput, $filters: [EventPersonFilter!] ) {
 					eventPerson(eventId: $eventId, cursor: $cursor, filters:$filters ) {
-					pageInfo {
-						hasNextPage
-						endCursor
-						totalItems
-						startCursor
-						lastPage
-						hasPreviousPage
-						currentPage
-					}
-					totalCount
 					nodes {
 						id
 						type
-						clientIds
-						email
 						firstName
 						lastName
 						jobTitle
 						organization
 						photoUrl
-						websiteUrl
-						biography
-						socialNetworks {
-							profile
-							type
-						}
 						groups {
 							id
 							name
 						}
-						source
 						withEvent(eventId: $eventId) {
 						fields {
 							... on SelectField {
