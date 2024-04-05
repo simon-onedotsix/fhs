@@ -124,47 +124,47 @@ export async function getStaticProps() {
 			},
 			body: JSON.stringify({
 				query: `
-				query eventPerson($eventId: ID!, $cursor: CursorPaginationInput, $filters: [EventPersonFilter!] ) {
-					eventPerson(eventId: $eventId, cursor: $cursor, filters:$filters ) {
-					nodes {
-						id
-						type
-						firstName
-						lastName
-						jobTitle
-						organization
-						photoUrl
-						groups {
+					query eventPerson($eventId: ID!, $cursor: CursorPaginationInput, $filters: [EventPersonFilter!] ) {
+						eventPerson(eventId: $eventId, cursor: $cursor, filters:$filters ) {
+						nodes {
 							id
-							name
-						}
-						withEvent(eventId: $eventId) {
-						fields {
-							... on SelectField {
-								translations {
-									value
-									language
-								}
-								definition {
-									id
+							type
+							firstName
+							lastName
+							jobTitle
+							organization
+							photoUrl
+							groups {
+								id
+								name
+							}
+							withEvent(eventId: $eventId) {
+							fields {
+								... on SelectField {
 									translations {
-										name
+										value
 										language
 									}
+									definition {
+										id
+										translations {
+											name
+											language
+										}
+											}
 										}
 									}
-								}
-								badges {
-									... on BadgeBarcode {
-										__typename
-										barcode
-										createdAt
+									badges {
+										... on BadgeBarcode {
+											__typename
+											barcode
+											createdAt
+										}
 									}
 								}
 							}
 						}
 					}
-				}
 				`,
 				variables: {
 					"eventId": process.env.SWAPCARD_EVENT_ID_SA,

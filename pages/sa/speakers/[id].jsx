@@ -156,11 +156,55 @@ Speaker.theme = 'sa-2014'
 
 
 export async function getStaticPaths() {
+
+	const result = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query eventPerson($eventId: ID!, $cursor: CursorPaginationInput, $filters: [EventPersonFilter!] ) {
+						eventPerson(eventId: $eventId, cursor: $cursor, filters:$filters ) {
+							nodes {
+								id
+							}
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA,
+					"cursor": {
+						"first": 300
+					},
+					"filters": {
+						"shouldBeInGroups": "RXZlbnRHcm91cF8zOTI4MDg="
+					}
+				}
+			})
+		}
+	)
+
+	const speakersData = await result.json()
+
+	console.log(speakersData.data.eventPerson.nodes)
+
+
 	return {
-		paths: [],
-		fallback: 'blocking'
-	}
+        paths: speakersData.data.eventPerson.nodes.map( speaker => ({ params: { id: speaker.id } })),
+        fallback: false
+    }
 }
+
+// export async function getStaticPaths() {
+// 	return {
+// 		paths: [],
+// 		fallback: 'blocking'
+// 	}
+// }
 
 export async function getStaticProps({ params }) {
 
@@ -179,13 +223,11 @@ export async function getStaticProps({ params }) {
 					query eventPerson($eventId: ID!, $filters: [EventPersonFilter!]) {
 						eventPerson(eventId: $eventId, filters: $filters) {
 							nodes {
-								createdAt
-								firstName
 								id
+								firstName
 								lastName
 								jobTitle
 								organization
-								userId
 								biography
 								photoUrl
 								withEvent(eventId: $eventId) {
