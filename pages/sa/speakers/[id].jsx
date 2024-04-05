@@ -102,7 +102,7 @@ function Speaker({ speaker, sessions }) {
 							<p className={`${CSS.avatar} mt-sm`}>
 								{
 									speaker.photoUrl ? 
-									<img 
+									<Image 
 										src={speaker.photoUrl} 
 										width={370} 
 										height={370} 
@@ -110,7 +110,7 @@ function Speaker({ speaker, sessions }) {
 										unoptimized
 									/>
 									: 
-									<img 
+									<Image 
 										src='/assets/ui/avatar-fallback.png' 
 										width={370} 
 										height={370} 
