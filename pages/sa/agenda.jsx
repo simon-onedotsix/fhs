@@ -65,7 +65,7 @@ const FILTER_TRACKS = [
     },
 	{
         "id": "RmllbGRWYWx1ZV8yMzI1MzEyOA==",
-        "name": "Data & Digital Talks"
+        "name": "Talks"
     },
 	{
         "id": "RmllbGRWYWx1ZV8yMzI1MzEyOQ==",
@@ -103,10 +103,6 @@ const FILTER_TRACKS = [
 		"id": "RmllbGRWYWx1ZV8yMzI1MzEzOQ==",
 		"name": "Technology & Innovation"
 	},
-    {
-        "id": "RmllbGRWYWx1ZV8yMzI1MzE0MA==",
-        "name": "TenX Leadership Talks"
-    },
     {
         "id": "RmllbGRWYWx1ZV8yMzI1MzE0MQ==",
         "name": "Wellness & Luxury"
@@ -469,7 +465,7 @@ export default function Agenda ({ sessions, locations }) {
 	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
 	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))
 	
-	// console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
+	console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
 
 
 
