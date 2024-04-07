@@ -41,16 +41,81 @@ import CSS from '../../css/app/agenda-sa-2024.module.css'
 
 
 
+
+// custom topic selection and ordering
+// to revert to API-driven replace the mapped variable with:
+// groupFieldGroupsByName( sessions, 'Topics')
+
 const FILTER_TRACKS = [
+    {
+        "id": "RmllbGRWYWx1ZV8xOTE1MDcwOQ==",
+        "name": "FHS Sessions"
+    },
+    {
+        "id": "RmllbGRWYWx1ZV8yMzI1MzEzNw==",
+        "name": "Restaurant Invest (GRIF)"
+    },
 	{
-		id: "RmllbGRWYWx1ZV8xOTE1MDcwOQ==",
-		name: "FHS"
+        "id": "RmllbGRWYWx1ZV8yMzI1MzEyNg==",
+        "name": "Opening, Awards & Signings"
+    },
+	{
+        "id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==",
+        "name": "Brand Development"
+    },
+	{
+        "id": "RmllbGRWYWx1ZV8yMzI1MzEyOA==",
+        "name": "Data & Digital Talks"
+    },
+	{
+        "id": "RmllbGRWYWx1ZV8yMzI1MzEyOQ==",
+        "name": "Development"
+    },
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzMA==",
+		"name": "Destination Development"
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzMQ==",
+		"name": "ESG "
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzMg==",
+		"name": "Heritage & Tourism"
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzNA==",
+		"name": "Human Capital"
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzNQ==",
+		"name": "Investment"
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzNg==",
+		"name": "Networking"
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzOA==",
+		"name": "Startup Den"
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzOQ==",
+		"name": "Technology & Innovation"
 	},
     {
-        id: "RmllbGRWYWx1ZV8xOTEwNTI2Mg==",
-        name: "GRIF"
+        "id": "RmllbGRWYWx1ZV8yMzI1MzE0MA==",
+        "name": "TenX Leadership Talks"
     },
+    {
+        "id": "RmllbGRWYWx1ZV8yMzI1MzE0MQ==",
+        "name": "Wellness & Luxury"
+    }
 ]
+
+// end custom topic selection and ordering
+
+
 
 
 

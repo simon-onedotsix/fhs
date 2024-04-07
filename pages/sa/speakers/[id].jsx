@@ -199,13 +199,6 @@ export async function getStaticPaths() {
     }
 }
 
-// export async function getStaticPaths() {
-// 	return {
-// 		paths: [],
-// 		fallback: 'blocking'
-// 	}
-// }
-
 export async function getStaticProps({ params }) {
 
 	// console.log('params',params)
