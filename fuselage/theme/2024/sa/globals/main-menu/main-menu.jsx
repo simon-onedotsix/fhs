@@ -80,6 +80,11 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents }) => {
                             </Link>
                         </p>
                         <p className='c-white'>
+                            <Link href={'/sa/travel-guide'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Travel Guide</a>
+                            </Link>
+                        </p>
+                        <p className='c-white'>
                             <Link href={'/sa/saudi-women-in-hospitality'}>
                                 <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>#FHSWomenPower</a>
                             </Link>
@@ -87,22 +92,39 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents }) => {
                     </section>
 
                     <section>
-                        <p className='fs-5 fw-700 c-accent'>Get Involved</p>
-                        <p className='c-white'>
-                            <Link href={'/sa/contact-us'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Contact Us</a>
-                            </Link>
-                        </p>
-                        <p className='c-white'>
-                            <Link href={'/sa/travel-guide'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Travel Guide</a>
-                            </Link>
-                        </p>
-
-                        <p className='fs-5 fw-700 c-accent mt-sm'>Event Features</p>
+                        <p className='fs-5 fw-700 c-accent'>Event Features</p>
                         <p className='c-white pl-sm'>
                             <Link href={'/sa/grif'}>
                                 <a className='uLink fw-400' onClick={ () => setActive(false)}>GRIF Saudi Arabia</a>
+                            </Link>
+                        </p>
+
+                        <p className='c-white fs-6 fw-400'>FHS Pitch Sessions</p>
+                        <p className='c-white pl-sm'>
+                            <Link href={'/sa/startup-den'}>
+                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Startup Den</a>
+                            </Link>
+                        </p>
+                        <p className='c-white pl-sm'>
+                            <Link href={'/sa/destination-tomorrow'}>
+                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Destination Tomorrow</a>
+                            </Link>
+                        </p>
+                        <p className='c-white pl-sm'>
+                            <Link href={'/sa/speakers-corner'}>
+                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Speakers Corner</a>
+                            </Link>
+                        </p>
+                        
+                        <p className='c-white fs-6 fw-400'>Awards</p>
+                        <p className='c-white pl-sm'>
+                            <Link href={'/sa/leaders-of-tomorrow-award'}>
+                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Leaders of Tomorrow</a>
+                            </Link>
+                        </p>
+                        <p className='c-white pl-sm'>
+                            <Link href={'/sa/industry-pioneer-award'}>
+                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Industry Pioneer</a>
                             </Link>
                         </p>
 
@@ -123,32 +145,12 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents }) => {
                             </Link>
                         </p>
                         
-                        <p className='c-white fs-6 fw-400'>Awards</p>
-                        <p className='c-white pl-sm'>
-                            <Link href={'/sa/leaders-of-tomorrow-award'}>
-                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Leaders of Tomorrow</a>
-                            </Link>
-                        </p>
-                        <p className='c-white pl-sm'>
-                            <Link href={'/sa/industry-pioneer-award'}>
-                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Industry Pioneer</a>
-                            </Link>
-                        </p>
                         
-                        <p className='c-white fs-6 fw-400'>Pitch Sessions</p>
-                        <p className='c-white pl-sm'>
-                            <Link href={'/sa/startup-den'}>
-                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Startup Den</a>
-                            </Link>
-                        </p>
-                        <p className='c-white pl-sm'>
-                            <Link href={'/sa/destination-tomorrow'}>
-                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Destination Tomorrow</a>
-                            </Link>
-                        </p>
-                        <p className='c-white pl-sm'>
-                            <Link href={'/sa/speakers-corner'}>
-                                <a className='uLink fw-400' onClick={ () => setActive(false)}>Speakers Corner</a>
+
+                        <p className='fs-5 fw-700 c-accent mt-sm'>Get Involved</p>
+                        <p className='c-white'>
+                            <Link href={'/sa/contact-us'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Contact Us</a>
                             </Link>
                         </p>
                     </section>
