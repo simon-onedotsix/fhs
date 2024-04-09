@@ -511,7 +511,7 @@ export default function Agenda ({ sessions, locations }) {
 						<ul>
 							<li>FHS - tracks covering hospitality investment, industry entrepreneurship, sustainable development and human capital</li>
 							<li>GRIF - tracks covering F&amp;B investment &amp; workshops</li>
-							<li><a href="https://fhsksa24.expofp.com/" target="_blank">Floor Plan</a></li>
+							<li><a href="https://fhsksa24.expofp.com/" target="_blank" rel="noreferrer">Floor Plan</a></li>
 							<li>All times listed are in Saudi Arabia&apos;s GMT+3 timezone</li>
 						</ul>
 						<p>Programme is subject to change.</p>
