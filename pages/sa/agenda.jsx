@@ -47,49 +47,33 @@ import CSS from '../../css/app/agenda-sa-2024.module.css'
 // groupFieldGroupsByName( sessions, 'Topics')
 
 const FILTER_TRACKS = [
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEyNg==",
+		"name": "Opening, Awards & Signings"
+	},
     {
         "id": "RmllbGRWYWx1ZV8xOTE1MDcwOQ==",
         "name": "FHS Sessions"
     },
-    {
-        "id": "RmllbGRWYWx1ZV8yMzI1MzEzNw==",
-        "name": "Restaurant Invest (GRIF)"
-    },
 	{
-        "id": "RmllbGRWYWx1ZV8yMzI1MzEyNg==",
-        "name": "Opening, Awards & Signings"
-    },
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzNw==",
+		"name": "Restaurant Invest (GRIF)"
+	},
 	{
-        "id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==",
-        "name": "Brand Development"
-    },
-	{
-        "id": "RmllbGRWYWx1ZV8yMzI1MzEyOA==",
-        "name": "Talks"
-    },
-	{
-        "id": "RmllbGRWYWx1ZV8yMzI1MzEyOQ==",
-        "name": "Development"
-    },
-	{
-		"id": "RmllbGRWYWx1ZV8yMzI1MzEzMA==",
-		"name": "Destination Development"
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==",
+		"name": "Brand & Destination"
 	},
 	{
 		"id": "RmllbGRWYWx1ZV8yMzI1MzEzMQ==",
-		"name": "ESG "
+		"name": "ESG & Human Capital"
 	},
 	{
 		"id": "RmllbGRWYWx1ZV8yMzI1MzEzMg==",
-		"name": "Heritage & Tourism"
-	},
-	{
-		"id": "RmllbGRWYWx1ZV8yMzI1MzEzNA==",
-		"name": "Human Capital"
+		"name": "Culture & Heritage"
 	},
 	{
 		"id": "RmllbGRWYWx1ZV8yMzI1MzEzNQ==",
-		"name": "Investment"
+		"name": "Investment & Development"
 	},
 	{
 		"id": "RmllbGRWYWx1ZV8yMzI1MzEzNg==",
@@ -100,13 +84,17 @@ const FILTER_TRACKS = [
 		"name": "Startup Den"
 	},
 	{
-		"id": "RmllbGRWYWx1ZV8yMzI1MzEzOQ==",
-		"name": "Technology & Innovation"
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEyOA==",
+		"name": "Talks"
 	},
     {
-        "id": "RmllbGRWYWx1ZV8yMzI1MzE0MQ==",
-        "name": "Wellness & Luxury"
-    }
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzOQ==",
+        "name": "Tech & Innovation"
+    },
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzE0MQ==",
+		"name": "Wellness"
+	}
 ]
 
 // end custom topic selection and ordering
@@ -132,15 +120,22 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-	// if query param is provided, scroll to session
 	useEffect(() => {
+		// if session param is provided, scroll to session
 		if ( lenis && router.isReady && router.query.session ) {
-			
 			lenis.scrollTo(`#${router.query.session}`, { duration: 1 })
-
 			router.replace({
 				pathname: router.pathname,
 				search: new URLSearchParams(router.search).delete('session'),
+			})
+		}
+		
+		// if track param is provided, set topic
+		if ( router.isReady && router.query.track ) {
+			setSelectedTopic(router.query.track)
+			router.replace({
+				pathname: router.pathname,
+				search: new URLSearchParams(router.search).delete('track'),
 			})
 		}
 	})
@@ -320,7 +315,7 @@ export default function Agenda ({ sessions, locations }) {
 		let moderators = []
         let speakers = []
 
-		speakerData.forEach( speaker => {
+		_.orderBy(speakerData, 'lastName').forEach( speaker => {
 			speaker.withEvent.eventProfile.type === 'Moderator' ? moderators.push( speaker ) : speakers.push( speaker )
 		})
 
@@ -465,7 +460,27 @@ export default function Agenda ({ sessions, locations }) {
 	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
 	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))
 	
-	console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
+	// console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
+
+
+
+
+
+
+
+
+
+	// const getSessionsByFieldId = ( sessionData, fieldId) => {
+
+	// }
+
+	// console.log('generic sessions:', getSessionsByFieldId( sessions, "RmllbGRWYWx1ZV8xNTA4NDAyMQ=="))
+
+
+
+
+
+
 
 
 
@@ -496,6 +511,7 @@ export default function Agenda ({ sessions, locations }) {
 						<ul>
 							<li>FHS - tracks covering hospitality investment, industry entrepreneurship, sustainable development and human capital</li>
 							<li>GRIF - tracks covering F&amp;B investment &amp; workshops</li>
+							<li><a href="https://fhsksa24.expofp.com/" target="_blank">Floor Plan</a></li>
 							<li>All times listed are in Saudi Arabia&apos;s GMT+3 timezone</li>
 						</ul>
 						<p>Programme is subject to change.</p>
