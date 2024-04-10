@@ -867,7 +867,7 @@ const ChevronUp = () => {
 
 const Chevron = () => {
 	return (
-		<span style={{ display: `inline-block`, height: 12, marginLeft: 6 }}>
+		<span style={{ display: `inline-block`, height: 12, width: 20, marginLeft: 6 }}>
 			<svg width="100%" height="100%" viewBox="0 0 28 20" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeLinecap:`square`, strokeMiterlimit:3 }}>
 				<g transform="matrix(1,0,0,1,-4176,-535)">
 					<g transform="matrix(0.5,0,0,0.5,2065,250)">

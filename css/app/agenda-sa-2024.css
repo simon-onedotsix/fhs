@@ -84,7 +84,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: .25rem
+    gap: .25rem;
 }
 
 /* speakerGrid */

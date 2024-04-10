@@ -43,5 +43,5 @@ export const CompassIcon = ({ fill }) => {
 const iconStyles = {
     display: `inline-block`,
     height: `1rem`,
-    wiidth: `1rem`,
+    width: `1rem`,
 }
