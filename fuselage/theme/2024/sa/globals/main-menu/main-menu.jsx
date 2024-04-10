@@ -80,8 +80,13 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents }) => {
                             </Link>
                         </p>
                         <p className='c-white'>
+                            <Link href={'/sa/sustainability'}>
+                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Sustainability</a>
+                            </Link>
+                        </p>
+                        <p className='c-white'>
                             <Link href={'/sa/travel-guide'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Travel Guide</a>
+                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Travel Guide</a>
                             </Link>
                         </p>
                         <p className='c-white'>

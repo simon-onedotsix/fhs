@@ -66,6 +66,10 @@
 	padding: 0;
 
 	min-width: 15rem;
+
+	/* max-height: 50vh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); */
 	
 	border: 1px solid var(--accent);
 	border-radius: calc(var(--default-radius) * 0.5);
@@ -139,7 +143,6 @@
 		width: calc(100vw - var(--space-md) * 2);
 		font-size: inherit;
 	}
-	.menuItem {
-		text-align: center;
-	}
 }
+
+

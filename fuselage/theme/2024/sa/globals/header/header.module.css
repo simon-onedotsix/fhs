@@ -6,7 +6,7 @@
     width: calc(100% - (var(--space-sm) * 2));
     margin: 0 var(--space-sm);
 
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-sm);
     display: flex;
     justify-content: space-between;
     gap: var(--space-sm);
@@ -72,7 +72,7 @@
         flex-wrap: wrap;
     }
     .ctaButton {
-        margin-left: 4rem; /* <–––––––––  makes space for fixed-position mobile hamburger */
+        margin-left: 3.5rem; /* <–––––––––  makes space for fixed-position mobile hamburger */
         width: 9rem
     }
     .underlay {

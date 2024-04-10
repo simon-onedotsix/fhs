@@ -112,6 +112,7 @@ export default function Agenda ({ sessions, locations }) {
 	// 	console.log(scroll)
 	// })
 
+	const [ filtersActive, setFiltersActive ] = useState (false)
 	const [ selectedTopic, setSelectedTopic ] = useState (null)
     const [ selectedDay, setSelectedDay ] = useState (null)
     const [ selectedLocation, setSelectedLocation ] = useState(null)
@@ -142,9 +143,13 @@ export default function Agenda ({ sessions, locations }) {
 
 
 	// filter menu pinning
-	const [filterTrigger, inView, entry] = useInView({
+	const [filterTrigger, inView] = useInView({
 		threshold: 1,
 		rootMargin: '-150px 0px 0px 0px'
+	})
+	const [filterToggle, toggleInView] = useInView({
+		threshold: 1,
+		rootMargin: '0px 0px 0px 0px'
 	})
 
 
@@ -229,8 +234,15 @@ export default function Agenda ({ sessions, locations }) {
 			// console.log('filter intersection:', _.intersection( filterLocations(sessionData), filterTopics(sessionData) ))
 			return _.intersection( filterLocations(sessionData), filterTopics(sessionData) )
 		}
-	
+
+
+		// ++++++++++++++++++++
 		
+		// inject generic sessions here
+		
+		// ++++++++++++++++++++
+		
+
 
 		// group sessions (and apply filters)
 
@@ -452,14 +464,12 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-	// console.log('sessions:', sessions)
+	console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
-	
 	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
-	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))
-	
+	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))	
 	// console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
 
 
@@ -470,11 +480,17 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-	// const getSessionsByFieldId = ( sessionData, fieldId) => {
+	const getSessionsWithType = ( sessionData ) => {
+		let array = []
 
-	// }
+		sessionData.forEach( session => {
+			session.fields.forEach( field => { if (field.definition.name === 'Type') { array.push(session) } })
+		})
+		
+		console.log('generic sessions:', array )
+	}
 
-	// console.log('generic sessions:', getSessionsByFieldId( sessions, "RmllbGRWYWx1ZV8xNTA4NDAyMQ=="))
+	getSessionsWithType( sessions )
 
 
 
@@ -522,7 +538,21 @@ export default function Agenda ({ sessions, locations }) {
 				{/* FILTERS */}
 				<div ref={filterTrigger} className={CSS.filters}>
 
-					<div className={`${CSS.filterLayout} ${ !inView && CSS.fixed }`}>
+
+					{/* mobile-only toggle */}
+					<div id="agendaMob" ref={filterToggle} className={CSS.filterToggleContainer}>
+						<button 
+							className={`${CSS.filterToggle} ${ !toggleInView && CSS.fixed } ${filtersActive && CSS.fixed}`} 
+							style={{ zIndex: filtersActive ? 110 : 6 }}
+							onClick={() => {
+								setFiltersActive(!filtersActive)
+								lenis.scrollTo('#agendaMob', { duration: 1 })
+							}}
+						>{ filtersActive ? <span style={{ fontSize: 30 }}>&times;</span> : <FilterIcon color={'white'} /> }</button>
+					</div>
+
+
+					<div className={`${CSS.filterLayout} ${ !inView && CSS.fixed } ${filtersActive && CSS.active}`}>
 
 						{/* tracks (topics) */}
 						<section className={CSS.filterLayoutButtons}>
@@ -849,7 +879,13 @@ const Chevron = () => {
 	)
 }
 
-
+const FilterIcon = ({ color }) => {
+	return (
+		<svg width="100%" height="100%" viewBox="0 0 18 19" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeMiterlimit:1.5 }}>
+			<path id="icon-filter" d="M16,2L16,5L11,11L11,17L7,15L7,11L2,5L2,2L16,2Z" style={{ fill:`none`, stroke: color ? color : 'var(--accent)', strokeWidth:1.5 }}/>
+		</svg>
+	)
+}
 
 
 
