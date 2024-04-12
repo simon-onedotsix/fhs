@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react"
 
+import { useRouter } from "next/router"
+
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 import { useInView } from 'react-intersection-observer'
-
-import { useRouter } from "next/router"
 
 import _ from 'lodash'
 import { format } from 'date-fns'
@@ -14,17 +14,15 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
 import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
-
 import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
 import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
 import { TagIcon, CompassIcon } from "../../fuselage/components/icons/icons"
 
 import { Modal } from "../../fuselage/theme/2024/sa/components/modal/modal"
+import { AgendaModal } from "../../fuselage/theme/2024/sa/components/agenda-modal/agenda-modal"
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
-
-import { Pop, Fade } from '../../fuselage/animation/animation'
 
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
@@ -44,28 +42,77 @@ import CSS from '../../css/app/agenda-sa-2024.module.css'
 
 
 
+// custom topic selection and ordering
+// to revert to API-driven replace the mapped variable with:
+// groupFieldGroupsByName( sessions, 'Topics')
 
 const FILTER_TRACKS = [
 	{
-		id: "RmllbGRWYWx1ZV8xOTE1MDcwOQ==",
-		name: "FHS"
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEyNg==",
+		"name": "Opening, Awards & Signings"
 	},
     {
-        id: "RmllbGRWYWx1ZV8xOTEwNTI2Mg==",
-        name: "GRIF"
+        "id": "RmllbGRWYWx1ZV8xOTE1MDcwOQ==",
+        "name": "FHS Sessions"
     },
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzNw==",
+		"name": "Restaurant Invest (GRIF)"
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==",
+		"name": "Brand & Destination"
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzMQ==",
+		"name": "ESG & Human Capital"
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzMg==",
+		"name": "Culture & Heritage"
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzNQ==",
+		"name": "Investment & Development"
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzNg==",
+		"name": "Networking"
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzOA==",
+		"name": "Startup Den"
+	},
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEyOA==",
+		"name": "Talks"
+	},
+    {
+		"id": "RmllbGRWYWx1ZV8yMzI1MzEzOQ==",
+        "name": "Tech & Innovation"
+    },
+	{
+		"id": "RmllbGRWYWx1ZV8yMzI1MzE0MQ==",
+		"name": "Wellness"
+	}
 ]
+
+// end custom topic selection and ordering
+
+
 
 
 
 export default function Agenda ({ sessions, locations }) {
 
 	const lenis = useLenis()
+	const router = useRouter()
 
 	// const lenis = useLenis(({ scroll }) => {
 	// 	console.log(scroll)
 	// })
 
+	const [ filtersActive, setFiltersActive ] = useState (false)
 	const [ selectedTopic, setSelectedTopic ] = useState (null)
     const [ selectedDay, setSelectedDay ] = useState (null)
     const [ selectedLocation, setSelectedLocation ] = useState(null)
@@ -73,24 +120,36 @@ export default function Agenda ({ sessions, locations }) {
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: '', speakingOn: null })
 
 
-	// if query param is provided, scroll to session
-	const router = useRouter()
-	useEffect(() => {
-		if ( router.query.session ) {
-			lenis.scrollTo(`#${router.query.session}`, { duration: 1 })
 
+	useEffect(() => {
+		// if session param is provided, scroll to session
+		if ( lenis && router.isReady && router.query.session ) {
+			lenis.scrollTo(`#${router.query.session}`, { duration: 1 })
 			router.replace({
 				pathname: router.pathname,
 				search: new URLSearchParams(router.search).delete('session'),
+			})
+		}
+		
+		// if track param is provided, set topic
+		if ( router.isReady && router.query.track ) {
+			setSelectedTopic(router.query.track)
+			router.replace({
+				pathname: router.pathname,
+				search: new URLSearchParams(router.search).delete('track'),
 			})
 		}
 	})
 
 
 	// filter menu pinning
-	const [filterTrigger, inView, entry] = useInView({
+	const [filterTrigger, inView] = useInView({
 		threshold: 1,
 		rootMargin: '-150px 0px 0px 0px'
+	})
+	const [filterToggle, toggleInView] = useInView({
+		threshold: 1,
+		rootMargin: '0px 0px 0px 0px'
 	})
 
 
@@ -175,8 +234,15 @@ export default function Agenda ({ sessions, locations }) {
 			// console.log('filter intersection:', _.intersection( filterLocations(sessionData), filterTopics(sessionData) ))
 			return _.intersection( filterLocations(sessionData), filterTopics(sessionData) )
 		}
-	
+
+
+		// ++++++++++++++++++++
 		
+		// inject generic sessions here
+		
+		// ++++++++++++++++++++
+		
+
 
 		// group sessions (and apply filters)
 
@@ -261,7 +327,7 @@ export default function Agenda ({ sessions, locations }) {
 		let moderators = []
         let speakers = []
 
-		speakerData.forEach( speaker => {
+		_.orderBy(speakerData, 'lastName').forEach( speaker => {
 			speaker.withEvent.eventProfile.type === 'Moderator' ? moderators.push( speaker ) : speakers.push( speaker )
 		})
 
@@ -308,7 +374,7 @@ export default function Agenda ({ sessions, locations }) {
 							title: speaker.jobTitle,
 							company: speaker.organization,
 							bio: speaker.biography,
-							speakingOn: speaker.withEvent?.eventProfile.speakerOnPlannings
+							speakingOn: speaker.withEvent?.eventProfile.withEvent.speakerOnPlannings
 						})
 						setShowModal(true)
 					}
@@ -395,15 +461,42 @@ export default function Agenda ({ sessions, locations }) {
 	}
 
 
+
+
+
 	// console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
-	
 	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
-	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))
-	
+	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))	
 	// console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
+
+
+
+
+
+
+
+
+
+	// const getSessionsWithType = ( sessionData ) => {
+	// 	let array = []
+
+	// 	sessionData.forEach( session => {
+	// 		session.fields.forEach( field => { if (field.definition.name === 'Type') { array.push(session) } })
+	// 	})
+		
+	// 	console.log('generic sessions:', array )
+	// }
+
+	// getSessionsWithType( sessions )
+
+
+
+
+
+
 
 
 
@@ -433,7 +526,8 @@ export default function Agenda ({ sessions, locations }) {
 					<div className="formatted mt-md">
 						<ul>
 							<li>FHS - tracks covering hospitality investment, industry entrepreneurship, sustainable development and human capital</li>
-							<li>GRIF - tracks covering F&amp;B investment &amp; workshops</li>
+							<li>Restaurant Invest (GRIF) - tracks covering F&amp;B investment &amp; workshops</li>
+							<li><a href="https://fhsksa24.expofp.com/" target="_blank" rel="noreferrer">Floor Plan</a></li>
 							<li>All times listed are in Saudi Arabia&apos;s GMT+3 timezone</li>
 						</ul>
 						<p>Programme is subject to change.</p>
@@ -444,7 +538,21 @@ export default function Agenda ({ sessions, locations }) {
 				{/* FILTERS */}
 				<div ref={filterTrigger} className={CSS.filters}>
 
-					<div className={`${CSS.filterLayout} ${ !inView && CSS.fixed }`}>
+
+					{/* mobile-only toggle */}
+					<div id="agendaMob" ref={filterToggle} className={CSS.filterToggleContainer}>
+						<button 
+							className={`${CSS.filterToggle} ${ !toggleInView && CSS.fixed } ${filtersActive && CSS.fixed}`} 
+							style={{ zIndex: filtersActive ? 110 : 6 }}
+							onClick={() => {
+								setFiltersActive(!filtersActive)
+								lenis.scrollTo('#agendaMob', { duration: 1 })
+							}}
+						>{ filtersActive ? <span style={{ fontSize: 30 }}>&times;</span> : <FilterIcon color={'white'} /> }</button>
+					</div>
+
+
+					<div className={`${CSS.filterLayout} ${ !inView && CSS.fixed } ${filtersActive && CSS.active}`}>
 
 						{/* tracks (topics) */}
 						<section className={CSS.filterLayoutButtons}>
@@ -457,19 +565,22 @@ export default function Agenda ({ sessions, locations }) {
 								transition 
 								menuClassName={menuClassName}
 							>
-								{
-									sessions &&
-									FILTER_TRACKS.map( 
-										filter => <MenuItem key={filter.id} onClick={() => {
-											setSelectedTopic(filter.id)
-											lenis.scrollTo('#agenda', { duration: 1 })
-										}}>{ filter.name }</MenuItem> 
-									)
-								}
-								<MenuItem key={0} onClick={() => {
-									setSelectedTopic('')
-									lenis.scrollTo('#agenda', { duration: 1 })
-								}}>All tracks</MenuItem>
+								<div className="columns-2">
+									{
+										sessions &&
+										FILTER_TRACKS.map( 
+											filter => <MenuItem key={filter.id} onClick={() => {
+												setSelectedTopic(filter.id)
+												lenis.scrollTo('#agenda', { duration: 1 })
+											}}>{ filter.name }</MenuItem> 
+										)
+									}
+									<MenuItem key={0} onClick={() => {
+										setSelectedTopic('')
+										lenis.scrollTo('#agenda', { duration: 1 })
+									}}>All tracks</MenuItem>
+
+								</div>
 							</Menu>
 						</section>
 
@@ -566,7 +677,7 @@ export default function Agenda ({ sessions, locations }) {
 															prioriseStreams( slot.sessions, locations ).map( (session, index) => {
 																return (
 																	<div key={index} className="sessionsWrapper">
-																		<span className="sessionAnchor" id={session.id}/>
+																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
 																		<div className='session | bg-glass'>
 
 																			{
@@ -579,6 +690,15 @@ export default function Agenda ({ sessions, locations }) {
 																			}
 
 																			<div className="sessionContent | columns-1 gap-xs">
+																				
+																				{<small style={{ color: 'orange' }}>
+																					{
+																						session.beginsAt && session.endsAt ?
+																						<>{format( new Date(slot.beginsAt), "HH:mm" )} - { format( new Date(slot.sessions[0].endsAt), "HH:mm" ) }</>
+																						: null
+																					}
+																				</small>}
+
 																				<p className="sessionTitle | fs-5 fw-600 lh-1 c-accent caps">
 																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
 																				</p>
@@ -626,6 +746,45 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
+            {/* <AgendaModal onClose={() => setShowModal(false)} show={showModal} modalContent={modalContent}>
+                <Sidebar size={`medium`}>
+                    <aside className="center">
+                        {
+                            modalContent.avatar ?
+                                <Avatar src={modalContent.avatar}/>
+                                :
+                                <Avatar src={`/assets/ui/avatar-fallback.png`}/>
+                        }
+                        <p className="fs-5 fw-600 c-white mt-xs lh-1">{ modalContent.name }</p>
+                        <p className="fs-sm fw-400 c-accent mt-xs">{modalContent.title} <br/>{modalContent.company}</p>
+                    </aside>
+                    
+					<section>
+						<SimpleBar style={{ maxHeight: `50vh` }}>
+							<div className="formatted pr-xs" dangerouslySetInnerHTML={{ __html: modalContent.bio }}></div>
+						</SimpleBar> 
+
+						<div className="mt-sm">
+							<p className="fs-6 fw-400 c-accent mb-xs">See { modalContent.name } speak in the following sessions:</p>                         
+							{
+								modalContent.speakingOn?.map( (day, index) => (
+									<div key={index} className='mb-xs'>
+										<p className="c-accent fs-sm">
+											{formatInTimeZone(new Date( day.beginsAt ), 'Asia/Dubai', 'EEEE dd MMMM: HH:mm')} - {formatInTimeZone(new Date( day.endsAt ), 'Asia/Dubai', 'HH:mm')}
+										</p>
+										<p className="fs-6 fw-600 c-white">{ day.title }</p>
+									</div>
+								))
+							}
+						</div>
+					</section>
+
+                    
+                </Sidebar>
+            </AgendaModal> */}
+
+
+
 
             <Modal onClose={() => setShowModal(false)} show={showModal}>
 
@@ -645,6 +804,26 @@ export default function Agenda ({ sessions, locations }) {
 						<SimpleBar style={{ maxHeight: `50vh` }}>
 							<div className="formatted pr-xs" dangerouslySetInnerHTML={{ __html: modalContent.bio }}></div>
 						</SimpleBar> 
+
+						{/* <div className="mt-sm">
+							<p className="fs-6 fw-400 c-accent mb-xs">See { modalContent.name } speak in the following sessions:</p>                         
+							{
+								modalContent.speakingOn &&
+								_.orderBy(modalContent.speakingOn, 'beginsAt').map( (day, index) => (
+									<div key={index} className='mb-xs'>
+										<p className="c-accent fs-sm">
+											{formatInTimeZone(new Date( day.beginsAt ), 'Asia/Dubai', 'EEEE dd MMMM: HH:mm')} - {formatInTimeZone(new Date( day.endsAt ), 'Asia/Dubai', 'HH:mm')}
+										</p>
+										<p className="fs-6 fw-600 c-white" 
+											onClick={() => {
+												lenis.scrollTo(`#${day.id.slice(0, -2)}`, { duration: 1 })
+												setShowModal(false)
+											}}
+										><span className="uLink">{ day.title }</span></p>
+									</div>
+								))
+							}
+						</div> */}
 					</section>
 
                     
@@ -700,7 +879,7 @@ const ChevronUp = () => {
 
 const Chevron = () => {
 	return (
-		<span style={{ display: `inline-block`, height: 12, marginLeft: 6 }}>
+		<span style={{ display: `inline-block`, height: 12, width: 20, marginLeft: 6 }}>
 			<svg width="100%" height="100%" viewBox="0 0 28 20" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeLinecap:`square`, strokeMiterlimit:3 }}>
 				<g transform="matrix(1,0,0,1,-4176,-535)">
 					<g transform="matrix(0.5,0,0,0.5,2065,250)">
@@ -712,7 +891,13 @@ const Chevron = () => {
 	)
 }
 
-
+const FilterIcon = ({ color }) => {
+	return (
+		<svg width="100%" height="100%" viewBox="0 0 18 19" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeMiterlimit:1.5 }}>
+			<path id="icon-filter" d="M16,2L16,5L11,11L11,17L7,15L7,11L2,5L2,2L16,2Z" style={{ fill:`none`, stroke: color ? color : 'var(--accent)', strokeWidth:1.5 }}/>
+		</svg>
+	)
+}
 
 
 
@@ -739,7 +924,7 @@ export async function getStaticProps() {
 							}
 						}
 
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}", page: 1, pageSize: 100) {
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}", page: 1, pageSize: 500) {
 							id
 							titleTranslations {
 								value
@@ -787,11 +972,13 @@ export async function getStaticProps() {
 								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}") {
 									eventProfile {
 										type
-										speakerOnPlannings {
-											id
-											title
-											beginsAt
-											endsAt
+										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
+											speakerOnPlannings {
+												id
+												title
+												beginsAt
+												endsAt
+											}
 										}
 									}
 								}

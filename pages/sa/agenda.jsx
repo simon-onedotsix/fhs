@@ -464,7 +464,7 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-	console.log('sessions:', sessions)
+	// console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
@@ -480,17 +480,17 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-	const getSessionsWithType = ( sessionData ) => {
-		let array = []
+	// const getSessionsWithType = ( sessionData ) => {
+	// 	let array = []
 
-		sessionData.forEach( session => {
-			session.fields.forEach( field => { if (field.definition.name === 'Type') { array.push(session) } })
-		})
+	// 	sessionData.forEach( session => {
+	// 		session.fields.forEach( field => { if (field.definition.name === 'Type') { array.push(session) } })
+	// 	})
 		
-		console.log('generic sessions:', array )
-	}
+	// 	console.log('generic sessions:', array )
+	// }
 
-	getSessionsWithType( sessions )
+	// getSessionsWithType( sessions )
 
 
 
@@ -565,19 +565,21 @@ export default function Agenda ({ sessions, locations }) {
 								transition 
 								menuClassName={menuClassName}
 							>
-								{
-									sessions &&
-									FILTER_TRACKS.map( 
-										filter => <MenuItem key={filter.id} onClick={() => {
-											setSelectedTopic(filter.id)
-											lenis.scrollTo('#agenda', { duration: 1 })
-										}}>{ filter.name }</MenuItem> 
-									)
-								}
-								<MenuItem key={0} onClick={() => {
-									setSelectedTopic('')
-									lenis.scrollTo('#agenda', { duration: 1 })
-								}}>All tracks</MenuItem>
+								<div className="columns-2">
+									{
+										sessions &&
+										FILTER_TRACKS.map( 
+											filter => <MenuItem key={filter.id} onClick={() => {
+												setSelectedTopic(filter.id)
+												lenis.scrollTo('#agenda', { duration: 1 })
+											}}>{ filter.name }</MenuItem> 
+										)
+									}
+									<MenuItem key={0} onClick={() => {
+										setSelectedTopic('')
+										lenis.scrollTo('#agenda', { duration: 1 })
+									}}>All tracks</MenuItem>
+								</div>
 							</Menu>
 						</section>
 
@@ -687,6 +689,15 @@ export default function Agenda ({ sessions, locations }) {
 																			}
 
 																			<div className="sessionContent | columns-1 gap-xs">
+																				
+																				{/* <small style={{ color: 'orange' }}>
+																					{
+																						session.beginsAt && session.endsAt ?
+																						<>{format( new Date(slot.beginsAt), "HH:mm" )} - { format( new Date(slot.sessions[0].endsAt), "HH:mm" ) }</>
+																						: null
+																					}
+																				</small> */}
+
 																				<p className="sessionTitle | fs-5 fw-600 lh-1 c-accent caps">
 																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
 																				</p>
