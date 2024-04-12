@@ -53,20 +53,26 @@
 
 .sessions {
     display: flex;
-
+    
     /* comment-out flex-direction to display SESSIONS in columns +++++++++++++++++++++++++++++++++++++++++ */
     /* flex-direction: column; */
-
+    
     gap: .5rem;
 }
 
 .session {
+    /* background-color: red; */
     flex: 1;
     /* padding: 1rem; */
     /* border: 1px solid var(--primary); */
     border-radius: calc(var(--agenda-radius) * 1);
     overflow: hidden;
 }
+
+
+
+
+
 
 .sessionLocation {
     width: 100%;

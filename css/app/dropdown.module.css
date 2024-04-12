@@ -63,9 +63,9 @@
 	color: white;
 	font-family: var(--default-font-family);
 	font-size: var(--default-font-size);
-	padding: 0;
+	padding: 1px;
 
-	min-width: 32rem;
+	/* min-width: 32rem; */
 
 	/* max-height: 50vh;
 	display: grid;
@@ -78,6 +78,11 @@
 
 	overflow: hidden;
 	
+}
+@media(min-width:600px){
+	.menu {
+		min-width: 32rem;
+	}
 }
 
 .menuOpening {
@@ -97,6 +102,9 @@
 	min-width: inherit;
 
 	transition: all 350ms ease-in-out;
+
+	margin: 2px;
+	border-radius: 5px;
 }
 
 .menuItemHover {
