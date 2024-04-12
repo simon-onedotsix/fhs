@@ -21,20 +21,30 @@
 .timeSlot {
     display: grid;
     grid-template-columns: 1fr;
-    gap: .5rem;
-    /* padding: .5rem;
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    border-radius: var(--agenda-radius); */
 }
 .timingsAndTags {
     background-color: var(--secondary);
     border-radius: calc(var(--agenda-radius) * 1);
     padding: .5rem 1rem;
-    /* border: 1px solid var(--primary); */
+}
+
+@media(max-width:500px){
+    .timeSlot {
+        border: 2px solid var(--secondary);
+        border-radius: calc(var(--agenda-radius) * 1.25);
+    }
+    .timingsAndTags {
+       border-bottom-right-radius: 0;
+       border-bottom-left-radius: 0;
+    }
+    .sessions {
+        padding: .25rem;
+    }
 }
 @media(min-width:600px){
     .timeSlot {
         grid-template-columns: 9rem auto;
+        gap: .5rem;
     }
     .timingsAndTags {
         padding: 1rem;

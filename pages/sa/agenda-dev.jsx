@@ -17,7 +17,7 @@ import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
 import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
 import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
-import { TagIcon, CompassIcon } from "../../fuselage/components/icons/icons"
+import { TagIcon, CompassIcon, StopwatchIcon } from "../../fuselage/components/icons/icons"
 
 import { Modal } from "../../fuselage/theme/2024/sa/components/modal/modal"
 import { AgendaModal } from "../../fuselage/theme/2024/sa/components/agenda-modal/agenda-modal"
@@ -461,10 +461,29 @@ export default function Agenda ({ sessions, locations }) {
 	}
 
 
+	const convertSeconds = (seconds) => {
+		const hours = Math.floor(seconds / 3600)
+		const minutes = Math.floor((seconds % 3600) / 60)
+		const remainingSeconds = seconds % 60
+	
+		const hourString = hours > 0 ? `${hours} hour${hours > 1 ? 's' : ''}` : ''
+		const minuteString = minutes > 0 ? `${minutes} minute${minutes > 1 ? 's' : ''}` : ''
+		const secondString = remainingSeconds > 0 ? `${remainingSeconds} second${remainingSeconds > 1 ? 's' : ''}` : ''
+	
+		if ( hours > 0 ) {
+			return `${hourString} : ${minuteString || '0 minute'} ${secondString && `: ${secondString}`}`
+
+		} else if ( !hours && minutes > 0 ) {
+			return `${minuteString} ${secondString && `: ${secondString}`}`
+
+		}
+	
+		return secondString
+	}
 
 
 
-	// console.log('sessions:', sessions)
+	console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
@@ -691,13 +710,16 @@ export default function Agenda ({ sessions, locations }) {
 
 																			<div className="sessionContent | columns-1 gap-xs">
 																				
-																				{<small style={{ color: 'orange' }}>
+																				{<span className="fw-500" style={{ color: 'white' }}>
 																					{
 																						session.beginsAt && session.endsAt ?
-																						<>{format( new Date(slot.beginsAt), "HH:mm" )} - { format( new Date(slot.sessions[0].endsAt), "HH:mm" ) }</>
+																						<>
+																							{format( new Date(session.beginsAt), "HH:mm" )} - { format( new Date(session.endsAt), "HH:mm" )}
+																							&ensp;<StopwatchIcon/> { convertSeconds(parseInt(new Date(session.endsAt).getTime() - new Date(session.beginsAt).getTime())/1000) }
+																						</>
 																						: null
 																					}
-																				</small>}
+																				</span>}
 
 																				<p className="sessionTitle | fs-5 fw-600 lh-1 c-accent caps">
 																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
@@ -746,6 +768,10 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
+
+
+
+
             {/* <AgendaModal onClose={() => setShowModal(false)} show={showModal} modalContent={modalContent}>
                 <Sidebar size={`medium`}>
                     <aside className="center">
@@ -782,8 +808,6 @@ export default function Agenda ({ sessions, locations }) {
                     
                 </Sidebar>
             </AgendaModal> */}
-
-
 
 
             <Modal onClose={() => setShowModal(false)} show={showModal}>
@@ -830,8 +854,6 @@ export default function Agenda ({ sessions, locations }) {
                 </Sidebar>
 
             </Modal>
-
-
 
 
             <Footer theme={{ footerBg: 'bg-white' }} />
