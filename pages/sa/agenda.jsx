@@ -275,6 +275,16 @@ export default function Agenda ({ sessions, locations }) {
 	
 	// HANDLE SESSION FIELDS (TAGS)
 
+	const getSessionLocation = ( sessionData ) => {
+		if ( !sessionData.fields ) return
+
+		let fieldsData = sessionData.fields.filter( (field) => field.definition.name === 'Location' )
+
+		return fieldsData.map ( (topic, index) => (
+			<span key={index} className='sessionLocationTag fw-500'>{ topic.translations[0].value }</span> 
+		))
+	}
+
 	const getSessionFields = ( sessionData, fieldHandle ) => {
 		if ( !sessionData.fields || !fieldHandle ) return
 
@@ -683,11 +693,11 @@ export default function Agenda ({ sessions, locations }) {
 										day.timeslots.length ?
 										day.timeslots.map( (slot, index) => {
 											return (
-												<div key={index} className='timeSlot'>
+												<div key={index} className='timeSlot-disabled'>
 
-													<div className='timingsAndTags'>
+													{/* <div className='timingsAndTags'>
 														{format( new Date(slot.beginsAt), "HH:mm" )} - { format( new Date(slot.sessions[0].endsAt), "HH:mm" ) }
-													</div>
+													</div> */}
 													
 													{/* SESSIONS */}
 
@@ -699,34 +709,34 @@ export default function Agenda ({ sessions, locations }) {
 																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
 																		<div className='session | bg-glass'>
 
-																			{
-																				getSessionFields( session, 'Location').length ?
-																					<div className='sessionLocation sessionTagGrid'>
-																						{getSessionFields( session, 'Location').length ? <CompassIcon fill={`white`} /> : null}
-																						{getSessionFields( session, 'Location')}
-																					</div>
-																				: null
-																			}
 
-																			<div className="sessionContent | columns-1 gap-xs">
-																				
-																				{<span className="fw-500" style={{ color: 'white' }}>
-																					{
-																						session.beginsAt && session.endsAt ?
-																						<>
+																			<div className='sessionHeader fw-500 c-white'>
+																				{
+																					session.beginsAt && session.endsAt ?
+																						<div>
 																							{format( new Date(session.beginsAt), "HH:mm" )} - { format( new Date(session.endsAt), "HH:mm" )}
 																							&ensp;<StopwatchIcon/> { convertSeconds(parseInt(new Date(session.endsAt).getTime() - new Date(session.beginsAt).getTime())/1000) }
-																						</>
-																						: null
-																					}
-																				</span>}
+																						</div>
+																					: null
+																				}
 
+																				{
+																					getSessionFields( session, 'Location').length ?
+																						<div className="sessionTagGrid">
+																							{session.fields.length ? <CompassIcon fill={`white`} /> : null }
+																							{getSessionLocation( session )}
+																						</div>
+																					: null
+																				}
+																			</div>
+
+																			<div className="sessionContent | columns-1 gap-xs">
 																				<p className="sessionTitle | fs-5 fw-600 lh-1 c-accent caps">
 																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
 																				</p>
 																																									
 																				<div className='sessionTagGrid'>
-																					{getSessionFields( session, 'Topics').length ? <TagIcon fill={`var(--primary)`} /> : null}
+																					{session.fields.length ? <TagIcon fill={`var(--primary)`} /> : null}
 																					{getSessionFields( session, 'Topics')}
 																				</div>
 
