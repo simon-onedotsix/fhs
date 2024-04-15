@@ -17,7 +17,7 @@ import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
 import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
 import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
-import { TagIcon, CompassIcon, StopwatchIcon } from "../../fuselage/components/icons/icons"
+import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from "../../fuselage/components/icons/icons"
 
 import { Modal } from "../../fuselage/theme/2024/sa/components/modal/modal"
 import { AgendaModal } from "../../fuselage/theme/2024/sa/components/agenda-modal/agenda-modal"
@@ -723,7 +723,7 @@ export default function Agenda ({ sessions, locations }) {
 																				{
 																					getSessionFields( session, 'Location').length ?
 																						<div className="sessionTagGrid">
-																							{session.fields.length ? <CompassIcon fill={`white`} /> : null }
+																							{session.fields.length ? <LocationIcon /> : null }
 																							{getSessionLocation( session )}
 																						</div>
 																					: null
