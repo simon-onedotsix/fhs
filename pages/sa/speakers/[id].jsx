@@ -16,6 +16,7 @@ import { StickySidebar } from '../../../fuselage/layout/sticky-sidebar/sticky-si
 import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
 import { ButtonSocial } from  '../../../fuselage/components/button-social/button-social'
 
+import { format } from 'date-fns'
 import { formatInTimeZone } from 'date-fns-tz'
 
 import CSS from '../../../css/app/speakers.module.css'
@@ -64,7 +65,7 @@ function Speaker({ speaker, sessions }) {
 					_.orderBy(speakerData.withEvent.speakerOnPlannings, 'beginsAt').map( (day, index) => (
 						<div key={index} className='mb-xs'>
 							<p className="c-accent">
-								{formatInTimeZone(new Date( day.beginsAt ), 'Asia/Dubai', 'EEEE dd MMMM: HH:mm')} - {formatInTimeZone(new Date( day.endsAt ), 'Asia/Dubai', 'HH:mm')}
+								{format(new Date( day.beginsAt ), 'EEEE dd MMMM: HH:mm')} - {format(new Date( day.endsAt ), 'HH:mm')}
 							</p>
 							{/* <p>{day.id} ---> {day.id.slice(0, -2)}</p> */}
 							<Link href={`/sa/agenda?session=${day.id.slice(0, -2)}`}><span className="fs-5 fw-600 c-white uLink">{ day.title }</span></Link>
