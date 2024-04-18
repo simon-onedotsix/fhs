@@ -466,19 +466,19 @@ export default function Agenda ({ agendaSettings, sessions, speakers, speakersOv
     
     // session theme
 
-    const getSessionTheme = ( bizzaboAgendaTags ) => {
+    const getSessionTheme = ( agendaTags ) => {
 
         // check if a cms sessionThemes object exists for bz tag
-        const found = sessionThemes.filter( obj => bizzaboAgendaTags.includes( obj.bizzaboAgendaTag ))
+        // const found = sessionThemes.filter( obj => agendaTags.includes( obj.agendaTag ))
 
         
-        // if yes, return the theme color
-        if ( found.length ) {
-            return found[0].color
-        }
+        // // if yes, return the theme color
+        // if ( found.length ) {
+        //     return found[0].color
+        // }
         
         // otherwise return a fallback
-        return '#ff9500'
+        return 'var(--dark)'
     }
 
     
@@ -747,11 +747,11 @@ export async function getStaticProps() {
 					title
                     ... on ${process.env.SITE_HANDLE_AE}Agenda_${process.env.SITE_HANDLE_AE}Agenda_Entry {
                         id
-                        bizzaboAgendaTheme {
-                            ... on bizzaboAgendaTheme_BlockType {
+                        agendaTheme {
+                            ... on agendaTheme_BlockType {
                                 id
                                 color
-                                bizzaboAgendaTag
+                                agendaTag
                             }
                         }
                     }
