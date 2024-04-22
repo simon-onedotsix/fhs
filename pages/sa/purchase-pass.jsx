@@ -53,7 +53,6 @@ function PurchasePass({ seomatic, entry }) {
 			<section className="block bg-default pb-0">
 				<div className="container">
 					<p className='fs-1 fw-600'>Purchase Pass</p>
-					<p className="mt-sm"><Button href={'/sa/travel-guide'} decal={'fw-600'}>Travel Guide</Button></p>
 				</div>
 			</section>
 
