@@ -118,6 +118,9 @@ export default function Agenda ({ sessions, locations }) {
     const [ selectedLocation, setSelectedLocation ] = useState(null)
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: '', speakingOn: null })
+	
+	const [ searchActive, setSearchActive ] = useState (false)
+	const [ search, setSearch ] = useState ('')
 
 
 
@@ -142,15 +145,16 @@ export default function Agenda ({ sessions, locations }) {
 	})
 
 
-	// filter menu pinning
-	const [filterTrigger, inView] = useInView({
+	// utilties menu pinning
+	const [utilties, utiltiesInView] = useInView({
 		threshold: 1,
 		rootMargin: '-150px 0px 0px 0px'
 	})
-	const [filterToggle, toggleInView] = useInView({
+	const [toggles, togglesInView] = useInView({
 		threshold: 1,
 		rootMargin: '0px 0px 0px 0px'
 	})
+
 
 
 	// FILTER UTILS
@@ -168,6 +172,18 @@ export default function Agenda ({ sessions, locations }) {
 	const buildAgenda = ( sessionsData ) => {
 
 		if ( !sessionsData ) return 
+
+
+		// search filter +++++++++++++++++++++++++++
+		
+		sessionsData = sessionsData.filter( item => {
+			return search.toLowerCase() === ''
+				? item
+				: item.titleTranslations[0].value.toLowerCase().includes(search)
+		})
+
+		// end search filter +++++++++++++++++++++++
+
 		
 		const timeslots = _.groupBy(sessionsData, 'beginsAt')
 		
@@ -267,7 +283,6 @@ export default function Agenda ({ sessions, locations }) {
 			agenda.push( { ...day , timeslots: slots } )
 		})
 
-		// console.log('agenda:', agenda)
 		return agenda
 	}
 
@@ -500,7 +515,7 @@ export default function Agenda ({ sessions, locations }) {
 	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
 	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))	
 	// console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
-
+	// console.log('SEARCH:', search)
 
 
 
@@ -563,127 +578,176 @@ export default function Agenda ({ sessions, locations }) {
 					</div>
                 </div>
 
-				
-				{/* FILTERS */}
-				<div ref={filterTrigger} className={CSS.filters}>
 
 
-					{/* mobile-only toggle */}
-					<div id="agendaMob" ref={filterToggle} className={CSS.filterToggleContainer}>
-						<button 
-							className={`${CSS.filterToggle} ${ !toggleInView && CSS.fixed } ${filtersActive && CSS.fixed}`} 
-							style={{ zIndex: filtersActive ? 110 : 6 }}
-							onClick={() => {
-								setFiltersActive(!filtersActive)
-								lenis.scrollTo('#agendaMob', { duration: 1 })
-							}}
-						>{ filtersActive ? <span style={{ fontSize: 30 }}>&times;</span> : <FilterIcon color={'white'} /> }</button>
-					</div>
+				<span ref={toggles}/>
+				<div ref={utilties} className={CSS.utilities}>
 
+					{/* FILTERS */}
+					<section className={CSS.filters}>
 
-					<div className={`${CSS.filterLayout} ${ !inView && CSS.fixed } ${filtersActive && CSS.active}`}>
+						{/* mobile-only toggle */}
+						<div id="agendaMob" className={CSS.filterToggleContainer}>
+							<button 
+								className={`${CSS.filterToggle} ${ !togglesInView && CSS.fixed } ${filtersActive && CSS.active}`} 
+								style={{ zIndex: filtersActive ? 110 : 6 }}
+								onClick={() => {
+									setFiltersActive(!filtersActive)
+									lenis.scrollTo('#agendaMob', { duration: 1 })
+								}}
+							>{ filtersActive ? <span style={{ fontSize: 30 }}>&times;</span> : <FilterIcon color={'white'} /> }</button>
+						</div>
 
-						{/* tracks (topics) */}
-						<section className={CSS.filterLayoutButtons}>
-							<Menu 
-								menuButton={
-									<MenuButton className={DROPDOWN.button}>
-										<strong className="left">{ selectedTopic ?  getFieldGroupNameById(sessions, selectedTopic, 'Topics') : `Tracks` }</strong> <Chevron />
-									</MenuButton>
-								} 
-								transition 
-								menuClassName={menuClassName}
-							>
-								<div className="columns-2">
+						<div className={`${CSS.filterLayout} ${CSS.filterGroup} ${ !utiltiesInView && CSS.fixed } ${filtersActive && CSS.active}`}>
+							{/* tracks (topics) */}
+							<section className={CSS.filterLayoutButtons}>
+								<Menu 
+									menuButton={
+										<MenuButton className={DROPDOWN.button}>
+											<strong className="left">{ selectedTopic ?  getFieldGroupNameById(sessions, selectedTopic, 'Topics') : `Tracks` }</strong> <Chevron />
+										</MenuButton>
+									} 
+									transition 
+									menuClassName={menuClassName}
+								>
+									<div className="columns-2">
+										{
+											sessions &&
+											FILTER_TRACKS.map( 
+												filter => <MenuItem key={filter.id} onClick={() => {
+													setSelectedTopic(filter.id)
+													lenis.scrollTo('#agenda', { duration: 1 })
+												}}>{ filter.name }</MenuItem> 
+											)
+										}
+										<MenuItem key={0} onClick={() => {
+											setSelectedTopic('')
+											lenis.scrollTo('#agenda', { duration: 1 })
+										}}>All tracks</MenuItem>
+
+									</div>
+								</Menu>
+							</section>
+
+							{/* days */}
+							<section className={CSS.filterLayoutButtons}>
+								<Menu 
+									menuButton={
+										<MenuButton className={DROPDOWN.button}><strong className="left">{ selectedDay ?  selectedDay : `Days` }</strong> <Chevron /></MenuButton>
+									} 
+									transition 
+									menuClassName={menuClassName}
+								>
 									{
 										sessions &&
-										FILTER_TRACKS.map( 
+										buildAgenda( sessions ).map( 
+											(day, index) => <MenuItem key={index} onClick={() => {
+												setSelectedDay(day.day)
+												lenis.scrollTo('#agenda', { duration: 1 })
+											}}>{ day.day }</MenuItem>
+										)
+									}
+									<MenuItem key={0} onClick={() => {
+										setSelectedDay(null)
+										lenis.scrollTo('#agenda', { duration: 1 })
+									}}>All days</MenuItem>
+								</Menu>
+							</section>
+
+							{/* locations */}
+							<section className={CSS.filterLayoutButtons}>
+								<Menu 
+									menuButton={
+										<MenuButton className={DROPDOWN.button}>
+											<strong className="left">{ selectedLocation ?  getFieldGroupNameById(sessions, selectedLocation, 'Location') : `Stages` }</strong> <Chevron />
+										</MenuButton>
+									} 
+									transition 
+									menuClassName={menuClassName}
+								>
+									{
+										sessions &&
+										_.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc']).map( 
 											filter => <MenuItem key={filter.id} onClick={() => {
-												setSelectedTopic(filter.id)
+												setSelectedLocation(filter.id)
 												lenis.scrollTo('#agenda', { duration: 1 })
 											}}>{ filter.name }</MenuItem> 
 										)
 									}
 									<MenuItem key={0} onClick={() => {
-										setSelectedTopic('')
+										setSelectedLocation('')
 										lenis.scrollTo('#agenda', { duration: 1 })
-									}}>All tracks</MenuItem>
+									}}>All stages</MenuItem>
+								</Menu>
+							</section> 
 
-								</div>
-							</Menu>
-						</section>
+							{/* reset filters */}
+							{
+								selectedDay || selectedLocation || selectedTopic ?
+									<section className={CSS.agendaFilterResetWrapper}>
+										<button className={CSS.agendaFilterReset} onClick={resetFilters}><span>&times;</span> Reset all filters</button>
+									</section>
+								: null
+							}
 
-						{/* days */}
-						<section className={CSS.filterLayoutButtons}>
-							<Menu 
-								menuButton={
-									<MenuButton className={DROPDOWN.button}><strong className="left">{ selectedDay ?  selectedDay : `Days` }</strong> <Chevron /></MenuButton>
-								} 
-								transition 
-								menuClassName={menuClassName}
-							>
-								{
-									sessions &&
-									buildAgenda( sessions ).map( 
-										(day, index) => <MenuItem key={index} onClick={() => {
-											setSelectedDay(day.day)
-											lenis.scrollTo('#agenda', { duration: 1 })
-										}}>{ day.day }</MenuItem>
-									)
-								}
-								<MenuItem key={0} onClick={() => {
-									setSelectedDay(null)
-									lenis.scrollTo('#agenda', { duration: 1 })
-								}}>All days</MenuItem>
-							</Menu>
-						</section>
+							<div className={CSS.filterActions}>
+								<button className={CSS.filterActionButton} onClick={ () => setFiltersActive(!filtersActive) }>Apply</button>
+							</div>
+						</div>
 
-						{/* locations */}
-						<section className={CSS.filterLayoutButtons}>
-							<Menu 
-								menuButton={
-									<MenuButton className={DROPDOWN.button}>
-										<strong className="left">{ selectedLocation ?  getFieldGroupNameById(sessions, selectedLocation, 'Location') : `Stages` }</strong> <Chevron />
-									</MenuButton>
-								} 
-								transition 
-								menuClassName={menuClassName}
-							>
-								{
-									sessions &&
-									_.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc']).map( 
-										filter => <MenuItem key={filter.id} onClick={() => {
-											setSelectedLocation(filter.id)
-											lenis.scrollTo('#agenda', { duration: 1 })
-										}}>{ filter.name }</MenuItem> 
-									)
-								}
-								<MenuItem key={0} onClick={() => {
-									setSelectedLocation('')
-									lenis.scrollTo('#agenda', { duration: 1 })
-								}}>All stages</MenuItem>
-							</Menu>
-						</section> 
+					</section>
 
-						{/* reset filters */}
-						{
-							selectedDay || selectedLocation || selectedTopic ?
-								<section className={CSS.agendaFilterResetWrapper}>
-									<button className={CSS.agendaFilterReset} onClick={resetFilters}><span>&times;</span> Reset all filters</button>
-								</section>
-							: null
-						}
 
-					</div>
+					{/* SEARCH */}
+					<section className={`${CSS.search}`}>
+
+						{/* mobile-only toggle */}
+						<div id="searchMob" className={CSS.searchToggleContainer}>
+							<button 
+								className={`${CSS.searchToggle} ${ !togglesInView && CSS.fixed } ${searchActive && CSS.active} `} 
+								style={{ zIndex: searchActive ? 105 : 6 }}
+								onClick={() => {
+									setSearchActive(!searchActive)
+									lenis.scrollTo('#agendaMob', { duration: 1 })
+								}}
+							>{ searchActive ? <span style={{ fontSize: 30 }}>&times;</span> : <SearchIcon color={'white'} /> }</button>
+						</div>
+
+						{/* search form */}
+						<div className={`${CSS.searchLayout} ${ !utiltiesInView && CSS.fixed } ${searchActive && CSS.active}`}>
+							<div className={CSS.searchFormContainer}>
+								<form>
+									<input 
+										type="text" 
+										placeholder="Search" 
+										onChange={ e => {
+											e.preventDefault()
+											setSearch(e.target.value) 
+										}}
+										value={search}
+									/>
+								</form>
+								<button
+									className={`${CSS.searchReset} ${ search !== '' ? CSS.active : ''}`}
+									onClick={ () => {
+										setSearch('')
+										lenis.scrollTo('#agendaMob', { duration: 1 })
+									}}
+								>&times;</button>
+							</div>
+						</div>
+					</section>
+				
 				</div>
 
+				
 
 				{/* AGENDA */}
 				<main className="agenda | section columns-1 gap-sm mt-sm">				
 					{
-						sessions &&
-						buildAgenda( sessions ).map( (day, index) => {
-							
+						buildAgenda( sessions ).length 
+						? buildAgenda( sessions ).map( (day, index) => {
+
 							if ( selectedDay && selectedDay !== day.day ) return
 
 							return (
@@ -695,10 +759,6 @@ export default function Agenda ({ sessions, locations }) {
 											return (
 												<div key={index} className='timeSlot-disabled'>
 
-													{/* <div className='timingsAndTags'>
-														{format( new Date(slot.beginsAt), "HH:mm" )} - { format( new Date(slot.sessions[0].endsAt), "HH:mm" ) }
-													</div> */}
-													
 													{/* SESSIONS */}
 
 													<div className="sessions">
@@ -762,6 +822,7 @@ export default function Agenda ({ sessions, locations }) {
 								</section>
 							)
 						})
+						: <p className="fs-4 fw-600">No sessions found!</p>
 					}
 
 				</main>
@@ -876,6 +937,8 @@ Agenda.theme = 'sa-2024'
 
 
 
+
+
 const SpeakerCard = ({ speaker, type }) => {
 
 	return (
@@ -927,6 +990,18 @@ const FilterIcon = ({ color }) => {
 	return (
 		<svg width="100%" height="100%" viewBox="0 0 18 19" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeMiterlimit:1.5 }}>
 			<path id="icon-filter" d="M16,2L16,5L11,11L11,17L7,15L7,11L2,5L2,2L16,2Z" style={{ fill:`none`, stroke: color ? color : 'var(--accent)', strokeWidth:1.5 }}/>
+		</svg>
+	)
+}
+
+const SearchIcon = ({ color }) => {
+	return (
+		<svg width="100%" height="100%" viewBox="0 0 20 20" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeMiterlimit:2 }}>
+			<g transform="matrix(1,0,0,1,-2511,-135)">
+				<g id="icon-search" transform="matrix(0.515035,0,0,0.515035,2511.24,135.556)">
+					<path d="M15.697,31.349C17.503,31.349 19.216,31.058 20.838,30.477C22.46,29.895 23.944,29.084 25.29,28.044L33.873,36.673L36.627,33.873L28.044,25.29C29.084,23.944 29.895,22.46 30.477,20.838C31.058,19.216 31.349,17.503 31.349,15.697C31.349,13.525 30.936,11.49 30.109,9.593C29.283,7.696 28.166,6.036 26.759,4.613C25.351,3.19 23.684,2.065 21.756,1.239C19.859,0.413 17.839,0 15.697,0C13.525,0 11.49,0.413 9.593,1.239C7.696,2.065 6.036,3.19 4.613,4.613C3.19,6.036 2.065,7.696 1.239,9.593C0.413,11.49 0,13.525 0,15.697C0,17.839 0.413,19.859 1.239,21.756C2.065,23.684 3.19,25.351 4.613,26.759C6.036,28.166 7.696,29.283 9.593,30.109C11.49,30.936 13.525,31.349 15.697,31.349ZM15.697,3.947C17.319,3.947 18.834,4.253 20.241,4.865C21.679,5.477 22.926,6.311 23.982,7.367C25.038,8.422 25.887,9.669 26.529,11.107C27.141,12.546 27.447,14.076 27.447,15.697C27.447,17.319 27.141,18.834 26.529,20.241C25.887,21.679 25.038,22.926 23.982,23.982C22.926,25.038 21.679,25.887 20.241,26.529C18.834,27.141 17.319,27.447 15.697,27.447C14.076,27.447 12.546,27.141 11.107,26.529C9.669,25.887 8.422,25.038 7.367,23.982C6.311,22.926 5.477,21.679 4.865,20.241C4.253,18.834 3.947,17.319 3.947,15.697C3.947,14.076 4.253,12.546 4.865,11.107C5.477,9.669 6.311,8.422 7.367,7.367C8.422,6.311 9.669,5.477 11.107,4.865C12.546,4.253 14.076,3.947 15.697,3.947Z" style={{ fill: color ? color : 'var(--accent)', fillRule:'nonzero' }}/>
+				</g>
+			</g>
 		</svg>
 	)
 }
