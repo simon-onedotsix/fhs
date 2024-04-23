@@ -716,7 +716,7 @@ export default function Agenda ({ sessions, locations }) {
 						{/* search form */}
 						<div className={`${CSS.searchLayout} ${ !utiltiesInView && CSS.fixed } ${searchActive && CSS.active}`}>
 							<div className={CSS.searchFormContainer}>
-								<form>
+								
 									<input 
 										type="text" 
 										placeholder="Search" 
@@ -725,8 +725,9 @@ export default function Agenda ({ sessions, locations }) {
 											setSearch(e.target.value) 
 										}}
 										value={search}
+										
 									/>
-								</form>
+								
 								<button
 									className={`${CSS.searchReset} ${ search !== '' ? CSS.active : ''}`}
 									onClick={ () => {
