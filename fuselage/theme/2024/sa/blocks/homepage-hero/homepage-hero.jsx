@@ -19,7 +19,8 @@ export const HomepageHero = () => {
                 <Pop><Image src='/assets/theme/sa-2024/theme-headline.svg' layout='responsive' width={1113} height={464} alt='' /></Pop>
                 <div className='mt-md'>
                     <Fade>
-                        <Button href={'/sa/agenda'} decal={'fs-5 fw-600'} accent>2024 Programme</Button>
+                        <Button href={'/sa/agenda'} decal={'fs-5 fw-600'} accent>2024 Programme</Button>&ensp;
+                        <Button href={'/sa/attendee-list-2024'} decal={'fs-5 fw-600'} accent>2024 Attendee List</Button>
                         {/* <Button href={'/sa/download-event-brochure'} decal={'fs-5 fw-600'} accent>Download Event Brochure</Button> */}
                     </Fade>
                 </div>
