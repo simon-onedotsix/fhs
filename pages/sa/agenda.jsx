@@ -46,55 +46,19 @@ import CSS from '../../css/app/agenda-sa-2024.module.css'
 // to revert to API-driven replace the mapped variable with:
 // groupFieldGroupsByName( sessions, 'Topics')
 
+
 const FILTER_TRACKS = [
-	{
-		"id": "RmllbGRWYWx1ZV8yMzI1MzEyNg==",
-		"name": "Opening, Awards & Signings"
-	},
-    {
-        "id": "RmllbGRWYWx1ZV8xOTE1MDcwOQ==",
-        "name": "FHS Sessions"
-    },
-	{
-		"id": "RmllbGRWYWx1ZV8yMzI1MzEzNw==",
-		"name": "Restaurant Invest (GRIF)"
-	},
-	{
-		"id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==",
-		"name": "Brand & Destination"
-	},
-	{
-		"id": "RmllbGRWYWx1ZV8yMzI1MzEzMQ==",
-		"name": "ESG & Human Capital"
-	},
-	{
-		"id": "RmllbGRWYWx1ZV8yMzI1MzEzMg==",
-		"name": "Culture & Heritage"
-	},
-	{
-		"id": "RmllbGRWYWx1ZV8yMzI1MzEzNQ==",
-		"name": "Investment & Development"
-	},
-	{
-		"id": "RmllbGRWYWx1ZV8yMzI1MzEzNg==",
-		"name": "Networking"
-	},
-	{
-		"id": "RmllbGRWYWx1ZV8yMzI1MzEzOA==",
-		"name": "Startup Den"
-	},
-	{
-		"id": "RmllbGRWYWx1ZV8yMzI1MzEyOA==",
-		"name": "Talks"
-	},
-    {
-		"id": "RmllbGRWYWx1ZV8yMzI1MzEzOQ==",
-        "name": "Tech & Innovation"
-    },
-	{
-		"id": "RmllbGRWYWx1ZV8yMzI1MzE0MQ==",
-		"name": "Wellness"
-	}
+    { "id": "RmllbGRWYWx1ZV8yMzI1MzEyNg==", "name": "FHS Opening, Awards & Signings" },
+    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzNw==", "name": "Restaurant Invest (GRIF)" },
+    { "id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==", "name": "Brand & Destination" },
+    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzMQ==", "name": "ESG & Human Capital" },
+    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzMg==", "name": "Culture & Heritage" },
+    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzNQ==", "name": "Investment & Development" },
+    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzNg==", "name": "Networking" },
+    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzOA==", "name": "Startup Den" },
+    { "id": "RmllbGRWYWx1ZV8yMzI1MzEyOA==", "name": "Talks" },
+    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzOQ==", "name": "Tech & Innovation" },
+    { "id": "RmllbGRWYWx1ZV8yMzI1MzE0MQ==", "name": "Wellness" },
 ]
 
 // end custom topic selection and ordering
@@ -702,7 +666,7 @@ export default function Agenda ({ sessions, locations }) {
 					<section className={`${CSS.search}`}>
 
 						{/* mobile-only toggle */}
-						<div id="searchMob" className={CSS.searchToggleContainer}>
+						{/* <div id="searchMob" className={CSS.searchToggleContainer}>
 							<button 
 								className={`${CSS.searchToggle} ${ !togglesInView && CSS.fixed } ${searchActive && CSS.active} `} 
 								style={{ zIndex: searchActive ? 105 : 6 }}
@@ -711,10 +675,10 @@ export default function Agenda ({ sessions, locations }) {
 									lenis.scrollTo('#agendaMob', { duration: 1 })
 								}}
 							>{ searchActive ? <span style={{ fontSize: 30 }}>&times;</span> : <SearchIcon color={'white'} /> }</button>
-						</div>
+						</div> */}
 
 						{/* search form */}
-						<div className={`${CSS.searchLayout} ${ !utiltiesInView && CSS.fixed } ${searchActive && CSS.active}`}>
+						{/* <div className={`${CSS.searchLayout} ${ !utiltiesInView && CSS.fixed } ${searchActive && CSS.active}`}>
 							<div className={CSS.searchFormContainer}>
 								
 									<input 
@@ -736,7 +700,7 @@ export default function Agenda ({ sessions, locations }) {
 									}}
 								>&times;</button>
 							</div>
-						</div>
+						</div> */}
 					</section>
 				
 				</div>
