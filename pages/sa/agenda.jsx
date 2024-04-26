@@ -546,6 +546,7 @@ export default function Agenda ({ sessions, locations }) {
 						<ul>
 							<li>FHS - tracks covering hospitality investment, industry entrepreneurship, sustainable development and human capital</li>
 							<li>Restaurant Invest (GRIF) - tracks covering F&amp;B investment &amp; workshops</li>
+							<li>The Welcome Remarks and Official Opening begins on the Summit Stage at 15:00 on Day One with plenty of sessions before and after.</li>
 							<li><a href="https://fhsksa24.expofp.com/" target="_blank" rel="noreferrer">Floor Plan</a></li>
 							<li>All times listed are in Saudi Arabia&apos;s GMT+3 timezone</li>
 						</ul>
