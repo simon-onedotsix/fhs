@@ -138,15 +138,26 @@ export default function Agenda ({ sessions, locations }) {
 		if ( !sessionsData ) return 
 
 
-		// search filter +++++++++++++++++++++++++++
-		
-		sessionsData = sessionsData.filter( item => {
-			return search.toLowerCase() === ''
-				? item
-				: item.titleTranslations[0].value.toLowerCase().includes(search)
+
+		// text search filtering
+
+		sessionsData = sessionsData.filter( session => {
+
+			if ( search.toLowerCase() === '' ) return session
+
+			let searchContent = session.titleTranslations[0].value.toLowerCase()
+
+			if ( session.speakers.length ) {
+				session.speakers.forEach( speaker => {
+					searchContent = searchContent + speaker.firstName.toLowerCase()
+					searchContent = searchContent + speaker.lastName.toLowerCase()
+				})
+			}
+
+			if ( searchContent.includes(search)) return session
+
 		})
 
-		// end search filter +++++++++++++++++++++++
 
 		
 		const timeslots = _.groupBy(sessionsData, 'beginsAt')
@@ -666,7 +677,7 @@ export default function Agenda ({ sessions, locations }) {
 					<section className={`${CSS.search}`}>
 
 						{/* mobile-only toggle */}
-						{/* <div id="searchMob" className={CSS.searchToggleContainer}>
+						<div id="searchMob" className={CSS.searchToggleContainer}>
 							<button 
 								className={`${CSS.searchToggle} ${ !togglesInView && CSS.fixed } ${searchActive && CSS.active} `} 
 								style={{ zIndex: searchActive ? 105 : 6 }}
@@ -675,10 +686,10 @@ export default function Agenda ({ sessions, locations }) {
 									lenis.scrollTo('#agendaMob', { duration: 1 })
 								}}
 							>{ searchActive ? <span style={{ fontSize: 30 }}>&times;</span> : <SearchIcon color={'white'} /> }</button>
-						</div> */}
+						</div>
 
 						{/* search form */}
-						{/* <div className={`${CSS.searchLayout} ${ !utiltiesInView && CSS.fixed } ${searchActive && CSS.active}`}>
+						<div className={`${CSS.searchLayout} ${ !utiltiesInView && CSS.fixed } ${searchActive && CSS.active}`}>
 							<div className={CSS.searchFormContainer}>
 								
 									<input 
@@ -700,7 +711,7 @@ export default function Agenda ({ sessions, locations }) {
 									}}
 								>&times;</button>
 							</div>
-						</div> */}
+						</div>
 					</section>
 				
 				</div>
