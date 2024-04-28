@@ -23,6 +23,7 @@ import { Modal } from "../../fuselage/theme/2024/sa/components/modal/modal"
 import { AgendaModal } from "../../fuselage/theme/2024/sa/components/agenda-modal/agenda-modal"
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
+import { Button } from '../../fuselage/theme/2024/sa/components/button/button'
 
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
@@ -768,6 +769,9 @@ export default function Agenda ({ sessions, locations }) {
 																			</div>
 
 																			<div className="sessionContent | columns-1 gap-xs">
+
+																				{/* <small style={{ color: 'orange'}}>{session.id}</small> */}
+																				
 																				<p className="sessionTitle | fs-5 fw-600 lh-1 c-accent caps">
 																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
 																				</p>
@@ -781,6 +785,13 @@ export default function Agenda ({ sessions, locations }) {
 																					session.descriptionTranslations.length ?
 																						parse( session.descriptionTranslations[0].value )
 																					: null
+																				}
+
+																				{
+																					session.id === "UGxhbm5pbmdfMTc1MDU5MQ==" &&
+																					<div className="mb-xs">
+																						<Button href={'mailto:rabih.feghali@hamamea.org'} decal={'fw-600'} accent>Request To Attend</Button>
+																					</div>
 																				}
 																				
 																				{ sortSpeakers(session.speakers) }
