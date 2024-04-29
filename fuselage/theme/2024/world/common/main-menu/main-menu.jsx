@@ -57,6 +57,11 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                             </Link>
                         </p>
                         <p className='c-white mt-xs'>
+                            <Link href={'/world/programme'}>
+                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>2024 Schedule at a Glance</a>
+                            </Link>
+                        </p>
+                        <p className='c-white mt-xs'>
                             <Link href={'/world/advisory-board'}>
                                 <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Advisory Board</a>
                             </Link>
