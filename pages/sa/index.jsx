@@ -30,6 +30,7 @@ import {
 	QueryCards,
     QuerySEO,
     QueryImages,
+	QueryPartnerGroups,
 	BizzaboPartners
 } from "../../graphql/queries"
 
@@ -43,6 +44,8 @@ import { HomepageHero } from '../../fuselage/theme/2024/sa/blocks/homepage-hero/
 export default function Home({ seomatic, contentBlocks, partnerData }) {
 
 	const { globals } = useContext(GlobalsContext)
+
+	// console.log('content-blocks:', contentBlocks)
 
 
 	return (
@@ -131,6 +134,7 @@ export async function getStaticProps({ preview, previewData }) {
 							${QueryCards}
 							${QueryForm}
 							${QueryImages}
+							${QueryPartnerGroups}
 							${BizzaboPartners}
 						}
 						${QuerySEO}
