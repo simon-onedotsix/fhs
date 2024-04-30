@@ -143,3 +143,10 @@
 @media print {
     .header, .shim {display: none}
 }
+
+
+@media(max-width:600px){
+    .desktopOnly {
+        display: none;
+    }
+}

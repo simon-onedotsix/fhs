@@ -75,11 +75,6 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents }) => {
                             </Link>
                         </p>
                         <p className='c-white'>
-                            <Link href={'/sa/purchase-pass'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Register Now</a>
-                            </Link>
-                        </p>
-                        <p className='c-white'>
                             <Link href={'/sa/sustainability'}>
                                 <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Sustainability</a>
                             </Link>
@@ -92,6 +87,11 @@ export const MainMenu = ({ fixToggle, mainMenu, otherEvents }) => {
                         <p className='c-white'>
                             <Link href={'/sa/saudi-women-in-hospitality'}>
                                 <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>#FHSWomenPower</a>
+                            </Link>
+                        </p>
+                        <p className='c-white'>
+                            <Link href={'/sa/register-interest'}>
+                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Register Interest for 2025</a>
                             </Link>
                         </p>
                     </section>
