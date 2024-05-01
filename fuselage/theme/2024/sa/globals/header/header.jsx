@@ -91,7 +91,7 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
                         <a className={`${CSS.ctaButton} fw-600 caps`}>Register Interest<span className={CSS.desktopOnly}>&thinsp;for 2025</span></a>
                     </Link>
                     
-                    <p><span className='fw-600 fs-6'>29 April - 01 May 2024</span> <br/>Mandarin Oriental Al Faisaliah, Riyadh</p>
+                    <p><span className='fw-600 fs-6'>12 - 14 May 2025</span> <br/>Mandarin Oriental Al Faisaliah, Riyadh</p>
                 </div>
                 
                 <a href={'/sa'} aria-label='FHS Saudi Arabia Home'>
