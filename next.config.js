@@ -7,7 +7,7 @@ const nextConfig = {
 	productionBrowserSourceMaps: true,
 
 	images: {
-		domains: ['cms.thebench.com', 'res.cloudinary.com', 'cdn-api.swapcard.com'],
+		domains: ['cms.thebench.com', 'res.cloudinary.com', 'cdn-api.swapcard.com', 'static.swapcard.com'],
 	},
 	
 	webpack(config) {
