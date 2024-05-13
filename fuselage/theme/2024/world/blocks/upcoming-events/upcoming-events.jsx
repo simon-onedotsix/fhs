@@ -84,7 +84,7 @@ export const EventCard = ({ theme, title, logo, passLink, websiteLink }) => {
 
             {
                 logo &&
-                <div className={CSS.eventLogo}>
+                <div className={CSS.eventLogo} style={{ height: '6rem', aspectRatio: logo.width / logo.height }}>
                     <Image src={logo.url} layout={`fill`} alt=''/>
                 </div> 
             }

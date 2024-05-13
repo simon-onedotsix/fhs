@@ -10,6 +10,8 @@
     border-bottom: 1px solid var(--primary-2);
 }
 
+
+
 @media(max-width:599px) {
     .eventCard {
         text-align: center;
@@ -18,12 +20,18 @@
 
 @media(min-width:600px) {
     .eventCard {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        max-width: 45rem;
         flex-direction: row;
-        gap: var(--space-xl);
+        gap: var(--space-lg);
         align-items: center;
         margin: 0 auto;
     }
 }
+
+
 
 
 
@@ -35,19 +43,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    justify-self: flex-start;
+    gap: 2rem;
 }
+
 .eventLogo {
     position: relative;
-    width: 10rem;
-    height: 8rem;
 }
 .eventLogo img {
     object-fit: contain;
     object-position: top right;
     width: 100%;
     height: 100%;
+}
+
+@media(min-width:600px) {
+    .actions {
+        align-items: flex-start;
+    }
 }
 
 
