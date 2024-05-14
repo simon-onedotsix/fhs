@@ -57,6 +57,7 @@ App.getInitialProps = async () => {
 									... on columnData_heading_BlockType {
 										id
 										heading
+										headingSize
 									}
 									... on columnData_menuLinksGroup_BlockType {
 										id
@@ -64,6 +65,8 @@ App.getInitialProps = async () => {
 											hyperlink
 											label
 											size
+											indent
+											newWindow
 										}
 									}
 								}
@@ -105,6 +108,32 @@ App.getInitialProps = async () => {
 		query: gql`
 			query KsaGlobals {
 				globalSets(site: "fhisSa") {
+					... on header_GlobalSet {
+						id
+						name
+						mainMenu {
+							... on mainMenu_BlockType {
+								id
+								columnData {
+									... on columnData_heading_BlockType {
+										id
+										heading
+										headingSize
+									}
+									... on columnData_menuLinksGroup_BlockType {
+										id
+										menuLinks {
+											hyperlink
+											label
+											size
+											indent
+											newWindow
+										}
+									}
+								}
+							}
+						}
+					}
 					... on footer_GlobalSet {
 						id
 						name
@@ -140,6 +169,32 @@ App.getInitialProps = async () => {
 		query: gql`
 			query meGlobals {
 				globalSets(site: "fhisAe") {
+					... on header_GlobalSet {
+						id
+						name
+						mainMenu {
+							... on mainMenu_BlockType {
+								id
+								columnData {
+									... on columnData_heading_BlockType {
+										id
+										heading
+										headingSize
+									}
+									... on columnData_menuLinksGroup_BlockType {
+										id
+										menuLinks {
+											hyperlink
+											label
+											size
+											indent
+											newWindow
+										}
+									}
+								}
+							}
+						}
+					}
 					... on footer_GlobalSet {
 						id
 						name

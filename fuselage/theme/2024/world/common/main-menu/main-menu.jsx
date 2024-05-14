@@ -1,14 +1,24 @@
 import React, { useState } from 'react'
-import Link from 'next/link'
+import { useContext } from 'react'
+import { GlobalsContext } from '../../../../../../pages/_app'
+
+import { renderMainMenu } from '../../../../../../lib/render-main-menu'
 
 import { Button } from "../../../../../../fuselage/theme/2024/world/components/button/button"
 import { ArrowButton } from '../../../../../components/arrow-button/arrow-button'
 
 import CSS from './main-menu.module.css'
 
-export const MainMenu = ({ mainMenu, otherEvents }) => {
+export const MainMenu = ({ otherEvents }) => {
 
     const [ active, setActive ] = useState( false )
+
+    const { globals } = useContext(GlobalsContext)
+    // console.log( 'globals:', globals )
+
+    const { mainMenu } = globals.me.find( data => data.__typename === 'header_GlobalSet' )
+    // console.log( 'sa:', globals.sa )
+    // console.log( 'sa mainMenu:', mainMenu )
 
     return (
         <>
@@ -49,132 +59,19 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
 
             <div className={`${CSS.overlay} ${ active && CSS.active } bg-primary`}>
                 
-            <div className="columns-4 gap-md mt-md">
-                    <section>
-                        <p className='c-white'>
-                            <Link href={'/world'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Home</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/programme'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>2024 Schedule at a Glance</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/advisory-board'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Advisory Board</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/content-library'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Content Library</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/venue'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Venue &amp; Accommodation</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/award-winners'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Award Winners</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/contact-us'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Contact Us</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/purchase-pass'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Register Now</a>
-                            </Link>
-                        </p>
-                    </section>
+                <nav className="columns-4 gap-md mt-md">
 
-                    <section>
-                        <p className='fs-5 fw-700 c-secondary'>Event Features</p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/stages-and-tracks'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Stages &amp; Tracks</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/sports'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Sports &amp; Wellness</a>
-                            </Link>
-                        </p>
-
-                        <p className='fs-5 fw-700 c-secondary mt-md'>Sponsorship</p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/become-a-sponsor'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Become A Sponsor for 2024</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/tech'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Technology &amp; Innovation</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/country-pavilions'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Country Pavilions</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/partners'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Sponsors &amp; Partners</a>
-                            </Link>
-                        </p>
-                    </section>
-
-                    <section>
-                        <p className='fs-5 fw-700 c-secondary'>FHS 2023</p>
-
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/speakers'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Speakers</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/agenda'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Agenda</a>
-                            </Link>
-                        </p>
-
-                        <p className='fs-5 fw-700 c-secondary mt-md'>FHS 2022</p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/2022/speakers'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Speakers</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/world/2022/agenda'}>
-                                <a className='uLink fs-6 fw-400' onClick={ () => setActive(false)}>Agenda</a>
-                            </Link>
-                        </p>
-                    </section>
-
-                    {/* <section className='c-white'>
-                        <p className="fs-4 fw-600">Future Hospitality events</p>
-                        <p className="mt-xs">
-                            <ArrowButton href={`https://www.canva.com/design/DAFtBtry1HM/nJ8pAa0CtfAnnW4g7jA7Uw/view#1`} target={`_blank`} theme={{ arrow: `white`, border: `white`, label: `white`}}>FHS World 2024 Brochure</ArrowButton>
-                        </p>
-                        <p className="mt-xs">
-                            <ArrowButton href={`/sa`} theme={{ arrow: `white`, border: `white`, label: `white`}}>FHS Saudi Arabia</ArrowButton>
-                        </p>
-                    </section> */}
+                    { renderMainMenu(mainMenu) }
 
                     <section className="c-white">
-                        <p className="fs-4 fw-600 c-secondary">Our Other Events</p>
+                        <p className="fs-4 fw-600 c-accent">Our Other Events</p>
                         {
                             otherEvents.length &&
                             otherEvents.map( event => (
                                 <p key={event.id} className="mt-xs">
                                     <ArrowButton 
                                         href={ event.url } 
-                                        theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `white`}}
+                                        theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
                                         target={ event.target && '_blank' }
                                     >
                                         { event.title }
@@ -184,7 +81,7 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                         }
                     </section>
                     
-                </div>
+                </nav>
 
                
             </div>

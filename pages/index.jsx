@@ -35,7 +35,7 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
         
         if ( ! events ) return
 
-        console.log('upocoming events:', events)
+        // console.log('upocoming events:', events)
 
         return (
             <UpcomingEvents landscape={true}>
@@ -132,7 +132,7 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
     
     const handleContentGroupFallback = ( heading, data, ctaButtonLink, ctaButtonLabel ) => {
 
-        console.log('content-group:', data)
+        // console.log('content-group:', data)
 
         return (
             <section className={`c-white`}>

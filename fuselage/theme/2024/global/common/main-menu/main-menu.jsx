@@ -1,49 +1,24 @@
 import React, { useState } from 'react'
-import Link from 'next/link'
 
-import { Button } from '../../../../../components/button/button'
+import { useContext } from 'react'
+import { GlobalsContext } from '../../../../../../pages/_app'
+
+import { renderMainMenu } from '../../../../../../lib/render-main-menu'
+
 import { ArrowButton } from '../../../../../components/arrow-button/arrow-button'
 
 import CSS from './main-menu.module.css'
 
-export const MainMenu = ({ mainMenu, otherEvents }) => {
+export const MainMenu = ({ otherEvents }) => {
 
     const [ active, setActive ] = useState( false )
 
+    const { globals } = useContext(GlobalsContext)
+    // console.log( 'globals:', globals )
 
-
-    // render main-menu
-
-    // console.log('MAIN MENU:', mainMenu.length)
-
-    // const renderMainMenu = () => {
-
-    //     mainMenu.forEach( column => {
-    //         console.log('--column:', column.columnData.length)
-
-    //         column.columnData.forEach( item => {
-
-    //             switch (item.__typename) {
-    //                 case "columnData_heading_BlockType":
-    //                     console.log('----', item.heading)
-    //                     break
-
-    //                 case "columnData_menuLinksGroup_BlockType":
-    //                     item.menuLinks.forEach( link => {
-    //                         console.log('----', link.label)
-    //                     })
-    //                     break
-                
-    //                 default:
-    //                     break
-    //             }
-    //         })
-
-    //     })
-
-    // }
-    // renderMainMenu(mainMenu)
-
+    const { mainMenu } = globals.global.find( data => data.__typename === 'header_GlobalSet' )
+    // console.log( 'sa:', globals.sa )
+    // console.log( 'sa mainMenu:', mainMenu )
 
 
     return (
@@ -59,25 +34,10 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
 
 
             <div className={`${CSS.overlay} ${ active && CSS.active } bg-primary`}>
-                
-                <div className="columns-3 gap-md mt-sm">
-                    <section>
-                        <p className='c-white'>
-                            <Link href={'/'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Home</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/content-library'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Content Library</a>
-                            </Link>
-                        </p>
-                        <p className='c-white mt-xs'>
-                            <Link href={'/award-winners'}>
-                                <a className='uLink fs-5 fw-400' onClick={ () => setActive(false)}>Award Winners</a>
-                            </Link>
-                        </p>
-                    </section>
+
+                <nav className="columns-3 gap-md mt-sm">
+
+                    { renderMainMenu(mainMenu) }
 
                     <section className='c-white'>
                         <p className="fs-4 fw-600 c-primary-3">Future Hospitality events</p>
@@ -96,22 +56,23 @@ export const MainMenu = ({ mainMenu, otherEvents }) => {
                             otherEvents.map( event => {
                                 if ( event.id == 1 || event.id == 3 ) return
                                 return (
-                                    <p key={ event.id} className="mt-xs">
-                                        <ArrowButton 
-                                            href={event.url} 
-                                            theme={{ arrow: `var(--primary-3)`, 
-                                            border: `var(--primary-3)`, 
-                                            label: `white`}}
-                                        >   
-                                            { event.title }
-                                        </ArrowButton>
-                                    </p>
+                                    <ul key={ event.id} className="mt-xs">
+                                        <li>
+                                            <ArrowButton 
+                                                href={event.url} 
+                                                theme={{ arrow: `var(--primary-3)`, 
+                                                border: `var(--primary-3)`, 
+                                                label: `white`}}
+                                            >   
+                                                { event.title }
+                                            </ArrowButton>
+                                        </li>
+                                    </ul>
                                 )
                             })
                         }
                     </section>
-
-                </div>
+                </nav>
 
                
             </div>

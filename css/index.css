@@ -25,3 +25,12 @@
 @import './app/forms/forms.css';
 
 @import './decal/global/print.css';
+
+
+
+
+/* global overrides */
+
+.fw-600.fs-5.c-accent:not(:first-child) {
+    margin-top: 2rem;
+}

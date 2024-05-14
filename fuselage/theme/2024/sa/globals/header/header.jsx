@@ -1,5 +1,8 @@
 import { useInView } from 'react-intersection-observer'
 
+import { useContext } from 'react'
+import { GlobalsContext } from '../../../../../../pages/_app'
+
 import Link from 'next/link'
 
 import { EventsBar } from '../../components/events-bar/events-bar'
@@ -20,6 +23,14 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
 		threshold: 0,
         initialInView: true
 	})
+
+    // const { globals } = useContext(GlobalsContext)
+    // console.log( 'globals:', globals )
+
+    // const { mainMenu } = globals.sa.find( data => data.__typename === 'header_GlobalSet' )
+    // console.log( 'sa:', globals.sa )
+    // console.log( 'sa mainMenu:', mainMenu )
+
 
     const otherEvents = [
         {
