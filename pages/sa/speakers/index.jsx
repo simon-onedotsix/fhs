@@ -45,6 +45,7 @@ function Speakers({ seomatic, speakers }) {
 		<>
 
 			<Head>
+				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
 				{ handleSeomaticMeta( seomatic ) } 
             </Head>
 

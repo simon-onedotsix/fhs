@@ -184,6 +184,7 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
     return (
         <div className='bg-primary' style={{ backgroundColor: `var(--primary)`, backgroundImage: `url('/assets/theme/fhs-2024-global-bg.svg')` }}>
             <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16" />
                 { handleSeomaticMeta( seomatic ) }
             </Head>
 
@@ -202,18 +203,6 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
             { handleUpcomingEvents( data.events )}
 
             
-            {/* <AngledSection innerBg={`white`} transitions={`var(--primary)`}>
-                <SectionDivider 
-                    theme={{ heading: `var(--primary)`, body: `var(--default-text-color)`, keyline: `var(--accent)` }}
-                    heading={`Our Event Brands`} 
-                    description={`Future Hospitality Summit series includes conference tracks from the Arabian Hospitality Investment Conference (AHIC) and Global Restaurant Investment Forum (GRIF) to create an unrivalled platform for holistic hospitality investment strategies.`}
-                />
-                <div className="container">
-                    <Floaters flipped>
-                        { handleEvents( data.eventFloaters ) }
-                    </Floaters>
-                </div>
-            </AngledSection> */}
 
           
             {
@@ -246,16 +235,13 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
                 </div>
             </section>
 
-
-            {/* <section className="block bg-primary" style={{ background: `transparent`, width: `100%`, overflow: `hidden` }}>
-                { data.contentLibraryPosts.map( (group, index) => handleContentGroup(index, group) ) }
-            </section> */}
             
             <section className="block bg-primary" style={{ background: `transparent`, width: `100%`, overflow: `hidden` }}>
                 { handleContentGroupFallback('Latest Podcasts', podcasts, '/content-library/category/podcast', 'See more podcasts') }
                 { handleContentGroupFallback('Latest Industry News', industryNews, '/content-library/category/industry-news', 'See more industry news') }
             </section>
          
+
 
             <Footer />
             <LenisScroller />

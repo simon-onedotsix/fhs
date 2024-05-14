@@ -11,6 +11,7 @@ import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 import { CtaTab } from '../../fuselage/components/cta-tab/cta-tab'
 import { HeroUnitImage } from '../../fuselage/blocks/hero-unit-image/hero-unit-image'
 import { AwardWinnerCard } from '../../fuselage/components/award-winner-card/award-winner-card'
+import Head from "next/head"
 
 
 export default function AwardWinners ({ data }) {
@@ -20,6 +21,10 @@ export default function AwardWinners ({ data }) {
     
     return (
         <div className='bg-primary' style={{ backgroundColor: `var(--primary)`, backgroundImage: `url('/assets/theme/fhs-2024-global-bg.svg')`, backgroundSize: `100%` }}>
+
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
+            </Head>
 
             <Header overlaid inverse />
 

@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
@@ -19,7 +21,7 @@ import CSS from '../../../css/app/partners.module.css'
 
 function Partner({ partner }) {
 
-	console.log('partner:', partner)
+	// console.log('partner:', partner)
 
 	const handleLinkedIn = () => {
 		if ( partner.linkedin ) {
@@ -98,6 +100,10 @@ function Partner({ partner }) {
 	return (
 
 		<>
+			<Head>
+				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
+			</Head>
+
 			<Header compact />
 
 			<ThemeBg />

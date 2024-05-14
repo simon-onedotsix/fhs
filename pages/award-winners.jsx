@@ -1,4 +1,4 @@
-import Layout from '../fuselage/templates/layout'
+import Head from "next/head"
 
 import { gql } from "@apollo/client"
 import craftApolloClient from "./api/apollo"
@@ -22,6 +22,10 @@ export default function AwardWinners ({ data }) {
     
     return (
         <div className='bg-primary' style={{ backgroundColor: `var(--primary)`, backgroundImage: `url('/assets/theme/fhs-2024-global-bg.svg')`, backgroundSize: `100%` }}>
+
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16" />
+            </Head>
 
             <Header overlaid inverse />
 

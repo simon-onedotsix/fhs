@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
@@ -93,6 +95,10 @@ function Partner({ partner }) {
 	return (
 
 		<>
+			<Head>
+				<link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
+			</Head>
+
 			<Header compact />
 
 

@@ -1,3 +1,4 @@
+import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -81,6 +82,10 @@ function Speaker({ speaker, sessions }) {
 	return (
 
 		<>
+			<Head>
+				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
+			</Head>
+
 			<Header compact />
 
 			<ThemeBg />

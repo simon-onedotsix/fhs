@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import Head from "next/head"
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
@@ -121,6 +122,8 @@ function Speaker({ speaker, sessions }) {
 	return (
 
 		<>
+			<Head><link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" /></Head>
+
 			<Header compact />
 
 			<section className="block">

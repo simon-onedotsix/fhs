@@ -1,6 +1,7 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from '../../../api/apollo'
 
+import Head from "next/head"
 import Image from "next/image"
 
 import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller'
@@ -20,6 +21,10 @@ export default function Profile ({ profile }) {
 
     return (
         <>
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
+            </Head>
+
             <Header compact  />
 
 

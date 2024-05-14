@@ -3,6 +3,8 @@ import craftApolloClient from "../../api/apollo"
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
+import Head from "next/head"
+
 import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 import { ArrowButton } from "../../../fuselage/components/arrow-button/arrow-button"
@@ -77,6 +79,9 @@ export default function ContentLibrary ({ articles, categories }) {
 
     return (
         <>
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
+            </Head>
 
             <Header compact />
 

@@ -1,6 +1,8 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
+import Head from "next/head"
+
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import { Header } from '../../fuselage/theme/2024/global/common/header/header'
@@ -77,6 +79,10 @@ export default function ContentLibrary ({ articles, categories }) {
 
     return (
         <>
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16" />
+            </Head>
+
             <Header overlaid inverse />
 
             <section className="block bg-primary pt-0">

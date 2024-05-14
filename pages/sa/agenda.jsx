@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react"
 
+import Head from "next/head"
 import { useRouter } from "next/router"
 
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
@@ -530,6 +531,10 @@ export default function Agenda ({ sessions, locations }) {
     return (
         <ReactLenis root>
 
+			<Head>
+				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
+			</Head>
+
             <Header compact shim />
 
             <ThemeBg />
@@ -827,46 +832,6 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-
-
-
-
-            {/* <AgendaModal onClose={() => setShowModal(false)} show={showModal} modalContent={modalContent}>
-                <Sidebar size={`medium`}>
-                    <aside className="center">
-                        {
-                            modalContent.avatar ?
-                                <Avatar src={modalContent.avatar}/>
-                                :
-                                <Avatar src={`/assets/ui/avatar-fallback.png`}/>
-                        }
-                        <p className="fs-5 fw-600 c-white mt-xs lh-1">{ modalContent.name }</p>
-                        <p className="fs-sm fw-400 c-accent mt-xs">{modalContent.title} <br/>{modalContent.company}</p>
-                    </aside>
-                    
-					<section>
-						<SimpleBar style={{ maxHeight: `50vh` }}>
-							<div className="formatted pr-xs" dangerouslySetInnerHTML={{ __html: modalContent.bio }}></div>
-						</SimpleBar> 
-
-						<div className="mt-sm">
-							<p className="fs-6 fw-400 c-accent mb-xs">See { modalContent.name } speak in the following sessions:</p>                         
-							{
-								modalContent.speakingOn?.map( (day, index) => (
-									<div key={index} className='mb-xs'>
-										<p className="c-accent fs-sm">
-											{formatInTimeZone(new Date( day.beginsAt ), 'Asia/Dubai', 'EEEE dd MMMM: HH:mm')} - {formatInTimeZone(new Date( day.endsAt ), 'Asia/Dubai', 'HH:mm')}
-										</p>
-										<p className="fs-6 fw-600 c-white">{ day.title }</p>
-									</div>
-								))
-							}
-						</div>
-					</section>
-
-                    
-                </Sidebar>
-            </AgendaModal> */}
 
 
             <Modal onClose={() => setShowModal(false)} show={showModal}>

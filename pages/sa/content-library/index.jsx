@@ -1,9 +1,9 @@
-import Layout from '../../../fuselage/templates/sa/layout'
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../../api/apollo"
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
+
+import Head from 'next/head'
 
 import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
 import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
@@ -87,6 +87,10 @@ export default function ContentLibrary ({ articles, categories }) {
 
     return (
         <>
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
+            </Head>
+
             <Header compact />
 
             <ThemeBg />
