@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useContext } from 'react'
 import { GlobalsContext } from '../../../../../../pages/_app'
 
-import { renderMainMenu } from '../../../../../../lib/render-main-menu'
+import Link from 'next/link'
 
 import { ArrowButton } from '../../../../../components/arrow-button/arrow-button'
 
@@ -37,7 +37,73 @@ export const MainMenu = ({ otherEvents }) => {
 
                 <nav className="columns-3 gap-md mt-sm">
 
-                    { renderMainMenu(mainMenu) }
+                    { 
+                        mainMenu?.map( column => (
+                            <section key={column.id}>
+                                {
+                                    column.columnData.map( item => {
+                                        switch (item.__typename) {
+                
+                                            case "columnData_heading_BlockType":
+                                                return (
+                                                    <p  
+                                                        key={item.id}
+                                                        className={`
+                                                            fw-600
+                                                            ${item.headingSize === 'lg' ? 'fs-5 c-accent mb-xxs' : ''}
+                                                            ${item.headingSize === 'md' ? 'fs-6' : ''}
+                                                            ${item.headingSize === 'sm' ? 'fs-default' : ''}
+                                                        `} 
+                                                    >
+                                                        { item.heading }
+                                                    </p>
+                                                )
+                                                break
+                        
+                                            case "columnData_menuLinksGroup_BlockType":
+                                                return (
+                                                    <ul key={item.id}>
+                                                        {
+                                                            item.menuLinks?.map( (link, index) => {
+                
+                                                                if (link.hyperlink) return (
+                                                                    <li key={index}  style={{ paddingBottom: `.125vh` }}>
+                                                                        <Link href={link.hyperlink}>
+                                                                            <a
+                                                                                className={` 
+                                                                                    ${link.size === 'sm' ? 'uLink' : 'uLink fs-6 fw-400'}
+                                                                                    ${link.indent && 'ml-sm'}
+                                                                                `} 
+                                                                                target={ link.newWindow ? '_blank' : '_self'}
+                                                                                onClick={ () => setActive(false)}
+                                                                            >{ link.label }</a>
+                                                                        </Link>    
+                                                                    </li> 
+                                                                )
+                
+                                                                return (
+                                                                    <li 
+                                                                        key={index}
+                                                                        className={` 
+                                                                            ${link.size === 'sm' ? '' : 'fs-6 fw-400'}
+                                                                            ${link.indent && 'ml-sm'}
+                                                                        `}
+                                                                    >{index}{ link.label }</li>
+                                                                )
+                                                            })
+                                                        }
+                                                    </ul>
+                                                )
+                                                break
+                                        
+                                            default:
+                                                break
+                                        }
+                                    })
+                                }
+                            </section> 
+                        ))
+                    }
 
                     <section className='c-white'>
                         <p className="fs-4 fw-600 c-primary-3">Future Hospitality events</p>
@@ -53,23 +119,25 @@ export const MainMenu = ({ otherEvents }) => {
                         <p className="fs-4 fw-600 c-primary-3">Our other events</p>
                         {
                             otherEvents.length &&
-                            otherEvents.map( event => {
-                                if ( event.id == 1 || event.id == 3 ) return
-                                return (
-                                    <ul key={ event.id} className="mt-xs">
-                                        <li>
-                                            <ArrowButton 
-                                                href={event.url} 
-                                                theme={{ arrow: `var(--primary-3)`, 
-                                                border: `var(--primary-3)`, 
-                                                label: `white`}}
-                                            >   
-                                                { event.title }
-                                            </ArrowButton>
-                                        </li>
-                                    </ul>
-                                )
-                            })
+                            <ul>
+                                {
+                                    otherEvents.map( (event, index) => {
+                                        if ( event.id == 1 || event.id == 3 ) return
+                                        return (
+                                                <li key={index} className="mt-xs">
+                                                    <ArrowButton 
+                                                        href={event.url} 
+                                                        theme={{ arrow: `var(--primary-3)`, 
+                                                        border: `var(--primary-3)`, 
+                                                        label: `white`}}
+                                                    >   
+                                                        { event.title }
+                                                    </ArrowButton>
+                                                </li>
+                                        )
+                                    })
+                                }
+                            </ul>
                         }
                     </section>
                 </nav>

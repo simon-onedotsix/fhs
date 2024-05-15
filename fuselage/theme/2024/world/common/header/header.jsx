@@ -19,15 +19,9 @@ const otherEvents = [
     // {
     //     id: 3,
     //     title: 'FHS World',
-    //     url: '/ae',
+    //     url: '/world',
     //     target: false
     // },
-    {
-        id: 2,
-        title: 'GRIF Saudi Arabia',
-        url: '/sa/grif',
-        target: false
-    },
     {
         id: 6,
         title: 'AviaDev',

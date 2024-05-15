@@ -40,12 +40,6 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
             target: false
         },
         {
-            id: 2,
-            title: 'GRIF Saudi Arabia',
-            url: '/sa/grif',
-            target: false
-        },
-        {
             id: 3,
             title: 'IDEEA',
             url: 'https://www.ideea-forum.com',
