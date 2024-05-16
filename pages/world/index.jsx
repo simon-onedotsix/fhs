@@ -188,9 +188,9 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             <section className="block bg-default">
                 <div className="container center">
                     <p className="fs-3 fw-600 c-secondary caps">Host Sponsor</p>
-                    <div className={`${CSS.hostSponsorLogoWrapper} mt-xs mx-auto`}>
+                    <div className={`${CSS.hostSponsorLogoWrapper} mt-sm mx-auto`}>
                         <Pop>
-                            <Image src={`/assets/site/ae/jumeirah.png`} layout={`responsive`} width={923} height={354} />
+                            <Image src={`/assets/site/ae/jumeirah-2024.png`} layout={`responsive`} width={900} height={173} />
                         </Pop>
                     </div>
                 </div>

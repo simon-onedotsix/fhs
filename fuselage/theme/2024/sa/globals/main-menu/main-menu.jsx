@@ -86,7 +86,7 @@ export const MainMenu = ({ fixToggle, otherEvents }) => {
                                                                             ${link.size === 'sm' ? '' : 'fs-6 fw-400'}
                                                                             ${link.indent && 'ml-sm'}
                                                                         `}
-                                                                    >{index}{ link.label }</li>
+                                                                    >{ link.label }</li>
                                                                 )
                                                             })
                                                         }
