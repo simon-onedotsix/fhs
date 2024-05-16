@@ -1650,25 +1650,6 @@ export const bzSpeakers = {
         },
         {
             "photoSet": {
-                "small": "https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_60,h_60,c_fill,g_face,f_auto,q_auto:best/wfg3m9lseuv93rooyci0.jpg",
-                "medium": "https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_120,h_120,c_fill,g_face,fl_any_format,q_auto:best/wfg3m9lseuv93rooyci0.jpg",
-                "large": "/legacy/ae/2022/speakers/wfg3m9lseuv93rooyci0.jpg",
-                "blur": "/legacy/ae/2022/speakers,e_blur:1300/wfg3m9lseuv93rooyci0.jpg"
-            },
-            "county": "AE",
-            "prefix": "Mr.",
-            "email": "adnan.sawadi@knowingo.com",
-            "firstname": "Adnan",
-            "hidden": false,
-            "company": "  Institute of Transformational Development & Knowingo",
-            "lastname": "Sawadi",
-            "title": "Chief Executive Officer",
-            "bio": "Adnan Sawadi is the CEO of a group of multi-million-dollar companies in the technology and sustainability space, incl. AI-based mobile-learning platform Knowingo (HQ: Netherlands), VR/AR/Metaverse innovator Institute for Transformational Development (ITD, HQ: UAE) and Sawadi Ventures (HQ: UAE). Furthermore, he’s a principles-based investor with proven success and is an active member of the international business community (Europe, US and Middle East).\n\nA firm believer in the potential of technology in the transformation of education and other industries, Adnan founded Sawadi Ventures to pursue technology driven impact ventures in among others the renewable energy sector in the years following. \n\nAdnan further built up his experience over the course of ten years in the corporate finance and technology sectors, by working respectively on a variety of technology-led transformation projects in the banking sector for reputable brands.\n",
-            "id": 1718351,
-            "country": "AE"
-        },
-        {
-            "photoSet": {
                 "small": "https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_60,h_60,c_fill,g_face,f_auto,q_auto:best/ap3t4ubcymk01mq4hd2s.jpg",
                 "medium": "https://res.cloudinary.com/bizzaboprod/image/upload/c_crop,g_custom,f_auto/w_120,h_120,c_fill,g_face,fl_any_format,q_auto:best/ap3t4ubcymk01mq4hd2s.jpg",
                 "large": "/legacy/ae/2022/speakers/ap3t4ubcymk01mq4hd2s.jpg",
