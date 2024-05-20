@@ -151,10 +151,14 @@ export default function Agenda ({ sessions, locations }) {
 
 			if ( session.speakers.length ) {
 				session.speakers.forEach( speaker => {
-					searchContent = searchContent + speaker.firstName.toLowerCase()
-					searchContent = searchContent + speaker.lastName.toLowerCase()
+					searchContent = searchContent + ` ${speaker.firstName.toLowerCase()} `
+					searchContent = searchContent + ` ${speaker.lastName.toLowerCase()} `
+					searchContent = searchContent + ` ${speaker.jobTitle?.toLowerCase()} `
+					searchContent = searchContent + ` ${speaker.organization?.toLowerCase()} `
 				})
 			}
+
+			console.log('searchContent:', searchContent)
 
 			if ( searchContent.includes(search)) return session
 
