@@ -14,6 +14,8 @@ import { ButtonSocial } from  '../../../fuselage/components/button-social/button
 import { sortSessions, toHoursAndMinutes } from "../../../lib/agenda-utils"
 import { formatInTimeZone } from 'date-fns-tz'
 
+import CSS from '../../../css/app/partners.module.css'
+
 
 function Speaker({ speaker, sessions }) {
 
