@@ -158,7 +158,7 @@ export default function Agenda ({ sessions, locations }) {
 				})
 			}
 
-			console.log('searchContent:', searchContent)
+			// console.log('searchContent:', searchContent)
 
 			if ( searchContent.includes(search)) return session
 
