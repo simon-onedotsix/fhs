@@ -131,27 +131,19 @@ function Speaker({ speaker, sessions }) {
 					<Sidebar size='medium'>
 
 						<aside className="formatted">
-							<p className="fw-600">
-								<ArrowLink 
-									theme={{ color: `white`, stroke: `var(--secondary)` }} 
-									href="/world/speakers"
-								>
-									View All Speakers
-								</ArrowLink>
-							</p>
-							<p className="fw-600">
-								<ArrowLink 
-									theme={{ color: `white`, stroke: `var(--secondary)` }} 
-									href="/world/advisory-board"
-								>
-									View Advisory Board
-								</ArrowLink>
-							</p>
-							<p className="mt-sm maxw-15">
+						<p className="fw-600">
+                                <ArrowLink 
+                                    theme={{ color: `white`, stroke: `var(--accent)` }} 
+                                    href="/world/speakers"
+                                >
+                                    View All Speakers
+                                </ArrowLink>
+                            </p>
+							<p className={`${CSS.avatar} mt-sm`}>
 								{
-									speaker.photoSet ? 
+									speaker.photoUrl ? 
 									<Image 
-										src={speaker.photoSet.large} 
+										src={speaker.photoUrl} 
 										width={370} 
 										height={370} 
 										alt=""
@@ -163,7 +155,6 @@ function Speaker({ speaker, sessions }) {
 										width={370} 
 										height={370} 
 										alt=""
-										unoptimized
 									/>
 								}
 							</p>
@@ -172,18 +163,18 @@ function Speaker({ speaker, sessions }) {
 						</aside>
 
 						<main className="maxw-60">
-							{/* <p className='fs-1 fw-600 lh-1 c-secondary maxw-40'>SPEAKER</p> */}
-							<p className="fs-3 fw-600 caps">{speaker.firstname} {speaker.lastname}</p>
-							<p>
-								{speaker.title}
+							<p className='fs-4 fw-600 lh-1 c-accent maxw-40'>Profile</p>
+							<p className="fs-3 fw-600 c-white caps mt-sm">{speaker.firstName} {speaker.lastName}</p>
+							<p className='c-white'>
+								{speaker.jobTitle}
 								<br/>
 								<span className="fw-500">
-									{ handleCompany() }
+									{ speaker.organization }
 								</span>
 							</p>
-							<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{speaker.bio}</p>
+							<p className="mt-sm maxw-50 c-white" style={{ whiteSpace: `pre-line` }}>{ speaker.biography }</p>
 
-							{ handleRelatedSessions() }
+							{/* { handleRelatedSessions() } */}
 						</main>
 
 					</Sidebar>
@@ -208,51 +199,99 @@ Speaker.theme = 'world-2024'
 
 export async function getStaticPaths() {
 
-	const res = await fetch(`https://api.bizzabo.com/api/speakers?eventId=${process.env.BIZZABO_EVENT_ID_AE}&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
+	const result = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query eventPerson($eventId: ID!, $cursor: CursorPaginationInput, $filters: [EventPersonFilter!] ) {
+						eventPerson(eventId: $eventId, cursor: $cursor, filters:$filters ) {
+							nodes {
+								id
+							}
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE,
+					"cursor": {
+						"first": 300
+					},
+					"filters": {
+						"shouldBeInGroups": "RXZlbnRHcm91cF80MDIzNTQ="
+					}
+				}
+			})
 		}
-	})
-	const allSpeakers = await res.json()
-	// console.log('hello:',allSpeakers)
+	)
+
+	const speakersData = await result.json()
+
+	console.log(speakersData.data.eventPerson.nodes)
+
 
 	return {
-		// paths: allSpeakers.content.map( entry => ({ params: { id: String(entry.id) } })),
-		paths: [],
-		fallback: 'blocking'
-	}
+        paths: speakersData.data.eventPerson.nodes.map( speaker => ({ params: { id: speaker.id } })),
+        fallback: false
+    }
 }
 
 export async function getStaticProps({ params }) {
 
 	// console.log('params',params)
 	
-	const res = await fetch(`https://api.bizzabo.com/api/speakers/${params.id}?eventId=${process.env.BIZZABO_EVENT_ID_AE}`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
+	const result = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query eventPerson($eventId: ID!, $filters: [EventPersonFilter!]) {
+						eventPerson(eventId: $eventId, filters: $filters) {
+							nodes {
+								id
+								firstName
+								lastName
+								jobTitle
+								organization
+								biography
+								photoUrl
+								withEvent(eventId: $eventId) {
+									speakerOnPlannings {
+									  id
+									  title
+									  beginsAt
+									  endsAt
+									}
+								}
+							}
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE,
+					"filters": {
+						"eventPeopleIds": [ params.id ],
+						"shouldBeInGroups": "RXZlbnRHcm91cF80MDIzNTQ="
+					}
+				}
+			})
 		}
-	})
-	const speakerData = await res.json()
+	)
 
-	const sessionsRes = await fetch(`https://api.bizzabo.com/api/agenda/sessions?eventId=${process.env.BIZZABO_EVENT_ID_AE}&size=200`, {
-		"method": "GET",
-		"headers": {
-			"Content-Type": "application/json",
-			"Authorization": "Bearer 67f61f9e-e897-4536-914e-3f47286650f9"
-		}
-	})
-    const sessionsData = await sessionsRes.json()
-    const sessions = sessionsData.content || null
+	const speakerData = await result.json()
 
 	return {
-		props: { 
-			speaker: speakerData, 
-			sessions 
-		}
+		props: { speaker: speakerData.data.eventPerson.nodes[0] }
 	}
 }
 

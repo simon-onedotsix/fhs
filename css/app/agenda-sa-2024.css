@@ -60,10 +60,7 @@
 }
 
 .session {
-    /* background-color: red; */
     flex: 1;
-    /* padding: 1rem; */
-    /* border: 1px solid var(--primary); */
     border-radius: calc(var(--agenda-radius) * 1);
     overflow: hidden;
 }
@@ -181,8 +178,6 @@
 
 
 @media(max-width:600px) {
-    /* updated layout (rows) */
-    
     .sessions {
         flex-direction: column;
     }
@@ -209,11 +204,7 @@
 .sessionAnchor {
     position: absolute;
     z-index: 12;
+    display: block;
 
     top: -14rem;
-
-    display: block;
-    /* height: 3rem;
-    background-color: red;
-    width: 2rem; */
 }

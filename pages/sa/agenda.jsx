@@ -756,7 +756,6 @@ export default function Agenda ({ sessions, locations }) {
 																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
 																		<div className='session | bg-glass'>
 
-
 																			<div className='sessionHeader fw-500 c-white'>
 																				{
 																					session.beginsAt && session.endsAt ?
@@ -805,6 +804,7 @@ export default function Agenda ({ sessions, locations }) {
 																				
 																				{ sortSpeakers(session.speakers) }
 																			</div>
+																			
 																		</div>
 																	</div>
 																)
