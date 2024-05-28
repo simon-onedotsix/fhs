@@ -1,0 +1,234 @@
+.test {
+    border: 1px solid rgb(255, 0, 208);
+}
+
+
+
+/* LAYOUT –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.day {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.dayDivider {
+    background-color: var(--accent);
+    border-radius: var(--default-radius);
+    padding: .5rem 1rem;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+@media(max-width:799px){
+
+    .utilities {
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        gap: .5rem;
+
+        min-height: 4.75rem;
+    }
+
+
+
+
+    .desktopOnly {
+        display: none;
+    }
+    
+    .agendaFilterResetWrapper {
+        flex: 0 !important;
+    }
+
+
+
+}
+
+
+/* DESKTOP ----------------------------------------------- */
+
+@media(min-width:800px){
+
+    .agenda {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+
+
+
+    .utilities {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+    .utilties,
+    .filters,
+    .search {
+        height: 3rem;
+    }
+
+}
+
+
+
+
+
+/* ACTIONS */
+
+.actions {
+    position: fixed;
+    z-index: 5;
+    bottom: var(--space-sm);
+    right: var(--space-sm)
+}
+
+@media(min-width:600px){
+    .actions {
+        display: none;
+    }
+}
+
+.scrollButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--accent);
+    border-radius: 3rem;
+
+    padding: .8rem;
+
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.25);
+
+    transition: all 350ms ease-in-out;
+}
+.scrollButton svg {
+    stroke: white;
+}
+
+
+@media(hover:hover){
+    .scrollButton:hover {
+        background-color: var(--accent);
+    }
+    .scrollButton:hover svg {
+        stroke: var(--dark);
+    }
+}
+
+
+
+
+/* STYLING ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+
+
+
+.sessionsWrapper {
+    flex:1;
+    display: flex;
+    gap: .5rem;
+}
+.sessions {
+    display: flex;
+    flex-direction: column;
+    
+    border-left: 2px solid var(--accent);
+    padding-left: 1rem;
+    gap: 1rem;
+}
+.session {
+    flex: 1;
+    border-radius: calc(var(--default-radius) * 1);
+    overflow: hidden;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sessionHeader {
+    width: 100%;
+    background-color: var(--primary);
+    padding-bottom: .5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: .5rem;
+    row-gap: .25rem;
+
+    color: var(--accent);
+}
+
+
+
+
+
+
+
+.sessionTitle {
+    max-width: 50rem;
+    margin-bottom: .5rem;
+}
+
+.sessionTagGrid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .25rem;
+}
+
+
+.sessionTag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2rem;
+    background-color: var(--accent);
+    font-size: .8rem;
+}
+.sessionLocationTag {
+    display: inline-block;
+}
+
+
+
+
+.sessionStream {
+    padding: .5rem 1rem;
+    border-radius: calc(var(--default-radius) * 1);
+    background-color: var(--primary);
+    min-width: 6.25rem;
+}
+
+
+
+@media(max-width:600px) {
+    .sessions {
+        flex-direction: column;
+    }
+    .sessionsWrapper {
+        position: relative;
+        flex:1;
+        display: flex;
+        gap: .5rem;
+    }
+
+}

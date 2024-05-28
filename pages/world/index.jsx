@@ -404,7 +404,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </PopupOverlay>
 
 
-            <Script id="chatbot" strategy="afterInteractive">
+            {/* <Script id="chatbot" strategy="afterInteractive">
                 {`
                     (function(d,t) {
                         var BASE_URL="https://app.chatlyn.com";
@@ -421,7 +421,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         }
                     })(document,"script");;
                 `}
-            </Script>
+            </Script> */}
         </>
     )
 }
