@@ -29,6 +29,7 @@ import {
     QueryImages,
     Passes,
     QueryPartners,
+    QueryTestimonials,
 	BizzaboPartners
 } from "../../graphql/queries"
 
@@ -109,6 +110,7 @@ export async function getStaticProps({ params, preview, previewData }) {
                             ${QueryImages}
                             ${QueryPartners}
                             ${Passes}
+                            ${QueryTestimonials}
                             ${BizzaboPartners}
                         }
                         ${QuerySEO}
