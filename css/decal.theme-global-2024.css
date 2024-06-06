@@ -7,6 +7,7 @@
     --accent: #EF3742;
     
     --primary-1: #3C1A52;
+    --primary-1-dark: #270b3a;
     
     --primary-2: #6E439A;
     --primary-2-dark: #5a3182;
@@ -26,9 +27,9 @@
     --default-heading-color: var(--primary);
 
     --wash: #F9F9FA;
-    --light: #E1E2EA;
-    --medium: #827e88;
-    --dark: #202B64;
+    --light: #a5eaff;
+    --medium: var(--primary-2);
+    --dark: var(--primary-1-dark);
 
     --error: rgb(255, 68, 0);
     --success: rgb(121, 173, 0);
@@ -172,7 +173,10 @@
 /* default */
 
 [data-theme='global-2024'] .bg-default {
-    color: var(--default-text-color);
+    color: inherit;
+}
+[data-theme='global-2024'] .bg-default .formatted * {
+    color: inherit;
 }
 [data-theme='global-2024'] .bg-default .formatted h1,
 [data-theme='global-2024'] .bg-default .formatted h2,
@@ -180,7 +184,7 @@
 [data-theme='global-2024'] .bg-default .formatted h4,
 [data-theme='global-2024'] .bg-default .formatted h5,
 [data-theme='global-2024'] .bg-default .formatted h6 {
-    color: var(--primary);
+    color: white;
 }
 
 /* white */

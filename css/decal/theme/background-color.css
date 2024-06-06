@@ -1,18 +1,18 @@
-.bg-global { background-color: var(--bg-global, white); }
+.bg-global { background-color: var(--bg-global); }
 
-.bg-primary { background-color: var(--primary, rgb(44, 44, 44)); }
-.bg-secondary { background-color: var(--secondary, rgb(95, 95, 95)); }
-.bg-accent { background-color: var(--accent, rgb(168, 168, 168)); }
+.bg-primary { background-color: var(--primary); }
+.bg-secondary { background-color: var(--secondary); }
+.bg-accent { background-color: var(--accent); }
 
 .bg-theme { 
     background: rgb(64,64,138);
     background: linear-gradient(90deg, rgba(168,58,144,1) 0%, rgba(64,64,138,1) 73%);
 }
 
-.bg-wash { background-color: var(--wash, #F9F9FA);}
-.bg-light { background-color: var(--light, #E1E2EA);}
-.bg-medium { background-color: var(--medium, #726E77);}
-.bg-dark { background-color: var(--dark, #19171C);}
+.bg-wash { background-color: var(--wash);}
+.bg-light { background-color: var(--light);}
+.bg-medium { background-color: var(--medium);}
+.bg-dark { background-color: var(--dark);}
 
 .bg-black { background-color: black; }
 .bg-black-90 { background-color: rgba(0, 0, 0, 0.9); }
