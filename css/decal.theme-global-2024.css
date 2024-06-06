@@ -131,7 +131,7 @@
 [data-theme='global-2024'] .formatted h4,
 [data-theme='global-2024'] .formatted h5,
 [data-theme='global-2024'] .formatted h6 {
-    color: var(--accent);
+    color: white;
 }
 [data-theme='global-2024'] {
     color: white;
@@ -185,6 +185,16 @@
 [data-theme='global-2024'] .bg-default .formatted h5,
 [data-theme='global-2024'] .bg-default .formatted h6 {
     color: white;
+}
+
+[data-theme='global-2024'] .bg-default .button {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--dark);
+}
+[data-theme='global-2024'] .bg-default .button:hover {
+    background-color: white;
+    border-color: white;
 }
 
 /* white */
