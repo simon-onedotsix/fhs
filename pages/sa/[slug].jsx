@@ -1,5 +1,3 @@
-import Layout from '../../fuselage/templates/sa/layout'
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 

@@ -42,9 +42,10 @@ import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } fr
 function Partners({ seomatic, contentBlocks, partnerData }) {
 
 
-	// console.log('swapcard partner data:', partnerData)
+	console.log('swapcard partner data:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 
+	partnerData.exhibitors.forEach( ex => console.log( ex.typeLabel?.name))
 
 	// programatically build array of unique types pulled from exhibitor data
 
