@@ -6,7 +6,7 @@ import { SectionDivider } from '../../theme/2024/world/blocks/section-divider/se
 
 import CSS from './hero-unit-image.module.css'
 
-export const HeroUnitImage = ({ children, hero, heading, description }) => {
+export const HeroUnitImage = ({ hero, heading, description }) => {
 
     let  scroll  = useScroll()
     let y = useTransform( scroll.scrollY, [0, 1000], ["0%", "30vh"])
@@ -17,7 +17,10 @@ export const HeroUnitImage = ({ children, hero, heading, description }) => {
                 
             <motion.div className={CSS.hero} style={{ y }}>
                 <div className={CSS.heroWrapper}>
-                    <Image src={`/assets/img/global/award-winners/hero-award-winners.jpg`} layout={`responsive`} width={1920} height={1200} alt=''/>
+                    {
+                        hero &&
+                        <Image src={ hero.url } layout={`responsive`} width={hero.width} height={hero.height} alt=''/>
+                    }
                 </div>
             </motion.div>
 

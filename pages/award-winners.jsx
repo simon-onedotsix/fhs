@@ -29,7 +29,15 @@ export default function AwardWinners ({ data }) {
 
             <Header overlaid inverse />
 
-            <HeroUnitImage heading={data.title} description={data.description} />
+            <HeroUnitImage 
+                heading={data.title} 
+                description={data.description} 
+                hero={{ 
+                    url: '/assets/img/global/award-winners/hero-award-winners.jpg',
+                    width: '1920',
+                    height: '1200',
+                }} 
+            />
 
             {
                 data.awardWinners.length &&

@@ -18,8 +18,7 @@ import { Pop, Fade } from '../fuselage/animation/animation'
 
 export default function AboutUs ({ data }) {
 
-    console.log('data:', data)
-
+    // console.log('data:', data)
 
 
     const handleContentBlocks = ( blockData ) => {
@@ -97,7 +96,14 @@ export default function AboutUs ({ data }) {
 
             <Header overlaid inverse />
 
-            <HeroUnitImage heading={"About Us"} />
+            <HeroUnitImage 
+                heading={"About Us"} 
+                hero={{ 
+                    url: '/assets/img/global/about-us/about-us-hero.jpg',
+                    width: '1920',
+                    height: '1200',
+                }} 
+            />
 
             { handleContentBlocks(data.contentBlocksFhsGlobal) }
 
