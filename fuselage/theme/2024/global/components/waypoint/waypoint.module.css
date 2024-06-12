@@ -1,0 +1,60 @@
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    align-items: center;
+}
+
+.year {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    border: 1px solid var(--accent);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--space-sm);
+    color: var(--accent);
+
+    transition: all 350ms ease-in-out;
+}
+.value {
+    transition: all 350ms ease-in-out;
+}
+
+
+@media(max-width:599px){
+    .year {
+        font-size: 1.5rem;
+    }
+    .value {
+        line-height: 1.2;
+    }
+}
+
+@media(min-width:600px){
+    .layout {
+        grid-template-columns: 6rem auto;
+        align-items: center;
+    }
+    .year {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 6rem;
+        font-size: 1.75rem;
+    }
+}
+
+@media(min-width:900px){
+    .layout {
+        grid-template-columns: 10rem auto;
+    }
+    .year {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 10rem;
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,17 @@
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-content: flex-start;
+}
+.photo {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+.photo img {
+    object-fit: cover;
+    object-position: top center;
+    width: 100%;
+    height: 100%;
+}
