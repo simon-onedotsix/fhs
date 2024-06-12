@@ -70,7 +70,7 @@ export default function AboutUs ({ data }) {
                                     <main>
                                         <div className="columns-3 gap-sm">
                                             {
-                                                block.profiles.map( profile => <Pop><ProfileCard key={ profile.id } profile={ profile } /></Pop> )
+                                                block.profiles.map( profile => <Pop key={ profile.id }><ProfileCard profile={ profile } /></Pop> )
                                             }
                                         </div>
                                     </main>
