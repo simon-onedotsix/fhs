@@ -19,6 +19,7 @@ import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
 import { ButtonSocial } from '../../../fuselage/components/button-social/button-social'
 import { VideoPlayer } from "../../../fuselage/components/video-player/video-player"
 import { Button } from "../../../fuselage/components/button/button"
+import HubspotForm from "../../../fuselage/components/hubspot-form/hubspot-form"
 
 import { QuerySEO } from "../../../graphql/queries"
 import handleSeomaticMeta from '../../../lib/seomatic'
@@ -81,7 +82,7 @@ export default function Article ({ entry }) {
             <>
                 {blocks.map( block => {
 
-                    //text
+                    // text
                     if ( block.__typename === 'contentLibraryContentBlocks_text_BlockType' ) {
                         return (
                             <div key={block.id} className="mt-sm formatted">
@@ -90,7 +91,7 @@ export default function Article ({ entry }) {
                         )
                     }
                     
-                    //image
+                    // image
                     if ( block.__typename === 'contentLibraryContentBlocks_image_BlockType' ) {
                         return (
                             <div key={block.id} className="mt-sm"style={{ borderRadius: `var(--default-radius)`, overflow: `hidden`}}>
@@ -103,7 +104,7 @@ export default function Article ({ entry }) {
                         )
                     }
                     
-                    //video
+                    // video
                     if ( block.__typename === 'contentLibraryContentBlocks_video_BlockType' ) {
                         return (
                             <div key={block.id} className="mt-sm formatted">
@@ -117,7 +118,7 @@ export default function Article ({ entry }) {
                         )
                     }
                     
-                    //podcast
+                    // podcast
                     if ( block.__typename === 'contentLibraryContentBlocks_podcast_BlockType' ) {
                         return (
                             <div key={block.id} className="mt-sm formatted">
@@ -126,7 +127,7 @@ export default function Article ({ entry }) {
                         )
                     }
                     
-                    //download
+                    // download
                     if ( block.__typename === 'contentLibraryContentBlocks_download_BlockType' ) {
                         return (
                             <div key={block.id} className="mt-sm formatted flex flex-wrap gap-xs">
@@ -145,6 +146,22 @@ export default function Article ({ entry }) {
                                         )
                                     })
                                 }
+                            </div>
+                        )
+                    }
+                    
+                    // hubspot form
+                    if ( block.__typename === 'contentLibraryContentBlocks_hubspotForm_BlockType' ) {
+
+                        if ( !block.hubspotForm ) return
+
+                        return (
+                            <div key={block.id} className="mt-sm formatted flex flex-wrap gap-xs mt-md">
+
+                                <div dangerouslySetInnerHTML={{__html: block.body}}></div>
+
+                                <HubspotForm portalId={block.hubspotForm[0].portalId} formId={block.hubspotForm[0].formId} />
+
                             </div>
                         )
                     }
@@ -201,8 +218,8 @@ export default function Article ({ entry }) {
                         <main>
                             <div className="p-md pt-0">
                                 <div className="mb-sm pb-xs bb-1 bc-secondary flex jc-between">
-                                <ArrowLink href="/world/content-library" decal='fw-600'>Content library</ArrowLink>
-                                {handleCategories()}                                
+                                    <ArrowLink href="/world/content-library" decal='fw-600'>Content library</ArrowLink>
+                                    {handleCategories()}                                
                                 </div>
 
                                 <p className="fs-1 fw-600 lh-1 mb-sm">{entry.title}</p>
@@ -325,7 +342,20 @@ export async function getStaticProps({ params, preview, previewData }) {
                                 id
                                 codeSnippet
                             }
+                            ... on contentLibraryContentBlocks_hubspotForm_BlockType {
+                                id
+                                body
+                                hubspotForm {
+                                    ... on hubspotForm_BlockType {
+                                        id
+                                        formId
+                                        portalId
+                                    }
+                                }
+                            }
                         }
+
+
                         contentTypes {
                             ... on contentLibrary_Category {
                                 id

@@ -185,6 +185,19 @@
     font-weight: 400;
 }
 
+select.hs-input {
+    width: max-content !important;
+    color: inherit !important;
+    border-color: var(--primary-2) !important;
+    background-color: transparent;
+    background-image: url('/assets/ui/dropdown-chevron.svg');
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem);
+
+}
+
+
 .form-columns-2 {
     max-width: 100% !important;
 }
