@@ -186,10 +186,12 @@
 }
 
 select.hs-input {
+    margin: .5rem 0;
     width: max-content !important;
-    color: inherit !important;
-    border-color: var(--primary-2) !important;
-    background-color: transparent;
+    color: var(--dark) !important;
+    border-color: var(--secondary) !important;
+    border-radius: .25rem;
+    background-color: var(--secondary);
     background-image: url('/assets/ui/dropdown-chevron.svg');
     background-size: 1rem;
     background-repeat: no-repeat;
