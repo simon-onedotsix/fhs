@@ -16,7 +16,7 @@ import { Pop, Fade } from '../fuselage/animation/animation'
 
 
 
-export default function AboutUs ({ data }) {
+export default function AboutFhs ({ data }) {
 
     // console.log('data:', data)
 
@@ -113,7 +113,7 @@ export default function AboutUs ({ data }) {
     )
 }
 
-AboutUs.theme='global-2024'
+AboutFhs.theme='global-2024'
 
 
 
