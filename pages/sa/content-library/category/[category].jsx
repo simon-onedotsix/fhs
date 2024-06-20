@@ -173,7 +173,7 @@ export async function getStaticProps({ params }) {
                         }
                     }
                 }
-                categories (group: "contentLibrary", id: [7701, 7702, 7703]) {
+                categories (group: "contentLibrary", id: [7701, 7702, 7703, 121314]) {
                     id
                     title
                     slug
