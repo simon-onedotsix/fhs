@@ -8,9 +8,8 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
 import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
-
 import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-
+import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'
 import handleContentBlocks from "../../lib/content-blocks-sa"
 
 import parse from 'html-react-parser'
@@ -33,11 +32,17 @@ import {
 	BizzaboPartners
 } from "../../graphql/queries"
 
+import SimpleBar from 'simplebar-react'
+import 'simplebar-react/dist/simplebar.min.css'
+
+import CSS from './post-event-resources.module.css'
+
 
 
 export default function PostEvent ({ hubspotData, cmsEntryData }) {
 
     const [ allowed, setAllowed ] = useState( false )
+    const [ showForm, setShowForm ] = useState( false )
     const [ message, setMessage ] = useState( '' )
     const userEmailRef = useRef(null)
     const allEmails = ['simon@onedotsix.com', 'muhammad.ahmed@thebench.com']
@@ -83,7 +88,7 @@ export default function PostEvent ({ hubspotData, cmsEntryData }) {
         } else if ( !userEmailRef.current.value ) {
             setMessage("<p>Please enter a valid email</p>")
         } else {
-            setMessage("<p><span className='fw-500'>Email not found!</span> Apply <a href='#'>here</a> to gain access.</p>")
+            setMessage("<p><span className='fw-500'>Email not found!</span> See below to register for access.</p>")
         }
     }
 
@@ -92,6 +97,7 @@ export default function PostEvent ({ hubspotData, cmsEntryData }) {
 
     // console.log('cmsEntryData:',cmsEntryData)
     // console.log('hubspotData:',hubspotData)
+    // console.log('allEmails:', allEmails)
 
 
     return (
@@ -99,21 +105,19 @@ export default function PostEvent ({ hubspotData, cmsEntryData }) {
             <ThemeBg />
             <Header compact shim />
 
-            {
-                allowed ? 
-                    
-                    handleContentBlocks( cmsEntryData.fhisContentBlocks, null, null, 'sa' )
-                   
-                :
-                    <>
-                        <section className='block'>
-                            <div className="container">
-                                <p className='fs-2 fw-600'>FHS Saudi Arabia 2024 - Resources</p>
+            
+            <div className={`${CSS.overlay} ${ !allowed && CSS.active }`}>
+
+                <section className={CSS.container}>
+                    <div className={CSS.contentScroller}>
+                        <div className={CSS.content}>
+                            <div className="container center">
+                                <p className='fs-2 fw-600 lh-1 c-primary'>FHS Saudi Arabia 2024 - Resources</p>
                             </div>
-                            <div className="container">
+                            <div className="container center">
                                 <p>Please enter your email below to access.</p>
-                                <form className='form mt-xs columns-1 gap-xs maxw-30' onSubmit={checkEmail}>
-                                    <input ref={userEmailRef} type="email" required/>
+                                <form className='form mt-xs columns-1 gap-xs' onSubmit={checkEmail}>
+                                    <input ref={userEmailRef} className='maxw-25 mx-auto' type="email" required/>
                                     <div>
                                         <button className='button fs-6' type="submit">Submit</button>
                                     </div>
@@ -123,14 +127,37 @@ export default function PostEvent ({ hubspotData, cmsEntryData }) {
                                     <div className='formatted mt-xs'>{ parse(message) }</div>
                                 }
                             </div>
-                        </section>
-                    </>
+                            <div className="container center">
+                                <p className='fw-500 c-primary'>Didn&apos;t attend FHS Saudi Arabia this year? <br/>Click <span className='underline' onClick={() => setShowForm(true)}>here</span> to register for access.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+
+            <div className={`${CSS.formOverlay} ${ showForm && CSS.active }`}>
+
+                <section className={CSS.container}>
+                    <button className={CSS.closeButton} onClick={() => setShowForm(false)}>&times;</button>
+                    <div className={CSS.contentScroller}>
+                        <div className={CSS.content}>
+                            <p className='mb-sm maxw-30'>Please complete the form below to register and access content and insights from FHS Saudi Arabia 2024.</p>
+                            <HubspotForm portalId={'14527187'} formId={'728bd06b-3a6f-47ac-b192-793bb22c5f7d'} />
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
                     
-            }
+           
+
+            { handleContentBlocks( cmsEntryData.fhisContentBlocks, null, null, 'sa' ) }
             
 
             <Footer />
-            <LenisScroller />
+            {/* <LenisScroller /> */}
         </>
     )
 

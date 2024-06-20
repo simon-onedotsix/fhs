@@ -290,3 +290,5 @@
 .bc-primary { border-color: var(--primary);}
 .bc-secondary { border-color: var(--secondary);}
 .bc-accent { border-color: var(--accent);}
+
+.underline { text-decoration: underline; cursor: pointer; }
