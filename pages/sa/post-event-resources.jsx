@@ -97,7 +97,7 @@ export default function PostEvent ({ hubspotData, cmsEntryData }) {
 
     // console.log('cmsEntryData:',cmsEntryData)
     // console.log('hubspotData:',hubspotData)
-    // console.log('allEmails:', allEmails)
+    console.log('allEmails:', allEmails)
 
 
     return (
@@ -179,7 +179,7 @@ export async function getStaticProps() {
     
     const hubspotClient = new Client({ accessToken: 'pat-na1-4b3f96a9-f593-4d17-b3bf-ecfce1f5fe82' })  
     const hubspotContactData = await hubspotClient.apiRequest({
-        path: '/contacts/v1/lists/737/contacts/all',
+        path: '/contacts/v1/lists/777/contacts/all',
     })
     const contactsData = await hubspotContactData.json()
 

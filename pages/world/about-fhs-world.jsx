@@ -63,7 +63,7 @@ export default function LeadWall () {
 
             <Footer />
             {/* <LenisScroller /> */}
-        </>
+        </> 
     )
 
 }
