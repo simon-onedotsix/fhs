@@ -97,7 +97,7 @@ export default function AboutFhs ({ data }) {
             <Header overlaid inverse />
 
             <HeroUnitImage 
-                heading={"About Us"} 
+                heading={"About FHS"} 
                 hero={{ 
                     url: '/assets/img/global/about-us/about-us-hero.jpg',
                     width: '1920',

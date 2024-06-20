@@ -72,7 +72,7 @@ export default function AwardWinners ({ data }) {
             <Footer />
             <LenisScroller />
 
-            <CtaTab />
+            {/* <CtaTab /> */}
         </div>
     )
 }
