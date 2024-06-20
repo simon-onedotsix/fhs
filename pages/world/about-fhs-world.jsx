@@ -31,7 +31,7 @@ export default function LeadWall () {
                     <div>
                         <h1>About FHS World</h1>
 
-                        <p>FHS World is the hospitality industry's platform to invest in its future. It is a premium platform for investors, hotel owners and operators in the hospitality industry to connect, network and drive the future of hospitality.</p>
+                        <p>FHS World is the hospitality industry&apos;s platform to invest in its future. It is a premium platform for investors, hotel owners and operators in the hospitality industry to connect, network and drive the future of hospitality.</p>
                         
                         <p>The summit connects investment opportunities and projects from the Middle East, Europe, Africa, Asia and the Americas to C-level hospitality decision-makers. Established in 2005, FHS World was formerly known as AHIC.</p>
 
