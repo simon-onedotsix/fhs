@@ -38,7 +38,7 @@ import handleSeomaticMeta from '../../lib/seomatic'
 
 function PurchasePass({ seomatic, entry }) {
 
-	console.log('entry:', entry )
+	// console.log('entry:', entry )
 
 	return (
 		<>
@@ -61,22 +61,23 @@ function PurchasePass({ seomatic, entry }) {
 						title={ "Standard Pass" }
 						header={
 							<>
-								<p className="fs-6"><span className="fw-800 c-primary">Available at this rate until 29 September</span> before the price increases to <strong>US$ 3500</strong></p>
+								<p className="fs-6"><span className="fw-800 c-primary">Only available at this rate until 30 June</span> before the price increases to <strong>US$ 3000</strong></p>
 							</>
 						}
+						cta={ <p className="fw-600">6 passes left at this rate</p> }
 						description={ 
 							<>
 								<p>Includes access to:</p>
 								<ul>
 									<li>All FHS conference tracks</li>
 									<li>Exhibition</li>
-									<li>Experiences (subject to availability</li>
+									<li>Experiences (subject to availability)</li>
 									<li>Networking receptions</li>
 								</ul>
 							</> 
 						}
 						currency={ "US$" }
-						value={ 3300 }
+						value={ 2600 }
 						from={ "2024-01-01T00:00:00+00:00" }
 						to={ "2024-10-02T23:00:00+00:00" }
 						label={ "Purchase Pass" }
@@ -88,9 +89,10 @@ function PurchasePass({ seomatic, entry }) {
 						title={ "Premium Pass" }
 						header={
 							<>
-								<p className="fs-6"><span className="fw-800 c-primary">Available at this rate until 29 September</span> before the price increases to <strong>US$ 3700</strong></p>
+								<p className="fs-6"><span className="fw-800 c-primary">Only available at this rate until 30 June</span> before the price increases to <strong>US$ 3200</strong></p>
 							</>
 						}
+						cta={ <p className="fw-600">20 passes left at this rate</p> }
 						description={ 
 							<>
 								<p>Includes access to:</p>
@@ -98,13 +100,13 @@ function PurchasePass({ seomatic, entry }) {
 									<li><strong>Branded Residences Forum 2024</strong></li>
 									<li>All FHS conference tracks</li>
 									<li>Exhibition</li>
-									<li>Experiences (subject to availability</li>
+									<li>Experiences (subject to availability)</li>
 									<li>Networking receptions</li>
 								</ul>
 							</> 
 						}
 						currency={ "US$" }
-						value={ 3500 }
+						value={ 2800 }
 						from={ "2024-01-01T00:00:00+00:00" }
 						to={ "2024-10-02T23:00:00+00:00" }
 						label={ "Purchase Pass" }
@@ -112,13 +114,14 @@ function PurchasePass({ seomatic, entry }) {
 					/>
 					
 					<Pass
-						title={ "BRF-ONLY Pass" }
+						title={ "Branded Residences Forum Pass" }
 						header={
 							<>
-								<p className="fs-6"><span className="fw-800 c-primary">Available at this rate until 29 September</span> before the price increases to <strong>US$ 950</strong></p>
+								<p className="fs-6"><span className="fw-800 c-primary">Only available at this rate until 30 June</span> before the price increases to <strong>US$ 750</strong></p>
 
 							</>
 						}
+						cta={ <p className="fw-600">35 passes left at this rate</p> }
 						description={ 
 							<>
 								<p>Includes access to:</p>
@@ -133,7 +136,7 @@ function PurchasePass({ seomatic, entry }) {
 							</> 
 						}
 						currency={ "US$" }
-						value={ 850 }
+						value={ 650 }
 						from={ "2024-01-01T00:00:00+00:00" }
 						to={ "2024-10-02T23:00:00+00:00" }
 						label={ "Purchase Pass" }

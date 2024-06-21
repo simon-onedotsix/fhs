@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 import CSS from './pass.module.css'
 
-export const Pass = ({ flash, title, header, description, currency, value, from, to, href }) => {
+export const Pass = ({ flash, title, header, cta, description, currency, value, from, to, href }) => {
 
     const [ status, setStatus ] = useState(true)
 
@@ -47,12 +47,14 @@ export const Pass = ({ flash, title, header, description, currency, value, from,
             <section className={CSS.details}>
                 <p className='fs-2 fw-600 lh-1 c-primary caps center pt-xs mx-auto'>{ title }</p>
                 <div className="formatted">{ header }</div>
+                
                 <div className="formatted">{ description }</div>
             </section>
 
             <section className={CSS.actions}>
                 {/* { handlePassStatus( from, to ) } */}
-                <p className='fs-2 fw-600 c-primary mb-xs'>{ currency } { value }</p>
+                <p className='fs-2 fw-600 c-primary'>{ currency } { value }</p>
+                <div className="formatted mb-xs">{ cta }</div>
                 { handleButtonLabel( from, to )}
             </section>
         </div>

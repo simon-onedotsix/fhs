@@ -22,7 +22,7 @@
 }
 .flash span {
     display: inline-block;
-    background-color: var(--accent);
+    background-color: rgb(35, 175, 89);
     padding: .5rem 1.5rem;
     border-radius: 1.5rem;
 }
