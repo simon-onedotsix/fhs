@@ -4,7 +4,9 @@ import ReactPlayer from 'react-player'
 
 import CSS from './hero-unit-video.module.css'
 
-export const HeroUnitVideo = ({ children }) => {
+export const HeroUnitVideo = ({ children, video, poster }) => {
+
+    if ( !video || !poster ) return
 
     let  scroll  = useScroll()
     let y = useTransform( scroll.scrollY, [0, 1000], ["0%", "30vh"])
@@ -16,8 +18,8 @@ export const HeroUnitVideo = ({ children }) => {
 
                     <div className={CSS.videoWrapper}>
                         <ReactPlayer
-                            url={`/assets/video/fhs-2023-opt.mp4`}
-                            config={{ attributes: { poster: '/assets/video/fhs-2023-opt-poster.jpg' } }}
+                            url={video}
+                            config={{ attributes: { poster: poster } }}
                             width='100%'
                             height='100%'
                             controls={false}

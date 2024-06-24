@@ -192,7 +192,7 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
             <Header overlaid inverse />
 
 
-            <HeroUnitVideo>
+            <HeroUnitVideo video={'/assets/video/fhs-2023-opt.mp4'} poster={'/assets/video/fhs-2023-opt-poster.jpg'}>
                 <SectionDivider 
                     heading={`Future Hospitality Summit`} 
                     description={`Where the world's most influential hospitality investment decision-makers connect, exchange knowledge and explore new partnerships.`}
