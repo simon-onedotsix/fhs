@@ -51,7 +51,7 @@ export default function Page () {
             
             <section className="block">
                 <div className="container center maxw-50">
-                    <p className="fs-5 fw-300">Accor has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans ultra-prime urban locations and the most sought-after resort destinations. These exclusive homes are natural extensions of Accor's iconic luxury, premium, and lifestyle brands. Each property is meticulously designed and serviced to meet the demanding standards of the brand it represents, epitomising excellence in luxury living.</p>
+                    <p className="fs-5 fw-300">Accor has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans ultra-prime urban locations and the most sought-after resort destinations. These exclusive homes are natural extensions of Accor&apos;s iconic luxury, premium, and lifestyle brands. Each property is meticulously designed and serviced to meet the demanding standards of the brand it represents, epitomising excellence in luxury living.</p>
                 </div>
             </section>
             
