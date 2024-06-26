@@ -1,0 +1,101 @@
+.panoSlider {
+    position: relative;
+    margin: 0 var(--space-md);
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    grid-area: 1/1 / 2/2;
+    width: 100%;
+    aspect-ratio: 1540/630;
+    overflow: hidden;
+}
+.imageWrapper {
+    position: relative;
+    margin: 0 -25vw;
+    aspect-ratio: 2400/640;
+
+    transition: opacity 350ms ease-in-out;
+}
+
+.imageWrapper img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+    padding: var(--space-sm);
+}
+
+@media(max-width:599px){
+    .nav {
+        border-top: 1px solid var(--ui-frame);
+        padding: 8vw;
+    }
+}
+
+@media(min-width:600px){
+    .nav {
+        position: absolute;
+        bottom: 0;
+        right: 0; 
+    }
+}
+
+.navButton {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+
+    width: 2.8rem;
+    height: 2.8rem;
+    border: 1px solid rgba(0, 255, 255, 0.25);
+
+    padding: .75rem;
+
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: aqua;
+
+    transition: all 350ms ease-in-out;
+}
+
+.navButton:disabled {
+    pointer-events: none;
+    cursor: default;
+}
+.navButton svg {
+    stroke: aqua;
+    transition: all 350ms ease-in-out;
+}
+.navButton:disabled svg {
+    opacity: .25;
+}
+
+@media(hover:hover){
+    .navButton:hover {
+        color: white;
+        background-color: rgba(0, 255, 255, 0.15);
+    }
+    .navButton:hover svg {
+        stroke: white;
+    }
+}

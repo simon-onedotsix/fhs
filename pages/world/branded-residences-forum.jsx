@@ -1,4 +1,8 @@
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
+
 import { motion, useScroll, useTransform } from "framer-motion"
+
 import { Header } from '../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 import { HeroUnitVideo } from "../../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video"
@@ -6,9 +10,15 @@ import { Button } from "../../fuselage/theme/2024/world/components/button/button
 
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
+import { PanoSlider } from "../../fuselage/components/pano-slider/pano-slider"
+import { Callout } from '../../fuselage/theme/2024/world/blocks/callout/callout'
+import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'
 
 
 export default function Page () {
+
+    const lenis = useLenis()
+
     return (
         <>
             <Header overlaid inverse />
@@ -35,7 +45,12 @@ export default function Page () {
                 <Fade>
                     <div className="mt-md center">
                         <Pop inline>
-                            <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Purchase Your Pass</Button>
+                            {/* <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Purchase Your Pass</Button> */}
+                            <Button 
+                                href={`/world/branded-residences-forum#form`} 
+                                theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} 
+                                decal={`fs-5 fw-600`}
+                            >Register Interest</Button>
                         </Pop>
                     </div>
                 </Fade>
@@ -43,28 +58,55 @@ export default function Page () {
 
 
             <section className="block">
-                <div className="container center maxw-50">
-                    <p className="fs-5 fw-300">The branded residences sector is experiencing a period of unprecedented growth, globally. Since 2024, the sector has expanded by 176%, with 687 projects now open and operating worldwide.</p>
+                <div className="container formatted maxw-90">
+                    <Callout image={{ url:'/assets/img/brf/brf-2024-image-02.jpg', width:1200, height:700 }}>
+                        <Fade>
+                            <p className="fs-4 fw-300">The branded residences sector is experiencing a period of unprecedented growth, globally.</p> 
+                            <p className="fs-4 fw-300">Since 2024, the sector has expanded by <strong>176%</strong>, with <strong>687 projects</strong> now open and operating worldwide.</p>
+                        </Fade>
+                    </Callout>
+                </div>
+            </section>
+
+
+            <PanoSlider />
+
+
+            <section className="block">
+                <div className="container formatted maxw-90">
+                    <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-01.jpg', width:1200, height:700 }}>
+                        <Fade>
+                            <p className="fs-5 fw-300">Accor has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans ultra-prime urban locations and the most sought-after resort destinations.</p> 
+                            <p className="fs-5 fw-300">These exclusive homes are natural extensions of Accor&apos;s iconic luxury, premium, and lifestyle brands. Each property is meticulously designed and serviced to meet the demanding standards of the brand it represents, epitomising excellence in luxury living.</p>
+                        </Fade>
+                    </Callout>
                 </div>
             </section>
             
             
-            <section className="block">
-                <div className="container center maxw-50">
-                    <p className="fs-5 fw-300">Accor has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans ultra-prime urban locations and the most sought-after resort destinations. These exclusive homes are natural extensions of Accor&apos;s iconic luxury, premium, and lifestyle brands. Each property is meticulously designed and serviced to meet the demanding standards of the brand it represents, epitomising excellence in luxury living.</p>
-                </div>
-            </section>
             
-            
-            <section className="block">
+            {/* <section className="block">
                 <div className="container center">
                     <Pop inline>
                         <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Purchase Your Pass</Button>
                     </Pop>
                 </div>
+            </section> */}
+
+
+            <section id="form" className="block">
+                <div className="container center">
+                    <p className="fs-1 fw-600">Register Your Interest</p>
+                </div>
+                <div className="container maxw-70">
+                    <HubspotForm portalId='14527187' formId='b27737f1-fdbb-438d-a39a-27ff6c12d24c' />
+                </div>
             </section>
 
+
+
             <Footer />
+            <LenisScroller />
         </>
     )
 }

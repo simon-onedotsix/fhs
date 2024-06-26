@@ -1,0 +1,40 @@
+.layout {
+    position: relative;
+    z-index: 2;
+
+    grid-template-columns: 1fr;
+    display: grid;
+    gap: var(--space-sm);
+    align-items: center;
+}
+
+
+@media(min-width:600px){
+    .layout {
+        grid-template-columns: 2fr 3fr;
+        gap: var(--space-lg);
+    }
+    .imageContainer {
+        grid-area: 1/2 / 2/3;
+    }
+    .content {
+        grid-area: 1/1 / 2/2;
+    }
+    
+    .flipped.layout {
+        grid-template-columns: 3fr 2fr;
+    }
+    .flipped .imageContainer {
+        grid-area: 1/1 / 2/2;
+    }
+    .flipped .content {
+        grid-area: 1/2 / 2/3;
+    }
+}
+
+
+
+
+.imageContainer img {
+    border-radius: 1.5rem;
+}
