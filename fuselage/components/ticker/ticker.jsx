@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { HorizontalTicker } from "react-infinite-ticker"
 
 import CSS from './ticker.module.css'
@@ -19,7 +20,11 @@ export const Ticker = ({ speed, messages }) => {
                                     ${message.weight ? `fw-${message.weight}` : `fw-400`}
                                 `}
                             >
-                                { message.text }
+                                { 
+                                    message.hyperlink ? 
+                                        <Link href={message.hyperlink}>{ message.text }</Link>
+                                    : message.text
+                                }
                             </p>
                         ))
                     }

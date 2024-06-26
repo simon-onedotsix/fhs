@@ -340,6 +340,7 @@ export const QueryTickers = `
             ... on ticker_BlockType {
                 id
                 text
+                hyperlink
                 weight
                 color
             }
