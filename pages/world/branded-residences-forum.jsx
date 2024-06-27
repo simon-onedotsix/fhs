@@ -90,7 +90,7 @@ export default function Page () {
                                 <li>Serviced Apartments / Extended Stay</li>
                                 <li>Private Clubs</li>
                                 <li>Benefits for Investors</li>
-                                <li>Operator's Perspective</li>
+                                <li>Operator&apos;s Perspective</li>
                                 <li>Legal Structures in Branded Residences</li>
                                 <li>Lifestyle Branded Residences - Design, Innovation & Wellness</li>
                                 <li>Rental Programs</li>
