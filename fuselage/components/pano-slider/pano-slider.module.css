@@ -1,8 +1,9 @@
 .panoSlider {
     position: relative;
     margin: 0 var(--space-md);
-    border-radius: 1.5rem;
+    border-radius: var(--default-radius);
     overflow: hidden;
+    background-color: var(--primary);
 }
 
 .container {
@@ -14,13 +15,13 @@
 .slide {
     grid-area: 1/1 / 2/2;
     width: 100%;
-    aspect-ratio: 1540/630;
+    aspect-ratio: 4/3;
     overflow: hidden;
 }
 .imageWrapper {
     position: relative;
-    margin: 0 -25vw;
-    aspect-ratio: 2400/640;
+    margin: 0 -50vw;
+    aspect-ratio: 2400/2400;
 
     transition: opacity 350ms ease-in-out;
 }
@@ -41,18 +42,19 @@
     padding: var(--space-sm);
 }
 
-@media(max-width:599px){
-    .nav {
-        border-top: 1px solid var(--ui-frame);
-        padding: 8vw;
-    }
-}
 
 @media(min-width:600px){
     .nav {
         position: absolute;
         bottom: 0;
         right: 0; 
+    }
+    .slide {
+        aspect-ratio: 1540/630;
+    }
+    .imageWrapper {
+        margin: 0 -20vw;
+        aspect-ratio: 2400/640;
     }
 }
 
@@ -98,4 +100,21 @@
     .navButton:hover svg {
         stroke: white;
     }
+}
+
+
+
+
+
+.overlayWrapper {
+    position: relative;
+}
+.overlayContent {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -10,7 +10,7 @@ import { Button } from "../../fuselage/theme/2024/world/components/button/button
 
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
-import { PanoSlider } from "../../fuselage/components/pano-slider/pano-slider"
+import { PanoSlider, PanoSliderOverlay } from "../../fuselage/components/pano-slider/pano-slider"
 import { Callout } from '../../fuselage/theme/2024/world/blocks/callout/callout'
 import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'
 
@@ -37,7 +37,17 @@ export default function Page () {
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ type: "spring", bounce: 0.25 }}
-                    className={`fs-4 fw-300 c-white center mt-xs maxw-45 mx-auto`} 
+                    className={`fs-4 c-secondary center mt-xs maxw-45 mx-auto caps ls-2`} 
+                >
+                    2 October 2024<br/>
+                    Madinat Jumeirah, Dubai
+                </motion.p>
+
+                <motion.p 
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ type: "spring", bounce: 0.25 }}
+                    className={`fs-4 c-white center mt-md maxw-45 mx-auto`} 
                 >
                     Co-located with <strong>FHS World</strong> and brought to you by <strong>Accor One Living</strong>, this <strong>exclusive one-day forum</strong> will explore the burgeoning sector of Branded Residences holistically.
                 </motion.p>
@@ -57,27 +67,61 @@ export default function Page () {
             </HeroUnitVideo>
 
 
+            <PanoSliderOverlay
+                images={ [{ url: '/assets/img/brf/brf-2024-pano-02.jpg' }] } 
+                direction={'rtl'}
+                opacity={0.2}
+            >
+                <Pop>
+                    <div style={{ width: 300, maxWidth: '45vw' }}>
+                        <img src="/assets/img/brf/accor-one-living-stack.svg" alt="logo" />
+                    </div>
+                </Pop>
+            </PanoSliderOverlay>
+
+
             <section className="block">
+                <div className="container formatted maxw-90">
+                    <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-03.jpg', width:1200, height:700 }}>
+                        <Fade>
+                            <p className="fs-5">Branded Residences Forum will be co-located with FHS World and is a one-day forum, taking place on 2 October 2024 at Madinat Jumeirah, Dubai. The forum will feature workshops and conference sessions around key topics including:</p> 
+                            <ul className='mt-xs'>
+                                <li>Co-living</li>
+                                <li>Serviced Apartments / Extended Stay</li>
+                                <li>Private Clubs</li>
+                                <li>Benefits for Investors</li>
+                                <li>Operator's Perspective</li>
+                                <li>Legal Structures in Branded Residences</li>
+                                <li>Lifestyle Branded Residences - Design, Innovation & Wellness</li>
+                                <li>Rental Programs</li>
+                                <li>Future Opportunities and Potential in Branded Residences</li>
+                            </ul>
+                        </Fade>
+                    </Callout>
+                </div>
+
                 <div className="container formatted maxw-90">
                     <Callout image={{ url:'/assets/img/brf/brf-2024-image-02.jpg', width:1200, height:700 }}>
                         <Fade>
-                            <p className="fs-4 fw-300">The branded residences sector is experiencing a period of unprecedented growth, globally.</p> 
-                            <p className="fs-4 fw-300">Since 2024, the sector has expanded by <strong>176%</strong>, with <strong>687 projects</strong> now open and operating worldwide.</p>
+                            <p className="fs-4">The branded residences sector is experiencing a period of unprecedented growth, globally.</p> 
+                            <p className="fs-4">Since 2024, the sector has expanded by <strong>176%</strong>, with <strong>687 projects</strong> now open and operating worldwide.</p>
                         </Fade>
                     </Callout>
                 </div>
             </section>
 
 
-            <PanoSlider />
+            <PanoSlider images={ [
+                { url: '/assets/img/brf/brf-2024-pano-01.jpg' }
+            ] } />
 
 
             <section className="block">
                 <div className="container formatted maxw-90">
                     <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-01.jpg', width:1200, height:700 }}>
                         <Fade>
-                            <p className="fs-5 fw-300">Accor has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans ultra-prime urban locations and the most sought-after resort destinations.</p> 
-                            <p className="fs-5 fw-300">These exclusive homes are natural extensions of Accor&apos;s iconic luxury, premium, and lifestyle brands. Each property is meticulously designed and serviced to meet the demanding standards of the brand it represents, epitomising excellence in luxury living.</p>
+                            <p className="fs-5">Accor has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans ultra-prime urban locations and the most sought-after resort destinations.</p> 
+                            <p className="fs-5">These exclusive homes are natural extensions of Accor&apos;s iconic luxury, premium, and lifestyle brands. Each property is meticulously designed and serviced to meet the demanding standards of the brand it represents, epitomising excellence in luxury living.</p>
                         </Fade>
                     </Callout>
                 </div>

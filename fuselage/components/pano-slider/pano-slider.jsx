@@ -9,7 +9,7 @@ import CSS from './pano-slider.module.css'
 
 
 
-export const PanoSlider = () => {
+export const PanoSlider = ({ images, direction, opacity }) => {
 
     const SLIDER_DATA = [
         { url: '/assets/img/brf/brf-2024-pano-01.jpg' }
@@ -29,11 +29,11 @@ export const PanoSlider = () => {
         <section className={CSS.panoSlider}>
             <div className={CSS.container}>
                 {
-                    SLIDER_DATA.map( (image, index) => <PanoSliderSlide key={index} src={image.url} active={ index+1 === currentPage ? true : false } /> )	
+                    images.map( (image, index) => <PanoSliderSlide key={index} src={image.url} active={ index+1 === currentPage ? true : false } opacity={opacity} /> )	
                 }
             </div>
             {
-                SLIDER_DATA.length > 1 &&
+                images.length > 1 &&
                 <nav className={CSS.nav}>
                     <Pop><p style={{ userSelect: `none` }}>{ currentPage }<span style={{ padding: `0 5px` }}>/</span>{ totalPages }</p></Pop>
                     <Pop delay={.1}><button className={CSS.navButton} onClick={prevPage} disabled={currentPage === 1 && true}><NavChevron flipped /></button></Pop>
@@ -47,7 +47,7 @@ export const PanoSlider = () => {
 
 
 
-export const PanoSliderSlide = ({ src, active }) => {
+export const PanoSliderSlide = ({ src, active, opacity }) => {
 
     let ref = useRef(null)
 
@@ -56,7 +56,7 @@ export const PanoSliderSlide = ({ src, active }) => {
         offset: ["start end", "end start"]
     })
 
-    let x = useTransform( scrollYProgress, [0, 1], ['25vw', '-25vw'])
+    let x = useTransform( scrollYProgress, [0, 1], ['20vw', '-20vw'])
 
     return (
         <div ref={ref} className={CSS.slide}>
@@ -66,12 +66,29 @@ export const PanoSliderSlide = ({ src, active }) => {
                     width={3050}
                     height={1080} 
                     alt='' 
+                    style={{ opacity: opacity }}
                 />
             </motion.div>
         </div>
     )
 }
 
+
+export const PanoSliderOverlay = ({ images, direction, opacity, children }) => {
+    return (
+        <section className={CSS.overlayWrapper}>
+            <div className={CSS.overlayContent}>
+                { children }
+            </div>
+
+            <PanoSlider 
+                images={images} 
+                direction={direction}
+                opacity={opacity}
+            />
+        </section>
+    )
+}
 
 
 const NavChevron = ({ flipped }) => {

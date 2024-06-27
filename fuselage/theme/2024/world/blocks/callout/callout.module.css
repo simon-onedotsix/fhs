@@ -36,5 +36,5 @@
 
 
 .imageContainer img {
-    border-radius: 1.5rem;
+    border-radius: var(--degault-radius);
 }

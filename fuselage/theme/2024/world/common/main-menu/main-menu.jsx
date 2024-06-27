@@ -18,7 +18,7 @@ export const MainMenu = ({ otherEvents }) => {
 
     const { mainMenu } = globals.me.find( data => data.__typename === 'header_GlobalSet' )
     // console.log( 'sa:', globals.sa )
-    // console.log( 'sa mainMenu:', mainMenu )
+    // console.log( 'world mainMenu:', mainMenu )
 
     return (
         <>
@@ -100,7 +100,13 @@ export const MainMenu = ({ otherEvents }) => {
                                                                                 `} 
                                                                                 target={ link.newWindow ? '_blank' : '_self'}
                                                                                 onClick={ () => setActive(false)}
-                                                                            >{ link.label }</a>
+                                                                            >
+                                                                                {
+                                                                                    link.hyperlink === '/world/branded-residences-forum' &&
+                                                                                    <span className={CSS.label}>New for 2024!</span>
+                                                                                }
+                                                                                { link.label }
+                                                                            </a>
                                                                         </Link>    
                                                                     </li> 
                                                                 )
