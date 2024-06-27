@@ -7,6 +7,7 @@ import { Header } from '../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 import { HeroUnitVideo } from "../../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
+import { ArrowButton } from '../../fuselage/components/arrow-button/arrow-button'
 
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
@@ -122,6 +123,15 @@ export default function Page () {
                         <Fade>
                             <p className="fs-5">Accor has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans ultra-prime urban locations and the most sought-after resort destinations.</p> 
                             <p className="fs-5">These exclusive homes are natural extensions of Accor&apos;s iconic luxury, premium, and lifestyle brands. Each property is meticulously designed and serviced to meet the demanding standards of the brand it represents, epitomising excellence in luxury living.</p>
+                            <p className='mt-sm'>
+                                <ArrowButton 
+                                    href={ 'https://accor-residences.com/' } 
+                                    theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
+                                    target={ '_blank' }
+                                >
+                                    Learn more about Accor One Living
+                                </ArrowButton>
+                            </p>
                         </Fade>
                     </Callout>
                 </div>
@@ -146,7 +156,6 @@ export default function Page () {
                     <HubspotForm portalId='14527187' formId='b27737f1-fdbb-438d-a39a-27ff6c12d24c' />
                 </div>
             </section>
-
 
 
             <Footer />
