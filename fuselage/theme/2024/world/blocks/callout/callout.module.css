@@ -9,6 +9,7 @@
 }
 
 
+
 @media(min-width:600px){
     .layout {
         grid-template-columns: 2fr 3fr;

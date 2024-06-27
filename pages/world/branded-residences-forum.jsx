@@ -50,7 +50,7 @@ export default function Page () {
                     transition={{ type: "spring", bounce: 0.25 }}
                     className={`fs-4 c-white center mt-md maxw-45 mx-auto`} 
                 >
-                    Co-located with <strong>FHS World</strong> and brought to you by <strong>Accor One Living</strong>, this <strong>exclusive one-day forum</strong> will explore the burgeoning sector of Branded Residences holistically.
+                    Co-located with <strong>FHS World</strong>, this exclusive one-day forum will explore the burgeoning sector of Branded Residences.
                 </motion.p>
 
                 <Fade>
@@ -74,6 +74,7 @@ export default function Page () {
                 opacity={0.2}
             >
                 <Pop>
+                    <p className='center pb-md caps ls-2'>Brought to you by</p>
                     <div style={{ width: 300, maxWidth: '45vw' }}>
                         <img src="/assets/img/brf/accor-one-living-stack.svg" alt="logo" />
                     </div>
@@ -85,16 +86,18 @@ export default function Page () {
                 <div className="container formatted maxw-90">
                     <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-03.jpg', width:1200, height:700 }}>
                         <Fade>
-                            <p className="fs-5">Branded Residences Forum will be co-located with FHS World and is a one-day forum, taking place on 2 October 2024 at Madinat Jumeirah, Dubai. The forum will feature workshops and conference sessions around key topics including:</p> 
+                            <p className='fs-2 fw-600 c-secondary'>Key Topics</p>
+                            <p className="fs-5">The forum will feature workshops and conference sessions around key topics including:</p> 
                             <ul className='mt-xs'>
-                                <li>Co-living</li>
-                                <li>Serviced Apartments / Extended Stay</li>
-                                <li>Private Clubs</li>
-                                <li>Benefits for Investors</li>
-                                <li>Operator&apos;s Perspective</li>
-                                <li>Legal Structures in Branded Residences</li>
+                                <li>Dynamic Co-working Concepts</li>
+                                <li>How Shared Living is Evolving</li>
+                                <li>Serviced Apartments / Extended Stay  - Demand Continues to Exceed Supply</li>
+                                <li>How Private Clubs are Becoming The Fastest Growing Workplace </li>
+                                <li>How Investors Can Leverage Unprecedented ROIs</li>
+                                <li>Operator&apos;s Perspective - Diversifying Revenue Streams with Security</li>
+                                <li>Demystifying Legal Structures and Concepts in Branded Residences</li>
                                 <li>Lifestyle Branded Residences - Design, Innovation & Wellness</li>
-                                <li>Rental Programs</li>
+                                <li>Strategies to Align Interests and Navigate Complexities in Rental Programs</li>
                                 <li>Future Opportunities and Potential in Branded Residences</li>
                             </ul>
                         </Fade>
@@ -104,6 +107,7 @@ export default function Page () {
                 <div className="container formatted maxw-90">
                     <Callout image={{ url:'/assets/img/brf/brf-2024-image-02.jpg', width:1200, height:700 }}>
                         <Fade>
+                            <p className='fs-2 fw-600 lh-2 c-secondary'>Unprecedented Growth Trends</p>
                             <p className="fs-4">The branded residences sector is experiencing a period of unprecedented growth, globally.</p> 
                             <p className="fs-4">Since 2024, the sector has expanded by <strong>176%</strong>, with <strong>687 projects</strong> now open and operating worldwide.</p>
                         </Fade>
@@ -121,16 +125,13 @@ export default function Page () {
                 <div className="container formatted maxw-90">
                     <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-01.jpg', width:1200, height:700 }}>
                         <Fade>
-                            <p className="fs-5">Accor has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans ultra-prime urban locations and the most sought-after resort destinations.</p> 
-                            <p className="fs-5">These exclusive homes are natural extensions of Accor&apos;s iconic luxury, premium, and lifestyle brands. Each property is meticulously designed and serviced to meet the demanding standards of the brand it represents, epitomising excellence in luxury living.</p>
+                            <p className='fs-2 fw-600 lh-2 c-secondary'>Accor and FHS World Partnership</p>
+                            <p className="fs-6">FHS World has partnered with Accor who has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans ultra-prime urban locations and the most sought-after resort destinations.</p> 
+                            <p className="fs-6">Each property is meticulously designed and serviced to meet the demanding standards of the brand it represents and Branded Residences Forum is an opportunity to learn about and invest in Accor&apos;s promising pipeline.</p>
                             <p className='mt-sm'>
-                                <ArrowButton 
-                                    href={ 'https://accor-residences.com/' } 
-                                    theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
-                                    target={ '_blank' }
-                                >
+                                <a className='button' href={ 'https://accor-residences.com/' } target={ '_blank' } rel="noreferrer">
                                     Learn more about Accor One Living
-                                </ArrowButton>
+                                </a>
                             </p>
                         </Fade>
                     </Callout>
