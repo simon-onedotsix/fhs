@@ -10,12 +10,12 @@ import { FhsLockup } from '../../components/logos/fhs-brand'
 import CSS from './header.module.css'
 
 const otherEvents = [
-    {
-        id: 1,
-        title: 'FHS Saudi Arabia',
-        url: '/sa',
-        target: false
-    },
+    // {
+    //     id: 1,
+    //     title: 'FHS Saudi Arabia',
+    //     url: '/sa',
+    //     target: false
+    // },
     // {
     //     id: 3,
     //     title: 'FHS World',

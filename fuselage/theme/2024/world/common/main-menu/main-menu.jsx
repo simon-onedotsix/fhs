@@ -136,12 +136,20 @@ export const MainMenu = ({ otherEvents }) => {
                     }
 
                     <section className="c-white">
-                        <p className="pb-sm">
+                        <p className="pb-xs">
                             <ArrowButton 
                                 href={ '/' } 
                                 theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
                             >
                                 FHS
+                            </ArrowButton>
+                        </p>
+                        <p className="pb-sm">
+                            <ArrowButton 
+                                href={ '/sa' } 
+                                theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
+                            >
+                                FHS Saudi Arabia
                             </ArrowButton>
                         </p>
 
