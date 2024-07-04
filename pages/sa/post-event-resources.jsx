@@ -39,65 +39,49 @@ import CSS from './post-event-resources.module.css'
 
 
 
-export default function PostEvent ({ hubspotData, cmsEntryData }) {
+export default function PostEvent ({ cmsEntryData }) {
 
-    const [ allowed, setAllowed ] = useState( false )
+    const [ allowed, setAllowed ] = useState( true )
     const [ showForm, setShowForm ] = useState( false )
     const [ message, setMessage ] = useState( '' )
-    const userEmailRef = useRef(null)
-    const allEmails = ['simon@onedotsix.com', 'muhammad.ahmed@thebench.com']
-    
+    const emailInputRef = useRef()
+
 
     useEffect( ()=> {
-        if ( localStorage.getItem("fhsSaPostEvent") === "true" ) {
+        if ( !localStorage.getItem("fhsSaPostEvent") === "true" ) {
             setAllowed( true )
+        } else {
+            setAllowed( false )
         }
     },[])
 
 
-    // extract all emails for a given contact
-
-    const getEmailsFromIdentityProfiles = ( identitiesData ) => {
-        if ( !identitiesData ) return
-
-        const emails = []
-
-        identitiesData.map( profile => {
-            profile.identities.map ( identity => {
-                if ( identity.type === 'EMAIL' ) emails.push(identity.value)
-            })
-        })
-
-        return emails
-    }
-
-
-    // compile list of all emails
-
-    hubspotData.map( contact => allEmails.push(...getEmailsFromIdentityProfiles(contact['identity-profiles'])) )
-
-
-    // form handler
-
-    function checkEmail (e) {
+    function formHandler ( e ) {
         e.preventDefault()
 
-        if ( allEmails.includes(userEmailRef.current.value) ) {
-            setAllowed(true)
-            localStorage.setItem("fhsSaPostEvent", "true")
-        } else if ( !userEmailRef.current.value ) {
-            setMessage("<p>Please enter a valid email</p>")
-        } else {
-            setMessage("<p><span className='fw-500'>Email not found!</span> See below to register for access.</p>")
-        }
+        const reqBody = { email: emailInputRef.current.value }
+
+        fetch('/api/sa/delegate-auth', {
+            method: 'POST',
+            body: JSON.stringify(reqBody),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then( response => response.json() )
+        .then( (data) => {
+            console.log(data)
+            if ( data.authorised === true ) {
+                setAllowed( true )
+                localStorage.setItem("fhsSaPostEvent", "true")
+            } else {
+                setAllowed( false )
+                setMessage("<p><span className='fw-500'>Email not found!</span> See below to register for access.</p>")
+            }
+        })
     }
 
 
-
-
-    // console.log('cmsEntryData:',cmsEntryData)
-    // console.log('hubspotData:',hubspotData)
-    console.log('allEmails:', allEmails)
 
 
     return (
@@ -116,8 +100,8 @@ export default function PostEvent ({ hubspotData, cmsEntryData }) {
                             </div>
                             <div className="container center">
                                 <p>Please enter your email below to access.</p>
-                                <form className='form mt-xs columns-1 gap-xs' onSubmit={checkEmail}>
-                                    <input ref={userEmailRef} className='maxw-25 mx-auto' type="email" required/>
+                                <form className='form mt-xs columns-1 gap-xs' onSubmit={formHandler}>
+                                    <input ref={emailInputRef} className='maxw-25 mx-auto' type="email" required/>
                                     <div>
                                         <button className='button fs-6' type="submit">Submit</button>
                                     </div>
@@ -168,21 +152,8 @@ PostEvent.theme = 'sa-2024'
 
 
 
-// https://web.postman.co/workspace/My-Workspace~9945b9ad-25f6-48ea-8a6e-fcb4e2b1900e/request/19835058-f2b4d8a1-dccd-40a2-8840-82349f761576
-
-// https://api.hubapi.com/contacts/v1/lists/737/contacts/all
-
-
 
 export async function getStaticProps() {
-
-    
-    const hubspotClient = new Client({ accessToken: 'pat-na1-4b3f96a9-f593-4d17-b3bf-ecfce1f5fe82' })  
-    const hubspotContactData = await hubspotClient.apiRequest({
-        path: '/contacts/v1/lists/777/contacts/all',
-    })
-    const contactsData = await hubspotContactData.json()
-
 
     const cmsEntryData = await craftApolloClient().query({
         query: gql`
@@ -214,12 +185,9 @@ export async function getStaticProps() {
             }
         `
     })
-    
-    
 
     return { 
 		props: { 
-			hubspotData: contactsData.contacts,
             cmsEntryData: cmsEntryData.data.entry
 		}
 	}
