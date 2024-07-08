@@ -65,8 +65,6 @@
         gap: var(--space-md);
     }
 
-
-
     .utilities {
         position: relative;
         display: grid;
@@ -79,8 +77,35 @@
         height: 3rem;
     }
 
+
+
+    .agendaSidebarLayout {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+    .agendaSidebarLayout aside {
+        text-align: right;
+    }
+    .agendaSidebarLayout main,
+    .agendaSidebarLayout aside {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+    .agendaSidebarLayout main {
+        max-width: 45vw;
+    }
+
 }
 
+/* .sidebarDay {
+    border: 1px solid var(--primary-2);
+    padding: var(--space-sm);
+    border-radius: var(--default-radius);
+    border-radius: 1.5rem;
+} */
 
 
 

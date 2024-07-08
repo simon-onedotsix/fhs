@@ -8,6 +8,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 
 import Head from "next/head"
 import Image from "next/image"
+import Link from "next/link"
 import Script from "next/script"
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
@@ -274,8 +275,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         </Fade>
                         <Fade>
                             <p className='fs-5 fw-500 maxw-45 mt-sm'>This year we are creating an intersection for the world of hospitality where the industry invests in its future. </p>
-                            <p className='fs-6 fw-300 maxw-45'>We are returning to <strong>Dubai</strong> to a much bigger, bolder space - Madinat Jumeirah. A more personalised and immersive experience with new features like <strong>Investors Lounge</strong>, <strong>ESG Lab</strong>, <strong>Country Pavilions</strong>, an <strong>Expanded Exhibition Area</strong>, and much more.</p>
-                            <p className='fs-6 fw-300 maxw-45 mt-xs mb-sm'>Sponsorship spaces at the event are limited and are selling out fast. If you are interested in booking a stand or a pavilion, please feel free to reach out to our sponsorship team.</p>
+                            <p className='fs-6 fw-300 maxw-45'>FHS World 2024 will feature several new exciting initiatives and partnerships. <Link href={'/world/branded-residences-forum'}><strong className="underline">The Branded Residences Forum</strong></Link>, a one-day exclusive event taking place on 2 October 2024 brought to you by Accor One Living, will focus on the thriving sector of branded residences. For the first time ever, FHS World will host the semi-finals of the <Link href={'/world/unto'}><strong className="underline">UN Tourism's Women in Tech</strong></Link> startup competition, showcasing innovative solutions from women-led tech startups. Additionally, the <strong>#FHSWomenPower initiative</strong> will facilitate more women in the hospitality industry, supporting female leaders and driving gender diversity in the hospitality industry.</p>
+                            <p className='fs-6 fw-300 maxw-45 mt-xs mb-sm'>This year, we are presenting expanded Themes of Focus including Tech & Innovation, Sustainable Construction, Real Estate Hotelisation and Country Pavilions.</p>
                         </Fade>
                         <Pop inline>
                             <Button 
