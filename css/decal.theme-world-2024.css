@@ -194,6 +194,21 @@
 }
 
 
+
+[data-theme='world-2024'] .slug {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+}
+[data-theme='world-2024'] .slug.keyline {
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+
 /* default */
 
 [data-theme='world-2024'] .bg-default {

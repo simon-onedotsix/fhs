@@ -1,9 +1,72 @@
 import { useState, useEffect } from 'react'
 import { format, parseISO } from 'date-fns'
+import parse from 'html-react-parser'
 
 import Link from 'next/link'
 
 import CSS from './pass.module.css'
+
+
+
+export const PassPriceBands = ({ flash, title, description, currency, priceBands, priceIncreaseMessage, quantityRemaining, label, href }) => {
+
+    const [ priceIncreaseMessage, setPriceIncreaseMessage ] = useState( null )
+
+
+
+    const getCurrentPrice = ( data ) => {
+
+        console.log('priceBands:', data)
+
+        if ( !data ) return
+        
+
+
+        return data[0].value
+    }
+
+
+    
+    return (
+        <div className={`${CSS.pass} bg-white p-sm`}>
+
+            {
+                flash &&
+                <div className={CSS.flash}>{ flash }</div>
+            }
+
+            <section className={CSS.details}>
+                <p className='fs-2 fw-600 lh-1 c-primary caps center pt-xs mx-auto'>{ title }</p>
+
+                {
+                    priceIncreaseMessage &&
+                    <div className="formatted">
+                        { priceIncreaseMessage }
+                    </div>
+                }
+                
+                <div className="formatted">{ parse(description) }</div>
+            </section>
+
+            <section className={CSS.actions}>
+
+                { 
+                    priceBands && currency ?
+                        <p className='fs-2 fw-600 c-primary'>
+                            { currency } { getCurrentPrice( priceBands ) }
+                        </p>
+                    : null
+                }
+                
+                <div className="formatted mb-xs fw-600">{ quantityRemaining } passes left at this rate</div>
+                
+                <a className={`${CSS.button} fs-6 fw-600`} href={ href } target='_blank'>{ label }</a>
+            </section>
+        </div>
+    )
+}
+
+
 
 export const Pass = ({ flash, title, header, cta, description, currency, value, from, to, href }) => {
 

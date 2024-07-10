@@ -1,35 +1,15 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
-import { Pass, SpecialPass, PassGrid, PassGridSectionHeading } from '../../fuselage/theme/2024/world/components/pass/pass'
+import { Pass, PassPriceBands, SpecialPass, PassGrid, PassGridSectionHeading } from '../../fuselage/theme/2024/world/components/pass/pass'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import Head from 'next/head'
 
-import { 
-    QueryText, 
-    QueryFlipFlops, 
-    QueryFloaters, 
-    QueryBillboards, 
-    QueryBillboardSliders, 
-    QueryImpactFigures, 
-    QueryVideos,
-    QueryForm,
-    QueryProfileCarousel,
-    QuerySEO,
-    QueryImages,
-    Passes,
-    QueryPartners,
-	BizzaboPartners
-} from "../../graphql/queries"
-
-import handleContentBlocks from "../../lib/content-blocks"
 
 import { Header } from '../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
-
-import { ThemeBg } from "../../fuselage/theme/2023/ae/theme-bg"
 
 import { TickIcon } from "../../fuselage/icons/tick"
 
@@ -40,6 +20,41 @@ function PurchasePass({ seomatic, entry }) {
 
 	// console.log('entry:', entry )
 
+	const PASS_DATA = [
+		{
+			"id": "",
+			"passTitle": "Standard Pass",
+			"passPriceIncreases": "true",
+			"passDescription": "<p>Includes access to:</p><ul><li>All FHS conference tracks</li><li>Exhibition</li><li>Experiences (subject to availability)</li><li>Networking receptions</li></ul>",
+			"passCurrency": "US$",
+			"passPriceBands": [
+				{
+					"endDate": "2024-06-30T00:00:00+01:00",
+					"startDate": "2024-05-01T00:00:00+01:00",
+					"value": "2600"
+				},
+				{
+					"endDate": "2024-08-31T00:00:00+01:00",
+					"startDate": "2024-06-30T00:00:00+01:00",
+					"value": "3000"
+				},
+				{
+					"endDate": "2024-09-30T00:00:00+01:00",
+					"startDate": "2024-08-31T00:00:00+01:00",
+					"value": "3300"
+				},
+				{
+					"endDate": "2024-10-02T00:00:00+01:00",
+					"startDate": "2024-09-30T00:00:00+01:00",
+					"value": "3600"
+				}
+			],
+			"passQuantityRemaining": "67",
+			"passButtonLabel": "Purchase Pass",
+			"PassButtonUrl": "#"
+		}
+	]
+
 	return (
 		<>
 
@@ -49,6 +64,29 @@ function PurchasePass({ seomatic, entry }) {
             </Head>
 
 			<Header compact />
+
+
+			<section className="block">
+				<PassGrid>
+					{
+						PASS_DATA &&
+						PASS_DATA.map( pass => (
+							<PassPriceBands
+								key={pass.id}
+								flash={null}
+								title={pass.passTitle}
+								priceIncreaseMessage={pass.passPriceIncreases}
+								description={pass.passDescription}
+								currency={pass.passCurrency}
+								priceBands={pass.passPriceBands}
+								quantityRemaining={pass.passQuantityRemaining}
+								label={pass.passButtonLabel}
+								href={pass.PassButtonUrl}
+							/>
+						))
+					}
+				</PassGrid>
+			</section>
 
 			<section className="block">
 
@@ -61,7 +99,7 @@ function PurchasePass({ seomatic, entry }) {
 						title={ "Standard Pass" }
 						header={
 							<>
-								<p className="fs-6"><span className="fw-800 c-primary">Only available at this rate until 30 June</span> before the price increases to <strong>US$ 3000</strong></p>
+								<p className="fs-6"><span className="fw-800 c-primary">Only available at this rate until 31 July</span> before the price increases to <strong>US$ 3000</strong></p>
 							</>
 						}
 						cta={ <p className="fw-600">6 passes left at this rate</p> }
@@ -89,7 +127,7 @@ function PurchasePass({ seomatic, entry }) {
 						title={ "Premium Pass" }
 						header={
 							<>
-								<p className="fs-6"><span className="fw-800 c-primary">Only available at this rate until 30 June</span> before the price increases to <strong>US$ 3200</strong></p>
+								<p className="fs-6"><span className="fw-800 c-primary">Only available at this rate until 31 July</span> before the price increases to <strong>US$ 3200</strong></p>
 							</>
 						}
 						cta={ <p className="fw-600">20 passes left at this rate</p> }
@@ -117,7 +155,10 @@ function PurchasePass({ seomatic, entry }) {
 						title={ "Branded Residences Forum Pass" }
 						header={
 							<>
-								<p className="fs-6"><span className="fw-800 c-primary">Only available at this rate until 30 June</span> before the price increases to <strong>US$ 750</strong></p>
+								<div className="center pb-xs">
+									<p className="slug keyline fw-600">Provides access for one day only</p>
+								</div>
+								<p className="fs-6"><span className="fw-800 c-primary">Only available at this rate until 31 July</span> before the price increases to <strong>US$ 750</strong></p>
 
 							</>
 						}
