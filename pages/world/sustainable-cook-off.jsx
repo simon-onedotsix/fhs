@@ -41,7 +41,7 @@ export default function Page () {
                     transition={{ type: "spring", bounce: 0.25 }}
                     className={`fs-4 c-white center mt-md maxw-45 mx-auto`} 
                 >
-                    Join us at The Sustainable Cook-off at FHS World 2024: Where top chefs transform locally sourced ingredients into gastronomic masterpieces - celebrating the unique flavours of the Emirates and championing sustainability.
+                    Join us at The Sustainable Cook-off at FHS World 2024, where top chefs transform locally sourced ingredients into gastronomic masterpieces - celebrating the unique flavours of the Emirates and championing sustainability.
                 </motion.p>
 
                 {/* <Fade>
