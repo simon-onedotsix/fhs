@@ -110,7 +110,7 @@ export default function Page () {
                         <Fade>
                             <h2><strong className='c-secondary'>About The Competition</strong></h2>
                             <p className='fs-6'>The Sustainable Cook-off at FHS World is an exciting culinary competition that brings together top chefs from across the Emirates to create innovative dishes using locally sourced ingredients.</p>
-                            <p className='fs-6'>The competition will take place during one of three days of FHS World from 30 September - 02 October at Madinat Jumeirah, Dubai.</p>
+                            <p className='fs-6'>The competition will take place during FHS World from 30 September - 02 October at Madinat Jumeirah, Dubai.</p>
                         </Fade>
                     </Callout>
                 </div>
