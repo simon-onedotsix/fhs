@@ -10,7 +10,7 @@ import CSS from './pass.module.css'
 
 export const PassPriceBands = ({ flash, title, description, currency, priceBands, priceIncreaseMessage, quantityRemaining, label, href }) => {
 
-    const [ priceIncreaseMessage, setPriceIncreaseMessage ] = useState( null )
+    // const [ priceIncreaseMessage, setPriceIncreaseMessage ] = useState( null )
 
 
 
