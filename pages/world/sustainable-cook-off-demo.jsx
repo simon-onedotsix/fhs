@@ -44,10 +44,9 @@ export default function Page () {
                     Join us at The Sustainable Cook-off at FHS World 2024: Where top chefs transform locally sourced ingredients into gastronomic masterpieces - celebrating the unique flavours of the Emirates and championing sustainability.
                 </motion.p>
 
-                <Fade>
+                {/* <Fade>
                     <div className="mt-md center">
                         <Pop inline>
-                            {/* <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Purchase Your Pass</Button> */}
                             <Button 
                                 href={`/world/branded-residences-forum#form`} 
                                 theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} 
@@ -55,45 +54,63 @@ export default function Page () {
                             >Register Now</Button>
                         </Pop>
                     </div>
-                </Fade>
+                </Fade> */}
             </HeroUnitVideo>
 
 
             <PanoSliderOverlay
                 images={ [{ url: '/assets/img/world/pages/sustainable-cook-off/cook-off-pano.jpg' }] } 
                 direction={'rtl'}
-                opacity={0.2}
+                opacity={1}
             >
-                <Pop>
-                    <p className='center pb-sm caps ls-2'>Powered by</p>
-                    <div className='columns-3 gap-xs' style={{ width: '45vw' }}>
-                        <LogoBox logo={{ 
-                            url:"/assets/img/world/pages/sustainable-cook-off/logos/ECG.jpg",
-                            width: 1200,
-                            height: 1148
-                        }} />
-                        <LogoBox logo={{ 
-                            url:"/assets/img/world/pages/sustainable-cook-off/logos/freshontable.png",
-                            width: 426,
-                            height: 85
-                        }} />
-                        <LogoBox logo={{ 
-                            url:"/assets/img/world/pages/sustainable-cook-off/logos/UAERG.jpg",
-                            width: 1114,
-                            height: 463
-                        }} />
-                    </div>
-                </Pop>
+            
             </PanoSliderOverlay>
 
+            <section className="block">
+                <div className="container center">
+               
+                    <Fade><p className='center pb-sm caps ls-2'>Powered by</p></Fade>
+                    <div className='columns-4 gap-xs'>
+                        <Pop>
+                            <LogoBox logo={{ 
+                                url:"/assets/img/world/pages/sustainable-cook-off/logos/freshontable.png",
+                                width: 426,
+                                height: 85
+                            }} />
+                        </Pop>
+                        <Pop>
+                            <LogoBox logo={{ 
+                                url:"/assets/img/world/pages/sustainable-cook-off/logos/hama.png",
+                                width: 1114,
+                                height: 463
+                            }} />
+                        </Pop>
+                        <Pop>
+                            <LogoBox logo={{ 
+                                url:"/assets/img/world/pages/sustainable-cook-off/logos/ECG.jpg",
+                                width: 1200,
+                                height: 1148
+                            }} />
+                        </Pop>
+                        <Pop>
+                            <LogoBox logo={{ 
+                                url:"/assets/img/world/pages/sustainable-cook-off/logos/UAERG.jpg",
+                                width: 1114,
+                                height: 463
+                            }} />
+                        </Pop>
+                    </div>
+                
+                </div>
+            </section>
 
             <section className="block">
                 <div className="container formatted maxw-90">
                     <Callout flipped image={{ url:'/assets/img/world/pages/sustainable-cook-off/cook-off-inset-01.jpg', width:3000, height:1996 }}>
                         <Fade>
-                            <h2><strong className='c-secondary'>Competition Theme</strong></h2>
-                            <p>The theme for the Taste of the Emirates competition is &apos;The Sustainable 7 Emirates&apos; with ingredients from the 7 emirates being the highlight. </p>
-                            <p>The finals will take place at FHS World featuring the top 15 teams chosen from the pre-selection round. Finalists will cook their dishes for a panel of industry experts and Worldchefs judges at one of the lunches during FHS World.</p>
+                            <h2><strong className='c-secondary'>About The Competition</strong></h2>
+                            <p className='fs-6'>The Sustainable Cook-off at FHS World is an exciting culinary competition that brings together top chefs from across the Emirates to create innovative dishes using locally sourced ingredients.</p>
+                            <p className='fs-6'>The competition will take place during one of three days of FHS World from 30 September - 02 October at Madinat Jumeirah, Dubai.</p>
                         </Fade>
                     </Callout>
                 </div>
@@ -101,13 +118,17 @@ export default function Page () {
                 <div className="container formatted maxw-90">
                     <Callout image={{ url:'/assets/img/world/pages/sustainable-cook-off/cook-off-inset-02.jpg', width:3000, height:1996 }}>
                         <Fade>
-                            <h2><strong className='c-secondary'>Judging Criteria </strong></h2>
-                            <ul><li>Brought Material/Mise-en-Place 5 points: Clear arrangement of materials. Clean working place, proper working position, clean work clothes.</li>
-                            <li>Professional Preparation 30 points: proper working technique. Correct utilisation of working time and punctual completion</li>
-                            <li>Hygiene 10 points: Standard of attention paid to hygiene during the preparation of food.</li>
-                            <li>Presentation/Innovation 10 points: Ingredients and side dishes must be in harmony. Points are granted for excellent combination, simplicity and originally in composition. A pleasing table decoration themed so as to best set off the food displayed.</li>
-                            <li>Taste & Texture 50 points: Each dish must have appropriate taste and seasoning. In quality, flavour and colour, the dish should conform to today&apos;s standards of nutritional values.</li>
-                            </ul>
+                            <h2><strong className='c-secondary'>Theme </strong></h2>
+                            <p className='fs-6'>The theme for the Taste of the Emirates competition is &apos;The Sustainable 7 Emirates&apos; with ingredients from the 7 emirates being the highlight. Celebrating sustainability and culinary excellence, the finalists will be presenting their creations to a panel of esteemed judges.</p>
+                        </Fade>
+                    </Callout>
+                </div>
+                
+                <div className="container formatted maxw-90">
+                    <Callout flipped image={{ url:'/assets/img/world/pages/sustainable-cook-off/cook-off-inset-03.jpg', width:3000, height:1996 }}>
+                        <Fade>
+                            <h2><strong className='c-secondary'>Showcasing Culinary Excellence </strong></h2>
+                            <p className='fs-6'>The Sustainable Cook-off will be an opportunity for aspiring chefs to showcase their culinary excellence to FHS delegates. During the event, the top 15 teams&apos; dishes will be replicated by the Madinat Culinary Team and served to FHS delegates. Each dish will highlights the unique flavors of the seven Emirates while promoting environmentally responsible cooking practices.</p>
                         </Fade>
                     </Callout>
                 </div>

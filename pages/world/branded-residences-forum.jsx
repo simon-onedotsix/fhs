@@ -48,13 +48,13 @@ export default function Page () {
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ type: "spring", bounce: 0.25 }}
-                    className={`fs-4 c-white center mt-md maxw-45 mx-auto`} 
+                    className={`fs-4 c-white center mt-sm maxw-45 mx-auto`} 
                 >
                     Co-located with <strong>FHS World</strong>, this exclusive one-day forum will explore the thriving sector of Branded Residences.
                 </motion.p>
 
                 <Fade>
-                    <div className="mt-md center">
+                    <div className="mt-sm center">
                         <Pop inline>
                             {/* <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Purchase Your Pass</Button> */}
                             <Button 
@@ -65,24 +65,37 @@ export default function Page () {
                         </Pop>
                     </div>
                 </Fade>
+                
+                <Pop>
+                    <div className='my-lg'>
+                        <p className='c-secondary center pb-md caps ls-2'>Brought to you by</p>
+                        <div style={{ width: 400, maxWidth: '40vw', margin: '0 auto' }}>
+                            <img src="/assets/img/brf/accor-one-living.svg" alt="logo" />
+                        </div>
+                    </div>
+                </Pop>
             </HeroUnitVideo>
 
 
-            <PanoSliderOverlay
+            {/* <PanoSliderOverlay
                 images={ [{ url: '/assets/img/brf/brf-2024-pano-02.jpg' }] } 
                 direction={'rtl'}
                 opacity={0.2}
             >
                 <Pop>
-                    <p className='center pb-md caps ls-2'>Brought to you by</p>
+                    <p className='c-secondary center pb-md caps ls-2'>Brought to you by</p>
                     <div style={{ width: 300, maxWidth: '45vw' }}>
                         <img src="/assets/img/brf/accor-one-living-stack.svg" alt="logo" />
                     </div>
                 </Pop>
-            </PanoSliderOverlay>
+            </PanoSliderOverlay> */}
 
 
-            <section className="block">
+            <PanoSlider images={ [
+                { url: '/assets/img/brf/brf-2024-pano-01.jpg' }
+            ] } />
+
+            <section className="block mt-md">
                 <div className="container formatted maxw-90">
                     <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-03.jpg', width:1200, height:700 }}>
                         <Fade>
@@ -103,7 +116,9 @@ export default function Page () {
                         </Fade>
                     </Callout>
                 </div>
+            </section>
 
+            <section className="block">
                 <div className="container formatted maxw-90">
                     <Callout image={{ url:'/assets/img/brf/brf-2024-image-02.jpg', width:1200, height:700 }}>
                         <Fade>
@@ -115,22 +130,16 @@ export default function Page () {
                 </div>
             </section>
 
-
-            <PanoSlider images={ [
-                { url: '/assets/img/brf/brf-2024-pano-01.jpg' }
-            ] } />
-
-
             <section className="block">
                 <div className="container formatted maxw-90">
                     <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-01.jpg', width:1200, height:700 }}>
                         <Fade>
-                            <p className='fs-2 fw-600 lh-2 c-secondary'>Accor and FHS World Partnership</p>
-                            <p className="fs-6">FHS World has partnered with Accor who has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans ultra-prime urban locations and the most sought-after resort destinations.</p> 
-                            <p className="fs-6">Each property is meticulously designed and serviced to meet the demanding standards of the brand it represents and Branded Residences Forum is an opportunity to learn about and invest in Accor&apos;s promising pipeline.</p>
+                            <p className='fs-2 fw-600 lh-2 c-secondary'>Accor One Living and FHS World Partnership</p>
+                            <p className="fs-6">FHS World has partnered with Accor One Living who has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans ultra-prime urban locations and the most sought-after resort destinations.</p> 
+                            <p className="fs-6">Each property is meticulously designed and serviced to meet the demanding standards of the brand it represents and Branded Residences Forum is an opportunity to learn about and invest in Accor One Living&apos;s promising pipeline.</p>
                             <p className='mt-sm'>
-                                <a className='button' href={ 'https://accor-residences.com/' } target={ '_blank' } rel="noreferrer">
-                                    Learn more about Accor One Living
+                                <a className='button center' href={ 'https://accor-residences.com/' } target={ '_blank' } rel="noreferrer">
+                                    Learn more about Accor&nbsp;One&nbsp;Living
                                 </a>
                             </p>
                         </Fade>

@@ -26,6 +26,7 @@
     justify-content: flex-end;
 
     overflow-x: hidden;
+    padding-top: calc(var(--space-xl) * 5);
 }
 .content {
     display: grid;
@@ -42,10 +43,14 @@
     .video {
         top: 0;
     }
+    .overlay {
+        padding-top: calc(var(--space-xl) * 2);
+    }
 }
 @media(min-width:800px){
     .overlay {
         min-height: 60vh;
+        
     }
 }
 @media(min-width:1200px){
