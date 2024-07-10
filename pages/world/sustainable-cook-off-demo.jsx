@@ -32,7 +32,7 @@ export default function Page () {
                     transition={{ type: "spring", bounce: 0.25 }}
                     className={`fs-0 fw-700 c-white lh-1 center`} 
                 >
-                    Sustainable Cook-off
+                    Sustainable Cook&#8209;off
                 </motion.p>
 
                 <motion.p 
@@ -92,7 +92,7 @@ export default function Page () {
                     <Callout flipped image={{ url:'/assets/img/world/pages/sustainable-cook-off/cook-off-inset-01.jpg', width:3000, height:1996 }}>
                         <Fade>
                             <h2><strong className='c-secondary'>Competition Theme</strong></h2>
-                            <p>The theme for the Taste of the Emirates competition is 'The Sustainable 7 Emirates' with ingredients from the 7 emirates being the highlight. </p>
+                            <p>The theme for the Taste of the Emirates competition is &apos;The Sustainable 7 Emirates&apos; with ingredients from the 7 emirates being the highlight. </p>
                             <p>The finals will take place at FHS World featuring the top 15 teams chosen from the pre-selection round. Finalists will cook their dishes for a panel of industry experts and Worldchefs judges at one of the lunches during FHS World.</p>
                         </Fade>
                     </Callout>
@@ -106,7 +106,7 @@ export default function Page () {
                             <li>Professional Preparation 30 points: proper working technique. Correct utilisation of working time and punctual completion</li>
                             <li>Hygiene 10 points: Standard of attention paid to hygiene during the preparation of food.</li>
                             <li>Presentation/Innovation 10 points: Ingredients and side dishes must be in harmony. Points are granted for excellent combination, simplicity and originally in composition. A pleasing table decoration themed so as to best set off the food displayed.</li>
-                            <li>Taste & Texture 50 points: Each dish must have appropriate taste and seasoning. In quality, flavour and colour, the dish should conform to today’s standards of nutritional values.</li>
+                            <li>Taste & Texture 50 points: Each dish must have appropriate taste and seasoning. In quality, flavour and colour, the dish should conform to today&apos;s standards of nutritional values.</li>
                             </ul>
                         </Fade>
                     </Callout>
