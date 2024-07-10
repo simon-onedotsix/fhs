@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { format, parseISO } from 'date-fns'
 import parse from 'html-react-parser'
 
-import Link from 'next/link'
+import { TickIcon } from '../../../../../icons/tick'
 
 import CSS from './pass.module.css'
 
@@ -10,20 +11,33 @@ import CSS from './pass.module.css'
 
 export const PassPriceBands = ({ flash, title, description, currency, priceBands, priceIncreaseMessage, quantityRemaining, label, href }) => {
 
-    // const [ priceIncreaseMessage, setPriceIncreaseMessage ] = useState( null )
+    const [ currentBand, setCurrentBand ] = useState()
+    const [ nextBand, setNextBand ] = useState()
 
+    useEffect( () => {
+        // console.log('priceBands:', priceBands)
+    
+        if ( !priceBands ) return
 
-
-    const getCurrentPrice = ( data ) => {
-
-        console.log('priceBands:', data)
-
-        if ( !data ) return
+        let indexOfCurrent = 0
+    
+        priceBands.forEach( ( band, index ) => {
+            // if ( new Date(parseISO(band.endDate)) < Date.now() ) console.log('expired')
+            // if ( new Date(parseISO(band.startDate)) > Date.now() ) console.log('not yet available')
+            // if ( new Date(parseISO(band.startDate)) < Date.now() && new Date(parseISO(band.endDate)) > Date.now() ) console.log('current')
+                    
+            if ( new Date(parseISO(band.startDate)) < Date.now() && new Date(parseISO(band.endDate)) > Date.now() ) {
+                setCurrentBand( band )
+                indexOfCurrent = index
+            }
+        })
         
+        setNextBand( priceBands[indexOfCurrent + 1] )
 
+        // console.log('currentBand:', currentBand )
+        // console.log('nextBand:', nextBand )
 
-        return data[0].value
-    }
+    }, [])
 
 
     
@@ -32,35 +46,39 @@ export const PassPriceBands = ({ flash, title, description, currency, priceBands
 
             {
                 flash &&
-                <div className={CSS.flash}>{ flash }</div>
+                <div className={CSS.flash}><span className='fw-600 fs-6 c-white caps'><TickIcon/>&ensp;{ flash }</span></div>
             }
 
             <section className={CSS.details}>
                 <p className='fs-2 fw-600 lh-1 c-primary caps center pt-xs mx-auto'>{ title }</p>
-
                 {
-                    priceIncreaseMessage &&
-                    <div className="formatted">
-                        { priceIncreaseMessage }
-                    </div>
+                    currentBand && nextBand && priceIncreaseMessage ?
+                        <div className="formatted">
+                            <p className="fs-6">
+                                <span className="fw-800 c-primary">Only available at this rate until { format( new Date(currentBand.endDate), "d MMMM" ) }</span> before the price increases to <strong>{ currency } { nextBand.value }</strong>
+                            </p>
+                        </div>
+                    : null
                 }
                 
-                <div className="formatted">{ parse(description) }</div>
+                <div className="formatted">{ description && parse(description) }</div>
             </section>
 
             <section className={CSS.actions}>
-
                 { 
                     priceBands && currency ?
                         <p className='fs-2 fw-600 c-primary'>
-                            { currency } { getCurrentPrice( priceBands ) }
+                            { currency } { currentBand ? currentBand.value : 'TBA' }
                         </p>
                     : null
                 }
                 
-                <div className="formatted mb-xs fw-600">{ quantityRemaining } passes left at this rate</div>
+                {
+                    quantityRemaining &&
+                    <div className="formatted fw-600">{ quantityRemaining } passes left at this rate</div>
+                }
                 
-                <a className={`${CSS.button} fs-6 fw-600`} href={ href } target='_blank'>{ label }</a>
+                <a className={`${CSS.button} fs-6 fw-600 mt-xs`} href={ href } target='_blank'>{ label }</a>
             </section>
         </div>
     )
@@ -111,7 +129,7 @@ export const Pass = ({ flash, title, header, cta, description, currency, value, 
                 <p className='fs-2 fw-600 lh-1 c-primary caps center pt-xs mx-auto'>{ title }</p>
                 <div className="formatted">{ header }</div>
                 
-                <div className="formatted">{ description }</div>
+                <div className="formatted">{ description && parse(description) }</div>
             </section>
 
             <section className={CSS.actions}>
@@ -132,7 +150,7 @@ export const SpecialPass = ({ title, header, description, currency, value, from,
             <section>
                 <p className='fs-2 fw-600 lh-1 c-primary mb-xs'>{ title }</p>
                 <div className="formatted">{ header }</div>
-                <div className="formatted">{ description }</div>
+                <div className="formatted">{ description && parse(description) }</div>
             </section>
 
             <section>

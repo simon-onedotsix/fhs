@@ -24,7 +24,8 @@ import {
     QueryImages,
     QueryCards,
     QueryTestimonials,
-    QueryTickers
+    QueryTickers,
+    Passes
 } from "../../graphql/queries"
 
 import handleSeomaticMeta from '../../lib/seomatic'
@@ -105,6 +106,7 @@ export async function getStaticProps({ params, preview, previewData }) {
                             ${QueryCards}
                             ${QueryTestimonials}
                             ${QueryTickers}
+                            ${Passes}
                         }
                         ${QuerySEO}
                     }

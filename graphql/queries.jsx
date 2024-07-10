@@ -314,6 +314,22 @@ export const Passes = `
                 specialPassButtonLabel
                 specialPassHyperlink
             }
+            ... on passes_passNew_BlockType {
+                id
+                passTitle
+                passFlash
+                passPriceIncreases
+                passDescription
+                passCurrency
+                passPriceBands {
+                    endDate
+                    startDate
+                    value
+                }
+                passQuantityRemaining
+                passButtonLabel
+                passButtonUrl
+            }
         }
     }
 `
