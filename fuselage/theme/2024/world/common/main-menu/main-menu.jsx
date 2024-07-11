@@ -89,6 +89,14 @@ export const MainMenu = ({ otherEvents }) => {
                                                     <ul key={item.id}>
                                                         {
                                                             item.menuLinks?.map( (link, index) => {
+
+                                                                let showFlash = false
+
+                                                                if ( 
+                                                                    link.hyperlink === '/world/branded-residences-forum' ||
+                                                                    link.hyperlink === '/world/unto' ||
+                                                                    link.hyperlink === '/world/sustainable-cook-off'
+                                                                ) showFlash = true
                 
                                                                 if (link.hyperlink) return (
                                                                     <li key={index}  style={{ paddingBottom: `.125vh` }}>
@@ -102,7 +110,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                                                 onClick={ () => setActive(false)}
                                                                             >
                                                                                 {
-                                                                                    link.hyperlink === '/world/branded-residences-forum' &&
+                                                                                    showFlash &&
                                                                                     <span className={CSS.label}>New for 2024!</span>
                                                                                 }
                                                                                 { link.label }
