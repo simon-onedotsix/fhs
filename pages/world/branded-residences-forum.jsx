@@ -50,7 +50,7 @@ export default function Page () {
                     transition={{ type: "spring", bounce: 0.25 }}
                     className={`fs-4 c-white center mt-sm maxw-45 mx-auto`} 
                 >
-                    Co-located with <strong>FHS World</strong>, this exclusive one-day forum will explore the thriving sector of Branded Residences.
+                    Held adjacently with with <strong>FHS World</strong>, this exclusive one-day forum will explore the thriving sector of Branded Residences.
                 </motion.p>
 
                 <Fade>
