@@ -74,8 +74,6 @@ export default function Page () {
                         </Pop>
                     </div>
                 </Fade>
-                
-                
             </HeroUnitVideo>
 
 
@@ -97,7 +95,7 @@ export default function Page () {
                 { url: '/assets/img/brf/brf-2024-pano-01.jpg' }
             ] } /> */}
 
-            <section className="block mt-md">
+            <section className="block pt-md">
                 <div className="container formatted maxw-90">
                     <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-03.jpg', width:1200, height:700 }}>
                         <Fade>

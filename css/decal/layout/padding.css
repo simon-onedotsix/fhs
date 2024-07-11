@@ -26,11 +26,11 @@
 
 /* padding-top */
 
-.pt-xs { padding-top: var(--space-xs, .5rem); }
-.pt-sm { padding-top: var(--space-sm, 1rem); }
-.pt-md { padding-top: var(--space-md, 2rem); }
-.pt-lg { padding-top: var(--space-lg, 4rem); }
-.pt-xl { padding-top: var(--space-xl, 6rem); }
+.pt-xs { padding-top: var(--space-xs, .5rem) !important; }
+.pt-sm { padding-top: var(--space-sm, 1rem) !important; }
+.pt-md { padding-top: var(--space-md, 2rem) !important; }
+.pt-lg { padding-top: var(--space-lg, 4rem) !important; }
+.pt-xl { padding-top: var(--space-xl, 6rem) !important; }
 
 /* padding-left */
 
