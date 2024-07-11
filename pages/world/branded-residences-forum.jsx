@@ -34,6 +34,15 @@ export default function Page () {
                     Branded Residences Forum
                 </motion.p>
 
+                <Pop>
+                    <div className='mt-sm mb-md'>
+                        <p className='c-secondary center pb-sm caps ls-2'>Brought to you by</p>
+                        <div style={{ width: 400, maxWidth: '40vw', margin: '0 auto' }}>
+                            <img src="/assets/img/brf/accor-one-living.svg" alt="logo" />
+                        </div>
+                    </div>
+                </Pop>
+
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -50,7 +59,7 @@ export default function Page () {
                     transition={{ type: "spring", bounce: 0.25 }}
                     className={`fs-4 c-white center mt-sm maxw-45 mx-auto`} 
                 >
-                    Held adjacently with with <strong>FHS World</strong>, this exclusive one-day forum will explore the thriving sector of Branded Residences.
+                    Held adjacently with <strong>FHS World</strong>, this exclusive one-day forum will explore the thriving sector of Branded Residences.
                 </motion.p>
 
                 <Fade>
@@ -66,14 +75,7 @@ export default function Page () {
                     </div>
                 </Fade>
                 
-                <Pop>
-                    <div className='my-lg'>
-                        <p className='c-secondary center pb-md caps ls-2'>Brought to you by</p>
-                        <div style={{ width: 400, maxWidth: '40vw', margin: '0 auto' }}>
-                            <img src="/assets/img/brf/accor-one-living.svg" alt="logo" />
-                        </div>
-                    </div>
-                </Pop>
+                
             </HeroUnitVideo>
 
 
@@ -91,9 +93,9 @@ export default function Page () {
             </PanoSliderOverlay> */}
 
 
-            <PanoSlider images={ [
+            {/* <PanoSlider images={ [
                 { url: '/assets/img/brf/brf-2024-pano-01.jpg' }
-            ] } />
+            ] } /> */}
 
             <section className="block mt-md">
                 <div className="container formatted maxw-90">
