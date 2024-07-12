@@ -105,25 +105,29 @@
     height: 100vh;
     width: 100vw;
 
-    /* inset: var(--space-sm);
-    border-radius: calc(var(--default-radius) * 3); */
-
     padding: var(--space-md);
-    padding-top: calc(var(--space-lg) * 2.75);
-    overflow-y: scroll;
-    
+    padding-top: calc(var(--space-lg) * 3.5);
+    overflow-y: scroll; 
     
     color: var(--secondary);
 
     opacity: 0;
     pointer-events: none;
-    transition: all 500ms cubic-bezier(.7, .1, .2, 1) 250ms;
+    transition: opacity 500ms cubic-bezier(.7, .1, .2, 1) 250ms;
 }
 .overlay.active {
     opacity: 1;
     pointer-events: all;
-    transition: all 500ms cubic-bezier(.7, .1, .2, 1);
+    transition: opacity 500ms cubic-bezier(.7, .1, .2, 1);
 }
+
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
 .overlay ul {
     list-style: none;
     margin-bottom: .75rem;
@@ -132,15 +136,57 @@
     margin-bottom: .75rem;
 }
 
+
 @media(min-width:600px) {
     .overlay {
         padding-top: calc(var(--space-lg) * 2);
     }
 }
-@media(min-width:900px) {
-    .overlay {
-        padding: calc(var(--space-lg) * 1.5) var(--space-lg) var(--space-lg);
+
+
+/* notebook */
+@media(max-height:760px) and (min-width:1200px) {
+    .layout {
+        display: flex;
+        column-gap: var(--space-md);
+        row-gap: var(--space-sm);
     }
+    .overlay {
+        padding: calc(var(--space-lg) * 1.375) var(--space-lg) var(--space-lg);
+    }
+    .heading {
+        margin-top: 1rem !important;
+    }
+    .overlay ul {
+        list-style: none;
+        margin-bottom: .5rem;
+    }
+    .overlay ul li {
+        margin-bottom: .5rem;
+    }
+}
+
+
+/* desktop */
+@media(min-width:900px) and (min-height:760px) {
+    .layout {
+        display: flex;
+        column-gap: var(--space-md);
+        row-gap: var(--space-sm);
+        justify-content: space-between;
+    }
+    .overlay {
+        padding: calc(var(--space-lg) * 1.75) var(--space-lg) var(--space-lg);
+    }
+    .overlay ul {
+        list-style: none;
+        margin-bottom: .5rem;
+    }
+    .overlay ul li {
+        margin-bottom: .5rem;
+    }
+}
+@media(min-height:800px) {
     .overlay ul {
         list-style: none;
         margin-bottom: .75rem;

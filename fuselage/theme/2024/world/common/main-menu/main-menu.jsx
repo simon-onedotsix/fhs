@@ -59,7 +59,7 @@ export const MainMenu = ({ otherEvents }) => {
 
             <div className={`${CSS.overlay} ${ active && CSS.active } bg-primary`}>
                 
-                <nav className="columns-4 gap-md mt-md">
+                <nav className={CSS.layout}>
 
                     { 
                         mainMenu?.map( column => (
@@ -73,6 +73,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                     <p  
                                                         key={item.id}
                                                         className={`
+                                                            ${CSS.heading}
                                                             fw-600
                                                             ${item.headingSize === 'lg' ? 'fs-5 c-accent mb-xxs' : ''}
                                                             ${item.headingSize === 'md' ? 'fs-6' : ''}
@@ -99,11 +100,11 @@ export const MainMenu = ({ otherEvents }) => {
                                                                 ) showFlash = true
                 
                                                                 if (link.hyperlink) return (
-                                                                    <li key={index}  style={{ paddingBottom: `.125vh` }}>
+                                                                    <li key={index}  style={{ paddingBottom: `.05vh` }}>
                                                                         <Link href={link.hyperlink}>
                                                                             <a
                                                                                 className={` 
-                                                                                    ${link.size === 'sm' ? 'uLink' : 'uLink fs-6 fw-400'}
+                                                                                    ${link.size === 'sm' ? 'uLink' : 'uLink fw-400'}
                                                                                     ${link.indent && 'ml-sm'}
                                                                                 `} 
                                                                                 target={ link.newWindow ? '_blank' : '_self'}
@@ -123,7 +124,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                                     <li 
                                                                         key={index}
                                                                         className={` 
-                                                                            ${link.size === 'sm' ? '' : 'fs-6 fw-400'}
+                                                                            ${link.size === 'sm' ? '' : 'fw-400'}
                                                                             ${link.indent && 'ml-sm'}
                                                                         `}
                                                                     >{ link.label }</li>

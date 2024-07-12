@@ -67,10 +67,10 @@ export default function Page () {
                         <Pop inline>
                             {/* <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Purchase Your Pass</Button> */}
                             <Button 
-                                href={`/world/branded-residences-forum#form`} 
+                                href={`/world/purchase-pass`} 
                                 theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} 
                                 decal={`fs-5 fw-600`}
-                            >Register Interest</Button>
+                            >Purchase Pass</Button>
                         </Pop>
                     </div>
                 </Fade>
