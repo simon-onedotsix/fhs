@@ -97,7 +97,7 @@ export default function Page () {
 
             <section className="block pt-md">
                 <div className="container formatted maxw-90">
-                    <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-03.jpg', width:1200, height:700 }}>
+                    <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-06.jpg', width:2000, height:1333 }}>
                         <Fade>
                             <p className='fs-2 fw-600 c-secondary'>Key Topics</p>
                             <p className="fs-5">The forum will feature workshops and conference sessions around key topics including:</p> 
@@ -120,7 +120,7 @@ export default function Page () {
 
             <section className="block">
                 <div className="container formatted maxw-90">
-                    <Callout image={{ url:'/assets/img/brf/brf-2024-image-02.jpg', width:1200, height:700 }}>
+                    <Callout image={{ url:'/assets/img/brf/brf-2024-image-04.jpg', width:2000, height:1331 }}>
                         <Fade>
                             <p className='fs-2 fw-600 lh-2 c-secondary'>Unprecedented Growth Trends</p>
                             <p className="fs-4">The branded residences sector is experiencing a period of unprecedented growth, globally.</p> 
@@ -132,7 +132,7 @@ export default function Page () {
 
             <section className="block">
                 <div className="container formatted maxw-90">
-                    <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-01.jpg', width:1200, height:700 }}>
+                    <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-05.jpg', width:2000, height:1428 }}>
                         <Fade>
                             <p className='fs-2 fw-600 lh-2 c-secondary'>Accor One Living and FHS World Partnership</p>
                             <p className="fs-6">FHS World has partnered with Accor One Living who has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans ultra-prime urban locations and the most sought-after resort destinations.</p> 
