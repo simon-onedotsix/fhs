@@ -34,7 +34,7 @@ export const Billboard = ({ children, hero, height, verticalAlign, horizontalAli
             <div className={CSS.billboardBg}>
                 {/* <img src={hero.url} alt={hero.alt}/> */}
                 {
-                    hero.url &&
+                    hero?.url &&
                     <Image src={hero.url} layout={`fill`} alt={hero.alt}/>
                 }
             </div>
