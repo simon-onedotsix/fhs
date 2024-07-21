@@ -25,6 +25,16 @@ function Speakers({ seomatic, speakers, craftCmsProfiles }) {
 	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
 	// console.log('ordered:', orderedSpeakers)
 
+	// customise order (VIP speakers to top of list)
+	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
+		(speaker => speaker.lastName === 'bin Touq Al Marri' ? 0 : 1),
+		(speaker => speaker.lastName === 'Bazin' ? 0 : 1),
+		(speaker => speaker.lastName === 'Anand' ? 0 : 1),
+		(speaker => speaker.lastName === 'Abdulrahim Kazim' ? 0 : 1),
+		(speaker => speaker.lastName === 'Paolo Righi' ? 0 : 1),
+	] )
+	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
+
 	return (
 		<>
 
@@ -45,7 +55,7 @@ function Speakers({ seomatic, speakers, craftCmsProfiles }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
 							speakers.length &&
-							orderedSpeakers.map( speaker => {
+							customOrderedSpeakers.map( speaker => {
 								if ( speaker.type ) return (
 									<div key={speaker.id}>
 										<Link href={`/world/speakers/${speaker.id}`}>

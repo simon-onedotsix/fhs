@@ -124,7 +124,7 @@ export default function Page () {
                         <Fade>
                             <p className='fs-2 fw-600 lh-2 c-secondary'>Unprecedented Growth Trends</p>
                             <p className="fs-4">The branded residences sector is experiencing a period of unprecedented growth, globally.</p> 
-                            <p className="fs-4">Since 2024, the sector has expanded by <strong>176%</strong>, with <strong>687 projects</strong> now open and operating worldwide.</p>
+                            <p className="fs-4">The sector has grown more than 160% over the last decade with approximately 1,300 branded residential projects globally as of&nbsp;2023.</p>
                         </Fade>
                     </Callout>
                 </div>
@@ -135,8 +135,8 @@ export default function Page () {
                     <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-05.jpg', width:2000, height:1428 }}>
                         <Fade>
                             <p className='fs-2 fw-600 lh-2 c-secondary'>Accor One Living and FHS World Partnership</p>
-                            <p className="fs-6">FHS World has partnered with Accor One Living who has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans ultra-prime urban locations and the most sought-after resort destinations.</p> 
-                            <p className="fs-6">Each property is meticulously designed and serviced to meet the demanding standards of the brand it represents and Branded Residences Forum is an opportunity to learn about and invest in Accor One Living&apos;s promising pipeline.</p>
+                            <p>To host this forum, FHS World has partnered with Accor One Living, a dedicated mixed-use platform from Accor that has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans a diverse collection of brands throughout ultra-prime urban locations and the most sought-after resort destinations.</p> 
+                            <p>Each residential community supported by Accor One Living is meticulously designed and serviced to meet the demanding standards of the Accor brand it represents. The Branded Residences Forum by Accor One Living is an opportunity to engage with industry leaders, learn more about the branded residential sector, and explore the Accor One Living platform, its participating brands and communities as well as its promising pipeline.</p>
                             <p className='mt-sm'>
                                 <a className='button center' href={ 'https://accor-residences.com/' } target={ '_blank' } rel="noreferrer">
                                     Learn more about Accor&nbsp;One&nbsp;Living
