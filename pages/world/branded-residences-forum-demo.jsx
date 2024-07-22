@@ -17,7 +17,10 @@ import { Callout } from '../../fuselage/theme/2024/world/blocks/callout/callout'
 import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'
 
 import { Quote } from '../../fuselage/theme/2024/world/components/quote/quote'
+import { QuoteSlider } from '../../fuselage/theme/2024/world/components/quote-slider/quote-slider'
 import { StopwatchIcon } from "../../fuselage/components/icons/icons"
+import { SpeakerCarousel } from '../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel'
+import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
 
 import CSS from '../../css/app/agenda-world-2024.module.css'
 
@@ -26,12 +29,16 @@ import CSS from '../../css/app/agenda-world-2024.module.css'
 
 
 
-export default function Page ({ sessions }) {
+export default function Page ({ sessions, speakers }) {
 
     const lenis = useLenis()
 
 
-    console.log('sessions:', sessions)
+    const selectedCmsSpeakers = []
+
+
+    // console.log('sessions:', sessions)
+    // console.log('speakers:', speakers)
 
 
     const getSessionsByTopic = ( sessionData, topicID ) => {
@@ -150,6 +157,40 @@ export default function Page ({ sessions }) {
                 </div>
             </section>
 
+
+
+            {/* FEATURED SPEAKERS */}
+
+            {
+                speakers &&
+                <SpeakerCarousel 
+                    heading={`Featured Speakers`} 
+                    text={null}
+                    decal={'bg-secondary'}
+                    ctaLink={null}
+                    ctaLabel={null}
+                    anchorId={null}
+                >
+                    {
+                        speakers?.map( profile => (
+                            <Pop key={profile.id}>
+                                <SpeakerCard
+                                    url={null}
+                                    photoUrl={profile.photoUrl }
+                                    fullName={`${profile.firstName} ${profile.lastName}`}
+                                    jobTitle={profile.jobTitle}
+                                    company={profile.organisation}
+                                />
+                            </Pop>
+                        ))
+                    }
+                </SpeakerCarousel>
+            }
+
+
+
+            {/* FLOATERS */}
+
             <section className="block">
                 <div className="container formatted maxw-90">
                     <Callout image={{ url:'/assets/img/brf/brf-2024-image-04.jpg', width:2000, height:1331 }}>
@@ -179,7 +220,9 @@ export default function Page ({ sessions }) {
                 </div>
             </section>
             
-            
+
+
+            {/* AGENDA */}
             
             <section className="block bg-default">
                 <div className="container maxw-70 center">
@@ -257,25 +300,61 @@ export default function Page ({ sessions }) {
 
 
 
-            <section className="block">
-                <div className="container columns-2 gap-md">
-                    <Quote 
-                        quote={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
-                        name={"Firstname Lastname"}
-                        title={"Job Title"}
-                        company={"Organisation"}
-                    />
-                    <Quote 
-                        quote={"Duis aute irure dolor excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
-                        name={"Firstname Lastname"}
-                        title={"Job Title"}
-                        company={"Organisation"}
-                    />
+            {/* TESTIMONIALS */}
+
+            <section className="block bg-pattern-blue">
+                <div className="container maxw-70">
+
+                    <QuoteSlider 
+                        heading={"Testimonials"}
+                        testimonials={[
+                        {
+                            quote: "Success in branded residences requires specialized expertise across multiple disciplines - which is why we see The Branded Residence Forum by Accor One Living as such an essential platform for discussion. At this trailblazing event, we will pull together key-decision makers from across the sector - including residential developers who have executed enormously successful projects, expert lawyers, branding and communication firms, architects, interior designer and other key consultants - the key players who are propelling the success of branded residences globally.",
+                            avatar: [
+                                {
+                                    url: "/assets/img/brf/quotes/jeff.jpg",
+                                    width: "800",
+                                    height: "800"
+                                }
+                            ],
+                            fullName: "Jeff Tisdall",
+                            jobTitle: "CBO",
+                            organisation: "Accor One Living"
+                        },
+                        {
+                            quote: "We see The Branded Residences Forum by Accor One Living as an important opportunity for the industry to gather and discuss this ever-expanding sector. Interest is now truly global and standalone branded development activity is accelerating. At the same time, exciting new brands and partnership are emerging - simply put, investors have a lot to consider and share when it comes to branded residences.",
+                            avatar: [
+                                {
+                                    url: "/assets/img/brf/quotes/Itani.jpg",
+                                    width: "800",
+                                    height: "800"
+                                }
+                            ],
+                            fullName: "Riyan Itani",
+                            jobTitle: "Founder",
+                            organisation: "Global Branded Residences"
+                        },
+                        {
+                            quote: "FHS World in Dubai is a key gathering for hospitality investors and it is only natural that its scope has been expanded to include a 'must-attend' day-long event for those developing, operating or exploring branded residences. We see this forum as a key opportunity for investors to delve into the key issues and trends, such as rental programs, legal structure, sales and marketing and design.",
+                            avatar: [
+                                {
+                                    url: "/assets/img/brf/quotes/rico.jpg",
+                                    width: "800",
+                                    height: "800"
+                                }
+                            ],
+                            fullName: "Rico Picenoni",
+                            jobTitle: "Head of Savills Global Residential Development Consultancy",
+                            organisation: ""
+                        }
+                    ]} />
+
                 </div>
             </section>
-
             
 
+
+            {/* FORM */}
 
             <section id="form" className="block">
                 <div className="container center">
@@ -393,8 +472,54 @@ export async function getStaticProps() {
 			})
 		}
 	)
+	const event = await eventQuery.json()
+	
 
-	const result = await eventQuery.json()
+    const selectedSpeakerQuery = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query eventPerson($eventId: ID!, $filters: [EventPersonFilter!]) {
+                        eventPerson(eventId: $eventId, filters: $filters) {
+                            nodes {
+                                id
+                                photoUrl
+                                firstName
+                                lastName
+                                jobTitle
+                                organization
+                                userId
+                            }
+                        }
+                    }
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE,
+					"filters": {
+                        "eventPeopleIds": [
+                            "RXZlbnRQZW9wbGVfMzE4NDk5Mzg=",
+                            "RXZlbnRQZW9wbGVfMzE4NDUxMDQ=",
+                            "RXZlbnRQZW9wbGVfMzE4NTAyOTI=",
+                            "RXZlbnRQZW9wbGVfMzE4NTA1NDQ=",
+                            "RXZlbnRQZW9wbGVfMzE4NDkwMDM=",
+                            "RXZlbnRQZW9wbGVfMzE2OTE5Mjc=",
+                            "RXZlbnRQZW9wbGVfMzE2Nzg2MzY=",
+                            "RXZlbnRQZW9wbGVfMzE4NTcyMzg=",
+                            "RXZlbnRQZW9wbGVfMzE3NDAzMzY=",
+                            "RXZlbnRQZW9wbGVfMzE4NDg0MzQ="
+                        ]
+                    }
+				}
+			})
+		}
+	)
+	const speakers = await selectedSpeakerQuery.json()
 	
 
 	// console.log('RESULT', result)
@@ -402,10 +527,11 @@ export async function getStaticProps() {
 	// console.log('TEST sessions', result.data.plannings)
   
 
-    if ( result.data ) return { 
+    if ( event.data ) return { 
         props: { 
-            sessions: result.data.plannings,
-			locations: result.data.event.planningsPlaces
+            sessions: event.data.plannings,
+			locations: event.data.event.planningsPlaces,
+            speakers: speakers.data.eventPerson.nodes
         } 
     }
 

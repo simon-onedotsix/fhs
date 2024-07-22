@@ -118,16 +118,18 @@
 
 [data-theme='world-2024'] .bg-theme { background-color: var(--primary); background: var(--primary); }
 
-[data-theme='world-2024'] .bg-fhs-pattern-blue { 
-    background-image: url('/assets/theme/ae-2024/fhs-pattern-blue-top.png'), url('/assets/theme/ae-2024/fhs-pattern-blue-bottom.png');
+
+[data-theme='world-2024'] .bg-pattern-blue { 
+    background-color: var(--secondary);
+    background-image: url('/assets/theme/ae-2024/fhs-pattern-blue.png');
     background-size: 100%;
-    background-position: top center, bottom center;
-    background-repeat: no-repeat;
+    background-position: top center;
 
     @media(max-width:600px) {
         background-size: 250%;
     }
 }
+
 
 
 

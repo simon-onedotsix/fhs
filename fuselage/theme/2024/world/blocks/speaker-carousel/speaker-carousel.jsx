@@ -10,10 +10,10 @@ import CSS from './speaker-carousel.module.css'
 export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, decal }) => {
     return (
 
-        <section className={`block ${decal} bg-fhs-pattern-blue`}>
+        <section className={`block ${decal} bg-pattern-blue`}>
             
             <div className='container center'>
-                <p className="fs-0 fw-700 lh-1">{ heading }</p>
+                <p className="fs-0 fw-700 lh-1 c-primary">{ heading }</p>
                 <div className='fs-5'>
                     { text }
                 </div>
@@ -34,7 +34,7 @@ export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, de
                     }
                 }}>
                     <SplideTrack>
-                        { children.map( (item, index) => {
+                        { children?.map( (item, index) => {
                             return (
                                 <SplideSlide key={index}>
                                     { item }

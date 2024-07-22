@@ -1,0 +1,153 @@
+.waveTop,
+.waveBottom {
+    width: 100%;
+}
+.waveTop {
+    margin-bottom: -2px;
+}
+.waveBottom {
+    margin-top: -2px;
+}
+
+
+
+
+/* nav */
+
+.nav {  
+    display: flex;
+    gap: var(--space-sm);
+    align-items: center;
+    justify-content: center;
+}
+.navButton {
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    border: 1px solid var(--primary);
+    background-color: transparent;
+    color: white;
+    padding: .85rem;
+
+    transition: all 350ms ease-in-out;
+}
+.navButton[disabled] {
+    pointer-events: none;
+    opacity: .3;
+}
+
+@media(hover:hover){
+    .navButton:hover {
+        background-color: var(--primary);
+    }
+}
+
+
+
+
+
+.layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.contentWrapper {
+    grid-area: 1/1 / 2/2;
+    opacity: 0;
+    transform: translateY(4rem);
+    transition: all 500ms cubic-bezier(.7, .1, .2, 1);
+    pointer-events: none;
+}
+.contentWrapper.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+
+
+
+@media(max-width:899px){
+    .nav {
+        margin-top: var(--space-lg);
+    }
+}
+
+@media(min-width:900px){
+    .layout {
+        margin-top: var(--space-md);
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+    .contentWrapper {
+        grid-area: 1/1 / 2/2;
+        opacity: 0;
+        transform: translateY(4rem);
+        transition: all 500ms cubic-bezier(.7, .1, .2, 1);
+        pointer-events: none;
+    }
+    .contentWrapper.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+    }
+
+    
+    .nav {
+        margin-top: var(--space-md);
+    }
+
+
+
+}
+
+@media(hover:hover) {
+    .navButton:hover {
+        background-color: var(--primary);
+    }
+}
+
+
+
+
+
+
+.avatar {
+    cursor: pointer;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    background-color: var(--secondary-1-dark);
+    border: 6px solid var(--secondary-1-dark);
+    transition: all 350ms ease-in-out;
+}
+.avatar img {
+    opacity: .5;
+    transition: all 350ms ease-in-out;
+}
+
+.avatar.active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    transform: scale(1.4);
+}
+.avatar.active img {
+    opacity: 1;
+}
+
+@media (min-width:800px){
+    .avatar {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 6rem;
+    }
+}
