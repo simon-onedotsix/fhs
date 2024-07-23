@@ -240,8 +240,8 @@ export default function Page ({ sessions, speakers }) {
                         sessions &&
                         getSessionsByTopic( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ).map( session => (
 
-                            <Pop>
-                                <div key={session.id} className={CSS.sessionsWrapper}>
+                            <Pop key={session.id}>
+                                <div className={CSS.sessionsWrapper}>
                                     <div className={`${CSSlite.session} ${session.id === 'UGxhbm5pbmdfMjAyNzgxOA==' && `bg-primary-2 caps`} `}>
 
                                         <div className={`${CSSlite.sessionHeader} fw-300 c-white`}>

@@ -1,20 +1,30 @@
 .session {
     display: grid;
-    grid-template-columns: 12rem auto;
+    grid-template-columns: 1fr;
 
     border: 1px solid var(--primary-2);
     border-radius: 1rem;
 }
-
 .sessionHeader,
 .sessionContent {
-    padding: var(--space-xs);
+    padding: var(--space-sm);
 }
 
-.sessionHeader {
-    border-right: 1px solid var(--primary-2);
+@media (max-width:799px) {
+    .sessionHeader {
+        border-bottom: 1px solid var(--primary-2);
+    }
 }
+@media (min-width:800px) {
+    .session {
+        grid-template-columns: 12rem auto;
 
-.sessionContent {
-
+    }
+    .sessionHeader {
+        border-right: 1px solid var(--primary-2);
+    }
+    .sessionHeader,
+    .sessionContent {
+        padding: var(--space-xs);
+    }
 }
