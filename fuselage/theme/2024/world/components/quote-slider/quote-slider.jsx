@@ -41,7 +41,7 @@ export const QuoteSlider = ({ heading, testimonials }) => {
                 <nav className={CSS.nav}>
                     {
                         testimonials.map ( (testimonial, index) => (
-                            <button onClick={() => handleUpdate( index+1 )} className={`${CSS.avatar} ${index+1 === currentPage ? CSS.active : ''}`}>
+                            <button key={index} onClick={() => handleUpdate( index+1 )} className={`${CSS.avatar} ${index+1 === currentPage ? CSS.active : ''}`}>
                                 <Image src={testimonial.avatar[0].url} width={400} height={400} />
                             </button>
                         ))

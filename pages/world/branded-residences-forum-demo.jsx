@@ -34,11 +34,8 @@ export default function Page ({ sessions, speakers }) {
     const lenis = useLenis()
 
 
-    const selectedCmsSpeakers = []
-
-
     // console.log('sessions:', sessions)
-    // console.log('speakers:', speakers)
+    console.log('speakers:', speakers)
 
 
     const getSessionsByTopic = ( sessionData, topicID ) => {
@@ -74,6 +71,11 @@ export default function Page ({ sessions, speakers }) {
 	}
 
     // console.dir( getSessionsByTopic( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
+
+
+    // sort speakers by lastName
+	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
+	// console.log('ordered:', orderedSpeakers)
 
 
     return (
@@ -136,7 +138,7 @@ export default function Page ({ sessions, speakers }) {
 
             <section className="block pt-md">
                 <div className="container formatted maxw-90">
-                    <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-06.jpg', width:2000, height:1333 }}>
+                    <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-09.jpg', width:2000, height:1333 }}>
                         <Fade>
                             <p className='fs-2 fw-600 c-secondary'>Key Topics</p>
                             <p className="fs-5">The forum will feature workshops and conference sessions around key topics including:</p> 
@@ -172,14 +174,14 @@ export default function Page ({ sessions, speakers }) {
                     anchorId={null}
                 >
                     {
-                        speakers?.map( profile => (
+                        orderedSpeakers?.map( profile => (
                             <Pop key={profile.id}>
                                 <SpeakerCard
                                     url={null}
                                     photoUrl={profile.photoUrl }
                                     fullName={`${profile.firstName} ${profile.lastName}`}
                                     jobTitle={profile.jobTitle}
-                                    company={profile.organisation}
+                                    company={profile.organization}
                                 />
                             </Pop>
                         ))
@@ -193,7 +195,7 @@ export default function Page ({ sessions, speakers }) {
 
             <section className="block">
                 <div className="container formatted maxw-90">
-                    <Callout image={{ url:'/assets/img/brf/brf-2024-image-04.jpg', width:2000, height:1331 }}>
+                    <Callout image={{ url:'/assets/img/brf/brf-2024-image-08.jpg', width:2000, height:1333 }}>
                         <Fade>
                             <p className='fs-2 fw-600 lh-2 c-secondary'>Unprecedented Growth Trends</p>
                             <p className="fs-4">The branded residences sector is experiencing a period of unprecedented growth, globally.</p> 
@@ -309,7 +311,7 @@ export default function Page ({ sessions, speakers }) {
                         heading={"Testimonials"}
                         testimonials={[
                         {
-                            quote: "Success in branded residences requires specialized expertise across multiple disciplines - which is why we see The Branded Residence Forum by Accor One Living as such an essential platform for discussion. At this trailblazing event, we will pull together key-decision makers from across the sector - including residential developers who have executed enormously successful projects, expert lawyers, branding and communication firms, architects, interior designer and other key consultants - the key players who are propelling the success of branded residences globally.",
+                            quote: "Success in branded residences requires specialised expertise across multiple disciplines - which is why we see The Branded Residence Forum by Accor One Living as such an essential platform for discussion. At this trailblazing event, we will pull together key-decision makers from across the sector - including residential developers who have executed enormously successful projects, expert lawyers, branding and communication firms, architects, interior designer and other key consultants - the key players who are propelling the success of branded residences globally.",
                             avatar: [
                                 {
                                     url: "/assets/img/brf/quotes/jeff.jpg",
@@ -511,8 +513,7 @@ export async function getStaticProps() {
                             "RXZlbnRQZW9wbGVfMzE2OTE5Mjc=",
                             "RXZlbnRQZW9wbGVfMzE2Nzg2MzY=",
                             "RXZlbnRQZW9wbGVfMzE4NTcyMzg=",
-                            "RXZlbnRQZW9wbGVfMzE3NDAzMzY=",
-                            "RXZlbnRQZW9wbGVfMzE4NDg0MzQ="
+                            "RXZlbnRQZW9wbGVfMzE3NDAzMzY="
                         ]
                     }
 				}
