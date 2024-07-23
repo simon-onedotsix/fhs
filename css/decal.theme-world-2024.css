@@ -107,6 +107,7 @@
 [data-theme='world-2024'] .bg-global { background-color: var(--bg-global); }
 
 [data-theme='world-2024'] .bg-primary { background-color: var(--primary); }
+[data-theme='world-2024'] .bg-primary-2 { background-color: var(--primary-2); }
 [data-theme='world-2024'] .bg-secondary { background-color: var(--secondary); }
 [data-theme='world-2024'] .bg-accent { background-color: var(--accent); }
 

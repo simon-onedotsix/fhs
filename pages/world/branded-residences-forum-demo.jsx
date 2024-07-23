@@ -23,6 +23,7 @@ import { SpeakerCarousel } from '../../fuselage/theme/2024/world/blocks/speaker-
 import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
 
 import CSS from '../../css/app/agenda-world-2024.module.css'
+import CSSlite from '../../css/app/agenda-world-2024-aag.module.css'
 
 
 
@@ -233,68 +234,74 @@ export default function Page ({ sessions, speakers }) {
             </section>
 
             <section className="block bg-default">
-                <div className="container maxw-70 columns-1 gap-xs">
+                <div className="container maxw-50 columns-1 gap-xs">
                     
                     {
                         sessions &&
                         getSessionsByTopic( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ).map( session => (
-                            <div key={session.id} className={CSS.sessionsWrapper}>
-                                <div className={CSS.session}>
 
-                                    <div className={`${CSS.sessionHeader} fw-500 c-white bg-medium`}>
-                                        {
-                                            session.beginsAt && session.endsAt ?
-                                                <div>
-                                                    {format( new Date(session.beginsAt), "HH:mm" )} - { format( new Date(session.endsAt), "HH:mm" )}
-                                                    &ensp;<StopwatchIcon fill={'var(--accent)'}/> { convertSeconds(parseInt(new Date(session.endsAt).getTime() - new Date(session.beginsAt).getTime())/1000) }
-                                                </div>
-                                            : null
-                                        }
+                            <Pop>
+                                <div key={session.id} className={CSS.sessionsWrapper}>
+                                    <div className={`${CSSlite.session} ${session.id === 'UGxhbm5pbmdfMjAyNzgxOA==' && `bg-primary-2 caps`} `}>
 
-                                        {/* {
-                                            getSessionFields( session, 'Location').length ?
-                                                <div className={CSS.sessionTagGrid}>
-                                                    {session.fields.length ? <LocationIcon fill={'var(--accent)'}/> : null }
-                                                    {getSessionLocation( session )}
-                                                </div>
-                                            : null
-                                        } */}
-                                    </div>
+                                        <div className={`${CSSlite.sessionHeader} fw-300 c-white`}>
+                                            {
+                                                session.beginsAt && session.endsAt ?
+                                                    <>
+                                                        {format( new Date(session.beginsAt), "HH:mm" )} - { format( new Date(session.endsAt), "HH:mm" )}
+                                                        <p className='mt-xxs'>
+                                                            <StopwatchIcon fill={'var(--secondary)'}/>
+                                                            <span className='fs-sm fw-500 c-secondary'> { convertSeconds(parseInt(new Date(session.endsAt).getTime() - new Date(session.beginsAt).getTime())/1000) }</span>
+                                                        </p>                                                    
+                                                    </>
+                                                : null
+                                            }
 
-                                    <div className={`${CSS.sessionContent} | columns-1 gap-xs`}>
+                                            {/* {
+                                                getSessionFields( session, 'Location').length ?
+                                                    <div className={CSS.sessionTagGrid}>
+                                                        {session.fields.length ? <LocationIcon fill={'var(--accent)'}/> : null }
+                                                        {getSessionLocation( session )}
+                                                    </div>
+                                                : null
+                                            } */}
+                                        </div>
 
-                                        {/* <small style={{ color: 'orange'}}>{session.id}</small> */}
+                                        <div className={`${CSSlite.sessionContent} | columns-1 gap-xs`}>
+
+                                            {/* <small style={{ color: 'orange'}}>{session.id}</small> */}
+                                            
+                                            <p className={`fs-5 fw-4500 c-white`}>
+                                                { session.titleTranslations[0].value }
+                                            </p>
                                         
-                                        <p className={`fs-5 fw-600 lh-1 c-white caps`}>
-                                            { session.titleTranslations[0].value }
-                                        </p>
-                                     
-                                        {/* {
-                                            getSessionFields( session, 'Topics').length ?
-                                                <div className={CSS.sessionTagGrid}>
-                                                    <TagIcon fill={`var(--accent)`} />
-                                                    {getSessionFields( session, 'Topics')}
-                                                </div>
-                                            : null
-                                        } */}
+                                            {/* {
+                                                getSessionFields( session, 'Topics').length ?
+                                                    <div className={CSS.sessionTagGrid}>
+                                                        <TagIcon fill={`var(--accent)`} />
+                                                        {getSessionFields( session, 'Topics')}
+                                                    </div>
+                                                : null
+                                            } */}
 
-                                        {
-                                            session.descriptionTranslations.length ?
-                                                parse( session.descriptionTranslations[0].value )
-                                            : null
-                                        }
-                                        
-                                        {/* { sortSpeakers(session.speakers) } */}
-                                    </div>
+                                            {
+                                                session.descriptionTranslations.length ?
+                                                    parse( session.descriptionTranslations[0].value )
+                                                : null
+                                            }
+                                            
+                                            {/* { sortSpeakers(session.speakers) } */}
+                                        </div>
 
-                                    </div>
-                            </div>
+                                        </div>
+                                </div>
+                            </Pop>
                         ))
                     }
 
                 </div>
 
-                <div className="container maxw-70 formatted">
+                <div className="container maxw-50 formatted">
                     <p className='fs-4 fw-600 c-secondary'>Pass Enquiries:</p>
                     <p className='fs-6'>If you have any questions related to your access to the Branded Residences Forum 2024, please contact us on: <a href="mailto:usama.aslam@thebench.com">usama.aslam@thebench.com</a></p>
                 </div>

@@ -1,0 +1,20 @@
+.session {
+    display: grid;
+    grid-template-columns: 12rem auto;
+
+    border: 1px solid var(--primary-2);
+    border-radius: 1rem;
+}
+
+.sessionHeader,
+.sessionContent {
+    padding: var(--space-xs);
+}
+
+.sessionHeader {
+    border-right: 1px solid var(--primary-2);
+}
+
+.sessionContent {
+
+}
