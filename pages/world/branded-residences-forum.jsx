@@ -198,7 +198,10 @@ export default function Page ({ sessions, speakers }) {
 
             <section className="block">
                 <div className="container formatted maxw-90">
-                    <Callout image={{ url:'/assets/img/brf/brf-2024-image-08.jpg', width:2000, height:1333 }}>
+                    <Callout 
+                        image={{ url:'/assets/img/brf/brf-2024-image-08.jpg', width:2000, height:1333 }}
+                        caption={"The Rixos Dubai Islands Residences"}
+                    >
                         <Fade>
                             <p className='fs-2 fw-600 lh-2 c-secondary'>Unprecedented Growth Trends</p>
                             <p className="fs-4">The branded residences sector is experiencing a period of unprecedented growth, globally.</p> 

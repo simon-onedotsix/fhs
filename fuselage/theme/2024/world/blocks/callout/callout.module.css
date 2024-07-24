@@ -39,3 +39,7 @@
 .imageContainer img {
     border-radius: var(--degault-radius);
 }
+
+.caption {
+    margin-top: .5rem;
+}

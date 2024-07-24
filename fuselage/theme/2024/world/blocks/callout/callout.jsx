@@ -4,15 +4,21 @@ import { Pop } from '../../../../../animation/animation'
 
 import CSS from './callout.module.css'
 
-export const Callout = ({ image, children, flipped }) => {
+export const Callout = ({ image, caption, children, flipped }) => {
 
     return (
         <section className={`${CSS.layout} ${flipped && CSS.flipped}`}>
-            <div className={CSS.imageContainer}>
-                <Pop>
+            <Pop>
+                <div className={CSS.imageContainer}>
                     <Image src={image.url} width={image.width} height={image.height} />
-                </Pop>
-            </div>
+                    {
+                        caption &&
+                        <div className={CSS.caption}>
+                            <p>{ caption }</p>
+                        </div>
+                    }
+                </div>
+            </Pop>
 
             <div className={CSS.content}>
                 { children }
