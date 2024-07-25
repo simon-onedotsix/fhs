@@ -17,6 +17,41 @@ import handleSeomaticMeta from '../../../lib/seomatic'
 
 import CSS from '../../../css/app/speakers.module.css'
 
+
+
+
+const CUSTOM_ORDERED_SPEAKERS = [
+	{
+		"id": "1",
+		"firstName": "His Excellency Abdulla bin Touq Al",
+		"lastName": "Marri"
+	},
+	{
+		"id": "2",
+		"firstName": "Sébastien",
+		"lastName": "Bazin"
+	},
+	{
+		"id": "3",
+		"firstName": "Satya",
+		"lastName": "Anand"
+	},
+	{
+		"id": "4",
+		"firstName": "Javier",
+		"lastName": "Águila"
+	},
+	{
+		"id": "5",
+		"firstName": "Pier Paolo",
+		"lastName": "Righi"
+	},
+]
+
+
+
+
+
 function Speakers({ seomatic, speakers, craftCmsProfiles }) {
 
 	// console.log('speakers:', speakers)
