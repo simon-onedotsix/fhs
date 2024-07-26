@@ -38,7 +38,7 @@ function Partners() {
 	partnerData.exhibitors.forEach( obj => {
 		if ( obj.type && obj.typeLabel ) allTypesArray.push({id: obj.typeLabel.id, name: obj.type, size: ''})
 	})
-	console.log('types:', _.uniqBy(allTypesArray, obj => obj.id))
+	// console.log('types:', _.uniqBy(allTypesArray, obj => obj.id))
 
 	const typesArray = _.uniqBy(allTypesArray, obj => obj.id)
 

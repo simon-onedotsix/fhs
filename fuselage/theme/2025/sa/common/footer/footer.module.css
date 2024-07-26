@@ -1,0 +1,42 @@
+
+.hosts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.partnerLogo {
+    display: block;
+    max-width: 12rem;
+    max-height: 9rem;
+}
+
+@media(max-width:799px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 35rem;
+    }
+}
+
+@media(min-width:800px) and (max-width:900px) {
+    .section:first-child {
+        grid-column: 1 / span 2;
+    }
+}
+
+@media(min-width:800px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+    }
+
+    .section:last-child {
+        border-left: 1px solid var(--primary-2);
+        padding-left: var(--space-md);
+    }
+}
+
+
+@media print {
+    .container {display: none}
+}

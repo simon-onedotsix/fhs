@@ -37,7 +37,7 @@ import { speakers } from "../../../../data/legacy/sa/2024/sc-speakers"
 
 function Speakers() {
 
-	console.log('speakers:', speakers)
+	// console.log('speakers:', speakers)
 
 	// sort speakers by lastName
 	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
