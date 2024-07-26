@@ -77,7 +77,7 @@ export default function Page ({ sessions, speakers }) {
     // console.dir( getSessionsByTopic( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
 
     // console.log('sessions:', sessions)
-    // console.log('speakers:', speakers)
+    console.log('speakers:', speakers)
     // console.log('ordered:', orderedSpeakers)
 
 
@@ -517,7 +517,6 @@ export async function getStaticProps() {
 					"eventId": process.env.SWAPCARD_EVENT_ID_AE,
 					"filters": {
                         "eventPeopleIds": [
-                            "RXZlbnRQZW9wbGVfMzE4NDk5Mzg=",
                             "RXZlbnRQZW9wbGVfMzE4NDUxMDQ=",
                             "RXZlbnRQZW9wbGVfMzE4NTAyOTI=",
                             "RXZlbnRQZW9wbGVfMzE4NTA1NDQ=",
