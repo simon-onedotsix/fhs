@@ -31,7 +31,7 @@
     }
 
     .section:last-child {
-        border-left: 1px solid var(--primary-2);
+        border-left: 1px solid var(--accent);
         padding-left: var(--space-md);
     }
 }

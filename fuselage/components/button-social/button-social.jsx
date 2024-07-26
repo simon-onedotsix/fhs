@@ -4,28 +4,28 @@ export const ButtonSocial = ({ icon, iconColor, url, alt, decal }) => {
 
     const handleIcon = () => {
         switch ( icon ) {
-            case 'twitter' : return <TwitterIcon className={CSS.icon} alt={alt}/>
+            case 'twitter' : return <TwitterIcon className={CSS.icon} fill={iconColor} alt={alt}/>
             break
 
-            case 'linkedin' : return <LinkedinIcon className={CSS.icon} alt={alt}/>
+            case 'linkedin' : return <LinkedinIcon className={CSS.icon} fill={iconColor} alt={alt}/>
             break
             
-            case 'facebook' : return <FacebookIcon className={CSS.icon} alt={alt}/>
+            case 'facebook' : return <FacebookIcon className={CSS.icon} fill={iconColor} alt={alt}/>
             break
             
-            case 'youtube' : return <YoutubeIcon className={CSS.icon} alt={alt}/>
+            case 'youtube' : return <YoutubeIcon className={CSS.icon} fill={iconColor} alt={alt}/>
             break
             
-            case 'flickr' : return <FlickrIcon className={CSS.icon} alt={alt}/>
+            case 'flickr' : return <FlickrIcon className={CSS.icon} fill={iconColor} alt={alt}/>
             break
             
-            case 'instagram' : return <InstagramIcon className={CSS.icon} alt={alt}/>
+            case 'instagram' : return <InstagramIcon className={CSS.icon} fill={iconColor} alt={alt}/>
             break
             
-            case 'email' : return <EmailIcon className={CSS.icon} alt={alt}/>
+            case 'email' : return <EmailIcon className={CSS.icon} fill={iconColor} alt={alt}/>
             break
 
-            default: return <EmailIcon className={CSS.icon} alt={alt}/>
+            default: return <EmailIcon className={CSS.icon} fill={iconColor} alt={alt}/>
         }
     }
 

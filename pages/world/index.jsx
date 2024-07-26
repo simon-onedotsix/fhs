@@ -304,7 +304,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 <SpeakerCarousel 
                     heading={`Featured Speakers`} 
                     text={``}
-                    decal={'bg-secondary'}
+                    decal={'bg-secondary bg-pattern-blue'}
                     ctaLink={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLink : ''}
                     ctaLabel={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLabel : ''}
                     anchorId={``}

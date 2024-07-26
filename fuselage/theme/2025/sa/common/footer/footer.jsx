@@ -24,7 +24,7 @@ export const Footer = () => {
 
                     <section className={`${CSS.section}`}>
                         <p className='fs-1 fw-600 lh-1'>Join the Conversation</p>
-                        <p className='fs-5 fw-600 c-secondary mt-sm'>#FutureHospitalitySummit</p>
+                        <p className='fs-5 fw-600 c-accent mt-sm'>#FutureHospitalitySummit</p>
                         <p className='flex flex-wrap gap-xxs mt-sm'>
                             {
                                 socialConnections &&
@@ -35,7 +35,8 @@ export const Footer = () => {
                                             icon={connection.icon} 
                                             url={connection.hyperlink} 
                                             alt={connection.label}
-                                            decal={'bg-secondary'}
+                                            iconColor={'var(--secondary)'}
+                                            decal={'bg-white'}
                                         />
                                     )
                                 })

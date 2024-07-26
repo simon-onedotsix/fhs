@@ -16,7 +16,7 @@ export const MainMenu = ({ otherEvents }) => {
     const { globals } = useContext(GlobalsContext)
     // console.log( 'globals:', globals )
 
-    const { mainMenu } = globals.me.find( data => data.__typename === 'header_GlobalSet' )
+    const { mainMenu } = globals.sa.find( data => data.__typename === 'header_GlobalSet' )
     // console.log( 'sa:', globals.sa )
     // console.log( 'world mainMenu:', mainMenu )
 
@@ -25,7 +25,7 @@ export const MainMenu = ({ otherEvents }) => {
             <div className={CSS.toggleContainer}>
                 <div className={`${CSS.toggleActions} ${ active && CSS.active }`}>
                     <Button 
-                        href={`/world/purchase-pass`} 
+                        href={`/sa/purchase-pass`} 
                         theme={{ 
                             color: `white`,
                             background: `var(--secondary)`, 
@@ -37,7 +37,7 @@ export const MainMenu = ({ otherEvents }) => {
                     </Button>
                     
                     <Button 
-                        href={`/world/become-a-sponsor`} 
+                        href={`/sa/become-a-sponsor`} 
                         theme={{ 
                             color: `white`,
                             background: `var(--secondary)`, 
@@ -59,8 +59,7 @@ export const MainMenu = ({ otherEvents }) => {
 
             <div className={`${CSS.overlay} ${ active && CSS.active } bg-primary`}>
                 
-                <nav className={CSS.layout}>
-
+            <nav className="columns-4 gap-md">
                     { 
                         mainMenu?.map( column => (
                             <section key={column.id}>
@@ -73,7 +72,6 @@ export const MainMenu = ({ otherEvents }) => {
                                                     <p  
                                                         key={item.id}
                                                         className={`
-                                                            ${CSS.heading}
                                                             fw-600
                                                             ${item.headingSize === 'lg' ? 'fs-5 c-accent mb-xxs' : ''}
                                                             ${item.headingSize === 'md' ? 'fs-6' : ''}
@@ -90,33 +88,18 @@ export const MainMenu = ({ otherEvents }) => {
                                                     <ul key={item.id}>
                                                         {
                                                             item.menuLinks?.map( (link, index) => {
-
-                                                                let showFlash = false
-
-                                                                if ( 
-                                                                    link.hyperlink === '/world/branded-residences-forum' ||
-                                                                    link.hyperlink === '/world/unto' ||
-                                                                    link.hyperlink === '/world/sustainable-cook-off' ||
-                                                                    link.hyperlink === '/world/country-pavilions'
-                                                                ) showFlash = true
                 
                                                                 if (link.hyperlink) return (
-                                                                    <li key={index}  style={{ paddingBottom: `.05vh` }}>
+                                                                    <li key={index}  style={{ paddingBottom: `.125vh` }}>
                                                                         <Link href={link.hyperlink}>
                                                                             <a
                                                                                 className={` 
-                                                                                    ${link.size === 'sm' ? 'uLink' : 'uLink fw-400'}
+                                                                                    ${link.size === 'sm' ? 'uLink' : 'uLink fs-6 fw-400'}
                                                                                     ${link.indent && 'ml-sm'}
                                                                                 `} 
                                                                                 target={ link.newWindow ? '_blank' : '_self'}
                                                                                 onClick={ () => setActive(false)}
-                                                                            >
-                                                                                {
-                                                                                    showFlash &&
-                                                                                    <span className={CSS.label}>New for 2024!</span>
-                                                                                }
-                                                                                { link.label }
-                                                                            </a>
+                                                                            >{ link.label }</a>
                                                                         </Link>    
                                                                     </li> 
                                                                 )
@@ -125,7 +108,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                                     <li 
                                                                         key={index}
                                                                         className={` 
-                                                                            ${link.size === 'sm' ? '' : 'fw-400'}
+                                                                            ${link.size === 'sm' ? '' : 'fs-6 fw-400'}
                                                                             ${link.indent && 'ml-sm'}
                                                                         `}
                                                                     >{ link.label }</li>
@@ -145,21 +128,14 @@ export const MainMenu = ({ otherEvents }) => {
                         ))
                     }
 
+
                     <section className="c-white">
-                        <p className="pb-xs">
+                        <p className="pb-sm">
                             <ArrowButton 
                                 href={ '/' } 
                                 theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
                             >
                                 FHS
-                            </ArrowButton>
-                        </p>
-                        <p className="pb-sm">
-                            <ArrowButton 
-                                href={ '/sa' } 
-                                theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
-                            >
-                                FHS Saudi Arabia
                             </ArrowButton>
                         </p>
 
@@ -179,7 +155,6 @@ export const MainMenu = ({ otherEvents }) => {
                             ))
                         }
                     </section>
-                    
                 </nav>
 
                

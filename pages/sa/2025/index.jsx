@@ -45,7 +45,7 @@ import {
 
 import handleSeomaticMeta from '../../../lib/seomatic'
 
-import CSS from '../../../fuselage/theme/2024/world/css/homepage.module.css'
+import CSS from '../../../fuselage/theme/2025/sa/css/homepage.module.css'
 
 
 const photos = [
@@ -172,13 +172,13 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
                     className={`fs-5 fw-500 c-white center mt-xs`} 
                 >
-                    30 SEP - 02 OCT 2024, Madinat Jumeirah, Dubai
+                    14 - 16 APRIL 2025, Mandarin Oriental Al Faisaliah, Riyadh
                 </motion.p>
 
                 <Fade>
                     <div className="mt-sm center">
                         <Pop inline>
-                            <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Now</Button>
+                            <Button href={`/sa/purchase-pass`} theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Now</Button>
                         </Pop>
                     </div>
                 </Fade>
@@ -255,16 +255,18 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 <SpeakerCarousel 
                     heading={`Featured Speakers`} 
                     text={``}
-                    decal={'bg-secondary'}
+                    decal={'bg-pattern-green'}
                     ctaLink={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLink : ''}
                     ctaLabel={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLabel : ''}
                     anchorId={``}
+                    color={'white'}
                 >
                     {
                         selectedCmsSpeakers.profiles.map( profile => (
                             <Pop key={profile.id}>
                                 <SpeakerCard
-                                    url={`world/speakers/profile/${profile.slug}`}
+                                    url={`sa/speakers/profile/${profile.slug}`}
+                                    color={"c-white"}
                                     photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
                                     fullName={profile.title}
                                     jobTitle={profile.positions[0].jobTitle}
@@ -282,7 +284,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             <section className="block bg-white o-hidden">
                 <div className="container">
                     <div className={CSS.impactFiguresGrid}>
-                        <Slide><p className="fs-0 fw-700 c-primary lh-1">2023 in Numbers</p></Slide>
+                        <Slide><p className="fs-0 fw-700 c-primary lh-1">2024 in Numbers</p></Slide>
                         
                         <div className='columns-4 gap-sm'>
                             <ImpactFigure value={`1200`} label={`Delegates`} />
@@ -304,7 +306,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 </div>
 
                 <div className={`${CSS.photoGrid} container`}>
-                    <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2023 in <span className='c-secondary'>Photos</span></p></Slide>
+                    <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2024 in <span className='c-secondary'>Photos</span></p></Slide>
                     
                     <div className="columns-3 gap-xs mt-md">
                         {
@@ -324,7 +326,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 </div>
 
                 <motion.div className={CSS.highlightsGraphicWapper} style={{ y }}>
-                    <FhsIconKeyline inverse />
+                    <FhsIconKeyline inverse topColor={'var(--accent)'} sectorColor={'var(--primary)'} />
                 </motion.div>
             </section>
 
@@ -355,25 +357,6 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 { modalContent } 
             </PopupOverlay>
 
-
-            {/* <Script id="chatbot" strategy="afterInteractive">
-                {`
-                    (function(d,t) {
-                        var BASE_URL="https://app.chatlyn.com";
-                        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-                        g.src=BASE_URL+"/packs/js/sdk.js";
-                        g.defer = true;
-                        g.async = true;
-                        s.parentNode.insertBefore(g,s);
-                        g.onload=function(){
-                        window.chatwootSDK.run({
-                        websiteToken: 'M83YXfr8QveNibKc6eFniAuA',
-                        baseUrl: BASE_URL
-                        })
-                        }
-                    })(document,"script");;
-                `}
-            </Script> */}
         </>
     )
 }

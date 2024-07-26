@@ -15,6 +15,7 @@
     --secondary-2: #EF3742;
     --secondary-2-dark: #c61b27;
 
+    --accent-dark: #b98350;
     --accent-2: rgb(99, 53, 5);
 
     
@@ -121,9 +122,9 @@
 [data-theme='sa-2025'] .bg-theme { background-color: var(--primary); background: var(--primary); }
 
 
-[data-theme='sa-2025'] .bg-pattern-blue { 
+[data-theme='sa-2025'] .bg-pattern-green { 
     background-color: var(--secondary);
-    background-image: url('/assets/theme/ae-2024/fhs-pattern-blue.png');
+    background-image: url('/assets/theme/sa-2025/fhs-pattern-green.png');
     background-size: 100%;
     background-position: top center;
 
@@ -380,13 +381,13 @@
 
 
 [data-theme='sa-2025'] .form input[type='submit'] {
-	background-color: var(--secondary-2);
+    color: var(--primary);
+	background-color: var(--accent);
     border: none;
 }
 
 [data-theme='sa-2025'] .form input[type='submit']:hover {
-	background-color: var(--secondary-2-dark);
-    color: white;
+	background-color: var(--accent-dark);
 }
 
 
@@ -416,20 +417,27 @@
     padding-right: 0;
     color: white;
     font-family: inherit;
-    border-bottom-color: var(--primary-2) !important;
+    border-bottom-color: var(--accent) !important;
 }
+
+[data-theme='sa-2025'] select.hs-input {
+    background-color: transparent;
+    border-color: var(--accent) !important;
+    background-image: url('/assets/ui/select-chevron-sa-2025.svg');
+}
+
 
 [data-theme='sa-2025'] footer.footer .hs-form-field textarea,
 [data-theme='sa-2025'] footer.footer .hs-form-field input[type='text'],
 [data-theme='sa-2025'] footer.footer .hs-form-field input[type='password'],
 [data-theme='sa-2025'] footer.footer .hs-form-field input[type='tel'],
 [data-theme='sa-2025'] footer.footer .hs-form-field input[type='email'] {
-    border-bottom-color: var(--primary-2) !important;
+    border-bottom-color: var(--accent) !important;
 }
 
 
 [data-theme='sa-2025'] footer .form input {
-    border-bottom-color: var(--primary-2) !important;
+    border-bottom-color: var(--accent) !important;
     color: white;
 }
 [data-theme='sa-2025'] footer .form input:focus {

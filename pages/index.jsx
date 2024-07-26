@@ -171,6 +171,7 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
             <SpeakerCard
                 key={profile.id}
                 // url={`/speakers/profile/${profile.slug}`} 
+                color={"white"}
                 photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
                 fullName={profile.title}
                 jobTitle={profile.positions[0].jobTitle}

@@ -7,13 +7,13 @@ import Chevron from './img/slider-chevron-right.svg'
 
 import CSS from './speaker-carousel.module.css'
 
-export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, decal }) => {
+export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, color, decal }) => {
     return (
 
-        <section className={`block ${decal} bg-pattern-blue`}>
+        <section className={`block ${decal}`}>
             
             <div className='container center'>
-                <p className="fs-0 fw-700 lh-1 c-primary">{ heading }</p>
+                <p className={`fs-0 fw-700 lh-1 ${ color ? color : "c-primary"}`}>{ heading }</p>
                 <div className='fs-5'>
                     { text }
                 </div>
@@ -60,7 +60,7 @@ export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, de
                 ctaLink &&
                 <div className='container center'>
                     <p className='mt-sm'>
-                        <ArrowButton href={ ctaLink } theme={{ arrow: `var(--primary-2)`, border: `var(--primary-2)`, label: `var(--primary-2)`}} >{ ctaLabel }</ArrowButton>
+                        <ArrowButton href={ ctaLink } theme={{ arrow: color ? color : "c-primary", border: color ? color : "c-primary", label: color ? color : "c-primary"}} >{ ctaLabel }</ArrowButton>
                     </p>
                 </div>
             }
