@@ -94,7 +94,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                                 let showFlash = false
 
                                                                 if ( 
-                                                                    link.hyperlink === '/world/branded-residences-forum' ||
+                                                                    link.hyperlink === '/world/brf' ||
                                                                     link.hyperlink === '/world/unto' ||
                                                                     link.hyperlink === '/world/sustainable-cook-off' ||
                                                                     link.hyperlink === '/world/country-pavilions'
