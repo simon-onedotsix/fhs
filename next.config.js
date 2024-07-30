@@ -26,6 +26,11 @@ const nextConfig = {
 			destination: '/world/:path*',
 			permanent: true,
 		  },
+		  {
+			source: '/world/branded-residences-forum',
+			destination: '/world/brf',
+			permanent: true,
+		  },
 		]
 	}
 

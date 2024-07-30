@@ -15,7 +15,7 @@ import { Pop, Slide, Fade } from "../../../fuselage/theme/2023/ae/layout/animati
 
 import { Header } from '../../../fuselage/theme/2025/sa/common/header/header'
 import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
-import { HeroUnitVideo } from "../../../fuselage/theme/2025/sa/blocks/hero-unit-video/hero-unit-video"
+import { HeroUnit } from "../../../fuselage/theme/2025/sa/blocks/hero-unit/hero-unit"
 
 import { FhsIcon, FhsIconKeyline } from "../../../fuselage/theme/2024/world/components/logos/fhs-brand"
 import { SpeakerCarousel } from "../../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
@@ -145,14 +145,19 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
     return (
         <>
             <Head>
-                <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
+                <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
 				{ handleSeomaticMeta( seomatic ) }
 			</Head>
         
             <Header overlaid inverse />
 
 
-            <HeroUnitVideo video={'/assets/video/fhs-2023-opt.mp4'} poster={'/assets/video/fhs-2023-opt-poster.jpg'}>
+            <HeroUnit hero={{
+                url: "/assets/img/sa/homepage-hero-2025.jpg",
+                width: "3000",
+                height: "2333"
+            }}>
+
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -182,7 +187,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         </Pop>
                     </div>
                 </Fade>
-            </HeroUnitVideo>
+
+            </HeroUnit>
 
 
             {/* HOST SPONSOR */}
@@ -221,13 +227,14 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     <section>
                         <Fade>
                             <p className='fs-0 fw-600 lh-1 maxw-45 c-primary'>
-                                What&apos;s new for <span className="c-secondary">Future Hospitality Summit</span> <span className="c-accent">2024</span>
+                                What&apos;s new for <span className="c-secondary">FHS Saudi Arabia</span> <span className="c-accent">2025</span>
                             </p>
                         </Fade>
                         <Fade>
                             <p className='fs-5 fw-500 maxw-45 mt-sm'>This year we are creating an intersection for the world of hospitality where the industry invests in its future. </p>
-                            <p className='fs-6 fw-300 maxw-45'>FHS World 2024 will feature several new exciting initiatives and partnerships. <Link href={'/world/branded-residences-forum'}><strong className="underline">The Branded Residences Forum</strong></Link>, a one-day exclusive event taking place on 2 October 2024 brought to you by Accor One Living, will focus on the thriving sector of branded residences. For the first time ever, FHS World will host the semi-finals of the <Link href={'/world/unto'}><strong className="underline">UN Tourism&apos;s Women in Tech</strong></Link> startup competition, showcasing innovative solutions from women-led tech startups. Additionally, the <strong>#FHSWomenPower initiative</strong> will facilitate more women in the hospitality industry, supporting female leaders and driving gender diversity in the hospitality industry.</p>
-                            <p className='fs-6 fw-300 maxw-45 mt-xs mb-sm'>This year, we are presenting expanded Themes of Focus including Tech & Innovation, Sustainable Construction, Real Estate Hotelisation and Country Pavilions.</p>
+                            <p className='fs-6 fw-300 maxw-45'>FHS Saudi Arabia will feature Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis quisquam impedit neque dolore aliquam laboriosam similique accusantium exercitationem nam dignissimos, labore quis, voluptas harum asperiores, inventore nisi dolorum ullam? Quia?</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, culpa explicabo fugiat recusandae praesentium, obcaecati assumenda quod consectetur veniam autem cum corporis perspiciatis molestiae. Vel recusandae ducimus facere expedita quae! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum fuga, odio suscipit officia consequuntur libero. Voluptatibus, minima quaerat suscipit accusamus cum, aspernatur voluptatum repellat quibusdam iure delectus natus? Corrupti, odio?</p>
+                            <p>&nbsp;</p>
                         </Fade>
                         <Pop inline>
                             <Button 
@@ -301,12 +308,12 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             <section className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className={`${CSS.highlightVideoGrid} container`}>
-                    <Slide><p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS&nbsp;2023</span></p></Slide>
+                    <Slide><p className='fs-0 fw-700 lh-1'>Highlights from FHS&nbsp;2023</p></Slide>
                     <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=7Ar-CT0z23k&t=2s`} />
                 </div>
 
                 <div className={`${CSS.photoGrid} container`}>
-                    <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2024 in <span className='c-secondary'>Photos</span></p></Slide>
+                    <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2024 in Photos</p></Slide>
                     
                     <div className="columns-3 gap-xs mt-md">
                         {
