@@ -19,6 +19,7 @@
     width: 9rem;
     padding: 1.5rem var(--space-md);
 }
+
 .brand * {
     text-decoration: none;
 }
@@ -36,8 +37,14 @@
         height: var(--header-height-compact-mobile);
     }
 
+    .brandWrapper {
+        display: grid;
+        grid-template-columns: 13rem auto;
+        align-items: center;
+    }
+
     .brand {
-        width: 14rem;
+        width: 20rem;
         padding: var(--space-md);
     }
     

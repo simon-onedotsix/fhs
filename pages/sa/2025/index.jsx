@@ -153,7 +153,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
             <HeroUnit hero={{
-                url: "/assets/img/sa/homepage-hero-2025.jpg",
+                url: "/assets/img/sa/homepage-hero-2025-2.jpg",
                 width: "3000",
                 height: "2333"
             }}>
@@ -166,7 +166,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
                     className={`fs-0 fw-700 c-white lh-1 center`} 
                 >
-                    Invest in Our Future
+                    Invest in Tomorrow: Today
                 </motion.p>
 
                 <motion.p 
@@ -189,20 +189,22 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 </Fade>
 
             </HeroUnit>
-
-
-            {/* HOST SPONSOR */}
+            
 
             <section className="block bg-accent-2">
                 <div className="container center">
                     <p className="fs-3 fw-600 c-accent caps">Host Sponsor</p>
                     <div className={`${CSS.hostSponsorLogoWrapper} mt-sm mx-auto`}>
                         <Pop>
-                            <Image src={`/assets/site/ae/jumeirah-2024.png`} layout={`responsive`} width={900} height={173} />
+                            {/* <Image src={`/assets/site/ae/jumeirah-2024.png`} layout={`responsive`} width={900} height={173} /> */}
+                            <p className="fs-2">[ sponsor logo ]</p>
                         </Pop>
                     </div>
                 </div>
             </section>
+
+            {/* HOST SPONSOR */}
+
 
 
             

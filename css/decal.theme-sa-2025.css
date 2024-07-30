@@ -3,18 +3,17 @@
     /* colour */
 
     --primary: #3C1A52;
-    --secondary: #00744B;
-    --accent: #DFA46E;
-    
     --primary-1: #3C1A52;
     --primary-2: #6E439A;
     --primary-2-dark: #5a3182;
     --primary-3: #9972AB;
-
+    
+    --secondary: #00744B;
     --secondary-dark: #00442c;
-
+    
+    --accent: #DFA46E;
     --accent-dark: #b98350;
-    --accent-2: rgb(99, 53, 5);
+    --accent-2: rgb(110, 78, 45);
 
     
 
@@ -24,10 +23,10 @@
     --default-text-color: rgb(71, 71, 71);
     --default-heading-color: var(--primary);
 
-    --wash: #F9F9FA;
-    --light: #E1E2EA;
-    --medium: #7e4fac;
-    --dark: #301343;
+    --wash: #ebebe3;
+    --light: #DFA46E;
+    --medium: #00744B;
+    --dark: #00442c;
 
     --error: rgb(255, 68, 0);
     --success: rgb(121, 173, 0);
@@ -117,7 +116,16 @@
 [data-theme='sa-2025'] .bg-dark { background-color: var(--dark);}
 
 
-[data-theme='sa-2025'] .bg-theme { background-color: var(--primary); background: var(--primary); }
+[data-theme='sa-2025'] .bg-theme { 
+    background-color: var(--secondary-dark);
+    background-image: url('/assets/theme/sa-2025/fhs-pattern-green.png');
+    background-size: 100%;
+    background-position: top center;
+
+    @media(max-width:600px) {
+        background-size: 250%;
+    }
+}
 
 
 [data-theme='sa-2025'] .bg-pattern-green { 
@@ -223,7 +231,7 @@
 [data-theme='sa-2025'] .bg-default .formatted h4,
 [data-theme='sa-2025'] .bg-default .formatted h5,
 [data-theme='sa-2025'] .bg-default .formatted h6 {
-    color: var(--secondary);
+    color: var(--accent);
 }
 
 /* white */
@@ -272,7 +280,7 @@
 /* secondary */
 
 [data-theme='sa-2025'] .bg-secondary {
-    color: var(--default-text-color);
+    color: white;
 }
 [data-theme='sa-2025'] .bg-secondary .formatted h1,
 [data-theme='sa-2025'] .bg-secondary .formatted h2,
@@ -280,7 +288,15 @@
 [data-theme='sa-2025'] .bg-secondary .formatted h4,
 [data-theme='sa-2025'] .bg-secondary .formatted h5,
 [data-theme='sa-2025'] .bg-secondary .formatted h6 {
-    color: var(--primary);
+    color: var(--accent);
+}
+[data-theme='sa-2025'] .bg-secondary .form input[type='submit'] {
+    color: var(--secondary);
+	background-color: var(--accent);
+    border: none;
+}
+[data-theme='sa-2025'] .bg-secondary .form input[type='submit']:hover {
+	background-color: white;
 }
 
 /* accent */
@@ -343,6 +359,14 @@
 [data-theme='sa-2025'] .bg-medium .formatted h6 {
     color: white;
 }
+[data-theme='sa-2025'] .bg-medium .button {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--secondary);
+}
+[data-theme='sa-2025'] .bg-medium .button:hover {
+    background-color: white;
+}
 
 
 /* dark */
@@ -379,13 +403,13 @@
 
 
 [data-theme='sa-2025'] .form input[type='submit'] {
-    color: var(--primary);
-	background-color: var(--accent);
+    color: white;
+	background-color: var(--secondary);
     border: none;
 }
 
 [data-theme='sa-2025'] .form input[type='submit']:hover {
-	background-color: var(--accent-dark);
+	background-color: var(--secondary-dark);
 }
 
 
@@ -440,6 +464,15 @@
 }
 [data-theme='sa-2025'] footer .form input:focus {
     border-bottom-color: white !important;
+}
+
+[data-theme='sa-2025'] footer .form input[type='submit'] {
+    color: var(--secondary);
+	background-color: var(--accent);
+    border: none;
+}
+[data-theme='sa-2025'] footer .form input[type='submit']:hover {
+	background-color: white;
 }
 
 
