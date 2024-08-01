@@ -797,7 +797,7 @@ export default function Agenda ({ sessions, locations }) {
 																					</div>
 																				}
 																				
-																				{ sortSpeakers(session.speakers) }
+																				{/* { sortSpeakers(session.speakers) } */}
 																			</div>
 																			
 																		</div>
