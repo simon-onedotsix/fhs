@@ -93,7 +93,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 										<h4 className='fs-5 fw-600 c-secondary caps pb-xs'>{ category && category.name }</h4>
 										<PartnerLogoGrid>
 											{
-												_.orderBy(group, 'name').map(partner => (
+												_.orderBy(group, [partner => partner.name?.toLowerCase()]).map(partner => (
 													<a key={partner.id} href={`/world/partners/${partner.id}`}>
 														<PartnerLogo 
 															hero={{ url: partner.logoUrl }} 
