@@ -364,6 +364,18 @@ export const QueryTickers = `
     }
 `
 
+export const QueryBannerImage = `
+    ... on ${blocksHandle}ContentBlocks_bannerImage_BlockType {
+        id
+        id
+        hero {
+            url
+            width
+            height
+        }
+    }
+`
+
 
 
 

@@ -157,6 +157,12 @@ export default function Agenda ({ sessions, locations }) {
 				})
 			}
 
+			if ( session.fields.length ) {
+				session.fields.forEach( field => {
+					searchContent = searchContent + ` ${field.value.toLowerCase()} `
+				})
+			}
+
 			// console.log('searchContent:', searchContent)
 
 			if ( searchContent.includes(search)) return session
@@ -494,7 +500,7 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-	// console.log('sessions:', sessions)
+	console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
