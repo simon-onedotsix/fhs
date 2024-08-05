@@ -20,38 +20,6 @@ import CSS from '../../../css/app/speakers.module.css'
 
 
 
-const CUSTOM_ORDERED_SPEAKERS = [
-	{
-		"id": "1",
-		"firstName": "His Excellency Abdulla bin Touq Al",
-		"lastName": "Marri"
-	},
-	{
-		"id": "2",
-		"firstName": "Sébastien",
-		"lastName": "Bazin"
-	},
-	{
-		"id": "3",
-		"firstName": "Satya",
-		"lastName": "Anand"
-	},
-	{
-		"id": "4",
-		"firstName": "Javier",
-		"lastName": "Águila"
-	},
-	{
-		"id": "5",
-		"firstName": "Pier Paolo",
-		"lastName": "Righi"
-	},
-]
-
-
-
-
-
 function Speakers({ seomatic, speakers, craftCmsProfiles }) {
 
 	// console.log('speakers:', speakers)
@@ -67,6 +35,10 @@ function Speakers({ seomatic, speakers, craftCmsProfiles }) {
 		(speaker => speaker.firstName == 'Satya' && speaker.lastName === 'Anand' ? 0 : 1),
 		(speaker => speaker.firstName == 'Javier' && speaker.lastName === 'Águila' ? 0 : 1),
 		(speaker => speaker.firstName == 'Pier Paolo' && speaker.lastName === 'Righi' ? 0 : 1),
+		(speaker => speaker.firstName == 'Stephen' && speaker.lastName === 'Sackur' ? 0 : 1),
+		(speaker => speaker.firstName == 'John' && speaker.lastName === 'Pagano' ? 0 : 1),
+		(speaker => speaker.firstName == 'Dr. Adel' && speaker.lastName === 'Ezzat' ? 0 : 1),
+		(speaker => speaker.firstName == 'Paul' && speaker.lastName === 'Griffiths' ? 0 : 1),
 	] )
 	console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
