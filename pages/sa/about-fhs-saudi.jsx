@@ -1,11 +1,10 @@
 import { useState } from 'react'
 
-import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
+import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 
-import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
 import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'
-import { Billboard } from '../../fuselage/theme/2024/sa/blocks/billboard/billboard'
+import { Billboard } from '../../fuselage/blocks/billboard/billboard'
 
 
 import CSS from '../../css/app/lead-wall.module.css'
@@ -19,7 +18,6 @@ export default function LeadWall () {
 
     return (
         <>
-            <ThemeBg />
 
             <Header compact shim />
 
@@ -72,6 +70,6 @@ export default function LeadWall () {
 
 }
 
-LeadWall.theme = 'sa-2024'
+LeadWall.theme = 'sa-2025'
 
 

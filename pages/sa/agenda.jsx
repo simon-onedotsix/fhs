@@ -13,10 +13,8 @@ import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
-import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from "../../fuselage/components/icons/icons"
 
@@ -39,7 +37,7 @@ import {
 import DROPDOWN from '../../css/app/dropdown.module.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
 
-import CSS from '../../css/app/agenda-sa-2024.module.css'
+import CSS from '../../css/app/agenda-sa-2025.module.css'
 
 
 
@@ -344,25 +342,25 @@ export default function Agenda ({ sessions, locations }) {
 					moderators.length ?
 						<div>
 							<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
-							<div className='sessionSpeakerGrid'>
+							<div className={CSS.sessionSpeakerGrid}>
 								{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
 							</div>
 							{
 								speakers.length ?
-									<p style={{ color: `aqua`, padding: `10px 0 0 0`}}>In conversation with</p>
+									<p style={{ color: `var(--accent)`, padding: `10px 0 0 0`}}>In conversation with</p>
 								: null
 							}
 						</div>
 					: null
 				}
-				<div className='sessionSpeakerGrid'>
+				<div className={CSS.sessionSpeakerGrid}>
 					{ speakers.map( speaker => renderSpeakerCard(speaker) ) }
 				</div>
 			</>
 		)
 
 		return (
-			<div className='sessionSpeakerGrid'>
+			<div className={CSS.sessionSpeakerGrid}>
 				{ speakerData.map( speaker => renderSpeakerCard(speaker) ) }
 			</div>
 		)
@@ -540,9 +538,6 @@ export default function Agenda ({ sessions, locations }) {
 			</Head>
 
             <Header compact shim />
-
-            <ThemeBg />
-            <ThemeFg />
 
 
             <section className="block">
@@ -730,7 +725,7 @@ export default function Agenda ({ sessions, locations }) {
 				
 
 				{/* AGENDA */}
-				<main className="agenda | section columns-1 gap-sm mt-sm">				
+				<main className={`${CSS.agenda} | section columns-1 gap-sm mt-sm"`}>				
 					{
 						buildAgenda( sessions ).length 
 						? buildAgenda( sessions ).map( (day, index) => {
@@ -738,8 +733,8 @@ export default function Agenda ({ sessions, locations }) {
 							if ( selectedDay && selectedDay !== day.day ) return
 
 							return (
-								<section key={index} className='day'>
-									<p key={index} className='dayDivider'> { day.day }</p>
+								<section key={index} className={CSS.day}>
+									<p key={index} className={CSS.dayDivider}> { day.day }</p>
 									{
 										day.timeslots.length ?
 										day.timeslots.map( (slot, index) => {
@@ -748,44 +743,44 @@ export default function Agenda ({ sessions, locations }) {
 
 													{/* SESSIONS */}
 
-													<div className="sessions">
+													<div className={CSS.sessions}>
 														{
 															prioriseStreams( slot.sessions, locations ).map( (session, index) => {
 																return (
-																	<div key={index} className="sessionsWrapper">
-																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
-																		<div className='session | bg-glass'>
+																	<div key={index} className={CSS.sessionsWrapper}>
+																		<span className={CSS.sessionAnchor} id={session.id.slice(0, -2)}/>
+																		<div className={CSS.session}>
 
-																			<div className='sessionHeader fw-500 c-white'>
+																			<div className={`${CSS.sessionHeader} fw-500 c-white`}>
 																				{
 																					session.beginsAt && session.endsAt ?
 																						<div>
 																							{format( new Date(session.beginsAt), "HH:mm" )} - { format( new Date(session.endsAt), "HH:mm" )}
-																							&ensp;<StopwatchIcon/> { convertSeconds(parseInt(new Date(session.endsAt).getTime() - new Date(session.beginsAt).getTime())/1000) }
+																							&ensp;<StopwatchIcon fill={'var(--accent)'}/> { convertSeconds(parseInt(new Date(session.endsAt).getTime() - new Date(session.beginsAt).getTime())/1000) }
 																						</div>
 																					: null
 																				}
 
 																				{
 																					getSessionFields( session, 'Location').length ?
-																						<div className="sessionTagGrid">
-																							{session.fields.length ? <LocationIcon /> : null }
+																						<div className={CSS.sessionTagGrid}>
+																							{session.fields.length ? <LocationIcon fill={'var(--accent)'}/> : null }
 																							{getSessionLocation( session )}
 																						</div>
 																					: null
 																				}
 																			</div>
 
-																			<div className="sessionContent | columns-1 gap-xs">
+																			<div className={`${CSS.sessionContent} columns-1 gap-xs`}>
 
 																				{/* <small style={{ color: 'orange'}}>{session.id}</small> */}
 																				
-																				<p className="sessionTitle | fs-5 fw-600 lh-1 c-accent caps">
+																				<p className={`${CSS.sessionTitle} fs-5 fw-600 lh-1 c-accent caps`}>
 																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
 																				</p>
 																																									
-																				<div className='sessionTagGrid'>
-																					{session.fields.length ? <TagIcon fill={`var(--primary)`} /> : null}
+																				<div className={CSS.sessionTagGrid}>
+																					{session.fields.length ? <TagIcon fill={`var(--accent)`} /> : null}
 																					{getSessionFields( session, 'Topics')}
 																				</div>
 
@@ -890,7 +885,7 @@ export default function Agenda ({ sessions, locations }) {
         </ReactLenis>
     )
 }
-Agenda.theme = 'sa-2024'
+Agenda.theme = 'sa-2025'
 
 
 

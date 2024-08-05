@@ -82,7 +82,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
 
                 <section className={CSS.brandWrapper}>
                     <div className={`${CSS.brand}`}>
-                        <Link href={`/ae`}>
+                        <Link href={`/sa`}>
                             <a className={CSS.logo}>
                                 <FhsLockup 
                                     inverse 

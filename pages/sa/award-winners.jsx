@@ -6,13 +6,10 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import Head from "next/head"
 import Image from 'next/image'
 
-import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from '../../fuselage/theme/2024/sa/globals/footer/footer'
+import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 
-import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
-import { CtaTab } from '../../fuselage/components/cta-tab/cta-tab'
 import { HeroUnitImage } from '../../fuselage/blocks/hero-unit-image/hero-unit-image'
 import { AwardWinnerCard } from '../../fuselage/components/award-winner-card/award-winner-card'
 
@@ -30,8 +27,6 @@ export default function AwardWinners ({ data }) {
 
             <Header overlaid inverse />
 
-            <ThemeBg />
-			<ThemeFg />
 
             <HeroUnitImage heading={data.title} description={data.description} />
 
@@ -87,7 +82,7 @@ export default function AwardWinners ({ data }) {
 }
 
 
-AwardWinners.theme='sa-2024'
+AwardWinners.theme='sa-2025'
 
 
 

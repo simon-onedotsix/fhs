@@ -12,11 +12,8 @@ import {format} from 'date-fns'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
-
-import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+import { Header } from '../../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { HeaderShim } from '../../../fuselage/global-sa/header/header'
 
@@ -201,10 +198,7 @@ export default function Article ({ entry }) {
             
             <Header compact />
 
-            <ThemeBg />
-            
-
-            <section className="block pt-0">
+            <section className="block bg-default pt-0">
                 <div className="container">
                     <StickySidebar size='large' flipped>
 
@@ -253,7 +247,7 @@ export default function Article ({ entry }) {
 
 }
 
-Article.theme = 'sa-2024'
+Article.theme = 'sa-2025'
 
 
 

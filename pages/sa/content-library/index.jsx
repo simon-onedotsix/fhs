@@ -5,11 +5,8 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
 import Head from 'next/head'
 
-import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
-
-import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+import { Header } from '../../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { HeaderShim } from '../../../fuselage/global-sa/header/header'
 
@@ -93,8 +90,6 @@ export default function ContentLibrary ({ articles, categories }) {
 
             <Header compact />
 
-            <ThemeBg />
-
             <section className="block bg-default pt-0">
                 <StickySidebar size='small'>
                     <aside>
@@ -120,7 +115,7 @@ export default function ContentLibrary ({ articles, categories }) {
     
 }
 
-ContentLibrary.theme = 'sa-2024'
+ContentLibrary.theme = 'sa-2025'
 
 
 

@@ -23,66 +23,15 @@
 
 .hostSponsorLogoWrapper {
     max-width: 60vw;
-
-    @media(min-width:600px){
-        max-width: 20rem;
-    }
 }
-
-.photoGrid {
-    position: relative;
-    z-index: 2;
-}
-
-/* intro section */
-
-.introHeadline {
-    @media(min-width:600px) {
+@media(min-width:600px){
+    .hostSponsorLogoWrapper {
+        max-width: 30rem;
         display: flex;
-        justify-content: flex-end;
+        gap: var(--space-md)
     }
 }
 
-.introGraphicWapper {
-    position: absolute;
-    left: -10vw;
-    bottom: -8vw;
-
-    width: 50vw;
-    aspect-ratio: 1;
-
-    @media(max-width:599px) {
-        display: none;
-    }
-}
-
-
-/* what's new section */
-
-.fhsGraphicWrapper {
-   width: 30vw;
-   aspect-ratio: 1;
-
-   @media(max-width:599px) {
-        width: 50vw;
-    }
-}
-
-
-/* 2023 highlights section */
-
-.highlightsGraphicWapper {
-    position: absolute;
-    right: -16vw;
-    bottom: -8vw;
-
-    width: 70vw;
-    aspect-ratio: 1;
-
-    @media(max-width:599px) {
-        display: none;
-    }
-}
 
 
 /* modal popup */

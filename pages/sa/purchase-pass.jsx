@@ -28,8 +28,8 @@ import {
 
 import handleContentBlocks from "../../lib/content-blocks-sa"
 
-import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
+import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
 
@@ -67,7 +67,7 @@ function PurchasePass({ seomatic, entry }) {
 	)
 }
 
-PurchasePass.theme = 'sa-2024'
+PurchasePass.theme = 'sa-2025'
 
 
 

@@ -1,17 +1,14 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
-import Head from "next/head"
-
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
+import Head from "next/head"
 
-import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 
-import handleContentBlocks from "../../lib/content-blocks-sa"
+import handleContentBlocks from "../../lib/content-blocks"
 
 import { 
     QueryText, 
@@ -25,41 +22,41 @@ import {
     QueryProfileCarousel,
     QuerySEO,
     QueryImages,
-    Passes,
-    QueryPartners,
+    QueryCards,
     QueryTestimonials,
-	BizzaboPartners
+    QueryTickers,
+    Passes
 } from "../../graphql/queries"
 
 import handleSeomaticMeta from '../../lib/seomatic'
 
+
+
 export default function Page ({ entry, seomatic }) {
 
-    // console.log('entry:', entry)
-    
+    // console.log('entry:', entry) 
   
     return (
         <>
 
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
-                { handleSeomaticMeta( seomatic ) }
+				{ handleSeomaticMeta( seomatic ) }
             </Head>
-            
-            <ThemeBg />
 
-            <Header compact shim />
+            <Header compact />
             
-            { handleContentBlocks( entry.fhisContentBlocks, null, null, 'sa' ) }
+            {handleContentBlocks( entry.fhisContentBlocks, null, null, 'ae' )}
 
             <Footer />
             <LenisScroller />
+
         </>
     )
 }
 
+Page.theme = 'sa-2025'
 
-Page.theme = 'sa-2024'
 
 
 
@@ -106,10 +103,10 @@ export async function getStaticProps({ params, preview, previewData }) {
                             ${QueryProfileCarousel}
                             ${QueryForm}
                             ${QueryImages}
-                            ${QueryPartners}
-                            ${Passes}
+                            ${QueryCards}
                             ${QueryTestimonials}
-                            ${BizzaboPartners}
+                            ${QueryTickers}
+                            ${Passes}
                         }
                         ${QuerySEO}
                     }
@@ -121,7 +118,7 @@ export async function getStaticProps({ params, preview, previewData }) {
     return { 
         props: { 
             entry: entryData.data.entry,
-            seomatic: entryData.data.entry.seomatic, 
+            seomatic: entryData.data.entry.seomatic 
         }
     }
 }

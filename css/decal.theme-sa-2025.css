@@ -233,6 +233,14 @@
 [data-theme='sa-2025'] .bg-default .formatted h6 {
     color: var(--accent);
 }
+[data-theme='sa-2025'] .bg-default .formatted .button {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+[data-theme='sa-2025'] .bg-default .formatted .button:hover {
+    background-color: white;
+    border-color: white;
+}
 
 /* white */
 
@@ -261,6 +269,7 @@
 [data-theme='sa-2025'] .bg-wash .formatted h6 {
     color: var(--primary);
 }
+
 
 
 /* light */
@@ -382,6 +391,14 @@
 [data-theme='sa-2025'] .bg-dark .formatted h6 {
     color: var(--secondary);
 }
+[data-theme='sa-2025'] .bg-dark .formatted .button {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+[data-theme='sa-2025'] .bg-dark .formatted .button:hover {
+    background-color: white;
+    border-color: white;
+}
 
 
 /* theme */
@@ -396,6 +413,14 @@
 [data-theme='sa-2025'] .bg-theme .formatted h5,
 [data-theme='sa-2025'] .bg-theme .formatted h6 {
     color: white;
+}
+[data-theme='sa-2025'] .bg-theme .formatted .button {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+[data-theme='sa-2025'] .bg-theme .formatted .button:hover {
+    background-color: white;
+    border-color: white;
 }
 
 

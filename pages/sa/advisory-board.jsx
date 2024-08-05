@@ -7,8 +7,8 @@ import Head from 'next/head'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../fuselage/theme/2024/sa/globals/footer/footer"
+import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
 import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
@@ -36,7 +36,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 
 			<ThemeBg />
 
-			<section className="block bg-theme">
+			<section className="block bg-default">
 				<div className="container">
 
 					<p className='fs-1 fw-600 lh-1'>Advisory Board</p>
@@ -51,6 +51,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 								fullName={speaker.title}
 								jobTitle={speaker.positions[0] && speaker.positions[0].jobTitle}
 								company={speaker.positions[0] && speaker.positions[0].organisation}
+								color={'white'}
 							/>
 						))}
 					</SpeakerGrid>
@@ -65,7 +66,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 	)
 }
 
-Speakers.theme = 'sa-2024'
+Speakers.theme = 'sa-2025'
 
 
 

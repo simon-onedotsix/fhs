@@ -1,0 +1,207 @@
+[data-theme='sa-2025'] .agenda, .day {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    gap: .5rem;
+}
+
+[data-theme='sa-2025'] .dayDivider {
+    background-color: var(--accent);
+    /* border-radius: var(--agenda-radius); */
+    padding: .5rem 1rem;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+[data-theme='sa-2025'] .timeSlot {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+[data-theme='sa-2025'] .timingsAndTags {
+    background-color: var(--secondary);
+    /* border-radius: calc(var(--agenda-radius) * 1); */
+    padding: .5rem 1rem;
+}
+
+@media(max-width:500px){
+    [data-theme='sa-2025'] .timeSlot {
+        border: 2px solid var(--secondary);
+        /* border-radius: calc(var(--agenda-radius) * 1.25); */
+    }
+    /* [data-theme='sa-2025'] .timingsAndTags {
+       border-bottom-right-radius: 0;
+       border-bottom-left-radius: 0;
+    } */
+    [data-theme='sa-2025'] .sessions {
+        padding: .25rem;
+    }
+}
+@media(min-width:600px){
+    [data-theme='sa-2025'] .timeSlot {
+        grid-template-columns: 9rem auto;
+        gap: .5rem;
+    }
+    [data-theme='sa-2025'] .timingsAndTags {
+        padding: 1rem;
+    }
+}
+
+[data-theme='sa-2025'] .sessions {
+    display: flex;
+    /* comment-out flex-direction to display SESSIONS in columns +++++++++++++++++++++++++++++++++++++++++ */
+    /* flex-direction: column; */
+    
+    gap: .5rem;
+}
+
+[data-theme='sa-2025'] .session {
+    flex: 1;
+    /* border-radius: calc(var(--agenda-radius) * 1); */
+    overflow: hidden;
+    background-color: var(--secondary-dark);
+}
+
+
+
+
+
+
+[data-theme='sa-2025'] .sessionHeader {
+    width: 100%;
+    padding: .5rem 1rem;
+    background-color: var(--primary);
+}
+[data-theme='sa-2025'] .sessionHeader {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: .5rem;
+    row-gap: .25rem;
+}
+@media(min-width:600px){
+}
+
+[data-theme='sa-2025'] .sessionContent {
+    padding: 1rem;
+}
+@media(min-width:600px){
+    [data-theme='sa-2025'] .sessionContent {
+        padding: 1.5rem;
+    }
+}
+
+[data-theme='sa-2025'] .sessionTitle {
+    max-width: 50rem;
+}
+
+[data-theme='sa-2025'] .sessionTagGrid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .25rem;
+}
+
+/* speakerGrid */
+
+[data-theme='sa-2025'] .sessionSpeakerGrid {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+}
+
+@media(min-width:1200px) {
+    [data-theme='sa-2025'] .sessionSpeakerGrid {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+    [data-theme='sa-2025']  .sessionSpeaker {
+        width: 12vw;
+    }
+}
+
+[data-theme='sa-2025'] .sessionTag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: calc(var(--agenda-radius) * 2);
+    background-color: var(--primary);
+    font-size: .8rem;
+}
+[data-theme='sa-2025'] .sessionLocationTag {
+    display: inline-block;
+}
+
+[data-theme='sa-2025'] .test {
+    border: 1px solid rgb(255, 0, 208);
+}
+
+[data-theme='sa-2025'] .speakerTag {
+    display: inline-block;
+    margin-bottom: .5rem;
+    padding: 2px 8px;
+    border-radius: calc(var(--agenda-radius) * 2);
+    background-color: var(--accent);
+    color: black;
+    font-size: .8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+
+
+/* updated layout (columns) */
+
+[data-theme='sa-2025'] .sessionsWrapper {
+    flex:1;
+    display: flex;
+    /* comment-out flex-direction to display STREAMS in rows +++++++++++++++++++++++++++++++++++++++++ */
+    flex-direction: column;
+    gap: .5rem;
+}
+
+[data-theme='sa-2025'] .sessionStream {
+    padding: .5rem 1rem;
+    border-radius: calc(var(--agenda-radius) * 1);
+    background-color: var(--primary);
+    min-width: 6.25rem;
+}
+
+[data-theme='sa-2025'] .session {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+@media(max-width:600px) {
+    [data-theme='sa-2025']  .sessions {
+        flex-direction: column;
+    }
+    [data-theme='sa-2025']  .sessionsWrapper {
+        position: relative;
+        flex:1;
+        display: flex;
+        /* comment-out flex-direction to display sessions in rows +++++++++++++++++++++++++++++++++++++++++ */
+        /* flex-direction: row; */
+        gap: .5rem;
+    }
+
+}
+
+
+
+
+/* session anchors */
+
+[data-theme='sa-2025'] .sessionsWrapper {
+    position: relative;
+}
+
+[data-theme='sa-2025'] .sessionAnchor {
+    position: absolute;
+    z-index: 12;
+    display: block;
+
+    top: -14rem;
+}

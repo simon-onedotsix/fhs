@@ -8,8 +8,8 @@ import Link from 'next/link'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
+import { Header } from '../../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
 import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
@@ -74,7 +74,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 			
 
 
-			<section className='block'>
+			<section className='block bg-default'>
 
 				<div className='container center formatted'>
 					<p className='fs-1 fw-600'>2024 Sponsors &amp; Partners</p>
@@ -173,7 +173,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 	)
 }
 
-Partners.theme = 'sa-2024'
+Partners.theme = 'sa-2025'
 
 
 
