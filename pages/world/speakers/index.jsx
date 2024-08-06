@@ -33,12 +33,13 @@ function Speakers({ seomatic, speakers, craftCmsProfiles }) {
 		(speaker => speaker.firstName == 'His Excellency Abdulla bin Touq Al' && speaker.lastName === 'Marri' ? 0 : 1),
 		(speaker => speaker.firstName == 'Sébastien' && speaker.lastName === 'Bazin' ? 0 : 1),
 		(speaker => speaker.firstName == 'Satya' && speaker.lastName === 'Anand' ? 0 : 1),
-		(speaker => speaker.firstName == 'Javier' && speaker.lastName === 'Águila' ? 0 : 1),
+		(speaker => speaker.firstName == 'Haitham' && speaker.lastName === 'Mattar' ? 0 : 1),
 		(speaker => speaker.firstName == 'Pier Paolo' && speaker.lastName === 'Righi' ? 0 : 1),
 		(speaker => speaker.firstName == 'Stephen' && speaker.lastName === 'Sackur' ? 0 : 1),
 		(speaker => speaker.firstName == 'John' && speaker.lastName === 'Pagano' ? 0 : 1),
 		(speaker => speaker.firstName == 'Dr. Adel' && speaker.lastName === 'Ezzat' ? 0 : 1),
 		(speaker => speaker.firstName == 'Paul' && speaker.lastName === 'Griffiths' ? 0 : 1),
+		(speaker => speaker.firstName == 'Guy' && speaker.lastName === 'Hutchinson' ? 0 : 1),
 	] )
 	console.log('customOrderedSpeakers:', customOrderedSpeakers)
 

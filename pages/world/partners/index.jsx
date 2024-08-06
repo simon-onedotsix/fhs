@@ -41,7 +41,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 
 	// console.log('swapcard partner data:', partnerData)
-	console.log('content-blocks:', contentBlocks)
+	// console.log('content-blocks:', contentBlocks)
 
 
 	// programatically build array of unique types pulled from exhibitor data
