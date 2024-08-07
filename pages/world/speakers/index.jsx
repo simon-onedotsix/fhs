@@ -25,7 +25,7 @@ function Speakers({ seomatic, speakers, craftCmsProfiles }) {
 	// console.log('speakers:', speakers)
 
 	// sort speakers by lastName
-	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
+	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") ], ['asc'])
 	console.log('ordered:', orderedSpeakers)
 
 	// customise order (VIP speakers to top of list)
@@ -34,6 +34,7 @@ function Speakers({ seomatic, speakers, craftCmsProfiles }) {
 		(speaker => speaker.firstName == 'Sébastien' && speaker.lastName === 'Bazin' ? 0 : 1),
 		(speaker => speaker.firstName == 'Satya' && speaker.lastName === 'Anand' ? 0 : 1),
 		(speaker => speaker.firstName == 'Haitham' && speaker.lastName === 'Mattar' ? 0 : 1),
+		(speaker => speaker.firstName == 'Javier' && speaker.lastName === 'Águila' ? 0 : 1),
 		(speaker => speaker.firstName == 'Pier Paolo' && speaker.lastName === 'Righi' ? 0 : 1),
 		(speaker => speaker.firstName == 'Stephen' && speaker.lastName === 'Sackur' ? 0 : 1),
 		(speaker => speaker.firstName == 'John' && speaker.lastName === 'Pagano' ? 0 : 1),
