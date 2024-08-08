@@ -147,9 +147,9 @@ export default function Page ({ sessions, speakers }) {
                             <p className="fs-5">The forum will feature workshops and conference sessions around key topics including:</p> 
                             <ul className='mt-xs'>
                                 <li>How Investors Can Unlock Value in Mixed-Use Developments</li>
-                                <li>Operator's Perspective - Diversifying Revenue Streams with Security</li>
+                                <li>Operator&apos;s Perspective - Diversifying Revenue Streams with Security</li>
                                 <li>Demystifying Legal Structures and Concepts in Branded Residences</li>
-                                <li>Lifestyle Branded Residences - Design, Innovation & Wellness</li>
+                                <li>Lifestyle Branded Residences - Design, Innovation &amp; Wellness</li>
                                 <li>Strategies to Align Interests and Navigate Complexities in Rental Programs</li>
                                 <li>Future of branded living</li>
                             </ul>
