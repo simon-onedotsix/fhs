@@ -390,6 +390,8 @@ Page.theme = 'world-2024'
 
 // BRF topic id: RmllbGRWYWx1ZV8yNDIzOTQ1MA==
 
+// peir paolo righi id: "RXZlbnRQZW9wbGVfMzE4NDk5Mzg=",
+
 export async function getStaticProps() {
 
 	const eventQuery = await fetch(
@@ -520,7 +522,6 @@ export async function getStaticProps() {
                             "RXZlbnRQZW9wbGVfMzE4NDkxODM=",
                             "RXZlbnRQZW9wbGVfMzE2OTE5Mjc=",
                             "RXZlbnRQZW9wbGVfMzE2Nzg2MzY=",
-                            "RXZlbnRQZW9wbGVfMzE4NDk5Mzg=",
                             "RXZlbnRQZW9wbGVfMzE4NTcyMzg=",
                             "RXZlbnRQZW9wbGVfMzE3NDAzMzY="
                         ]
