@@ -349,7 +349,7 @@ export default function Agenda ({ sessions, locations }) {
 					moderators.length ?
 						<div>
 							<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
-							<div className='sessionSpeakerGrid'>
+							<div className={CSS.sessionSpeakerGrid}>
 								{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
 							</div>
 							{
@@ -360,14 +360,14 @@ export default function Agenda ({ sessions, locations }) {
 						</div>
 					: null
 				}
-				<div className='sessionSpeakerGrid'>
+				<div className={CSS.sessionSpeakerGrid}>
 					{ speakers.map( speaker => renderSpeakerCard(speaker) ) }
 				</div>
 			</>
 		)
 
 		return (
-			<div className='sessionSpeakerGrid'>
+			<div className={CSS.sessionSpeakerGrid}>
 				{ speakerData.map( speaker => renderSpeakerCard(speaker) ) }
 			</div>
 		)
@@ -803,7 +803,7 @@ export default function Agenda ({ sessions, locations }) {
 																					</div>
 																				}
 																				
-																				{/* { sortSpeakers(session.speakers) } */}
+																				{ sortSpeakers(session.speakers) }
 																			</div>
 																			
 																		</div>

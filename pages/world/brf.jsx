@@ -146,16 +146,12 @@ export default function Page ({ sessions, speakers }) {
                             <p className='fs-2 fw-600 c-secondary'>Key Topics</p>
                             <p className="fs-5">The forum will feature workshops and conference sessions around key topics including:</p> 
                             <ul className='mt-xs'>
-                                <li>Dynamic Co-working Concepts</li>
-                                <li>How Shared Living is Evolving</li>
-                                <li>Serviced Apartments / Extended Stay  - Demand Continues to Exceed Supply</li>
-                                <li>How Private Clubs are Becoming The Fastest Growing Workplace </li>
-                                <li>How Investors Can Leverage Unprecedented ROIs</li>
-                                <li>Operator&apos;s Perspective - Diversifying Revenue Streams with Security</li>
+                                <li>How Investors Can Unlock Value in Mixed-Use Developments</li>
+                                <li>Operator's Perspective - Diversifying Revenue Streams with Security</li>
                                 <li>Demystifying Legal Structures and Concepts in Branded Residences</li>
                                 <li>Lifestyle Branded Residences - Design, Innovation & Wellness</li>
                                 <li>Strategies to Align Interests and Navigate Complexities in Rental Programs</li>
-                                <li>Future Opportunities and Potential in Branded Residences</li>
+                                <li>Future of branded living</li>
                             </ul>
                         </Fade>
                     </Callout>
@@ -524,6 +520,7 @@ export async function getStaticProps() {
                             "RXZlbnRQZW9wbGVfMzE4NDkxODM=",
                             "RXZlbnRQZW9wbGVfMzE2OTE5Mjc=",
                             "RXZlbnRQZW9wbGVfMzE2Nzg2MzY=",
+                            "RXZlbnRQZW9wbGVfMzE4NDk5Mzg=",
                             "RXZlbnRQZW9wbGVfMzE4NTcyMzg=",
                             "RXZlbnRQZW9wbGVfMzE3NDAzMzY="
                         ]
