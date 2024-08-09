@@ -33,15 +33,18 @@ import {
 	QueryTestimonials
 } from "../../../graphql/queries"
 
+import { VideoTestimonialCard } from '../video-testimonials'
 
 
 
 
-function Partners({ seomatic, contentBlocks, partnerData }) {
+
+function Partners({ seomatic, contentBlocks, partnerData, videoTestimonials }) {
 
 
 	// console.log('swapcard partner data:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
+	// console.log('vts:', videoTestimonials)
 
 
 	// programatically build array of unique types pulled from exhibitor data
@@ -65,6 +68,16 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
             </Head>
 
 			<Header compact/>
+
+
+			{/* {
+				videoTestimonials &&
+				<section className="block bg-default">
+					<div className="container columns-3 gap-md">
+						{ videoTestimonials.map( entry => <VideoTestimonialCard key={entry.id} entry={entry} /> ) }
+					</div>
+				</section>
+			} */}
 
 
 			{/* PARTNERS */}
@@ -153,6 +166,18 @@ export async function getStaticProps() {
 					}
 					${QuerySEO}
 				}
+				entries(site: "${process.env.SITE_HANDLE_AE}", section: "videoTestimonials") {
+					... on videoTestimonials_videoTestimonial_Entry {
+                        id
+                        slug
+                        title
+                        videoShareUrl
+                        fullName
+                        jobTitle
+                        organisation
+                        testimonial
+                    }
+				}
 			}
         `
     })
@@ -204,7 +229,8 @@ export async function getStaticProps() {
 		props: { 
 			seomatic: cmsData.data.entry.seomatic,
 			contentBlocks: cmsData.data.entry.fhisContentBlocks,
-			partnerData: partnerData.data
+			partnerData: partnerData.data,
+			videoTestimonials: cmsData.data.entries
 		}
 	}
 }
