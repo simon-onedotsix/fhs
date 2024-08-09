@@ -21,6 +21,7 @@ import { QuoteSlider } from '../../fuselage/theme/2024/world/components/quote-sl
 import { StopwatchIcon } from "../../fuselage/components/icons/icons"
 import { SpeakerCarousel } from '../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel'
 import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
+import { AgendaSpeakerCard } from '../../fuselage/components/agenda-speaker-card/agenda-speaker-card'
 
 import CSS from '../../css/app/agenda-world-2024.module.css'
 import CSSlite from '../../css/app/agenda-world-2024-aag.module.css'
@@ -72,12 +73,55 @@ export default function Page ({ sessions, speakers }) {
     // sort speakers by lastName
 	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
 	
-    
+
+
+    const sortSpeakers = ( speakerData ) => {
+
+		if ( !speakerData ) return
+
+		let moderators = []
+        let speakers = []
+
+		_.orderBy(speakerData, 'lastName').forEach( speaker => {
+			speaker.withEvent.eventProfile.type === 'Moderator' ? moderators.push( speaker ) : speakers.push( speaker )
+		})
+
+
+		if ( moderators.length && speakers.length ) return (
+			<>
+				{
+					moderators.length ?
+						<div>
+							<p className="c-secondary pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
+							<div className={CSS.sessionSpeakerGrid}>
+								{ moderators.map( moderator => <AgendaSpeakerCard key={moderator.id} color={'white'} speaker={moderator}/> ) }
+							</div>
+							{
+								speakers.length ?
+									<p style={{ color: `var(--secondary)`, padding: `10px 0 0 0`}}>In conversation with</p>
+								: null
+							}
+						</div>
+					: null
+				}
+				<div className={CSS.sessionSpeakerGrid}>
+					{ speakers.map( speaker => <AgendaSpeakerCard key={speaker.id} color={'white'} speaker={speaker}/> ) }
+				</div>
+			</>
+		)
+
+		return (
+			<div className={CSS.sessionSpeakerGrid}>
+				{ speakerData.map( speaker => <AgendaSpeakerCard key={speaker.id} color={'white'} speaker={speaker}/> ) }
+			</div>
+		)
+	}
+
 
     // console.dir( getSessionsByTopic( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
 
     // console.log('sessions:', sessions)
-    console.log('speakers:', speakers)
+    // console.log('speakers:', speakers)
     // console.log('ordered:', orderedSpeakers)
 
 
@@ -291,7 +335,7 @@ export default function Page ({ sessions, speakers }) {
                                                 : null
                                             }
                                             
-                                            {/* { sortSpeakers(session.speakers) } */}
+                                            { sortSpeakers(session.speakers) }
                                         </div>
 
                                         </div>
@@ -516,12 +560,54 @@ export async function getStaticProps() {
 					"filters": {
                         "eventPeopleIds": [
                             "RXZlbnRQZW9wbGVfMzE4NDUxMDQ=",
+                            "RXZlbnRQZW9wbGVfMzIxNTYzMjc=",
+                            "RXZlbnRQZW9wbGVfMzIwMjkxNjI=",
                             "RXZlbnRQZW9wbGVfMzE4NTAyOTI=",
+                            "RXZlbnRQZW9wbGVfMzIxNTU2ODI=",
                             "RXZlbnRQZW9wbGVfMzE4NTA1NDQ=",
                             "RXZlbnRQZW9wbGVfMzE4NDkwMDM=",
                             "RXZlbnRQZW9wbGVfMzE4NDkxODM=",
-                            "RXZlbnRQZW9wbGVfMzE2OTE5Mjc=",
+                            "RXZlbnRQZW9wbGVfMzE5NDczNjg=",
+                            "RXZlbnRQZW9wbGVfMzE2OTE5Mjc="
+                        ]
+                    }
+				}
+			})
+		}
+	)
+	const speakers = await selectedSpeakerQuery.json()
+    
+    const selectedSpeakerQuery2 = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query eventPerson($eventId: ID!, $filters: [EventPersonFilter!]) {
+                        eventPerson(eventId: $eventId, filters: $filters) {
+                            nodes {
+                                id
+                                photoUrl
+                                firstName
+                                lastName
+                                jobTitle
+                                organization
+                                userId
+                            }
+                        }
+                    }
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE,
+					"filters": {
+                        "eventPeopleIds": [
                             "RXZlbnRQZW9wbGVfMzE2Nzg2MzY=",
+                            "RXZlbnRQZW9wbGVfMzIxNTIyNjQ=",
+                            "RXZlbnRQZW9wbGVfMzIxNjAyNzA=",
                             "RXZlbnRQZW9wbGVfMzE4NTcyMzg=",
                             "RXZlbnRQZW9wbGVfMzE3NDAzMzY="
                         ]
@@ -530,19 +616,37 @@ export async function getStaticProps() {
 			})
 		}
 	)
-	const speakers = await selectedSpeakerQuery.json()
+	const speakers2 = await selectedSpeakerQuery2.json()
+
+    // louis abboud: RXZlbnRQZW9wbGVfMzE4NDUxMDQ=
+    // Salma Aboul-ela: RXZlbnRQZW9wbGVfMzIxNTYzMjc=
+    // Jean-Baptiste Recher: RXZlbnRQZW9wbGVfMzIwMjkxNjI=
+    // daniel von barloewen: RXZlbnRQZW9wbGVfMzE4NTAyOTI=
+    // Richard Bursby: RXZlbnRQZW9wbGVfMzIxNTU2ODI=
+    // lara barrett: RXZlbnRQZW9wbGVfMzE4NTA1NDQ=
+    // riyan itan: RXZlbnRQZW9wbGVfMzE4NDkwMDM=
+    // ali manzoor: RXZlbnRQZW9wbGVfMzE4NDkxODM=
+    // Jaidev Menezes: RXZlbnRQZW9wbGVfMzE5NDczNjg=
+    // rico picenoni: RXZlbnRQZW9wbGVfMzE2OTE5Mjc=
+    // paul rands: RXZlbnRQZW9wbGVfMzE2Nzg2MzY=
+    // Moustafa Said: RXZlbnRQZW9wbGVfMzIxNTIyNjQ=
+    // Sudhin Siva: RXZlbnRQZW9wbGVfMzIxNjAyNzA=
+    // adrian strittmatter: RXZlbnRQZW9wbGVfMzE4NTcyMzg=
+    // jeff tisdall: RXZlbnRQZW9wbGVfMzE3NDAzMzY=
+
 	
 
 	// console.log('RESULT', result)
 	// console.log('TEST plannings', result.data.event.planningsPlaces)
 	// console.log('TEST sessions', result.data.plannings)
+	// console.log('SC speakers', speakers.data.eventPerson.nodes)
   
 
     if ( event.data ) return { 
         props: { 
             sessions: event.data.plannings,
 			locations: event.data.event.planningsPlaces,
-            speakers: speakers.data.eventPerson.nodes
+            speakers: [ ...speakers.data.eventPerson.nodes, ...speakers2.data.eventPerson.nodes]
         } 
     }
 
