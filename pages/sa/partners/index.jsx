@@ -11,9 +11,6 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import { Header } from '../../../fuselage/theme/2025/sa/common/header/header'
 import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
 
-import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
-
 import handleContentBlocks from "../../../lib/content-blocks-sa"
 import handleSeomaticMeta from '../../../lib/seomatic'
 
@@ -39,24 +36,26 @@ import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } fr
 
 
 
-function Partners({ seomatic, contentBlocks, partnerData }) {
+function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 
 
-	console.log('swapcard partner data:', partnerData)
+	console.log('swapcard partner data 2025:', partnerData2025)
+	// console.log('swapcard partner data 2024:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 
-	partnerData.exhibitors.forEach( ex => console.log( ex.typeLabel?.name))
+	// partnerData.exhibitors.forEach( ex => console.log( ex.typeLabel?.name))
+
+
 
 	// programatically build array of unique types pulled from exhibitor data
-
 	const allTypesArray = []
 	partnerData.exhibitors.forEach( obj => {
 		if ( obj.type && obj.typeLabel ) allTypesArray.push({id: obj.typeLabel.id, name: obj.type, size: ''})
 	})
-	console.log('types:', _.uniqBy(allTypesArray, obj => obj.id))
-
+	// console.log('types:', _.uniqBy(allTypesArray, obj => obj.id))
 	const typesArray = _.uniqBy(allTypesArray, obj => obj.id)
 
+	
 	
 
 	return (
@@ -68,10 +67,30 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
             </Head>
 
 			<Header compact shim />
-			<ThemeBg />
-			<ThemeFg />
 
 			
+			{/* <section className='block bg-default'>
+				<div className='container center formatted'>
+					<p className='fs-1 fw-600'>2025 Sponsors &amp; Partners</p>
+					<p><Link href="/sa/get-in-touch"><a className="button secondary">Become A Sponsor</a></Link></p>
+				</div>
+
+				<div className="container">
+					<PartnerLogoGrid>
+						{
+							partnerData2025 &&
+							_.orderBy(partnerData2025.exhibitors, 'name').map( partner => (
+								<a key={partner.id} href={`/sa/partners/${partner.id}`}>
+									<PartnerLogo 
+										hero={{ url: partner.logoUrl }} 
+										size={ 200 }
+									/>
+								</a>
+							))
+						}
+					</PartnerLogoGrid>	
+				</div>
+			</section> */}
 
 
 			<section className='block bg-default'>
@@ -94,7 +113,7 @@ function Partners({ seomatic, contentBlocks, partnerData }) {
 
 								let category = typesArray.find( obj => obj.id === type.id )
 
-								console.log(`GROUP: ${category.id} - ${category.name}`)
+								// console.log(`GROUP: ${category.id} - ${category.name}`)
 
 								let specialCategories = [
 									'RmllbGRWYWx1ZV8yMjM5NDE1NA==',
@@ -247,16 +266,54 @@ export async function getStaticProps() {
 			})
 		}
 	)
-
-	// console.log(swapcardData)
-	
 	const partnerData =  await swapcardData.json()
+
+
+	const swapcardData2025 = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query {
+						event(id: "${process.env.SWAPCARD_EVENT_ID_SA_2025}") {
+							exhibitorsTypes {
+								name
+								id
+								position
+							}
+						}
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2025}", page:1, pageSize: 200) {
+							id
+							name
+							logoUrl
+							type
+							typeLabel {
+								id
+								name
+							}
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2025,
+					"page": 1
+				}
+			})
+		}
+	)
+	const partnerData2025 =  await swapcardData2025.json()
 	
 	return {
 		props: { 
 			seomatic: cmsData.data.entry.seomatic,
 			contentBlocks: cmsData.data.entry.fhisContentBlocks,
-			partnerData: partnerData.data
+			partnerData: partnerData.data,
+			partnerData2025: partnerData2025.data
 		}
 	}
 }

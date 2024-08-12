@@ -174,7 +174,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
 
-	console.log('params',params)
+	// console.log('params',params)
 	
 	const result = await fetch(
 		"https://developer.swapcard.com/event-admin/graphql",
@@ -200,12 +200,11 @@ export async function getStaticProps({ params }) {
 					"eventId": process.env.SWAPCARD_EVENT_ID_SA,
 					"ids": [
                         params.id
-                      ]
+                    ]
 				}
 			})
 		}
 	)
-
 	const partner = await result.json()
 
 	return {
