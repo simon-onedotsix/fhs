@@ -12,6 +12,7 @@ import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 
 import { PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
+import { Button } from '../../../fuselage/theme/2024/world/components/button/button'
 
 import handleContentBlocks from "../../../lib/content-blocks"
 import handleSeomaticMeta from "../../../lib/seomatic"
@@ -75,6 +76,15 @@ function Partners({ seomatic, contentBlocks, partnerData, videoTestimonials }) {
 				<section className="block bg-default">
 					<div className="container columns-3 gap-md">
 						{ videoTestimonials.map( entry => <VideoTestimonialCard key={entry.id} entry={entry} /> ) }
+					</div>
+					<div className="container center">
+						<Button
+							href={'/world/video-testimonials'}
+							decal={`fs-5 fw-600`} 
+							theme={{ background: `var(--secondary-1)`, hover: `white`, color: `var(--primary)`}} 
+						>
+							More Testimonials
+						</Button>
 					</div>
 				</section>
 			} */}

@@ -553,6 +553,8 @@
 }
 
 .session {
+    container: session-container / inline-size;
+
     flex: 1;
     border-radius: calc(var(--default-radius) * 1);
     overflow: hidden;
@@ -575,8 +577,18 @@
     column-gap: .5rem;
     row-gap: .25rem;
 }
-@media(min-width:600px){
+
+@container session-container (width < 25rem){
+    .sessionHeader,
+    .sessionHeader .sessionTimings {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: .125rem
+    }
 }
+
+
+
 
 .sessionContent {
     padding: 1rem;
@@ -586,6 +598,9 @@
         padding: 1.5rem;
     }
 }
+
+
+
 
 .sessionTitle {
     max-width: 50rem;

@@ -64,6 +64,33 @@ const FILTER_TRACKS = [
 
 
 
+// custom stream order
+
+let PRIORITISED_STREAMS = [
+    {
+        "id": "RmllbGRWYWx1ZV8xOTEwNTI2NA==",
+        "name": "Summit Stage"
+    },
+    {
+        "id": "RmllbGRWYWx1ZV8xOTEwNTI2NQ==",
+        "name": "Future Stage"
+    },
+	{
+		"id": "RmllbGRWYWx1ZV8yMjQ1NzUyOA==",
+		"name": "Innovation Stage"
+	},
+    {
+		"id": "RmllbGRWYWx1ZV8yMDYxOTUyNA==",
+        "name": "Exhibition Stage"
+    },
+	{
+		"id": "RmllbGRWYWx1ZV8xOTgzMTg2Nw==",
+		"name": "Workshops (Marjan)"
+	},
+]
+
+// end stream order
+
 
 
 export default function Agenda ({ sessions, locations }) {
@@ -343,28 +370,30 @@ export default function Agenda ({ sessions, locations }) {
 		})
 
 
-		if ( moderators.length && speakers.length ) return (
-			<>
-				{
-					moderators.length ?
-						<div>
-							<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
-							<div className={CSS.sessionSpeakerGrid}>
-								{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
+		if ( moderators.length && speakers.length ) { 
+			return (
+				<>
+					{
+						moderators.length ?
+							<div>
+								<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
+								<div className={CSS.sessionSpeakerGrid}>
+									{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
+								</div>
+								{
+									speakers.length ?
+										<p style={{ color: `var(--accent)`, padding: `10px 0 0 0`}}>In conversation with</p>
+									: null
+								}
 							</div>
-							{
-								speakers.length ?
-									<p style={{ color: `var(--accent)`, padding: `10px 0 0 0`}}>In conversation with</p>
-								: null
-							}
-						</div>
-					: null
-				}
-				<div className={CSS.sessionSpeakerGrid}>
-					{ speakers.map( speaker => renderSpeakerCard(speaker) ) }
-				</div>
-			</>
-		)
+						: null
+					}
+					<div className={CSS.sessionSpeakerGrid}>
+						{ speakers.map( speaker => renderSpeakerCard(speaker) ) }
+					</div>
+				</>
+			)
+		}
 
 		return (
 			<div className={CSS.sessionSpeakerGrid}>
@@ -447,7 +476,7 @@ export default function Agenda ({ sessions, locations }) {
 				if ( session.fields.find( (field) => field.definition.name === 'Location' ) ) {
 
 					let location = session.fields.find( (field) => field.definition.name === 'Location' )
-					session.priority = locationsData.map( i => i.id ).indexOf(location?.id)
+					session.priority = locationsData.map( i => i.id ).indexOf(location?.id)					
 
 					sortedStreams.push(session)
 
@@ -500,7 +529,7 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-	console.log('sessions:', sessions)
+	// console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
@@ -747,7 +776,7 @@ export default function Agenda ({ sessions, locations }) {
 
 													<div className={CSS.sessions}>
 														{
-															prioriseStreams( slot.sessions, locations ).map( (session, index) => {
+															prioriseStreams( slot.sessions, PRIORITISED_STREAMS ).map( (session, index) => {
 																return (
 																	<div key={index} className={CSS.sessionsWrapper}>
 																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
@@ -756,9 +785,14 @@ export default function Agenda ({ sessions, locations }) {
 																			<div className={`${CSS.sessionHeader} fw-500 c-white bg-medium`}>
 																				{
 																					session.beginsAt && session.endsAt ?
-																						<div>
-																							{format( new Date(session.beginsAt), "HH:mm" )} - { format( new Date(session.endsAt), "HH:mm" )}
-																							&ensp;<StopwatchIcon fill={'var(--accent)'}/> { convertSeconds(parseInt(new Date(session.endsAt).getTime() - new Date(session.beginsAt).getTime())/1000) }
+																						<div className={CSS.sessionTimings}>
+																							<span>
+																								{format( new Date(session.beginsAt), "HH:mm" )} - { format( new Date(session.endsAt), "HH:mm" )}&ensp;
+																							</span>
+
+																							<span>
+																								<StopwatchIcon fill={'var(--accent)'}/> { convertSeconds(parseInt(new Date(session.endsAt).getTime() - new Date(session.beginsAt).getTime())/1000) }
+																							</span>
 																						</div>
 																					: null
 																				}
@@ -776,6 +810,7 @@ export default function Agenda ({ sessions, locations }) {
 																			<div className={`${CSS.sessionContent} | columns-1 gap-xs`}>
 
 																				{/* <small style={{ color: 'orange'}}>{session.id}</small> */}
+																				{/* <small style={{ color: 'orange'}}>{session.priority}</small> */}
 																				
 																				<p className={`${CSS.sessionTitle} | fs-5 fw-600 lh-1 c-white caps`}>
 																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
