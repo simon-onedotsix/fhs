@@ -97,6 +97,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                                     link.hyperlink === '/world/brf' ||
                                                                     link.hyperlink === '/world/unto' ||
                                                                     link.hyperlink === '/world/sustainable-cook-off' ||
+                                                                    link.hyperlink === '/world/tomorrows-showcase' ||
                                                                     link.hyperlink === '/world/country-pavilions'
                                                                 ) showFlash = true
                 
