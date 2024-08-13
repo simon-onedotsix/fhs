@@ -31,7 +31,7 @@ function Speakers({ seomatic, speakers, craftCmsProfiles }) {
 	// customise order (VIP speakers to top of list)
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
 		(speaker => speaker.firstName == 'His Excellency Abdulla bin Touq Al' && speaker.lastName === 'Marri' ? 0 : 1),
-		(speaker => speaker.firstName == 'Rizwan' && speaker.lastName === 'Kassim' ? 0 : 1),
+		(speaker => speaker.firstName == 'His Excellency Issam AbdulRahim' && speaker.lastName === 'Kazim' ? 0 : 1),
 		(speaker => speaker.firstName == 'Sébastien' && speaker.lastName === 'Bazin' ? 0 : 1),
 		(speaker => speaker.firstName == 'Pier Paolo' && speaker.lastName === 'Righi' ? 0 : 1),
 		(speaker => speaker.firstName == 'Paul' && speaker.lastName === 'Griffiths' ? 0 : 1),
