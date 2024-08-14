@@ -39,14 +39,12 @@ import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } fr
 function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 
 
-
 	// LEGACY !!!
 	// programatically build array of unique types pulled from exhibitor data
 	const allTypesArray = []
 	partnerData.exhibitors.forEach( obj => {
 		if ( obj.type && obj.typeLabel ) allTypesArray.push({id: obj.typeLabel.id, name: obj.type, size: ''})
 	})
-	// console.log('types:', _.uniqBy(allTypesArray, obj => obj.id))
 	const typesArray = _.uniqBy(allTypesArray, obj => obj.id)
 	// END LEGACY !!!
 
@@ -58,11 +56,10 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0].id, name: obj.fields[0].translations[0].value, size: ''})
 	})
 	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
-	// console.log('categories:', categoriesArray)
 
+	// 2025 custom ordering
 	const orderedCategories = []
 	categoriesArray.forEach( category => {
-		// console.log('cat:', category)
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1Nw==') orderedCategories.push({ ...category, priority: 1 })
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg2MA==') orderedCategories.push({ ...category, priority: 2 })
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1OA==') orderedCategories.push({ ...category, priority: 3 })
@@ -70,14 +67,14 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyMw==') orderedCategories.push({ ...category, priority: 5 })
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 6 })
 	})
-	// console.log('orderedCategories:', orderedCategories)
-
 
 
 	// console.log('swapcard partner data 2025:', partnerData2025)
 	// console.log('swapcard partner data 2024:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// partnerData.exhibitors.forEach( ex => console.log( ex.typeLabel?.name))
+	// console.log('orderedCategories:', orderedCategories)
+	// console.log('categories:', categoriesArray)
 
 
 	return (
@@ -121,7 +118,6 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 														hero={{ url: partner.logoUrl }} 
 														size={ category && category.size }
 													/>
-													<p className='c-primary'>{ partner.name }</p>
 												</a>
 											))
 										}
