@@ -97,7 +97,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                                     link.hyperlink === '/world/brf' ||
                                                                     link.hyperlink === '/world/unto' ||
                                                                     link.hyperlink === '/world/sustainable-cook-off' ||
-                                                                    link.hyperlink === '/world/tomorrows-showcase' ||
+                                                                    link.hyperlink === '/world/the-big-project-pitch' ||
                                                                     link.hyperlink === '/world/country-pavilions'
                                                                 ) showFlash = true
                 
@@ -114,7 +114,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                                             >
                                                                                 {
                                                                                     showFlash &&
-                                                                                    <span className={CSS.label}>New for 2024!</span>
+                                                                                    <span className={CSS.label}>New!</span>
                                                                                 }
                                                                                 { link.label }
                                                                             </a>
@@ -167,17 +167,19 @@ export const MainMenu = ({ otherEvents }) => {
                         <p className="fs-4 fw-600 c-accent">Our Other Events</p>
                         {
                             otherEvents.length &&
-                            otherEvents.map( event => (
-                                <p key={event.id} className="mt-xs">
-                                    <ArrowButton 
-                                        href={ event.url } 
-                                        theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
-                                        target={ event.target && '_blank' }
-                                    >
-                                        { event.title }
-                                    </ArrowButton>
-                                </p>
-                            ))
+                            otherEvents.map( event => {
+                                if ( event.id != 1 ) return (
+                                    <p key={event.id} className="mt-xs">
+                                        <ArrowButton 
+                                            href={ event.url } 
+                                            theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
+                                            target={ event.target && '_blank' }
+                                        >
+                                            { event.title }
+                                        </ArrowButton>
+                                    </p>
+                                )
+                            })
                         }
                     </section>
                     

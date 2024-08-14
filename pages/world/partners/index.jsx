@@ -71,7 +71,7 @@ function Partners({ seomatic, contentBlocks, partnerData, videoTestimonials }) {
 			<Header compact/>
 
 
-			{/* {
+			{
 				videoTestimonials &&
 				<section className="block bg-default">
 					<div className="container columns-3 gap-md">
@@ -87,7 +87,7 @@ function Partners({ seomatic, contentBlocks, partnerData, videoTestimonials }) {
 						</Button>
 					</div>
 				</section>
-			} */}
+			}
 
 
 			{/* PARTNERS */}
@@ -176,7 +176,7 @@ export async function getStaticProps() {
 					}
 					${QuerySEO}
 				}
-				entries(site: "${process.env.SITE_HANDLE_AE}", section: "videoTestimonials") {
+				entries(site: "${process.env.SITE_HANDLE_AE}", section: "videoTestimonials", limit: 3) {
 					... on videoTestimonials_videoTestimonial_Entry {
                         id
                         slug

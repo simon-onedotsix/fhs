@@ -17,7 +17,7 @@ export default function LeadWall () {
 
 
     return (
-        <>
+        <div className="bg-theme">
 
             <Header compact shim />
 
@@ -65,7 +65,7 @@ export default function LeadWall () {
 
             <Footer />
             {/* <LenisScroller /> */}
-        </>
+        </div>
     )
 
 }

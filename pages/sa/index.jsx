@@ -137,7 +137,7 @@ export default function Home ({ globals, entry, seomatic, contentBlocks, partner
     let y = useTransform( scrollYProgress, [0, 1], ["-15%", "5%"])
 
     return (
-        <>
+        <div className="bg-theme">
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
 				{ handleSeomaticMeta( seomatic ) }
@@ -228,7 +228,7 @@ export default function Home ({ globals, entry, seomatic, contentBlocks, partner
                 { modalContent } 
             </PopupOverlay>
 
-        </>
+        </div>
     )
 }
 Home.theme = 'sa-2025'

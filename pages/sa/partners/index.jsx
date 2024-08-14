@@ -39,14 +39,8 @@ import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } fr
 function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 
 
-	console.log('swapcard partner data 2025:', partnerData2025)
-	// console.log('swapcard partner data 2024:', partnerData)
-	// console.log('content-blocks:', contentBlocks)
 
-	// partnerData.exhibitors.forEach( ex => console.log( ex.typeLabel?.name))
-
-
-
+	// LEGACY !!!
 	// programatically build array of unique types pulled from exhibitor data
 	const allTypesArray = []
 	partnerData.exhibitors.forEach( obj => {
@@ -54,12 +48,29 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 	})
 	// console.log('types:', _.uniqBy(allTypesArray, obj => obj.id))
 	const typesArray = _.uniqBy(allTypesArray, obj => obj.id)
+	// END LEGACY !!!
 
 	
-	
+	// 2025 (switched to SC custom field)
+	// programatically build array of unique types pulled from exhibitor data
+	const allCategoriesArray = []
+	partnerData2025.exhibitors.forEach( obj => {
+		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0].id, name: obj.fields[0].translations[0].value, size: ''})
+	})
+	// console.log('types:', _.uniqBy(allCategoriesArray, obj => obj.id))
+	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
+
+
+
+
+	// console.log('swapcard partner data 2025:', partnerData2025)
+	// console.log('swapcard partner data 2024:', partnerData)
+	// console.log('content-blocks:', contentBlocks)
+	// partnerData.exhibitors.forEach( ex => console.log( ex.typeLabel?.name))
+
 
 	return (
-		<>
+		<div className="bg-theme">
 
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
@@ -68,36 +79,83 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 
 			<Header compact shim />
 
-			
+
+			{/* 2025 partners */}
+
 			{/* <section className='block bg-default'>
-				<div className='container center formatted'>
-					<p className='fs-1 fw-600'>2025 Sponsors &amp; Partners</p>
-					<p><Link href="/sa/get-in-touch"><a className="button secondary">Become A Sponsor</a></Link></p>
-				</div>
-
-				<div className="container">
-					<PartnerLogoGrid>
-						{
-							partnerData2025 &&
-							_.orderBy(partnerData2025.exhibitors, 'name').map( partner => (
-								<a key={partner.id} href={`/sa/partners/${partner.id}`}>
-									<PartnerLogo 
-										hero={{ url: partner.logoUrl }} 
-										size={ 200 }
-									/>
-								</a>
-							))
-						}
-					</PartnerLogoGrid>	
-				</div>
-			</section> */}
-
-
-			<section className='block bg-default'>
 
 				<div className='container center formatted'>
 					<p className='fs-1 fw-600'>2024 Sponsors &amp; Partners</p>
 					<p><Link href="/sa/get-in-touch"><a className="button secondary">Become A Sponsor</a></Link></p>
+				</div>
+
+				<PartnerCategoryGrid>
+					{
+						partnerData2025 &&
+						categoriesArray.map( category => {
+							const group = partnerData2025.exhibitors.filter( partner => {
+								if (partner.fields[0].id === category.id ) return partner
+							})
+							console.log('group:', group)
+
+							return (
+								<PartnerCategory key={category.id}>
+
+									<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category && category.name }</h4>
+									<PartnerLogoGrid>
+										{
+											_.orderBy(group, 'name').map(partner => (
+												<a key={partner.id} href={`/sa/partners/${partner.id}`}>
+													<PartnerLogo 
+														hero={{ url: partner.logoUrl }} 
+														size={ category && category.size }
+													/>
+													<p className='c-primary'>{ partner.name }</p>
+												</a>
+											))
+										}
+									</PartnerLogoGrid>
+									
+								</PartnerCategory>
+							)
+							
+						})
+					}
+				</PartnerCategoryGrid>
+				
+			</section> */}
+
+
+			<QuoteGrid>
+				<Quote 
+					quote={`“Great quality content and senior influential leadership under one roof!”`}
+					name={`Imran Changezi`}
+					title={`Executive Director Development`}
+					company={`Hospitality, Diriyah Company`}
+				/>
+				<Quote 
+					quote={`“Great insight into the Saudi Arabia tourism business development and valuable contacts. A very well-organised conference with ample opportunity to network.”`}
+					name={`Elisabeth Ixmeier`}
+					title={`Co-Founder and Managing Partner`}
+					company={`Healing Hotels of the World`}
+				/>
+				<Quote 
+					quote={`“Very informative, relevant to our business, engaging and necessary! It has become a must do.”`}
+					name={`Najee Syriani`}
+					title={`Corporate Vice President - Projects`}
+					company={`Rotana`}
+				/>
+			</QuoteGrid>
+
+
+
+			{/* LEGACY !!! – 2024 content */}
+
+			<section className='block bg-medium'>
+
+				<div className='container center formatted'>
+					<p className='fs-1 fw-600'>2024 Sponsors &amp; Partners</p>
+					{/* <p><Link href="/sa/get-in-touch"><a className="button secondary">Become A Sponsor</a></Link></p> */}
 				</div>
 
 				<PartnerCategoryGrid>
@@ -148,36 +206,13 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 				
 			</section>
 
+			{/* END LEGACY !!! – 2024 content */}
 
+			
 
-			<QuoteGrid>
-				<Quote 
-					quote={`“Great quality content and senior influential leadership under one roof!”`}
-					name={`Imran Changezi`}
-					title={`Executive Director Development`}
-					company={`Hospitality, Diriyah Company`}
-				/>
-				<Quote 
-					quote={`“Great insight into the Saudi Arabia tourism business development and valuable contacts. A very well-organised conference with ample opportunity to network.”`}
-					name={`Elisabeth Ixmeier`}
-					title={`Co-Founder and Managing Partner`}
-					company={`Healing Hotels of the World`}
-				/>
-				<Quote 
-					quote={`“Very informative, relevant to our business, engaging and necessary! It has become a must do.”`}
-					name={`Najee Syriani`}
-					title={`Corporate Vice President - Projects`}
-					company={`Rotana`}
-				/>
-			</QuoteGrid>
-
-
-
-			<section className="block pt-0">
+			<section className="block bg-default">
 				<div className="container flex jc-center flex-wrap gap-xs">
-
 					<Link href="/sa/2023/partners"><a className="button secondary">2023 Sponsors & Partners</a></Link> <Link href="/sa/get-in-touch"><a className="button secondary">Get in Touch</a></Link>
-
 				</div>
 			</section>
 
@@ -188,7 +223,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 
 			<Footer />
 			<LenisScroller />
-		</>
+		</div>
 	)
 }
 
@@ -280,21 +315,22 @@ export async function getStaticProps() {
 			body: JSON.stringify({
 				query: `
 					query {
-						event(id: "${process.env.SWAPCARD_EVENT_ID_SA_2025}") {
-							exhibitorsTypes {
-								name
-								id
-								position
-							}
-						}
 						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2025}", page:1, pageSize: 200) {
 							id
 							name
 							logoUrl
-							type
-							typeLabel {
-								id
-								name
+							fields {
+								... on SelectField {
+									id
+									value
+									definition {
+										id
+										name
+									}
+									translations {
+										value
+									}
+								}
 							}
 						}
 					}

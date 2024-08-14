@@ -119,7 +119,7 @@
 [data-theme='sa-2025'] .bg-theme { 
     background-color: var(--secondary-dark);
     background-image: url('/assets/theme/sa-2025/fhs-pattern-green.png');
-    background-size: 100%;
+    background-size: 50%;
     background-position: top center;
 
     @media(max-width:600px) {
@@ -233,13 +233,18 @@
 [data-theme='sa-2025'] .bg-default .formatted h6 {
     color: var(--accent);
 }
-[data-theme='sa-2025'] .bg-default .formatted .button {
+[data-theme='sa-2025'] .bg-default .formatted .button,
+[data-theme='sa-2025'] .bg-default .button {
     background-color: var(--accent);
     border-color: var(--accent);
 }
-[data-theme='sa-2025'] .bg-default .formatted .button:hover {
+[data-theme='sa-2025'] .bg-default .formatted .button:hover,
+[data-theme='sa-2025'] .bg-default .button:hover {
     background-color: white;
     border-color: white;
+}
+[data-theme='sa-2025'] .bg-default .button {
+    color: var(--secondary);
 }
 
 /* white */

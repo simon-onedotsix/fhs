@@ -26,7 +26,7 @@ export default function Profile ({ profile }) {
     // console.log('profile data:', profile)
 
     return (
-        <>
+        <div className="bg-theme">
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
             </Head>
@@ -91,7 +91,7 @@ export default function Profile ({ profile }) {
 
             <Footer />
             <LenisScroller />
-		</>
+		</div>
     )
 }
 

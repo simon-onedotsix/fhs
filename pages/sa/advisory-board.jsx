@@ -25,7 +25,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 	// console.log('cms profile data:', craftCmsProfiles)
 
 	return (
-		<>
+		<div className="bg-theme">
 
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
@@ -62,7 +62,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 			<Footer />
 			<LenisScroller />
 
-		</>
+		</div>
 	)
 }
 

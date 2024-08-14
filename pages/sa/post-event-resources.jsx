@@ -85,7 +85,7 @@ export default function PostEvent ({ cmsEntryData }) {
 
 
     return (
-        <>
+        <div className="bg-theme">
             <ThemeBg />
             <Header compact shim />
 
@@ -142,7 +142,7 @@ export default function PostEvent ({ cmsEntryData }) {
 
             <Footer />
             {/* <LenisScroller /> */}
-        </>
+        </div>
     )
 
 }
