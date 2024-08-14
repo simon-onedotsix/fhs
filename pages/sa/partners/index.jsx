@@ -57,9 +57,20 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 	partnerData2025.exhibitors.forEach( obj => {
 		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0].id, name: obj.fields[0].translations[0].value, size: ''})
 	})
-	// console.log('types:', _.uniqBy(allCategoriesArray, obj => obj.id))
 	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
+	// console.log('categories:', categoriesArray)
 
+	const orderedCategories = []
+	categoriesArray.forEach( category => {
+		// console.log('cat:', category)
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1Nw==') orderedCategories.push({ ...category, priority: 1 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg2MA==') orderedCategories.push({ ...category, priority: 2 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1OA==') orderedCategories.push({ ...category, priority: 3 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNDQ3NDE0MA==') orderedCategories.push({ ...category, priority: 4 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyMw==') orderedCategories.push({ ...category, priority: 5 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 6 })
+	})
+	// console.log('orderedCategories:', orderedCategories)
 
 
 
@@ -82,7 +93,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 
 			{/* 2025 partners */}
 
-			{/* <section className='block bg-default'>
+			<section className='block bg-default'>
 
 				<div className='container center formatted'>
 					<p className='fs-1 fw-600'>2024 Sponsors &amp; Partners</p>
@@ -92,11 +103,11 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 				<PartnerCategoryGrid>
 					{
 						partnerData2025 &&
-						categoriesArray.map( category => {
+						_.orderBy(orderedCategories, 'priority').map( category => {
 							const group = partnerData2025.exhibitors.filter( partner => {
 								if (partner.fields[0].id === category.id ) return partner
 							})
-							console.log('group:', group)
+							// console.log('group:', group)
 
 							return (
 								<PartnerCategory key={category.id}>
@@ -123,7 +134,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 					}
 				</PartnerCategoryGrid>
 				
-			</section> */}
+			</section>
 
 
 			<QuoteGrid>
