@@ -98,7 +98,8 @@ export const MainMenu = ({ otherEvents }) => {
                                                                     link.hyperlink === '/world/unto' ||
                                                                     link.hyperlink === '/world/sustainable-cook-off' ||
                                                                     link.hyperlink === '/world/the-big-project-pitch' ||
-                                                                    link.hyperlink === '/world/country-pavilions'
+                                                                    link.hyperlink === '/world/country-pavilions' ||
+                                                                    link.hyperlink === '/world/future-leader-award'
                                                                 ) showFlash = true
                 
                                                                 if (link.hyperlink) return (
