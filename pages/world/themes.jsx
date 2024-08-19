@@ -140,7 +140,7 @@ export const ThemesExploreArrow = () => {
                         <clipPath id="_clip1">
                             <rect x="0" y="304.571" width="42.117" height="45.771"/>
                         </clipPath>
-                        <g clip-path="url(#_clip1)">
+                        <g clipPath="url(#_clip1)">
                             <g transform="matrix(-1,-1.34877e-16,1.22465e-16,-1.10136,2598.53,1324.97)">
                                 <path vectorEffect="non-scaling-stroke" d="M2577.47,884.939L2597.97,925.943L2556.97,925.943L2577.47,884.939Z" style={{ fill:'none', stroke:'rgb(226,53,66)', strokeWidth: 1 }}/>
                             </g>
