@@ -11,10 +11,10 @@
 .fs-base {
     font-size: var(--default-font-size, 1rem);
 }
-.fs-6, .h6 {
+.fs-6, .h6, .fs-6 > * {
     font-size: calc(var(--default-font-size, 1rem) * 1.125);
 }
-.fs-5, .h5 {
+.fs-5, .h5, .fs-5 > * {
     font-size: calc(var(--default-font-size, 1rem) * 1.25);
 }
 .fs-4, .h4 {

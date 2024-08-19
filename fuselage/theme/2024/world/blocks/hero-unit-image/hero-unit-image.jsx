@@ -12,7 +12,7 @@ export const HeroUnitImage = ({ children, imageUrl }) => {
     let y = useTransform( scroll.scrollY, [0, 1000], ["0%", "30vh"])
 
     return (
-        <section>
+        <section style={{ position: 'relative', zIndex: 1 }}>
                 
             <motion.div className={CSS.image} style={{ y }}>
 
