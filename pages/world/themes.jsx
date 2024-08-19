@@ -101,7 +101,7 @@ export default function Themes () {
             </HeroUnitImage>
 
             <ThemesLayout>
-                { THEMES_DATA.map( theme => <ThemeCard imageUrl={theme.imageUrl} iconUrl={theme.iconUrl} title={theme.title} body={theme.body} />) }
+                { THEMES_DATA.map( (theme, index) => <ThemeCard key={index} imageUrl={theme.imageUrl} iconUrl={theme.iconUrl} title={theme.title} body={theme.body} />) }
             </ThemesLayout>
 
 
