@@ -152,7 +152,6 @@ export const ThemesExploreArrow = () => {
     )
 }
 
-
 export const ThemeCard = ({ iconUrl, imageUrl, title, body }) => {
     return (
         <div className={CSS.card}>
