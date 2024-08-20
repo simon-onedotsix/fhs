@@ -136,7 +136,7 @@ export default function Page ({ sessions, speakers }) {
     // console.log('ordered:', orderedSpeakers)
     
     // console.dir( getSessionsByTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
-    // console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
+    console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
 
 
     return (
@@ -221,7 +221,7 @@ export default function Page ({ sessions, speakers }) {
             {/* FEATURED SPEAKERS */}
 
             {
-                speakers &&
+                sessions &&
                 <SpeakerCarousel 
                     heading={`Featured Speakers`} 
                     text={null}
@@ -231,7 +231,7 @@ export default function Page ({ sessions, speakers }) {
                     anchorId={null}
                 >
                     {
-                        getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" )?.map( profile => (
+                        getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ).map( profile => (
                             <Pop key={profile.id}>
                                 <SpeakerCard
                                     url={null}
