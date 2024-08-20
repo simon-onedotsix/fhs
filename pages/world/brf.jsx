@@ -38,7 +38,7 @@ export default function Page ({ sessions, speakers }) {
 
     
 
-    const getSessionsByTopic = ( sessionData, topicID ) => {
+    const getSessionsByTopicID = ( sessionData, topicID ) => {
 
         if ( !sessionData || !topicID ) return
 		
@@ -118,11 +118,25 @@ export default function Page ({ sessions, speakers }) {
 	}
 
 
-    // console.dir( getSessionsByTopic( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
+    const getSpeakersBySessionTopicID = ( sessionData, topicID ) => {
+        const speakers = []
+        getSessionsByTopicID( sessionData, topicID ).map( session => {
+            if ( session.speakers?.length ) {
+                session.speakers.forEach( speaker => speakers.push(speaker) )
+            }
+        })
 
+        let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
+        return _.uniqBy(orderedSpeakers, 'id')
+    }
+
+    
     // console.log('sessions:', sessions)
     // console.log('speakers:', speakers)
     // console.log('ordered:', orderedSpeakers)
+    
+    // console.dir( getSessionsByTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
+    // console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
 
 
     return (
@@ -217,7 +231,7 @@ export default function Page ({ sessions, speakers }) {
                     anchorId={null}
                 >
                     {
-                        orderedSpeakers?.map( profile => (
+                        getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" )?.map( profile => (
                             <Pop key={profile.id}>
                                 <SpeakerCard
                                     url={null}
@@ -283,7 +297,7 @@ export default function Page ({ sessions, speakers }) {
                     
                     {
                         sessions &&
-                        getSessionsByTopic( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ).map( session => (
+                        getSessionsByTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ).map( session => (
 
                             <Pop key={session.id}>
                                 <div className={CSS.sessionsWrapper}>
@@ -531,92 +545,92 @@ export async function getStaticProps() {
 	const event = await eventQuery.json()
 	
 
-    const selectedSpeakerQuery = await fetch(
-		"https://developer.swapcard.com/event-admin/graphql",
-		{
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				"Authorization": process.env.SWAPCARD_AUTH_KEY
-			},
-			body: JSON.stringify({
-				query: `
-					query eventPerson($eventId: ID!, $filters: [EventPersonFilter!]) {
-                        eventPerson(eventId: $eventId, filters: $filters) {
-                            nodes {
-                                id
-                                photoUrl
-                                firstName
-                                lastName
-                                jobTitle
-                                organization
-                                userId
-                            }
-                        }
-                    }
-				`,
-				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AE,
-					"filters": {
-                        "eventPeopleIds": [
-                            "RXZlbnRQZW9wbGVfMzE4NDUxMDQ=",
-                            "RXZlbnRQZW9wbGVfMzIxNTYzMjc=",
-                            "RXZlbnRQZW9wbGVfMzIwMjkxNjI=",
-                            "RXZlbnRQZW9wbGVfMzE4NTAyOTI=",
-                            "RXZlbnRQZW9wbGVfMzIxNTU2ODI=",
-                            "RXZlbnRQZW9wbGVfMzE4NTA1NDQ=",
-                            "RXZlbnRQZW9wbGVfMzE4NDkwMDM=",
-                            "RXZlbnRQZW9wbGVfMzE4NDkxODM=",
-                            "RXZlbnRQZW9wbGVfMzE5NDczNjg=",
-                            "RXZlbnRQZW9wbGVfMzE2OTE5Mjc="
-                        ]
-                    }
-				}
-			})
-		}
-	)
-	const speakers = await selectedSpeakerQuery.json()
+    // const selectedSpeakerQuery = await fetch(
+	// 	"https://developer.swapcard.com/event-admin/graphql",
+	// 	{
+	// 		method: "POST",
+	// 		headers: {
+	// 			"Content-Type": "application/json",
+	// 			"Authorization": process.env.SWAPCARD_AUTH_KEY
+	// 		},
+	// 		body: JSON.stringify({
+	// 			query: `
+	// 				query eventPerson($eventId: ID!, $filters: [EventPersonFilter!]) {
+    //                     eventPerson(eventId: $eventId, filters: $filters) {
+    //                         nodes {
+    //                             id
+    //                             photoUrl
+    //                             firstName
+    //                             lastName
+    //                             jobTitle
+    //                             organization
+    //                             userId
+    //                         }
+    //                     }
+    //                 }
+	// 			`,
+	// 			variables: {
+	// 				"eventId": process.env.SWAPCARD_EVENT_ID_AE,
+	// 				"filters": {
+    //                     "eventPeopleIds": [
+    //                         "RXZlbnRQZW9wbGVfMzE4NDUxMDQ=",
+    //                         "RXZlbnRQZW9wbGVfMzIxNTYzMjc=",
+    //                         "RXZlbnRQZW9wbGVfMzIwMjkxNjI=",
+    //                         "RXZlbnRQZW9wbGVfMzE4NTAyOTI=",
+    //                         "RXZlbnRQZW9wbGVfMzIxNTU2ODI=",
+    //                         "RXZlbnRQZW9wbGVfMzE4NTA1NDQ=",
+    //                         "RXZlbnRQZW9wbGVfMzE4NDkwMDM=",
+    //                         "RXZlbnRQZW9wbGVfMzE4NDkxODM=",
+    //                         "RXZlbnRQZW9wbGVfMzE5NDczNjg=",
+    //                         "RXZlbnRQZW9wbGVfMzE2OTE5Mjc="
+    //                     ]
+    //                 }
+	// 			}
+	// 		})
+	// 	}
+	// )
+	// const speakers = await selectedSpeakerQuery.json()
     
-    const selectedSpeakerQuery2 = await fetch(
-		"https://developer.swapcard.com/event-admin/graphql",
-		{
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				"Authorization": process.env.SWAPCARD_AUTH_KEY
-			},
-			body: JSON.stringify({
-				query: `
-					query eventPerson($eventId: ID!, $filters: [EventPersonFilter!]) {
-                        eventPerson(eventId: $eventId, filters: $filters) {
-                            nodes {
-                                id
-                                photoUrl
-                                firstName
-                                lastName
-                                jobTitle
-                                organization
-                                userId
-                            }
-                        }
-                    }
-				`,
-				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AE,
-					"filters": {
-                        "eventPeopleIds": [
-                            "RXZlbnRQZW9wbGVfMzE2Nzg2MzY=",
-                            "RXZlbnRQZW9wbGVfMzIxNTIyNjQ=",
-                            "RXZlbnRQZW9wbGVfMzIxNjAyNzA=",
-                            "RXZlbnRQZW9wbGVfMzE4NTcyMzg=",
-                            "RXZlbnRQZW9wbGVfMzE3NDAzMzY="
-                        ]
-                    }
-				}
-			})
-		}
-	)
-	const speakers2 = await selectedSpeakerQuery2.json()
+    // const selectedSpeakerQuery2 = await fetch(
+	// 	"https://developer.swapcard.com/event-admin/graphql",
+	// 	{
+	// 		method: "POST",
+	// 		headers: {
+	// 			"Content-Type": "application/json",
+	// 			"Authorization": process.env.SWAPCARD_AUTH_KEY
+	// 		},
+	// 		body: JSON.stringify({
+	// 			query: `
+	// 				query eventPerson($eventId: ID!, $filters: [EventPersonFilter!]) {
+    //                     eventPerson(eventId: $eventId, filters: $filters) {
+    //                         nodes {
+    //                             id
+    //                             photoUrl
+    //                             firstName
+    //                             lastName
+    //                             jobTitle
+    //                             organization
+    //                             userId
+    //                         }
+    //                     }
+    //                 }
+	// 			`,
+	// 			variables: {
+	// 				"eventId": process.env.SWAPCARD_EVENT_ID_AE,
+	// 				"filters": {
+    //                     "eventPeopleIds": [
+    //                         "RXZlbnRQZW9wbGVfMzE2Nzg2MzY=",
+    //                         "RXZlbnRQZW9wbGVfMzIxNTIyNjQ=",
+    //                         "RXZlbnRQZW9wbGVfMzIxNjAyNzA=",
+    //                         "RXZlbnRQZW9wbGVfMzE4NTcyMzg=",
+    //                         "RXZlbnRQZW9wbGVfMzE3NDAzMzY="
+    //                     ]
+    //                 }
+	// 			}
+	// 		})
+	// 	}
+	// )
+	// const speakers2 = await selectedSpeakerQuery2.json()
 
     // louis abboud: RXZlbnRQZW9wbGVfMzE4NDUxMDQ=
     // Salma Aboul-ela: RXZlbnRQZW9wbGVfMzIxNTYzMjc=
@@ -646,7 +660,7 @@ export async function getStaticProps() {
         props: { 
             sessions: event.data.plannings,
 			locations: event.data.event.planningsPlaces,
-            speakers: [ ...speakers.data.eventPerson.nodes, ...speakers2.data.eventPerson.nodes]
+            // speakers: [ ...speakers.data.eventPerson.nodes, ...speakers2.data.eventPerson.nodes]
         } 
     }
 
