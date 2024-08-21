@@ -71,9 +71,8 @@ export default function Page ({ sessions, speakers }) {
 	}
 
     // sort speakers by lastName
-	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
+	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") ], ['asc'])
 	
-
 
     const sortSpeakers = ( speakerData ) => {
 
@@ -130,13 +129,31 @@ export default function Page ({ sessions, speakers }) {
         return _.uniqBy(orderedSpeakers, 'id')
     }
 
+
+    const prioritiseSpeakers = ( speakerData, prioritySpeakersArray ) => {
+        let customOrderedSpeakers = _.sortBy( speakerData, prioritySpeakersArray )
+        // console.log('prioritisedSpeakers:', customOrderedSpeakers)
+        return customOrderedSpeakers
+    }
+
+
+    // prioritise speakers
+	let prioritySpeakersArray = [
+		(speaker => speaker.firstName == 'Pier Paolo' && speaker.lastName === 'Righi' ? 0 : 1),
+		(speaker => speaker.firstName == 'Charlie' && speaker.lastName === 'Walsh' ? 0 : 1),
+		(speaker => speaker.firstName == 'Husni Al' && speaker.lastName === 'Bayari' ? 0 : 1),
+		(speaker => speaker.firstName == 'George' && speaker.lastName === 'Azar' ? 0 : 1),
+		(speaker => speaker.firstName == 'Jeff' && speaker.lastName === 'Tisdall' ? 0 : 1),
+	]
+    
     
     // console.log('sessions:', sessions)
     // console.log('speakers:', speakers)
     // console.log('ordered:', orderedSpeakers)
     
     // console.dir( getSessionsByTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
-    console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
+    // console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
+	// console.log('customOrderedSpeakers:', prioritiseSpeakers( getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ), prioritySpeakersArray ))
 
 
     return (
@@ -197,7 +214,7 @@ export default function Page ({ sessions, speakers }) {
 
 
 
-            <section className="block pt-md">
+            {/* <section className="block pt-md">
                 <div className="container formatted maxw-90">
                     <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-09.jpg', width:2000, height:1333 }}>
                         <Fade>
@@ -214,58 +231,9 @@ export default function Page ({ sessions, speakers }) {
                         </Fade>
                     </Callout>
                 </div>
-            </section>
+            </section> */}
 
-
-
-            {/* FEATURED SPEAKERS */}
-
-            {
-                sessions &&
-                <SpeakerCarousel 
-                    heading={`Featured Speakers`} 
-                    text={null}
-                    decal={'bg-secondary'}
-                    ctaLink={null}
-                    ctaLabel={null}
-                    anchorId={null}
-                >
-                    {
-                        getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ).map( profile => (
-                            <Pop key={profile.id}>
-                                <SpeakerCard
-                                    url={null}
-                                    photoUrl={profile.photoUrl }
-                                    fullName={`${profile.firstName} ${profile.lastName}`}
-                                    jobTitle={profile.jobTitle}
-                                    company={profile.organization}
-                                />
-                            </Pop>
-                        ))
-                    }
-                </SpeakerCarousel>
-            }
-
-
-
-            {/* FLOATERS */}
-
-            <section className="block">
-                <div className="container formatted maxw-90">
-                    <Callout 
-                        image={{ url:'/assets/img/brf/brf-2024-image-08.jpg', width:2000, height:1333 }}
-                        caption={"The Rixos Dubai Islands Residences"}
-                    >
-                        <Fade>
-                            <p className='fs-2 fw-600 lh-2 c-secondary'>Unprecedented Growth Trends</p>
-                            <p className="fs-4">The branded residences sector is experiencing a period of unprecedented growth, globally.</p> 
-                            <p className="fs-4">The sector has grown more than 160% over the last decade with approximately 1,300 branded residential projects globally as of&nbsp;2023.</p>
-                        </Fade>
-                    </Callout>
-                </div>
-            </section>
-
-            <section className="block">
+            <section className="block bg-default">
                 <div className="container formatted maxw-90">
                     <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-05.jpg', width:2000, height:1428 }}>
                         <Fade>
@@ -281,6 +249,53 @@ export default function Page ({ sessions, speakers }) {
                     </Callout>
                 </div>
             </section>
+
+            <section className="block bg-default">
+                <div className="container formatted maxw-90">
+                    <Callout 
+                        image={{ url:'/assets/img/brf/brf-2024-image-08.jpg', width:2000, height:1333 }}
+                        caption={"The Rixos Dubai Islands Residences"}
+                    >
+                        <Fade>
+                            <p className='fs-2 fw-600 lh-2 c-secondary'>Unprecedented Growth Trends</p>
+                            <p className="fs-4">The branded residences sector is experiencing a period of unprecedented growth, globally.</p> 
+                            <p className="fs-4">The sector has grown more than 160% over the last decade with approximately 1,300 branded residential projects globally as of&nbsp;2023.</p>
+                        </Fade>
+                    </Callout>
+                </div>
+            </section>
+
+
+
+
+            {/* FEATURED SPEAKERS */}
+
+            {
+                sessions &&
+                <SpeakerCarousel 
+                    heading={`Speakers`} 
+                    text={null}
+                    decal={'bg-secondary'}
+                    ctaLink={null}
+                    ctaLabel={null}
+                    anchorId={null}
+                >
+                    {
+                        prioritiseSpeakers( getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ), prioritySpeakersArray ).map( profile => (
+                            <Pop key={profile.id}>
+                                <SpeakerCard
+                                    url={null}
+                                    photoUrl={profile.photoUrl }
+                                    fullName={`${profile.firstName} ${profile.lastName}`}
+                                    jobTitle={profile.jobTitle}
+                                    company={profile.organization}
+                                />
+                            </Pop>
+                        ))
+                    }
+                </SpeakerCarousel>
+            }
+
             
 
 

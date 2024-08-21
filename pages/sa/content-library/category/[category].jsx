@@ -62,6 +62,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
                                     excerpt={entry.excerpt}
                                     postDate={entry.postDate}
                                     type={entry.contentTypes[0].slug}
+                                    background={'var(--secondary)'}
                                 />
                             ))
                         }

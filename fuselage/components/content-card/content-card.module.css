@@ -2,6 +2,9 @@
     /* display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-xs); */
+    background-color: hsl( from var(--primary) h s calc(l - 4) );
+    padding: var(--space-xs);
+    border-radius: var(--space-xs);
 }
 
 .meta {
@@ -18,6 +21,7 @@
     align-items: center;
     justify-content: center;
     border-radius: var(--default-radius);
+    border-radius: var(--space-xxs);
 }
 .hero img {
     display: block;
