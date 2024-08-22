@@ -13,10 +13,13 @@
     z-index: 2;
     top: 0;
     bottom: 0;
-    left: 50%;
+    left: 0;
     border-left: 1px solid var(--accent);
 }
-
+.keylineArrow {
+    width: 24px;
+    margin: 20px 0 -6px -11.5px;
+}
 
 
 /* card ----------------------------------------- */
@@ -25,47 +28,26 @@
 .card {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
+    grid-template-columns: 1fr;
     padding-top: 5vw;
 }
-
-
-.image {
-    grid-area: 1/1 / 2/2;
-    height: 24vw;
-    width: 100%;
-}
 .content {
-    grid-area: 1/2 / 2/3;
-    padding: 5vw 0 0 5vw;
-}
-.card:nth-child(odd) .image {
-    grid-area: 1/2 / 2/3;
-}
-.card:nth-child(odd) .content {
-    grid-area: 1/1 / 2/2;
-    padding: 5vw 5vw 0 0;
-}
-
-.card:nth-child(even) .image {
-    display: flex;
-    justify-content: flex-end;
+    padding: var(--space-md) 0 var(--space-md) var(--space-md);
 }
 
 .iconWrapper {
     position: absolute;
     z-index: 2;
-    top: 0;
-    left: calc(50% - 5vw);
+    top: -5vw;
+    left: 0;
 
-    width: 10vw;
+    width: 20vw;
     aspect-ratio: 1;
 }
 
 .imageWrapper {
     position: relative;
-    height: 100%;
+    height: 50vw;
     background-color: rgba(0, 0, 0, 0.165);
 }
 
@@ -74,3 +56,67 @@
     width: 100%;
     height: 100%;
 }
+
+
+@media(min-width:800px){
+
+    .keyline {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        border-left: 1px solid var(--accent);
+    }
+    .keylineArrow {
+        width: 24px;
+        margin: 20px auto -6px;
+    }
+
+
+    .card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .image {
+        grid-area: 1/1 / 2/2;
+        height: 24vw;
+        width: 100%;
+    }
+    .imageWrapper {
+        height: 24vw;
+    }
+
+    .content {
+        grid-area: 1/2 / 2/3;
+        padding: 5vw 0 0 5vw;
+    }
+    .card:nth-child(odd) .image {
+        grid-area: 1/2 / 2/3;
+    }
+    .card:nth-child(odd) .content {
+        grid-area: 1/1 / 2/2;
+        padding: 5vw 5vw 0 0;
+    }
+    
+    .card:nth-child(even) .image {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+    .iconWrapper {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: calc(50% - 5vw);
+    
+        width: 10vw;
+        aspect-ratio: 1;
+    }
+    
+}
+
+
+

@@ -116,6 +116,10 @@ Themes.theme = 'world-2024'
 
 
 
+
+// COMPONENTS –––––––––––––––––––––––––––––––––––––––––
+
+
 export const ThemesLayout = ({ children }) => {
     return (
         <section className="block pt-0" style={{ position: 'relative', zIndex: 5 }}>
@@ -132,7 +136,7 @@ export const ThemesLayout = ({ children }) => {
 
 export const ThemesExploreArrow = () => {
     return (
-        <div style={{ width: 24, margin: '20px auto -6px' }}>
+        <div className={CSS.keylineArrow}>
             <svg width="100%" height="100%" viewBox="0 0 42 42" style={{ fillRule:'evenodd', clipRule:'evenodd', strokeMiterlimit:3 }}>
                 <g transform="matrix(1,0,0,1,0,-304)">
                     <g id="arrow" transform="matrix(1,0,0,0.907972,0,27.4585)">
