@@ -26,7 +26,7 @@ function Speakers({ seomatic, speakers, craftCmsProfiles }) {
 
 	// sort speakers by lastName
 	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") ], ['asc'])
-	console.log('ordered:', orderedSpeakers)
+	// console.log('ordered:', orderedSpeakers)
 
 	// customise order (VIP speakers to top of list)
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
@@ -41,7 +41,9 @@ function Speakers({ seomatic, speakers, craftCmsProfiles }) {
 		(speaker => speaker.firstName == 'Haitham' && speaker.lastName === 'Mattar' ? 0 : 1),
 		(speaker => speaker.firstName == 'Stephen' && speaker.lastName === 'Sackur' ? 0 : 1),
 	] )
-	console.log('customOrderedSpeakers:', customOrderedSpeakers)
+	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
+
+
 
 	return (
 		<>
@@ -64,6 +66,13 @@ function Speakers({ seomatic, speakers, craftCmsProfiles }) {
 						{
 							speakers.length &&
 							customOrderedSpeakers.map( speaker => {
+
+								// let BRFspeaker = false
+								// speaker.speakerOnPlannings?.forEach( planning => {
+								// 	if ( planning.fields.some( field => field.id == "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) ) BRFspeaker = true
+								// })
+								// console.log(BRFspeaker)
+
 								if ( speaker.type ) return (
 									<div key={speaker.id}>
 										<Link href={`/world/speakers/${speaker.id}`}>
@@ -88,6 +97,9 @@ function Speakers({ seomatic, speakers, craftCmsProfiles }) {
 										</Link>
 										<div>
 											<p className='mt-xs'>
+												{/* {
+													BRFspeaker && <p className="c-accent">BRF</p>
+												} */}
 												<span className='fw-600'>{speaker.firstName} {speaker.lastName}</span> 
 												<br/>{speaker.jobTitle} 
 												<br/>{speaker.organization}
@@ -139,6 +151,36 @@ export async function getStaticProps() {
 								id
 								name
 							}
+							speakerOnPlannings {
+								id
+								title
+								categories
+								fields {
+									... on SelectField {
+										id
+										definition {
+											isDefault
+											name
+										}
+										value
+										translations {
+											value
+										}
+									}
+									... on MultipleSelectField {
+										id
+										definition {
+											isDefault
+											name
+										}
+										value
+										translations {
+											value
+										}
+									}
+								}
+							}
+
 							withEvent(eventId: $eventId) {
 							fields {
 								... on SelectField {
@@ -153,13 +195,6 @@ export async function getStaticProps() {
 											language
 										}
 											}
-										}
-									}
-									badges {
-										... on BadgeBarcode {
-											__typename
-											barcode
-											createdAt
 										}
 									}
 								}

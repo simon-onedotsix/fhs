@@ -33,7 +33,7 @@ import {
 	MenuItem as MenuItemInner,
 	SubMenu as SubMenuInner 
 } from '@szhsin/react-menu'
-import DROPDOWN from '../../css/app/dropdown.module.css'
+import DROPDOWN from '../../css/app/dropdown-world-2024.module.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
 
 import CSS from '../../css/app/agenda-world-2024.module.css'
@@ -621,6 +621,7 @@ export default function Agenda ({ sessions, locations }) {
 									} 
 									transition 
 									menuClassName={menuClassName}
+									position={'initial'}
 								>
 									<div className="columns-2">
 										{
