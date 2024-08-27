@@ -46,6 +46,9 @@ import handleSeomaticMeta from '../../lib/seomatic'
 
 import CSS from '../../fuselage/theme/2024/world/css/homepage.module.css'
 
+import { THEMES_DATA } from "./themes"
+import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
+
 
 const photos = [
     {
@@ -294,6 +297,12 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     </section>
 
                 </div>
+            </section>
+
+
+
+            <section className="block">
+                <ThemesSlider data={THEMES_DATA} />
             </section>
 
 
