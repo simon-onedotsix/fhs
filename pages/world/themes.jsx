@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 
 import Head from 'next/head'
 
+import _ from 'lodash'
 import parse from 'html-react-parser'
 
 import { Header } from '../../fuselage/theme/2024/world/common/header/header'
@@ -17,66 +18,77 @@ import CSS from '../../fuselage/theme/2024/world/css/themes.module.css'
 
 const THEMES_DATA = [
     {
+        id: 'RmllbGRWYWx1ZV8yNDU3Mjg5Mg==',
         imageUrl: '/assets/img/brf/themes/global-investment.jpg',
         iconUrl: '/assets/img/brf/icons/global-investments.svg',
         title: 'Global Investments',
         body: '<p>Global investments shape the future of hospitality. With Country Pavilions, the industry will be able to dive into the trends, opportunities, and strategic decisions driving investment in key markets, setting the stage for sustained industry growth at FHS World 2024.</p>'
     },
     {
+        id: 'RmllbGRWYWx1ZV8yNDIzNzQxMQ==',
         imageUrl: '/assets/img/brf/themes/projects.jpg',
         iconUrl: '/assets/img/brf/icons/projects-destinations.svg',
         title: 'Projects & Destinations',
         body: '<p>Learn about the big projects and destination tourism initiatives redefining the global hospitality landscape. Our event features focus on this theme to highlight development strategies and market trends that are creating the next generation of must-visit locations.</p>'
     },
     {
+        id: 'RmllbGRWYWx1ZV8yNDU4Nzc2OQ==',
         imageUrl: '/assets/img/brf/themes/wellness.jpg',
         iconUrl: '/assets/img/brf/icons/wellness-tourism.svg',
         title: 'Wellness & Medical Tourism',
         body: '<p>Dubai&apos;s broader tourism strategy aims to attract 500,000 medical tourists by the end of 2025. This niche is brimming with potential but what is required to truly leverage its benefits and popularity? We will delve into innovations that are redefining health-focused travel, making it a cornerstone of the global hospitality landscape.</p>'
     },
     {
+        id: 'RmllbGRWYWx1ZV8yNDU3MzE3Mw==',
         imageUrl: '/assets/img/brf/themes/branding.jpg',
         iconUrl: '/assets/img/brf/icons/branding-strategies.svg',
         title: 'Branding Strategies',
         body: '<p>The hospitality industry is a crowded marketplace like any other. Effective branding is crucial to survive. This theme focuses on the strategies that build powerful brands, creating a legacy and driving loyalty in the competitive hospitality sector.</p>'
     },
     {
+        id: 'RmllbGRWYWx1ZV8yNDU3Mjg5MQ==',
         imageUrl: '/assets/img/brf/themes/sustainability.jpg',
         iconUrl: '/assets/img/brf/icons/sustainability.svg',
         title: 'Sustainability & Innovation',
         body: '<p>Exploring the intersection of sustainability and innovation, with this theme we aim to highlight how cutting-edge solutions are being implemented to meet the growing demand for eco-friendly practices. FHS World 2024 will deconstruct their growth trends, demand and integration from a dynamic perspective.</p>'
     },
     {
+        id: 'RmllbGRWYWx1ZV8yMzI1MzEzOQ==',
         imageUrl: '/assets/img/brf/themes/technology.jpg',
         iconUrl: '/assets/img/brf/icons/technology.svg',
         title: 'Technology & AI',
         body: '<p>Technology and AI are transforming hospitality at every level. Join us to examine the latest advancements, from AI-driven customer service to smart hotel management systems, and how they are revolutionising guest experiences, hotel properties and hospitality investments.</p>'
     },
     {
+        id: 'RmllbGRWYWx1ZV8yNDIzOTQ1MA==',
         imageUrl: '/assets/img/brf/themes/branded-residences.jpg',
         iconUrl: '/assets/img/brf/icons/branded-residences.svg',
         title: 'Branded Residences',
         body: '<p>The Branded Residences sector is expanded exponentially. As part of our agenda and the Branded Residences Forum, we&apos;re focused on covering the strategies behind their success. FHS World is the place to be to discover on how they combine the prestige of renowned brands with the comforts of home to create unparalleled residential experiences.</p>'
     },
     {
+        id: 'RmllbGRWYWx1ZV8yMzI1MzEzNw==',
         imageUrl: '/assets/img/brf/themes/restaurant.jpg',
         iconUrl: '/assets/img/brf/icons/restaurant-investment.svg',
         title: 'Restaurant Investment',
         body: '<p>Investing in the future of dining, this theme focuses on the opportunities and challenges in the restaurant sector, from emerging trends to the business models driving growth in a rapidly evolving market.</p>'
     },
     {
+        id: 'RmllbGRWYWx1ZV8yNDU3MzE2NQ==',
         imageUrl: '/assets/img/brf/themes/woman-leader.jpg',
         iconUrl: '/assets/img/brf/icons/women-leadership.svg',
         title: 'Women Leadership',
         body: '<p>Join us in creating a better and stronger future as we concentrate efforts on advancing women in hospitality. We want to highlight the impact of women leaders in hospitality and facilitate more women leaders to break past the &apos;broken rung&apos;.</p>'
     },
     {
+        id: 'RmllbGRWYWx1ZV8yNDU3MjkwMg==',
         imageUrl: '/assets/img/brf/themes/education.jpg',
         iconUrl: '/assets/img/brf/icons/education-investment.svg',
         title: 'Education Investment',
         body: '<p>Investing in education is investing in the future. FHS World will focus on the critical role of education in hospitality, from talent development to leadership training, ensuring the industry&apos;s continued growth and success.</p>'
     },
     {
+        id: 'RmllbGRWYWx1ZV8yNDU3Mjg4NQ==',
         imageUrl: '/assets/img/brf/themes/green-city.jpg',
         iconUrl: '/assets/img/brf/icons/green-construction.svg',
         title: 'Green Construction & Smart Cities',
@@ -87,7 +99,56 @@ const THEMES_DATA = [
 
 
 
-export default function Themes () {
+export default function Themes ({ sessions }) {
+
+    // get agenda topics
+    const groupFieldGroupsByName = ( sessionsData, fieldHandle ) => {
+		if ( !sessionsData || !fieldHandle ) return []
+
+		const fieldIds = []
+		const fieldObjects = []
+		const distilledFieldObjects = []
+
+		// build arrays
+		sessionsData.forEach( (session) => {
+			let topics = session.fields.filter( (field) => field.definition.name === fieldHandle )
+			topics.forEach( (field) => {
+				fieldIds.push(field.id)
+				fieldObjects.push({ id: field.id, name: field.translations[0].value })
+			})
+		})
+
+		// for unique IDs, search the field object array to find the related name
+		_.uniq(fieldIds).forEach( (id) => {
+			distilledFieldObjects.push(fieldObjects.find( (obj) => obj.id === id ))
+		})
+
+		return distilledFieldObjects
+	}
+    const TRACKS = _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc'])
+    
+
+
+
+    const getSessionsByTopic = ( sessionData, topicID ) => {
+        const sessionGroup = []
+
+        sessionData.forEach( session => {
+            session.fields.forEach( field => {
+                if ( field.id === topicID ) sessionGroup.push(session)
+            })
+        })
+
+        return sessionGroup
+    }
+     
+    
+    // console.log('sessions [total]:', sessions.length)
+    // console.log('sessions:', sessions)
+    // console.log('development session:', getSessionsByTopic( sessions, "RmllbGRWYWx1ZV8yNDIzNzQxMQ==" ))
+    // console.log('tracks (topics)', TRACKS)
+
+
     return (
         <>
             <Head>
@@ -102,7 +163,16 @@ export default function Themes () {
             </HeroUnitImage>
 
             <ThemesLayout>
-                { THEMES_DATA.map( (theme, index) => <ThemeCard key={index} imageUrl={theme.imageUrl} iconUrl={theme.iconUrl} title={theme.title} body={theme.body} />) }
+                { THEMES_DATA.map( (theme, index) => (
+                    <ThemeCard 
+                        key={index} 
+                        imageUrl={theme.imageUrl} 
+                        iconUrl={theme.iconUrl} 
+                        title={theme.title} 
+                        body={theme.body} 
+                        // sessions={ getSessionsByTopic( sessions, theme.id ) }
+                    />
+                )) }
             </ThemesLayout>
 
 
@@ -116,7 +186,6 @@ export default function Themes () {
 }
 
 Themes.theme = 'world-2024'
-
 
 
 
@@ -160,7 +229,7 @@ export const ThemesExploreArrow = () => {
     )
 }
 
-export const ThemeCard = ({ iconUrl, imageUrl, title, body }) => {
+export const ThemeCard = ({ iconUrl, imageUrl, title, body, sessions }) => {
     return (
         <div className={CSS.card}>
             <motion.div 
@@ -195,14 +264,151 @@ export const ThemeCard = ({ iconUrl, imageUrl, title, body }) => {
 
                 <motion.div 
                     className="formatted fs-6"
-                    initial={{ y: 50, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     transition={{ type: "spring", bounce: 0.25, delay: 0.2 }}
                 >
                     { body && parse(body) }
                 </motion.div>
+
+                {
+                    sessions?.length &&
+                    <div className="formatted">
+                        <p className='fw-600 c-secondary mt-sm'>Agenda sessions tagged with {title}:</p>
+                        <ul>
+                            { sessions.map( session => (
+                                <motion.li key={session.id}
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ type: "spring", bounce: 0.25, delay: 0.2 }}
+                                >
+                                    { session.titleTranslations[0].value }
+                                </motion.li> 
+                            )) }
+                        </ul>
+                    </div>
+                }
             </div>
 
         </div>
     )
+}
+
+
+
+
+
+
+
+
+
+export async function getStaticProps() {
+
+	const eventQuery = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query EventById($eventId: ID!) {
+
+						event(id: $eventId) {
+							planningsPlaces {
+								id
+								name
+								value
+							}
+						}
+
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_AE}", page: 1, pageSize: 500) {
+							id
+							titleTranslations {
+								value
+								language
+							}
+							beginsAt
+							endsAt
+							descriptionTranslations {
+								value
+								language
+							}
+							format
+							fields {
+								... on SelectField {
+									id
+									definition {
+										isDefault
+										name
+									}
+									value
+									translations {
+										value
+									}
+								}
+								... on MultipleSelectField {
+									id
+									definition {
+										isDefault
+										name
+									}
+									value
+									translations {
+										value
+									}
+								}
+							}
+							speakers {
+								firstName
+								id
+								jobTitle
+								lastName
+								photoUrl
+								organization
+								biography
+								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE}") {
+									eventProfile {
+										type
+										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
+											speakerOnPlannings {
+												id
+												title
+												beginsAt
+												endsAt
+											}
+										}
+									}
+								}
+							}
+							categories
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE,
+					"page": 1
+				}
+			})
+		}
+	)
+
+	const result = await eventQuery.json()
+	
+
+	// console.log('RESULT', result)
+	// console.log('TEST plannings', result.data.event.planningsPlaces)
+	// console.log('TEST sessions', result.data.plannings)
+  
+
+    if ( result.data ) return { 
+        props: { 
+            sessions: result.data.plannings,
+			locations: result.data.event.planningsPlaces
+        } 
+    }
+
+	return { props: {} }
 }
