@@ -10,16 +10,23 @@ import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 import { HeroUnitImage } from '../../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
 
 import CSS from '../../fuselage/theme/2024/world/css/themes.module.css'
+import { ThemesSlider } from '../../fuselage/theme/2024/world/components/themes-slider/themes-slider'
 
 
 
 
 const THEMES_DATA = [
     {
-        imageUrl: '/assets/img/brf/themes/green-city.jpg',
-        iconUrl: '/assets/img/brf/icons/green-construction.svg',
-        title: 'Green Construction & Smart Cities',
-        body: '<p>Pioneering the future of urban living, our agenda will dive into the nuances of integrating green construction and smart technologies. Green construction has kickstarted the transformation of cities into sustainable, intelligent environments that enhance the quality of life and drive long-term growth. Join us to explore how this change is adapted by the hospitality industry.</p>'
+        imageUrl: '/assets/img/brf/themes/global-investment.jpg',
+        iconUrl: '/assets/img/brf/icons/global-investments.svg',
+        title: 'Global Investments',
+        body: '<p>Global investments shape the future of hospitality. With Country Pavilions, the industry will be able to dive into the trends, opportunities, and strategic decisions driving investment in key markets, setting the stage for sustained industry growth at FHS World 2024.</p>'
+    },
+    {
+        imageUrl: '/assets/img/brf/themes/projects.jpg',
+        iconUrl: '/assets/img/brf/icons/projects-destinations.svg',
+        title: 'Projects & Destinations',
+        body: '<p>Learn about the big projects and destination tourism initiatives redefining the global hospitality landscape. Our event features focus on this theme to highlight development strategies and market trends that are creating the next generation of must-visit locations.</p>'
     },
     {
         imageUrl: '/assets/img/brf/themes/wellness.jpg',
@@ -64,22 +71,16 @@ const THEMES_DATA = [
         body: '<p>Join us in creating a better and stronger future as we concentrate efforts on advancing women in hospitality. We want to highlight the impact of women leaders in hospitality and facilitate more women leaders to break past the &apos;broken rung&apos;.</p>'
     },
     {
-        imageUrl: '/assets/img/brf/themes/global-investment.jpg',
-        iconUrl: '/assets/img/brf/icons/global-investments.svg',
-        title: 'Global Investments',
-        body: '<p>Global investments shape the future of hospitality. With Country Pavilions, the industry will be able to dive into the trends, opportunities, and strategic decisions driving investment in key markets, setting the stage for sustained industry growth at FHS World 2024.</p>'
-    },
-    {
-        imageUrl: '/assets/img/brf/themes/projects.jpg',
-        iconUrl: '/assets/img/brf/icons/projects-destinations.svg',
-        title: 'Projects & Destinations',
-        body: '<p>Learn about the big projects and destination tourism initiatives redefining the global hospitality landscape. Our event features focus on this theme to highlight development strategies and market trends that are creating the next generation of must-visit locations.</p>'
-    },
-    {
         imageUrl: '/assets/img/brf/themes/education.jpg',
         iconUrl: '/assets/img/brf/icons/education-investment.svg',
         title: 'Education Investment',
         body: '<p>Investing in education is investing in the future. FHS World will focus on the critical role of education in hospitality, from talent development to leadership training, ensuring the industry&apos;s continued growth and success.</p>'
+    },
+    {
+        imageUrl: '/assets/img/brf/themes/green-city.jpg',
+        iconUrl: '/assets/img/brf/icons/green-construction.svg',
+        title: 'Green Construction & Smart Cities',
+        body: '<p>Pioneering the future of urban living, our agenda will dive into the nuances of integrating green construction and smart technologies. Green construction has kickstarted the transformation of cities into sustainable, intelligent environments that enhance the quality of life and drive long-term growth. Join us to explore how this change is adapted by the hospitality industry.</p>'
     }
 ]
 
@@ -103,6 +104,9 @@ export default function Themes () {
             <ThemesLayout>
                 { THEMES_DATA.map( (theme, index) => <ThemeCard key={index} imageUrl={theme.imageUrl} iconUrl={theme.iconUrl} title={theme.title} body={theme.body} />) }
             </ThemesLayout>
+
+
+            <ThemesSlider data={THEMES_DATA} />
 
 
             <Footer />
