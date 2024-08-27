@@ -813,7 +813,7 @@ export default function Agenda ({ sessions, locations }) {
 																				{/* <small style={{ color: 'orange'}}>{session.id}</small> */}
 																				{/* <small style={{ color: 'orange'}}>{session.priority}</small> */}
 																				
-																				<p className={`${CSS.sessionTitle} | fs-5 fw-600 lh-1 c-white caps`}>
+																				<p className={`${CSS.sessionTitle} | fs-3 fw-500 lh-1 c-white`}>
 																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
 																				</p>
 
