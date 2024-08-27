@@ -129,7 +129,6 @@ export default function Themes ({ sessions }) {
     
 
 
-
     const getSessionsByTopic = ( sessionData, topicID ) => {
         const sessionGroup = []
 
@@ -176,7 +175,7 @@ export default function Themes ({ sessions }) {
             </ThemesLayout>
 
 
-            <ThemesSlider data={THEMES_DATA} />
+            {/* <ThemesSlider data={THEMES_DATA} /> */}
 
 
             <Footer />
