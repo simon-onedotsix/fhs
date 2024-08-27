@@ -169,7 +169,7 @@ export default function Themes ({ sessions }) {
                         iconUrl={theme.iconUrl} 
                         title={theme.title} 
                         body={theme.body} 
-                        // sessions={ getSessionsByTopic( sessions, theme.id ) }
+                        sessions={ getSessionsByTopic( sessions, theme.id ) }
                     />
                 )) }
             </ThemesLayout>
@@ -357,28 +357,6 @@ export async function getStaticProps() {
 									value
 									translations {
 										value
-									}
-								}
-							}
-							speakers {
-								firstName
-								id
-								jobTitle
-								lastName
-								photoUrl
-								organization
-								biography
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE}") {
-									eventProfile {
-										type
-										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
-											speakerOnPlannings {
-												id
-												title
-												beginsAt
-												endsAt
-											}
-										}
 									}
 								}
 							}
