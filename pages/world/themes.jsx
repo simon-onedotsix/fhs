@@ -9,9 +9,9 @@ import { Header } from '../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 import { HeroUnitImage } from '../../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
 
-import CSS from '../../fuselage/theme/2024/world/css/themes.module.css'
 import { ThemesSlider } from '../../fuselage/theme/2024/world/components/themes-slider/themes-slider'
 
+import CSS from '../../fuselage/theme/2024/world/css/themes.module.css'
 
 
 

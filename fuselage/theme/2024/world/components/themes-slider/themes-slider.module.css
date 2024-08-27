@@ -39,7 +39,7 @@
 }
 .iconSlide {
     position: relative;
-    width: 150px;
+    width: calc( 100% / 11 );
     aspect-ratio: 1;
     
     opacity: 0.1;
