@@ -34,7 +34,7 @@ export const ThemesSlider = ({ data }) => {
 		<>
 			<div className={`${CSS.header} block center formatted py-0 mb-sm`}>
 				<p className="fs-1 fw-600">Event Themes</p>
-				<p className="fs-5 maxw-40 mx-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure ut laborum id corrupti illum ab at temporibus eum dolore.</p>
+				{/* <p className="fs-5 maxw-40 mx-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure ut laborum id corrupti illum ab at temporibus eum dolore.</p> */}
 			</div>
 
 
