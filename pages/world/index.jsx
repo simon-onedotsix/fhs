@@ -251,6 +251,11 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </section>
 
 
+            <section className="block">
+                <ThemesSlider data={THEMES_DATA} />
+            </section>
+
+
             
             {/* LAUNCH STATEMENT */}
 
@@ -299,11 +304,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 </div>
             </section>
 
-
-
-            <section className="block">
-                <ThemesSlider data={THEMES_DATA} />
-            </section>
+         
 
 
             {/* SPEAKER HIGHLIGHTS */}
