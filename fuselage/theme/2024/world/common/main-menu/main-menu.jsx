@@ -95,6 +95,7 @@ export const MainMenu = ({ otherEvents }) => {
 
                                                                 if ( 
                                                                     link.hyperlink === '/world/brf' ||
+                                                                    link.hyperlink === '/world/projects' ||
                                                                     link.hyperlink === '/world/unto' ||
                                                                     link.hyperlink === '/world/sustainable-cook-off' ||
                                                                     link.hyperlink === '/world/the-big-project-pitch' ||
