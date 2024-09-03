@@ -1,0 +1,26 @@
+.dayDivider {
+    margin: 1rem 0 .5rem;
+    color: var(--secondary);
+    font-size: 1.2rem;
+}
+
+.session {
+    display: grid;
+    grid-template-columns: 8rem auto;
+    margin-bottom: .25rem;
+}
+
+.timing {
+    color: var(--secondary);
+}
+
+.titleLink {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media(hover:hover){
+    .titleLink:hover {
+        text-decoration: underline;
+    }
+}

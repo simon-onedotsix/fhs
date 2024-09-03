@@ -413,8 +413,7 @@ export default function Agenda ({ sessions, locations }) {
 							name: `${speaker.firstName} ${speaker.lastName}`,
 							title: speaker.jobTitle,
 							company: speaker.organization,
-							bio: speaker.biography,
-							speakingOn: speaker.withEvent?.eventProfile.withEvent.speakerOnPlannings
+							bio: speaker.biography
 						})
 						setShowModal(true)
 					}
@@ -893,26 +892,6 @@ export default function Agenda ({ sessions, locations }) {
 						<SimpleBar style={{ maxHeight: `50vh` }}>
 							<div className="formatted pr-xs" dangerouslySetInnerHTML={{ __html: modalContent.bio }}></div>
 						</SimpleBar> 
-
-						{/* <div className="mt-sm">
-							<p className="fs-6 fw-400 c-accent mb-xs">See { modalContent.name } speak in the following sessions:</p>                         
-							{
-								modalContent.speakingOn &&
-								_.orderBy(modalContent.speakingOn, 'beginsAt').map( (day, index) => (
-									<div key={index} className='mb-xs'>
-										<p className="c-accent fs-sm">
-											{formatInTimeZone(new Date( day.beginsAt ), 'Asia/Dubai', 'EEEE dd MMMM: HH:mm')} - {formatInTimeZone(new Date( day.endsAt ), 'Asia/Dubai', 'HH:mm')}
-										</p>
-										<p className="fs-6 fw-600 c-white" 
-											onClick={() => {
-												lenis.scrollTo(`#${day.id.slice(0, -2)}`, { duration: 1 })
-												setShowModal(false)
-											}}
-										><span className="uLink">{ day.title }</span></p>
-									</div>
-								))
-							}
-						</div> */}
 					</section>
 
                     

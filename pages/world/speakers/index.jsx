@@ -147,40 +147,7 @@ export async function getStaticProps() {
 							jobTitle
 							organization
 							photoUrl
-							groups {
-								id
-								name
-							}
-							speakerOnPlannings {
-								id
-								title
-								categories
-								fields {
-									... on SelectField {
-										id
-										definition {
-											isDefault
-											name
-										}
-										value
-										translations {
-											value
-										}
-									}
-									... on MultipleSelectField {
-										id
-										definition {
-											isDefault
-											name
-										}
-										value
-										translations {
-											value
-										}
-									}
-								}
-							}
-
+							
 							withEvent(eventId: $eventId) {
 							fields {
 								... on SelectField {

@@ -4,120 +4,58 @@ import Head from "next/head"
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
+import { format } from 'date-fns'
+
 import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 import { Sidebar } from "../../../fuselage/layout/sidebar/sidebar"
 import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
-import { OffsiteLink } from "../../../fuselage/components/offsite-link/offsite-link"
-import { ButtonSocial } from  '../../../fuselage/components/button-social/button-social'
-
-import { sortSessions, toHoursAndMinutes } from "../../../lib/agenda-utils"
-import { formatInTimeZone } from 'date-fns-tz'
-
-import CSS from '../../../css/app/partners.module.css'
 
 
-function Speaker({ speaker, sessions }) {
+import { groupSessionsByDays } from "../../../lib/swapcard/agenda-utils"
 
-	console.log('speaker data:', speaker)
-	// console.log('sessions data:', sessions)
 
-	const handleLinkedIn = () => {
-		if  ( speaker.linkedIn ) {
-			return (
-				<>
-					<ButtonSocial 
-						icon='linkedin' 
-						url={speaker.linkedIn} 
-						alt='linkedin'
-						target='_blank'
-						rel='noreferrer'
-					/>&ensp;
-				</>
-			)
-		}
-	}
-	const handleTwitter = () => {
-		if ( speaker.twitterHandle ) {
-			return (
-				<ButtonSocial 
-					icon='twitter' 
-					url={`https://www.twitter.com/${speaker.twitterHandle}`} 
-					alt='twitter'
-					target='_blank'
-					rel='noreferrer'
-				/>
-			)
-		}
-	}
-	const handleCompany = () => {
-		if( speaker.web ) {
-			return (
-				<OffsiteLink href={speaker.web} direction='right' target='_blank'>
-					{speaker.company}
-				</OffsiteLink>
-			)
-		}
-		return speaker.company
+import CSS from '../../../fuselage/theme/2024/world/css/speaker.module.css'
+
+
+function Speaker({ speaker }) {
+
+	// console.log('speaker data:', speaker)
+	// console.log('speaker sessions:', speaker.withEvent.speakerOnPlannings)
+	// console.log('session days:', groupSessionsByDays(speaker.withEvent.speakerOnPlannings))
+
+
+
+	const handleRelatedSessions = ( speakerData ) => {
+
+		if ( !speakerData.withEvent.speakerOnPlannings.length ) return
 		
-	}
+		return (
+			<div className="mt-sm bt-1 bc-secondary pt-sm">
+				<p className="fs-5 fw-400 mb-xs">See {speaker.firstName} {speaker.lastName} speak in the following sessions:</p>
+				{
+					groupSessionsByDays(speaker.withEvent.speakerOnPlannings).map( day => (
+						<>
+							<p key={day.timeCode} className={CSS.dayDivider}>{day.day}</p>
+							{ day.sessions?.map( session => {
+								return (
+									<div key={session.id} className={CSS.session}>
+										<p className={CSS.timing}>
+											{ session.beginsAt && format( new Date(session.beginsAt), "HH:mm" ) }
+											{ session.endsAt && ` - ${format( new Date(session.endsAt), "HH:mm" )}` }
+										</p>
+										<Link href={`/world/agenda#${session.id.slice(0, -2)}`}>
+											<a className={CSS.titleLink}>{ session.title }</a>
+										</Link>
+									</div>
+								)
+							})}
+						</>
+					))
+				}
+			</div>
+		)
 
-
-	const handleRelatedSessions = () => {
-
-		// speaker id: 3098821
-		// session id: 1198611
-
-		let relatedSessions = []
-
-		sessions.map( session => {
-			if ( session.speakers && session.speakers.find( item => item.speakerId === speaker.id ) ){
-				relatedSessions.push(session)
-			}
-		})
-		
-		if ( relatedSessions.length ) {
-			let sessions = sortSessions(relatedSessions)
-			return (
-				<div className="mt-sm bt-1 bc-secondary pt-sm">
-					<p className="fs-5 fw-400 mb-xs">See {speaker.firstname} {speaker.lastname} speak in the following sessions:</p>
-					{
-						sessions.map( (day, index) => (
-							<div key={index} className='mb-xs'>
-								{ renderDivider( day[0].startDate ) }
-								{ renderSessions( day ) }
-							</div>
-						))
-					}
-				</div>
-			)
-		}
-		
-		// helpers
-		
-		function renderDivider ( day ) {
-			return (
-				<p className='fs-6 fw-400 c-secondary'>
-					{formatInTimeZone(new Date( day ), 'Asia/Dubai', 'EEEE dd MMMM')}
-				</p>
-			)
-		}
-		
-		function renderSessions ( sessions ) {
-			return (
-				sessions.map( session => {
-					return (
-						<div key={session.id} className="mt-xs">
-							<p>
-								{ session.startMinute && toHoursAndMinutes(session.startMinute) }
-								{ session.endMinute && ` - ${toHoursAndMinutes(session.endMinute)}` }
-							</p>
-							<Link href={`/ae/agenda#session-${session.id}`}><a className='fw-600'>{ session.title }</a></Link>
-						</div>
-					)
-				})
-			)
-		}
 	}
 	
 
@@ -160,8 +98,6 @@ function Speaker({ speaker, sessions }) {
 									/>
 								}
 							</p>
-							{ handleLinkedIn() }
-							{ handleTwitter() }
 						</aside>
 
 						<main className="maxw-60">
@@ -176,7 +112,7 @@ function Speaker({ speaker, sessions }) {
 							</p>
 							<p className="mt-sm maxw-50 c-white" style={{ whiteSpace: `pre-line` }}>{ speaker.biography }</p>
 
-							{/* { handleRelatedSessions() } */}
+							{ handleRelatedSessions( speaker ) }
 						</main>
 
 					</Sidebar>
