@@ -22,7 +22,7 @@ import CSS from '../../../css/app/speakers.module.css'
 
 
 
-function Speakers({ seomatic, speakers, craftCmsProfiles }) {
+function Speakers({ seomatic, speakers }) {
 
 	const [ filter, setFilter ] = useState( null )
 

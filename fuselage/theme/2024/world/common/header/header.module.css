@@ -15,7 +15,7 @@
 }
 
 .brand {
-    z-index: 100;
+    z-index: 50;
     width: 9rem;
     padding: 1.5rem var(--space-md);
 }
@@ -53,7 +53,7 @@
     }
     .nav.fixed {
         position: fixed;
-        z-index: 200;
+        z-index: 50;
         top: 0;
         right: 0;
     }

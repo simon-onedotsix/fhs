@@ -54,16 +54,18 @@
 @media(max-width:799px){
     .toggleContainer {
         position: fixed;
-        z-index: 200;
+        z-index: 100;
         top: 2rem;
         right: 2rem;
         left: 2rem;
         display: grid;
         grid-template-columns: auto auto;
         align-items: flex-start;
+        pointer-events: none;
     }
     .toggle {
         justify-self: flex-end;
+        pointer-events: all;
     }
     .toggleActions {
         opacity: 0;
@@ -86,7 +88,7 @@
 @media (min-width:800px) {
     .toggleContainer {
         position: relative;
-        z-index: 200;
+        z-index: 100;
         display: grid;
         grid-template-columns: auto auto;
         align-items: center;
@@ -98,7 +100,7 @@
 /* overlay ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .overlay {
-    z-index: 180;
+    z-index: 80;
     position: fixed;
     top: 0;
     left: 0;

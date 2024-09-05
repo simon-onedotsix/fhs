@@ -5,11 +5,12 @@
     .utilities {
         position: relative;
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
         justify-content: flex-start;
         gap: .5rem;
 
         min-height: 4.75rem;
+        padding-top: var(--space-sm);
         /* border: 1px dashed lime; */
     }
 
@@ -19,7 +20,7 @@
         z-index: 2;
         inset: 0;
         padding: var(--space-md);
-        padding-top: 5rem;
+        padding-top: 6rem;
         background-color: var(--dark);
         display: none;
     }
@@ -38,7 +39,7 @@
         top: 0;
         right: 0;
         left:0;
-        padding: var(--space-sm) 5.5rem var(--space-sm) var(--space-md);
+        padding: var(--space-md) 5.5rem var(--space-md) var(--space-md);
         background-color: var(--dark);
         display: none;
     }
@@ -77,13 +78,13 @@
     .filterToggle.fixed {
         position: fixed;
         z-index: 6;
-        top: var(--space-sm);
-        right: var(--space-md);
+        top: var(--space-md);
+        /* left: var(--space-md); */
     }
     .filterToggle.active {
         position: fixed;
         z-index: 6;
-        top: var(--space-sm);
+        top: var(--space-md);
         right: var(--space-md);
     }
 
@@ -122,14 +123,15 @@
     .searchToggle.fixed {
         position: fixed;
         z-index: 105;
-        top: var(--space-sm);
-        right: calc(var(--space-md) + 3.5rem);
+        top: var(--space-md);
+        left: calc(var(--space-md) + 3.5rem);
     }
     .searchToggle.active {
         position: fixed;
         z-index: 105;
-        top: var(--space-sm);
+        top: var(--space-md);
         right: var(--space-md);
+        left: auto;
     }
 
 
@@ -143,6 +145,10 @@
         font-family: inherit;
         font-size: 1.2rem;
         font-weight: 600;
+    }
+
+    .searchFormContainer input {
+        outline: none;
     }
 
 
@@ -212,7 +218,7 @@
 
 @media(min-width:1200px){
     .searchLayout.fixed {
-        right: calc(var(--space-sm) + var(--space-lg) + 2rem);
+        right: calc(var(--space-sm) + var(--space-lg));
     }
 }
 
