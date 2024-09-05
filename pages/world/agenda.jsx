@@ -190,9 +190,9 @@ export default function Agenda ({ sessions, locations }) {
 				})
 			}
 
-			// console.log('searchContent:', searchContent)
+			// console.log('current session searchContent:', searchContent)
 
-			if ( searchContent.includes(search)) return session
+			if ( searchContent.includes(search.toLowerCase()) ) return session
 
 		})
 

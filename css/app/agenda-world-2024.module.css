@@ -101,7 +101,7 @@
 
 
    .searchToggleContainer {
-        display: none;
+        /* display: none; */
         padding-top: var(--space-sm);
         min-height: 3rem;
     }
