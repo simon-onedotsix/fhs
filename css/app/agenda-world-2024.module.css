@@ -101,7 +101,7 @@
 
 
    .searchToggleContainer {
-        /* display: none; TEMP HIDE */
+        display: none;
         padding-top: var(--space-sm);
         min-height: 3rem;
     }
@@ -383,14 +383,11 @@
     gap: .51rem
 }
 .agendaFilterReset span {
-    display: inline-block;
     width: 2rem;
     height: 2rem;
     border-radius: 2rem;
     border: 1px solid var(--accent);
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 1;
+    padding: 6px;
     backdrop-filter: blur(10px);
 
     display: flex;

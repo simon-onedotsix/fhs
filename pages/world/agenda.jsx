@@ -697,7 +697,7 @@ export default function Agenda ({ sessions, locations }) {
 							{
 								selectedDay || selectedLocation || selectedTopic ?
 									<section className={CSS.agendaFilterResetWrapper}>
-										<button className={CSS.agendaFilterReset} onClick={resetFilters}><span>&times;</span> Reset all filters</button>
+										<button className={CSS.agendaFilterReset} onClick={resetFilters}><span><Close /></span> Reset all filters</button>
 									</section>
 								: null
 							}
@@ -729,16 +729,16 @@ export default function Agenda ({ sessions, locations }) {
 						<div className={`${CSS.searchLayout} ${ !utiltiesInView && CSS.fixed } ${searchActive && CSS.active}`}>
 							<div className={CSS.searchFormContainer}>
 								
-									<input 
-										type="text" 
-										placeholder="Search" 
-										onChange={ e => {
-											e.preventDefault()
-											setSearch(e.target.value) 
-										}}
-										value={search}
-										
-									/>
+								<input 
+									type="text" 
+									placeholder="Search" 
+									onChange={ e => {
+										e.preventDefault()
+										setSearch(e.target.value) 
+									}}
+									value={search}
+									
+								/>
 								
 								<button
 									className={`${CSS.searchReset} ${ search !== '' ? CSS.active : ''}`}
