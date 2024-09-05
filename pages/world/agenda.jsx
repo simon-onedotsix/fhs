@@ -606,7 +606,7 @@ export default function Agenda ({ sessions, locations }) {
 									setFiltersActive(!filtersActive)
 									lenis.scrollTo('#agendaMob', { duration: 1 })
 								}}
-							>{ filtersActive ? <span style={{ fontSize: 30 }}>&times;</span> : <FilterIcon color={'white'} /> }</button>
+							>{ filtersActive ? <Close /> : <FilterIcon color={'white'} /> }</button>
 						</div>
 
 						<div className={`${CSS.filterLayout} ${CSS.filterGroup} ${ !utiltiesInView && CSS.fixed } ${filtersActive && CSS.active}`}>
@@ -722,7 +722,7 @@ export default function Agenda ({ sessions, locations }) {
 									setSearchActive(!searchActive)
 									lenis.scrollTo('#agendaMob', { duration: 1 })
 								}}
-							>{ searchActive ? <span style={{ fontSize: 30 }}>&times;</span> : <SearchIcon color={'white'} /> }</button>
+							>{ searchActive ? <Close /> : <SearchIcon color={'white'} /> }</button>
 						</div>
 
 						{/* search form */}
@@ -979,7 +979,20 @@ const SearchIcon = ({ color }) => {
 	)
 }
 
-
+const Close = () => {
+	return (
+		<svg width="100%" height="100%" viewBox="0 0 24 24" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeLinejoin:`round`, strokeMiterlimit:1.5 }}>
+			<g transform="matrix(0.760499,0,0,0.760499,-1524.21,-102.075)">
+				<g id="icon-close">
+					<path d="M2010,140L2030,160" style={{ fill:`none`, stroke:`white`, strokeWidth: 3.5 }}/>
+					<g transform="matrix(-1,0,0,1,4040,0)">
+						<path d="M2010,140L2030,160" style={{ fill:`none`, stroke:`white`, strokeWidth: 3.5 }}/>
+					</g>
+				</g>
+			</g>
+		</svg>
+	)
+}
 
 
 export async function getStaticProps() {

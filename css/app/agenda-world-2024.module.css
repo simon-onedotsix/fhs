@@ -7,7 +7,7 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        gap: .5rem;
+        /* gap: .5rem; */
 
         min-height: 4.75rem;
         padding-top: var(--space-sm);
@@ -56,8 +56,10 @@
     .filterToggleContainer {
         padding-top: var(--space-sm);
         min-height: 3rem;
+        width: calc(48px + .5rem);
     }
     .filterToggle {
+        display: block;
         height: 48px;
         width: 48px;
         border: 1px solid var(--accent);
@@ -99,6 +101,7 @@
 
 
    .searchToggleContainer {
+        /* display: none; TEMP HIDE */
         padding-top: var(--space-sm);
         min-height: 3rem;
     }
