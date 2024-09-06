@@ -48,7 +48,8 @@ function Speakers({ seomatic, speakers }) {
 	
 	
 	
-	// console.log('speakers:', speakers)
+	console.log('speakers:', speakers)
+	// console.log('speakers found:', speakers.length)
 	// console.log('ordered:', orderedSpeakers)
 	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
@@ -82,7 +83,7 @@ function Speakers({ seomatic, speakers }) {
 								})
 								// console.log(BRFspeaker)
 
-								if ( speaker.type ) return (
+								return (
 									<div key={speaker.id}>
 										<Link href={`/world/speakers/${speaker.id}`}>
 											<a className={CSS.avatar}>
