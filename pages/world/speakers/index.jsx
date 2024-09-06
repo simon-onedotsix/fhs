@@ -48,7 +48,7 @@ function Speakers({ seomatic, speakers }) {
 	
 	
 	
-	console.log('speakers:', speakers)
+	// console.log('speakers:', speakers)
 	// console.log('speakers found:', speakers.length)
 	// console.log('ordered:', orderedSpeakers)
 	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
