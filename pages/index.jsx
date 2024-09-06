@@ -201,7 +201,15 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
             </HeroUnitVideo>
 
 
-            { handleUpcomingEvents( data.events )}
+            <section className={`block`}>
+                <div className="container">
+                    <p className='fs-0 fw-700 center'>Upcoming FHS&nbsp;events</p>
+                </div>
+
+                <div className="container">
+                    { handleUpcomingEvents( data.events )}
+                </div>
+            </section>
 
             
 

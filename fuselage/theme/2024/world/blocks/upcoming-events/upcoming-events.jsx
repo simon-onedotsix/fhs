@@ -10,15 +10,9 @@ import CSS from './upcoming-events.module.css'
 
 export const UpcomingEvents = ({ children, landscape }) => {
     return (
-        <section className={`${CSS.layout} ${landscape && CSS.landscape} block`}>
-            <div className="container">
-                <p className='fs-0 fw-700 center'>Upcoming FHS&nbsp;events</p>
-            </div>
-
-            <div className={`container columns-1 pt-sm`}>
-                { children }
-            </div>
-        </section>
+        <div className={`columns-1 pt-sm`}>
+            { children }
+        </div>
     )
 }
 
