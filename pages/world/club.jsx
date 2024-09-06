@@ -43,6 +43,68 @@ const TIER_DATA = [
     }
 ]
 
+const FAQ_DATA = [
+    {
+        q: "What is the FHS Club?",
+        a: "The FHS Club is a loyalty program designed to reward attendees of the Future Hospitality Summit with exclusive benefits based on their participation in past editions."
+    },
+    {
+        q: "How do I become a member of the FHS Club?",
+        a: "To become a member, you must have attended at least two editions of the Future Hospitality Summit. Membership tiers are then assigned based on the total number of editions you have attended."
+    },
+    {
+        q: "What are the different membership tiers?",
+        a: "There are three tiers: Member, Silver, and Gold, each offering different levels of benefits. Tiers are determined by the number of FHS editions attended."
+    },
+    {
+        q: "How can I check my membership tier?",
+        a: "You can check your membership status by submitting your email address in the form shared above."
+    },
+    {
+        q: "Can my membership tier change?",
+        a: "Yes, your membership tier can change as you attend more FHS editions. The more editions you attend, the higher the tier and the greater the benefits."
+    },
+    {
+        q: "What benefits are available to Gold Tier members?",
+        a: "Gold Tier members enjoy the highest level of benefits, including significant ticket discounts, hotel/ restaurant vouchers, exclusive access to content, priority event access, and media opportunities."
+    },
+    {
+        q: "How long do my benefits last?",
+        a: "Membership benefits are valid for one year from the date you qualify for your tier. You can renew or upgrade your tier by attending more FHS editions."
+    }
+]
+
+const TERMS_DATA = [
+    {
+        title: "Membership Eligibility:",
+        body:"<p>The FHS Club is open to all individuals who have attended at least two editions of the Future Hospitality Summit. Membership is automatically assigned based on edition attendance.Tier Qualification:</p><ul><li>Member Tier: Attend at least 2 editions of FHS.</li><li>Silver Tier: Attend 3 or more editions of FHS.</li><li>Gold Tier: Attend 5 or more editions of FHS.</li></ul>"
+    },
+    {
+        title: "Membership Validity:",
+        body:"<p>Membership and associated benefits are valid for one year from the date of tier qualification. Memberships can be renewed annually by meeting the FHS edition attendance requirements.</p>"
+    },
+    {
+        title: "Benefit Redemption:",
+        body:"<p>Benefits such as discounts and vouchers are non-transferable and can only be used by the member. Benefits must be redeemed within the specified time frames.</p>"
+    },
+    {
+        title: "Changes to the Program:",
+        body:"<p>FHS reserves the right to modify or terminate the FHS Club, including its benefits and terms, at any time without prior notice.</p>"
+    },
+    {
+        title: "Privacy Policy:",
+        body:"<p>FHS Club members&apos; personal information will be handled according to the FHS privacy policy, ensuring the security and confidentiality of all data.</p>"
+    },
+    {
+        title: "Contact Information:",
+        body:"<p>For any questions or support, members can contact the FHS Club team at <a href='hello@thebench.com'>hello@thebench.com</a></p>"
+    }
+]
+
+
+
+
+
 
 
 export default function Club ({ events }) {
@@ -57,102 +119,125 @@ export default function Club ({ events }) {
         
             <Header compact />
 
+            <div className="bg-pattern-primary-50">
 
-            <HeroUnitImage imageUrl={'/assets/site/ae/hero-about-fhs-world.jpg'}>
-                <p className='fs-1 fw-600 center'>Welcome to the FHS Club</p>
-                <p className='fs-6 maxw-50 center mx-auto mt-md'>The FHS Club is an exclusive loyalty program designed to reward our most dedicated attendees, recognising and celebrating your commitment to the FHS brand. As a member, you&apos;ll enjoy exclusive perks, early access, and unique opportunities that are reserved for our most loyal supporters. Whether you are a frequent attendee or new to FHS, there is a tier for everyone, providing tailored rewards and experiences that recognise your commitment.</p>
-            </HeroUnitImage>
+                <HeroUnitImage imageUrl={'/assets/site/ae/hero-about-fhs-world.jpg'}>
+                    <p className='fs-1 fw-600 center'>Welcome to the FHS Club</p>
+                    <p className='fs-6 maxw-50 center mx-auto mt-md'>The FHS Club is an exclusive loyalty program designed to reward our most dedicated attendees, recognising and celebrating your commitment to the FHS brand. As a member, you&apos;ll enjoy exclusive perks, early access, and unique opportunities that are reserved for our most loyal supporters. Whether you are a frequent attendee or new to FHS, there is a tier for everyone, providing tailored rewards and experiences that recognise your commitment.</p>
+                </HeroUnitImage>
 
 
-            <section className="block pt-0">
-                <div className="container">
-                    <p className='fs-2 fw-600 center'>Tiers</p>
-                    <p className='fs-6 maxw-50 center mx-auto mt-md'>Our loyalty program is structured into three distinct tiers, each offering a range of benefits. Your tier is determined by your attendance at past FHS editions.</p>
-                </div>
+                <section className="block pt-0">
+                    <div className="container">
+                        <p className='fs-2 fw-600 center'>Tiers</p>
+                        <p className='fs-6 maxw-50 center mx-auto mt-md'>Our loyalty program is structured into three distinct tiers, each offering a range of benefits. Your tier is determined by your attendance at past FHS editions.</p>
+                    </div>
 
-                <div className="container columns-1 gap-sm">
-                    {
-                        TIER_DATA.map( (tier, index) => (
-                            <Tier key={index} title={tier.title} color={tier.color} badgeUrl={tier.badgeUrl} criteria={tier.criteria} benefits={tier.benefits} />
-                        ))
-                    }
-                </div>
-            </section>
+                    <div className="container columns-1 gap-sm">
+                        {
+                            TIER_DATA.map( (tier, index) => (
+                                <Tier key={index} title={tier.title} color={tier.color} badgeUrl={tier.badgeUrl} criteria={tier.criteria} benefits={tier.benefits} />
+                            ))
+                        }
+                    </div>
+                </section>
 
-            <section className="block pt-0">
-                <div className="container">
-                    <p className='fs-2 fw-600 center'>How to Join</p>
-                    
-                    <div className={CSS.steps}>
-                        <div className={CSS.step}>
-                            <p className={CSS.bigNumber}>1</p>
-                            <p>ATTEND TWO OR MORE EDITIONS OF THE FUTURE HOSPITALITY SUMMIT TO START EARNING YOUR PLACE IN THE FHS CLUB.</p>
-                        </div>
-                        <div className={CSS.step}>
-                            <p className={CSS.bigNumber}>2</p>
-                            <p>YOUR TIER IS AUTOMATICALLY ASSIGNED BASED ON YOUR ATTENDANCE RECORD. KEEP ATTENDING FHS EDITIONS TO MOVE UP THE TIERS AND UNLOCK MORE BENEFITS.</p>
-                        </div>
-                        <div className={CSS.step}>
-                            <p className={CSS.bigNumber}>3</p>
-                            <p>CHECK YOUR MEMBERSHIP STATUS AND LEARN ABOUT EXCLUSIVE BENEFITS</p>
+                <section className="block pt-0">
+                    <div className="container">
+                        <p className='fs-2 fw-600 center'>How to Join</p>
+                        
+                        <div className={CSS.steps}>
+                            <div className={CSS.step}>
+                                <p className={CSS.bigNumber}>1</p>
+                                <p>ATTEND TWO OR MORE EDITIONS OF THE FUTURE HOSPITALITY SUMMIT TO START EARNING YOUR PLACE IN THE FHS CLUB.</p>
+                            </div>
+                            <div className={CSS.step}>
+                                <p className={CSS.bigNumber}>2</p>
+                                <p>YOUR TIER IS AUTOMATICALLY ASSIGNED BASED ON YOUR ATTENDANCE RECORD. KEEP ATTENDING FHS EDITIONS TO MOVE UP THE TIERS AND UNLOCK MORE BENEFITS.</p>
+                            </div>
+                            <div className={CSS.step}>
+                                <p className={CSS.bigNumber}>3</p>
+                                <p>CHECK YOUR MEMBERSHIP STATUS AND LEARN ABOUT EXCLUSIVE BENEFITS</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
 
 
-            <section className="block bg-dark">
-                <div className="container">
-                    <p className='fs-2 fw-600 center'>Our Upcoming Events</p>
-                </div>
+                <section className="block bg-dark">
+                    <div className="container">
+                        <p className='fs-2 fw-600 center'>Our Upcoming Events</p>
+                    </div>
 
-                <UpcomingEvents landscape={true}>
-                    {
-                        events?.map( event => {
-                            return (
-                                <EventGroupCard
-                                    key={event.id}
-                                    theme={event.theme} 
-                                    location={event.heading} 
-                                    dates={{ startDate: event.startDate, endDate: event.endDate}}
-                                    venue={event.venue}
-                                >
-                                    {
-                                        event.streams &&
-                                        event.streams.map( stream => (
-                                            <EventCard
-                                                key={stream.id}
-                                                title={stream.heading}
-                                                logo={stream.logo[0]}
-                                                passLink={stream.purchasePassLink} 
-                                                websiteLink={stream.websiteLink} 
-                                                theme={event.theme} 
-                                            />
-                                        ))
-                                    }
-                                </EventGroupCard>
-                            )
-                        })
-                    }
-                </UpcomingEvents>
-            </section>
+                    <UpcomingEvents landscape={true}>
+                        {
+                            events?.map( event => {
+                                return (
+                                    <EventGroupCard
+                                        key={event.id}
+                                        theme={event.theme} 
+                                        location={event.heading} 
+                                        dates={{ startDate: event.startDate, endDate: event.endDate}}
+                                        venue={event.venue}
+                                    >
+                                        {
+                                            event.streams &&
+                                            event.streams.map( stream => (
+                                                <EventCard
+                                                    key={stream.id}
+                                                    title={stream.heading}
+                                                    logo={stream.logo[0]}
+                                                    passLink={stream.purchasePassLink} 
+                                                    websiteLink={stream.websiteLink} 
+                                                    theme={event.theme} 
+                                                />
+                                            ))
+                                        }
+                                    </EventGroupCard>
+                                )
+                            })
+                        }
+                    </UpcomingEvents>
+                </section>
 
 
 
-            <section className="block">
-                <div className="container">
-                    <p className='fs-2 fw-600 center'>FAQs (Frequently Asked Questions)</p>
-                </div>
-            </section>
-            
-            
-            
-            <section className="block bg-dark">
-                <div className="container">
-                    <p className='fs-2 fw-600 center'>Terms and Conditions</p>
-                </div>
-            </section>
+                <section className="block">
+                    <div className="container">
+                        <p className='fs-2 fw-600 center'>FAQs (Frequently Asked Questions)</p>
+                    </div>
+                    <div className="container maxw-45 columns-1 gap-sm">
+                        {
+                            FAQ_DATA.map( (set, index) => (
+                                <div key={index} className="formatted">
+                                    <p className="fs-6 fw-600 c-accent">{set.q}</p>
+                                    <p>{set.a}</p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </section>
+                
+                
+                
+                <section className="block bg-dark">
+                    <div className="container">
+                        <p className='fs-2 fw-600 center'>Terms and Conditions</p>
+                    </div>
+                    <div className="container maxw-45 columns-1 gap-sm">
+                        {
+                            TERMS_DATA.map( (set, index) => (
+                                <div key={index} className="formatted">
+                                    <p className="fs-6 fw-600 c-secondary">{set.title}</p>
+                                    <p>{parse(set.body)}</p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </section>
+            </div>
+
 
 
             <Footer />
