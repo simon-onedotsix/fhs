@@ -160,7 +160,7 @@ export default function Page ({ sessions, speakers }) {
         <>
             <Header overlaid inverse />
 
-            <HeroUnitVideo video={'/assets/video/fhs-2024-world-beanded-residences-opt.mp4'} poster={'/assets/video/fhs-2024-world-beanded-residences-opt.jpg'}>
+            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-beanded-residences-opt.mp4'} poster={'https://cms.thebench.com/assets/video/fhs-2024-world-beanded-residences-opt.jpg'}>
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}

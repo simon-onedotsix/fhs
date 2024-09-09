@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client"
-import craftApolloClient from "../api/apollo"
+import craftApolloClient from "./api/apollo"
 
-import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+import { LenisScroller } from '../fuselage/animation/lenis-scroller'
 import { motion, useScroll, useTransform } from "framer-motion"
 
 import Head from 'next/head'
@@ -9,13 +9,13 @@ import Head from 'next/head'
 import _ from 'lodash'
 import parse from 'html-react-parser'
 
-import { Header } from '../../fuselage/theme/2024/world/common/header/header'
-import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
-import { HeroUnitImage } from '../../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
+import { Header } from '../fuselage/theme/2024/global/common/header/header'
+import { Footer } from '../fuselage/theme/2024/global/common/footer/footer'
+import { HeroUnitImage } from '../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
 
-import { UpcomingEvents, EventGroupCard, EventCard } from '../../fuselage/theme/2024/world/blocks/upcoming-events/upcoming-events'
+import { UpcomingEvents, EventGroupCard, EventCard } from '../fuselage/theme/2024/world/blocks/upcoming-events/upcoming-events'
 
-import CSS from '../../fuselage/theme/2024/world/css/fhs-club.module.css'
+import CSS from '../fuselage/theme/2024/global/css/fhs-club.module.css'
 
 
 
