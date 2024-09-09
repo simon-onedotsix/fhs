@@ -270,7 +270,7 @@ export const ThemeCard = ({ iconUrl, imageUrl, title, body, sessions }) => {
                     { body && parse(body) }
                 </motion.div>
 
-                {
+                {/* {
                     sessions?.length &&
                     <div className="formatted">
                         <p className='fw-600 c-secondary mt-sm'>Agenda sessions tagged with {title}:</p>
@@ -286,7 +286,7 @@ export const ThemeCard = ({ iconUrl, imageUrl, title, body, sessions }) => {
                             )) }
                         </ul>
                     </div>
-                }
+                } */}
             </div>
 
         </div>

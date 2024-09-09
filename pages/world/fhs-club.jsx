@@ -15,7 +15,7 @@ import { HeroUnitImage } from '../../fuselage/theme/2024/world/blocks/hero-unit-
 
 import { UpcomingEvents, EventGroupCard, EventCard } from '../../fuselage/theme/2024/world/blocks/upcoming-events/upcoming-events'
 
-import CSS from '../../fuselage/theme/2024/world/css/club.module.css'
+import CSS from '../../fuselage/theme/2024/world/css/fhs-club.module.css'
 
 
 
