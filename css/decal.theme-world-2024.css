@@ -131,6 +131,17 @@
     }
 }
 
+[data-theme='world-2024'] .bg-pattern-primary-50 { 
+    background-color: var(--primary);
+    background-image: url('/assets/theme/world-2024/fhs-pattern-purple-50.png');
+    background-size: 50%;
+    background-position: top center;
+
+    @media(max-width:600px) {
+        background-size: 125%;
+    }
+}
+
 
 
 
