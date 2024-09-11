@@ -170,22 +170,13 @@ export default function Page ({ sessions, speakers }) {
                     Branded Residences Forum
                 </motion.p>
 
-                <Pop>
-                    <div className='mt-sm mb-md'>
-                        <p className='c-secondary center pb-sm caps ls-2'>Brought to you by</p>
-                        <div style={{ width: 400, maxWidth: '40vw', margin: '0 auto' }}>
-                            <img src="/assets/img/brf/accor-one-living.svg" alt="logo" />
-                        </div>
-                    </div>
-                </Pop>
-
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ type: "spring", bounce: 0.25 }}
-                    className={`fs-4 c-secondary center mt-xs maxw-45 mx-auto caps ls-2`} 
+                    className={`fs-5 c-secondary center mt-sm maxw-45 mx-auto caps ls-2`} 
                 >
-                    2 October 2024<br/>
+                    2nd October 2024<br/>
                     Madinat Jumeirah, Dubai
                 </motion.p>
 
@@ -233,22 +224,7 @@ export default function Page ({ sessions, speakers }) {
                 </div>
             </section> */}
 
-            <section className="block bg-default">
-                <div className="container formatted maxw-90">
-                    <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-05.jpg', width:2000, height:1428 }}>
-                        <Fade>
-                            <p className='fs-2 fw-600 lh-2 c-secondary'>Accor One Living and FHS World Partnership</p>
-                            <p>To host this forum, FHS World has partnered with Accor One Living, a dedicated mixed-use platform from Accor that has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans a diverse collection of brands throughout ultra-prime urban locations and the most sought-after resort destinations.</p> 
-                            <p>Each residential community supported by Accor One Living is meticulously designed and serviced to meet the demanding standards of the Accor brand it represents. The Branded Residences Forum by Accor One Living is an opportunity to engage with industry leaders, learn more about the branded residential sector, and explore the Accor One Living platform, its participating brands and communities as well as its promising pipeline.</p>
-                            <p className='mt-sm'>
-                                <a className='button center' href={ 'https://accor-residences.com/' } target={ '_blank' } rel="noreferrer">
-                                    Learn more about Accor&nbsp;One&nbsp;Living
-                                </a>
-                            </p>
-                        </Fade>
-                    </Callout>
-                </div>
-            </section>
+            
 
             <section className="block bg-default">
                 <div className="container formatted maxw-90">
@@ -297,6 +273,16 @@ export default function Page ({ sessions, speakers }) {
             }
 
             
+            <section className='block bg-default'>
+                <Pop>
+                    <div className="container">
+                        <p className='c-secondary center pb-sm caps ls-2'>Brought to you by</p>
+                        <div style={{ width: 400, maxWidth: '40vw', margin: '0 auto' }}>
+                            <img src="/assets/img/brf/accor-one-living.svg" alt="logo" />
+                        </div>
+                    </div>
+                </Pop>
+            </section>
 
 
             {/* AGENDA */}
@@ -432,6 +418,25 @@ export default function Page ({ sessions, speakers }) {
                         }
                     ]} />
 
+                </div>
+            </section>
+
+
+
+            <section className="block bg-default">
+                <div className="container formatted maxw-90">
+                    <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-05.jpg', width:2000, height:1428 }}>
+                        <Fade>
+                            <p className='fs-2 fw-600 lh-2 c-secondary'>Accor One Living and FHS World Partnership</p>
+                            <p>To host this forum, FHS World has partnered with Accor One Living, a dedicated mixed-use platform from Accor that has been at the forefront of driving the branded residences sector, showcasing an impressive portfolio that spans a diverse collection of brands throughout ultra-prime urban locations and the most sought-after resort destinations.</p> 
+                            <p>Each residential community supported by Accor One Living is meticulously designed and serviced to meet the demanding standards of the Accor brand it represents. The Branded Residences Forum by Accor One Living is an opportunity to engage with industry leaders, learn more about the branded residential sector, and explore the Accor One Living platform, its participating brands and communities as well as its promising pipeline.</p>
+                            <p className='mt-sm'>
+                                <a className='button center' href={ 'https://accor-residences.com/' } target={ '_blank' } rel="noreferrer">
+                                    Learn more about Accor&nbsp;One&nbsp;Living
+                                </a>
+                            </p>
+                        </Fade>
+                    </Callout>
                 </div>
             </section>
             
