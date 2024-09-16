@@ -154,7 +154,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             <Header overlaid inverse />
 
 
-            <HeroUnitVideo video={'/assets/video/fhs-2023-opt.mp4'} poster={'/assets/video/fhs-2023-opt-poster.jpg'}>
+            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2023-opt.mp4'} poster={'/assets/video/fhs-2023-opt-poster.jpg'}>
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}

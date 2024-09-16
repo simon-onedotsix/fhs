@@ -9,8 +9,18 @@
 .hero {
     position: relative;
     max-width: 100%;
+    background-color: white;
 }
-.hero img {
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: var(--space-sm);
+}
+
+.hero.cover img {
     object-fit: cover;
     object-position: center;
     width: 100%;
@@ -19,6 +29,7 @@
 }
 .hero.fill img {
     object-fit: fill;
+    width: 100%;
 }
 
 .content {

@@ -28,10 +28,20 @@ export const Card = ({ hero, heroRatio, heroLayout, heroWidth, body }) => {
     return (
         <div className={CSS.layout}>
             <div 
-                className={`${CSS.hero} ${heroLayout === `fill` && CSS.fill}`} 
+                className={`
+                    ${CSS.hero} 
+                    ${heroLayout === `logo` && CSS.logo}
+                    ${heroLayout === `cover` && CSS.cover}
+                `} 
                 style={{ aspectRatio: heroRatio, width: heroWidth ? `${heroWidth}%` : `100%` }}
             >
-                <Image src={hero[0].url} layout={`fill`} />
+                {
+                    heroLayout === 'logo' ?
+                        <Image src={hero[0].url} width={hero[0].width} height={hero[0].height} />
+                    :
+                        <Image src={hero[0].url} layout={`fill`} />
+                }
+
             </div>
 
             <div className={CSS.content} dangerouslySetInnerHTML={{__html: body }} />
