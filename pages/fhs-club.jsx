@@ -12,6 +12,7 @@ import parse from 'html-react-parser'
 import { Header } from '../fuselage/theme/2024/global/common/header/header'
 import { Footer } from '../fuselage/theme/2024/global/common/footer/footer'
 import { HeroUnitImage } from '../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
+import { FhsLockup } from "../fuselage/theme/2024/global/components/logos/fhs-brand"
 import { Button } from '../fuselage/theme/2024/world/components/button/button'
 import HubspotForm from "../fuselage/components/hubspot-form/hubspot-form"
 
@@ -125,7 +126,15 @@ export default function Club ({ events }) {
             <div className="bg-pattern-primary-50">
 
                 <HeroUnitImage imageUrl={'/assets/site/ae/hero-about-fhs-world.jpg'}>
-                    <p className='fs-1 fw-600 center'>Welcome to the FHS Club</p>
+                    <p className='fs-1 fw-600 center'>Welcome to the</p>
+                    <div className="pt-xs" style={{ margin: '0 auto'}}>
+                        <FhsLockup 
+                            inverse
+                            sectorLabel={"Club"} 
+                            sectorColor={"#6E3FA1"} 
+                            topColor={"#9A72AB"}
+                        />
+                    </div>
                     <p className='fs-5 maxw-50 center mx-auto mt-md'>The FHS Club is an exclusive loyalty program designed to reward our most dedicated attendees, recognising and celebrating your commitment to the FHS brand. As a member, you&apos;ll enjoy exclusive perks, early access, and unique opportunities that are reserved for our most loyal supporters.</p>
                 </HeroUnitImage>
 

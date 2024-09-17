@@ -36,14 +36,24 @@ function Speakers({ seomatic, speakers }) {
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
 		(speaker => speaker.firstName == 'His Excellency Abdulla bin Touq Al' && speaker.lastName === 'Marri' ? 0 : 1),
 		(speaker => speaker.firstName == 'His Excellency Issam AbdulRahim' && speaker.lastName === 'Kazim' ? 0 : 1),
+		(speaker => speaker.firstName == 'Fatim-Zahra' && speaker.lastName === 'Ammor' ? 0 : 1),
 		(speaker => speaker.firstName == 'Sébastien' && speaker.lastName === 'Bazin' ? 0 : 1),
-		(speaker => speaker.firstName == 'Pier Paolo' && speaker.lastName === 'Righi' ? 0 : 1),
 		(speaker => speaker.firstName == 'Paul' && speaker.lastName === 'Griffiths' ? 0 : 1),
+		(speaker => speaker.firstName == 'Philip' && speaker.lastName === 'Barnes' ? 0 : 1),
+		(speaker => speaker.firstName == 'Puneet' && speaker.lastName === 'Chhatwal' ? 0 : 1),
+		(speaker => speaker.firstName == 'Kevin' && speaker.lastName === 'Goh' ? 0 : 1),
+		(speaker => speaker.firstName == 'Pier Paolo' && speaker.lastName === 'Righi' ? 0 : 1),
 		(speaker => speaker.firstName == 'Satya' && speaker.lastName === 'Anand' ? 0 : 1),
-		(speaker => speaker.firstName == 'Javier' && speaker.lastName === 'Águila' ? 0 : 1),
-		(speaker => speaker.firstName == 'John' && speaker.lastName === 'Pagano' ? 0 : 1),
+		(speaker => speaker.firstName == 'Artur' && speaker.lastName === 'Gerber' ? 0 : 1),
+		(speaker => speaker.firstName == 'Michael' && speaker.lastName === 'Dyke' ? 0 : 1),
+		(speaker => speaker.firstName == 'Greg' && speaker.lastName === 'Djerejian' ? 0 : 1),
+		(speaker => speaker.firstName == 'Elie' && speaker.lastName === 'Younes' ? 0 : 1),
 		(speaker => speaker.firstName == 'Haitham' && speaker.lastName === 'Mattar' ? 0 : 1),
-		(speaker => speaker.firstName == 'Stephen' && speaker.lastName === 'Sackur' ? 0 : 1),
+		(speaker => speaker.firstName == 'Guy' && speaker.lastName === 'Hutchinson' ? 0 : 1),
+		(speaker => speaker.firstName == 'Dr. Fahad' && speaker.lastName === 'bin Mushayt' ? 0 : 1),
+		(speaker => speaker.firstName == 'Thomas' && speaker.lastName === 'B. Meier' ? 0 : 1),
+		(speaker => speaker.firstName == 'Duncan' && speaker.lastName === "O’Rourke" ? 0 : 1),
+		(speaker => speaker.firstName == 'Dr. Marinos' && speaker.lastName === 'Giannopoulos' ? 0 : 1),
 	] )
 	
 	
