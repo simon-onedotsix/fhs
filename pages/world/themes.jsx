@@ -16,7 +16,7 @@ import CSS from '../../fuselage/theme/2024/world/css/themes.module.css'
 
 
 
-const THEMES_DATA = [
+export const THEMES_DATA = [
     {
         id: 'RmllbGRWYWx1ZV8yNDU3Mjg5Mg==',
         imageUrl: '/assets/img/brf/themes/global-investment.jpg',

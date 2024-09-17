@@ -12,10 +12,13 @@ import parse from 'html-react-parser'
 import { Header } from '../fuselage/theme/2024/global/common/header/header'
 import { Footer } from '../fuselage/theme/2024/global/common/footer/footer'
 import { HeroUnitImage } from '../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
+import { Button } from '../fuselage/theme/2024/world/components/button/button'
+import HubspotForm from "../fuselage/components/hubspot-form/hubspot-form"
 
 import { UpcomingEvents, EventGroupCard, EventCard } from '../fuselage/theme/2024/world/blocks/upcoming-events/upcoming-events'
 
 import CSS from '../fuselage/theme/2024/global/css/fhs-club.module.css'
+
 
 
 
@@ -24,29 +27,29 @@ const TIER_DATA = [
         title: 'Member',
         color: 'white',
         badgeUrl: '/assets/theme/fhs-pin-member.png',
-        criteria: '<p>Attended at least 2 editions of the last 6 editions of FHS</p>',
-        benefits: '<ul><li><strong>5% Discount on Standard Tickets:</strong> Enjoy a discount on your tickets to future FHS editions.</li><li><strong>5% Discount on Colleague/Friend Tickets:</strong> Share the experience with your colleagues and friends at a reduced price.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Get early access to valuable industry insights and content from past events.</li><li><strong>Loyalty Pins/Badges:</strong> Receive special loyalty pins or badges provided on-site at events.</li></ul>'
+        criteria: '<p>Attended at least 2 editions of the recent most 6 editions of FHS</p>',
+        benefits: '<ul><li><strong>5% Discount on Standard Tickets:</strong> Enjoy a discount on your tickets to future FHS editions.</li><li><strong>5% Discount on Colleague/Friend Tickets:</strong> Share the experience with your colleagues and friends at a reduced price.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Get early access to valuable industry insights from our partners and content from recent events.</li></ul>'
     },
     {
         title: 'Silver',
         color: '#9F9F9F',
         badgeUrl: '/assets/theme/fhs-pin-silver.png',
-        criteria: '<p>Attended 3 or more editions of the last 6 editions of FHS</p>',
-        benefits: '<ul><li><strong>10% Discount on Standard Tickets:</strong> Greater savings on your tickets to FHS events.</li><li><strong>5% Discount on Colleague/Friend Tickets:</strong> Continued discount for your colleagues and friends.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Stay ahead with priority access to exclusive content.</li><li><strong>Loyalty Pins/Badges:</strong> Receive loyalty pins or badges on-site.</li><li><strong>Hotel/Restaurant Vouchers:</strong> Free hotel nights/restaurant/activity vouchers from our sponsors/partners.</li><li><strong>2 Weeks Extended Access to Previous Delegate Rate:</strong> Secure your place at events with extended access to discounted rates.</li><li><strong>Featured on FHS Website:</strong> Be recognized on our website under the members&apos; section.</li><li><strong>Priority Access to Site Tours and On-Site Activities:</strong> Enjoy priority booking for site tours and other activities.</li><li><strong>Access to Networking Receptions:</strong> Join exclusive networking receptions at FHS and other Bench conferences.</li></ul>'
+        criteria: '<p>Attended 3 or more editions of the recent most 6 editions of FHS</p>',
+        benefits: '<ul><li><strong>7% Discount on Standard Tickets:</strong> Greater savings on your tickets to FHS events.</li><li><strong>5% Discount on Colleague/Friend Tickets:</strong> Continued discount for your colleagues and friends.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Stay ahead with priority access to exclusive content.</li><li><strong>Loyalty Pins/Badges:</strong> Receive loyalty pins or badges on-site.</li><li><strong>Hotel/Restaurant Vouchers:</strong> Free hotel nights/restaurant/activity vouchers from our sponsors/partners.</li><li><strong>Priority Access to Site Tours and On-Site Activities:</strong> Enjoy priority booking for site tours and other activities.</li><li><strong>Access to Networking Receptions:</strong> Join exclusive networking receptions at FHS and other Bench conferences.</li></ul>'
     },
     {
         title: 'Gold',
         color: '#DFA258',
         badgeUrl: '/assets/theme/fhs-pin-gold.png',
         criteria: '<p>Attended 5 or more editions of FHS</p>',
-        benefits: '<ul><li><strong>15% Discount on Delegate Tickets:</strong> Maximize your savings with the highest discount on event tickets.</li><li><strong>10% Discount on Colleague/Friend Tickets:</strong> Significant savings for your colleagues and friends.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Continue to receive exclusive industry insights and content.</li><li><strong>Loyalty Pins/Badges + Event Preparation Kits:</strong> Get special loyalty pins or badges along with event preparation kits provided on-site.</li><li><strong>Hotel/Restaurant Vouchers:</strong> Free hotel nights/restaurant/activity vouchers from our sponsors/partners.</li><li><strong>4 Weeks Extended Access to Previous Delegate Rate:</strong> Enjoy the longest period of extended access to discounted rates.</li><li><strong>Featured on FHS Website:</strong> Prominent recognition on our website.</li><li><strong>Priority Access to Site Tours and On-Site Activities:</strong> Maintain priority booking status for all activities.</li><li><strong>Access to Networking Receptions:</strong> Full access to all networking receptions at FHS and other Bench conferences.</li><li><strong>Opportunity to be Featured in FHS Podcast:</strong> Opportunity to be an interviewer of one of our partners/sponsors.</li><li><strong>Opportunity to be Interviewed On-Site:</strong> Gain visibility by being interviewed by the FHS team on-site.</li></ul>'
+        benefits: '<ul><li><strong>10% Discount on Delegate Tickets:</strong> Maximize your savings with the highest discount on event tickets.</li><li><strong>10% Discount on Colleague/Friend Tickets:</strong> Significant savings for your colleagues and friends.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Continue to receive exclusive industry insights and content.</li><li><strong>Loyalty Pins/Badges + Event Preparation Kits:</strong> Get special loyalty pins or badges along with event preparation kits provided on-site.</li><li><strong>Hotel/Restaurant Vouchers:</strong> Free hotel nights/restaurant/activity vouchers from our sponsors/partners.</li><li><strong>Featured on FHS Website:</strong> Prominent recognition on our website.</li><li><strong>Priority Access to Site Tours and On-Site Activities:</strong> Maintain priority booking status for all activities.</li><li><strong>Access to Networking Receptions:</strong> Full access to all networking receptions at FHS and other Bench conferences.</li><li><strong>Opportunity to be Featured in FHS Podcast:</strong> Opportunity to be an interviewer of one of our partners/sponsors.</li><li><strong>Opportunity to be Interviewed On-Site:</strong> Gain visibility by being interviewed by the FHS team on-site.</li></ul>'
     }
 ]
 
 const FAQ_DATA = [
     {
         q: "What is the FHS Club?",
-        a: "The FHS Club is a loyalty program designed to reward attendees of the Future Hospitality Summit with exclusive benefits based on their participation in past editions."
+        a: "The FHS Club is a loyalty programme designed to reward attendees of the Future Hospitality Summit with exclusive benefits based on their participation in the recent most 6 editions."
     },
     {
         q: "How do I become a member of the FHS Club?",
@@ -70,18 +73,18 @@ const FAQ_DATA = [
     },
     {
         q: "How long do my benefits last?",
-        a: "Membership benefits are valid for one year from the date you qualify for your tier. You can renew or upgrade your tier by attending more FHS editions."
+        a: "Membership tiers are updated at every FHS event to include recent most 6 editions. You can renew or upgrade your tier by attending more FHS editions."
     }
 ]
 
 const TERMS_DATA = [
     {
         title: "Membership Eligibility:",
-        body:"<p>The FHS Club is open to all individuals who have attended at least two editions of the Future Hospitality Summit. Membership is automatically assigned based on edition attendance.Tier Qualification:</p><ul><li>Member Tier: Attend at least 2 editions of FHS.</li><li>Silver Tier: Attend 3 or more editions of FHS.</li><li>Gold Tier: Attend 5 or more editions of FHS.</li></ul>"
+        body:"<p>The FHS Club is open to all individuals who have attended at least two editions of the Future Hospitality Summit. Membership is automatically assigned based on edition attendance.Tier Qualification:</p><ul><li>Member Tier: Attend at least 2 editions of the recent most 6 editions of FHS.</li><li>Silver Tier: Attend 3 or more editions of the recent most 6 editions of FHS.</li><li>Gold Tier: Attend 5 or more editions of the recent most 6 editions of FHS.</li></ul>"
     },
     {
         title: "Membership Validity:",
-        body:"<p>Membership and associated benefits are valid for one year from the date of tier qualification. Memberships can be renewed annually by meeting the FHS edition attendance requirements.</p>"
+        body:"<p>Membership and associated benefits are valid until the next edition of FHS event. Memberships can be biannually by meeting the FHS edition attendance requirements.</p>"
     },
     {
         title: "Benefit Redemption:",
@@ -123,14 +126,16 @@ export default function Club ({ events }) {
 
                 <HeroUnitImage imageUrl={'/assets/site/ae/hero-about-fhs-world.jpg'}>
                     <p className='fs-1 fw-600 center'>Welcome to the FHS Club</p>
-                    <p className='fs-6 maxw-50 center mx-auto mt-md'>The FHS Club is an exclusive loyalty program designed to reward our most dedicated attendees, recognising and celebrating your commitment to the FHS brand. As a member, you&apos;ll enjoy exclusive perks, early access, and unique opportunities that are reserved for our most loyal supporters. Whether you are a frequent attendee or new to FHS, there is a tier for everyone, providing tailored rewards and experiences that recognise your commitment.</p>
+                    <p className='fs-5 maxw-50 center mx-auto mt-md'>The FHS Club is an exclusive loyalty program designed to reward our most dedicated attendees, recognising and celebrating your commitment to the FHS brand. As a member, you&apos;ll enjoy exclusive perks, early access, and unique opportunities that are reserved for our most loyal supporters.</p>
                 </HeroUnitImage>
 
 
                 <section className="block pt-0">
-                    <div className="container">
+                    <div className="container center formatted">
                         <p className='fs-2 fw-600 center'>Tiers</p>
-                        <p className='fs-6 maxw-50 center mx-auto mt-md'>Our loyalty program is structured into three distinct tiers, each offering a range of benefits. Your tier is determined by your attendance at past FHS editions.</p>
+                        <p className='fs-6 maxw-50 mx-auto mt-md'>Our loyalty programme is divided into three distinct tiers, each offering a range of exclusive benefits. Your tier is determined based on your attendance at the most recent 6 editions of FHS which for now includes:</p>
+                        <p>AHIC 2021 | FHS Saudi Arabia 2022, 2023, 2024 | FHS World 2022, 2023</p>
+                        <p>Please note that membership status will reset at every FHS event to include the recent most 6 editions.</p>
                     </div>
 
                     <div className="container columns-1 gap-sm">
@@ -139,6 +144,13 @@ export default function Club ({ events }) {
                                 <Tier key={index} title={tier.title} color={tier.color} badgeUrl={tier.badgeUrl} criteria={tier.criteria} benefits={tier.benefits} />
                             ))
                         }
+                    </div>
+                    <div className="container center">
+                        <Button 
+                            href={'https://14527187.fs1.hubspotusercontent-na1.net/hubfs/14527187/FHS%20Club/Gold%20Members.pdf'} 
+                            target={'_blank'}
+                            theme={{ background: `var(--secondary)`, hover: `white`, color: `var(--primary)`}}
+                        >View Gold Members</Button>
                     </div>
                 </section>
 
@@ -157,9 +169,13 @@ export default function Club ({ events }) {
                             </div>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>3</p>
-                                <p>CHECK YOUR MEMBERSHIP STATUS AND LEARN ABOUT EXCLUSIVE BENEFITS</p>
+                                <p>CHECK YOUR MEMBERSHIP STATUS BELOW AND LEARN ABOUT EXCLUSIVE BENEFITS. MEMERSHIP STATUS WILL RESET AT EVERY FHS EVENT</p>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="container maxw-30">
+                        <HubspotForm portalId={"14527187"} formId={"975e52f2-15f8-4f34-bfd8-b251c814c288"} />
                     </div>
                 </section>
 
@@ -283,7 +299,6 @@ const Tier = ({ color, badgeUrl, title, criteria, benefits }) => {
 
 
 // DATA -----------------------------------------------
-
 
 
 export async function getStaticProps() {
