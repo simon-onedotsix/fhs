@@ -85,7 +85,7 @@ const TERMS_DATA = [
     },
     {
         title: "Membership Validity:",
-        body:"<p>Membership and associated benefits are valid until the next edition of FHS event. Memberships can be biannually by meeting the FHS edition attendance requirements.</p>"
+        body:"<p>Membership and associated benefits are valid until the next edition of FHS event and will be updated biannually.</p>"
     },
     {
         title: "Benefit Redemption:",
@@ -150,16 +150,16 @@ export default function Club ({ events }) {
                     <div className="container columns-1 gap-sm">
                         {
                             TIER_DATA.map( (tier, index) => (
-                                <Tier key={index} title={tier.title} color={tier.color} badgeUrl={tier.badgeUrl} criteria={tier.criteria} benefits={tier.benefits} />
+                                <Tier 
+                                    key={index} 
+                                    title={tier.title} 
+                                    color={tier.color} 
+                                    badgeUrl={tier.badgeUrl} 
+                                    criteria={tier.criteria} 
+                                    benefits={tier.benefits} 
+                                />
                             ))
                         }
-                    </div>
-                    <div className="container center">
-                        <Button 
-                            href={'https://14527187.fs1.hubspotusercontent-na1.net/hubfs/14527187/FHS%20Club/Gold%20Members.pdf'} 
-                            target={'_blank'}
-                            theme={{ background: `var(--secondary)`, hover: `white`, color: `var(--primary)`}}
-                        >View Gold Members</Button>
                     </div>
                 </section>
 
@@ -287,6 +287,18 @@ const Tier = ({ color, badgeUrl, title, criteria, benefits }) => {
                     <img src={badgeUrl} alt="" />
                 </div>
                 <p className={CSS.tierTitle} style={{ background: color ? color : 'white' }}>{ title }</p>
+
+                {
+                    title === "Gold" &&
+                    <div className="mt-sm center">
+                        <a 
+                            className="uLink"
+                            href={'https://14527187.fs1.hubspotusercontent-na1.net/hubfs/14527187/FHS%20Club/Gold%20Members.pdf'} 
+                            target={'_blank'}
+                            theme={{ background: `var(--secondary)`, hover: `white`, color: `var(--primary)`}}
+                        >View Gold Members</a>
+                    </div>
+                }
             </aside>
             <main>
                 <div className='formatted'>
