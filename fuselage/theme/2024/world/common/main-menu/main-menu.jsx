@@ -47,6 +47,18 @@ export const MainMenu = ({ otherEvents }) => {
                     >
                         Become A Sponsor
                     </Button>
+                    
+                    <Button 
+                        href={`https://page.swapcard.com/app/the-bench/`} 
+                        theme={{ 
+                            color: `var(--primary)`,
+                            background: `var(--secondary-1)`, 
+                            hover: `var(--secondary-1-dark)`, 
+                        }} 
+                        decal={`fw-600`}
+                    >
+                        Download Event App
+                    </Button>
                 </div>
                     
                 <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>

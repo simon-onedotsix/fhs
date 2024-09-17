@@ -88,6 +88,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                         <p className='lh-2'><span className='fw-600'>30 SEP - 02 OCT 2024</span> <br/>Madinat Jumeirah, Dubai</p>
                     </div>
                 </section>
+                
                 <div className={`${CSS.nav} ${ !inView && CSS.fixed}`}>
                     <MainMenu mainMenu={null} otherEvents={otherEvents} />
                 </div>
