@@ -10,13 +10,13 @@ import { Header } from '../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 import { HeroUnitImage } from '../../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
 
-import { ThemesSlider } from '../../fuselage/theme/2024/world/components/themes-slider/themes-slider'
+import { Button } from '../../fuselage/theme/2024/world/components/button/button'
 
 import CSS from '../../fuselage/theme/2024/world/css/themes.module.css'
 
 
 
-export const THEMES_DATA = [
+const THEMES_DATA = [
     {
         id: 'RmllbGRWYWx1ZV8yNDU3Mjg5Mg==',
         imageUrl: '/assets/img/brf/themes/global-investment.jpg',
@@ -164,7 +164,8 @@ export default function Themes ({ sessions }) {
             <ThemesLayout>
                 { THEMES_DATA.map( (theme, index) => (
                     <ThemeCard 
-                        key={index} 
+                        key={index}
+                        themeId={theme.id} 
                         imageUrl={theme.imageUrl} 
                         iconUrl={theme.iconUrl} 
                         title={theme.title} 
@@ -228,7 +229,7 @@ export const ThemesExploreArrow = () => {
     )
 }
 
-export const ThemeCard = ({ iconUrl, imageUrl, title, body, sessions }) => {
+export const ThemeCard = ({ iconUrl, imageUrl, themeId, title, body, sessions }) => {
     return (
         <div className={CSS.card}>
             <motion.div 
@@ -270,23 +271,35 @@ export const ThemeCard = ({ iconUrl, imageUrl, title, body, sessions }) => {
                     { body && parse(body) }
                 </motion.div>
 
-                {/* {
+                {
                     sessions?.length &&
                     <div className="formatted">
-                        <p className='fw-600 c-secondary mt-sm'>Agenda sessions tagged with {title}:</p>
-                        <ul>
-                            { sessions.map( session => (
-                                <motion.li key={session.id}
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    transition={{ type: "spring", bounce: 0.25, delay: 0.2 }}
-                                >
-                                    { session.titleTranslations[0].value }
-                                </motion.li> 
-                            )) }
-                        </ul>
+                        <details className='mt-sm'>
+                            <summary  className='fw-600 fs-6 c-secondary'>
+                                {title} Sessions
+                            </summary>
+                            <ul className='mt-xs'>
+                                { sessions.map( session => (
+                                    <motion.li key={session.id}
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        transition={{ type: "spring", bounce: 0.25, delay: 0.2 }}
+                                    >
+                                        { session.titleTranslations[0].value }
+                                    </motion.li> 
+                                )) }
+                            </ul>
+                            
+                            <p className='mt-sm'>
+                                <Button 
+                                    href={`/world/agenda?track=${themeId}`}
+                                    theme={{ background: `var(--primary-2)`, hover: `var(--primary-2-dark)`, color: `white`}}
+                                >Go to Agenda</Button>
+                            </p>
+                        </details>
+
                     </div>
-                } */}
+                }
             </div>
 
         </div>
