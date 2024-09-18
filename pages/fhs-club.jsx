@@ -135,7 +135,7 @@ export default function Club ({ events }) {
                             topColor={"#9A72AB"}
                         />
                     </div>
-                    <p className='fs-5 maxw-55 center mx-auto mt-md'>Be part of our exclusive community, reserved for those who shape the future of hospitality. As one of our most dedicated attendees, you&apos;ll gain access to exclusive privileges, early VIP experiences, and once-in-a-lifetime opportunities that only the inner circle of FHS can enjoy. This is your gateway to the future - and it's waiting for those bold enough to seize it.</p>
+                    <p className='fs-5 maxw-55 center mx-auto mt-md'>Be part of our exclusive community, reserved for those who shape the future of hospitality. As one of our most dedicated attendees, you&apos;ll gain access to exclusive privileges, early VIP experiences, and once-in-a-lifetime opportunities that only the inner circle of FHS can enjoy. This is your gateway to the future - and it&apos;s waiting for those bold enough to seize it.</p>
                 </HeroUnitImage>
 
 
