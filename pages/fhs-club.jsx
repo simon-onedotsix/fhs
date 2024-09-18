@@ -135,7 +135,7 @@ export default function Club ({ events }) {
                             topColor={"#9A72AB"}
                         />
                     </div>
-                    <p className='fs-5 maxw-50 center mx-auto mt-md'>The FHS Club is an exclusive loyalty program designed to reward our most dedicated attendees, recognising and celebrating your commitment to the FHS brand. As a member, you&apos;ll enjoy exclusive perks, early access, and unique opportunities that are reserved for our most loyal supporters.</p>
+                    <p className='fs-5 maxw-55 center mx-auto mt-md'>Be part of our exclusive community, reserved for those who shape the future of hospitality. As one of our most dedicated attendees, you&apos;ll gain access to exclusive privileges, early VIP experiences, and once-in-a-lifetime opportunities that only the inner circle of FHS can enjoy. This is your gateway to the future - and it's waiting for those bold enough to seize it.</p>
                 </HeroUnitImage>
 
 
@@ -170,7 +170,7 @@ export default function Club ({ events }) {
                         <div className={CSS.steps}>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>1</p>
-                                <p>ATTEND TWO OR MORE EDITIONS OF THE FUTURE HOSPITALITY SUMMIT TO START EARNING YOUR PLACE IN THE FHS CLUB.</p>
+                                <p>ATTEND TWO OR MORE OF THE RECENT SIX EDITIONS OF FUTURE HOSPITALITY SUMMIT (FHS SAUDI ARABIA, FHS WORLD) TO START EARNING YOUR PLACE IN THE FHS CLUB.</p>
                             </div>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>2</p>
