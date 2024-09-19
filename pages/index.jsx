@@ -209,6 +209,10 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
                 <div className="container">
                     { handleUpcomingEvents( data.events )}
                 </div>
+
+                <div className="container center">
+                    <ArrowButton href={'fhs-club'} theme={{ arrow: `var(--primary-3)`, border: `var(--primary-3)`, label: `white`}}>FHS Club Loyalty Programme</ArrowButton>
+                </div>
             </section>
 
             

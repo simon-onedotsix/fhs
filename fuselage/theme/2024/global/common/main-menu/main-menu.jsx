@@ -50,7 +50,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                         key={item.id}
                                                         className={`
                                                             fw-600
-                                                            ${item.headingSize === 'lg' ? 'fs-5 c-accent mb-xxs' : ''}
+                                                            ${item.headingSize === 'lg' ? 'fs-5 c-secondary mt-sm mb-xs' : ''}
                                                             ${item.headingSize === 'md' ? 'fs-6' : ''}
                                                             ${item.headingSize === 'sm' ? 'fs-default' : ''}
                                                         `} 

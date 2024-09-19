@@ -177,10 +177,10 @@ export default function Agenda ({ sessions, locations }) {
 
 			if ( session.speakers.length ) {
 				session.speakers.forEach( speaker => {
-					searchContent = searchContent + ` ${speaker.firstName.toLowerCase()} `
-					searchContent = searchContent + ` ${speaker.lastName.toLowerCase()} `
-					searchContent = searchContent + ` ${speaker.jobTitle?.toLowerCase()} `
-					searchContent = searchContent + ` ${speaker.organization?.toLowerCase()} `
+					searchContent = searchContent + ` ${speaker.firstName.toLowerCase()}`
+					searchContent = searchContent + ` ${speaker.lastName.toLowerCase()}`
+					searchContent = searchContent + ` ${speaker.jobTitle?.toLowerCase()}`
+					searchContent = searchContent + ` ${speaker.organization?.toLowerCase()}`
 				})
 			}
 
@@ -190,7 +190,7 @@ export default function Agenda ({ sessions, locations }) {
 				})
 			}
 
-			// console.log('current session searchContent:', searchContent)
+			console.log('current session searchContent:', searchContent)
 
 			if ( searchContent.includes(search.toLowerCase()) ) return session
 
@@ -534,7 +534,7 @@ export default function Agenda ({ sessions, locations }) {
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
 	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
 	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))	
-	console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
+	// console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
 	// console.log('SEARCH:', search)
 
 
@@ -915,7 +915,7 @@ Agenda.theme = 'world-2024'
 const SpeakerCard = ({ speaker, type }) => {
 
 	return (
-		<div key={speaker.id} className='sessionSpeaker'>
+		<div key={speaker.id} className={CSS.sessionSpeaker}>
 
 			<span style={{ cursor: speaker.biography ? 'pointer' : 'default' }}>
 				{

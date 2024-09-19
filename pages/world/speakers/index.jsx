@@ -88,6 +88,7 @@ function Speakers({ seomatic, speakers }) {
 							customOrderedSpeakers.map( speaker => {
 
 								let BRFspeaker = false
+
 								speaker.speakerOnPlannings?.forEach( planning => {
 									if ( planning.fields.some( field => field.id == "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) ) BRFspeaker = true
 								})
@@ -120,7 +121,13 @@ function Speakers({ seomatic, speakers }) {
 												<span className='fw-600'>{speaker.firstName} {speaker.lastName}</span> 
 												<br/>{speaker.jobTitle} 
 												<br/>{speaker.organization}
-												{ BRFspeaker && <p className="fs-sm fw-600 c-accent mt-xxs">Speaking at the Branded Residences&nbsp;Forum</p> }
+
+												{
+													// filter out specific speakers then show BRF tag
+													BRFspeaker && speaker.id !== "RXZlbnRQZW9wbGVfMzIxMTkyODQ=" && speaker.id !== "RXZlbnRQZW9wbGVfMzE4NDk5Mzg=" ? 
+														<p className="fs-sm fw-600 c-accent mt-xxs">Speaking at the Branded Residences&nbsp;Forum</p>
+													: null 
+												}
 											</p>
 										</div>
 									</div>
