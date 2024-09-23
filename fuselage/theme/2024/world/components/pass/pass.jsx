@@ -9,7 +9,7 @@ import CSS from './pass.module.css'
 
 
 
-export const PassPriceBands = ({ flash, title, description, currency, priceBands, priceIncreaseMessage, quantityRemaining, label, href }) => {
+export const PassPriceBands = ({ flash, title, description, currency, priceBands, soldOut, priceIncreaseMessage, quantityRemaining, label, href }) => {
 
     const [ currentBand, setCurrentBand ] = useState()
     const [ nextBand, setNextBand ] = useState()
@@ -42,7 +42,13 @@ export const PassPriceBands = ({ flash, title, description, currency, priceBands
 
     
     return (
-        <div className={`${CSS.pass} bg-white p-sm`}>
+        <div className={`${CSS.pass} ${soldOut && CSS.soldOut} bg-white p-sm`}>
+
+            {
+                soldOut &&
+                <div className={CSS.soldOutFlash}><span className='fs-2 fw-600 c-white caps center lh-1'>Sold out</span></div>
+            }
+
 
             {
                 flash &&

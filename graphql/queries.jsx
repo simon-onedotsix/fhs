@@ -329,6 +329,7 @@ export const Passes = `
                 passQuantityRemaining
                 passButtonLabel
                 passButtonUrl
+                passSoldOut
             }
         }
     }
