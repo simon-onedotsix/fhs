@@ -89,3 +89,10 @@
     }
     
 }
+
+
+@media print {
+    .layout {
+        display: none;
+    }
+}

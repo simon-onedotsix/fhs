@@ -19,7 +19,7 @@ export const Footer = () => {
     const socialConnections = globals.global[2].socialConnections
 
     return (
-        <footer className="block">
+        <footer className={`${CSS.footer} block`}>
             <div className={`container columns-3 gap-md formatted`}>
 
                     <section className={`${CSS.section}`}>

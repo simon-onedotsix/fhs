@@ -723,3 +723,59 @@
 
     top: -14rem;
 }
+
+
+
+
+
+@media print {
+
+    .filters,
+    .search {
+        display: none;
+    }
+    .agenda * {
+        color: black !important;
+    }
+
+
+    .agendaWrapper {
+        width: 100vw;
+    }
+
+    .sessions {
+        flex-direction: column;
+    }
+    .sessionsWrapper {
+        break-inside: avoid;
+        position: relative;
+        flex:1;
+        display: flex;
+        gap: .5rem;
+    }
+
+    .dayDivider {
+        background-color: white !important;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        margin: 2rem 0;
+    }
+
+    .sessionHeader {
+        border-bottom: 1px solid rgb(200, 200, 200) !important;
+        background-color: white !important;
+    }
+    .session {
+        background-color: white !important;
+        border: 1px solid rgb(200, 200, 200);
+        color: black !important;
+    }
+
+    .sessionTag {
+        color: white !important;
+    }
+
+    .speakerAvatar {
+        display: none;
+    }
+}

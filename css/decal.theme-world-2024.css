@@ -484,3 +484,14 @@
 [data-theme='world-2024'] .woot-widget-bubble {
     background: var(--accent) !important;
 }
+
+
+
+
+
+@media print {
+    body {
+        background-color: white !important;
+        color: black;
+    }
+}

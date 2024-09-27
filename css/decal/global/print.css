@@ -12,7 +12,7 @@
     }
 
     /* force chrome to print colour backgrounds */
-    body { -webkit-print-color-adjust: exact !important; }
+    /* body { -webkit-print-color-adjust: exact !important; } */
 
     /* stop block elements from splitting across pages */
     div { display: table; }

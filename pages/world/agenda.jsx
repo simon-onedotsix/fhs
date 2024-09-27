@@ -577,7 +577,7 @@ export default function Agenda ({ sessions, locations }) {
 
             <Header compact shim />
 
-            <section className="block">
+            <section className={`${CSS.agendaWrapper} block`}>
                 
 				<span id="agenda"/>
 
@@ -917,7 +917,7 @@ const SpeakerCard = ({ speaker, type }) => {
 	return (
 		<div key={speaker.id} className={CSS.sessionSpeaker}>
 
-			<span style={{ cursor: speaker.biography ? 'pointer' : 'default' }}>
+			<span className={CSS.speakerAvatar} style={{ cursor: speaker.biography ? 'pointer' : 'default' }}>
 				{
 					speaker.photoUrl ?
 						<img src={speaker.photoUrl} alt="" style={{ maxWidth: 100, maxHeight: 100, borderRadius: 100, marginBottom: 10 }} />
