@@ -727,11 +727,40 @@
 
 
 
+/* title-block */
+
+.titleBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.printButton {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: white;
+    display: inline-grid;
+    grid-template-columns: 1.5rem auto;
+    gap: .25rem;
+    align-items: center;
+
+}
+.printButton svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
+
+
+/* printer styles --------------------------------------------- */
 
 @media print {
 
     .filters,
-    .search {
+    .search,
+    .printButton {
         display: none;
     }
     .agenda * {
@@ -779,3 +808,5 @@
         display: none;
     }
 }
+
+
