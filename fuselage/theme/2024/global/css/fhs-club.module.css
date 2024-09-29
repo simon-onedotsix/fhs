@@ -120,3 +120,21 @@
         font-size: 6vw;
     }
 }
+
+
+
+
+.eligibilityTable {
+    display: inline-flex;
+    background-color: var(--primary);
+    border: 1px solid var(--primary-2);
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+}
+.eligibilityTable span {
+    display: block;
+    padding: .5rem 1rem;
+}
+.eligibilityTable span:first-child {
+    border-right: 1px solid var(--primary-2);
+}
