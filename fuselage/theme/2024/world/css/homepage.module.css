@@ -110,3 +110,52 @@
     }
     
 }
+
+
+
+/* next year flash */
+
+.flashWrapper {
+    position: absolute;
+    z-index: 10;
+    bottom: var(--space-md);
+    right: var(--space-md);
+}
+
+.flash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border-radius: 50%;
+    aspect-ratio: 1;
+    background-color: var(--accent);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.flashHeading {
+    font-size: 2rem;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+@media (max-width:600px) {
+    .flashWrapper {
+        bottom: auto;
+        top: 7rem;
+        right: 0;
+    }
+    .flash {
+        transform: scale(.7);
+    }
+}
+@media (min-width:601px) and (max-width:900px) {
+    .flashWrapper {
+        bottom: auto;
+        top: 8rem;
+        right: var(--space-md);
+    }
+}

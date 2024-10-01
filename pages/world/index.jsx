@@ -154,7 +154,19 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             <Header overlaid inverse />
 
 
+
+
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2023-opt.mp4'} poster={'/assets/video/fhs-2023-opt-poster.jpg'}>
+
+                    <div className={CSS.flashWrapper}>
+                        <Pop>
+                            <div className={CSS.flash}>
+                                <p className={CSS.flashHeading}>See you <br/>in 2025!</p>
+                                <p>27-29 October 2025</p>
+                            </div>
+                        </Pop>
+                    </div>
+
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
