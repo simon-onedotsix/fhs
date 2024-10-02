@@ -25,7 +25,7 @@ export const MainMenu = ({ otherEvents }) => {
             <div className={CSS.toggleContainer}>
                 <div className={`${CSS.toggleActions} ${ active && CSS.active }`}>
                     <Button 
-                        href={`/world/purchase-pass`} 
+                        href={`/world/register-interest`} 
                         theme={{ 
                             color: `var(--primary)`,
                             background: `var(--secondary-1)`, 
@@ -33,7 +33,7 @@ export const MainMenu = ({ otherEvents }) => {
                         }} 
                         decal={`fw-600`}
                     >
-                        Register Now
+                        Register Interest
                     </Button>
                     
                     <Button 
@@ -46,18 +46,6 @@ export const MainMenu = ({ otherEvents }) => {
                         decal={`fw-600`}
                     >
                         Become A Sponsor
-                    </Button>
-                    
-                    <Button 
-                        href={`https://page.swapcard.com/app/the-bench/`} 
-                        theme={{ 
-                            color: `var(--primary)`,
-                            background: `var(--secondary-1)`, 
-                            hover: `var(--secondary-1-dark)`, 
-                        }} 
-                        decal={`fw-600`}
-                    >
-                        Download Event App
                     </Button>
                 </div>
                     

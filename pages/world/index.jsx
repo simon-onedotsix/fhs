@@ -186,13 +186,13 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
                     className={`fs-5 fw-500 c-white center mt-xs`} 
                 >
-                    30 SEP - 02 OCT 2024, Madinat Jumeirah, Dubai
+                    27-29 October 2025, Madinat Jumeirah, Dubai
                 </motion.p>
 
                 <Fade>
                     <div className="mt-sm center">
                         <Pop inline>
-                            <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Now</Button>
+                            <Button href={`/world/register-interest`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Interest</Button>
                         </Pop>
                     </div>
                 </Fade>
@@ -290,13 +290,13 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     <section>
                         <Fade>
                             <p className='fs-0 fw-600 lh-1 maxw-45 c-primary'>
-                                What&apos;s new for <span className="c-secondary">Future Hospitality Summit</span> <span className="c-accent">2024</span>
+                                Thank You for Joining Us at <span className="c-accent"> FHS World!</span>
                             </p>
                         </Fade>
                         <Fade>
-                            <p className='fs-5 fw-500 maxw-45 mt-sm'>This year we are creating an intersection for the world of hospitality where the industry invests in its future. </p>
-                            <p className='fs-6 fw-300 maxw-45'>FHS World 2024 will feature several new exciting initiatives and partnerships. <Link href={'/world/branded-residences-forum'}><strong className="underline">The Branded Residences Forum</strong></Link>, a one-day exclusive event taking place on 2 October 2024, will focus on the thriving sector of branded residences. For the first time ever, FHS World will host the semi-finals of the <Link href={'/world/unto'}><strong className="underline">UN Tourism&apos;s Women in Tech</strong></Link> startup competition, showcasing innovative solutions from women-led tech startups. Additionally, the <strong>#FHSWomenPower initiative</strong> will facilitate more women in the hospitality industry, supporting female leaders and driving gender diversity in the hospitality industry.</p>
-                            <p className='fs-6 fw-300 maxw-45 mt-xs mb-sm'>This year, we are presenting expanded Themes of Focus including Tech & Innovation, Sustainable Construction, Real Estate Hotelisation and Country Pavilions.</p>
+                            <p className='fs-5 fw-500 maxw-45 mt-sm'>This year we created an intersection for the world of hospitality where the industry invests in its future with over 1500 attendees, 500 companies and 60+ companies represented.</p>
+                            <p className='fs-6 fw-300 maxw-45'>FHS World 2024 featured several new exciting initiatives and partnerships. <Link href={'/world/branded-residences-forum'}><strong className="underline">The Branded Residences Forum</strong></Link>, a one-day exclusive event co-located with FHS World, foucsed on the thriving sector of branded residences. For the first time ever, FHS World hosted the semi-finals of the <Link href={'/world/unto'}><strong className="underline">UN Tourism&apos;s Women in Tech</strong></Link> startup competition, showcasing innovative solutions from women-led tech startups. Additionally, the #FHSWomenPower initiative facilitated a record-number of women with over 550+ women in attendance.</p>
+                            <p className='fs-5 fw-500 maxw-45 pb-sm'>We look forward to hosting you in 2025!</p>
                         </Fade>
                         <Pop inline>
                             <Button 
