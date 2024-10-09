@@ -353,13 +353,13 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             <section className="block bg-white o-hidden">
                 <div className="container">
                     <div className={CSS.impactFiguresGrid}>
-                        <Slide><p className="fs-0 fw-700 c-primary lh-1">2023 in Numbers</p></Slide>
+                        <Slide><p className="fs-0 fw-700 c-primary lh-1">2024 in Numbers</p></Slide>
                         
                         <div className='columns-4 gap-sm'>
-                            <ImpactFigure value={`1200`} label={`Delegates`} />
-                            <ImpactFigure value={`40`} label={`Countries`} />
-                            <ImpactFigure value={`400`} label={`Companies`} />
-                            <ImpactFigure value={`200`} label={`Speakers`} />
+                            <ImpactFigure value={`1596`} label={`Delegates`} />
+                            <ImpactFigure value={`60`} label={`Countries`} />
+                            <ImpactFigure value={`735`} label={`Companies`} />
+                            <ImpactFigure value={`276`} label={`Speakers`} />
                         </div>
                     </div>
                 </div>
