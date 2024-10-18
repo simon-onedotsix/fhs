@@ -93,7 +93,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 			<section className='block bg-default'>
 
 				<div className='container center formatted'>
-					<p className='fs-1 fw-600'>2024 Sponsors &amp; Partners</p>
+					<p className='fs-1 fw-600'>2025 Sponsors &amp; Partners</p>
 					<p><Link href="/sa/get-in-touch"><a className="button secondary">Become A Sponsor</a></Link></p>
 				</div>
 
@@ -193,12 +193,12 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 										<PartnerLogoGrid>
 											{
 												_.orderBy(group, 'name').map(partner => (
-													<a key={partner.id} href={`/sa/partners/${partner.id}`}>
+													<span key={partner.id}>
 														<PartnerLogo 
 															hero={{ url: partner.logoUrl }} 
 															size={ category && category.size }
 														/>
-													</a>
+													</span>
 												))
 											}
 										</PartnerLogoGrid>
