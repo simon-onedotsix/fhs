@@ -156,7 +156,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
 
-            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2023-opt.mp4'} poster={'/assets/video/fhs-2023-opt-poster.jpg'}>
+            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4'} poster={'/assets/video/fhs-2024-world-opt-poster.jpg'}>
 
                     <div className={CSS.flashWrapper}>
                         <Pop>
@@ -370,8 +370,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             <section className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className={`${CSS.highlightVideoGrid} container`}>
-                    <Slide><p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS&nbsp;2023</span></p></Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=7Ar-CT0z23k&t=2s`} />
+                    <Slide><p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS World 2024</span></p></Slide>
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=yv7QScRD9Nk`} />
                 </div>
 
                 <div className={`${CSS.photoGrid} container`}>
