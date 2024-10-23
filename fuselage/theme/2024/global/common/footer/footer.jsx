@@ -45,6 +45,7 @@ export const Footer = () => {
                         <div className='mt-md caps fw-600'>
                             <p><Link href='/ae/contact-us'><a className='uLink'>Contact us</a></Link></p>
                             <p><Link href='https://www.thebench.com/privacy'><a className='uLink' target='_blank'>Privacy Policy</a></Link></p>
+                            <p><Link href='/code-of-conduct'><a className='uLink' >Code of Conduct</a></Link></p>
                         </div>
                     </section>
 
