@@ -32,7 +32,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 			<section className="block">
 				<div className="container">
 
-					<p className='fs-0 fw-600 lh-1'>2024 Advisory Board</p>
+					<p className='fs-0 fw-600 lh-1'>2025 Advisory Board</p>
 
 					<SpeakerGrid decal="gap-sm mt-md">
 						{craftCmsProfiles.map( speaker => (

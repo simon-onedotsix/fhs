@@ -39,7 +39,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 			<section className="block bg-default">
 				<div className="container">
 
-					<p className='fs-1 fw-600 lh-1'>Advisory Board</p>
+					<p className='fs-1 fw-600 lh-1'>2025 Advisory Board</p>
 
 					<SpeakerGrid decal="gap-sm mt-md">
 						{craftCmsProfiles.map( speaker => (
@@ -78,7 +78,6 @@ export async function getStaticProps() {
 				entry(site: "${process.env.SITE_HANDLE_SA}", id: "63858") {
 					title
 					seomatic (asArray: true) {
-						KSAtaTitleContainer
 						metaTagContainer
 					}
 				}
