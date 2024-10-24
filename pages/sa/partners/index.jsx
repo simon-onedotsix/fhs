@@ -114,10 +114,13 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 										{
 											_.orderBy(group, 'name').map(partner => (
 												<a key={partner.id} href={`/sa/partners/${partner.id}`}>
-													<PartnerLogo 
-														hero={{ url: partner.logoUrl }} 
-														size={ category && category.size }
-													/>
+													{
+														partner.logoUrl &&
+														<PartnerLogo 
+															hero={{ url: partner.logoUrl }} 
+															size={ category && category.size }
+														/>
+													}
 												</a>
 											))
 										}
