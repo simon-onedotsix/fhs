@@ -37,7 +37,7 @@ export const MainMenu = ({ otherEvents }) => {
                     </Button> */}
                     
                     <Button 
-                        href={`/sa/register-interest`} 
+                        href={`/sa/purchase-pass`} 
                         theme={{ 
                             color: `white`,
                             background: `var(--secondary)`, 
@@ -45,7 +45,7 @@ export const MainMenu = ({ otherEvents }) => {
                         }} 
                         decal={`fw-600`}
                     >
-                        Register Interest for 2025
+                        Purchase Pass
                     </Button>
                 </div>
                     
