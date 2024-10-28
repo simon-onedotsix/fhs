@@ -116,6 +116,39 @@ const photos = [
                 "height": 588
             }
         ]
+    },
+    {
+        "id": "13868",
+        "hero": [
+            {
+                "id": "50187",
+                "url": "/assets/img/world/pages/home/fhs-world-2024-07.jpg",
+                "width": 1000,
+                "height": 588
+            }
+        ]
+    },
+    {
+        "id": "50206",
+        "hero": [
+            {
+                "id": "50189",
+                "url": "/assets/img/world/pages/home/fhs-world-2024-08.jpg",
+                "width": 1000,
+                "height": 588
+            }
+        ]
+    },
+    {
+        "id": "50207",
+        "hero": [
+            {
+                "id": "50193",
+                "url": "/assets/img/world/pages/home/fhs-world-2024-09.jpg",
+                "width": 1000,
+                "height": 588
+            }
+        ]
     }
 ]
 
