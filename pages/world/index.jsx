@@ -56,7 +56,7 @@ const photos = [
         "hero": [
             {
                 "id": "50183",
-                "url": "/assets/img/ae/2023/photo-01.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2024-05.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -67,7 +67,7 @@ const photos = [
         "hero": [
             {
                 "id": "50184",
-                "url": "/assets/img/ae/2023/photo-02.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2024-03.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -78,7 +78,7 @@ const photos = [
         "hero": [
             {
                 "id": "50186",
-                "url": "/assets/img/ae/2023/photo-03.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2024-02.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -89,7 +89,7 @@ const photos = [
         "hero": [
             {
                 "id": "50187",
-                "url": "/assets/img/ae/2023/photo-04.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2024-04.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -100,7 +100,7 @@ const photos = [
         "hero": [
             {
                 "id": "50189",
-                "url": "/assets/img/ae/2023/photo-05.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2024-01.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -111,7 +111,7 @@ const photos = [
         "hero": [
             {
                 "id": "50193",
-                "url": "/assets/img/ae/2023/photo-06.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2024-06.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -387,7 +387,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 </div>
 
                 <div className={`${CSS.photoGrid} container`}>
-                    <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2023 in <span className='c-secondary'>Photos</span></p></Slide>
+                    <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2024 in <span className='c-secondary'>Photos</span></p></Slide>
                     
                     <div className="columns-3 gap-xs mt-md">
                         {
@@ -400,7 +400,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                             ))
                         }
                         <p className="mt-xs">
-                            <ArrowButton href={`https://flic.kr/s/aHBqjAXaGC`} target='_blank' theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>View all photos</ArrowButton>
+                            <ArrowButton href={`https://www.flickr.com/photos/benchevents/albums/`} target='_blank' theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>View all photos</ArrowButton>
                         </p>
                     </div>
 
