@@ -12,7 +12,7 @@ import CSS from './header.module.css'
 const otherEvents = [
     {
         id: 0,
-        title: 'FHS',
+        title: 'FHS Home',
         url: '/',
         target: false
     },
