@@ -11,13 +11,13 @@ import CSS from './header.module.css'
 
 const otherEvents = [
     {
-        id: 0,
+        id: 1,
         title: 'FHS Home',
         url: '/',
         target: false
     },
     {
-        id: 3,
+        id: 2,
         title: 'FHS World',
         url: '/world',
         target: false

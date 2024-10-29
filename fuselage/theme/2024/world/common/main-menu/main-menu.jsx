@@ -154,7 +154,7 @@ export const MainMenu = ({ otherEvents }) => {
                                 href={ '/' } 
                                 theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
                             >
-                                FHS
+                                FHS Home
                             </ArrowButton>
                         </p>
                         <p className="pb-sm">
@@ -170,7 +170,7 @@ export const MainMenu = ({ otherEvents }) => {
                         {
                             otherEvents.length &&
                             otherEvents.map( event => {
-                                if ( event.id != 1 ) return (
+                                if ( event.id != 1 && event.id != 2 ) return (
                                     <p key={event.id} className="mt-xs">
                                         <ArrowButton 
                                             href={ event.url } 

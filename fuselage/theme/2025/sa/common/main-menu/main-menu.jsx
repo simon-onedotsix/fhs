@@ -130,29 +130,39 @@ export const MainMenu = ({ otherEvents }) => {
 
 
                     <section className="c-white">
-                        <p className="pb-sm">
+                        <p className="pb-xs">
                             <ArrowButton 
                                 href={ '/' } 
                                 theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
                             >
-                                FHS
+                                FHS Home
+                            </ArrowButton>
+                        </p>
+                        <p className="pb-sm">
+                            <ArrowButton 
+                                href={ '/world' } 
+                                theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
+                            >
+                                FHS World
                             </ArrowButton>
                         </p>
 
                         <p className="fs-4 fw-600 c-accent">Our Other Events</p>
                         {
                             otherEvents.length &&
-                            otherEvents.map( event => (
-                                <p key={event.id} className="mt-xs">
-                                    <ArrowButton 
-                                        href={ event.url } 
-                                        theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
-                                        target={ event.target && '_blank' }
-                                    >
-                                        { event.title }
-                                    </ArrowButton>
-                                </p>
-                            ))
+                            otherEvents.map( event => {
+                                if ( event.id !== 1 && event.id !== 2 ) return (
+                                    <p key={event.id} className="mt-xs">
+                                        <ArrowButton 
+                                            href={ event.url } 
+                                            theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
+                                            target={ event.target && '_blank' }
+                                        >
+                                            { event.title }
+                                        </ArrowButton>
+                                    </p>
+                                )
+                            })
                         }
                     </section>
                 </nav>
