@@ -161,60 +161,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 
 			{/* LEGACY !!! – 2024 content */}
 
-			<section className='block bg-medium'>
-
-				<div className='container center formatted'>
-					<p className='fs-1 fw-600'>2024 Sponsors &amp; Partners</p>
-					{/* <p><Link href="/sa/get-in-touch"><a className="button secondary">Become A Sponsor</a></Link></p> */}
-				</div>
-
-				<PartnerCategoryGrid>
-					{
-						partnerData &&
-						partnerData.event.exhibitorsTypes.map( type => {
-
-							const group = partnerData.exhibitors.filter( element => {
-								if (element.typeLabel && element.typeLabel.id === type.id ) return element
-							})
-
-							if ( group.length > 0 ) {
-
-								let category = typesArray.find( obj => obj.id === type.id )
-
-								// console.log(`GROUP: ${category.id} - ${category.name}`)
-
-								let specialCategories = [
-									'RmllbGRWYWx1ZV8yMjM5NDE1NA==',
-									'RmllbGRWYWx1ZV8yMjM5NDE1Mg==',
-									'RmllbGRWYWx1ZV8yMjM5NDE0OQ=='
-								]
-
-								return (
-									<PartnerCategory key={type.id} width={ specialCategories.includes( category.id ) ? 1 : null }>
-
-										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category && category.name }</h4>
-										<PartnerLogoGrid>
-											{
-												_.orderBy(group, 'name').map(partner => (
-													<span key={partner.id}>
-														<PartnerLogo 
-															hero={{ url: partner.logoUrl }} 
-															size={ category && category.size }
-														/>
-													</span>
-												))
-											}
-										</PartnerLogoGrid>
-										
-									</PartnerCategory>
-								)
-							}
-							
-						})
-					}
-				</PartnerCategoryGrid>
-				
-			</section>
+			
 
 			{/* END LEGACY !!! – 2024 content */}
 
@@ -222,7 +169,8 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
 
 			<section className="block bg-default">
 				<div className="container flex jc-center flex-wrap gap-xs">
-					<Link href="/sa/2023/partners"><a className="button secondary">2023 Sponsors & Partners</a></Link> <Link href="/sa/get-in-touch"><a className="button secondary">Get in Touch</a></Link>
+					<Link href="/sa/2024/partners"><a className="button secondary">2024 Sponsors & Partners</a></Link> 
+					<Link href="/sa/get-in-touch"><a className="button secondary">Get in Touch</a></Link>
 				</div>
 			</section>
 

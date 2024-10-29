@@ -11,17 +11,17 @@ import CSS from './header.module.css'
 
 const otherEvents = [
     {
+        id: 0,
+        title: 'FHS',
+        url: '/',
+        target: false
+    },
+    {
         id: 1,
         title: 'FHS Saudi Arabia',
         url: '/sa',
         target: false
     },
-    // {
-    //     id: 3,
-    //     title: 'FHS World',
-    //     url: '/world',
-    //     target: false
-    // },
     {
         id: 6,
         title: 'AviaDev',
