@@ -6,6 +6,8 @@ import { useState, useRef } from "react"
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { motion, useScroll, useTransform } from "framer-motion"
 
+import _ from 'lodash'
+
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
@@ -18,6 +20,7 @@ import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 import { HeroUnit } from "../../fuselage/theme/2025/sa/blocks/hero-unit/hero-unit"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
 import { PopupOverlay } from "../../fuselage/components/popup-overlay/popup-overlay"
+import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } from '../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
 
 import handleContentBlocks from "../../lib/content-blocks"
 
@@ -113,15 +116,12 @@ const photos = [
 
 
 
-export default function Home ({ globals, entry, seomatic, contentBlocks, partnerData }) {
+export default function Home ({ entry, seomatic, contentBlocks, partners }) {
 
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState()
 
     // console.log('entry:', entry)
-	// console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
-    // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))	
-    // console.log('speakerData:', speakerData)
 
     let selectedCmsSpeakers = entry.fhisContentBlocks.find( obj => obj.__typename === 'fhisContentBlocks_profilesCarousel_BlockType')
     // console.log('selectedCmsSpeakers:', selectedCmsSpeakers)
@@ -135,6 +135,32 @@ export default function Home ({ globals, entry, seomatic, contentBlocks, partner
     })
 
     let y = useTransform( scrollYProgress, [0, 1], ["-15%", "5%"])
+
+    
+
+
+    // swapcard sponsors
+    // programatically build array of unique types pulled from exhibitor data
+	const allCategoriesArray = []
+	partners.exhibitors.forEach( obj => {
+		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0].id, name: obj.fields[0].translations[0].value, size: ''})
+	})
+	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
+
+	// 2025 custom ordering
+	const orderedCategories = []
+	categoriesArray.forEach( category => {
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1Nw==') orderedCategories.push({ ...category, priority: 1 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg2MA==') orderedCategories.push({ ...category, priority: 2 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1OA==') orderedCategories.push({ ...category, priority: 3 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNDQ3NDE0MA==') orderedCategories.push({ ...category, priority: 4 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyMw==') orderedCategories.push({ ...category, priority: 5 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 6 })
+	})
+
+
+
+
 
     return (
         <div className="bg-theme">
@@ -160,7 +186,7 @@ export default function Home ({ globals, entry, seomatic, contentBlocks, partner
 
                     className={`fs-0 fw-700 c-white lh-1 center`} 
                 >
-                    Invest in Tomorrow: Today
+                    Invest in Tomorrow: Today, Together
                 </motion.p>
 
                 <motion.p 
@@ -171,7 +197,7 @@ export default function Home ({ globals, entry, seomatic, contentBlocks, partner
 
                     className={`fs-5 fw-500 c-white center mt-xs`} 
                 >
-                    14 - 16 APRIL 2025, Mandarin Oriental Al Faisaliah, Riyadh
+                    14 - 16 April 2025, Mandarin Oriental Al Faisaliah, Riyadh
                 </motion.p>
 
                 <Fade>
@@ -216,9 +242,54 @@ export default function Home ({ globals, entry, seomatic, contentBlocks, partner
             </section>
 
 
-            { handleContentBlocks( contentBlocks, null, partnerData, 'sa' ) }
+            { handleContentBlocks( contentBlocks, null, null, 'sa' ) }
 
             
+            {/* 2025 partners */}
+
+			<section className='block bg-default'>
+                <div className='container center formatted'>
+                    <p className='fs-1 fw-600'>2025 Sponsors &amp; Partners</p>
+                    <p><Link href="/sa/get-in-touch"><a className="button secondary">Become A Sponsor</a></Link></p>
+                </div>
+
+                <PartnerCategoryGrid>
+                    {
+                        partners &&
+                        _.orderBy(orderedCategories, 'priority').map( category => {
+                            const group = partners.exhibitors.filter( partner => {
+                                if (partner.fields[0].id === category.id ) return partner
+                            })
+                            // console.log('group:', group)
+
+                            return (
+                                <PartnerCategory key={category.id}>
+
+                                    <h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category && category.name }</h4>
+                                    <PartnerLogoGrid>
+                                        {
+                                            _.orderBy(group, 'name').map(partner => (
+                                                <a key={partner.id} href={`/sa/partners/${partner.id}`}>
+                                                    {
+                                                        partner.logoUrl &&
+                                                        <PartnerLogo 
+                                                            hero={{ url: partner.logoUrl }} 
+                                                            size={ category && category.size }
+                                                        />
+                                                    }
+                                                </a>
+                                            ))
+                                        }
+                                    </PartnerLogoGrid>
+                                    
+                                </PartnerCategory>
+                            )
+                            
+                        })
+                    }
+                </PartnerCategoryGrid>
+            </section>
+
 
             <Footer />
             <LenisScroller />
@@ -296,6 +367,46 @@ export async function getStaticProps({ preview, previewData }) {
     })
     const pageData = data
 
+    const swapcardData2025 = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query {
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2025}", page:1, pageSize: 200) {
+							id
+							name
+							logoUrl
+							fields {
+								... on SelectField {
+									id
+									value
+									definition {
+										id
+										name
+									}
+									translations {
+										value
+									}
+								}
+							}
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2025,
+					"page": 1
+				}
+			})
+		}
+	)
+	const partnerData2025 =  await swapcardData2025.json()
+
 
     return { 
 		props: { 
@@ -303,6 +414,7 @@ export async function getStaticProps({ preview, previewData }) {
 			entry: pageData.data.entry,
 			seomatic: pageData.data.entry.seomatic,
 			contentBlocks: pageData.data.entry.fhisContentBlocks,
+            partners: partnerData2025.data
 		}
 	}
 }
