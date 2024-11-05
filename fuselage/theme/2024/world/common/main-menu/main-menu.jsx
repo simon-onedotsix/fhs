@@ -37,7 +37,7 @@ export const MainMenu = ({ otherEvents }) => {
                     </Button>
                     
                     <Button 
-                        href={`/world/become-a-sponsor`} 
+                        href={`/world/become-a-sponsor#partner-form`} 
                         theme={{ 
                             color: `var(--primary)`,
                             background: `var(--secondary-1)`, 
@@ -154,7 +154,7 @@ export const MainMenu = ({ otherEvents }) => {
                                 href={ '/' } 
                                 theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
                             >
-                                FHS Home
+                                FHS
                             </ArrowButton>
                         </p>
                         <p className="pb-sm">
@@ -170,7 +170,7 @@ export const MainMenu = ({ otherEvents }) => {
                         {
                             otherEvents.length &&
                             otherEvents.map( event => {
-                                if ( event.id != 1 && event.id != 2 ) return (
+                                if ( event.id != 1 ) return (
                                     <p key={event.id} className="mt-xs">
                                         <ArrowButton 
                                             href={ event.url } 
