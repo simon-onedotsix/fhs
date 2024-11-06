@@ -35,12 +35,6 @@ const otherEvents = [
         target: true
     },
     {
-        id: 4,
-        title: 'IDEEA',
-        url: 'https://www.ideea-forum.com',
-        target: true
-    },
-    {
         id: 7,
         title: 'SAHIC',
         url: 'https://www.sahic.com',
