@@ -17,10 +17,12 @@ import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/
 
 import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
-import { HeroUnit } from "../../fuselage/theme/2025/sa/blocks/hero-unit/hero-unit"
+import { HeroUnitVideo } from "../../fuselage/theme/2025/sa/blocks/hero-unit-video/hero-unit-video"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
-import { PopupOverlay } from "../../fuselage/components/popup-overlay/popup-overlay"
-import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } from '../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
+
+import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
+import { ImpactGrid, ImpactFigure, TitleBlock, ImageBlock } from "../../fuselage/theme/2025/sa/blocks/impact-grid/impact-grid"
+
 
 import handleContentBlocks from "../../lib/content-blocks"
 
@@ -45,86 +47,9 @@ import handleSeomaticMeta from '../../lib/seomatic'
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
 
 
-const photos = [
-    {
-        "id": "13864",
-        "hero": [
-            {
-                "id": "50183",
-                "url": "/assets/img/ae/2023/photo-01.jpg",
-                "width": 1000,
-                "height": 588
-            }
-        ]
-    },
-    {
-        "id": "13865",
-        "hero": [
-            {
-                "id": "50184",
-                "url": "/assets/img/ae/2023/photo-02.jpg",
-                "width": 1000,
-                "height": 588
-            }
-        ]
-    },
-    {
-        "id": "13867",
-        "hero": [
-            {
-                "id": "50186",
-                "url": "/assets/img/ae/2023/photo-03.jpg",
-                "width": 1000,
-                "height": 588
-            }
-        ]
-    },
-    {
-        "id": "13868",
-        "hero": [
-            {
-                "id": "50187",
-                "url": "/assets/img/ae/2023/photo-04.jpg",
-                "width": 1000,
-                "height": 588
-            }
-        ]
-    },
-    {
-        "id": "50206",
-        "hero": [
-            {
-                "id": "50189",
-                "url": "/assets/img/ae/2023/photo-05.jpg",
-                "width": 1000,
-                "height": 588
-            }
-        ]
-    },
-    {
-        "id": "50207",
-        "hero": [
-            {
-                "id": "50193",
-                "url": "/assets/img/ae/2023/photo-06.jpg",
-                "width": 1000,
-                "height": 588
-            }
-        ]
-    }
-]
-
-
-
 export default function Home ({ entry, seomatic, contentBlocks, partners }) {
 
-    const [ showModal, setShowModal ] = useState(false)
-    const [ modalContent, setModalContent ] = useState()
-
     // console.log('entry:', entry)
-
-    let selectedCmsSpeakers = entry.fhisContentBlocks.find( obj => obj.__typename === 'fhisContentBlocks_profilesCarousel_BlockType')
-    // console.log('selectedCmsSpeakers:', selectedCmsSpeakers)
 
 
     // scroll animation
@@ -133,37 +58,12 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
         target: introRef,
         offset: ["start 75%", "end 0%"]
     })
-
     let y = useTransform( scrollYProgress, [0, 1], ["-15%", "5%"])
-
-    
-
-
-    // swapcard sponsors
-    // programatically build array of unique types pulled from exhibitor data
-	const allCategoriesArray = []
-	partners.exhibitors.forEach( obj => {
-		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0].id, name: obj.fields[0].translations[0].value, size: ''})
-	})
-	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
-
-	// 2025 custom ordering
-	const orderedCategories = []
-	categoriesArray.forEach( category => {
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1Nw==') orderedCategories.push({ ...category, priority: 1 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg2MA==') orderedCategories.push({ ...category, priority: 2 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1OA==') orderedCategories.push({ ...category, priority: 3 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNDQ3NDE0MA==') orderedCategories.push({ ...category, priority: 4 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyMw==') orderedCategories.push({ ...category, priority: 5 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 6 })
-	})
-
-
 
 
 
     return (
-        <div className="bg-theme">
+        <>
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
 				{ handleSeomaticMeta( seomatic ) }
@@ -172,29 +72,21 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
             <Header overlaid inverse />
 
 
-            <HeroUnit hero={{
-                url: "/assets/img/sa/homepage-hero-2025-2.jpg",
-                width: "3000",
-                height: "2333"
-            }}>
+            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4'} poster={'/assets/video/fhs-2024-world-opt-poster.jpg'}>
 
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    // viewport={{ once: true }}
                     transition={{ type: "spring", bounce: 0.25 }}
-
                     className={`fs-0 fw-700 c-white lh-1 center`} 
                 >
-                    Invest in Tomorrow: Today, Together
+                    Invest in Tomorrow: Today,&nbsp;Together
                 </motion.p>
 
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    // viewport={{ once: true }}
                     transition={{ type: "spring", bounce: 0.25 }}
-
                     className={`fs-5 fw-500 c-white center mt-xs`} 
                 >
                     14 - 16 April 2025, Mandarin Oriental Al Faisaliah, Riyadh
@@ -222,14 +114,11 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
                         </Pop>
                     </div>
                 </Fade>
+            </HeroUnitVideo>
 
-            </HeroUnit>
-            
-            
-            
+
             {/* HOST SPONSOR */}
-
-            <section className="block bg-accent-2">
+            <section className="block bg-primary">
                 <div className="container center">
                     <p className="fs-3 fw-600 c-accent caps">2024 Host Sponsors</p>
                         <Pop>
@@ -242,67 +131,68 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
             </section>
 
 
-            { handleContentBlocks( contentBlocks, null, null, 'sa' ) }
-
-            
-            {/* 2025 partners */}
-
-			<section className='block bg-default'>
-                <div className='container center formatted'>
-                    <p className='fs-1 fw-600'>2025 Sponsors &amp; Partners</p>
-                    <p><Link href="/sa/get-in-touch"><a className="button secondary">Become A Sponsor</a></Link></p>
+            {/* QUOTE */}
+            <section className="block bg-primary o-hidden ">
+                <div className="container maxw-80">
+                    <Quotation
+                        avatarUrl={'/assets/img/sa/haddad-bani.jpg'}
+                        quote={'FHS Saudi Arabia 2024 was one of the best industry events I have attended in the recent years!'}
+                        fullName={'Bani Haddad'}
+                        title={'Managing Director - Hospitality, Aleph Hospitality'}
+                    />
                 </div>
-
-                <PartnerCategoryGrid>
-                    {
-                        partners &&
-                        _.orderBy(orderedCategories, 'priority').map( category => {
-                            const group = partners.exhibitors.filter( partner => {
-                                if (partner.fields[0].id === category.id ) return partner
-                            })
-                            // console.log('group:', group)
-
-                            return (
-                                <PartnerCategory key={category.id}>
-
-                                    <h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category && category.name }</h4>
-                                    <PartnerLogoGrid>
-                                        {
-                                            _.orderBy(group, 'name').map(partner => (
-                                                <a key={partner.id} href={`/sa/partners/${partner.id}`}>
-                                                    {
-                                                        partner.logoUrl &&
-                                                        <PartnerLogo 
-                                                            hero={{ url: partner.logoUrl }} 
-                                                            size={ category && category.size }
-                                                        />
-                                                    }
-                                                </a>
-                                            ))
-                                        }
-                                    </PartnerLogoGrid>
-                                    
-                                </PartnerCategory>
-                            )
-                            
-                        })
-                    }
-                </PartnerCategoryGrid>
             </section>
 
+            
+            <ImpactGrid>
+                <TitleBlock>
+                    <SectionHeading heading={'2024 in Numbers'} />
+                </TitleBlock>
+                <ImpactFigure figure={1329} impact={'Attendees'}  />
+                <ImpactFigure decal={'bg-accent'} figure={38} impact={'Countries'}  />
+                <ImpactFigure decal={'bg-primary'} figure={206} impact={'Speakers'}  />
+                <ImpactFigure figure={95} impact={'Sponsors & Partners'}  />
+                <ImpactFigure decal={'bg-primary'} figure={80} unit={'%'} impact={'C-Level Executives, VP & Directors'}  />
+                <ImpactFigure decal={'bg-theme'} />
+                <ImpactFigure decal={'bg-accent'} figure={94} unit={'%'} impact={'of those surveyed indicated FHS Saudi Arabia met their objective of gaining the latest market insights.'} />
+                <ImpactFigure decal={'bg-primary'} figure={84} unit={'%'} impact={'of those surveyed indicated FHS Saudi Arabia met their objective of finding new business opportunities.'} />
+                <ImageBlock />
+            </ImpactGrid>
 
+
+            {/* QUOTE */}
+            <section className="block bg-dark o-hidden ">
+                <div className="container maxw-80">
+                    <Quotation
+                        avatarUrl={'/assets/img/sa/mizan-abdulla.jpg'}
+                        quote={`Stepping into the Future Hospitality Summit felt like entering a realm where innovation knows no bounds. This summit wasn't just an event — it was a transformative experience that ignited my passion for shaping the future of hospitality.`}
+                        fullName={'Abdulla Mizan'}
+                        title={'Director, Procurement at Maldives Fund Management Corporation'}
+                    />
+                </div>
+            </section>
+
+            
             <Footer />
             <LenisScroller />
-
-
-            <PopupOverlay onClose={() => setShowModal(false)} show={showModal}>
-                { modalContent } 
-            </PopupOverlay>
-
-        </div>
+        </>
     )
 }
 Home.theme = 'sa-2025'
+
+
+
+
+const SectionHeading = ({ heading }) => {
+    return (
+        <div className={CSS.sectionHeadingContainer}>
+            <span/>
+            <Slide>
+                <p className={CSS.sectionHeading}>{ heading }</p>
+            </Slide>
+        </div>
+    )
+}
 
 
 
