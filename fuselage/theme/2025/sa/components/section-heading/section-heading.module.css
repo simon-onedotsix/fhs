@@ -1,0 +1,17 @@
+.sectionHeadingContainer {
+    display: grid;
+    grid-template-columns: var(--space-md) auto ;
+}
+.sectionHeadingContainer span {
+    border-bottom: 2px solid white;
+}
+.sectionHeading {
+    font-size: 10vw;
+    line-height: 1.1;
+}
+
+@media(min-width:600px){
+    .sectionHeading {
+        font-size: 3.5vw;
+    } 
+}

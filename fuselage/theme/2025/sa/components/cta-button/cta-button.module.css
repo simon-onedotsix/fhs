@@ -1,0 +1,18 @@
+.ctaButton {
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	font-family: var(--default-font-family);
+	padding: .75rem 2.5rem;
+    border: 1px solid var(--accent);
+	border-radius: var(--default-button-radius);
+	background-color: transparent;
+	color: var(--accent);
+	transition: all 500ms ease-in-out;
+	text-align: center;
+}
+.ctaButton:hover {
+	transition: all 250ms ease-in-out;
+	background-color: var(--accent);
+	color: var(--dark);
+}

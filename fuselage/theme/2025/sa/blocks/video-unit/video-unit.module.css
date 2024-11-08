@@ -1,0 +1,39 @@
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    width: 100%;
+    overflow: hidden;
+
+    padding-bottom: var(--space-md);
+
+    background-color: var(--primary);
+    background-image: url('/assets/theme/world-2024/fhs-pattern-purple-50.png');
+    background-size: 100vw;
+    background-position: top center;
+
+    @media(max-width:600px) {
+        background-size: 250%;
+    }
+}
+
+.video {
+    aspect-ratio: 16/9;
+}
+.content {
+    padding: var(--space-md) var(--space-md) var(--space-md) 0;
+}
+
+
+@media(max-width:599px) {
+    .content {
+        grid-row-start: 1;
+    }
+}
+
+@media(min-width:600px){
+    .layout {
+        grid-template-columns: 3fr 2fr;
+        padding: var(--space-lg) 0;
+    }
+}
