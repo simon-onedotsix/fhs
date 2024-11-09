@@ -158,7 +158,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
             <Header overlaid inverse />
 
 
-            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4'} poster={'/assets/video/fhs-2024-world-opt-poster.jpg'}>
+            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-sa-opt.mp4'} poster={'/assets/video/fhs-2024-sa-opt-poster.jpg'}>
 
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
