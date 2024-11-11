@@ -343,19 +343,20 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
 
             {/* PREMIUM EXPOSURE FORM */}
 
-            <section className="bg-theme-primary o-hidden">
-                <div className="maxw-50 pt-md">
-                    <SectionHeading heading={'Get Premium Exposure at FHS Saudi Arabia 2025'} />
+            <section className="block bg-theme-primary o-hidden columns-2 gap-md">
+                <div className="container">
+                    <div className="formatted">
+                        <Slide>
+                            <p className="fs-1 lh-1">Get Premium Exposure at FHS Saudi Arabia 2025</p>
+                        </Slide>
+                        <Fade>
+                            <p className="fs-6 mt-sm lh-6">Join the epicenter of the Middle East&apos;s hospitality industry at FHS Saudi Arabia 2025. This premier conference brings together Government leaders, tourism ministries, top hospitality brands, hotel owners and investors, renowned restaurant groups, destination developers, asset managers, financial institutions, and consultants. By participating, you&apos;ll have the opportunity to showcase your brand, position yourself as a thought leader or innovator, and connect with key decision-makers and industry influencers in the region. Don&apos;t miss out on elevating your presence in one of the world&apos;s fastest-growing hospitality markets. Speak with our sales team today to discover how you can make the most of this unique opportunity!</p>
+                        </Fade>
+                    </div>
                 </div>
-                <div className="block">
-                    <div className="container maxw-45">
-                        <div className="formatted">
-                            <p className="fs-6">Join the epicenter of the Middle East&apos;s hospitality industry at FHS Saudi Arabia 2025. This premier conference brings together Government leaders, tourism ministries, top hospitality brands, hotel owners and investors, renowned restaurant groups, destination developers, asset managers, financial institutions, and consultants. By participating, you&apos;ll have the opportunity to showcase your brand, position yourself as a thought leader or innovator, and connect with key decision-makers and industry influencers in the region. Don&apos;t miss out on elevating your presence in one of the world&apos;s fastest-growing hospitality markets. Speak with our sales team today to discover how you can make the most of this unique opportunity!</p>
-                        </div>
-                    </div>
-                    <div className="container maxw-45">
-                        <HubspotForm portalId={"14527187"} formId={"9b80f5cc-3153-4063-924b-39dae712c15d"} />
-                    </div>
+
+                <div className=" pt-xs">
+                    <HubspotForm portalId={"14527187"} formId={"9b80f5cc-3153-4063-924b-39dae712c15d"} />
                 </div>
             </section>
             
