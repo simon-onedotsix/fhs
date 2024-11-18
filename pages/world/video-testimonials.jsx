@@ -31,11 +31,11 @@ export default function VideoTestimonials ({ entries }) {
             <section className="block bg-default">
                 <div className="container columns-3 gap-md">
                     {
-                        entries 
+                        entries.length 
                         ? 
                             entries.map( entry => <VideoTestimonialCard key={entry.id} entry={entry} /> )
                         : 
-                            <p>Currently, there are no testimonials available</p>
+                            <p>Currently, there are no testimonials available.</p>
                     }
                     
                 </div>

@@ -27,16 +27,19 @@ import {
     QuerySEO,
 	QueryCards,
 	QueryPartners,
-	QueryPartnerGroups
+	QueryPartnerGroups,
+	QueryTestimonials
 } from "../../../graphql/queries"
 
 import { Quote, QuoteGrid } from '../../../fuselage/theme/2024/sa/components/quote/quote'
 import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
+import { VideoTestimonialCard } from '../video-testimonials'
+import { CTAButton } from '../../../fuselage/theme/2025/sa/components/cta-button/cta-button'
 
 
 
 
-function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
+function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, videoTestimonials }) {
 
 
 	// LEGACY !!!
@@ -86,6 +89,24 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025 }) {
             </Head>
 
 			<Header compact shim />
+
+
+			{
+				videoTestimonials.length ?
+					<section className="block bg-default">
+						<div className="container columns-3 gap-md">
+							{ videoTestimonials.map( entry => <VideoTestimonialCard key={entry.id} entry={entry} /> ) }
+						</div>
+						<div className="container center">
+							<CTAButton
+								href={'/sa/video-testimonials'}
+								label={'More Testimonials'} 
+							/>
+						</div>
+					</section>
+				: null
+			}
+
 
 
 			{/* 2025 partners */}
@@ -213,9 +234,22 @@ export async function getStaticProps() {
 							${QueryForm}
 							${QueryPartners}
 							${QueryPartnerGroups}
+							${QueryTestimonials}
 						}
 					}
 					${QuerySEO}
+				}
+				entries(site: "${process.env.SITE_HANDLE_SA}", section: "videoTestimonials", limit: 3) {
+					... on videoTestimonials_videoTestimonial_Entry {
+                        id
+                        slug
+                        title
+                        videoShareUrl
+                        fullName
+                        jobTitle
+                        organisation
+                        testimonial
+                    }
 				}
 			}
         `
@@ -307,7 +341,8 @@ export async function getStaticProps() {
 			seomatic: cmsData.data.entry.seomatic,
 			contentBlocks: cmsData.data.entry.fhisContentBlocks,
 			partnerData: partnerData.data,
-			partnerData2025: partnerData2025.data
+			partnerData2025: partnerData2025.data,
+			videoTestimonials: cmsData.data.entries
 		}
 	}
 }
