@@ -36,7 +36,7 @@ export default function LeadWall () {
                         <p>The summit connects investment opportunities and projects from the Middle East, Europe, Africa, Asia and the Americas to C-level hospitality decision-makers. Established in 2005, FHS World was formerly known as AHIC.</p>
 
                         <p className='fs-5 fw-600 mt-sm'>Find out Who Attends: </p>
-                        <p><button className='button fs-6' onClick={() => setShowPopover(true)}>Download 2023 Post-event Report</button></p>
+                        <p><button className='button fs-6' onClick={() => setShowPopover(true)}>Download 2024 Post-event Report</button></p>
                         <p className='mt-xs'><a className="button fs-6" href="https://www.futurehospitality.com/about-fhs" target="_blank" rel="noreferrer noopener">Our Legacy</a></p>
                     </div>
                 </div>
@@ -50,9 +50,9 @@ export default function LeadWall () {
                     <button className={CSS.closeButton} onClick={() => setShowPopover(false)}>&times;</button>
                     <div className={CSS.contentScroller}>
                         <div className={CSS.content}>
-                            <p className='fw-500 c-primary'>Please fill out the form to download the FHS 2023 post-event report.</p>
+                            <p className='fw-500 c-primary'>Please fill out the form to download the FHS 2024 post-event report.</p>
                             <section className='mt-md'>
-                                <HubspotForm portalId='14527187' formId='c2b14f19-e6b6-478f-83ac-e76e9facc2c6' />
+                                <HubspotForm portalId='14527187' formId='e2919e90-4702-498e-8fda-35724db51ca2' />
                             </section>
                         </div>
                     </div>

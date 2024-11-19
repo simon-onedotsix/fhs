@@ -21,7 +21,7 @@ export const THEMES_DATA = [
         id: 'RmllbGRWYWx1ZV8yNDU3Mjg5Mg==',
         imageUrl: '/assets/img/brf/themes/global-investment.jpg',
         iconUrl: '/assets/img/brf/icons/global-investments.svg',
-        title: 'Global Investments',
+        title: 'Global Hospitality Investments',
         body: '<p>Global investments shape the future of hospitality. With Country Pavilions, the industry will be able to dive into the trends, opportunities, and strategic decisions driving investment in key markets, setting the stage for sustained industry growth at FHS World 2024.</p>'
     },
     {
