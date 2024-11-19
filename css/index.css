@@ -22,6 +22,7 @@
 
 @import './app/components/underline-link.css';
 @import './app/components/button.css';
+@import './app/components/button-grid.css';
 
 @import './app/forms/forms.css';
 

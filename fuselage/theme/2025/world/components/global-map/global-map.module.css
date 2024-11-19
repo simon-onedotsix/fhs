@@ -1,0 +1,57 @@
+.layout {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3589/1820;
+}
+
+
+
+
+
+
+
+@media(max-width:599px){
+    .overlay {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: .25rem;
+        margin-top: var(--space-sm);
+    }
+
+    .region {
+        padding: .5rem 1.25rem;
+        background-color: var(--accent);
+    }
+    .region p {
+        font-size: 5vw;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .region p span {
+        font-size: 7vw;
+    }
+}
+
+@media(min-width:600px){
+    .overlay {
+        position: absolute;
+        inset: 0;
+    }
+
+    .regionContainer {
+        position: absolute;
+    }
+    .region {
+        padding: .5rem 1.25rem;
+        background-color: var(--accent);
+    }
+    .region p {
+        font-size: 1.2vw;
+        display: flex;
+        align-items: center;
+    }
+    .region p span {
+        font-size: 2vw;
+    }
+}

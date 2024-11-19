@@ -1,0 +1,51 @@
+.layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.titleBlock {
+    grid-column: span 2;
+    aspect-ratio: 2/1;
+    display: flex;
+    align-items: center;
+}
+
+.impactFigure {
+    padding: var(--space-sm);
+    overflow: hidden;
+}
+.figure {
+    font-size: 14vw;
+    font-weight: 200;
+    line-height: 1;
+    color: var(--secondary);
+}
+.impact {
+    font-size: 3.75vw;
+    line-height: 1.3;
+}
+
+.imageBlock {
+    position: relative;
+    grid-column: span 2;
+    aspect-ratio: 2/1;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+.imageBlock img {
+    object-fit: cover;
+}
+
+
+
+
+@media(min-width:600px){
+    .layout {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .figure {
+        font-size: 6.5vw;
+    }
+    .impact {
+        font-size: 1.75vw;
+    }
+}

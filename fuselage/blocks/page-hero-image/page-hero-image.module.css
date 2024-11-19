@@ -1,0 +1,52 @@
+.hero {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    mix-blend-mode: hard-light;
+}
+.hero img {
+    filter: saturate(0.9) contrast(0.75) brightness(1.2);
+    width: 100%;
+}
+.heroWrapper {
+    position: relative;
+    background-color: transparent;
+    mask-image: linear-gradient(to top, transparent 5%, black 100%);
+
+}
+
+.overlay {
+    position: relative;
+    z-index: 2;
+    /* min-height: 70vh; */
+    padding-top: 15vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    overflow-x: hidden;
+}
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-xl);
+    align-items: flex-end;
+}
+.headline {
+    font-size: 7vw;
+    line-height: .95;
+}
+
+@media(min-width:800px){
+    .overlay {
+        /* min-height: 60vh; */
+        padding-top: 15vw;
+    }
+}
+@media(min-width:1200px){
+    .overlay {
+        /* min-height: 94vh; */
+        padding-top: 20vw;
+    }
+}
