@@ -209,8 +209,8 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
                     <p className="fs-3 fw-600 c-accent caps">2024 Host Sponsors</p>
                         <Pop>
                             <div className={`${CSS.hostSponsorLogoWrapper} mt-sm mx-auto`}>
-                                    <Image src={`/assets/site/sa/mandarin-oriental-al-faisaliah-logo.png`} width={200} height={200}/>
-                                    <Image src={`/assets/site/sa/al-khozama-logo.png`} width={200} height={200}/>
+                                <Image src={`/assets/site/sa/mandarin-oriental-al-faisaliah-logo.png`} width={200} height={200}/>
+                                <Image src={`/assets/site/sa/al-khozama-logo-2025.png`} width={830} height={427}/>
                             </div>
                         </Pop>
                 </div>
