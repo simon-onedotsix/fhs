@@ -8,7 +8,7 @@ export const Ticker = ({ speed, children }) => {
     if (!children) return
 
     return (
-        <div className={CSS.container} style={{ backgroundColor: `var(--primary)` }}>
+        <div className={CSS.container}>
             <HorizontalTicker duration={ speed ? speed * 1000 : 20000 }>
                 <div className={CSS.messages}>
                     { children }

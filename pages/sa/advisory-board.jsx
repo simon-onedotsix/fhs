@@ -25,7 +25,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 	// console.log('cms profile data:', craftCmsProfiles)
 
 	return (
-		<div className="bg-theme">
+		<>
 
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
@@ -39,7 +39,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 			<section className="block bg-default">
 				<div className="container">
 
-					<p className='fs-1 fw-600 lh-1'>2025 Advisory Board</p>
+					<p className='fs-1 fw-600 c-secondary lh-1'>2025 Advisory Board</p>
 
 					<SpeakerGrid decal="gap-sm mt-md">
 						{craftCmsProfiles.map( speaker => (
@@ -62,7 +62,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 			<Footer />
 			<LenisScroller />
 
-		</div>
+		</>
 	)
 }
 

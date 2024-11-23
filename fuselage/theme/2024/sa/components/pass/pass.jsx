@@ -39,15 +39,15 @@ export const Pass = ({ title, description, currency, value, from, to, href }) =>
 
 
     return (
-        <div className={`${CSS.pass} ${ !status && CSS.expired } bg-glass p-sm`}>
+        <div className={`${CSS.pass} ${ !status && CSS.expired } p-sm`}>
             <section>
-                <p className='fs-2 fw-600 lh-1 c-accent mb-xs'>{ title }</p>
+                <p className='fs-2 fw-600 lh-1 c-secondary mb-xs'>{ title }</p>
                 <div className="formatted" dangerouslySetInnerHTML={{__html: description }} />
             </section>
 
             <section>
                 {/* { handlePassStatus( from, to ) } */}
-                <p className='fs-2 fw-600 c-white mb-xs'>{ currency } { value }</p>
+                <p className='fs-2 fw-600 c-secondary mb-xs'>{ currency } { value }</p>
                 { handleButtonLabel( from, to )}
             </section>
         </div>
@@ -58,9 +58,9 @@ export const Pass = ({ title, description, currency, value, from, to, href }) =>
 export const SpecialPass = ({ title, description, currency, value, from, to, label, href }) => {
 
     return (
-        <div className={`${CSS.pass} bg-glass p-sm`}>
+        <div className={`${CSS.pass} p-sm`}>
             <section>
-                <p className='fs-2 fw-600 lh-1 c-accent mb-xs'>{ title }</p>
+                <p className='fs-2 fw-600 lh-1 c-secondary mb-xs'>{ title }</p>
                 <div className="formatted" dangerouslySetInnerHTML={{__html: description }} />
             </section>
 
@@ -68,7 +68,7 @@ export const SpecialPass = ({ title, description, currency, value, from, to, lab
                 {/* { handlePassStatus( from, to ) } */}
                 {
                     value &&
-                    <p className='fs-2 fw-600 c-white mb-xs'>{ value }</p>
+                    <p className='fs-2 fw-600 c-secondary mb-xs'>{ value }</p>
                 }
                 {
                     href && label ?
@@ -85,7 +85,7 @@ export const SpecialPass = ({ title, description, currency, value, from, to, lab
 
 export const PassGridSectionHeading = ({ heading }) => {
     return (
-        <p className={`${CSS.sectionHeading} fs-2 fw-400 mt-sm mb-xxs`}>{ heading }</p>
+        <p className={`${CSS.sectionHeading} fs-3 fw-400 mt-sm mb-xxs c-primary`}>{ heading }</p>
     )
 }
 

@@ -140,11 +140,20 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
 
     // scroll animation
     let introRef = useRef(null)
-    let { scrollYProgress } = useScroll({ 
+    let headerScroll = useScroll({ 
         target: introRef,
-        offset: ["start 75%", "end 0%"]
+        offset: ["start 100%", "end 0%"]
     })
-    let y = useTransform( scrollYProgress, [0, 1], ["-15%", "5%"])
+    let g1 = useTransform( headerScroll.scrollYProgress, [0, 1], ["-15%", "20%"])
+    let g2 = useTransform( headerScroll.scrollYProgress, [0, 1], ["-15%", "40%"])
+
+
+    let quoteRef = useRef(null)
+    let quoteScroll = useScroll({ 
+        target: quoteRef,
+        offset: ["start 100%", "end 0%"]
+    })
+    let g3 = useTransform( quoteScroll.scrollYProgress, [0, 1], ["-5%", "5%"])
 
 
 
@@ -158,96 +167,107 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
             <Header overlaid inverse />
 
 
-            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-sa-opt.mp4'} poster={'/assets/video/fhs-2024-sa-opt-poster.jpg'}>
+            <div ref={introRef} className={CSS.themeWrapper}>
 
-                <motion.p 
-                    initial={{ y: 100, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ type: "spring", bounce: 0.25 }}
-                    className={`fs-0 fw-700 c-white lh-1 center`} 
-                >
-                    Invest in Tomorrow: Today,&nbsp;Together
-                </motion.p>
+                <motion.img className={CSS.deco01} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g1 }}/>
+                <motion.img className={CSS.deco02} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g2 }}/>
 
-                <motion.p 
-                    initial={{ y: 100, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ type: "spring", bounce: 0.25 }}
-                    className={`fs-5 fw-500 c-white center mt-xs`} 
-                >
-                    14 - 16 April 2025, Mandarin Oriental Al Faisaliah, Riyadh
-                </motion.p>
+                <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-sa-opt.mp4'} poster={'/assets/video/fhs-2024-sa-opt-poster.jpg'}>
 
-                <Fade>
-                    <div className="mt-sm center">
-                        <Pop inline>
-                            <Button 
-                                href={'/sa/agenda'} 
-                                theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                decal={'fs-5 fw-600'} 
-                                accent
-                            >
-                                2024 Programme
-                            </Button>&ensp;
-                            <Button 
-                                href={'/sa/post-event-resources'} 
-                                theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                decal={'fs-5 fw-600'} 
-                                accent
-                            >
-                                2024 Resources
-                            </Button>
-                        </Pop>
+                    <motion.p 
+                        initial={{ y: 100, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ type: "spring", bounce: 0.25 }}
+                        className={`fs-0 fw-700 c-white lh-1 center`} 
+                    >
+                        WHERE VISION <br/>
+                        SHAPES OPPORTUNITY
+                    </motion.p>
+
+                    <motion.p 
+                        initial={{ y: 100, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ type: "spring", bounce: 0.25 }}
+                        className={`fs-5 fw-500 c-white center mt-xs`} 
+                    >
+                        14 - 16 April 2025, Mandarin Oriental Al Faisaliah, Riyadh
+                    </motion.p>
+
+                    <Fade>
+                        <div className="mt-md center">
+                            <Pop inline>
+                                <Button 
+                                    href={'/sa/agenda'} 
+                                    theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
+                                    decal={'fs-5 fw-600'} 
+                                    accent
+                                >
+                                    2024 Programme
+                                </Button>&ensp;
+                                <Button 
+                                    href={'/sa/post-event-resources'} 
+                                    theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
+                                    decal={'fs-5 fw-600'} 
+                                    accent
+                                >
+                                    2024 Resources
+                                </Button>
+                            </Pop>
+                        </div>
+                    </Fade>
+                </HeroUnitVideo>
+
+
+                {/* HOST SPONSOR */}
+                <section className="block bg-primary">
+                    <div className="container center">
+                        <p className="fs-3 fw-600 c-accent caps">2024 Host Sponsors</p>
+                            <Pop>
+                                <div className={`${CSS.hostSponsorLogoWrapper} mt-sm mx-auto`}>
+                                    <Image src={`/assets/site/sa/mandarin-oriental-al-faisaliah-logo.png`} width={200} height={200}/>
+                                    <Image src={`/assets/site/sa/al-khozama-logo-2025.png`} width={830} height={427}/>
+                                </div>
+                            </Pop>
                     </div>
-                </Fade>
-            </HeroUnitVideo>
+                </section>
 
+                {/* QUOTE */}
+                <section className="block bg-primary o-hidden ">
+                    <div className="container maxw-80">
+                        <Quotation
+                            avatarUrl={'/assets/img/sa/haddad-bani.jpg'}
+                            quote={'FHS Saudi Arabia 2024 was one of the best industry events I have attended in the recent years!'}
+                            fullName={'Bani Haddad'}
+                            title={'Managing Director - Hospitality, Aleph Hospitality'}
+                        />
+                    </div>
+                </section>
 
-            {/* HOST SPONSOR */}
-            <section className="block bg-primary">
-                <div className="container center">
-                    <p className="fs-3 fw-600 c-accent caps">2024 Host Sponsors</p>
-                        <Pop>
-                            <div className={`${CSS.hostSponsorLogoWrapper} mt-sm mx-auto`}>
-                                <Image src={`/assets/site/sa/mandarin-oriental-al-faisaliah-logo.png`} width={200} height={200}/>
-                                <Image src={`/assets/site/sa/al-khozama-logo-2025.png`} width={830} height={427}/>
-                            </div>
-                        </Pop>
-                </div>
-            </section>
+            </div>
 
-
-            {/* QUOTE */}
-            <section className="block bg-primary o-hidden ">
-                <div className="container maxw-80">
-                    <Quotation
-                        avatarUrl={'/assets/img/sa/haddad-bani.jpg'}
-                        quote={'FHS Saudi Arabia 2024 was one of the best industry events I have attended in the recent years!'}
-                        fullName={'Bani Haddad'}
-                        title={'Managing Director - Hospitality, Aleph Hospitality'}
-                    />
-                </div>
-            </section>
 
             
             <ImpactGrid>
                 <TitleBlock>
-                    <SectionHeading heading={'2024 in Numbers'} />
+                    <SectionHeading heading={'2024 in Numbers'} decal={'c-secondary'} />
                 </TitleBlock>
-                <ImpactFigure figure={1329} impact={'Attendees'}  />
-                <ImpactFigure decal={'bg-accent'} figure={38} impact={'Countries'}  />
-                <ImpactFigure decal={'bg-primary'} figure={206} impact={'Speakers'}  />
-                <ImpactFigure figure={95} impact={'Sponsors & Partners'}  />
-                <ImpactFigure decal={'bg-primary'} figure={80} unit={'%'} impact={'C-Level Executives, VP & Directors'}  />
-                <ImpactFigure decal={'bg-theme'} />
-                <ImpactFigure decal={'bg-accent'} figure={94} unit={'%'} impact={'of those surveyed indicated FHS Saudi Arabia met their objective of gaining the latest market insights.'} />
-                <ImpactFigure decal={'bg-primary'} figure={84} unit={'%'} impact={'of those surveyed indicated FHS Saudi Arabia met their objective of finding new business opportunities.'} />
+                <ImpactFigure decal={'bg-neutral-01'} figure={1329} impact={'Attendees'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={38} impact={'Countries'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={206} impact={'Speakers'}  />
+                <ImpactFigure decal={'bg-neutral-01'} figure={95} impact={'Sponsors & Partners'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={80} unit={'%'} impact={'C-Level Executives, VP & Directors'}  />
+                <ImpactFigure />
+                <ImpactFigure decal={'bg-neutral-01'} figure={94} unit={'%'} impact={'of those surveyed indicated FHS Saudi Arabia met their objective of gaining the latest market insights.'} />
+                <ImpactFigure decal={'bg-neutral-02'} figure={84} unit={'%'} impact={'of those surveyed indicated FHS Saudi Arabia met their objective of finding new business opportunities.'} />
                 <ImageBlock />
             </ImpactGrid>
 
 
+
             {/* QUOTE */}
-            <section className="block bg-dark o-hidden ">
+            <section className="block bg-white o-hidden" style={{ position: 'relative' }}>
+                <img className={CSS.deco03} src="/assets/theme/sa-2025/gfk-01.svg" alt=""/>
+
                 <div className="container maxw-80">
                     <Quotation
                         avatarUrl={'/assets/img/sa/mizan-abdulla.jpg'}
@@ -263,11 +283,11 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
                 AB_DATA &&
                 <SpeakerCarousel 
                     heading={`2025 Advisory Board`} 
+                    color={`c-secondary`}
                     text={``}
-                    decal={'bg-medium'}
+                    decal={'bg-neutral-02'}
                     ctaLink={'/sa/advisory-board'}
                     ctaLabel={'View All Members'}
-                    color={'white'}
                 >
                     {
                         AB_DATA.map( (profile, index) => (
@@ -305,7 +325,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
 
 
             <VideoUnit>
-                <SectionHeading heading={'Watch 2024 Highlights'} />
+                <SectionHeading heading={'Watch 2024 Highlights'} inverse />
             </VideoUnit>
         
 
@@ -327,7 +347,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
                 <Photo photoUrl={'/assets/img/sa/photos/2024-10.jpg'} />
                 <ContentBlock>
                     <div className="pl-md">
-                        <CTAButton href={'https://www.flickr.com/photos/benchevents/albums/'} label={'View all Photos'} target={'_blank'} />
+                        <CTAButton href={'https://www.flickr.com/photos/benchevents/albums/'} label={'View all Photos'} target={'_blank'} background={'white'} />
                     </div>
                 </ContentBlock>
             </PhotoGrid>
@@ -343,7 +363,9 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
 
             {/* PREMIUM EXPOSURE FORM */}
 
-            <section className="block bg-theme-primary o-hidden columns-2 gap-md">
+            <section className="block bg-primary o-hidden columns-2 gap-md" style={{ position: 'relative' }}>
+                <img className={CSS.deco04} src="/assets/theme/sa-2025/gfk-01.svg" alt=""/>
+
                 <div className="container">
                     <div className="formatted">
                         <Slide>

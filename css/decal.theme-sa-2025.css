@@ -15,7 +15,8 @@
     --accent-dark: #b98350;
     --accent-2: rgb(110, 78, 45);
 
-    
+    --neutral-01: #f6f6f6;
+    --neutral-02: #ececec;
 
 
     --bg-global: rgb(255, 255, 255);
@@ -100,7 +101,7 @@
 
 /* GLOBAL theme backgrounds */
 
-[data-theme='sa-2025'] body { background-color: var(--secondary) }
+[data-theme='sa-2025'] body { background-color: white }
 
 [data-theme='sa-2025'] .bg-global { background-color: var(--bg-global); }
 
@@ -110,10 +111,16 @@
 [data-theme='sa-2025'] .bg-accent { background-color: var(--accent); }
 [data-theme='sa-2025'] .bg-accent-2 { background-color: var(--accent-2); }
 
-[data-theme='sa-2025'] .bg-wash { background-color: var(--wash);}
-[data-theme='sa-2025'] .bg-light { background-color: var(--light);}
+[data-theme='sa-2025'] .bg-wash { background-color: var(--neutral-01);}
+[data-theme='sa-2025'] .bg-light { background-color: var(--neutral-02);}
 [data-theme='sa-2025'] .bg-medium { background-color: var(--medium);}
 [data-theme='sa-2025'] .bg-dark { background-color: var(--dark);}
+
+
+[data-theme='sa-2025'] .bg-neutral-01 { background-color: var(--neutral-01);}
+[data-theme='sa-2025'] .bg-neutral-02 { background-color: var(--neutral-02);}
+
+
 
 
 [data-theme='sa-2025'] .bg-theme { 
@@ -162,17 +169,18 @@
     color: inherit;
 }
 [data-theme='sa-2025'] {
-    color: white;
+    color: var(--default-text-color);
 }
 
 [data-theme='sa-2025'] .formatted .button {
-    color: var(--primary);
+    /* color: var(--primary); */
     background-color: var(--secondary);
     border-color: var(--secondary);
 }
 [data-theme='sa-2025'] .formatted .button:hover {
     background-color: white;
     border-color: white;
+    color: var(--secondary);
 }
 [data-theme='sa-2025'] .formatted .button.secondary {
     color: var(--primary);
@@ -232,7 +240,7 @@
 /* default */
 
 [data-theme='sa-2025'] .bg-default {
-    color: white;
+    color: var(--default-text-color);
 }
 [data-theme='sa-2025'] .bg-default .formatted h1,
 [data-theme='sa-2025'] .bg-default .formatted h2,
@@ -240,17 +248,18 @@
 [data-theme='sa-2025'] .bg-default .formatted h4,
 [data-theme='sa-2025'] .bg-default .formatted h5,
 [data-theme='sa-2025'] .bg-default .formatted h6 {
-    color: var(--accent);
+    color: var(--primary);
 }
 [data-theme='sa-2025'] .bg-default .formatted .button,
 [data-theme='sa-2025'] .bg-default .button {
-    background-color: var(--accent);
-    border-color: var(--accent);
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: white !important;
 }
 [data-theme='sa-2025'] .bg-default .formatted .button:hover,
 [data-theme='sa-2025'] .bg-default .button:hover {
-    background-color: white;
-    border-color: white;
+    background-color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
 }
 [data-theme='sa-2025'] .bg-default .button {
     color: var(--secondary);
@@ -268,6 +277,26 @@
 [data-theme='sa-2025'] .bg-white .formatted h5,
 [data-theme='sa-2025'] .bg-white .formatted h6 {
     color: var(--primary);
+}
+[data-theme='sa-2025'] .bg-white .quote {
+    color: var(--secondary);
+}
+
+/* neutral-02 */
+
+[data-theme='sa-2025'] .bg-neutral-02 {
+    color: var(--default-text-color);
+}
+[data-theme='sa-2025'] .bg-neutral-02 .formatted h1,
+[data-theme='sa-2025'] .bg-neutral-02 .formatted h2,
+[data-theme='sa-2025'] .bg-neutral-02 .formatted h3,
+[data-theme='sa-2025'] .bg-neutral-02 .formatted h4,
+[data-theme='sa-2025'] .bg-neutral-02 .formatted h5,
+[data-theme='sa-2025'] .bg-neutral-02 .formatted h6 {
+    color: var(--primary);
+}
+[data-theme='sa-2025'] .bg-neutral-02 .quote {
+    color: var(--secondary);
 }
 
 /* wash */
@@ -298,6 +327,20 @@
 [data-theme='sa-2025'] .bg-light .formatted h5,
 [data-theme='sa-2025'] .bg-light .formatted h6 {
     color: var(--primary);
+}
+[data-theme='sa-2025'] .bg-light .formatted .button,
+[data-theme='sa-2025'] .bg-light .button {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: white;
+}
+[data-theme='sa-2025'] .bg-light .formatted .button:hover,
+[data-theme='sa-2025'] .bg-light .button:hover {
+    background-color: var(--secondary-dark);
+    border-color: var(--secondary-dark);
+}
+[data-theme='sa-2025'] .bg-light .button {
+    color: var(--secondary);
 }
 
 /* secondary */
@@ -506,12 +549,12 @@
 }
 
 [data-theme='sa-2025'] footer .form input[type='submit'] {
-    color: var(--secondary);
-	background-color: var(--accent);
+    color: white;
+	background-color: var(--secondary);
     border: none;
 }
 [data-theme='sa-2025'] footer .form input[type='submit']:hover {
-	background-color: white;
+	background-color: var(--secondary-dark);
 }
 
 

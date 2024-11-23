@@ -88,7 +88,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                         </Link>
                     </div>
                     <div className={CSS.venue}>
-                        <p className='lh-2'><span className='fw-600'>14 - 16 APRIL 2025</span> <br/>Mandarin Oriental Al Faisaliah, Riyadh</p>
+                        <p className='lh-2 c-white'><span className='fw-600'>14 - 16 APRIL 2025</span> <br/>Mandarin Oriental Al Faisaliah, Riyadh</p>
                     </div>
                 </section>
                 <div className={`${CSS.nav} ${ !inView && CSS.fixed}`}>

@@ -37,7 +37,7 @@ export default function Page ({ entry, seomatic }) {
     // console.log('entry:', entry) 
   
     return (
-        <div className="bg-theme">
+        <div>
 
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />

@@ -1,4 +1,6 @@
 .layout {
+    position: relative;
+    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
@@ -19,6 +21,7 @@
     font-size: 14vw;
     font-weight: 600;
     line-height: 1;
+    color: var(--secondary);
 }
 .impact {
     font-size: 3.75vw;
@@ -49,3 +52,32 @@
         font-size: 1.75vw;
     }
 }
+
+
+
+
+/* THEME ---------------------------- */
+
+.titleBlock, .impactFigure, .imageBlock {
+    position: relative;
+    z-index: 2;
+}
+
+@media(max-width:599px){
+    .deco {
+        position: absolute;
+        top: 45vh;
+        left: -20vw;
+        width: 120vw;
+    }
+}
+@media(min-width:600px){
+    .deco {
+        position: absolute;
+        top: 10vw;
+        left: 20vw;
+        width: 70vw;
+    }
+}
+
+

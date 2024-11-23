@@ -6,15 +6,15 @@ export const Quote = ({ quote, name, title, company }) => {
     return (
         <div className={CSS.container}>
             <Pop>
-                <div className={`${CSS.quote} bg-glass-clear`}>
-                    <p className='fs-2 lh-1'>{ quote }</p>
+                <div className={CSS.quote}>
+                    <p className='fs-2 lh-1 c-secondary'>{ quote }</p>
                 </div>
             </Pop>
             <Slide delay={0.25}>
-                <p className={`${CSS.quotee} fs-6 c-accent`}>
+                <p className={`${CSS.quotee} fs-6`}>
                     <span className='fw-600'>{ name }</span> 
                     <br/>{ title } 
-                    <br/><span className='fw-600'>{ company }</span>
+                    <br/><span className='fw-600 c-secondary'>{ company }</span>
                 </p>
             </Slide>
         </div>

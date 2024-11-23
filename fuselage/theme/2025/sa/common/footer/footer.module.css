@@ -40,3 +40,24 @@
 @media print {
     .container {display: none}
 }
+
+
+
+
+/* THEME ---------------------------- */
+
+
+@media(max-width:599px){
+    .deco {
+        display: none;
+    }
+}
+@media(min-width:600px){
+    .deco {
+        position: absolute;
+        bottom: -45vw;
+        right: -31vw;
+        width: 60vw;
+    }
+}
+

@@ -341,13 +341,13 @@ export default function Agenda ({ sessions, locations }) {
 				{
 					moderators.length ?
 						<div>
-							<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
+							<p className="c-accent fw-600 pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
 							<div className={CSS.sessionSpeakerGrid}>
 								{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
 							</div>
 							{
 								speakers.length ?
-									<p style={{ color: `var(--accent)`, padding: `10px 0 0 0`}}>In conversation with</p>
+									<p style={{ color: `var(--accent)`, fontWeight: 600, padding: `10px 0 0 0`}}>In conversation with</p>
 								: null
 							}
 						</div>
@@ -546,7 +546,7 @@ export default function Agenda ({ sessions, locations }) {
 
 				{/* INTRO */}
                 <div className="section mb-sm">
-                    <p className="fs-0 fw-500">2024 Agenda</p>
+                    <p className="fs-0 fw-500 c-secondary">2024 Agenda</p>
 					<div className="formatted mt-md">
 						<ul>
 							<li>FHS - tracks covering hospitality investment, industry entrepreneurship, sustainable development and human capital</li>
@@ -751,7 +751,7 @@ export default function Agenda ({ sessions, locations }) {
 																		<span className={CSS.sessionAnchor} id={session.id.slice(0, -2)}/>
 																		<div className={CSS.session}>
 
-																			<div className={`${CSS.sessionHeader} fw-500 c-white`}>
+																			<div className={`${CSS.sessionHeader} fw-500`}>
 																				{
 																					session.beginsAt && session.endsAt ?
 																						<div>
@@ -775,7 +775,7 @@ export default function Agenda ({ sessions, locations }) {
 
 																				{/* <small style={{ color: 'orange'}}>{session.id}</small> */}
 																				
-																				<p className={`${CSS.sessionTitle} fs-5 fw-600 lh-1 c-accent caps`}>
+																				<p className={`${CSS.sessionTitle} fs-5 fw-600 lh-1 c-primary caps`}>
 																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
 																				</p>
 																																									

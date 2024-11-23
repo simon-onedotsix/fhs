@@ -27,7 +27,7 @@ export default function ContentLibrary ({ articles, categories }) {
                 categories.map( category => {
                     return (
                         <section key={category.id} id={category.slug} className="mb-xxs">
-                            <a className="uLink fs-6 fw-600 c-white" href={`/sa/content-library/category/${category.slug}`}>{category.title}</a>
+                            <a className="uLink fs-6 fw-600 c-primary" href={`/sa/content-library/category/${category.slug}`}>{category.title}</a>
                         </section>
                     )
                 })
@@ -67,14 +67,14 @@ export default function ContentLibrary ({ articles, categories }) {
                                             contentTypes={entry.contentTypes}
                                             postDate={entry.postDate}
                                             type={entry.contentTypes[0].slug}
-                                            background={'var(--secondary)'}
+                                            background={'white'}
                                         />
                                     ))
                                 }
                             </div>
     
                             <p className="mt-sm">
-                                <ArrowButton href={`/sa/content-library/category/${category.slug}`} theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}>See all in {category.title}</ArrowButton>
+                                <ArrowButton href={`/sa/content-library/category/${category.slug}`} theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `var(--primary)`}}>See all in {category.title}</ArrowButton>
                             </p>
                         </section>
                     )
@@ -84,7 +84,7 @@ export default function ContentLibrary ({ articles, categories }) {
     }
 
     return (
-        <div className="bg-theme">
+        <>
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
             </Head>
@@ -94,14 +94,12 @@ export default function ContentLibrary ({ articles, categories }) {
             <section className="block bg-default pt-0">
                 <StickySidebar size='small'>
                     <aside>
-                        <HeaderShim/>
                         <p className="fs-6 fw-600 c-accent mb-sm">Filter</p>
                         { handleCategoryMenu() }
                     </aside>
 
                     <main>
-                        <HeaderShim/>
-                        <p className="fs-0 fw-600 c-accent">Content library</p>
+                        <p className="fs-0 fw-600 c-secondary">Content library</p>
 
                         { handleCategorisedArticles() }
                     </main>
@@ -111,7 +109,7 @@ export default function ContentLibrary ({ articles, categories }) {
             <Footer />
 
             <LenisScroller />
-        </div>
+        </>
     )
     
 }

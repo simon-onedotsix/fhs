@@ -18,7 +18,7 @@ export const Quotation = ({ avatarUrl, quote, fullName, title }) => {
             <main>
                 <OpenQuote/>
                 <Slide>
-                    <p className='fs-2 lh-2'>{ quote }&nbsp;<CloseQuote/></p>
+                    <p className='fs-2 lh-2 quote'>{ quote }&nbsp;<CloseQuote/></p>
                     <p className='fs-5 fw-600 mt-sm'>{ fullName }</p>
                     <p className='fs-5 fw-300'>{ title }</p>
                 </Slide>

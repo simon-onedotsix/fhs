@@ -7,6 +7,8 @@ import CSS from './photo-grid.module.css'
 export const PhotoGrid = ({ children }) => {
     return (
         <section className={CSS.layout}>
+            <img className={CSS.deco} src="/assets/theme/sa-2025/gfk-03.svg" alt=""/>
+
             { children }
         </section>
     )

@@ -11,7 +11,7 @@ export const Quote = ({ quote, name, title, company }) => {
                 </div>
             </Pop>
             <Slide delay={0.25}>
-                <p className={`${CSS.quotee} fs-6 c-white`}>
+                <p className={`${CSS.quotee} fs-6`}>
                     <span className='fw-600'>{ name }</span> 
                     <br/>{ title } 
                     <br/><span className='fw-600 c-secondary'>{ company }</span>

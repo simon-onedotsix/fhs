@@ -232,20 +232,20 @@
     position: relative;
     display: flex;
     align-items: center;
-    border: 1px solid var(--accent);
+    border: 1px solid var(--primary);
     border-radius: calc(var(--default-radius) * 0.5);
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: white;
     backdrop-filter: blur(10px);
 }
 [data-theme='sa-2025'] .search input::placeholder {
-    color: var(--accent);
+    color: var(--primary);
     opacity: 1;
 }
 [data-theme='sa-2025'] .search input {
     font-family: inherit;
     font-size: inherit;
     font-weight: 500;
-    color: white;
+    color: var(--default-text-color);
     padding: .75rem 1rem;
     border: none;
     background-color: transparent;
@@ -261,7 +261,7 @@
     font-size: 1.9rem;
     line-height: 1;
     border: 0;
-    background-color: transparent;
+    background-color: var(--primary);
     color: white;
     display: none;
 }
@@ -297,10 +297,8 @@
     white-space: nowrap;
     color: white;
     padding: .75rem 1rem;
-    border: 1px solid var(--accent);
+    border: 1px solid var(--primary);
     border-radius: calc(var(--default-radius) * 0.5);
-    background-color: transparent;
-    backdrop-filter: blur(10px);
 
     transition: all 350ms ease-in-out;
 }
@@ -364,9 +362,7 @@
     border: none;
     font-family: inherit;
     font-size: inherit;
-    color: white;
     background-color: transparent;
-    
     height: 100%;
     
     display: flex;
@@ -374,15 +370,14 @@
     gap: .51rem
 }
 [data-theme='sa-2025'] .agendaFilterReset span {
-    display: inline-block;
     width: 2rem;
     height: 2rem;
     border-radius: 2rem;
-    border: 1px solid var(--accent);
-    font-size: 2rem;
-    font-weight: 300;
+    background-color: var(--primary);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
     line-height: 1;
-    backdrop-filter: blur(10px);
 
     display: flex;
     align-items: center;
@@ -392,14 +387,12 @@
     transition: all 350ms ease-in-out;
 }
 [data-theme='sa-2025'] .agendaFilterReset:hover span {
-    background-color: var(--accent);
-    color: var(--secondary);
+    background-color: var(--primary-2);
 }
 
 [data-theme='sa-2025'] .agendaFilterResetWrapper {
     flex: 1;
     display: flex;
-    /* justify-content: flex-end; */
 }
 
 
@@ -507,10 +500,9 @@
 }
 
 [data-theme='sa-2025'] .dayDivider {
-    background-color: var(--accent);
-    /* border-radius: var(--agenda-radius); */
+    background-color: var(--secondary);
     padding: .5rem 1rem;
-    color: var(--dark);
+    color: white;
     font-weight: 600;
     font-size: 1.5rem;
 }
@@ -520,14 +512,14 @@
     grid-template-columns: 1fr;
 }
 [data-theme='sa-2025'] .timingsAndTags {
-    background-color: var(--secondary);
+    background-color: var(--neutral-01);
     /* border-radius: calc(var(--agenda-radius) * 1); */
     padding: .5rem 1rem;
 }
 
 @media(max-width:500px){
     [data-theme='sa-2025'] .timeSlot {
-        border: 2px solid var(--secondary);
+        border: 2px solid var(--neutral-01);
         /* border-radius: calc(var(--agenda-radius) * 1.25); */
     }
     /* [data-theme='sa-2025'] .timingsAndTags {
@@ -560,7 +552,7 @@
     flex: 1;
     /* border-radius: calc(var(--agenda-radius) * 1); */
     overflow: hidden;
-    background-color: var(--secondary-dark);
+    background-color: var(--neutral-01);
 }
 
 
@@ -571,7 +563,7 @@
 [data-theme='sa-2025'] .sessionHeader {
     width: 100%;
     padding: .5rem 1rem;
-    background-color: var(--primary);
+    background-color: var(--neutral-02);
 }
 [data-theme='sa-2025'] .sessionHeader {
     display: flex;
@@ -663,7 +655,7 @@
 [data-theme='sa-2025'] .sessionStream {
     padding: .5rem 1rem;
     border-radius: calc(var(--agenda-radius) * 1);
-    background-color: var(--primary);
+    /* background-color: var(--neutral-01); */
     min-width: 6.25rem;
 }
 

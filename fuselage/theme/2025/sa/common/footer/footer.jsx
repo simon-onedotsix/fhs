@@ -19,11 +19,13 @@ export const Footer = () => {
     const socialConnections = globals.global[2].socialConnections
 
     return (
-        <footer className="block">
+        <footer className="block bg-neutral-02" style={{ position: 'relative', overflow: 'hidden' }}>
+            <img className={CSS.deco} src="/assets/theme/sa-2025/gfk-02.svg" alt=""/>
+
             <div className={`container columns-3 gap-md formatted`}>
 
                     <section className={`${CSS.section}`}>
-                        <p className='fs-1 fw-600 lh-1'>Join the Conversation</p>
+                        <p className='fs-1 fw-600 lh-1 c-secondary'>Join the Conversation</p>
                         <p className='fs-5 fw-600 c-accent mt-sm'>#FutureHospitalitySummit</p>
                         <p className='flex flex-wrap gap-xxs mt-sm'>
                             {
@@ -35,8 +37,8 @@ export const Footer = () => {
                                             icon={connection.icon} 
                                             url={connection.hyperlink} 
                                             alt={connection.label}
-                                            iconColor={'var(--secondary)'}
-                                            decal={'bg-white'}
+                                            iconColor={'white'}
+                                            decal={'bg-secondary'}
                                         />
                                     )
                                 })
@@ -53,7 +55,7 @@ export const Footer = () => {
                     {
                         hubspotForm &&
                         <section className={CSS.section}>
-                            <p className='fs-5 fw-600 '>Want to stay updated on FHS?</p>
+                            <p className='fs-5 fw-600 c-secondary'>Want to stay updated on FHS?</p>
                             <p className='pb-xs'>If you haven&apos;t already registered your interest, simply submit your name and email and we&apos;ll make sure to keep you posted on all the exciting announcements we have in store for the event.</p>
                             <HubspotForm portalId={hubspotForm.portalId} formId={hubspotForm.formId} />
                         </section>
@@ -61,21 +63,21 @@ export const Footer = () => {
 
                     <section className={`${CSS.section}`}>
                         <div>
-                            <p className='fs-5 fw-600'>Organisers</p>
+                            <p className='fs-5 fw-600 c-secondary'>Organisers</p>
                             <div className="mt-sm maxw-40">
                                 <p>
                                     <a className={CSS.partnerLogo} href="https://www.thebench.com" target='_blank' rel='noreferrer' aria-label="Organiser">
-                                        <Image width={221} height={92} src="/assets/site/the-bench-inverse@2x.png" alt="" />
+                                        <Image width={221} height={92} src="/assets/site/the-bench-black.png" alt="" />
                                     </a>
                                 </p>
-                                <p className='fw-300 mt-sm'>The Bench has established a legacy for delivering world-leading investment forums and conferences in Europe, Africa, the Middle East, and Latin America. These include AHIC, AHIF, GRIF, AHF, IDEEA, AviaDev and RENEW.</p>
+                                <p className='mt-sm'>The Bench has established a legacy for delivering world-leading investment forums and conferences in Europe, Africa, the Middle East, and Latin America. These include AHIC, AHIF, GRIF, AHF, IDEEA, AviaDev and RENEW.</p>
 
                             </div>
                         </div>
                     </section>
             </div>
                 
-            <div className="container c-white">
+            <div className="container">
                 <p><small>
                     © {new Date().getFullYear()} The Bench
                 </small></p>

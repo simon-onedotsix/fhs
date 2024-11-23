@@ -33,15 +33,19 @@ import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
 
-
 import handleSeomaticMeta from '../../lib/seomatic'
+
+
+
+import CSS from '../../fuselage/theme/2025/sa/css/purchase-pass.module.css'
+
 
 function PurchasePass({ seomatic, entry }) {
 
 	// console.log('entry:', entry )
 
 	return (
-		<div className="bg-theme">
+		<>
 
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
@@ -50,20 +54,26 @@ function PurchasePass({ seomatic, entry }) {
 
 			<Header compact shim />
 
-			<ThemeBg />
 			
-			<section className="block bg-default pb-0">
-				<div className="container">
-					<p className='fs-1 fw-600'>Purchase Pass</p>
-				</div>
-			</section>
+			<div className={`${CSS.themeWrapper} bg-neutral-02`}>
+				<img className={CSS.deco} src="/assets/theme/sa-2025/gfk-01.svg" alt=""/>
 
-			{ handleContentBlocks( entry.fhisContentBlocks, null, null, 'sa' ) }
+				<div style={{ position: 'relative', zIndex: 2 }}>
+					<section className={`block pb-0`}>
+						<div className="container">
+							<p className='fs-1 fw-600 c-secondary'>Purchase Pass</p>
+						</div>
+					</section>
+
+					{ handleContentBlocks( entry.fhisContentBlocks, null, null, 'sa' ) }
+				</div>
+			</div>
+
 
 			<Footer />
 			<LenisScroller />
 
-		</div>
+		</>
 	)
 }
 

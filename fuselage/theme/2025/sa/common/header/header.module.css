@@ -5,6 +5,7 @@
 }
 .layout.overlaid {
     position: absolute;
+    z-index: 10;
     width: 100%;
 }
 
@@ -26,6 +27,12 @@
 
 .venue {
     display: none;
+}
+
+@media(max-width:599px){
+    .layout {
+        background-color: var(--secondary-dark);
+    }
 }
 
 @media(min-width:600px){

@@ -33,7 +33,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
                     return (
                         <section key={category.id} id={category.slug} className="mb-xxs">
                             <a 
-                                className={`uLink fs-6 fw-600 c-white ${ router.query.category === category.slug ? 'here' : '' }`} 
+                                className={`uLink fs-6 fw-600 c-primary ${ router.query.category === category.slug ? 'here' : '' }`} 
                                 href={`/sa/content-library/category/${category.slug}`}
                             >
                                 {category.title}
@@ -62,7 +62,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
                                     excerpt={entry.excerpt}
                                     postDate={entry.postDate}
                                     type={entry.contentTypes[0].slug}
-                                    background={'var(--secondary)'}
+                                    background={'white'}
                                 />
                             ))
                         }
@@ -73,7 +73,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
     }
 
     return (
-        <div className="bg-theme">
+        <>
             <Head>
                 <title>FHS | Content Library</title>
                 <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
@@ -84,17 +84,15 @@ export default function ContentLibraryCategory ({ categories, category, articles
             <section className="block bg-default pt-0">
                 <StickySidebar size='small'>
                     <aside>
-                        <HeaderShim/>
                         <p className="fs-6 fw-600 c-accent mb-sm">Filter</p>
                         { handleCategoryMenu() }
                         <p className="mt-sm">
-                            <a className="uLink fs-sm caps fw-400 c-accent" href={`/sa/content-library`}>Clear filter</a>
+                            <a className="uLink fs-sm caps fw-400 c-secondary" href={`/sa/content-library`}>Clear filter</a>
                         </p>
                     </aside>
 
                     <main>
-                        <HeaderShim/>
-                        <p className="fs-0 fw-600 c-accent">Content library</p>
+                        <p className="fs-0 fw-600 c-secondary">Content library</p>
 
                         { handleArticles() }
                     </main>
@@ -105,7 +103,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
 
             <LenisScroller />
 
-        </div>
+        </>
     )
 }
 

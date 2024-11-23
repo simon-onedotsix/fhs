@@ -42,7 +42,7 @@ function Speakers({ seomatic, speakers }) {
 	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 	return (
-		<div className="bg-theme">
+		<div className="bg-default">
 
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
@@ -56,7 +56,7 @@ function Speakers({ seomatic, speakers }) {
 			<section className="block bg-default">
 				<div className="container">
 
-					<p className='fs-1 fw-600 lh-1 maxw-40'>2024 SPEAKERS</p>
+					<p className='fs-1 fw-600 c-secondary lh-1 maxw-40'>2024 SPEAKERS</p>
 					
 					<SpeakerGrid decal="gap-sm mt-md">
 						{

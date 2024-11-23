@@ -4,36 +4,33 @@
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
-	color: inherit;
+	color: white;
 	padding: .75rem 1rem;
-	border: 1px var(--accent) solid;
+	border: 1px var(--primary) solid;
 	border-radius: var(--standard-field-radius, 0);
-	background-color: transparent;
+	background-color: var(--primary);
 
-	/* min-width: 12rem; */
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 
 	transition: all 350ms ease-in-out;
 
-	backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.25) !important;
 }
 
 .button svg {
-	stroke: var(--accent);
+	stroke: white;
 	transition: all 350ms ease-in-out;
 }
 
 
 @media(hover: hover){
 	.button:hover {
-		background-color: var(--accent)!important;
-		color: var(--dark)!important;
+		background-color: var(--primary-2)!important;
+		color: white!important;
 	}
 	.button:hover svg {
-		stroke: var(--dark);
+		stroke: white;
 	}
 }
 
@@ -63,18 +60,9 @@
 	color: white;
 	font-family: var(--default-font-family);
 	font-size: var(--default-font-size);
-	padding: 1px;
 
-	/* min-width: 32rem; */
-
-	/* max-height: 50vh;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr); */
-	
-	border: 1px solid var(--accent);
 	border-radius: calc(var(--default-radius) * 0.5);
-    background-color: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(10px);
+    background-color: var(--primary);
 
 	overflow: hidden;
 	
@@ -102,15 +90,11 @@
 	min-width: inherit;
 
 	transition: all 350ms ease-in-out;
-
-	margin: 2px;
-	border-radius: 5px;
 }
 
 .menuItemHover {
 	composes: menuItem;
-	color: var(--dark);
-	background-color: var(--accent);
+	background-color: var(--primary-2);
 }
 
 .menuItemDisabled {
@@ -129,7 +113,6 @@
 }
 
 .submenuItem::after {
-	/* content: url("chevron-right-solid.svg"); */
 	content: '>';
 	position: absolute;
 	width: 7px;

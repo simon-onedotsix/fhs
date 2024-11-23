@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react'
-import { animate, KeyFrameOptions, useInView } from 'framer-motion'
+import { animate, useInView } from 'framer-motion'
 
 import { Fade, Pop, Slide } from '../../../../../animation/animation'
 
@@ -8,8 +8,12 @@ import Image from 'next/image'
 import CSS from  './impact-grid.module.css'
 
 export const ImpactGrid = ({ children }) => {
+
+
     return (
         <section className={CSS.layout}>
+            <img className={CSS.deco} src="/assets/theme/sa-2025/gfk-03.svg" alt=""/>
+
             { children }
         </section>
     )
@@ -17,7 +21,7 @@ export const ImpactGrid = ({ children }) => {
 
 export const TitleBlock = ({ children }) => {
     return (
-        <div className={`${CSS.titleBlock} bg-theme`}>
+        <div className={CSS.titleBlock}>
             { children }
         </div>
     )
@@ -25,17 +29,17 @@ export const TitleBlock = ({ children }) => {
 
 export const ImpactFigure = ({ figure, unit, impact, decal }) => {
     return (
-        <Fade>
-            <div className={`${CSS.impactFigure} ${decal}`}>
+        <div className={`${CSS.impactFigure} ${decal}`}>
+            <Fade>
                 {
                     figure &&
                     <p className={CSS.figure}><AnimatedCounter from={0} to={figure} />{ unit }</p>
                 }
 
                 <Slide><p className={CSS.impact}>{ impact }</p></Slide>
-            </div>
+            </Fade>
+        </div>
 
-        </Fade>
     )
 }
 

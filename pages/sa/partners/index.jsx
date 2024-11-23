@@ -81,7 +81,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 
 
 	return (
-		<div className="bg-theme">
+		<>
 
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
@@ -202,7 +202,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 
 			<Footer />
 			<LenisScroller />
-		</div>
+		</>
 	)
 }
 

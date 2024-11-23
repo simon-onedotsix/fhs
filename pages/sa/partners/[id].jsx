@@ -99,14 +99,12 @@ function Partner({ partner }) {
 
 	return (
 
-		<div className="bg-theme">
+		<>
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
 			</Head>
 
 			<Header compact />
-
-			<ThemeBg />
 
 			<section className="block pt-0">
 				<div className="container">
@@ -115,7 +113,7 @@ function Partner({ partner }) {
 
 						<aside className="formatted">
 							<HeaderShim/>
-							<p className="fw-600 c-white"><ArrowLink href="/sa/partners">View all partners</ArrowLink></p>
+							<p className="fw-600"><ArrowLink href="/sa/partners">View all partners</ArrowLink></p>
 
 							<div className="bg-white p-sm mt-sm center rad-sm">
 								<div className={CSS.profileLogoWrapper}>
@@ -135,10 +133,10 @@ function Partner({ partner }) {
 							
 						</aside>
 						
-						<main className="maxw-60 c-white">
+						<main className="maxw-60">
 							<HeaderShim/>
 							{/* <p className='fs-2 fw-600 lh-1 c-secondary maxw-40'>{GetBizzaboPartnerLevelTitle(partner.level)}</p> */}
-							<p className="fs-3 fw-600 caps">{partner.name}</p>	
+							<p className="fs-3 fw-600 caps c-secondary">{partner.name}</p>	
 							{
 								partner.htmlDescription &&
 								<div className="mt-sm maxw-50 formatted">{ parse(String(partner.htmlDescription)) }</div>
@@ -154,7 +152,7 @@ function Partner({ partner }) {
 			<Footer />
 
 			<LenisScroller />
-		</div>
+		</>
 	)
 }
 

@@ -60,12 +60,12 @@ function Speaker({ speaker, sessions }) {
 
 		return (
 			<div className="mt-sm bt-1 bc-accent pt-sm">
-				<p className="fs-5 fw-400 c-accent mb-xs">See {speaker.firstName} {speaker.lastName} speak in the following sessions:</p>
+				<p className="fs-5 fw-400 c-secondary mb-xs">See {speaker.firstName} {speaker.lastName} speak in the following sessions:</p>
 				{
 					speakerData.withEvent.speakerOnPlannings.length &&
 					_.orderBy(speakerData.withEvent.speakerOnPlannings, 'beginsAt').map( (day, index) => (
 						<div key={index} className='mb-xs'>
-							<p className="c-accent">
+							<p className="c-secondary">
 								{format(new Date( day.beginsAt ), 'EEEE dd MMMM: HH:mm')} - {format(new Date( day.endsAt ), 'HH:mm')}
 							</p>
 							{/* <p>{day.id} ---> {day.id.slice(0, -2)}</p> */}
@@ -81,7 +81,7 @@ function Speaker({ speaker, sessions }) {
 
 	return (
 
-		<div className="bg-theme">
+		<>
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
 			</Head>
@@ -90,7 +90,7 @@ function Speaker({ speaker, sessions }) {
 
 			<ThemeBg />
 
-			<section className="block pt-0">
+			<section className="block bg-default pt-0">
 				<div className="container">
 
 					<StickySidebar size='medium'>
@@ -99,7 +99,7 @@ function Speaker({ speaker, sessions }) {
 							<HeaderShim/>
 							<p className="fw-600">
                                 <ArrowLink 
-                                    theme={{ color: `white`, stroke: `var(--accent)` }} 
+                                    theme={{ stroke: `var(--accent)` }} 
                                     href="/sa/speakers"
                                 >
                                     View All Speakers
@@ -130,16 +130,16 @@ function Speaker({ speaker, sessions }) {
 						
 						<main className="maxw-60">
 							<HeaderShim/>
-							<p className='fs-4 fw-600 lh-1 c-accent maxw-40'>Profile</p>
-							<p className="fs-3 fw-600 c-white caps mt-sm">{speaker.firstName} {speaker.lastName}</p>
-							<p className='c-white'>
+							<p className='fs-4 fw-600 lh-1 c-secondary maxw-40'>Profile</p>
+							<p className="fs-3 fw-600 caps mt-sm">{speaker.firstName} {speaker.lastName}</p>
+							<p>
 								{speaker.jobTitle}
 								<br/>
 								<span className="fw-500">
 									{ speaker.organization }
 								</span>
 							</p>
-							<p className="mt-sm maxw-50 c-white" style={{ whiteSpace: `pre-line` }}>{ speaker.biography }</p>
+							<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{ speaker.biography }</p>
 
 							{ handleRelatedSessions( speaker ) }
 
@@ -152,7 +152,7 @@ function Speaker({ speaker, sessions }) {
 
 			<Footer />
 			<LenisScroller />
-		</div>
+		</>
 	)
 }
 

@@ -81,3 +81,77 @@
         font-size: 4vw;
     } 
 }
+
+
+
+
+
+
+
+
+/* THEME ------------------------------------- */
+
+.themeWrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+@media(max-width:599px){
+    .deco01 {
+        position: absolute;
+        top: 10vh;
+        left: -70%;
+        width: 100vw;
+    }
+    .deco02 {
+        position: absolute;
+        top: 40vh;
+        right: -70%;
+        width: 100vw;
+    }
+    /* quote */
+    .deco03 {
+        position: absolute;
+        top: -20vh;
+        right: -70%;
+        width: 100vw;
+    }
+    /* form */
+    .deco04 {
+        display: none;
+    }
+}
+
+@media(min-width:600px){
+    .deco01 {
+        position: absolute;
+        top: 15vw;
+        left: -40%;
+        z-index: 2;
+        width: 60vw;
+    }
+    .deco02 {
+        position: absolute;
+        top: -20vw;
+        right: -35%;
+        z-index: 2;
+        width: 60vw;
+    }
+    /* quote */
+    .deco03 {
+        position: absolute;
+        bottom: -52vw;
+        right: -35%;
+        z-index: 2;
+        width: 60vw;
+    }
+    /* form */
+    .deco04 {
+        position: absolute;
+        bottom: -35vw;
+        left: -28%;
+        z-index: 2;
+        width: 60vw;
+    }
+
+}

@@ -188,7 +188,7 @@ export default function Article ({ entry }) {
     
 
     return (
-        <div className="bg-theme">
+        <>
 
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
@@ -203,13 +203,12 @@ export default function Article ({ entry }) {
                     <StickySidebar size='large' flipped>
 
                         <main>
-                            <HeaderShim/>
                             <div className="mb-sm pb-xs bb-1 bc-accent flex jc-between">
                                <ArrowLink href="/sa/content-library" decal='fw-600'>Content library</ArrowLink>
                                {handleCategories()}                                
                             </div>
 
-                            <p className="fs-1 fw-600 lh-1 c-accent mb-sm">{entry.title}</p>
+                            <p className="fs-1 fw-600 lh-1 c-secondary mb-sm">{entry.title}</p>
                             
                             {handleHero()}
 
@@ -217,7 +216,6 @@ export default function Article ({ entry }) {
                         </main>
 
                         <aside>
-                            <HeaderShim/>
                             <div className="mb-sm pb-xs bb-1 bc-accent">
                                 <p className="fw-600">Published: { format(new Date(entry.postDate), 'd MMMM yyyy') }</p>
                             </div>
@@ -227,9 +225,9 @@ export default function Article ({ entry }) {
                             <div className="py-xs">
                                 <p className="fw-600 pb-xs">Share this article</p>
                                 <div className="flex gap-xxs">
-                                    <ButtonSocial url={buildShareUrl(`https://www.linkedin.com/sharing/share-offsite/?url=`, router)} icon='linkedin' decal='bg-accent' />
-                                    <ButtonSocial url={buildShareUrl(`https://www.facebook.com/sharer.php?u=`, router)} icon='facebook' decal='bg-accent' />
-                                    <ButtonSocial url={buildShareUrl(`https://twitter.com/intent/tweet?url=`, router)} icon='twitter' decal='bg-accent' />
+                                    <ButtonSocial url={buildShareUrl(`https://www.linkedin.com/sharing/share-offsite/?url=`, router)} icon='linkedin' decal='bg-secondary' iconColor={'white'} />
+                                    <ButtonSocial url={buildShareUrl(`https://www.facebook.com/sharer.php?u=`, router)} icon='facebook' decal='bg-secondary' iconColor={'white'} />
+                                    <ButtonSocial url={buildShareUrl(`https://twitter.com/intent/tweet?url=`, router)} icon='twitter' decal='bg-secondary' iconColor={'white'} />
                                 </div>
                             </div>
 
@@ -242,7 +240,7 @@ export default function Article ({ entry }) {
             <Footer />
 
             <LenisScroller />
-        </div>
+        </>
     )
 
 }

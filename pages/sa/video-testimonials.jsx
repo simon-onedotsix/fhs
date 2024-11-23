@@ -24,7 +24,7 @@ export default function VideoTestimonials ({ entries }) {
 
             <section className="block bg-default">
                 <div className="container">
-                    <p className="fs-1 fw-500">Video Testimonials</p>
+                    <p className="fs-1 fw-500 c-secondary">Video Testimonials</p>
                 </div>
             </section>
 

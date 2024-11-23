@@ -44,7 +44,7 @@ export const Article = ({ heroUrl, title, excerpt, url }) => {
             </Pop>
 
             <main className='formatted'>
-                <Slide><p className='fs-4 fw-600 lh-2'>{title}</p></Slide>
+                <Slide><p className='fs-4 fw-600 lh-2 c-secondary'>{title}</p></Slide>
                 <Fade>
                     <p>{excerpt}</p>
                     {
