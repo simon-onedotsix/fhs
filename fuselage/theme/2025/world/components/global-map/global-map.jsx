@@ -12,7 +12,7 @@ export const GlobalMap = () => {
 
             <div className={CSS.overlay}>
                 <Region label={'Middle East'} value={72} unit={'%'} position={{ x: '55%', y: '42%' }} delay={0.3}/>
-                <Region label={'Europe'} value={17} unit={'%'} position={{ x: '35%', y: '30%' }} delay={0.1}/>
+                <Region label={'Europe'} value={16} unit={'%'} position={{ x: '35%', y: '30%' }} delay={0.1}/>
                 <Region label={'Asia'} value={6} unit={'%'} position={{ x: '80%', y: '50%' }} delay={0.5}/>
                 <Region label={'Americas'} value={3} unit={'%'} position={{ x: '20%', y: '50%' }} delay={0.2}/>
                 <Region label={'Africa'} value={3} unit={'%'} position={{ x: '45%', y: '60%' }} delay={0.4}/>

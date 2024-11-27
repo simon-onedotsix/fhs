@@ -455,7 +455,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     </div>
 
                     <div>
-                        <HubspotForm portalId={`14527187`} formId={`f2335c74-d011-4635-830c-8d44ec22bb58`} />
+                        <HubspotForm portalId={`14527187`} formId={`65f4705e-45dc-4e1f-8d89-858947d3ac40`} />
                     </div>
                 </div>
             </section>
