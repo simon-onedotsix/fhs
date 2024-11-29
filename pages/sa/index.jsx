@@ -250,7 +250,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             {/* AB interviews */}
 
             <div className="bg-primary pt-md o-hidden">
-                <SectionHeading heading={'2025 Advisory Board Interviews'} inverse />
+                <SectionHeading heading={'2025 Advisory Board Member Interviews'} inverse />
             </div>
             <section className="block bg-primary">
                 <div className="container columns-4 gap-sm">
@@ -466,17 +466,22 @@ export async function getStaticProps({ preview, previewData }) {
 						${QuerySEO}
 					}
 				}
-                abVideos: entries(site: "${process.env.SITE_HANDLE_AE}", section: "videoTestimonials", limit: 4) {
-					... on videoTestimonials_videoTestimonial_Entry {
-                        id
-                        slug
-                        title
-                        videoShareUrl
-                        fullName
-                        jobTitle
-                        organisation
-                        testimonial
-                    }
+                abVideos: entry(site: "${process.env.SITE_HANDLE_SA}", id: "227427" limit: 4) {
+					... on fhsSaAdvisoryBoard_fhsSaAdvisoryBoard_Entry {
+					id
+					slug
+					title
+					videos {
+						... on videos_video_BlockType {
+							id
+							videoShareUrl
+							fullName
+							jobTitle
+							organisation
+							testimonial
+							}
+						}
+					}
 				}
 			}
 			
@@ -532,7 +537,7 @@ export async function getStaticProps({ preview, previewData }) {
 			seomatic: pageData.data.entry.seomatic,
 			contentBlocks: pageData.data.entry.fhisContentBlocks,
             partners: partnerData2025.data.exhibitors,
-            abVideos: pageData.data.abVideos
+            abVideos: pageData.data.abVideos.videos
 		}
 	}
 }

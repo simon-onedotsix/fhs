@@ -41,7 +41,7 @@ function Speakers({ videos, craftCmsProfiles }) {
 
             <section className="block bg-default">
                 <div className="container">
-                    <p className="fs-1 fw-500 c-secondary">Advisory Board Interviews</p>
+                    <p className="fs-1 fw-500 c-secondary">Member Interviews</p>
                 </div>
 
                 <div className="container columns-4 gap-sm">
@@ -55,7 +55,6 @@ function Speakers({ videos, craftCmsProfiles }) {
                     
                 </div>
             </section>
-
 
 
 			{/* AB listing */}
@@ -137,17 +136,22 @@ export async function getStaticProps() {
 	const cmsVideos = await craftApolloClient().query({
         query: gql`
             query Videos {
-                entries(site: "${process.env.SITE_HANDLE_AE}", section: "videoTestimonials", limit: 4) {
-					... on videoTestimonials_videoTestimonial_Entry {
-                        id
-                        slug
-                        title
-                        videoShareUrl
-                        fullName
-                        jobTitle
-                        organisation
-                        testimonial
-                    }
+                entry(site: "${process.env.SITE_HANDLE_SA}", id: "227427") {
+					... on fhsSaAdvisoryBoard_fhsSaAdvisoryBoard_Entry {
+					id
+					slug
+					title
+					videos {
+						... on videos_video_BlockType {
+							id
+							videoShareUrl
+							fullName
+							jobTitle
+							organisation
+							testimonial
+							}
+						}
+					}
 				}
             }
           
@@ -157,7 +161,7 @@ export async function getStaticProps() {
 	return {
 		props: { 
 			craftCmsProfiles: craftCmsProfiles.data.entries[0].profiles,
-			videos: cmsVideos.data.entries
+			videos: cmsVideos.data.entry.videos
 		}
 	}
 }
