@@ -257,7 +257,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     {
                         abVideos
                         ? 
-                            abVideos.map( entry => <Pop><VideoTestimonialCard key={entry.id} entry={entry} /></Pop> )
+                            abVideos.map( entry => <Pop key={entry.id}><VideoTestimonialCard entry={entry} /></Pop> )
                         : 
                             <p>Currently, there are no testimonials available.</p>
                     }
