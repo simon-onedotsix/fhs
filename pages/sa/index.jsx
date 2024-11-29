@@ -31,6 +31,7 @@ import { CTAButton } from "../../fuselage/theme/2025/sa/components/cta-button/ct
 import { LogoTicker, Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticker/logo-ticker"
 import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
+import { VideoTestimonialCard } from "./video-testimonials"
 
 
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
@@ -132,7 +133,7 @@ const AB_DATA = [
     }
 ]
 
-export default function Home ({ entry, seomatic, contentBlocks, partners }) {
+export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
 
     // console.log('entry:', entry)
     // console.log('partners:', partners)
@@ -245,6 +246,24 @@ export default function Home ({ entry, seomatic, contentBlocks, partners }) {
 
             </div>
 
+
+            {/* AB interviews */}
+
+            <div className="bg-primary pt-md o-hidden">
+                <SectionHeading heading={'2025 Advisory Board Interviews'} inverse />
+            </div>
+            <section className="block bg-primary">
+                <div className="container columns-4 gap-sm">
+                    {
+                        abVideos
+                        ? 
+                            abVideos.map( entry => <Pop><VideoTestimonialCard key={entry.id} entry={entry} /></Pop> )
+                        : 
+                            <p>Currently, there are no testimonials available.</p>
+                    }
+                    
+                </div>
+            </section>
 
             
             <ImpactGrid>
@@ -447,6 +466,18 @@ export async function getStaticProps({ preview, previewData }) {
 						${QuerySEO}
 					}
 				}
+                abVideos: entries(site: "${process.env.SITE_HANDLE_AE}", section: "videoTestimonials", limit: 4) {
+					... on videoTestimonials_videoTestimonial_Entry {
+                        id
+                        slug
+                        title
+                        videoShareUrl
+                        fullName
+                        jobTitle
+                        organisation
+                        testimonial
+                    }
+				}
 			}
 			
         `
@@ -500,7 +531,8 @@ export async function getStaticProps({ preview, previewData }) {
 			entry: pageData.data.entry,
 			seomatic: pageData.data.entry.seomatic,
 			contentBlocks: pageData.data.entry.fhisContentBlocks,
-            partners: partnerData2025.data.exhibitors
+            partners: partnerData2025.data.exhibitors,
+            abVideos: pageData.data.abVideos
 		}
 	}
 }

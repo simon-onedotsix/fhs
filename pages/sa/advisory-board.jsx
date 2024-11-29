@@ -16,9 +16,11 @@ import { ThemeFg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 import { SpeakerGrid } from '../../fuselage/layout/speaker-grid/speaker-grid'
 import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
 
+import { VideoTestimonialCard } from './video-testimonials'
+
 import handleSeomaticMeta from '../../lib/seomatic'
 
-function Speakers({ seomatic, craftCmsProfiles }) {
+function Speakers({ videos, craftCmsProfiles }) {
 
 	// speakers
 
@@ -29,14 +31,36 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
-				{ handleSeomaticMeta( seomatic ) } 
             </Head>
 
 			<Header compact shim />
 
-			<ThemeBg />
 
-			<section className="block bg-default">
+
+			{/* AB interviews */}
+
+            <section className="block bg-default">
+                <div className="container">
+                    <p className="fs-1 fw-500 c-secondary">Advisory Board Interviews</p>
+                </div>
+
+                <div className="container columns-4 gap-sm">
+                    {
+                        videos.length 
+                        ? 
+                            videos.map( entry => <VideoTestimonialCard key={entry.id} entry={entry} /> )
+                        : 
+                            <p>Currently, there are no testimonials available.</p>
+                    }
+                    
+                </div>
+            </section>
+
+
+
+			{/* AB listing */}
+
+			<section className="block bg-neutral-01">
 				<div className="container">
 
 					<p className='fs-1 fw-600 c-secondary lh-1'>2025 Advisory Board</p>
@@ -72,18 +96,6 @@ Speakers.theme = 'sa-2025'
 
 export async function getStaticProps() {
 
-	const cmsData = await craftApolloClient().query({
-        query: gql`
-			query SEO {
-				entry(site: "${process.env.SITE_HANDLE_SA}", id: "63858") {
-					title
-					seomatic (asArray: true) {
-						metaTagContainer
-					}
-				}
-			}
-        `
-    })
 
 	const craftCmsProfiles = await craftApolloClient().query({
         query: gql`
@@ -122,10 +134,30 @@ export async function getStaticProps() {
         `
 	})
 
+	const cmsVideos = await craftApolloClient().query({
+        query: gql`
+            query Videos {
+                entries(site: "${process.env.SITE_HANDLE_AE}", section: "videoTestimonials", limit: 4) {
+					... on videoTestimonials_videoTestimonial_Entry {
+                        id
+                        slug
+                        title
+                        videoShareUrl
+                        fullName
+                        jobTitle
+                        organisation
+                        testimonial
+                    }
+				}
+            }
+          
+        `
+	})
+
 	return {
 		props: { 
-			// seomatic: cmsData.data.entry.seomatic,
-			craftCmsProfiles: craftCmsProfiles.data.entries[0].profiles
+			craftCmsProfiles: craftCmsProfiles.data.entries[0].profiles,
+			videos: cmsVideos.data.entries
 		}
 	}
 }
