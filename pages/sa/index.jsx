@@ -136,7 +136,7 @@ const AB_DATA = [
 export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
 
     // console.log('entry:', entry)
-    // console.log('partners:', partners)
+    console.log('partners:', partners)
 
 
     // scroll animation
