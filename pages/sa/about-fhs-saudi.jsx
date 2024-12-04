@@ -38,7 +38,7 @@ export default function LeadWall () {
                         <p>FHS Saudi Arabia 2024 was a record-breaking edition, attracting over 1300+ delegates from 40 countries for 3 days of business, growth and networking at the iconic Mandarin Oriental Al Faisaliah Hotel, Riyadh.</p>
 
                         <p className='fs-5 fw-600 mt-sm'>Find out Who Attends: </p>
-                        <p><button className='button fs-6' onClick={() => setShowPopover(true)}>Download 2023 Post-event Report</button></p>
+                        <p><button className='button fs-6' onClick={() => setShowPopover(true)}>Download 2024 Post-event Report</button></p>
                         <p className='mt-xs'><a className="button fs-6" href="https://www.futurehospitality.com/about-fhs" target="_blank" rel="noreferrer noopener">Our Legacy</a></p>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ export default function LeadWall () {
                     <button className={CSS.closeButton} onClick={() => setShowPopover(false)}>&times;</button>
                     <div className={CSS.contentScroller}>
                         <div className={CSS.content}>
-                            <p className='fw-500 c-primary'>Please fill out the form to download the FHS Saudi Arabia 2023 post-event report.</p>
+                            <p className='fw-500 c-primary'>Please fill out the form to download the FHS Saudi Arabia 2024 post-event report.</p>
                             <section className='mt-md'>
                                 <HubspotForm portalId='14527187' formId='0113cdf5-eada-4d6b-83b5-1e5054fdc7e2' />
                             </section>

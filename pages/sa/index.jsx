@@ -136,7 +136,7 @@ const AB_DATA = [
 export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
 
     // console.log('entry:', entry)
-    console.log('partners:', partners)
+    // console.log('partners:', partners)
 
 
     // scroll animation
@@ -191,7 +191,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         transition={{ type: "spring", bounce: 0.25 }}
                         className={`fs-5 fw-500 c-white center mt-xs`} 
                     >
-                        14 - 16 April 2025, Mandarin Oriental Al Faisaliah, Riyadh
+                        11-13 May 2025, Mandarin Oriental Al Faisaliah, Riyadh
                     </motion.p>
 
                     <Fade>
