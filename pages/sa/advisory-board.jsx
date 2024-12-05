@@ -17,6 +17,7 @@ import { SpeakerGrid } from '../../fuselage/layout/speaker-grid/speaker-grid'
 import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
 
 import { VideoTestimonialCard } from './video-testimonials'
+import ReactPlayer from "react-player/youtube"
 
 import handleSeomaticMeta from '../../lib/seomatic'
 
@@ -36,11 +37,30 @@ function Speakers({ videos, craftCmsProfiles }) {
 			<Header compact shim />
 
 
+			{/* highlights video */}
+
+			<section className="block bg-theme">
+				<div className="container center">
+					<p className="fs-1 fw-500">Highlights</p>
+				</div>
+				<div className="container maxw-60" style={{ aspectRatio: 16/9 }}>
+					<ReactPlayer
+                        url={'https://youtu.be/7Qyzlgh4TYM?si=uA4FL6e54XwJ2fhf'}
+                        width='100%'
+                        height='100%'
+                        controls={true}
+                        muted={false}
+                        playing={false}
+                    />
+				</div>
+			</section>
+
+
 
 			{/* AB interviews */}
 
             <section className="block bg-default">
-                <div className="container">
+                <div className="container center">
                     <p className="fs-1 fw-500 c-secondary">Member Interviews</p>
                 </div>
 
@@ -62,7 +82,7 @@ function Speakers({ videos, craftCmsProfiles }) {
 			<section className="block bg-neutral-01">
 				<div className="container">
 
-					<p className='fs-1 fw-600 c-secondary lh-1'>2025 Advisory Board</p>
+					<p className='fs-1 fw-600 c-secondary lh-1 center'>2025 Advisory Board</p>
 
 					<SpeakerGrid decal="gap-sm mt-md">
 						{craftCmsProfiles.map( speaker => (
