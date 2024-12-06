@@ -90,13 +90,13 @@ export const Header = ({ compact, shim, shimMobile, theme, path }) => {
             >
                 
                 <div className={CSS.venue}>
-                    <MainMenu fixToggle={!inView} otherEvents={otherEvents}  />
+                    {/* <MainMenu fixToggle={!inView} otherEvents={otherEvents}  /> */}
                                         
-                    <Link href="/sa/register-interest">
-                        <a className={`${CSS.ctaButton} fw-600 caps`}>Register Interest<span className={CSS.desktopOnly}>&thinsp;for 2025</span></a>
+                    <Link href={`/sa${ path ? path : '' }`}>
+                        <a className={`${CSS.ctaButton} fw-600`}>Go to 2025</a>
                     </Link>
                     
-                    <p><span className='fw-600 fs-6'>14 - 16 April 2025</span> <br/>Mandarin Oriental Al Faisaliah, Riyadh</p>
+                    <p><span className='fw-600 fs-6'>29 April - 01 May 2024</span> <br/>Mandarin Oriental Al Faisaliah, Riyadh</p>
                 </div>
                 
                 <a href={'/sa'} aria-label='FHS Saudi Arabia Home'>

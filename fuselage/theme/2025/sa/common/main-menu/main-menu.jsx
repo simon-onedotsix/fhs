@@ -73,6 +73,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                         key={item.id}
                                                         className={`
                                                             fw-600
+                                                            ${CSS.heading}
                                                             ${item.headingSize === 'lg' ? 'fs-5 c-accent mb-xxs' : ''}
                                                             ${item.headingSize === 'md' ? 'fs-6' : ''}
                                                             ${item.headingSize === 'sm' ? 'fs-default' : ''}
@@ -90,7 +91,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                             item.menuLinks?.map( (link, index) => {
                 
                                                                 if (link.hyperlink) return (
-                                                                    <li key={index}  style={{ paddingBottom: `.125vh` }}>
+                                                                    <li key={index}  style={{ paddingBottom: 0 }}>
                                                                         <Link href={link.hyperlink}>
                                                                             <a
                                                                                 className={` 
