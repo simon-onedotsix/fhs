@@ -11,28 +11,12 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 
-import { PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
+import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
 import { Button } from '../../../fuselage/theme/2024/world/components/button/button'
 
-import handleContentBlocks from "../../../lib/content-blocks"
 import handleSeomaticMeta from "../../../lib/seomatic"
 
-import { 
-	QueryText, 
-    QueryFlipFlops, 
-    QueryFloaters, 
-    QueryBillboards, 
-    QueryBillboardSliders, 
-    QueryImpactFigures, 
-    QueryVideos,
-    QueryForm,
-    QueryProfileCarousel,
-    QuerySEO,
-	QueryCards,
-	QueryPartners,
-	QueryPartnerGroups,
-	QueryTestimonials
-} from "../../../graphql/queries"
+import { QuerySEO } from "../../../graphql/queries"
 
 import { VideoTestimonialCard } from '../video-testimonials'
 
@@ -40,7 +24,7 @@ import { VideoTestimonialCard } from '../video-testimonials'
 
 
 
-function Partners({ seomatic, contentBlocks, partnerData, videoTestimonials }) {
+function Partners({ seomatic, partnerData, videoTestimonials }) {
 
 
 	// console.log('swapcard partner data:', partnerData)
@@ -49,16 +33,21 @@ function Partners({ seomatic, contentBlocks, partnerData, videoTestimonials }) {
 
 
 	// programatically build array of unique types pulled from exhibitor data
-
-	const allTypesArray = []
+	const allCategoriesArray = []
 	partnerData.exhibitors.forEach( obj => {
-		if ( obj.type && obj.typeLabel ) allTypesArray.push({id: obj.typeLabel.id, name: obj.type, size: ''})
+		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0].id, name: obj.fields[0].translations[0].value, size: ''})
 	})
-	// console.log('types:', _.uniqBy(allTypesArray, obj => obj.id))
+	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
 
-	const typesArray = _.uniqBy(allTypesArray, obj => obj.id)
+	// 2025 custom ordering
+	const orderedCategories = []
+	categoriesArray.forEach( category => {
+		if (category.id === 'RmllbGRWYWx1ZV8yNTY4ODMxNQ==') orderedCategories.push({ ...category, priority: 1 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNTY4ODM0Ng==') orderedCategories.push({ ...category, priority: 2 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNTY4ODM0Mw==') orderedCategories.push({ ...category, priority: 3 })
+	})
 
-	
+
 
 	return (
 		<>
@@ -95,44 +84,44 @@ function Partners({ seomatic, contentBlocks, partnerData, videoTestimonials }) {
 			<section className='block'>
 
 				<div className='container center formatted'>
-					<p className='fs-1 fw-600'>2024 Sponsors &amp; Partners</p>
+					<p className='fs-1 fw-600'>2025 Sponsors &amp; Partners</p>
 				</div>
 
-				<div className='container columns-1 gap-md center pt-md'>
+				<PartnerCategoryGrid>
 					{
 						partnerData &&
-						partnerData.event.exhibitorsTypes.map( type => {
-
-							const group = partnerData.exhibitors.filter( element => {
-								if (element.typeLabel && element.typeLabel.id === type.id ) return element
+						_.orderBy(orderedCategories, 'priority').map( category => {
+							const group = partnerData.exhibitors.filter( partner => {
+								if (partner.fields[0].id === category.id ) return partner
 							})
+							// console.log('group:', group)
 
-							if ( group.length > 0 ) {
+							return (
+								<PartnerCategory key={category.id}>
 
-								let category = typesArray.find( obj => obj.id === type.id )
-
-								return (
-									<div key={type.id}>
-										<h4 className='fs-5 fw-600 c-secondary caps pb-xs'>{ category && category.name }</h4>
-										<PartnerLogoGrid>
-											{
-												_.orderBy(group, [partner => partner.name?.toLowerCase()]).map(partner => (
-													<a key={partner.id} href={`/world/partners/${partner.id}`}>
+									<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category && category.name }</h4>
+									<PartnerLogoGrid>
+										{
+											_.orderBy(group, 'name').map(partner => (
+												<a key={partner.id} href={`/sa/partners/${partner.id}`}>
+													{
+														partner.logoUrl &&
 														<PartnerLogo 
 															hero={{ url: partner.logoUrl }} 
 															size={ category && category.size }
 														/>
-													</a>
-												))
-											}
-										</PartnerLogoGrid>
-									</div>
-								)
-							}
+													}
+												</a>
+											))
+										}
+									</PartnerLogoGrid>
+									
+								</PartnerCategory>
+							)
 							
 						})
 					}
-				</div>
+				</PartnerCategoryGrid>
 				
 			</section>
 
@@ -159,20 +148,6 @@ export async function getStaticProps() {
 						id
 						title
 						slug
-						${process.env.SITE_HANDLE}ContentBlocks {
-							${QueryText}
-							${QueryFlipFlops}
-							${QueryFloaters}
-							${QueryBillboards}
-							${QueryBillboardSliders}
-							${QueryImpactFigures}
-							${QueryVideos}
-							${QueryCards}
-							${QueryProfileCarousel}
-							${QueryForm}
-							${QueryPartnerGroups}
-							${QueryTestimonials}
-						}
 					}
 					${QuerySEO}
 				}
@@ -204,27 +179,35 @@ export async function getStaticProps() {
 			body: JSON.stringify({
 				query: `
 					query {
-						event(id: "${process.env.SWAPCARD_EVENT_ID_AE}") {
+						event(id: "${process.env.SWAPCARD_EVENT_ID_AE_2025}") {
 							exhibitorsTypes {
 								name
 								id
 								position
 							}
 						}
-						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_AE}", page:1, pageSize: 200) {
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2025}", page:1, pageSize: 200) {
 							id
 							name
 							logoUrl
-							type
-							typeLabel {
-								id
-								name
+							fields {
+								... on SelectField {
+									id
+									value
+									definition {
+										id
+										name
+									}
+									translations {
+										value
+									}
+								}
 							}
 						}
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AE,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2025,
 					"page": 1
 				}
 			})
@@ -238,7 +221,6 @@ export async function getStaticProps() {
 	return {
 		props: { 
 			seomatic: cmsData.data.entry.seomatic,
-			contentBlocks: cmsData.data.entry.fhisContentBlocks,
 			partnerData: partnerData.data,
 			videoTestimonials: cmsData.data.entries
 		}
