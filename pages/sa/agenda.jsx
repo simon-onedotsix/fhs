@@ -47,7 +47,7 @@ import CSS from '../../css/app/agenda-sa-2025.module.css'
 // groupFieldGroupsByName( sessions, 'Topics')
 
 
-const FILTER_TRACKS = [
+const FILTER_TRACKS_2024 = [
     { "id": "RmllbGRWYWx1ZV8yMzI1MzEyNg==", "name": "FHS Opening, Awards & Signings" },
     { "id": "RmllbGRWYWx1ZV8yMzI1MzEzNw==", "name": "Restaurant Invest (GRIF)" },
     { "id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==", "name": "Brand & Destination" },
@@ -60,6 +60,8 @@ const FILTER_TRACKS = [
     { "id": "RmllbGRWYWx1ZV8yMzI1MzEzOQ==", "name": "Tech & Innovation" },
     { "id": "RmllbGRWYWx1ZV8yMzI1MzE0MQ==", "name": "Wellness" },
 ]
+
+const FILTER_TRACKS = []
 
 // end custom topic selection and ordering
 
@@ -546,15 +548,8 @@ export default function Agenda ({ sessions, locations }) {
 
 				{/* INTRO */}
                 <div className="section mb-sm">
-                    <p className="fs-0 fw-500 c-secondary">2024 Agenda</p>
+                    <p className="fs-0 fw-500 c-secondary">2025 Agenda</p>
 					<div className="formatted mt-md">
-						<ul>
-							<li>FHS - tracks covering hospitality investment, industry entrepreneurship, sustainable development and human capital</li>
-							<li>Restaurant Invest (GRIF) - tracks covering F&amp;B investment &amp; workshops</li>
-							<li>The Welcome Remarks and Official Opening begins on the Summit Stage at 15:00 on Day One with plenty of sessions before and after.</li>
-							<li><a href="https://fhsksa24.expofp.com/" target="_blank" rel="noreferrer">Floor Plan</a></li>
-							<li>All times listed are in Saudi Arabia&apos;s GMT+3 timezone</li>
-						</ul>
 						<p>Programme is subject to change.</p>
 					</div>
                 </div>
@@ -562,6 +557,7 @@ export default function Agenda ({ sessions, locations }) {
 
 
 				<span ref={toggles}/>
+
 				<div ref={utilties} className={CSS.utilities}>
 
 					{/* FILTERS */}
@@ -571,7 +567,7 @@ export default function Agenda ({ sessions, locations }) {
 						<div id="agendaMob" className={CSS.filterToggleContainer}>
 							<button 
 								className={`${CSS.filterToggle} ${ !togglesInView && CSS.fixed } ${filtersActive && CSS.active}`} 
-								style={{ zIndex: filtersActive ? 110 : 6 }}
+								style={{ zIndex: filtersActive ? 210 : 6 }}
 								onClick={() => {
 									setFiltersActive(!filtersActive)
 									lenis.scrollTo('#agendaMob', { duration: 1 })
@@ -581,34 +577,38 @@ export default function Agenda ({ sessions, locations }) {
 
 						<div className={`${CSS.filterLayout} ${CSS.filterGroup} ${ !utiltiesInView && CSS.fixed } ${filtersActive && CSS.active}`}>
 							{/* tracks (topics) */}
-							<section className={CSS.filterLayoutButtons}>
-								<Menu 
-									menuButton={
-										<MenuButton className={DROPDOWN.button}>
-											<strong className="left">{ selectedTopic ?  getFieldGroupNameById(sessions, selectedTopic, 'Topics') : `Tracks` }</strong> <Chevron />
-										</MenuButton>
-									} 
-									transition 
-									menuClassName={menuClassName}
-								>
-									<div className="columns-2">
-										{
-											sessions &&
-											FILTER_TRACKS.map( 
-												filter => <MenuItem key={filter.id} onClick={() => {
-													setSelectedTopic(filter.id)
+							{
+								FILTER_TRACKS.length ?
+									<section className={CSS.filterLayoutButtons}>
+										<Menu 
+											menuButton={
+												<MenuButton className={DROPDOWN.button}>
+													<strong className="left">{ selectedTopic ?  getFieldGroupNameById(sessions, selectedTopic, 'Topics') : `Tracks` }</strong> <Chevron />
+												</MenuButton>
+											} 
+											transition 
+											menuClassName={menuClassName}
+										>
+											<div className="columns-2">
+												{
+													sessions &&
+													FILTER_TRACKS.map( 
+														filter => <MenuItem key={filter.id} onClick={() => {
+															setSelectedTopic(filter.id)
+															lenis.scrollTo('#agenda', { duration: 1 })
+														}}>{ filter.name }</MenuItem> 
+													)
+												}
+												<MenuItem key={0} onClick={() => {
+													setSelectedTopic('')
 													lenis.scrollTo('#agenda', { duration: 1 })
-												}}>{ filter.name }</MenuItem> 
-											)
-										}
-										<MenuItem key={0} onClick={() => {
-											setSelectedTopic('')
-											lenis.scrollTo('#agenda', { duration: 1 })
-										}}>All tracks</MenuItem>
+												}}>All tracks</MenuItem>
 
-									</div>
-								</Menu>
-							</section>
+											</div>
+										</Menu>
+									</section>
+								: null
+							}
 
 							{/* days */}
 							<section className={CSS.filterLayoutButtons}>
@@ -686,7 +686,7 @@ export default function Agenda ({ sessions, locations }) {
 						<div id="searchMob" className={CSS.searchToggleContainer}>
 							<button 
 								className={`${CSS.searchToggle} ${ !togglesInView && CSS.fixed } ${searchActive && CSS.active} `} 
-								style={{ zIndex: searchActive ? 105 : 6 }}
+								style={{ zIndex: searchActive ? 205 : 6 }}
 								onClick={() => {
 									setSearchActive(!searchActive)
 									lenis.scrollTo('#agendaMob', { duration: 1 })
@@ -778,23 +778,20 @@ export default function Agenda ({ sessions, locations }) {
 																				<p className={`${CSS.sessionTitle} fs-5 fw-600 lh-1 c-primary caps`}>
 																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
 																				</p>
-																																									
-																				<div className={CSS.sessionTagGrid}>
-																					{session.fields.length ? <TagIcon fill={`var(--accent)`} /> : null}
-																					{getSessionFields( session, 'Topics')}
-																				</div>
+
+																				{
+																					getSessionFields( session, 'Topics').length ?
+																						<div className={CSS.sessionTagGrid}>
+																							<TagIcon fill={`var(--accent)`} />
+																							{ getSessionFields( session, 'Topics') }
+																						</div>
+																					: null
+																				}																			
 
 																				{
 																					session.descriptionTranslations.length ?
 																						parse( session.descriptionTranslations[0].value )
 																					: null
-																				}
-
-																				{
-																					session.id === "UGxhbm5pbmdfMTc1MDU5MQ==" &&
-																					<div className="mb-xs">
-																						<Button href={'mailto:rabih.feghali@hamamea.org'} decal={'fw-600'} accent>Request To Attend</Button>
-																					</div>
 																				}
 																				
 																				{ sortSpeakers(session.speakers) }
@@ -963,7 +960,7 @@ export async function getStaticProps() {
 							}
 						}
 
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}", page: 1, pageSize: 500) {
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2025}", page: 1, pageSize: 500) {
 							id
 							titleTranslations {
 								value
@@ -1008,7 +1005,7 @@ export async function getStaticProps() {
 								photoUrl
 								organization
 								biography
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}") {
+								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2025}") {
 									eventProfile {
 										type
 										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
@@ -1027,7 +1024,7 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_SA,
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2025,
 					"page": 1
 				}
 			})
