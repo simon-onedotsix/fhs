@@ -12,7 +12,7 @@ export const PageHeroImage = ({ hero, children }) => {
 
 
     return (
-        <section>
+        <section style={{ position: 'relative' }}>
                 
             <motion.div className={CSS.hero} style={{ y }}>
                 <div className={CSS.heroWrapper}>
