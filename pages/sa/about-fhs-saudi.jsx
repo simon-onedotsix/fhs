@@ -128,7 +128,7 @@ export default function LeadWall () {
                     <div className="container maxw-50 pb-md formatted c-white center">
                         <h1>About FHS Saudi Arabia</h1>
 
-                        <p className='mt-sm'>Anchored in Riyadh, FHS Saudi Arabia attracts esteemed investors, hotel owners & operators and leading C-level executives from the hospitality industry to focus on the region's booming hospitality landscape. Featuring insightful panel discussions, informative workshops and unparalleled networking opportunities, the region's hospitality community convenes to invest in the industry's future together.</p>
+                        <p className='mt-sm'>Anchored in Riyadh, FHS Saudi Arabia attracts esteemed investors, hotel owners &amp; operators and leading C-level executives from the hospitality industry to focus on the region&apos;s booming hospitality landscape. Featuring insightful panel discussions, informative workshops and unparalleled networking opportunities, the region&apos;s hospitality community convenes to invest in the industry&apos;s future together.</p>
                         
                         <p>FHS Saudi Arabia 2024 was a record-breaking edition, attracting over 1300+ delegates from 40 countries for 3 days of business, growth and networking at the iconic Mandarin Oriental Al Faisaliah Hotel, Riyadh.</p>
 
