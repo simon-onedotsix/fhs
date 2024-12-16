@@ -103,7 +103,7 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 									<PartnerLogoGrid>
 										{
 											_.orderBy(group, 'name').map(partner => (
-												<a key={partner.id} href={`/sa/partners/${partner.id}`}>
+												<a key={partner.id} href={`/world/partners/${partner.id}`}>
 													{
 														partner.logoUrl &&
 														<PartnerLogo 
