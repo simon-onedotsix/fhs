@@ -1,11 +1,12 @@
 .hero {
     position: absolute;
+    z-index: 1;
     top: 0;
     width: 100%;
     mix-blend-mode: hard-light;
 }
 .hero img {
-    filter: saturate(0.9) contrast(0.75) brightness(1.2);
+    filter: saturate(0.9) contrast(0.75) brightness(1);
     width: 100%;
 }
 .heroWrapper {
@@ -18,7 +19,6 @@
 .overlay {
     position: relative;
     z-index: 2;
-    /* min-height: 70vh; */
     padding-top: 15vw;
 
     display: flex;
@@ -40,13 +40,11 @@
 
 @media(min-width:800px){
     .overlay {
-        /* min-height: 60vh; */
-        padding-top: 15vw;
+        padding-top: 10vw;
     }
 }
 @media(min-width:1200px){
     .overlay {
-        /* min-height: 94vh; */
-        padding-top: 20vw;
+        padding-top: 15vw;
     }
 }
