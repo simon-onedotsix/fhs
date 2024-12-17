@@ -64,15 +64,16 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 	const orderedCategories = []
 	categoriesArray.forEach( category => {
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1Nw==') orderedCategories.push({ ...category, priority: 1 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg2MA==') orderedCategories.push({ ...category, priority: 2 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1OA==') orderedCategories.push({ ...category, priority: 3 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNDQ3NDE0MA==') orderedCategories.push({ ...category, priority: 4 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyMw==') orderedCategories.push({ ...category, priority: 5 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 6 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNTg5Nzk4NA==') orderedCategories.push({ ...category, priority: 2 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg2MA==') orderedCategories.push({ ...category, priority: 3 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1OA==') orderedCategories.push({ ...category, priority: 4 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNDQ3NDE0MA==') orderedCategories.push({ ...category, priority: 5 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyMw==') orderedCategories.push({ ...category, priority: 6 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 7 })
 	})
 
 
-	console.log('swapcard partner data 2025:', partnerData2025)
+	// console.log('swapcard partner data 2025:', partnerData2025)
 	// console.log('swapcard partner data 2024:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// partnerData.exhibitors.forEach( ex => console.log( ex.typeLabel?.name))
