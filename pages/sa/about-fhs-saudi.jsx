@@ -30,10 +30,6 @@ const INDUSTRY_DATA = [
         value: 11.2
     },
     {
-        label: 'Other',
-        value: 9.9
-    },
-    {
         label: 'Hotel Developer / Builder',
         value: 7.5
     },
@@ -80,6 +76,10 @@ const INDUSTRY_DATA = [
     {
         label: 'Education',
         value: 0.1
+    },
+    {
+        label: 'Other',
+        value: 9.9
     },
 ]
 
