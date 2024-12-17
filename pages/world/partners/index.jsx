@@ -27,7 +27,7 @@ import { VideoTestimonialCard } from '../video-testimonials'
 function Partners({ seomatic, partnerData, videoTestimonials }) {
 
 
-	// console.log('swapcard partner data:', partnerData)
+	console.log('swapcard partner data:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
 
@@ -35,7 +35,7 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 	// programatically build array of unique types pulled from exhibitor data
 	const allCategoriesArray = []
 	partnerData.exhibitors.forEach( obj => {
-		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0].id, name: obj.fields[0].translations[0].value, size: ''})
+		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0]?.id, name: obj.fields[0]?.translations[0].value, size: ''})
 	})
 	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
 
@@ -92,7 +92,7 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 						partnerData &&
 						_.orderBy(orderedCategories, 'priority').map( category => {
 							const group = partnerData.exhibitors.filter( partner => {
-								if (partner.fields[0].id === category.id ) return partner
+								if (partner.fields[0]?.id === category.id ) return partner
 							})
 							// console.log('group:', group)
 

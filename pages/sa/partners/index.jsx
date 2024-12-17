@@ -56,7 +56,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 	// programatically build array of unique types pulled from exhibitor data
 	const allCategoriesArray = []
 	partnerData2025.exhibitors.forEach( obj => {
-		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0].id, name: obj.fields[0].translations[0].value, size: ''})
+		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0]?.id, name: obj.fields[0]?.translations[0].value, size: ''})
 	})
 	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
 
@@ -72,7 +72,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 	})
 
 
-	// console.log('swapcard partner data 2025:', partnerData2025)
+	console.log('swapcard partner data 2025:', partnerData2025)
 	// console.log('swapcard partner data 2024:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// partnerData.exhibitors.forEach( ex => console.log( ex.typeLabel?.name))
@@ -123,7 +123,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 						partnerData2025 &&
 						_.orderBy(orderedCategories, 'priority').map( category => {
 							const group = partnerData2025.exhibitors.filter( partner => {
-								if (partner.fields[0].id === category.id ) return partner
+								if (partner.fields[0]?.id === category.id ) return partner
 							})
 							// console.log('group:', group)
 
