@@ -203,7 +203,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                     decal={'fs-5 fw-600'} 
                                     accent
                                 >
-                                    2024 Programme
+                                    2025 Programme
                                 </Button>&ensp;
                                 <Button 
                                     href={'/sa/post-event-resources'} 

@@ -4,6 +4,7 @@
 
     .utilities {
         position: relative;
+
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -165,6 +166,7 @@
 
     .utilities {
         position: relative;
+        z-index: 1;
         display: grid;
         grid-template-columns: 1fr auto;
     }
@@ -367,7 +369,7 @@
     border: none;
     font-family: inherit;
     font-size: inherit;
-    color: var(--primary);
+    color: white;
     background-color: transparent;
     
     height: 100%;
@@ -380,9 +382,9 @@
     width: 2rem;
     height: 2rem;
     border-radius: 2rem;
-    border: 1px solid var(--primary);
+    border: 1px solid white;
     padding: 6px;
-    background-color: white;
+    background-color: transparent;
 
     display: flex;
     align-items: center;
@@ -391,10 +393,6 @@
 
     transition: all 350ms ease-in-out;
 }
-.agendaFilterReset:hover span {
-    background-color: var(--primary);
-    color: white;
-}
 
 .agendaFilterResetWrapper {
     flex: 1;
@@ -402,6 +400,19 @@
     /* justify-content: flex-end; */
 }
 
+@media(min-width:800px){
+    .agendaFilterReset {
+        color: var(--primary);
+    }
+    .agendaFilterReset span {
+        border: 1px solid var(--primary);
+        background-color: white;
+    }
+    .agendaFilterReset:hover span {
+        background-color: var(--primary);
+        color: white;
+    }
+}
 
 /* speaker profile modal trigger */
 

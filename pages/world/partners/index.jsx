@@ -27,11 +27,15 @@ import { VideoTestimonialCard } from '../video-testimonials'
 function Partners({ seomatic, partnerData, videoTestimonials }) {
 
 
-	// console.log('swapcard partner data:', partnerData)
+	console.log('swapcard partner data:', partnerData)
+
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
 
 
+
+	// LEGACY -----------------------------------------------------------
+	
 	// programatically build array of unique types pulled from exhibitor data
 	const allCategoriesArray = []
 	partnerData.exhibitors.forEach( obj => {
@@ -48,6 +52,22 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 		if (category.id === 'RmllbGRWYWx1ZV8yNTY4ODM0Mw==') orderedCategories.push({ ...category, priority: 4 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNTg5NzkyNg==') orderedCategories.push({ ...category, priority: 5 })
 	})
+
+	// END LEGACY -------------------------------------------------------
+
+
+
+
+
+	// TO-DO +++++++++++++++
+
+	// use fieldDefinitions to automate categorisation
+	const partnerCategories = partnerData.event.fieldDefinitions.find( arr => arr.id === "RmllbGREZWZpbml0aW9uXzc4MjgzNw==").optionsValues
+	// console.log('swapcard partner categories:', partnerCategories )
+
+	// END TO-DO +++++++++++
+
+
 
 
 
@@ -182,10 +202,15 @@ export async function getStaticProps() {
 				query: `
 					query {
 						event(id: "${process.env.SWAPCARD_EVENT_ID_AE_2025}") {
-							exhibitorsTypes {
-								name
-								id
-								position
+							fieldDefinitions {
+								... on SelectFieldDefinition {
+									id
+									name
+									optionsValues {
+										id
+										value
+									}
+								}
 							}
 						}
 						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2025}", page:1, pageSize: 200) {
