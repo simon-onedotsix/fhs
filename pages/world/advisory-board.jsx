@@ -39,11 +39,21 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 							<div key={speaker.id}>
 								<Link href={`/world/speakers/profile/${speaker.slug}`}>
 									<a className={CSS.avatar}>
-										<Image 
-											src={speaker.avatar[0].url} 
-											layout='fill'
-											alt="profile picture"
-										/>
+									{
+											speaker.avatar[0] ?
+											<Image 
+												src={speaker.avatar[0].url} 
+												layout='fill'
+												alt="profile picture"
+											/>
+											:
+											<Image 
+												src='/assets/ui/avatar-fallback.png' 
+												width={370} 
+												height={370} 
+												alt=""
+											/>
+										}
 									</a>
 								</Link>
 								<div>
