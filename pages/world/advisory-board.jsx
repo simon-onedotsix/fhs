@@ -39,7 +39,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 							<div key={speaker.id}>
 								<Link href={`/world/speakers/profile/${speaker.slug}`}>
 									<a className={CSS.avatar}>
-									{
+										{
 											speaker.avatar[0] ?
 											<Image 
 												src={speaker.avatar[0].url} 
