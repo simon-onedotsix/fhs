@@ -54,8 +54,8 @@ export default function WhyAttend () {
                         <Card imageUrl={'/assets/img/sa/why-attend/why-attend-delegate.jpg'}>
                             <p className="fs-2 c-secondary lh-1">Attend as a Delegate</p>
                             <div className="formatted mt-sm">
-                                <p className="fw-600">Gain access to the region's leading industry leaders under one roof and access the latest trends and future directions in hospitality.</p>
-                                <p>The summit provides unmatched networking opportunities, enabling delegates to connect with our premium audience of hotel owners and operators, government representatives, potential business partners, and investors. Workshops and seminars at the event focus on fostering professional growth and innovation, all within the context of Saudi Arabia's Vision 2030.</p>
+                                <p className="fw-600">Gain access to the region&apos;s leading industry leaders under one roof and access the latest trends and future directions in hospitality.</p>
+                                <p>The summit provides unmatched networking opportunities, enabling delegates to connect with our premium audience of hotel owners and operators, government representatives, potential business partners, and investors. Workshops and seminars at the event focus on fostering professional growth and innovation, all within the context of Saudi Arabia&apos;s Vision 2030.</p>
                             </div>
                         </Card>
                     </Pop>
@@ -67,7 +67,7 @@ export default function WhyAttend () {
                             <p className="fs-2 c-secondary lh-1">Sponsor FHS Saudi Arabia</p>
                             <div className="formatted mt-sm">
                                 <p className="fw-600">Invest in increased brand visibility among influential decision-makers in the hospitality investment industry of the region.</p>
-                                <p>Tailored sponsorship packages can provide direct engagement with the target audience through speaking opportunities and exhibition spaces. By positioning the brand as thought leaders, share your expertise and reinforce your authority in the market, leveraging the platform to align with the region's ambitious goals.</p>
+                                <p>Tailored sponsorship packages can provide direct engagement with the target audience through speaking opportunities and exhibition spaces. By positioning the brand as thought leaders, share your expertise and reinforce your authority in the market, leveraging the platform to align with the region&apos;s ambitious goals.</p>
                             </div>
                         </Card>
                     </Pop>
