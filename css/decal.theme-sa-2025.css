@@ -155,6 +155,17 @@
     }
 }
 
+[data-theme='sa-2025'] .bg-pattern-blue { 
+    background-color: white;
+    background-image: url('/assets/theme/fhs-pattern-light-blue.png');
+    background-size: 60vw;
+    background-position: top center;
+
+    @media(max-width:600px) {
+        background-size: 250%;
+    }
+}
+
 
 
 

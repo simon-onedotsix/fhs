@@ -1,0 +1,107 @@
+.header {
+    position: relative;
+}
+.overlay {
+    position: absolute;
+    inset: 0;
+    padding: var(--space-md);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header img {
+    mask-image: linear-gradient(black, 50%, transparent);
+    /* -webkit-mask-image: linear-gradient(rgb(24, 23, 23), transparent); */
+}
+
+
+
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: white;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.219);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.cardContent {
+    padding: var(--space-md);
+}
+.cardImage {
+    background-color: rgba(0, 0, 0, 0.032);
+    position: relative;
+}
+.cardImage img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+.jumpMenu {
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xxs);
+}
+
+@media (max-width:599px) {
+    .header {
+        min-height: 70vw;
+    }
+    .overlay {
+        align-items: flex-end;
+    }
+    .cardImage {
+        min-height: 60vw;
+        grid-row-start: 1;
+    }
+}
+
+@media(min-width: 600px){
+    .card {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .jumpMenu {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.jumpButton {
+    max-width: 16rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+    padding: 1rem 1rem 1rem 2rem;
+    border-radius: 5rem;
+    color: white;
+    font-size: 110%;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    text-align: left;
+}
+
+.jumpArrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border-radius: 2.5rem;
+    border: 1px solid var(--secondary);
+    padding: .25rem;
+    margin-left: 1rem;
+    transition: all 250ms ease-in-out;
+}
+.jumpArrow svg {
+    stroke: var(--secondary);
+    transition: all 250ms ease-in-out;
+}
+
+.jumpButton:hover .jumpArrow {
+    border-color: white;
+}
+.jumpButton:hover .jumpArrow svg {
+    stroke: white;
+}
