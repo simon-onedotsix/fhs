@@ -23,15 +23,15 @@ const otherEvents = [
         target: false
     },
     {
-        id: 6,
-        title: 'AviaDev',
-        url: 'https://www.aviationdevelop.com',
+        id: 5,
+        title: 'FHS Africa (AHIF)',
+        url: 'https://www.ahif.com',
         target: true
     },
     {
-        id: 5,
-        title: 'AHIF',
-        url: 'https://www.ahif.com',
+        id: 6,
+        title: 'AviaDev',
+        url: 'https://www.aviationdevelop.com',
         target: true
     },
     {
