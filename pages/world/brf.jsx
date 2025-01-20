@@ -176,7 +176,7 @@ export default function Page ({ sessions, speakers }) {
                     transition={{ type: "spring", bounce: 0.25 }}
                     className={`fs-5 c-secondary center mt-sm maxw-45 mx-auto caps ls-2`} 
                 >
-                    2nd October 2024<br/>
+                    29 October 2025<br/>
                     Madinat Jumeirah, Dubai
                 </motion.p>
 
@@ -193,11 +193,11 @@ export default function Page ({ sessions, speakers }) {
                     <div className="mt-sm center">
                         <Pop inline>
                             {/* <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Purchase Your Pass</Button> */}
-                            <Button 
+                            {/* <Button 
                                 href={`/world/purchase-pass`} 
                                 theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} 
                                 decal={`fs-5 fw-600`}
-                            >Purchase Pass</Button>
+                            >Purchase Pass</Button> */}
                         </Pop>
                     </div>
                 </Fade>
@@ -273,7 +273,7 @@ export default function Page ({ sessions, speakers }) {
             }
 
             
-            <section className='block bg-default'>
+            {/* <section className='block bg-default'>
                 <Pop>
                     <div className="container">
                         <p className='c-secondary center pb-sm caps ls-2'>Brought to you by</p>
@@ -282,14 +282,14 @@ export default function Page ({ sessions, speakers }) {
                         </div>
                     </div>
                 </Pop>
-            </section>
+            </section> */}
 
 
             {/* AGENDA */}
             
             <section className="block bg-default">
                 <div className="container maxw-70 center">
-                    <p className='fs-1 fw-600 c-secondary'>Branded Residences Forum Agenda</p>
+                    <p className='fs-1 fw-600 c-secondary'>2024 Branded Residences Forum Agenda</p>
                 </div>
             </section>
 
@@ -423,7 +423,7 @@ export default function Page ({ sessions, speakers }) {
 
 
 
-            <section className="block bg-default">
+            {/* <section className="block bg-default">
                 <div className="container formatted maxw-90">
                     <Callout flipped image={{ url:'/assets/img/brf/brf-2024-image-05.jpg', width:2000, height:1428 }}>
                         <Fade>
@@ -438,7 +438,7 @@ export default function Page ({ sessions, speakers }) {
                         </Fade>
                     </Callout>
                 </div>
-            </section>
+            </section> */}
             
 
 

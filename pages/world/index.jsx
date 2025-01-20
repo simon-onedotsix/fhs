@@ -329,7 +329,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         <Fade>
                             <p className='fs-5 fw-500 maxw-45 mt-sm'>At FHS World 2024, we created an intersection for the world of hospitality where the industry invests in its future with 1596 attendees, representing 735 companies, from 60 countries.</p>
                             <p className='fs-6 fw-300 maxw-45'>FHS World 2024 featured several new exciting initiatives and partnerships. <Link href={'/world/branded-residences-forum'}><strong className="underline">The Branded Residences Forum</strong></Link>, a one-day exclusive event co-located with FHS World, focused on the thriving sector of branded residences. For the first time ever, FHS World hosted the semi-finals of the <Link href={'/world/unto'}><strong className="underline">UN Tourism&apos;s Women in Tech</strong></Link> startup competition, showcasing innovative solutions from women-led tech startups. Additionally, the #FHSWomenPower initiative facilitated a record-number of women with over 550+ women in attendance.</p>
-                            <p className='fs-5 fw-500 maxw-45 pb-sm'>We look forward to hosting you in 2025!</p>
+                            <p className='fs-5 fw-500 maxw-45 pb-sm'>We look forward to connecting with you in 2025!</p>
                         </Fade>
                         <Pop inline>
                             <Button 

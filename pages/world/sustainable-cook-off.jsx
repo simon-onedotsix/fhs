@@ -133,9 +133,6 @@ export default function Page () {
                     </Callout>
                 </div>
 
-                <div className="container center pt-md">
-                    <p className='fs-5 c-secondary'>For any queries related to the competition, please reach out to: <a href="mailto:andy.cuthbert@jumeirah.com">Andy Cuthbert</a></p>
-                </div>
             </section>
             
 
