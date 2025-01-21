@@ -27,7 +27,7 @@ import { VideoTestimonialCard } from '../video-testimonials'
 function Partners({ seomatic, partnerData, videoTestimonials }) {
 
 
-	console.log('swapcard partner data:', partnerData)
+	// console.log('swapcard partner data:', partnerData)
 
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
@@ -46,11 +46,20 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 	// 2025 custom ordering
 	const orderedCategories = []
 	categoriesArray.forEach( category => {
-		if (category.id === 'RmllbGRWYWx1ZV8yNTY4ODMxNQ==') orderedCategories.push({ ...category, priority: 1 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNTg5MzU2Ng==') orderedCategories.push({ ...category, priority: 2 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNTY4ODM0Ng==') orderedCategories.push({ ...category, priority: 3 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNTY4ODM0Mw==') orderedCategories.push({ ...category, priority: 4 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNTg5NzkyNg==') orderedCategories.push({ ...category, priority: 5 })
+		//host sponsors
+		if (category.id === 'RmllbGRWYWx1ZV8yNjEwNTYyOA==') orderedCategories.push({ ...category, priority: 1 })
+		//strategic partners
+		if (category.id === 'RmllbGRWYWx1ZV8yNTY4ODMxNQ==') orderedCategories.push({ ...category, priority: 2 })
+		//knowledge partners
+		if (category.id === 'RmllbGRWYWx1ZV8yNjEwNTYxNg==') orderedCategories.push({ ...category, priority: 3 })
+		//country pavillions
+		if (category.id === 'RmllbGRWYWx1ZV8yNTg5MzU2Ng==') orderedCategories.push({ ...category, priority: 4 })
+		//headline sponsors
+		if (category.id === 'RmllbGRWYWx1ZV8yNTY4ODM0Ng==') orderedCategories.push({ ...category, priority: 5 })
+		//sponsors
+		if (category.id === 'RmllbGRWYWx1ZV8yNTY4ODM0Mw==') orderedCategories.push({ ...category, priority: 6 })
+		//exhibitors
+		if (category.id === 'RmllbGRWYWx1ZV8yNTg5NzkyNg==') orderedCategories.push({ ...category, priority: 7 })
 	})
 
 	// END LEGACY -------------------------------------------------------
