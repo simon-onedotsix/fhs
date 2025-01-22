@@ -27,7 +27,7 @@ import { VideoTestimonialCard } from '../video-testimonials'
 function Partners({ seomatic, partnerData, videoTestimonials }) {
 
 
-	// console.log('swapcard partner data:', partnerData)
+	console.log('swapcard partner data:', partnerData)
 
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
