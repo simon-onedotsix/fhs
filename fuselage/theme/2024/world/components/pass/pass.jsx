@@ -61,7 +61,7 @@ export const PassPriceBands = ({ flash, title, description, currency, priceBands
                     currentBand && nextBand && priceIncreaseMessage ?
                         <div className="formatted">
                             <p className="fs-6">
-                                <span className="fw-800 c-primary">Only available at this rate until { format( new Date(currentBand.endDate), "d MMMM" ) }</span> before the price increases to <strong>{ currency } { nextBand.value }</strong>
+                                <span className="fw-800 c-primary">Only available at this rate before { format( new Date(currentBand.endDate), "d MMMM" ) }</span> when the price increases to <strong>{ currency } { nextBand.value }</strong>
                             </p>
                         </div>
                     : null
