@@ -25,7 +25,7 @@ export const MainMenu = ({ otherEvents }) => {
             <div className={CSS.toggleContainer}>
                 <div className={`${CSS.toggleActions} ${ active && CSS.active }`}>
                     <Button 
-                        href={`/world/register-interest`} 
+                        href={`/world/purchase-pass`} 
                         theme={{ 
                             color: `var(--primary)`,
                             background: `var(--secondary-1)`, 
@@ -33,7 +33,7 @@ export const MainMenu = ({ otherEvents }) => {
                         }} 
                         decal={`fw-600`}
                     >
-                        Register Interest
+                        Purchase Pass
                     </Button>
                     
                     <Button 

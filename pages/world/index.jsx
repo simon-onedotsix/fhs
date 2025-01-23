@@ -225,7 +225,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 <Fade>
                     <div className="mt-sm center">
                         <Pop inline>
-                            <Button href={`/world/register-interest`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Interest</Button>
+                            <Button href={`/world/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Purchase Pass</Button>
                         </Pop>
                     </div>
                 </Fade>
