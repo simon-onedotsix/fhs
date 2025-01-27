@@ -56,7 +56,7 @@ function Speakers({ seomatic, speakers }) {
 			<section className="block bg-default">
 				<div className="container">
 
-					<p className='fs-1 fw-600 c-secondary lh-1 maxw-40'>2024 SPEAKERS</p>
+					<p className='fs-1 fw-600 c-secondary lh-1 maxw-40'>2025 SPEAKERS</p>
 					
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
@@ -168,12 +168,12 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_SA,
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2025,
 					"cursor": {
 						"first": 300
 					},
 					"filters": {
-						"shouldBeInGroups": "RXZlbnRHcm91cF8zOTI4MDg="
+						"shouldBeInGroups": "RXZlbnRHcm91cF81MDg0MzQ="
 					}
 				}
 			})
