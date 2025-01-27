@@ -13,12 +13,11 @@ import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 
 import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
 import { Button } from '../../../fuselage/theme/2024/world/components/button/button'
+import { VideoTestimonialCard } from '../video-testimonials'
 
 import handleSeomaticMeta from "../../../lib/seomatic"
-
 import { QuerySEO } from "../../../graphql/queries"
 
-import { VideoTestimonialCard } from '../video-testimonials'
 
 
 
@@ -27,56 +26,35 @@ import { VideoTestimonialCard } from '../video-testimonials'
 function Partners({ seomatic, partnerData, videoTestimonials }) {
 
 
-	console.log('swapcard partner data:', partnerData)
+	// use fieldDefinitions to automate partner categorisation (requires ID of the selectFieldDefinition used to tag categories inside SC studio)
 
+	const swapcardPartnerGroups = partnerData.event.fieldDefinitions.find( arr => arr.id === "RmllbGREZWZpbml0aW9uXzc4MjgzNw==").optionsValues
+	const partnersArray = []
+	
+	swapcardPartnerGroups.map(category => {
+		const partnerGroup = []
+		
+		partnerData.exhibitors.map( partner => {
+			partner.fields.map( field => {
+				if ( field.id === category.id ) partnerGroup.push( partner )
+			})
+		})
+		
+		partnersArray.push(
+			{
+				group: category,
+				partners: partnerGroup
+			}
+		)
+	})
+	
+
+
+	// console.log('swapcard partner data:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
-
-
-
-	// LEGACY -----------------------------------------------------------
-	
-	// programatically build array of unique types pulled from exhibitor data
-	const allCategoriesArray = []
-	partnerData.exhibitors.forEach( obj => {
-		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0]?.id, name: obj.fields[0]?.translations[0].value, size: ''})
-	})
-	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
-
-	// 2025 custom ordering
-	const orderedCategories = []
-	categoriesArray.forEach( category => {
-		//host sponsors
-		if (category.id === 'RmllbGRWYWx1ZV8yNjEwNTYyOA==') orderedCategories.push({ ...category, priority: 1 })
-		//strategic partners
-		if (category.id === 'RmllbGRWYWx1ZV8yNTY4ODMxNQ==') orderedCategories.push({ ...category, priority: 2 })
-		//knowledge partners
-		if (category.id === 'RmllbGRWYWx1ZV8yNjEwNTYxNg==') orderedCategories.push({ ...category, priority: 3 })
-		//country pavillions
-		if (category.id === 'RmllbGRWYWx1ZV8yNTg5MzU2Ng==') orderedCategories.push({ ...category, priority: 4 })
-		//headline sponsors
-		if (category.id === 'RmllbGRWYWx1ZV8yNTY4ODM0Ng==') orderedCategories.push({ ...category, priority: 5 })
-		//sponsors
-		if (category.id === 'RmllbGRWYWx1ZV8yNTY4ODM0Mw==') orderedCategories.push({ ...category, priority: 6 })
-		//exhibitors
-		if (category.id === 'RmllbGRWYWx1ZV8yNTg5NzkyNg==') orderedCategories.push({ ...category, priority: 7 })
-	})
-
-	// END LEGACY -------------------------------------------------------
-
-
-
-
-
-	// TO-DO +++++++++++++++
-
-	// use fieldDefinitions to automate categorisation
-	const partnerCategories = partnerData.event.fieldDefinitions.find( arr => arr.id === "RmllbGREZWZpbml0aW9uXzc4MjgzNw==").optionsValues
-	// console.log('swapcard partner categories:', partnerCategories )
-
-	// END TO-DO +++++++++++
-
-
+	// console.log('swapcard partner categories:', swapcardPartnerGroups )
+	// console.log('PARTNERS ARRAY:', partnersArray)
 
 
 
@@ -120,26 +98,19 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 
 				<PartnerCategoryGrid>
 					{
-						partnerData &&
-						_.orderBy(orderedCategories, 'priority').map( category => {
-							const group = partnerData.exhibitors.filter( partner => {
-								if (partner.fields[0]?.id === category.id ) return partner
-							})
-							// console.log('group:', group)
+						partnersArray.length &&
+						partnersArray.map( (category, index) => (
+								<PartnerCategory key={index}>
 
-							return (
-								<PartnerCategory key={category.id}>
-
-									<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category && category.name }</h4>
+									<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category.group.translations[0].value }</h4>
 									<PartnerLogoGrid>
 										{
-											_.orderBy(group, 'name').map(partner => (
+											_.orderBy(category.partners, 'name').map(partner => (
 												<a key={partner.id} href={`/world/partners/${partner.id}`}>
 													{
 														partner.logoUrl &&
 														<PartnerLogo 
 															hero={{ url: partner.logoUrl }} 
-															size={ category && category.size }
 														/>
 													}
 												</a>
@@ -150,7 +121,7 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 								</PartnerCategory>
 							)
 							
-						})
+						)
 					}
 				</PartnerCategoryGrid>
 				
@@ -218,6 +189,10 @@ export async function getStaticProps() {
 									optionsValues {
 										id
 										value
+										translations {
+											language
+											value
+										}
 									}
 								}
 							}
