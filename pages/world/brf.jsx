@@ -170,7 +170,7 @@ export default function Page ({ sessions, speakers }) {
                     Branded Residences Forum
                 </motion.p>
 
-                <motion.p 
+                {/* <motion.p 
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ type: "spring", bounce: 0.25 }}
@@ -178,7 +178,7 @@ export default function Page ({ sessions, speakers }) {
                 >
                     29 October 2025<br/>
                     Madinat Jumeirah, Dubai
-                </motion.p>
+                </motion.p> */}
 
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
@@ -186,8 +186,19 @@ export default function Page ({ sessions, speakers }) {
                     transition={{ type: "spring", bounce: 0.25 }}
                     className={`fs-4 c-white center mt-sm maxw-45 mx-auto`} 
                 >
-                    Held adjacently with <strong>FHS World</strong>, this exclusive one-day forum will explore the thriving sector of Branded Residences.
+                    Held adjacently with <strong>FHS World</strong>, this exclusive one-day forum explores the thriving sector of Branded Residences.
                 </motion.p>
+                
+                <motion.div 
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ type: "spring", bounce: 0.25 }}
+                >
+                    <p className={`fs-3 fw-600 c-secondary center mt-lg maxw-45 mx-auto`} >Savill&apos;s Branded Residences Report</p>
+                    <p className="mt-sm center">
+                        <Button href={'/world/savills-branded-residences-report-download'}>Download the Report Here</Button>
+                    </p>
+                </motion.div>
 
                 <Fade>
                     <div className="mt-sm center">
