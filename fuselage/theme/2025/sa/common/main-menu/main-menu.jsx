@@ -131,7 +131,8 @@ export const MainMenu = ({ otherEvents }) => {
 
 
                     <section className="c-white">
-                        <p className="pb-xs">
+                        <p className="fs-4 fw-600 c-accent">Future Hospitality Events</p>
+                        <p className="pt-sm pb-xs">
                             <ArrowButton 
                                 href={ '/' } 
                                 theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
@@ -139,7 +140,7 @@ export const MainMenu = ({ otherEvents }) => {
                                 FHS Home
                             </ArrowButton>
                         </p>
-                        <p className="pb-sm">
+                        <p className="pb-xs">
                             <ArrowButton 
                                 href={ '/world' } 
                                 theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
@@ -147,12 +148,20 @@ export const MainMenu = ({ otherEvents }) => {
                                 FHS World
                             </ArrowButton>
                         </p>
+                        <p className="pb-sm">
+                            <ArrowButton 
+                                href={ 'https://www.ahif.com' } 
+                                theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
+                            >
+                                FHS Africa
+                            </ArrowButton>
+                        </p>
 
                         <p className="fs-4 fw-600 c-accent">Our Other Events</p>
                         {
                             otherEvents.length &&
                             otherEvents.map( event => {
-                                if ( event.id !== 1 && event.id !== 2 ) return (
+                                if ( event.id !== 1 && event.id !== 2 && event.id !== 5 ) return (
                                     <p key={event.id} className="mt-xs">
                                         <ArrowButton 
                                             href={ event.url } 

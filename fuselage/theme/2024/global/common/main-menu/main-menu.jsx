@@ -113,6 +113,9 @@ export const MainMenu = ({ otherEvents }) => {
                         <p className="mt-xs">
                             <ArrowButton href={`/sa`} theme={{ arrow: `var(--primary-3)`, border: `var(--primary-3)`, label: `white`}}>FHS Saudi Arabia</ArrowButton>
                         </p>
+                        <p className="mt-xs">
+                            <ArrowButton href={`https://www.ahif.com`} theme={{ arrow: `var(--primary-3)`, border: `var(--primary-3)`, label: `white`}}>FHS Africa</ArrowButton>
+                        </p>
                     </section>
                     
                     <section className='c-white'>
@@ -122,7 +125,7 @@ export const MainMenu = ({ otherEvents }) => {
                             <ul>
                                 {
                                     otherEvents.map( (event, index) => {
-                                        if ( event.id == 1 || event.id == 3 ) return
+                                        if ( event.id == 1 || event.id == 3 || event.id == 5 ) return
                                         return (
                                                 <li key={index} className="mt-xs">
                                                     <ArrowButton 
