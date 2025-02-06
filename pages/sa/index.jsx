@@ -33,6 +33,7 @@ import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { VideoTestimonialCard } from "./video-testimonials"
 
+import { ActionsTab } from '../../fuselage/components/actions-tab/actions-tab'
 
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 
@@ -400,6 +401,21 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     <HubspotForm portalId={"14527187"} formId={"9b80f5cc-3153-4063-924b-39dae712c15d"} />
                 </div>
             </section>
+
+
+            <ActionsTab>
+                <Button 
+                    href={`/sa/download-prospectus`} 
+                    theme={{ 
+                        color: `white`,
+                        background: `var(--secondary)`, 
+                        hover: `var(--secondary-dark)`, 
+                    }} 
+                    decal={`fw-600`}
+                >
+                    Download Prospectus
+                </Button>
+            </ActionsTab>
             
             <Footer />
             <LenisScroller />
