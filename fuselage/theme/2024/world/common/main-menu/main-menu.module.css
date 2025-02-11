@@ -154,17 +154,24 @@
         row-gap: var(--space-sm);
     }
     .overlay {
-        padding: calc(var(--space-lg) * 1.375) var(--space-lg) var(--space-lg);
+        padding: calc(var(--space-lg) * 1.45) var(--space-lg) var(--space-lg);
     }
     .heading {
         margin-top: 1rem !important;
     }
     .overlay ul {
         list-style: none;
-        margin-bottom: .5rem;
+        margin-bottom: .2rem;
     }
     .overlay ul li {
-        margin-bottom: .5rem;
+        margin-bottom: .2rem;
+    }
+
+    .overlay p {
+        font-size: 2.2vh !important;
+    }
+    .overlay li a {
+        font-size: 2vh !important;
     }
 }
 

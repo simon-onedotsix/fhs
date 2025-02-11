@@ -153,17 +153,26 @@
         row-gap: var(--space-sm);
     }
     .overlay {
-        padding: calc(var(--space-lg) * 1.375) var(--space-lg) var(--space-lg);
+        padding: calc(var(--space-lg) * 1.3) var(--space-lg) var(--space-lg);
     }
     .heading {
-        margin-top: 1rem !important;
+        margin-top: .5rem !important;
     }
     .overlay ul {
         list-style: none;
-        margin-bottom: .3rem;
+        margin-bottom: .2rem;
+        font-size: 2vh;
     }
     .overlay ul li {
-        margin-bottom: .3rem;
+        margin-bottom: .2rem;
+    }
+
+
+    .overlay p {
+        font-size: 2.2vh !important;
+    }
+    .overlay li a {
+        font-size: 2vh !important;
     }
 }
 
