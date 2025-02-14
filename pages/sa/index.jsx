@@ -134,6 +134,65 @@ const AB_DATA = [
     }
 ]
 
+const SPEAKER_DATA = [
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgyNzk=`,
+        photoUrl: 'https://static.swapcard.com/public/images/aa283dd8d6b747a3ba4c7db9039e57e2.jpeg',
+        fullName: 'Waleed AlRashed AlHumaid',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Alrajhi Capital',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwMDUxOTU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/7b395ba5c8d146cb970582231d498e01.jpeg',
+        fullName: 'Sultan Bader Al-Otaibi',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Taiba Investments',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MTkzNzc=`,
+        photoUrl: 'https://static.swapcard.com/public/images/aed31042fa48418e9ad796226f2b3676.jpeg',
+        fullName: 'Steven Greenway',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Flyadeal',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
+        photoUrl: 'https://static.swapcard.com/public/images/be577fb8e2b044c98cc51dc0dc10fb55.jpeg',
+        fullName: 'Nikolina Angelkova',
+        jobTitle: 'Former Minister Tourism, Bulgaria | Owner and CEO, Angelkova law and Consultancy office',
+        company: '',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5Mzc4NzY=`,
+        photoUrl: 'https://static.swapcard.com/public/images/761b085b2385463baabb37776817bcae.jpeg',
+        fullName: 'Ron Pohl',
+        jobTitle: 'President',
+        company: 'BWH Hotels',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MTk4MzI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/93e21228749a4f0480a74e05cd7f65e4.jpeg',
+        fullName: 'Jeff Tisdall',
+        jobTitle: 'Chief Business Officer, Accor One Living | Global Head of Mixed-Use, Accor',
+        company: '',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcyMjQwNzQ=`,
+        photoUrl: 'https://static.swapcard.com/public/images/2ca186381f1a453c84f2b9e39d502d5b.jpeg',
+        fullName: 'Muin Serhan',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Amsa Hospitality',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwMDUxMzc=`,
+        photoUrl: 'https://static.swapcard.com/public/images/bd21592bd99c45d3afe4fb5b2ccc5f1c.jpeg',
+        fullName: 'Gregory Lanter',
+        jobTitle: 'Group Deputy CEO',
+        company: 'Club Med',
+    }
+]
+
 export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
 
     // console.log('entry:', entry)
@@ -302,15 +361,15 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             {
                 AB_DATA &&
                 <SpeakerCarousel 
-                    heading={`2025 Advisory Board`} 
+                    heading={`2025 Speakers`} 
                     color={`c-secondary`}
                     text={``}
                     decal={'bg-neutral-02'}
-                    ctaLink={'/sa/advisory-board'}
-                    ctaLabel={'View All Members'}
+                    ctaLink={'/sa/speakers'}
+                    ctaLabel={'View All Speakers'}
                 >
                     {
-                        AB_DATA.map( (profile, index) => (
+                        SPEAKER_DATA.map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
                                     url={profile.url}
