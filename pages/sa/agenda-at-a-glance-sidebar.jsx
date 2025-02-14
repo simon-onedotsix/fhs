@@ -18,7 +18,8 @@ import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { StickySidebar } from '../../fuselage/theme/2024/global/components/sticky-sidebar/sticky-sidebar'
-import { SessionGroup, Session, Feature, Duration } from "./agenda-at-a-glance"
+import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from "../../fuselage/components/icons/icons"
+// import { SessionGroup, Session, Feature, Duration } from "./agenda-at-a-glance"
 
 import CSS from '../../fuselage/theme/2025/sa/css/agenda-compact.module.css'
 
@@ -312,51 +313,58 @@ export default function Agenda ({ sessions, locations }) {
 										startTime={"2025-05-11 15:00:00"} 
 										endTime={"2025-05-11 18:30:00"}
 										title={"NextGen: Investing in Saudi Arabia's Hospitality Education"}
+										trackID={""}
 									/>
 									<Session 
 										startTime={"2025-05-11 15:00:00"} 
 										endTime={"2025-05-11 15:10:00"}
 										title={"Welcome Remarks"}
+										trackID={""}
 									/>
 								</SessionGroup> 
 
-								<SessionGroup location={{ title: "Summit Stage", color: "red" }}>
+								<SessionGroup location={{ title: "Summit Stage" }}>
 									<p className={CSS.heading}>Main Stage</p>
 									<Session 
 										startTime={"2025-05-11 15:10:00"} 
 										endTime={"2025-05-11 15:20:00"}
 										title={"Keynote - Hospitality Talent in Saudi Arabia: A Data-Driven Overview"}
+										trackID={""}
 									/>
 									<Session 
 										startTime={"2025-05-11 15:20:00"} 
 										endTime={"2025-05-11 15:40:00"}
 										title={"Education Meets Industry - Key Skills for the Future of Saudi Workforce"}
+										trackID={""}
 									/>
 									<Session 
 										startTime={"2025-05-11 15:40:00"} 
 										endTime={"2025-05-11 16:00:00"}
 										title={"Hospitality Workforce of the Future: Anticipating Trends and Building Resilience"}
+										trackID={""}
 									/>
 								</SessionGroup> 
 
-								<SessionGroup location={{ title: "Future Stage", color: "#239873" }}>
+								<SessionGroup location={{ title: "Future Stage" }}>
 									<p className={CSS.heading}>Workshops</p>
-									<p className={CSS.heading}>THEME: Hospitality Education and Real Estate Investment</p>
+									<Theme>Hospitality Education and Real Estate Investment</Theme>
 									<Session 
 										startTime={"2025-05-11 16:00:00"} 
 										endTime={"2025-05-11 16:45:00"}
 										title={"How Can We Rebrand Hospitality Careers to Attract Saudi Youth?"}
+										trackID={""}
 									/>
 									<Session 
 										startTime={"2025-05-11 17:00:00"} 
 										endTime={"2025-05-11 17:45:00"}
 										title={"How Can Public-Private Partnerships in Hospitality Training Help Build Saudi Arabia's Workforce of the Future?"}
+										trackID={""}
 									/>
 								</SessionGroup> 
 
-								<SessionGroup location={{ title: "Meeting Room 1", color: "#875645" }}>
+								<SessionGroup location={{ title: "Meeting Room 1" }}>
 									<p className={CSS.heading}>Workshops</p>
-									<p className={CSS.heading}>THEME: Hospitality Education and Real Estate Investment</p>
+									<Theme>Hospitality Education and Real Estate Investment</Theme>
 									<Session 
 										startTime={"2025-05-12 16:00:00"} 
 										endTime={"2025-05-12 16:45:00"}
@@ -369,7 +377,7 @@ export default function Agenda ({ sessions, locations }) {
 									/>
 								</SessionGroup>
 
-								<SessionGroup location={{ title: "Meeting Room 2", color: "#736452" }}>
+								<SessionGroup location={{ title: "Meeting Room 2" }}>
 									<p className={CSS.heading}>Workshops</p>
 									<p className={CSS.heading}>THEME: Deep dive into training</p>
 									<Session 
@@ -425,7 +433,7 @@ export default function Agenda ({ sessions, locations }) {
 
 									{/* SESSIONS */}
 
-									<SessionGroup location={{ title: "Summit Stage", color: "red" }}>
+									<SessionGroup location={{ title: "Summit Stage" }}>
 										<Session 
 											startTime={"2025-05-12 10:00:00"} 
 											endTime={"2025-05-12 10:15:00"}
@@ -467,7 +475,7 @@ export default function Agenda ({ sessions, locations }) {
 										/>
 									</SessionGroup>
 
-									<SessionGroup location={{ title: "Future Stage", color: "#239873" }}>
+									<SessionGroup location={{ title: "Future Stage" }}>
 										<p className={CSS.heading}>Workshops</p>
 										<Session 
 											startTime={"2025-05-12 11:00:00"} 
@@ -481,7 +489,7 @@ export default function Agenda ({ sessions, locations }) {
 										/>
 									</SessionGroup>
 
-									<SessionGroup location={{ title: "Centre Stage", color: "#669428" }}>
+									<SessionGroup location={{ title: "Centre Stage" }}>
 										<Session 
 											startTime={"2025-05-12 11:45:00"} 
 											endTime={"2025-05-12 13:00:00"}
@@ -496,7 +504,7 @@ export default function Agenda ({ sessions, locations }) {
 										</Feature>
 									</SessionGroup>
 
-									<SessionGroup location={{ title: "Summit Stage", color: "red" }}>
+									<SessionGroup location={{ title: "Summit Stage" }}>
 										<Session 
 											startTime={"2025-05-12 14:00:00"} 
 											endTime={"2025-05-12 14:20:00"}
@@ -548,7 +556,7 @@ export default function Agenda ({ sessions, locations }) {
 										/>
 									</SessionGroup>
 
-									<SessionGroup location={{ title: "Future Stage", color: "#239873" }}>
+									<SessionGroup location={{ title: "Future Stage" }}>
 										<p className={CSS.heading}>Workshops</p>
 										<Session 
 											startTime={"2025-05-12 14:00:00"} 
@@ -567,7 +575,7 @@ export default function Agenda ({ sessions, locations }) {
 										/>
 									</SessionGroup>
 
-									<SessionGroup location={{ title: "Centre Stage", color: "#669428" }}>
+									<SessionGroup location={{ title: "Centre Stage" }}>
 										<Session 
 											startTime={"2025-05-12 14:00:00"} 
 											endTime={"2025-05-12 14:30:00"}
@@ -629,7 +637,7 @@ export default function Agenda ({ sessions, locations }) {
 										/>
 									</SessionGroup> 
 									
-									<SessionGroup location={{ title: "Summit Stage", color: "red" }}>
+									<SessionGroup location={{ title: "Summit Stage" }}>
 										<Session 
 											startTime={"2025-05-12 10:00:00"} 
 											endTime={"2025-05-12 10:15:00"}
@@ -688,7 +696,7 @@ export default function Agenda ({ sessions, locations }) {
 										</Feature>
 									</SessionGroup> 
 
-									<SessionGroup location={{ title: "Future Stage", color: "#239873" }}>
+									<SessionGroup location={{ title: "Future Stage" }}>
 										<p className={CSS.heading}>Workshops</p>
 										<Session 
 											startTime={"2025-05-12 10:00:00"} 
@@ -712,7 +720,7 @@ export default function Agenda ({ sessions, locations }) {
 										/>
 									</SessionGroup>
 
-									<SessionGroup location={{ title: "Centre Stage", color: "#669428" }}>
+									<SessionGroup location={{ title: "Centre Stage" }}>
 										<Session 
 											startTime={"2025-05-12 11:00:00"} 
 											endTime={"2025-05-12 13:00:00"}
@@ -735,7 +743,7 @@ export default function Agenda ({ sessions, locations }) {
 										</Feature>
 									</SessionGroup>
 
-									<SessionGroup location={{ title: "Summit Stage", color: "red" }}>
+									<SessionGroup location={{ title: "Summit Stage" }}>
 										<Session 
 											startTime={"2025-05-12 14:30:00"} 
 											endTime={"2025-05-12 15:00:00"}
@@ -763,7 +771,7 @@ export default function Agenda ({ sessions, locations }) {
 										/>
 									</SessionGroup>
 
-									<SessionGroup location={{ title: "Future Stage", color: "#239873" }}>
+									<SessionGroup location={{ title: "Future Stage" }}>
 										<p className={CSS.heading}>Workshops</p>
 										<Session 
 											startTime={"2025-05-12 14:15:00"} 
@@ -794,3 +802,156 @@ export default function Agenda ({ sessions, locations }) {
     )
 }
 Agenda.theme = 'sa-2025'
+
+
+
+
+const tracks = [
+	{
+		id: "1",
+		title: "NextGen - Education Investment",
+		color: "#f0d8d7"
+	},
+	{
+		id: "2",
+		title: "Investment, Financing & Real Estate",
+		color: "#ded7e8"
+	},
+	{
+		id: "3",
+		title: "Brand & Destination",
+		color: "#7ca4db"
+	},
+	{
+		id: "4",
+		title: "Luxury, F&B, and Experiential",
+		color: "#db68c0"
+	},
+	{
+		id: "5",
+		title: "Focus on Saudi Arabia",
+		color: "#83c2d4"
+	},
+	{
+		id: "6",
+		title: "Religious Tourisim",
+		color: "#5c1a8f"
+	},
+	{
+		id: "7",
+		title: "Sustainability & ESG",
+		color: "#e7efd7"
+	},
+	{
+		id: "8",
+		title: "Branded Residences",
+		color: "#b10005"
+	},
+	{
+		id: "9",
+		title: "Wellness",
+		color: "#d5d1b8"
+	},
+	{
+		id: "10",
+		title: "Technology & Innovation",
+		color: "#1c304f"
+	}
+]
+
+
+export const SessionGroup = ({ location, children }) => {
+
+	if ( !children ) return
+
+	return (
+		<div className={CSS.sessionGroupContainer} style={{ borderColor: location?.color, backgroundColor: location?.color }}>
+			{
+				location?.title &&
+				<p className={`${CSS.sessionGroupHeader} | fs-5`}>{ location.title }</p>
+			}
+
+			<div className={CSS.sessionGroup}>
+				{ children }
+			</div>
+		</div> 
+	)
+}
+
+export const Session = ({ startTime, endTime, title, trackID }) => {
+	return (
+		<Pop>
+			<div className={CSS.sessionsWrapper}>
+				<div className={CSS.session}>
+					<div className={CSS.sessionHeader}>
+						<Duration startTime={startTime} endTime={endTime} />
+						{ trackID &&  <Track trackID={trackID} />}
+					</div>
+
+					<div className={CSS.sessionContent}>
+						<p className={`${CSS.sessionTitle} | fs-5 fw-500 lh-1-1 c-white`}>
+							{ title }
+						</p>
+					</div>
+				</div>
+			</div>
+		</Pop>
+	)
+}
+
+export const Feature = ({ children }) => {
+	return (
+		<div className={CSS.featureWrapper}>
+			{ children }
+		</div>
+	)
+}
+
+export const Duration = ({ startTime, endTime }) => {
+
+	const convertSeconds = (seconds) => {
+		const hours = Math.floor(seconds / 3600)
+		const minutes = Math.floor((seconds % 3600) / 60)
+	
+		const hourString = hours > 0 ? `${hours} hour${hours > 1 ? 's' : ''}` : ''
+		const minuteString = minutes > 0 ? `${minutes} minute${minutes > 1 ? 's' : ''}` : ''
+	
+		if ( hours > 0 ) {
+			return `${hourString} ${ minutes > 0 ? minuteString : ''}`
+
+		} else if ( !hours && minutes > 0 ) {
+			return `${minuteString}`
+
+		}
+	
+		return
+	}
+
+
+	return (
+		<p>
+			{ format( new Date(startTime), "HH:mm" ) } - { endTime && format( new Date(endTime), "HH:mm" ) }
+			{
+				endTime &&
+				<span>&ensp;<StopwatchIcon fill={'var(--primary-3)'}/> { convertSeconds(parseInt(new Date(endTime).getTime() - new Date(startTime).getTime())/1000) }</span>
+			}
+		</p>
+	)
+}
+
+export const Track = ({ trackID }) => {
+
+	const t = tracks.find( track => track.id === trackID )
+
+	if ( !t ) return
+	
+	return (
+		<p className={CSS.tag}><TagIcon fill={t.color} />{ t.title }</p>
+	)
+}
+
+export const Theme = ({ children }) => {
+	return (
+		<p className={CSS.theme}>THEME: { children }</p>
+	)
+}

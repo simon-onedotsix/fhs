@@ -39,7 +39,7 @@ function Speakers({ seomatic, speakers }) {
 		(speaker => speaker.lastName === 'Abu Haimed' ? 0 : 1),
 		(speaker => speaker.lastName === 'Abdulhadi' ? 0 : 1),
 	] )
-	console.log('customOrderedSpeakers:', customOrderedSpeakers)
+	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 	return (
 		<div className="bg-default">

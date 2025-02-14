@@ -136,6 +136,13 @@ const AB_DATA = [
 
 const SPEAKER_DATA = [
     {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/77e27e150ec94e1d8c549fbb6e6f065b.jpeg',
+        fullName: 'HH Prince Bandar bin Saud bin Khalid Al Saud',
+        jobTitle: 'Secretary General King Faisal Foundation (KFF) | Chairman of the Board of Directors Al Khozama',
+        company: '',
+    },
+    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgyNzk=`,
         photoUrl: 'https://static.swapcard.com/public/images/aa283dd8d6b747a3ba4c7db9039e57e2.jpeg',
         fullName: 'Waleed AlRashed AlHumaid',
