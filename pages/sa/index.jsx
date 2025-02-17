@@ -32,6 +32,7 @@ import { LogoTicker, Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticke
 import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { VideoTestimonialCard } from "./video-testimonials"
+import { Avatar } from '../../fuselage/components/avatar/avatar'
 
 import { ActionsTab } from '../../fuselage/components/actions-tab/actions-tab'
 
@@ -299,19 +300,50 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     </div>
                 </section>
 
-                {/* QUOTE */}
-                <section className="block bg-primary o-hidden ">
-                    <div className="container maxw-80">
-                        <Quotation
-                            avatarUrl={'/assets/img/sa/haddad-bani.jpg'}
-                            quote={'FHS Saudi Arabia 2024 was one of the best industry events I have attended in the recent years!'}
-                            fullName={'Bani Haddad'}
-                            title={'Managing Director - Hospitality, Aleph Hospitality'}
-                        />
+
+                {/* PATRONAGE */}
+                <section className="block bg-primary">
+                    <div className="container center">
+                        <p className="fs-3 fw-600 c-accent caps pb-sm">Under the Patronage of</p>
+
+                        <div className={CSS.patronBox}>
+
+                            <div className={CSS.patronBoxAvatar}>
+                                <Pop>
+                                    <Avatar src={"https://static.swapcard.com/public/images/77e27e150ec94e1d8c549fbb6e6f065b.jpeg"} />
+                                </Pop>
+                            </div>
+
+                            <div className={CSS.patronBoxContent}>
+                                <Pop>
+                                    <p className="fs-6 fw-600 mt-sm">HH Prince Bandar bin Saud bin Khalid Al Saud</p>
+                                    <p className="mt-xxs">
+                                        Secretary General King Faisal Foundation&nbsp;(KFF)<br/>
+                                        Chairman of the Board of Directors Al&nbsp;Khozama
+                                    </p>
+
+                                </Pop>
+                            </div>
+                        </div>
+                        
+                        <p className="mt-xs caps fs-sm c-accent"><Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}><a className="uLink">View biography</a></Link></p>
                     </div>
                 </section>
 
             </div>
+            
+            
+            {/* quote */}
+            <section className="block bg-theme o-hidden ">
+                <div className="container maxw-80">
+                    <Quotation
+                        avatarUrl={'/assets/img/sa/haddad-bani.jpg'}
+                        quote={'FHS Saudi Arabia 2024 was one of the best industry events I have attended in recent years!'}
+                        fullName={'Bani Haddad'}
+                        title={'Managing Director - Hospitality, Aleph Hospitality'}
+                    />
+                </div>
+            </section>
 
 
             {/* AB interviews */}
