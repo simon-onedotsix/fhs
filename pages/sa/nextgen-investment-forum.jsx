@@ -237,7 +237,7 @@ export default function Page () {
 
                     <div className="block">
                         <div className="container maxw-45 center formatted fs-5">
-                            <p className=' fw-600'>The NextGen Investment Forum aims to inspire top leaders to come together and tackle the most pressing questions surrounding education, training, and talent retention in Saudi Arabia's hospitality industry.</p>
+                            <p className=' fw-600'>The NextGen Investment Forum aims to inspire top leaders to come together and tackle the most pressing questions surrounding education, training, and talent retention in Saudi Arabia&apos;s hospitality industry.</p>
                             <p>The afternoon will feature a dynamic series of roundtable discussions centered on key themes:</p>
                         </div>
                         <div className="container columns-4 gap-sm">
