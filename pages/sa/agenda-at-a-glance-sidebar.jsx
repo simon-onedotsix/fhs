@@ -313,13 +313,13 @@ export default function Agenda ({ sessions, locations }) {
 										startTime={"2025-05-11 15:00:00"} 
 										endTime={"2025-05-11 18:30:00"}
 										title={"NextGen: Investing in Saudi Arabia's Hospitality Education"}
-										trackID={""}
+										trackID={"1"}
 									/>
 									<Session 
 										startTime={"2025-05-11 15:00:00"} 
 										endTime={"2025-05-11 15:10:00"}
 										title={"Welcome Remarks"}
-										trackID={""}
+										trackID={"1"}
 									/>
 								</SessionGroup> 
 
@@ -329,19 +329,19 @@ export default function Agenda ({ sessions, locations }) {
 										startTime={"2025-05-11 15:10:00"} 
 										endTime={"2025-05-11 15:20:00"}
 										title={"Keynote - Hospitality Talent in Saudi Arabia: A Data-Driven Overview"}
-										trackID={""}
+										trackID={"1"}
 									/>
 									<Session 
 										startTime={"2025-05-11 15:20:00"} 
 										endTime={"2025-05-11 15:40:00"}
 										title={"Education Meets Industry - Key Skills for the Future of Saudi Workforce"}
-										trackID={""}
+										trackID={"1"}
 									/>
 									<Session 
 										startTime={"2025-05-11 15:40:00"} 
 										endTime={"2025-05-11 16:00:00"}
 										title={"Hospitality Workforce of the Future: Anticipating Trends and Building Resilience"}
-										trackID={""}
+										trackID={"1"}
 									/>
 								</SessionGroup> 
 
@@ -369,11 +369,13 @@ export default function Agenda ({ sessions, locations }) {
 										startTime={"2025-05-12 16:00:00"} 
 										endTime={"2025-05-12 16:45:00"}
 										title={"Where Are the Investment Opportunities in Hospitality Education Real Estate?"}
+										trackID={"1"}
 									/>
 									<Session 
 										startTime={"2025-05-12 17:00:00"} 
 										endTime={"2025-05-12 17:45:00"}
 										title={"How Can Student Housing Be Designed to Meet the Needs of Future Hospitality Professionals?"}
+										trackID={"1"}
 									/>
 								</SessionGroup>
 
@@ -879,9 +881,13 @@ export const SessionGroup = ({ location, children }) => {
 }
 
 export const Session = ({ startTime, endTime, title, trackID }) => {
+
+	const t = tracks.find( track => track.id === trackID )
+
 	return (
 		<Pop>
 			<div className={CSS.sessionsWrapper}>
+				{/* style={{ backgroundColor: t?.color }} */}
 				<div className={CSS.session}>
 					<div className={CSS.sessionHeader}>
 						<Duration startTime={startTime} endTime={endTime} />
@@ -913,8 +919,8 @@ export const Duration = ({ startTime, endTime }) => {
 		const hours = Math.floor(seconds / 3600)
 		const minutes = Math.floor((seconds % 3600) / 60)
 	
-		const hourString = hours > 0 ? `${hours} hour${hours > 1 ? 's' : ''}` : ''
-		const minuteString = minutes > 0 ? `${minutes} minute${minutes > 1 ? 's' : ''}` : ''
+		const hourString = hours > 0 ? `${hours}h` : ''
+		const minuteString = minutes > 0 ? `${minutes}m` : ''
 	
 		if ( hours > 0 ) {
 			return `${hourString} ${ minutes > 0 ? minuteString : ''}`

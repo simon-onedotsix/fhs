@@ -1,0 +1,280 @@
+
+
+/* THEME ------------------------------------- */
+
+.themeWrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+@media(max-width:599px){
+    .deco01 {
+        position: absolute;
+        top: 10vh;
+        left: -70%;
+        width: 100vw;
+    }
+    .deco02 {
+        position: absolute;
+        top: 40vh;
+        right: -70%;
+        width: 100vw;
+    }
+}
+
+@media(min-width:600px){
+    .deco01 {
+        position: absolute;
+        top: 15vw;
+        left: -35%;
+        z-index: 2;
+        width: 50vw;
+    }
+    .deco02 {
+        position: absolute;
+        top: -20vw;
+        right: -30%;
+        z-index: 2;
+        width: 50vw;
+    }
+}
+
+
+
+/* MAIN SECTIONS ------------------------------- */
+
+
+/* CHALLENGES */
+
+.challengeCards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+
+}
+
+.challengeCardLayout {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: var(--space-md);
+    text-align: center;
+}
+
+.challengeCardImage {
+    justify-self: center;
+}
+.challengeCardImageContainer {
+    width: 40vw;
+    height: 40vw;
+    position: relative;
+}
+.challengeCardImageContainer img {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.challengeCardContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+}
+
+
+@media (min-width:600px) {
+    .challengeCardLayout {
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+    }
+    .challengeCardLayout:nth-child(even) {
+        text-align: right;
+    }
+    .challengeCardImage {
+        
+        justify-self: flex-end;
+    }
+    .challengeCardLayout:nth-child(even) .challengeCardImage {
+        grid-area: 1/2 / 2/3;
+        justify-self: flex-start;
+    }
+    .challengeCardImageContainer {
+        width: 16vw;
+        height: 16vw;
+    }
+}
+
+
+/* OBJECTIVES */
+
+.objectivesSection {
+    position: relative;
+    overflow: hidden;
+}
+.objectivesSectionBG {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    mask-image: linear-gradient(to bottom, transparent 2%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+
+.objectiveCards {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    justify-content: center;
+}
+.objectiveCardLayout {
+    position: relative;
+}
+.objectiveCardHeader,
+.objectiveCardBody {
+    position: relative;
+    z-index: 2;
+}
+.objectiveCardHeader {
+    padding: var(--space-sm);
+    background-color: var(--secondary);
+    border-radius: 1rem 1rem 0 0;
+}
+.objectiveCardBody {
+    padding: var(--space-sm);
+    background-color: white;
+    color: var(--default-text-color);
+    border-radius: 0 0 1rem 1rem;
+}
+@media (min-width:600px){
+    .objectiveCardLayout {
+        max-width: 20vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+}
+
+
+
+.pulse {
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    top: -.5rem;
+    left: -.5rem;
+    border-radius: 6vw;
+    background-color: var(--accent);
+}
+@media(min-width:600px){
+    .pulse {
+        width: 1.4rem;
+        height: 1.4rem;
+        border-radius: 1.4rem;
+    }
+}
+
+.pulseRing {
+    position: absolute;
+    z-index: 1;
+    top: calc(50% - 5vw);
+    left: calc(50% - 5vw);
+    
+    width: 10vw;
+    height: 10vw;
+    border-radius: 10vw;
+    border: 30px solid var(--accent);
+    mix-blend-mode: hard-light;
+
+    animation: pulseThick 1s ease-out infinite;
+}
+@keyframes pulseThick {
+    0% {
+        transform: scale(.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(.8);
+        opacity: 0;
+    }
+}
+
+
+
+
+/* COMPONENTS */
+
+.componentCardLayout {
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    overflow: hidden;
+}
+.componentCardImage {
+    background-color: var(--secondary);
+    border-radius: 1rem 1rem 0 0;
+    aspect-ratio: 16/9;
+    position: relative;
+}
+.componentCardBody {
+    padding: var(--space-sm);
+    color: var(--default-text-color);
+    border-radius: 0 0 1rem 1rem;
+}
+@media (min-width:600px){
+    .componentCardLayout {
+        max-width: 20vw;
+    }
+}
+
+
+
+
+/* GOALS */
+
+.goalCardLayout {
+    background-color: var(--primary);
+    padding: var(--space-sm);
+    border-radius: 1rem;
+}
+
+
+
+/* AGENDA */
+
+.sessionGroup {
+    border: 1px solid var(--primary-2);
+    border-radius: 1rem;
+}
+
+.session {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.sessionTimes {
+    padding: 1rem 1rem 0;
+}
+.sessionBody {
+    padding: 1rem;
+}
+.session:not(:last-child) .sessionBody {
+    border-bottom: 1px solid var(--primary-2);
+}
+
+@media(min-width:600px) {
+    .session {
+        grid-template-columns: 10rem auto;
+    }
+    .sessionTimes {
+        padding: 1rem;
+    }
+    .sessionBody {
+        border-left: 1px solid var(--primary-2);
+        padding: 1rem;
+    }
+}
+
+
+
+

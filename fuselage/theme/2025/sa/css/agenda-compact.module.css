@@ -152,6 +152,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    
+    /* background-color: red;
+    padding: 1rem;
+    border-radius: .25rem; */
 }
 
 .sessionHeader {
@@ -216,7 +220,7 @@
 }
 
 .tag {
-    color: white;
+    /* color: white; */
     display: flex;
     align-items: center;
 }

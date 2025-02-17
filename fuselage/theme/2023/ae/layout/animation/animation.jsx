@@ -14,7 +14,18 @@ export const Pop = ({ children, delay, once, inline }) => {
     )
 }
 
-export const Slide = ({ children, delay, once, amount = 50 }) => {
+export const Slide = ({ children, delay, once, amount = 50, direction }) => {
+    if (direction === 'up') return (
+        <motion.div 
+            initial={{ y: amount, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once }}
+            transition={{ type: "spring", bounce: 0.25, delay }}
+        >
+            { children }
+        </motion.div>
+    )
+
     return (
         <motion.div 
             initial={{ x: amount, opacity: 0 }}

@@ -77,6 +77,9 @@ dependencies:
   react-scroll-parallax:
     specifier: ^3.2.0
     version: 3.2.0(react-dom@18.2.0)(react@18.2.0)
+  react-smart-ticker:
+    specifier: ^1.4.0
+    version: 1.4.0(react-dom@18.2.0)(react@18.2.0)
   react-social-media-embed:
     specifier: ^2.5.17
     version: 2.5.17(react-dom@18.2.0)(react@18.2.0)
@@ -3807,6 +3810,16 @@ packages:
       react-dom: ^16.8.0-0 || >=17.0.1
     dependencies:
       parallax-controller: 1.5.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /react-smart-ticker@1.4.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-RPVEMgjOmH5zgZgqoEmEvGBbCaw6HDHQmCounly0XZ7Q+kRBEYwPdZdW3yfYu8tlLXOd8qCH7QW7jjSzJFztDA==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
