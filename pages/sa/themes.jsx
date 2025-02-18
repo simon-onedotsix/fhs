@@ -6,8 +6,8 @@ import Head from 'next/head'
 import _ from 'lodash'
 import parse from 'html-react-parser'
 
-import { Header } from '../../fuselage/theme/2024/world/common/header/header'
-import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
+import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 import { HeroUnitImage } from '../../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
 
 import { Button } from '../../fuselage/theme/2024/world/components/button/button'
@@ -18,82 +18,55 @@ import CSS from '../../fuselage/theme/2024/world/css/themes.module.css'
 
 export const THEMES_DATA = [
     {
-        id: 'RmllbGRWYWx1ZV8yNDU3Mjg5Mg==',
-        imageUrl: '/assets/img/brf/themes/global-investment.jpg',
-        iconUrl: '/assets/img/brf/icons/global-investments.svg',
-        title: 'Global Hospitality Investments',
-        body: '<p>Global investments shape the future of hospitality. With Country Pavilions, the industry will be able to dive into the trends, opportunities, and strategic decisions driving investment in key markets, setting the stage for sustained industry growth at FHS World 2024.</p>'
+        id: '1',
+        imageUrl: '/assets/img/sa/event-themes/nextgen-talent.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/nextgen-talent.svg',
+        title: 'NextGen Talent & Hospitality Education',
+        body: '<p>liquam dapibus ipsum vitae sem. Ut eget mauris ac nunc luctus ornare. Phasellus enim augue, rutrum tempus, blandit in, vehicula eu, neque. Sed consequat nunc. Proin metus. Duis at mi non tellus malesuada tincidunt. Cras in neque.</p>'
     },
     {
-        id: 'RmllbGRWYWx1ZV8yNDIzNzQxMQ==',
-        imageUrl: '/assets/img/brf/themes/projects.jpg',
-        iconUrl: '/assets/img/brf/icons/projects-destinations.svg',
-        title: 'Projects & Destinations',
+        id: '2',
+        imageUrl: '/assets/img/sa/event-themes/investment.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/investment.svg',
+        title: 'Investment, Financing & Real Estate',
         body: '<p>Learn about the big projects and destination tourism initiatives redefining the global hospitality landscape. Our event features focus on this theme to highlight development strategies and market trends that are creating the next generation of must-visit locations.</p>'
     },
     {
-        id: 'RmllbGRWYWx1ZV8yNDU4Nzc2OQ==',
-        imageUrl: '/assets/img/brf/themes/wellness.jpg',
-        iconUrl: '/assets/img/brf/icons/wellness-tourism.svg',
-        title: 'Wellness & Medical Tourism',
-        body: '<p>Dubai&apos;s broader tourism strategy aims to attract 500,000 medical tourists by the end of 2025. This niche is brimming with potential but what is required to truly leverage its benefits and popularity? We will delve into innovations that are redefining health-focused travel, making it a cornerstone of the global hospitality landscape.</p>'
+        id: '3',
+        imageUrl: '/assets/img/sa/event-themes/religious-tourism.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/religious-tourism.svg',
+        title: 'Religious Tourism',
+        body: '<p>Learn about the big projects and destination tourism initiatives redefining the global hospitality landscape. Our event features focus on this theme to highlight development strategies and market trends that are creating the next generation of must-visit locations.</p>'
     },
     {
-        id: 'RmllbGRWYWx1ZV8yNDU3MzE3Mw==',
-        imageUrl: '/assets/img/brf/themes/branding.jpg',
-        iconUrl: '/assets/img/brf/icons/branding-strategies.svg',
-        title: 'Branding Strategies',
-        body: '<p>The hospitality industry is a crowded marketplace like any other. Effective branding is crucial to survive. This theme focuses on the strategies that build powerful brands, creating a legacy and driving loyalty in the competitive hospitality sector.</p>'
+        id: '4',
+        imageUrl: '/assets/img/sa/event-themes/destination-development.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/destination-development.svg',
+        title: 'Destination Development',
+        body: '<p>Learn about the big projects and destination tourism initiatives redefining the global hospitality landscape. Our event features focus on this theme to highlight development strategies and market trends that are creating the next generation of must-visit locations.</p>'
     },
     {
-        id: 'RmllbGRWYWx1ZV8yNDU3Mjg5MQ==',
-        imageUrl: '/assets/img/brf/themes/sustainability.jpg',
-        iconUrl: '/assets/img/brf/icons/sustainability.svg',
-        title: 'Sustainability & Innovation',
-        body: '<p>Exploring the intersection of sustainability and innovation, with this theme we aim to highlight how cutting-edge solutions are being implemented to meet the growing demand for eco-friendly practices. FHS World 2024 will deconstruct their growth trends, demand and integration from a dynamic perspective.</p>'
+        id: '5',
+        imageUrl: '/assets/img/sa/event-themes/technology.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/technology.svg',
+        title: 'Technology & Innovation',
+        body: '<p>Learn about the big projects and destination tourism initiatives redefining the global hospitality landscape. Our event features focus on this theme to highlight development strategies and market trends that are creating the next generation of must-visit locations.</p>'
     },
     {
-        id: 'RmllbGRWYWx1ZV8yMzI1MzEzOQ==',
-        imageUrl: '/assets/img/brf/themes/technology.jpg',
-        iconUrl: '/assets/img/brf/icons/technology.svg',
-        title: 'Technology & AI',
-        body: '<p>Technology and AI are transforming hospitality at every level. Join us to examine the latest advancements, from AI-driven customer service to smart hotel management systems, and how they are revolutionising guest experiences, hotel properties and hospitality investments.</p>'
+        id: '6',
+        imageUrl: '/assets/img/sa/event-themes/luxury.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/luxury.svg',
+        title: 'Luxury, F&B, and Experiential Hospitality',
+        body: '<p>Learn about the big projects and destination tourism initiatives redefining the global hospitality landscape. Our event features focus on this theme to highlight development strategies and market trends that are creating the next generation of must-visit locations.</p>'
     },
     {
-        id: 'RmllbGRWYWx1ZV8yNDIzOTQ1MA==',
-        imageUrl: '/assets/img/brf/themes/branded-residences.jpg',
-        iconUrl: '/assets/img/brf/icons/branded-residences.svg',
-        title: 'Branded Residences',
-        body: '<p>The Branded Residences sector is expanded exponentially. As part of our agenda and the Branded Residences Forum, we&apos;re focused on covering the strategies behind their success. FHS World is the place to be to discover on how they combine the prestige of renowned brands with the comforts of home to create unparalleled residential experiences.</p>'
-    },
-    {
-        id: 'RmllbGRWYWx1ZV8yMzI1MzEzNw==',
-        imageUrl: '/assets/img/brf/themes/restaurant.jpg',
-        iconUrl: '/assets/img/brf/icons/restaurant-investment.svg',
-        title: 'Restaurant Investment',
-        body: '<p>Investing in the future of dining, this theme focuses on the opportunities and challenges in the restaurant sector, from emerging trends to the business models driving growth in a rapidly evolving market.</p>'
-    },
-    {
-        id: 'RmllbGRWYWx1ZV8yNDU3MzE2NQ==',
-        imageUrl: '/assets/img/brf/themes/woman-leader.jpg',
-        iconUrl: '/assets/img/brf/icons/women-leadership.svg',
-        title: 'Women Leadership',
-        body: '<p>Join us in creating a better and stronger future as we concentrate efforts on advancing women in hospitality. We want to highlight the impact of women leaders in hospitality and facilitate more women leaders to break past the &apos;broken rung&apos;.</p>'
-    },
-    {
-        id: 'RmllbGRWYWx1ZV8yNDU3MjkwMg==',
-        imageUrl: '/assets/img/brf/themes/education.jpg',
-        iconUrl: '/assets/img/brf/icons/education-investment.svg',
-        title: 'Education Investment',
-        body: '<p>Investing in education is investing in the future. FHS World will focus on the critical role of education in hospitality, from talent development to leadership training, ensuring the industry&apos;s continued growth and success.</p>'
-    },
-    {
-        id: 'RmllbGRWYWx1ZV8yNDU3Mjg4NQ==',
-        imageUrl: '/assets/img/brf/themes/green-city.jpg',
-        iconUrl: '/assets/img/brf/icons/green-construction.svg',
-        title: 'Green Construction & Smart Cities',
-        body: '<p>Pioneering the future of urban living, our agenda will dive into the nuances of integrating green construction and smart technologies. Green construction has kickstarted the transformation of cities into sustainable, intelligent environments that enhance the quality of life and drive long-term growth. Join us to explore how this change is adapted by the hospitality industry.</p>'
+        id: '7',
+        imageUrl: '/assets/img/sa/event-themes/sustainability.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/sustainability.svg',
+        title: 'Sustainability & ESG',
+        body: '<p>Learn about the big projects and destination tourism initiatives redefining the global hospitality landscape. Our event features focus on this theme to highlight development strategies and market trends that are creating the next generation of must-visit locations.</p>'
     }
+    
 ]
 
 
@@ -153,30 +126,30 @@ export default function Themes ({ sessions }) {
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
 			</Head>
+
+            <div className='bg-primary'>
+                <Header compact />
+
+
+                <HeroUnitImage imageUrl={'/assets/site/ae/hero-about-fhs-world.jpg'}>
+                    <p className='fs-1 fw-600 center'>2025 Event Themes</p>
+                </HeroUnitImage>
+
+                <ThemesLayout>
+                    { THEMES_DATA.map( (theme, index) => (
+                        <ThemeCard 
+                            key={index}
+                            themeId={theme.id} 
+                            imageUrl={theme.imageUrl} 
+                            iconUrl={theme.iconUrl} 
+                            title={theme.title} 
+                            body={theme.body} 
+                            sessions={ getSessionsByTopic( sessions, theme.id ) }
+                        />
+                    )) }
+                </ThemesLayout>
+            </div>
         
-            <Header compact />
-
-
-            <HeroUnitImage imageUrl={'/assets/site/ae/hero-about-fhs-world.jpg'}>
-                <p className='fs-1 fw-600 center'>FHS 2024 Themes</p>
-            </HeroUnitImage>
-
-            <ThemesLayout>
-                { THEMES_DATA.map( (theme, index) => (
-                    <ThemeCard 
-                        key={index}
-                        themeId={theme.id} 
-                        imageUrl={theme.imageUrl} 
-                        iconUrl={theme.iconUrl} 
-                        title={theme.title} 
-                        body={theme.body} 
-                        sessions={ getSessionsByTopic( sessions, theme.id ) }
-                    />
-                )) }
-            </ThemesLayout>
-
-
-            {/* <ThemesSlider data={THEMES_DATA} /> */}
 
 
             <Footer />
@@ -185,7 +158,7 @@ export default function Themes ({ sessions }) {
     )
 }
 
-Themes.theme = 'world-2024'
+Themes.theme = 'sa-2025'
 
 
 
@@ -197,7 +170,7 @@ export const ThemesLayout = ({ children }) => {
     return (
         <section className="block pt-0" style={{ position: 'relative', zIndex: 5 }}>
 
-            <p className='fs-5 fw-400 c-secondary ls-3 center'>EXPLORE</p>
+            <p className='fs-5 fw-400 c-accent ls-3 center'>EXPLORE</p>
             <ThemesExploreArrow />
             <div className={`${CSS.layout} container`}>
                 <span className={CSS.keyline} />
@@ -219,7 +192,7 @@ export const ThemesExploreArrow = () => {
                         </clipPath>
                         <g clipPath="url(#_clip1)">
                             <g transform="matrix(-1,-1.34877e-16,1.22465e-16,-1.10136,2598.53,1324.97)">
-                                <path vectorEffect="non-scaling-stroke" d="M2577.47,884.939L2597.97,925.943L2556.97,925.943L2577.47,884.939Z" style={{ fill:'none', stroke:'rgb(226,53,66)', strokeWidth: 1 }}/>
+                                <path vectorEffect="non-scaling-stroke" d="M2577.47,884.939L2597.97,925.943L2556.97,925.943L2577.47,884.939Z" style={{ fill:'none', stroke:'var(--accent)', strokeWidth: 1 }}/>
                             </g>
                         </g>
                     </g>
@@ -254,7 +227,7 @@ export const ThemeCard = ({ iconUrl, imageUrl, themeId, title, body, sessions })
 
             <div className={CSS.content}>
                 <motion.p 
-                    className='fs-2 fw-400 lh-1 c-secondary mb-sm'
+                    className='fs-2 fw-400 lh-1 c-accent mb-sm'
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ type: "spring", bounce: 0.25, delay: 0.1 }}
@@ -271,11 +244,11 @@ export const ThemeCard = ({ iconUrl, imageUrl, themeId, title, body, sessions })
                     { body && parse(body) }
                 </motion.div>
 
-                {
+                {/* {
                     sessions?.length &&
                     <div className="formatted">
                         <details className='mt-sm'>
-                            <summary  className='fw-600 fs-6 c-secondary'>
+                            <summary  className='fw-600 fs-6 c-accent'>
                                 {title} Sessions
                             </summary>
                             <ul className='mt-xs'>
@@ -299,7 +272,7 @@ export const ThemeCard = ({ iconUrl, imageUrl, themeId, title, body, sessions })
                         </details>
 
                     </div>
-                }
+                } */}
             </div>
 
         </div>

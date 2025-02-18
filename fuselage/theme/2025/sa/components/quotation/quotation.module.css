@@ -1,19 +1,23 @@
 .layout {
     display: inline-grid;
     grid-template-columns: 1fr;
-    align-items: center;
+    align-items: flex-start;
+    align-self: flex-start;
     gap: var(--space-sm);
 }
 .layout main {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-sm)
+    gap: var(--space-sm);
+}
+.layout aside {
+    display: inline-block;
 }
 
 .avatarContainer {
     position: relative;
-    max-width: 40vw;
+    max-width: 10vw;
     aspect-ratio: 1;
     border-radius: 50%;
     overflow: hidden;
@@ -29,7 +33,7 @@
     line-height: 1.2;
 }
 
-@media(min-width:600px){
+/* @media(min-width:600px){
     .layout {
         grid-template-columns: 25vw auto;
     }
@@ -46,4 +50,4 @@
     .avatarContainer {
         max-width: 15vw;
     }
-}
+} */

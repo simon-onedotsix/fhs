@@ -297,7 +297,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
             <section className="block">
-                <ThemesSlider data={THEMES_DATA} />
+                <ThemesSlider data={THEMES_DATA} link={'/world/themes'} linkLabel={'Learn More'} />
             </section>
 
 

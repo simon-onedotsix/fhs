@@ -8,25 +8,29 @@ import CSS from './themes-slider.module.css'
 
 
 
-export const ThemesSlider = ({ data }) => {
+export const ThemesSlider = ({ data, link, linkLabel }) => {
+
+	if ( !data ) return
+
+	const count = data.length
 
 	// console.log('insight-slider data:', data)
 
 	const [ currentPage, setCurrentPage ] = useState(1)
-	const [ offset, setOffset ] = useState( 50 - (100/11) /2 )
+	const [ offset, setOffset ] = useState( 50 - (100/count) /2 )
 
     const totalPages = data.length
 
     const nextPage = () => {
         if ( currentPage < totalPages ) {
 			setCurrentPage( currentPage + 1 )
-			setOffset( offset - 100/11 )
+			setOffset( offset - 100/count )
 		}
 	}
 	const prevPage = () => {
 		if ( currentPage > 1 ) {
 			setCurrentPage( currentPage - 1 )
-			setOffset( offset + 100/11 )
+			setOffset( offset + 100/count )
 		}
     }
 
@@ -34,7 +38,6 @@ export const ThemesSlider = ({ data }) => {
 		<>
 			<div className={`${CSS.header} block center formatted py-0 mb-sm`}>
 				<p className="fs-1 fw-600">Event Themes</p>
-				{/* <p className="fs-5 maxw-40 mx-auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure ut laborum id corrupti illum ab at temporibus eum dolore.</p> */}
 			</div>
 
 
@@ -51,7 +54,7 @@ export const ThemesSlider = ({ data }) => {
 					<motion.div className={CSS.iconWrapper} style={{ x: `${offset}%` }}>
 						{
 							data.map( (theme, index) => (
-								<div key={index} className={`${CSS.iconSlide} ${index+1 === currentPage ? CSS.active : ''}`}>
+								<div key={index} className={`${CSS.iconSlide} ${index+1 === currentPage ? CSS.active : ''}`} style={{ width: `calc( 100% / ${count})`}}>
 									{
 										theme ? 
 											<motion.div 
@@ -97,8 +100,8 @@ export const ThemesSlider = ({ data }) => {
 			</section>
 
 			<div className={`${CSS.footer} block pt-md center`}>
-				<Link href={'/world/themes'}>
-					<a className={CSS.button}>Learn More</a>
+				<Link href={link}>
+					<a className={CSS.button}>{linkLabel}</a>
 				</Link>
 			</div>
 		</>
@@ -120,7 +123,7 @@ export const ThemesExploreArrow = () => {
                         </clipPath>
                         <g clipPath="url(#_clip1)">
                             <g transform="matrix(-1,-1.34877e-16,1.22465e-16,-1.10136,2598.53,1324.97)">
-                                <path vectorEffect="non-scaling-stroke" d="M2577.47,884.939L2597.97,925.943L2556.97,925.943L2577.47,884.939Z" style={{ fill:'none', stroke:'rgb(226,53,66)', strokeWidth: 1 }}/>
+                                <path vectorEffect="non-scaling-stroke" d="M2577.47,884.939L2597.97,925.943L2556.97,925.943L2577.47,884.939Z" style={{ fill:'none', stroke:'var(--accent)', strokeWidth: 1 }}/>
                             </g>
                         </g>
                     </g>

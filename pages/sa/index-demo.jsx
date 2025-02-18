@@ -353,7 +353,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
             {/* QUOTES */}
             <section className="block bg-theme o-hidden ">
-                <div className="container columns-2 gap-md">
+                <div className="container columns-2 gap-lg">
                     <Quotation
                         avatarUrl={'/assets/img/sa/haddad-bani.jpg'}
                         quote={'FHS Saudi Arabia 2024 was one of the best industry events I have attended in recent years!'}
@@ -402,7 +402,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
             {/* THEMES */}
             <section className="block bg-primary">
-                <ThemesSlider data={THEMES_DATA} />
+                <ThemesSlider data={THEMES_DATA} link={'/sa/themes'} linkLabel={'Learn more'} />
             </section>
 
 
@@ -451,8 +451,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     </div>
                 </ContentBlock>
             </PhotoGrid>
-            
-
             
 
 
