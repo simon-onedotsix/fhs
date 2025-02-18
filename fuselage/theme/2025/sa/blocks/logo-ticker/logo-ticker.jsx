@@ -14,7 +14,7 @@ export const LogoTicker = ({ heading, speed, children }) => {
                     <p className={CSS.sectionHeading}>{ heading }</p>
                 </Slide>
             </div>
-            <HorizontalTicker duration={ speed ? speed * 1000 : 20000 }>
+            <HorizontalTicker duration={ speed ? speed * 500 : 20000 }>
                 <div className={CSS.logos}>
                     { children }
                 </div>

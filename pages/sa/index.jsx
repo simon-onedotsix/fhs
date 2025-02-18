@@ -300,36 +300,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     </div>
                 </section>
 
-
-                {/* PATRONAGE */}
-                <section className="block bg-primary">
-                    <div className="container center">
-                        <p className="fs-3 fw-600 c-accent caps pb-sm">Under the Patronage of</p>
-
-                        <div className={CSS.patronBox}>
-
-                            <div className={CSS.patronBoxAvatar}>
-                                <Pop>
-                                    <Avatar src={"https://static.swapcard.com/public/images/77e27e150ec94e1d8c549fbb6e6f065b.jpeg"} />
-                                </Pop>
-                            </div>
-
-                            <div className={CSS.patronBoxContent}>
-                                <Pop>
-                                    <p className="fs-6 fw-600 mt-sm">HH Prince Bandar bin Saud bin Khalid Al Saud</p>
-                                    <p className="mt-xxs">
-                                        Secretary General King Faisal Foundation&nbsp;(KFF)<br/>
-                                        Chairman of the Board of Directors Al&nbsp;Khozama
-                                    </p>
-
-                                </Pop>
-                            </div>
-                        </div>
-                        
-                        <p className="mt-xs caps fs-sm c-accent"><Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}><a className="uLink">View biography</a></Link></p>
-                    </div>
-                </section>
-
             </div>
             
             

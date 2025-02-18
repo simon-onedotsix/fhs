@@ -67,7 +67,7 @@ export const Footer = () => {
                                         <Image width={221} height={92} src="/assets/site/the-bench-inverse@2x.png" alt="" />
                                     </a>
                                 </p>
-                                <p className='fw-300 mt-sm'>The Bench has established a legacy for delivering world-leading investment forums and conferences in Europe, Africa, the Middle East, and Latin America. These include AHIC, AHIF, GRIF, AHF, IDEEA, AviaDev and RENEW.</p>
+                                <p className='fw-300 mt-sm'>The Bench has established a legacy for delivering world-leading investment forums and conferences in Europe, Africa, the Middle East, and Latin America. The Bench organises the Future Hospitality Summit (FHS) series including FHS World in Dubai, FHS Saudi Arabia and FHS Africa - and the AviaDev Africa conference.</p>
 
                             </div>
                         </div>
