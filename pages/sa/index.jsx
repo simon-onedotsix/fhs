@@ -33,6 +33,7 @@ import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { VideoTestimonialCard } from "./video-testimonials"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
+import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
 
 import { ActionsTab } from '../../fuselage/components/actions-tab/actions-tab'
 
@@ -61,7 +62,7 @@ import handleSeomaticMeta from '../../lib/seomatic'
 
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
 
-
+import { THEMES_DATA } from "./themes"
 
 const ARTICLE_DATA = [
     {
@@ -217,14 +218,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
     let g2 = useTransform( headerScroll.scrollYProgress, [0, 1], ["-15%", "40%"])
 
 
-    let quoteRef = useRef(null)
-    let quoteScroll = useScroll({ 
-        target: quoteRef,
-        offset: ["start 100%", "end 0%"]
-    })
-    let g3 = useTransform( quoteScroll.scrollYProgress, [0, 1], ["-5%", "5%"])
-
-
 
     return (
         <>
@@ -237,7 +230,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
             <div ref={introRef} className={CSS.themeWrapper}>
-
                 <motion.img className={CSS.deco01} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g1 }}/>
                 <motion.img className={CSS.deco02} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g2 }}/>
 
@@ -274,12 +266,12 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                     2025 Programme
                                 </Button>&ensp;
                                 <Button 
-                                    href={'/sa/post-event-resources'} 
+                                    href={'/sa/download-prospectus'} 
                                     theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                     decal={'fs-5 fw-600'} 
                                     accent
                                 >
-                                    2024 Resources
+                                    Download Prospectus
                                 </Button>
                             </Pop>
                         </div>
@@ -300,41 +292,48 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     </div>
                 </section>
 
+
+                {/* PATRONAGE */}
+                {/* <section className="block bg-primary">
+                    <div className="container center">
+                        <p className="fs-3 fw-600 c-accent caps pb-sm">Under the Patronage of</p>
+
+                        <div className={CSS.patronBox}>
+
+                            <div className={CSS.patronBoxAvatar}>
+                                <Pop>
+                                    <div className={CSS.avatar}>
+                                        <Image src={"https://static.swapcard.com/public/images/77e27e150ec94e1d8c549fbb6e6f065b.jpeg"} layout='fill' alt="" unoptimized />
+                                    </div>
+                                </Pop>
+                            </div>
+
+                            <div className={CSS.patronBoxContent}>
+                                <Pop>
+                                    <p className="fs-4 fw-600">HH Prince Bandar bin Saud bin Khalid Al Saud</p>
+                                    <p className="fs-5 mt-xxs">
+                                        Secretary General King Faisal Foundation&nbsp;(KFF)<br/>
+                                        Chairman of the Board of Directors Al&nbsp;Khozama
+                                    </p>
+
+                                </Pop>
+                            </div>
+                        </div>
+                        
+                        <p className="mt-xs caps fs-sm c-accent"><Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}><a className="uLink">View biography</a></Link></p>
+                    </div>
+                </section> */}
             </div>
-            
-            
-            {/* quote */}
-            <section className="block bg-theme o-hidden ">
-                <div className="container maxw-80">
-                    <Quotation
-                        avatarUrl={'/assets/img/sa/haddad-bani.jpg'}
-                        quote={'FHS Saudi Arabia 2024 was one of the best industry events I have attended in recent years!'}
-                        fullName={'Bani Haddad'}
-                        title={'Managing Director - Hospitality, Aleph Hospitality'}
-                    />
-                </div>
-            </section>
 
 
-            {/* AB interviews */}
+            <Ticker>
+                <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
+                <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
+                <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
+            </Ticker>
 
-            <div className="bg-primary pt-md o-hidden">
-                <SectionHeading heading={'2025 Advisory Board Member Interviews'} inverse />
-            </div>
-            <section className="block bg-primary">
-                <div className="container columns-4 gap-sm">
-                    {
-                        abVideos
-                        ? 
-                            abVideos.map( entry => <Pop key={entry.id}><VideoTestimonialCard entry={entry} /></Pop> )
-                        : 
-                            <p>Currently, there are no testimonials available.</p>
-                    }
-                    
-                </div>
-            </section>
 
-            
+
             <ImpactGrid>
                 <TitleBlock>
                     <SectionHeading heading={'2024 in Numbers'} decal={'c-secondary'} />
@@ -352,11 +351,15 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
 
-            {/* QUOTE */}
-            <section className="block bg-white o-hidden" style={{ position: 'relative' }}>
-                <img className={CSS.deco03} src="/assets/theme/sa-2025/gfk-01.svg" alt=""/>
-
-                <div className="container maxw-80">
+            {/* QUOTES */}
+            <section className="block bg-theme o-hidden ">
+                <div className={`${CSS.quoteGrid} container`}>
+                    <Quotation
+                        avatarUrl={'/assets/img/sa/haddad-bani.jpg'}
+                        quote={'FHS Saudi Arabia 2024 was one of the best industry events I have attended in recent years!'}
+                        fullName={'Bani Haddad'}
+                        title={'Managing Director - Hospitality, Aleph Hospitality'}
+                    />
                     <Quotation
                         avatarUrl={'/assets/img/sa/mizan-abdulla.jpg'}
                         quote={`Stepping into the Future Hospitality Summit felt like entering a realm where innovation knows no bounds. This summit wasn't just an event — it was a transformative experience that ignited my passion for shaping the future of hospitality.`}
@@ -367,6 +370,8 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </section>
 
 
+
+            {/* SPEAKERS */}
             {
                 AB_DATA &&
                 <SpeakerCarousel 
@@ -395,15 +400,22 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             }
 
 
-            <Ticker>
-                <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
-                <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
-                <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
-            </Ticker>
+            {/* THEMES */}
+            <section className="block bg-primary">
+                <ThemesSlider data={THEMES_DATA} link={'/sa/themes'} linkLabel={'Learn more'} />
+            </section>
 
+
+            {/* SPONSORS */}
+            <LogoTicker heading={'Thank You to Our Sponsors & Partners'} speed={120}>
+                {
+                    partners &&
+                    partners.map( logo => <Logo key={logo.id} logoUrl={logo.logoUrl} />)
+                }
+            </LogoTicker>
+            
 
             {/* ANNOUNCEMENTS */}
-
             <ArticleScroller>
                 {
                     ARTICLE_DATA &&
@@ -441,16 +453,8 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </PhotoGrid>
             
 
-            <LogoTicker heading={'Thank You to Our Sponsors & Partners'}>
-                {
-                    partners &&
-                    partners.map( logo => <Logo key={logo.id} logoUrl={logo.logoUrl} />)
-                }
-            </LogoTicker>
-
 
             {/* PREMIUM EXPOSURE FORM */}
-
             <section className="block bg-primary o-hidden columns-2 gap-md" style={{ position: 'relative' }}>
                 <img className={CSS.deco04} src="/assets/theme/sa-2025/gfk-01.svg" alt=""/>
 
@@ -470,20 +474,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 </div>
             </section>
 
-
-            <ActionsTab>
-                <Button 
-                    href={`/sa/download-prospectus`} 
-                    theme={{ 
-                        color: `white`,
-                        background: `var(--secondary)`, 
-                        hover: `var(--secondary-dark)`, 
-                    }} 
-                    decal={`fw-600`}
-                >
-                    Download Prospectus
-                </Button>
-            </ActionsTab>
             
             <Footer />
             <LenisScroller />

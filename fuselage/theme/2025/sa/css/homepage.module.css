@@ -48,6 +48,21 @@
     }
 }
 
+
+.quoteGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+@media (min-width:600px) {
+    .quoteGrid {
+        grid-template-columns: 2fr 3fr;
+    }
+}
+
+
+
+
 .highlightVideoGrid {
     position: relative;
     z-index: 2;
