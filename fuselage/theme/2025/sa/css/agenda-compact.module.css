@@ -220,9 +220,12 @@
 }
 
 .tag {
-    /* color: white; */
     display: flex;
     align-items: center;
+    border-radius: 2rem;
+    padding: 0 .75rem 0 .5rem;
+    font-size: 90%;
+    color: var(--primary);
 }
 .tag span {
     display: inline-block;
