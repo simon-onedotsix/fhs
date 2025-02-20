@@ -294,7 +294,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
                 {/* PATRONAGE */}
-                {/* <section className="block bg-primary">
+                <section className="block bg-primary">
                     <div className="container center">
                         <p className="fs-3 fw-600 c-accent caps pb-sm">Under the Patronage of</p>
 
@@ -322,7 +322,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         
                         <p className="mt-xs caps fs-sm c-accent"><Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}><a className="uLink">View biography</a></Link></p>
                     </div>
-                </section> */}
+                </section>
             </div>
 
 
