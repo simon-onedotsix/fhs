@@ -352,7 +352,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     <p className="mt-md">
                         <Pop>
                             <ButtonKeyline 
-                                href={'/sa/agenda'} 
+                                href={'/sa/investors'} 
                                 decal={'fs-5 fw-600'} 
                                 color={'var(--secondary)'}
                             >
