@@ -19,6 +19,7 @@ import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 import { HeroUnitVideo } from "../../fuselage/theme/2025/sa/blocks/hero-unit-video/hero-unit-video"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
+import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
 
 import { SectionHeading } from "../../fuselage/theme/2025/sa/components/section-heading/section-heading"
 import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
@@ -34,6 +35,7 @@ import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card
 import { VideoTestimonialCard } from "./video-testimonials"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
 import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
+import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/animated-counter/animated-counter"
 
 import { ActionsTab } from '../../fuselage/components/actions-tab/actions-tab'
 
@@ -326,11 +328,40 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </div>
 
 
-            <Ticker>
-                <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
-                <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
-                <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
-            </Ticker>
+            {/* TICKER */}
+            <div className="bg-secondary">
+                <Ticker>
+                    <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
+                    <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
+                    <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
+                </Ticker>
+            </div>
+
+
+            {/* INVESTORS */}
+            <section className="block bg-theme">
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-1 fw-600 lh-1 caps">Investors at FHS Saudi Arabia</p>
+                    </Fade>
+                    <div className="columns-3 gap-sm maxw-55 mx-auto mt-md">
+                        <InvestorImpact figure={283} label={"Investors"} />
+                        <InvestorImpact figure={22} unit={"%"} label={"of Attendees"} />
+                        <InvestorImpact figure={17} label={"Deals Signed"} />
+                    </div>
+                    <p className="mt-md">
+                        <Pop>
+                            <ButtonKeyline 
+                                href={'/sa/agenda'} 
+                                decal={'fs-5 fw-600'} 
+                                color={'var(--secondary)'}
+                            >
+                                View Past Investors
+                            </ButtonKeyline>
+                        </Pop>
+                    </p>
+                </div>
+            </section>
 
 
 
@@ -481,6 +512,20 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
     )
 }
 Home.theme = 'sa-2025'
+
+
+
+const InvestorImpact = ({ figure, unit, label }) => {
+    return (
+        <Pop>
+            <div className={CSS.investorImpact}>
+                <p className={CSS.investorImpactFigure}><AnimatedCounter from={0} to={figure} />{unit}</p>
+                <p className={CSS.investorImpactLabel}>{label}</p>
+            </div>
+        </Pop>
+    )
+}
+
 
 
 

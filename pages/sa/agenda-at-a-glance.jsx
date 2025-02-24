@@ -1,15 +1,10 @@
-
 import Head from "next/head"
 import Image from "next/image"
-import { useRouter } from "next/router"
 
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
-import { useInView } from 'react-intersection-observer'
 
 import _ from 'lodash'
 import { format } from 'date-fns'
-import { formatInTimeZone } from 'date-fns-tz'
-import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { Pop, Fade } from '../../fuselage/animation/animation'
@@ -19,48 +14,67 @@ import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { StickySidebar } from '../../fuselage/theme/2024/global/components/sticky-sidebar/sticky-sidebar'
 import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from "../../fuselage/components/icons/icons"
-// import { SessionGroup, Session, Feature, Duration } from "./agenda-at-a-glance"
 
 import CSS from '../../fuselage/theme/2025/sa/css/agenda-compact.module.css'
 
 
 
-
-// custom topic selection and ordering
-// to revert to API-driven replace the mapped variable with:
-// groupFieldGroupsByName( sessions, 'Topics')
-
-
-const FILTER_TRACKS = [
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEyNg==", "name": "FHS Opening, Awards & Signings" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzNw==", "name": "Restaurant Invest (GRIF)" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==", "name": "Brand & Destination" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzMQ==", "name": "ESG & Human Capital" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzMg==", "name": "Culture & Heritage" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzNQ==", "name": "Investment & Development" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzNg==", "name": "Networking" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzOA==", "name": "Startup Den" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEyOA==", "name": "Talks" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzOQ==", "name": "Tech & Innovation" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzE0MQ==", "name": "Wellness" },
+const tracks = [
+	{
+		id: "1",
+		title: "NextGen - Education Investment",
+		color: "#FFCFCF"
+	},
+	{
+		id: "2",
+		title: "Investment, Financing & Real Estate",
+		color: "#E4DFEC"
+	},
+	{
+		id: "3",
+		title: "Brand & Destination",
+		color: "#7DB4F2"
+	},
+	{
+		id: "4",
+		title: "Luxury, F&B, and Experiential",
+		color: "#E381CB"
+	},
+	{
+		id: "5",
+		title: "Focus on Saudi Arabia",
+		color: "#82EDD1"
+	},
+	{
+		id: "6",
+		title: "Religious Tourisim",
+		color: "#AB57EA"
+	},
+	{
+		id: "7",
+		title: "Sustainability & ESG",
+		color: "#B3C981"
+	},
+	{
+		id: "8",
+		title: "Branded Residences",
+		color: "#FF2B2B"
+	},
+	{
+		id: "9",
+		title: "Wellness",
+		color: "#B8B084"
+	},
+	{
+		id: "10",
+		title: "Technology & Innovation",
+		color: "#6B6DEF"
+	}
 ]
-
-// end custom topic selection and ordering
-
-
-
 
 
 
 export default function Agenda ({ sessions, locations }) {
-
-	const lenis = useLenis()
-	const router = useRouter()
-
-	// const lenis = useLenis(({ scroll }) => {
-	// 	console.log(scroll)
-	// })
-
 
 
 	// BUILD AGENDA
@@ -120,7 +134,6 @@ export default function Agenda ({ sessions, locations }) {
 		return agenda
 	}
 
-
 	
 	// HANDLE SESSION FIELDS (TAGS)
 
@@ -174,8 +187,6 @@ export default function Agenda ({ sessions, locations }) {
 		let obj = array.find( topic => topic.id === fieldId)
 		return obj.name
 	}
-
-
 
 
 
@@ -253,13 +264,6 @@ export default function Agenda ({ sessions, locations }) {
 	// console.log('SEARCH:', search)
 
 
-
-
-	const breakTitle = ( trigger, titleString, splitPoint ) => {
-		if ( !titleString.includes(trigger) ) return titleString
-		let lines = titleString.split(splitPoint)
-		return `${lines[0]}:<br/>${lines[1]}`		
-	}
 
 
 
@@ -841,59 +845,6 @@ Agenda.theme = 'sa-2025'
 
 
 
-
-const tracks = [
-	{
-		id: "1",
-		title: "NextGen - Education Investment",
-		color: "#FFCFCF"
-	},
-	{
-		id: "2",
-		title: "Investment, Financing & Real Estate",
-		color: "#E4DFEC"
-	},
-	{
-		id: "3",
-		title: "Brand & Destination",
-		color: "#7DB4F2"
-	},
-	{
-		id: "4",
-		title: "Luxury, F&B, and Experiential",
-		color: "#E381CB"
-	},
-	{
-		id: "5",
-		title: "Focus on Saudi Arabia",
-		color: "#82EDD1"
-	},
-	{
-		id: "6",
-		title: "Religious Tourisim",
-		color: "#AB57EA"
-	},
-	{
-		id: "7",
-		title: "Sustainability & ESG",
-		color: "#B3C981"
-	},
-	{
-		id: "8",
-		title: "Branded Residences",
-		color: "#FF2B2B"
-	},
-	{
-		id: "9",
-		title: "Wellness",
-		color: "#B8B084"
-	},
-	{
-		id: "10",
-		title: "Technology & Innovation",
-		color: "#6B6DEF"
-	}
-]
 
 
 export const SessionGroup = ({ location, children }) => {
