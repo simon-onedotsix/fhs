@@ -23,6 +23,7 @@ import { AgendaModal } from "../../fuselage/theme/2024/sa/components/agenda-moda
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
 import { Button } from '../../fuselage/theme/2024/sa/components/button/button'
+import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
 
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
@@ -66,7 +67,7 @@ const FILTER_TRACKS = []
 // end custom topic selection and ordering
 
 
-
+import { THEMES_DATA } from "./themes"
 
 
 export default function Agenda ({ sessions, locations }) {
@@ -117,6 +118,10 @@ export default function Agenda ({ sessions, locations }) {
 		rootMargin: '-150px 0px 0px 0px'
 	})
 	const [toggles, togglesInView] = useInView({
+		threshold: 1,
+		rootMargin: '0px 0px 0px 0px'
+	})
+	const [themes, themesInView] = useInView({
 		threshold: 1,
 		rootMargin: '0px 0px 0px 0px'
 	})
@@ -542,7 +547,17 @@ export default function Agenda ({ sessions, locations }) {
             <Header compact shim />
 
 
-            <section className="block">
+			{/* THEMES */}
+			<section className="block bg-primary" style={{ position: 'relative', zIndex: 2}}>
+				<ThemesSlider data={THEMES_DATA} link={'/sa/themes'} linkLabel={'Learn more'} />
+				<div className="continer maxw-40">
+
+				</div>
+			</section>
+
+
+
+            <section ref={agenda} className="block">
                 
 				<span id="agenda"/>
 
