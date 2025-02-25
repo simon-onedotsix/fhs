@@ -5,6 +5,8 @@ export const AnimatedCounter = ({ from, to, animationOptions }) => {
     const ref = useRef(null)
     const inView = useInView(ref, {once: false})
 
+    // console.log(`${to} ${Number.isInteger(to)}`)
+
     useEffect(() => {
         const element = ref.current
 
@@ -18,7 +20,7 @@ export const AnimatedCounter = ({ from, to, animationOptions }) => {
             ease: 'easeOut',
             ...animationOptions,
             onUpdate(value) {
-                element.textContent = value.toFixed(0)
+                element.textContent = value.toFixed( Number.isInteger(to) ? 0 : 1 )
             } 
         })
 

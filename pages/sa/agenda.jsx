@@ -121,10 +121,6 @@ export default function Agenda ({ sessions, locations }) {
 		threshold: 1,
 		rootMargin: '0px 0px 0px 0px'
 	})
-	const [themes, themesInView] = useInView({
-		threshold: 1,
-		rootMargin: '0px 0px 0px 0px'
-	})
 
 
 
@@ -557,7 +553,7 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-            <section ref={agenda} className="block">
+            <section className="block">
                 
 				<span id="agenda"/>
 

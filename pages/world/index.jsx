@@ -44,10 +44,12 @@ import {
 
 import handleSeomaticMeta from '../../lib/seomatic'
 
-import CSS from '../../fuselage/theme/2024/world/css/homepage.module.css'
-
 import { THEMES_DATA } from "./themes"
 import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
+import { InvestorImpact } from "../../fuselage/components/impact-figure/impact-figure"
+import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
+
+import CSS from '../../fuselage/theme/2024/world/css/homepage.module.css'
 
 
 const photos = [
@@ -246,60 +248,80 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </section>
 
 
-            {/* DOWNLOADS */}
+            {/* PATRONAGE */}
+            <section className="block bg-primary">
+                <div className="container center">
+                    <p className="fs-3 fw-600 c-secondary caps pb-sm">Under the Patronage of</p>
 
-            {/* <section className="block">
-                <div className="container">
-                    <Fade>
-                        <div className="flex flex-wrap jc-center gap-xs">
-                            <span 
-                                onClick={() => {
-                                    console.log('modal button clicked')
-                                        setModalContent(
-                                            <>
-                                                <div className={CSS.popupHeader}>
-                                                    <p className="fs-5 fw-600 lh-1 mb-sm">Download Event Brochure</p>
-                                                    <img className={CSS.popupHeaderImage} src="/assets/site/ae/FHSWorld-brochure-mockup.png" alt=""/>
-                                                </div>
+                    <div className={CSS.patronBox}>
 
-                                                <HubspotForm portalId={`14527187`} formId={'40f2dd9c-9f5a-41c2-9d78-f35a170107d4'} />
-                                            </>
-                                        )
-                                        setShowModal(true)
-                                
-                                }}>
-                                <Button decal={`fs-5 fw-600`} theme={{ background: `var(--secondary-1)`, hover: `white`, color: `var(--primary)`}} target={`_blank`}>Download Event Brochure</Button>
-                            </span>
-                            
-                            <span 
-                                onClick={() => {
-                                    console.log('modal button clicked')
-                                        setModalContent(
-                                            <>
-                                                <div className={CSS.popupHeader}>
-                                                    <p className="fs-4 fw-600 lh-1">Download FHS 2023 Post-event Report</p>
-                                                    <img className={CSS.popupHeaderImage} src="/assets/site/ae/FHS2023-post-show-report.png" alt=""/>
-                                                </div>
-
-                                                <HubspotForm portalId={`14527187`} formId={'c2b14f19-e6b6-478f-83ac-e76e9facc2c6'} />
-                                            </>
-                                        )
-                                        setShowModal(true)
-                                
-                                }}>
-                                <Button decal={`fs-5 fw-600`} theme={{ background: `var(--secondary-1)`, hover: `white`, color: `var(--primary)`}} target={`_blank`}>Download FHS 2023 Post-event Report</Button>
-                            </span>
-
+                        <div className={CSS.patronBoxAvatar}>
+                            <Pop>
+                                <div className={CSS.avatar}>
+                                    <Image src={"https://cms.thebench.com/assets/img/avatars/H.H.-Sheikh-Ahmed-bin-Saeed-Al-Maktoum.jpeg"} layout='fill' alt="" unoptimized />
+                                </div>
+                            </Pop>
                         </div>
-                    </Fade>
+
+                        <div className={CSS.patronBoxContent}>
+                            <Pop>
+                                <p className="fs-4 fw-600">His Highness Sheikh Ahmed bin Saeed Al Maktoum</p>
+                                <p className="fs-5 mt-xxs">
+                                    Founding Patron, AHIC/FHS
+                                </p>
+                                <p className="fs-5 mt-xxs">
+                                    President, Dubai Civil Aviation Authority
+                                </p>
+                                <p className="fs-5 mt-xxs">
+                                    Chairman, Dubai Airports
+                                </p>
+                                <p className="fs-5 mt-xxs">
+                                    Chairman and Chief Executive, Emirates Airline & Group
+                                </p>
+                                <p className="fs-5 mt-xxs">
+                                    Chairman, Dubai Holding
+                                </p>
+
+                            </Pop>
+                        </div>
+                    </div>
+                    
+                    <p className="mt-xs caps fs-sm c-secondary"><Link href={'/world/speakers/profile/h-h-sheikh-ahmed-bin-saeed-al-maktoum'}><a className="uLink">View biography</a></Link></p>
                 </div>
-            </section> */}
+            </section>
+
 
 
             <section className="block">
                 <ThemesSlider data={THEMES_DATA} link={'/world/themes'} linkLabel={'Learn More'} />
             </section>
 
+
+            {/* INVESTORS */}
+            <section className="block bg-pattern-primary-50-dark">
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-1 fw-600 lh-1 caps">Investors at FHS World</p>
+                    </Fade>
+                    <div className="columns-4 gap-sm mt-md">
+                        <InvestorImpact figure={239} label={"Investors"} />
+                        <InvestorImpact figure={4.5} prefix={"$"} unit={"tn"} label={"Assets Under Management"} />
+                        <InvestorImpact figure={78} label={"Introductions Facilitated"} />
+                        <InvestorImpact figure={22} label={"Meetings Scheduled"} />
+                    </div>
+                    <p className="mt-md">
+                        <Pop>
+                            <ButtonKeyline 
+                                href={'/world/investors'} 
+                                decal={'fs-5 fw-600'} 
+                                color={'var(--primary)'}
+                            >
+                                View Past Investors
+                            </ButtonKeyline>
+                        </Pop>
+                    </p>
+                </div>
+            </section>
 
             
             {/* LAUNCH STATEMENT */}
@@ -471,25 +493,6 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 { modalContent } 
             </PopupOverlay>
 
-
-            {/* <Script id="chatbot" strategy="afterInteractive">
-                {`
-                    (function(d,t) {
-                        var BASE_URL="https://app.chatlyn.com";
-                        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-                        g.src=BASE_URL+"/packs/js/sdk.js";
-                        g.defer = true;
-                        g.async = true;
-                        s.parentNode.insertBefore(g,s);
-                        g.onload=function(){
-                        window.chatwootSDK.run({
-                        websiteToken: 'M83YXfr8QveNibKc6eFniAuA',
-                        baseUrl: BASE_URL
-                        })
-                        }
-                    })(document,"script");;
-                `}
-            </Script> */}
         </>
     )
 }

@@ -9,7 +9,7 @@
     --primary-1: #3C1A52;
     
     --primary-2: #6E439A;
-    --primary-2-dark: #5a3182;
+    --primary-2-dark: #4a2a6b;
     
     --primary-3: #9972AB;
 
@@ -85,6 +85,7 @@
 
 
 [data-theme='world-2024'] .c-primary { color: var(--primary); }
+[data-theme='world-2024'] .c-primary-1 { color: var(--primary-1); }
 [data-theme='world-2024'] .c-primary-2 { color: var(--primary-2); }
 [data-theme='world-2024'] .c-primary-3 { color: var(--primary-3); }
 [data-theme='world-2024'] .c-secondary { color: var(--secondary); }
@@ -107,7 +108,9 @@
 [data-theme='world-2024'] .bg-global { background-color: var(--bg-global); }
 
 [data-theme='world-2024'] .bg-primary { background-color: var(--primary); }
+[data-theme='world-2024'] .bg-primary-1 { background-color: var(--primary-1); }
 [data-theme='world-2024'] .bg-primary-2 { background-color: var(--primary-2); }
+[data-theme='world-2024'] .bg-primary-2-dark { background-color: var(--primary-2-dark); }
 [data-theme='world-2024'] .bg-secondary { background-color: var(--secondary); }
 [data-theme='world-2024'] .bg-accent { background-color: var(--accent); }
 
@@ -133,6 +136,16 @@
 
 [data-theme='world-2024'] .bg-pattern-primary-50 { 
     background-color: var(--primary);
+    background-image: url('/assets/theme/world-2024/fhs-pattern-purple-50.png');
+    background-size: 50%;
+    background-position: top center;
+
+    @media(max-width:600px) {
+        background-size: 125%;
+    }
+}
+[data-theme='world-2024'] .bg-pattern-primary-50-dark { 
+    background-color: var(--primary-2-dark);
     background-image: url('/assets/theme/world-2024/fhs-pattern-purple-50.png');
     background-size: 50%;
     background-position: top center;

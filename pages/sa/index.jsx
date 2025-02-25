@@ -515,11 +515,11 @@ Home.theme = 'sa-2025'
 
 
 
-const InvestorImpact = ({ figure, unit, label }) => {
+export const InvestorImpact = ({ prefix, figure, unit, label }) => {
     return (
         <Pop>
             <div className={CSS.investorImpact}>
-                <p className={CSS.investorImpactFigure}><AnimatedCounter from={0} to={figure} />{unit}</p>
+                <p className={CSS.investorImpactFigure}>{prefix}<AnimatedCounter from={0} to={figure} />{unit}</p>
                 <p className={CSS.investorImpactLabel}>{label}</p>
             </div>
         </Pop>
