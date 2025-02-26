@@ -72,7 +72,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                 />
             </span>
         
-            <header ref={hideEventsBarTrigger} className={`${CSS.layout} ${overlaid && CSS.overlaid} ${compact && CSS.compact}`}>
+            <header ref={hideEventsBarTrigger} className={`${CSS.layout} ${overlaid && CSS.overlaid} ${compact && CSS.compact} no-print`}>
 
                 <section className={CSS.brandWrapper}>
                     <div className={`${CSS.brand}`}>

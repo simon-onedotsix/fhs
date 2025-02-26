@@ -1,20 +1,23 @@
 import { useRef } from 'react'
 
-import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
-import { motion, useScroll, useTransform } from "framer-motion"
-import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
-import { Reveal } from "../../fuselage/animation/reveal"
-
 import Image from 'next/image'
 
-import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
-import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
-
-import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
-import { FhsLockup } from '../../fuselage/theme/2025/sa/components/logos/fhs-brand'
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+import { motion, useScroll, useTransform } from "framer-motion"
 
 import { SmartTicker } from 'react-smart-ticker'
 import parse from 'html-react-parser'
+
+import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
+import { Reveal } from "../../fuselage/animation/reveal"
+
+import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
+import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
+import { FhsLockup } from '../../fuselage/theme/2025/sa/components/logos/fhs-brand'
+import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
+import { ButtonKeyline } from '../../fuselage/theme/2024/world/components/button-keyline/button-keyline'
+
 
 import CSS from '../../fuselage/theme/2025/sa/css/nextgen-investment-forum.module.css'
 
@@ -199,6 +202,52 @@ export default function Page () {
                     </section>
                 </section>
 
+
+                <section className="block bg-theme">
+                    <div className="container center">
+                        <p className='fs-0'>Featured Speakers</p>
+                    </div>
+                    <div className="container center columns-3 gap-md maxw-60">
+                        <Pop>
+                            <SpeakerCard
+                            color={'c-accent'}
+                                photoUrl={'/assets/img/sa/nextgen-forum/abeer-green.jpg'}
+                                fullName={'Dr. Abeer A. Alamri'}
+                                jobTitle={'Strategic Planning and Monitoring Deputyship'}
+                                company={'Ministry of Tourism'}
+                            />
+                        </Pop>
+                        <Pop delay={.05}>
+                            <SpeakerCard
+                            color={'c-accent'}
+                                photoUrl={'/assets/img/sa/nextgen-forum/dr-fabien.jpg'}
+                                fullName={'Dr. Abeer A. Alamri'}
+                                jobTitle={'CEO'}
+                                company={'Riyadh School of Tourism and Hospitality'}
+                            />
+                        </Pop>
+                        <Pop delay={.1}>
+                            <SpeakerCard
+                            color={'c-accent'}
+                                photoUrl={'/assets/img/sa/nextgen-forum/aj-singh.jpg'}
+                                fullName={'A.J Singh'}
+                                jobTitle={'Founding Director'}
+                                company={'Hospitality and Tourism Management'}
+                            />
+                        </Pop>
+                    </div>
+                    <div className="container center">
+                        <Pop inline>
+                            <ButtonKeyline 
+                                href={'/sa/speakers'} 
+                                decal={'fs-5 fw-600'} 
+                                color={'var(--secondary)'}
+                            >
+                                View All Speakers
+                            </ButtonKeyline>
+                        </Pop>
+                    </div>
+                </section>
 
 
                 {/* components */}
