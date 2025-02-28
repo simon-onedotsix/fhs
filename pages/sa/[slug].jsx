@@ -1,3 +1,5 @@
+import { useRouter } from "next/router"
+
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
@@ -7,6 +9,8 @@ import Head from "next/head"
 
 import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
+import { PopOver } from "../../fuselage/components/popover/popover"
+import { StartupPromo } from "."
 
 import handleContentBlocks from "../../lib/content-blocks"
 
@@ -34,7 +38,10 @@ import handleSeomaticMeta from '../../lib/seomatic'
 
 export default function Page ({ entry, seomatic }) {
 
+    const router = useRouter()
+  
     // console.log('entry:', entry) 
+    // console.log('router:', router.query.slug)
   
     return (
         <div>
@@ -47,6 +54,15 @@ export default function Page ({ entry, seomatic }) {
             <Header compact />
             
             {handleContentBlocks( entry.fhisContentBlocks, null, null, 'sa' )}
+
+
+            {/* only show popover on specific pages */}
+            {
+                router.query.slug === "become-a-sponsor" &&
+                <PopOver>
+                    <StartupPromo />
+                </PopOver>
+            }
 
             <Footer />
             <LenisScroller />

@@ -509,25 +509,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
             <PopOver>
-                <div className="formatted">
-                    <p className="fs-3 fw-600 c-primary lh-1">Startups - Discounted Exhibition Stand</p>
-                    <p>Showcase your innovative product/solution at FHS &amp; connect with investors, hospitality leaders, and decision-makers for just <strong>$2500!</strong></p>
-                    <ul className={`${CSS.tickboxList} fw-500`}>
-                        <li>Branded Exhibition Stand (1x0.5m)</li>
-                        <li>Full-Access Delegate Pass</li>
-                        <li>Attendee List Acccess</li>
-                    </ul>
-                    <p className="fs-sm pb-xs"><TickIcon/>Revenue &lt; $1M | <TickIcon/>2-30 employees | <TickIcon/>Seed-stage funding | <TickIcon/>&lt; 3 years in operation</p>
-                    <Pop>
-                        <Button 
-                            href={'https://share.hsforms.com/1Z4wBBQkfQ8ej6EySFQJh6w8nd8z'} 
-                            target={'_blank'}
-                            decal={'fs-6 fw-600'} 
-                        >
-                            APPLY NOW
-                        </Button>
-                    </Pop>
-                </div>
+                <StartupPromo />
             </PopOver>
 
             
@@ -551,7 +533,31 @@ export const InvestorImpact = ({ prefix, figure, unit, label }) => {
     )
 }
 
-const TickIcon = () => <img src="/assets/ui/icon-tick.svg" alt="" style={{ height: 12, marginRight: 5 }} />
+export const StartupPromo = () => {
+    return (
+        <div className="formatted">
+            <p className="fs-3 fw-600 c-primary lh-1">Startups - Discounted Exhibition Stand</p>
+            <p>Showcase your innovative product/solution at FHS &amp; connect with investors, hospitality leaders, and decision-makers for just <strong>$2500!</strong></p>
+            <ul className={`${CSS.tickboxList} fw-500`}>
+                <li>Branded Exhibition Stand (1x0.5m)</li>
+                <li>Full-Access Delegate Pass</li>
+                <li>Attendee List Acccess</li>
+            </ul>
+            <p className="fs-sm pb-xs"><TickIcon/>&nbsp;Revenue &lt; $1M | <TickIcon/>&nbsp;2-30 employees | <TickIcon/>&nbsp;Seed-stage funding | <TickIcon/>&lt;&nbsp;3 years in operation</p>
+            <Pop>
+                <Button 
+                    href={'https://share.hsforms.com/1Z4wBBQkfQ8ej6EySFQJh6w8nd8z'} 
+                    target={'_blank'}
+                    decal={'fs-6 fw-600'} 
+                >
+                    APPLY NOW
+                </Button>
+            </Pop>
+        </div>
+    )
+}
+
+const TickIcon = () => <img src="/assets/ui/icon-tick.svg" alt="" style={{ height: 12, marginRight: 1 }} />
 
 
 
