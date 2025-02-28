@@ -229,3 +229,24 @@
     }
 
 }
+
+
+
+
+.tickboxList {
+    list-style: none !important;
+    padding: 0!important;
+}
+.tickboxList li::before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: .2rem;
+    background-color: var(--secondary);
+    margin-right: .5rem;
+    background-image: url('/assets/ui/icon-tick-white.svg');
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: 65% center;
+}
