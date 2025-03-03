@@ -94,65 +94,20 @@ const ARTICLE_DATA = [
     }
 ]
 
-const AB_DATA = [
-    {
-        url: `/sa/speakers/profile/khalid-saud-abu-haimed`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Abu-Haimed_Khalid-Saud_pic2_2023-07-05-064306_cgrk.jpg',
-        fullName: 'Khalid Saud Abu Haimed',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Al Khozama Investments',
-    },
-    {
-        url: `/sa/speakers/profile/sultan-bader-al-otaibi`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Otaibi_Sultan_photo.jpg',
-        fullName: 'Sultan Bader Al-Otaibi',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Taiba Investments',
-    },
-    {
-        url: `/sa/speakers/profile/mae-al-mozaini`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Mozaini_Mae_hi-res-photo.jpeg',
-        fullName: 'Mae Al Mozaini',
-        jobTitle: 'Founder & CEO',
-        company: `The Arab Institute for Women's Empowerment - Nusf`,
-    },
-    {
-        url: `/sa/speakers/profile/mohammad-al-athel`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Athel_Mohammad_photo.jpg',
-        fullName: 'Mohammad Alathel',
-        jobTitle: 'Managing Director',
-        company: `Amsa Hospitality`,
-    },
-    {
-        url: `/sa/speakers/profile/manuel-schneider`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Manuel-Schneider_profile-photo-1.jpg',
-        fullName: 'Manuel Schneider',
-        jobTitle: 'Representative',
-        company: `A PIF Company`,
-    },
-    {
-        url: `/sa/speakers/profile/abdallah-azhari`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/AZHARI_ABDALLAH_sq.jpg',
-        fullName: 'Abdullah Azhari',
-        jobTitle: 'Chief Executive Officer',
-        company: `Saudi Icon`,
-    }
-]
-
 const SPEAKER_DATA = [
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/77e27e150ec94e1d8c549fbb6e6f065b.jpeg',
-        fullName: 'HH Prince Bandar bin Saud bin Khalid Al Saud',
-        jobTitle: 'Secretary General King Faisal Foundation (KFF) | Chairman of the Board of Directors Al Khozama',
-        company: '',
-    },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgyNzk=`,
         photoUrl: 'https://static.swapcard.com/public/images/aa283dd8d6b747a3ba4c7db9039e57e2.jpeg',
         fullName: 'Waleed AlRashed AlHumaid',
         jobTitle: 'Chief Executive Officer',
         company: 'Alrajhi Capital',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc3MDYzMTQ=`,
+        photoUrl: 'https://static.swapcard.com/public/images/2d0ccacdbd4a4a5cab7230fab32d2763.jpeg',
+        fullName: 'Julia Simpson',
+        jobTitle: 'President & CEO',
+        company: 'World Travel & Tourism Council',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwMDUxOTU=`,
@@ -162,13 +117,6 @@ const SPEAKER_DATA = [
         company: 'Taiba Investments',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MTkzNzc=`,
-        photoUrl: 'https://static.swapcard.com/public/images/aed31042fa48418e9ad796226f2b3676.jpeg',
-        fullName: 'Steven Greenway',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Flyadeal',
-    },
-    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
         photoUrl: 'https://static.swapcard.com/public/images/be577fb8e2b044c98cc51dc0dc10fb55.jpeg',
         fullName: 'Nikolina Angelkova',
@@ -176,32 +124,11 @@ const SPEAKER_DATA = [
         company: '',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5Mzc4NzY=`,
-        photoUrl: 'https://static.swapcard.com/public/images/761b085b2385463baabb37776817bcae.jpeg',
-        fullName: 'Ron Pohl',
-        jobTitle: 'President',
-        company: 'BWH Hotels',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MTk4MzI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/93e21228749a4f0480a74e05cd7f65e4.jpeg',
-        fullName: 'Jeff Tisdall',
-        jobTitle: 'Chief Business Officer, Accor One Living | Global Head of Mixed-Use, Accor',
-        company: '',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcyMjQwNzQ=`,
-        photoUrl: 'https://static.swapcard.com/public/images/2ca186381f1a453c84f2b9e39d502d5b.jpeg',
-        fullName: 'Muin Serhan',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1OTk1ODI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
+        fullName: 'Maud Bailly',
         jobTitle: 'Chief Executive Officer',
-        company: 'Amsa Hospitality',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwMDUxMzc=`,
-        photoUrl: 'https://static.swapcard.com/public/images/bd21592bd99c45d3afe4fb5b2ccc5f1c.jpeg',
-        fullName: 'Gregory Lanter',
-        jobTitle: 'Group Deputy CEO',
-        company: 'Club Med',
+        company: 'Sofitel Legend, Sofitel, MGallery & Emblems',
     }
 ]
 
@@ -405,7 +332,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
             {/* SPEAKERS */}
             {
-                AB_DATA &&
+                SPEAKER_DATA &&
                 <SpeakerCarousel 
                     heading={`2025 Speakers`} 
                     color={`c-secondary`}

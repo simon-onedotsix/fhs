@@ -207,7 +207,7 @@ export default function Page () {
                     <div className="container center">
                         <p className='fs-0'>Featured Speakers</p>
                     </div>
-                    <div className="container center columns-3 gap-md maxw-60">
+                    <div className="container center columns-5 gap-md">
                         <Pop>
                             <SpeakerCard
                             color={'c-accent'}
@@ -235,6 +235,25 @@ export default function Page () {
                                 company={'Hospitality and Tourism Management'}
                             />
                         </Pop>
+                        <Pop delay={.2}>
+                            <SpeakerCard
+                            color={'c-accent'}
+                                photoUrl={'https://static.swapcard.com/public/images/6f7ac5e6899849429e30e768190d52aa.jpeg'}
+                                fullName={'Lameese Damiri'}
+                                jobTitle={'Head of Education'}
+                                company={'UN Tourism'}
+                            />
+                        </Pop>
+                        <Pop delay={.15}>
+                            <SpeakerCard
+                            color={'c-accent'}
+                                photoUrl={'https://cdn-api.swapcard.com/public/images/3e48bf508a3f4f5a855d9b179a19b4ec.jpeg'}
+                                fullName={'Louis Nicolas Barrios'}
+                                jobTitle={'Regional Manager, Innovation, Education and Investment'}
+                                company={'UN Tourism'}
+                            />
+                        </Pop>
+                        
                     </div>
                     <div className="container center">
                         <Pop inline>
