@@ -43,28 +43,6 @@ import CSS from '../../css/app/agenda-sa-2025.module.css'
 
 
 
-// custom topic selection and ordering
-// to revert to API-driven replace the mapped variable with:
-// groupFieldGroupsByName( sessions, 'Topics')
-
-
-const FILTER_TRACKS_2024 = [
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEyNg==", "name": "FHS Opening, Awards & Signings" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzNw==", "name": "Restaurant Invest (GRIF)" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==", "name": "Brand & Destination" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzMQ==", "name": "ESG & Human Capital" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzMg==", "name": "Culture & Heritage" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzNQ==", "name": "Investment & Development" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzNg==", "name": "Networking" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzOA==", "name": "Startup Den" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEyOA==", "name": "Talks" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzOQ==", "name": "Tech & Innovation" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzE0MQ==", "name": "Wellness" },
-]
-
-const FILTER_TRACKS = []
-
-// end custom topic selection and ordering
 
 
 import { THEMES_DATA } from "./themes"
@@ -503,24 +481,33 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
+	// TRACKS =====================================
 
+	
+	const FILTER_TRACKS = _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc'])
 
-
-	// const getSessionsWithType = ( sessionData ) => {
-	// 	let array = []
-
-	// 	sessionData.forEach( session => {
-	// 		session.fields.forEach( field => { if (field.definition.name === 'Type') { array.push(session) } })
-	// 	})
-		
-	// 	console.log('generic sessions:', array )
-	// }
-
-	// getSessionsWithType( sessions )
-
-
-
-
+	// custom topic selection and ordering
+	// to revert to API-driven replace the mapped variable with:
+	// groupFieldGroupsByName( sessions, 'Topics')
+	
+	const FILTER_TRACKS_ORDERED = [
+		{ "id": "RmllbGRWYWx1ZV8yNjYzMzYxMQ==", "name": "NextGen Talent & Hospitality Education" },
+		{ "id": "RmllbGRWYWx1ZV8yMzI1MzEzMQ==", "name": "ESG & Human Capital" },
+		{ "id": "RmllbGRWYWx1ZV8yMzI1MzEzNQ==", "name": "Investment & Development" },
+		{ "id": "RmllbGRWYWx1ZV8yMzI1MzEzOQ==", "name": "Technology and Innovation" },
+		{ "id": "RmllbGRWYWx1ZV8yNDM0OTA0Mw==", "name": "Hotelisation of Traditional Assets" },
+		{ "id": "RmllbGRWYWx1ZV8yNDM0OTA1OQ==", "name": "Branding & Culture" },
+		{ "id": "RmllbGRWYWx1ZV8yNDU2NzA5MQ==", "name": "Branded Residences" },
+		{ "id": "RmllbGRWYWx1ZV8yNDU2NzE4OQ==", "name": "Focus on Saudi Arabia" },
+		{ "id": "RmllbGRWYWx1ZV8yNDU3Mjg5MQ==", "name": "Sustainability & Innovation" },
+		{ "id": "RmllbGRWYWx1ZV8yNDU4Nzc2OQ==", "name": "Wellness & Medical Tourism" },
+		{ "id": "RmllbGRWYWx1ZV8yNjYzMzY0NA==", "name": "Luxury, F&B, and Experiential Hospitality" },
+		{ "id": "RmllbGRWYWx1ZV8yNjYzMzY0NQ==", "name": "Sustainability & ESG" },
+		{ "id": "RmllbGRWYWx1ZV8yNjYzMzY3Mw==", "name": "Investment, Finance & Real Estate " },
+		{ "id": "RmllbGRWYWx1ZV8yNjYzMzYxNQ==", "name": "Religious Tourism" }
+	]
+	
+	// end custom topic selection and ordering
 
 
 
@@ -593,7 +580,7 @@ export default function Agenda ({ sessions, locations }) {
 						<div className={`${CSS.filterLayout} ${CSS.filterGroup} ${ !utiltiesInView && CSS.fixed } ${filtersActive && CSS.active}`}>
 							{/* tracks (topics) */}
 							{
-								FILTER_TRACKS.length ?
+								FILTER_TRACKS_ORDERED.length ?
 									<section className={CSS.filterLayoutButtons}>
 										<Menu 
 											menuButton={
@@ -607,7 +594,7 @@ export default function Agenda ({ sessions, locations }) {
 											<div className="columns-2">
 												{
 													sessions &&
-													FILTER_TRACKS.map( 
+													FILTER_TRACKS_ORDERED.map( 
 														filter => <MenuItem key={filter.id} onClick={() => {
 															setSelectedTopic(filter.id)
 															lenis.scrollTo('#agenda', { duration: 1 })
