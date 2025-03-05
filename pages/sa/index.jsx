@@ -110,11 +110,11 @@ const SPEAKER_DATA = [
         company: 'World Travel & Tourism Council',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwMDUxOTU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/7b395ba5c8d146cb970582231d498e01.jpeg',
-        fullName: 'Sultan Bader Al-Otaibi',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc5MDEyNjk=`,
+        photoUrl: 'https://static.swapcard.com/public/images/7ffaec8014ff4f33bd453f98c0e67b51.jpeg',
+        fullName: 'Nick Candy',
         jobTitle: 'Chief Executive Officer',
-        company: 'Taiba Investments',
+        company: 'Candy Capital',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
