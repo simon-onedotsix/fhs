@@ -69,7 +69,7 @@ function Speaker({ speaker, sessions }) {
 								{format(new Date( day.beginsAt ), 'EEEE dd MMMM: HH:mm')} - {format(new Date( day.endsAt ), 'HH:mm')}
 							</p>
 							{/* <p>{day.id} ---> {day.id.slice(0, -2)}</p> */}
-							<Link href={`/sa/agenda?session=${day.id.slice(0, -2)}`}><span className="fs-5 fw-600 c-white uLink">{ day.title }</span></Link>
+							<Link href={`/sa/agenda?session=${day.id.slice(0, -2)}`}><span className="fs-5 fw-600 uLink">{ day.title }</span></Link>
 						</div>
 					))
 				}
