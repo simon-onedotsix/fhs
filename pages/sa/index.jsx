@@ -253,6 +253,20 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         <p className="mt-xs caps fs-sm c-accent"><Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}><a className="uLink">View biography</a></Link></p>
                     </div>
                 </section>
+
+
+                {/* SUPPORTERS */}
+                <section className="block bg-primary">
+                    <div className="container center">
+                        <p className="fs-3 fw-600 c-accent caps">Supporters</p>
+                            <Pop>
+                                <div className={`${CSS.hostSponsorLogoWrapper} mt-sm mx-auto`}>
+                                    <Image src={`/assets/site/sa/unt-white.png`} width={800} height={624}/>
+                                    <Image src={`/assets/site/sa/wttc-white.png`} width={800} height={712}/>
+                                </div>
+                            </Pop>
+                    </div>
+                </section>
             </div>
 
 
@@ -292,44 +306,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </section>
 
 
-
-            <ImpactGrid>
-                <TitleBlock>
-                    <SectionHeading heading={'2024 in Numbers'} decal={'c-secondary'} />
-                </TitleBlock>
-                <ImpactFigure decal={'bg-neutral-01'} figure={1329} impact={'Attendees'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={38} impact={'Countries'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={206} impact={'Speakers'}  />
-                <ImpactFigure decal={'bg-neutral-01'} figure={95} impact={'Sponsors & Partners'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={80} unit={'%'} impact={'C-Level Executives, VP & Directors'}  />
-                <ImpactFigure />
-                <ImpactFigure decal={'bg-neutral-01'} figure={94} unit={'%'} impact={'of those surveyed indicated FHS Saudi Arabia met their objective of gaining the latest market insights.'} />
-                <ImpactFigure decal={'bg-neutral-02'} figure={84} unit={'%'} impact={'of those surveyed indicated FHS Saudi Arabia met their objective of finding new business opportunities.'} />
-                <ImageBlock />
-            </ImpactGrid>
-
-
-
-            {/* QUOTES */}
-            <section className="block bg-theme o-hidden ">
-                <div className={`${CSS.quoteGrid} container`}>
-                    <Quotation
-                        avatarUrl={'/assets/img/sa/haddad-bani.jpg'}
-                        quote={'FHS Saudi Arabia 2024 was one of the best industry events I have attended in recent years!'}
-                        fullName={'Bani Haddad'}
-                        title={'Managing Director - Hospitality, Aleph Hospitality'}
-                    />
-                    <Quotation
-                        avatarUrl={'/assets/img/sa/mizan-abdulla.jpg'}
-                        quote={`Stepping into the Future Hospitality Summit felt like entering a realm where innovation knows no bounds. This summit wasn't just an event — it was a transformative experience that ignited my passion for shaping the future of hospitality.`}
-                        fullName={'Abdulla Mizan'}
-                        title={'Director, Procurement at Maldives Fund Management Corporation'}
-                    />
-                </div>
-            </section>
-
-
-
             {/* SPEAKERS */}
             {
                 SPEAKER_DATA &&
@@ -357,6 +333,41 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     }
                 </SpeakerCarousel>
             }
+
+
+            <ImpactGrid>
+                <TitleBlock>
+                    <SectionHeading heading={'2024 in Numbers'} decal={'c-secondary'} />
+                </TitleBlock>
+                <ImpactFigure decal={'bg-neutral-01'} figure={1329} impact={'Attendees'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={38} impact={'Countries'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={206} impact={'Speakers'}  />
+                <ImpactFigure decal={'bg-neutral-01'} figure={95} impact={'Sponsors & Partners'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={80} unit={'%'} impact={'C-Level Executives, VP & Directors'}  />
+                <ImpactFigure />
+                <ImpactFigure decal={'bg-neutral-01'} figure={94} unit={'%'} impact={'of those surveyed indicated FHS Saudi Arabia met their objective of gaining the latest market insights.'} />
+                <ImpactFigure decal={'bg-neutral-02'} figure={84} unit={'%'} impact={'of those surveyed indicated FHS Saudi Arabia met their objective of finding new business opportunities.'} />
+                <ImageBlock />
+            </ImpactGrid>
+
+
+            {/* QUOTES */}
+            <section className="block bg-theme o-hidden ">
+                <div className={`${CSS.quoteGrid} container`}>
+                    <Quotation
+                        avatarUrl={'/assets/img/sa/haddad-bani.jpg'}
+                        quote={'FHS Saudi Arabia 2024 was one of the best industry events I have attended in recent years!'}
+                        fullName={'Bani Haddad'}
+                        title={'Managing Director - Hospitality, Aleph Hospitality'}
+                    />
+                    <Quotation
+                        avatarUrl={'/assets/img/sa/mizan-abdulla.jpg'}
+                        quote={`Stepping into the Future Hospitality Summit felt like entering a realm where innovation knows no bounds. This summit wasn't just an event — it was a transformative experience that ignited my passion for shaping the future of hospitality.`}
+                        fullName={'Abdulla Mizan'}
+                        title={'Director, Procurement at Maldives Fund Management Corporation'}
+                    />
+                </div>
+            </section>
 
 
             {/* THEMES */}

@@ -130,16 +130,22 @@ export default function Agenda ({ sessions, locations }) {
 
 			if ( session.speakers.length ) {
 				session.speakers.forEach( speaker => {
-					searchContent = searchContent + ` ${speaker.firstName.toLowerCase()} `
-					searchContent = searchContent + ` ${speaker.lastName.toLowerCase()} `
-					searchContent = searchContent + ` ${speaker.jobTitle?.toLowerCase()} `
-					searchContent = searchContent + ` ${speaker.organization?.toLowerCase()} `
+					searchContent = searchContent + ` ${speaker.firstName.toLowerCase()}`
+					searchContent = searchContent + ` ${speaker.lastName.toLowerCase()}`
+					searchContent = searchContent + ` ${speaker.jobTitle?.toLowerCase()}`
+					searchContent = searchContent + ` ${speaker.organization?.toLowerCase()}`
 				})
 			}
 
-			// console.log('searchContent:', searchContent)
+			if ( session.fields.length ) {
+				session.fields.forEach( field => {
+					searchContent = searchContent + ` ${field.value.toLowerCase()} `
+				})
+			}
 
-			if ( searchContent.includes(search)) return session
+			console.log('current session searchContent:', searchContent)
+
+			if ( searchContent.includes(search.toLowerCase()) ) return session
 
 		})
 
