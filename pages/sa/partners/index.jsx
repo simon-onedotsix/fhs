@@ -71,10 +71,11 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyMw==') orderedCategories.push({ ...category, priority: 6 })
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 7 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNjAzMTE4Mg==') orderedCategories.push({ ...category, priority: 8 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNjcwNDI5MQ==') orderedCategories.push({ ...category, priority: 9 })
 	})
 
 
-	console.log('swapcard partner data 2025:', partnerData2025)
+	// console.log('swapcard partner data 2025:', partnerData2025)
 	// console.log('swapcard partner data 2024:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// partnerData.exhibitors.forEach( ex => console.log( ex.typeLabel?.name))
