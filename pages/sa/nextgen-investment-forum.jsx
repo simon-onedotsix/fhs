@@ -15,6 +15,7 @@ import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
 import { FhsLockup } from '../../fuselage/theme/2025/sa/components/logos/fhs-brand'
+import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
 import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
 import { ButtonKeyline } from '../../fuselage/theme/2024/world/components/button-keyline/button-keyline'
 
@@ -129,16 +130,24 @@ export default function Page () {
                                 </Fade>
                             </div>
 
-                            <div className="container">
-                                <p className='fs-5 caps center'>Co-located with:</p>
-                                <Pop>
-                                    <FhsLockup 
-                                        inverse 
-                                        sectorLabel={"Saudi Arabia"} 
-                                        sectorColor={"var(--accent)"} 
-                                        topColor={"var(--secondary)"}
-                                    />
-                                </Pop>
+                            <div className="container columns-2 gap-sm">
+                                <section>
+                                    <p className='fs-5 c-accent caps center pb-xs'>Co-located with:</p>
+                                    <Pop>
+                                        <FhsLockup 
+                                            inverse 
+                                            sectorLabel={"Saudi Arabia"} 
+                                            sectorColor={"var(--accent)"} 
+                                            topColor={"var(--secondary)"}
+                                        />
+                                    </Pop>
+                                </section>
+                                <section style={{ maxWidth: '15rem'}}>
+                                    <p className='fs-5 c-accent caps center'>Sponsored by:</p>
+                                    <Pop>
+                                        <Image src={'/assets/img/sa/nextgen-forum/baraka-logo.png'} width={1000} height={499} layout='responsive' />
+                                    </Pop>
+                                </section>
                             </div>
                         </PageHeroImage>
                     </div>
@@ -153,7 +162,7 @@ export default function Page () {
                             <div className="container">
                                 <p className='fs-0 center'>Hospitality Education: Challenges</p>
                             </div>
-                            <div className={`${CSS.challengeCards} container maxw-60 pt-sm`}>
+                            <div className={`${CSS.challengeCards} container pt-sm`}>
                                 {
                                     CHALLENGE_CARD_DATA.map( (card, index) => (
                                         <ChallengeCard 
@@ -203,70 +212,118 @@ export default function Page () {
                 </section>
 
 
-                <section className="block bg-theme">
-                    <div className="container center">
-                        <p className='fs-0'>Featured Speakers</p>
-                    </div>
-                    <div className="container center columns-5 gap-md">
-                        <Pop>
-                            <SpeakerCard
-                            color={'c-accent'}
-                                photoUrl={'/assets/img/sa/nextgen-forum/abeer-green.jpg'}
-                                fullName={'Dr. Abeer A. Alamri'}
-                                jobTitle={'Strategic Planning and Monitoring Deputyship'}
-                                company={'Ministry of Tourism'}
-                            />
-                        </Pop>
-                        <Pop delay={.05}>
-                            <SpeakerCard
-                            color={'c-accent'}
-                                photoUrl={'/assets/img/sa/nextgen-forum/dr-fabien.jpg'}
-                                fullName={'Dr. Abeer A. Alamri'}
-                                jobTitle={'CEO'}
-                                company={'Riyadh School of Tourism and Hospitality'}
-                            />
-                        </Pop>
-                        <Pop delay={.1}>
-                            <SpeakerCard
-                            color={'c-accent'}
-                                photoUrl={'/assets/img/sa/nextgen-forum/aj-singh.jpg'}
-                                fullName={'A.J Singh'}
-                                jobTitle={'Founding Director'}
-                                company={'Hospitality and Tourism Management'}
-                            />
-                        </Pop>
-                        <Pop delay={.2}>
-                            <SpeakerCard
-                            color={'c-accent'}
-                                photoUrl={'https://static.swapcard.com/public/images/6f7ac5e6899849429e30e768190d52aa.jpeg'}
-                                fullName={'Lameese Damiri'}
-                                jobTitle={'Head of Education'}
-                                company={'UN Tourism'}
-                            />
-                        </Pop>
-                        <Pop delay={.15}>
-                            <SpeakerCard
-                            color={'c-accent'}
-                                photoUrl={'https://cdn-api.swapcard.com/public/images/3e48bf508a3f4f5a855d9b179a19b4ec.jpeg'}
-                                fullName={'Louis Nicolas Barrios'}
-                                jobTitle={'Regional Manager, Innovation, Education and Investment'}
-                                company={'UN Tourism'}
-                            />
-                        </Pop>
-                        
-                    </div>
-                    <div className="container center">
-                        <Pop inline>
-                            <ButtonKeyline 
-                                href={'/sa/speakers'} 
-                                decal={'fs-5 fw-600'} 
-                                color={'var(--secondary)'}
-                            >
-                                View All Speakers
-                            </ButtonKeyline>
-                        </Pop>
-                    </div>
-                </section>
+
+                {/* featured speakers */}
+
+                <SpeakerCarousel 
+                    heading={`Featured Speakers`} 
+                    color={`c-white`}
+                    text={``}
+                    decal={'bg-theme'}
+                    ctaLink={'/sa/speakers'}
+                    ctaLabel={'View All Speakers'}
+                >
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
+                            photoUrl={'/assets/img/sa/nextgen-forum/dr-fabien.jpg'}
+                            fullName={'Dr. Fabien'}
+                            jobTitle={'CEO'}
+                            company={'Riyadh School of Tourism and Hospitality'}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
+                            photoUrl={'/assets/img/sa/nextgen-forum/abeer-green.jpg'}
+                            fullName={'Dr. Abeer A. Alamri'}
+                            jobTitle={'Strategic Planning and Monitoring Deputyship'}
+                            company={'Ministry of Tourism'}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
+                            photoUrl={'https://cdn-api.swapcard.com/public/images/431472c4cc334203850dac4f47ff261d.jpeg'}
+                            fullName={'Glenn Mandziuk'}
+                            jobTitle={'Chief Executive Officer'}
+                            company={'World Sustainable Hospitality Alliance'}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
+                            photoUrl={'https://cdn-api.swapcard.com/public/images/e83e40532f97441986d87e699f53d5e6.jpeg'}
+                            fullName={'Paul Griep'}
+                            jobTitle={'Director of alumni & Industry'}
+                            company={'Hotelschool The Hague'}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
+                            photoUrl={'https://cdn-api.swapcard.com/public/images/3e48bf508a3f4f5a855d9b179a19b4ec.jpeg'}
+                            fullName={'Louis Nicolas Barrios'}
+                            jobTitle={'Regional Manager, Innovation, Education and Investment'}
+                            company={'UN Tourism'}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
+                            photoUrl={'https://static.swapcard.com/public/images/6f7ac5e6899849429e30e768190d52aa.jpeg'}
+                            fullName={'Lameese Damiri'}
+                            jobTitle={'Head of Education'}
+                            company={'UN Tourism'}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
+                            photoUrl={'https://static.swapcard.com/public/images/839a45698a0e4ad6b590ac1fdf344483.jpeg'}
+                            fullName={'Adrian Artimov'}
+                            jobTitle={'VP Enrollment'}
+                            company={'Sommet Education'}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
+                            photoUrl={'https://cms.thebench.com/assets/img/avatars/Andre_2024-07-18-073246_blrk.jpg'}
+                            fullName={'Andre Wiringa'}
+                            jobTitle={'Chief Reverse Engineer'}
+                            company={'Start Reverse'}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
+                            photoUrl={''}
+                            fullName={'Dr. Rana Al Ogaily'}
+                            jobTitle={'Dean'}
+                            company={'Applied College Princess Nourah University'}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
+                            photoUrl={'/assets/img/sa/nextgen-forum/aj-singh.jpg'}
+                            fullName={'A.J Singh'}
+                            jobTitle={'Founding Director'}
+                            company={'Hospitality and Tourism Management'}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
+                            photoUrl={'https://cdn-api.swapcard.com/public/images/92f3ad3bab5d49eebb2b626ffb308ba2.jpeg'}
+                            fullName={'Joe Tabet'}
+                            jobTitle={'CEO & Managing Director'}
+                            company={'JT+Partners'}
+                        />
+                    </Pop>
+                </SpeakerCarousel>
+
 
 
                 {/* components */}
@@ -329,7 +386,7 @@ export default function Page () {
                         <Pop><p className='fs-1 fw-600 c-accent'>2025 NextGen Forum Programme</p></Pop>
                     </div>
                     <div className="container columns-1 gap-sm maxw-50">
-                       <Slide> <p className='fs-4 fw-600'>EIF Main Stage Program</p></Slide>
+                       <Slide> <p className='fs-4 fw-600'>Main Stage Program</p></Slide>
                         <SessionGroup>
                             <Session times={"15:00 - 15:10"} title={"Welcome Remarks to NextGen: Investing in Saudi's Hospitality Education"} />
                             <Session times={"15:10 - 15:20"} title={"Keynote - Hospitality Talent in Saudi Arabia: A Data-Driven Overview"}/>
@@ -390,11 +447,11 @@ const ChallengeCard = ({ imageUrl, title, bigImpact, impact, body }) => {
                 <Pop><p className='fs-3 fw-600'>{title}</p></Pop>
             
                 <Slide>
-                    <p className='fs-xl lh-1 fw-300 c-accent'>{bigImpact}</p>
-                    <p className='fs-1 lh-1 fw-300 c-accent'>{impact}</p>
+                    <p className='fs-0 lh-1 fw-300 c-accent'>{bigImpact}</p>
+                    <p className='fs-2 lh-1 fw-300 c-accent'>{impact}</p>
                 </Slide>
             
-                <Slide delay={.2} direction='up'><p className='fs-5'>{parse(body)}</p></Slide>
+                <Slide delay={.2} direction='up'><p className='fs-6'>{parse(body)}</p></Slide>
             </div>
         </div>
     )

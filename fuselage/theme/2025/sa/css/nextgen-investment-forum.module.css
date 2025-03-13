@@ -49,8 +49,8 @@
 .challengeCards {
     display: grid;
     grid-template-columns: 1fr;
+    align-items: flex-start;
     gap: var(--space-lg);
-
 }
 
 .challengeCardLayout {
@@ -80,22 +80,21 @@
     gap: var(--space-xs);
 }
 
-
-@media (min-width:600px) {
-    .challengeCardLayout {
-        grid-template-columns: 1fr 1fr;
-        text-align: left;
+@media (max-width:1199px) {
+    .challengeCards {
+        max-width: 50vw;
     }
-    .challengeCardLayout:nth-child(even) {
-        text-align: right;
+}
+@media (min-width:800px) {
+    .challengeCardImageContainer {
+        width: 30vw;
+        height: 30vw;
     }
-    .challengeCardImage {
-        
-        justify-self: flex-end;
-    }
-    .challengeCardLayout:nth-child(even) .challengeCardImage {
-        grid-area: 1/2 / 2/3;
-        justify-self: flex-start;
+}
+@media (min-width:1200px) {
+    .challengeCards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-lg);
     }
     .challengeCardImageContainer {
         width: 16vw;
