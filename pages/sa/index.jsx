@@ -96,11 +96,11 @@ const ARTICLE_DATA = [
 
 const SPEAKER_DATA = [
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgyNzk=`,
-        photoUrl: 'https://static.swapcard.com/public/images/aa283dd8d6b747a3ba4c7db9039e57e2.jpeg',
-        fullName: 'Waleed AlRashed AlHumaid',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Alrajhi Capital',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/0f3466754aec406ab2b64862743c639f.jpeg',
+        fullName: 'HH Prince Bandar bin Saud bin Khalid Al Saud',
+        jobTitle: 'Secretary General, King Faisal Foundation (KFF) | Chairman of the Board of Directors, Al Khozama Investment Company',
+        company: '',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc3MDYzMTQ=`,
@@ -117,13 +117,6 @@ const SPEAKER_DATA = [
         company: '',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc5MDEyNjk=`,
-        photoUrl: 'https://static.swapcard.com/public/images/7ffaec8014ff4f33bd453f98c0e67b51.jpeg',
-        fullName: 'Nick Candy',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Candy Capital',
-    },
-    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
         photoUrl: 'https://static.swapcard.com/public/images/be577fb8e2b044c98cc51dc0dc10fb55.jpeg',
         fullName: 'Nikolina Angelkova',
@@ -131,11 +124,46 @@ const SPEAKER_DATA = [
         company: '',
     },
     {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc5MDEyNjk=`,
+        photoUrl: 'https://static.swapcard.com/public/images/7ffaec8014ff4f33bd453f98c0e67b51.jpeg',
+        fullName: 'Nick Candy',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Candy Capital',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgyNzk=`,
+        photoUrl: 'https://static.swapcard.com/public/images/aa283dd8d6b747a3ba4c7db9039e57e2.jpeg',
+        fullName: 'Waleed AlRashed AlHumaid',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Alrajhi Capital',
+    },
+    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1OTk1ODI=`,
         photoUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
         fullName: 'Maud Bailly',
         jobTitle: 'Chief Executive Officer',
         company: 'Sofitel Legend, Sofitel, MGallery & Emblems',
+    },
+    {
+        url: `/sa/speakers`,
+        photoUrl: '',
+        fullName: 'Michael Acton Smith',
+        jobTitle: 'Co-founder',
+        company: 'Calm',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/a96df3d5f0c84807a351df07dfc4e15c.jpeg',
+        fullName: 'Dr. Abeer Alamri',
+        jobTitle: 'Strategic Planning & Monitoring Deputyship',
+        company: 'Tourism Ministry',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MTkzNzc=`,
+        photoUrl: 'https://static.swapcard.com/public/images/aed31042fa48418e9ad796226f2b3676.jpeg',
+        fullName: 'Steven Greenway',
+        jobTitle: 'Chief Executive Officer',
+        company: 'flyadeal',
     }
 ]
 
