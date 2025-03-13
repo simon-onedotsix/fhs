@@ -70,8 +70,8 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 		if (category.id === 'RmllbGRWYWx1ZV8yNDQ3NDE0MA==') orderedCategories.push({ ...category, priority: 5 })
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyMw==') orderedCategories.push({ ...category, priority: 6 })
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 7 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNjAzMTE4Mg==') orderedCategories.push({ ...category, priority: 8 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNjcwNDI5MQ==') orderedCategories.push({ ...category, priority: 9 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNjcwNDI5MQ==') orderedCategories.push({ ...category, priority: 8 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNjAzMTE4Mg==') orderedCategories.push({ ...category, priority: 9 })
 	})
 
 

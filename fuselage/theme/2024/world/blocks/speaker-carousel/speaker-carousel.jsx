@@ -24,7 +24,7 @@ export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, co
                 <Splide hasTrack={false} aria-label="Speakers" options={{
                     pagination: false,
                     gap: '2rem',
-                    perPage: 4,
+                    perPage: 5,
                     perMove: 1,
                     breakpoints: {
                         600: {

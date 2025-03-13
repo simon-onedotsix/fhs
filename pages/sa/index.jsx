@@ -110,6 +110,13 @@ const SPEAKER_DATA = [
         company: 'World Travel & Tourism Council',
     },
     {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgwNjYxMDQ=`,
+        photoUrl: 'https://static.swapcard.com/public/images/b946c29ec7c24b2091410172ac1ed515.jpeg',
+        fullName: 'Jerry Inzerillo',
+        jobTitle: 'Group Chief Executive Officer, Diriyah Company | Vice Chairman, Forbes Travel Guide',
+        company: '',
+    },
+    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc5MDEyNjk=`,
         photoUrl: 'https://static.swapcard.com/public/images/7ffaec8014ff4f33bd453f98c0e67b51.jpeg',
         fullName: 'Nick Candy',
