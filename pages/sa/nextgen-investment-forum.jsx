@@ -295,7 +295,7 @@ export default function Page () {
                             company={'Start Reverse'}
                         />
                     </Pop>
-                    <Pop>
+                    {/* <Pop>
                         <SpeakerCard
                         color={'c-accent'}
                             photoUrl={''}
@@ -303,7 +303,7 @@ export default function Page () {
                             jobTitle={'Dean'}
                             company={'Applied College Princess Nourah University'}
                         />
-                    </Pop>
+                    </Pop> */}
                     <Pop>
                         <SpeakerCard
                         color={'c-accent'}

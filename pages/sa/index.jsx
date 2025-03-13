@@ -145,8 +145,8 @@ const SPEAKER_DATA = [
         company: 'Sofitel Legend, Sofitel, MGallery & Emblems',
     },
     {
-        url: `/sa/speakers`,
-        photoUrl: '',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc2MDY1NjI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/aeeea1ec1faf489f89b37288836b84c9.jpeg',
         fullName: 'Michael Acton Smith',
         jobTitle: 'Co-founder',
         company: 'Calm',
