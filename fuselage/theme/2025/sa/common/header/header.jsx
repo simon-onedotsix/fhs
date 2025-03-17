@@ -29,6 +29,12 @@ const otherEvents = [
         target: true
     },
     {
+        id: 11,
+        title: 'BRF Asia',
+        url: 'https://www.brandedresidencesforum.com/',
+        target: true
+    },
+    {
         id: 6,
         title: 'AviaDev',
         url: 'https://www.aviationdevelop.com',
