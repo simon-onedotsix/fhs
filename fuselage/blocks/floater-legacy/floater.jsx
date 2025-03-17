@@ -4,6 +4,7 @@ import CSS from './floater.module.css'
 
 
 export const FloatersLegacy = ({ children, theme, flipped }) => {
+    console.log('block-theme:', theme)
     return (
         <section className={`${CSS.floaters} block bg-${theme} ${flipped ? CSS.flipped : ''}`}>
             <div className="container">

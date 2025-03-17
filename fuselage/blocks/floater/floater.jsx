@@ -8,8 +8,9 @@ import CSS from './floater.module.css'
 
 
 export const Floaters = ({ children, theme, flipped }) => {
+    
     return (
-        <section className={`${CSS.floaters} ${flipped ? CSS.flipped : ''}`}>
+        <section className={`${CSS.floaters} block bg-${theme} ${flipped ? CSS.flipped : ''}`}>
             <div className="container columns-1 gap-lg">
                 {children}
             </div>
