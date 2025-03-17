@@ -20,6 +20,7 @@ import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 import { HeroUnitVideo } from "../../fuselage/theme/2025/sa/blocks/hero-unit-video/hero-unit-video"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
 import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
+import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 
 import { SectionHeading } from "../../fuselage/theme/2025/sa/components/section-heading/section-heading"
 import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
@@ -103,6 +104,13 @@ const SPEAKER_DATA = [
         company: '',
     },
     {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1NjE0MTM=`,
+        photoUrl: 'https://static.swapcard.com/public/images/2540878a4ce149da8e5f9cb8384277cc.jpeg',
+        fullName: 'Khalid Saud Abu Haimed',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Al Khozama Investment Company',
+    },
+    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc3MDYzMTQ=`,
         photoUrl: 'https://static.swapcard.com/public/images/2d0ccacdbd4a4a5cab7230fab32d2763.jpeg',
         fullName: 'Julia Simpson',
@@ -158,13 +166,6 @@ const SPEAKER_DATA = [
         jobTitle: 'Strategic Planning & Monitoring Deputyship',
         company: 'Tourism Ministry',
     },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MTkzNzc=`,
-        photoUrl: 'https://static.swapcard.com/public/images/aed31042fa48418e9ad796226f2b3676.jpeg',
-        fullName: 'Steven Greenway',
-        jobTitle: 'Chief Executive Officer',
-        company: 'flyadeal',
-    }
 ]
 
 export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
@@ -343,16 +344,11 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
             {/* SPEAKERS */}
-            {
-                SPEAKER_DATA &&
-                <SpeakerCarousel 
-                    heading={`2025 Speakers`} 
-                    color={`c-secondary`}
-                    text={``}
-                    decal={'bg-neutral-02'}
-                    ctaLink={'/sa/speakers'}
-                    ctaLabel={'View All Speakers'}
-                >
+            <section className="block bg-light">
+                <div className="container center">
+                    <p className="fs-0 fw-600 c-secondary">2025 Speakers</p>
+                </div>
+                <div className="container columns-5 gap-sm">
                     {
                         SPEAKER_DATA.map( (profile, index) => (
                             <Pop key={index}>
@@ -367,8 +363,20 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                             </Pop>
                         ))
                     }
-                </SpeakerCarousel>
-            }
+                </div>
+                <div className="container center">
+                    <Pop>
+                        <ArrowButton 
+                            href={ '/sa/speakers' } 
+                            theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}
+                        >
+                            View All Speakers
+                        </ArrowButton>
+                    </Pop>
+                </div>
+            </section>
+               
+           
 
 
             <ImpactGrid>
