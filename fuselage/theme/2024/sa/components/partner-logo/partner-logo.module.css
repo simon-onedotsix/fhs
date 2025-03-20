@@ -19,7 +19,12 @@
     height: 100%;
 }
 
-
+.label {
+    color: var(--default-text-color);
+    margin-top: .5rem;
+    text-transform: uppercase;
+    font-size: small;
+}
 
 .grid {
     display: flex;

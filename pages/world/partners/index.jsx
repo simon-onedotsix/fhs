@@ -111,6 +111,7 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 														partner.logoUrl &&
 														<PartnerLogo 
 															hero={{ url: partner.logoUrl }} 
+															label={ partner.id === "RXhoaWJpdG9yXzIxNzg3Nzg=" && 'China' }
 														/>
 													}
 												</a>

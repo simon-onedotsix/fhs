@@ -2,7 +2,7 @@ import Image from "next/image"
 
 import CSS from './partner-logo.module.css'
 
-export const PartnerLogo = ({ hero, size, alt }) => {
+export const PartnerLogo = ({ hero, size, alt, label }) => {
 
     if ( !hero ) return
 
@@ -18,12 +18,15 @@ export const PartnerLogo = ({ hero, size, alt }) => {
     }
     
     return ( 
-        <div className={`${CSS.logo} ${handleSize()}`}> 
-            <Image
-                src={hero.url}
-                alt={alt}
-                layout={`fill`}
-            />
+        <div>
+            <div className={`${CSS.logo} ${handleSize()}`}> 
+                <Image
+                    src={hero.url}
+                    alt={alt}
+                    layout={`fill`}
+                />
+            </div>
+            { label && <p className={CSS.label}>{label}</p> }
         </div>
     )
 }
