@@ -357,6 +357,7 @@ export default function Agenda ({ sessions, locations }) {
 		return (
 			<span
 				key={speaker.id} 
+				className={CSS.speakerCardWrapper}
 				onClick={() => {
 					if ( speaker.biography ) {
 						setModalContent({

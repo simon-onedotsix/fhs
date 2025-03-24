@@ -701,6 +701,7 @@
 
 /* speakerGrid */
 
+
 [data-theme='sa-2025'] .sessionSpeakerGrid {
     display: inline-grid;
     grid-template-columns: repeat(2, 1fr);
@@ -714,6 +715,9 @@
     }
     [data-theme='sa-2025']  .sessionSpeaker {
         width: 12vw;
+    }
+    .speakerCardWrapper {
+        width: 15vw;
     }
 }
 
