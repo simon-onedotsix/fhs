@@ -12,7 +12,7 @@ export const HeroUnitVideo = ({ children, video, poster }) => {
     let y = useTransform( scroll.scrollY, [0, 1000], ["0%", "30vh"])
 
     return (
-        <section>
+        <section className={CSS.layout}>
                 
             <motion.div className={CSS.video} style={{ y }}>
 

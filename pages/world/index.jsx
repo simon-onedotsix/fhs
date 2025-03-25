@@ -48,6 +48,7 @@ import { THEMES_DATA } from "./themes"
 import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
 import { InvestorImpact } from "../../fuselage/components/impact-figure/impact-figure"
 import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
+import { ThemeBillboard } from "../../fuselage/theme/2025/world/pages/home/theme-billboard"
 
 import CSS from '../../fuselage/theme/2024/world/css/homepage.module.css'
 
@@ -189,9 +190,10 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             <Header overlaid inverse />
 
 
+            <ThemeBillboard />
 
 
-            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4'} poster={'/assets/video/fhs-2024-world-opt-poster.jpg'}>
+            {/* <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4'} poster={'/assets/video/fhs-2024-world-opt-poster.jpg'}>
 
                     <div className={CSS.flashWrapper}>
                         <Pop>
@@ -231,7 +233,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         </Pop>
                     </div>
                 </Fade>
-            </HeroUnitVideo>
+            </HeroUnitVideo> */}
 
 
             {/* HOST SPONSOR */}
@@ -332,7 +334,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
             {/* INVESTORS */}
-            <section className="block bg-pattern-primary-50-dark">
+            <section className="block bg-primary-2-dark">
                 <div className="container center">
                     <Fade>
                         <p className="fs-1 fw-600 lh-1 caps">Investors at FHS World</p>
@@ -427,7 +429,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 <SpeakerCarousel 
                     heading={`Featured Speakers`} 
                     text={``}
-                    decal={'bg-secondary bg-pattern-blue'}
+                    decal={'bg-secondary'}
                     ctaLink={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLink : ''}
                     ctaLabel={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLabel : ''}
                     anchorId={``}

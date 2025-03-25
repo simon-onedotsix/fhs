@@ -1,3 +1,7 @@
+.layout {
+    position: relative;
+}
+
 .video {
     position: absolute;
     top: 6.5rem;
