@@ -14,7 +14,7 @@ export const ThemeBillboard = () => {
 
             <div className={CSS.triGrid}>
                 <motion.div
-                    initial={{ x: -500, opacity: 0 }}
+                    initial={{ x: -200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ type: "spring", bounce: 0.25, duration: 1, delay: .5 }}
                 >
@@ -22,7 +22,7 @@ export const ThemeBillboard = () => {
                 </motion.div>
 
                 <motion.div
-                    initial={{ x: -500, opacity: 0 }}
+                    initial={{ x: -200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ type: "spring", bounce: 0.25, duration: 1, delay: .25 }}
                 >
@@ -30,7 +30,7 @@ export const ThemeBillboard = () => {
                 </motion.div>
 
                 <motion.div
-                    initial={{ x: -500, opacity: 0 }}
+                    initial={{ x: -200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ type: "spring", bounce: 0.25, duration: 1 }}
                 >

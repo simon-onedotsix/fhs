@@ -40,7 +40,8 @@
     }
 
     .triGrid {
-        width: 95vw;
+        width: 75vw;
+        justify-self: center;
     }
     .triGrid > * {
         margin: 0 -6vw;
