@@ -297,6 +297,40 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </section>
 
 
+            {/* AWARD-WINNER */}
+            <section className="block bg-primary">
+                <div className="container center">
+                    <p className="fs-3 fw-600 c-secondary caps pb-sm">FHS Lifetime Achievement Award 2025 Winner</p>
+
+                    <div className={CSS.patronBox}>
+
+                        <div className={CSS.patronBoxAvatar}>
+                            <Pop>
+                                <div className={CSS.avatar}>
+                                    <Image src={"https://cms.thebench.com/assets/img/avatars/AAA-Chairman.jpg"} layout='fill' alt="" unoptimized />
+                                </div>
+                            </Pop>
+                        </div>
+
+                        <div className={CSS.patronBoxContent}>
+                            <Pop>
+                                <p className="fs-4 fw-600">Abdullah Ahmed Al Moosa</p>
+                                <p className="fs-5 mt-xxs">
+                                    Founder &amp; Chairman
+                                </p>
+                                <p className="fs-5 mt-xxs">
+                                    A. A. Al Moosa Enterprises | ARENCO Group
+                                </p>
+                            </Pop>
+                        </div>
+                    </div>
+                    
+                    <p className="mt-xs caps fs-sm c-secondary"><Link href={'/world/speakers/profile/abdullah-ahmed-al-moosa'}><a className="uLink">View biography</a></Link></p>
+                </div>
+            </section>
+
+
+
             {/* INVESTORS */}
             <section className="block bg-pattern-primary-50-dark">
                 <div className="container center">
