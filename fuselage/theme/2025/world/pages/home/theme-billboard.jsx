@@ -80,12 +80,12 @@ const Tri = ({ fill }) => {
 
         <defs>
             <linearGradient id="red" x1="0%" x2="100%" y1="0%" y2="0%">
-                <stop offset="33%" stop-color={`rgb(233, 55, 66)`} />
-                <stop offset="100%" stop-color={`rgba(233, 55, 66, 0)`} />
+                <stop offset="33%" stopColor={`rgb(233, 55, 66)`} />
+                <stop offset="100%" stopColor={`rgba(233, 55, 66, 0)`} />
             </linearGradient>
             <linearGradient id="blue" x1="0%" x2="100%" y1="0%" y2="0%">
-                <stop offset="33%" stop-color={`rgb(113, 207, 235)`} />
-                <stop offset="100%" stop-color={`rgba(113, 207, 235, 0)`} />
+                <stop offset="33%" stopColor={`rgb(113, 207, 235)`} />
+                <stop offset="100%" stopColor={`rgba(113, 207, 235, 0)`} />
             </linearGradient>
         </defs>
 
