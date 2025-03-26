@@ -32,12 +32,12 @@ const tracks = [
 	},
 	{
 		id: "3",
-		title: "Brand & Destination",
+		title: "Destination Development",
 		color: "#7DB4F2"
 	},
 	{
 		id: "4",
-		title: "Luxury, F&B, and Experiential",
+		title: "Luxury, F&B, and Experiential Hospitality",
 		color: "#E381CB"
 	},
 	{
@@ -62,12 +62,17 @@ const tracks = [
 	},
 	{
 		id: "9",
-		title: "Wellness",
+		title: "Wellness & Medical Tourism",
 		color: "#B8B084"
 	},
 	{
 		id: "10",
-		title: "Technology & Innovation",
+		title: "Technology & AI",
+		color: "#6B6DEF"
+	},
+	{
+		id: "11",
+		title: "Investment & Development",
 		color: "#6B6DEF"
 	}
 ]
@@ -310,116 +315,34 @@ export default function Agenda ({ sessions, locations }) {
 							<main>
 								<div className={CSS.sessions}>
 
-								{/* SESSIONS */}
+									{/* SESSIONS */}
 
-								<SessionGroup>
-									<Session 
-										startTime={"2025-05-11 15:00:00"} 
-										endTime={"2025-05-11 18:30:00"}
-										title={"NextGen: Investing in Saudi Arabia's Hospitality Education"}
-										trackID={"1"}
-									/>
-									<Session 
-										startTime={"2025-05-11 15:00:00"} 
-										endTime={"2025-05-11 15:10:00"}
-										title={"Welcome Remarks"}
-										trackID={"1"}
-									/>
-								</SessionGroup> 
-
-								<SessionGroup location={{ title: "Summit Stage" }}>
-									<p className={CSS.heading}>Main Stage</p>
-									<Session 
-										startTime={"2025-05-11 15:10:00"} 
-										endTime={"2025-05-11 15:20:00"}
-										title={"Keynote - Hospitality Talent in Saudi Arabia: A Data-Driven Overview"}
-										trackID={"1"}
-									/>
-									<Session 
-										startTime={"2025-05-11 15:20:00"} 
-										endTime={"2025-05-11 15:40:00"}
-										title={"Education Meets Industry - Key Skills for the Future of Saudi Workforce"}
-										trackID={"1"}
-									/>
-									<Session 
-										startTime={"2025-05-11 15:40:00"} 
-										endTime={"2025-05-11 16:00:00"}
-										title={"Hospitality Workforce of the Future: Anticipating Trends and Building Resilience"}
-										trackID={"1"}
-									/>
-								</SessionGroup> 
-
-								<SessionGroup location={{ title: "Future Stage" }}>
-									<p className={CSS.heading}>Workshops</p>
-									<Theme>Hospitality Education and Real Estate Investment</Theme>
-									<Session 
-										startTime={"2025-05-11 16:00:00"} 
-										endTime={"2025-05-11 16:45:00"}
-										title={"How Can We Rebrand Hospitality Careers to Attract Saudi Youth?"}
-										trackID={"5"}
-									/>
-									<Session 
-										startTime={"2025-05-11 17:00:00"} 
-										endTime={"2025-05-11 17:45:00"}
-										title={"How Can Public-Private Partnerships in Hospitality Training Help Build Saudi Arabia's Workforce of the Future?"}
-										trackID={"5"}
-									/>
-								</SessionGroup> 
-
-								<SessionGroup location={{ title: "Meeting Room 1" }}>
-									<p className={CSS.heading}>Workshops</p>
-									<Theme>Hospitality Education and Real Estate Investment</Theme>
-									<Session 
-										startTime={"2025-05-12 16:00:00"} 
-										endTime={"2025-05-12 16:45:00"}
-										title={"Where Are the Investment Opportunities in Hospitality Education Real Estate?"}
-										trackID={"1"}
-									/>
-									<Session 
-										startTime={"2025-05-12 17:00:00"} 
-										endTime={"2025-05-12 17:45:00"}
-										title={"How Can Student Housing Be Designed to Meet the Needs of Future Hospitality Professionals?"}
-										trackID={"1"}
-									/>
-								</SessionGroup>
-
-								<SessionGroup location={{ title: "Meeting Room 2" }}>
-									<p className={CSS.heading}>Workshops</p>
-									<p className={CSS.heading}>THEME: Deep dive into training</p>
-									<Session 
-										startTime={"2025-05-12 16:00:00"} 
-										endTime={"2025-05-12 16:40:00"}
-										title={"How Can Hospitality Schools Adapt Their Curriculum to Meet Industry Trends and Standards?"}
-									/>
-									<Session 
-										startTime={"2025-05-12 16:40:00"} 
-										endTime={"2025-05-12 17:00:00"}
-										title={"How Can Technology Enhance Hospitality Training and Skill Development?"}
-									/>
-									<Session 
-										startTime={"2025-05-12 17:10:00"} 
-										endTime={"2025-05-12 18:00:00"}
-										title={"What Are the Best Models for Ongoing Professional Development in Hospitality?"}
-									/>
-								</SessionGroup>
-
-								<SessionGroup>
-									<Feature>
-										<Session 
-											startTime={"2025-05-12 17:45:00"} 
-											endTime={"2025-05-12 18:30:00"}
-											title={"Speed Networking (Future Stage)"}
-										/>
-									</Feature>
-									<Feature>
-										<Session 
-											startTime={"2025-05-12 18:30:00"} 
+									<SessionGroup location={{ title: "NextGen Focus" }}>
+										<Timeslot
+											startTime={"2025-05-11 15:00:00"} 
+											endTime={"2025-05-11 18:30:00"}
+										>
+											<Session 
+												title={"Keynote: Hospitality Talent in Saudi Arabia - A Data-Driven Overview"}
+												trackID={"1"}
+											/>
+											<Session title={"Panel: Bridging Education and Industry"} />
+											<Session title={"Workshop: Rebranding Hospitality Careers"} />
+											<Session title={"Workshop: Strengthening Public-Private Partnerships"} />
+											<Session title={"Speed Networking"} />
+										</Timeslot>
+										
+										<Timeslot
+											startTime={"2025-05-11 18:30:00"} 
 											endTime={""}
-											title={"Welcome Reception - Hosted by Al Khozama"}
-										/>
-									</Feature>
-								</SessionGroup>
-
+										>
+											<Session 
+												
+												title={"Welcome Reception hosted by Al Khozama"}
+												trackID={"1"}
+											/>
+										</Timeslot>
+									</SessionGroup> 
 								</div>
 							</main>
 						</StickySidebar>
@@ -439,199 +362,104 @@ export default function Agenda ({ sessions, locations }) {
 
 									{/* SESSIONS */}
 
-									<SessionGroup location={{ title: "Summit Stage" }}>
-										<Session 
-											startTime={"2025-05-12 10:00:00"} 
-											endTime={"2025-05-12 10:15:00"}
-											title={"Welcome to FHS Saudi Arabia 2025"}
-										/>
-										<Session 
-											startTime={"2025-05-12 10:15:00"} 
-											endTime={"2025-05-12 10:30:00"}
-											title={"The Visionary Outlook: Empowering Saudi Tourism Destinations through the Hospitality Sector"}
-											trackID={"5"}
-										/>
-										<Session 
-											startTime={"2025-05-12 10:30:00"} 
-											endTime={"2025-05-12 11:15:00"}
-											title={"Safeguarding Hospitality Investments Amid Market Shifts: Is Saudi Arabia Still the Land of Opportunity?"}
-											trackID={"2"}
-										/>
-
-										<Feature>
+									<SessionGroup location={{ title: "Main Summit Day" }}>
+										<Timeslot>
 											<Session 
-												startTime={"2025-05-12 11:30:00"} 
-												endTime={"2025-05-12 11:50:00"}
-												title={"Coffee Break"}
+												startTime={"2025-05-12 10:00:00"} 
+												endTime={"2025-05-12 10:15:00"}
+												title={"Welcome to FHS Saudi Arabia"}
 											/>
-										</Feature>
+										</Timeslot>
+
+										<Timeslot 
+											startTime={"2025-05-12 10:15:00"} 
+											endTime={"2025-05-12 11:15:00"}
+										>
+											<Session 
+												title={"Keynotes: Visionary Leadership in Saudi Tourism"}
+												trackID={"5"}
+											/>
+											<Session 
+												title={"Panel: Unlocking Destination Potential"}
+												trackID={"3"}
+											/>
+										</Timeslot>
 										
-										<Session 
+										<Timeslot 
 											startTime={"2025-05-12 11:30:00"} 
-											endTime={"2025-05-12 11:50:00"}
-											title={"Keynote Speech"}
-										/>
-										<Session 
-											startTime={"2025-05-12 11:50:00"} 
-											endTime={"2025-05-12 12:30:00"}
-											title={"The Changing Face of Riyadh: The Role of Mega Events in Driving Modernization, Infrastructure Growth, and Tourism Excellence"}
-											trackID={"3"}
-										/>
-										<Session 
-											startTime={"2025-05-12 12:30:00"} 
 											endTime={"2025-05-12 13:00:00"}
-											title={"TenX Leadership Talk: Insights on the Economic Impact of Travel & Tourism and Global Trends"}
-											trackID={"8"}
-										/>
-									</SessionGroup>
+										>
+											<Session 
+												title={"Riyadh's Transformation: A Hospitality Perspective"}
+												trackID={"5"}
+											/>
+											<Session 
+												title={"Economic Impact of Travel & Tourism"}
+												trackID={"2"}
+											/>
+										</Timeslot>
 
-									<SessionGroup location={{ title: "Future Stage" }}>
-										<p className={CSS.heading}>Workshops</p>
-										<Session 
-											startTime={"2025-05-12 11:00:00"} 
-											endTime={"2025-05-12 12:00:00"}
-											title={"Empowering Connections: Networking Session"}
-										/>
-										<Session 
-											startTime={"2025-05-12 12:00:00"} 
-											endTime={"2025-05-12 13:00:00"}
-											title={"Navigating the Hospitality Investment Industry in Saudi Arabia: A Beginner's Guide for New Attendees"}
-											trackID={"2"}
-										/>
-									</SessionGroup>
-
-									<SessionGroup location={{ title: "Centre Stage" }}>
-										<Session 
-											startTime={"2025-05-12 11:45:00"} 
-											endTime={"2025-05-12 13:00:00"}
-											title={"Announcements & Signings"}
-										/>
-										<Feature>
+										<Timeslot>
 											<Session 
 												startTime={"2025-05-12 13:00:00"} 
-												endTime={""}
+												endTime={"2025-05-12 14:00:00"}
 												title={"Lunch"}
 											/>
-										</Feature>
-									</SessionGroup>
-
-									<SessionGroup location={{ title: "Summit Stage" }}>
-										<Session 
+										</Timeslot>
+										
+										<Timeslot 
 											startTime={"2025-05-12 14:00:00"} 
-											endTime={"2025-05-12 14:20:00"}
-											title={"Setting the Scene for Hotel Performance and Development in Saudi Arabia"}
-											trackID={"5"}
-										/>
-										<Session 
-											startTime={"2025-05-12 14:20:00"} 
-											endTime={"2025-05-12 14:50:00"}
-											title={"Financing Hospitality Ventures: Maximizing Capital for Growth and Success"}
-											trackID={"2"}
-										/>
-										<Session 
-											startTime={"2025-05-12 14:50:00"} 
-											endTime={"2025-05-12 15:15:00"}
-											title={"Is the pursuit of luxury compatible with sustainability in Saudi Arabian Hospitality?"}
-											trackID={"7"}
-										/>
-										<Session 
-											startTime={"2025-05-12 15:15:00"} 
-											endTime={"2025-05-12 15:30:00"}
-											title={"Hospitality: Differentiation Through Service Excellence"}
-											trackID={"7"}
-										/>
-										<Session 
-											startTime={"2025-05-12 15:30:00"} 
 											endTime={"2025-05-12 16:00:00"}
-											title={"A Bleak and Empty Hotel Shop …. or a Chance to activate Retail Brand Experiences blended with cool, branded Cafes and Bars?"}
-											trackID={"4"}
-										/>
+										>
+											<Session 
+												title={"Hotel Performance Outlook"}
+												trackID={"2"}
+											/>
+											<Session 
+												title={"Financing the Future: Hospitality Ventures"}
+												trackID={"2"}
+											/>
+											<Session 
+												title={"Sustainability in Practice: Green Hospitality"}
+												trackID={"7"}
+											/>
+										</Timeslot>
 
-										<Feature>
+										<Timeslot>
 											<Session 
 												startTime={"2025-05-12 16:00:00"} 
 												endTime={"2025-05-12 16:30:00"}
 												title={"Coffee Break"}
 											/>
-										</Feature>
+										</Timeslot>
 
-										<Session 
+										<Timeslot 
 											startTime={"2025-05-12 16:30:00"} 
-											endTime={"2025-05-12 16:45:00"}
-											title={"What's Next? Tourism of the Future"}
-											trackID={"3"}
-										/>
-										<Session 
-											startTime={"2025-05-12 16:45:00"} 
-											endTime={"2025-05-12 17:20:00"}
-											title={"Balancing Growth: Unlocking the Potential of Mid-Market Hospitality in Saudi Arabia's Luxury Landscape"}
-											trackID={"2"}
-										/>
-										<Session 
-											startTime={"2025-05-12 17:20:00"} 
 											endTime={"2025-05-12 17:45:00"}
-											title={"Could Hotel F&B set a World first by dominating the Mid Sector Dining Market in the kingdom?"}
-											trackID={"4"}
-										/>
-									</SessionGroup>
-
-									<SessionGroup location={{ title: "Future Stage" }}>
-										<p className={CSS.heading}>Workshops</p>
-										<Session 
-											startTime={"2025-05-12 14:00:00"} 
-											endTime={"2025-05-12 15:15:00"}
-											title={"Insights on Branded Residences"}
-											trackID={"8"}
-										/>
-										<Session 
-											startTime={"2025-05-12 15:15:00"} 
-											endTime={"2025-05-12 16:15:00"}
-											title={"Key Trends in Hotel Management Contracts"}
-											trackID={"2"}
-										/>
-										<Session 
-											startTime={"2025-05-12 16:15:00"} 
-											endTime={"2025-05-12 17:00:00"}
-											title={"Your Path to Red Sea Global: Exploring Projects and Partnership Opportunities"}
-											trackID={"5"}
-										/>
-									</SessionGroup>
-
-									<SessionGroup location={{ title: "Centre Stage" }}>
-										<Session 
-											startTime={"2025-05-12 14:00:00"} 
-											endTime={"2025-05-12 14:30:00"}
-											title={"Announcements & Signings"}
-										/>
-										<Session 
-											startTime={"2025-05-12 14:30:00"} 
-											endTime={"2025-05-12 16:00:00"}
-											title={"Start-up Den"}
-										/>
-										<Session 
-											startTime={"2025-05-12 16:00:00"} 
-											endTime={"2025-05-12 17:00:00"}
-											title={"Announcements & Signings"}
-										/>
-									</SessionGroup>
-
-									<SessionGroup>
-										<Session 
-											startTime={"2025-05-12 14:30:00"} 
-											endTime={"2025-05-12 16:00:00"}
-											title={"Roundtable Discussions"}
-										/>
-									</SessionGroup> 
-
-									<SessionGroup>
-										<Feature>
+										>
 											<Session 
-												startTime={"2025-05-12 18:30:00"} 
+												title={"Future of Tourism: Global Trends & Local Strategies"}
+												trackID={"2"}
+											/>
+											<Session 
+												title={"Panel: Mid-Market Opportunity in KSA"}
+												trackID={"11"}
+											/>
+											<Session 
+												title={"Hotel F&B Innovation & Luxury"}
+												trackID={"4"}
+											/>
+										</Timeslot>
+
+										<Timeslot>
+											<Session 
+												startTime={"2025-05-12 18:00:00"} 
 												endTime={""}
 												title={"FHS Evening Reception"}
 											/>
-										</Feature>
-									</SessionGroup> 
+										</Timeslot>
+									</SessionGroup>
+
 								</div>
 							</main>
 						</StickySidebar>
@@ -650,179 +478,74 @@ export default function Agenda ({ sessions, locations }) {
 								<div className={CSS.sessions}>
 
 									{/* SESSIONS */}
-
-									<SessionGroup>
-										<Session 
-											startTime={"2025-05-12 09:00:00"} 
-											endTime={"2025-05-12 10:00:00"}
-											title={"Investor Breakfast - By invitation only"}
-										/>
-									</SessionGroup> 
 									
-									<SessionGroup location={{ title: "Summit Stage" }}>
-										<Session 
+									<SessionGroup location={{ title: "Future Hospitality Themes" }}>
+										<Timeslot
 											startTime={"2025-05-12 10:00:00"} 
-											endTime={"2025-05-12 10:15:00"}
-											title={"Saudi Arabia Tourism Outlook: Shaping the Future from 2025 to 2040"}
-											trackID={"5"}
-										/>
-										<Session 
-											startTime={"2025-05-12 10:15:00"} 
-											endTime={"2025-05-12 10:40:00"}
-											title={"How Is Saudi Arabia Preparing for a Tourism Transformation to Connect Travelers Locally and Globally?"}
-											trackID={"5"}
-										/>
-										<Session 
-											startTime={"2025-05-12 10:40:00"} 
-											endTime={"2025-05-12 11:00:00"}
-											title={"Beyond Pilgrimage: Future Trends and Developments in Mecca and Medina"}
-											trackID={"6"}
-										/>
-										<Session 
-											startTime={"2025-05-12 11:00:00"} 
-											endTime={"2025-05-12 11:15:00"}
-											title={"How Can Technology Overcome the Logistical Challenges of Managing Pilgrim Crowds, and How Can These Insights Be Applied to Broader Hospitality Sectors?"}
-											trackID={"10"}
-										/>
-										<Session 
-											startTime={"2025-05-12 11:15:00"} 
 											endTime={"2025-05-12 11:45:00"}
-											title={"Transforming Sacred Journeys: How Can Religious Tourism Serve as a Springboard for Expanding Tourism in the Kingdom?"}
-											trackID={"6"}
-										/>
-
-										<Feature>
+										>
 											<Session 
-												startTime={"2025-05-12 11:45:00"} 
-												endTime={"2025-05-12 12:00:00"}
-												title={"Coffee Break"}
+												title={"Insights into Branded Residences"}
+												trackID={"8"}
 											/>
-										</Feature>
-
-										<Session 
-											startTime={"2025-05-12 12:00:00"} 
-											endTime={"2025-05-12 12:15:00"}
-											title={"Designing for Transformational Travel: Crafting Next-Gen Experiences That Inspire Change"}
-											trackID={"7"}
-										/>
-										<Session 
-											startTime={"2025-05-12 12:15:00"} 
-											endTime={"2025-05-12 12:45:00"}
-											title={"Planning with Purpose: Integrating Tourism Strategy and Conservation in Destination Development"}
-											trackID={"7"}
-										/>
-										<Session 
-											startTime={"2025-05-12 12:45:00"} 
-											endTime={"2025-05-12 13:15:00"}
-											title={"All-Inclusive Reimagined: How Gen Z and Luxury are Redefining the Upscale Travel Experience"}
-											trackID={"3"}
-										/>
-										<Feature>
 											<Session 
-												startTime={"2025-05-12 13:50:00"} 
-												endTime={"2025-05-12 14:30:00"}
+												title={"Pilgrimage and Cultural Travel Trends"}
+												trackID={"6"}
+											/>
+											<Session 
+												title={"Tech Transformations in Hospitality"}
+												trackID={"10"}
+											/>
+										</Timeslot>
+										
+										<Timeslot
+											startTime={"2025-05-12 12:00:00"} 
+											endTime={"2025-05-12 13:15:00"}
+										>
+											<Session 
+												title={"Transformational Travel"}
+												trackID={"4"}
+											/>
+											<Session 
+												title={"Conservation and Destination Development"}
+												trackID={"3"}
+											/>
+										</Timeslot>
+
+										<Timeslot>
+											<Session 
+												startTime={"2025-05-12 13:15:00"} 
+												endTime={"2025-05-12 13:30:00"}
 												title={"FHS Awards"}
 											/>
-										</Feature>
-									</SessionGroup> 
+										</Timeslot>
 
-									<SessionGroup location={{ title: "Future Stage" }}>
-										<p className={CSS.heading}>Workshops</p>
-										<Session 
-											startTime={"2025-05-12 10:00:00"} 
-											endTime={"2025-05-12 10:30:00"}
-											title={"Government Insights on Investment Incentives in Saudi Arabia"}
-											trackID={"5"}
-										/>
-										<Session 
-											startTime={"2025-05-12 10:30:00"} 
-											endTime={"2025-05-12 11:15:00"}
-											title={"ESG in Hospitality: Balancing Sustainability with Profit - Cost-Effective Solutions for a Competitive Edge"}
-											trackID={"7"}
-										/>
-										<Session 
-											startTime={"2025-05-12 11:15:00"} 
-											endTime={"2025-05-12 12:30:00"}
-											title={"Building the Future: A Workshop on Modular Architecture and Technology-Driven Regulations"}
-											trackID={"10"}
-										/>
-										<Session 
-											startTime={"2025-05-12 12:00:00"} 
-											endTime={"2025-05-12 13:00:00"}
-											title={"Key Feeder Markets for Saudi Arabia: Who are our new customers and what are they looking for?"}
-											trackID={"5"}
-										/>
-									</SessionGroup>
-
-									<SessionGroup location={{ title: "Centre Stage" }}>
-										<Session 
-											startTime={"2025-05-12 11:00:00"} 
-											endTime={"2025-05-12 13:00:00"}
-											title={"Announcements & Signings"}
-										/>
-									</SessionGroup>
-
-									<SessionGroup>
-										<Session 
-											startTime={"2025-05-12 11:00:00"} 
-											endTime={"2025-05-12 13:00:00"}
-											title={"Roundtable Discussions"}
-										/>
-										<Feature>
+										<Timeslot>
 											<Session 
-												startTime={"2025-05-12 13:00:00"} 
-												endTime={""}
-												title={"Lunch"}
+												startTime={"2025-05-12 13:30:00"} 
+												endTime={"2025-05-12 14:30:00"}
+												title={"Lunch Break"}
 											/>
-										</Feature>
-									</SessionGroup>
+										</Timeslot>
 
-									<SessionGroup location={{ title: "Summit Stage" }}>
-										<Session 
+										<Timeslot
 											startTime={"2025-05-12 14:30:00"} 
-											endTime={"2025-05-12 15:00:00"}
-											title={"The Future Workforce: Empowering Talent, Leadership, and Inclusion"}
-											trackID={"7"}
-										/>
-										<Session 
-											startTime={"2025-05-12 15:00:00"} 
-											endTime={"2025-05-12 15:30:00"}
-											title={"Unveiling Market Trends: Insights into Branded Residences in the Kingdom"}
-											trackID={"8"}
-										/>
-										<Session 
-											startTime={"2025-05-12 15:30:00"} 
-											endTime={"2025-05-12 16:10:00"}
-											title={"Capitalizing on the Alternative Accommodation Boom: The Rising Tide of Investment"}
-											trackID={"2"}
-										/>
-										<Session 
-											startTime={"2025-05-12 16:10:00"} 
 											endTime={"2025-05-12 16:45:00"}
-											title={"Pathways to Holistic Wellness: Mapping Saudi Arabia's Role in Global Wellness Tourism"}
-											trackID={"9"}
-										/>
-										<Session 
-											startTime={"2025-05-12 16:45:00"} 
-											endTime={"2025-05-12 17:00:00"}
-											title={"Closing Plenary: The Road Ahead for Global Hospitality"}
-										/>
-									</SessionGroup>
+										>
+											<Session 
+												title={"Future of Work in Hospitality"}
+												trackID={"7"}
+											/>
+											<Session 
+												title={"Branded Residences in Saudi Arabia"}
+												trackID={"8"}
+											/>
+											<Session 
+												title={"Branded Residences in Saudi Arabia"}
+												trackID={"9"}
+											/>
+										</Timeslot>
 
-									<SessionGroup location={{ title: "Future Stage" }}>
-										<p className={CSS.heading}>Workshops</p>
-										<Session 
-											startTime={"2025-05-12 14:15:00"} 
-											endTime={"2025-05-12 15:15:00"}
-											title={"The Future of Hotel Asset Management - HAMA Asset Management Workshop - Invitation Only"}
-											trackID={"2"}
-										/>
-										<Session 
-											startTime={"2025-05-12 15:15:00"} 
-											endTime={"2025-05-12 16:15:00"}
-											title={"Shifting Gears: Navigating the Transition from CapEx to OpEx in the Hospitality Market"}
-											trackID={"2"}
-										/>
 									</SessionGroup>
 								</div>
 							</main>
@@ -872,19 +595,39 @@ export const Session = ({ startTime, endTime, title, trackID }) => {
 	return (
 		<Pop>
 			<div className={CSS.sessionsWrapper}>
-				{/* style={{ backgroundColor: t?.color }} */}
 				<div className={CSS.session}>
 					<div className={CSS.sessionHeader}>
 						<Duration startTime={startTime} endTime={endTime} />
-						{ trackID &&  <Track trackID={trackID} />}
+						{ trackID && <Track trackID={trackID} />}
 					</div>
-
+					
 					<div className={CSS.sessionContent}>
 						<p className={`${CSS.sessionTitle} | fs-5 fw-500 lh-1-1 c-white`}>
 							{ title }
 						</p>
 					</div>
 				</div>
+			</div>
+		</Pop>
+	)
+}
+
+export const Timeslot = ({ startTime, endTime, trackID, children }) => {
+
+	const t = tracks.find( track => track.id === trackID )
+
+	return (
+		<Pop>
+			<div className={CSS.timeslotWrapper}>
+				{
+					startTime ?
+						<div className={CSS.timeslotHeader}>
+							<Duration startTime={startTime} endTime={endTime} />
+							{ trackID && <Track trackID={trackID} />}
+						</div>
+					: null
+				}
+				{ children }
 			</div>
 		</Pop>
 	)
@@ -920,13 +663,14 @@ export const Duration = ({ startTime, endTime }) => {
 
 
 	return (
-		<p>
-			{ format( new Date(startTime), "HH:mm" ) } - { endTime && format( new Date(endTime), "HH:mm" ) }
+		<>
+			{ startTime && format( new Date(startTime), "HH:mm" ) } { startTime && endTime && "-"} { endTime && format( new Date(endTime), "HH:mm" ) }
 			{
-				endTime &&
+				startTime &&  endTime ?
 				<span>&ensp;<StopwatchIcon fill={'var(--primary-3)'}/> { convertSeconds(parseInt(new Date(endTime).getTime() - new Date(startTime).getTime())/1000) }</span>
+				: null
 			}
-		</p>
+		</>
 	)
 }
 

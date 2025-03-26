@@ -386,34 +386,21 @@ export default function Page () {
                         <Pop><p className='fs-1 fw-600 c-accent'>2025 NextGen Forum Programme</p></Pop>
                     </div>
                     <div className="container columns-1 gap-sm maxw-50">
-                       <Slide> <p className='fs-4 fw-600'>Main Stage Program</p></Slide>
+                       <Slide> <p className='fs-4 fw-600'>Main Stage</p></Slide>
                         <SessionGroup>
-                            <Session times={"15:00 - 15:10"} title={"Welcome Remarks to NextGen: Investing in Saudi's Hospitality Education"} />
-                            <Session times={"15:10 - 15:20"} title={"Keynote - Hospitality Talent in Saudi Arabia: A Data-Driven Overview"}/>
-                            <Session times={"15:20 - 15:40"} title={"Education Meets Industry - Key Skills for the Future of Saudi Workforce"}/>
-                            <Session times={"15:40 - 16:00"} title={"Hospitality Workforce of the Future: Anticipating Trends and Building Resilience"}/>
+                            <Session times={"15:30 - 15:40"} title={"Hospitality Talent in Saudi Arabia: A Data-Driven Overview"} />
+                            <Session times={"15:40 - 16:20"} title={"Rethinking Hospitality Schools: Education, Experience & Environment"}/>
+                            <Session times={"16:25 - 17:05"} title={"How Can We Rebrand Hospitality Careers to Attract Saudi Youth?"}/>
+                            <Session times={"17:05 - 17:30"} title={"What Are the Best Models for Ongoing Professional Development in Hospitality?"}/>
                         </SessionGroup>
                         
                         <div>
-                            <Slide><p className='fs-4 fw-600 mt-xs'>Series of Round Tables</p></Slide>
-                            <Slide delay={.1}><p className='fs-5 fw-400 c-accent mt-xxs'><strong>Future Stage</strong>: Enhancing strategies for talent retention</p></Slide>
+                            <Slide><p className='fs-4 fw-600 mt-xs'>Workshops</p></Slide>
+                            {/* <Slide delay={.1}><p className='fs-5 fw-400 c-accent mt-xxs'><strong>Future Stage</strong>: Enhancing strategies for talent retention</p></Slide> */}
                         </div>
                         <SessionGroup>
-                            <Session times={"16:00 - 16:45"} title={"How Can We Rebrand Hospitality Careers to Attract Saudi Youth?"}/>
-                            <Session times={"17:00 - 17:45"} title={"How Can Public-Private Partnerships in Hospitality Training Help Build Saudi Arabia's Workforce of the Future?"}/>
-                        </SessionGroup>
-                        
-                        <Slide><p className='fs-5 fw-400 c-accent mt-xxs'><strong>Meeting Room 1</strong>: Hospitality Education and Real Estate Investment</p></Slide>
-                        <SessionGroup>
-                            <Session times={"16:00 - 16:45"} title={"Where Are the Investment Opportunities in Hospitality Education Real Estate?"}/>
-                            <Session times={"17:00 - 17:45"} title={"How Can Student Housing Be Designed to Meet the Needs of Future Hospitality Professionals?"}/>
-                        </SessionGroup>
-                        
-                        <Slide><p className='fs-5 fw-400 c-accent mt-xxs'><strong>Meeting Room 2</strong>: Deep dive into training</p></Slide>
-                        <SessionGroup>
-                            <Session times={"16:00 - 16:45"} title={"How Can Hospitality Schools Adapt Their Curriculum to Meet Industry Trends and Standards?"}/>
-                            <Session times={"16:45 - 17:15"} title={"How Can Technology Enhance Hospitality Training and Skill Development?"}/>
-                            <Session times={"17:15 - 18:00"} title={"What Are the Best Models for Ongoing Professional Development in Hospitality?"}/>
+                            <Session times={"16:30 - 17:00"} title={"Masterclass: Engagement, Culture and Leadership make or break brand and property value"}/>
+                            <Session times={"17:00 - 17:30"} title={"How Can Student Housing Be Designed to Meet the Needs of Future Hospitality Professionals?"}/>
                         </SessionGroup>
                     </div>
                 </section>
