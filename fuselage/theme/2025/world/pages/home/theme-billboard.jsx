@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 
+import Image from 'next/image'
+
 import { Reveal } from '../../../../../animation/reveal'
 import { Fade, Pop } from '../../../../../animation/animation'
 import { Button } from '../../../../2024/world/components/button/button'
@@ -16,6 +18,7 @@ export const ThemeBillboard = () => {
                 <motion.div
                     initial={{ x: -200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
                     transition={{ type: "spring", bounce: 0.25, duration: 1, delay: .5 }}
                 >
                     <Tri />
@@ -24,6 +27,7 @@ export const ThemeBillboard = () => {
                 <motion.div
                     initial={{ x: -200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
                     transition={{ type: "spring", bounce: 0.25, duration: 1, delay: .25 }}
                 >
                     <Tri fill={'blue'} />
@@ -32,6 +36,7 @@ export const ThemeBillboard = () => {
                 <motion.div
                     initial={{ x: -200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
                     transition={{ type: "spring", bounce: 0.25, duration: 1 }}
                 >
                     <Tri />
@@ -40,13 +45,12 @@ export const ThemeBillboard = () => {
 
             <div className={CSS.overlay}>
                 <div>
-
                     <div className={CSS.headline}>
                         <Reveal delay={.75}>
-                            <p className='fs-0 fw-500 caps'>Where Vision Leads,</p>
+                            <p className='fs-0 fw-500 caps lh-1'>Where Vision Leads,</p>
                         </Reveal>
                         <Reveal delay={1}>
-                            <p className='fs-0 fw-500 caps'>Investment Follows</p>
+                            <p className='fs-0 fw-500 caps lh-1'>Investment Follows</p>
                         </Reveal>
                     </div>
 
@@ -61,9 +65,17 @@ export const ThemeBillboard = () => {
                             </Pop>
                         </div>
                     </Fade>
+                </div>
 
+                <div className={CSS.logosContainer}>
+                    <div className={CSS.logoGrid}>
+                        <Pop><LogoBox label={"Host Sponsor"}><Image src={`/assets/site/ae/jumeirah-2024.png`} layout={`fill`} /></LogoBox></Pop>
+                        <Pop><LogoBox scale={0.8} label={"Organised by"}><Image src={'/assets/site/the-bench-inverse@2x.png'} layout='fill' /></LogoBox></Pop>
+                        <Pop><LogoBox><Image src={'/assets/theme/world-2025/fhs-20-years.png'} layout='fill' /></LogoBox></Pop>
+                    </div>
                 </div>
             </div>
+
 
         </section>
     )
@@ -99,3 +111,13 @@ const Tri = ({ fill }) => {
         </svg>
     )
 }
+
+
+const LogoBox = ({ children, label, scale }) => (
+	<div>
+		{ label && <p className={CSS.logoBoxLabel}>{label}</p> }
+		<div className={CSS.logoBox} style={{ marginTop: label && 10, transform: scale && `scale(${scale})` }}>
+			{ children }
+		</div>
+	</div>
+)

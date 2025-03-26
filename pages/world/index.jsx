@@ -15,7 +15,7 @@ import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/
 
 import { Header } from '../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
-import { HeroUnitVideo } from "../../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video"
+
 import { FhsIcon, FhsIconKeyline } from "../../fuselage/theme/2024/world/components/logos/fhs-brand"
 import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
 import { ImpactFigure } from "../../fuselage/theme/2024/world/components/impact-figure/impact-figure"
@@ -48,6 +48,8 @@ import { THEMES_DATA } from "./themes"
 import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
 import { InvestorImpact } from "../../fuselage/components/impact-figure/impact-figure"
 import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
+
+import { HeroUnitVideo } from "../../fuselage/theme/2025/world/pages/home/hero-unit-video"
 import { ThemeBillboard } from "../../fuselage/theme/2025/world/pages/home/theme-billboard"
 
 import CSS from '../../fuselage/theme/2024/world/css/homepage.module.css'
@@ -189,9 +191,9 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
         
             <Header overlaid inverse />
 
-
-            <ThemeBillboard />
-
+            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4'} poster={'/assets/video/fhs-2024-world-opt-poster.jpg'}>
+                <ThemeBillboard />
+            </HeroUnitVideo>
 
             {/* <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4'} poster={'/assets/video/fhs-2024-world-opt-poster.jpg'}>
 
@@ -238,7 +240,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             {/* HOST SPONSOR */}
 
-            <section className="block bg-default">
+            {/* <section className="block bg-default">
                 <div className="container center">
                     <p className="fs-3 fw-600 c-secondary caps">Host Sponsor</p>
                     <div className={`${CSS.hostSponsorLogoWrapper} mt-sm mx-auto`}>
@@ -247,7 +249,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         </Pop>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
 
             {/* PATRONAGE */}

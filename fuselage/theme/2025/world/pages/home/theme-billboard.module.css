@@ -1,9 +1,6 @@
 .layout {
     position: relative;
     width: 100%;
-    min-height: 95vh;
-    background-color: var(--primary);
-    overflow: hidden;
 }
 
 .triGrid {
@@ -36,11 +33,11 @@
 
 @media(max-width:599px){
     .layout {    
-        padding: 8rem var(--space-xs);
+        height: 100vh;
     }
 
     .triGrid {
-        width: 75vw;
+        width: 50vw;
         justify-self: center;
     }
     .triGrid > * {
@@ -48,30 +45,58 @@
     }
 
     .overlay {
-        padding: var(--space-lg);
+        padding: var(--space-md);
         display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        text-align: center;
+    }
+
+    .logosContainer {
+        margin-top: var(--space-xl);
+    }
+
+    .logoGrid {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        gap: var(--space-sm);
     }
 }
 
 @media(min-width: 600px){
     .layout {
-        padding: var(--space-xl);
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: flex-end;
     }
     
     .triGrid {
-        width: 50vw;
+        width: 30vw;
+        margin-right: 6vw;
     }
 
     .overlay {
-        padding: var(--space-xl);
         display: flex;
         align-items: center;
         justify-content: flex-start;
+    }
+
+    .logosContainer {
+        position: absolute;
+        z-index: 4;
+        right: 0;
+        bottom: 0;
+    }
+
+    .logoGrid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; 
+        gap: var(--space-sm);
     }
 }
 
@@ -80,3 +105,28 @@
 
 
 
+
+
+.logoBox {
+    position: relative;
+    width: 30vw;
+    height: 20vw;
+}
+.logoBox img {
+    object-fit: contain;
+    width: 100%;
+}
+.logoBoxLabel {
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: small;
+    letter-spacing: .1rem;
+}
+
+@media(min-width:600px){
+    .logoBox {
+        width: 8vw;
+        height: 4vw;
+    }
+}
