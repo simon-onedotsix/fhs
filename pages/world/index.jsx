@@ -196,6 +196,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
             {/* PATRONAGE */}
+            
             <section className="block bg-primary">
                 <div className="container center">
                     <p className="fs-3 fw-600 c-secondary caps pb-sm">Under the Patronage of</p>
@@ -239,6 +240,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
 
+            {/* THEMES */}
+
             <div className={CSS.themeWrapper}>
                 <div className={CSS.themeWrapperGraphics}>
                     <div className={CSS.graphic01}>
@@ -254,8 +257,9 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </div>
 
 
-            {/* AWARD-WINNER */}
             
+            {/* AWARD-WINNER */}
+
             <div className={CSS.themeWrapper}>
                 <div className={CSS.themeWrapperGraphics}>
                     <div className={CSS.graphic02}>
@@ -300,6 +304,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
             {/* INVESTORS */}
+
             <section className="block bg-primary-2-dark">
                 <div className="container center">
                     <Fade>
@@ -324,6 +329,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     </p>
                 </div>
             </section>
+
 
             
             {/* LAUNCH STATEMENT */}
