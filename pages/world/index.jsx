@@ -9,13 +9,12 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-import Script from "next/script"
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 
 import { Header } from '../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
-import { HeroUnitVideo } from "../../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video"
+
 import { FhsIcon, FhsIconKeyline } from "../../fuselage/theme/2024/world/components/logos/fhs-brand"
 import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
 import { ImpactFigure } from "../../fuselage/theme/2024/world/components/impact-figure/impact-figure"
@@ -37,7 +36,7 @@ import {
     QueryImpactFigures, 
     QueryVideos,
     QueryForm,
-	QueryProfileCarousel,
+    QueryProfileCarousel,
     QuerySEO,
     QueryImages
 } from "../../graphql/queries"
@@ -48,6 +47,9 @@ import { THEMES_DATA } from "./themes"
 import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
 import { InvestorImpact } from "../../fuselage/components/impact-figure/impact-figure"
 import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
+
+import { HeroUnitVideo } from "../../fuselage/theme/2025/world/pages/home/hero-unit-video"
+import { ThemeBillboard, Tri } from "../../fuselage/theme/2025/world/pages/home/theme-billboard"
 
 import CSS from '../../fuselage/theme/2024/world/css/homepage.module.css'
 
@@ -162,7 +164,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
     const [ modalContent, setModalContent ] = useState()
 
     // console.log('entry:', entry)
-	// console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
+    // console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
     // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))	
     // console.log('speakerData:', speakerData)
 
@@ -183,69 +185,14 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
         <>
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
-				{ handleSeomaticMeta( seomatic ) }
-			</Head>
+                { handleSeomaticMeta( seomatic ) }
+            </Head>
         
             <Header overlaid inverse />
 
-
-
-
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4'} poster={'/assets/video/fhs-2024-world-opt-poster.jpg'}>
-
-                    <div className={CSS.flashWrapper}>
-                        <Pop>
-                            <div className={CSS.flash}>
-                                <p className={CSS.flashHeading}>See you <br/>in 2025!</p>
-                                <p>27-29 October 2025</p>
-                            </div>
-                        </Pop>
-                    </div>
-
-                <motion.p 
-                    initial={{ y: 100, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    // viewport={{ once: true }}
-                    transition={{ type: "spring", bounce: 0.25 }}
-
-                    className={`fs-0 fw-700 c-white lh-1 center`} 
-                >
-                    Invest in Our Future
-                </motion.p>
-
-                <motion.p 
-                    initial={{ y: 100, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    // viewport={{ once: true }}
-                    transition={{ type: "spring", bounce: 0.25 }}
-
-                    className={`fs-5 fw-500 c-white center mt-xs`} 
-                >
-                    27-29 October 2025, Madinat Jumeirah, Dubai
-                </motion.p>
-
-                <Fade>
-                    <div className="mt-sm center">
-                        <Pop inline>
-                            <Button href={`/world/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Purchase Pass</Button>
-                        </Pop>
-                    </div>
-                </Fade>
+                <ThemeBillboard />
             </HeroUnitVideo>
-
-
-            {/* HOST SPONSOR */}
-
-            <section className="block bg-default">
-                <div className="container center">
-                    <p className="fs-3 fw-600 c-secondary caps">Host Sponsor</p>
-                    <div className={`${CSS.hostSponsorLogoWrapper} mt-sm mx-auto`}>
-                        <Pop>
-                            <Image src={`/assets/site/ae/jumeirah-2024.png`} layout={`responsive`} width={900} height={173} />
-                        </Pop>
-                    </div>
-                </div>
-            </section>
 
 
             {/* PATRONAGE */}
@@ -292,47 +239,68 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
 
 
-            <section className="block">
-                <ThemesSlider data={THEMES_DATA} link={'/world/themes'} linkLabel={'Learn More'} />
-            </section>
+            <div className={CSS.themeWrapper}>
+                <div className={CSS.themeWrapperGraphics}>
+                    <div className={CSS.graphic01}>
+                        <Pop>
+                            <Tri fill={''} />
+                        </Pop>
+                    </div>
+                </div>
+
+                <section className={`${CSS.themeWrapperContent} block`}>
+                    <ThemesSlider data={THEMES_DATA} link={'/world/themes'} linkLabel={'Learn More'} />
+                </section>
+            </div>
 
 
             {/* AWARD-WINNER */}
-            <section className="block bg-primary">
-                <div className="container center">
-                    <p className="fs-3 fw-600 c-secondary caps pb-sm">FHS Lifetime Achievement Award 2025 Winner</p>
-
-                    <div className={CSS.patronBox}>
-
-                        <div className={CSS.patronBoxAvatar}>
-                            <Pop>
-                                <div className={CSS.avatar}>
-                                    <Image src={"https://cms.thebench.com/assets/img/avatars/AAA-Chairman.jpg"} layout='fill' alt="" unoptimized />
-                                </div>
-                            </Pop>
-                        </div>
-
-                        <div className={CSS.patronBoxContent}>
-                            <Pop>
-                                <p className="fs-4 fw-600">Abdullah Ahmed Al Moosa</p>
-                                <p className="fs-5 mt-xxs">
-                                    Founder &amp; Chairman
-                                </p>
-                                <p className="fs-5 mt-xxs">
-                                    A. A. Al Moosa Enterprises | ARENCO Group
-                                </p>
-                            </Pop>
-                        </div>
+            
+            <div className={CSS.themeWrapper}>
+                <div className={CSS.themeWrapperGraphics}>
+                    <div className={CSS.graphic02}>
+                        <Pop>
+                            <Tri fill={'blue'} />
+                        </Pop>
                     </div>
-                    
-                    <p className="mt-xs caps fs-sm c-secondary"><Link href={'/world/speakers/profile/abdullah-ahmed-al-moosa'}><a className="uLink">View biography</a></Link></p>
                 </div>
-            </section>
+
+                <section className={`${CSS.themeWrapperContent} block`}>
+                        <div className="container center">
+                            <p className="fs-3 fw-600 c-secondary caps pb-sm">FHS Lifetime Achievement Award 2025 Winner</p>
+
+                            <div className={CSS.patronBox}>
+
+                                <div className={CSS.patronBoxAvatar}>
+                                    <Pop>
+                                        <div className={CSS.avatar}>
+                                            <Image src={"https://cms.thebench.com/assets/img/avatars/AAA-Chairman.jpg"} layout='fill' alt="" unoptimized />
+                                        </div>
+                                    </Pop>
+                                </div>
+
+                                <div className={CSS.patronBoxContent}>
+                                    <Pop>
+                                        <p className="fs-4 fw-600">Abdullah Ahmed Al Moosa</p>
+                                        <p className="fs-5 mt-xxs">
+                                            Founder &amp; Chairman
+                                        </p>
+                                        <p className="fs-5 mt-xxs">
+                                            A. A. Al Moosa Enterprises | ARENCO Group
+                                        </p>
+                                    </Pop>
+                                </div>
+                            </div>
+                            
+                            <p className="mt-xs caps fs-sm c-secondary"><Link href={'/world/speakers/profile/abdullah-ahmed-al-moosa'}><a className="uLink">View biography</a></Link></p>
+                        </div>
+                </section>
+            </div>
 
 
 
             {/* INVESTORS */}
-            <section className="block bg-pattern-primary-50-dark">
+            <section className="block bg-primary-2-dark">
                 <div className="container center">
                     <Fade>
                         <p className="fs-1 fw-600 lh-1 caps">Investors at FHS World</p>
@@ -427,7 +395,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 <SpeakerCarousel 
                     heading={`Featured Speakers`} 
                     text={``}
-                    decal={'bg-secondary bg-pattern-blue'}
+                    decal={'bg-secondary'}
                     ctaLink={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLink : ''}
                     ctaLabel={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLabel : ''}
                     anchorId={``}
@@ -496,7 +464,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 </div>
 
                 <motion.div className={CSS.highlightsGraphicWapper} style={{ y }}>
-                    <FhsIconKeyline inverse />
+                    {/* <FhsIconKeyline inverse /> */}
+                    <Tri/>
                 </motion.div>
             </section>
 
@@ -539,66 +508,66 @@ export async function getStaticProps({ params, preview, previewData }) {
 
     const data = await craftApolloClient( preview, previewData ).query({
         query: gql`
-			query Homepage {
-				globalSet(site: "${process.env.SITE_HANDLE_AE}") {
-					... on footer_GlobalSet {
-						id
-						name
-						socialConnections {
-							... on socialConnections_BlockType {
-								id
-								hyperlink
-								icon
-								label
-							}
-						}
-						contactDetails {
-							... on contactDetails_BlockType {
-								id
-								body
-							}
-						}
-						hubspotForm {
-							... on hubspotForm_BlockType {
-								id
-								formId
-								portalId
-							}
-						}
-					}
-				}
-				entry(site: "${process.env.SITE_HANDLE_AE}", id: "7949") {
-					id
-					title
-					... on ${process.env.SITE_HANDLE_AE}Homepage_${process.env.SITE_HANDLE_AE}Homepage_Entry {
-						${process.env.CONTENT_BLOCKS_HANDLE}ContentBlocks {
-							${QueryText}
-							${QueryFlipFlops}
-							${QueryFloaters}
-							${QueryBillboards}
-							${QueryBillboardSliders}
-							${QueryImpactFigures}
-							${QueryVideos}
-							${QueryProfileCarousel}
-							${QueryForm}
-							${QueryImages}
-						}
-						${QuerySEO}
-					}
-				}
-			}
+            query Homepage {
+                globalSet(site: "${process.env.SITE_HANDLE_AE}") {
+                    ... on footer_GlobalSet {
+                        id
+                        name
+                        socialConnections {
+                            ... on socialConnections_BlockType {
+                                id
+                                hyperlink
+                                icon
+                                label
+                            }
+                        }
+                        contactDetails {
+                            ... on contactDetails_BlockType {
+                                id
+                                body
+                            }
+                        }
+                        hubspotForm {
+                            ... on hubspotForm_BlockType {
+                                id
+                                formId
+                                portalId
+                            }
+                        }
+                    }
+                }
+                entry(site: "${process.env.SITE_HANDLE_AE}", id: "7949") {
+                    id
+                    title
+                    ... on ${process.env.SITE_HANDLE_AE}Homepage_${process.env.SITE_HANDLE_AE}Homepage_Entry {
+                        ${process.env.CONTENT_BLOCKS_HANDLE}ContentBlocks {
+                            ${QueryText}
+                            ${QueryFlipFlops}
+                            ${QueryFloaters}
+                            ${QueryBillboards}
+                            ${QueryBillboardSliders}
+                            ${QueryImpactFigures}
+                            ${QueryVideos}
+                            ${QueryProfileCarousel}
+                            ${QueryForm}
+                            ${QueryImages}
+                        }
+                        ${QuerySEO}
+                    }
+                }
+            }
         `
     })
     const pageData = data
 
 
     return { 
-		props: { 
-			globals: pageData.data.globalSet,
-			entry: pageData.data.entry,
-			seomatic: pageData.data.entry.seomatic,
-			// speakerData: speakerData.content, 
-			// partnerData: partnerData.content
-		}
-	}
+        props: { 
+            globals: pageData.data.globalSet,
+            entry: pageData.data.entry,
+            seomatic: pageData.data.entry.seomatic,
+            // speakerData: speakerData.content, 
+            // partnerData: partnerData.content
+        }
+    }
 }

@@ -67,13 +67,13 @@ export const ThemeBillboard = () => {
                     </Fade>
                 </div>
 
-                <div className={CSS.logosContainer}>
+                {/* <div className={CSS.logosContainer}>
                     <div className={CSS.logoGrid}>
                         <Pop><LogoBox label={"Host Sponsor"}><Image src={`/assets/site/ae/jumeirah-2024.png`} layout={`fill`} /></LogoBox></Pop>
                         <Pop><LogoBox scale={0.8} label={"Organised by"}><Image src={'/assets/site/the-bench-inverse@2x.png'} layout='fill' /></LogoBox></Pop>
                         <Pop><LogoBox><Image src={'/assets/theme/world-2025/fhs-20-years.png'} layout='fill' /></LogoBox></Pop>
                     </div>
-                </div>
+                </div> */}
             </div>
 
 
@@ -82,7 +82,7 @@ export const ThemeBillboard = () => {
 }
 
 
-const Tri = ({ fill }) => {
+export const Tri = ({ fill }) => {
 
     // red = 233,55,66
     // blue = 113, 207, 235
