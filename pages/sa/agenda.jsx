@@ -306,8 +306,7 @@ export default function Agenda ({ sessions, locations }) {
 		let obj = array.find( topic => topic.id === fieldId)
 		return obj.name
 	}
-
-
+	
 
 	// HANDLE SPEAKERS PER SESSION (pick out moderators)
 
@@ -351,6 +350,18 @@ export default function Agenda ({ sessions, locations }) {
 				{ speakerData.map( speaker => renderSpeakerCard(speaker) ) }
 			</div>
 		)
+	}
+
+	const displaySpeakers = ( speakerData ) => {
+
+		if ( !speakerData ) return
+
+		return (
+			<div className={CSS.sessionSpeakerGrid}>
+				{ speakerData.map( speaker => renderSpeakerCard(speaker) ) }
+			</div>
+		)
+
 	}
 
 	const renderSpeakerCard = ( speaker ) => {
@@ -803,7 +814,12 @@ export default function Agenda ({ sessions, locations }) {
 																					: null
 																				}
 																				
-																				{ sortSpeakers(session.speakers) }
+																				{ 
+																					//target specific session
+																					session.id === "UGxhbm5pbmdfMjQ3NjM4OA==" 
+																					? displaySpeakers(session.speakers)
+																					: sortSpeakers(session.speakers) 
+																				}
 																			</div>
 																			
 																		</div>
