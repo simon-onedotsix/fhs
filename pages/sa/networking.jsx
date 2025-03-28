@@ -91,9 +91,9 @@ export default function Page () {
 
                             <div className="formatted">
                                 <Slide>
-                                    <h2>Connect with 1,400+ hospitality investors, owners, and industry leaders shaping the Kingdom's tourism future</h2>
-                                    <p>With over 1,400 delegates expected at FHS Saudi Arabia 2025, you'll have unparalleled access to the most influential figures driving hospitality investment across the region. From government officials and tourism authorities to international hotel chains, investors, and developers—the key decision-makers transforming Saudi Arabia's hospitality landscape will all be in one place.</p>
-                                    <p>This premier gathering offers you the chance to connect with visionaries and leaders driving Saudi Arabia's ambitious Vision 2030 tourism goals, while positioning yourself at the center of one of the world's most dynamic hospitality markets.</p>
+                                    <h2>Connect with 1,400+ hospitality investors, owners, and industry leaders shaping the Kingdom&apos;s tourism future</h2>
+                                    <p>With over 1,400 delegates expected at FHS Saudi Arabia 2025, you&apos;ll have unparalleled access to the most influential figures driving hospitality investment across the region. From government officials and tourism authorities to international hotel chains, investors, and developers—the key decision-makers transforming Saudi Arabia&apos;s hospitality landscape will all be in one place.</p>
+                                    <p>This premier gathering offers you the chance to connect with visionaries and leaders driving Saudi Arabia&apos;s ambitious Vision 2030 tourism goals, while positioning yourself at the center of one of the world&apos;s most dynamic hospitality markets.</p>
 
                                 </Slide>
 
@@ -233,7 +233,7 @@ export default function Page () {
 
             <section className="block bg-primary">
                 <div className="container center maxw-55 c-white">
-                    <p className='fs-4'>FHS Saudi Arabia isn't just about making contacts—it's about creating lasting business relationships that drive the future of hospitality in the Kingdom. With a demonstrated track record of facilitating meaningful industry connections, our 2025 event promises to deliver the relationships that will shape the next phase of Saudi Arabia's hospitality growth.</p>
+                    <p className='fs-4'>FHS Saudi Arabia isn&apos;t just about making contacts—it&apos;s about creating lasting business relationships that drive the future of hospitality in the Kingdom. With a demonstrated track record of facilitating meaningful industry connections, our 2025 event promises to deliver the relationships that will shape the next phase of Saudi Arabia&apos;s hospitality growth.</p>
                 </div>
             </section>
 
