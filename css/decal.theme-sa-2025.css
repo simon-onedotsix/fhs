@@ -107,6 +107,7 @@
 
 [data-theme='sa-2025'] .bg-primary { background-color: var(--primary); }
 [data-theme='sa-2025'] .bg-primary-2 { background-color: var(--primary-2); }
+[data-theme='sa-2025'] .bg-primary-2-dark { background-color: var(--primary-2-dark); }
 [data-theme='sa-2025'] .bg-secondary { background-color: var(--secondary); }
 [data-theme='sa-2025'] .bg-accent { background-color: var(--accent); }
 [data-theme='sa-2025'] .bg-accent-2 { background-color: var(--accent-2); }
