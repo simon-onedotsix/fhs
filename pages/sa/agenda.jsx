@@ -358,7 +358,7 @@ export default function Agenda ({ sessions, locations }) {
 
 		return (
 			<div className={CSS.sessionSpeakerGrid}>
-				{ speakerData.map( speaker => renderSpeakerCard(speaker) ) }
+				{ _.reverse(speakerData).map( speaker => renderSpeakerCard(speaker) ) }
 			</div>
 		)
 
