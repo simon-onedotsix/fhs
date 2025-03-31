@@ -81,7 +81,7 @@ PurchasePass.theme = 'sa-2025'
 
 
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
 
 	const cmsData = await craftApolloClient().query({
         query: gql`
@@ -116,7 +116,7 @@ export async function getStaticProps() {
 	return {
 		props: { 
 			seomatic: cmsData.data.entry.seomatic,
-			entry: cmsData.data.entry,
+			entry: cmsData.data.entry
 		}
 	}
 }

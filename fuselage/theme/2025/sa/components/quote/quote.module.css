@@ -19,6 +19,10 @@
     height: var(--space-sm);
     border-left: 1px solid var(--accent);
 }
+.quote.rtl:after {
+    left: auto;
+    right: var(--space-lg);
+}
 
 .quotee {
     padding: 0.5rem 0 0 var(--space-lg);

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import { useInView } from 'react-intersection-observer'
 
@@ -51,6 +52,8 @@ const otherEvents = [
 
 export const Header = ({ compact, overlaid, inverse }) => {
 
+    const { locale } = useRouter()
+
     const [pinHeaderTrigger, inView, eventsBar] = useInView({
 		threshold: 0,
         initialInView: true
@@ -94,7 +97,10 @@ export const Header = ({ compact, overlaid, inverse }) => {
                         </Link>
                     </div>
                     <div className={CSS.venue}>
-                        <p className='lh-2 c-white'><span className='fw-600'>11-13 May 2025</span> <br/>Mandarin Oriental Al Faisaliah, Riyadh</p>
+                        <p className='lh-2 c-white'>
+                            <span className='fw-600'>{ locale === 'ar' ? "11-13 مايو 2025" : "11-13 May 2025"}</span> <br/>
+                            { locale === 'ar' ? "فندق ماندارين أورينتال الفيصلية، الرياض" : "Mandarin Oriental Al Faisaliah, Riyadh" }
+                        </p>
                     </div>
                 </section>
                 <div className={`${CSS.nav} ${ !inView && CSS.fixed}`}>

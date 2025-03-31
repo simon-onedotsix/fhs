@@ -34,6 +34,14 @@
         border-left: 1px solid var(--accent);
         padding-left: var(--space-md);
     }
+    .section.rtl {
+        border-left: none;
+        padding-left: none;
+        border-right: 1px solid var(--accent);
+        padding-right: var(--space-md);
+
+    }
+
 }
 
 

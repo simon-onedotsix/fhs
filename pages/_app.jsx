@@ -4,6 +4,7 @@ import { createContext } from "react"
 import { gql } from "@apollo/client"
 import craftApolloClient from "./api/apollo"
 
+import {NextIntlClientProvider} from 'next-intl'
 import { useRouter } from "next/router"
 
 import { ThemeProvider } from 'next-themes'
@@ -19,24 +20,30 @@ export default function App({ Component, pageProps, globals }) {
 
 	// console.log('globals from _app:', globals)
 	const router = useRouter()
-	// console.log(router)
+	console.log(router)
 
 	const getLayout = Component.getLayout || ((page) => page)
 
 	return getLayout(
 		<GlobalsContext.Provider value={{ globals }} >
-			<ThemeProvider themes={['global', 'sa', 'ae']} defaultTheme="global" forcedTheme={Component.theme || null}>
-				<Script id="google-tag-manager" strategy="afterInteractive">
-					{`
-						(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-						new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-						j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-						'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-						})(window,document,'script','dataLayer','GTM-MNM37BX');
-					`}
-				</Script>
-				<Component {...pageProps} globals={globals} />
-			</ThemeProvider>
+			<NextIntlClientProvider
+				locale={router.locale}
+				timeZone="Europe/Vienna"
+				messages={pageProps.messages}
+			>
+				<ThemeProvider themes={['global', 'sa', 'ae']} defaultTheme="global" forcedTheme={Component.theme || null}>
+					<Script id="google-tag-manager" strategy="afterInteractive">
+						{`
+							(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+							new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+							j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+							'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+							})(window,document,'script','dataLayer','GTM-MNM37BX');
+						`}
+					</Script>
+					<Component {...pageProps} globals={globals} />
+				</ThemeProvider>
+			</NextIntlClientProvider>
 		</GlobalsContext.Provider>
 	)
 }

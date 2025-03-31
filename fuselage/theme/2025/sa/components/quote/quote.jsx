@@ -2,11 +2,11 @@ import { Pop, Slide } from '../../../../../animation/animation'
  
 import CSS from './quote.module.css'
 
-export const Quote = ({ quote, name, title, company }) => {
+export const Quote = ({ locale, quote, name, title, company }) => {
     return (
         <div className={CSS.container}>
             <Pop>
-                <div className={`${CSS.quote}`}>
+                <div className={`${CSS.quote} ${ locale === 'ar' ? CSS.rtl : '' }`}>
                     <p className='fs-2 lh-1'>{ quote }</p>
                 </div>
             </Pop>

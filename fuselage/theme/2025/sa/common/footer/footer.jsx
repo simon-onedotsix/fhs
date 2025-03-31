@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { GlobalsContext } from '../../../../../../pages/_app'
 
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -10,6 +11,8 @@ import { ButtonSocial } from  '../../../../../components/button-social/button-so
 import CSS from './footer.module.css'
 
 export const Footer = () => {
+
+    const { locale } = useRouter()
 
     const { globals } = useContext(GlobalsContext)
     // console.log('globals from FOOTER:', globals)
@@ -25,7 +28,7 @@ export const Footer = () => {
             <div className={`container columns-3 gap-md formatted`}>
 
                     <section className={`${CSS.section}`}>
-                        <p className='fs-1 fw-600 lh-1 c-secondary'>Join the Conversation</p>
+                        <p className='fs-1 fw-600 lh-1 c-secondary'>{ locale === 'ar' ? "انضم إلى المحادثة!" : "Join the Conversation" }</p>
                         <p className='fs-5 fw-600 c-accent mt-sm'>#FutureHospitalitySummit</p>
                         <p className='flex flex-wrap gap-xxs mt-sm'>
                             {
@@ -46,31 +49,55 @@ export const Footer = () => {
                         </p>
 
                         <div className='mt-md caps fw-600'>
-                            <p><Link href='/ae/contact-us'><a className='uLink'>Contact us</a></Link></p>
-                            <p><Link href='https://www.thebench.com/privacy'><a className='uLink' target='_blank'>Privacy Policy</a></Link></p>
-                            <p><Link href='/code-of-conduct'><a className='uLink' >Code of Conduct</a></Link></p>
+                            <p><Link href='/ae/contact-us'><a className='uLink'>{ locale === 'ar' ? "تواصل معنا" : "Contact us" }</a></Link></p>
+                            <p><Link href='https://www.thebench.com/privacy'><a className='uLink' target='_blank'>{ locale === 'ar' ? "سياسة الخصوصية" : "Privacy Policy" }</a></Link></p>
+                            <p><Link href='/code-of-conduct'><a className='uLink' >{ locale === 'ar' ? "مدونة قواعد السلوك" : "Code of Conduct" }</a></Link></p>
                         </div>
                     </section>
 
                     {
                         hubspotForm &&
                         <section className={CSS.section}>
-                            <p className='fs-5 fw-600 c-secondary'>Want to stay updated on FHS?</p>
-                            <p className='pb-xs'>If you haven&apos;t already registered your interest, simply submit your name and email and we&apos;ll make sure to keep you posted on all the exciting announcements we have in store for the event.</p>
+                            <p className='fs-5 fw-600 c-secondary'>
+                                {
+                                    locale === 'ar'
+                                    ?
+                                        "هل ترغب بالاطلاع على آخر أخبار قمة مستقبل الضيافة؟"
+                                    :
+                                        "Want to stay updated on FHS?"
+                                }
+                            </p>
+                            <p className='pb-xs'>
+                                {
+                                    locale === "ar"
+                                    ?
+                                        "إذا لم تسجل بعد، أرسل لنا اسمك وبريدك الإلكتروني، وسنوافيك بآخر المستجدات الحصرية المثيرة حول الحدث!"
+                                    :
+                                        "If you haven't already registered your interest, simply submit your name and email and we'll make sure to keep you posted on all the exciting announcements we have in store for the event."
+                                }
+                            </p>
                             <HubspotForm portalId={hubspotForm.portalId} formId={hubspotForm.formId} />
                         </section>
                     }
 
-                    <section className={`${CSS.section}`}>
+                    <section className={`${CSS.section} ${ locale === 'ar' && CSS.rtl }`}>
                         <div>
-                            <p className='fs-5 fw-600 c-secondary'>Organisers</p>
+                            <p className='fs-5 fw-600 c-secondary'>{ locale === 'ar' ? "الجهات المنظمة" : "Organisers" }</p>
                             <div className="mt-sm maxw-40">
                                 <p>
                                     <a className={CSS.partnerLogo} href="https://www.thebench.com" target='_blank' rel='noreferrer' aria-label="Organiser">
                                         <Image width={221} height={92} src="/assets/site/the-bench-black.png" alt="" />
                                     </a>
                                 </p>
-                                <p className='mt-sm'>The Bench has established a legacy for delivering world-leading investment forums and conferences in Europe, Africa, the Middle East, and Latin America. The Bench organises the Future Hospitality Summit (FHS) series including FHS World in Dubai, FHS Saudi Arabia and FHS Africa - and the AviaDev Africa conference.</p>
+                                <p className='mt-sm'>
+                                    {
+                                        locale === 'ar'
+                                        ?
+                                            "تملك The Bench تاريخًا وخبرة طويلة في تنظيم أهم منتديات الاستثمار والمؤتمرات العالمية في أوروبا وإفريقيا والشرق الأوسط وأمريكا اللاتينية. تنظم الشركة سلسلة فعاليات قمة مستقبل الضيافة التي تشمل قمة مستقبل الضيافة العالمية في دبي، وقمة مستقبل الضيافة بالمملكة العربية السعودية، وقمة مستقبل الضيافة بإفريقيا، إلى جانب مؤتمر AviaDev إفريقيا."
+                                        :
+                                            "The Bench has established a legacy for delivering world-leading investment forums and conferences in Europe, Africa, the Middle East, and Latin America. The Bench organises the Future Hospitality Summit (FHS) series including FHS World in Dubai, FHS Saudi Arabia and FHS Africa - and the AviaDev Africa conference."
+                                    }
+                                </p>
 
                             </div>
                         </div>

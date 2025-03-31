@@ -1,15 +1,18 @@
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 import CSS from './events-bar.module.css'
 
 export const EventsBar = ({ hidden, thisEvent, eventsLabel, events, theme }) => {
 
+    const { locale } = useRouter()
+
     return (
         <div className={`${CSS.wrapper} ${hidden && CSS.hidden}`} style={{ background: theme ? theme.background : `var(--primary)` }}>
 
             <div className={CSS.layout} style={{ color: theme ? theme.color : 'inherit'}}>
                 <section>
-                    { thisEvent ? thisEvent : 'This event ' } is brought to you by <EventBarButton href={`https://www.thebench.com`} title={`The Bench`} target stroke={ theme ? theme.accent : `var(--accent)`} />
+                    { thisEvent ? thisEvent : 'This event ' } { locale === 'ar' ? "تأتيكم قمة مستقبل الضيافة برعاية" : "is brought to you by" } <EventBarButton href={`https://www.thebench.com`} title={`The Bench`} target stroke={ theme ? theme.accent : `var(--accent)`} />
                 </section>
 
                 <section className={CSS.events}>
@@ -17,11 +20,12 @@ export const EventsBar = ({ hidden, thisEvent, eventsLabel, events, theme }) => 
                     {
                         events &&
                         <>
-                            {
-                                eventsLabel ?
-                                    <span>{ eventsLabel }</span>
+                            { 
+                                locale === 'ar'
+                                ?
+                                    "فعالياتنا:"
                                 :
-                                    <span>Our other events:</span>
+                                    "Our Events:"
                             }
                             { events.map( (event, index) => (
                                 <EventBarButton 

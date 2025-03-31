@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useContext } from 'react'
 import { GlobalsContext } from '../../../../../../pages/_app'
 
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 import { Button } from "../../../../../../fuselage/theme/2024/world/components/button/button"
@@ -10,6 +11,8 @@ import { ArrowButton } from '../../../../../components/arrow-button/arrow-button
 import CSS from './main-menu.module.css'
 
 export const MainMenu = ({ otherEvents }) => {
+
+    const { locale } = useRouter()
 
     const [ active, setActive ] = useState( false )
 
@@ -45,7 +48,7 @@ export const MainMenu = ({ otherEvents }) => {
                         }} 
                         decal={`fw-600`}
                     >
-                        Purchase Pass
+                        { locale === 'ar' ? "احجز تذكرتك الآن" : "Purchase Pass" }
                     </Button>
                 </div>
                     
@@ -57,9 +60,9 @@ export const MainMenu = ({ otherEvents }) => {
             </div>
 
 
-            <div className={`${CSS.overlay} ${ active && CSS.active } bg-primary`}>
+            <div className={`${CSS.overlay} ${ active && CSS.active } bg-primary`} dir='ltr'>
                 
-            <nav className="columns-4 gap-md">
+                <nav className="columns-4 gap-md">
                     { 
                         mainMenu?.map( column => (
                             <section key={column.id}>

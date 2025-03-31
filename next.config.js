@@ -6,6 +6,11 @@ const nextConfig = {
 
 	productionBrowserSourceMaps: true,
 
+	i18n: {
+		locales: ['en', 'ar'],
+		defaultLocale: 'en',
+	},
+
 	images: {
 		domains: ['cms.thebench.com', 'res.cloudinary.com', 'cdn-api.swapcard.com', 'static.swapcard.com'],
 	},

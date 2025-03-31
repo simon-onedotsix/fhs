@@ -1,6 +1,8 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
+import {useTranslations} from 'next-intl'
+
 import { useState, useRef } from "react"
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
@@ -170,6 +172,8 @@ const SPEAKER_DATA = [
 
 export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
 
+    const t = useTranslations('Global')
+
     // console.log('entry:', entry)
     // console.log('partners:', partners)
 
@@ -200,7 +204,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 <motion.img className={CSS.deco02} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g2 }}/>
 
                 <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-sa-opt.mp4'} poster={'/assets/video/fhs-2024-sa-opt-poster.jpg'}>
-
+                    
                     <motion.p 
                         initial={{ y: 100, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
@@ -546,7 +550,7 @@ const TickIcon = () => <img src="/assets/ui/icon-tick.svg" alt="" style={{ heigh
 
 
 
-export async function getStaticProps({ preview, previewData }) {
+export async function getStaticProps({ preview, previewData, locale }) {
 
     const data = await craftApolloClient( preview, previewData ).query({
         query: gql`
@@ -671,7 +675,9 @@ export async function getStaticProps({ preview, previewData }) {
 			seomatic: pageData.data.entry.seomatic,
 			contentBlocks: pageData.data.entry.fhisContentBlocks,
             partners: partnerData2025.data.exhibitors,
-            abVideos: pageData.data.abVideos.videos
+            abVideos: pageData.data.abVideos.videos,
+
+            messages: (await import(`../../translations/${locale}.json`)).default
 		}
 	}
 }
