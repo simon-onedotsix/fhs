@@ -226,8 +226,35 @@ export default function Page () {
                     <Pop>
                         <SpeakerCard
                         color={'c-accent'}
+                            photoUrl={'/assets/img/sa/nextgen-forum/abeer-green.jpg'}
+                            fullName={'Dr. Abeer A. Alamri'}
+                            jobTitle={'Strategic Planning and Monitoring Deputyship'}
+                            company={'Ministry of Tourism'}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
+                            photoUrl={'https://static.swapcard.com/public/images/6f7ac5e6899849429e30e768190d52aa.jpeg'}
+                            fullName={'Lameese Damiri'}
+                            jobTitle={'Head of Education'}
+                            company={'UN Tourism'}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
+                            photoUrl={'https://cdn-api.swapcard.com/public/images/3e48bf508a3f4f5a855d9b179a19b4ec.jpeg'}
+                            fullName={'Louis Nicolas Barrios'}
+                            jobTitle={'Regional Manager, Innovation, Education and Investment'}
+                            company={'UN Tourism'}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard
+                        color={'c-accent'}
                             photoUrl={'/assets/img/sa/nextgen-forum/dr-fabien.jpg'}
-                            fullName={'Dr. Fabien'}
+                            fullName={'Dr. Fabien Fresnel'}
                             jobTitle={'CEO'}
                             company={'Riyadh School of Tourism and Hospitality'}
                         />
@@ -235,10 +262,10 @@ export default function Page () {
                     <Pop>
                         <SpeakerCard
                         color={'c-accent'}
-                            photoUrl={'/assets/img/sa/nextgen-forum/abeer-green.jpg'}
-                            fullName={'Dr. Abeer A. Alamri'}
-                            jobTitle={'Strategic Planning and Monitoring Deputyship'}
-                            company={'Ministry of Tourism'}
+                            photoUrl={'https://static.swapcard.com/public/images/839a45698a0e4ad6b590ac1fdf344483.jpeg'}
+                            fullName={'Adrian Artimov'}
+                            jobTitle={'VP Enrollment'}
+                            company={'Sommet Education'}
                         />
                     </Pop>
                     <Pop>
@@ -259,33 +286,7 @@ export default function Page () {
                             company={'Hotelschool The Hague'}
                         />
                     </Pop>
-                    <Pop>
-                        <SpeakerCard
-                        color={'c-accent'}
-                            photoUrl={'https://cdn-api.swapcard.com/public/images/3e48bf508a3f4f5a855d9b179a19b4ec.jpeg'}
-                            fullName={'Louis Nicolas Barrios'}
-                            jobTitle={'Regional Manager, Innovation, Education and Investment'}
-                            company={'UN Tourism'}
-                        />
-                    </Pop>
-                    <Pop>
-                        <SpeakerCard
-                        color={'c-accent'}
-                            photoUrl={'https://static.swapcard.com/public/images/6f7ac5e6899849429e30e768190d52aa.jpeg'}
-                            fullName={'Lameese Damiri'}
-                            jobTitle={'Head of Education'}
-                            company={'UN Tourism'}
-                        />
-                    </Pop>
-                    <Pop>
-                        <SpeakerCard
-                        color={'c-accent'}
-                            photoUrl={'https://static.swapcard.com/public/images/839a45698a0e4ad6b590ac1fdf344483.jpeg'}
-                            fullName={'Adrian Artimov'}
-                            jobTitle={'VP Enrollment'}
-                            company={'Sommet Education'}
-                        />
-                    </Pop>
+                    
                     <Pop>
                         <SpeakerCard
                         color={'c-accent'}
@@ -295,15 +296,6 @@ export default function Page () {
                             company={'Start Reverse'}
                         />
                     </Pop>
-                    {/* <Pop>
-                        <SpeakerCard
-                        color={'c-accent'}
-                            photoUrl={''}
-                            fullName={'Dr. Rana Al Ogaily'}
-                            jobTitle={'Dean'}
-                            company={'Applied College Princess Nourah University'}
-                        />
-                    </Pop> */}
                     <Pop>
                         <SpeakerCard
                         color={'c-accent'}
