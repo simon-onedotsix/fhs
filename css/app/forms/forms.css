@@ -28,8 +28,6 @@
     transition: border 350ms ease;
 }
 
-
-
 .form input[type='submit'] {
 	cursor: pointer;
 	display: inline-block;
@@ -147,9 +145,6 @@
 }
 
 
-
-
-
 /* HUBSPOT SPECIFIC */
 
 .hs-form-field {
@@ -202,4 +197,17 @@ select.hs-input {
 
 .form-columns-2 {
     max-width: 100% !important;
+}
+
+
+
+/* LOCALISED elements */
+
+html[lang='ar'] .form input[type='checkbox'] {
+    margin-left: .5rem;
+    margin-right: 0;
+}
+
+html[lang='ar'] select.hs-input {
+    background-position: calc(1rem);
 }

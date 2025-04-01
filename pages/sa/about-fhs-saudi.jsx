@@ -220,7 +220,7 @@ export default function Page () {
 
 
     return (
-        <>
+        <div dir={ locale === 'ar' ? 'rtl' : 'ltr' }>
 
             <Header compact />
 
@@ -364,7 +364,7 @@ export default function Page () {
 
             <Footer />
             {/* <LenisScroller /> */}
-        </>
+        </div>
     )
 
 }

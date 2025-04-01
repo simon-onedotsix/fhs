@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -7,16 +8,19 @@ import { SectionHeading } from '../../components/section-heading/section-heading
 import CSS from './article-scroller.module.css'
 
 export const ArticleScroller = ({ children }) => {
+
+    const { locale } = useRouter()
+
     return (
 
         <section className={CSS.layout}>
             <div className={CSS.graphic}><KeylineIcon /></div>
 
             <aside>
-                <SectionHeading heading={'2024 Signings & Announcements'} />
+                <SectionHeading heading={ locale === 'ar' ? "التوقيعات والإعلانات لعام 2024" : '2024 Signings & Announcements'} />
                 <div className='p-md'>
                     <Link href={'/sa/content-library/category/press-room'} >
-                        <a className={`${CSS.ctaButton} fs-5 fw-600`} >Latest News &amp; Updates</a>
+                        <a className={`${CSS.ctaButton} fs-5 fw-600`} >{ locale === 'ar' ? "آخر الأخبار والمستجدات" : <>Latest News &amp; Updates</> }</a>
                     </Link>
                 </div>
             </aside>
@@ -35,6 +39,8 @@ export const Article = ({ heroUrl, title, excerpt, url }) => {
     
     if (!heroUrl) return
 
+    const { locale } = useRouter()
+
     return (
         <section className={CSS.article}>
             <Pop>
@@ -52,7 +58,7 @@ export const Article = ({ heroUrl, title, excerpt, url }) => {
                         <div>
                             <Link href={url}>
                                 <a className={`${CSS.readButton} uLink c-accent fw-600`}>
-                                    <span className={CSS.iconContainer}><PageIcon/></span> Read More
+                                    <span className={CSS.iconContainer}><PageIcon/></span> { locale === 'ar' ? "اقرأ المزيد" : "Read More"}
                                 </a>
                             </Link>
                         </div>

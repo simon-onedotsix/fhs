@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+import { useRouter } from "next/router"
+
 import { motion, useScroll, useTransform } from "framer-motion"
 
 import Link from "next/link"
@@ -11,6 +13,8 @@ import CSS from './themes-slider.module.css'
 export const ThemesSlider = ({ data, link, linkLabel }) => {
 
 	if ( !data ) return
+
+	const { locale } = useRouter()
 
 	const count = data.length
 
@@ -36,8 +40,8 @@ export const ThemesSlider = ({ data, link, linkLabel }) => {
 
     return (
 		<>
-			<div className={`${CSS.header} block center formatted py-0 mb-sm`}>
-				<p className="fs-1 fw-600">Event Themes</p>
+			<div className={`${CSS.header} block center formatted py-0 mb-sm`} dir={ locale === 'ar' ? "rtl" : "ltr" }>
+				<p className="fs-1 fw-600">{ locale === 'ar' ? "محاور الحدث" : "Event Themes" }</p>
 			</div>
 
 
@@ -88,7 +92,7 @@ export const ThemesSlider = ({ data, link, linkLabel }) => {
 
 				
 
-				<nav className={CSS.nav}>
+				<nav className={CSS.nav} dir="ltr">
 					<button className={CSS.navButton} onClick={prevPage} disabled={currentPage === 1 && true}><NavChevron flipped /></button>
 					<button className={CSS.navButton} onClick={nextPage} disabled={currentPage === totalPages && true}><NavChevron /></button>
 					{/* <p style={{ userSelect: `none` }}>{ currentPage }<span style={{ padding: `0 5px` }}>/</span>{ totalPages }</p> */}

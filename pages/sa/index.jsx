@@ -10,6 +10,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 
 import _ from 'lodash'
 
+import { useRouter } from "next/router"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
@@ -68,7 +69,7 @@ import handleSeomaticMeta from '../../lib/seomatic'
 
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
 
-import { THEMES_DATA } from "./themes"
+import { THEMES_DATA, THEMES_DATA_AR } from "./themes"
 
 const ARTICLE_DATA = [
     {
@@ -93,6 +94,32 @@ const ARTICLE_DATA = [
         heroUrl: '/assets/img/sa/press-release-4.webp',
         title: 'Marriott International and Al Qimmah Hospitality Sign Agreement to Open a JW Marriott Hotel in Jeddah',
         excerpt: 'Marriott International, Inc. and Al Qimmah Hospitality (a subsidiary of BinDawood Trading) today announced the signing of an agreement to introduce the JW Marriott brand in Jeddah. Situated on the Jeddah Corniche, JW Marriott Hotel Jeddah is anticipated to be a haven for travelers who seek a luxury escape to the waterfront destination, paired with exceptional service and holistic well-being experiences.',
+        url: '',
+    }
+]
+const ARTICLE_DATA_AR = [
+    {
+        heroUrl: '/assets/img/sa/press-release-1.webp',
+        title: 'شركة رؤى المدينة القابضة توقع اتفاقية مع هيلتون لافتتاح ثلاثة فنادق في مشروع رؤى المدينة',
+        excerpt: 'وقّعت شركة رؤى المدينة القابضة اتفاقية مع هيلتون لافتتاح ثلاثة فنادق تضم أكثر من 1600 غرفة.',
+        url: '/sa/content-library/rua-al-madinah-holding-signs-agreement-with-hilton-to-open-three-hotels-at-rua-al-madinah-project',
+    },
+    {
+        heroUrl: '/assets/img/sa/press-release-2.webp',
+        title: 'مجموعة فنادق راديسون تسرّع استراتيجيتها التوسعية في المملكة العربية السعودية مع التركيز على المدن المقدسة',
+        excerpt: 'تواصل مجموعة فنادق راديسون تكثيف جهودها في المملكة العربية السعودية، بما يتماشى مع رؤية السعودية 2030 لقطاع الضيافة.',
+        url: '/sa/content-library/radisson-hotel-group-accelerates-expansion-strategy-in-saudi-arabia-with-focus-on-holy-cities',
+    },
+    {
+        heroUrl: '/assets/img/sa/press-release-3.webp',
+        title: 'أكور تقود عملية توسع قطاع الضيافة في جميع أنحاء المملكة العربية السعودية',
+        excerpt: "بصفتها أكبر مشغل فنادق في المملكة، تقود أكور تحولًا استراتيجيًا في قطاع السياحة، مما يمثل عهدًا جديدًا من الضيافة في المملكة.",
+        url: '/sa/content-library/accor-spearheads-hospitality-expansion-throughout-saudi-arabia-2',
+    },
+    {
+        heroUrl: '/assets/img/sa/press-release-4.webp',
+        title: 'ماريوت الدولة والقمّة للضيافة توقعان اتفاقية لافتتاح فندق جي دبليو ماريوت في جدة',
+        excerpt: 'أعلنت شركة ماريوت الدولية، بالشراكة مع القمّة للضيافة (إحدى شركات مجموعة بن داود القابضة)، عن توقيع اتفاقية لإطلاق علامة جي دبليو ماريوت في جدة. سيتمتع الفندق بموقع مميز على كورنيش جدة، ليكون وجهة فاخرة للمسافرين الباحثين عن تجربة إقامة راقية على الواجهة البحرية تجمع بين الفخامة والخدمات المتميزة والرفاهية الشاملة.',
         url: '',
     }
 ]
@@ -174,6 +201,8 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
     const t = useTranslations('Global')
 
+    const { locale } = useRouter()
+
     // console.log('entry:', entry)
     // console.log('partners:', partners)
 
@@ -190,7 +219,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
     return (
-        <>
+        <div dir={ locale === 'ar' ? 'rtl' : 'ltr' }>
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
 				{ handleSeomaticMeta( seomatic ) }
@@ -211,8 +240,8 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         transition={{ type: "spring", bounce: 0.25 }}
                         className={`fs-0 fw-700 c-white lh-1 center`} 
                     >
-                        WHERE VISION <br/>
-                        SHAPES OPPORTUNITY
+                        { locale === 'ar' ? "حيث تصنع الرؤية الفرص" : <>WHERE VISION <br/> SHAPES OPPORTUNITY</> }
+                        
                     </motion.p>
 
                     <motion.p 
@@ -221,7 +250,8 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         transition={{ type: "spring", bounce: 0.25 }}
                         className={`fs-5 fw-500 c-white center mt-xs`} 
                     >
-                        11-13 May 2025, Mandarin Oriental Al Faisaliah, Riyadh
+                        { locale === 'ar' ? "13-11 مايو 2025، فندق ماندارين أورينتال الفيصلية، الرياض" : "11-13 May 2025, Mandarin Oriental Al Faisaliah, Riyadh" }
+                        
                     </motion.p>
 
                     <Fade>
@@ -233,7 +263,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                     decal={'fs-5 fw-600'} 
                                     accent
                                 >
-                                    2025 Programme
+                                    { locale === 'ar' ? "برنامج 2025" : "2025 Programme" }
                                 </Button>&ensp;
                                 <Button 
                                     href={'/sa/download-prospectus'} 
@@ -241,7 +271,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                     decal={'fs-5 fw-600'} 
                                     accent
                                 >
-                                    Download Prospectus
+                                    { locale === 'ar' ? "تحميل الكتيب التعريفي" : "Download Prospectus" }
                                 </Button>
                             </Pop>
                         </div>
@@ -252,7 +282,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 {/* HOST SPONSOR */}
                 <section className="block bg-primary">
                     <div className="container center">
-                        <p className="fs-3 fw-600 c-accent caps">Host Sponsors</p>
+                        <p className="fs-3 fw-600 c-accent caps">{ locale === 'ar' ? "الجهات الراعية المضيفة" : "Host Sponsors" }</p>
                             <Pop>
                                 <div className={`${CSS.hostSponsorLogoWrapper} mt-sm mx-auto`}>
                                     <Image src={`/assets/site/sa/mandarin-oriental-al-faisaliah-logo.png`} width={200} height={200}/>
@@ -266,7 +296,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 {/* PATRONAGE */}
                 <section className="block bg-primary">
                     <div className="container center">
-                        <p className="fs-3 fw-600 c-accent caps pb-sm">Under the Patronage of</p>
+                        <p className="fs-3 fw-600 c-accent caps pb-sm">{ locale === 'ar' ? "تحت رعاية" : "Under the Patronage of" }</p>
 
                         <div className={CSS.patronBox}>
 
@@ -280,17 +310,37 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
                             <div className={CSS.patronBoxContent}>
                                 <Pop>
-                                    <p className="fs-4 fw-600">HH Prince Bandar bin Saud bin Khalid Al Saud</p>
-                                    <p className="fs-5 mt-xxs">
-                                        Secretary General King Faisal Foundation&nbsp;(KFF)<br/>
-                                        Chairman of the Board of Directors Al&nbsp;Khozama
-                                    </p>
+                                    {
+                                        locale === 'ar'
+                                        ?
+                                            <>
+                                                <p className="fs-4 fw-600">صاحب السمو الأمير بندر بن سعود بن خالد آل سعود</p>
+                                                <p className="fs-5 mt-xxs">
+                                                    الأمين العام لمؤسسة الملك فيصل (KFF)
+                                                <br/>
+                                                    رئيس مجلس إدارة الخزامى
+                                                </p>
+                                            </>
+                                        :
+                                            <>
+                                                <p className="fs-4 fw-600">HH Prince Bandar bin Saud bin Khalid Al Saud</p>
+                                                <p className="fs-5 mt-xxs">
+                                                    Secretary General King Faisal Foundation&nbsp;(KFF)<br/>
+                                                    Chairman of the Board of Directors Al&nbsp;Khozama
+                                                </p>
+                                            </>
+                                    }
+                                    
 
                                 </Pop>
                             </div>
                         </div>
                         
-                        <p className="mt-xs caps fs-sm c-accent"><Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}><a className="uLink">View biography</a></Link></p>
+                        <p className="mt-xs caps fs-sm c-accent">
+                            <Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}>
+                                <a className="uLink">{ locale === 'ar' ? "عرض السيرة الذاتية" : "View biography" }</a>
+                            </Link>
+                        </p>
                     </div>
                 </section>
 
@@ -298,7 +348,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 {/* SUPPORTERS */}
                 <section className="block bg-primary">
                     <div className="container center">
-                        <p className="fs-3 fw-600 c-accent caps">Supporters</p>
+                        <p className="fs-3 fw-600 c-accent caps">{ locale === 'ar' ? "Supporters" : "Supporters" }</p>
                             <Pop>
                                 <div className={`${CSS.sponsorLogoWrapper} mt-sm mx-auto`}>
                                     <Image src={`/assets/site/sa/unt-white.png`} width={800} height={624}/>
@@ -312,12 +362,22 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
             {/* TICKER */}
-            <div className="bg-secondary">
-                <Ticker>
-                    <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
-                    <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
-                    <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
-                </Ticker>
+            <div className="bg-secondary" dir="ltr">
+                {
+                    locale === 'ar'
+                    ?
+                        <Ticker reverse>
+                            <p className="fs-2" dir="rtl"><strong>1.1 مليار دولار </strong> صفقات وفرص تجارية مُحققة في 2024 - </p>
+                            <p className="fs-2" dir="rtl"><strong>1.1 مليار دولار </strong> صفقات وفرص تجارية مُحققة في 2024 - </p>
+                            <p className="fs-2" dir="rtl"><strong>1.1 مليار دولار </strong> صفقات وفرص تجارية مُحققة في 2024 - </p>
+                        </Ticker>
+                    :
+                        <Ticker>
+                            <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
+                            <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
+                            <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
+                        </Ticker>
+                }
             </div>
 
 
@@ -325,12 +385,14 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             <section className="block bg-theme">
                 <div className="container center">
                     <Fade>
-                        <p className="fs-1 fw-600 lh-1 caps">Investors at FHS Saudi Arabia</p>
+                        <p className="fs-1 fw-600 lh-1 caps">
+                            { locale === 'ar' ? "المستثمرون في قمة مستقبل الضيافة بالمملكة العربية السعودية" : "Investors at FHS Saudi Arabia" }
+                        </p>
                     </Fade>
                     <div className="columns-3 gap-sm maxw-55 mx-auto mt-md">
-                        <InvestorImpact figure={283} label={"Investors"} />
-                        <InvestorImpact figure={22} unit={"%"} label={"of Attendees"} />
-                        <InvestorImpact figure={17} label={"Deals Signed"} />
+                        <InvestorImpact figure={283} label={ locale === 'ar' ? "مستثمرًا" : "Investors"} />
+                        <InvestorImpact figure={22} unit={"%"} label={ locale === 'ar' ? "من الحضور" : "of Attendees"} />
+                        <InvestorImpact figure={17} label={ locale === 'ar' ? "صفقة موقعة" : "Deals Signed"} />
                     </div>
                     <p className="mt-md">
                         <Pop>
@@ -339,7 +401,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                 decal={'fs-5 fw-600'} 
                                 color={'var(--secondary)'}
                             >
-                                View Past Investors
+                                { locale ===  'ar' ? "عرض قائمة المستثمرين السابقين" : "View Past Investors" }
                             </ButtonKeyline>
                         </Pop>
                     </p>
@@ -348,7 +410,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
             {/* SPEAKERS */}
-            <section className="block bg-light">
+            <section className="block bg-light" dir="ltr">
                 <div className="container center">
                     <p className="fs-0 fw-600 c-secondary">2025 Speakers</p>
                 </div>
@@ -385,16 +447,16 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
             <ImpactGrid>
                 <TitleBlock>
-                    <SectionHeading heading={'2024 in Numbers'} decal={'c-secondary'} />
+                    <SectionHeading heading={ locale === 'ar' ? "2024 بالأرقام" : '2024 in Numbers'} decal={'c-secondary'} />
                 </TitleBlock>
-                <ImpactFigure decal={'bg-neutral-01'} figure={1329} impact={'Attendees'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={38} impact={'Countries'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={206} impact={'Speakers'}  />
-                <ImpactFigure decal={'bg-neutral-01'} figure={95} impact={'Sponsors & Partners'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={80} unit={'%'} impact={'C-Level Executives, VP & Directors'}  />
+                <ImpactFigure decal={'bg-neutral-01'} figure={1329} impact={ locale === 'ar' ? "عدد الحضور" : 'Attendees'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={38} impact={ locale === 'ar' ? "دولة" : 'Countries'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={206} impact={ locale === 'ar' ? "عدد المتحدثين" : 'Speakers'}  />
+                <ImpactFigure decal={'bg-neutral-01'} figure={95} impact={ locale === 'ar' ? "الجهات الراعية والشركاء" : 'Sponsors & Partners'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={80} unit={'%'} impact={ locale === 'ar' ? "كبار المديرين التنفيذيين ونواب الرؤساء والمديرين" : 'C-Level Executives, VP & Directors'}  />
                 <ImpactFigure />
-                <ImpactFigure decal={'bg-neutral-01'} figure={94} unit={'%'} impact={'of those surveyed indicated FHS Saudi Arabia met their objective of gaining the latest market insights.'} />
-                <ImpactFigure decal={'bg-neutral-02'} figure={84} unit={'%'} impact={'of those surveyed indicated FHS Saudi Arabia met their objective of finding new business opportunities.'} />
+                <ImpactFigure decal={'bg-neutral-01'} figure={94} unit={'%'} impact={ locale === 'ar' ? "من المشاركين في الاستطلاع أكدوا أن قمة مستقبل الضيافة بالمملكة العربية السعودية مكنتهم من التعرف على أحدث المعلومات والتوجهات في السوق." : 'of those surveyed indicated FHS Saudi Arabia met their objective of gaining the latest market insights.'} />
+                <ImpactFigure decal={'bg-neutral-02'} figure={84} unit={'%'} impact={ locale === 'ar' ? "من المشاركين في الاستطلاع أكدوا أن قمة مستقبل الضيافة بالمملكة العربية السعودية مكنتهم من إيجاد فرص تجارية جديدة" : 'of those surveyed indicated FHS Saudi Arabia met their objective of finding new business opportunities.'} />
                 <ImageBlock />
             </ImpactGrid>
 
@@ -404,15 +466,15 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 <div className={`${CSS.quoteGrid} container`}>
                     <Quotation
                         avatarUrl={'/assets/img/sa/haddad-bani.jpg'}
-                        quote={'FHS Saudi Arabia 2024 was one of the best industry events I have attended in recent years!'}
-                        fullName={'Bani Haddad'}
-                        title={'Managing Director - Hospitality, Aleph Hospitality'}
+                        quote={ locale === 'ar' ? "كانت قمة مستقبل الضيافة بالمملكة العربية السعودية 2024 واحدة من أفضل الفعاليات في هذا القطاع التي حضرتها في السنوات الأخيرة!" : 'FHS Saudi Arabia 2024 was one of the best industry events I have attended in recent years!'}
+                        fullName={ locale === 'ar' ? "باني حداد" : 'Bani Haddad'}
+                        title={ locale === 'ar' ? "المدير الإداري - الضيافة، ألف للضيافة" : 'Managing Director - Hospitality, Aleph Hospitality'}
                     />
                     <Quotation
                         avatarUrl={'/assets/img/sa/mizan-abdulla.jpg'}
-                        quote={`Stepping into the Future Hospitality Summit felt like entering a realm where innovation knows no bounds. This summit wasn't just an event — it was a transformative experience that ignited my passion for shaping the future of hospitality.`}
-                        fullName={'Abdulla Mizan'}
-                        title={'Director, Procurement at Maldives Fund Management Corporation'}
+                        quote={ locale === 'ar' ? "إنَّ دخول قمة مستقبل الضيافة كان أشبه بدخول عالمٍ لا حدود للابتكار فيه. لم يكن هذا الحدث مجرد مؤتمر عادي، بل كان تجربة تحويلية أشعلت شغفي برسم مستقبل الضيافة." : `Stepping into the Future Hospitality Summit felt like entering a realm where innovation knows no bounds. This summit wasn't just an event — it was a transformative experience that ignited my passion for shaping the future of hospitality.`}
+                        fullName={ locale === 'ar' ? "عبد الله ميزان" : 'Abdulla Mizan'}
+                        title={ locale === 'ar' ? "مدير المشتريات في شركة إدارة صناديق المالديف" : 'Director, Procurement at Maldives Fund Management Corporation'}
                     />
                 </div>
             </section>
@@ -420,12 +482,15 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
             {/* THEMES */}
             <section className="block bg-primary">
-                <ThemesSlider data={THEMES_DATA} link={'/sa/themes'} linkLabel={'Learn more'} />
+                <ThemesSlider 
+                    data={ locale === 'ar' ? THEMES_DATA_AR : THEMES_DATA} link={'/sa/themes'} 
+                    linkLabel={ locale === 'ar' ? "اعرف المزيد" : 'Learn more'} 
+                />
             </section>
 
 
             {/* SPONSORS */}
-            <LogoTicker heading={'Thank You to Our Sponsors & Partners'} speed={120}>
+            <LogoTicker heading={ locale === 'ar' ? "شكرًا لرعاتنا وشركائنا" : 'Thank You to Our Sponsors & Partners'} speed={120}>
                 {
                     partners &&
                     partners.map( logo => <Logo key={logo.id} logoUrl={logo.logoUrl} />)
@@ -436,20 +501,20 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             {/* ANNOUNCEMENTS */}
             <ArticleScroller>
                 {
-                    ARTICLE_DATA &&
-                    ARTICLE_DATA.map(( article, index ) => <Article key={index} heroUrl={article.heroUrl} title={article.title} excerpt={article.excerpt} url={article.url} />)
+                    ( locale === 'ar' ? ARTICLE_DATA_AR : ARTICLE_DATA)
+                    .map(( article, index ) => <Article key={index} heroUrl={article.heroUrl} title={article.title} excerpt={article.excerpt} url={article.url} />)
                 }
             </ArticleScroller>
 
 
             <VideoUnit>
-                <SectionHeading heading={'Watch 2024 Highlights'} inverse />
+                <SectionHeading heading={ locale === 'ar' ? "شاهد أبرز لحظات 2024" : 'Watch 2024 Highlights'} inverse />
             </VideoUnit>
         
 
             <PhotoGrid>
                 <ContentBlock>
-                    <SectionHeading heading={'2024 in Photos'} />
+                    <SectionHeading heading={ locale === 'ar' ? "2024 بالصور" : '2024 in Photos'} />
                 </ContentBlock>
                 <Photo photoUrl={'/assets/img/sa/photos/2024-01.jpg'} />
                 <Photo photoUrl={'/assets/img/sa/photos/2024-02.jpg'} />
@@ -464,8 +529,8 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 <Photo photoUrl={'/assets/img/sa/photos/2024-09.jpg'} />
                 <Photo photoUrl={'/assets/img/sa/photos/2024-10.jpg'} />
                 <ContentBlock>
-                    <div className="pl-md">
-                        <CTAButton href={'https://www.flickr.com/photos/benchevents/albums/'} label={'View all Photos'} target={'_blank'} background={'white'} />
+                    <div className="px-md">
+                        <CTAButton href={'https://www.flickr.com/photos/benchevents/albums/'} label={ locale === 'ar' ? "عرض جميع الصور" : 'View all Photos'} target={'_blank'} background={'white'} />
                     </div>
                 </ContentBlock>
             </PhotoGrid>
@@ -479,10 +544,18 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 <div className="container">
                     <div className="formatted">
                         <Slide>
-                            <p className="fs-1 lh-1">Get Premium Exposure at FHS Saudi Arabia 2025</p>
+                            <p className="fs-1 lh-1">
+                                { locale === 'ar' ? "احصل على وصول أفضل في قمة مستقبل الضيافة بالمملكة العربية السعودية 2025" : "Get Premium Exposure at FHS Saudi Arabia 2025" }
+                            </p>
                         </Slide>
                         <Fade>
-                            <p className="fs-6 mt-sm lh-6">Join the epicenter of the Middle East&apos;s hospitality industry at FHS Saudi Arabia 2025. This premier conference brings together Government leaders, tourism ministries, top hospitality brands, hotel owners and investors, renowned restaurant groups, destination developers, asset managers, financial institutions, and consultants. By participating, you&apos;ll have the opportunity to showcase your brand, position yourself as a thought leader or innovator, and connect with key decision-makers and industry influencers in the region. Don&apos;t miss out on elevating your presence in one of the world&apos;s fastest-growing hospitality markets. Speak with our sales team today to discover how you can make the most of this unique opportunity!</p>
+                            {
+                                locale === 'ar'
+                                ?
+                                    <p className="fs-6 mt-sm lh-6">انضم إلى مركز صناعة الضيافة في الشرق الأوسط من خلال المشاركة في قمة مستقبل الضيافة بالمملكة العربية السعودية 2025. يجمع هذا المؤتمر الرائد العديد من قادة الحكومات، ووزارات السياحة، وأكبر العلامات التجارية الفندقية، ومالكي الفنادق والمستثمرين، والمجموعات الفندقية العالمية، ومطوري الوجهات السياحية، ومديري الأصول، والمؤسسات المالية، والاستشاريين. من خلال مشاركتك، ستحظى بفرصة استثنائية لعرض علامتك التجارية، وترسيخ مكانتك كقائد ملهم أو مبتكر، والتواصل مع أبرز صُنَّاع القرار والمؤثرين في المنطقة. لا تفوّت هذه الفرصة لتعزيز حضورك في أحد أسرع أسواق الضيافة نموًا في العالم. تواصل مع فريق المبيعات لدينا اليوم لاكتشاف كيفية تحقيق أقصى استفادة من هذه الفرصة الفريدة!</p>
+                                :
+                                    <p className="fs-6 mt-sm lh-6">Join the epicenter of the Middle East&apos;s hospitality industry at FHS Saudi Arabia 2025. This premier conference brings together Government leaders, tourism ministries, top hospitality brands, hotel owners and investors, renowned restaurant groups, destination developers, asset managers, financial institutions, and consultants. By participating, you&apos;ll have the opportunity to showcase your brand, position yourself as a thought leader or innovator, and connect with key decision-makers and industry influencers in the region. Don&apos;t miss out on elevating your presence in one of the world&apos;s fastest-growing hospitality markets. Speak with our sales team today to discover how you can make the most of this unique opportunity!</p>
+                            }
                         </Fade>
                     </div>
                 </div>
@@ -501,7 +574,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             
             <Footer />
             <LenisScroller />
-        </>
+        </div>
     )
 }
 Home.theme = 'sa-2025'

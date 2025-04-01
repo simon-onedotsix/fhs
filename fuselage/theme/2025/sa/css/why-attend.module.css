@@ -83,6 +83,10 @@
     text-decoration: none;
     text-align: left;
 }
+.jumpButton.rtl {
+    flex-direction: row-reverse;
+    text-align: right;
+}
 
 .jumpArrow {
     width: 2.5rem;

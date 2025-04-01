@@ -2,9 +2,12 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class MainDocument extends Document {
 
+	// add below to HTML tag to handle RTL globally
+	// dir={ this.props.locale === 'ar' ? 'rtl' : 'ltr'}
+
 	render() {
 		return (
-			<Html lang={this.props.locale} dir={ this.props.locale === 'ar' ? 'rtl' : 'ltr'}>
+			<Html lang={this.props.locale}>
 				<Head>
 					<link rel="preconnect" href="https://fonts.googleapis.com"/>
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>

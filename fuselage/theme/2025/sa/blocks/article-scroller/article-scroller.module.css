@@ -46,6 +46,7 @@
 .article {
     display: grid;
     grid-template-columns: 1fr;
+    background-color: var(--neutral-02);
 }
 .article aside {
     position: relative;

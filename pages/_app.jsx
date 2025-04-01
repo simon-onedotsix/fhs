@@ -28,8 +28,7 @@ export default function App({ Component, pageProps, globals }) {
 		<GlobalsContext.Provider value={{ globals }} >
 			<NextIntlClientProvider
 				locale={router.locale}
-				timeZone="Europe/Vienna"
-				messages={pageProps.messages}
+				// messages={pageProps.messages}
 			>
 				<ThemeProvider themes={['global', 'sa', 'ae']} defaultTheme="global" forcedTheme={Component.theme || null}>
 					<Script id="google-tag-manager" strategy="afterInteractive">

@@ -81,7 +81,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                 />
             </span>
         
-            <header ref={hideEventsBarTrigger} className={`${CSS.layout} ${overlaid && CSS.overlaid} ${compact && CSS.compact} no-print`}>
+            <header ref={hideEventsBarTrigger} className={`${CSS.layout} ${overlaid && CSS.overlaid} ${compact && CSS.compact} no-print`} dir={ locale === 'ar' ? 'rtl' : 'ltr' }>
 
                 <section className={CSS.brandWrapper}>
                     <div className={`${CSS.brand}`}>
@@ -98,7 +98,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                     </div>
                     <div className={CSS.venue}>
                         <p className='lh-2 c-white'>
-                            <span className='fw-600'>{ locale === 'ar' ? "11-13 مايو 2025" : "11-13 May 2025"}</span> <br/>
+                            <span className='fw-600'>{ locale === 'ar' ? "13-11 مايو 2025" : "11-13 May 2025"}</span> <br/>
                             { locale === 'ar' ? "فندق ماندارين أورينتال الفيصلية، الرياض" : "Mandarin Oriental Al Faisaliah, Riyadh" }
                         </p>
                     </div>

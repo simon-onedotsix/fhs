@@ -8,7 +8,7 @@ export const EventsBar = ({ hidden, thisEvent, eventsLabel, events, theme }) => 
     const { locale } = useRouter()
 
     return (
-        <div className={`${CSS.wrapper} ${hidden && CSS.hidden}`} style={{ background: theme ? theme.background : `var(--primary)` }}>
+        <div className={`${CSS.wrapper} ${hidden && CSS.hidden}`} style={{ background: theme ? theme.background : `var(--primary)` }} dir={ locale === 'ar' ? 'rtl' : 'ltr' }>
 
             <div className={CSS.layout} style={{ color: theme ? theme.color : 'inherit'}}>
                 <section>
