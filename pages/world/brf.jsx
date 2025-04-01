@@ -188,6 +188,23 @@ export default function Page ({ sessions, speakers }) {
                 >
                     Held adjacently with <strong>FHS World</strong>, this exclusive one-day forum explores the thriving sector of Branded Residences.
                 </motion.p>
+
+                <Pop>
+                    <div className="container maxw-50 pt-lg columns-2 gap-md">
+                        <section>
+                            <p className='c-secondary center pb-sm caps ls-2'>Founder Sponsor</p>
+                            <div style={{ width: 300, maxWidth: '70vw', margin: '0 auto' }}>
+                                <img src="/assets/img/brf/accor-one-living.svg" alt="logo" />
+                            </div>
+                        </section>
+                        <section>
+                            <p className='c-secondary center pb-sm caps ls-2'>Strategic Partner</p>
+                            <div style={{ width: 150, maxWidth: '30vw', margin: '0 auto' }}>
+                                <img src="/assets/img/brf/global-branded-residences.svg" alt="logo" />
+                            </div>
+                        </section>
+                    </div>
+                </Pop>
                 
                 <motion.div 
                     initial={{ y: 100, opacity: 0 }}
@@ -200,18 +217,18 @@ export default function Page ({ sessions, speakers }) {
                     </p>
                 </motion.div>
 
-                <Fade>
+                {/* <Fade>
                     <div className="mt-sm center">
                         <Pop inline>
-                            {/* <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Purchase Your Pass</Button> */}
-                            {/* <Button 
+                            <Button href={`/ae/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Purchase Your Pass</Button>
+                            <Button 
                                 href={`/world/purchase-pass`} 
                                 theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} 
                                 decal={`fs-5 fw-600`}
-                            >Purchase Pass</Button> */}
+                            >Purchase Pass</Button>
                         </Pop>
                     </div>
-                </Fade>
+                </Fade> */}
             </HeroUnitVideo>
 
 
