@@ -54,7 +54,7 @@ export const ThemesSlider = ({ data, link, linkLabel }) => {
 					</div>
 				</div>
 
-				<div className={CSS.icons}>
+				<div className={CSS.icons} dir="ltr">
 					<motion.div className={CSS.iconWrapper} style={{ x: `${offset}%` }}>
 						{
 							data.map( (theme, index) => (
