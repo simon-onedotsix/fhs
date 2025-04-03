@@ -560,7 +560,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     </div>
                 </div>
 
-                <div className=" pt-xs">
+                <div className=" pt-xs" dir="ltr" style={{ position: 'relative', zIndex: 2}}>
                     <HubspotForm portalId={"14527187"} formId={"9b80f5cc-3153-4063-924b-39dae712c15d"} />
                 </div>
             </section>

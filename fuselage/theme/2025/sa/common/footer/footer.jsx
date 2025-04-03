@@ -76,7 +76,9 @@ export const Footer = () => {
                                         "If you haven't already registered your interest, simply submit your name and email and we'll make sure to keep you posted on all the exciting announcements we have in store for the event."
                                 }
                             </p>
-                            <HubspotForm portalId={hubspotForm.portalId} formId={hubspotForm.formId} />
+                            <div dir="ltr">
+                                <HubspotForm portalId={hubspotForm.portalId} formId={hubspotForm.formId} />
+                            </div>
                         </section>
                     }
 
