@@ -21,11 +21,18 @@ export const UpcomingEvents = ({ children, landscape }) => {
 export const EventGroupCard = ({ children, theme, location, dates, venue }) => {
 
     let startDay = formatInTimeZone(new Date( dates.startDate ), 'Asia/Dubai', 'd')
-    let endDay = formatInTimeZone(new Date( dates.endDate ), 'Asia/Dubai', 'd')
     let startMonth = formatInTimeZone(new Date( dates.startDate ), 'Asia/Dubai', 'MMMM')
-    let endMonth = formatInTimeZone(new Date( dates.endDate ), 'Asia/Dubai', 'MMMM')
     let year = formatInTimeZone(new Date( dates.startDate ), 'Asia/Dubai', 'yyyy')
+    
+    let endDay
+    let endMonth
 
+    if (dates.endDate) {
+        endDay = formatInTimeZone(new Date( dates.endDate ), 'Asia/Dubai', 'd')
+        endMonth = formatInTimeZone(new Date( dates.endDate ), 'Asia/Dubai', 'MMMM')
+    }
+
+    // console.log('dates:', dates)
     // console.log('start day:', startDay)
     // console.log('end day:', endDay)
     // console.log('start month:', startMonth)
@@ -49,7 +56,7 @@ export const EventGroupCard = ({ children, theme, location, dates, venue }) => {
                         </p>
                     :
                         <p className='fs-4 fw-700 lh-2'>
-                            { startDay } { startMonth } - { endDay } { endMonth } { year }
+                            { startDay } { startMonth } { dates.endDate && "-" } { endDay } { endMonth } { year }
                         </p>
 
                 }
