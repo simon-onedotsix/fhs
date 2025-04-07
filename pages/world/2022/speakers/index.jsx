@@ -45,8 +45,7 @@ function Speakers() {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{orderedSpeakers.map( speaker => (
 							<div key={speaker.id}>
-								<Link href={`/world/2022/speakers/${speaker.id}`}>
-									<a className={CSS.avatar}>
+									<div className={CSS.avatar}>
 										{
 											speaker.photoSet ? 
 											<Image 
@@ -65,8 +64,7 @@ function Speakers() {
 												unoptimized
 											/>
 										}
-									</a>
-								</Link>
+									</div>
 								<div>
 									<p className='mt-xs fw-300'>
 										<span className='fw-600'>{speaker.firstname} {speaker.lastname}</span> 

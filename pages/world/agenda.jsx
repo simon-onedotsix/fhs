@@ -584,7 +584,7 @@ export default function Agenda ({ sessions, locations }) {
 				{/* INTRO */}
                 <div className="section mb-sm">
 					<div className={CSS.titleBlock}>
-						<p className="fs-0 fw-500">2024 Agenda</p>
+						<p className="fs-0 fw-500">2025 Agenda</p>
 						<button 
 							className={CSS.printButton}
 							onClick={ ()=> window.print() }
@@ -1045,7 +1045,7 @@ export async function getStaticProps() {
 							}
 						}
 
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_AE}", page: 1, pageSize: 500) {
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2025}", page: 1, pageSize: 500) {
 							id
 							titleTranslations {
 								value
@@ -1090,7 +1090,7 @@ export async function getStaticProps() {
 								photoUrl
 								organization
 								biography
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE}") {
+								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2025}") {
 									eventProfile {
 										type
 										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
@@ -1109,7 +1109,7 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AE,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2025,
 					"page": 1
 				}
 			})

@@ -20,7 +20,7 @@ export default function App({ Component, pageProps, globals }) {
 
 	// console.log('globals from _app:', globals)
 	const router = useRouter()
-	console.log(router)
+	// console.log(router)
 
 	const getLayout = Component.getLayout || ((page) => page)
 
