@@ -292,22 +292,22 @@ export default function Page () {
                 <div className="container columns-4 gap-md formatted">
                     <article>
                         <h5>How do I access the app?</h5>
-                        <ul><li>After registration, you get an email from Future Hospitality Summit &lt;noreply@swapcard.com&gt;</li><li>The email has two options: either navigate to 'let's get started' to log in or choose 'Get the mobile app/download it'.</li><li>Log in using the same email address used to register for the event and then proceed to create a password. The app gives an option of sending a magic link to your registered email address through which you can create a password.</li><li>However, only registered attendees can access the app.</li></ul>
+                        <ul><li>After registration, you get an email from Future Hospitality Summit &lt;noreply@swapcard.com&gt;</li><li>The email has two options: either navigate to &apos;let&apos;s get started&apos; to log in or choose &apos;Get the mobile app/download it&apos;.</li><li>Log in using the same email address used to register for the event and then proceed to create a password. The app gives an option of sending a magic link to your registered email address through which you can create a password.</li><li>However, only registered attendees can access the app.</li></ul>
                     </article>
 
                     <article>
                         <h5>How do I reset my password?</h5>
-                        <ul><li>When logging in, after entering your email, the next step asks for a password. Find the option to 'Send me a magic link' to receive an email from Future Hospitality Summit &lt;noreply@swapcard.com&gt; containing the magic sign-in link. Click on the 'Sign in to Future Hospitality Summit' button and create a password. This would reset/change your old password to the new one.</li><li>If on the website, press the profile icon top right, choose settings, scroll down and you will find a 'Change Password' option.</li></ul>
+                        <ul><li>When logging in, after entering your email, the next step asks for a password. Find the option to &apos;Send me a magic link&apos; to receive an email from Future Hospitality Summit &lt;noreply@swapcard.com&gt; containing the magic sign-in link. Click on the &apos;Sign in to Future Hospitality Summit&apos; button and create a password. This would reset/change your old password to the new one.</li><li>If on the website, press the profile icon top right, choose settings, scroll down and you will find a &apos;Change Password&apos; option.</li></ul>
                     </article>
 
                     <article>
                         <h5>How do I edit my profile?</h5>
-                        <ul><li>Click on your profile icon bottom right, and click on the top (your details like name and your display picture). You will find options to edit details like: about me/information/social media/contact details/company.</li><li>For the website, navigate to the top tight profile icon, click it, then go to 'My Profile' and make edits.</li></ul>
+                        <ul><li>Click on your profile icon bottom right, and click on the top (your details like name and your display picture). You will find options to edit details like: about me/information/social media/contact details/company.</li><li>For the website, navigate to the top tight profile icon, click it, then go to &apos;My Profile&apos; and make edits.</li></ul>
                     </article>
 
                     <article>
                         <h5>How do I manage meetings?</h5>
-                        <ul><li>Once you have registered as an attendee and the event is live, go to 'Attendee List' to preview who you can set up meetings with. Click on any relevant profile, and set up a meeting with them with the 'Set Meeting' button.</li><li>Alternatively, you can accept contact requests/meeting requests from others as per your choice.</li><li>You can then view your meeting schedule by navigating to 'My Schedule' on the left.</li></ul>
+                        <ul><li>Once you have registered as an attendee and the event is live, go to &apos;Attendee List&apos; to preview who you can set up meetings with. Click on any relevant profile, and set up a meeting with them with the &apos;Set Meeting&apos; button.</li><li>Alternatively, you can accept contact requests/meeting requests from others as per your choice.</li><li>You can then view your meeting schedule by navigating to &apos;My Schedule&apos; on the left.</li></ul>
                     </article>
                 </div>
             </section>
