@@ -221,6 +221,7 @@ export default function Page () {
             </section>
 
 
+
             {/* SIGNINGS */}
 
             <section className="block bg-theme">
@@ -262,13 +263,9 @@ export default function Page () {
                 </div>
             </section>
 
-            {/* <ArticleScroller>
-                {
-                    ARTICLE_DATA &&
-                    ARTICLE_DATA.map(( article, index ) => <Article key={index} heroUrl={article.heroUrl} title={article.title} excerpt={article.excerpt} url={article.url} />)
-                }
-            </ArticleScroller> */}
 
+
+            {/* RELATIONSHIPS STATEMENT */}
 
             <section className="block bg-primary">
                 <div className="container center maxw-55 c-white">
@@ -277,7 +274,9 @@ export default function Page () {
             </section>
 
 
+
             {/* FAQs */}
+            
             <Billboard 
                 hero={{ url: "/assets/img/sa/networking/networking-faqs-banner.jpg" }}
                 height={"50"}
