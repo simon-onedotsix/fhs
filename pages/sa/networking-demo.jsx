@@ -2,6 +2,8 @@ import Image from 'next/image'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
+import Link from 'next/link'
+
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Reveal } from "../../fuselage/animation/reveal"
 import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/animated-counter/animated-counter"
@@ -9,8 +11,10 @@ import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/anim
 import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
+import { Button } from '../../fuselage/theme/2024/world/components/button/button'
 import { ButtonKeyline } from '../../fuselage/theme/2024/world/components/button-keyline/button-keyline'
 import { ArticleScroller, Article } from "../../fuselage/theme/2025/sa/pages/networking/article-scroller"
+import { Billboard } from '../../fuselage/blocks/billboard/billboard'
 
 
 
@@ -26,7 +30,7 @@ const ARTICLE_DATA = [
     {
         heroUrl: '/assets/img/sa/press-release-4.webp',
         title: 'Marriott International and Al Qimmah Hospitality Sign Agreement to Open a JW Marriott Hotel in Jeddah',
-        excerpt: 'Marriott International, Inc. and Al Qimmah Hospitality (a subsidiary of BinDawood Trading) today announced the signing of an agreement to introduce the JW Marriott brand in Jeddah. Situated on the Jeddah Corniche, JW Marriott Hotel Jeddah is anticipated to be a haven for travelers who seek a luxury escape to the waterfront destination, paired with exceptional service and holistic well-being experiences.',
+        excerpt: 'Marriott International, Inc. and Al Qimmah Hospitality (a subsidiary of BinDawood Trading) today announced the signing of an agreement to introduce the JW Marriott brand in Jeddah.',
         url: '/sa/content-library/marriott-international-and-al-qimmah-hospitality-sign-agreement-to-open-a-jw-marriott-hotel-in-jeddah',
     },
     {
@@ -99,13 +103,9 @@ export default function Page () {
 
                                 <p className='mt-md'>
                                     <Pop inline>
-                                        <ButtonKeyline 
-                                            href={'/sa/purchase-pass'} 
-                                            decal={'fs-5 fw-600'} 
-                                            color={'var(--secondary)'}
-                                        >
-                                            Register Now
-                                        </ButtonKeyline>
+                                        <Link href="/sa/purchase-pass">
+                                            <a className="button fs-5 caps">Register Now</a>
+                                        </Link>
                                     </Pop>
                                 </p>
                             </div>
@@ -158,22 +158,22 @@ export default function Page () {
                 </div>
 
                 <div className="container columns-3 gap-md">
-                    <Pop><Card>
+                    <Pop><Card heroUrl={'/assets/img/sa/networking/receptions.jpg'}>
                         <p className='fs-4 c-secondary fw-600'>Networking Receptions</p>
                     </Card></Pop>
-                    <Pop><Card>
+                    <Pop><Card heroUrl={'/assets/img/sa/networking/networking.jpg'}>
                         <p className='fs-4 c-secondary fw-600'>Speed Networking</p>
                     </Card></Pop>
-                    <Pop><Card>
+                    <Pop><Card heroUrl={'/assets/img/sa/networking/lunch.jpg'}>
                         <p className='fs-4 c-secondary fw-600'>Curated Lunch &amp; Coffee</p>
                     </Card></Pop>
-                    <Pop><Card>
+                    <Pop><Card heroUrl={'/assets/img/sa/networking/tours.jpg'}>
                         <p className='fs-4 c-secondary fw-600'>Site Tours</p>
                     </Card></Pop>
-                    <Pop><Card>
+                    <Pop><Card heroUrl={'/assets/img/sa/networking/investors-lounge.jpg'}>
                         <p className='fs-4 c-secondary fw-600'>Investor&apos;s Lounge</p>
                     </Card></Pop>
-                    <Pop><Card>
+                    <Pop><Card heroUrl={'/assets/img/sa/networking/exhibition.jpg'}>
                         <p className='fs-4 c-secondary fw-600'>Exhibition Floor</p>
                     </Card></Pop>
                     
@@ -221,19 +221,94 @@ export default function Page () {
             </section>
 
 
-            {/* CONTENT-LIBRARY */}
+            {/* SIGNINGS */}
 
-            <ArticleScroller>
+            <section className="block bg-theme">
+                <div className="container center maxw-50">
+                    <Fade>
+                        <p className="fs-1 fw-600 lh-1 caps">Creating impact through meaningful connections</p>
+                    </Fade>
+                    <p className='mt-sm'>At FHS Saudi Arabia 2024, industry-shaping deals and partnerships were announced on-site, including agreements between IHG Hotels and Resorts, ASFAR, Baheej Group, Kerten Hospitality, AlSulaiman Group, Hilton,Marriott, Rua Al Madinah and much more!</p>
+                    <p className='mt-md'>
+                    </p>
+                </div>
+
+                <div className="container columns-3 gap-md">
+                    {
+                        ARTICLE_DATA &&
+                        ARTICLE_DATA.map(( article, index ) => (
+                            <Pop key={index}>
+                                <Card heroUrl={article.heroUrl}>
+                                    <p className='fs-6 lh-2 c-secondary fw-600 pb-xs'>{article.title}</p>
+                                    <p>{article.excerpt}</p>
+                                    <p className='fw-600 c-accent mt-xs'><Link href={article.url}><a className='uLink'>Read more</a></Link></p>
+                                </Card>
+                            </Pop>
+                        ))
+                    }
+                    
+                </div>
+
+                <div className="container center">
+                    <Pop inline>
+                        <ButtonKeyline 
+                            href={'/sa/content-library/category/press-room'} 
+                            decal={'fs-5 fw-600'} 
+                            color={'var(--secondary)'}
+                        >
+                            View More
+                        </ButtonKeyline>
+                    </Pop>
+                </div>
+            </section>
+
+            {/* <ArticleScroller>
                 {
                     ARTICLE_DATA &&
                     ARTICLE_DATA.map(( article, index ) => <Article key={index} heroUrl={article.heroUrl} title={article.title} excerpt={article.excerpt} url={article.url} />)
                 }
-            </ArticleScroller>
+            </ArticleScroller> */}
 
 
             <section className="block bg-primary">
                 <div className="container center maxw-55 c-white">
                     <p className='fs-4'>FHS Saudi Arabia isn&apos;t just about making contacts—it&apos;s about creating lasting business relationships that drive the future of hospitality in the Kingdom. With a demonstrated track record of facilitating meaningful industry connections, our 2025 event promises to deliver the relationships that will shape the next phase of Saudi Arabia&apos;s hospitality growth.</p>
+                </div>
+            </section>
+
+
+            {/* FAQs */}
+            <Billboard 
+                hero={{ url: "/assets/img/sa/networking/networking-faqs-banner.jpg" }}
+                height={"50"}
+                tint={"20"}
+                horizontalAlign={"center"}
+                verticalAlign={"center"}
+                maxContentWidth={""}
+            >
+                <p className='fs-1 fw-600'>FAQs</p>
+            </Billboard>
+            <section className="block bg-default">
+                <div className="container columns-4 gap-md formatted">
+                    <article>
+                        <h5>How do I access the app?</h5>
+                        <ul><li>After registration, you get an email from Future Hospitality Summit &lt;noreply@swapcard.com&gt;</li><li>The email has two options: either navigate to 'let's get started' to log in or choose 'Get the mobile app/download it'.</li><li>Log in using the same email address used to register for the event and then proceed to create a password. The app gives an option of sending a magic link to your registered email address through which you can create a password.</li><li>However, only registered attendees can access the app.</li></ul>
+                    </article>
+
+                    <article>
+                        <h5>How do I reset my password?</h5>
+                        <ul><li>When logging in, after entering your email, the next step asks for a password. Find the option to 'Send me a magic link' to receive an email from Future Hospitality Summit &lt;noreply@swapcard.com&gt; containing the magic sign-in link. Click on the 'Sign in to Future Hospitality Summit' button and create a password. This would reset/change your old password to the new one.</li><li>If on the website, press the profile icon top right, choose settings, scroll down and you will find a 'Change Password' option.</li></ul>
+                    </article>
+
+                    <article>
+                        <h5>How do I edit my profile?</h5>
+                        <ul><li>Click on your profile icon bottom right, and click on the top (your details like name and your display picture). You will find options to edit details like: about me/information/social media/contact details/company.</li><li>For the website, navigate to the top tight profile icon, click it, then go to 'My Profile' and make edits.</li></ul>
+                    </article>
+
+                    <article>
+                        <h5>How do I manage meetings?</h5>
+                        <ul><li>Once you have registered as an attendee and the event is live, go to 'Attendee List' to preview who you can set up meetings with. Click on any relevant profile, and set up a meeting with them with the 'Set Meeting' button.</li><li>Alternatively, you can accept contact requests/meeting requests from others as per your choice.</li><li>You can then view your meeting schedule by navigating to 'My Schedule' on the left.</li></ul>
+                    </article>
                 </div>
             </section>
 
@@ -258,11 +333,11 @@ const InvestorImpact = ({ prefix, figure, unit, label }) => {
     )
 }
 
-const Card = ({ children }) => {
+const Card = ({ children, heroUrl }) => {
     return (
         <div className={CSS.card}>
             <div className={CSS.cardHero}>
-
+                <Image src={heroUrl} layout='fill' />
             </div>
             
             <div className={CSS.cardContent}>
