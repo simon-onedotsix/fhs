@@ -72,6 +72,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 7 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNjcwNDI5MQ==') orderedCategories.push({ ...category, priority: 8 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNjAzMTE4Mg==') orderedCategories.push({ ...category, priority: 9 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzEwNjg2Mw==') orderedCategories.push({ ...category, priority: 10 })
 	})
 
 
@@ -80,7 +81,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 	// console.log('content-blocks:', contentBlocks)
 	// partnerData.exhibitors.forEach( ex => console.log( ex.typeLabel?.name))
 	// console.log('orderedCategories:', orderedCategories)
-	// console.log('categories:', categoriesArray)
+	console.log('categories:', categoriesArray)
 
 
 	return (
