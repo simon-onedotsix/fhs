@@ -137,7 +137,7 @@ export default function Page () {
             <section className="block bg-primary">
                 <div className="container center">
                     <Fade>
-                        <p className="fs-1 fw-600 lh-1 caps maxw-40 mx-auto">Networking Stats from FHS Saudi Arabia 2024</p>
+                        <p className="fs-1 fw-600 lh-1 maxw-40 mx-auto">Networking Stats from FHS Saudi Arabia 2024</p>
                     </Fade>
                     <div className="columns-3 gap-sm maxw-50 mx-auto mt-md">
                         <InvestorImpact prefix={"$"} figure={1.1} unit={"B"} label={"in Business"} />
@@ -161,7 +161,7 @@ export default function Page () {
                     <Pop><Card heroUrl={'/assets/img/sa/networking/receptions.jpg'}>
                         <p className='fs-4 c-secondary fw-600'>Networking Receptions</p>
                     </Card></Pop>
-                    <Pop><Card heroUrl={'/assets/img/sa/networking/networking.jpg'}>
+                    <Pop><Card heroUrl={'/assets/img/sa/networking/speed-networking.jpg'}>
                         <p className='fs-4 c-secondary fw-600'>Speed Networking</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/lunch.jpg'}>
@@ -214,7 +214,7 @@ export default function Page () {
                             <p><strong>Personalised Agenda:</strong> Create a custom schedule that balances educational sessions with your networking priorities.</p>
                             <p><strong>Real-Time Updates:</strong> Receive notifications about networking events, special sessions, and deal announcements happening throughout the summit</p>
                             <p><span className="c-secondary"><br/></span></p>
-                            <p><a className="button" href="https://page.swapcard.com/app/the-bench/" target="_blank" rel="noreferrer noopener">Download the event app</a><br/></p>
+                            <p><a className="button" href="https://page.swapcard.com/app/the-bench/" target="_blank" rel="noreferrer noopener">Download the Event App</a><br/></p>
                         </Slide>
                     </div>
                 </div>      
@@ -227,7 +227,7 @@ export default function Page () {
             <section className="block bg-theme">
                 <div className="container center maxw-50">
                     <Fade>
-                        <p className="fs-1 fw-600 lh-1 caps">Creating impact through meaningful connections</p>
+                        <p className="fs-1 fw-600 lh-1">Creating impact through meaningful connections</p>
                     </Fade>
                     <p className='mt-sm'>At FHS Saudi Arabia 2024, industry-shaping deals and partnerships were announced on-site, including agreements between IHG Hotels and Resorts, ASFAR, Baheej Group, Kerten Hospitality, AlSulaiman Group, Hilton,Marriott, Rua Al Madinah and much more!</p>
                     <p className='mt-md'>
