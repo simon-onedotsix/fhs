@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
@@ -24,8 +25,10 @@ import CSS from '../../fuselage/theme/2025/sa/css/investors.module.css'
 
 export default function Page () {
 
+    const { locale } = useRouter()
+
     return (
-        <>
+        <div dir={ locale === 'ar' ? 'rtl' : 'ltr' }>
             <Header compact />
 
             {/* INTRO */}
@@ -34,7 +37,13 @@ export default function Page () {
                 <PageHeroImage hero={{ url: '/assets/img/sa/nextgen-forum/bg-1.jpg', width: 2000, height: 1334 }} >
                     <div className="container maxw-60 pb-md c-white center">
                         <Reveal>
-                            <h1 className='fs-0'>Spearhead Hospitality Investment at FHS Saudi Arabia</h1>
+                            {
+                                locale === 'ar'
+                                ?
+                                    <h1 className='fs-0'>Spearhead Hospitality Investment at FHS Saudi Arabia</h1>
+                                :
+                                    <h1 className='fs-0'>Spearhead Hospitality Investment at FHS Saudi Arabia</h1>
+                            }
                         </Reveal>
                     </div>
 
@@ -43,13 +52,21 @@ export default function Page () {
 
                     <div className="container center">
                         <Fade>
-                            <p className="fs-1 fw-600 lh-1">2024 in Numbers</p>
+                            <p className="fs-1 fw-600 lh-1">
+                                {
+                                    locale === 'ar'
+                                    ?
+                                       "2024 بالأرقام"
+                                    :
+                                       "2024 in Numbers"
+                                }
+                            </p>
                         </Fade>
                         <div className="columns-4 gap-sm mt-md">
-                            <InvestorImpact figure={283} label={"Investors"} />
-                            <InvestorImpact figure={22} unit={"%"} label={"of Attendees"} />
-                            <InvestorImpact prefix={'$'} figure={1.1} unit={'B'} label={"In business opportunities and deals volume gained"} />
-                            <InvestorImpact figure={17} label={"Deals Signed"} />
+                            <InvestorImpact figure={283} label={ locale === 'ar' ? "مستثمرًا" : "Investors"} />
+                            <InvestorImpact figure={22} unit={"%"} label={ locale === 'ar' ? "من الحضور" : "of Attendees"} />
+                            <InvestorImpact prefix={'$'} figure={1.1} unit={'B'} label={ locale === 'ar' ? "1.1 مليار دولار قيمة صفقات وفرص تجارية مُحققة في 2024" : "In business opportunities and deals volume gained"} />
+                            <InvestorImpact figure={17} label={ locale === 'ar' ? "" : "Deals Signed"} />
                         </div>
                     </div>
 
@@ -58,7 +75,13 @@ export default function Page () {
                         <div className="columns-3 gap-md ai-center">
                             <section>
                                 <Slide>
-                                    <p className="fs-1 fw-600 lh-1 right">Investor Breakdown</p>
+                                    <p className="fs-1 fw-600 lh-1 right">
+                                        {
+                                            locale === 'ar'
+                                            ?   "Investor Breakdown"
+                                            :   "Investor Breakdown"
+                                        }
+                                    </p>
                                 </Slide>
                             </section>
 
@@ -70,12 +93,12 @@ export default function Page () {
 
                             <section>
                                 <ul className={CSS.graphKey}>
-                                    <GraphKey color={'#9067BD'}>25% Developers</GraphKey>
-                                    <GraphKey color={'#DFA46E'}>11% Investment Company</GraphKey>
-                                    <GraphKey color={'#694094'}>48% Development Project / Governmental Company</GraphKey>
-                                    <GraphKey color={'#FF4B4B'}>3% Private Equity</GraphKey>
-                                    <GraphKey color={'#36D0FF'}>3% Bank</GraphKey>
-                                    <GraphKey color={'#56E1B2'}>10% Asset Manager</GraphKey>
+                                    <GraphKey color={'#9067BD'}>{ locale === 'ar' ? "25% Developers" : "25% Developers" }</GraphKey>
+                                    <GraphKey color={'#DFA46E'}>{ locale === 'ar' ? "11% Investment Company" : "11% Investment Company" }</GraphKey>
+                                    <GraphKey color={'#694094'}>{ locale === 'ar' ? "48% Development Project / Governmental Company" : "48% Development Project / Governmental Company" }</GraphKey>
+                                    <GraphKey color={'#FF4B4B'}>{ locale === 'ar' ? "3% Private Equity" : "3% Private Equity" }</GraphKey>
+                                    <GraphKey color={'#36D0FF'}>{ locale === 'ar' ? "3% Bank" : "3% Bank" }</GraphKey>
+                                    <GraphKey color={'#56E1B2'}>{ locale === 'ar' ? "10% Asset Manager" : "10% Asset Manager" }</GraphKey>
                                 </ul>
                             </section>
                         </div>
@@ -98,15 +121,31 @@ export default function Page () {
 
                     <div className="formatted">
                         <Slide>
-                            <h2>WHY ATTEND AS AN INVESTOR?</h2>
-                            <p>At FHS Saudi Arabia, investors gain exclusive access to high-impact deal-making opportunities in one of the world&apos;s fastest-growing hospitality markets. The platform brings together global and regional hospitality leaders, real estate developers, asset owners, and government decision-makers under one roof, with $1.1B+ in business opportunities created last year. The Investors Relations team works closely with investors to understand their development targets and facilitate meetings with the right delegates.</p>
-
+                            {
+                                locale === 'ar'
+                                ?
+                                    <>
+                                        <h2>لماذا المشاركة كمستثمر؟</h2>
+                                        <p>في قمة مستقبل الضيافة بالمملكة العربية السعودية، يحظى المستثمرون بإمكانية الوصول الحصري إلى فرص فريدة لعقد صفقات ضخمة في أحد أسرع أسواق الضيافة نموًا في العالم. تجمع المنصة بين قادة الضيافة العالميين والإقليميين، والمطورين العقاريين، ومالكي الأصول، وصُنَّاع القرار الحكوميين تحت سقفٍ واحد، مع فرص استثمارية بلغت قيمتها 1.1 مليار دولار في العام الماضي. يعمل فريق علاقات المستثمرين بشكلٍ وثيق مع المستثمرين لفهم أهدافهم للتطوير وتنسيق الاجتماعات مع الوفود المناسبين.</p>
+                                    </>
+                                :
+                                    <>
+                                        <h2>WHY ATTEND AS AN INVESTOR?</h2>
+                                        <p>At FHS Saudi Arabia, investors gain exclusive access to high-impact deal-making opportunities in one of the world&apos;s fastest-growing hospitality markets. The platform brings together global and regional hospitality leaders, real estate developers, asset owners, and government decision-makers under one roof, with $1.1B+ in business opportunities created last year. The Investors Relations team works closely with investors to understand their development targets and facilitate meetings with the right delegates.</p>
+                                    </>
+                            }
                         </Slide>
 
                         <p className='mt-md'>
                             <Pop inline>
                                 <Link href="https://share.hsforms.com/165e0aXCeSsG2vZWX3GsGeQ8nd8z" target="_blank">
-                                    <a className="button fs-5 caps">Register Interest for Investor Pass</a>
+                                    <a className="button fs-5 caps">
+                                        {
+                                            locale === 'ar'
+                                            ?   "سجّل اهتمامك للحصول على تذكرة المستثمر"
+                                            :   "Register Interest for Investor Pass"
+                                        }
+                                    </a>
                                 </Link>
                             </Pop>
                         </p>
@@ -116,8 +155,23 @@ export default function Page () {
                 <div className="container columns-2 gap-md ai-center pt-lg">
                     <div className="formatted">
                         <Slide>
-                            <h2>EXCLUSIVE INVESTOR PASS BENEFITS</h2>
-                            <ul><li><strong><u>Access to the Investors Lounge</u> - </strong>A private, invitation-only networking zone where top-tier investors, developers, and leading operators discuss high-impact investment deals in an exclusive setting. There, tailor-made presentations are accessible exclusively to owners and investors.</li><li><strong><u>Pre-arranged 1:1 Meetings</u> - </strong>Personalised introductions to leading hospitality operators, asset managers, and financial leaders to explore investment partnerships.</li><li><strong><u>Invitation to Closed-Door Investor Events</u> - </strong>Join a private, investor-focused roundtable or networking event within 12 months of registration to stay engaged with the industry&apos;s biggest opportunities. These events are organised around the world, providing a key platform to meet and connect with other investors.</li></ul>
+                            {
+                                locale === 'ar'
+                                ?
+                                    <>
+                                        <h2>مزايا حصرية لتذكرة المستثمر</h2>
+                                        <ul>
+                                            <li><strong><u>الوصول إلى صالة المستثمرين </u> - </strong> منطقة حصرية مخصصة بالدعوات فقط للتواصل، حيث يلتقي كبار المستثمرين والمطورين والمشغلين الرائدين لمناقشة صفقات استثمارية عالية التأثير في بيئة حصرية، مع عروض تقديمية مخصصة متاحة فقط للمالكين والمستثمرين.</li>
+                                            <li><strong><u>اجتماعات فردية مُرتبة مسبقًا </u> - </strong> لقاءات مخصصة مع كبار مشغلي الضيافة، ومديري الأصول، والقادة الماليين لاستكشاف شراكات استثمارية مثمرة.</li>
+                                            <li><strong><u>دعوة لحضور فعاليات المستثمرين المغلقة </u> - </strong>فرصة للمشاركة في اجتماع مائدة مستديرة خاص أو فعالية تواصل تركز على المستثمرين خلال 12 شهرًا من التسجيل، للبقاء على اطلاع دائم بأهم الفرص في القطاع. تُنظَّم هذه الفعاليات في مختلف أنحاء العالم، مما يوفر منصة أساسية للقاء والتواصل مع مستثمرين آخرين.</li></ul>
+                                    </>
+                                :
+                                    <>
+                                        <h2>EXCLUSIVE INVESTOR PASS BENEFITS</h2>
+                                        <ul><li><strong><u>Access to the Investors Lounge</u> - </strong>A private, invitation-only networking zone where top-tier investors, developers, and leading operators discuss high-impact investment deals in an exclusive setting. There, tailor-made presentations are accessible exclusively to owners and investors.</li><li><strong><u>Pre-arranged 1:1 Meetings</u> - </strong>Personalised introductions to leading hospitality operators, asset managers, and financial leaders to explore investment partnerships.</li><li><strong><u>Invitation to Closed-Door Investor Events</u> - </strong>Join a private, investor-focused roundtable or networking event within 12 months of registration to stay engaged with the industry&apos;s biggest opportunities. These events are organised around the world, providing a key platform to meet and connect with other investors.</li></ul>
+                                    </>
+                            }
+                            
                         </Slide>
                     </div>
 
@@ -178,10 +232,10 @@ export default function Page () {
                         <p className="fs-1 fw-600 lh-1">2024 in Numbers</p>
                     </Fade>
                     <div className="columns-4 gap-sm mx-auto mt-md">
-                        <InvestorImpact figure={293} label={"Total attending investors"} />
-                        <InvestorImpact prefix={'$'} figure={22} unit={"Tr+"} label={"Total Assets Under Management (AUM)"} />
-                        <InvestorImpact figure={78} label={"Introductions Facilitated"} />
-                        <InvestorImpact figure={22} label={"Meetings Scheduled"} />
+                        <InvestorImpact figure={293} label={ locale === 'ar' ? "إجمالي عدد المستثمرين المشاركين" : "Total attending investors"} />
+                        <InvestorImpact prefix={'$'} figure={22} unit={"Tr+"} label={ locale === 'ar' ? "أكثر من 4.5 تريليون دولار إجمالي الأصول المدارة (AUM)" : "Total Assets Under Management (AUM)"} />
+                        <InvestorImpact figure={78} label={ locale === 'ar' ? "عملية تعريف" : "Introductions Facilitated"} />
+                        <InvestorImpact figure={22} label={ locale === 'ar' ? "اجتماعًا" : "Meetings Scheduled"} />
                     </div>
                 </div>
             </section>
@@ -238,18 +292,106 @@ export default function Page () {
             
             <section className="block bg-default">
                 <div className="container center">
-                    <p className='fs-1 fw-600 c-primary'>SAMPLE LIST OF INVESTORS FROM 2024</p>
+                    <p className='fs-1 fw-600 c-primary'>
+                        {
+                            locale === 'ar'
+                            ?   "عينة من قائمة المستثمرين في 2024"
+                            :   "SAMPLE LIST OF INVESTORS FROM 2024"
+                        }
+                    </p>
                 </div>
 
                 <div className="container formatted">
                     <article className={CSS.listing}>
-                        <p>AB Holding<br/>AIMS Hospitality<br/>AIRZAI<br/>Al Balad Development Company<br/>Al Hokair Group<br/>Al Khozama Investment<br/>Al Muhaidib Holding<br/>Al Othaim Investment<br/>Al Rajhi Bank<br/>Al Raya Real Estate Co.<br/>Al Tamimi holding<br/>Alpha Capital<br/>Almaubah<br/>Alsulaiman Group<br/>Arbireo Capital<br/>ARDARA Company<br/>Aseer Development Authority (ASDA)<br/>ASFAR<br/>Baheej<br/>Blue Bronco<br/>Boutique Group<br/>
-               
-                        Cayan Group<br/>Cheval Collection<br/>Coolmore Capital<br/>Dallah Real Estate<br/>Dan Company<br/>DAQ<br/>First Projects Co.<br/>General Authority for State Real Estate<br/>Group Sadiki Morocco<br/>Gulf Coast Real Estate Development Company<br/>Hashoo Hotels<br/>Hesperia World<br/>Hihome<br/>HMC<br/>Hwadi Company<br/>Jumana House<br/>KAAJ Ventures<br/>KEC<br/>King Abdullah Financial District (KAFD)<br/>Kingstone Capital Holding<br/>KSL Capital Partners International<br/>
-                
-                       LADUN<br/>Lifestyle Developers<br/>Maldives Fund Management Corporation<br/>Masar / Umm Al Qura Development<br/>Mobco Group<br/>Mumtalakat<br/>NEOM<br/>New Murabba Development Company (NMDC)<br/>OFC<br/>Olayan Group<br/>Public Investment Fund (PIF)<br/>Qiddiya Investment Company<br/>Radic Real Estate Development<br/>Raseel Properties Co.<br/>RCU<br/>Red Sea Global<br/>REFAD Real Estate<br/>Rikaz<br/>Riyadh Municipality<br/>Roshn Real Estate<br/>Royal Commission of Jubail<br/>
-                   
-                       Royal Commission of Yanbu<br/>Rua Al Madinah Holding Company<br/>Samaya Group<br/>Saud Alarife Group<br/>Saudi Hospitality Company<br/>Saudi Tourism Authority<br/>SEDCO Capital<br/>SEVEN<br/>Sharjah Investment and Development Authority - Shurooq<br/>Shatha Co.<br/>Siyaha Advanced Limited Company<br/>Soudah Development Company<br/>Taiba Investment<br/>Tashyid Urban Development<br/>TDF (Tourism Development Fund)<br/>Urban Shelter Infrastructure</p>
+                        {
+                            locale === 'ar'
+                            ?
+                                <p>AB القابضة
+                                <br/>إيمز للضيافة
+                                <br/>AIRZAI
+                                <br/>شركة تطوير البلد
+                                <br/>مجموعة الحكير
+                                <br/>شركة الخزامى للاستثمار
+                                <br/>مجموعة المهيدب
+                                <br/>شركة العثيم للاستثمار
+                                <br/>مصرف الراجحي
+                                <br/>شركة الراية العقارية
+                                <br/>مجموعة التميمي
+                                <br/>ألفا كابيتال
+                                <br/>المصباح
+                                <br/>مجموعة السليمان
+                                <br/>أربيرو كابيتال
+                                <br/>شركة أردارا
+                                <br/>هيئة تطوير منطقة عسير (ASDA)
+                                <br/>أسفار
+                                <br/>بهيج
+                                <br/>بلو برونكو
+                                <br/>مجموعة بوتيك
+                                
+                                <br/>مجموعة كيان
+                                <br/>مجموعة شيفال
+                                <br/>كولمور كابيتال
+                                <br/>دلة العقارية
+                                <br/>شركة دان
+                                <br/>DAQ
+                                <br/>شركة المشاريع الأولى
+                                <br/>الهيئة العامة لعقارات الدولة
+                                <br/>مجموعة صديقي المغرب
+                                <br/>شركة تطوير العقارات الساحلية الخليجية
+                                <br/>فنادق هاشو
+                                <br/>هيسبيريا وورلد
+                                <br/>هاي هوم
+                                <br/>HMC
+                                <br/>شركة هوادي
+                                <br/>بيت جمانة
+                                <br/>KAAJ Ventures
+                                <br/>KEC
+                                <br/>حي الملك عبد الله المالي (KAFD)
+                                <br/>كينغستون كابيتال هولدينغ
+                                <br/>KSL كابيتال بارتنرز إنترناشيونال
+                                
+                                <br/>لدن
+                                <br/>لايفستايل ديفيلوبرز
+                                <br/>شركة إدارة صناديق المالديف
+                                <br/>مسار / تطوير أم القرى
+                                <br/>مجموعة موبكو
+                                <br/>ممتلكات
+                                <br/>نيوم
+                                <br/>شركة تطوير المربع الجديد (NMDC)
+                                <br/>OFC
+                                <br/>مجموعة العليان
+                                <br/>صندوق الاستثمارات العامة (PIF)
+                                <br/>شركة القدية للاستثمار
+                                <br/>راديك للتطوير العقاري
+                                <br/>شركة رسيل العقارية
+                                <br/>RCU
+                                <br/>شركة البحر الأحمر الدولية
+                                <br/>ريفاد العقارية
+                                <br/>ركاز
+                                <br/>أمانة منطقة الرياض
+                                <br/>روشن العقارية
+                                <br/>الهيئة الملكية للجبيل
+                                
+                                <br/>الهيئة الملكية لينبع
+                                <br/>شركة رؤى المدينة القابضة
+                                <br/>مجموعة سمايا
+                                <br/>مجموعة سعود العريفي
+                                <br/>شركة الضيافة السعودية
+                                <br/>الهيئة السعودية للسياحة
+                                <br/>سدكو كابيتال
+                                <br/>شركة مشاريع الترفيه السعودية &apos;سڤن&apos;
+                                <br/>هيئة الشارقة للاستثمار والتطوير (شروق)
+                                <br/>شركة شذا
+                                <br/>شركة سياحة المتقدمة المحدودة
+                                <br/>شركة السودة للتطوير
+                                <br/>شركة طيبة للاستثمار
+                                <br/>تشييد للتطوير العمراني
+                                <br/>صندوق التنمية السياحي (TDF)
+                                <br/>أوربان شيلتر للبنية التحتية</p>
+                            :
+                                <p>AB Holding<br/>AIMS Hospitality<br/>AIRZAI<br/>Al Balad Development Company<br/>Al Hokair Group<br/>Al Khozama Investment<br/>Al Muhaidib Holding<br/>Al Othaim Investment<br/>Al Rajhi Bank<br/>Al Raya Real Estate Co.<br/>Al Tamimi holding<br/>Alpha Capital<br/>Almaubah<br/>Alsulaiman Group<br/>Arbireo Capital<br/>ARDARA Company<br/>Aseer Development Authority (ASDA)<br/>ASFAR<br/>Baheej<br/>Blue Bronco<br/>Boutique Group<br/>Cayan Group<br/>Cheval Collection<br/>Coolmore Capital<br/>Dallah Real Estate<br/>Dan Company<br/>DAQ<br/>First Projects Co.<br/>General Authority for State Real Estate<br/>Group Sadiki Morocco<br/>Gulf Coast Real Estate Development Company<br/>Hashoo Hotels<br/>Hesperia World<br/>Hihome<br/>HMC<br/>Hwadi Company<br/>Jumana House<br/>KAAJ Ventures<br/>KEC<br/>King Abdullah Financial District (KAFD)<br/>Kingstone Capital Holding<br/>KSL Capital Partners International<br/>LADUN<br/>Lifestyle Developers<br/>Maldives Fund Management Corporation<br/>Masar / Umm Al Qura Development<br/>Mobco Group<br/>Mumtalakat<br/>NEOM<br/>New Murabba Development Company (NMDC)<br/>OFC<br/>Olayan Group<br/>Public Investment Fund (PIF)<br/>Qiddiya Investment Company<br/>Radic Real Estate Development<br/>Raseel Properties Co.<br/>RCU<br/>Red Sea Global<br/>REFAD Real Estate<br/>Rikaz<br/>Riyadh Municipality<br/>Roshn Real Estate<br/>Royal Commission of Jubail<br/>Royal Commission of Yanbu<br/>Rua Al Madinah Holding Company<br/>Samaya Group<br/>Saud Alarife Group<br/>Saudi Hospitality Company<br/>Saudi Tourism Authority<br/>SEDCO Capital<br/>SEVEN<br/>Sharjah Investment and Development Authority - Shurooq<br/>Shatha Co.<br/>Siyaha Advanced Limited Company<br/>Soudah Development Company<br/>Taiba Investment<br/>Tashyid Urban Development<br/>TDF (Tourism Development Fund)<br/>Urban Shelter Infrastructure</p>
+                        }
+                        
                     </article>
                 </div>
             </section>
@@ -257,7 +399,7 @@ export default function Page () {
 
             <Footer />
             <LenisScroller />
-        </>
+        </div>
     )
 }
 

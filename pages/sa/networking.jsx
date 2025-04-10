@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
@@ -62,8 +63,10 @@ const ARTICLE_DATA = [
 
 export default function Page () {
 
+    const { locale } = useRouter()
+
     return (
-        <>
+        <div dir={ locale === 'ar' ? 'rtl' : 'ltr' }>
             <Header compact />
 
             {/* INTRO */}
@@ -74,7 +77,7 @@ export default function Page () {
                     <PageHeroImage hero={{ url: '/assets/img/sa/nextgen-forum/bg-1.jpg', width: 2000, height: 1334 }} >
                         <div className="container maxw-60 pb-md c-white center">
                             <Reveal>
-                                <h1 className='fs-0'>The Networking Experience at&nbsp;FHS</h1>
+                                <h1 className='fs-0'>{ locale === 'ar' ? "تجربة التواصل في قمة مستقبل الضيافة" : "The Networking Experience at&nbsp;FHS"}</h1>
                             </Reveal>
                         </div>
 
@@ -114,9 +117,21 @@ export default function Page () {
                         <div className="container columns-2 gap-md ai-center pt-lg">
                             <div className="formatted">
                                 <Slide>
-                                    <h2>Curated Networking Opportunities</h2>
-                                    <p>Engage in a variety of curated networking opportunities to connect closely in unique environments. Our on-site experiences include brilliant coffee breaks and exciting speed networking sessions to foster lasting connections.</p>
-                                    <p>As part of the FHS Networking experience, you can also participate in site tours that offer an immersive experience to connect more deeply with your peers. 98% of delegates surveyed in 2024 indicated that FHS met their objective of networking with industry peers and business partners.</p>
+                                    {
+                                        locale === 'ar'
+                                        ?
+                                            <>
+                                                <h2>فرص تواصل وتعارف مُنظمة بعناية</h2>
+                                                <p>شارك في العديد من فعاليات التعارف والتواصل المُنظمة بعناية لتمكين المشاركين من بناء العلاقات الوثيقة في بيئاتٍ فريدة من نوعها. نوفر لك تجارب محسوسة تشمل استراحات القهوة التفاعلية وجلسات التواصل السريع لبناء روابط وعلاقات دائمة.</p>
+                                                <p>في إطار تجربة التواصل والتعارف في قمة مستقبل الضيافة، يمكنك أيضًا المشاركة في جولاتٍ ميدانية تساعدك في بناء علاقات أفضل مع نظرائك. فقد أكد 98% من المشاركين في نسخة القمة عام 2023 أنَّ مشاركتهم في القمة مكنتهم من تحقيق أهدافهم في التواصل مع النظراء في القطاع وشركاء الأعمال.</p>
+                                            </>
+                                        :
+                                            <>
+                                                <h2>Curated Networking Opportunities</h2>
+                                                <p>Engage in a variety of curated networking opportunities to connect closely in unique environments. Our on-site experiences include brilliant coffee breaks and exciting speed networking sessions to foster lasting connections.</p>
+                                                <p>As part of the FHS Networking experience, you can also participate in site tours that offer an immersive experience to connect more deeply with your peers. 98% of delegates surveyed in 2024 indicated that FHS met their objective of networking with industry peers and business partners.</p>
+                                            </>
+                                    }
                                 </Slide>
                             </div>
 
@@ -214,7 +229,9 @@ export default function Page () {
                             <p><strong>Personalised Agenda:</strong> Create a custom schedule that balances educational sessions with your networking priorities.</p>
                             <p><strong>Real-Time Updates:</strong> Receive notifications about networking events, special sessions, and deal announcements happening throughout the summit</p>
                             <p><span className="c-secondary"><br/></span></p>
-                            <p><a className="button" href="https://page.swapcard.com/app/the-bench/" target="_blank" rel="noreferrer noopener">Download the Event App</a><br/></p>
+                            <p><a className="button" href="https://page.swapcard.com/app/the-bench/" target="_blank" rel="noreferrer noopener">
+                                { locale === 'ar' ? "حمل التطبيق الآن" : "Download the Event App" }
+                            </a><br/></p>
                         </Slide>
                     </div>
                 </div>      
@@ -285,36 +302,80 @@ export default function Page () {
                 verticalAlign={"center"}
                 maxContentWidth={""}
             >
-                <p className='fs-1 fw-600'>FAQs</p>
+                <p className='fs-1 fw-600'>{ locale === 'ar' ? "الأسئلة الشائعة" : "FAQs"}</p>
             </Billboard>
             <section className="block bg-default">
                 <div className="container columns-4 gap-md formatted">
-                    <article>
-                        <h5>How do I access the app?</h5>
-                        <ul><li>After registration, you get an email from Future Hospitality Summit &lt;noreply@swapcard.com&gt;</li><li>The email has two options: either navigate to &apos;let&apos;s get started&apos; to log in or choose &apos;Get the mobile app/download it&apos;.</li><li>Log in using the same email address used to register for the event and then proceed to create a password. The app gives an option of sending a magic link to your registered email address through which you can create a password.</li><li>However, only registered attendees can access the app.</li></ul>
-                    </article>
 
-                    <article>
-                        <h5>How do I reset my password?</h5>
-                        <ul><li>When logging in, after entering your email, the next step asks for a password. Find the option to &apos;Send me a magic link&apos; to receive an email from Future Hospitality Summit &lt;noreply@swapcard.com&gt; containing the magic sign-in link. Click on the &apos;Sign in to Future Hospitality Summit&apos; button and create a password. This would reset/change your old password to the new one.</li><li>If on the website, press the profile icon top right, choose settings, scroll down and you will find a &apos;Change Password&apos; option.</li></ul>
-                    </article>
+                    {
+                        locale === 'ar'
+                        ?
+                            <>
+                                <article>
+                                    <h5>كيف يمكنني الحصول على التطبيق؟</h5>
+                                    <ul>
+                                        <li>بعد التسجيل، ستصلك رسالة إلكترونية من قمة مستقبل الضيافة عبر noreply@swapcard.com .</li>
+                                        <li>تحتوي الرسالة على خيارين: إما رابط &quot;لنبدأ الآن&quot; لتسجيل الدخول مباشرةً أو خيار &quot;تحميل التطبيق على الهاتف المحمول&quot;.</li>
+                                        <li>سجل الدخول باستخدام البريد الإلكتروني الذي سجلت به للحدث، ثم اختر كلمة المرور الخاصة بك. يمكنك أيضًا اختيار إرسال رابط سريع إلى بريدك الإلكتروني لإنشاء كلمة المرور.</li>
+                                        <li>التطبيق متاح للمشاركين المسجلين فقط.</li>
+                                    </ul>
+                                </article>
 
-                    <article>
-                        <h5>How do I edit my profile?</h5>
-                        <ul><li>Click on your profile icon bottom right, and click on the top (your details like name and your display picture). You will find options to edit details like: about me/information/social media/contact details/company.</li><li>For the website, navigate to the top tight profile icon, click it, then go to &apos;My Profile&apos; and make edits.</li></ul>
-                    </article>
+                                <article>
+                                    <h5>كيف يمكنني إعادة تعيين كلمة المرور؟</h5>
+                                    <ul>
+                                        <li>عند تسجيل الدخول، بعد إدخال بريدك الإلكتروني، سيتعين عليك إنشاء كلمة المرور الخاصة بك. اختر &quot;إرسال رابط Magic Link&quot; لتصلك رسالة إلكترونية من قمة مستقبل الضيافة noreply@swapcard.com. اضغط على زر &quot;تسجيل الدخول إلى قمة مستقبل الضيافة&quot; وقم بإنشاء كلمة مرور، حيث سيمكنك ذلك من تغيير/إعادة تعيين كلمة مرورك القديمة إلى واحدة جديدة.</li>
+                                        <li>إذا كنت تستخدم الموقع الإلكتروني، يمكنك تغيير كلمة المرور من خلال الضغط على أيقونة الملف الشخصي بالأعلى على اليمين، ثم اختيار &quot;الإعدادات&quot;، والتمرير للأسفل حتى تجد خيار &quot;تغيير كلمة المرور&quot;.</li>
+                                    </ul>
+                                </article>
 
-                    <article>
-                        <h5>How do I manage meetings?</h5>
-                        <ul><li>Once you have registered as an attendee and the event is live, go to &apos;Attendee List&apos; to preview who you can set up meetings with. Click on any relevant profile, and set up a meeting with them with the &apos;Set Meeting&apos; button.</li><li>Alternatively, you can accept contact requests/meeting requests from others as per your choice.</li><li>You can then view your meeting schedule by navigating to &apos;My Schedule&apos; on the left.</li></ul>
-                    </article>
+                                <article>
+                                    <h5>كيف يمكنني تعديل ملفي الشخصي؟</h5>
+                                    <ul>
+                                        <li>اضغط على أيقونة الملف الشخصي في الأسفل على اليمين، ثم اضغط على بياناتك الشخصية (مثل الاسم والصورة). ستجد خيارات لتعديل تفاصيل مثل: التعريف بي، معلومات/روابط وسائل التواصل الاجتماعي/معلومات الاتصال/الشركة.</li>
+                                        <li>على الموقع الإلكتروني، اذهب إلى أيقونة الملف الشخصي في الجزء اليمين من الأعلى، واضغط على &quot;ملفي الشخصي&quot; لإجراء التعديلات المطلوبة.</li>
+                                    </ul>
+                                </article>
+
+                                <article>
+                                    <h5>كيف يمكنني إدارة الاجتماعات؟</h5>
+                                    <ul>
+                                        <li>بمجرد تسجيلك كمشارك وبدء الحدث، يمكنك استعراض &quot;قائمة الحضور&quot; ومعاينة الأشخاص الذين ترغب في مقابلتهم. يمكنك عقد اجتماع مع أي شخص من خلال الضغط على زر &quot;عقد اجتماع&quot; على ملفه الشخصي.</li>
+                                        <li>أو يمكنك قبول طلبات التواصل/طلبات الاجتماعات الواردة من الآخرين وفقًا لاختياراتك.</li>
+                                        <li>يمكنك عرض جدول اجتماعاتك من خلال قسم &quot;جدولي&quot; في القائمة الجانبية.</li></ul>
+                                </article>
+                            </>
+                        :
+                            <>
+                                <article>
+                                    <h5>How do I access the app?</h5>
+                                    <ul><li>After registration, you get an email from Future Hospitality Summit &lt;noreply@swapcard.com&gt;</li><li>The email has two options: either navigate to &apos;let&apos;s get started&apos; to log in or choose &apos;Get the mobile app/download it&apos;.</li><li>Log in using the same email address used to register for the event and then proceed to create a password. The app gives an option of sending a magic link to your registered email address through which you can create a password.</li><li>However, only registered attendees can access the app.</li></ul>
+                                </article>
+
+                                <article>
+                                    <h5>How do I reset my password?</h5>
+                                    <ul><li>When logging in, after entering your email, the next step asks for a password. Find the option to &apos;Send me a magic link&apos; to receive an email from Future Hospitality Summit &lt;noreply@swapcard.com&gt; containing the magic sign-in link. Click on the &apos;Sign in to Future Hospitality Summit&apos; button and create a password. This would reset/change your old password to the new one.</li><li>If on the website, press the profile icon top right, choose settings, scroll down and you will find a &apos;Change Password&apos; option.</li></ul>
+                                </article>
+
+                                <article>
+                                    <h5>How do I edit my profile?</h5>
+                                    <ul><li>Click on your profile icon bottom right, and click on the top (your details like name and your display picture). You will find options to edit details like: about me/information/social media/contact details/company.</li><li>For the website, navigate to the top tight profile icon, click it, then go to &apos;My Profile&apos; and make edits.</li></ul>
+                                </article>
+
+                                <article>
+                                    <h5>How do I manage meetings?</h5>
+                                    <ul><li>Once you have registered as an attendee and the event is live, go to &apos;Attendee List&apos; to preview who you can set up meetings with. Click on any relevant profile, and set up a meeting with them with the &apos;Set Meeting&apos; button.</li><li>Alternatively, you can accept contact requests/meeting requests from others as per your choice.</li><li>You can then view your meeting schedule by navigating to &apos;My Schedule&apos; on the left.</li></ul>
+                                </article>
+                            </>
+                    }
+                    
                 </div>
             </section>
 
 
             <Footer />
             <LenisScroller />
-        </>
+        </div>
     )
 }
 
