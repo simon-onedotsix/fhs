@@ -393,7 +393,9 @@
 
 /* primary */
 
-[data-theme='sa-2025'] .bg-primary {
+[data-theme='sa-2025'] .bg-primary,
+[data-theme='sa-2025'] .bg-primary-2,
+[data-theme='sa-2025'] .bg-primary-2-dark {
     color: white;
 }
 
@@ -402,7 +404,21 @@
 [data-theme='sa-2025'] .bg-primary .formatted h3,
 [data-theme='sa-2025'] .bg-primary .formatted h4,
 [data-theme='sa-2025'] .bg-primary .formatted h5,
-[data-theme='sa-2025'] .bg-primary .formatted h6 {
+[data-theme='sa-2025'] .bg-primary .formatted h6,
+
+[data-theme='sa-2025'] .bg-primary-2 .formatted h1,
+[data-theme='sa-2025'] .bg-primary-2 .formatted h2,
+[data-theme='sa-2025'] .bg-primary-2 .formatted h3,
+[data-theme='sa-2025'] .bg-primary-2 .formatted h4,
+[data-theme='sa-2025'] .bg-primary-2 .formatted h5,
+[data-theme='sa-2025'] .bg-primary-2 .formatted h6,
+
+[data-theme='sa-2025'] .bg-primary-2-dark .formatted h1,
+[data-theme='sa-2025'] .bg-primary-2-dark .formatted h2,
+[data-theme='sa-2025'] .bg-primary-2-dark .formatted h3,
+[data-theme='sa-2025'] .bg-primary-2-dark .formatted h4,
+[data-theme='sa-2025'] .bg-primary-2-dark .formatted h5,
+[data-theme='sa-2025'] .bg-primary-2-dark .formatted h6 {
     color: white;
 }
 
