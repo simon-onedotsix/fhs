@@ -80,6 +80,8 @@ export const Header = ({ compact, overlaid, inverse }) => {
                     }}
                 />
             </span>
+
+
         
             <header ref={hideEventsBarTrigger} className={`${CSS.layout} ${overlaid && CSS.overlaid} ${compact && CSS.compact} no-print`} dir={ locale === 'ar' ? 'rtl' : 'ltr' }>
 
@@ -103,6 +105,8 @@ export const Header = ({ compact, overlaid, inverse }) => {
                         </p>
                     </div>
                 </section>
+
+
                 <div className={`${CSS.nav} ${ !inView && CSS.fixed}`}>
                     <MainMenu mainMenu={null} otherEvents={otherEvents} />
                 </div>

@@ -5,6 +5,7 @@ import { GlobalsContext } from '../../../../../../pages/_app'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
+import { Locales } from '../locales/locales'
 import { Button } from "../../../../../../fuselage/theme/2024/world/components/button/button"
 import { ArrowButton } from '../../../../../components/arrow-button/arrow-button'
 
@@ -27,18 +28,6 @@ export const MainMenu = ({ otherEvents }) => {
         <>
             <div className={CSS.toggleContainer}>
                 <div className={`${CSS.toggleActions} ${ active && CSS.active }`}>
-                    {/* <Button 
-                        href={`/sa/purchase-pass`} 
-                        theme={{ 
-                            color: `white`,
-                            background: `var(--secondary)`, 
-                            hover: `var(--secondary-dark)`, 
-                        }} 
-                        decal={`fw-600`}
-                    >
-                        Register Now
-                    </Button> */}
-                    
                     <Button 
                         href={`/sa/purchase-pass`} 
                         theme={{ 
@@ -50,6 +39,8 @@ export const MainMenu = ({ otherEvents }) => {
                     >
                         { locale === 'ar' ? "احجز تذكرتك الآن" : "Purchase Pass" }
                     </Button>
+
+                    <Locales />
                 </div>
                     
                 <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
@@ -195,7 +186,6 @@ export const MainMenu = ({ otherEvents }) => {
                     </section>
                 </nav>
 
-               
             </div>
         </>
     )

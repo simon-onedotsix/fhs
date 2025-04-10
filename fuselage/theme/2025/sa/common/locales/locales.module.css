@@ -1,0 +1,80 @@
+.layout {
+    position: relative;
+}
+
+
+.toggle {
+    position: relative;
+    z-index: 185;
+    cursor: pointer;
+    height: 48px;
+    width: 48px;
+    border-radius: var(--default-button-radius);
+    border-radius: 3rem;
+    background-color: var(--secondary);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .75rem;
+
+    transition: all .35s ease;
+    pointer-events: all;
+}
+
+@media(hover:hover) {
+    .toggle:hover {
+        background-color: var(--secondary-dark);
+    }
+}
+
+
+
+/* overlay ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.overlay {
+    z-index: 180;
+    position: absolute;
+    top: 3.75rem;
+    right: 0;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+
+    border-radius: .5rem;
+    padding: var(--space-xs);
+    
+    background-color: white;
+    color: var(--secondary);
+
+    opacity: 0;
+    pointer-events: none;
+}
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 500ms cubic-bezier(.7, .1, .2, 1);
+}
+
+
+
+
+.localeButton {
+    display: block;
+    background-color: transparent;
+    border: 1px solid var(--primary-2);
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+
+    color: var(--primary-2);
+    text-decoration: none;
+
+    transition: all 250ms ease-in-out;
+}
+
+.localeButton:hover,
+.localeButton.active {
+    background-color: var(--primary-2);
+    color: white;
+}
