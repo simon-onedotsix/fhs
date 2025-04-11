@@ -34,7 +34,7 @@ export default function Page () {
             {/* INTRO */}
 
             <div className="bg-primary o-hidden">
-                <PageHeroImage hero={{ url: '/assets/img/sa/nextgen-forum/bg-1.jpg', width: 2000, height: 1334 }} >
+                <PageHeroImage hero={{ url: '/assets/img/sa/investors/investors-hero.jpg', width: 6192, height: 4128 }} >
                     <div className="container maxw-60 pb-md c-white center">
                         <Reveal>
                             {
