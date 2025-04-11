@@ -190,33 +190,27 @@ export default function Page () {
             <section className="block bg-primary-2-dark o-hidden">
                 <div className="container center">
                     <Fade>
-                        <p className="fs-1 fw-600 lh-1">Exclusive Investor Pass Benefits</p>
-                    </Fade>
-                </div>
-
-                <div className="container center">
-                    <Fade>
-                        <p className='fs-3 fw-600'>Investor Spotlight at FHS Saudi</p>
-                        <p className='fs-4'>A sneak peak at Investor focused sessions</p>
+                        <p className='fs-1 fw-600'>Investor Spotlight at FHS Saudi Arabia</p>
+                        <p className='fs-3'>A sneak peak at Investor focused sessions</p>
                     </Fade>
                 </div>
 
                 <div className="container columns-3 gap-sm">
                     <Pop>
                         <article className={CSS.previewCard}>
-                            <p className='fs-5 lh-2'>Beyond the Whistle: The FIFA World Cup 2034&apos;s Ripple Effect on the Saudi Hospitality Sector</p>
+                            <p className='fs-4 lh-3'>Beyond the Whistle: The FIFA World Cup 2034&apos;s Ripple Effect on the Saudi Hospitality Sector</p>
                         </article>
                     </Pop>
 
                     <Pop>
                         <article className={CSS.previewCard}>
-                            <p className='fs-5 lh-2'>Saudi Arabia Tourism Outlook: Shaping the Future from 2025 to 2040</p>
+                            <p className='fs-4 lh-3'>Saudi Arabia Tourism Outlook: Shaping the Future from 2025 to 2040</p>
                         </article>
                     </Pop>
 
                     <Pop>
                         <article className={CSS.previewCard}>
-                            <p className='fs-5 lh-2'>From White Label Operators, Franchising to Traditional Management Agreements - What is the Future?</p>
+                            <p className='fs-4 lh-3'>From White Label Operators, Franchising to Traditional Management Agreements - What is the Future?</p>
                         </article>
                     </Pop>
                 </div>
@@ -229,11 +223,11 @@ export default function Page () {
             <section className="block bg-primary">
                 <div className="container center">
                     <Fade>
-                        <p className="fs-1 fw-600 lh-1">2024 in Numbers</p>
+                        <p className="fs-1 fw-600 lh-1">Investors at FHS World 2024</p>
                     </Fade>
                     <div className="columns-4 gap-sm mx-auto mt-md">
-                        <InvestorImpact figure={293} label={ locale === 'ar' ? "إجمالي عدد المستثمرين المشاركين" : "Total attending investors"} />
-                        <InvestorImpact prefix={'$'} figure={22} unit={"Tr+"} label={ locale === 'ar' ? "أكثر من 4.5 تريليون دولار إجمالي الأصول المدارة (AUM)" : "Total Assets Under Management (AUM)"} />
+                        <InvestorImpact figure={239} label={ locale === 'ar' ? "إجمالي عدد المستثمرين المشاركين" : "Total attending investors"} />
+                        <InvestorImpact prefix={'$'} figure={4.5} unit={"Tr+"} label={ locale === 'ar' ? "أكثر من 4.5 تريليون دولار إجمالي الأصول المدارة (AUM)" : "Total Assets Under Management (AUM)"} />
                         <InvestorImpact figure={78} label={ locale === 'ar' ? "عملية تعريف" : "Introductions Facilitated"} />
                         <InvestorImpact figure={22} label={ locale === 'ar' ? "اجتماعًا" : "Meetings Scheduled"} />
                     </div>
