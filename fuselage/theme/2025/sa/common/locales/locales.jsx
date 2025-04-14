@@ -25,8 +25,8 @@ export const Locales = () => {
             </div>
 
             <div className={`${CSS.overlay} ${ active && CSS.active } bg-white`} onMouseLeave={ () => setActive(false)}>
-                <Link href={asPath} locale='en' shallow><a className={`${CSS.localeButton} ${locale !== 'ar' && CSS.active}`}>EN</a></Link>
-                <Link href={asPath} locale='ar' shallow><a className={`${CSS.localeButton} ${locale === 'ar' && CSS.active}`}>AR</a></Link>
+                <Link href={asPath} locale='en' shallow><a className={`${CSS.localeButton} ${locale !== 'ar' && CSS.active}`}>English</a></Link>
+                <Link href={asPath} locale='ar' shallow><a className={`${CSS.localeButton} ${locale === 'ar' && CSS.active}`}>العربية</a></Link>
             </div>
         </div>
     )

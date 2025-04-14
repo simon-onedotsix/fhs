@@ -80,7 +80,7 @@ export default function Page () {
                                     <p className="fs-1 fw-600 lh-1 right">
                                         {
                                             locale === 'ar'
-                                            ?   "Investor Breakdown"
+                                            ?   "تحليل المستثمرين"
                                             :   "Investor Breakdown"
                                         }
                                     </p>
@@ -95,12 +95,12 @@ export default function Page () {
 
                             <section>
                                 <ul className={CSS.graphKey}>
-                                    <GraphKey color={'#694094'}>{ locale === 'ar' ? "48% Development Project / Governmental Company" : "48% Development Project / Governmental Company" }</GraphKey>
-                                    <GraphKey color={'#9067BD'}>{ locale === 'ar' ? "25% Developers" : "25% Developers" }</GraphKey>
-                                    <GraphKey color={'#DFA46E'}>{ locale === 'ar' ? "11% Investment Company" : "11% Investment Company" }</GraphKey>
-                                    <GraphKey color={'#56E1B2'}>{ locale === 'ar' ? "10% Asset Manager" : "10% Asset Manager" }</GraphKey>
-                                    <GraphKey color={'#FF4B4B'}>{ locale === 'ar' ? "3% Private Equity" : "3% Private Equity" }</GraphKey>
-                                    <GraphKey color={'#36D0FF'}>{ locale === 'ar' ? "3% Bank" : "3% Bank" }</GraphKey>
+                                    <GraphKey color={'#694094'}>{ locale === 'ar' ? "48% مشاريع تطوير / شركات حكومية" : "48% Development Project / Governmental Company" }</GraphKey>
+                                    <GraphKey color={'#9067BD'}>{ locale === 'ar' ? "25% شركات تطوير عقاري" : "25% Developers" }</GraphKey>
+                                    <GraphKey color={'#DFA46E'}>{ locale === 'ar' ? "11% شركات" : "11% Investment Company" }</GraphKey>
+                                    <GraphKey color={'#56E1B2'}>{ locale === 'ar' ? "10% مدراء أصول" : "10% Asset Manager" }</GraphKey>
+                                    <GraphKey color={'#FF4B4B'}>{ locale === 'ar' ? "3% شركات استثمار مباشر (Private Equity)" : "3% Private Equity" }</GraphKey>
+                                    <GraphKey color={'#36D0FF'}>{ locale === 'ar' ? "3% بنوك" : "3% Bank" }</GraphKey>
                                 </ul>
                             </section>
                         </div>
@@ -171,6 +171,19 @@ export default function Page () {
                                     <>
                                         <h2>EXCLUSIVE INVESTOR PASS BENEFITS</h2>
                                         <ul><li><strong><u>Access to the Investors Lounge</u> - </strong>A private, invitation-only networking zone where top-tier investors, developers, and leading operators discuss high-impact investment deals in an exclusive setting. There, tailor-made presentations are accessible exclusively to owners and investors.</li><li><strong><u>Pre-arranged 1:1 Meetings</u> - </strong>Personalised introductions to leading hospitality operators, asset managers, and financial leaders to explore investment partnerships.</li><li><strong><u>Invitation to Closed-Door Investor Events</u> - </strong>Join a private, investor-focused roundtable or networking event within 12 months of registration to stay engaged with the industry&apos;s biggest opportunities. These events are organised around the world, providing a key platform to meet and connect with other investors.</li></ul>
+                                        {/* <p className='mt-md'>
+                                            <Pop inline>
+                                                <Link href="https://share.hsforms.com/165e0aXCeSsG2vZWX3GsGeQ8nd8z" target="_blank">
+                                                    <a className="button fs-5 caps">
+                                                        {
+                                                            locale === 'ar'
+                                                            ?   "Download Investor Prospectus"
+                                                            :   "Download Investor Prospectus"
+                                                        }
+                                                    </a>
+                                                </Link>
+                                            </Pop>
+                                        </p> */}
                                     </>
                             }
                             
@@ -192,43 +205,96 @@ export default function Page () {
             <section className="block bg-primary-2-dark o-hidden">
                 <div className="container center">
                     <Fade>
-                        <p className='fs-1 fw-600'>Investor Spotlight at FHS Saudi Arabia</p>
-                        <p className='fs-3'>A sneak peak at Investor focused sessions</p>
+                        {
+                            locale === 'ar'
+                            ? 
+                                <>
+                                    <p className='fs-1 fw-600'>تسليط الضوء على المستثمرين في قمة مستقبل الضيافة بالمملكة العربية السعودية</p>
+                                    <p className='fs-3 mt-sm'>نظرة خاطفة على الجلسات المخصصة للمستثمرين</p>
+                                </>
+                            :
+                                <>
+                                    <p className='fs-1 fw-600'>Investor Spotlight at FHS Saudi Arabia</p>
+                                    <p className='fs-3 mt-sm'>A sneak peak at Investor focused sessions</p>
+                                </>
+                        }
                     </Fade>
                 </div>
 
                 <div className="container columns-3 gap-sm formatted">
                     <Pop>
                         <article className={CSS.previewCard}>
-                            <p className='fs-4 lh-3'>Beyond the Whistle: The FIFA World Cup 2034&apos;s Ripple Effect on the Saudi Hospitality Sector</p>
-                            <p className='fw-600'>Speaker:</p>
+                            {
+                                locale === 'ar'
+                                ?
+                                    <>
+                                        <p className='fs-4 lh-3'>ما بعد الصافرة: الأثر المتسلسل الذي نشأ عن كأس العالم فيفا 2034 على قطاع الضيافة السعودي</p>
+                                        <p className='fw-600'>Speaker:</p>
+                                        <li><strong>Dr. Sarah Gasim</strong>, Senior Vice President, Head of Hotels KSA, JLL</li>
+                                    </>
+                                :
+                                <>
+                                        <p className='fs-4 lh-3'>Beyond the Whistle: The FIFA World Cup 2034&apos;s Ripple Effect on the Saudi Hospitality Sector</p>
+                                        <p className='fw-600'>Speaker:</p>
+                                        <li><strong>Dr. Sarah Gasim</strong>, Senior Vice President, Head of Hotels KSA, JLL</li>
+                                    </>
+                            }
                             <ul>
-                                <li><strong>Dr. Sarah Gasim</strong>, Senior Vice President, Head of Hotels KSA, JLL</li>
                             </ul>
                         </article>
                     </Pop>
 
                     <Pop>
                         <article className={CSS.previewCard}>
-                            <p className='fs-4 lh-3'>Saudi Arabia Tourism Outlook: Shaping the Future from 2025 to 2040</p>
-                            <p className='fw-600'>Speaker:</p>
+                            {
+                                locale === 'ar'
+                                ?
+                                    <>
+                                        <p className='fs-4 lh-3'>توقعات السياحة في السعودية: رسم خريطة المستقبل من</p>
+                                        <p className='fw-600'>Speaker:</p>
+                                        <li><strong>Muhammad Bassrawi</strong>, President Domestic Tourism Business Unit, Saudi Tourism Authority</li>
+                                    </>
+                                :
+                                <>
+                                        <p className='fs-4 lh-3'>Saudi Arabia Tourism Outlook: Shaping the Future from 2025 to 2040</p>
+                                        <p className='fw-600'>Speaker:</p>
+                                        <li><strong>Muhammad Bassrawi</strong>, President Domestic Tourism Business Unit, Saudi Tourism Authority</li>
+                                    </>
+                            }
                             <ul>
-                                <li><strong>Muhammad Bassrawi</strong>, President Domestic Tourism Business Unit, Saudi Tourism Authority</li>
                             </ul>
                         </article>
                     </Pop>
 
                     <Pop>
                         <article className={CSS.previewCard}>
-                            <p className='fs-4 lh-3'>From White Label Operators, Franchising to Traditional Management Agreements - What is the Future?</p>
-                            <p className='fw-600'>Speakers:</p>
-                            <ul>
-                                <li><strong>Scott Antel</strong>, Founder & Owner, Scott&apos;s FZ LLE</li>
-                                <li><strong>Victor Abou Ghanem</strong>, Chief Executive Officer, Story Hospitality</li>
-                                <li><strong>Tariq Dowidar</strong>, Vice President KSA, Aleph Hospitality</li>
-                                <li><strong>David Thomson</strong>, Senior Vice President of Business Development, The First Group</li>
-                                <li><strong>Eddy Tannous</strong>, Chief Operating Officer, Rotana</li>
-                            </ul>
+                            {
+                                locale === 'ar'
+                                ?
+                                    <>
+                                        <p className='fs-4 lh-3'>من مشغلي المنشآت التي تعمل بنظام &quot;وايت ليبل&quot; والامتيازات التجارية إلى اتفاقيات الإدارة التقليدية - ما هو مستقبل إدارة الفنادق؟</p>
+                                        <p className='fw-600'>Speakers:</p>
+                                        <ul>
+                                            <li><strong>Scott Antel</strong>, Founder & Owner, Scott&apos;s FZ LLE</li>
+                                            <li><strong>Victor Abou Ghanem</strong>, Chief Executive Officer, Story Hospitality</li>
+                                            <li><strong>Tariq Dowidar</strong>, Vice President KSA, Aleph Hospitality</li>
+                                            <li><strong>David Thomson</strong>, Senior Vice President of Business Development, The First Group</li>
+                                            <li><strong>Eddy Tannous</strong>, Chief Operating Officer, Rotana</li>
+                                        </ul>
+                                    </>
+                                :
+                                    <>
+                                        <p className='fs-4 lh-3'>From White Label Operators, Franchising to Traditional Management Agreements - What is the Future?</p>
+                                        <p className='fw-600'>Speakers:</p>
+                                        <ul>
+                                            <li><strong>Scott Antel</strong>, Founder & Owner, Scott&apos;s FZ LLE</li>
+                                            <li><strong>Victor Abou Ghanem</strong>, Chief Executive Officer, Story Hospitality</li>
+                                            <li><strong>Tariq Dowidar</strong>, Vice President KSA, Aleph Hospitality</li>
+                                            <li><strong>David Thomson</strong>, Senior Vice President of Business Development, The First Group</li>
+                                            <li><strong>Eddy Tannous</strong>, Chief Operating Officer, Rotana</li>
+                                        </ul>
+                                    </>
+                            }
                         </article>
                     </Pop>
                 </div>
@@ -329,28 +395,28 @@ export default function Page () {
             <section className="block bg-primary-2">
                 <div className="container center maxw-40">
                     <Fade>
-                        <p className='fs-2 fw-600 lh-2'>Where Investor Conversations Spark Landmark Deals</p>
+                        <p className='fs-2 fw-600 lh-2'>{locale === 'ar' ? "حيث تثمر محادثات المستثمرين عن صفقات كبيرة" : "Where Investor Conversations Spark Landmark Deals"}</p>
                     </Fade>
                 </div>
 
                 <div className="container columns-3 gap-md">
                     <Pop><Card heroUrl={'/assets/img/sa/networking/receptions.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>Networking Receptions</p>
+                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "حفلات تواصل" : "Networking Receptions"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/speed-networking.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>Speed Networking</p>
+                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "جلسات تواصل سريع" : "Speed Networking"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/lunch.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>Curated Lunch &amp; Coffee</p>
+                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "استراحة غداء وقهوة خاصة" : "Curated Lunch & Coffee"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/tours.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>Site Tours</p>
+                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "جولات ميدانية" : "Site Tours"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/investors-lounge.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>Investor&apos;s Lounge</p>
+                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "ردهة المستثمرين" : "Investor's Lounge"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/exhibition.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>Exhibition Floor</p>
+                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "طابق المعرض" : "Exhibition Floor"}</p>
                     </Card></Pop>
                     
                 </div>
@@ -363,7 +429,7 @@ export default function Page () {
                             color={'var(--secondary)'}
                             target={'_blank'}
                         >
-                            View Attendee List
+                            {locale === 'ar' ? "عرض قائمة الحضور" : "View Attendee List"}
                         </ButtonKeyline>
                     </Pop>
                 </div>

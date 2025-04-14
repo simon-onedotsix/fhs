@@ -60,6 +60,45 @@ const ARTICLE_DATA = [
     },
     
 ]
+const ARTICLE_DATA_AR = [
+    {
+        heroUrl: '/assets/img/sa/press-release-1.webp',
+        title: 'رُوى المدينة القابضة توقّع اتفاقية مع هيلتون لافتتاح ثلاث فنادق ضمن مشروع رُوى المدينة',
+        excerpt: 'أعلنت شركة رُوى المدينة القابضة عن توقيع اتفاقية مع مجموعة Hilton لافتتاح ثلاث فنادق جديدة ضمن مشروع رُوى المدينة، تضم أكثر من 1600 غرفة.',
+        url: '/sa/content-library/rua-al-madinah-holding-signs-agreement-with-hilton-to-open-three-hotels-at-rua-al-madinah-project',
+    },
+    {
+        heroUrl: '/assets/img/sa/press-release-4.webp',
+        title: 'ماريوت الدولية و"القمّة للضيافة" يوقعان اتفاقية لافتتاح فندق JW Marriott في جدة',
+        excerpt: 'أعلنت شركة ماريوت الدولية والقمة للضيافة (إحدى الشركات التابعة لشركة بن داود التجارية) عن توقيع اتفاقية لإطلاق علامة JW Marriott في مدينة جدة.',
+        url: '/sa/content-library/marriott-international-and-al-qimmah-hospitality-sign-agreement-to-open-a-jw-marriott-hotel-in-jeddah',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/IHG_REFAD-Signing.jpg',
+        title: 'مجموعة فنادق ومنتجعات IHG توسّع نطاق تواجدها في عالم الفخامة وأسلوب الحياة بالمملكة العربية السعودية بتوقيع اتفاقية فندق Indigo جديد',
+        excerpt: "أعلنت مجموعة فنادق ومنتجعات IHG، إحدى أبرز شركات الضيافة في العالم، عن توقيع اتفاقية إدارة مع شركة رفاد للتطوير والاستثمار العقاري.",
+        url: '/sa/content-library/ihg-hotels-resorts-expands-luxury-lifestyle-footprint-in-saudi-arabia-with-a-new-hotel-indigo-signing',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/Inhabitr-Signing-FHS.jpg',
+        title: "شركة Inhabitr من وادي السيليكون تدخل الشرق الأوسط بحلول تأثيث تعتمد على الذكاء الاصطناعي",
+        excerpt: "أعلنت شركة Inhabitr، أول منصة تأثيث عقاري تجاري مدعومة بالذكاء الاصطناعي، عن توسعها في الشرق الأوسط بافتتاح مكاتب واستوديوهات تصميم جديدة في المملكة العربية السعودية.",
+        url: '/sa/content-library/silicon-valleys-inhabitr-brings-ai-powered-furnishing-solutions-to-the-middle-east',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/ASFAR-Announces-Baheej-and-Kerten-Hospitality-Partnership-to-Elevate-Integrated-Living-in-Yanbu-1.jpg',
+        title: "شركة أسفار تعلن عن شراكة بين مجموعة بهيج وشركة كيرتن للضيافة (Kerten Hospitality)، لتعزيز مفهوم العيش المتكامل في ينبع",
+        excerpt: "أعلنت شركة بهيج للتطوير السياحي، وهي مشروع مشترك بين شركة أسفار (شركة استثمار سياحي تابعة لصندوق الاستثمارات العامة) وتحالف التميمي-AWN، عن توقيع اتفاقية استراتيجية مع شركة كيرتن للضيافة (Kerten Hospitality)، الرائدة في قطاع العيش المتكامل والضيافة عالميًا.",
+        url: '/sa/content-library/asfar-announces-baheej-and-kerten-hospitality-partnership-to-elevate-integrated-living-in-yanbu',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/FHS-Saudi-Arabia-2024-1.jpg',
+        title: "كيرتن للضيافة (Kerten Hospitality) تعلن عن توسّع قياسي، وتضاعف محفظتها في الربع الأول من 2024",
+        excerpt: "أعلنت شركة كيرتن للضيافة (Kerten Hospitality)، الرائدة عالميًا في حلول الضيافة المخصصة ومفاهيم العيش المتكامل، عن تحقيق نمو سنوي مضاعف في الربع الأول من عام 2024.",
+        url: '/sa/content-library/kerten-hospitality-announces-record-expansion-doubling-portfolio-in-first-quarter-of-2024',
+    },
+    
+]
 
 export default function Page () {
 
@@ -98,9 +137,21 @@ export default function Page () {
 
                             <div className="formatted">
                                 <Slide>
-                                    <h2>Connect with 1,400+ hospitality investors, owners, and industry leaders shaping the Kingdom&apos;s tourism future</h2>
-                                    <p>With over 1,400 delegates expected at FHS Saudi Arabia 2025, you&apos;ll have unparalleled access to the most influential figures driving hospitality investment across the region. From government officials and tourism authorities to international hotel chains, investors, and developers—the key decision-makers transforming Saudi Arabia&apos;s hospitality landscape will all be in one place.</p>
-                                    <p>This premier gathering offers you the chance to connect with visionaries and leaders driving Saudi Arabia&apos;s ambitious Vision 2030 tourism goals, while positioning yourself at the center of one of the world&apos;s most dynamic hospitality markets.</p>
+                                    {
+                                        locale === 'ar'
+                                        ?
+                                            <>
+                                                <h2>تواصل مع أكثر من 1,400 مستثمر ومالك ورائد في قطاع الضيافة يساهمون في تشكيل مستقبل السياحة في المملكة</h2>
+                                                <p>مع توقع حضور أكثر من 1,400 مشارك في قمة مستقبل الضيافة بالمملكة العربية السعودية 2025، ستتاح لك فرصة استثنائية للوصول إلى أبرز الشخصيات المؤثرة في دفع عجلة الاستثمار الفندقي في المنطقة. فمن المسؤولين الحكوميين والهيئات السياحية، إلى سلاسل الفنادق العالمية والمستثمرين والمطورين - جميع صُنّاع القرار الذين يُحدثون تحولاً في مشهد الضيافة السعودي سيتواجدون في مكان واحد.</p>
+                                                <p>هذا الحدث المهم هو فرصتك الذهبية للتواصل مع أصحاب الرؤى والقيادات التي تدفع أهداف رؤية السعودية 2030 السياحية الطموحة، بينما تضع نفسك في قلب أحد أكثر أسواق الضيافة حيوية في العالم. سجل الآن</p>
+                                            </>
+                                        :
+                                            <>
+                                                <h2>Connect with 1,400+ hospitality investors, owners, and industry leaders shaping the Kingdom&apos;s tourism future</h2>
+                                                <p>With over 1,400 delegates expected at FHS Saudi Arabia 2025, you&apos;ll have unparalleled access to the most influential figures driving hospitality investment across the region. From government officials and tourism authorities to international hotel chains, investors, and developers—the key decision-makers transforming Saudi Arabia&apos;s hospitality landscape will all be in one place.</p>
+                                                <p>This premier gathering offers you the chance to connect with visionaries and leaders driving Saudi Arabia&apos;s ambitious Vision 2030 tourism goals, while positioning yourself at the center of one of the world&apos;s most dynamic hospitality markets.</p>
+                                            </>
+                                    }
 
                                 </Slide>
 
@@ -152,12 +203,18 @@ export default function Page () {
             <section className="block bg-primary">
                 <div className="container center">
                     <Fade>
-                        <p className="fs-1 fw-600 lh-1 maxw-40 mx-auto">Networking Stats from FHS Saudi Arabia 2024</p>
+                        <p className="fs-1 fw-600 lh-1 maxw-40 mx-auto">
+                            {
+                                locale === 'ar'
+                                ?   "إحصائيات التواصل من قمة مستقبل الضيافة بالمملكة العربية السعودية 2024"
+                                :   "Networking Stats from FHS Saudi Arabia 2024"
+                            }
+                        </p>
                     </Fade>
                     <div className="columns-3 gap-sm maxw-50 mx-auto mt-md">
-                        <InvestorImpact prefix={"$"} figure={1.1} unit={"B"} label={"in Business"} />
-                        <InvestorImpact figure={22} unit={"%"} label={"Investors"} />
-                        <InvestorImpact figure={17} label={"Deals Signed"} />
+                        <InvestorImpact prefix={"$"} figure={1.1} unit={"B"} label={locale === 'ar' ? "مليار دولار قيمة الأعمال التجارية" : "in Business"} />
+                        <InvestorImpact figure={22} unit={"%"} label={locale === 'ar' ? "نسبة المستثمرين" : "Investors"} />
+                        <InvestorImpact figure={17} label={locale === 'ar' ? "صفقة تم توقيعها" : "Deals Signed"} />
                     </div>
                 </div>
             </section>
@@ -168,28 +225,34 @@ export default function Page () {
             <section className="block bg-primary-2-dark">
                 <div className="container center maxw-40">
                     <Fade>
-                        <p className='fs-2 fw-600 lh-2'>Your next landmark deal begins with a conversation at FHS Saudi Arabia</p>
+                        <p className='fs-2 fw-600 lh-2'>
+                            {
+                                locale === 'ar'
+                                ?   "صفقتك القادمة تبدأ بمحادثة في قمة مستقبل الضيافة بالمملكة العربية السعودية"
+                                :   "Your next landmark deal begins with a conversation at FHS Saudi Arabia"
+                            }
+                        </p>
                     </Fade>
                 </div>
 
                 <div className="container columns-3 gap-md">
                     <Pop><Card heroUrl={'/assets/img/sa/networking/receptions.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>Networking Receptions</p>
+                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "حفلات تواصل" : "Networking Receptions"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/speed-networking.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>Speed Networking</p>
+                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "جلسات تواصل سريع" : "Speed Networking"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/lunch.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>Curated Lunch &amp; Coffee</p>
+                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "استراحة غداء وقهوة خاصة" : "Curated Lunch & Coffee"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/tours.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>Site Tours</p>
+                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "جولات ميدانية" : "Site Tours"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/investors-lounge.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>Investor&apos;s Lounge</p>
+                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "ردهة المستثمرين" : "Investor's Lounge"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/exhibition.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>Exhibition Floor</p>
+                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "طابق المعرض" : "Exhibition Floor"}</p>
                     </Card></Pop>
                     
                 </div>
@@ -202,7 +265,7 @@ export default function Page () {
                             color={'var(--secondary)'}
                             target={'_blank'}
                         >
-                            View Attendee List
+                            {locale === 'ar' ? "عرض قائمة الحضور" : "View Attendee List"}
                         </ButtonKeyline>
                     </Pop>
                 </div>
@@ -221,14 +284,30 @@ export default function Page () {
 
                     <div className="formatted">
                         <Slide>
-                            <h2>Power your networking with the FHS&nbsp;app</h2>
-                            <p>Start building your network before you even arrive in Riyadh. The FHS Saudi Arabia mobile app puts the entire event ecosystem at your fingertips:</p>
-                            <p><strong>Attendee Directory:</strong> Browse
-                            the comprehensive list of registered delegates and initiate conversations with potential partners.</p>
-                            <p><strong>Meeting Scheduler:</strong> Arrange and manage your meetings with key industry figures directly through the app.</p>
-                            <p><strong>Personalised Agenda:</strong> Create a custom schedule that balances educational sessions with your networking priorities.</p>
-                            <p><strong>Real-Time Updates:</strong> Receive notifications about networking events, special sessions, and deal announcements happening throughout the summit</p>
-                            <p><span className="c-secondary"><br/></span></p>
+                            {
+                                locale === 'ar'
+                                ?
+                                    <>
+                                        <h2>عزّز فرصك في التواصل عبر تطبيق قمة مستقبل الضيافة (FHS)</h2>
+                                        <p>سارع إلى بناء شبكة علاقاتك من الآن قبل وصولك إلى الرياض. تطبيق قمة مستقبل الضيافة بالمملكة العربية السعودية (FHS Saudi Arabia) يضع النظام الكامل للحدث بين يديك:</p>
+                                        <p>دليل الحضور: تصفّح القائمة الكاملة للمسجلين وابدأ المحادثات مع شركاء محتملين.</p>
+                                        <p>جدولة الاجتماعات: رتّب وأدِر لقاءاتك مع الشخصيات الرئيسية في القطاع مباشرة عبر التطبيق.</p>
+                                        <p>أجندة مخصصة: أنشئ جدولًا شخصيًا يوازن بين الجلسات التعليمية وأولويات التواصل.</p>
+                                        <p>تحديثات مباشرة: استقبل إشعارات حول فعاليات التواصل، الجلسات الخاصة، والإعلانات عن الصفقات طوال أيام القمة.</p>
+                                    </>
+                                :
+                                    <>
+                                        <h2>Power your networking with the FHS&nbsp;app</h2>
+                                        <p>Start building your network before you even arrive in Riyadh. The FHS Saudi Arabia mobile app puts the entire event ecosystem at your fingertips:</p>
+                                        <p><strong>Attendee Directory:</strong> Browse
+                                        the comprehensive list of registered delegates and initiate conversations with potential partners.</p>
+                                        <p><strong>Meeting Scheduler:</strong> Arrange and manage your meetings with key industry figures directly through the app.</p>
+                                        <p><strong>Personalised Agenda:</strong> Create a custom schedule that balances educational sessions with your networking priorities.</p>
+                                        <p><strong>Real-Time Updates:</strong> Receive notifications about networking events, special sessions, and deal announcements happening throughout the summit</p>
+                                        <p><span className="c-secondary"><br/></span></p>
+                                    </>
+                            }
+                            
                             <p><a className="button" href="https://page.swapcard.com/app/the-bench/" target="_blank" rel="noreferrer noopener">
                                 { locale === 'ar' ? "حمل التطبيق الآن" : "Download the Event App" }
                             </a><br/></p>
@@ -244,22 +323,33 @@ export default function Page () {
             <section className="block bg-primary-2-dark">
                 <div className="container center maxw-50">
                     <Fade>
-                        <p className="fs-1 fw-600 lh-1">Creating impact through meaningful connections</p>
+                        <p className="fs-1 fw-600 lh-1">
+                            {
+                                locale === 'ar'
+                                ?   "إحداث تأثير من خلال علاقات هادفة"
+                                :   "Creating impact through meaningful connections"
+                            }
+                        </p>
                     </Fade>
-                    <p className='mt-sm'>At FHS Saudi Arabia 2024, industry-shaping deals and partnerships were announced on-site, including agreements between IHG Hotels and Resorts, ASFAR, Baheej Group, Kerten Hospitality, AlSulaiman Group, Hilton,Marriott, Rua Al Madinah and much more!</p>
+                    <p className='mt-sm'>
+                        {
+                            locale === 'ar'
+                            ?   "في قمة مستقبل الضيافة بالمملكة العربية السعودية 2024، تم الإعلان عن عدد من الصفقات والشراكات التي غيّرت قواعد اللعبة، منها توقيع اتفاقية بين فنادق ومنتجعات IHG، وشركة أسفار (ASFAR)، مجموعة بهيج، كيرتن للضيافة (Kerten Hospitality)، مجموعة السليمان، هليتون، ماريوت، رؤى المدينة، وغيرها من العلامات التجارية الأخرى."
+                            :   "At FHS Saudi Arabia 2024, industry-shaping deals and partnerships were announced on-site, including agreements between IHG Hotels and Resorts, ASFAR, Baheej Group, Kerten Hospitality, AlSulaiman Group, Hilton,Marriott, Rua Al Madinah and much more!"
+                        }
+                    </p>
                     <p className='mt-md'>
                     </p>
                 </div>
 
                 <div className="container columns-3 gap-md">
                     {
-                        ARTICLE_DATA &&
-                        ARTICLE_DATA.map(( article, index ) => (
+                        ( locale === 'ar' ? ARTICLE_DATA_AR : ARTICLE_DATA ).map(( article, index ) => (
                             <Pop key={index}>
                                 <Card heroUrl={article.heroUrl}>
                                     <p className='fs-6 lh-2 c-secondary fw-600 pb-xs'>{article.title}</p>
                                     <p>{article.excerpt}</p>
-                                    <p className='fw-600 c-accent mt-xs'><Link href={article.url}><a className='uLink'>Read more</a></Link></p>
+                                    <p className='fw-600 c-accent mt-xs'><Link href={article.url}><a className='uLink'>{locale === 'ar' ? "اعرف المزيد" : "Read more"}</a></Link></p>
                                 </Card>
                             </Pop>
                         ))
@@ -274,7 +364,7 @@ export default function Page () {
                             decal={'fs-5 fw-600'} 
                             color={'var(--secondary)'}
                         >
-                            View More
+                            { locale === 'ar' ? "عرض المزيد" : "View More" }
                         </ButtonKeyline>
                     </Pop>
                 </div>
@@ -286,7 +376,13 @@ export default function Page () {
 
             <section className="block bg-primary">
                 <div className="container center maxw-55 c-white">
-                    <p className='fs-4'>FHS Saudi Arabia isn&apos;t just about making contacts—it&apos;s about creating lasting business relationships that drive the future of hospitality in the Kingdom. With a demonstrated track record of facilitating meaningful industry connections, our 2025 event promises to deliver the relationships that will shape the next phase of Saudi Arabia&apos;s hospitality growth.</p>
+                    {
+                        locale === 'ar'
+                        ?
+                            <p className='fs-4'>قمة مستقبل الضيافة بالمملكة العربية السعودية لا يقتصر على بناء علاقات فحسب - بل يصنع شراكات أعمال طويلة الأمد تدفع مستقبل قطاع الضيافة في المملكة. فبفضل سجله الحافل في بناء روابط فعّالة داخل القطاع، يعدك مؤتمر 2025 بتوفير العلاقات التي ستشكل المرحلة المقبلة من نمو قطاع الضيافة في السعودية.</p>
+                        :
+                            <p className='fs-4'>FHS Saudi Arabia isn&apos;t just about making contacts—it&apos;s about creating lasting business relationships that drive the future of hospitality in the Kingdom. With a demonstrated track record of facilitating meaningful industry connections, our 2025 event promises to deliver the relationships that will shape the next phase of Saudi Arabia&apos;s hospitality growth.</p>
+                    }
                 </div>
             </section>
 
