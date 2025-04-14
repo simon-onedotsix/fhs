@@ -351,6 +351,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         <p className="fs-3 fw-600 c-accent caps">{ locale === 'ar' ? "Supporters" : "Supporters" }</p>
                             <Pop>
                                 <div className={`${CSS.sponsorLogoWrapper} mt-sm mx-auto`}>
+                                    <Image src={`/assets/site/sa/ministry-of-tourism.png`} width={1547} height={556}/>
                                     <Image src={`/assets/site/sa/unt-white.png`} width={800} height={624}/>
                                     <Image src={`/assets/site/sa/wsha-white.png`} width={1000} height={442}/>
                                     <Image src={`/assets/site/sa/wttc-white.png`} width={800} height={712}/>

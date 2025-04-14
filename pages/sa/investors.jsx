@@ -40,9 +40,9 @@ export default function Page () {
                             {
                                 locale === 'ar'
                                 ?
-                                    <h1 className='fs-0'>Spearhead Hospitality Investment at FHS Saudi Arabia</h1>
+                                    <h1 className='fs-0'>Investors at FHS Saudi Arabia</h1>
                                 :
-                                    <h1 className='fs-0'>Spearhead Hospitality Investment at FHS Saudi Arabia</h1>
+                                    <h1 className='fs-0'>Investors at FHS Saudi Arabia</h1>
                             }
                         </Reveal>
                     </div>
@@ -93,12 +93,12 @@ export default function Page () {
 
                             <section>
                                 <ul className={CSS.graphKey}>
+                                    <GraphKey color={'#694094'}>{ locale === 'ar' ? "48% Development Project / Governmental Company" : "48% Development Project / Governmental Company" }</GraphKey>
                                     <GraphKey color={'#9067BD'}>{ locale === 'ar' ? "25% Developers" : "25% Developers" }</GraphKey>
                                     <GraphKey color={'#DFA46E'}>{ locale === 'ar' ? "11% Investment Company" : "11% Investment Company" }</GraphKey>
-                                    <GraphKey color={'#694094'}>{ locale === 'ar' ? "48% Development Project / Governmental Company" : "48% Development Project / Governmental Company" }</GraphKey>
+                                    <GraphKey color={'#56E1B2'}>{ locale === 'ar' ? "10% Asset Manager" : "10% Asset Manager" }</GraphKey>
                                     <GraphKey color={'#FF4B4B'}>{ locale === 'ar' ? "3% Private Equity" : "3% Private Equity" }</GraphKey>
                                     <GraphKey color={'#36D0FF'}>{ locale === 'ar' ? "3% Bank" : "3% Bank" }</GraphKey>
-                                    <GraphKey color={'#56E1B2'}>{ locale === 'ar' ? "10% Asset Manager" : "10% Asset Manager" }</GraphKey>
                                 </ul>
                             </section>
                         </div>
@@ -195,22 +195,38 @@ export default function Page () {
                     </Fade>
                 </div>
 
-                <div className="container columns-3 gap-sm">
+                <div className="container columns-3 gap-sm formatted">
                     <Pop>
                         <article className={CSS.previewCard}>
                             <p className='fs-4 lh-3'>Beyond the Whistle: The FIFA World Cup 2034&apos;s Ripple Effect on the Saudi Hospitality Sector</p>
+                            <p className='fw-600'>Speaker:</p>
+                            <ul>
+                                <li><strong>Dr. Sarah Gasim</strong>, Senior Vice President, Head of Hotels KSA, JLL</li>
+                            </ul>
                         </article>
                     </Pop>
 
                     <Pop>
                         <article className={CSS.previewCard}>
                             <p className='fs-4 lh-3'>Saudi Arabia Tourism Outlook: Shaping the Future from 2025 to 2040</p>
+                            <p className='fw-600'>Speaker:</p>
+                            <ul>
+                                <li><strong>Muhammad Bassrawi</strong>, President Domestic Tourism Business Unit, Saudi Tourism Authority</li>
+                            </ul>
                         </article>
                     </Pop>
 
                     <Pop>
                         <article className={CSS.previewCard}>
                             <p className='fs-4 lh-3'>From White Label Operators, Franchising to Traditional Management Agreements - What is the Future?</p>
+                            <p className='fw-600'>Speakers:</p>
+                            <ul>
+                                <li><strong>Scott Antel</strong>, Founder & Owner, Scott's FZ LLE</li>
+                                <li><strong>Victor Abou Ghanem</strong>, Chief Executive Officer, Story Hospitality</li>
+                                <li><strong>Tariq Dowidar</strong>, Vice President KSA, Aleph Hospitality</li>
+                                <li><strong>David Thomson</strong>, Senior Vice President of Business Development, The First Group</li>
+                                <li><strong>Eddy Tannous</strong>, Chief Operating Officer, Rotana</li>
+                            </ul>
                         </article>
                     </Pop>
                 </div>
@@ -237,7 +253,7 @@ export default function Page () {
 
             {/* FEATURES */}
 
-            <section className="block bg-theme">
+            <section className="block bg-primary-2">
                 <div className="container center maxw-40">
                     <Fade>
                         <p className='fs-2 fw-600 lh-2'>Where Investor Conversations Spark Landmark Deals</p>
@@ -246,22 +262,22 @@ export default function Page () {
 
                 <div className="container columns-3 gap-md">
                     <Pop><Card heroUrl={'/assets/img/sa/networking/receptions.jpg'}>
-                        <p className='fs-4 c-secondary fw-600'>Networking Receptions</p>
+                        <p className='fs-4 c-primary fw-600'>Networking Receptions</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/speed-networking.jpg'}>
-                        <p className='fs-4 c-secondary fw-600'>Speed Networking</p>
+                        <p className='fs-4 c-primary fw-600'>Speed Networking</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/lunch.jpg'}>
-                        <p className='fs-4 c-secondary fw-600'>Curated Lunch &amp; Coffee</p>
+                        <p className='fs-4 c-primary fw-600'>Curated Lunch &amp; Coffee</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/tours.jpg'}>
-                        <p className='fs-4 c-secondary fw-600'>Site Tours</p>
+                        <p className='fs-4 c-primary fw-600'>Site Tours</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/investors-lounge.jpg'}>
-                        <p className='fs-4 c-secondary fw-600'>Investor&apos;s Lounge</p>
+                        <p className='fs-4 c-primary fw-600'>Investor&apos;s Lounge</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/exhibition.jpg'}>
-                        <p className='fs-4 c-secondary fw-600'>Exhibition Floor</p>
+                        <p className='fs-4 c-primary fw-600'>Exhibition Floor</p>
                     </Card></Pop>
                     
                 </div>

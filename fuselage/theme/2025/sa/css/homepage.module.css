@@ -119,9 +119,9 @@
 }
 @media(min-width:600px){
     .sponsorLogoWrapper {
-        max-width: 40rem;
+        max-width: 55vw;
         display: grid;
-        grid-template-columns: 1fr 1.3fr 1.2fr;
+        grid-template-columns: 1.75fr 1fr 1.3fr 1.2fr;
         gap: var(--space-sm)
     }
 }
