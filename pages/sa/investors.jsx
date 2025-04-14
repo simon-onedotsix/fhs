@@ -16,6 +16,8 @@ import { Button } from '../../fuselage/theme/2024/world/components/button/button
 import { ButtonKeyline } from '../../fuselage/theme/2024/world/components/button-keyline/button-keyline'
 import { ArticleScroller, Article } from "../../fuselage/theme/2025/sa/pages/networking/article-scroller"
 import { Billboard } from '../../fuselage/blocks/billboard/billboard'
+import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
+import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
 
 
 
@@ -221,7 +223,7 @@ export default function Page () {
                             <p className='fs-4 lh-3'>From White Label Operators, Franchising to Traditional Management Agreements - What is the Future?</p>
                             <p className='fw-600'>Speakers:</p>
                             <ul>
-                                <li><strong>Scott Antel</strong>, Founder & Owner, Scott's FZ LLE</li>
+                                <li><strong>Scott Antel</strong>, Founder & Owner, Scott&apos;s FZ LLE</li>
                                 <li><strong>Victor Abou Ghanem</strong>, Chief Executive Officer, Story Hospitality</li>
                                 <li><strong>Tariq Dowidar</strong>, Vice President KSA, Aleph Hospitality</li>
                                 <li><strong>David Thomson</strong>, Senior Vice President of Business Development, The First Group</li>
@@ -233,22 +235,93 @@ export default function Page () {
             </section>
 
 
+            {/* INVESTOR SPEAKERS */}
+            
+            <SpeakerCarousel 
+                heading={`Investor-Speakers at FHS Saudi Arabia 2025`} 
+                color={`c-white`}
+                text={``}
+                decal={'bg-primary'}
+                ctaLink={'/sa/speakers'}
+                ctaLabel={'View All Speakers'}
+            >
 
-            {/* 2024 IN NUMBERS */}
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/2540878a4ce149da8e5f9cb8384277cc.jpeg'}
+                        fullName={'Khalid Saud Abu Haimed'}
+                        jobTitle={'Chief Executive Officer'}
+                        company={'Al Khozama Investment Company'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/7b395ba5c8d146cb970582231d498e01.jpeg'}
+                        fullName={'Sultan Bader Al-Otaibi'}
+                        jobTitle={'Chief Executive Officer'}
+                        company={'Taiba Investments'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://cms.thebench.com/assets/img/avatars/Ahdab_Hassan.jpg'}
+                        fullName={'Hassan Ahdab'}
+                        jobTitle={'Chief Hospitality Operations Officer'}
+                        company={'Taiba Investments'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/7a338419909044c5b3a29f6d9820e408.jpeg'}
+                        fullName={'Fahad Mohammed Alobailan'}
+                        jobTitle={'Chief Executive Officer'}
+                        company={'BAAN Holding'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/323171e14d9b42c593b657cec119176e.jpeg'}
+                        fullName={'Sean Hehir'}
+                        jobTitle={'President & CEO'}
+                        company={'Trinity Investments'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/97a1ef7bc8bb47fc9a6ce1108c7fc3a3.jpeg'}
+                        fullName={'Nick Candy'}
+                        jobTitle={'Chief Executive Officer'}
+                        company={'Candy Capital'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/8cadb1f6b939436ab08ad4dd957f35e2.jpeg'}
+                        fullName={'Sundip Patel'}
+                        jobTitle={'Chief Executive Officer'}
+                        company={'Ezdaher Financing Company'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/1de1fe42566f4d0dbdb24885e0724c4b.jpeg'}
+                        fullName={'Amit Nayak'}
+                        jobTitle={'Vice President'}
+                        company={'HAMA MEA'}
+                    />
+                </Pop>
 
-            <section className="block bg-primary">
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-1 fw-600 lh-1">Investors at FHS World 2024</p>
-                    </Fade>
-                    <div className="columns-4 gap-sm mx-auto mt-md">
-                        <InvestorImpact figure={239} label={ locale === 'ar' ? "إجمالي عدد المستثمرين المشاركين" : "Total attending investors"} />
-                        <InvestorImpact prefix={'$'} figure={4.5} unit={"Tr+"} label={ locale === 'ar' ? "أكثر من 4.5 تريليون دولار إجمالي الأصول المدارة (AUM)" : "Total Assets Under Management (AUM)"} />
-                        <InvestorImpact figure={78} label={ locale === 'ar' ? "عملية تعريف" : "Introductions Facilitated"} />
-                        <InvestorImpact figure={22} label={ locale === 'ar' ? "اجتماعًا" : "Meetings Scheduled"} />
-                    </div>
-                </div>
-            </section>
+            </SpeakerCarousel>
+
+            
 
 
             {/* FEATURES */}

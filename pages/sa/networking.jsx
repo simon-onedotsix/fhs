@@ -77,7 +77,7 @@ export default function Page () {
                     <PageHeroImage hero={{ url: '/assets/img/sa/nextgen-forum/bg-1.jpg', width: 2000, height: 1334 }} >
                         <div className="container maxw-60 pb-md c-white center">
                             <Reveal>
-                                <h1 className='fs-0'>{ locale === 'ar' ? "تجربة التواصل في قمة مستقبل الضيافة" : "The Networking Experience at&nbsp;FHS"}</h1>
+                                <h1 className='fs-0 maxw-40'>{ locale === 'ar' ? "تجربة التواصل في قمة مستقبل الضيافة" : "The Networking Experience at FHS"}</h1>
                             </Reveal>
                         </div>
 
@@ -165,7 +165,7 @@ export default function Page () {
 
             {/* FEATURES */}
 
-            <section className="block bg-theme">
+            <section className="block bg-primary-2-dark">
                 <div className="container center maxw-40">
                     <Fade>
                         <p className='fs-2 fw-600 lh-2'>Your next landmark deal begins with a conversation at FHS Saudi Arabia</p>
@@ -174,22 +174,22 @@ export default function Page () {
 
                 <div className="container columns-3 gap-md">
                     <Pop><Card heroUrl={'/assets/img/sa/networking/receptions.jpg'}>
-                        <p className='fs-4 c-secondary fw-600'>Networking Receptions</p>
+                        <p className='fs-4 c-primary fw-600'>Networking Receptions</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/speed-networking.jpg'}>
-                        <p className='fs-4 c-secondary fw-600'>Speed Networking</p>
+                        <p className='fs-4 c-primary fw-600'>Speed Networking</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/lunch.jpg'}>
-                        <p className='fs-4 c-secondary fw-600'>Curated Lunch &amp; Coffee</p>
+                        <p className='fs-4 c-primary fw-600'>Curated Lunch &amp; Coffee</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/tours.jpg'}>
-                        <p className='fs-4 c-secondary fw-600'>Site Tours</p>
+                        <p className='fs-4 c-primary fw-600'>Site Tours</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/investors-lounge.jpg'}>
-                        <p className='fs-4 c-secondary fw-600'>Investor&apos;s Lounge</p>
+                        <p className='fs-4 c-primary fw-600'>Investor&apos;s Lounge</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/exhibition.jpg'}>
-                        <p className='fs-4 c-secondary fw-600'>Exhibition Floor</p>
+                        <p className='fs-4 c-primary fw-600'>Exhibition Floor</p>
                     </Card></Pop>
                     
                 </div>
@@ -241,7 +241,7 @@ export default function Page () {
 
             {/* SIGNINGS */}
 
-            <section className="block bg-theme">
+            <section className="block bg-primary-2-dark">
                 <div className="container center maxw-50">
                     <Fade>
                         <p className="fs-1 fw-600 lh-1">Creating impact through meaningful connections</p>
