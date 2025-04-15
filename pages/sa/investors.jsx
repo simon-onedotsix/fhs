@@ -166,24 +166,25 @@ export default function Page () {
                                             <li><strong><u>الوصول إلى صالة المستثمرين </u> - </strong> منطقة حصرية مخصصة بالدعوات فقط للتواصل، حيث يلتقي كبار المستثمرين والمطورين والمشغلين الرائدين لمناقشة صفقات استثمارية عالية التأثير في بيئة حصرية، مع عروض تقديمية مخصصة متاحة فقط للمالكين والمستثمرين.</li>
                                             <li><strong><u>اجتماعات فردية مُرتبة مسبقًا </u> - </strong> لقاءات مخصصة مع كبار مشغلي الضيافة، ومديري الأصول، والقادة الماليين لاستكشاف شراكات استثمارية مثمرة.</li>
                                             <li><strong><u>دعوة لحضور فعاليات المستثمرين المغلقة </u> - </strong>فرصة للمشاركة في اجتماع مائدة مستديرة خاص أو فعالية تواصل تركز على المستثمرين خلال 12 شهرًا من التسجيل، للبقاء على اطلاع دائم بأهم الفرص في القطاع. تُنظَّم هذه الفعاليات في مختلف أنحاء العالم، مما يوفر منصة أساسية للقاء والتواصل مع مستثمرين آخرين.</li></ul>
+                                            <p className='mt-md'>
+                                                <Pop inline>
+                                                    <Link href="/sa/download-investor-prospectus" target="_blank">
+                                                        <a className="button fs-5 caps">Download Investor Prospectus</a>
+                                                    </Link>
+                                                </Pop>
+                                            </p>
                                     </>
                                 :
                                     <>
                                         <h2>EXCLUSIVE INVESTOR PASS BENEFITS</h2>
                                         <ul><li><strong><u>Access to the Investors Lounge</u> - </strong>A private, invitation-only networking zone where top-tier investors, developers, and leading operators discuss high-impact investment deals in an exclusive setting. There, tailor-made presentations are accessible exclusively to owners and investors.</li><li><strong><u>Pre-arranged 1:1 Meetings</u> - </strong>Personalised introductions to leading hospitality operators, asset managers, and financial leaders to explore investment partnerships.</li><li><strong><u>Invitation to Closed-Door Investor Events</u> - </strong>Join a private, investor-focused roundtable or networking event within 12 months of registration to stay engaged with the industry&apos;s biggest opportunities. These events are organised around the world, providing a key platform to meet and connect with other investors.</li></ul>
-                                        {/* <p className='mt-md'>
+                                        <p className='mt-md'>
                                             <Pop inline>
-                                                <Link href="https://share.hsforms.com/165e0aXCeSsG2vZWX3GsGeQ8nd8z" target="_blank">
-                                                    <a className="button fs-5 caps">
-                                                        {
-                                                            locale === 'ar'
-                                                            ?   "Download Investor Prospectus"
-                                                            :   "Download Investor Prospectus"
-                                                        }
-                                                    </a>
+                                                <Link href="/sa/download-investor-prospectus" target="_blank">
+                                                    <a className="button fs-5 caps">Download Investor Prospectus</a>
                                                 </Link>
                                             </Pop>
-                                        </p> */}
+                                        </p>
                                     </>
                             }
                             
@@ -297,6 +298,19 @@ export default function Page () {
                             }
                         </article>
                     </Pop>
+                </div>
+
+                <div className="container center">
+                    <Pop inline>
+                        <ButtonKeyline 
+                            href={'/sa/agenda'} 
+                            decal={'fs-5 fw-600'} 
+                            color={'var(--primary)'}
+                        >
+                            Agenda
+                        </ButtonKeyline>
+                    </Pop>
+                    
                 </div>
             </section>
 
