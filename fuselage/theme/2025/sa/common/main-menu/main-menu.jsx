@@ -89,7 +89,8 @@ export const MainMenu = ({ otherEvents }) => {
                                                                 if ( 
                                                                     link.hyperlink === '/sa/themes' ||
                                                                     link.hyperlink === '/sa/investors' ||
-                                                                    link.hyperlink === '/sa/nextgen-investment-forum'
+                                                                    link.hyperlink === '/sa/nextgen-investment-forum' ||
+                                                                    link.hyperlink === '/sa/curated-connections'
                                                                 ) showFlash = true
                 
                                                                 if (link.hyperlink) return (
