@@ -20,13 +20,12 @@ export const Locales = () => {
 
     return (
         <div className={CSS.layout}>
-            <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
-                <GlobeIcon />
-            </div>
-
-            <div className={`${CSS.overlay} ${ active && CSS.active } bg-white`} onMouseLeave={ () => setActive(false)}>
-                <Link href={asPath} locale='en' shallow><a className={`${CSS.localeButton} ${locale !== 'ar' && CSS.active}`}>English</a></Link>
-                <Link href={asPath} locale='ar' shallow><a className={`${CSS.localeButton} ${locale === 'ar' && CSS.active}`}>العربية</a></Link>
+            <div className={CSS.toggle}>
+                {
+                    locale === 'ar'
+                    ?   <Link href={asPath} locale='en' shallow><a className={CSS.localeButton}>EN</a></Link>
+                    :   <Link href={asPath} locale='ar' shallow><a className={CSS.localeButton}>AR</a></Link>
+                }
             </div>
         </div>
     )

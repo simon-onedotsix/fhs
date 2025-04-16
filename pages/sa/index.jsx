@@ -196,6 +196,78 @@ const SPEAKER_DATA = [
         company: 'Tourism Ministry',
     },
 ]
+const SPEAKER_DATA_AR = [
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/0f3466754aec406ab2b64862743c639f.jpeg',
+        fullName: 'صاحب السمو الأمير بندر بن سعود بن خالد آل سعود',
+        jobTitle: 'الأمين العام، مؤسسة الملك فيصل | رئيس مجلس إدارة شركة الخزامى للاستثما',
+        company: '',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1NjE0MTM=`,
+        photoUrl: 'https://static.swapcard.com/public/images/2540878a4ce149da8e5f9cb8384277cc.jpeg',
+        fullName: 'خالد سعود أبو حيمد',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'شركة الخزامى للاستثمار',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc3MDYzMTQ=`,
+        photoUrl: 'https://static.swapcard.com/public/images/2d0ccacdbd4a4a5cab7230fab32d2763.jpeg',
+        fullName: 'جوليا سيمبسون',
+        jobTitle: 'الرئيسة والمديرة التنفيذية',
+        company: 'المجلس العالمي للسفر والسياحة',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgwNjYxMDQ=`,
+        photoUrl: 'https://static.swapcard.com/public/images/b946c29ec7c24b2091410172ac1ed515.jpeg',
+        fullName: 'جيري إنزيريلو',
+        jobTitle: 'الرئيس التنفيذي لمجموعة شركة الدرعية | نائب رئيس دليل فوربس للسفر',
+        company: '',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
+        photoUrl: 'https://static.swapcard.com/public/images/be577fb8e2b044c98cc51dc0dc10fb55.jpeg',
+        fullName: 'نيكولينا أنجيلكوفا',
+        jobTitle: 'وزيرة السياحة البلغارية السابقة | المالكة والمديرة التنفيذية لمكتب أنجيلكوفا للمحاماة والاستشارات',
+        company: '',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc5MDEyNjk=`,
+        photoUrl: 'https://static.swapcard.com/public/images/7ffaec8014ff4f33bd453f98c0e67b51.jpeg',
+        fullName: 'نيك كاندي',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'كاندي كابيتال',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgyNzk=`,
+        photoUrl: 'https://static.swapcard.com/public/images/aa283dd8d6b747a3ba4c7db9039e57e2.jpeg',
+        fullName: 'وليد الراشد الحميد',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'شركة الراجحي المالية',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1OTk1ODI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
+        fullName: 'مود بيلي',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'سوفيتيل ليجند، سوفيتيل، إم جاليري أند إمبلمز',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc2MDY1NjI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/aeeea1ec1faf489f89b37288836b84c9.jpeg',
+        fullName: 'مايكل أكتون سميث',
+        jobTitle: 'الشريك المؤسس',
+        company: 'شركة كالم (Calm)',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/a96df3d5f0c84807a351df07dfc4e15c.jpeg',
+        fullName: 'الدكتورة عبير العمري',
+        jobTitle: 'وكالة التخطيط الاستراتيجي والمتابعة',
+        company: 'وزارة السياحة',
+    },
+]
 
 export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
 
@@ -411,13 +483,13 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
             {/* SPEAKERS */}
-            <section className="block bg-light" dir="ltr">
+            <section className="block bg-light">
                 <div className="container center">
-                    <p className="fs-0 fw-600 c-secondary">2025 Speakers</p>
+                    <p className="fs-0 fw-600 c-secondary">{ locale === 'ar' ? "المتحدثون لعام 2025" : "2025 Speakers"}</p>
                 </div>
                 <div className="container columns-5 gap-sm">
                     {
-                        SPEAKER_DATA.map( (profile, index) => (
+                        (locale === 'ar' ? SPEAKER_DATA_AR : SPEAKER_DATA).map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
                                     url={profile.url}
@@ -437,14 +509,13 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                             href={ '/sa/speakers' } 
                             theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}
                         >
-                            View All Speakers
+                            { locale === 'ar' ? "عرض جميع المتحدثين" : "View All Speakers"}
                         </ArrowButton>
                     </Pop>
                 </div>
             </section>
                
            
-
 
             <ImpactGrid>
                 <TitleBlock>

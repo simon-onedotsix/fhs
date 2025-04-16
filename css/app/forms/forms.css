@@ -203,11 +203,11 @@ select.hs-input {
 
 /* LOCALISED elements */
 
-html[lang='ar'] .form input[type='checkbox'] {
+/* html[lang='ar'] .form input[type='checkbox'] {
     margin-left: .5rem;
     margin-right: 0;
 }
 
 html[lang='ar'] select.hs-input {
     background-position: calc(1rem);
-}
+} */
