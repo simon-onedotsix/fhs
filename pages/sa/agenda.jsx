@@ -304,7 +304,8 @@ export default function Agenda ({ sessions, locations }) {
 		if ( !fieldId ) return
 		let array = groupFieldGroupsByName( sessionData, handle )
 		let obj = array.find( topic => topic.id === fieldId)
-		return obj.name
+		if ( obj ) return obj.name
+		return
 	}
 	
 
@@ -496,7 +497,8 @@ export default function Agenda ({ sessions, locations }) {
 	// console.log('SEARCH:', search)
 
 
-
+	let sesh = sessions.find(session => session.id === "UGxhbm5pbmdfMjQ3NjQxMA==")
+	console.log('SESH:',sesh)
 
 
 	// TRACKS =====================================
@@ -519,10 +521,10 @@ export default function Agenda ({ sessions, locations }) {
 		{ "id": "RmllbGRWYWx1ZV8yNDU2NzE4OQ==", "name": "Focus on Saudi Arabia" },
 		{ "id": "RmllbGRWYWx1ZV8yNDU3Mjg5MQ==", "name": "Sustainability & Innovation" },
 		{ "id": "RmllbGRWYWx1ZV8yNDU4Nzc2OQ==", "name": "Wellness & Medical Tourism" },
-		{ "id": "RmllbGRWYWx1ZV8yNjYzMzY0NA==", "name": "Luxury, F&B, and Experiential Hospitality" },
 		{ "id": "RmllbGRWYWx1ZV8yNjYzMzY0NQ==", "name": "Sustainability & ESG" },
 		{ "id": "RmllbGRWYWx1ZV8yNjYzMzY3Mw==", "name": "Investment, Finance & Real Estate " },
-		{ "id": "RmllbGRWYWx1ZV8yNjYzMzYxNQ==", "name": "Religious Tourism" }
+		{ "id": "RmllbGRWYWx1ZV8yNjYzMzYxNQ==", "name": "Religious Tourism" },
+		{ "id": 'RmllbGRWYWx1ZV8yNzA3NTM4MQ==', "name": 'Luxury, F&B, and Experiential Hospitality'}
 	]
 	
 	// end custom topic selection and ordering
