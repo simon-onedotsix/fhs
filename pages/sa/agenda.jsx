@@ -378,7 +378,7 @@ export default function Agenda ({ sessions, locations }) {
 							title: speaker.jobTitle,
 							company: speaker.organization,
 							bio: speaker.biography,
-							speakingOn: speaker.withEvent?.eventProfile.withEvent.speakerOnPlannings
+							speakingOn: speaker.withEvent?.eventProfile.withEvent?.speakerOnPlannings
 						})
 						setShowModal(true)
 					}
@@ -497,8 +497,6 @@ export default function Agenda ({ sessions, locations }) {
 	// console.log('SEARCH:', search)
 
 
-	let sesh = sessions.find(session => session.id === "UGxhbm5pbmdfMjQ3NjQxMA==")
-	console.log('SESH:',sesh)
 
 
 	// TRACKS =====================================
@@ -600,7 +598,7 @@ export default function Agenda ({ sessions, locations }) {
 						<div className={`${CSS.filterLayout} ${CSS.filterGroup} ${ !utiltiesInView && CSS.fixed } ${filtersActive && CSS.active}`}>
 							{/* tracks (topics) */}
 							{
-								FILTER_TRACKS_ORDERED.length ?
+								FILTER_TRACKS.length ?
 									<section className={CSS.filterLayoutButtons}>
 										<Menu 
 											menuButton={
@@ -614,7 +612,7 @@ export default function Agenda ({ sessions, locations }) {
 											<div className="columns-2">
 												{
 													sessions &&
-													FILTER_TRACKS_ORDERED.map( 
+													FILTER_TRACKS.map( 
 														filter => <MenuItem key={filter.id} onClick={() => {
 															setSelectedTopic(filter.id)
 															lenis.scrollTo('#agenda', { duration: 1 })
