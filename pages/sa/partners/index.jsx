@@ -82,8 +82,8 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 	// console.log('swapcard partner data 2024:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// partnerData.exhibitors.forEach( ex => console.log( ex.typeLabel?.name))
-	console.log('categories:', categoriesArray)
-	console.log('orderedCategories:', orderedCategories)
+	// console.log('categories:', categoriesArray)
+	// console.log('orderedCategories:', orderedCategories)
 
 
 	return (
@@ -131,30 +131,39 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 							const group = partnerData2025.exhibitors.filter( partner => {
 								if (partner.fields[0]?.id === category.id ) return partner
 							})
+							
 							// console.log('group:', group)
 
-							return (
-								<PartnerCategory key={category.id}>
+							if ( group.length > 0 ) {
 
-									<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category && category.name }</h4>
-									<PartnerLogoGrid>
-										{
-											_.orderBy(group, 'name').map(partner => (
-												<a key={partner.id} href={`/sa/partners/${partner.id}`}>
-													{
-														partner.logoUrl &&
+								// console.log(`GROUP: ${category.id} - ${category.name}`)
+
+								let specialCategories = [
+									'RmllbGRWYWx1ZV8yNTg5Nzk4NA==',
+									'RmllbGRWYWx1ZV8yMzk2Njg2MA==',
+									'RmllbGRWYWx1ZV8yMzk2Njg2MQ=='
+								]
+
+								return (
+									<PartnerCategory key={category.id} width={ specialCategories.includes( category.id ) ? 1 : null }>
+
+										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category && category.name }</h4>
+										<PartnerLogoGrid>
+											{
+												_.orderBy(group, 'name').map(partner => (
+													<a key={partner.id} href={`/sa/2024/partners/${partner.id}`}>
 														<PartnerLogo 
 															hero={{ url: partner.logoUrl }} 
 															size={ category && category.size }
 														/>
-													}
-												</a>
-											))
-										}
-									</PartnerLogoGrid>
-									
-								</PartnerCategory>
-							)
+													</a>
+												))
+											}
+										</PartnerLogoGrid>
+										
+									</PartnerCategory>
+								)
+							}
 							
 						})
 					}
