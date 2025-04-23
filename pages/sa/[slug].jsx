@@ -57,12 +57,12 @@ export default function Page ({ entry, seomatic }) {
 
 
             {/* only show popover on specific pages */}
-            {
+            {/* {
                 router.query.slug === "become-a-sponsor" &&
                 <PopOver>
                     <StartupPromo />
                 </PopOver>
-            }
+            } */}
 
             <Footer />
             <LenisScroller />

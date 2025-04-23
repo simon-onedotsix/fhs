@@ -639,9 +639,9 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
 
-            <PopOver>
+            {/* <PopOver>
                 <StartupPromo />
-            </PopOver>
+            </PopOver> */}
 
             
             <Footer />
