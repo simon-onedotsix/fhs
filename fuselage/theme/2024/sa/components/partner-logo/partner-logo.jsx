@@ -4,7 +4,7 @@ import CSS from './partner-logo.module.css'
 
 export const PartnerLogo = ({ hero, size, alt, label }) => {
 
-    if ( !hero ) return
+    if ( !hero.url ) return
 
     const handleSize = () => {
         switch (size) {

@@ -271,7 +271,6 @@ const SPEAKER_DATA_AR = [
 
 export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
 
-    const t = useTranslations('Global')
 
     const { locale } = useRouter()
 
@@ -821,8 +820,6 @@ export async function getStaticProps({ preview, previewData, locale }) {
 			contentBlocks: pageData.data.entry.fhisContentBlocks,
             partners: partnerData2025.data.exhibitors,
             abVideos: pageData.data.abVideos.videos,
-
-            messages: (await import(`../../translations/${locale}.json`)).default
 		}
 	}
 }
