@@ -799,6 +799,19 @@ export default function Agenda ({ sessions, locations }) {
 																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
 																				</p>
 
+																				{ 
+																					//target specific session
+																					session.id === "UGxhbm5pbmdfMjQ3NjM4NQ==" 
+																					?	
+																						<div className="columns-4 gap-xs">
+																							<img src="/assets/img/sa/agenda/reception-2.jpg" alt="" style={{ width: '100%' }} />
+																							<img src="/assets/img/sa/agenda/reception-3.jpg" alt="" style={{ width: '100%' }} />
+																							<img src="/assets/img/sa/agenda/reception-4.jpg" alt="" style={{ width: '100%' }} />
+																							<img src="/assets/img/sa/agenda/reception-1.jpg" alt="" style={{ width: '100%' }} />
+																						</div>
+																					: null
+																				}
+
 																				{
 																					getSessionFields( session, 'Topics').length ?
 																						<div className={CSS.sessionTagGrid}>
@@ -809,8 +822,8 @@ export default function Agenda ({ sessions, locations }) {
 																				}																			
 
 																				{
-																					session.descriptionTranslations.length ?
-																						parse( session.descriptionTranslations[0].value )
+																					session.descriptionTranslations.length 
+																					? parse( session.descriptionTranslations[0].value )
 																					: null
 																				}
 																				
@@ -820,6 +833,8 @@ export default function Agenda ({ sessions, locations }) {
 																					? displaySpeakers(session.speakers)
 																					: sortSpeakers(session.speakers) 
 																				}
+																				
+																				
 																			</div>
 																			
 																		</div>
