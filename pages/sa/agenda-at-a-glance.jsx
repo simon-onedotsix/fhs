@@ -292,7 +292,7 @@ export default function Agenda ({ sessions, locations }) {
 
 				{/* INTRO */}
                 <div className="section mb-sm" style={{ zIndex: 2, position: 'relative' }}>
-                    <p className="fs-1 fw-500">2024 Agenda at a Glance</p>
+                    <p className="fs-1 fw-500">2025 Agenda at a Glance</p>
 					<div className="formatted mt-xs">
 						<p>Programme is subject to change.</p>
 					</div>

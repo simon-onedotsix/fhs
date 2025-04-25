@@ -167,13 +167,7 @@ const SPEAKER_DATA = [
         jobTitle: 'Chief Executive Officer',
         company: 'Candy Capital',
     },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgyNzk=`,
-        photoUrl: 'https://static.swapcard.com/public/images/aa283dd8d6b747a3ba4c7db9039e57e2.jpeg',
-        fullName: 'Waleed AlRashed AlHumaid',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Alrajhi Capital',
-    },
+
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1OTk1ODI=`,
         photoUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
@@ -239,13 +233,7 @@ const SPEAKER_DATA_AR = [
         jobTitle: 'الرئيس التنفيذي',
         company: 'كاندي كابيتال',
     },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgyNzk=`,
-        photoUrl: 'https://static.swapcard.com/public/images/aa283dd8d6b747a3ba4c7db9039e57e2.jpeg',
-        fullName: 'وليد الراشد الحميد',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'شركة الراجحي المالية',
-    },
+
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1OTk1ODI=`,
         photoUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
