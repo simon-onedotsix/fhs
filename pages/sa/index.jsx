@@ -315,7 +315,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     </motion.p>
 
                     <Fade>
-                        <div className="mt-md center">
+                        <div className="mt-md center button-grid w-100pc">
                             <Pop inline>
                                 <Button 
                                     href={'/sa/agenda'} 
@@ -324,15 +324,30 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                     accent
                                 >
                                     { locale === 'ar' ? "برنامج 2025" : "2025 Programme" }
-                                </Button>&ensp;
-                                <Button 
-                                    href={'/sa/download-prospectus'} 
-                                    theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                    decal={'fs-5 fw-600'} 
-                                    accent
-                                >
-                                    { locale === 'ar' ? "تحميل الكتيب التعريفي" : "Download Prospectus" }
                                 </Button>
+                            </Pop>
+                            <Pop inline>
+                                <div className="desktop-only">
+                                    <Button 
+                                        href={'/sa/download-prospectus'} 
+                                        theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
+                                        decal={'fs-5 fw-600'} 
+                                        accent
+                                    >
+                                        { locale === 'ar' ? "تحميل الكتيب التعريفي" : "Download Prospectus" }
+                                    </Button>
+                                </div>
+
+                                <div className="mobile-only">
+                                    <Button 
+                                        href={'/sa/purchase-pass'} 
+                                        theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
+                                        decal={'fs-5 fw-600'} 
+                                        accent
+                                    >
+                                        { locale === 'ar' ? "احجز تذكرتك الآن" : "Purchase Pass" }
+                                    </Button>
+                                </div>
                             </Pop>
                         </div>
                     </Fade>

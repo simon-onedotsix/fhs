@@ -46,6 +46,24 @@ a { color: inherit; }
 }
 
 
+@media(max-width:599px){
+    .mobile-only {
+        display: block !important;
+    }
+    .desktop-only {
+        display: none !important;
+    }
+}
+@media(min-width:599px){
+    .mobile-only {
+        display: none !important;
+    }
+    .desktop-only {
+        display: block !important;
+    }
+}
+
+
 /* scrollshim */
 
 .scrollShim  {

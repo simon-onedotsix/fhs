@@ -26,6 +26,7 @@ export const HeroUnitVideo = ({ children, video, poster }) => {
                             muted={true}
                             playing={true}
                             loop={true}
+                            playsinline={true}
                         />
                     </div>
 
