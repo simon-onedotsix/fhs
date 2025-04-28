@@ -140,11 +140,18 @@ const SPEAKER_DATA = [
         company: 'Al Khozama Investment Company',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgwNjYxMDQ=`,
-        photoUrl: 'https://static.swapcard.com/public/images/b946c29ec7c24b2091410172ac1ed515.jpeg',
-        fullName: 'Jerry Inzerillo',
-        jobTitle: 'Group Chief Executive Officer, Diriyah Company | Vice Chairman, Forbes Travel Guide',
-        company: '',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
+        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
+        fullName: 'Hossam Al-Basrawi',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Alrajhi Capital',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgzMzQ4Nzk=`,
+        photoUrl: 'https://static.swapcard.com/public/images/b844c54d6f3e43f28533f8592e1e9216.jpeg',
+        fullName: 'Gregory Djerejian',
+        jobTitle: 'Group Head of Investments',
+        company: 'Red Sea Global',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
@@ -182,20 +189,6 @@ const SPEAKER_DATA = [
         jobTitle: 'Strategic Planning & Monitoring Deputyship',
         company: 'Tourism Ministry',
     },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
-        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
-        fullName: 'Hossam Al-Basrawi',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Alrajhi Capital',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgzMzQ4Nzk=`,
-        photoUrl: 'https://static.swapcard.com/public/images/b844c54d6f3e43f28533f8592e1e9216.jpeg',
-        fullName: 'Gregory Djerejian',
-        jobTitle: 'Group Head of Investments',
-        company: 'Red Sea Global',
-    },
 ]
 const SPEAKER_DATA_AR = [
     {
@@ -213,11 +206,18 @@ const SPEAKER_DATA_AR = [
         company: 'شركة الخزامى للاستثمار',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgwNjYxMDQ=`,
-        photoUrl: 'https://static.swapcard.com/public/images/b946c29ec7c24b2091410172ac1ed515.jpeg',
-        fullName: 'جيري إنزيريلو',
-        jobTitle: 'الرئيس التنفيذي لمجموعة شركة الدرعية | نائب رئيس دليل فوربس للسفر',
-        company: '',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
+        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
+        fullName: 'Hossam Al-Basrawi',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Alrajhi Capital',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgzMzQ4Nzk=`,
+        photoUrl: 'https://static.swapcard.com/public/images/b844c54d6f3e43f28533f8592e1e9216.jpeg',
+        fullName: 'Gregory Djerejian',
+        jobTitle: 'Group Head of Investments',
+        company: 'Red Sea Global',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
@@ -255,20 +255,7 @@ const SPEAKER_DATA_AR = [
         jobTitle: 'وكالة التخطيط الاستراتيجي والمتابعة',
         company: 'وزارة السياحة',
     },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
-        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
-        fullName: 'Hossam Al-Basrawi',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Alrajhi Capital',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgzMzQ4Nzk=`,
-        photoUrl: 'https://static.swapcard.com/public/images/b844c54d6f3e43f28533f8592e1e9216.jpeg',
-        fullName: 'Gregory Djerejian',
-        jobTitle: 'Group Head of Investments',
-        company: 'Red Sea Global',
-    },
+
 ]
 
 export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
