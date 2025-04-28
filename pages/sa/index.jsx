@@ -140,13 +140,6 @@ const SPEAKER_DATA = [
         company: 'Al Khozama Investment Company',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc3MDYzMTQ=`,
-        photoUrl: 'https://static.swapcard.com/public/images/2d0ccacdbd4a4a5cab7230fab32d2763.jpeg',
-        fullName: 'Julia Simpson',
-        jobTitle: 'President & CEO',
-        company: 'World Travel & Tourism Council',
-    },
-    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgwNjYxMDQ=`,
         photoUrl: 'https://static.swapcard.com/public/images/b946c29ec7c24b2091410172ac1ed515.jpeg',
         fullName: 'Jerry Inzerillo',
@@ -189,6 +182,20 @@ const SPEAKER_DATA = [
         jobTitle: 'Strategic Planning & Monitoring Deputyship',
         company: 'Tourism Ministry',
     },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
+        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
+        fullName: 'Hossam Al-Basrawi',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Alrajhi Capital',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgzMzQ4Nzk=`,
+        photoUrl: 'https://static.swapcard.com/public/images/b844c54d6f3e43f28533f8592e1e9216.jpeg',
+        fullName: 'Gregory Djerejian',
+        jobTitle: 'Group Head of Investments',
+        company: 'Red Sea Global',
+    },
 ]
 const SPEAKER_DATA_AR = [
     {
@@ -204,13 +211,6 @@ const SPEAKER_DATA_AR = [
         fullName: 'خالد سعود أبو حيمد',
         jobTitle: 'الرئيس التنفيذي',
         company: 'شركة الخزامى للاستثمار',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc3MDYzMTQ=`,
-        photoUrl: 'https://static.swapcard.com/public/images/2d0ccacdbd4a4a5cab7230fab32d2763.jpeg',
-        fullName: 'جوليا سيمبسون',
-        jobTitle: 'الرئيسة والمديرة التنفيذية',
-        company: 'المجلس العالمي للسفر والسياحة',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgwNjYxMDQ=`,
@@ -254,6 +254,20 @@ const SPEAKER_DATA_AR = [
         fullName: 'الدكتورة عبير العمري',
         jobTitle: 'وكالة التخطيط الاستراتيجي والمتابعة',
         company: 'وزارة السياحة',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
+        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
+        fullName: 'Hossam Al-Basrawi',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Alrajhi Capital',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgzMzQ4Nzk=`,
+        photoUrl: 'https://static.swapcard.com/public/images/b844c54d6f3e43f28533f8592e1e9216.jpeg',
+        fullName: 'Gregory Djerejian',
+        jobTitle: 'Group Head of Investments',
+        company: 'Red Sea Global',
     },
 ]
 
