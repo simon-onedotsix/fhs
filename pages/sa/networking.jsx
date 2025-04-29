@@ -141,13 +141,13 @@ export default function Page () {
                                         locale === 'ar'
                                         ?
                                             <>
-                                                <h2>تواصل مع أكثر من 1,400 مستثمر ومالك ورائد في قطاع الضيافة يساهمون في تشكيل مستقبل السياحة في المملكة</h2>
+                                                <h2>تواصل مع أكثر من 1000 مستثمر ومالك ورائد في قطاع الضيافة يساهمون في تشكيل مستقبل السياحة في المملكة</h2>
                                                 <p>مع توقع حضور أكثر من 1,400 مشارك في قمة مستقبل الضيافة بالمملكة العربية السعودية 2025، ستتاح لك فرصة استثنائية للوصول إلى أبرز الشخصيات المؤثرة في دفع عجلة الاستثمار الفندقي في المنطقة. فمن المسؤولين الحكوميين والهيئات السياحية، إلى سلاسل الفنادق العالمية والمستثمرين والمطورين - جميع صُنّاع القرار الذين يُحدثون تحولاً في مشهد الضيافة السعودي سيتواجدون في مكان واحد.</p>
                                                 <p>هذا الحدث المهم هو فرصتك الذهبية للتواصل مع أصحاب الرؤى والقيادات التي تدفع أهداف رؤية السعودية 2030 السياحية الطموحة، بينما تضع نفسك في قلب أحد أكثر أسواق الضيافة حيوية في العالم. سجل الآن</p>
                                             </>
                                         :
                                             <>
-                                                <h2>Connect with 1,400+ hospitality investors, owners, and industry leaders shaping the Kingdom&apos;s tourism future</h2>
+                                                <h2>Connect with 1000+ hospitality investors, owners, and industry leaders shaping the Kingdom&apos;s tourism future</h2>
                                                 <p>With over 1,400 delegates expected at FHS Saudi Arabia 2025, you&apos;ll have unparalleled access to the most influential figures driving hospitality investment across the region. From government officials and tourism authorities to international hotel chains, investors, and developers—the key decision-makers transforming Saudi Arabia&apos;s hospitality landscape will all be in one place.</p>
                                                 <p>This premier gathering offers you the chance to connect with visionaries and leaders driving Saudi Arabia&apos;s ambitious Vision 2030 tourism goals, while positioning yourself at the center of one of the world&apos;s most dynamic hospitality markets.</p>
                                             </>
