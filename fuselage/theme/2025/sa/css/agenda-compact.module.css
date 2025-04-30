@@ -131,7 +131,7 @@
     background-color: var(--primary-2);
     border: 1px solid var(--primary-2);
     border-radius: .5rem;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .sessionGroupHeader {
     padding: .75rem 1rem;
@@ -147,7 +147,7 @@
 .session {
     flex: 1;
     border-radius: calc(var(--default-radius) * 1);
-    overflow: hidden;
+    /* overflow: hidden; */
     
     display: flex;
     flex-direction: column;
@@ -273,3 +273,77 @@
     border-radius: .25rem;
     padding: .75rem;
 }
+
+
+
+
+
+
+
+
+/* speakerGrid + speakerCard --------------------------------- */
+
+.sessionSpeakerGrid {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: var(--space-xs);
+}
+
+@media(min-width:600px) {
+    .sessionSpeakerGrid {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+    .sessionSpeaker {
+        width: 14vw;
+    }
+}
+
+.speakerPhoto {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+
+    transition: all 150ms ease-in-out;
+}
+.speakerPhoto img {
+    display: block;
+    max-width: 100px; 
+    max-height: 100px; 
+    border-radius: 100px; 
+}
+
+/* icon (if speaker has bio) */
+.speakerPhoto.bio {
+    cursor: pointer;
+}
+.speakerPhoto.bio span {
+    position: absolute;
+    top: -.25rem;
+    right: -.25rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--accent);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+
+    transform: scale(.3);
+    opacity: 0;
+    transition: all 150ms ease-in-out;
+}
+@media(hover:hover){
+    .speakerPhoto.bio:hover {
+        transform: scale(1.05);
+    }
+    .speakerPhoto.bio:hover span {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
