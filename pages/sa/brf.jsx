@@ -187,7 +187,7 @@ export default function Agenda ({ sessions, locations }) {
 
 				{/* INTRO */}
                 <div className="section mb-sm" style={{ zIndex: 2, position: 'relative' }}>
-                    <p className="fs-1 fw-500 maxw-40">Branded Residences Forum at FHS Saudi Arabia</p>
+                    <p className="fs-1 fw-500 maxw-40">Branded Residences at FHS&nbsp;Saudi Arabia</p>
 					<div className="formatted mt-xs">
 						<p>Programme is subject to change.</p>
 					</div>
