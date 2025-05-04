@@ -227,8 +227,8 @@ export default function Page () {
                         <SpeakerCard
                         color={'c-accent'}
                             photoUrl={'/assets/img/sa/nextgen-forum/abeer-green.jpg'}
-                            fullName={'Dr. Abeer A. Alamri'}
-                            jobTitle={'Strategic Planning and Monitoring Deputyship'}
+                            fullName={'Dr. Abeer Alamri'}
+                            jobTitle={'Skills Development and Talent Optimization Expert'}
                             company={'Ministry of Tourism'}
                         />
                     </Pop>
