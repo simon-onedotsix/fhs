@@ -186,8 +186,8 @@ const SPEAKER_DATA = [
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
         photoUrl: 'https://static.swapcard.com/public/images/a96df3d5f0c84807a351df07dfc4e15c.jpeg',
         fullName: 'Dr. Abeer Alamri',
-        jobTitle: 'Strategic Planning & Monitoring Deputyship',
-        company: 'Tourism Ministry',
+        jobTitle: 'Skills Development and Talent Optimization Expert',
+        company: '',
     },
 ]
 const SPEAKER_DATA_AR = [
