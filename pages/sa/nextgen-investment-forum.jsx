@@ -229,7 +229,7 @@ export default function Page () {
                             photoUrl={'/assets/img/sa/nextgen-forum/abeer-green.jpg'}
                             fullName={'Dr. Abeer Alamri'}
                             jobTitle={'Skills Development and Talent Optimization Expert'}
-                            company={'Ministry of Tourism'}
+                            company={''}
                         />
                     </Pop>
                     <Pop>
