@@ -365,6 +365,16 @@ export default function Agenda ({ sessions, locations }) {
 
 	}
 
+	const changeSpeakerStatus = ( speakerData, speakerID, newType ) => {
+		const updatedSpeakerData = speakerData.map( speaker => {
+			if ( speaker.id === speakerID ) {
+
+				return { ...speaker, withEvent: { eventProfile: { type : newType }} }
+			}
+			return speaker
+		})
+	}
+
 	const renderSpeakerCard = ( speaker ) => {
 		return (
 			<span
@@ -828,12 +838,16 @@ export default function Agenda ({ sessions, locations }) {
 																				}
 																				
 																				{ 
-																					//target specific session
+																					//target specific session [custom speakers]
 																					session.id === "UGxhbm5pbmdfMjQ3NjM4OA==" 
 																					? displaySpeakers(session.speakers)
 																					: sortSpeakers(session.speakers) 
 																				}
-																				
+
+																				{
+																					session.id === "UGxhbm5pbmdfMjU4NDUwMQ==" 
+																					&& sortSpeakers(changeSpeakerStatus(session.speakers, "U3BlYWtlcihFdmVudF8xOTkyMjcyLEV2ZW50UGVvcGxlXzM5MTMzMDAzLFVzZXJfMTQ2Njc2OCk=", 'Speaker')) 
+																				}																				
 																				
 																			</div>
 																			

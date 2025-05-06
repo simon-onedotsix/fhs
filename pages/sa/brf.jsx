@@ -222,6 +222,7 @@ export default function Agenda ({ sessions, locations }) {
 																timeslot.sessions.map( session => (
 																	<Session 
 																		key={session.id}
+																		id={session.id}
 																		title={session.titleTranslations[0].value}
 																		location={getLocationTitleById(session)}
 																		description={session.descriptionTranslations.length && session.descriptionTranslations[0].value}
@@ -276,7 +277,7 @@ export const SessionGroup = ({ location, children }) => {
 	)
 }
 
-export const Session = ({ startTime, endTime, title, trackID, location, description, speakers }) => {
+export const Session = ({ id, startTime, endTime, title, trackID, location, description, speakers }) => {
 
 	const t = tracks.find( track => track.id === trackID )
 
@@ -296,7 +297,12 @@ export const Session = ({ startTime, endTime, title, trackID, location, descript
 						</p>
 					</Fade>
 					{ description && description !== "<br />" ? parse(description) : null }
-					{ speakers.length ? sortSpeakers(speakers) : null }
+					{/* { speakers.length ? sortSpeakers(speakers) : null } */}
+					{
+						speakers.length && id === "UGxhbm5pbmdfMjU4NDUwMQ==" 
+						? sortSpeakers(_.orderBy(changeSpeakerStatus(speakers, "U3BlYWtlcihFdmVudF8xOTkyMjcyLEV2ZW50UGVvcGxlXzM5MTMzMDAzLFVzZXJfMTQ2Njc2OCk=", 'Speaker'), 'lastName')) 
+						: sortSpeakers(_.orderBy(speakers, 'lastName'))
+					}
 				</div>
 			</div>
 		</div>
@@ -500,6 +506,17 @@ const sortSpeakers = ( speakerData ) => {
 			{ speakerData.map( speaker => <SpeakerCard key={speaker.id} speaker={speaker} /> ) }
 		</div>
 	)
+}
+
+const changeSpeakerStatus = ( speakerData, speakerID, newType ) => {
+	const updatedSpeakerData = speakerData.map( speaker => {
+		if ( speaker.id === speakerID ) {
+
+			return { ...speaker, withEvent: { eventProfile: { type : newType }} }
+		}
+		return speaker
+	})
+	return updatedSpeakerData
 }
 
 
