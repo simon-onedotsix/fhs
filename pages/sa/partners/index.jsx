@@ -132,7 +132,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 								if (partner.fields[0]?.id === category.id ) return partner
 							})
 							
-							// console.log('group:', group)
+							console.log('group:', group)
 
 							if ( group.length > 0 ) {
 
@@ -150,7 +150,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category && category.name }</h4>
 										<PartnerLogoGrid>
 											{
-												_.orderBy(group, 'name').map(partner => (
+												_.orderBy(group, [(p) => p.name.toLowerCase()]).map( partner => (
 													<a key={partner.id} href={`/sa/partners/${partner.id}`}>
 														<PartnerLogo 
 															hero={{ url: partner.logoUrl ? partner.logoUrl : null }} 
