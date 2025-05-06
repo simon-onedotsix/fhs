@@ -105,7 +105,7 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 									<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category.group.translations[0].value }</h4>
 									<PartnerLogoGrid>
 										{
-											_.orderBy(category.partners, 'name').map(partner => (
+											_.orderBy( category.partners, [(p) => p.name.toLowerCase()] ).map(partner => (
 												<a key={partner.id} href={`/world/partners/${partner.id}`}>
 													{
 														partner.logoUrl &&

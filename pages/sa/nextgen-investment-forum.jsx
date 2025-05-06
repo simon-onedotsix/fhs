@@ -157,7 +157,7 @@ export default function Page () {
 
                     {/* challenges */}
 
-                    <section className="block bg-primary" style={{ width: '100%', overflow: 'hidden' }}>
+                    {/* <section className="block bg-primary" style={{ width: '100%', overflow: 'hidden' }}>
                         <div style={{ position: 'relative', zIndex: 2 }}>
                             <div className="container">
                                 <p className='fs-0 center'>Hospitality Education: Challenges</p>
@@ -177,7 +177,7 @@ export default function Page () {
                                 }
                             </div>
                         </div>
-                    </section>
+                    </section> */}
 
                 </div>
 

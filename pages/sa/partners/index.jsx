@@ -39,20 +39,10 @@ import { CTAButton } from '../../../fuselage/theme/2025/sa/components/cta-button
 
 
 
-function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, videoTestimonials }) {
+function Partners({ seomatic, contentBlocks, partnerData2025, videoTestimonials }) {
 
 
-	// LEGACY !!!
-	// programatically build array of unique types pulled from exhibitor data
-	const allTypesArray = []
-	partnerData.exhibitors.forEach( obj => {
-		if ( obj.type && obj.typeLabel ) allTypesArray.push({id: obj.typeLabel.id, name: obj.type, size: ''})
-	})
-	const typesArray = _.uniqBy(allTypesArray, obj => obj.id)
-	// END LEGACY !!!
 
-	
-	// 2025 (switched to SC custom field)
 	// programatically build array of unique types pulled from exhibitor data
 	const allCategoriesArray = []
 	partnerData2025.exhibitors.forEach( obj => {
@@ -70,20 +60,21 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1OA==') orderedCategories.push({ ...category, priority: 5 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNDQ3NDE0MA==') orderedCategories.push({ ...category, priority: 6 })
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyMw==') orderedCategories.push({ ...category, priority: 7 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 8 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzA3NzQwMA==') orderedCategories.push({ ...category, priority: 9 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNjcwNDI5MQ==') orderedCategories.push({ ...category, priority: 10 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNjAzMTE4Mg==') orderedCategories.push({ ...category, priority: 11 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzEwNjg2Mw==') orderedCategories.push({ ...category, priority: 12 })
+			
+		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 9 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzA3NzQwMA==') orderedCategories.push({ ...category, priority: 10 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNjcwNDI5MQ==') orderedCategories.push({ ...category, priority: 11 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNjAzMTE4Mg==') orderedCategories.push({ ...category, priority: 12 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzEwNjg2Mw==') orderedCategories.push({ ...category, priority: 13 })
 	})
 
 
-	// console.log('swapcard partner data 2025:', partnerData2025)
-	// console.log('swapcard partner data 2024:', partnerData)
+	console.log('swapcard partner data 2025:', partnerData2025)
 	// console.log('content-blocks:', contentBlocks)
 	// partnerData.exhibitors.forEach( ex => console.log( ex.typeLabel?.name))
-	// console.log('categories:', categoriesArray)
-	// console.log('orderedCategories:', orderedCategories)
+
+	console.log('categories:', categoriesArray)
+	console.log('orderedCategories:', orderedCategories)
 
 
 	return (
@@ -132,7 +123,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 								if (partner.fields[0]?.id === category.id ) return partner
 							})
 							
-							console.log('group:', group)
+							// console.log('group:', group)
 
 							if ( group.length > 0 ) {
 
@@ -150,7 +141,7 @@ function Partners({ seomatic, contentBlocks, partnerData, partnerData2025, video
 										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category && category.name }</h4>
 										<PartnerLogoGrid>
 											{
-												_.orderBy(group, [(p) => p.name.toLowerCase()]).map( partner => (
+												_.orderBy( group, [(p) => p.name.toLowerCase()] ).map( partner => (
 													<a key={partner.id} href={`/sa/partners/${partner.id}`}>
 														<PartnerLogo 
 															hero={{ url: partner.logoUrl ? partner.logoUrl : null }} 

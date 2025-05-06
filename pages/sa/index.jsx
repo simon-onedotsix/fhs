@@ -323,18 +323,18 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                     decal={'fs-5 fw-600'} 
                                     accent
                                 >
-                                    { locale === 'ar' ? "برنامج 2025" : "2025 Programme" }
+                                    { locale === 'ar' ? "برنامج 2025" : "Agenda" }
                                 </Button>
                             </Pop>
                             <Pop inline>
                                 <div className="desktop-only">
                                     <Button 
-                                        href={'/sa/download-prospectus'} 
+                                        href={'/sa/attendee-list-2025'} 
                                         theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                         decal={'fs-5 fw-600'} 
                                         accent
                                     >
-                                        { locale === 'ar' ? "تحميل الكتيب التعريفي" : "Download Prospectus" }
+                                        { locale === 'ar' ? "Attendee List" : "Attendee List" }
                                     </Button>
                                 </div>
 
