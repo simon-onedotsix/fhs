@@ -373,6 +373,7 @@ export default function Agenda ({ sessions, locations }) {
 			}
 			return speaker
 		})
+		return updatedSpeakerData
 	}
 
 	const renderSpeakerCard = ( speaker ) => {
@@ -837,17 +838,23 @@ export default function Agenda ({ sessions, locations }) {
 																					: null
 																				}
 																				
+																				{/* target specific session [custom speakers] */}
 																				{ 
-																					//target specific session [custom speakers]
 																					session.id === "UGxhbm5pbmdfMjQ3NjM4OA==" 
-																					? displaySpeakers(session.speakers)
-																					: sortSpeakers(session.speakers) 
+																					&& displaySpeakers(session.speakers)
 																				}
 
 																				{
 																					session.id === "UGxhbm5pbmdfMjU4NDUwMQ==" 
 																					&& sortSpeakers(changeSpeakerStatus(session.speakers, "U3BlYWtlcihFdmVudF8xOTkyMjcyLEV2ZW50UGVvcGxlXzM5MTMzMDAzLFVzZXJfMTQ2Njc2OCk=", 'Speaker')) 
-																				}																				
+																				}	
+
+																				{
+																					session.id !== "UGxhbm5pbmdfMjQ3NjM4OA==" && session.id !== "UGxhbm5pbmdfMjU4NDUwMQ=="
+																					? sortSpeakers(session.speakers) 
+																					: null
+																				}	
+																				{/* end target specific session [custom speakers] */}
 																				
 																			</div>
 																			
