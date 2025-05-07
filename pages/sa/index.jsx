@@ -189,6 +189,13 @@ const SPEAKER_DATA = [
         jobTitle: 'Skills Development and Talent Optimization Expert',
         company: '',
     },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Inzerillo_Jerry_cr.jpg',
+        fullName: 'Jerry Inzerillo',
+        jobTitle: 'Group Chief Executive Officer, Diriyah Gate Company Limited | Vice Chairman, Forbes Travel Guide',
+        company: '',
+    },
 ]
 const SPEAKER_DATA_AR = [
     {
