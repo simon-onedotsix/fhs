@@ -154,6 +154,13 @@ const SPEAKER_DATA = [
         company: '',
     },
     {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Inzerillo_Jerry_cr.jpg',
+        fullName: 'Jerry Inzerillo',
+        jobTitle: 'Group Chief Executive Officer, Diriyah Gate Company Limited | Vice Chairman, Forbes Travel Guide',
+        company: '',
+    },
+    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc5MDEyNjk=`,
         photoUrl: 'https://static.swapcard.com/public/images/7ffaec8014ff4f33bd453f98c0e67b51.jpeg',
         fullName: 'Nick Candy',
@@ -180,13 +187,6 @@ const SPEAKER_DATA = [
         photoUrl: 'https://static.swapcard.com/public/images/a96df3d5f0c84807a351df07dfc4e15c.jpeg',
         fullName: 'Dr. Abeer Alamri',
         jobTitle: 'Skills Development and Talent Optimization Expert',
-        company: '',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Inzerillo_Jerry_cr.jpg',
-        fullName: 'Jerry Inzerillo',
-        jobTitle: 'Group Chief Executive Officer, Diriyah Gate Company Limited | Vice Chairman, Forbes Travel Guide',
         company: '',
     },
 ]
@@ -220,6 +220,13 @@ const SPEAKER_DATA_AR = [
         company: '',
     },
     {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/a96df3d5f0c84807a351df07dfc4e15c.jpeg',
+        fullName: 'الدكتورة عبير العمري',
+        jobTitle: 'وكالة التخطيط الاستراتيجي والمتابعة',
+        company: 'وزارة السياحة',
+    },
+    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc5MDEyNjk=`,
         photoUrl: 'https://static.swapcard.com/public/images/7ffaec8014ff4f33bd453f98c0e67b51.jpeg',
         fullName: 'نيك كاندي',
@@ -241,14 +248,6 @@ const SPEAKER_DATA_AR = [
         jobTitle: 'الشريك المؤسس',
         company: 'شركة كالم (Calm)',
     },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/a96df3d5f0c84807a351df07dfc4e15c.jpeg',
-        fullName: 'الدكتورة عبير العمري',
-        jobTitle: 'وكالة التخطيط الاستراتيجي والمتابعة',
-        company: 'وزارة السياحة',
-    },
-
 ]
 
 export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
