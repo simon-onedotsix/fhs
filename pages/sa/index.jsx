@@ -133,13 +133,6 @@ const SPEAKER_DATA = [
         company: '',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1NjE0MTM=`,
-        photoUrl: 'https://static.swapcard.com/public/images/2540878a4ce149da8e5f9cb8384277cc.jpeg',
-        fullName: 'Khalid Saud Abu Haimed',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Al Khozama Investment Company',
-    },
-    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
         photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
         fullName: 'Hossam Al-Basrawi',
@@ -204,13 +197,6 @@ const SPEAKER_DATA_AR = [
         fullName: 'صاحب السمو الأمير بندر بن سعود بن خالد آل سعود',
         jobTitle: 'الأمين العام، مؤسسة الملك فيصل | رئيس مجلس إدارة شركة الخزامى للاستثما',
         company: '',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1NjE0MTM=`,
-        photoUrl: 'https://static.swapcard.com/public/images/2540878a4ce149da8e5f9cb8384277cc.jpeg',
-        fullName: 'خالد سعود أبو حيمد',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'شركة الخزامى للاستثمار',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,

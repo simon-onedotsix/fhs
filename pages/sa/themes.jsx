@@ -32,6 +32,13 @@ export const THEMES_DATA = [
         body: '<p>Delve into the financial landscape shaping Saudi Arabia&apos;s hospitality market. This track covers everything from raising capital and de-risking investments to innovative asset management and real estate opportunities. Hear from investors, developers, and financial experts as they share strategies, success stories, and market forecasts that will help you navigate—and thrive in—this vibrant, rapidly evolving industry.</p>'
     },
     {
+        id: '25',
+        imageUrl: '/assets/img/sa/event-themes/branded-residences.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/branded-residences.svg',
+        title: 'Branded Residences',
+        body: '<p>Explore the dynamic convergence of hospitality and real estate in our Branded Residences track. With Saudi Arabia emerging as a key player in luxury residential development, this series of sessions unpacks everything from market trends and legal frameworks to investor strategies and global buyer behavior. Hear directly from leading developers, operators, and marketing experts as they reveal how branding is transforming value creation, enhancing sales, and shaping the future of high-end living in the Kingdom.</p>'
+    },
+    {
         id: '3',
         imageUrl: '/assets/img/sa/event-themes/religious-tourism.jpg',
         iconUrl: '/assets/img/sa/event-themes/icons/religious-tourism.svg',
@@ -82,6 +89,13 @@ export const THEMES_DATA_AR = [
         iconUrl: '/assets/img/sa/event-themes/icons/investment.svg',
         title: 'الاستثمار والتمويل والعقارات',
         body: '<p>Delve into the financial landscape shaping Saudi Arabia&apos;s hospitality market. This track covers everything from raising capital and de-risking investments to innovative asset management and real estate opportunities. Hear from investors, developers, and financial experts as they share strategies, success stories, and market forecasts that will help you navigate—and thrive in—this vibrant, rapidly evolving industry.</p>'
+    },
+    {
+        id: '25',
+        imageUrl: '/assets/img/sa/event-themes/branded-residences.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/branded-residences.svg',
+        title: 'Branded Residences',
+        body: '<p>Explore the dynamic convergence of hospitality and real estate in our Branded Residences track. With Saudi Arabia emerging as a key player in luxury residential development, this series of sessions unpacks everything from market trends and legal frameworks to investor strategies and global buyer behavior. Hear directly from leading developers, operators, and marketing experts as they reveal how branding is transforming value creation, enhancing sales, and shaping the future of high-end living in the Kingdom.</p>'
     },
     {
         id: '3',
