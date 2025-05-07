@@ -88,6 +88,7 @@ export const MainMenu = ({ otherEvents }) => {
 
                                                                 if ( 
                                                                     link.hyperlink === '/sa/brf' ||
+                                                                    link.hyperlink === '/sa/net-positive-solutions-lab' ||
                                                                     link.hyperlink === '/sa/nextgen-investment-forum' ||
                                                                     link.hyperlink === '/sa/curated-connections'
                                                                 ) showFlash = true
