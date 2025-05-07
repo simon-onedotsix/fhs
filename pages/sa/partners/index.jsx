@@ -60,6 +60,7 @@ function Partners({ seomatic, contentBlocks, partnerData2025, videoTestimonials 
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1OA==') orderedCategories.push({ ...category, priority: 5 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNDQ3NDE0MA==') orderedCategories.push({ ...category, priority: 6 })
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyMw==') orderedCategories.push({ ...category, priority: 7 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzQyNTY2Ng==') orderedCategories.push({ ...category, priority: 8 })
 			
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 9 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNzA3NzQwMA==') orderedCategories.push({ ...category, priority: 10 })
