@@ -133,6 +133,13 @@ const SPEAKER_DATA = [
         company: '',
     },
     {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk1MDI0MTI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/56724beae060457ea3b07e98cba20646.jpeg',
+        fullName: 'Mahmoud Abdulhadi',
+        jobTitle: 'Deputy Minister, Destination Enablement',
+        company: 'Ministry of Tourism of Saudi Arabia',
+    },
+    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
         photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
         fullName: 'Hossam Al-Basrawi',
