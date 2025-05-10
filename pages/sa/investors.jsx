@@ -138,7 +138,7 @@ export default function Page () {
                             }
                         </Slide>
 
-                        <p className='mt-md'>
+                        {/* <p className='mt-md'>
                             <Pop inline>
                                 <Link href="https://share.hsforms.com/165e0aXCeSsG2vZWX3GsGeQ8nd8z" target="_blank">
                                     <a className="button fs-5 caps">
@@ -150,7 +150,7 @@ export default function Page () {
                                     </a>
                                 </Link>
                             </Pop>
-                        </p>
+                        </p> */}
                     </div>
                 </div>
 
