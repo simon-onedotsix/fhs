@@ -19,6 +19,7 @@ import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
 import { FhsLockup } from '../../fuselage/theme/2025/sa/components/logos/fhs-brand'
 import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
+import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { TagIcon, CompassIcon, StopwatchIcon } from "../../fuselage/components/icons/icons"
 import { Modal } from "../../fuselage/theme/2024/sa/components/modal/modal"
 
@@ -730,7 +731,7 @@ export const Theme = ({ children }) => {
 
 
 
-const SpeakerCard = ({ speaker, type }) => {
+const AgendaSpeakerCard = ({ speaker, type }) => {
 
 	const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: ''})
@@ -814,7 +815,7 @@ const sortSpeakers = ( speakerData ) => {
 					<div>
 						<p className="fw-500 c-accent" style={{ padding: `0 0 15px 0`}}>Moderator{ moderators.length > 1 && 's'}</p>
 						<div className={agendaCSS.sessionSpeakerGrid}>
-							{ moderators.map( moderator => <SpeakerCard key={moderator.id} speaker={moderator} /> ) }
+							{ moderators.map( moderator => <AgendaSpeakerCard key={moderator.id} speaker={moderator} /> ) }
 						</div>
 					</div>
 				: null
@@ -826,7 +827,7 @@ const sortSpeakers = ( speakerData ) => {
 					: null
 				}
 				<div className={agendaCSS.sessionSpeakerGrid}>
-					{ speakers.map( speaker => <SpeakerCard key={speaker.id} speaker={speaker} /> ) }
+					{ speakers.map( speaker => <AgendaSpeakerCard key={speaker.id} speaker={speaker} /> ) }
 				</div>
 			</div>
 
@@ -835,7 +836,7 @@ const sortSpeakers = ( speakerData ) => {
 
 	return (
 		<div className={agendaCSS.sessionSpeakerGrid}>
-			{ speakerData.map( speaker => <SpeakerCard key={speaker.id} speaker={speaker} /> ) }
+			{ speakerData.map( speaker => <AgendaSpeakerCard key={speaker.id} speaker={speaker} /> ) }
 		</div>
 	)
 }
