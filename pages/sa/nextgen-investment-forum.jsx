@@ -598,6 +598,10 @@ const GoalCard = ({ body, delay }) => {
     )
 }
 
+
+
+
+
 export const SessionGroup = ({ location, children }) => {
 
 	if ( !children ) return
@@ -619,7 +623,7 @@ export const SessionGroup = ({ location, children }) => {
 export const Session = ({ id, startTime, endTime, title, trackID, location, description, speakers }) => {
 
 	return (
-		<div className={agendaCSS.sessionsWrapper}>
+		<div key={id} className={agendaCSS.sessionsWrapper}>
 			<div className={agendaCSS.session}>
 				<div className={agendaCSS.sessionHeader}>
 					<Duration startTime={startTime} endTime={endTime} />
