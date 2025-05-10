@@ -1,6 +1,9 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 import Image from 'next/image'
+
+import _ from 'lodash'
+import { format } from 'date-fns'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { motion, useScroll, useTransform } from "framer-motion"
@@ -16,11 +19,12 @@ import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
 import { FhsLockup } from '../../fuselage/theme/2025/sa/components/logos/fhs-brand'
 import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
-import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
-import { ButtonKeyline } from '../../fuselage/theme/2024/world/components/button-keyline/button-keyline'
+import { TagIcon, CompassIcon, StopwatchIcon } from "../../fuselage/components/icons/icons"
+import { Modal } from "../../fuselage/theme/2024/sa/components/modal/modal"
 
 
 import CSS from '../../fuselage/theme/2025/sa/css/nextgen-investment-forum.module.css'
+import agendaCSS from '../../fuselage/theme/2025/sa/css/agenda-compact.module.css'
 
 
 const CHALLENGE_CARD_DATA = [
@@ -96,7 +100,21 @@ const COMPONENT_CARD_DATA = [
 
 
 
-export default function Page () {
+export default function Page ({ sessions, locations }) {
+
+    // console.log('sessions:', sessions)
+
+    let NEXTGEN_SESSIONS = []
+
+	sessions.map(session => {
+		if (session.fields.find( field => field.id === 'RmllbGRWYWx1ZV8yNjYzMzYxMQ==')) {
+			NEXTGEN_SESSIONS.push(session)
+		}
+	})
+
+    // console.log('NEXTGEN_SESSIONS:', NEXTGEN_SESSIONS)
+
+
 
     // scroll animation
     let introRef = useRef(null)
@@ -106,6 +124,70 @@ export default function Page () {
     })
     let g1 = useTransform( headerScroll.scrollYProgress, [0, 1], ["-15%", "20%"])
     let g2 = useTransform( headerScroll.scrollYProgress, [0, 1], ["-15%", "40%"])
+
+
+    // BUILD AGENDA
+		
+	const buildAgenda = ( sessionsData ) => {
+
+		if ( !sessionsData ) return 
+
+		const timeslots = _.groupBy(sessionsData, 'beginsAt')	
+
+
+		// calculate event days
+
+		const getUniqueDays = ( sessionData ) => {
+
+			const groupedStartTimes = _.groupBy(sessionData, 'beginsAt')
+			const timeCodes = Object.keys(groupedStartTimes)
+			const eventDays = _.uniqBy( timeCodes, string => string.slice(0, 10) )
+	
+			return eventDays
+		}
+		
+		const agendaDays = []
+		getUniqueDays( sessionsData ).map((timestring, index) => {
+			agendaDays.push({ 
+				day: format( new Date(timestring), "eeee dd MMMM" ), 
+				time: timestring.slice(0, 10), 
+				timeslots: [] 
+			})
+		})
+
+
+		// group sessions (and apply filters)
+
+		const filteredTimeslots = _.groupBy(sessionsData, 'beginsAt')
+		
+	
+		// build agenda
+	
+		const agenda = []
+		agendaDays.map( day => {
+			let slots = []
+			for ( const key in filteredTimeslots ) {
+				if ( key.slice(0, 10) === day.time.slice(0, 10) ) {
+					slots.push({ 
+						beginsAt: filteredTimeslots[key][0].beginsAt, 
+						endsAt: filteredTimeslots[key][0].endsAt, 
+						sessions: filteredTimeslots[key]
+					})
+				}
+			}
+	
+			agenda.push( { ...day , timeslots: slots } )
+		})
+
+		return agenda
+	}
+
+	const getLocationTitleById = ( session ) => {
+		const location = session.fields.find( field => field.definition.name === 'Location' )
+		if ( !location ) return
+		return location.translations[0].value
+	}
+
 
 
     return (
@@ -378,22 +460,48 @@ export default function Page () {
                         <Pop><p className='fs-1 fw-600 c-accent'>2025 NextGen Forum Programme</p></Pop>
                     </div>
                     <div className="container columns-1 gap-sm maxw-50">
-                       <Slide> <p className='fs-4 fw-600'>Main Stage</p></Slide>
-                        <SessionGroup>
-                            <Session times={"15:30 - 15:40"} title={"Hospitality Talent in Saudi Arabia: A Data-Driven Overview"} />
-                            <Session times={"15:40 - 16:20"} title={"Rethinking Hospitality Schools: Education, Experience & Environment"}/>
-                            <Session times={"16:25 - 17:05"} title={"How Can We Rebrand Hospitality Careers to Attract Saudi Youth?"}/>
-                            <Session times={"17:05 - 17:30"} title={"What Are the Best Models for Ongoing Professional Development in Hospitality?"}/>
-                        </SessionGroup>
-                        
-                        <div>
-                            <Slide><p className='fs-4 fw-600 mt-xs'>Workshops</p></Slide>
-                            {/* <Slide delay={.1}><p className='fs-5 fw-400 c-accent mt-xxs'><strong>Future Stage</strong>: Enhancing strategies for talent retention</p></Slide> */}
-                        </div>
-                        <SessionGroup>
-                            <Session times={"16:30 - 17:00"} title={"Masterclass: Engagement, Culture and Leadership make or break brand and property value"}/>
-                            <Session times={"17:00 - 17:30"} title={"How Can Student Housing Be Designed to Meet the Needs of Future Hospitality Professionals?"}/>
-                        </SessionGroup>
+                       {
+						buildAgenda(NEXTGEN_SESSIONS).map( (day, index) => (
+							<section key={index}>
+							
+									<aside>
+										<Pop>
+											<p className={agendaCSS.dayDivider}>{ day.day }</p>
+										</Pop>
+									</aside>
+
+									<main className='mt-sm'>
+										<div className={agendaCSS.sessions}>
+											<SessionGroup>
+												{
+													day.timeslots.map( timeslot => (
+														<Timeslot
+															key={timeslot.time}
+															startTime={timeslot.beginsAt} 
+															endTime={timeslot.endsAt}
+														>
+															{
+																timeslot.sessions.map( session => (
+																	<Session 
+																		key={session.id}
+																		id={session.id}
+																		title={session.titleTranslations[0].value}
+																		location={getLocationTitleById(session)}
+																		description={session.descriptionTranslations.length && session.descriptionTranslations[0].value}
+																		speakers={session.speakers}
+																	/>
+																))
+															}
+														</Timeslot>
+													))
+												}
+											</SessionGroup> 
+										</div>
+									</main>
+							
+							</section>
+						))
+					}
                     </div>
                 </section>
 
@@ -490,25 +598,359 @@ const GoalCard = ({ body, delay }) => {
     )
 }
 
-const SessionGroup = ({ children }) => {
-    return (
-        <Pop>
-            <div className={CSS.sessionGroup}>
-                { children }
-            </div>
-        </Pop>
-    )
+export const SessionGroup = ({ location, children }) => {
+
+	if ( !children ) return
+
+	return (
+		<div className={agendaCSS.sessionGroupContainer} style={{ borderColor: location?.color, backgroundColor: location?.color }}>
+			{
+				location?.title &&
+				<p className={`${agendaCSS.sessionGroupHeader} | fs-5`}>{ location.title }</p>
+			}
+
+			<div className={agendaCSS.sessionGroup}>
+				{ children }
+			</div>
+		</div> 
+	)
 }
 
-const Session = ({ times, title }) => {
-    return (
-        <div className={CSS.session}>
-            <div className={CSS.sessionTimes}>
-                <p>{times}</p>
-            </div>
-            <div className={CSS.sessionBody}>
-                <p className='fs-5 fw-400'>{title}</p>
-            </div>
-        </div>
-    )
+export const Session = ({ id, startTime, endTime, title, trackID, location, description, speakers }) => {
+
+	return (
+		<div className={agendaCSS.sessionsWrapper}>
+			<div className={agendaCSS.session}>
+				<div className={agendaCSS.sessionHeader}>
+					<Duration startTime={startTime} endTime={endTime} />
+					{ trackID && <Track trackID={trackID} />}
+					{ location && <Location locationTitle={location}/>}
+				</div>
+				
+				<div className={agendaCSS.sessionContent}>
+					<Fade>
+						<p className={`${agendaCSS.sessionTitle} | fs-5 fw-500 lh-1-1 c-white`}>
+							{ title }
+						</p>
+					</Fade>
+					{ description && description !== "<br />" ? parse(description) : null }
+					{ speakers.length ? sortSpeakers(speakers) : null }
+				</div>
+			</div>
+		</div>
+	)
+}
+
+export const Timeslot = ({ startTime, endTime, trackID, children }) => {
+
+	return (
+		<div className={agendaCSS.timeslotWrapper}>
+			{
+				startTime ?
+					<div className={agendaCSS.timeslotHeader}>
+						<Duration startTime={startTime} endTime={endTime} />
+						{ trackID && <Track trackID={trackID} />}
+					</div>
+				: null
+			}
+			{ children }
+		</div>
+	)
+}
+
+export const Feature = ({ children }) => {
+	return (
+		<div className={agendaCSS.featureWrapper}>
+			{ children }
+		</div>
+	)
+}
+
+export const Duration = ({ startTime, endTime }) => {
+
+	const convertSeconds = (seconds) => {
+		const hours = Math.floor(seconds / 3600)
+		const minutes = Math.floor((seconds % 3600) / 60)
+	
+		const hourString = hours > 0 ? `${hours}h` : ''
+		const minuteString = minutes > 0 ? `${minutes}m` : ''
+	
+		if ( hours > 0 ) {
+			return `${hourString} ${ minutes > 0 ? minuteString : ''}`
+
+		} else if ( !hours && minutes > 0 ) {
+			return `${minuteString}`
+
+		}
+	
+		return
+	}
+
+
+	return (
+		<>
+			{ startTime && format( new Date(startTime), "HH:mm" ) } { startTime && endTime && "-"} { endTime && format( new Date(endTime), "HH:mm" ) }
+			{
+				startTime &&  endTime ?
+				<span>&ensp;<StopwatchIcon fill={'var(--primary-3)'}/> { convertSeconds(parseInt(new Date(endTime).getTime() - new Date(startTime).getTime())/1000) }</span>
+				: null
+			}
+		</>
+	)
+}
+
+export const Track = ({ trackID }) => {
+
+	const t = tracks.find( track => track.id === trackID )
+
+	if ( !t ) return
+	
+	return (
+		<p className={agendaCSS.tag} style={{ backgroundColor: t.color }}><TagIcon fill={'var(--primary'} />{ t.title }</p>
+	)
+}
+
+export const Location = ({ locationTitle }) => {
+
+	if ( !locationTitle ) return
+	
+	return (
+		<Pop><p className={agendaCSS.tag} style={{ backgroundColor: 'white' }}><CompassIcon fill={'var(--primary'} />{ locationTitle }</p></Pop>
+	)
+}
+
+export const Theme = ({ children }) => {
+	return (
+		<p className={agendaCSS.theme}>THEME: { children }</p>
+	)
+}
+
+
+
+
+const SpeakerCard = ({ speaker, type }) => {
+
+    if ( !speaker ) return
+
+	const [ showModal, setShowModal ] = useState(false)
+    const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: ''})
+
+	return (
+		<Pop>
+
+			<div key={speaker.id} className={agendaCSS.sessionSpeaker}>
+				{ type ? <p className="c-secondary fw-500 pb-xs">{ type }</p> : null }
+				{
+					speaker.photoUrl 
+					?	<div className={`${agendaCSS.speakerPhoto} ${speaker.biography && agendaCSS.bio}`}
+							onClick={() => {
+								if ( speaker.biography ) {
+									setModalContent({
+										avatar: speaker.photoUrl,
+										name: `${speaker.firstName} ${speaker.lastName}`,
+										title: speaker.jobTitle,
+										company: speaker.organization,
+										bio: speaker.biography
+									})
+									setShowModal(true)
+								}
+							}}>
+							{speaker.biography && <span><ProfileIcon /></span>}
+							<img src={speaker.photoUrl} alt="" />
+						</div>
+					:	<div className={agendaCSS.speakerPhoto}><img src={`/assets/ui/avatar-fallback.png`} alt="" /></div>
+
+				}
+				<p className="fw-600">{ speaker.firstName } { speaker.lastName }</p>
+				<p className="fs-sm lh-1">{ speaker.jobTitle }<br />{ speaker.organization }</p>
+			</div>
+
+			<Modal onClose={() => setShowModal(false)} show={showModal}>
+				<div style={{ maxHeight: '80vh', overflowY: 'scroll', paddingRight: 10 }}>
+					<p className="fs-5 fw-600">{ modalContent.name }</p>
+					<p className="fs-sm">{ modalContent.title }<br />{ modalContent.company }</p>
+					<p className="mt-xs">{modalContent.bio}</p>
+				</div>
+			</Modal>
+		</Pop>
+	)
+}
+
+const ProfileIcon = ({ color = 'var(--primary)' }) => {
+
+	return (
+		<svg width="100%" height="100%" viewBox="0 0 24 15" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeMiterlimit: 1.5 }}>
+			<g id="icon-profile">
+				<g id="icon-author">
+					<circle cx="7.517" cy="5.135" r="3.763" style={{ fill:`none`, stroke: color, strokeWidth:1.5 }}/>
+					<path d="M1.351,12.932C2.39,10.558 4.761,8.897 7.517,8.897C10.273,8.897 12.644,10.558 13.684,12.932" style={{ fill:`none`, stroke: color, strokeWidth:1.5 }}/>
+				</g>
+				<path d="M13.739,2.244L21.996,2.244" style={{ fill:`none`, stroke: color, strokeWidth:1.5 }}/>
+				<path d="M13.739,6.649L21.996,6.649" style={{ fill:`none`, stroke: color, strokeWidth:1.5 }}/>
+				<path d="M15.918,11.054L21.996,11.054" style={{ fill:`none`, stroke: color, strokeWidth:1.5 }}/>
+			</g>
+		</svg>
+	)
+}
+
+const sortSpeakers = ( speakerData ) => {
+
+	if ( !speakerData ) return
+
+	// console.log('speakerData:', speakerData)
+
+	let moderators = []
+	let speakers = []
+
+	speakerData.forEach( speaker => {
+		speaker.withEvent?.eventProfile.type !== 'Speaker' ? moderators.push( speaker ) : speakers.push( speaker )
+	})
+
+
+	if ( moderators.length && speakers.length ) return (
+		<section>
+			{
+				moderators.length ?
+					<div>
+						<p className="fw-500 c-accent" style={{ padding: `0 0 15px 0`}}>Moderator{ moderators.length > 1 && 's'}</p>
+						<div className={agendaCSS.sessionSpeakerGrid}>
+							{ moderators.map( moderator => <SpeakerCard key={moderator.id} speaker={moderator} /> ) }
+						</div>
+					</div>
+				: null
+			}
+			<div>
+				{
+					moderators.length && speakers.length ?
+						<p className="fw-500 mt-xxs c-accent" style={{ padding: `0 0 15px 0`}}>In conversation with</p>
+					: null
+				}
+				<div className={agendaCSS.sessionSpeakerGrid}>
+					{ speakers.map( speaker => <SpeakerCard key={speaker.id} speaker={speaker} /> ) }
+				</div>
+			</div>
+
+		</section>
+	)
+
+	return (
+		<div className={agendaCSS.sessionSpeakerGrid}>
+			{ speakerData.map( speaker => <SpeakerCard key={speaker.id} speaker={speaker} /> ) }
+		</div>
+	)
+}
+
+
+
+
+
+export async function getStaticProps() {
+
+	const eventQuery = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query EventById($eventId: ID!) {
+
+						event(id: $eventId) {
+							planningsPlaces {
+								id
+								name
+								value
+							}
+						}
+
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2025}", page: 1, pageSize: 500) {
+							id
+							titleTranslations {
+								value
+								language
+							}
+							beginsAt
+							endsAt
+							descriptionTranslations {
+								value
+								language
+							}
+							format
+							fields {
+								... on SelectField {
+									id
+									definition {
+										isDefault
+										name
+									}
+									value
+									translations {
+										value
+									}
+								}
+								... on MultipleSelectField {
+									id
+									definition {
+										isDefault
+										name
+									}
+									value
+									translations {
+										value
+									}
+								}
+							}
+							speakers {
+								firstName
+								id
+								jobTitle
+								lastName
+								photoUrl
+								organization
+								biography
+								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2025}") {
+									eventProfile {
+										type
+										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
+											speakerOnPlannings {
+												id
+												title
+												beginsAt
+												endsAt
+											}
+										}
+									}
+								}
+							}
+							categories
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2025,
+					"page": 1
+				}
+			})
+		}
+	)
+
+	const result = await eventQuery.json()
+	
+
+	// console.log('RESULT', result)
+	// console.log('TEST plannings', result.data.event.planningsPlaces)
+	// console.log('TEST sessions', result.data.plannings)
+  
+
+    if ( result.data ) return { 
+        props: { 
+            sessions: result.data.plannings,
+			locations: result.data.event.planningsPlaces
+        } 
+    }
+
+	return { props: {} }
 }
