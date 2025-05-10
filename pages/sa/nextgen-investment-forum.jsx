@@ -463,42 +463,40 @@ export default function Page ({ sessions, locations }) {
                        {
 						buildAgenda(NEXTGEN_SESSIONS).map( (day, index) => (
 							<section key={index}>
-							
-									<aside>
-										<Pop>
-											<p className={agendaCSS.dayDivider}>{ day.day }</p>
-										</Pop>
-									</aside>
+                                <aside>
+                                    <Pop>
+                                        <p className={agendaCSS.dayDivider}>{ day.day }</p>
+                                    </Pop>
+                                </aside>
 
-									<main className='mt-sm'>
-										<div className={agendaCSS.sessions}>
-											<SessionGroup>
-												{
-													day.timeslots.map( timeslot => (
-														<Timeslot
-															key={timeslot.time}
-															startTime={timeslot.beginsAt} 
-															endTime={timeslot.endsAt}
-														>
-															{
-																timeslot.sessions.map( session => (
-																	<Session 
-																		key={session.id}
-																		id={session.id}
-																		title={session.titleTranslations[0].value}
-																		location={getLocationTitleById(session)}
-																		description={session.descriptionTranslations.length && session.descriptionTranslations[0].value}
-																		speakers={session.speakers}
-																	/>
-																))
-															}
-														</Timeslot>
-													))
-												}
-											</SessionGroup> 
-										</div>
-									</main>
-							
+                                <main className='mt-sm'>
+                                    <div className={agendaCSS.sessions}>
+                                        <SessionGroup>
+                                            {
+                                                day.timeslots.map( timeslot => (
+                                                    <Timeslot
+                                                        key={timeslot.time}
+                                                        startTime={timeslot.beginsAt} 
+                                                        endTime={timeslot.endsAt}
+                                                    >
+                                                        {
+                                                            timeslot.sessions.map( session => (
+                                                                <Session 
+                                                                    key={session.id}
+                                                                    id={session.id}
+                                                                    title={session.titleTranslations[0].value}
+                                                                    location={getLocationTitleById(session)}
+                                                                    description={session.descriptionTranslations.length && session.descriptionTranslations[0].value}
+                                                                    speakers={session.speakers}
+                                                                />
+                                                            ))
+                                                        }
+                                                    </Timeslot>
+                                                ))
+                                            }
+                                        </SessionGroup> 
+                                    </div>
+                                </main>
 							</section>
 						))
 					}
@@ -733,8 +731,6 @@ export const Theme = ({ children }) => {
 
 
 const SpeakerCard = ({ speaker, type }) => {
-
-    if ( !speaker ) return
 
 	const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: ''})
