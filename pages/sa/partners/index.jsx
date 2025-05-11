@@ -64,10 +64,11 @@ function Partners({ seomatic, contentBlocks, partnerData2025, videoTestimonials 
 			
 		if (category.id === 'RmllbGRWYWx1ZV8yNzQ0NjA5Nw==') orderedCategories.push({ ...category, priority: 9 })
 		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 10 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzA3NzQwMA==') orderedCategories.push({ ...category, priority: 11 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNjcwNDI5MQ==') orderedCategories.push({ ...category, priority: 12 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNjAzMTE4Mg==') orderedCategories.push({ ...category, priority: 13 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzEwNjg2Mw==') orderedCategories.push({ ...category, priority: 14 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzQ2MzE3OQ==') orderedCategories.push({ ...category, priority: 11 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzA3NzQwMA==') orderedCategories.push({ ...category, priority: 12 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNjcwNDI5MQ==') orderedCategories.push({ ...category, priority: 13 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNjAzMTE4Mg==') orderedCategories.push({ ...category, priority: 14 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzEwNjg2Mw==') orderedCategories.push({ ...category, priority: 15 })
 	})
 
 
