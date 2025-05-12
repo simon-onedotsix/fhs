@@ -29,7 +29,7 @@ export const MainMenu = ({ otherEvents }) => {
             <div className={CSS.toggleContainer}>
                 <div className={`${CSS.toggleActions} ${ active && CSS.active }`}>
                     <Button 
-                        href={`/sa/purchase-pass`} 
+                        href={`/sa/register-interest`} 
                         theme={{ 
                             color: `white`,
                             background: `var(--secondary)`, 
@@ -37,7 +37,7 @@ export const MainMenu = ({ otherEvents }) => {
                         }} 
                         decal={`fw-600`}
                     >
-                        { locale === 'ar' ? "احجز تذكرتك الآن" : "Purchase Pass" }
+                        Register Interest for 2026
                     </Button>
 
                     <Locales />

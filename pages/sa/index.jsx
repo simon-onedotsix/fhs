@@ -328,12 +328,13 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                             <Pop inline>
                                 <div className="desktop-only">
                                     <Button 
-                                        href={'/sa/attendee-list-2025'} 
+                                        href={'https://www.linkedin.com/showcase/fhs-future-hospitality-summit/'} 
                                         theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                         decal={'fs-5 fw-600'} 
+                                        target={'_blank'}
                                         accent
                                     >
-                                        { locale === 'ar' ? "Attendee List" : "Attendee List" }
+                                        Watch Live Stream
                                     </Button>
                                 </div>
 
@@ -436,8 +437,24 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </div>
 
 
+            <ImpactGrid>
+                <TitleBlock>
+                    <SectionHeading heading={ locale === 'ar' ? "2025 بالأرقام" : '2025 in Numbers'} decal={'c-secondary'} />
+                </TitleBlock>
+                <ImpactFigure decal={'bg-neutral-01'} figure={1050} impact={ locale === 'ar' ? "عدد الحضور" : 'Attendees'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={37} impact={ locale === 'ar' ? "دولة" : 'Countries'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={150} impact={ locale === 'ar' ? "عدد المتحدثين" : 'Speakers'}  />
+                <ImpactFigure decal={'bg-neutral-01'} figure={85} impact={ locale === 'ar' ? "الجهات الراعية والشركاء" : 'Sponsors & Partners'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={68} unit={'%'} impact={ locale === 'ar' ? "كبار المديرين التنفيذيين ونواب الرؤساء والمديرين" : 'C-Level Executives, VP & Directors'}  />
+                <ImpactFigure />
+                <ImpactFigure decal={'bg-neutral-01'} figure={24} unit={'%'} impact={'Investors'} />
+                <ImpactFigure decal={'bg-neutral-02'} prefix={'$'} figure={5.4} unit={'tn'} impact={'AUM'} />
+                <ImageBlock />
+            </ImpactGrid>
+
+
             {/* TICKER */}
-            <div className="bg-secondary" dir="ltr">
+            {/* <div className="bg-secondary" dir="ltr">
                 {
                     locale === 'ar'
                     ?
@@ -453,11 +470,11 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                             <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
                         </Ticker>
                 }
-            </div>
+            </div> */}
 
 
             {/* INVESTORS */}
-            <section className="block bg-theme">
+            {/* <section className="block bg-theme">
                 <div className="container center">
                     <Fade>
                         <p className="fs-1 fw-600 lh-1 caps">
@@ -481,13 +498,13 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         </Pop>
                     </p>
                 </div>
-            </section>
+            </section> */}
 
 
             {/* SPEAKERS */}
-            <section className="block bg-light">
+            <section className="block bg-primary-2-dark">
                 <div className="container center">
-                    <p className="fs-0 fw-600 c-secondary">{ locale === 'ar' ? "المتحدثون لعام 2025" : "2025 Speakers"}</p>
+                    <p className="fs-0 fw-600 c-white">{ locale === 'ar' ? "المتحدثون لعام 2025" : "2025 Speakers"}</p>
                 </div>
                 <div className="container columns-5 gap-sm">
                     {
@@ -509,7 +526,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     <Pop>
                         <ArrowButton 
                             href={ '/sa/speakers' } 
-                            theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}
+                            theme={{ arrow: `white`, border: `white`, label: `white`}}
                         >
                             { locale === 'ar' ? "عرض جميع المتحدثين" : "View All Speakers"}
                         </ArrowButton>
@@ -517,22 +534,17 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 </div>
             </section>
                
-           
 
-            <ImpactGrid>
-                <TitleBlock>
-                    <SectionHeading heading={ locale === 'ar' ? "2024 بالأرقام" : '2024 in Numbers'} decal={'c-secondary'} />
-                </TitleBlock>
-                <ImpactFigure decal={'bg-neutral-01'} figure={1329} impact={ locale === 'ar' ? "عدد الحضور" : 'Attendees'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={38} impact={ locale === 'ar' ? "دولة" : 'Countries'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={206} impact={ locale === 'ar' ? "عدد المتحدثين" : 'Speakers'}  />
-                <ImpactFigure decal={'bg-neutral-01'} figure={95} impact={ locale === 'ar' ? "الجهات الراعية والشركاء" : 'Sponsors & Partners'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={80} unit={'%'} impact={ locale === 'ar' ? "كبار المديرين التنفيذيين ونواب الرؤساء والمديرين" : 'C-Level Executives, VP & Directors'}  />
-                <ImpactFigure />
-                <ImpactFigure decal={'bg-neutral-01'} figure={94} unit={'%'} impact={ locale === 'ar' ? "من المشاركين في الاستطلاع أكدوا أن قمة مستقبل الضيافة بالمملكة العربية السعودية مكنتهم من التعرف على أحدث المعلومات والتوجهات في السوق." : 'of those surveyed indicated FHS Saudi Arabia met their objective of gaining the latest market insights.'} />
-                <ImpactFigure decal={'bg-neutral-02'} figure={84} unit={'%'} impact={ locale === 'ar' ? "من المشاركين في الاستطلاع أكدوا أن قمة مستقبل الضيافة بالمملكة العربية السعودية مكنتهم من إيجاد فرص تجارية جديدة" : 'of those surveyed indicated FHS Saudi Arabia met their objective of finding new business opportunities.'} />
-                <ImageBlock />
-            </ImpactGrid>
+
+
+            {/* THEMES */}
+            <section className="block bg-primary">
+                <ThemesSlider 
+                    data={ locale === 'ar' ? THEMES_DATA_AR : THEMES_DATA} link={'/sa/themes'} 
+                    linkLabel={ locale === 'ar' ? "اعرف المزيد" : 'Learn more'} 
+                />
+            </section>
+
 
 
             {/* QUOTES */}
@@ -554,15 +566,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </section>
 
 
-            {/* THEMES */}
-            <section className="block bg-primary">
-                <ThemesSlider 
-                    data={ locale === 'ar' ? THEMES_DATA_AR : THEMES_DATA} link={'/sa/themes'} 
-                    linkLabel={ locale === 'ar' ? "اعرف المزيد" : 'Learn more'} 
-                />
-            </section>
-
-
             {/* SPONSORS */}
             <LogoTicker heading={ locale === 'ar' ? "شكرًا لرعاتنا وشركائنا" : 'Thank You to Our Sponsors & Partners'} speed={120}>
                 {
@@ -581,12 +584,12 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </ArticleScroller>
 
 
-            <VideoUnit>
+            {/* <VideoUnit>
                 <SectionHeading heading={ locale === 'ar' ? "شاهد أبرز لحظات 2024" : 'Watch 2024 Highlights'} inverse />
-            </VideoUnit>
+            </VideoUnit> */}
         
 
-            <PhotoGrid>
+            {/* <PhotoGrid>
                 <ContentBlock>
                     <SectionHeading heading={ locale === 'ar' ? "2024 بالصور" : '2024 in Photos'} />
                 </ContentBlock>
@@ -607,7 +610,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         <CTAButton href={'https://www.flickr.com/photos/benchevents/albums/'} label={ locale === 'ar' ? "عرض جميع الصور" : 'View all Photos'} target={'_blank'} background={'white'} />
                     </div>
                 </ContentBlock>
-            </PhotoGrid>
+            </PhotoGrid> */}
             
 
 

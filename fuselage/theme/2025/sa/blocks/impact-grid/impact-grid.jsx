@@ -27,13 +27,13 @@ export const TitleBlock = ({ children }) => {
     )
 }
 
-export const ImpactFigure = ({ figure, unit, impact, decal }) => {
+export const ImpactFigure = ({ prefix, figure, unit, impact, decal }) => {
     return (
         <div className={`${CSS.impactFigure} ${decal}`}>
             <Fade>
                 {
                     figure &&
-                    <p className={CSS.figure}><AnimatedCounter from={0} to={figure} />{ unit }</p>
+                    <p className={CSS.figure}>{prefix}<AnimatedCounter from={0} to={figure} />{ unit }</p>
                 }
 
                 <Slide><p className={CSS.impact}>{ impact }</p></Slide>
@@ -74,7 +74,7 @@ const AnimatedCounter = ({ from, to, animationOptions }) => {
             ease: 'easeOut',
             ...animationOptions,
             onUpdate(value) {
-                element.textContent = value.toFixed(0)
+                element.textContent = value.toFixed( Number.isInteger(to) ? 0 : 1 )
             } 
         })
 
