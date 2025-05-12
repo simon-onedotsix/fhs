@@ -360,7 +360,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         <p className="fs-3 fw-600 c-accent caps">{ locale === 'ar' ? "الجهات الراعية المضيفة" : "Host Sponsors" }</p>
                             <Pop>
                                 <div className={`${CSS.hostSponsorLogoWrapper} mt-sm mx-auto`}>
-                                    <Image src={`/assets/site/sa/mandarin-oriental-al-faisaliah-logo.png`} width={200} height={200}/>
+                                    <Image src={`/assets/site/sa/mandarin-oriental-al-faisaliah-logo-update.png`} width={800} height={800}/>
                                     <Image src={`/assets/site/sa/al-khozama-logo-2025.png`} width={830} height={427}/>
                                 </div>
                             </Pop>

@@ -103,9 +103,9 @@
 }
 @media(min-width:600px){
     .hostSponsorLogoWrapper {
-        max-width: 30rem;
+        max-width: 35rem;
         display: grid;
-        grid-template-columns: 1fr 1.5fr;
+        grid-template-columns: 1fr 1fr;
         gap: var(--space-md)
     }
 }
