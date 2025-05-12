@@ -35,7 +35,7 @@ export const MainMenu = ({ otherEvents }) => {
                             background: `var(--secondary)`, 
                             hover: `var(--secondary-dark)`, 
                         }} 
-                        decal={`fw-600`}
+                        decal={`fw-600 desktop-only`}
                     >
                         Register Interest for 2026
                     </Button>
@@ -66,6 +66,33 @@ export const MainMenu = ({ otherEvents }) => {
 
             <div className={`${CSS.overlay} ${ active && CSS.active } bg-primary`} dir='ltr'>
                 
+                <div className={`${CSS.mobileToggleActions} mobile-only mb-md`}>
+                    <Button 
+                        href={`/sa/register-interest`} 
+                        theme={{ 
+                            color: `white`,
+                            background: `var(--secondary)`, 
+                            hover: `var(--secondary-dark)`, 
+                        }} 
+                        decal={`fw-600`}
+                    >
+                        Register Interest for 2026
+                    </Button>
+                    
+                    <Button 
+                        href={`https://fhs.marcomevent.net/registration_new/new/conspecial_day3`} 
+                        theme={{ 
+                            color: `white`,
+                            background: `var(--secondary)`, 
+                            hover: `var(--secondary-dark)`, 
+                        }} 
+                        decal={`fw-600`}
+                        target={'_blank'}
+                    >
+                        Day 3 Experience Pass
+                    </Button>
+                </div>
+
                 <nav className="columns-4 gap-md">
                     { 
                         mainMenu?.map( column => (
