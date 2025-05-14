@@ -39,19 +39,7 @@ export const MainMenu = ({ otherEvents }) => {
                     >
                         Register Interest for 2026
                     </Button>
-                    
-                    <Button 
-                        href={`https://fhs.marcomevent.net/registration_new/new/conspecial_day3`} 
-                        theme={{ 
-                            color: `white`,
-                            background: `var(--secondary)`, 
-                            hover: `var(--secondary-dark)`, 
-                        }} 
-                        decal={`fw-600 desktop-only`}
-                        target={'_blank'}
-                    >
-                        Day 3 Experience Pass
-                    </Button>
+
 
                     <Locales />
                 </div>
@@ -77,19 +65,6 @@ export const MainMenu = ({ otherEvents }) => {
                         decal={`fw-600`}
                     >
                         Register Interest for 2026
-                    </Button>
-                    
-                    <Button 
-                        href={`https://fhs.marcomevent.net/registration_new/new/conspecial_day3`} 
-                        theme={{ 
-                            color: `white`,
-                            background: `var(--secondary)`, 
-                            hover: `var(--secondary-dark)`, 
-                        }} 
-                        decal={`fw-600`}
-                        target={'_blank'}
-                    >
-                        Day 3 Experience Pass
                     </Button>
                 </div>
 

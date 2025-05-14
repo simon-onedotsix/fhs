@@ -14,7 +14,6 @@ import { useRouter } from "next/router"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
-import Script from "next/script"
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 
@@ -22,27 +21,16 @@ import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 import { HeroUnitVideo } from "../../fuselage/theme/2025/sa/blocks/hero-unit-video/hero-unit-video"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
-import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 
 import { SectionHeading } from "../../fuselage/theme/2025/sa/components/section-heading/section-heading"
 import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
 import { ImpactGrid, ImpactFigure, TitleBlock, ImageBlock } from "../../fuselage/theme/2025/sa/blocks/impact-grid/impact-grid"
-import { Ticker } from "../../fuselage/theme/2025/sa/components/ticker/ticker"
 import { ArticleScroller, Article } from "../../fuselage/theme/2025/sa/blocks/article-scroller/article-scroller"
-import { VideoUnit } from "../../fuselage/theme/2025/sa/blocks/video-unit/video-unit"
-import { PhotoGrid, ContentBlock, Photo, Spacer } from "../../fuselage/theme/2025/sa/blocks/photo-grid/photo-grid"
-import { CTAButton } from "../../fuselage/theme/2025/sa/components/cta-button/cta-button"
 import { LogoTicker, Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticker/logo-ticker"
-import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
-import { VideoTestimonialCard } from "./video-testimonials"
-import { Avatar } from '../../fuselage/components/avatar/avatar'
 import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
 import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/animated-counter/animated-counter"
-
-import { ActionsTab } from '../../fuselage/components/actions-tab/actions-tab'
-import { PopOver } from '../../fuselage/components/popover/popover'
 
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 
