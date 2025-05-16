@@ -100,7 +100,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                     </div>
                     <div className={CSS.venue}>
                         <p className='lh-2 c-white'>
-                            <span className='fw-600'>{ locale === 'ar' ? "13-11 مايو 2025" : "11-13 May 2025"}</span> <br/>
+                            <span className='fw-600'>{ locale === 'ar' ? "2026" : "2026"}</span> <br/>
                             { locale === 'ar' ? "فندق ماندارين أورينتال الفيصلية، الرياض" : "Mandarin Oriental Al Faisaliah, Riyadh" }
                         </p>
                     </div>
