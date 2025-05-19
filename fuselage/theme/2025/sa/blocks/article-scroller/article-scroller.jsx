@@ -17,7 +17,7 @@ export const ArticleScroller = ({ children }) => {
             <div className={CSS.graphic}><KeylineIcon /></div>
 
             <aside>
-                <SectionHeading heading={ locale === 'ar' ? "التوقيعات والإعلانات لعام 2024" : '2024 Signings & Announcements'} />
+                <SectionHeading heading={ locale === 'ar' ? "التوقيعات والإعلانات لعام 2025" : '2025 Signings & Announcements'} />
                 <div className='p-md'>
                     <Link href={'/sa/content-library/category/press-room'} >
                         <a className={`${CSS.ctaButton} fs-5 fw-600`} >{ locale === 'ar' ? "آخر الأخبار والمستجدات" : <>Latest News &amp; Updates</> }</a>
