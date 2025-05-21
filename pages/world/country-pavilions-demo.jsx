@@ -184,27 +184,33 @@ export default function Page ({ entry }) {
 
             <PageHeroImage hero={{ url: 'https://cms.thebench.com/assets/img/site/FHS-World/53727353681_d9e964e388_o.jpg', width: 6192, height: 4128 }} >
                 <div className="container maxw-50 pb-xl formatted c-white center">
-                    <h1>Projects & Country Pavilions</h1>
-                    <p className='fs-6 mt-sm'>FHS World features country pavilions that showcase new projects and destinations unique to each participating country. These pavilions will showcase upcoming hospitality projects unique to each country and present a plethora of investment opportunities in ventures with high ROI.</p>
+                    <Pop>
+                        <h1>Projects & Country Pavilions</h1>
+                    </Pop>
+                    <Fade>
+                        <p className='fs-6 mt-sm'>FHS World features country pavilions that showcase new projects and destinations unique to each participating country. These pavilions will showcase upcoming hospitality projects unique to each country and present a plethora of investment opportunities in ventures with high ROI.</p>
+                    </Fade>
                 </div>
                 
-                <div className="container formatted center">
-                    <p className='fs-1 fw-600'>Country Pavilions at FHS World 2025</p>
-                </div>
 
-                <div className="container columns-1 gap-md pt-sm">
-                    { PAVILIONS_DATA.map( pavilion => <Pavilion key={pavilion.id} data={pavilion} /> ) }
-                </div>
+                <FlagTicker speed={20} heading={'Country Pavilions at FHS World 2025'}>
+                    { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
+                    { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
+                    { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
+                    { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
+                    { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
+                </FlagTicker>
+                
+                
+                <section className="block">
+                    <div className="container columns-1 gap-md">
+                        { PAVILIONS_DATA.map( pavilion => <Pavilion key={pavilion.id} data={pavilion} /> ) }
+                    </div>
+                </section>         
+                
             </PageHeroImage>
 
-
-            <FlagTicker speed={10}>
-                { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-                { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-                { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-                { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-                { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-            </FlagTicker>
+            
 
 
             <section className="block pt-0">

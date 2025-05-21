@@ -24,7 +24,7 @@ export const PageHeroImage = ({ hero, children, inverse }) => {
             </motion.div>
 
 
-            <div className={`${CSS.overlay} block`}>
+            <div className={CSS.overlay}>
                 { children }
             </div>
 

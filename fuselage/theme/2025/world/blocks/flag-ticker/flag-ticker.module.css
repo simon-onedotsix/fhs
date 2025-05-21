@@ -1,17 +1,14 @@
 .container {
-    padding: 1rem 0;
     overflow: hidden;
     padding: var(--space-md) 0;
 }
-
-.logos {
+.flags {
     display: flex;
     gap: var(--space-xs);
     margin-right: 1rem;
     white-space: nowrap;
 }
-
-.logo {
+.flag {
     position: relative;
     display: flex;
     align-items: center;
@@ -23,38 +20,16 @@
     width: 6rem;
     aspect-ratio: 3/2;
 }
-.logo img {
+.flag img {
     width: 100%;
 }
 
 
 
 
-
-
-
-.sectionHeadingContainer {
-    display: grid;
-    grid-template-columns: var(--space-md) auto ;
-    margin-bottom: var(--space-md);
-    width: 100%;
-    overflow: hidden;
-}
-.sectionHeadingContainer span {
-    border-bottom: 2px solid var(--primary);
-}
-.sectionHeading {
-    font-size: 6vw;
-    line-height: 1.1;
-    text-transform: uppercase;
-    color: var(--primary);
-}
 
 @media(min-width:600px){
-    .sectionHeading {
-        font-size: 2vw;
-    } 
-    .logo { 
+    .flag { 
         width: 6rem;
         aspect-ratio: 3/2;
     }

@@ -212,8 +212,6 @@ const LEVEL_DATA_AR = [
 
 export default function Page () {
 
-    const t = useTranslations('about')
-
     const { locale } = useRouter()
 
     const [ showPopover, setShowPopover ] = useState( false )
@@ -372,10 +370,3 @@ export default function Page () {
 Page.theme = 'sa-2025'
 
 
-export async function getStaticProps({ preview, previewData, locale }) {
-    return { 
-        props: { 
-            messages: (await import(`../../translations/${locale}.json`)).default
-        }
-    }
-}
