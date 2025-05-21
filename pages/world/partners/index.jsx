@@ -100,6 +100,7 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 					{
 						partnersArray.length &&
 						partnersArray.map( (category, index) => (
+							<>
 								<PartnerCategory key={index}>
 
 									<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category.group.translations[0].value }</h4>
@@ -120,9 +121,14 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 									</PartnerLogoGrid>
 									
 								</PartnerCategory>
-							)
-							
-						)
+
+								{
+									category.group.id === "RmllbGRWYWx1ZV8yNTY4ODM0Mw==" &&
+									<div>[ ticker ]</div>
+
+								}
+							</>
+						))
 					}
 				</PartnerCategoryGrid>
 				

@@ -7,6 +7,7 @@ import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 import _ from 'lodash'
 import { format } from 'date-fns'
+import HTMLReactParser from 'html-react-parser'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { Pop, Fade, Slide } from '../../fuselage/animation/animation'
@@ -307,7 +308,7 @@ export const Session = ({ id, startTime, endTime, title, trackID, location, desc
 							{ title }
 						</p>
 					</Fade>
-					{ description && description !== "<br />" ? parse(description) : null }
+					{ description && description !== "<br />" ? HTMLReactParser(description) : null }
 					{/* { speakers.length ? sortSpeakers(speakers) : null } */}
 					{
 						speakers.length && id === "UGxhbm5pbmdfMjU4NDUwMQ==" 

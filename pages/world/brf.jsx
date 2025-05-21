@@ -4,6 +4,7 @@ import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 import _ from 'lodash'
 import { format } from 'date-fns'
 import parse from 'html-react-parser'
+import HTMLReactParser from 'html-react-parser'
 
 import { motion, useScroll, useTransform } from "framer-motion"
 
@@ -16,7 +17,6 @@ import { Pop, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animati
 import { Callout } from '../../fuselage/theme/2024/world/blocks/callout/callout'
 import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'
 
-import { Quote } from '../../fuselage/theme/2024/world/components/quote/quote'
 import { QuoteSlider } from '../../fuselage/theme/2024/world/components/quote-slider/quote-slider'
 import { StopwatchIcon } from "../../fuselage/components/icons/icons"
 import { SpeakerCarousel } from '../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel'
@@ -374,7 +374,7 @@ export default function Page ({ sessions, speakers }) {
 
                                             {
                                                 session.descriptionTranslations.length ?
-                                                    parse( session.descriptionTranslations[0].value )
+                                                    HTMLReactParser( session.descriptionTranslations[0].value )
                                                 : null
                                             }
                                             
