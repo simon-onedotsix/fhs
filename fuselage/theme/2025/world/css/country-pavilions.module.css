@@ -1,0 +1,68 @@
+.pavilion {
+    position: relative;
+    display: grid;
+    grid-template-columns:1fr;
+
+
+    border-radius: .5rem;
+}
+.pavilionHero {
+    position: relative;
+    min-height: 55vw;
+}
+.pavilionHero img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem 1rem 0 0;
+}
+.pavilionContent {
+    padding: var(--space-sm);
+    overflow: hidden;
+}
+.pavilionFlag {
+    position: absolute;
+    z-index: 2;
+    top: -1rem;
+    left: 2rem;
+
+    border-radius: .5rem;
+    overflow: hidden;
+
+    width: 6rem;
+    aspect-ratio: 3/2;
+}
+
+.pavilionLogoGrid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem
+}
+.pavilionLogo {
+    position: relative;
+    width: 9.5rem;
+    aspect-ratio: 5/3;
+
+    border: .75rem solid white;
+    border-radius: .5rem;
+    background-color: white;
+}
+.pavilionLogo img {
+    object-fit: contain;
+}
+
+@media(min-width: 600px){
+    .pavilion {
+        grid-template-columns: repeat(2, 1fr);
+        border-radius: 1rem;
+    }
+    .pavilionHero {
+        min-height: 30vw;
+    }
+    .pavilionHero img {
+        border-radius: 1rem 0 0 1rem
+    }
+    .pavilionFlag {
+        width: 8rem;
+    }
+}

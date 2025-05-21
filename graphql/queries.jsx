@@ -377,6 +377,37 @@ export const QueryBannerImage = `
     }
 `
 
+export const QueryCoutryPavilions = `
+    ... on ${blocksHandle}ContentBlocks_countryPavilions_BlockType {
+        id
+        countryPavilions {
+            ... on countryPavilions_pavilion_BlockType {
+                id
+                country
+                body
+                hero{
+                    id
+                    url
+                }
+                flag {
+                    id
+                    url
+                }
+                logoGroup {
+                    ... on logoGroup_BlockType {
+                        id
+                        groupHeading
+                        logos {
+                            id
+                            url
+                        }
+                    }
+                }
+            }
+        }
+    }
+`
+
 
 
 
