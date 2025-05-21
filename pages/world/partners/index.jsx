@@ -125,6 +125,7 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 									
 								</PartnerCategory>
 
+								{/* inject after sponsors category */}
 								{
 									category.group.id === "RmllbGRWYWx1ZV8yNTY4ODM0Mw==" &&
 									<FlagTicker speed={20} heading={'Country Pavilions at FHS World 2025'}>
