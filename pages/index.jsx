@@ -47,6 +47,7 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
                                 theme={event.theme} 
                                 location={event.heading} 
                                 dates={{ startDate: event.startDate, endDate: event.endDate}}
+                                dateOverride={event.dateOverride}
                                 venue={event.venue}
                             >
                                 {
@@ -286,6 +287,7 @@ export async function getStaticProps() {
                                 heading
                                 startDate
                                 endDate
+                                dateOverride
                                 venue
                                 theme
                                 streams {

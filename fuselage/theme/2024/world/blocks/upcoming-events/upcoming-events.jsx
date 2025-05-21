@@ -18,7 +18,7 @@ export const UpcomingEvents = ({ children, landscape }) => {
 
 
 
-export const EventGroupCard = ({ children, theme, location, dates, venue }) => {
+export const EventGroupCard = ({ children, theme, location, dates, dateOverride, venue }) => {
 
     let startDay = formatInTimeZone(new Date( dates.startDate ), 'Asia/Dubai', 'd')
     let startMonth = formatInTimeZone(new Date( dates.startDate ), 'Asia/Dubai', 'MMMM')
@@ -50,15 +50,22 @@ export const EventGroupCard = ({ children, theme, location, dates, venue }) => {
             <div className={`formatted`}>
                 <p className='fs-2 fw-700' style={{ color: theme }}>{ location }</p>
                 {
-                    startMonth === endMonth ?
-                        <p className='fs-4 fw-700 lh-2'>
-                            { startDay }-{ endDay } { startMonth } { year }
-                        </p>
+                    dateOverride ?
+                        <p className='fs-4 fw-700 lh-2'>{dateOverride}</p>
                     :
-                        <p className='fs-4 fw-700 lh-2'>
-                            { startDay } { startMonth } { dates.endDate && "-" } { endDay } { endMonth } { year }
-                        </p>
+                        <>
+                            {
+                                startMonth === endMonth ?
+                                    <p className='fs-4 fw-700 lh-2'>
+                                        { startDay }-{ endDay } { startMonth } { year }
+                                    </p>
+                                :
+                                    <p className='fs-4 fw-700 lh-2'>
+                                        { startDay } { startMonth } { dates.endDate && "-" } { endDay } { endMonth } { year }
+                                    </p>
 
+                            }
+                        </>
                 }
                 <p className='fs-5'>{ venue }</p>
             </div>
