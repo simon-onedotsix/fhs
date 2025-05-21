@@ -294,7 +294,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                     { locale === 'ar' ? "برنامج 2025" : "Agenda" }
                                 </Button>
                             </Pop>
-                            <Pop inline>
+                            {/* <Pop inline>
                                 <div className="desktop-only">
                                     <Button 
                                         href={'https://www.linkedin.com/showcase/fhs-future-hospitality-summit/'} 
@@ -317,7 +317,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                         { locale === 'ar' ? "احجز تذكرتك الآن" : "Purchase Pass" }
                                     </Button>
                                 </div>
-                            </Pop>
+                            </Pop> */}
                         </div>
                     </Fade>
                 </HeroUnitVideo>
