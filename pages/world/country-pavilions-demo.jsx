@@ -24,7 +24,7 @@ import { FlagTicker, Flag } from "../../fuselage/theme/2025/world/blocks/flag-ti
 import CSS from '../../fuselage/theme/2025/world/css/country-pavilions.module.css'
 
 
-const PAVILIONS_DATA = [
+export const PAVILIONS_DATA = [
     {
         "__typename": "countryPavilions_pavilion_BlockType",
         "id": "257333",

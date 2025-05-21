@@ -8,7 +8,7 @@ export const FlagTicker = ({ heading, speed, children }) => {
         <div className={CSS.container}>
             <div className={CSS.sectionHeadingContainer}>
                 <Pop>
-                    <p className={'fs-2 fw-400 center pb-sm'}>{ heading }</p>
+                    <p className={'fs-2 fw-400 center pb-sm px-sm'}>{ heading }</p>
                 </Pop>
             </div>
             <div dir="ltr">

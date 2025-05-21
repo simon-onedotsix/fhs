@@ -14,12 +14,13 @@ import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
 import { Button } from '../../../fuselage/theme/2024/world/components/button/button'
 import { VideoTestimonialCard } from '../video-testimonials'
+import { FlagTicker, Flag } from "../../../fuselage/theme/2025/world/blocks/flag-ticker/flag-ticker"
 
 import handleSeomaticMeta from "../../../lib/seomatic"
 import { QuerySEO } from "../../../graphql/queries"
 
 
-
+import { PAVILIONS_DATA } from '../country-pavilions-demo'
 
 
 
@@ -90,11 +91,11 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 
 			{/* PARTNERS */}
 
-			<section className='block'>
-
+			<section className='block py-0'>
 				<div className='container center formatted'>
 					<p className='fs-1 fw-600'>2025 Sponsors &amp; Partners</p>
 				</div>
+			</section>
 
 				<PartnerCategoryGrid>
 					{
@@ -103,28 +104,36 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 							<>
 								<PartnerCategory key={index}>
 
-									<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category.group.translations[0].value }</h4>
-									<PartnerLogoGrid>
-										{
-											_.orderBy( category.partners, [(p) => p.name.toLowerCase()] ).map(partner => (
-												<a key={partner.id} href={`/world/partners/${partner.id}`}>
-													{
-														partner.logoUrl &&
-														<PartnerLogo 
-															hero={{ url: partner.logoUrl }} 
-															label={ partner.id === "RXhoaWJpdG9yXzIxNzg3Nzg=" && 'China' }
-														/>
-													}
-												</a>
-											))
-										}
-									</PartnerLogoGrid>
+									<div className="block pt-0">
+										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category.group.translations[0].value }</h4>
+										<PartnerLogoGrid>
+											{
+												_.orderBy( category.partners, [(p) => p.name.toLowerCase()] ).map(partner => (
+													<a key={partner.id} href={`/world/partners/${partner.id}`}>
+														{
+															partner.logoUrl &&
+															<PartnerLogo 
+																hero={{ url: partner.logoUrl }} 
+																label={ partner.id === "RXhoaWJpdG9yXzIxNzg3Nzg=" && 'China' }
+															/>
+														}
+													</a>
+												))
+											}
+										</PartnerLogoGrid>
+									</div>
 									
 								</PartnerCategory>
 
 								{
 									category.group.id === "RmllbGRWYWx1ZV8yNTY4ODM0Mw==" &&
-									<div>[ ticker ]</div>
+									<FlagTicker speed={20} heading={'Country Pavilions at FHS World 2025'}>
+										{ PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
+										{ PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
+										{ PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
+										{ PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
+										{ PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
+									</FlagTicker>
 
 								}
 							</>
@@ -132,7 +141,7 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 					}
 				</PartnerCategoryGrid>
 				
-			</section>
+			
 
 
 
