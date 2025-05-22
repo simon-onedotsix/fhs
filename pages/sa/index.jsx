@@ -294,30 +294,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                     { locale === 'ar' ? "برنامج 2025" : "Agenda" }
                                 </Button>
                             </Pop>
-                            {/* <Pop inline>
-                                <div className="desktop-only">
-                                    <Button 
-                                        href={'https://www.linkedin.com/showcase/fhs-future-hospitality-summit/'} 
-                                        theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                        decal={'fs-5 fw-600'} 
-                                        target={'_blank'}
-                                        accent
-                                    >
-                                        Watch Live Stream
-                                    </Button>
-                                </div>
-
-                                <div className="mobile-only">
-                                    <Button 
-                                        href={'/sa/purchase-pass'} 
-                                        theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                        decal={'fs-5 fw-600'} 
-                                        accent
-                                    >
-                                        { locale === 'ar' ? "احجز تذكرتك الآن" : "Purchase Pass" }
-                                    </Button>
-                                </div>
-                            </Pop> */}
                         </div>
                     </Fade>
                 </HeroUnitVideo>
@@ -422,53 +398,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </ImpactGrid>
 
 
-            {/* TICKER */}
-            {/* <div className="bg-secondary" dir="ltr">
-                {
-                    locale === 'ar'
-                    ?
-                        <Ticker reverse>
-                            <p className="fs-2" dir="rtl"><strong>1.1 مليار دولار </strong> صفقات وفرص تجارية مُحققة في 2024 - </p>
-                            <p className="fs-2" dir="rtl"><strong>1.1 مليار دولار </strong> صفقات وفرص تجارية مُحققة في 2024 - </p>
-                            <p className="fs-2" dir="rtl"><strong>1.1 مليار دولار </strong> صفقات وفرص تجارية مُحققة في 2024 - </p>
-                        </Ticker>
-                    :
-                        <Ticker>
-                            <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
-                            <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
-                            <p className="fs-2"><strong>$1.1billion</strong> in business opportunities and deal volume gained in 2024 - </p>
-                        </Ticker>
-                }
-            </div> */}
-
-
-            {/* INVESTORS */}
-            {/* <section className="block bg-theme">
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-1 fw-600 lh-1 caps">
-                            { locale === 'ar' ? "المستثمرون في قمة مستقبل الضيافة بالمملكة العربية السعودية" : "Investors at FHS Saudi Arabia" }
-                        </p>
-                    </Fade>
-                    <div className="columns-3 gap-sm maxw-55 mx-auto mt-md">
-                        <InvestorImpact figure={283} label={ locale === 'ar' ? "مستثمرًا" : "Investors"} />
-                        <InvestorImpact figure={22} unit={"%"} label={ locale === 'ar' ? "من الحضور" : "of Attendees"} />
-                        <InvestorImpact figure={17} label={ locale === 'ar' ? "صفقة موقعة" : "Deals Signed"} />
-                    </div>
-                    <p className="mt-md">
-                        <Pop>
-                            <ButtonKeyline 
-                                href={'/sa/investors'} 
-                                decal={'fs-5 fw-600'} 
-                                color={'var(--secondary)'}
-                            >
-                                { locale ===  'ar' ? "عرض قائمة المستثمرين السابقين" : "View Past Investors" }
-                            </ButtonKeyline>
-                        </Pop>
-                    </p>
-                </div>
-            </section> */}
-
 
             {/* SPEAKERS */}
             <section className="block bg-primary-2-dark">
@@ -550,72 +479,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     ARTICLE_DATA.map(( article, index ) => <Article key={index} heroUrl={article.heroUrl} title={article.title} excerpt={article.excerpt} url={article.url} />)
                 }
             </ArticleScroller>
-
-
-            {/* <VideoUnit>
-                <SectionHeading heading={ locale === 'ar' ? "شاهد أبرز لحظات 2024" : 'Watch 2024 Highlights'} inverse />
-            </VideoUnit> */}
-        
-
-            {/* <PhotoGrid>
-                <ContentBlock>
-                    <SectionHeading heading={ locale === 'ar' ? "2024 بالصور" : '2024 in Photos'} />
-                </ContentBlock>
-                <Photo photoUrl={'/assets/img/sa/photos/2024-01.jpg'} />
-                <Photo photoUrl={'/assets/img/sa/photos/2024-02.jpg'} />
-                <Spacer />
-                <Photo photoUrl={'/assets/img/sa/photos/2024-03.jpg'} />
-                <Photo photoUrl={'/assets/img/sa/photos/2024-04.jpg'} />
-                <Spacer />
-                <Photo photoUrl={'/assets/img/sa/photos/2024-05.jpg'} />
-                <Photo photoUrl={'/assets/img/sa/photos/2024-06.jpg'} />
-                <Photo photoUrl={'/assets/img/sa/photos/2024-07.jpg'} />
-                <Photo photoUrl={'/assets/img/sa/photos/2024-08.jpg'} />
-                <Photo photoUrl={'/assets/img/sa/photos/2024-09.jpg'} />
-                <Photo photoUrl={'/assets/img/sa/photos/2024-10.jpg'} />
-                <ContentBlock>
-                    <div className="px-md">
-                        <CTAButton href={'https://www.flickr.com/photos/benchevents/albums/'} label={ locale === 'ar' ? "عرض جميع الصور" : 'View all Photos'} target={'_blank'} background={'white'} />
-                    </div>
-                </ContentBlock>
-            </PhotoGrid> */}
             
-
-
-            {/* PREMIUM EXPOSURE FORM */}
-            <section className="block bg-primary o-hidden columns-2 gap-md" style={{ position: 'relative' }}>
-                <img className={CSS.deco04} src="/assets/theme/sa-2025/gfk-01.svg" alt=""/>
-
-                <div className="container">
-                    <div className="formatted">
-                        <Slide>
-                            <p className="fs-1 lh-1">
-                                { locale === 'ar' ? "احصل على وصول أفضل في قمة مستقبل الضيافة بالمملكة العربية السعودية 2025" : "Get Premium Exposure at FHS Saudi Arabia 2025" }
-                            </p>
-                        </Slide>
-                        <Fade>
-                            {
-                                locale === 'ar'
-                                ?
-                                    <p className="fs-6 mt-sm lh-6">انضم إلى مركز صناعة الضيافة في الشرق الأوسط من خلال المشاركة في قمة مستقبل الضيافة بالمملكة العربية السعودية 2025. يجمع هذا المؤتمر الرائد العديد من قادة الحكومات، ووزارات السياحة، وأكبر العلامات التجارية الفندقية، ومالكي الفنادق والمستثمرين، والمجموعات الفندقية العالمية، ومطوري الوجهات السياحية، ومديري الأصول، والمؤسسات المالية، والاستشاريين. من خلال مشاركتك، ستحظى بفرصة استثنائية لعرض علامتك التجارية، وترسيخ مكانتك كقائد ملهم أو مبتكر، والتواصل مع أبرز صُنَّاع القرار والمؤثرين في المنطقة. لا تفوّت هذه الفرصة لتعزيز حضورك في أحد أسرع أسواق الضيافة نموًا في العالم. تواصل مع فريق المبيعات لدينا اليوم لاكتشاف كيفية تحقيق أقصى استفادة من هذه الفرصة الفريدة!</p>
-                                :
-                                    <p className="fs-6 mt-sm lh-6">Join the epicenter of the Middle East&apos;s hospitality industry at FHS Saudi Arabia 2025. This premier conference brings together Government leaders, tourism ministries, top hospitality brands, hotel owners and investors, renowned restaurant groups, destination developers, asset managers, financial institutions, and consultants. By participating, you&apos;ll have the opportunity to showcase your brand, position yourself as a thought leader or innovator, and connect with key decision-makers and industry influencers in the region. Don&apos;t miss out on elevating your presence in one of the world&apos;s fastest-growing hospitality markets. Speak with our sales team today to discover how you can make the most of this unique opportunity!</p>
-                            }
-                        </Fade>
-                    </div>
-                </div>
-
-                <div className=" pt-xs" dir="ltr" style={{ position: 'relative', zIndex: 2}}>
-                    <HubspotForm portalId={"14527187"} formId={"9b80f5cc-3153-4063-924b-39dae712c15d"} />
-                </div>
-            </section>
-
-
-
-            {/* <PopOver>
-                <StartupPromo />
-            </PopOver> */}
-
             
             <Footer />
             <LenisScroller />
