@@ -23,6 +23,7 @@ import { SpeakerCarousel } from '../../fuselage/theme/2024/world/blocks/speaker-
 import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
 import { AgendaSpeakerCard } from '../../fuselage/components/agenda-speaker-card/agenda-speaker-card'
 
+
 import CSS from '../../css/app/agenda-world-2024.module.css'
 import CSSlite from '../../css/app/agenda-world-2024-aag.module.css'
 
@@ -152,7 +153,7 @@ export default function Page ({ sessions, speakers }) {
     // console.log('ordered:', orderedSpeakers)
     
     // console.dir( getSessionsByTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
-    console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
+    // console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
 	// console.log('customOrderedSpeakers:', prioritiseSpeakers( getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ), prioritySpeakersArray ))
 
 
@@ -167,30 +168,23 @@ export default function Page ({ sessions, speakers }) {
                     transition={{ type: "spring", bounce: 0.25 }}
                     className={`fs-0 fw-700 c-white lh-1 center`} 
                 >
-                    Branded Residences Forum
+                    <span style={{ display: 'inline-block', width: '14rem'}}>
+                        <img src="/assets/img/brf/brf-logo-inverse.svg" alt="logo" />
+                    </span>
                 </motion.p>
 
-                {/* <motion.p 
-                    initial={{ y: 100, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ type: "spring", bounce: 0.25 }}
-                    className={`fs-5 c-secondary center mt-sm maxw-45 mx-auto caps ls-2`} 
-                >
-                    29 October 2025<br/>
-                    Madinat Jumeirah, Dubai
-                </motion.p> */}
 
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ type: "spring", bounce: 0.25 }}
-                    className={`fs-4 c-white center mt-sm maxw-45 mx-auto`} 
+                    className={`fs-4 c-white center mt-md maxw-45 mx-auto`} 
                 >
                     Held adjacently with <strong>FHS World</strong>, this exclusive one-day forum explores the thriving sector of Branded Residences.
                 </motion.p>
 
                 <Pop>
-                    <div className="container maxw-50 pt-lg columns-2 gap-md">
+                    <div className="container maxw-60 pt-lg columns-3 gap-md">
                         <section>
                             <p className='c-secondary center pb-sm caps ls-2'>Founder Sponsor</p>
                             <div style={{ width: 300, maxWidth: '70vw', margin: '0 auto' }}>
@@ -201,6 +195,12 @@ export default function Page ({ sessions, speakers }) {
                             <p className='c-secondary center pb-sm caps ls-2'>Strategic Partner</p>
                             <div style={{ width: 150, maxWidth: '30vw', margin: '0 auto' }}>
                                 <img src="/assets/img/brf/global-branded-residences.svg" alt="logo" />
+                            </div>
+                        </section>
+                        <section>
+                            <p className='c-secondary center pb-sm caps ls-2'>Sponsor</p>
+                            <div style={{ width: 627, maxWidth: '13vw', margin: '0 auto' }}>
+                                <img src="/assets/img/brf/marriott.svg" alt="logo" />
                             </div>
                         </section>
                     </div>

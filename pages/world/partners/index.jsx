@@ -128,13 +128,21 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 								{/* inject after sponsors category */}
 								{
 									category.group.id === "RmllbGRWYWx1ZV8yNTY4ODM0Mw==" &&
-									<FlagTicker speed={20} heading={'Country Pavilions at FHS World 2025'}>
-										{ PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-										{ PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-										{ PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-										{ PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-										{ PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-									</FlagTicker>
+									<PartnerCategory>
+										<div className="block pt-0">
+										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>Country Pavilions</h4>
+											<PartnerLogoGrid>
+												{ 
+													PAVILIONS_DATA.map( pavilion => (
+														<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+															<Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> 
+															<p className='fs-5 fw-500 c-primary mt-xxs'>{pavilion.country}</p>
+														</div>
+													)) 
+												}
+											</PartnerLogoGrid>
+										</div>
+									</PartnerCategory>
 
 								}
 							</>
