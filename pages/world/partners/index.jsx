@@ -134,8 +134,8 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 											<PartnerLogoGrid>
 												{ 
 													PAVILIONS_DATA.map( pavilion => (
-														<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-															<Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> 
+														<div key={pavilion.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+															<Flag flagUrl={pavilion.flag[0].url} /> 
 															<p className='fs-5 fw-500 c-primary mt-xxs'>{pavilion.country}</p>
 														</div>
 													)) 
