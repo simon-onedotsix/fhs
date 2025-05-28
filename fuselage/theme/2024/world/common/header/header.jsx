@@ -35,6 +35,12 @@ const otherEvents = [
         target: true
     },
     {
+        id: 12,
+        title: 'BRF 2025',
+        url: '/world/brf',
+        target: true
+    },
+    {
         id: 6,
         title: 'AviaDev',
         url: 'https://www.aviationdevelop.com',
