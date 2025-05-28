@@ -173,6 +173,8 @@ export default function Page ({ sessions, speakers }) {
                     </span>
                 </motion.p>
 
+                <p className='fs-4 fw-600 c-secondary caps center mt-sm'>29 October 2025</p>
+
 
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
