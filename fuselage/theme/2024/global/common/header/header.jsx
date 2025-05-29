@@ -33,7 +33,7 @@ const otherEvents = [
     },
     {
         id: 12,
-        title: 'BRF 2025',
+        title: 'BRF',
         url: '/world/brf',
         target: true
     },
