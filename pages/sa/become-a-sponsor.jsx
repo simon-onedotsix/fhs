@@ -17,6 +17,7 @@ import { ButtonKeyline } from '../../fuselage/theme/2024/world/components/button
 import { ArticleScroller, Article } from "../../fuselage/theme/2025/sa/pages/networking/article-scroller"
 import { Billboard } from '../../fuselage/blocks/billboard/billboard'
 import { Quote, QuoteGrid } from '../../fuselage/theme/2025/sa/components/quote/quote'
+import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'
 
 
 
@@ -39,16 +40,21 @@ export default function Page () {
 
             <div className="bg-default o-hidden">
                 <PageHeroImage inverse hero={{ url: 'https://cms.thebench.com/assets/img/site/FHS-SA/53726532587_e90f8d8abb_o.jpg', width: 7557, height: 4448 }} >
-                    <div className="container maxw-60 pb-md c-primary center minvh-20">
+                    <div className="container maxw-60 pb-md c-primary center minvh-30">
                         <Reveal>
                             {
                                 locale === 'ar'
                                 ?
-                                    <h1 className='fs-0'>انضم إلى الجهات الراعية لقمة مستقبل الضيافة 2025</h1>
+                                    <h1 className='fs-0'>انضم إلى الجهات الراعية لقمة مستقبل الضيافة 2026</h1>
                                 :
-                                    <h1 className='fs-0'>Become a Sponsor for 2025</h1>
+                                    <h1 className='fs-0'>Become a Sponsor for 2026</h1>
                             }
                         </Reveal>
+                        <Pop inline>
+                            <Link href="/sa/get-in-touch">
+                                <a className="button">Get in Touch</a>
+                            </Link>
+                        </Pop>
                     </div>
 
 
@@ -107,10 +113,10 @@ export default function Page () {
                             </Pop>
                         </div>
                     </div>
+                </PageHeroImage>
 
-
-
-                    {/* features */}
+                {/* features */}
+                <section className="block bg-default">
                     <div className="container columns-2 gap-md ai-center pt-md">
                         <div className="formatted">
                             <Slide>
@@ -130,7 +136,7 @@ export default function Page () {
                             </Slide>
                         </div>
 
-                         <Pop>
+                            <Pop>
                             <div className={CSS.floaterImg}>
                                 <Image src={"https://cms.thebench.com/assets/img/site/FHS-SA/53252269696_4fa04c159f_o.jpg"} layout='fill' />
                             </div>
@@ -217,26 +223,26 @@ export default function Page () {
                             </Slide>
                         </div>
                     </div>
-
-                </PageHeroImage>
+                </section>
             </div>
+
 
 
             <section className='bg-default o-hidden'>
                 <QuoteGrid>
                     <Quote 
                         locale={locale}
-                        quote={ locale === 'ar' ? "حدث رائع للتواصل، منظم بإتقان. شيء مثير للإعجاب!" : "Excellent networking event, very well organised. Impressive!" }
-                        name={ locale === 'ar' ? "مدان مانجيشوار" : "Madan Manjeshwar" }
-                        title={ locale === 'ar' ? "المدير المالي" : "Director of Finance" }
-                        company={ locale === 'ar' ? "المعجل القابضة للضيافة" : "Almoajil Holding Hospitality" }
+                        quote={"Being at FHS is like an obligation now! We attend both Saudi Arabia and World to present our company's developments, network and meet with colleagues and investors. This year was much stronger and more effective."}
+                        name={"Hassan Ahdab"}
+                        title={"Chief Hospitality Operations Officer"}
+                        company={"Taiba Investments"}
                     />
                     <Quote 
                         locale={locale}
-                        quote={ locale === 'ar' ? "فرصة رائعة للاجتماع بصُنّاع القرار وإجراء محادثات مثمرة!" : "Fantastic. Great to meet decision-makers and engage in fruitful conversations." }
-                        name={ locale === 'ar' ? "إليزابيث أوفيلي" : "Elizabeth Ofili" }
-                        title={ locale === 'ar' ? "المستشارة الخاصة للوزير المعنية بالإعلام والاتصالات والشراكات" : "Special Advisor to the Minister on Media, Communications and Partnerships" }
-                        company={ locale === 'ar' ? "وزارة السياحة الفيدرالية في نيجيريا" : "Federal Ministry of Tourism Nigeria" }
+                        quote={"It's a blessing. Very energizing, very dynamic, very busy. Lots of beautiful encounters so far."}
+                        name={"Maud Bailly"}
+                        title={"Chief Executive Officer"}
+                        company={"Sofitel Legend, Sofitel, MGallery & Emblems"}
                     />
                     <Quote 
                         locale={locale}
@@ -247,12 +253,22 @@ export default function Page () {
                     />
                     <Quote 
                         locale={locale}
-                        quote={ locale === 'ar' ? "منصة رائعة لبناء العلاقات والتواصل مع كبار صُنّاع القرار!" : "FHS is a great platform to network and build relationships as well as meet with key decision-makers." }
-                        name={ locale === 'ar' ? "حسين طوالبة" : "Hussein Tawalbeh" }
-                        title={ locale === 'ar' ? "نائب الرئيس التجاري، منطقة الشرق الأوسط وأفريقيا" : "VP Commercial, MEA Region" }
-                        company={ locale === 'ar' ? "Thynk.Cloud" : "Thynk.Cloud" }
+                        quote={"As in every Future Hospitality Summit, we get quality conversations rather than the big quantities that we find in other exhibitions. So, this has been a really good exhibition so far. We've had some quality discussions."}
+                        name={"Eddy Tannous"}
+                        title={"Chief Operating Officer"}
+                        company={"Rotana"}
                     />
                 </QuoteGrid>
+            </section>
+
+
+            <section id='form' className="block bg-wash">
+                <div className="container formatted">
+                    <p className='fs-1 fw-600 c-primary center'>Become a Sponsor for 2026</p>
+                </div>
+                <div className="container maxw-60">
+                    <HubspotForm portalId={`14527187`} formId={`34357038-0e2a-412a-95e3-a68427da15e3`} />
+                </div>
             </section>
   
            

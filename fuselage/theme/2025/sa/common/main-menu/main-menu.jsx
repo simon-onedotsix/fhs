@@ -39,7 +39,18 @@ export const MainMenu = ({ otherEvents }) => {
                     >
                         Register Interest for 2026
                     </Button>
-
+                    
+                    <Button 
+                        href={`/sa/become-a-sponsor#form`} 
+                        theme={{ 
+                            color: `white`,
+                            background: `var(--secondary)`, 
+                            hover: `var(--secondary-dark)`, 
+                        }} 
+                        decal={`fw-600 desktop-only`}
+                    >
+                        Become a Sponsor
+                    </Button>
 
                     <Locales />
                 </div>
@@ -63,9 +74,16 @@ export const MainMenu = ({ otherEvents }) => {
                             hover: `var(--secondary-dark)`, 
                         }} 
                         decal={`fw-600`}
-                    >
-                        Register Interest for 2026
-                    </Button>
+                    >Register Interest for 2026</Button>
+                    <Button 
+                        href={`/sa/become-a-sponsor#form`} 
+                        theme={{ 
+                            color: `white`,
+                            background: `var(--secondary)`, 
+                            hover: `var(--secondary-dark)`, 
+                        }} 
+                        decal={`fw-600 mobile-only`}
+                    >Become a Sponsor</Button>
                 </div>
 
                 <nav className="columns-4 gap-md">
