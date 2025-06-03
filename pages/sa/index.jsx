@@ -31,6 +31,8 @@ import { LogoTicker, Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticke
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
 import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/animated-counter/animated-counter"
+import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
+import { Award } from "../../fuselage/icons/award"
 
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 
@@ -58,6 +60,7 @@ import handleSeomaticMeta from '../../lib/seomatic'
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
 
 import { THEMES_DATA, THEMES_DATA_AR } from "./themes"
+import { AwardWinnerCard } from "../../fuselage/components/award-winner-card/award-winner-card"
 
 const ARTICLE_DATA = [
     {
@@ -91,8 +94,6 @@ const ARTICLE_DATA = [
         url: '/sa/content-library/ihg-hotels-resorts-and-ashaad-company-announces-three-new-hotel-signings-across-jeddah-and-al-khobar',
     },
 ]
-
-
 const SPEAKER_DATA = [
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
@@ -225,6 +226,123 @@ const SPEAKER_DATA_AR = [
         company: 'شركة كالم (Calm)',
     },
 ]
+const PHOTOS_DATA = [
+    {
+        "id": "13864",
+        "hero": [
+            {
+                "id": "50183",
+                "url": "/assets/img/sa/photos/2025-01.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "13865",
+        "hero": [
+            {
+                "id": "50184",
+                "url": "/assets/img/sa/photos/2025-02.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "13867",
+        "hero": [
+            {
+                "id": "50186",
+                "url": "/assets/img/sa/photos/2025-03.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "13868",
+        "hero": [
+            {
+                "id": "50187",
+                "url": "/assets/img/sa/photos/2025-04.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "50206",
+        "hero": [
+            {
+                "id": "50189",
+                "url": "/assets/img/sa/photos/2025-05.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "50207",
+        "hero": [
+            {
+                "id": "50193",
+                "url": "/assets/img/sa/photos/2025-06.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "13868",
+        "hero": [
+            {
+                "id": "50187",
+                "url": "/assets/img/sa/photos/2025-07.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "50206",
+        "hero": [
+            {
+                "id": "50189",
+                "url": "/assets/img/sa/photos/2025-08.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "50207",
+        "hero": [
+            {
+                "id": "50193",
+                "url": "/assets/img/sa/photos/2025-09.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    }
+]
+const AWARD_WINNERS_DATA = [
+    {
+        awardTitle: "Future Leader Award",
+        avatarUrl: "https://static.swapcard.com/public/images/5d27d4543c2a4075b57e2c418d0fbda4.jpeg",
+        fullName: "Lama AlQawasmi",
+        title: "Co-Founder & COO",
+        organisation: "Hospitality Talents"
+    },
+    {
+        awardTitle: "Impact Leader Award",
+        avatarUrl: "https://static.swapcard.com/public/images/a8bd1871a3d04d8db3cd7156a77b5bee.jpeg",
+        fullName: "Narjes Mohammed",
+        title: "Revenue Manager",
+        organisation: "Makkah clock Royal Tower. A Fairmont Hotel"
+    }
+]
 
 export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
 
@@ -243,7 +361,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
     })
     let g1 = useTransform( headerScroll.scrollYProgress, [0, 1], ["-15%", "20%"])
     let g2 = useTransform( headerScroll.scrollYProgress, [0, 1], ["-15%", "40%"])
-
 
 
     return (
@@ -386,9 +503,9 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 <TitleBlock>
                     <SectionHeading heading={ locale === 'ar' ? "2025 بالأرقام" : '2025 in Numbers'} decal={'c-secondary'} />
                 </TitleBlock>
-                <ImpactFigure decal={'bg-neutral-01'} figure={1050} impact={ locale === 'ar' ? "عدد الحضور" : 'Attendees'}  />
+                <ImpactFigure decal={'bg-neutral-01'} figure={1086} impact={ locale === 'ar' ? "عدد الحضور" : 'Attendees'}  />
                 <ImpactFigure decal={'bg-neutral-02'} figure={37} impact={ locale === 'ar' ? "دولة" : 'Countries'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={150} impact={ locale === 'ar' ? "عدد المتحدثين" : 'Speakers'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={153} impact={ locale === 'ar' ? "عدد المتحدثين" : 'Speakers'}  />
                 <ImpactFigure decal={'bg-neutral-01'} figure={85} impact={ locale === 'ar' ? "الجهات الراعية والشركاء" : 'Sponsors & Partners'}  />
                 <ImpactFigure decal={'bg-neutral-02'} figure={68} unit={'%'} impact={ locale === 'ar' ? "كبار المديرين التنفيذيين ونواب الرؤساء والمديرين" : 'C-Level Executives, VP & Directors'}  />
                 <ImpactFigure />
@@ -398,11 +515,27 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </ImpactGrid>
 
 
+            <section className="block bg-primary">
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-0 fw-600 c-white">2025 Award Winners</p>
+                    </Fade>
+                </div>
+                <div className="container columns-2 gap-md maxw-40">
+                    {
+                        AWARD_WINNERS_DATA.map( (winner, index ) => <AwardWinner winner={winner} key={index} />)
+                    }
+                </div>
+            </section>
+
+
 
             {/* SPEAKERS */}
             <section className="block bg-primary-2-dark">
                 <div className="container center">
-                    <p className="fs-0 fw-600 c-white">{ locale === 'ar' ? "المتحدثون لعام 2025" : "2025 Speakers"}</p>
+                    <Fade>
+                        <p className="fs-0 fw-600 c-white">Featured Speakers</p>
+                    </Fade>
                 </div>
                 <div className="container columns-5 gap-sm">
                     {
@@ -435,50 +568,76 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
 
-            {/* THEMES */}
-            <section className="block bg-primary">
-                <ThemesSlider 
-                    data={ locale === 'ar' ? THEMES_DATA_AR : THEMES_DATA} link={'/sa/themes'} 
-                    linkLabel={ locale === 'ar' ? "اعرف المزيد" : 'Learn more'} 
-                />
+            {/* VIDEO + PHOTO HIGHLIGHTS */}
+            <section className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
+                <div className={`${CSS.highlightVideoGrid} container`}>
+                    <Slide><p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS Saudi Arabia 2025</span></p></Slide>
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://cms.thebench.com/assets/video/fhs-2025-sa-highlights.mp4`}  poster={'https://cms.thebench.com/assets/video/fhs-2025-sa-highlights-poster.jpg'} controls={true} />
+                </div>
+
+                <div className={`${CSS.photoGrid} container`}>
+                    <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2025 in <span className='c-secondary'>Photos</span></p></Slide>
+                    
+                    <div className="columns-3 gap-xs mt-md">
+                        {
+                            PHOTOS_DATA.map( (photo, index) => (
+                                <Pop key={index}>
+                                    <div key={photo.id} style={{ position: `relative`}}>
+                                        <Image src={photo.hero[0].url} width={photo.hero[0].width} height={photo.hero[0].height} layout={`responsive`} alt="" />
+                                    </div>
+                                </Pop>
+                            ))
+                        }
+                        <p className="mt-xs">
+                            <ArrowButton href={`https://www.flickr.com/photos/benchevents/albums/`} target='_blank' theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>View Full Gallery</ArrowButton>
+                        </p>
+                    </div>
+
+                </div>
             </section>
 
 
 
             {/* QUOTES */}
-            <section className="block bg-theme o-hidden ">
-                <div className={`${CSS.quoteGrid} container`}>
+            <section className="block bg-primary o-hidden ">
+                <div className={`container columns-3 gap-md`}>
                     <Quotation
-                        avatarUrl={'/assets/img/sa/haddad-bani.jpg'}
-                        quote={ locale === 'ar' ? "كانت قمة مستقبل الضيافة بالمملكة العربية السعودية 2024 واحدة من أفضل الفعاليات في هذا القطاع التي حضرتها في السنوات الأخيرة!" : 'FHS Saudi Arabia 2024 was one of the best industry events I have attended in recent years!'}
-                        fullName={ locale === 'ar' ? "باني حداد" : 'Bani Haddad'}
-                        title={ locale === 'ar' ? "المدير الإداري - الضيافة، ألف للضيافة" : 'Managing Director - Hospitality, Aleph Hospitality'}
+                        avatarUrl={'https://static.swapcard.com/public/images/9cf68577bdff4a38be44c9fbf2850f25.jpeg'}
+                        quote={"Being at FHS is like an obligation now! We attend both Saudi Arabia and World to present our company's developments, network and meet with colleagues and investors. This year was much stronger and more effective."}
+                        fullName={"Hassan Ahdab"}
+                        title={"Chief Hospitality Operations Officer, Taiba Investments"}
                     />
                     <Quotation
-                        avatarUrl={'/assets/img/sa/mizan-abdulla.jpg'}
-                        quote={ locale === 'ar' ? "إنَّ دخول قمة مستقبل الضيافة كان أشبه بدخول عالمٍ لا حدود للابتكار فيه. لم يكن هذا الحدث مجرد مؤتمر عادي، بل كان تجربة تحويلية أشعلت شغفي برسم مستقبل الضيافة." : `Stepping into the Future Hospitality Summit felt like entering a realm where innovation knows no bounds. This summit wasn't just an event — it was a transformative experience that ignited my passion for shaping the future of hospitality.`}
-                        fullName={ locale === 'ar' ? "عبد الله ميزان" : 'Abdulla Mizan'}
-                        title={ locale === 'ar' ? "مدير المشتريات في شركة إدارة صناديق المالديف" : 'Director, Procurement at Maldives Fund Management Corporation'}
+                        avatarUrl={'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg'}
+                        quote={"It's a blessing. Very energizing, very dynamic, very busy. Lots of beautiful encounters so far."}
+                        fullName={"Maud Bailly"}
+                        title={"Chief Executive Officer, Sofitel Legend, Sofitel, MGallery & Emblems"}
+                    />
+                    <Quotation
+                        avatarUrl={'https://static.swapcard.com/public/images/0ea10113e8f64d0795d891c9d1769812.jpeg'}
+                        quote={"As in every Future Hospitality Summit, we get quality conversations rather than the big quantities that we find in other exhibitions. So, this has been a really good exhibition so far. We've had some quality discussions."}
+                        fullName={"Eddy Tannous"}
+                        title={"Chief Operating Officer, Rotana"}
                     />
                 </div>
             </section>
 
 
             {/* SPONSORS */}
-            <LogoTicker heading={ locale === 'ar' ? "شكرًا لرعاتنا وشركائنا" : 'Thank You to Our Sponsors & Partners'} speed={120}>
+            {/* <LogoTicker heading={ locale === 'ar' ? "شكرًا لرعاتنا وشركائنا" : 'Thank You to Our Sponsors & Partners'} speed={120}>
                 {
                     partners &&
                     partners.map( logo => <Logo key={logo.id} logoUrl={logo.logoUrl} />)
                 }
-            </LogoTicker>
+            </LogoTicker> */}
             
 
             {/* ANNOUNCEMENTS */}
-            <ArticleScroller>
+            {/* <ArticleScroller>
                 {
                     ARTICLE_DATA.map(( article, index ) => <Article key={index} heroUrl={article.heroUrl} title={article.title} excerpt={article.excerpt} url={article.url} />)
                 }
-            </ArticleScroller>
+            </ArticleScroller> */}
             
             
             <Footer />
@@ -527,7 +686,30 @@ export const StartupPromo = () => {
 
 const TickIcon = () => <img src="/assets/ui/icon-tick.svg" alt="" style={{ height: 12, marginRight: 1 }} />
 
+const AwardWinner = ({ winner }) => {
+    return (
+        <Pop>
+            <div className={CSS.awardCard}>
+                <header>
+                    <Award />
+                    <p className="fs-4 caps lh-1">{winner.awardTitle}</p>
+                </header>
 
+                <Pop delay={.1}>
+                    <section>
+                        <img src={winner.avatarUrl} alt="" />
+                    </section>
+                </Pop>
+
+                <footer>
+                    <p className="fs-4 fw-600">{winner.fullName}</p>
+                    <p className="mt-xxs">{winner.title}</p>
+                    <p className="fw-600">{winner.organisation}</p>
+                </footer>
+            </div>
+        </Pop>
+    )
+}
 
 
 

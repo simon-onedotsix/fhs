@@ -36,10 +36,10 @@
 
 
 @media(min-width:600px){
-    .layout {
+    /* .layout {
         grid-template-columns: 10vw auto;
-    }
+    } */
     .avatarContainer {
-        max-width: 15vw;
+        max-width: 10vw;
     }
 }

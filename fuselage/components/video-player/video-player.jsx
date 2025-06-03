@@ -1,8 +1,8 @@
-import ReactPlayer from "react-player/youtube"
+import ReactPlayer from "react-player"
 
 import CSS from './video-player.module.css'
 
-export const VideoPlayer = ({ videoUrl, controls, muted, autoplay }) => {
+export const VideoPlayer = ({ videoUrl, controls, muted, autoplay, poster }) => {
 
     return (
         <>
@@ -14,6 +14,7 @@ export const VideoPlayer = ({ videoUrl, controls, muted, autoplay }) => {
                     controls={controls}
                     muted={muted}
                     playing={autoplay}
+                    config={{ attributes: { poster: poster } }}
                 />
             </div>
         </>

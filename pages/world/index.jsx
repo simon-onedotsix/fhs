@@ -190,7 +190,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
         
             <Header overlaid inverse />
 
-            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4'} poster={'/assets/video/fhs-2024-world-opt-poster.jpg'}>
+            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4'} poster={'https://cms.thebench.com/assets/video/fhs-2024-world-opt-poster.jpg'}>
                 <ThemeBillboard />
             </HeroUnitVideo>
 
