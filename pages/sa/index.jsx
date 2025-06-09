@@ -33,6 +33,7 @@ import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-
 import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/animated-counter/animated-counter"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 import { Award } from "../../fuselage/icons/award"
+import { Ticker } from '../../fuselage/theme/2025/sa/components/ticker/ticker'
 
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 
@@ -498,6 +499,12 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 </section>
             </div>
 
+            <div className="bg-secondary">
+                <Ticker>
+                    <p className="fs-4">&bull; <strong>$1.6BN</strong> in business opportunities and deal volume gained in 2025 edition</p>
+                    <p className="fs-4">&bull; <strong>$1.6BN</strong> in business opportunities and deal volume gained in 2025 edition</p>
+                </Ticker>
+            </div>
 
             <ImpactGrid>
                 <TitleBlock>
@@ -515,18 +522,30 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </ImpactGrid>
 
 
-            <section className="block bg-primary">
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-0 fw-600 c-white">2025 Award Winners</p>
-                    </Fade>
-                </div>
-                <div className="container columns-2 gap-md maxw-40">
-                    {
-                        AWARD_WINNERS_DATA.map( (winner, index ) => <AwardWinner winner={winner} key={index} />)
-                    }
+            {/* QUOTES */}
+            <section className="block bg-primary o-hidden ">
+                <div className={`container columns-3 gap-md`}>
+                    <Quotation
+                        avatarUrl={'https://static.swapcard.com/public/images/9cf68577bdff4a38be44c9fbf2850f25.jpeg'}
+                        quote={"Being at FHS is like an obligation now! We attend both Saudi Arabia and World to present our company's developments, network and meet with colleagues and investors. This year was much stronger and more effective."}
+                        fullName={"Hassan Ahdab"}
+                        title={"Chief Hospitality Operations Officer, Taiba Investments"}
+                    />
+                    <Quotation
+                        avatarUrl={'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg'}
+                        quote={"It's a blessing. Very energizing, very dynamic, very busy. Lots of beautiful encounters so far."}
+                        fullName={"Maud Bailly"}
+                        title={"Chief Executive Officer, Sofitel Legend, Sofitel, MGallery & Emblems"}
+                    />
+                    <Quotation
+                        avatarUrl={'https://static.swapcard.com/public/images/0ea10113e8f64d0795d891c9d1769812.jpeg'}
+                        quote={"As in every Future Hospitality Summit, we get quality conversations rather than the big quantities that we find in other exhibitions. So, this has been a really good exhibition so far. We've had some quality discussions."}
+                        fullName={"Eddy Tannous"}
+                        title={"Chief Operating Officer, Rotana"}
+                    />
                 </div>
             </section>
+
 
 
 
@@ -564,6 +583,25 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     </Pop>
                 </div>
             </section>
+
+
+
+
+            {/* AWARDS */}
+            <section className="block bg-primary">
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-0 fw-600 c-white">2025 Award Winners</p>
+                    </Fade>
+                </div>
+                <div className="container columns-2 gap-md maxw-40">
+                    {
+                        AWARD_WINNERS_DATA.map( (winner, index ) => <AwardWinner winner={winner} key={index} />)
+                    }
+                </div>
+            </section>
+
+
                
 
 
@@ -598,29 +636,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
 
-            {/* QUOTES */}
-            <section className="block bg-primary o-hidden ">
-                <div className={`container columns-3 gap-md`}>
-                    <Quotation
-                        avatarUrl={'https://static.swapcard.com/public/images/9cf68577bdff4a38be44c9fbf2850f25.jpeg'}
-                        quote={"Being at FHS is like an obligation now! We attend both Saudi Arabia and World to present our company's developments, network and meet with colleagues and investors. This year was much stronger and more effective."}
-                        fullName={"Hassan Ahdab"}
-                        title={"Chief Hospitality Operations Officer, Taiba Investments"}
-                    />
-                    <Quotation
-                        avatarUrl={'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg'}
-                        quote={"It's a blessing. Very energizing, very dynamic, very busy. Lots of beautiful encounters so far."}
-                        fullName={"Maud Bailly"}
-                        title={"Chief Executive Officer, Sofitel Legend, Sofitel, MGallery & Emblems"}
-                    />
-                    <Quotation
-                        avatarUrl={'https://static.swapcard.com/public/images/0ea10113e8f64d0795d891c9d1769812.jpeg'}
-                        quote={"As in every Future Hospitality Summit, we get quality conversations rather than the big quantities that we find in other exhibitions. So, this has been a really good exhibition so far. We've had some quality discussions."}
-                        fullName={"Eddy Tannous"}
-                        title={"Chief Operating Officer, Rotana"}
-                    />
-                </div>
-            </section>
+            
 
 
             {/* SPONSORS */}
