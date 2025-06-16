@@ -257,7 +257,7 @@ export default function Club ({ events }) {
                             TERMS_DATA.map( (set, index) => (
                                 <div key={index} className="formatted">
                                     <p className="fs-6 fw-600 c-secondary">{set.title}</p>
-                                    <p>{parse(set.body)}</p>
+                                    {parse(set.body)}
                                 </div>
                             ))
                         }
