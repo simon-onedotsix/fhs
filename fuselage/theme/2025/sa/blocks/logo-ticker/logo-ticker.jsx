@@ -15,11 +15,11 @@ export const LogoTicker = ({ heading, speed, children }) => {
                 </Slide>
             </div>
             <div dir="ltr">
-                <HorizontalTicker duration={ speed ? speed * 500 : 20000 }>
+                {/* <HorizontalTicker duration={ speed ? speed * 500 : 20000 }>
                     <div className={CSS.logos}>
                         { children }
                     </div>
-                </HorizontalTicker>
+                </HorizontalTicker> */}
             </div>
         </div>
     )

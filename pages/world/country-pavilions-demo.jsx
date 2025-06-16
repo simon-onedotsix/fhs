@@ -17,7 +17,7 @@ import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-i
 import { ImpactFigure } from '../../fuselage/theme/2025/world/blocks/impact-grid/impact-grid'
 import { Floaters, Floater } from '../../fuselage/blocks/floater/floater'
 import { FlagTicker, Flag } from "../../fuselage/theme/2025/world/blocks/flag-ticker/flag-ticker"
-
+import Ticker from 'framer-motion-ticker'
 
 
 
@@ -192,14 +192,16 @@ export default function Page ({ entry }) {
                     </Fade>
                 </div>
                 
-
-                <FlagTicker speed={20} heading={'Country Pavilions at FHS World 2025'}>
+                <div className="container">
+                    <p className="fs-2 center pb-sm">Country Pavilions at FHS World 2025</p>
+                </div>
+                <Ticker speed={20}>
                     { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
                     { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
                     { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
                     { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
                     { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-                </FlagTicker>
+                </Ticker>
                 
                 
                 <section className="block">

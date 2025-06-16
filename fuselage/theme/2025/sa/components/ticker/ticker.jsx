@@ -9,11 +9,11 @@ export const Ticker = ({ speed, children, reverse }) => {
 
     return (
         <div className={CSS.container}>
-            <HorizontalTicker duration={ speed ? speed * 1000 : 20000 } reverse={reverse} >
+            {/* <HorizontalTicker duration={ speed ? speed * 1000 : 20000 } reverse={reverse} >
                 <div className={CSS.messages}>
                     { children }
                 </div>
-            </HorizontalTicker>
+            </HorizontalTicker> */}
         </div>
     )
 }

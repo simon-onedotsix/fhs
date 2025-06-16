@@ -21,6 +21,7 @@
 
     width: 6rem;
     aspect-ratio: 3/2;
+    margin: .5rem;
 }
 .flag img {
     width: 100%;

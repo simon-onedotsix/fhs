@@ -1,8 +1,6 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
-import {useTranslations} from 'next-intl'
-
 import { useState, useRef } from "react"
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
@@ -26,14 +24,13 @@ import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button
 import { SectionHeading } from "../../fuselage/theme/2025/sa/components/section-heading/section-heading"
 import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
 import { ImpactGrid, ImpactFigure, TitleBlock, ImageBlock } from "../../fuselage/theme/2025/sa/blocks/impact-grid/impact-grid"
-import { ArticleScroller, Article } from "../../fuselage/theme/2025/sa/blocks/article-scroller/article-scroller"
-import { LogoTicker, Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticker/logo-ticker"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
-import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
 import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/animated-counter/animated-counter"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 import { Award } from "../../fuselage/icons/award"
-import { Ticker } from '../../fuselage/theme/2025/sa/components/ticker/ticker'
+
+// import { Ticker } from '../../fuselage/theme/2025/sa/components/ticker/ticker'
+import Ticker from 'framer-motion-ticker'
 
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 
@@ -499,10 +496,10 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 </section>
             </div>
 
-            <div className="bg-secondary">
+            <div className="bg-secondary py-xs">
                 <Ticker>
-                    <p className="fs-4">&bull; <strong>$1.6BN</strong> in business opportunities and deal volume gained in 2025 edition</p>
-                    <p className="fs-4">&bull; <strong>$1.6BN</strong> in business opportunities and deal volume gained in 2025 edition</p>
+                    <p className="fs-4">&ensp;&bull;&ensp;<strong>$1.6BN</strong> in business opportunities and deal volume gained in 2025 edition</p>
+                    <p className="fs-4">&ensp;&bull;&ensp;<strong>$1.6BN</strong> in business opportunities and deal volume gained in 2025 edition</p>
                 </Ticker>
             </div>
 
@@ -635,26 +632,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </section>
 
 
-
-            
-
-
-            {/* SPONSORS */}
-            {/* <LogoTicker heading={ locale === 'ar' ? "شكرًا لرعاتنا وشركائنا" : 'Thank You to Our Sponsors & Partners'} speed={120}>
-                {
-                    partners &&
-                    partners.map( logo => <Logo key={logo.id} logoUrl={logo.logoUrl} />)
-                }
-            </LogoTicker> */}
-            
-
-            {/* ANNOUNCEMENTS */}
-            {/* <ArticleScroller>
-                {
-                    ARTICLE_DATA.map(( article, index ) => <Article key={index} heroUrl={article.heroUrl} title={article.title} excerpt={article.excerpt} url={article.url} />)
-                }
-            </ArticleScroller> */}
-            
             
             <Footer />
             <LenisScroller />

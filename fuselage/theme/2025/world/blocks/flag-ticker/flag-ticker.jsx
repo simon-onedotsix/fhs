@@ -12,11 +12,11 @@ export const FlagTicker = ({ heading, speed, children }) => {
                 </Pop>
             </div>
             <div dir="ltr">
-                <HorizontalTicker duration={ speed ? speed * 500 : 20000 }>
+                {/* <HorizontalTicker duration={ speed ? speed * 500 : 20000 }>
                     <div className={CSS.flags}>
                         { children }
                     </div>
-                </HorizontalTicker>
+                </HorizontalTicker> */}
             </div>
         </div>
     )

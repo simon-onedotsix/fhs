@@ -24,7 +24,6 @@ import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quo
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 
 import useMasonry from "../../fuselage/layout/masonry/useMasonry"
-// import { Ticker } from "../../fuselage/theme/2025/sa/components/new-ticker/ticker"
 import Ticker from 'framer-motion-ticker'
 
 import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'

@@ -7,7 +7,7 @@ export const Ticker = ({ speed, messages }) => {
 
     return (
         <div className={CSS.container} style={{ backgroundColor: `var(--dark)` }}>
-            <HorizontalTicker duration={ speed ? speed * 1000 : 100000 }>
+            {/* <HorizontalTicker duration={ speed ? speed * 1000 : 100000 }>
                 <div className={CSS.messages}>
                     {
                         messages.length &&
@@ -29,7 +29,7 @@ export const Ticker = ({ speed, messages }) => {
                         ))
                     }
                 </div>
-            </HorizontalTicker>
+            </HorizontalTicker> */}
         </div>
     )
 }
