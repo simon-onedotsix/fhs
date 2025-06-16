@@ -1,0 +1,10 @@
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+}
+
+.videoContainer {
+    border-radius: 1rem;
+    overflow: hidden;
+}
