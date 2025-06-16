@@ -298,7 +298,6 @@ const Tier = ({ color, badgeUrl, title, criteria, benefits }) => {
                             href={'https://14527187.fs1.hubspotusercontent-na1.net/hubfs/14527187/FHS%20Club/Gold%20Members.pdf'} 
                             target={'_blank'}
                             rel="noreferrer"
-                            theme={{ background: `var(--secondary)`, hover: `white`, color: `var(--primary)`}}
                         >View Gold Members</a>
                     </div>
                 }
