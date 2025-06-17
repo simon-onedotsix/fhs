@@ -21,6 +21,7 @@ import { HeroUnitVideo } from "../../fuselage/theme/2025/sa/blocks/hero-unit-vid
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 
+import { ArticleScroller, Article } from "../../fuselage/theme/2025/sa/blocks/article-scroller/article-scroller"
 import { SectionHeading } from "../../fuselage/theme/2025/sa/components/section-heading/section-heading"
 import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
 import { ImpactGrid, ImpactFigure, TitleBlock, ImageBlock } from "../../fuselage/theme/2025/sa/blocks/impact-grid/impact-grid"
@@ -62,35 +63,55 @@ import { AwardWinnerCard } from "../../fuselage/components/award-winner-card/awa
 
 const ARTICLE_DATA = [
     {
-        heroUrl: 'https://cms.thebench.com/assets/content-library/img/Picture1_2025-05-13-092721_krhj.jpg',
-        title: 'Wyndham and Le Park Concord to Launch 100 Super 8® Hotels Across Saudi Arabia in Landmark 10-Year Deal',
-        excerpt: 'With plans to open 100 hotels over the next ten years, the agreement reinforces Wyndham’s long-term commitment to quality, accessible and sustainable hospitality development in the region.',
-        url: '/sa/content-library/wyndham-and-le-park-concord-to-launch-100-super-8-hotels-across-saudi-arabia-in-landmark-10-year-deal',
+        heroUrl: '/assets/img/sa/press-release-1.webp',
+        title: 'Rua Al Madinah Holding Signs Agreement With Hilton To Open Three Hotels At Rua Al Madinah Project',
+        excerpt: 'Rua Al Madinah Holding has signed an agreement with Hilton to open three hotels comprising of over 1600 keys.',
+        url: '/sa/content-library/rua-al-madinah-holding-signs-agreement-with-hilton-to-open-three-hotels-at-rua-al-madinah-project',
     },
     {
-        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/RM200860.jpg',
-        title: 'Baraka and Kerten Hospitality partner to launch The House Residence at Al Salam District in Jeddah',
-        excerpt: "In a strategic move to bring soulful, modern living to the forefront of Jeddah’s urban landscape, Baraka for Real Estate Development and Investment Company Ltd has signed a milestone agreement with global lifestyle hospitality operator Kerten Hospitality to launch The House Residence Al Salam District in Jeddah.",
-        url: '/sa/content-library/baraka-and-kerten-hospitality-partner-to-launch-the-house-residence-at-al-salam-district-in-jeddah',
+        heroUrl: '/assets/img/sa/press-release-2.webp',
+        title: 'Radisson Hotel Group accelerates expansion strategy in Saudi Arabia with focus on holy cities',
+        excerpt: 'Radisson Hotel Group continues to intensify its efforts in the Kingdom of Saudi Arabia, aligning with the Saudi 2030 vision for hospitality.',
+        url: '/sa/content-library/radisson-hotel-group-accelerates-expansion-strategy-in-saudi-arabia-with-focus-on-holy-cities',
     },
     {
-        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/RM106193.jpg',
-        title: 'SOPHOS Hotels SA and WATANIAH Business Group to partner for the launch of the first Le Meridien Hotel Tabuk, KSA.',
-        excerpt: 'In partnership with WATANIAH Business Group, SOPHOS Hotels SA, one of the leading Third-party hotel operator, is set to manage a Le Meridien, one of Marriott International’s premium brands, in Tabuk.',
-        url: '/sa/content-library/sophos-hotels-sa-and-wataniah-business-group-to-partner-for-the-launch-of-the-first-le-meridien-hotel-tabuk-ksa',
+        heroUrl: '/assets/img/sa/press-release-3.webp',
+        title: 'Accor spearheads hospitality expansion throughout Saudi Arabia',
+        excerpt: "As the largest hotel operator in Saudi Arabia, Accor is spearheading a strategic transformation of the country's tourism sector, marking a new era of hospitality in the Kingdom.",
+        url: '/sa/content-library/accor-spearheads-hospitality-expansion-throughout-saudi-arabia-2',
     },
     {
-        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/Signing-cermeony-for-The-St.-Regis-Jeddah.jpg',
-        title: 'Marriott International Signs Agreement to Bring the Iconic St. Regis Brand to Jeddah, Saudi Arabia',
-        excerpt: '“The signing of The St. Regis Jeddah reflects our commitment to expand our portfolio of brands and experiences in the Kingdom,” said Karim Cheltout, Senior Vice President, Development, Middle East & Africa.',
-        url: '/sa/content-library/marriott-international-signs-agreement-to-bring-the-iconic-st-regis-brand-to-jeddah-saudi-arabia',
+        heroUrl: '/assets/img/sa/press-release-4.webp',
+        title: 'Marriott International and Al Qimmah Hospitality Sign Agreement to Open a JW Marriott Hotel in Jeddah',
+        excerpt: 'Marriott International, Inc. and Al Qimmah Hospitality (a subsidiary of BinDawood Trading) today announced the signing of an agreement to introduce the JW Marriott brand in Jeddah. Situated on the Jeddah Corniche, JW Marriott Hotel Jeddah is anticipated to be a haven for travelers who seek a luxury escape to the waterfront destination, paired with exceptional service and holistic well-being experiences.',
+        url: '',
+    }
+]
+const ARTICLE_DATA_AR = [
+    {
+        heroUrl: '/assets/img/sa/press-release-1.webp',
+        title: 'شركة رؤى المدينة القابضة توقع اتفاقية مع هيلتون لافتتاح ثلاثة فنادق في مشروع رؤى المدينة',
+        excerpt: 'وقّعت شركة رؤى المدينة القابضة اتفاقية مع هيلتون لافتتاح ثلاثة فنادق تضم أكثر من 1600 غرفة.',
+        url: '/sa/content-library/rua-al-madinah-holding-signs-agreement-with-hilton-to-open-three-hotels-at-rua-al-madinah-project',
     },
     {
-        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/IHG-X-ASHAD-Signing-1.jpg',
-        title: 'IHG Hotels & Resorts and Ashaad Company announces three new hotel signings across Jeddah and Al Khobar',
-        excerpt: 'IHG Hotels & Resorts, one of the world’s leading hospitality companies, has announced the signing of three new hotels in the Kingdom of Saudi Arabia at Future Hospitality Summit Riyadh 2025.',
-        url: '/sa/content-library/ihg-hotels-resorts-and-ashaad-company-announces-three-new-hotel-signings-across-jeddah-and-al-khobar',
+        heroUrl: '/assets/img/sa/press-release-2.webp',
+        title: 'مجموعة فنادق راديسون تسرّع استراتيجيتها التوسعية في المملكة العربية السعودية مع التركيز على المدن المقدسة',
+        excerpt: 'تواصل مجموعة فنادق راديسون تكثيف جهودها في المملكة العربية السعودية، بما يتماشى مع رؤية السعودية 2030 لقطاع الضيافة.',
+        url: '/sa/content-library/radisson-hotel-group-accelerates-expansion-strategy-in-saudi-arabia-with-focus-on-holy-cities',
     },
+    {
+        heroUrl: '/assets/img/sa/press-release-3.webp',
+        title: 'أكور تقود عملية توسع قطاع الضيافة في جميع أنحاء المملكة العربية السعودية',
+        excerpt: "بصفتها أكبر مشغل فنادق في المملكة، تقود أكور تحولًا استراتيجيًا في قطاع السياحة، مما يمثل عهدًا جديدًا من الضيافة في المملكة.",
+        url: '/sa/content-library/accor-spearheads-hospitality-expansion-throughout-saudi-arabia-2',
+    },
+    {
+        heroUrl: '/assets/img/sa/press-release-4.webp',
+        title: 'ماريوت الدولة والقمّة للضيافة توقعان اتفاقية لافتتاح فندق جي دبليو ماريوت في جدة',
+        excerpt: 'أعلنت شركة ماريوت الدولية، بالشراكة مع القمّة للضيافة (إحدى شركات مجموعة بن داود القابضة)، عن توقيع اتفاقية لإطلاق علامة جي دبليو ماريوت في جدة. سيتمتع الفندق بموقع مميز على كورنيش جدة، ليكون وجهة فاخرة للمسافرين الباحثين عن تجربة إقامة راقية على الواجهة البحرية تجمع بين الفخامة والخدمات المتميزة والرفاهية الشاملة.',
+        url: '',
+    }
 ]
 const SPEAKER_DATA = [
     {
@@ -583,9 +604,17 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
 
+            {/* ANNOUNCEMENTS */}
+            <ArticleScroller>
+                {
+                    ( locale === 'ar' ? ARTICLE_DATA_AR : ARTICLE_DATA)
+                    .map(( article, index ) => <Article key={index} heroUrl={article.heroUrl} title={article.title} excerpt={article.excerpt} url={article.url} />)
+                }
+            </ArticleScroller>
+
 
             {/* AWARDS */}
-            <section className="block bg-primary">
+            {/* <section className="block bg-primary">
                 <div className="container center">
                     <Fade>
                         <p className="fs-0 fw-600 c-white">2025 Award Winners</p>
@@ -596,7 +625,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         AWARD_WINNERS_DATA.map( (winner, index ) => <AwardWinner winner={winner} key={index} />)
                     }
                 </div>
-            </section>
+            </section> */}
 
 
                

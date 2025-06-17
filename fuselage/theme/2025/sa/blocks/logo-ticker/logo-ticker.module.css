@@ -23,7 +23,7 @@
     height: 10vw;
 }
 .logo img {
-    width: 100%;
+    width: 90%;
 }
 
 
@@ -54,7 +54,7 @@
         font-size: 2vw;
     } 
     .logo { 
-        width: 8vw;
-        height: 4vw;
+        width: 12vw;
+        height: 6vw;
     }
 }
