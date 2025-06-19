@@ -238,10 +238,10 @@ export default function Page ({ partners }) {
                 <TitleBlock>
                     <SectionHeading heading={'2025 in Numbers'} decal={'c-secondary'} />
                 </TitleBlock>
-                <ImpactFigure decal={'bg-neutral-01'} figure={1086} impact={"Attendees"}  />
+                <ImpactFigure decal={'bg-neutral-01'} figure={1106} impact={"Attendees"}  />
                 <ImpactFigure decal={'bg-neutral-02'} figure={85} impact={"Sponsors"}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={24} impact={"Investors"}  />
-                <ImpactFigure decal={'bg-neutral-01'} prefix={"$"} figure={5.4} unit={"tn"} impact={"Assets Under Management"}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={24} unit={"%"} impact={"Investors"}  />
+                <ImpactFigure decal={'bg-neutral-01'} prefix={"$"} figure={1.6} unit={"bn"} impact={"in Business Opportunities"}  />
                 <ImageBlock />
             </ImpactGrid>
 
@@ -341,17 +341,15 @@ export default function Page ({ partners }) {
                 </div>
 
                 <div ref={masonryContainer} className="container center columns-3 gap-sm">
-
-                    <div style={{ background: 'white', aspectRatio: 4/3, width: '100%', borderRadius: '1rem', color: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>POST</div>
-                    <div style={{ background: 'white', aspectRatio: 2.5/3, width: '100%', borderRadius: '1rem', color: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>POST</div>
-                    <div style={{ background: 'white', aspectRatio: 3/3, width: '100%', borderRadius: '1rem', color: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>POST</div>
-                    <div style={{ background: 'white', aspectRatio: 4/3, width: '100%', borderRadius: '1rem', color: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>POST</div>
-                    <div style={{ background: 'white', aspectRatio: 3/3, width: '100%', borderRadius: '1rem', color: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>POST</div>
-                    <div style={{ background: 'white', aspectRatio: 4/3, width: '100%', borderRadius: '1rem', color: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>POST</div>
-                    <div style={{ background: 'white', aspectRatio: 2.5/3, width: '100%', borderRadius: '1rem', color: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>POST</div>
-                    <div style={{ background: 'white', aspectRatio: 3/3, width: '100%', borderRadius: '1rem', color: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>POST</div>
-                    <div style={{ background: 'white', aspectRatio: 2.5/3, width: '100%', borderRadius: '1rem', color: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>POST</div>
-                     
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-01.jpg`, width: 720, height: 1396 }} />
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-02.jpg`, width: 902, height: 1020 }} />
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-03.jpg`, width: 902, height: 1026 }} />                     
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-04.jpg`, width: 902, height: 744 }} />                     
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-05.jpg`, width: 902, height: 1060 }} />                     
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-06.jpg`, width: 902, height: 750 }} />                     
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-07.jpg`, width: 902, height: 1014 }} />                     
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-08.jpg`, width: 902, height: 1050 }} />                     
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-09.jpg`, width: 902, height: 854 }} />                     
                 </div>
             </section>
 
@@ -478,10 +476,21 @@ const IconCard = ({ imageUrl, heading, body }) => {
     )
 }
 
-const MediaWallPost = ({ children }) => {
+const MediaWallPost = ({ image, href }) => {
     return (
-        <div className={CSS.mediaWallPost}>
-            {children}
+        
+        <div className={CSS.mediaWallPost} style={{ aspectRatio: image.width/image.height  }}>
+            <Pop>
+                {
+                    href
+                    ? 
+                        <a href={href} target="_blank" rel="noreferrer">
+                            <Image src={image.url} width={image.width} height={image.height} />
+                        </a>
+                    : 
+                        <Image src={image.url} width={image.width} height={image.height} />
+                }
+            </Pop>
         </div>
     )
 }

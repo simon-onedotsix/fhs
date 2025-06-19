@@ -42,3 +42,16 @@
         grid-template-columns: repeat(4, auto);
     }
 }
+
+
+
+
+.mediaWallPost {
+    border-radius: 1rem;
+    overflow: hidden;
+    background-color: transparent;
+}
+.mediaWallPost img {
+    display: block;
+    border-radius: 1rem;
+}
