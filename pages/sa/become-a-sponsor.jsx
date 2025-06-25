@@ -201,27 +201,15 @@ export default function Page ({ partners }) {
                     <div className={`block ${CSS.linkGrid}`}>
                         <div>
                             <Pop inline>
-                                <Link href="/sa/download-prospectus">
-                                    <a className="button secondary fs-5">
-                                        {
-                                            locale === 'ar'
-                                            ?   "كتيب 2025"
-                                            :   "2025 Brochure"
-                                        }
-                                    </a>
+                                <Link href="/sa/post-event-report-2025">
+                                    <a className="button secondary fs-5">2025 Post-Event Report</a>
                                 </Link>
                             </Pop>
                         </div>
                         <div>
                             <Pop inline>
-                                <Link href="https://floorplan.live/interactive/shows/3936/views/3/plan" target="_blank">
-                                    <a className="button secondary fs-5">
-                                        {
-                                            locale === 'ar'
-                                            ?   "خريطة المعرض 2025"
-                                            :   "2025 Floor Plan"
-                                        }
-                                    </a>
+                                <Link href="https://floorplan.live/interactive/shows/4222/views/3/plan" target="_blank">
+                                    <a className="button secondary fs-5">2026 Floor Plan</a>
                                 </Link>
                             </Pop>
                         </div>
@@ -273,63 +261,37 @@ export default function Page ({ partners }) {
                 </div>
 
                 <div className="container columns-3 gap-lg">
-                    <Quotation
-                        avatarUrl={'https://static.swapcard.com/public/images/9cf68577bdff4a38be44c9fbf2850f25.jpeg'}
-                        quote={"Being at FHS is like an obligation now! We attend both Saudi Arabia and World to present our company's developments, network and meet with colleagues and investors. This year was much stronger and more effective."}
-                        fullName={"Hassan Ahdab"}
-                        title={"Chief Hospitality Operations Officer, Taiba Investments"}
-                    />
 
                     <VideoTestimonial entry={{
-                        "__typename": "videoTestimonials_videoTestimonial_Entry",
                         "id": "223023",
-                        "slug": "bhagya-mahavithanage",
-                        "title": "Bhagya Mahavithanage",
-                        "videoShareUrl": "https://youtu.be/e33RqIaIEQE",
-                        "fullName": "Bhagya Mahavithanage",
-                        "jobTitle": "Deputy Director - Investor Relations Unit",
-                        "organisation": "Sri Lanka Tourism Development Authority",
-                        "testimonial": "On the very first day, we have created a lot of connections with very important people"
+                        "videoShareUrl": "https://cms.thebench.com/assets/video/fhs-sa-2025-ibrahim-osta-opt.mp4",
+                        "fullName": "Hassan Ahdab",
+                        "jobTitle": "Chief Hospitality Operations Officer",
+                        "organisation": "Taiba Investments",
+                        "testimonial": "Being at FHS is like an obligation now! This year was much stronger and more effective."
                     }} />
-
+                   
                     <VideoTestimonial entry={{
-                        "__typename": "videoTestimonials_videoTestimonial_Entry",
                         "id": "223023",
-                        "slug": "bhagya-mahavithanage",
-                        "title": "Bhagya Mahavithanage",
-                        "videoShareUrl": "https://youtu.be/e33RqIaIEQE",
-                        "fullName": "Bhagya Mahavithanage",
-                        "jobTitle": "Deputy Director - Investor Relations Unit",
-                        "organisation": "Sri Lanka Tourism Development Authority",
-                        "testimonial": "On the very first day, we have created a lot of connections with very important people"
+                        "videoShareUrl": "https://cms.thebench.com/assets/video/fhs-sa-2025-maud-bailly-opt.mp4",
+                        "fullName": "Maud Bailly",
+                        "jobTitle": "Chief Executive Officer",
+                        "organisation": "Sofitel Legend, Sofitel, MGallery & Emblems",
+                        "testimonial": "It's a blessing. Very energizing, very dynamic, very busy. Lots of beautiful encounters so far."
                     }} />
-
-                    <Quotation
-                        avatarUrl={'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg'}
-                        quote={"It's a blessing. Very energizing, very dynamic, very busy. Lots of beautiful encounters so far."}
-                        fullName={"Maud Bailly"}
-                        title={"Chief Executive Officer, Sofitel Legend, Sofitel, MGallery & Emblems"}
-                    />
-                    <Quotation
-                        avatarUrl={'https://static.swapcard.com/public/images/0ea10113e8f64d0795d891c9d1769812.jpeg'}
-                        quote={"As in every Future Hospitality Summit, we get quality conversations rather than the big quantities that we find in other exhibitions. So, this has been a really good exhibition so far. We've had some quality discussions."}
-                        fullName={"Eddy Tannous"}
-                        title={"Chief Operating Officer, Rotana"}
-                    />
-
+                   
                     <VideoTestimonial entry={{
-                        "__typename": "videoTestimonials_videoTestimonial_Entry",
                         "id": "223023",
-                        "slug": "bhagya-mahavithanage",
-                        "title": "Bhagya Mahavithanage",
-                        "videoShareUrl": "https://youtu.be/e33RqIaIEQE",
-                        "fullName": "Bhagya Mahavithanage",
-                        "jobTitle": "Deputy Director - Investor Relations Unit",
-                        "organisation": "Sri Lanka Tourism Development Authority",
-                        "testimonial": "On the very first day, we have created a lot of connections with very important people"
+                        "videoShareUrl": "https://cms.thebench.com/assets/video/fhs-sa-2025-eddy-tannous-opt.mp4",
+                        "fullName": "Eddy Tannous",
+                        "jobTitle": "Chief Operating Officer",
+                        "organisation": "Rotana",
+                        "testimonial": "As in every Future Hospitality Summit, we get quality conversations rather than the big quantities that we find in other exhibitions."
                     }} />
+
                 </div>
             </section>
+
 
 
             {/* join the conversation */}
@@ -352,10 +314,6 @@ export default function Page ({ partners }) {
                     <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/posts/?feedView=all`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-09.jpg`, width: 902, height: 854 }} />                     
                 </div>
             </section>
-
-
-
-            
 
 
 
@@ -384,9 +342,32 @@ export default function Page ({ partners }) {
 
 
 
+            {/* contacts */}
+            <section className="block bg-primary-2 mt-lg">
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-1 fw-600 lh-1 caps">Get in Touch</p>
+                    </Fade>
+                </div>
+                <div className="container columns-1 gap-md formatted maxw-50 center">
+                    <Pop>
+                        <h5>Daria Smith</h5>
+                        <p>Portfolio Director at The Bench <br/><a href="mailto:daria.smith@thebench.com">daria.smith@thebench.com</a> </p>
+                    </Pop>
+                </div>
+            </section>
 
 
 
+            {/* form */}
+            <section id='form' className="block bg-primary">
+                <div className="container formatted maxw-60">
+                    <p className='fs-1 fw-600 center'>We are keen to hear more about your objectives. Let&apos;s connect!</p>
+                </div>
+                <div className="container maxw-60">
+                    <HubspotForm portalId={`14527187`} formId={`34357038-0e2a-412a-95e3-a68427da15e3`} />
+                </div>
+            </section>
 
 
 
@@ -413,39 +394,7 @@ export default function Page ({ partners }) {
                 </div>
             </section>
 
-            
-            {/* contacts */}
-            <section className="block bg-primary-2">
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-1 fw-600 lh-1 caps">Get in Touch</p>
-                    </Fade>
-                </div>
-                <div className="container columns-2 gap-md formatted maxw-50 center">
-                    <Pop>
-                        <h5>Jamil Chaanine</h5>
-                        <p>Senior Sales Manager, The Bench <br/><a href="mailto:jamil.chaanine@thebench.com">jamil.chaanine@thebench.com</a> </p>
-                    </Pop>
 
-                    <Pop>
-                        <h5>Matthew Weihs</h5>
-                        <p>Managing Director, The Bench <br/><a href="mailto:matthew.weihs@thebench.com">matthew.weihs@thebench.com</a> </p>
-                    </Pop>
-                </div>
-            </section>
-
-
-            {/* form */}
-            <section id='form' className="block bg-primary">
-                <div className="container formatted">
-                    <p className='fs-1 fw-600 center'>Become a Sponsor for 2026</p>
-                </div>
-                <div className="container maxw-60">
-                    <HubspotForm portalId={`14527187`} formId={`34357038-0e2a-412a-95e3-a68427da15e3`} />
-                </div>
-            </section>
-  
-           
 
             <Footer />
             <LenisScroller />

@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-sm);
+    align-self: flex-start;
 }
 
 .videoContainer {
