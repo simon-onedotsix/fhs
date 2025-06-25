@@ -265,10 +265,10 @@ export default function Page ({ partners }) {
                     <VideoTestimonial entry={{
                         "id": "223023",
                         "videoShareUrl": "https://cms.thebench.com/assets/video/fhs-sa-2025-ibrahim-osta-opt.mp4",
-                        "fullName": "Hassan Ahdab",
-                        "jobTitle": "Chief Hospitality Operations Officer",
-                        "organisation": "Taiba Investments",
-                        "testimonial": "Being at FHS is like an obligation now! This year was much stronger and more effective."
+                        "fullName": "Ibrahim Osta",
+                        "jobTitle": "Global Tourism Lead and Senior Economic Growth Advisor",
+                        "organisation": "Chemonics International",
+                        "testimonial": "So many of the world's best minds represented in one place."
                     }} />
                    
                     <VideoTestimonial entry={{
