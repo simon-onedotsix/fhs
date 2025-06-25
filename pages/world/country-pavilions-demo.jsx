@@ -139,6 +139,27 @@ export const PAVILIONS_DATA = [
                 ]
             }
         ]
+    },
+    {
+        "__typename": "countryPavilions_pavilion_BlockType",
+        "id": "257914",
+        "country": "Philippines Pavilion",
+        "body": "<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt numquam aut magni at quasi nesciunt officia beatae adipisci? Quae nam eum assumenda expedita! Obcaecati ratione quia quos optio repellat natus.</p>",
+        "hero": [
+            {
+                "__typename": "site_Asset",
+                "id": "246555",
+                "url": "/assets/img/world/pages/country-pavilions/philippines.webp"
+            }
+        ],
+        "flag": [
+            {
+                "__typename": "site_Asset",
+                "id": "257900",
+                "url": "https://cms.thebench.com/assets/img/site/FHS-World/pavilions/flag-of-philippines.jpg"
+            }
+        ],
+        "logoGroup": []
     }
 ]
 
@@ -264,7 +285,7 @@ const Pavilion = ({ data }) => {
                     </Slide>
 
                     {
-                        data.logoGroup.length &&
+                        data.logoGroup.length ?
                         data.logoGroup.map( group => (
                             <div key={group.id}>
                                 <p className="fw-600 mt-xs c-accent">{ group.groupHeading }</p>
@@ -276,6 +297,7 @@ const Pavilion = ({ data }) => {
                                 </div>
                             </div>
                         ))
+                        : null
                     }
                 
                 </section>
