@@ -48,7 +48,7 @@ export default function PostEvent ({ cmsEntryData }) {
 
 
     useEffect( ()=> {
-        if ( !localStorage.getItem("fhsSaPostEvent2025") === "true" ) {
+        if ( localStorage.getItem("fhsSaPostEvent2025") === "true" ) {
             setAllowed( true )
         } else {
             setAllowed( false )
