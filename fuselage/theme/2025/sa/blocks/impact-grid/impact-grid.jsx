@@ -43,11 +43,11 @@ export const ImpactFigure = ({ prefix, figure, unit, impact, decal }) => {
     )
 }
 
-export const ImageBlock = () => {
+export const ImageBlock = ({ imageUrl }) => {
     return (
         <div className={CSS.imageBlock}>
             <Fade>
-                <Image src={'/assets/img/sa/impact-hero.jpg'} layout={'fill'} />
+                <Image src={ imageUrl ? imageUrl : '/assets/img/sa/impact-hero.jpg'} layout={'fill'} />
             </Fade>
         </div>
     )

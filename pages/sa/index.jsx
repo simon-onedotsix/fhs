@@ -536,7 +536,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 <ImpactFigure />
                 <ImpactFigure decal={'bg-neutral-01'} figure={24} unit={'%'} impact={'Investors'} />
                 <ImpactFigure decal={'bg-neutral-02'} prefix={'$'} figure={5.4} unit={'tn'} impact={'AUM'} />
-                <ImageBlock />
+                <ImageBlock imageUrl={'/assets/img/sa/impact-hero.jpg'} />
             </ImpactGrid>
 
 

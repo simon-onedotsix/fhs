@@ -176,7 +176,7 @@ export default function Page ({ partners }) {
             {/* intro */}
             <div className="bg-primary o-hidden">
                 <PageHeroImage hero={{ url: 'https://cms.thebench.com/assets/img/site/FHIS-SA/become-a-sponsor-hero.jpg', width: 3643, height: 2429 }} >
-                    <div className="container maxw-60 pb-md center minvh-30">
+                    <div className="container maxw-60 pb-md center">
                         <Reveal>
                             {
                                 locale === 'ar'
@@ -230,7 +230,7 @@ export default function Page ({ partners }) {
                 <ImpactFigure decal={'bg-neutral-02'} figure={85} impact={"Sponsors"}  />
                 <ImpactFigure decal={'bg-neutral-02'} figure={24} unit={"%"} impact={"Investors"}  />
                 <ImpactFigure decal={'bg-neutral-01'} prefix={"$"} figure={1.6} unit={"bn"} impact={"in Business Opportunities"}  />
-                <ImageBlock />
+                <ImageBlock imageUrl={'/assets/img/sa/become-a-sponsor/sponsor-impact-inset.jpg'} />
             </ImpactGrid>
 
 
@@ -264,7 +264,7 @@ export default function Page ({ partners }) {
 
                     <VideoTestimonial entry={{
                         "id": "223023",
-                        "videoShareUrl": "https://cms.thebench.com/assets/video/fhs-sa-2025-ibrahim-osta-opt.mp4",
+                        "videoShareUrl": "https://youtu.be/bJuvI9381nw",
                         "fullName": "Ibrahim Osta",
                         "jobTitle": "Global Tourism Lead and Senior Economic Growth Advisor",
                         "organisation": "Chemonics International",
@@ -273,7 +273,7 @@ export default function Page ({ partners }) {
                    
                     <VideoTestimonial entry={{
                         "id": "223023",
-                        "videoShareUrl": "https://cms.thebench.com/assets/video/fhs-sa-2025-maud-bailly-opt.mp4",
+                        "videoShareUrl": "https://youtu.be/vGJuFVZeb0I",
                         "fullName": "Maud Bailly",
                         "jobTitle": "Chief Executive Officer",
                         "organisation": "Sofitel Legend, Sofitel, MGallery & Emblems",
@@ -282,7 +282,7 @@ export default function Page ({ partners }) {
                    
                     <VideoTestimonial entry={{
                         "id": "223023",
-                        "videoShareUrl": "https://cms.thebench.com/assets/video/fhs-sa-2025-eddy-tannous-opt.mp4",
+                        "videoShareUrl": "https://youtu.be/u15jyxLvqNE",
                         "fullName": "Eddy Tannous",
                         "jobTitle": "Chief Operating Officer",
                         "organisation": "Rotana",

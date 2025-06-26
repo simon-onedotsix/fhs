@@ -50,11 +50,11 @@
 
 @media(min-width:800px){
     .overlay {
-        padding-top: 10vw;
+        padding-top: var(--space-lg);
     }
 }
 @media(min-width:1200px){
     .overlay {
-        padding-top: 15vw;
+        padding-top: var(--space-lg);
     }
 }

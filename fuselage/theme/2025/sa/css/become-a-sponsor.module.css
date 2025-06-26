@@ -26,11 +26,12 @@
 
 
 .linkGrid {
-    display: inline-grid;
-    grid-template-columns: 1fr;
+    display: inline-flex;
     gap: var(--space-sm);
+    flex-wrap: wrap;
     margin: 0 auto;
     text-align: center;
+    justify-content: center;
 }
 @media(min-width:600px) {
     .linkGrid {
