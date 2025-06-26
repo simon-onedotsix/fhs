@@ -1,3 +1,8 @@
+// 2025 hubspot list IDs:
+// List ID: 1237
+// ILS List ID: 2031
+
+
 import { Client } from "@hubspot/api-client"
 
 async function handler (req, res) {
@@ -18,7 +23,7 @@ async function handler (req, res) {
 
         if ( contactsData['list-memberships'] ) {
 
-            const allowed = contactsData['list-memberships'].find( obj => obj['static-list-id'] === 777 )
+            const allowed = contactsData['list-memberships'].find( obj => obj['static-list-id'] === 1237 )
             authorised = true
             message = 'authorisation complete'
 

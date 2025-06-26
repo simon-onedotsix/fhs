@@ -29,6 +29,7 @@ import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card
 import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/animated-counter/animated-counter"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 import { Award } from "../../fuselage/icons/award"
+import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
 
 // import { Ticker } from '../../fuselage/theme/2025/sa/components/ticker/ticker'
 import Ticker from 'framer-motion-ticker'
@@ -392,6 +393,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             <Header overlaid inverse />
 
 
+            {/* INTRO */}
             <div ref={introRef} className={CSS.themeWrapper}>
                 <motion.img className={CSS.deco01} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g1 }}/>
                 <motion.img className={CSS.deco02} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g2 }}/>
@@ -420,15 +422,21 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
                     <Fade>
                         <div className="mt-md center button-grid w-100pc">
-                            <Pop inline>
+                            {/* <Pop inline>
                                 <Button 
-                                    href={'/sa/agenda'} 
+                                    href={'/sa/post-event-resources-2025'} 
                                     theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                     decal={'fs-5 fw-600'} 
                                     accent
-                                >
-                                    { locale === 'ar' ? "برنامج 2025" : "Agenda" }
-                                </Button>
+                                >2025 Digital Resources</Button>
+                            </Pop> */}
+                            <Pop inline>
+                                <Button 
+                                    href={'/sa/post-event-report-2025'} 
+                                    theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
+                                    decal={'fs-5 fw-600'} 
+                                    accent
+                                >Post-Event Report</Button>
                             </Pop>
                         </div>
                     </Fade>
@@ -524,9 +532,21 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 </Ticker>
             </div>
 
+
+            {/* IN NUMBERS */}
             <ImpactGrid>
                 <TitleBlock>
                     <SectionHeading heading={ locale === 'ar' ? "2025 بالأرقام" : '2025 in Numbers'} decal={'c-secondary'} />
+                    <div style={{ marginTop: `var(--space-sm)`, marginLeft: `var(--space-md)`}}>
+                        <Pop inline>
+                            <Button 
+                                href={'/sa/attendee-list-2025'} 
+                                theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
+                                decal={'fs-5 fw-600'} 
+                                accent
+                            >Download Attendee List</Button>
+                        </Pop>
+                    </div>
                 </TitleBlock>
                 <ImpactFigure decal={'bg-neutral-01'} figure={1086} impact={ locale === 'ar' ? "عدد الحضور" : 'Attendees'}  />
                 <ImpactFigure decal={'bg-neutral-02'} figure={37} impact={ locale === 'ar' ? "دولة" : 'Countries'}  />
@@ -565,8 +585,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </section>
 
 
-
-
             {/* SPEAKERS */}
             <section className="block bg-primary-2-dark">
                 <div className="container center">
@@ -603,6 +621,11 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </section>
 
 
+            {/* THEMES */}
+            <section className="block bg-primary no-print" style={{ position: 'relative', zIndex: 2}}>
+                <ThemesSlider data={THEMES_DATA} link={'/sa/ai-session-summaries-2025'} linkLabel={'Download AI Session Summaries'} />
+            </section>
+
 
             {/* ANNOUNCEMENTS */}
             <ArticleScroller>
@@ -626,10 +649,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     }
                 </div>
             </section> */}
-
-
-               
-
 
 
             {/* VIDEO + PHOTO HIGHLIGHTS */}
