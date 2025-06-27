@@ -422,14 +422,14 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
                     <Fade>
                         <div className="mt-md center button-grid w-100pc">
-                            {/* <Pop inline>
+                            <Pop inline>
                                 <Button 
                                     href={'/sa/post-event-resources-2025'} 
                                     theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                     decal={'fs-5 fw-600'} 
                                     accent
                                 >2025 Digital Resources</Button>
-                            </Pop> */}
+                            </Pop>
                             <Pop inline>
                                 <Button 
                                     href={'/sa/post-event-report-2025'} 
