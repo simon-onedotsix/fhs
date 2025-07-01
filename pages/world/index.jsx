@@ -358,10 +358,10 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                             </p>
                         </Fade>
                         <Fade>
-                            <p className='fs-5 fw-500 maxw-45 mt-sm'>After an unforgettable edition in 2024, where <strong className="fw-900">1596 attendees</strong> from <strong className="fw-900">735 companies</strong> across <strong className="fw-900">60 countries</strong> came together, we're already gearing up for something even bigger.</p>
-                            <p>From the launch of the <a href="/world/brf">Branded Residences Forum</a> and the Women in Tech semi-finals to the incredible momentum behind <a href="/world/fhswomenpower">#FHSWomenPower</a> with 550+ women in attendance, FHS World 2024 was a celebration of innovation, investment, and inclusion.</p>
-                            <p>Now, it's your turn to be part of the story.</p>
-                            <p className="mb-sm">Join us at FHS World 2025 as we bring the global hospitality investment community back together to shape what's next. We can't wait to welcome you.</p>
+                            <p className='fs-5 fw-500 maxw-45 mt-sm'>After an unforgettable edition in 2024, where <strong className="fw-900">1596 attendees</strong> from <strong className="fw-900">735 companies</strong> across <strong className="fw-900">60 countries</strong> came together, we&apos;re already gearing up for something even bigger.</p>
+                            <p>From the launch of the <Link href="/world/brf"><a>Branded Residences Forum</a></Link> and the Women in Tech semi-finals to the incredible momentum behind <Link href="/world/fhswomenpower"><a>#FHSWomenPower</a></Link> with 550+ women in attendance, FHS World 2024 was a celebration of innovation, investment, and inclusion.</p>
+                            <p>Now, it&apos;s your turn to be part of the story.</p>
+                            <p className="mb-sm">Join us at FHS World 2025 as we bring the global hospitality investment community back together to shape what&apos;s next. We can&apos;t wait to welcome you.</p>
                         </Fade>
                         <Pop inline>
                             <Button 
