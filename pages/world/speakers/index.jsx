@@ -99,7 +99,7 @@ function Speakers({ seomatic, speakers }) {
 											</a>
 										</Link>
 										<div>
-											<p className='mt-xs'>
+											<p className='mt-xs' >
 												<span className='fw-600'>{speaker.firstName} {speaker.lastName}</span> 
 												<br/>{speaker.jobTitle} 
 												<br/>{speaker.organization}
