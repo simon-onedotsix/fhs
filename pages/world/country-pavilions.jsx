@@ -96,7 +96,7 @@ export const PAVILIONS_DATA = [
                     },
                     {
                         "__typename": "contentLibrary_Asset",
-                        "url": "https://cms.thebench.com/assets/content-library/img/FHS-World/Logo-Arsenale-Negativo-PNG.png"
+                        "url": "https://cms.thebench.com/assets/img/site/FHS-World/Logo-Arsenale-Postitivo.png"
                     },
                     {
                         "__typename": "contentLibrary_Asset",
@@ -134,7 +134,7 @@ export const PAVILIONS_DATA = [
                     {
                         "__typename": "contentLibrary_Asset",
                         "id": "193784",
-                        "url": "https://cms.thebench.com/assets/content-library/img/Logo-White.png"
+                        "url": "https://cms.thebench.com/assets/img/site/FHS-World/mfmc_logo.jpg"
                     }
                 ]
             }
@@ -144,7 +144,7 @@ export const PAVILIONS_DATA = [
         "__typename": "countryPavilions_pavilion_BlockType",
         "id": "257914",
         "country": "Philippines Pavilion",
-        "body": "<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt numquam aut magni at quasi nesciunt officia beatae adipisci? Quae nam eum assumenda expedita! Obcaecati ratione quia quos optio repellat natus.</p>",
+        "body": "<p>The Philippines, an archipelago of over 7,000 islands, is fast emerging as one of Asia's most exciting tourism and hospitality markets. With its breathtaking natural landscapes, vibrant culture, and rapidly expanding infrastructure, the country is attracting growing interest from global investors, developers, and travellers alike.</p><p>At FHS World 2025, the Philippines Pavilion, presented by the Tourism Promotions Board Philippines and key industry stakeholders, will spotlight the nation's strategic push to elevate its hospitality and tourism offerings. From luxury resorts to sustainable developments, the pavilion will showcase upcoming projects and investment opportunities that highlight the Philippines' commitment to becoming a premier destination in the region.</p>",
         "hero": [
             {
                 "__typename": "site_Asset",
@@ -159,7 +159,20 @@ export const PAVILIONS_DATA = [
                 "url": "https://cms.thebench.com/assets/img/site/FHS-World/pavilions/flag-of-philippines.jpg"
             }
         ],
-        "logoGroup": []
+        "logoGroup": [
+            {
+                "__typename": "logoGroup_BlockType",
+                "id": "257915",
+                "groupHeading": "Presented by:",
+                "logos": [
+                    {
+                        "__typename": "contentLibrary_Asset",
+                        "id": "193784",
+                        "url": "https://cms.thebench.com/assets/img/site/FHS-World/philippines-tourism.png"
+                    }
+                ]
+            }
+        ]
     }
 ]
 
