@@ -27,6 +27,7 @@ import {
     QueryTickers,
     QueryBannerImage,
     QueryCoutryPavilions,
+    QueryVideoTestimonials,
     Passes
 } from "../../graphql/queries"
 
@@ -111,6 +112,7 @@ export async function getStaticProps({ params, preview, previewData }) {
                             ${QueryBannerImage}
                             ${QueryCoutryPavilions}
                             ${Passes}
+                            ${QueryVideoTestimonials}
                         }
                         ${QuerySEO}
                     }

@@ -368,7 +368,6 @@ export const QueryTickers = `
 export const QueryBannerImage = `
     ... on ${blocksHandle}ContentBlocks_bannerImage_BlockType {
         id
-        id
         hero {
             url
             width
@@ -403,6 +402,22 @@ export const QueryCoutryPavilions = `
                         }
                     }
                 }
+            }
+        }
+    }
+`
+
+export const QueryVideoTestimonials = `
+    ... on ${blocksHandle}ContentBlocks_videoTestimonials_BlockType {
+        id
+        videoTestimonials {
+            ... on videoTestimonials_videoTestimonial_Entry {
+                id
+                videoShareUrl
+                fullName
+                jobTitle
+                organisation
+                testimonial
             }
         }
     }

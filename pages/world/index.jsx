@@ -354,13 +354,14 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     <section>
                         <Fade>
                             <p className='fs-0 fw-600 lh-1 maxw-45 c-primary'>
-                                Thank You for Joining Us at <span className="c-accent"> FHS World!</span>
+                                Join Us at <span className="c-accent"> FHS&nbsp;World</span>&nbsp;2025
                             </p>
                         </Fade>
                         <Fade>
-                            <p className='fs-5 fw-500 maxw-45 mt-sm'>At FHS World 2024, we created an intersection for the world of hospitality where the industry invests in its future with 1596 attendees, representing 735 companies, from 60 countries.</p>
-                            <p className='fs-6 fw-300 maxw-45'>FHS World 2024 featured several new exciting initiatives and partnerships. <Link href={'/world/branded-residences-forum'}><strong className="underline">The Branded Residences Forum</strong></Link>, a one-day exclusive event co-located with FHS World, focused on the thriving sector of branded residences. For the first time ever, FHS World hosted the semi-finals of the <Link href={'/world/unto'}><strong className="underline">UN Tourism&apos;s Women in Tech</strong></Link> startup competition, showcasing innovative solutions from women-led tech startups. Additionally, the #FHSWomenPower initiative facilitated a record-number of women with over 550+ women in attendance.</p>
-                            <p className='fs-5 fw-500 maxw-45 pb-sm'>We look forward to connecting with you in 2025!</p>
+                            <p className='fs-5 fw-500 maxw-45 mt-sm'>After an unforgettable edition in 2024, where <strong className="fw-900">1596 attendees</strong> from <strong className="fw-900">735 companies</strong> across <strong className="fw-900">60 countries</strong> came together, we're already gearing up for something even bigger.</p>
+                            <p>From the launch of the <a href="/world/brf">Branded Residences Forum</a> and the Women in Tech semi-finals to the incredible momentum behind <a href="/world/fhswomenpower">#FHSWomenPower</a> with 550+ women in attendance, FHS World 2024 was a celebration of innovation, investment, and inclusion.</p>
+                            <p>Now, it's your turn to be part of the story.</p>
+                            <p className="mb-sm">Join us at FHS World 2025 as we bring the global hospitality investment community back together to shape what's next. We can't wait to welcome you.</p>
                         </Fade>
                         <Pop inline>
                             <Button 
@@ -376,7 +377,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                                 Virtual Tour 2024
                             </Button>&emsp;
                             <Button 
-                                href={`/world/get-in-touch`} 
+                                href={`/world/become-a-sponsor#partner-form`} 
                                 theme={{ 
                                     background: `var(--secondary-2)`, 
                                     hover: `var(--secondary-2-dark)`, 

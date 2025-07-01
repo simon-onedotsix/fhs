@@ -193,7 +193,7 @@ const FLOATER_DATA = [
     {
         "__typename": "floaters_BlockType",
         "id": "159692",
-        "body": "<h3>Who Sponsors Country Pavilions</h3>\n<ul><li>Investment Promotion Agencies</li><li>Tourism Groups</li><li>Developers</li><li>Advisors</li><li>Local Owners/Operators</li><li>International F&amp;B Concepts</li></ul><p>If you belong to any of the categories mentioned above and are interested in booking a pavilion for your country, you can reach out directly to our sponsorship team.</p>\n<p><a class=\"button\" href=\"/ae/get-in-touch\">Get in touch</a></p>",
+        "body": "<h3>Who Sponsors Country Pavilions</h3>\n<ul><li>Investment Promotion Agencies</li><li>Tourism Groups</li><li>Developers</li><li>Advisors</li><li>Local Owners/Operators</li><li>International F&amp;B Concepts</li></ul><p>If you belong to any of the categories mentioned above and are interested in booking a pavilion for your country, you can reach out directly to our sponsorship team.</p>\n<p><a class=\"button\" href=\"/world/become-a-sponsor#partner-form\">Get in touch</a></p>",
         "hero": [
             {
                 "__typename": "site_Asset",
@@ -305,7 +305,7 @@ const Pavilion = ({ data }) => {
                                 <div className={CSS.pavilionLogoGrid}>
                                     {
                                         group.logos.length &&
-                                        group.logos.map( logo => <PavilionLogo key={logo.id} logo={logo} /> )
+                                        group.logos.map( (logo, index) => <PavilionLogo key={index} logo={logo} /> )
                                     }    
                                 </div>
                             </div>
