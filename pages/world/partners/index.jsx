@@ -20,7 +20,7 @@ import handleSeomaticMeta from "../../../lib/seomatic"
 import { QuerySEO } from "../../../graphql/queries"
 
 
-import { PAVILIONS_DATA } from '../country-pavilions-demo'
+import { PAVILIONS_DATA } from '../country-pavilions'
 
 
 
