@@ -37,7 +37,7 @@ export const MainMenu = ({ otherEvents }) => {
                     </Button>
                     
                     <Button 
-                        href={`/world/become-a-sponsor#partner-form`} 
+                        href={`/world/why-sponsor#partner-form`} 
                         theme={{ 
                             color: `var(--primary)`,
                             background: `var(--secondary-1)`, 

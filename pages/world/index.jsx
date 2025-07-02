@@ -377,7 +377,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                                 Virtual Tour 2024
                             </Button>&emsp;
                             <Button 
-                                href={`/world/become-a-sponsor#partner-form`} 
+                                href={`/world/why-sponsor#partner-form`} 
                                 theme={{ 
                                     background: `var(--secondary-2)`, 
                                     hover: `var(--secondary-2-dark)`, 
