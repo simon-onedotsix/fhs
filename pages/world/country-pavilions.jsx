@@ -60,7 +60,7 @@ export const PAVILIONS_DATA = [
         "__typename": "countryPavilions_pavilion_BlockType",
         "id": "257335",
         "country": "Italy Pavilion",
-        "body": "<p>Italy, now ranked as the 5th most visited country in the world, offers a wealth of opportunities within its dynamic hospitality industry. As Europe's most trending travel destination, Italy continues to captivate the hearts of millions of visitors with its rich cultural heritage, exquisite cuisine, and iconic landmarks.<br /><br />At FHS World 2025, the Italia Hospitality-sponsored Italy Pavilion will provide delegates with invaluable insights into the nation's burgeoning hospitality sector and its array of upcoming projects. This pavilion will underscore Italy's dedication to fostering innovation and excellence in hospitality, ensuring that Italy remains a top choice for travellers from around the globe.</p>",
+        "body": "<p>Italy, now ranked as the 5th most visited country in the world, offers a wealth of opportunities within its dynamic hospitality industry. As Europe's most trending travel destination, Italy continues to captivate the hearts of millions of visitors with its rich cultural heritage, exquisite cuisine, and iconic landmarks.<br /><br />At FHS World 2025, the Italia Hospitality-sponsored Italy Pavilion will provide delegates with invaluable insights into the nation's burgeoning hospitality sector and its array of upcoming projects. This pavilion will underscore Italy's dedication to fostering innovation and excellence in hospitality, ensuring that Italy remains a top choice for travellers from around the globe.</p><p>If you are an Italian company and want to purchase ticket for the Summit or partner up with Italia Hospitality to showcase your brand, please reach out to <a href='mailto:mgm@italiahospitality.it'>Marco G Malacrida</a>.</p>",
         "hero": [
             {
                 "__typename": "site_Asset",
@@ -197,9 +197,9 @@ const FLOATER_DATA = [
         "hero": [
             {
                 "__typename": "site_Asset",
-                "url": "https://cms.thebench.com/assets/img/site/FHS-World/Untitlede-design-13.png",
-                "width": 1077,
-                "height": 939
+                "url": "https://cms.thebench.com/assets/img/site/FHS-World/FHS-WORLD-2024-D1-GENERAL_179.jpg",
+                "width": 2000,
+                "height": 1116
             }
         ]
     }
