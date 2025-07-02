@@ -36,6 +36,11 @@ const nextConfig = {
 			destination: '/world/brf',
 			permanent: true,
 		  },
+		  {
+			source: '/sa/post-event',
+			destination: '/sa/post-event-resources-2025',
+			permanent: true,
+		  },
 		]
 	}
 
