@@ -570,14 +570,14 @@
 
 [data-theme='sa-2025'] footer .form input {
     border-bottom-color: var(--accent) !important;
-    color: white;
+    color: var(--default-text-color) !important;
 }
 [data-theme='sa-2025'] footer .form input:focus {
-    border-bottom-color: white !important;
+    border-bottom-color: var(--secondary) !important;
 }
 
 [data-theme='sa-2025'] footer .form input[type='submit'] {
-    color: white;
+    color: white !important;
 	background-color: var(--secondary);
     border: none;
 }
