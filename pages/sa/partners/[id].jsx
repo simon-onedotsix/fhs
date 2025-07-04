@@ -195,10 +195,10 @@ export async function getStaticProps({ params }) {
                     }
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2026,
 					"ids": [
                         params.id
-                    ]
+                      ]
 				}
 			})
 		}
