@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client"
-import craftApolloClient from "../../../api/apollo"
+import craftApolloClient from "../../api/apollo"
 
 import _ from 'lodash'
 
@@ -7,19 +7,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller'
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../../../fuselage/theme/2024/sa/globals/footer/footer"
+import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
 
-import { ThemeBg } from '../../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
 
-import { SpeakerGrid } from "../../../../fuselage/layout/speaker-grid/speaker-grid"
+import { SpeakerGrid } from "../../../fuselage/layout/speaker-grid/speaker-grid"
 
-import handleSeomaticMeta from '../../../../lib/seomatic'
-
-import CSS from '../../../../css/app/speakers-sa-2024.module.css'
+import CSS from '../../../css/app/speakers-sa-2024.module.css'
 
 
 
@@ -27,7 +24,7 @@ import CSS from '../../../../css/app/speakers-sa-2024.module.css'
 
 // hard-coded legacy data
 
-import { speakers } from "../../../../data/legacy/sa/2024/sc-speakers"
+import { speakers } from "../../../data/legacy/sa/2024/sc-speakers"
 
 
 
@@ -73,7 +70,7 @@ function Speakers() {
 							customOrderedSpeakers.map( speaker => {
 								if ( speaker.type ) return (
 									<div key={speaker.id}>
-										<Link href={`/sa/2024/speakers/${speaker.id}`}>
+										
 											<a className={CSS.avatar}>
 												{
 													speaker.photoUrl ? 
@@ -92,7 +89,7 @@ function Speakers() {
 													/>
 												}
 											</a>
-										</Link>
+									
 										<div>
 											<p className='mt-xs'>
 												<span className='fw-600'>{speaker.firstName} {speaker.lastName}</span> 

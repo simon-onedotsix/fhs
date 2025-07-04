@@ -62,7 +62,7 @@ function Speakers({ bizzaboSpeakers }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{customSpeakers.map( speaker => (
 							<div key={speaker.id}>
-								{/* <Link href={`/sa/2023/speakers/${speaker.id}`}> */}
+							
 									<span className={CSS.avatar}>
 										{
 											speaker.photoSet ? 
@@ -81,7 +81,7 @@ function Speakers({ bizzaboSpeakers }) {
 											/>
 										}
 									</span>
-								{/* </Link> */}
+						
 								<div>
 									<p className='mt-xs'><span className='fw-600'>{speaker.firstname} {speaker.lastname}</span> <br/>{speaker.title} <br/>{speaker.company}</p>
 								</div>

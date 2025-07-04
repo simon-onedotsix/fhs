@@ -548,14 +548,14 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         </Pop>
                     </div>
                 </TitleBlock>
-                <ImpactFigure decal={'bg-neutral-01'} figure={1086} impact={ locale === 'ar' ? "عدد الحضور" : 'Attendees'}  />
+                <ImpactFigure decal={'bg-neutral-01'} figure={1106} impact={ locale === 'ar' ? "عدد الحضور" : 'Attendees'}  />
                 <ImpactFigure decal={'bg-neutral-02'} figure={37} impact={ locale === 'ar' ? "دولة" : 'Countries'}  />
                 <ImpactFigure decal={'bg-neutral-02'} figure={153} impact={ locale === 'ar' ? "عدد المتحدثين" : 'Speakers'}  />
                 <ImpactFigure decal={'bg-neutral-01'} figure={85} impact={ locale === 'ar' ? "الجهات الراعية والشركاء" : 'Sponsors & Partners'}  />
                 <ImpactFigure decal={'bg-neutral-02'} figure={68} unit={'%'} impact={ locale === 'ar' ? "كبار المديرين التنفيذيين ونواب الرؤساء والمديرين" : 'C-Level Executives, VP & Directors'}  />
                 <ImpactFigure />
                 <ImpactFigure decal={'bg-neutral-01'} figure={24} unit={'%'} impact={'Investors'} />
-                <ImpactFigure decal={'bg-neutral-02'} prefix={'$'} figure={5.4} unit={'tn'} impact={'AUM'} />
+                <ImpactFigure decal={'bg-neutral-02'} prefix={'$'} figure={5.6} unit={'tn'} impact={'AUM'} />
                 <ImageBlock imageUrl={'/assets/img/sa/impact-hero.jpg'} />
             </ImpactGrid>
 

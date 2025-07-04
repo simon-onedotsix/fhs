@@ -11,25 +11,6 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import { Header } from '../../../fuselage/theme/2025/sa/common/header/header'
 import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
 
-import handleContentBlocks from "../../../lib/content-blocks-sa"
-import handleSeomaticMeta from '../../../lib/seomatic'
-
-import { 
-	QueryText, 
-    QueryFlipFlops, 
-    QueryFloaters, 
-    QueryBillboards, 
-    QueryBillboardSliders, 
-    QueryImpactFigures, 
-    QueryVideos,
-    QueryForm,
-    QueryProfileCarousel,
-    QuerySEO,
-	QueryCards,
-	QueryPartners,
-	QueryPartnerGroups,
-	QueryTestimonials
-} from "../../../graphql/queries"
 
 import { Quote, QuoteGrid } from '../../../fuselage/theme/2024/sa/components/quote/quote'
 import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
@@ -39,13 +20,13 @@ import { CTAButton } from '../../../fuselage/theme/2025/sa/components/cta-button
 
 
 
-function Partners({ seomatic, contentBlocks, partnerData2025, videoTestimonials }) {
+function Partners({ partnerData, videoTestimonials }) {
 
 
 
 	// programatically build array of unique types pulled from exhibitor data
 	const allCategoriesArray = []
-	partnerData2025.exhibitors.forEach( obj => {
+	partnerData.exhibitors.forEach( obj => {
 		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0]?.id, name: obj.fields[0]?.translations[0].value, size: ''})
 	})
 	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
@@ -53,31 +34,19 @@ function Partners({ seomatic, contentBlocks, partnerData2025, videoTestimonials 
 	// 2025 custom ordering
 	const orderedCategories = []
 	categoriesArray.forEach( category => {
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1Nw==') orderedCategories.push({ ...category, priority: 1 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg2MQ==') orderedCategories.push({ ...category, priority: 2 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg2MA==') orderedCategories.push({ ...category, priority: 3 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNTg5Nzk4NA==') orderedCategories.push({ ...category, priority: 4 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk2Njg1OA==') orderedCategories.push({ ...category, priority: 5 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNDQ3NDE0MA==') orderedCategories.push({ ...category, priority: 6 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyMw==') orderedCategories.push({ ...category, priority: 7 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzQyNTY2Ng==') orderedCategories.push({ ...category, priority: 8 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0Mw==') orderedCategories.push({ ...category, priority: 0 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQxNw==') orderedCategories.push({ ...category, priority: 1 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0MQ==') orderedCategories.push({ ...category, priority: 3 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0Mg==') orderedCategories.push({ ...category, priority: 2 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMQ==') orderedCategories.push({ ...category, priority: 4 })
 			
-		if (category.id === 'RmllbGRWYWx1ZV8yNzQ0NjA5Nw==') orderedCategories.push({ ...category, priority: 9 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzk3OTkyNQ==') orderedCategories.push({ ...category, priority: 10 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzQ2MzE3OQ==') orderedCategories.push({ ...category, priority: 11 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzA3NzQwMA==') orderedCategories.push({ ...category, priority: 12 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNjcwNDI5MQ==') orderedCategories.push({ ...category, priority: 13 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNjAzMTE4Mg==') orderedCategories.push({ ...category, priority: 14 })
-		if (category.id === 'RmllbGRWYWx1ZV8yMzEwNjg2Mw==') orderedCategories.push({ ...category, priority: 15 })
+
 	})
 
 
-	console.log('swapcard partner data 2025:', partnerData2025)
-	// console.log('content-blocks:', contentBlocks)
-	// partnerData.exhibitors.forEach( ex => console.log( ex.typeLabel?.name))
-
-	console.log('categories:', categoriesArray)
-	console.log('orderedCategories:', orderedCategories)
+	// console.log('swapcard partner data 2026:', partnerData)
+	// console.log('categories:', categoriesArray)
+	// console.log('orderedCategories:', orderedCategories)
 
 
 	return (
@@ -85,7 +54,6 @@ function Partners({ seomatic, contentBlocks, partnerData2025, videoTestimonials 
 
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
-				{ handleSeomaticMeta( seomatic ) }  
             </Head>
 
 			<Header compact shim />
@@ -114,15 +82,15 @@ function Partners({ seomatic, contentBlocks, partnerData2025, videoTestimonials 
 			<section className='block bg-default'>
 
 				<div className='container center formatted'>
-					<p className='fs-1 fw-600'>2025 Sponsors &amp; Partners</p>
-					<p><Link href="/sa/get-in-touch"><a className="button secondary">Become A Sponsor</a></Link></p>
+					<p className='fs-1 fw-600'>2026 Sponsors &amp; Partners</p>
+					<p><Link href="/sa/become-a-sponsor#form"><a className="button secondary">Become A Sponsor</a></Link></p>
 				</div>
 
 				<PartnerCategoryGrid>
 					{
-						partnerData2025 &&
+						partnerData &&
 						_.orderBy(orderedCategories, 'priority').map( category => {
-							const group = partnerData2025.exhibitors.filter( partner => {
+							const group = partnerData.exhibitors.filter( partner => {
 								if (partner.fields[0]?.id === category.id ) return partner
 							})
 							
@@ -192,8 +160,8 @@ function Partners({ seomatic, contentBlocks, partnerData2025, videoTestimonials 
 
 			<section className="block bg-default">
 				<div className="container flex jc-center flex-wrap gap-xs">
-					<Link href="/sa/2024/partners"><a className="button secondary">2024 Sponsors & Partners</a></Link> 
-					<Link href="/sa/get-in-touch"><a className="button secondary">Get in Touch</a></Link>
+					<Link href="/sa/2025/partners"><a className="button secondary">2025 Sponsors & Partners</a></Link> 
+					<Link href="/sa/become-a-sponsor#form"><a className="button secondary">Get in Touch</a></Link>
 				</div>
 			</section>
 
@@ -217,30 +185,6 @@ export async function getStaticProps() {
 	const cmsData = await craftApolloClient().query({
         query: gql`
 			query Page {
-				entry(site: "${process.env.SITE_HANDLE_SA}", id: 63862) {
-					title
-					... on ${process.env.SITE_HANDLE_SA}Partners_${process.env.SITE_HANDLE_SA}Partners_Entry {
-						id
-						title
-						slug
-						${process.env.SITE_HANDLE}ContentBlocks {
-							${QueryText}
-							${QueryFlipFlops}
-							${QueryFloaters}
-							${QueryBillboards}
-							${QueryBillboardSliders}
-							${QueryImpactFigures}
-							${QueryVideos}
-							${QueryCards}
-							${QueryProfileCarousel}
-							${QueryForm}
-							${QueryPartners}
-							${QueryPartnerGroups}
-							${QueryTestimonials}
-						}
-					}
-					${QuerySEO}
-				}
 				entries(site: "${process.env.SITE_HANDLE_SA}", section: "videoTestimonials", limit: 3) {
 					... on videoTestimonials_videoTestimonial_Entry {
                         id
@@ -269,47 +213,23 @@ export async function getStaticProps() {
 			body: JSON.stringify({
 				query: `
 					query {
-						event(id: "${process.env.SWAPCARD_EVENT_ID_SA}") {
-							exhibitorsTypes {
-								name
-								id
-								position
+						event(id: "${process.env.SWAPCARD_EVENT_ID_SA_2026}") {
+							fieldDefinitions {
+								... on SelectFieldDefinition {
+									id
+									name
+									optionsValues {
+										id
+										value
+										translations {
+											language
+											value
+										}
+									}
+								}
 							}
 						}
-						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_SA}", page:1, pageSize: 200) {
-							id
-							name
-							logoUrl
-							type
-							typeLabel {
-								id
-								name
-							}
-						}
-					}
-				`,
-				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_SA,
-					"page": 1
-				}
-			})
-		}
-	)
-	const partnerData =  await swapcardData.json()
-
-
-	const swapcardData2025 = await fetch(
-		"https://developer.swapcard.com/event-admin/graphql",
-		{
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				"Authorization": process.env.SWAPCARD_AUTH_KEY
-			},
-			body: JSON.stringify({
-				query: `
-					query {
-						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2025}", page:1, pageSize: 200) {
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2026}", page:1, pageSize: 200) {
 							id
 							name
 							logoUrl
@@ -330,20 +250,18 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2026,
 					"page": 1
 				}
 			})
 		}
 	)
-	const partnerData2025 =  await swapcardData2025.json()
+	const partnerData =  await swapcardData.json()
+
 	
 	return {
 		props: { 
-			seomatic: cmsData.data.entry.seomatic,
-			contentBlocks: cmsData.data.entry.fhisContentBlocks,
 			partnerData: partnerData.data,
-			partnerData2025: partnerData2025.data,
 			videoTestimonials: cmsData.data.entries
 		}
 	}

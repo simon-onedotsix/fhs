@@ -3,23 +3,23 @@ import _ from 'lodash'
 import Head from 'next/head'
 import Link from 'next/link'
 
-import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller'
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../../../fuselage/theme/2024/sa/globals/footer/footer"
+import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
+import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
 
-import { ThemeBg } from '../../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
+import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
 
-import { Quote, QuoteGrid } from '../../../../fuselage/theme/2024/sa/components/quote/quote'
-import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } from '../../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
+import { Quote, QuoteGrid } from '../../../fuselage/theme/2024/sa/components/quote/quote'
+import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
 
 
 
 
 // hard-coded legacy data
 
-import { partnerData } from '../../../../data/legacy/sa/2024/sc-partners'
+import { partnerData } from '../../../data/legacy/sa/2024/sc-partners'
 
 
 
@@ -92,12 +92,11 @@ function Partners() {
 										<PartnerLogoGrid>
 											{
 												_.orderBy(group, 'name').map(partner => (
-													<a key={partner.id} href={`/sa/2024/partners/${partner.id}`}>
-														<PartnerLogo 
-															hero={{ url: partner.logoUrl }} 
-															size={ category && category.size }
-														/>
-													</a>
+													<PartnerLogo 
+														key={partner.id}
+														hero={{ url: partner.logoUrl }} 
+														size={ category && category.size }
+													/>
 												))
 											}
 										</PartnerLogoGrid>
