@@ -26,7 +26,7 @@ function Partners({ partnerData, videoTestimonials }) {
 
 	// programatically build array of unique types pulled from exhibitor data
 	const allCategoriesArray = []
-	partnerData.exhibitors.forEach( obj => {
+	partnerData.exhibitors?.forEach( obj => {
 		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0]?.id, name: obj.fields[0]?.translations[0].value, size: ''})
 	})
 	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
@@ -34,8 +34,8 @@ function Partners({ partnerData, videoTestimonials }) {
 	// 2025 custom ordering
 	const orderedCategories = []
 	categoriesArray.forEach( category => {
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0Mw==') orderedCategories.push({ ...category, priority: 0 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQxNw==') orderedCategories.push({ ...category, priority: 1 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQxNw==') orderedCategories.push({ ...category, priority: 0 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0Mw==') orderedCategories.push({ ...category, priority: 1 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0MQ==') orderedCategories.push({ ...category, priority: 3 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0Mg==') orderedCategories.push({ ...category, priority: 2 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMQ==') orderedCategories.push({ ...category, priority: 4 })
@@ -90,7 +90,7 @@ function Partners({ partnerData, videoTestimonials }) {
 					{
 						partnerData &&
 						_.orderBy(orderedCategories, 'priority').map( category => {
-							const group = partnerData.exhibitors.filter( partner => {
+							const group = partnerData.exhibitors?.filter( partner => {
 								if (partner.fields[0]?.id === category.id ) return partner
 							})
 							

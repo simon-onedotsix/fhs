@@ -77,7 +77,7 @@ export const Footer = () => {
                                 }
                             </p>
                             <div dir="ltr">
-                                <HubspotForm portalId={hubspotForm.portalId} formId={hubspotForm.formId} />
+                                <HubspotForm portalId={"14527187"} formId={"68c654b4-dcb0-42c6-adbc-75ef5153d822"} />
                             </div>
                         </section>
                     }

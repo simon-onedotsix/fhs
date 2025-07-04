@@ -41,7 +41,7 @@ import CSS from './post-event-resources.module.css'
 
 export default function PostEvent ({ cmsEntryData }) {
 
-    const [ allowed, setAllowed ] = useState( true )
+    const [ allowed, setAllowed ] = useState( false )
     const [ showForm, setShowForm ] = useState( false )
     const [ message, setMessage ] = useState( '' )
     const emailInputRef = useRef()
