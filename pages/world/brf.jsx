@@ -279,7 +279,7 @@ export default function Page ({ sessions, speakers }) {
             {
                 sessions &&
                 <SpeakerCarousel 
-                    heading={`Speakers`} 
+                    heading={`2024 Speakers`} 
                     text={null}
                     decal={'bg-secondary'}
                     ctaLink={null}
