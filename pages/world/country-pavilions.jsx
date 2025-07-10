@@ -64,7 +64,7 @@ export const PAVILIONS_DATA = [
         "hero": [
             {
                 "__typename": "site_Asset",
-                "url": "https://cms.thebench.com/assets/img/site/FHS-World/italia-cropped.jpg"
+                "url": "https://cms.thebench.com/assets/img/site/FHS-World/italy-pavilion-retouch.jpg"
             }
         ],
         "flag": [

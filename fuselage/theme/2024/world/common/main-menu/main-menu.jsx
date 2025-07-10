@@ -48,12 +48,17 @@ export const MainMenu = ({ otherEvents }) => {
                         Become A Sponsor
                     </Button>
                 </div>
+
+                <div className={CSS.toggleWrapper}>
+                    <caption>MENU</caption>
                     
-                <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
+                        <span/>
+                        <span/>
+                        <span/>
+                    </div>
                 </div>
+                    
             </div>
 
 
@@ -130,6 +135,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                                         className={` 
                                                                             ${link.size === 'sm' ? '' : 'fw-400'}
                                                                             ${link.indent && 'ml-sm'}
+                                                                            fw-600
                                                                         `}
                                                                     >{ link.label }</li>
                                                                 )

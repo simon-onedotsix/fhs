@@ -82,6 +82,10 @@
         opacity: 1;
         pointer-events: all;
     }
+
+    .toggleWrapper caption {
+        display: none;
+    }
 }
 
 
@@ -92,6 +96,22 @@
         display: grid;
         grid-template-columns: auto auto;
         align-items: center;
+    }
+
+    .toggleWrapper {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: .75rem;
+        align-items: center;
+
+        background-color: var(--primary-2);
+        background-color: rgba(0, 0, 0, 0.25);
+        border-radius: 5rem;
+
+        padding-left: 1.25rem;
+    }
+    .toggleWrapper caption {
+        font-size: .8rem;
     }
 }
 
