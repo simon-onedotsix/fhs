@@ -10,7 +10,7 @@ import CSS from './themes-slider.module.css'
 
 
 
-export const ThemesSlider = ({ data, link, linkLabel }) => {
+export const ThemesSlider = ({ data, heading, link, linkLabel }) => {
 
 	if ( !data ) return
 
@@ -41,7 +41,7 @@ export const ThemesSlider = ({ data, link, linkLabel }) => {
     return (
 		<>
 			<div className={`${CSS.header} block center formatted py-0 mb-sm`} dir={ locale === 'ar' ? "rtl" : "ltr" }>
-				<p className="fs-1 fw-600">{ locale === 'ar' ? "محاور الحدث" : "Event Themes" }</p>
+				<p className="fs-1 fw-600">{ heading ? heading : "Event Themes" }</p>
 			</div>
 
 
