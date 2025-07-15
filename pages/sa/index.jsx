@@ -416,7 +416,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         transition={{ type: "spring", bounce: 0.25 }}
                         className={`fs-5 fw-500 c-white center mt-xs`} 
                     >
-                        { locale === 'ar' ? "13-11 مايو 2026، فندق ماندارين أورينتال الفيصلية، الرياض" : "2026, Mandarin Oriental Al Faisaliah, Riyadh" }
+                        20-22 April 2026, Mandarin Oriental Al Faisaliah, Riyadh
                         
                     </motion.p>
 
