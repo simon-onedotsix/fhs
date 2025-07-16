@@ -41,6 +41,11 @@ const nextConfig = {
 			destination: '/sa/post-event-resources-2025',
 			permanent: true,
 		  },
+		  {
+			source: '/sa/grif',
+			destination: '/sa/',
+			permanent: true,
+		  },
 		]
 	}
 

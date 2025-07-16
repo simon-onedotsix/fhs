@@ -264,9 +264,8 @@ export default function Page ({ sessions, speakers }) {
                         caption={"The Rixos Dubai Islands Residences"}
                     >
                         <Fade>
-                            <p className='fs-2 fw-600 lh-2 c-secondary'>Unprecedented Growth Trends</p>
-                            <p className="fs-4">The branded residences sector is experiencing a period of unprecedented growth, globally.</p> 
-                            <p className="fs-4">The sector has grown more than 160% over the last decade with approximately 1,300 branded residential projects globally as of&nbsp;2023.</p>
+                            <p className='fs-2 fw-600 lh-2 c-secondary'>Market Overview</p>
+                            <p className="fs-4">The branded residences sector has grown <strong>180% globally in the past decade</strong>, with 788 projects currently running and an additional <strong>900+</strong> launching globally (or in pipeline) over the next 5 to 6 years.</p>
                         </Fade>
                     </Callout>
                 </div>
