@@ -6,7 +6,7 @@ export const FhsLockup = ({ sectorColor, sectorLabel, topColor, inverse }) => {
             <FhsIcon inverse={inverse} topColor={topColor} sectorColor={sectorColor} />
             <div>
                 <p className={CSS.brand} style={{ color: inverse ? 'white' : 'var(--primary)'}}>FHS</p>
-                <p className={CSS.sector} style={{ color: sectorColor ? sectorColor : 'var(--accent)' }}>{ sectorLabel ? sectorLabel : 'World' }</p>
+                <p className={CSS.sector} style={{ color: sectorColor ? sectorColor : 'var(--accent)' }}>{ sectorLabel ? sectorLabel : '' }</p>
             </div>
         </div>
     )

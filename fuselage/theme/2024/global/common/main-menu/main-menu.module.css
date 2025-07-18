@@ -45,30 +45,46 @@
     text-align: center;
     font-size: 1rem;
     color: var(--primary);
+
+    display: flex;
+    gap: .5rem;
 }
 
 
 @media(max-width:799px){
     .toggleContainer {
         position: fixed;
-        z-index: 200;
+        z-index: 100;
         top: 2rem;
+        right: 2rem;
         left: 2rem;
         display: grid;
         grid-template-columns: auto auto;
-        align-items: center;
+        align-items: flex-start;
+        pointer-events: none;
     }
     .toggle {
         justify-self: flex-end;
+        pointer-events: all;
     }
     .toggleActions {
         opacity: 0;
         pointer-events: none;
         transition: all .35s ease 400ms;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem;
+        padding: 0;
     }
     .toggleActions.active {
         opacity: 1;
         pointer-events: all;
+    }
+
+    .toggleWrapper caption {
+        display: none;
     }
 }
 
@@ -76,10 +92,26 @@
 @media (min-width:800px) {
     .toggleContainer {
         position: relative;
-        z-index: 200;
+        z-index: 100;
         display: grid;
         grid-template-columns: auto auto;
         align-items: center;
+    }
+
+    .toggleWrapper {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: .75rem;
+        align-items: center;
+
+        background-color: var(--primary-2);
+        background-color: rgba(0, 0, 0, 0.25);
+        border-radius: 5rem;
+
+        padding-left: 1.25rem;
+    }
+    .toggleWrapper caption {
+        font-size: .8rem;
     }
 }
 
@@ -88,32 +120,35 @@
 /* overlay ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .overlay {
-    z-index: 180;
+    z-index: 80;
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
 
-    /* inset: var(--space-sm);
-    border-radius: calc(var(--default-radius) * 3); */
-
     padding: var(--space-md);
-    padding-top: calc(var(--space-lg) * 2);
-    overflow-y: scroll;
-    
+    overflow-y: scroll; 
     
     color: var(--secondary);
 
     opacity: 0;
     pointer-events: none;
-    transition: all 500ms cubic-bezier(.7, .1, .2, 1) 250ms;
+    transition: opacity 500ms cubic-bezier(.7, .1, .2, 1) 250ms;
 }
 .overlay.active {
     opacity: 1;
     pointer-events: all;
-    transition: all 500ms cubic-bezier(.7, .1, .2, 1);
+    transition: opacity 500ms cubic-bezier(.7, .1, .2, 1);
 }
+
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
 .overlay ul {
     list-style: none;
     margin-bottom: .75rem;
@@ -122,10 +157,64 @@
     margin-bottom: .75rem;
 }
 
-@media(min-width:900px) {
+
+@media(min-width:600px) {
     .overlay {
-        padding: calc(var(--space-lg) * 1.5) var(--space-lg) var(--space-lg);
+        padding-top: calc(var(--space-lg) * 2);
     }
+}
+
+
+/* notebook */
+@media(max-height:760px) and (min-width:1200px) {
+    .layout {
+        display: flex;
+        column-gap: var(--space-md);
+        row-gap: var(--space-sm);
+    }
+    .overlay {
+        padding: calc(var(--space-lg) * 1.45) var(--space-lg) var(--space-lg);
+    }
+    .heading {
+        margin-top: 1rem !important;
+    }
+    .overlay ul {
+        list-style: none;
+        margin-bottom: .2rem;
+    }
+    .overlay ul li {
+        margin-bottom: .2rem;
+    }
+
+    .overlay p {
+        font-size: 2.2vh !important;
+    }
+    .overlay li a {
+        font-size: 2vh !important;
+    }
+}
+
+
+/* desktop */
+@media(min-width:900px) and (min-height:760px) {
+    .layout {
+        display: flex;
+        column-gap: var(--space-md);
+        row-gap: var(--space-sm);
+        justify-content: space-between;
+    }
+    .overlay {
+        padding: calc(var(--space-lg) * 1.75) var(--space-lg) var(--space-lg);
+    }
+    .overlay ul {
+        list-style: none;
+        margin-bottom: .5rem;
+    }
+    .overlay ul li {
+        margin-bottom: .5rem;
+    }
+}
+@media(min-height:800px) {
     .overlay ul {
         list-style: none;
         margin-bottom: .75rem;
@@ -133,4 +222,18 @@
     .overlay ul li {
         margin-bottom: .75rem;
     }
+}
+
+
+
+
+.label {
+    display: inline-block;
+    transform: translateY(-2px);
+    margin-right: .35rem;
+    background-color: var(--accent);
+    border-radius: 2rem;
+    padding: 3px 8px;
+    font-size: .8rem;
+    font-weight: 600;
 }

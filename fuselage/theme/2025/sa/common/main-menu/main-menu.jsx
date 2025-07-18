@@ -54,12 +54,17 @@ export const MainMenu = ({ otherEvents }) => {
 
                     <Locales />
                 </div>
+
+                <div className={CSS.toggleWrapper}>
+                    <caption>MENU</caption>
                     
-                <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
+                        <span/>
+                        <span/>
+                        <span/>
+                    </div>
                 </div>
+                    
             </div>
 
 

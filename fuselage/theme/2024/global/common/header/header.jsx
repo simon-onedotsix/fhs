@@ -1,5 +1,7 @@
 import { useInView } from 'react-intersection-observer'
 
+import Link from 'next/link'
+
 import { MainMenu } from '../main-menu/main-menu'
 import { EventsBar } from '../../../../../components/events-bar/events-bar'
 import { FhsLockup } from '../../components/logos/fhs-brand'
@@ -84,7 +86,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
             <header ref={hideEventsBarTrigger} className={`${CSS.layout} ${overlaid && CSS.overlaid}`}>
 
                 <div className={`${CSS.brand} ${compact && CSS.compact}`}>
-                    {/* <Link href={`/`}><FhsLockup inverse sectorLabel={`Global`} /></Link> */}
+                    <Link href={`/`}><FhsLockup inverse sectorLabel={``} topColor={'var(--primary)'} /></Link>
                 </div>
                 
                 <div className={`${CSS.nav} ${ !inView && CSS.fixed}`}>

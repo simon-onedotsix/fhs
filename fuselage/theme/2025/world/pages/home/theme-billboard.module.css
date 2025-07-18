@@ -33,7 +33,7 @@
 
 @media(max-width:599px){
     .layout {    
-        height: 100vh;
+        height: 75vh;
     }
 
     .triGrid {

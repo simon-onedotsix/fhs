@@ -24,12 +24,18 @@ export const MainMenu = ({ otherEvents }) => {
     return (
         <>
             <div className={CSS.toggleContainer}>
-                <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div className={`${CSS.toggleActions} ${ active && CSS.active }`}></div>
+                
+                <div className={CSS.toggleWrapper}>
+                    <caption>MENU</caption>
+                    
+                    <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
+                        <span/>
+                        <span/>
+                        <span/>
+                    </div>
                 </div>
-                {/* <div className={`${CSS.toggleActions} ${ active && CSS.active } fw-600 caps`}><Button href={`#`} accent>Stay Updated</Button></div> */}
+                    
             </div>
 
 
