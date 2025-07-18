@@ -363,31 +363,35 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                             <p>Now, it&apos;s your turn to be part of the story.</p>
                             <p className="mb-sm">Join us at FHS World 2025 as we bring the global hospitality investment community back together to shape what&apos;s next. We can&apos;t wait to welcome you.</p>
                         </Fade>
-                        <Pop inline>
-                            <Button 
-                                href={`https://my.matterport.com/show/?m=DaYm3aXzc6n&ss=103&sr=1.79,.48`} 
-                                theme={{ 
-                                    background: `var(--secondary-2)`, 
-                                    hover: `var(--secondary-2-dark)`, 
-                                    color: `white`
-                                }} 
-                                decal={`fs-5 fw-600`}
-                                target={'_blank'}
-                            >
-                                Virtual Tour 2024
-                            </Button>&emsp;
-                            <Button 
-                                href={`/world/why-sponsor#partner-form`} 
-                                theme={{ 
-                                    background: `var(--secondary-2)`, 
-                                    hover: `var(--secondary-2-dark)`, 
-                                    color: `white`
-                                }} 
-                                decal={`fs-5 fw-600`}
-                            >
-                                Get in touch
-                            </Button>
-                        </Pop>
+                            <div className="button-grid">
+                                <Pop inline>
+                                    <Button 
+                                        href={`https://my.matterport.com/show/?m=DaYm3aXzc6n&ss=103&sr=1.79,.48`} 
+                                        theme={{ 
+                                            background: `var(--secondary-2)`, 
+                                            hover: `var(--secondary-2-dark)`, 
+                                            color: `white`
+                                        }} 
+                                        decal={`fs-5 fw-600`}
+                                        target={'_blank'}
+                                    >
+                                        Virtual Tour 2024
+                                    </Button>
+                                </Pop>
+                                <Pop inline>
+                                    <Button 
+                                        href={`/world/why-sponsor#partner-form`} 
+                                        theme={{ 
+                                            background: `var(--secondary-2)`, 
+                                            hover: `var(--secondary-2-dark)`, 
+                                            color: `white`
+                                        }} 
+                                        decal={`fs-5 fw-600`}
+                                    >
+                                        Get in touch
+                                    </Button>
+                                </Pop>
+                            </div>
                     </section>
 
                 </div>
@@ -400,28 +404,38 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             {
                 selectedCmsSpeakers &&
-                <SpeakerCarousel 
-                    heading={`Featured Speakers`} 
-                    text={``}
-                    decal={'bg-secondary'}
-                    ctaLink={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLink : ''}
-                    ctaLabel={selectedCmsSpeakers.ctaButton.length ? selectedCmsSpeakers.ctaButton[0].buttonLabel : ''}
-                    anchorId={``}
-                >
-                    {
-                        selectedCmsSpeakers.profiles.map( profile => (
-                            <Pop key={profile.id}>
-                                <SpeakerCard
-                                    url={`world/speakers/profile/${profile.slug}`}
-                                    photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
-                                    fullName={profile.title}
-                                    jobTitle={profile.positions[0].jobTitle}
-                                    company={profile.positions[0].organisation}
-                                />
-                            </Pop>
-                        ))
-                    }
-                </SpeakerCarousel>
+                <>
+                    <SpeakerCarousel 
+                        heading={`Featured Speakers`} 
+                        text={``}
+                        decal={'bg-secondary'}
+                        anchorId={``}
+                    >
+                        {
+                            selectedCmsSpeakers.profiles.map( profile => (
+                                <Pop key={profile.id}>
+                                    <SpeakerCard
+                                        url={`world/speakers/profile/${profile.slug}`}
+                                        photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
+                                        fullName={profile.title}
+                                        jobTitle={profile.positions[0].jobTitle}
+                                        company={profile.positions[0].organisation}
+                                    />
+                                </Pop>
+                            ))
+                        }
+                    </SpeakerCarousel>
+
+                    <div className="block bg-secondary">
+                        <div className='container center'>
+                            <div className="button-grid">
+                                <ArrowButton href={`/world/speakers`} theme={{ arrow: "c-primary", border: "c-primary", label: "c-primary"}} >View All Speakers</ArrowButton>
+                                <ArrowButton href={`/world/agenda`} theme={{ arrow: "c-primary", border: "c-primary", label: "c-primary"}} >View Agenda</ArrowButton>
+                            </div>
+                        </div>
+                    </div>
+                </>
+                
             }
 
 
