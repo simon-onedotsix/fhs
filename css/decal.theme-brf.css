@@ -1,0 +1,179 @@
+/* BRFA theme */
+
+[data-theme='brf'] body {
+	background-color: var(--primary);
+	color: white;
+}
+
+
+[data-theme='brf'] .c-primary { color: var(--accent); }
+[data-theme='brf'] .c-secondary { color: var(--accent); }
+[data-theme='brf'] .c-accent { color: var(--accent); }
+[data-theme='brf'] .c-peach { color: var(--peach); }
+
+[data-theme='brf'] .c-p { color: var(--default-text-color); }
+[data-theme='brf'] .c-h { color: var(--default-heading-color); }
+
+[data-theme='brf'] .c-black { color: black; }
+[data-theme='brf'] .c-white { color: white; }
+
+[data-theme='brf'] .c-light { color: var(--light) }
+[data-theme='brf'] .c-medium { color: var(--medium) }
+
+
+
+
+[data-theme='brf'] .bg-global { background-color: var(--bg-global); }
+
+[data-theme='brf'] .bg-primary { background-color: var(--primary); }
+[data-theme='brf'] .bg-secondary { background-color: var(--secondary); }
+[data-theme='brf'] .bg-accent { background-color: var(--accent); }
+[data-theme='brf'] .bg-peach { background-color: var(--peach); }
+
+[data-theme='brf'] .bg-wash { background-color: var(--wash);}
+[data-theme='brf'] .bg-light { background-color: var(--light);}
+[data-theme='brf'] .bg-medium { background-color: var(--medium);}
+[data-theme='brf'] .bg-dark { background-color: var(--dark);}
+
+
+
+/* BACKGROUNDS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+[data-theme='brf'] .bg-secondary,
+[data-theme='brf'] .bg-secondary .formatted h1,
+[data-theme='brf'] .bg-secondary .formatted h2,
+[data-theme='brf'] .bg-secondary .formatted h3,
+[data-theme='brf'] .bg-secondary .formatted h4,
+[data-theme='brf'] .bg-secondary .formatted h5,
+[data-theme='brf'] .bg-secondary .formatted h6 {
+    color: white;
+}
+
+
+
+/* FORMS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+[data-theme='brf'] .form input[type='submit'] {
+	border: 1px solid var(--peach);
+	background-color: var(--peach);
+	color: var(--primary);
+}
+
+[data-theme='brf'] .form input[type='submit']:hover {
+    border: 1px solid white;
+	background-color: white;
+}
+
+
+
+/* FORMS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+[data-theme='brf'] .form input[type='submit'] {
+    color: var(--primary);
+	background-color: var(--peach);
+    border: none;
+}
+
+[data-theme='brf'] .form input[type='submit']:hover {
+	background-color: white;
+}
+
+
+/* HUBSPOT SPECIFIC */
+
+[data-theme='brf'] .hs-form-field {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+[data-theme='brf'] .hs-form-field > label {
+    font-weight: 600;
+    font-size: smaller;
+}
+
+[data-theme='brf'] .hs-form-field textarea,
+[data-theme='brf'] .hs-form-field input[type='text'],
+[data-theme='brf'] .hs-form-field input[type='password'],
+[data-theme='brf'] .hs-form-field input[type='tel'],
+[data-theme='brf'] .hs-form-field input[type='email'] {
+    width: 100% !important;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-left: 0;
+    padding-right: 0;
+    color: white;
+    font-family: inherit;
+    border-bottom-color: white !important;
+}
+
+[data-theme='brf'] select.hs-input {
+    background-color: transparent;
+	color: white !important;
+    border-color: white !important;
+    background-image: url('/assets/ui/select-chevron-brf.svg');
+}
+
+
+[data-theme='brf'] footer.footer .hs-form-field textarea,
+[data-theme='brf'] footer.footer .hs-form-field input[type='text'],
+[data-theme='brf'] footer.footer .hs-form-field input[type='password'],
+[data-theme='brf'] footer.footer .hs-form-field input[type='tel'],
+[data-theme='brf'] footer.footer .hs-form-field input[type='email'] {
+    border-bottom-color: var(--accent) !important;
+}
+
+
+[data-theme='brf'] footer .form input {
+    border-bottom-color: var(--accent) !important;
+    color: var(--default-text-color) !important;
+}
+[data-theme='brf'] footer .form input:focus {
+    border-bottom-color: var(--secondary) !important;
+}
+
+[data-theme='brf'] footer .form input[type='submit'] {
+    color: var(--primary) !important;
+	background-color: var(--peach);
+    border: none;
+}
+[data-theme='brf'] footer .form input[type='submit']:hover {
+	background-color: white;
+}
+
+
+[data-theme='brf'] .hs_submit, 
+[data-theme='brf'] .hs-button, 
+[data-theme='brf'] .hs-submit,
+[data-theme='brf'] .hs_submit:hover, 
+[data-theme='brf'] .hs-button:hover,
+[data-theme='brf'] .hs-submit:hover {
+    border: none !important;
+}
+
+[data-theme='brf'] .hs-error-msgs {
+    list-style: none;
+    color: var(--error);
+    font-weight: 400;
+    padding-left: 0;
+}
+
+[data-theme='brf'] .hs-error-msg {
+    margin-top: .5rem;
+    color: var(--error);
+    font-weight: 400;
+}
+
+[data-theme='brf'] .hs-main-font-element {
+    margin-top: .5rem;
+    font-weight: 400;
+}
+
+[data-theme='brf'] .form-columns-2 {
+    max-width: 100% !important;
+}

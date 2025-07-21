@@ -3,12 +3,14 @@
 @import './decal.config.css';
 @import './decal.config-sa.css';
 @import './decal.config-ae.css';
+@import './decal.config-brf.css';
 
 @import './decal/decal.css';
 @import './decal.fonts.css';
 
 @import './decal.theme.css';
 @import './decal.theme-sa.css';
+@import './decal.theme-brf.css';
 @import './decal.theme-sa-2023.css';
 @import './decal.theme-ae-2022.css';
 @import './decal.theme-ae-2023.css';

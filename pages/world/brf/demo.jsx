@@ -6,10 +6,10 @@ import _ from 'lodash'
 
 import { motion } from "framer-motion"
 
-import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
-import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
+import { Header } from '../../../fuselage/theme/2025/brf/common/header/header'
+import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
 import { HeroUnitVideo } from "../../../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video"
-import { Button } from "../../../fuselage/theme/2024/world/components/button/button"
+import { Button } from "../../../fuselage/theme/2025/brf/components/button/button"
 
 import { Pop, Fade } from "../../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Callout } from '../../../fuselage/theme/2024/world/blocks/callout/callout'
@@ -201,14 +201,14 @@ export default function Page ({ sessions, speakers }) {
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ type: "spring", bounce: 0.25 }}
-                    className={`fs-0 fw-700 c-white lh-1 center`} 
+                    className={`fs-0 fw-700 lh-1 center`} 
                 >
                     <span style={{ display: 'inline-block', width: '14rem'}}>
                         <img src="/assets/img/brf/brf-logo-inverse.svg" alt="logo" />
                     </span>
                 </motion.p>
 
-                <p className='fs-4 fw-600 c-secondary caps center mt-sm'>29 October 2025</p>
+                <p className='fs-4 fw-600 c-white caps center mt-sm'>29 October 2025</p>
 
 
                 <motion.p 
@@ -223,19 +223,19 @@ export default function Page ({ sessions, speakers }) {
                 <Pop>
                     <div className="container maxw-60 pt-lg columns-3 gap-md">
                         <section>
-                            <p className='c-secondary center pb-sm caps ls-2'>Founder Sponsor</p>
+                            <p className='c-peach center pb-sm caps ls-2'>Founder Sponsor</p>
                             <div style={{ width: 300, maxWidth: '70vw', margin: '0 auto' }}>
                                 <img src="/assets/img/brf/accor-one-living.svg" alt="logo" />
                             </div>
                         </section>
                         <section>
-                            <p className='c-secondary center pb-sm caps ls-2'>Strategic Partner</p>
+                            <p className='c-peach center pb-sm caps ls-2'>Strategic Partner</p>
                             <div style={{ width: 150, maxWidth: '30vw', margin: '0 auto' }}>
                                 <img src="/assets/img/brf/global-branded-residences.svg" alt="logo" />
                             </div>
                         </section>
                         <section>
-                            <p className='c-secondary center pb-sm caps ls-2'>Sponsor</p>
+                            <p className='c-peach center pb-sm caps ls-2'>Sponsor</p>
                             <div style={{ width: 627, maxWidth: '13vw', margin: '0 auto' }}>
                                 <img src="/assets/img/brf/marriott.svg" alt="logo" />
                             </div>
@@ -248,7 +248,7 @@ export default function Page ({ sessions, speakers }) {
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ type: "spring", bounce: 0.25 }}
                 >
-                    <p className={`fs-3 fw-600 c-secondary center mt-lg maxw-45 mx-auto`} >Savill&apos;s Branded Residences Report</p>
+                    <p className={`fs-3 fw-600 c-white center mt-lg maxw-45 mx-auto`} >Savill&apos;s Branded Residences Report</p>
                     <p className="mt-sm center">
                         <Button href={'/world/savills-branded-residences-report-download'}>Download the Report Here</Button>
                     </p>
@@ -264,8 +264,8 @@ export default function Page ({ sessions, speakers }) {
                         caption={"The Rixos Dubai Islands Residences"}
                     >
                         <Fade>
-                            <p className='fs-2 fw-600 lh-2 c-secondary'>Market Overview</p>
-                            <p className="fs-4">The branded residences sector has grown <strong>180% globally in the past decade</strong>, with 788 projects currently running and an additional <strong>900+</strong> launching globally (or in pipeline) over the next 5 to 6 years.</p>
+                            <p className='fs-2 fw-600 lh-2'>Market Overview</p>
+                            <p className="fs-4 c-white">The branded residences sector has grown <strong>180% globally in the past decade</strong>, with 788 projects currently running and an additional <strong>900+</strong> launching globally (or in pipeline) over the next 5 to 6 years.</p>
                         </Fade>
                     </Callout>
                 </div>
@@ -279,6 +279,7 @@ export default function Page ({ sessions, speakers }) {
                 sessions &&
                 <SpeakerCarousel 
                     heading={`2024 Speakers`} 
+                    color={'white'}
                     text={null}
                     decal={'bg-secondary'}
                     ctaLink={null}
@@ -294,6 +295,7 @@ export default function Page ({ sessions, speakers }) {
                                     fullName={`${profile.firstName} ${profile.lastName}`}
                                     jobTitle={profile.jobTitle}
                                     company={profile.organization}
+                                    color={'white'}
                                 />
                             </Pop>
                         ))
@@ -320,48 +322,49 @@ export default function Page ({ sessions, speakers }) {
                 <div className="container maxw-70">
 
                     <QuoteSlider 
+                        color={'white'}
                         heading={"Testimonials"}
                         testimonials={[
-                        {
-                            quote: "Success in branded residences requires specialised expertise across multiple disciplines - which is why we see The Branded Residence Forum by Accor One Living as such an essential platform for discussion. At this trailblazing event, we will pull together key-decision makers from across the sector - including residential developers who have executed enormously successful projects, expert lawyers, branding and communication firms, architects, interior designer and other key consultants - the key players who are propelling the success of branded residences globally.",
-                            avatar: [
-                                {
-                                    url: "/assets/img/brf/quotes/jeff.jpg",
-                                    width: "800",
-                                    height: "800"
-                                }
-                            ],
-                            fullName: "Jeff Tisdall",
-                            jobTitle: "CBO",
-                            organisation: "Accor One Living"
-                        },
-                        {
-                            quote: "We see The Branded Residences Forum by Accor One Living as an important opportunity for the industry to gather and discuss this ever-expanding sector. Interest is now truly global and standalone branded development activity is accelerating. At the same time, exciting new brands and partnership are emerging - simply put, investors have a lot to consider and share when it comes to branded residences.",
-                            avatar: [
-                                {
-                                    url: "/assets/img/brf/quotes/Itani.jpg",
-                                    width: "800",
-                                    height: "800"
-                                }
-                            ],
-                            fullName: "Riyan Itani",
-                            jobTitle: "Founder",
-                            organisation: "Global Branded Residences"
-                        },
-                        {
-                            quote: "FHS World in Dubai is a key gathering for hospitality investors and it is only natural that its scope has been expanded to include a 'must-attend' day-long event for those developing, operating or exploring branded residences. We see this forum as a key opportunity for investors to delve into the key issues and trends, such as rental programs, legal structure, sales and marketing and design.",
-                            avatar: [
-                                {
-                                    url: "/assets/img/brf/quotes/rico.jpg",
-                                    width: "800",
-                                    height: "800"
-                                }
-                            ],
-                            fullName: "Rico Picenoni",
-                            jobTitle: "Head of Savills Global Residential Development Consultancy",
-                            organisation: ""
-                        }
-                    ]} />
+                            {
+                                quote: "Success in branded residences requires specialised expertise across multiple disciplines - which is why we see The Branded Residence Forum by Accor One Living as such an essential platform for discussion. At this trailblazing event, we will pull together key-decision makers from across the sector - including residential developers who have executed enormously successful projects, expert lawyers, branding and communication firms, architects, interior designer and other key consultants - the key players who are propelling the success of branded residences globally.",
+                                avatar: [
+                                    {
+                                        url: "/assets/img/brf/quotes/jeff.jpg",
+                                        width: "800",
+                                        height: "800"
+                                    }
+                                ],
+                                fullName: "Jeff Tisdall",
+                                jobTitle: "CBO",
+                                organisation: "Accor One Living"
+                            },
+                            {
+                                quote: "We see The Branded Residences Forum by Accor One Living as an important opportunity for the industry to gather and discuss this ever-expanding sector. Interest is now truly global and standalone branded development activity is accelerating. At the same time, exciting new brands and partnership are emerging - simply put, investors have a lot to consider and share when it comes to branded residences.",
+                                avatar: [
+                                    {
+                                        url: "/assets/img/brf/quotes/Itani.jpg",
+                                        width: "800",
+                                        height: "800"
+                                    }
+                                ],
+                                fullName: "Riyan Itani",
+                                jobTitle: "Founder",
+                                organisation: "Global Branded Residences"
+                            },
+                            {
+                                quote: "FHS World in Dubai is a key gathering for hospitality investors and it is only natural that its scope has been expanded to include a 'must-attend' day-long event for those developing, operating or exploring branded residences. We see this forum as a key opportunity for investors to delve into the key issues and trends, such as rental programs, legal structure, sales and marketing and design.",
+                                avatar: [
+                                    {
+                                        url: "/assets/img/brf/quotes/rico.jpg",
+                                        width: "800",
+                                        height: "800"
+                                    }
+                                ],
+                                fullName: "Rico Picenoni",
+                                jobTitle: "Head of Savills Global Residential Development Consultancy",
+                                organisation: ""
+                            }
+                        ]} />
 
                 </div>
             </section>
@@ -385,7 +388,7 @@ export default function Page ({ sessions, speakers }) {
     )
 }
 
-Page.theme = 'world-2024'
+Page.theme = 'brf'
 
 
 

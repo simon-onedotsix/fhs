@@ -6,7 +6,7 @@ import CSS from './quote-slider.module.css'
 
 
 
-export const QuoteSlider = ({ heading, testimonials }) => {
+export const QuoteSlider = ({ heading, testimonials, color }) => {
 
     const [ currentPage, setCurrentPage ] = useState(1)
     const totalPages = testimonials.length
@@ -24,9 +24,9 @@ export const QuoteSlider = ({ heading, testimonials }) => {
 
     return (
         <>
-            <p className="fs-1 fw-600 center c-primary">{ heading }</p>
+            <p className={`fs-1 fw-600 center ${color ? color : 'c-primary'}`}>{ heading }</p>
 
-            <section className={`${CSS.layout} center c-primary`}>
+            <section className={`${CSS.layout} center ${color ? color : 'c-primary'}`}>
 
                 {
                     testimonials.map( (testimonial, index) => (
