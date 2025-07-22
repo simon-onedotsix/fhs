@@ -74,7 +74,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
                 <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16" />
             </Head>
 
-            <Header overlaid inverse />
+            <Header compact inverse />
 
             <section className="block pt-0">
                 <StickySidebar size='small'>

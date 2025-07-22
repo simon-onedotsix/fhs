@@ -121,7 +121,7 @@ export default function Club ({ events }) {
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
 			</Head>
         
-            <Header compact />
+            <Header overlaid />
 
             <div className="bg-pattern-primary-50">
 

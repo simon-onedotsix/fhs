@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    z-index: 180;
 }
 .layout.overlaid {
     position: absolute;
@@ -16,9 +15,16 @@
 }
 
 .brand {
-    z-index: 10;
+    z-index: 50;
     width: 9rem;
     padding: 1.5rem var(--space-md);
+}
+.brand * {
+    text-decoration: none;
+}
+
+.venue {
+    display: none;
 }
 
 @media(min-width:600px){
@@ -35,9 +41,11 @@
         padding: var(--space-md);
     }
     
+    
     .compact {
-        padding: var(--space-sm);
-        width: 8rem;
+        /* padding: var(--space-sm); */
+        /* width: 100%; */
+        /* box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3); */
     }
 
     .nav {
@@ -45,7 +53,7 @@
     }
     .nav.fixed {
         position: fixed;
-        z-index: 200;
+        z-index: 50;
         top: 0;
         right: 0;
     }
@@ -55,15 +63,36 @@
 @media(min-width:900px){
     
     .brand {
-        width: 20rem;
+        /* width: 20rem; */
     }
+    
     .shim {
         height: var(--header-height-compact);
     }
-    .brand.compact {
-        padding: var(--space-sm);
-        width: 9rem;
-    }
-
     
+    .compact {
+        height: var(--header-height-compact);
+        padding: 0;
+        width: 100%;
+    }
+    
+    .compact .brand {
+        padding: 0;
+        width: 9rem;
+        transform: scale(.5);
+    }
+    
+    .compact .venue {
+        display: block;
+        position: relative;
+        z-index: 2;
+    }
+    
+}
+
+
+@media print {
+    .layout {
+        display: none;
+    }
 }
