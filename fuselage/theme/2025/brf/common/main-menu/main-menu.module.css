@@ -51,7 +51,7 @@
 }
 
 
-@media(max-width:799px){
+@media(max-width:899px){
     .toggleContainer {
         position: fixed;
         z-index: 100;
@@ -89,7 +89,7 @@
 }
 
 
-@media (min-width:800px) {
+@media (min-width:900px) {
     .toggleContainer {
         position: relative;
         z-index: 100;
@@ -128,7 +128,7 @@
     width: 100vw;
 
     padding: var(--space-md);
-    padding-top: calc(var(--space-lg) * 4.5);
+    padding-top: calc(var(--space-lg) * 3.5);
     overflow-y: scroll; 
     
     color: white;
@@ -161,7 +161,7 @@
 
 @media(min-width:600px) {
     .overlay {
-        padding-top: calc(var(--space-lg) * 2);
+        padding-top: calc(var(--space-lg) * 2.5);
     }
 }
 

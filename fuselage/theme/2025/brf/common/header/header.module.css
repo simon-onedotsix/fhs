@@ -18,6 +18,12 @@
     z-index: 50;
     width: 9rem;
     padding: 1.5rem var(--space-md);
+
+    display: flex;
+}
+.brandDivider {
+    margin: 0 1rem;
+    border-left: 1px solid white;
 }
 .brand * {
     text-decoration: none;
@@ -65,6 +71,8 @@
     .brand {
         /* width: 20rem; */
     }
+
+    
     
     .shim {
         height: var(--header-height-compact);
