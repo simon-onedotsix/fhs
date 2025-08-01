@@ -197,16 +197,7 @@ export default function Page ({ sessions, speakers }) {
             <Header overlaid inverse />
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>
-                <motion.p 
-                    initial={{ y: 100, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ type: "spring", bounce: 0.25 }}
-                    className={`fs-0 fw-700 lh-1 center`} 
-                >
-                    <span style={{ display: 'inline-block', width: '14rem'}}>
-                        <img src="/assets/img/brf/brf-logo-inverse.svg" alt="logo" />
-                    </span>
-                </motion.p>
+                <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>Where brands shape the future of living</p>
 
                 <p className='fs-4 fw-600 c-white caps center mt-sm'>29 October 2025</p>
 

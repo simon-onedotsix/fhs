@@ -88,8 +88,6 @@ export const Header = ({ compact, overlaid, inverse }) => {
 
                 <section className='flex jc-center flex-wrap gap-sm ai-center'>
                     <div className={`${CSS.brand}`}>
-                        <Link href={`/ae`}><a className={CSS.logo}><FhsLockup inverse topColor={`var(--graphite-light)`} sectorColor={`var(--peach)`} /></a></Link>
-                        <div className={CSS.brandDivider} />
                         <img src="/assets/img/brf/brf-logo-inverse.svg" alt="logo" />
                     </div>
                     <div className={CSS.venue}>
