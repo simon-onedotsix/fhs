@@ -69,23 +69,33 @@ const FILTER_TRACKS = [
 let PRIORITISED_STREAMS = [
     {
         "id": "RmllbGRWYWx1ZV8xOTEwNTI2NA==",
-        "name": "Summit Stage"
+        "name": "Summit Stage",
+		"color": "#006f6cff"
     },
     {
         "id": "RmllbGRWYWx1ZV8xOTEwNTI2NQ==",
-        "name": "Future Stage"
+        "name": "Future Stage",
+		"color": "#0064dfff"
+    },
+    {
+        "id": "RmllbGRWYWx1ZV8yNTg4MzM4MA==",
+        "name": "Centre Stage",
+		"color": "#5c00c5ff"
     },
 	{
 		"id": "RmllbGRWYWx1ZV8yMjQ1NzUyOA==",
-		"name": "Innovation Stage"
+		"name": "Innovation Stage",
+		"color": "#835c09"
 	},
     {
 		"id": "RmllbGRWYWx1ZV8yMDYxOTUyNA==",
-        "name": "Exhibition Stage"
+        "name": "Exhibition Stage",
+		"color": "#093c83"
     },
 	{
 		"id": "RmllbGRWYWx1ZV8xOTgzMTg2Nw==",
-		"name": "Workshops (Marjan)"
+		"name": "Workshops (Marjan)",
+		"color": "#800091ff"
 	},
 ]
 
@@ -475,7 +485,10 @@ export default function Agenda ({ sessions, locations }) {
 				if ( session.fields.find( (field) => field.definition.name === 'Location' ) ) {
 
 					let location = session.fields.find( (field) => field.definition.name === 'Location' )
-					session.priority = locationsData.map( i => i.id ).indexOf(location?.id)					
+					session.priority = locationsData.map( i => i.id ).indexOf(location?.id)	
+					
+					let theme = PRIORITISED_STREAMS.find( i => i.id === location.id )
+					if ( theme ) { session.color = theme.color }
 
 					sortedStreams.push(session)
 
@@ -788,7 +801,9 @@ export default function Agenda ({ sessions, locations }) {
 																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
 																		<div className={CSS.session}>
 
+																			{/* add to div below to colour-code headers => style={{ backgroundColor: session.color ? session.color : null }} */}
 																			<div className={`${CSS.sessionHeader} fw-500 c-white bg-medium`}>
+																				
 																				{
 																					session.beginsAt && session.endsAt ?
 																						<div className={CSS.sessionTimings}>
