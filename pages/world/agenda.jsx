@@ -97,6 +97,11 @@ let PRIORITISED_STREAMS = [
 		"name": "Workshops (Marjan)",
 		"color": "#800091ff"
 	},
+	{
+		"id": "RmllbGRWYWx1ZV8yNjk4NTkzMg==",
+		"name": "Workshops (Arena)",
+		"color": "#910041ff"
+	},
 ]
 
 // end stream order
@@ -542,7 +547,7 @@ export default function Agenda ({ sessions, locations }) {
 
 
 	// console.log('sessions:', sessions)
-	// console.log('locations [swc]:', locations)
+	console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
 	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
