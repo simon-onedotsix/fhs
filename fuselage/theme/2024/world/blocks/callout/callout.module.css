@@ -37,7 +37,7 @@
 
 
 .imageContainer img {
-    border-radius: var(--degault-radius);
+    border-radius: var(--default-radius);
 }
 
 .caption {
