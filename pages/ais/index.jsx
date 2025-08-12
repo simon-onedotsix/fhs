@@ -115,7 +115,7 @@ export default function Page () {
                                         height: "800"
                                     }
                                 ],
-                                fullName: "Badreya Al Maidoor",
+                                fullName: "H.E. Badreya Al Maidoor",
                                 jobTitle: "Assistant Undersecretary of Support Services Sector at Ministry Of Economy, UAE"
                             },
                             {
