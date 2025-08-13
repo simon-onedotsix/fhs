@@ -5,6 +5,9 @@ import _ from 'lodash'
 
 import { motion } from "framer-motion"
 
+import Link from 'next/link'
+import Image from 'next/image'
+
 import { Header } from '../../fuselage/theme/2025/ais/common/header/header'
 import { Footer } from '../../fuselage/theme/2025/ais/common/footer/footer'
 
@@ -19,7 +22,7 @@ import { QuoteSlider } from '../../fuselage/theme/2024/world/components/quote-sl
 
 
 
-import CSS from '../../css/app/agenda-world-2024.module.css'
+import CSS from '../../fuselage/theme/2025/ais/css/homepage.module.css'
 
 
 
@@ -52,6 +55,35 @@ export default function Page () {
                 >
                     Held as part of <strong className='fw-600'>FHS World</strong>, this summit aims to enhance economic and tourism partnerships between the UAE and African nations.
                 </motion.p>
+
+
+                {/* PATRONAGE */}
+            
+
+                <div className="container center pt-lg">
+                    <p className="fs-3 fw-600 c-secondary caps pb-sm">Under the Patronage of</p>
+
+                    <div className={CSS.patronBox}>
+
+                        <div className={CSS.patronBoxAvatar}>
+                            <Pop>
+                                <div className={CSS.avatar}>
+                                    <Image src={"/assets/img/ais/al-marri.jpg"} layout='fill' alt="" unoptimized />
+                                </div>
+                            </Pop>
+                        </div>
+
+                        <div className={CSS.patronBoxContent}>
+                            <Pop>
+                                <p className="fs-4 fw-600">H.E. Abdulla bin Touq Al Marri</p>
+                                <p className="fs-5 mt-xxs">Minister of Economy and Tourism, United Arab Emirates</p>
+
+                            </Pop>
+                        </div>
+                    </div>
+                </div>
+       
+
 
                 <Pop>
                     <div className="container maxw-60 pt-lg">

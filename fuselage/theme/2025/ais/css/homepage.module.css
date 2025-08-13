@@ -1,0 +1,229 @@
+.impactFiguresGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: var(--space-md);
+
+    @media(min-width:600px) {
+        grid-template-columns: 1fr 3fr;
+    }
+}
+
+.highlightVideoGrid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    
+    @media(min-width: 900px) {
+        grid-template-columns: 1fr 3fr;
+    }
+}
+
+.hostSponsorLogoWrapper {
+    max-width: 60vw;
+
+    @media(min-width:600px){
+        max-width: 20rem;
+    }
+}
+
+.photoGrid {
+    position: relative;
+    z-index: 2;
+}
+
+/* intro section */
+
+.introHeadline {
+    @media(min-width:600px) {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.introGraphicWapper {
+    position: absolute;
+    left: -10vw;
+    bottom: -8vw;
+
+    width: 50vw;
+    aspect-ratio: 1;
+
+    @media(max-width:599px) {
+        display: none;
+    }
+}
+
+
+/* what's new section */
+
+.fhsGraphicWrapper {
+   width: 30vw;
+   aspect-ratio: 1;
+
+   @media(max-width:599px) {
+        width: 50vw;
+    }
+}
+
+
+/* 2023 highlights section */
+
+.highlightsGraphicWapper {
+    position: absolute;
+    right: -16vw;
+    bottom: -8vw;
+
+    width: 70vw;
+    aspect-ratio: 1;
+
+    @media(max-width:599px) {
+        display: none;
+    }
+}
+
+
+/* modal popup */
+
+.popupHeader {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    margin-bottom: var(--space-sm);
+}
+
+.popupHeaderImage {
+    display: block;
+    max-width: 14rem;
+}
+
+@media(min-width:800px){
+    .popupHeader {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .popupHeaderImage {
+        max-width: 18rem;
+    }
+    
+}
+
+
+
+/* next year flash */
+
+.flashWrapper {
+    position: absolute;
+    z-index: 10;
+    bottom: var(--space-md);
+    right: var(--space-md);
+}
+
+.flash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border-radius: 50%;
+    aspect-ratio: 1;
+    background-color: var(--accent);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.flashHeading {
+    font-size: 2rem;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+@media (max-width:600px) {
+    .flashWrapper {
+        bottom: auto;
+        top: 7rem;
+        right: 0;
+    }
+    .flash {
+        transform: scale(.7);
+    }
+}
+@media (min-width:601px) and (max-width:900px) {
+    .flashWrapper {
+        bottom: auto;
+        top: 8rem;
+        right: var(--space-md);
+    }
+}
+
+
+
+
+
+
+
+.patronBox {
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7rem 7rem auto;
+}
+.patronBoxAvatar {
+    grid-area: 1/1 / 3/2;
+}
+.patronBoxContent {
+    grid-area: 2/1 / 4/2;
+    background-color: var(--primary-2);
+    border-radius: 1rem;
+    padding: var(--space-sm);
+    padding-top: calc(7rem + var(--space-sm));
+}
+.avatar {
+    display: inline-block;
+    position: relative;
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: rgb(212, 212, 212);
+}
+.avatar img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* THEME graphics ------------------- */
+
+.themeWrapper {
+    position: relative;
+}
+.themeWrapperGraphics {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+.themeWrapperContent {
+    position: relative;
+    z-index: 2;
+}
+
+.graphic01 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -10vw;
+    width: 40vw;
+}
+.graphic02 {
+    position: absolute;
+    top: 0;
+    bottom: -20vw;
+    right: -10vw;
+    width: 40vw;
+}

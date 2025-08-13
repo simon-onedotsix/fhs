@@ -24,12 +24,12 @@ export const MainMenu = ({ otherEvents }) => {
         <>
             <div className={CSS.toggleContainer}>
                 <div className={`${CSS.toggleActions} ${ active && CSS.active }`}>
-                    <Button href={`/world/purchase-pass`} >
+                    {/* <Button href={`/world/purchase-pass`} >
                         Purchase Pass
-                    </Button>
+                    </Button> */}
                     
-                    <Button href={`/world/why-sponsor#partner-form`} m>
-                        Become A Sponsor
+                    <Button href={`#form`} m>
+                        Register Interest
                     </Button>
                 </div>
 
