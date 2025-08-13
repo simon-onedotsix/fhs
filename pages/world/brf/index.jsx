@@ -361,9 +361,19 @@ export default function Page ({ sessions, speakers }) {
             </section>
 
 
+            <section className="block">
+                <div className="container formatted center maxw-50">
+                    <p className="fs-1 fw-600 lh-1">World Branded Residences Awards 2025</p>
+                    <p className='fs-5 mt-sm'>The World Branded Residences Awards recognise excellence and outstanding achievement among brokerages and individual brokers operating in the global branded residences market.</p>
+                </div>
+                <div className="container center">
+                    <Button href={'/world/brf/broker-award'}>Learn More</Button>
+                </div>
+            </section>
+
 
             {/* FORM */}
-            <section id="form" className="block">
+            <section id="form" className="block bg-secondary">
                 <div className="container center">
                     <p className="fs-1 fw-600">Register Your Interest</p>
                 </div>
