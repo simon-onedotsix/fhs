@@ -86,7 +86,11 @@ export const Header = ({ compact, overlaid, inverse }) => {
             <header ref={hideEventsBarTrigger} className={`${CSS.layout} ${overlaid && CSS.overlaid} ${compact && CSS.compact} `}>
 
                 <div className={`${CSS.brand} ${compact && CSS.compact}`}>
-                    <Link href={`/`}><FhsLockup inverse sectorLabel={``} topColor={'var(--primary-light)'} sectorColor={'var(--primary-2)'} /></Link>
+                    <Link href={`/world`}>
+                        <a>
+                            <FhsLockup inverse sectorLabel={`WORLD`} topColor={'#71CFEB'} sectorColor={'#EF3742'} />
+                        </a>
+                    </Link>
                 </div>
                 
                 <div className={`${CSS.nav} ${ !inView && CSS.fixed}`}>

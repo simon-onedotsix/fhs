@@ -4,7 +4,6 @@ import { useInView } from 'react-intersection-observer'
 
 import { MainMenu } from '../main-menu/main-menu'
 import { EventsBar } from '../../../../../components/events-bar/events-bar'
-import { FhsLogo } from '../../../../../components/fhs-logo/fhs-logo'
 import { FhsLockup } from '../../components/logos/fhs-brand'
 
 import CSS from './header.module.css'
