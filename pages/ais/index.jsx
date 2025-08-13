@@ -89,7 +89,7 @@ export default function Page () {
                         image={{ url:'/assets/img/ais/ais-02.jpg', width:2000, height:1403 }}
                     >
                         <Fade>
-                            <p className='fs-2 fw-600 lh-2'>Ministry of Economy & Tourism partners with The Bench to host &apos;Africa Investment Summit&apos; at FHS World 2025</p>
+                            <p className='fs-2 fw-600 lh-2'>Ministry of Economy & Tourism partners with The Bench to host &apos;UAE Africa Tourism Investment Summit&apos; at FHS World 2025</p>
                             <p className="fs-5 c-white">The event will gather <strong className='fw-600'>250+</strong> senior officials, investors, and tourism leaders from <strong className='fw-600'>53</strong> African nations to drive partnerships and boost investment in hospitality, tourism, and related sectors.</p>
                         </Fade>
                     </Callout>
