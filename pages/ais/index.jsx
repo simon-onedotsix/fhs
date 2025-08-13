@@ -41,8 +41,6 @@ export default function Page () {
                     <img src="/assets/img/ais/ais-logo.svg" alt="logo" width="100%" />
                 </div>
 
-                <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto mt-md'>African Investment Summit (AIS)</p>
-
                 <p className='fs-4 fw-600 c-white caps center mt-sm'>27 October 2025 <br/>08:30–13:00</p>
 
 
@@ -52,15 +50,18 @@ export default function Page () {
                     transition={{ type: "spring", bounce: 0.25 }}
                     className={`fs-5 c-white center mt-xs maxw-45 mx-auto`} 
                 >
-                    Held adjacently with <strong className='fw-600'>FHS World</strong>, this summit aims to enhance economic and tourism partnerships between the UAE and African nations.
+                    Held as part of <strong className='fw-600'>FHS World</strong>, this summit aims to enhance economic and tourism partnerships between the UAE and African nations.
                 </motion.p>
 
                 <Pop>
                     <div className="container maxw-60 pt-lg">
-                        <section>
-                            <p className='c-peach center pb-sm caps ls-2'>In collaboration with:</p>
-                            <div style={{ width: 500, maxWidth: '70vw', margin: '0 auto' }}>
+                            <p className='c-peach center pb-sm caps ls-2'>Brought to you by:</p>
+                        <section className='flex ai-center gap-md jc-center'>
+                            <div style={{ width: 400, maxWidth: '70vw', display: 'inline-block' }}>
                                 <img src="/assets/img/ais/uae-ministry.png" alt="logo" width="100%" />
+                            </div>
+                            <div style={{ width: 150, maxWidth: '70vw', display: 'inline-block' }}>
+                                <img src="/assets/site/the-bench-inverse@2x.png" alt="logo" width="100%" />
                             </div>
                         </section>
                     </div>
@@ -71,7 +72,7 @@ export default function Page () {
 
 
             {/* CALLOUTS */}
-            <section className="block bg-default">
+            <section className="block bg-default pt-md">
                 <div className="container formatted maxw-90">
                     <Callout
                         image={{ url:'/assets/img/ais/ais-01.jpg', width:2000, height:1335 }}
@@ -107,7 +108,7 @@ export default function Page () {
                         color={'white'}
                         testimonials={[
                             {
-                                quote: "The Africa Investment Summit  will serve as a strategic platform for exchanging insights and expertise between the UAE and African nations, supporting sustainable development efforts through the establishment of projects and partnerships that serve mutual interests. This aligns with the objectives of 'We the UAE 2031' vision, which aims to position the country as a leading global hub for the new economy, driven by international partnerships and future-focused sectors.",
+                                quote: "The UAE Africa Tourism Investment Summit will serve as a strategic platform for exchanging insights and expertise between the UAE and African nations, supporting sustainable development efforts through the establishment of projects and partnerships that serve mutual interests. This aligns with the objectives of 'We the UAE 2031' vision, which aims to position the country as a leading global hub for the new economy, driven by international partnerships and future-focused sectors.",
                                 avatar: [
                                     {
                                         url: "/assets/img/ais/quotes/badreya-al-maidoor.jpg",
@@ -119,7 +120,7 @@ export default function Page () {
                                 jobTitle: "Assistant Undersecretary of Support Services Sector at Ministry Of Economy, UAE"
                             },
                             {
-                                quote: "We are honoured to partner with the UAE Ministry of Economy & Tourism to launch the Africa Investment Summit as part of FHS World 2025. This collaboration reflects our shared ambition to accelerate investment and development across Africa's hospitality sector. The UAE has long served as a bridge between global capital and emerging markets, and this new platform will strengthen the connections between African nations and the international investment community. Together, we are creating an ecosystem that fosters meaningful dialogue, unlocks deal flow, and drives long-term economic growth across the continent.",
+                                quote: "We are honoured to partner with the UAE Ministry of Economy & Tourism to launch the UAE Africa Tourism Investment Summit as part of FHS World 2025. This collaboration reflects our shared ambition to accelerate investment and development across Africa's hospitality sector. The UAE has long served as a bridge between global capital and emerging markets, and this new platform will strengthen the connections between African nations and the international investment community. Together, we are creating an ecosystem that fosters meaningful dialogue, unlocks deal flow, and drives long-term economic growth across the continent.",
                                 avatar: [
                                     {
                                         url: "/assets/img/ais/quotes/jonathan-worsley.jpg",
@@ -140,7 +141,7 @@ export default function Page () {
             {/* FORM */}
             <section id="form" className="block bg-primary-2">
                 <div className="container formatted center maxw-50">
-                    <p className="fs-1 fw-600">Register Interest for AIS</p>
+                    <p className="fs-1 fw-600">Register Interest for UAE Africa Tourism Investment Summit</p>
                     <p className='fs-6'>Please note that this is an invitation-only event for select C-level operators and investors, and registration does not guarantee attendance for all applicants.</p>
                 </div>
                 <div className="container maxw-70">
