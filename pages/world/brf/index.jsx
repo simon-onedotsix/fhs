@@ -233,17 +233,6 @@ export default function Page ({ sessions, speakers }) {
                         </section>
                     </div>
                 </Pop>
-                
-                <motion.div 
-                    initial={{ y: 100, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ type: "spring", bounce: 0.25 }}
-                >
-                    <p className={`fs-3 fw-600 c-white center mt-lg maxw-45 mx-auto`} >Savill&apos;s Branded Residences Report</p>
-                    <p className="mt-sm center">
-                        <Button href={'/world/savills-branded-residences-report-download'}>Download the Report Here</Button>
-                    </p>
-                </motion.div>
 
             </HeroUnitVideo>
 
@@ -294,6 +283,17 @@ export default function Page ({ sessions, speakers }) {
                 </SpeakerCarousel>
             }
 
+
+            {/* AWARDS */}
+            <section className="block">
+                <div className="container formatted center maxw-50">
+                    <p className="fs-1 fw-600 lh-1">World Branded Residences Awards 2025</p>
+                    <p className='fs-5 mt-sm'>The World Branded Residences Awards recognise excellence and outstanding achievement among brokerages and individual brokers operating in the global branded residences market.</p>
+                </div>
+                <div className="container center">
+                    <Button href={'/world/brf/broker-award'}>Learn More</Button>
+                </div>
+            </section>
             
 
             {/* THEMES */}
@@ -360,16 +360,6 @@ export default function Page ({ sessions, speakers }) {
                 </div>
             </section>
 
-
-            <section className="block">
-                <div className="container formatted center maxw-50">
-                    <p className="fs-1 fw-600 lh-1">World Branded Residences Awards 2025</p>
-                    <p className='fs-5 mt-sm'>The World Branded Residences Awards recognise excellence and outstanding achievement among brokerages and individual brokers operating in the global branded residences market.</p>
-                </div>
-                <div className="container center">
-                    <Button href={'/world/brf/broker-award'}>Learn More</Button>
-                </div>
-            </section>
 
 
             {/* FORM */}
