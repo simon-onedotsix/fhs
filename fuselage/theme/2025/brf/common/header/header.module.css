@@ -2,11 +2,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    /* background-color: rgba(255, 255, 255, 0.102); */
 }
-.layout.overlaid {
-    position: absolute;
-    width: 100%;
-}
+
 
 .shim {
     position: relative;
@@ -14,28 +12,48 @@
     transition: height 350ms ease-in-out; 
 }
 
-.brand {
-    z-index: 50;
-    width: 9rem;
-    padding: 1.5rem var(--space-md);
 
-    display: flex;
-}
-.brandDivider {
-    margin: 0 1rem;
-    border-left: 1px solid white;
-}
-.brand * {
-    text-decoration: none;
+@media(max-width:599px){
+    .brand {
+        z-index: 50;
+        width: 9rem;
+        padding: 1.5rem var(--space-md);
+    
+        display: flex;
+    }
+    
+    .brandVenueWrapper {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .brandDivider {
+        margin: 0 1rem;
+        border-left: 1px solid white;
+    }
+
+    .brand * {
+        text-decoration: none;
+    }
+    .brand img,
+    .brand svg {
+        object-fit: contain;
+        object-position: left center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .venue {
+        display: none;
+    }
+
 }
 
-.venue {
-    display: none;
-}
 
-@media(min-width:600px){
+
+/* @media(min-width:600px){
     .layout {
-        /* background-color: rgba(230, 0, 255, 0.343); */
+        background-color: rgba(230, 0, 255, 0.343);
     }
 
     .shim {
@@ -49,8 +67,6 @@
     
     
     .compact {
-        /* padding: var(--space-sm); */
-        /* width: 100%; */
         box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3);
     }
 
@@ -64,30 +80,49 @@
         right: 0;
     }
 
-}
+} */
 
 @media(min-width:900px){
     
     .brand {
-        width: 20rem;
+        width: 18rem;
+        padding: 3rem;
+    }
+    .venue {
+        display: none;
     }
 
-    
+    .brandVenueWrapper {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .nav {
+        margin: var(--space-sm);
+    }
+    .nav.fixed {
+        position: fixed;
+        z-index: 50;
+        top: 0;
+        right: 0;
+    }
     
     .shim {
         height: var(--header-height-compact);
     }
-    
-    .compact {
-        height: var(--header-height-compact);
-        padding: 0;
+
+    .layout.overlaid {
+        position: absolute;;
+        z-index: 50;
         width: 100%;
     }
     
+    .compact {
+        height: var(--header-height-compact);
+    }
+    
     .compact .brand {
-        padding: 0;
-        width: 9rem;
-        transform: scale(.5);
+        width: 12rem;
     }
     
     .compact .venue {

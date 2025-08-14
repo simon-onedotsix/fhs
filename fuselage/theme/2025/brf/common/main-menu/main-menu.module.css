@@ -31,9 +31,9 @@
     .toggle:hover {
         background-color: white;
     }
-    .toggle:hover span {
-        /* background-color: white; */
-    }
+    /* .toggle:hover span {
+        background-color: white;
+    } */
 }
 
 
@@ -55,9 +55,10 @@
     .toggleContainer {
         position: fixed;
         z-index: 100;
-        top: 2rem;
-        right: 2rem;
-        left: 2rem;
+        top: 1.5rem;
+        right: 1.5rem;
+        left: 1.5rem;
+        
         display: grid;
         grid-template-columns: auto auto;
         align-items: flex-start;
@@ -83,6 +84,10 @@
         pointer-events: all;
     }
 
+    .toggleWrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
     .toggleWrapper caption {
         display: none;
     }

@@ -194,13 +194,12 @@ export default function Page ({ sessions, speakers }) {
 
     return (
         <>
-            <Header overlaid inverse />
+            <Header overlaid />
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>
+
                 <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>Where brands shape the future of living</p>
-
                 <p className='fs-4 fw-600 c-white caps center mt-sm'>29 October 2025</p>
-
 
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}

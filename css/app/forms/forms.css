@@ -182,7 +182,7 @@
 
 select.hs-input {
     margin: .5rem 0;
-    width: max-content !important;
+    /* width: max-content !important; */
     color: var(--dark) !important;
     border-color: var(--secondary) !important;
     border-radius: .25rem;
