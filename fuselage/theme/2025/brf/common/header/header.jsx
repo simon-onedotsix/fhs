@@ -89,7 +89,9 @@ export const Header = ({ compact, overlaid, inverse }) => {
                 <section className={CSS.brandVenueWrapper}>
 
                     <div className={`${CSS.brand}`}>
-                        <img src="/assets/img/brf/brf-logo-inverse.svg" alt="logo" />
+                        <Link href={`/world/brf`}>
+                            <a><img src="/assets/img/brf/brf-logo-inverse.svg" alt="logo" /></a>
+                        </Link>
                     </div>
                     
                     <div className={CSS.venue}>

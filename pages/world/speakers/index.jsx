@@ -124,7 +124,7 @@ function Speakers({ seomatic, speakers }) {
 
 												{/* {
 													// filter out specific speakers then show BRF tag
-													BRFspeaker && speaker.id !== "RXZlbnRQZW9wbGVfMzIxMTkyODQ=" && speaker.id !== "RXZlbnRQZW9wbGVfMzE4NDk5Mzg=" ? 
+													BRFspeaker ? 
 														<p className="fs-sm fw-600 c-accent mt-xxs">Speaking at the Branded Residences&nbsp;Forum</p>
 													: null 
 												} */}

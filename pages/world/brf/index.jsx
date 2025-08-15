@@ -3,6 +3,7 @@ import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 import _ from 'lodash'
 
+import Link from 'next/link'
 
 import { motion } from "framer-motion"
 
@@ -21,6 +22,8 @@ import { SpeakerCard } from '../../../fuselage/components/speaker-card/speaker-c
 import { AgendaSpeakerCard } from '../../../fuselage/components/agenda-speaker-card/agenda-speaker-card'
 
 import { ThemesSlider } from "../../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
+
+import Ticker from 'framer-motion-ticker'
 
 
 import CSS from '../../../css/app/agenda-world-2024.module.css'
@@ -173,7 +176,7 @@ export default function Page ({ sessions, speakers }) {
     }
 
 
-    // prioritise speakers
+    // prioritise speakers in slider
 	let prioritySpeakersArray = [
 		(speaker => speaker.firstName == 'Pier Paolo' && speaker.lastName === 'Righi' ? 0 : 1),
 		(speaker => speaker.firstName == 'Charlie' && speaker.lastName === 'Walsh' ? 0 : 1),
@@ -188,7 +191,7 @@ export default function Page ({ sessions, speakers }) {
     // console.log('ordered:', orderedSpeakers)
     
     // console.dir( getSessionsByTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
-    // console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
+    console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
 	// console.log('customOrderedSpeakers:', prioritiseSpeakers( getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ), prioritySpeakersArray ))
 
 
@@ -236,6 +239,29 @@ export default function Page ({ sessions, speakers }) {
             </HeroUnitVideo>
 
 
+            {/* AWARDS */}
+            <section className='mt-md'>
+                <Ticker speed={5}>
+                    <p className='fs-2 fw-600'>&darr; NEW for 2025 &darr; &thinsp;</p>
+                    <p className='fs-2 c-accent'>
+                        <Link href={`/world/brf/broker-award`}><a className='uLink'>Nominate now!</a></Link>&thinsp;
+                    </p>
+                </Ticker>
+            </section>
+
+            <section className="block">
+                <div className="container formatted center maxw-50">
+                    <p className="fs-1 fw-600 lh-1">World Branded Residences Awards&nbsp;2025</p>
+                    <p className='fs-5 mt-sm'>The World Branded Residences Awards recognise excellence and outstanding achievement among brokerages and individual brokers operating in the global branded residences market.</p>
+                </div>
+                <div className="container center">
+                    <Button href={'/world/brf/broker-award'}>Learn More</Button>
+                </div>
+            </section>
+
+
+
+               
 
             {/* MARKET OVERVIEW */}
             <section className="block bg-default">
@@ -253,6 +279,13 @@ export default function Page ({ sessions, speakers }) {
             </section>
 
 
+            {/* <section className="block bg-accent">
+                <div className="container">
+                    {
+                        getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ).map( (speaker, index) => <p key={index}>{speaker.firstName} {speaker.lastName}</p>)
+                    }
+                </div>
+            </section> */}
 
 
             {/* FEATURED SPEAKERS */}
@@ -285,16 +318,6 @@ export default function Page ({ sessions, speakers }) {
             }
 
 
-            {/* AWARDS */}
-            <section className="block">
-                <div className="container formatted center maxw-50">
-                    <p className="fs-1 fw-600 lh-1">World Branded Residences Awards&nbsp;2025</p>
-                    <p className='fs-5 mt-sm'>The World Branded Residences Awards recognise excellence and outstanding achievement among brokerages and individual brokers operating in the global branded residences market.</p>
-                </div>
-                <div className="container center">
-                    <Button href={'/world/brf/broker-award'}>Learn More</Button>
-                </div>
-            </section>
             
 
             {/* THEMES */}
@@ -484,110 +507,6 @@ export async function getStaticProps() {
 	)
 	const event = await eventQuery.json()
 	
-
-    // const selectedSpeakerQuery = await fetch(
-	// 	"https://developer.swapcard.com/event-admin/graphql",
-	// 	{
-	// 		method: "POST",
-	// 		headers: {
-	// 			"Content-Type": "application/json",
-	// 			"Authorization": process.env.SWAPCARD_AUTH_KEY
-	// 		},
-	// 		body: JSON.stringify({
-	// 			query: `
-	// 				query eventPerson($eventId: ID!, $filters: [EventPersonFilter!]) {
-    //                     eventPerson(eventId: $eventId, filters: $filters) {
-    //                         nodes {
-    //                             id
-    //                             photoUrl
-    //                             firstName
-    //                             lastName
-    //                             jobTitle
-    //                             organization
-    //                             userId
-    //                         }
-    //                     }
-    //                 }
-	// 			`,
-	// 			variables: {
-	// 				"eventId": process.env.SWAPCARD_EVENT_ID_AE,
-	// 				"filters": {
-    //                     "eventPeopleIds": [
-    //                         "RXZlbnRQZW9wbGVfMzE4NDUxMDQ=",
-    //                         "RXZlbnRQZW9wbGVfMzIxNTYzMjc=",
-    //                         "RXZlbnRQZW9wbGVfMzIwMjkxNjI=",
-    //                         "RXZlbnRQZW9wbGVfMzE4NTAyOTI=",
-    //                         "RXZlbnRQZW9wbGVfMzIxNTU2ODI=",
-    //                         "RXZlbnRQZW9wbGVfMzE4NTA1NDQ=",
-    //                         "RXZlbnRQZW9wbGVfMzE4NDkwMDM=",
-    //                         "RXZlbnRQZW9wbGVfMzE4NDkxODM=",
-    //                         "RXZlbnRQZW9wbGVfMzE5NDczNjg=",
-    //                         "RXZlbnRQZW9wbGVfMzE2OTE5Mjc="
-    //                     ]
-    //                 }
-	// 			}
-	// 		})
-	// 	}
-	// )
-	// const speakers = await selectedSpeakerQuery.json()
-    
-    // const selectedSpeakerQuery2 = await fetch(
-	// 	"https://developer.swapcard.com/event-admin/graphql",
-	// 	{
-	// 		method: "POST",
-	// 		headers: {
-	// 			"Content-Type": "application/json",
-	// 			"Authorization": process.env.SWAPCARD_AUTH_KEY
-	// 		},
-	// 		body: JSON.stringify({
-	// 			query: `
-	// 				query eventPerson($eventId: ID!, $filters: [EventPersonFilter!]) {
-    //                     eventPerson(eventId: $eventId, filters: $filters) {
-    //                         nodes {
-    //                             id
-    //                             photoUrl
-    //                             firstName
-    //                             lastName
-    //                             jobTitle
-    //                             organization
-    //                             userId
-    //                         }
-    //                     }
-    //                 }
-	// 			`,
-	// 			variables: {
-	// 				"eventId": process.env.SWAPCARD_EVENT_ID_AE,
-	// 				"filters": {
-    //                     "eventPeopleIds": [
-    //                         "RXZlbnRQZW9wbGVfMzE2Nzg2MzY=",
-    //                         "RXZlbnRQZW9wbGVfMzIxNTIyNjQ=",
-    //                         "RXZlbnRQZW9wbGVfMzIxNjAyNzA=",
-    //                         "RXZlbnRQZW9wbGVfMzE4NTcyMzg=",
-    //                         "RXZlbnRQZW9wbGVfMzE3NDAzMzY="
-    //                     ]
-    //                 }
-	// 			}
-	// 		})
-	// 	}
-	// )
-	// const speakers2 = await selectedSpeakerQuery2.json()
-
-    // louis abboud: RXZlbnRQZW9wbGVfMzE4NDUxMDQ=
-    // Salma Aboul-ela: RXZlbnRQZW9wbGVfMzIxNTYzMjc=
-    // Jean-Baptiste Recher: RXZlbnRQZW9wbGVfMzIwMjkxNjI=
-    // daniel von barloewen: RXZlbnRQZW9wbGVfMzE4NTAyOTI=
-    // Richard Bursby: RXZlbnRQZW9wbGVfMzIxNTU2ODI=
-    // lara barrett: RXZlbnRQZW9wbGVfMzE4NTA1NDQ=
-    // riyan itan: RXZlbnRQZW9wbGVfMzE4NDkwMDM=
-    // ali manzoor: RXZlbnRQZW9wbGVfMzE4NDkxODM=
-    // Jaidev Menezes: RXZlbnRQZW9wbGVfMzE5NDczNjg=
-    // rico picenoni: RXZlbnRQZW9wbGVfMzE2OTE5Mjc=
-    // paul rands: RXZlbnRQZW9wbGVfMzE2Nzg2MzY=
-    // Moustafa Said: RXZlbnRQZW9wbGVfMzIxNTIyNjQ=
-    // Sudhin Siva: RXZlbnRQZW9wbGVfMzIxNjAyNzA=
-    // adrian strittmatter: RXZlbnRQZW9wbGVfMzE4NTcyMzg=
-    // jeff tisdall: RXZlbnRQZW9wbGVfMzE3NDAzMzY=
-
 	
 
 	// console.log('RESULT', result)
