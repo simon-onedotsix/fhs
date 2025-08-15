@@ -90,7 +90,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
 
                     <div className={`${CSS.brand}`}>
                         <Link href={`/world/brf`}>
-                            <a><img src="/assets/img/brf/brf-logo-inverse.svg" alt="logo" /></a>
+                            <a><img src="/assets/img/brf/brf-@fhs-world-logo-inverse.svg" alt="logo" /></a>
                         </Link>
                     </div>
                     
