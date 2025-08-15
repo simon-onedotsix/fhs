@@ -236,6 +236,8 @@ export default function Page ({ sessions, speakers }) {
             </HeroUnitVideo>
 
 
+
+            {/* MARKET OVERVIEW */}
             <section className="block bg-default">
                 <div className="container formatted maxw-90">
                     <Callout 
@@ -286,7 +288,7 @@ export default function Page ({ sessions, speakers }) {
             {/* AWARDS */}
             <section className="block">
                 <div className="container formatted center maxw-50">
-                    <p className="fs-1 fw-600 lh-1">World Branded Residences Awards 2025</p>
+                    <p className="fs-1 fw-600 lh-1">World Branded Residences Awards&nbsp;2025</p>
                     <p className='fs-5 mt-sm'>The World Branded Residences Awards recognise excellence and outstanding achievement among brokerages and individual brokers operating in the global branded residences market.</p>
                 </div>
                 <div className="container center">

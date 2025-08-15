@@ -109,7 +109,7 @@
     padding-right: 0;
     color: white;
     font-family: inherit;
-    border-bottom-color: white !important;
+    border-bottom-color: rgba(255, 255, 255, 0.15) !important;
 }
 
 [data-theme='brf'] select.hs-input {
