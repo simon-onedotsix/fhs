@@ -79,6 +79,12 @@ export const MainMenu = ({ otherEvents }) => {
                                                     <ul key={item.id}>
                                                         {
                                                             item.menuLinks?.map( (link, index) => {
+
+                                                                let showFlash = false
+
+                                                                if ( 
+                                                                    link.hyperlink === '/world/ais'
+                                                                ) showFlash = true
                 
                                                                 if (link.hyperlink) return (
                                                                     <li key={index}  style={{ paddingBottom: `.05vh` }}>
@@ -91,6 +97,10 @@ export const MainMenu = ({ otherEvents }) => {
                                                                                 target={ link.newWindow ? '_blank' : '_self'}
                                                                                 onClick={ () => setActive(false)}
                                                                             >
+                                                                                {
+                                                                                    showFlash &&
+                                                                                    <span className={CSS.label}>New!</span>
+                                                                                }
                                                                                 { link.label }
                                                                             </a>
                                                                         </Link>    

@@ -1,12 +1,12 @@
-import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import { useLenis } from '@studio-freight/react-lenis'
 
 import Head from 'next/head'
 
-import { Header } from '../../fuselage/theme/2025/ais/common/header/header'
-import { Footer } from '../../fuselage/theme/2025/ais/common/footer/footer'
+import { Header } from '../../../fuselage/theme/2025/ais/common/header/header'
+import { Footer } from '../../../fuselage/theme/2025/ais/common/footer/footer'
 
-import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'
+import HubspotForm from '../../../fuselage/components/hubspot-form/hubspot-form'
 
 
 
@@ -40,7 +40,6 @@ export default function Page () {
                 <div className="container formatted center maxw-40">
                     <p className="fs-2 lh-1 fw-600">Register  for UAE Africa Tourism Investment Summit</p>
                     <p className='fs-4 fw-600 c-white caps center mt-sm'>27 October 2025, 08:30–13:00</p>
-                    <p>Please note that this is an invitation-only event for select C-level operators and investors, and registration does not guarantee attendance for all applicants.</p>
                 </div>
                 <div className="container maxw-70">
                     <HubspotForm portalId='14527187' formId='aef1bdec-b43d-430c-b054-c2aa99347b7f' />

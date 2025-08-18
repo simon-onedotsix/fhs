@@ -99,13 +99,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                                 let showFlash = false
 
                                                                 if ( 
-                                                                    link.hyperlink === '/world/brf' ||
-                                                                    link.hyperlink === '/world/projects' ||
-                                                                    link.hyperlink === '/world/unto' ||
-                                                                    link.hyperlink === '/world/sustainable-cook-off' ||
-                                                                    link.hyperlink === '/world/the-big-project-pitch' ||
-                                                                    link.hyperlink === '/world/country-pavilions' ||
-                                                                    link.hyperlink === '/world/future-leader-award'
+                                                                    link.hyperlink === '/world/ais'
                                                                 ) showFlash = true
                 
                                                                 if (link.hyperlink) return (
@@ -119,10 +113,10 @@ export const MainMenu = ({ otherEvents }) => {
                                                                                 target={ link.newWindow ? '_blank' : '_self'}
                                                                                 onClick={ () => setActive(false)}
                                                                             >
-                                                                                {/* {
+                                                                                {
                                                                                     showFlash &&
                                                                                     <span className={CSS.label}>New!</span>
-                                                                                } */}
+                                                                                }
                                                                                 { link.label }
                                                                             </a>
                                                                         </Link>    

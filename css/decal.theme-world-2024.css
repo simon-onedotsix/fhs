@@ -61,7 +61,7 @@
 
     /* global UI styling */
 
-    --default-radius: 0;
+    --default-radius: 1rem;
     --default-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
     --default-shadow-size: 20px;
     --default-shadow-opacity: 0.2;

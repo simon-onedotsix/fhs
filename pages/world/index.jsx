@@ -19,6 +19,7 @@ import { FhsIcon, FhsIconKeyline } from "../../fuselage/theme/2024/world/compone
 import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
 import { ImpactFigure } from "../../fuselage/theme/2024/world/components/impact-figure/impact-figure"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
+import { Callout } from '../../fuselage/theme/2024/world/blocks/callout/callout'
 
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
@@ -302,6 +303,47 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 </section>
             </div>
 
+
+            {/* AIS PROMO */}
+
+            <section className="block bg-primary-2">
+                <div className="container maxw-60">
+                    <Callout flipped
+                        image={{ url:'/assets/img/ais/ais-02.jpg', width:2000, height:1403 }}
+                        caption={"UAE Africa Tourism Investment Summit to Host 250+ Leaders from 53 African Nations"}
+                    >
+                        <Fade>
+                            <div style={{ width: 500, maxWidth: '22rem' }}>
+                                <img src="/assets/img/ais/ais-logo-align-left-inverse.png" alt="logo" width="100%" />
+                            </div>
+
+                            <p className='fs-4 fw-600 c-white caps mt-sm'>27 October 2025 <br/>08:30–13:00</p>
+                            <p className="fs-6 mt-xs">Held as part of <strong className="fw-600">FHS World</strong>, this summit aims to enhance economic and tourism partnerships between the UAE and African nations.</p>
+
+                            <p className="mt-sm lh-1 button-grid">
+                                <Pop>
+                                    <ButtonKeyline 
+                                        href={'/world/ais'} 
+                                        decal={'fs-6 fw-600'} 
+                                        color={'var(--primary)'}
+                                    >
+                                        More Information
+                                    </ButtonKeyline>
+                                </Pop>
+                                <Pop>
+                                    <ButtonKeyline 
+                                        href={'/world/ais/register#form'} 
+                                        decal={'fs-6 fw-600'} 
+                                        color={'var(--primary)'}
+                                    >
+                                        Register Interest
+                                    </ButtonKeyline>
+                                </Pop>
+                            </p>
+                        </Fade>
+                    </Callout>
+                </div>
+            </section>
 
 
             {/* INVESTORS */}

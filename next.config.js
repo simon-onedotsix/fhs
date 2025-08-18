@@ -32,6 +32,11 @@ const nextConfig = {
 			permanent: true,
 		  },
 		  {
+			source: '/ais/:path*',
+			destination: '/world/ais/:path*',
+			permanent: true,
+		  },
+		  {
 			source: '/world/branded-residences-forum',
 			destination: '/world/brf',
 			permanent: true,
