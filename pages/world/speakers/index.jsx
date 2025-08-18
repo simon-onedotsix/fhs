@@ -34,24 +34,25 @@ function Speakers({ seomatic, speakers }) {
 
 	// customise order (VIP speakers to top of list)
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
+		(speaker => speaker.firstName == 'His Excellency' && speaker.lastName === 'Abdulla bin Touq Al Marri' ? 0 : 1),
 		(speaker => speaker.firstName == 'Naser' && speaker.lastName === 'Mohamed Ali Naser Alnuwais' ? 0 : 1),
 		(speaker => speaker.firstName == 'Markus' && speaker.lastName === 'Venzin' ? 0 : 1),
 		(speaker => speaker.firstName == 'Marc' && speaker.lastName === 'Socker' ? 0 : 1),
 		(speaker => speaker.firstName == 'Eleonora' && speaker.lastName === 'Srugo' ? 0 : 1),
+		
 		(speaker => speaker.firstName == 'Stefano' && speaker.lastName === 'Saporetti' ? 0 : 1),
-
 		(speaker => speaker.firstName == 'Stephen' && speaker.lastName === 'Sackur' ? 0 : 1),
 		(speaker => speaker.firstName == 'Shaikha' && speaker.lastName === 'Nasser Al Nowais' ? 0 : 1),
 		(speaker => speaker.firstName == 'Hans' && speaker.lastName === 'Meyer' ? 0 : 1),
 		(speaker => speaker.firstName == 'Marc' && speaker.lastName === 'Dardenne' ? 0 : 1),
-		(speaker => speaker.firstName == 'Nick' && speaker.lastName === 'Candy' ? 0 : 1),
 		
+		(speaker => speaker.firstName == 'Nick' && speaker.lastName === 'Candy' ? 0 : 1),
 		(speaker => speaker.firstName == 'Thomas' && speaker.lastName === 'B. Meier' ? 0 : 1),
 		(speaker => speaker.firstName == 'Dr Khaled' && speaker.lastName === 'Khalifa' ? 0 : 1),
 		(speaker => speaker.firstName == 'Neil' && speaker.lastName === 'Benjelloun' ? 0 : 1),
 		(speaker => speaker.firstName == 'Gregory' && speaker.lastName === 'Lanter' ? 0 : 1),
+		
 		(speaker => speaker.firstName == 'Dimitris' && speaker.lastName === 'Manikis' ? 0 : 1),
-
 		(speaker => speaker.firstName == 'Haitham' && speaker.lastName === 'Mattar' ? 0 : 1),
 
 	] )
