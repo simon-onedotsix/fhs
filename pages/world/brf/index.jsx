@@ -67,14 +67,100 @@ const THEMES_DATA = [
     },
 
 ]
+const CONFIRMED_SPEAKER_DATA = [
+    {
+        url: `/world/speakers/RXZlbnRQZW9wbGVfNDAwNjUwMTI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/41573afd40d44444bbfe98f32c26109f.jpeg',
+        fullName: 'Hans Meyer',
+        jobTitle: 'Co Founder & Managing Director',
+        company: 'Zoku',
+    },
+    {
+        url: `/world/speakers/RXZlbnRQZW9wbGVfNDAzNDU2NjM=`,
+        photoUrl: 'https://static.swapcard.com/public/images/cd2f0cf8c3f8428e86d86e922f7b64fb.png',
+        fullName: 'Nick Candy',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Candy Capital',
+    },
+    {
+        url: `/world/speakers/RXZlbnRQZW9wbGVfNDAxNjkwNzY=`,
+        photoUrl: 'https://static.swapcard.com/public/images/27aa2c09769341c8a333b8ab30e3d2f8.png',
+        fullName: 'Eleonora Srugo',
+        jobTitle: 'Licensed Associated Real Estate Broker, Douglas Elliman',
+        company: 'Star of Netflix’s Selling the City',
+    },
+    {
+        url: `/world/speakers/RXZlbnRQZW9wbGVfMzg0MDMyOTQ=`,
+        photoUrl: 'https://static.swapcard.com/public/images/cb22de0ff76c48e080aa1ad8b770b936.jpeg',
+        fullName: 'Amit Arora',
+        jobTitle: 'Chief Operating Officer',
+        company: 'Arada',
+    },
+    {
+        url: `/world/speakers/RXZlbnRQZW9wbGVfNDA0MjQxMDI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/9977ec1893ef4679ac9bfdd4ad74be93.jpeg',
+        fullName: 'Barry Landsberg',
+        jobTitle: 'Principal',
+        company: 'Landsberg Residential Consulting Inc.',
+    },
+    {
+        url: `/world/speakers/RXZlbnRQZW9wbGVfNDA0ODY2NTM=`,
+        photoUrl: 'https://static.swapcard.com/public/images/665f0d09e03b46308f0adb0fb8011c4e.png',
+        fullName: 'Jeff Tisdall',
+        jobTitle: 'Chief Business Officer',
+        company: 'Accor One Living',
+    },
+    {
+        url: `/world/speakers/RXZlbnRQZW9wbGVfNDA3OTg1MTY=`,
+        photoUrl: 'https://static.swapcard.com/public/images/0a8fedf8c19444388ccf07bf5208b2c7.jpeg',
+        fullName: 'Riyan Itani',
+        jobTitle: 'Director and Founder',
+        company: 'Global Branded Residences Ltd.',
+    },
+    {
+        url: `/world/speakers/RXZlbnRQZW9wbGVfNDA1OTkxMjM=`,
+        photoUrl: 'https://cdn-api.swapcard.com/public/images/5cf473e2ddec40608d2edc80e017428d.jpeg',
+        fullName: 'Daniel von Barloewen',
+        jobTitle: 'Senior Vice President, Global Mixed-Use Development',
+        company: 'Accor',
+    },
+    {
+        url: `/world/speakers/RXZlbnRQZW9wbGVfMzk0MjE1OTU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/a1f87efa02b24fe8a1f202b05b2dc5a5.jpeg',
+        fullName: 'Jaidev Menezes',
+        jobTitle: 'RVP Mixed Use Development EMEA',
+        company: 'Marriott International',
+    },
+    {
+        url: `/world/speakers/RXZlbnRQZW9wbGVfNDAwNjI1NDM=`,
+        photoUrl: 'https://static.swapcard.com/public/images/192e3af65e8443a7bbaccec1513a2d08.png',
+        fullName: 'Stefano Saporetti',
+        jobTitle: 'Director of Brand Diversification',
+        company: 'Aston Martin',
+    },
+    {
+        url: `/world/speakers/RXZlbnRQZW9wbGVfMzg0MDMzMDM=`,
+        photoUrl: 'https://static.swapcard.com/public/images/08f9fc81218941db8921678dc03d98ca.jpeg',
+        fullName: 'Rosa Piro',
+        jobTitle: 'Chief Investment Officer',
+        company: 'Arada',
+    },
+    {
+        url: `/world/speakers/RXZlbnRQZW9wbGVfNDA2MzI2OTc=`,
+        photoUrl: 'https://static.swapcard.com/public/images/26ed7f8d9cf34cf8b785dd00b71ab676.jpeg',
+        fullName: 'Paul Saba',
+        jobTitle: 'Vice President and Senior Counsel - EMEA',
+        company: 'Marriott International',
+    },
+    
+]
+
 
 
 
 export default function Page ({ sessions, speakers }) {
 
     const lenis = useLenis()
-
-
     
 
     const getSessionsByTopicID = ( sessionData, topicID ) => {
@@ -279,20 +365,12 @@ export default function Page ({ sessions, speakers }) {
             </section>
 
 
-            {/* <section className="block bg-accent">
-                <div className="container">
-                    {
-                        getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ).map( (speaker, index) => <p key={index}>{speaker.firstName} {speaker.lastName}</p>)
-                    }
-                </div>
-            </section> */}
-
 
             {/* FEATURED SPEAKERS */}
             {
                 sessions &&
                 <SpeakerCarousel 
-                    heading={`2024 Speakers`} 
+                    heading={`2025 Speakers`} 
                     color={'white'}
                     text={null}
                     decal={'bg-secondary'}
@@ -301,14 +379,14 @@ export default function Page ({ sessions, speakers }) {
                     anchorId={null}
                 >
                     {
-                        prioritiseSpeakers( getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ), prioritySpeakersArray ).map( profile => (
+                        CONFIRMED_SPEAKER_DATA.map( profile => (
                             <Pop key={profile.id}>
                                 <SpeakerCard
                                     url={null}
                                     photoUrl={profile.photoUrl }
-                                    fullName={`${profile.firstName} ${profile.lastName}`}
+                                    fullName={profile.fullName}
                                     jobTitle={profile.jobTitle}
-                                    company={profile.organization}
+                                    company={profile.company}
                                     color={'white'}
                                 />
                             </Pop>
@@ -316,7 +394,6 @@ export default function Page ({ sessions, speakers }) {
                     }
                 </SpeakerCarousel>
             }
-
 
             
 

@@ -13,17 +13,16 @@ import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
 
 
 import { groupSessionsByDays } from "../../../lib/swapcard/agenda-utils"
+import { getFieldValueByID } from "../../../lib/swapcard/get-custom-field-by-id"
 
 
 import CSS from '../../../fuselage/theme/2024/world/css/speaker.module.css'
 
 
 function Speaker({ speaker }) {
-
 	// console.log('speaker data:', speaker)
 	// console.log('speaker sessions:', speaker.withEvent.speakerOnPlannings)
 	// console.log('session days:', groupSessionsByDays(speaker.withEvent.speakerOnPlannings))
-
 
 
 	const handleRelatedSessions = ( speakerData ) => {
@@ -57,7 +56,8 @@ function Speaker({ speaker }) {
 		)
 
 	}
-	
+
+
 
 	return (
 
@@ -97,6 +97,10 @@ function Speaker({ speaker }) {
 										alt=""
 									/>
 								}
+							</p>
+
+							<p className="fw-600 c-accent maxw-15">
+								{ getFieldValueByID( speaker, "RmllbGRWYWx1ZV8yODE3MjMyNA==" ) }
 							</p>
 						</aside>
 
@@ -170,7 +174,7 @@ export async function getStaticPaths() {
 
 	const speakersData = await result.json()
 
-	console.log(speakersData.data.eventPerson.nodes)
+	// console.log(speakersData.data.eventPerson.nodes)
 
 
 	return {
@@ -209,6 +213,20 @@ export async function getStaticProps({ params }) {
 									  title
 									  beginsAt
 									  endsAt
+									}
+									fields {
+										... on TextField {
+											definition {
+												name
+												translations {
+													name
+												}
+												id
+											}
+											locale
+											value
+											id
+										}
 									}
 								}
 							}

@@ -17,6 +17,8 @@ import { SpeakerGrid } from "../../../fuselage/layout/speaker-grid/speaker-grid"
 
 import handleSeomaticMeta from '../../../lib/seomatic'
 
+import { getFieldValueByID } from "../../../lib/swapcard/get-custom-field-by-id"
+
 import CSS from '../../../css/app/speakers.module.css'
 
 
@@ -61,7 +63,7 @@ function Speakers({ seomatic, speakers }) {
 	
 	// console.log('speakers:', speakers)
 	// console.log('speakers found:', speakers.length)
-	console.log('ordered:', orderedSpeakers)
+	// console.log('ordered:', orderedSpeakers)
 	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 
@@ -119,6 +121,11 @@ function Speakers({ seomatic, speakers }) {
 										</Link>
 										<div>
 											<p className='mt-xs' >
+												
+												<p className="fw-600 c-accent mb-xxs">
+													{ getFieldValueByID( speaker, "RmllbGRWYWx1ZV8yODE3MjMyNA==" ) }
+												</p>
+												
 												<span className='fw-600'>{speaker.firstName} {speaker.lastName}</span> 
 												<br/>{speaker.jobTitle} 
 												<br/>{speaker.organization}
@@ -163,22 +170,26 @@ export async function getStaticProps() {
 			},
 			body: JSON.stringify({
 				query: `
-					query eventPerson($eventId: ID!, $cursor: CursorPaginationInput, $filters: [EventPersonFilter!] ) {
-						eventPerson(eventId: $eventId, cursor: $cursor, filters:$filters ) {
-						nodes {
-							id
-							type
-							firstName
-							lastName
-							jobTitle
-							organization
-							photoUrl
-
-							speakerOnPlannings {
+					query eventPerson(
+						$eventId: ID!
+						$cursor: CursorPaginationInput
+						$filters: [EventPersonFilter!]
+					){
+						eventPerson(eventId: $eventId, cursor: $cursor, filters: $filters) {
+							nodes {
 								id
-								title
-								categories
-								fields {
+								type
+								firstName
+								lastName
+								jobTitle
+								organization
+								photoUrl
+
+								speakerOnPlannings {
+									id
+									title
+									categories
+									fields {
 									... on MultipleSelectField {
 										id
 										definition {
@@ -190,40 +201,53 @@ export async function getStaticProps() {
 											value
 										}
 									}
-								}
-							}
-							
-							withEvent(eventId: $eventId) {
-							fields {
-								... on SelectField {
-									translations {
-										value
-										language
 									}
-									definition {
-										id
-										translations {
-											name
-											language
-										}
+								}
+
+								withEvent(eventId: $eventId) {
+									fields {
+										... on SelectField {
+											translations {
+												value
+												language
+											}
+											definition {
+												id
+												translations {
+													name
+													language
+												}
 											}
 										}
+										... on TextField {
+											definition {
+												name
+												translations {
+													name
+												}
+												id
+											}
+											locale
+											value
+											id
+										}
 									}
+								}
 								}
 							}
 						}
+					`,
+					variables: {
+						"eventId": process.env.SWAPCARD_EVENT_ID_AE_2025,
+						"cursor": {
+							"first": 300
+						},
+						"filters": {
+							"shouldBeInGroups": "RXZlbnRHcm91cF81ODU5ODM="
+						}
 					}
-				`,
-				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2025,
-					"cursor": {
-						"first": 300
-					},
-					"filters": {
-						"shouldBeInGroups": "RXZlbnRHcm91cF81ODU5ODM="
-					}
-				}
-			})
+			}
+			)
 		}
 	)
 
