@@ -83,7 +83,8 @@ export const MainMenu = ({ otherEvents }) => {
                                                                 let showFlash = false
 
                                                                 if ( 
-                                                                    link.hyperlink === '/world/ais'
+                                                                    link.hyperlink === '/world/ais' ||
+                                                                    link.hyperlink === '/world/brf/broker-award'
                                                                 ) showFlash = true
                 
                                                                 if (link.hyperlink) return (
