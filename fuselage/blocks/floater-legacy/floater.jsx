@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import { Pop } from '../../animation/animation'
+
 import CSS from './floater.module.css'
 
 
@@ -19,7 +21,9 @@ export const FloaterLegacy = ({ children, hero }) => {
         <section className={CSS.floater}>
             <div className={CSS.container}>
                 <div className={CSS.hero}>
-                    <Image className={CSS.image} src={hero.url} width={hero.width} height={hero.height} alt={hero.title}/>               
+                    <Pop>
+                        <Image className={CSS.image} src={hero.url} width={hero.width} height={hero.height} alt={hero.title}/>               
+                    </Pop>
                 </div>
 
                 <div className={`${CSS.body} formatted`}>

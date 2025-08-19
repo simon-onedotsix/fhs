@@ -1,27 +1,38 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
-import Image from "next/image"
-
-import { useState } from 'react'
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
-import { Pop, Fade, Slide } from "../../fuselage/animation/animation"
-import { Reveal } from "../../fuselage/animation/reveal"
-
-import parse from 'html-react-parser'
+import { Pop, Fade } from "../../fuselage/animation/animation"
 
 import { Header } from '../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from "../../fuselage/theme/2024/world/common/footer/footer"
 
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
-import { ImpactFigure } from '../../fuselage/theme/2025/world/blocks/impact-grid/impact-grid'
-import { Floaters, Floater } from '../../fuselage/blocks/floater/floater'
-import { FlagTicker, Flag } from "../../fuselage/theme/2025/world/blocks/flag-ticker/flag-ticker"
+import { Flag } from "../../fuselage/theme/2025/world/blocks/flag-ticker/flag-ticker"
 import Ticker from 'framer-motion-ticker'
 
+import handleContentBlocks from "../../lib/content-blocks"
 
-
-import CSS from '../../fuselage/theme/2025/world/css/country-pavilions.module.css'
+import { 
+    QueryText, 
+    QueryFlipFlops, 
+    QueryFloaters, 
+    QueryBillboards, 
+    QueryBillboardSliders, 
+    QueryImpactFigures, 
+    QueryVideos,
+    QueryForm,
+    QueryProfileCarousel,
+    QuerySEO,
+    QueryImages,
+    QueryCards,
+    QueryTestimonials,
+    QueryTickers,
+    QueryBannerImage,
+    QueryCoutryPavilions,
+    QueryVideoTestimonials,
+    Passes
+} from "../../graphql/queries"
 
 
 export const PAVILIONS_DATA = [
@@ -176,40 +187,13 @@ export const PAVILIONS_DATA = [
     }
 ]
 
-const FLOATER_DATA = [
-    {
-        "__typename": "floaters_BlockType",
-        "id": "159691",
-        "body": "<h2>Showcase your country's exciting hospitality projects at the FHS World Country Pavilions. </h2>\n<p>As of 2024, <strong>42% of investors attending the event are searching for new projects and opportunities</strong>. Considering this high demand for investable projects, this year we have dedicated a substantial portion of our floor space to showcase hospitality projects from different countries through dedicated country pavilions.</p>",
-        "hero": [
-            {
-                "__typename": "site_Asset",
-                "url": "https://cms.thebench.com/assets/img/site/FHS-World/low-angle-shot-of-several-international-flags-wavi-2023-11-27-05-34-53-utc.jpg",
-                "width": 4896,
-                "height": 3264
-            }
-        ]
-    },
-    {
-        "__typename": "floaters_BlockType",
-        "id": "159692",
-        "body": "<h3>Who Sponsors Country Pavilions</h3>\n<ul><li>Investment Promotion Agencies</li><li>Tourism Groups</li><li>Developers</li><li>Advisors</li><li>Local Owners/Operators</li><li>International F&amp;B Concepts</li></ul><p>If you belong to any of the categories mentioned above and are interested in booking a pavilion for your country, you can reach out directly to our sponsorship team.</p>\n<p><a class=\"button\" href=\"/world/why-sponsor#partner-form\">Get in touch</a></p>",
-        "hero": [
-            {
-                "__typename": "site_Asset",
-                "url": "https://cms.thebench.com/assets/img/site/FHS-World/FHS-WORLD-2024-D1-GENERAL_179.jpg",
-                "width": 2000,
-                "height": 1116
-            }
-        ]
-    }
-]
-
 
 
 export default function Page ({ entry }) {
 
-    console.log('entry:', entry)
+    
+    const {countryPavilions} = entry.fhisContentBlocks.find( block => block.__typename === 'fhisContentBlocks_countryPavilions_BlockType' )
+    
 
     return (
         <>
@@ -217,6 +201,7 @@ export default function Page ({ entry }) {
 
 
             <PageHeroImage hero={{ url: 'https://cms.thebench.com/assets/img/site/FHS-World/53727353681_d9e964e388_o.jpg', width: 6192, height: 4128 }} >
+
                 <div className="container maxw-50 pb-xl formatted c-white center">
                     <Pop>
                         <h1>Projects & Country Pavilions</h1>
@@ -229,42 +214,20 @@ export default function Page ({ entry }) {
                 <div className="container">
                     <p className="fs-2 center pb-sm">Country Pavilions at FHS World 2025</p>
                 </div>
-                <Ticker speed={20}>
-                    { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-                    { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-                    { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-                    { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-                    { PAVILIONS_DATA.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
-                </Ticker>
+
+                {
+                    countryPavilions.length &&
+                    <Ticker speed={20}>
+                        { countryPavilions.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
+                        { countryPavilions.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
+                        { countryPavilions.map( pavilion => <Flag key={pavilion.id} flagUrl={pavilion.flag[0].url} /> ) }
+                    </Ticker>      
+                }
                 
-                
-                <section className="block">
-                    <div className="container columns-1 gap-md">
-                        { PAVILIONS_DATA.map( pavilion => <Pavilion key={pavilion.id} data={pavilion} /> ) }
-                    </div>
-                </section>         
-                
+                {handleContentBlocks( entry.fhisContentBlocks, null, null, 'ae' )}
+
             </PageHeroImage>
 
-            
-
-
-            <section className="block pt-0">
-                <div className="container">
-
-                    <Floaters theme={'bg-dark'} flipped={true}>
-                        {FLOATER_DATA.map( floater => {
-                            return (
-                                <Floater key={floater.id} hero={floater.hero[0]}>
-                                    <div dangerouslySetInnerHTML={{__html: floater.body }} />
-                                </Floater>
-                            )
-                        })}
-                    </Floaters>
-
-                </div>
-            </section>
-            
 
             <Footer />
             <LenisScroller />
@@ -275,59 +238,7 @@ export default function Page ({ entry }) {
 Page.theme = 'world-2024'
 
 
-const Pavilion = ({ data }) => {
-    return (
-        <Pop>
-            <article className={`${CSS.pavilion} bg-light`}>
-                <div className={CSS.pavilionFlag}>
-                    <Image src={data.flag[0].url} layout={'fill'} />
-                </div>
-            
-                <section className={CSS.pavilionHero}>
-                    <Fade once={true}>
-                        <Image src={data.hero[0].url} layout={'fill'} />
-                    </Fade>
-                </section>
 
-                <section className={`${CSS.pavilionContent} formatted`}>
-                    <Reveal>
-                        <h2>{data.country}</h2>
-                    </Reveal>
-                    <Slide delay={.2}>
-                        { parse(data.body) }
-                    </Slide>
-
-                    {
-                        data.logoGroup.length ?
-                        data.logoGroup.map( group => (
-                            <div key={group.id}>
-                                <p className="fw-600 mt-xs c-accent">{ group.groupHeading }</p>
-                                <div className={CSS.pavilionLogoGrid}>
-                                    {
-                                        group.logos.length &&
-                                        group.logos.map( (logo, index) => <PavilionLogo key={index} logo={logo} /> )
-                                    }    
-                                </div>
-                            </div>
-                        ))
-                        : null
-                    }
-                
-                </section>
-            </article>
-        </Pop>
-    )
-}
-
-const PavilionLogo = ({ logo }) => {
-    return (
-        <Pop>
-            <div className={CSS.pavilionLogo}>
-                <Image src={logo.url } layout={'fill'} />
-            </div>
-        </Pop>
-    )
-}
 
 
 
@@ -336,8 +247,35 @@ export async function getStaticProps() {
     const cmsData = await craftApolloClient().query({
         query: gql`
             query PAGE {
-                entry(site: "${process.env.SITE_HANDLE_AE}", id: "157393") {
-                    title
+                entry(site: "${process.env.SITE_HANDLE_AE}", id: "271354") {
+                    id
+                    hero {
+                        url
+                        width
+                        height
+                    }
+                    heading
+                    body
+
+                    ${process.env.CONTENT_BLOCKS_HANDLE}ContentBlocks {
+                        ${QueryText}
+                        ${QueryFlipFlops}
+                        ${QueryFloaters}
+                        ${QueryBillboards}
+                        ${QueryBillboardSliders}
+                        ${QueryImpactFigures}
+                        ${QueryVideos}
+                        ${QueryProfileCarousel}
+                        ${QueryForm}
+                        ${QueryImages}
+                        ${QueryCards}
+                        ${QueryTestimonials}
+                        ${QueryTickers}
+                        ${QueryBannerImage}
+                        ${QueryCoutryPavilions}
+                        ${Passes}
+                        ${QueryVideoTestimonials}
+                    }
                 }
             }
         `

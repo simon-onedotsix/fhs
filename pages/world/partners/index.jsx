@@ -17,14 +17,14 @@ import { VideoTestimonialCard } from '../video-testimonials'
 import { FlagTicker, Flag } from "../../../fuselage/theme/2025/world/blocks/flag-ticker/flag-ticker"
 
 import handleSeomaticMeta from "../../../lib/seomatic"
-import { QuerySEO } from "../../../graphql/queries"
-
-
-import { PAVILIONS_DATA } from '../country-pavilions'
+import { QuerySEO, QueryCoutryPavilions } from "../../../graphql/queries"
 
 
 
-function Partners({ seomatic, partnerData, videoTestimonials }) {
+function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
+
+	const {countryPavilions} = flags.fhisContentBlocks.find( block => block.__typename === 'fhisContentBlocks_countryPavilions_BlockType' )
+
 
 
 	// use fieldDefinitions to automate partner categorisation (requires ID of the selectFieldDefinition used to tag categories inside SC studio)
@@ -56,6 +56,7 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 	// console.log('vts:', videoTestimonials)
 	// console.log('swapcard partner categories:', swapcardPartnerGroups )
 	// console.log('PARTNERS ARRAY:', partnersArray)
+	// console.log('flags:', countryPavilions)
 
 
 
@@ -133,7 +134,7 @@ function Partners({ seomatic, partnerData, videoTestimonials }) {
 										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>Country Pavilions</h4>
 											<PartnerLogoGrid>
 												{ 
-													PAVILIONS_DATA.map( pavilion => (
+													countryPavilions.map( pavilion => (
 														<div key={pavilion.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 															<Flag flagUrl={pavilion.flag[0].url} /> 
 															<p className='fs-5 fw-500 c-primary mt-xxs'>{pavilion.country}</p>
@@ -168,7 +169,7 @@ export async function getStaticProps() {
 
 	const cmsData = await craftApolloClient().query({
         query: gql`
-			query Page {
+			query Data {
 				entry(site: "${process.env.SITE_HANDLE_AE}", id: 11544) {
 					title
 					... on ${process.env.SITE_HANDLE_AE}Partners_${process.env.SITE_HANDLE_AE}Partners_Entry {
@@ -189,6 +190,11 @@ export async function getStaticProps() {
                         organisation
                         testimonial
                     }
+				}
+				flags: entry(site: "${process.env.SITE_HANDLE_AE}", id: "271354") {
+					${process.env.CONTENT_BLOCKS_HANDLE}ContentBlocks {
+						${QueryCoutryPavilions}
+					}
 				}
 			}
         `
@@ -258,7 +264,8 @@ export async function getStaticProps() {
 		props: { 
 			seomatic: cmsData.data.entry.seomatic,
 			partnerData: partnerData.data,
-			videoTestimonials: cmsData.data.entries
+			videoTestimonials: cmsData.data.entries,
+			flags: cmsData.data.flags
 		}
 	}
 }
