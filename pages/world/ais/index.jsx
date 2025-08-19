@@ -5,6 +5,7 @@ import _ from 'lodash'
 
 import { motion } from "framer-motion"
 
+import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -36,6 +37,10 @@ export default function Page () {
 
     return (
         <>
+            <Head>
+                <title>UAE Africa Tourism Investment Summit</title>
+                <meta name="UAE Africa Tourism Investment Summit" content="page-title"></meta>
+            </Head>
             <Header overlaid inverse />
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4'} poster={'/assets/video/fhs-2024-world-opt-poster.jpg'}>
