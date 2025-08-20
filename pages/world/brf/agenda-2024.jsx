@@ -12,11 +12,14 @@ import { Pop } from "../../../fuselage/theme/2023/ae/layout/animation/animation"
 import { StopwatchIcon } from "../../../fuselage/components/icons/icons"
 import { AgendaSpeakerCard } from '../../../fuselage/components/agenda-speaker-card/agenda-speaker-card'
 
+import { convertSeconds } from '../../../lib/agenda-utils'
+
+
 import CSS from '../../../css/app/agenda-world-2024.module.css'
 import CSSlite from '../../../css/app/agenda-world-2024-aag.module.css'
 
 
-const SESSION_DATA_2025 = [
+const SESSION_DATA_2024 = [
     {
         "id": "UGxhbm5pbmdfMjAzMDE5NA==",
         "titleTranslations": [
@@ -1566,23 +1569,6 @@ export default function Page () {
 
 
 
-    const convertSeconds = (seconds) => {
-		const hours = Math.floor(seconds / 3600)
-		const minutes = Math.floor((seconds % 3600) / 60)
-	
-		const hourString = hours > 0 ? `${hours} hour${hours > 1 ? 's' : ''}` : ''
-		const minuteString = minutes > 0 ? `${minutes} minute${minutes > 1 ? 's' : ''}` : ''
-	
-		if ( hours > 0 ) {
-			return `${hourString} ${ minutes > 0 ? minuteString : ''}`
-
-		} else if ( !hours && minutes > 0 ) {
-			return `${minuteString}`
-
-		}
-	
-		return
-	}
 
     const sortSpeakers = ( speakerData ) => {
 
@@ -1642,8 +1628,8 @@ export default function Page () {
                 <div className="container maxw-50 columns-1 gap-xs">
                     
                     {
-                        SESSION_DATA_2025 &&
-                        SESSION_DATA_2025.map( session => (
+                        SESSION_DATA_2024 &&
+                        SESSION_DATA_2024.map( session => (
 
                             <Pop key={session.id}>
                                 <div className={CSS.sessionsWrapper}>
@@ -1661,15 +1647,6 @@ export default function Page () {
                                                     </>
                                                 : null
                                             }
-
-                                            {/* {
-                                                getSessionFields( session, 'Location').length ?
-                                                    <div className={CSS.sessionTagGrid}>
-                                                        {session.fields.length ? <LocationIcon fill={'var(--accent)'}/> : null }
-                                                        {getSessionLocation( session )}
-                                                    </div>
-                                                : null
-                                            } */}
                                         </div>
 
                                         <div className={`${CSSlite.sessionContent} | columns-1 gap-xs`}>
@@ -1679,15 +1656,6 @@ export default function Page () {
                                             <p className={`fs-5 fw-4500 c-white`}>
                                                 { session.titleTranslations[0].value }
                                             </p>
-                                        
-                                            {/* {
-                                                getSessionFields( session, 'Topics').length ?
-                                                    <div className={CSS.sessionTagGrid}>
-                                                        <TagIcon fill={`var(--accent)`} />
-                                                        {getSessionFields( session, 'Topics')}
-                                                    </div>
-                                                : null
-                                            } */}
 
                                             {
                                                 session.descriptionTranslations.length ?
