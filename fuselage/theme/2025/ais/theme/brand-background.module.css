@@ -1,5 +1,20 @@
 .bg {
     position: fixed;
+    top: 0;
+    bottom: 0;
     inset: 0;
     background-color: transparent;
+    overflow: hidden;
+
+    mask-image: linear-gradient(to bottom, transparent 25%, black 100%);
+}
+
+.svg {
+    opacity: .1;
+}
+
+@media(max-width:599px){
+    .svg {
+        width: 292%;
+    }
 }
