@@ -510,7 +510,7 @@
 
 .dayDivider {
     background-color: var(--accent);
-    border-radius: var(--default-radius);
+    border-radius: calc(var(--default-radius) * 0.5);
     padding: .5rem 1rem;
     color: white;
     font-weight: 600;
@@ -562,7 +562,7 @@
     container: session-container / inline-size;
 
     flex: 1;
-    border-radius: calc(var(--default-radius) * 1);
+    border-radius: calc(var(--default-radius) * 0.5);
     overflow: hidden;
     background-color: var(--dark);
 }
@@ -679,7 +679,7 @@
 
 .sessionStream {
     padding: .5rem 1rem;
-    border-radius: calc(var(--default-radius) * 1);
+    border-radius: calc(var(--default-radius) * 0.5);
     background-color: var(--primary);
     min-width: 6.25rem;
 }

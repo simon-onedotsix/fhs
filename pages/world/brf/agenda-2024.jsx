@@ -3,26 +3,14 @@ import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 import _ from 'lodash'
 import { format } from 'date-fns'
-import parse from 'html-react-parser'
 import HTMLReactParser from 'html-react-parser'
-
-import { motion, useScroll, useTransform } from "framer-motion"
 
 import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
-import { HeroUnitVideo } from "../../../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video"
-import { Button } from "../../../fuselage/theme/2024/world/components/button/button"
 
-import { Pop, Fade } from "../../../fuselage/theme/2023/ae/layout/animation/animation"
-import { Callout } from '../../../fuselage/theme/2024/world/blocks/callout/callout'
-import HubspotForm from '../../../fuselage/components/hubspot-form/hubspot-form'
-
-import { QuoteSlider } from '../../../fuselage/theme/2024/world/components/quote-slider/quote-slider'
+import { Pop } from "../../../fuselage/theme/2023/ae/layout/animation/animation"
 import { StopwatchIcon } from "../../../fuselage/components/icons/icons"
-import { SpeakerCarousel } from '../../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel'
-import { SpeakerCard } from '../../../fuselage/components/speaker-card/speaker-card'
 import { AgendaSpeakerCard } from '../../../fuselage/components/agenda-speaker-card/agenda-speaker-card'
-
 
 import CSS from '../../../css/app/agenda-world-2024.module.css'
 import CSSlite from '../../../css/app/agenda-world-2024-aag.module.css'

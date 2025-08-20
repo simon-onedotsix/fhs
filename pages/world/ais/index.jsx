@@ -180,7 +180,7 @@ export default function Page () {
             <section id="form" className="block bg-primary-2">
                 <div className="container formatted center maxw-50">
                     <p className="fs-1 fw-600">Register Interest for UAE Africa Tourism Investment Summit</p>
-                    <p className='fs-6'>Please note that this is an invitation-only event for select C-level operators and investors, and registration does not guarantee attendance for all applicants.</p>
+                    <p className='fs-6 c-accent'>Please note that this is an <strong className='caps'>invitation-only event</strong> for select C-level operators and investors, and registration does not guarantee attendance for all applicants.</p>
                 </div>
                 <div className="container maxw-70">
                     <HubspotForm portalId='14527187' formId='2bea127b-7387-446e-8d0e-7404e01b2933' />

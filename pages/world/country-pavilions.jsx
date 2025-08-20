@@ -199,6 +199,7 @@ export default function Page ({ entry }) {
         <>
             <Header compact />
 
+            {/* UPDATE TO USE CMS DATA */}
 
             <PageHeroImage hero={{ url: 'https://cms.thebench.com/assets/img/site/FHS-World/53727353681_d9e964e388_o.jpg', width: 6192, height: 4128 }} >
 
@@ -210,6 +211,8 @@ export default function Page ({ entry }) {
                         <p className='fs-6 mt-sm'>FHS World features country pavilions that showcase new projects and destinations unique to each participating country. These pavilions will showcase upcoming hospitality projects unique to each country and present a plethora of investment opportunities in ventures with high ROI.</p>
                     </Fade>
                 </div>
+
+            {/* END UPDATE TO USE CMS DATA */}
                 
                 <div className="container">
                     <p className="fs-2 center pb-sm">Country Pavilions at FHS World 2025</p>

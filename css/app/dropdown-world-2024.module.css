@@ -7,7 +7,7 @@
 	color: inherit;
 	padding: .75rem 1rem;
 	border: 1px var(--accent) solid;
-	border-radius: var(--standard-field-radius, 0);
+	border-radius: calc(var(--default-radius) * 0.5);
 	background-color: transparent;
 
 	/* min-width: 12rem; */
