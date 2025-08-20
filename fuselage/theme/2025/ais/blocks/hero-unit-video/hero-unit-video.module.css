@@ -15,20 +15,24 @@
 .videoWrapper {
     position: relative;
     background-color: transparent;
-    mask-image: linear-gradient(to top, transparent 5%, black 100%);
+    mask-image: linear-gradient(to top, transparent 5%, black 100%);    
 }
 
-@keyframes slats {
-    from  { mask-position: center -30000%; }
-    to    { mask-position: center 0%; }
-}
 
 .videoWrapperMask {
     mask-image: url('/assets/img/ais/theme/ais-grid-video.svg');
     mask-size: 100%;
 
-    animation: slats 1s cubic-bezier(0.65, 0, 0.076, 1);
+    mask-position: center -30000%;
+    mask-repeat: no-repeat;
+    animation: slats 1s cubic-bezier(0.65, 0, 0.076, 1) ;
+    animation-fill-mode: forwards ;
 }
+@keyframes slats {
+    from  { mask-position: center -30000%; }
+    to    { mask-position: center 0%; }
+}
+
 
 .overlay {
     position: relative;
