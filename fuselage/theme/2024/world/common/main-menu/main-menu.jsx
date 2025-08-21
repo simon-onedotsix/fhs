@@ -100,6 +100,7 @@ export const MainMenu = ({ otherEvents }) => {
 
                                                                 if ( 
                                                                     link.hyperlink === '/world/ais' ||
+                                                                    link.hyperlink === '/world/pitch-point' ||
                                                                     link.hyperlink === '/world/brf/broker-award'
                                                                 ) showFlash = true
                 
