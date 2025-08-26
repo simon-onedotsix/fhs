@@ -18,6 +18,7 @@ import { SpeakerGrid } from "../../../fuselage/layout/speaker-grid/speaker-grid"
 import handleSeomaticMeta from '../../../lib/seomatic'
 
 import { getFieldValueByID } from "../../../lib/swapcard/get-custom-field-by-id"
+import { getAllSpecialFields } from '../../../lib/swapcard/get-all-special-fields'
 
 import CSS from '../../../css/app/speakers.module.css'
 
@@ -90,13 +91,6 @@ function Speakers({ seomatic, speakers }) {
 							speakers.length &&
 							customOrderedSpeakers.map( speaker => {
 
-								// let BRFspeaker = false
-
-								// speaker.speakerOnPlannings?.forEach( planning => {
-								// 	if ( planning.fields.some( field => field.id == "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) ) BRFspeaker = true
-								// })
-								// console.log(BRFspeaker)
-
 								return (
 									<div key={speaker.id}>
 										<Link href={`/world/speakers/${speaker.id}`}>
@@ -121,21 +115,20 @@ function Speakers({ seomatic, speakers }) {
 										</Link>
 										<div>
 											<p className='mt-xs' >
-												
-												<p className="fw-600 c-accent mb-xxs">
-													{ getFieldValueByID( speaker, "RmllbGRWYWx1ZV8yODE3MjMyNA==" ) }
-												</p>
+									
+												{/* swapcard special field */}
+												{
+													getAllSpecialFields(speaker) &&
+													getAllSpecialFields(speaker).map(field => (
+														<p className="fw-600 mb-xxs" style={{ color: field.color }}>
+															{field.value}
+														</p>
+													))
+												}
 												
 												<span className='fw-600'>{speaker.firstName} {speaker.lastName}</span> 
 												<br/>{speaker.jobTitle} 
 												<br/>{speaker.organization}
-
-												{/* {
-													// filter out specific speakers then show BRF tag
-													BRFspeaker ? 
-														<p className="fs-sm fw-600 c-accent mt-xxs">Speaking at the Branded Residences&nbsp;Forum</p>
-													: null 
-												} */}
 											</p>
 										</div>
 									</div>

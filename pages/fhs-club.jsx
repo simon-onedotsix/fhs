@@ -144,7 +144,7 @@ export default function Club ({ events }) {
                         <p className='fs-2 fw-600 center'>Tiers</p>
                         <p className='fs-6 maxw-50 mx-auto mt-md'>Our loyalty programme is divided into three distinct tiers, each offering a range of exclusive benefits. Your tier is determined based on your attendance at the most recent 6 editions of FHS which for now includes:</p>
                         <div className={CSS.eligibilityTable}>
-                            <span>FHS Saudi Arabia (2022, 2023, 2024)</span> <span>FHS World (2022, 2023, 2024)</span>
+                            <span>FHS Saudi Arabia (2023, 2024, 2025)</span> <span>FHS World (2022, 2023, 2024)</span>
                         </div>
                         <p>Please note that membership status will reset at every FHS event to include the recent most 6 editions.</p>
                     </div>
