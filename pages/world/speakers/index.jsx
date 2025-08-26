@@ -119,8 +119,8 @@ function Speakers({ seomatic, speakers }) {
 												{/* swapcard special field */}
 												{
 													getAllSpecialFields(speaker) &&
-													getAllSpecialFields(speaker).map(field => (
-														<p className="fw-600 mb-xxs" style={{ color: field.color }}>
+													getAllSpecialFields(speaker).map((field, index) => (
+														<p key={index} className="fw-600 mb-xxs" style={{ color: field.color }}>
 															{field.value}
 														</p>
 													))
