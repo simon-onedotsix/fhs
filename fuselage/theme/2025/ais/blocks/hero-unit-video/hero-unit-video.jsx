@@ -6,7 +6,7 @@ import CSS from './hero-unit-video.module.css'
 
 export const HeroUnitVideo = ({ children, video, poster }) => {
 
-    if ( !video || !poster ) return
+    // if ( !video || !poster ) return
 
     let  scroll  = useScroll()
     let y = useTransform( scroll.scrollY, [0, 1000], ["0vh", "30vh"])
@@ -15,23 +15,23 @@ export const HeroUnitVideo = ({ children, video, poster }) => {
         <section className={CSS.layout}>
                 
             <motion.div className={CSS.video} style={{ y }}>
-
-                    <div className={CSS.videoWrapperMask}>
-                        <div className={CSS.videoWrapper}>
-                            <ReactPlayer
-                                url={video}
-                                config={{ attributes: { poster: poster } }}
-                                width='100%'
-                                height='100%'
-                                controls={false}
-                                muted={true}
-                                playing={true}
-                                loop={true}
-                                playsinline={true}
-                            />
-                        </div>
-
-                    </div>
+            
+                <div className={CSS.videoWrapper}>
+                    {
+                        video &&
+                        <ReactPlayer
+                            url={video}
+                            config={{ attributes: { poster: poster } }}
+                            width='100%'
+                            height='100%'
+                            controls={false}
+                            muted={true}
+                            playing={true}
+                            loop={true}
+                            playsinline={true}
+                        />
+                    }
+                </div>                 
 
             </motion.div>
 

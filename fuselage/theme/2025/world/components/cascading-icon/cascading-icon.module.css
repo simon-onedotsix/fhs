@@ -1,0 +1,31 @@
+.layout {
+    display: grid;
+}
+
+.graphic,
+.overlay {
+    grid-area: 1/1 / 2/2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    z-index: 2;
+}
+
+
+
+
+.icon {
+    width: 80vw; 
+    aspect-ratio: 1; 
+    position: relative;
+}
+@media(min-width:600px){
+    .icon {
+        width: 45vw;
+    }
+}
