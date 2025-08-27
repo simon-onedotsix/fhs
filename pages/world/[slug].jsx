@@ -28,7 +28,8 @@ import {
     QueryBannerImage,
     QueryCoutryPavilions,
     QueryVideoTestimonials,
-    Passes
+    Passes,
+    QueryHoverPopups
 } from "../../graphql/queries"
 
 import handleSeomaticMeta from '../../lib/seomatic'
@@ -37,7 +38,7 @@ import handleSeomaticMeta from '../../lib/seomatic'
 
 export default function Page ({ entry, seomatic }) {
 
-    console.log('entry:', entry) 
+    // console.log('entry:', entry) 
   
     return (
         <>
@@ -113,6 +114,7 @@ export async function getStaticProps({ params, preview, previewData }) {
                             ${QueryCoutryPavilions}
                             ${Passes}
                             ${QueryVideoTestimonials}
+                            ${QueryHoverPopups}
                         }
                         ${QuerySEO}
                     }

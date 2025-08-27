@@ -423,42 +423,55 @@ export const QueryVideoTestimonials = `
     }
 `
 
+export const QueryHoverPopups = `
+    ... on ${blocksHandle}ContentBlocks_hoverPopups_BlockType {
+        id
+        hoverPopups {
+            ... on hoverPopups_popup_BlockType {
+                id
+                message
+                popup
+            }
+        }
+    }
+`
+
 
 
 
 // bizzabo related
 
-export const BizzaboPasses = `
-    ... on ${blocksHandle}ContentBlocks_bizzaboPasses_BlockType {
-        id
-        bizzaboPasses {
-            ... on bizzaboPasses_BlockType {
-                id
-                passName
-            }
-        }
-    }
-`
-export const BizzaboSpeakers = `
-    ... on ${blocksHandle}ContentBlocks_bizzaboSpeakers_BlockType {
-        id
-        theme
-    }
-`
-export const BizzaboPartners = `
-    ... on ${blocksHandle}ContentBlocks_bizzaboPartners_BlockType {
-        id
-        theme
-        heading
-        body
-        bizzaboSponsorCategories {
-            ... on bizzaboSponsorCategories_BlockType {
-                id
-                sponsorshipLevel
-                sponsorshipType
-                heading
-                size
-            }
-        }
-    }
-`
+// export const BizzaboPasses = `
+//     ... on ${blocksHandle}ContentBlocks_bizzaboPasses_BlockType {
+//         id
+//         bizzaboPasses {
+//             ... on bizzaboPasses_BlockType {
+//                 id
+//                 passName
+//             }
+//         }
+//     }
+// `
+// export const BizzaboSpeakers = `
+//     ... on ${blocksHandle}ContentBlocks_bizzaboSpeakers_BlockType {
+//         id
+//         theme
+//     }
+// `
+// export const BizzaboPartners = `
+//     ... on ${blocksHandle}ContentBlocks_bizzaboPartners_BlockType {
+//         id
+//         theme
+//         heading
+//         body
+//         bizzaboSponsorCategories {
+//             ... on bizzaboSponsorCategories_BlockType {
+//                 id
+//                 sponsorshipLevel
+//                 sponsorshipType
+//                 heading
+//                 size
+//             }
+//         }
+//     }
+// `
