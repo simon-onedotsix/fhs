@@ -1,0 +1,812 @@
+/* LAYOUT –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media(max-width:799px){
+
+    .utilities {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        /* gap: .5rem; */
+
+        min-height: 4.75rem;
+        padding-top: var(--space-sm);
+        /* border: 1px dashed lime; */
+    }
+
+
+    .filterLayout {
+        position: fixed;
+        z-index: 2;
+        inset: 0;
+        padding: var(--space-md);
+        padding-top: 6rem;
+        background-color: var(--dark);
+        display: none;
+    }
+    .filterLayout.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: .75rem;
+        z-index: 105;
+    }
+
+
+    .searchLayout {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        left:0;
+        padding: var(--space-md) 5.5rem var(--space-md) var(--space-md);
+        background-color: var(--dark);
+        display: none;
+    }
+    .searchLayout.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: .75rem;
+        z-index: 100;
+    }
+
+
+
+    .filterToggleContainer {
+        padding-top: var(--space-sm);
+        min-height: 3rem;
+        width: calc(48px + .5rem);
+    }
+    .filterToggle {
+        display: block;
+        height: 48px;
+        width: 48px;
+        border: 1px solid var(--accent);
+        
+        border-radius: var(--default-button-radius);
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.25);
+        color: white;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filterToggle svg {
+        width: 1.25rem;
+    }
+    .filterToggle.fixed {
+        position: fixed;
+        z-index: 6;
+        top: var(--space-md);
+        /* left: var(--space-md); */
+    }
+    .filterToggle.active {
+        position: fixed;
+        z-index: 6;
+        top: var(--space-md);
+        right: var(--space-md);
+    }
+
+    .desktopOnly {
+        display: none;
+    }
+    
+    .agendaFilterResetWrapper {
+        flex: 0 !important;
+    }
+
+
+
+   .searchToggleContainer {
+        /* display: none; */
+        padding-top: var(--space-sm);
+        min-height: 3rem;
+    }
+    .searchToggle {
+        height: 48px;
+        width: 48px;
+        border: 1px solid var(--accent);
+        
+        border-radius: var(--default-button-radius);
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.25);
+        color: white;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .searchToggle svg {
+        width: 1.25rem;
+    }
+    .searchToggle.fixed {
+        position: fixed;
+        z-index: 105;
+        top: var(--space-md);
+        left: calc(var(--space-md) + 3.5rem);
+    }
+    .searchToggle.active {
+        position: fixed;
+        z-index: 105;
+        top: var(--space-md);
+        right: var(--space-md);
+        left: auto;
+    }
+
+
+    .filterActionButton {
+        margin-top: 1rem;
+        background-color: var(--accent);
+        border: none;
+        padding: .5rem 2rem;
+        border-radius: var(--default-button-radius);
+
+        font-family: inherit;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .searchFormContainer input {
+        outline: none;
+    }
+
+
+}
+
+
+/* DESKTOP ----------------------------------------------- */
+
+@media(min-width:800px){
+
+    .filterToggleContainer, .filterToggle,
+    .searchToggleContainer, .searchToggle,
+    .filterActions {
+        display: none;
+    }
+
+
+    .utilities {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+    .utilties,
+    .filters,
+    .search {
+        height: 3rem;
+    }
+
+
+    .filterLayout {
+        z-index: 10;
+        position: absolute;
+        top: 0;
+    }
+    .filterLayout.fixed {
+        position: fixed;
+        top: 150px;
+    }
+    
+
+    .searchLayout {
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .searchLayout.fixed {
+        position: fixed;
+        top: 150px;
+        right: calc(var(--space-sm) + var(--space-lg));
+    }
+
+
+
+    .filterGroup {
+        display: inline-grid;
+        grid-template-columns: repeat(4, auto);
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .filterButton {
+        width: auto;
+    }
+}
+
+
+@media(min-width:1200px){
+    .searchLayout.fixed {
+        right: calc(var(--space-sm) + var(--space-lg));
+    }
+}
+
+.filterLayoutButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: .2rem;
+}
+
+
+
+
+/* search form */
+
+.searchFormContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--accent);
+    border-radius: calc(var(--default-radius) * 0.5);
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+}
+.search input::placeholder {
+    color: var(--accent);
+    opacity: 1;
+}
+.search input {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    color: white;
+    padding: .75rem 1rem;
+    border: none;
+    background-color: transparent;
+}
+.searchReset {
+    position: absolute;
+    top: 0;
+    right:0;
+    bottom: 0;
+    cursor: pointer;
+    width: 2.8rem;
+    padding: 0;
+    font-size: 1.9rem;
+    line-height: 1;
+    border: 0;
+    background-color: transparent;
+    color: white;
+    display: none;
+}
+.searchReset.active {
+    display: block;
+}
+
+@media(max-width:599px){
+    .searchFormContainer {
+        display: unset;
+    }
+    .search form input {
+        flex: 1;
+        width: 100%;
+    }
+    .searchReset,
+    .searchReset.active {
+        position: absolute;
+    }
+}
+
+
+
+
+/* button */
+
+.filterButton {
+    cursor: pointer;
+    appearance:none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    white-space: nowrap;
+    color: white;
+    padding: .75rem 1rem;
+    border: 1px solid var(--accent);
+    border-radius: calc(var(--default-radius) * 0.5);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+
+    transition: all 350ms ease-in-out;
+}
+
+@media(hover:hover) {
+    .filterButton:hover{
+        background-color: var(--accent);
+        border-color: var(--accent);
+        color: var(--secondary);
+    }
+}
+
+.filterButton:focus {
+    border-color: var(--accent);
+    color: var(--secondary);
+    outline: none;
+}
+.filterButton.active {
+    border-color: var(--accent);
+    background-color: var(--accent);
+    color: var(--secondary);
+}
+
+
+/* select */
+
+.filterSelect {
+    cursor: pointer;
+    appearance:none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    width: 100%;
+    padding: .75rem 2.5rem .75rem 1rem;
+    border: 1px solid var(--accent);
+    border-radius: calc(var(--default-radius) * 0.5);
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+
+    background-image: url('/assets/ui/select-chevron-sa-2024.svg');
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1rem);
+}
+
+.filterSelect:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+.filterSelect span {
+    text-align: left;
+}
+
+
+
+.agendaFilterReset {
+    cursor: pointer;
+    appearance:none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: white;
+    background-color: transparent;
+    
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+    gap: .51rem
+}
+.agendaFilterReset span {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    border: 1px solid var(--accent);
+    padding: 6px;
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    transition: all 350ms ease-in-out;
+}
+.agendaFilterReset:hover span {
+    background-color: var(--accent);
+    color: var(--secondary);
+}
+
+.agendaFilterResetWrapper {
+    flex: 1;
+    display: flex;
+    /* justify-content: flex-end; */
+}
+
+
+/* speaker profile modal trigger */
+
+.modalTrigger {
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    font: inherit;
+}
+
+
+
+
+@media print {
+    .filterLayout { display: none; }
+}
+
+
+
+
+/* anchor hash handling */
+
+.sessionWrapper {
+    position: relative;
+}
+.anchorOffset {
+    display: block;
+    position: absolute;
+    top: calc( var(--header-height-compact-mobile) * -1 );
+}
+@media(min-width:600px){
+    .anchorOffset {
+        top: calc( var(--header-height-compact) * -1 );
+    }
+}
+
+
+
+
+/* ACTIONS */
+
+.actions {
+    position: fixed;
+    z-index: 5;
+    bottom: var(--space-sm);
+    right: var(--space-sm)
+}
+
+@media(min-width:600px){
+    .actions {
+        display: none;
+    }
+}
+
+.scrollButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--accent);
+    border-radius: 3rem;
+
+    padding: .8rem;
+
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.25);
+
+    transition: all 350ms ease-in-out;
+}
+.scrollButton svg {
+    stroke: white;
+}
+
+
+@media(hover:hover){
+    .scrollButton:hover {
+        background-color: var(--accent);
+    }
+    .scrollButton:hover svg {
+        stroke: var(--dark);
+    }
+}
+
+
+
+
+/* STYLING ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+.agenda, .day {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    gap: .5rem;
+}
+
+.dayDivider {
+    background-color: var(--accent);
+    border-radius: calc(var(--default-radius) * 0.5);
+    padding: .5rem 1rem;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.timeSlot {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.timingsAndTags {
+    background-color: var(--secondary);
+    border-radius: calc(var(--default-radius) * 1);
+    padding: .5rem 1rem;
+}
+
+@media(max-width:500px){
+    .timeSlot {
+        border: 2px solid var(--secondary);
+        border-radius: calc(var(--default-radius) * 1.25);
+    }
+    .timingsAndTags {
+       border-bottom-right-radius: 0;
+       border-bottom-left-radius: 0;
+    }
+    .sessions {
+        padding: .25rem;
+    }
+}
+@media(min-width:600px){
+    .timeSlot {
+        grid-template-columns: 9rem auto;
+        gap: .5rem;
+    }
+    .timingsAndTags {
+        padding: 1rem;
+    }
+}
+
+.sessions {
+    display: flex;
+    /* comment-out flex-direction to display SESSIONS in columns +++++++++++++++++++++++++++++++++++++++++ */
+    /* flex-direction: column; */
+    
+    gap: .5rem;
+}
+
+.session {
+    container: session-container / inline-size;
+
+    flex: 1;
+    border-radius: calc(var(--default-radius) * 0.5);
+    overflow: hidden;
+    background-color: var(--dark);
+}
+
+
+
+
+
+
+.sessionHeader {
+    width: 100%;
+    padding: .5rem 1rem;
+    background-color: var(--primary);
+}
+.sessionHeader {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: .5rem;
+    row-gap: .25rem;
+}
+
+@container session-container (width < 25rem){
+    .sessionHeader,
+    .sessionHeader .sessionTimings {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: .125rem
+    }
+}
+
+
+
+
+.sessionContent {
+    padding: 1rem;
+}
+@media(min-width:600px){
+    .sessionContent {
+        padding: 1.5rem;
+    }
+}
+
+
+
+
+.sessionTitle {
+    max-width: 50rem;
+}
+
+.sessionTagGrid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .25rem;
+}
+
+/* speakerGrid */
+
+.sessionSpeakerGrid {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+}
+
+@media(min-width:1200px) {
+    .sessionSpeakerGrid {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+    .sessionSpeaker {
+        width: 12vw;
+    }
+}
+
+.sessionTag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2rem;
+    background-color: var(--accent);
+    font-size: .8rem;
+}
+.sessionLocationTag {
+    display: inline-block;
+}
+
+.test {
+    border: 1px solid rgb(255, 0, 208);
+}
+
+.speakerTag {
+    display: inline-block;
+    margin-bottom: .5rem;
+    padding: 2px 8px;
+    border-radius: calc(var(--default-radius) * 2);
+    background-color: var(--accent);
+    color: black;
+    font-size: .8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+
+
+/* updated layout (columns) */
+
+.sessionsWrapper {
+    flex:1;
+    display: flex;
+    /* comment-out flex-direction to display STREAMS in rows +++++++++++++++++++++++++++++++++++++++++ */
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.sessionStream {
+    padding: .5rem 1rem;
+    border-radius: calc(var(--default-radius) * 0.5);
+    background-color: var(--primary);
+    min-width: 6.25rem;
+}
+
+.session {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+@media(max-width:600px) {
+    .sessions {
+        flex-direction: column;
+    }
+    .sessionsWrapper {
+        position: relative;
+        flex:1;
+        display: flex;
+        /* comment-out flex-direction to display sessions in rows +++++++++++++++++++++++++++++++++++++++++ */
+        /* flex-direction: row; */
+        gap: .5rem;
+    }
+
+}
+
+
+
+
+/* session anchors */
+
+.sessionsWrapper {
+    position: relative;
+}
+
+.sessionAnchor {
+    position: absolute;
+    z-index: 12;
+    display: block;
+
+    top: -14rem;
+}
+
+
+
+
+/* title-block */
+
+.titleBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.printButton {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: white;
+    display: inline-grid;
+    grid-template-columns: 1.5rem auto;
+    gap: .25rem;
+    align-items: center;
+
+}
+.printButton svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
+
+
+/* printer styles --------------------------------------------- */
+
+@media print {
+
+    .filters,
+    .search,
+    .printButton {
+        display: none;
+    }
+    .agenda * {
+        color: black !important;
+    }
+
+
+    .agendaWrapper {
+        width: 100vw;
+    }
+
+    .sessions {
+        flex-direction: column;
+    }
+    .sessionsWrapper {
+        break-inside: avoid;
+        position: relative;
+        flex:1;
+        display: flex;
+        gap: .5rem;
+    }
+
+    .dayDivider {
+        background-color: white !important;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        margin: 2rem 0;
+    }
+
+    .sessionHeader {
+        border-bottom: 1px solid rgb(200, 200, 200) !important;
+        background-color: white !important;
+    }
+    .session {
+        background-color: white !important;
+        border: 1px solid rgb(200, 200, 200);
+        color: black !important;
+    }
+
+    .sessionTag {
+        color: white !important;
+    }
+
+    .speakerAvatar {
+        display: none;
+    }
+}
+
+

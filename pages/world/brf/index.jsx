@@ -299,6 +299,12 @@ export default function Page ({ sessions, speakers }) {
                     Held adjacently with <strong>FHS World</strong>, this exclusive one-day forum explores the thriving sector of Branded Residences.
                 </motion.p>
 
+                <div className="mt-sm center">
+                    <Pop>
+                        <Button href={'/world/brf/agenda'}>View Agenda</Button>
+                    </Pop>
+                </div>
+
                 <Pop>
                     <div className="container maxw-60 pt-lg columns-3 gap-md">
                         <section>

@@ -245,7 +245,7 @@ export default function Page ({ sessions, locations }) {
                 <div className="container center">
                     <p>
                         <Pop>
-                            <Button href={`/world/agenda`}>View Full Agenda</Button>
+                            <Button href={`/world/agenda`}>View Full FHS Agenda</Button>
                         </Pop>
                     </p>
                 </div>
