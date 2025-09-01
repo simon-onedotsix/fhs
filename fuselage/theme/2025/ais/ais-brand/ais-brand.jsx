@@ -1,9 +1,40 @@
 import { motion } from "framer-motion"
 
-import CSS from './cascading-icon.module.css'
+import CSS from './ais-brand.module.css'
 
 
-export const AIS = ({ children }) => {
+export const AisLockup = () => {
+    return (
+        <div className={CSS.lockupLayout}>
+
+            <motion.section 
+                className={CSS.lockupEn}
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{ type: "spring", bounce: 0.1, delay: .75 }}
+            >
+                <img src="/assets/img/ais/ais-en.svg" alt=""/>
+            </motion.section>
+
+            <section className={CSS.lockupIcon}>
+                <CascadingIcon />
+            </section>
+            
+            <motion.section 
+                className={CSS.lockupAr}
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{ type: "spring", bounce: 0.1, delay: .75 }}
+            >
+                <img src="/assets/img/ais/ais-ar.svg" alt=""/>
+            </motion.section>
+        </div>
+    )
+}
+
+export const AisMotifBackground = ({ children }) => {
     return (
         <div className={CSS.layout}>
             <div className={CSS.graphic}>
@@ -58,14 +89,14 @@ const Slug = ({ x, y, h = 50, delay = 0 }) => {
                 width: `6%`,
                 height: `${h}%`,
                 borderRadius: 500,
-                backgroundColor: `var(--primary-2)`,
+                backgroundColor: `white`,
                 position: `absolute`,
                 top: `${y}%`,
                 left: `${x}%`,
             }}
 
             initial={{ opacity: 0, height: `${h * 1.5}%`, y: -40  }}
-            whileInView={{ opacity: .35, height: `${h}%`, y: 0  }}
+            whileInView={{ opacity: 1, height: `${h}%`, y: 0  }}
             viewport={{ once: false }}
             transition={{ type: "linear", bounce: 0.25, duration: .5, delay }}
         />

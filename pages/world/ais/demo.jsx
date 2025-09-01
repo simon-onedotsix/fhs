@@ -14,7 +14,7 @@ import Image from 'next/image'
 import { Header } from '../../../fuselage/theme/2025/ais/common/header/header'
 import { Footer } from '../../../fuselage/theme/2025/ais/common/footer/footer'
 
-import { AIS } from '../../../fuselage/theme/2025/world/components/cascading-icon/cascading-icon'
+import { AisMotifBackground, AisLockup } from '../../../fuselage/theme/2025/ais/ais-brand/ais-brand'
 import { HeroUnitVideo } from "../../../fuselage/theme/2025/ais/blocks/hero-unit-video/hero-unit-video"
 import { Button } from "../../../fuselage/theme/2025/ais/components/button/button"
 
@@ -31,6 +31,7 @@ import { convertSeconds, sortSpeakers } from '../../../lib/agenda-utils'
 import { filterSessionsByTopic } from '../../../lib/swapcard/agenda-utils'
 
 import { BrandBackground } from '../../../fuselage/theme/2025/ais/theme/brand-background'
+import { FixedBackgroundImage } from '../../../fuselage/theme/2025/ais/blocks/fixed-background-image/fixed-background-image'
 
 
 import CSS from '../../../fuselage/theme/2025/ais/css/homepage.module.css'
@@ -65,15 +66,17 @@ export default function Page ({ sessions, locations }) {
 
             {/* https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4 */}
             <HeroUnitVideo video={''} poster={'/assets/video/fhs-2024-world-opt-poster.jpg'}>
+                
 
-                <AIS>
-                    <Reveal delay={.8}><p className='fs-0 fw-500 caps lh-1 center'>UAE Africa Tourism </p></Reveal>
-                    <Reveal delay={1}><p className='fs-0 fw-500 caps lh-1 center'>Investment Summit</p></Reveal>
 
-                    <Pop delay={1.1}>
-                        <p className='fs-4 fw-600 c-accent caps center mt-sm'>27 October 2025 <br/>08:30–13:00</p>
-                    </Pop>
-                </AIS>
+                <div className="mx-auto mt-lg mb-sm">
+                    <AisLockup />
+                </div>
+
+                <Pop delay={.5}>
+                    <p className='fs-4 fw-600 c-accent caps center mt-sm'>27 October 2025 <br/>08:30–13:00</p>
+                </Pop>
+
 
 
                 <motion.p 
@@ -132,31 +135,25 @@ export default function Page ({ sessions, locations }) {
 
 
 
-
             {/* CALLOUTS */}
-            <section className="block bg-default pt-md" style={{ overflow: 'hidden'}}>
-                <div className="container formatted maxw-90">
-                    <Callout
-                        image={{ url:'/assets/img/ais/ais-01.jpg', width:2000, height:1335 }}
-                    >
-                        <Slide>
-                            <p className='fs-2 fw-600 lh-2'>Why Africa</p>
-                            <p className="fs-5 c-white">Africa&apos;s tourism and hospitality sector is expanding rapidly, with <strong className='fw-600'>577</strong> hotels and resorts in development, totaling <strong className='fw-600'>104,444</strong> rooms, a 13.3% year-on-year increase, outpacing global growth. International tourist arrivals reached <strong className='fw-600'>74</strong> million in 2024, up 12% from 2023 and 7% above 2019 levels.</p>
-                        </Slide>
-                    </Callout>
-                </div>
+            <FixedBackgroundImage backgroundImageUrl={`/assets/img/ais/ais-01.jpg`}>
+                <Pop inline delay={.1}>
+                    <p className='fs-2 fw-600 lh-2'>Why Africa</p>
+                </Pop>
+                <Pop inline delay={.2}>
+                    <p className="fs-5 c-white mt-sm">Africa&apos;s tourism and hospitality sector is expanding rapidly, with <strong className='fw-600'>577</strong> hotels and resorts in development, totaling <strong className='fw-600'>104,444</strong> rooms, a 13.3% year-on-year increase, outpacing global growth. International tourist arrivals reached <strong className='fw-600'>74</strong> million in 2024, up 12% from 2023 and 7% above 2019 levels.</p>
+                </Pop>
+            </FixedBackgroundImage>
+            
+            <FixedBackgroundImage backgroundImageUrl={`/assets/img/ais/ais-02.jpg`}>
+                <Pop inline delay={.1}>
+                    <p className='fs-2 fw-600 lh-2'>Ministry of Economy & Tourism partners with The Bench to host &apos;UAE Africa Tourism Investment Summit&apos; at FHS World 2025</p>
+                </Pop>
+                <Pop inline delay={.2}>
+                    <p className="fs-5 c-white mt-sm">The event will gather <strong className='fw-600'>250+</strong> senior officials, investors, and tourism leaders from <strong className='fw-600'>53</strong> African nations to drive partnerships and boost investment in hospitality, tourism, and related sectors.</p>
+                </Pop>
+            </FixedBackgroundImage>
 
-                <div className="container formatted maxw-90">
-                    <Callout flipped
-                        image={{ url:'/assets/img/ais/ais-02.jpg', width:2000, height:1403 }}
-                    >
-                        <Slide>
-                            <p className='fs-2 fw-600 lh-2'>Ministry of Economy & Tourism partners with The Bench to host &apos;UAE Africa Tourism Investment Summit&apos; at FHS World 2025</p>
-                            <p className="fs-5 c-white">The event will gather <strong className='fw-600'>250+</strong> senior officials, investors, and tourism leaders from <strong className='fw-600'>53</strong> African nations to drive partnerships and boost investment in hospitality, tourism, and related sectors.</p>
-                        </Slide>
-                    </Callout>
-                </div>
-            </section>
 
 
 
