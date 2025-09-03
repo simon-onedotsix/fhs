@@ -22,7 +22,7 @@ import CSS from '../../fuselage/theme/2025/sa/css/agenda-compact.module.css'
 const tracks = [
 	{
 		id: "1",
-		title: "NextGen - Education Investment",
+		title: "Workshop",
 		color: "#FFCFCF"
 	},
 	{
@@ -79,199 +79,7 @@ const tracks = [
 
 
 
-export default function Agenda ({ sessions, locations }) {
-
-
-	// BUILD AGENDA
-		
-	const buildAgenda = ( sessionsData ) => {
-
-		if ( !sessionsData ) return 
-
-		
-		const timeslots = _.groupBy(sessionsData, 'beginsAt')
-		
-
-		// calculate event days
-
-		const getUniqueDays = ( sessionData ) => {
-
-			const groupedStartTimes = _.groupBy(sessionData, 'beginsAt')
-			const timeCodes = Object.keys(groupedStartTimes)
-			const eventDays = _.uniqBy( timeCodes, string => string.slice(0, 10) )
-	
-			return eventDays
-		}
-		
-		const agendaDays = []
-		getUniqueDays( sessionsData ).map((timestring, index) => {
-			agendaDays.push({ 
-				day: format( new Date(timestring), "eeee dd MMMM" ), 
-				time: timestring.slice(0, 10), 
-				timeslots: [] 
-			})
-		})
-
-
-		// group sessions (and apply filters)
-
-		const filteredTimeslots = _.groupBy(sessionsData, 'beginsAt')
-		
-	
-		// build agenda
-	
-		const agenda = []
-		agendaDays.map( day => {
-			let slots = []
-			for ( const key in filteredTimeslots ) {
-				if ( key.slice(0, 10) === day.time.slice(0, 10) ) {
-					slots.push({ 
-						beginsAt: filteredTimeslots[key][0].beginsAt, 
-						endsAt: filteredTimeslots[key][0].endsAt, 
-						sessions: filteredTimeslots[key]
-					})
-				}
-			}
-	
-			agenda.push( { ...day , timeslots: slots } )
-		})
-
-		return agenda
-	}
-
-	
-	// HANDLE SESSION FIELDS (TAGS)
-
-	const getSessionLocation = ( sessionData ) => {
-		if ( !sessionData.fields ) return
-
-		let fieldsData = sessionData.fields.filter( (field) => field.definition.name === 'Location' )
-
-		return fieldsData.map ( (topic, index) => (
-			<span key={index} className='sessionLocationTag fw-500'>{ topic.translations[0].value }</span> 
-		))
-	}
-
-	const getSessionFields = ( sessionData, fieldHandle ) => {
-		if ( !sessionData.fields || !fieldHandle ) return
-
-		let fieldsData = sessionData.fields.filter( (field) => field.definition.name === fieldHandle )
-
-		return fieldsData.map ( (topic, index) => (
-			<span key={index} className={`${CSS.sessionTag} fw-500`}>{ topic.translations[0].value }</span> 
-		))
-	}
-
-	const groupFieldGroupsByName = ( sessionsData, fieldHandle ) => {
-		if ( !sessionsData || !fieldHandle ) return []
-
-		const fieldIds = []
-		const fieldObjects = []
-		const distilledFieldObjects = []
-
-		// build arrays
-		sessionsData.forEach( (session) => {
-			let topics = session.fields.filter( (field) => field.definition.name === fieldHandle )
-			topics.forEach( (field) => {
-				fieldIds.push(field.id)
-				fieldObjects.push({ id: field.id, name: field.translations[0].value })
-			})
-		})
-
-		// for unique IDs, search the field object array to find the related name
-		_.uniq(fieldIds).forEach( (id) => {
-			distilledFieldObjects.push(fieldObjects.find( (obj) => obj.id === id ))
-		})
-
-		return distilledFieldObjects
-	}
-	
-	const getFieldGroupNameById = ( sessionData, fieldId, handle ) => {
-		if ( !fieldId ) return
-		let array = groupFieldGroupsByName( sessionData, handle )
-		let obj = array.find( topic => topic.id === fieldId)
-		return obj.name
-	}
-
-
-
-
-	// STREAM PRIORITISING
-
-	const prioriseStreams = ( sessionsData, locationsData ) => {
-
-		if ( !sessionsData || !locationsData ) return
-
-		const sortedStreams = []
-
-		if ( sessionsData.length > 1 ) {
-
-			// console.log('sorting')
-			
-			sessionsData.forEach( session => {
-				if ( session.fields.find( (field) => field.definition.name === 'Location' ) ) {
-
-					let location = session.fields.find( (field) => field.definition.name === 'Location' )
-					session.priority = locationsData.map( i => i.id ).indexOf(location?.id)
-
-					sortedStreams.push(session)
-
-				} else {
-					session.priority = 100
-					sortedStreams.push(session)
-				}
-				
-				
-			})
-			
-			// console.log('–––––––––––––––––––-')
-			// console.log( _.orderBy(sortedStreams, ['priority'], ['asc']) )
-			
-			return _.orderBy(sortedStreams, ['priority'], ['asc'])
-		}
-
-		// console.log('passing session back unchanged')
-
-		return sessionsData
-
-	}
-
-
-	// SESSION UTILITIES
-
-	const convertSeconds = (seconds) => {
-		const hours = Math.floor(seconds / 3600)
-		const minutes = Math.floor((seconds % 3600) / 60)
-	
-		const hourString = hours > 0 ? `${hours} hour${hours > 1 ? 's' : ''}` : ''
-		const minuteString = minutes > 0 ? `${minutes} minute${minutes > 1 ? 's' : ''}` : ''
-	
-		if ( hours > 0 ) {
-			return `${hourString} ${ minutes > 0 ? minuteString : ''}`
-
-		} else if ( !hours && minutes > 0 ) {
-			return `${minuteString}`
-
-		}
-	
-		return
-	}
-
-
-
-	console.log('sessions:', sessions)
-	// console.log('locations [swc]:', locations)
-	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
-	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
-	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
-	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))	
-	// console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
-	// console.log('SEARCH:', search)
-
-
-
-
-
+export default function Agenda () {
 
     return (
         <ReactLenis root>
@@ -292,7 +100,7 @@ export default function Agenda ({ sessions, locations }) {
 
 				{/* INTRO */}
                 <div className="section mb-sm" style={{ zIndex: 2, position: 'relative' }}>
-                    <p className="fs-1 fw-500">2025 Agenda at a Glance</p>
+                    <p className="fs-1 fw-500">2026 Agenda at a Glance</p>
 					<div className="formatted mt-xs">
 						<p>Programme is subject to change.</p>
 					</div>
@@ -308,7 +116,7 @@ export default function Agenda ({ sessions, locations }) {
 							<aside>
 								<p className="fs-2">Day 1</p>
 								<Pop>
-									<p className={CSS.dayDivider}>11 May - Sunday</p>
+									<p className={CSS.dayDivider}>20 April - Monday</p>
 								</Pop>
 							</aside>
 
@@ -317,32 +125,145 @@ export default function Agenda ({ sessions, locations }) {
 
 									{/* SESSIONS */}
 
-									<SessionGroup location={{ title: "NextGen Focus" }}>
-										<Timeslot
-											startTime={"2025-05-11 15:00:00"} 
-											endTime={"2025-05-11 18:30:00"}
-										>
-											<Session 
-												title={"Keynote: Hospitality Talent in Saudi Arabia - A Data-Driven Overview"}
-												trackID={"1"}
+									<SessionGroup>
+										<Session
+											startTime={"2026-04-20 12:30:00"}
+											endTime={"2026-04-20 14:00:00"}
+											title={"Welcome to FHS Saudi Arabia 2025"}
+										/>
+									</SessionGroup>
+									
+									<SessionGroup location={{ title: "Summit Stage" }}>
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 14:00:00"}
+												endTime={"2026-04-20 14:20:00"}
+												title={"Welcome to FHS Saudi Arabia 2025"}
 											/>
-											<Session title={"Panel: Bridging Education and Industry"} />
-											<Session title={"Workshop: Rebranding Hospitality Careers"} />
-											<Session title={"Workshop: Strengthening Public-Private Partnerships"} />
-											<Session title={"Speed Networking"} />
 										</Timeslot>
 										
-										<Timeslot
-											startTime={"2025-05-11 18:30:00"} 
-											endTime={""}
-										>
-											<Session 
-												
-												title={"Welcome Reception hosted by Al Khozama"}
-												trackID={"1"}
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 14:20:00"}
+												endTime={"2026-04-20 14:45:00"}
+												title={"Scaling Peaks, Building Resilience: Lessons for Hospitality Leaders"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 14:45:00"}
+												endTime={"2026-04-20 15:15:00"}
+												title={"Betting Big: The Rise, Risk, and Reward of Giga Projects under Vision 2030"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 14:45:00"}
+												endTime={"2026-04-20 15:15:00"}
+												title={"The Age of Global Transformation: Connecting Saudi Arabia to the World"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 15:45:00"}
+												endTime={"2026-04-20 16:00:00"}
+												title={"Announcements & Signings"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 16:00:00"}
+												endTime={"2026-04-20 16:30:00"}
+												title={"Networking Coffee"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 16:30:00"}
+												endTime={"2026-04-20 16:45:00"}
+												title={"FHS Intelligence Talk: Travel & Tourism Economic Impact & Global Trends"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 16:45:00"}
+												endTime={"2026-04-20 17:30:00"}
+												title={"Building Beyond Boundaries: Creating World-Class Tourism Destinations"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 17:30:00"}
+												endTime={"2026-04-20 18:00:00"}
+												title={"Programming the Kingdom: Mega Events as a Pillar of Saudi Arabia’s Vision 2030"}
 											/>
 										</Timeslot>
 									</SessionGroup> 
+
+									<SessionGroup location={{ title: "Future Stage" }}>
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 11:00:00"}
+												endTime={"2026-04-20 11:30:00"}
+												title={"FHS Saudi Arabia 101: A First-Timer’s Guide to Making the Most of the Summit"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 11:30:00"}
+												endTime={"2026-04-20 12:30:00"}
+												title={"The Hospitality Shuffle: Speed Networking"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 12:30:00"}
+												endTime={"2026-04-20 14:00:00"}
+												title={"Luncheon"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 15:00:00"}
+												endTime={"2026-04-20 15:30:00"}
+												title={"Empowering Connections: Networking Session"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-20 15:30:00"}
+												endTime={"2026-04-20 17:00:00"}
+												title={"Start-Up Den"}
+											/>
+										</Timeslot>
+									</SessionGroup>
+
+									<SessionGroup>
+										<Session
+											startTime={"2026-04-20 15:00:00"}
+											endTime={"2026-04-20 17:00:00"}
+											title={"Exclusive, small-group discussions for deeper dives into pressing industry topics"}
+											trackID={"1"}
+										/>
+									</SessionGroup>
+
+									<SessionGroup>
+										<Session
+											startTime={"2026-04-20 18:00:00"}
+											title={"Welcome Reception"}
+										/>
+									</SessionGroup>
 								</div>
 							</main>
 						</StickySidebar>
@@ -353,7 +274,7 @@ export default function Agenda ({ sessions, locations }) {
 							<aside>
 								<p className="fs-2">Day 2</p>
 								<Pop>
-									<p className={CSS.dayDivider}>12 May - Monday</p>
+									<p className={CSS.dayDivider}>21 April - Tuesday</p>
 								</Pop>
 							</aside>
 
@@ -362,115 +283,196 @@ export default function Agenda ({ sessions, locations }) {
 
 									{/* SESSIONS */}
 
-									<SessionGroup location={{ title: "Main Summit Day" }}>
+									<SessionGroup>
+										<Session
+											startTime={"2026-04-21 09:30:00"}
+											endTime={"2026-04-21 10:30:00"}
+											title={"Executive Investor Breakfast & Project Showcase – A Closed-Door Gathering"}
+										/>
+									</SessionGroup>
+									
+									<SessionGroup location={{ title: "Summit Stage" }}>
 										<Timeslot>
-											<Session 
-												startTime={"2025-05-12 10:00:00"} 
-												endTime={"2025-05-12 10:15:00"}
-												title={"Welcome to FHS Saudi Arabia"}
-											/>
-										</Timeslot>
-
-										<Timeslot 
-											startTime={"2025-05-12 10:15:00"} 
-											endTime={"2025-05-12 11:15:00"}
-										>
-											<Session 
-												title={"Keynotes: Visionary Leadership in Saudi Tourism"}
-												trackID={"5"}
-											/>
-											<Session 
-												title={"Panel: Unlocking Destination Potential"}
-												trackID={"3"}
+											<Session
+												startTime={"2026-04-21 10:35:00"}
+												endTime={"2026-04-21 10:55:00"}
+												title={"Setting the Scene for Hotel Performance and Development in Saudi Arabia"}
 											/>
 										</Timeslot>
 										
-										<Timeslot 
-											startTime={"2025-05-12 11:30:00"} 
-											endTime={"2025-05-12 13:00:00"}
-										>
-											<Session 
-												title={"Riyadh's Transformation: A Hospitality Perspective"}
-												trackID={"5"}
-											/>
-											<Session 
-												title={"Economic Impact of Travel & Tourism"}
-												trackID={"2"}
-											/>
-										</Timeslot>
-
 										<Timeslot>
-											<Session 
-												startTime={"2025-05-12 13:00:00"} 
-												endTime={"2025-05-12 14:00:00"}
-												title={"Lunch"}
+											<Session
+												startTime={"2026-04-21 10:30:00"}
+												endTime={"2026-04-21 11:10:00"}
+												title={"New Rules of Ownership: Catalysing Investment Through Real Estate Reform in KSA"}
 											/>
 										</Timeslot>
 										
-										<Timeslot 
-											startTime={"2025-05-12 14:00:00"} 
-											endTime={"2025-05-12 16:00:00"}
-										>
-											<Session 
-												title={"Hotel Performance Outlook"}
-												trackID={"2"}
-											/>
-											<Session 
-												title={"Financing the Future: Hospitality Ventures"}
-												trackID={"2"}
-											/>
-											<Session 
-												title={"Sustainability in Practice: Green Hospitality"}
-												trackID={"7"}
-											/>
-										</Timeslot>
-
 										<Timeslot>
-											<Session 
-												startTime={"2025-05-12 16:00:00"} 
-												endTime={"2025-05-12 16:30:00"}
-												title={"Coffee Break"}
+											<Session
+												startTime={"2026-04-21 11:10:00"}
+												endTime={"2026-04-21 11:50:00"}
+												title={"Financing Hospitality Ventures: Maximizing Capital for Growth and Success"}
 											/>
 										</Timeslot>
-
-										<Timeslot 
-											startTime={"2025-05-12 16:30:00"} 
-											endTime={"2025-05-12 17:45:00"}
-										>
-											<Session 
-												title={"Future of Tourism: Global Trends & Local Strategies"}
-												trackID={"2"}
-											/>
-											<Session 
-												title={"Panel: Mid-Market Opportunity in KSA"}
-												trackID={"11"}
-											/>
-											<Session 
-												title={"Hotel F&B Innovation & Luxury"}
-												trackID={"4"}
-											/>
-										</Timeslot>
-
+										
 										<Timeslot>
-											<Session 
-												startTime={"2025-05-12 18:00:00"} 
-												endTime={""}
-												title={"FHS Evening Reception"}
+											<Session
+												startTime={"2026-04-21 11:50:00"}
+												endTime={"2026-04-21 12:15:00"}
+												title={"Building Legacy: Family Business in Saudi Arabia"}
 											/>
 										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 12:15:00"}
+												endTime={"2026-04-21 12:45:00"}
+												title={"Capital Meets Opportunity: Saudi Arabia’s Hospitality Sector Through the Investor Lens"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 12:45:00"}
+												endTime={"2026-04-21 13:00:00"}
+												title={"Announcements & Signings"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 13:00:00"}
+												endTime={"2026-04-21 14:00:00"}
+												title={"Luncheon"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 14:00:00"}
+												endTime={"2026-04-21 14:15:00"}
+												title={"Redefining the Guest Journey: Hospitality Through the Eyes of Saudi Influencers"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 14:15:00"}
+												endTime={"2026-04-21 14:45:00"}
+												title={"Longevity is the New Luxury: Redefining Hospitality Through Health, Heritage, and Experience"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 14:45:00"}
+												endTime={"2026-04-21 15:15:00"}
+												title={"Embracing Nature: Gateway to Next-Gen Hospitality Investments"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 15:15:00"}
+												endTime={"2026-04-21 15:30:00"}
+												title={"Announcements & Signings"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 15:30:00"}
+												endTime={"2026-04-21 16:00:00"}
+												title={"Lifestyle Hospitality in Saudi Arabia: Designing Spaces for a New Generation"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 16:00:00"}
+												endTime={"2026-04-21 16:30:00"}
+												title={"Synergy in Hospitality: The Role of Private Clubs in Enhancing Hotel and Mixed-Use Developments"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 16:30:00"}
+												endTime={"2026-04-21 17:00:00"}
+												title={"From Recognition to Experience: Iconic Brands Entering Hospitality"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 17:00:00"}
+												endTime={"2026-04-21 17:30:00"}
+												title={"Charting a Sustainable Course: Developing Saudi Arabia's Cruise Industry While Preventing Overtourism"}
+											/>
+										</Timeslot>
+									</SessionGroup> 
+
+									<SessionGroup location={{ title: "Future Stage" }}>
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 11:30:00"}
+												endTime={"2026-04-21 13:00:00"}
+												title={"Battle of the Brands: Conscious Capital Meets Commercial Brands"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 14:00:00"}
+												endTime={"2026-04-21 15:00:00"}
+												title={"From Pipeline to Portfolio: Real-Time Investment Opportunities in Saudi Hospitality"}
+											/>
+										</Timeslot>
+										
+										<Timeslot>
+											<Session
+												startTime={"2026-04-21 15:00:00"}
+												endTime={"2026-04-21 17:30:00"}
+												title={"NextGen: Investing in Saudi Arabia’s Hospitality Education"}
+											/>
+											<Feature><p>The Human Advantage – Leading Hospitality Through Change (Keynote)</p></Feature>
+											<Feature><p>How Can We Rebrand Hospitality Careers to Attract Saudi Youth?</p></Feature>
+											<Feature><p>Rethinking Hospitality Schools: Education, Experience & Environment</p></Feature>
+											<Feature><p>Building Your Saudi Team: Talent Solutions for New Market Entrants (Workshop)</p></Feature>
+										</Timeslot>
+
+									</SessionGroup>
+
+									<SessionGroup>
+										<Session
+											startTime={"2026-04-21 12:00:00"}
+											endTime={"2026-04-21 13:00:00"}
+											title={"The Future of Hotel Asset Management - HAMA Asset Management Workshop - Invitation Only"}
+											trackID={"1"}
+										/>
+									</SessionGroup>
+
+									<SessionGroup>
+										<Session
+											startTime={"2026-04-21 14:00:00"}
+											endTime={"2026-04-21 18:00:00"}
+											title={"Exclusive, small-group discussions for deeper dives into pressing industry topics"}
+											trackID={"1"}
+										/>
 									</SessionGroup>
 
 								</div>
 							</main>
 						</StickySidebar>
 					</section>
-							
+
 					<section className={CSS.sidebarDay}>
 						<StickySidebar>
 							<aside>
 								<p className="fs-2">Day 3</p>
 								<Pop>
-									<p className={CSS.dayDivider}>13 May - Tuesday</p>
+									<p className={CSS.dayDivider}>22 April - Wednesday</p>
 								</Pop>
 							</aside>
 
@@ -479,79 +481,89 @@ export default function Agenda ({ sessions, locations }) {
 
 									{/* SESSIONS */}
 									
-									<SessionGroup location={{ title: "Future Hospitality Themes" }}>
-										<Timeslot
-											startTime={"2025-05-12 10:00:00"} 
-											endTime={"2025-05-12 11:45:00"}
-										>
-											<Session 
-												title={"Insights into Branded Residences"}
-												trackID={"8"}
+									<SessionGroup location={{ title: "Summit Stage" }}>
+										<Timeslot>
+											<Session
+												startTime={"2026-04-22 10:00:00"}
+												endTime={"2026-04-22 13:00:00"}
+												title={"Branded Residences Forum"}
 											/>
-											<Session 
-												title={"Pilgrimage and Cultural Travel Trends"}
-												trackID={"6"}
-											/>
-											<Session 
-												title={"Tech Transformations in Hospitality"}
-												trackID={"10"}
-											/>
+											<Feature><p>Keynote: Industry Insights from a Saudi Perspective</p></Feature>
+											<Feature><p>Stakeholder perspectives – How do branded residences create value for investors, homeowners and brands</p></Feature>
+											<Feature><p>The Perfect Fit: Selecting the Right Brand for Residential Success</p></Feature>
+											<Feature><p>The Real Deal: Unpacking the Financial Realities</p></Feature>
 										</Timeslot>
 										
-										<Timeslot
-											startTime={"2025-05-12 12:00:00"} 
-											endTime={"2025-05-12 13:15:00"}
-										>
-											<Session 
-												title={"Transformational Travel"}
-												trackID={"4"}
-											/>
-											<Session 
-												title={"Conservation and Destination Development"}
-												trackID={"3"}
+									</SessionGroup> 
+
+									<SessionGroup location={{ title: "Future Stage" }}>
+										<Timeslot>
+											<Session
+												startTime={"2026-04-22 10:30:00"}
+												title={"Welcome Back"}
 											/>
 										</Timeslot>
 
 										<Timeslot>
-											<Session 
-												startTime={"2025-05-12 13:15:00"} 
-												endTime={"2025-05-12 13:30:00"}
-												title={"FHS Awards"}
+											<Session
+												startTime={"2026-04-22 10:30:00"}
+												endTime={"2026-04-22 10:45:00"}
+												title={"Keynote: Leading with Empathy in the Age of AI"}
 											/>
 										</Timeslot>
 
 										<Timeslot>
-											<Session 
-												startTime={"2025-05-12 13:30:00"} 
-												endTime={"2025-05-12 14:30:00"}
-												title={"Lunch Break"}
+											<Session
+												startTime={"2026-04-22 10:45:00"}
+												endTime={"2026-04-22 11:45:00"}
+												title={"AI in Hospitality"}
 											/>
 										</Timeslot>
 
-										<Timeslot
-											startTime={"2025-05-12 14:30:00"} 
-											endTime={"2025-05-12 16:45:00"}
-										>
-											<Session 
-												title={"Future of Work in Hospitality"}
-												trackID={"7"}
-											/>
-											<Session 
-												title={"Branded Residences in Saudi Arabia"}
-												trackID={"8"}
-											/>
-											<Session 
-												title={"Branded Residences in Saudi Arabia"}
-												trackID={"9"}
+										<Timeslot>
+											<Session
+												startTime={"2026-04-22 11:45:00"}
+												endTime={"2026-04-22 12:00:00"}
+												title={"Awards, Future Leader, Start-Up Den"}
 											/>
 										</Timeslot>
 
+										<Timeslot>
+											<Session
+												startTime={"2026-04-22 12:00:00"}
+												endTime={"2026-04-22 12:15:00"}
+												title={"Restaurant Invest Intelligence: How is F&B Performing within Hotels in Saudi?"}
+											/>
+										</Timeslot>
+
+										<Timeslot>
+											<Session
+												startTime={"2026-04-22 12:15:00"}
+												endTime={"2026-04-22 12:40:00"}
+												title={"The rise of F&B experiences in Saudi Arabia"}
+											/>
+										</Timeslot>
+
+										<Timeslot>
+											<Session
+												startTime={"2026-04-22 12:40:00"}
+												endTime={"2026-04-22 12:55:00"}
+												title={"The Future of Fun: Investing in Theme Parks"}
+											/>
+										</Timeslot>
+
+										<Timeslot>
+											<Session
+												startTime={"2026-04-22 12:55:00"}
+												endTime={"2026-04-22 13:00:00"}
+												title={"Closing Plenary: The Road Ahead for Global Hospitality"}
+											/>
+										</Timeslot>
 									</SessionGroup>
 								</div>
 							</main>
 						</StickySidebar>
 					</section>
-
 				</main>
 
 				
