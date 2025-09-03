@@ -129,7 +129,7 @@ export default function Agenda () {
 										<Session
 											startTime={"2026-04-20 12:30:00"}
 											endTime={"2026-04-20 14:00:00"}
-											title={"Welcome to FHS Saudi Arabia 2025"}
+											title={"Welcome"}
 										/>
 									</SessionGroup>
 									
