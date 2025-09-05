@@ -123,13 +123,13 @@ export default function Agenda ({ sessions, theme }) {
 		}
 		
 		// if track param is provided, set topic
-		if ( router.isReady && router.query.track ) {
-			setSelectedTopic(router.query.track)
-			router.replace({
-				pathname: router.pathname,
-				search: new URLSearchParams(router.search).delete('track'),
-			})
-		}
+		// if ( router.isReady && router.query.track ) {
+		// 	setSelectedTopic(router.query.track)
+		// 	router.replace({
+		// 		pathname: router.pathname,
+		// 		search: new URLSearchParams(router.search).delete('track'),
+		// 	})
+		// }
 	})
 
 
@@ -612,7 +612,7 @@ export default function Agenda ({ sessions, theme }) {
 
 						<div className={`${CSS.filterLayout} ${CSS.filterGroup} ${ !utiltiesInView && CSS.fixed } ${filtersActive && CSS.active}`}>
 							{/* tracks (topics) */}
-							{/* <section className={CSS.filterLayoutButtons}>
+							<section className={CSS.filterLayoutButtons}>
 								<Menu 
 									menuButton={
 										<MenuButton className={DROPDOWN.button}>
@@ -640,7 +640,7 @@ export default function Agenda ({ sessions, theme }) {
 
 									</div>
 								</Menu>
-							</section> */}
+							</section>
 
 							{/* days */}
 							<section className={CSS.filterLayoutButtons}>

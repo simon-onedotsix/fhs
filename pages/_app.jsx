@@ -234,7 +234,7 @@ App.getInitialProps = async () => {
 	
 	const africa = await craftApolloClient().query({
 		query: gql`
-			query meGlobals {
+			query ahifGlobals {
 				globalSets(site: "ahif") {
 					... on header_GlobalSet {
 						id
@@ -300,7 +300,7 @@ App.getInitialProps = async () => {
 			global: global.data.globalSets,
 			sa: sa.data.globalSets,
 			me: me.data.globalSets,
-			africa: africa.data.globals
+			africa: africa.data.globalSets
 		}
 	}
 
