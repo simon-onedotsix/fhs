@@ -16,7 +16,7 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { Header } from '../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from "../../fuselage/theme/2024/world/common/footer/footer"
 
-import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from "../../fuselage/components/icons/icons"
+import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon, WarningIcon } from "../../fuselage/components/icons/icons"
 
 import { Modal } from "../../fuselage/theme/2024/world/components/modal/modal"
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
@@ -800,10 +800,12 @@ export default function Agenda ({ sessions, locations }) {
 
 													<div className={CSS.sessions}>
 														{
-															prioriseStreams( slot.sessions, PRIORITISED_STREAMS ).map( (session, index) => {
+															prioriseStreams(slot.sessions, PRIORITISED_STREAMS).map((session, index) => {
+																console.log(session)
 																return (
 																	<div key={index} className={CSS.sessionsWrapper}>
 																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
+
 																		<div className={CSS.session}>
 
 																			{/* add to div below to colour-code headers => style={{ backgroundColor: session.color ? session.color : null }} */}
@@ -846,7 +848,12 @@ export default function Agenda ({ sessions, locations }) {
 																					getSessionFields( session, 'Topics').length ?
 																						<div className={CSS.sessionTagGrid}>
 																							<TagIcon fill={`var(--accent)`} />
-																							{getSessionFields( session, 'Topics')}
+																							{getSessionFields(session, 'Topics')}
+																							{
+																								session.categories.includes('UAE – Africa Tourism Investment Summit')
+																									? <p className="flex ai-center fs-sm"><WarningIcon fill={`yellow`} />&ensp;Restricted Access</p>
+																									: null
+																							}
 																						</div>
 																					: null
 																				}																		

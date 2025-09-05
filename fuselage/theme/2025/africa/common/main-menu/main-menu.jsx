@@ -14,7 +14,7 @@ export const MainMenu = ({ otherEvents }) => {
     const [ active, setActive ] = useState( false )
 
     const { globals } = useContext(GlobalsContext)
-    console.log( 'globals:', globals )
+    // console.log( 'globals:', globals )
 
     const { mainMenu } = globals.africa.find( data => data.__typename === 'header_GlobalSet' )
     // console.log( 'sa:', globals.sa )
