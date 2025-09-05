@@ -612,7 +612,7 @@ export default function Agenda ({ sessions, theme }) {
 
 						<div className={`${CSS.filterLayout} ${CSS.filterGroup} ${ !utiltiesInView && CSS.fixed } ${filtersActive && CSS.active}`}>
 							{/* tracks (topics) */}
-							<section className={CSS.filterLayoutButtons}>
+							{/* <section className={CSS.filterLayoutButtons}>
 								<Menu 
 									menuButton={
 										<MenuButton className={DROPDOWN.button}>
@@ -640,7 +640,7 @@ export default function Agenda ({ sessions, theme }) {
 
 									</div>
 								</Menu>
-							</section>
+							</section> */}
 
 							{/* days */}
 							<section className={CSS.filterLayoutButtons}>
@@ -772,8 +772,6 @@ export default function Agenda ({ sessions, theme }) {
 										day.timeslots.map( (slot, index) => {
 											return (
 												<div key={index}>
-
-													{/* SESSIONS */}
 
 													<div className={CSS.sessions}>
 														{

@@ -231,6 +231,67 @@ App.getInitialProps = async () => {
 		
 		`
 	})
+	
+	const africa = await craftApolloClient().query({
+		query: gql`
+			query meGlobals {
+				globalSets(site: "ahif") {
+					... on header_GlobalSet {
+						id
+						name
+						mainMenu {
+							... on mainMenu_BlockType {
+								id
+								columnData {
+									... on columnData_heading_BlockType {
+										id
+										heading
+										headingSize
+									}
+									... on columnData_menuLinksGroup_BlockType {
+										id
+										menuLinks {
+											hyperlink
+											label
+											size
+											indent
+											newWindow
+										}
+									}
+								}
+							}
+						}
+					}
+					... on footer_GlobalSet {
+						id
+						name
+						socialConnections {
+							... on socialConnections_BlockType {
+								id
+								hyperlink
+								icon
+								label
+							}
+						}
+						contactDetails {
+							... on contactDetails_BlockType {
+								id
+								body
+							}
+						}
+						hubspotForm {
+							... on hubspotForm_BlockType {
+								id
+								formId
+								portalId
+							}
+						}
+					}
+				}
+			}
+		
+		`
+	})
 
 	// console.log('FOOTER DATA:', (global))
 
@@ -239,6 +300,7 @@ App.getInitialProps = async () => {
 			global: global.data.globalSets,
 			sa: sa.data.globalSets,
 			me: me.data.globalSets,
+			africa: africa.data.globals
 		}
 	}
 
