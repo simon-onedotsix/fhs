@@ -1,0 +1,36 @@
+.layout {
+    display: grid;
+    grid-template-columns: 20vw auto 3rem;
+    background-color: var(--dark);
+    color: white;
+}
+
+.image,
+.graphic {
+    position: relative;
+    align-self: stretch;
+}
+.image img,
+.graphic img {
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+}
+
+.actions {
+    text-align: right;
+}
+
+
+@media (max-width:600px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+    .image {
+        aspect-ratio: 3/2.5;
+    }
+    .actions {
+        text-align: left;
+    }
+}

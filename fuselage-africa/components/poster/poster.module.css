@@ -1,0 +1,37 @@
+.poster {
+ 
+    min-height: 100vh;
+
+    /* background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center; */
+    
+    position: relative;
+    overflow: hidden;
+}
+
+.posterImg {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@media (hover: hover) {
+    .posterImg {
+        position: fixed;
+    }
+}
+
+.backgroundImage {
+    z-index: -2;
+    position: absolute;
+    inset: 0;
+}
+.backgroundImage img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,16 @@
+.layout {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    top: 50%;
+    transform-origin: top right;
+    transform: rotate(90deg) translateX(50%);
+
+    white-space: nowrap;
+}
+
+@media (max-width:800px) {
+    .layout {
+        display: none;
+    }
+}

@@ -26,6 +26,7 @@
     "html-react-parser": "^4.2.10",
     "lodash": "^4.17.21",
     "next": "12.1.6",
+    "next-hubspot": "^2.0.0",
     "next-intl": "^4.0.2",
     "next-themes": "^0.2.1",
     "prop-types": "^15.8.1",

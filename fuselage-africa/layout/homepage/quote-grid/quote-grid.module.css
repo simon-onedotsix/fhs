@@ -1,0 +1,42 @@
+@media (max-width:599px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 20vw;
+    }
+    .quoteContainer {
+        grid-area: 1/1 / 2/2;
+        z-index: 2;
+    }
+    .graphicContainer {
+        grid-area: 1/1 / 3/2;
+        position: relative;
+    }
+    .graphic {
+        object-fit: cover;
+        width: 30%;
+        height: 30%;
+        object-position: right;
+        transform: translate(50vw, 20vw);
+    }
+}
+
+@media(min-width:600px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        padding-bottom: 4rem;
+    }
+    .quoteContainer {
+        margin: 4rem 0;
+    }
+    .graphicContainer {
+        position: relative;
+        margin-bottom: -4rem;
+    }
+    .graphic {
+        object-fit: cover;
+        object-position: left center;
+        height: 100%;
+    }
+}

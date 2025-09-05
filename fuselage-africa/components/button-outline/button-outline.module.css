@@ -1,0 +1,30 @@
+.button {
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	padding: .75rem 2.5rem;
+	border: 1px solid var(--primary);
+	border-radius: var(--default-button-radius);
+	background-color: transparent;
+	color: var(--primary);
+	transition: all 500ms ease-in-out;
+}
+.button:hover {
+	transition: all 250ms ease-in-out;
+	background-color: black;
+	border-color: var(--secondary);
+	color: white;
+}
+
+
+.button.inverse {
+	border-color: white;
+	color: white;
+}
+
+
+.disabled {
+	pointer-events: none;
+	opacity: .5;
+}

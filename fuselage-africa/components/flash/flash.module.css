@@ -1,0 +1,6 @@
+.layout {
+    position: fixed;
+    z-index: 15;
+    right: var(--space-sm);
+    bottom: var(--space-sm);
+}

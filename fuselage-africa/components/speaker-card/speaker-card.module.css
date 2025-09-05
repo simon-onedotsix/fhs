@@ -1,0 +1,21 @@
+.layout {
+    display: block;
+    text-decoration: none;
+}
+
+.photoContainer {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;   
+    background-color: var(--medium);
+    border-radius: var(--default-radius);
+}
+
+.photo {
+    display: block;
+    object-fit: cover;
+    object-position: top center;
+    width: 100%;
+    height: 100%;
+}

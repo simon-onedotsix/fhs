@@ -1,0 +1,17 @@
+.logo {
+    display: block;
+    height: 3rem;
+    width: 3rem;
+}
+@media(min-width:600px){
+    .logo {
+        height: 4rem;
+        width: 3rem;
+    }
+}
+@media(min-width:900px){
+    .logo {
+        height: 5rem;
+        width: 5rem;
+    }
+}

@@ -1,0 +1,36 @@
+.layout {
+    /* background-color: var(--extra-dark); */
+}
+
+.topGraphic,
+.bottomGraphic {
+    position: relative;
+    width: 100%;
+    height: calc( var(--space-lg) * 1.5 );
+}
+.topGraphic img,
+.bottomGraphic img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+@media(min-width:800px) {
+    .topGraphic,
+    .bottomGraphic {
+        width: 50%;
+        height: var(--space-lg);
+    }
+    .topGraphic.right,
+    .bottomGraphic.right {
+        margin-left: 50%;
+    }
+
+    .collapseTop {
+        margin-top: calc( var(--space-lg) * -1 );
+    }
+    .collapseBottom {
+        margin-bottom: calc( var(--space-lg) * -1 );
+    }
+}

@@ -1,0 +1,142 @@
+.layout {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: 1fr;
+}
+
+/* .timings, .content {
+    padding: var(--space-sm) 0;
+} */
+
+
+
+
+@media(max-width:599px) {
+    .layout {
+        border-left: 4px solid rgb(229, 229, 229);
+        border-right: 1px solid rgb(229, 229, 229);
+        padding: 0 1rem;
+        margin: 1rem 0;
+    }
+    .layout:last-of-type {
+        margin-bottom: 2rem;
+    }
+
+    .timings {
+        padding: .5rem 0;
+        background-color: transparent !important;
+
+        display: flex;
+        gap: var(--space-xs);
+    }
+    .content {
+        /* margin-top: .5rem; */
+    }
+
+    .layout.stream {
+        background-color: var(--light);
+    }
+
+    .layout.stream:nth-child(3n+3) {
+        /* margin: -1rem 0; */
+        /* background-color: red; */
+    }
+
+}
+
+
+@media(min-width:600px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+    }
+    .timings, .content {
+        padding: var(--space-sm);
+    }
+    .timings {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xxs);
+
+        background-color: rgb(55, 55, 55);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+    }
+    
+    .content {
+        border-bottom: 1px solid var(--light);
+    }
+    .layout:not(:first-of-type) .content {
+        border-bottom: 1px solid var(--light);
+    }
+    .layout:last-of-type .content {
+        border-bottom: none;
+    }
+
+
+    .layout.stream {
+        display: inline-grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+    .layout.stream:not(:first-of-type) .content {
+        border-left: 1px solid var(--light);
+    }
+    .layout.stream.cols2 {
+        width: 50%;
+    }
+    .layout.stream.cols3 {
+        width: 33.33%;
+    }
+}
+
+
+.icon {
+    height: .8rem;
+    width: .8rem;
+    margin: 0 .35rem -.1rem 0;
+    fill: inherit;
+}
+
+
+
+/* speakerCard */
+
+.speakerCard {
+    max-width: 15rem;
+}
+
+
+/* speakerGrid */
+
+.speakerGrid {
+    display: inline-flex;
+    flex-wrap: wrap;
+    column-gap: var(--space-md);
+    row-gap: var(--space-sm);
+}
+
+@media(min-width:1200px) {
+    .speakerGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .tag {
+        color: white !important;
+    }
+    .icon {
+        height: .8rem;
+        width: .8rem;
+        margin: 0 .35rem -.1rem 0;
+        fill: white !important;
+    }
+}
+
+
+
+.role {
+    display: inline-block;
+    padding: .1rem .4rem;
+    color: white;
+    background-color: grey;
+    margin-bottom: .4rem;
+}

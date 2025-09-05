@@ -1,0 +1,89 @@
+.gridLayout {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: var(--primary);
+}
+
+/* image */
+
+.imageContainer img {
+    display: block;
+}
+
+.spacer {
+    position: relative;
+}
+
+
+.iconBox {
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid currentColor;
+    border-radius: var(--default-radius);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.icon {
+    fill: white;
+    width: 60%;
+}
+
+
+
+
+
+@media (max-width:599px) {
+    .spacer {
+        display: none;
+    }
+    .imageContainer {
+        margin: var(--space-xs) var(--space-md);
+    }
+    .imageContainer:not(:last-child) {
+        margin-bottom: 0;
+    }
+    .montageGraphic {
+        display: none;
+    }
+}
+
+
+@media (min-width:600px) {
+    .gridLayout {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .montageGraphic {
+        display: block;
+        position: relative;
+        grid-column: span 1;
+    }
+    .double,
+    img.double {
+        grid-column: span 2;
+    }
+    
+}
+@media (min-width:800px) {
+    .gridLayout {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .montageGraphic {
+        display: block;
+        position: relative;
+        grid-column: span 1;
+    }
+    .montageGraphic img {
+        object-fit: contain;
+        object-position: bottom;
+        height: 100%;
+    }
+    
+}

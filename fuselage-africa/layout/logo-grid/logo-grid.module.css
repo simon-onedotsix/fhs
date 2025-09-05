@@ -1,0 +1,8 @@
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: var(--space-md);
+    row-gap: var(--space-sm);
+    flex-wrap: wrap;
+}

@@ -1,0 +1,26 @@
+.mainGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.subGridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+@media(min-width:800px) {
+    .mainGrid {
+        grid-template-columns: 50% 50%;
+    }
+    .mainGrid .subGrid:first-child {
+        transform: translateY(5rem);
+    }
+}
+
+@media(min-width:1280px) {
+    .subGridContainer {
+        grid-template-columns: 50% 50%;
+    }
+
+}

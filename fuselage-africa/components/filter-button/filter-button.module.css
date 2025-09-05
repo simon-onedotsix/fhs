@@ -1,0 +1,32 @@
+.agendaFilterButton {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    border: 0;
+    padding: .4rem .8rem;
+    background-color: var(--wash);
+    border-radius: var(--default-radius);
+
+    font-family: var(--default-font-family);
+    font-style: var(--default-font-size);
+
+    margin-bottom: .25rem;
+
+    transition: all 350ms ease-in-out;
+}
+
+.flag {
+    display: inline-block;
+    width: .7rem;
+    height: .7rem;
+    border-radius: .7rem;
+    background-color: grey;
+    margin-right: .4rem;
+}
+
+@media(hover:hover) {
+    .agendaFilterButton:hover {
+        background-color: var(--light);
+    }
+
+}

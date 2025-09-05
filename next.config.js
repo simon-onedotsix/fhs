@@ -55,7 +55,19 @@ const nextConfig = {
 			source: '/sa/grif',
 			destination: '/sa/',
 			permanent: true,
-		  },
+			},
+		  
+		  
+		  {
+				source: '/africa/purchase-pass',
+				destination: 'https://www.eventbooking.uk.com/AHIF-2025/?_ga=2.121809099.1723537869.1730106145-200260928.1717500334',
+				permanent: true
+			},
+			{
+				source: '/africa/register',
+				destination: 'https://www.eventbooking.uk.com/AHIF-2025/?_ga=2.121809099.1723537869.1730106145-200260928.1717500334',
+				permanent: true
+			}
 		]
 	}
 

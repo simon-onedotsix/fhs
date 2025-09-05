@@ -1,0 +1,21 @@
+@media(max-width:799px) {
+    .layout {
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+}
+
+
+@media(min-width:800px){
+    .layout {
+        display: grid;
+        grid-template-columns: 3.5fr 2fr;
+    }
+
+    .videoContainer {
+        position: relative;
+        z-index: 1;
+        margin-top: -5rem;
+    }
+}

@@ -1,0 +1,225 @@
+/* FHS Africa theme */
+
+[data-theme='africa'] body {
+	background-color: var(--primary);
+	color: white;
+}
+
+
+[data-theme='africa'] .c-primary { color: var(--primary); }
+[data-theme='africa'] .c-secondary { color: var(--secondary); }
+[data-theme='africa'] .c-accent { color: var(--accent); }
+
+[data-theme='africa'] .c-p { color: var(--default-text-color); }
+[data-theme='africa'] .c-h { color: var(--default-heading-color); }
+
+[data-theme='africa'] .c-black { color: black; }
+[data-theme='africa'] .c-white { color: white; }
+
+[data-theme='africa'] .c-light { color: var(--light) }
+[data-theme='africa'] .c-medium { color: var(--medium) }
+
+
+
+
+[data-theme='africa'] .bg-global { background-color: var(--bg-global); }
+
+[data-theme='africa'] .bg-primary { background-color: var(--primary); }
+[data-theme='africa'] .bg-secondary { background-color: var(--secondary); }
+[data-theme='africa'] .bg-accent { background-color: var(--accent); }
+
+[data-theme='africa'] .bg-wash { background-color: var(--wash);}
+[data-theme='africa'] .bg-light { background-color: var(--light);}
+[data-theme='africa'] .bg-medium { background-color: var(--medium);}
+[data-theme='africa'] .bg-dark { background-color: var(--dark);}
+
+
+
+/* BACKGROUNDS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+[data-theme='africa'] .bg-secondary,
+[data-theme='africa'] .bg-secondary .formatted h1,
+[data-theme='africa'] .bg-secondary .formatted h2,
+[data-theme='africa'] .bg-secondary .formatted h3,
+[data-theme='africa'] .bg-secondary .formatted h4,
+[data-theme='africa'] .bg-secondary .formatted h5,
+[data-theme='africa'] .bg-secondary .formatted h6 {
+    color: white;
+}
+
+
+[data-theme='africa'] .bg-medium,
+[data-theme='africa'] .bg-medium .formatted h1,
+[data-theme='africa'] .bg-medium .formatted h2,
+[data-theme='africa'] .bg-medium .formatted h3,
+[data-theme='africa'] .bg-medium .formatted h4,
+[data-theme='africa'] .bg-medium .formatted h5,
+[data-theme='africa'] .bg-medium .formatted h6 {
+    color: white;
+}
+
+
+[data-theme='africa'] .agenda-default{
+    background-color: var(--accent);
+}
+[data-theme='africa'] .agenda-01{
+    background-color: #ff7b00;
+}
+[data-theme='africa'] .agenda-02{
+    background-color: #ffaa00;
+}
+[data-theme='africa'] .agenda-03{
+    background-color: #00a6ff;
+}
+[data-theme='africa'] .agenda-04{
+    background-color: #56b001;
+}
+[data-theme='africa'] .agenda-05{
+    background-color: #7fb600;
+}
+
+
+
+
+/* FORMS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+[data-theme='africa'] .form input[type='submit'] {
+    color: var(--secondary);
+	background-color: white;
+    border: none;
+}
+
+[data-theme='africa'] .form input[type='submit']:hover {
+	background-color: var(--accent);
+}
+
+
+/* HUBSPOT SPECIFIC */
+
+[data-theme='africa'] .hs-form-field {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+[data-theme='africa'] .hs-form-field > label {
+    font-weight: 600;
+}
+
+[data-theme='africa'] .hs-form-field textarea,
+[data-theme='africa'] .hs-form-field input[type='text'],
+[data-theme='africa'] .hs-form-field input[type='password'],
+[data-theme='africa'] .hs-form-field input[type='tel'],
+[data-theme='africa'] .hs-form-field input[type='email'] {
+    width: 100% !important;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-left: 0;
+    padding-right: 0;
+    color: white;
+    font-family: inherit;
+    border-bottom-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme='africa'] select.hs-input {
+    background-color: transparent;
+	color: white !important;
+    border-color: white !important;
+    background-image: url('/assets/ui/select-chevron-brf.svg');
+}
+
+
+[data-theme='africa'] footer.footer .hs-form-field textarea,
+[data-theme='africa'] footer.footer .hs-form-field input[type='text'],
+[data-theme='africa'] footer.footer .hs-form-field input[type='password'],
+[data-theme='africa'] footer.footer .hs-form-field input[type='tel'],
+[data-theme='africa'] footer.footer .hs-form-field input[type='email'] {
+    border-bottom-color: var(--accent) !important;
+}
+
+
+[data-theme='africa'] footer .form input {
+    border-bottom-color: var(--accent) !important;
+    color: var(--default-text-color) !important;
+}
+[data-theme='africa'] footer .form input:focus {
+    border-bottom-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme='africa'] footer .form input[type='submit'] {
+    color: var(--secondary) !important;
+	background-color: white;
+    border: none;
+}
+[data-theme='africa'] footer .form input[type='submit']:hover {
+	background-color: var(--accent);
+}
+
+/* checkbox */
+
+[data-theme='africa'] .form input[type="checkbox"] {
+    width: 1.1rem;
+    height: 1.1rem;
+    appearance: none; /* Removes default styles */
+    background-color: transparent; /* Default background */
+    border: 1px solid var(--secondary);
+    border-radius: 4px;
+    cursor: pointer;
+
+    margin-bottom: -3px;
+}
+
+[data-theme='africa'] .form input[type="checkbox"]:checked {
+    background-color: var(--primary); /* Changes background when checked */
+    border-color: var(--primary);
+    background-image: url('/assets/ui/icon-tick.svg');
+    background-repeat: no-repeat;
+    background-size: .75rem;
+    background-position: center;
+}
+
+/* buttons */
+
+[data-theme='africa'] .hs_submit, 
+[data-theme='africa'] .hs-button, 
+[data-theme='africa'] .hs-submit,
+[data-theme='africa'] .hs_submit:hover, 
+[data-theme='africa'] .hs-button:hover,
+[data-theme='africa'] .hs-submit:hover {
+    border: none !important;
+}
+
+
+
+/* misc */
+
+
+[data-theme='africa'] .hs-form-required {
+    color: var(--primary);
+}
+
+[data-theme='africa'] .hs-error-msgs {
+    list-style: none;
+    color: var(--error);
+    font-weight: 400;
+    padding-left: 0;
+}
+
+[data-theme='africa'] .hs-error-msg {
+    margin-top: .5rem;
+    color: var(--error);
+    font-weight: 400;
+}
+
+[data-theme='africa'] .hs-main-font-element {
+    margin-top: .5rem;
+    font-weight: 400;
+}
+
+[data-theme='africa'] .form-columns-2 {
+    max-width: 100% !important;
+}

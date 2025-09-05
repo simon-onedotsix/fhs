@@ -1,0 +1,133 @@
+.dayDivider {
+    background-color: white;
+    border-radius: var(--agenda-radius);
+    padding: .5rem 1rem;
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.1;
+}
+
+.sessions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .75rem;
+}
+.sessionsWrapper {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sessionsGroupSessions {
+    border-top: 1px solid var(--primary);
+}
+@media(min-width:900px) {
+    .sessionsGroupSessions {
+        display: flex;
+        /* gap: 1px; */
+        border-top: 1px solid var(--primary);
+    }
+    .sessionsGroupSessions .sessionHeader:not(:last-child) {
+        border-right: 1px solid var(--primary);
+    }
+}
+
+.sessionHeader {
+    width: 100%;
+    padding: .5rem 1rem;
+    background-color: var(--secondary);
+    border-top-left-radius: var(--agenda-radius);
+    border-top-right-radius: var(--agenda-radius);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: .5rem;
+    row-gap: .125rem;
+}
+.sessionContent {
+    padding: 1rem;
+    border-bottom-left-radius: var(--agenda-radius);
+    border-bottom-right-radius: var(--agenda-radius);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+.sessionTagGrid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .25rem;
+    color: white;
+    font-weight: 500;
+}
+
+
+
+
+/* speakerGrid + speakerCard --------------------------------- */
+
+.sessionSpeakerGrid {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media(min-width:600px) {
+    .sessionSpeakerGrid {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+    .sessionSpeaker {
+        width: 14vw;
+    }
+}
+
+.speakerPhoto {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+
+    transition: all 150ms ease-in-out;
+}
+.speakerPhoto img {
+    display: block;
+    max-width: 100px; 
+    max-height: 100px; 
+    border-radius: 100px; 
+}
+
+/* icon (if speaker has bio) */
+.speakerPhoto.bio {
+    cursor: pointer;
+}
+.speakerPhoto.bio span {
+    position: absolute;
+    top: -.25rem;
+    right: -.25rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--primary);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+
+    transform: scale(.3);
+    opacity: 0;
+    transition: all 150ms ease-in-out;
+}
+@media(hover:hover){
+    .speakerPhoto.bio:hover {
+        transform: scale(1.05);
+    }
+    .speakerPhoto.bio:hover span {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,47 @@
+.navWrapper {
+    position: unset;
+    display: inline-grid;
+    grid-template-columns: repeat(2, auto);
+    gap: .75rem;
+    margin-top: var(--space-sm);
+}
+
+.sliderButton {
+    position: unset;
+    background-color: var(--primary);
+    width: 3.6rem;
+    height: 3.6rem;
+    opacity: 1;
+    transition: all 350ms ease-in-out;
+    color: white;
+}
+
+.sliderButton:disabled {
+    opacity: .5;
+    pointer-events: none;
+}
+
+@media(hover:hover){
+    .sliderButton:hover {
+        background-color: var(--primary);
+        opacity: 1 !important;
+    }
+}
+.sliderButton svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    stroke: white;
+}
+
+@media(max-width:599px){
+    .sliderButton {
+        width: 3rem;
+        height: 3rem;
+    }
+    .sliderButton svg {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+

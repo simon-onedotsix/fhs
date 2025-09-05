@@ -1,0 +1,1 @@
+export const Spacer = ({ theme }) => <div className={`block ${theme}`}></div>

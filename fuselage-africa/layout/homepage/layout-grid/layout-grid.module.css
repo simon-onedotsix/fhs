@@ -1,0 +1,164 @@
+
+@media(max-width:799px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow: hidden;
+    }
+    
+    .aboveTheFoldBg {
+        grid-area: 1/1 / 3/2;
+        background-color: var(--primary);
+    }
+
+    .heroGraphic {
+        grid-area: 1/1 / 2/2;
+        height: 6rem;
+        /* overflow: hidden; */
+        /* background-color: var(--medium); */
+    }
+    .heroGraphic img {
+        transform: translate( 40vw, -4vh);
+    }
+
+    .descriptor {
+        grid-area: 2/1 / 3/2;
+        z-index: 2;
+        padding-right: 30vw;
+    }
+
+    .imageBox {
+        position: relative;
+        grid-area: 3/1 / 4/2;
+        /* margin-bottom: -10rem; */
+        min-height: 16rem;
+    }
+    .imageBox img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .introBox {
+
+    }
+
+    .impactFiguresBox {
+        padding-bottom: var(--space-lg);
+        
+        position: relative;
+        overflow: hidden;
+    }
+    .impactFiguresGraphic {
+        position: absolute;
+        bottom: -1rem;
+        right: 0;
+        width: 6rem;
+    }
+
+    .quoteBox {
+        background-color: var(--wash);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    .quoteBoxGraphic {
+        width: 50vw;
+    }
+}
+
+@media(min-width:800px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        overflow: hidden;
+    }
+
+    .aboveTheFoldBg {
+        grid-area: 1/1 / 3/3;
+        background-color: var(--primary);
+    }
+
+    .heroGraphic {
+        grid-area: 1/1 / 3/3;
+        justify-self: flex-end;
+    }
+    .heroGraphic img {
+        transform: translateX(25%);
+    }
+
+    .descriptor {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        min-height: 70vh;
+        z-index: 2;
+    }
+
+    .imageBox {
+        position: relative;
+        grid-area: 2/1 / 3/2;
+        margin-bottom: -10rem;
+        min-height: 32vw;
+    }
+    .imageBox img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .introBox {
+        grid-row-start: 2;
+        grid-column-start: 2;
+        margin-top: -10rem;
+        z-index: 2;
+    }
+
+    .impactFiguresBox {
+        grid-row-start: 3;
+        grid-column-start: 2;
+        padding-bottom: calc(var(--space-xl) * 1);
+
+        position: relative;
+        overflow: hidden;
+    }
+    .impactFiguresGraphic {
+        position: absolute;
+        bottom: -1rem;
+        right: 0;
+        width: 20rem;
+    }
+
+
+    .quoteBox {
+        grid-row-start: 3;
+        grid-column-start: 1;
+        align-self: flex-end;
+
+        background-color: transparent;
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        padding-bottom: 0;
+    }
+    .quoteBoxGraphic {
+        position: absolute;
+        z-index: -1;
+        top: var(--space-xl);
+        right: 0;
+        padding-bottom: var(--space-md);
+    }
+}
+
+
+
+.impactFiguresBoxGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+

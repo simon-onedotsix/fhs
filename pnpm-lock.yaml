@@ -59,6 +59,9 @@ importers:
       next:
         specifier: 12.1.6
         version: 12.1.6(@babel/core@7.27.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      next-hubspot:
+        specifier: ^2.0.0
+        version: 2.0.0(next@12.1.6(@babel/core@7.27.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)
       next-intl:
         specifier: ^4.0.2
         version: 4.1.0(next@12.1.6(@babel/core@7.27.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)(typescript@5.8.3)
@@ -2031,6 +2034,13 @@ packages:
   negotiator@1.0.0:
     resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
+
+  next-hubspot@2.0.0:
+    resolution: {integrity: sha512-ZfvU4JIVtTDYUSuvJeSK+ea/6GBkKIRl/qfUIhkbukrO/bammQPrOy5AH7ZxoCio66JHDEKjI73bO+yo7IMarQ==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      next: ^13 || ^14 || ^15
+      react: ^18 || ^19
 
   next-intl@4.1.0:
     resolution: {integrity: sha512-JNJRjc7sdnfUxhZmGcvzDszZ60tQKrygV/VLsgzXhnJDxQPn1cN2rVpc53adA1SvBJwPK2O6Sc6b4gYSILjCzw==}
@@ -4998,6 +5008,11 @@ snapshots:
   natural-compare@1.4.0: {}
 
   negotiator@1.0.0: {}
+
+  next-hubspot@2.0.0(next@12.1.6(@babel/core@7.27.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0):
+    dependencies:
+      next: 12.1.6(@babel/core@7.27.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
 
   next-intl@4.1.0(next@12.1.6(@babel/core@7.27.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react@18.2.0)(typescript@5.8.3):
     dependencies:

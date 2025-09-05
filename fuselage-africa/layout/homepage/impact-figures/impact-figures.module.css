@@ -1,0 +1,41 @@
+.container {
+    position: relative;
+    z-index: 3;
+    padding-top: 0;
+}
+
+
+.impactFigures {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.impactFigure  {
+    border-left: 1px solid var(--primary);
+}
+
+.graphic {
+    position: absolute;
+    top: -4vw;
+    right: -4vw;
+}
+
+
+@media(max-width:599px){
+    .spacer {
+        display: none;
+    }
+    .impactFigure {        
+        padding: .5rem var(--space-sm) .5rem 1rem;
+    }
+}
+
+@media(min-width:600px) {
+    .impactFigures {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .impactFigure {
+        padding: 1rem var(--space-sm) 1rem var(--sideRuleSpace);
+    }
+}

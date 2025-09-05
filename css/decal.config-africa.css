@@ -1,0 +1,85 @@
+[data-theme='africa'] {
+
+    /* colour */
+
+    --orange: #FC4C02;
+    --yellow: #FFB600;
+    --purple: #3C1053;
+
+    --primary: #FC4C02;
+    --secondary: #3C1053;
+    --accent: #FFB600;
+
+    --bg-global: var(--primary);
+
+    --default-text-color: var(--accent);
+    --default-heading-color: var(--accent);
+
+    --wash: #fafaf9;
+    --light: #eae6e1;
+    --medium: #491465;
+    --dark: #290a3a;
+
+    --error: rgb(255, 68, 0);
+    --success: rgb(121, 173, 0);
+    --warning: rgb(255, 166, 0);
+
+
+    /* spacing */
+
+    --container-max-width: 100rem;
+    --container-adjacent-spacing-factor: 0.5;
+
+    --unit-xxs: .5rem;
+    --unit-xs: 1rem;
+    --unit-sm: 2rem;
+    --unit-md: 4rem;
+    --unit-lg: 6rem;
+    --unit-xl: 8rem;
+
+
+    /* type */
+
+    --default-font-family: 'Outfit', sans-serif;
+    --default-font-weight: 300;
+    --default-font-size: 1rem;
+    --default-line-height: 1.4;
+
+    --default-heading-line-height: 1.1;
+    --default-heading-weight: 600;
+
+
+    /* global UI styling */
+
+    --default-radius: .75rem;
+    --default-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    --default-shadow-size: 20px;
+    --default-shadow-opacity: 0.2;
+
+    --default-button-radius: 4rem;
+
+    --gap-divider-color: currentColor;
+
+    /* header */
+
+    --header-height: 12.5rem;
+    --header-height-compact: 6.875rem;
+    --header-height-mobile: 8.5rem;
+    --header-height-compact-mobile: 8.5rem;
+
+}
+
+
+
+/* FORMS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+.global .bg-primary .form input[type='submit'] {
+	border: 1px solid var(--accent);
+	background-color: transparent;
+}
+
+.global .bg-primary .form input[type='submit']:hover {
+    border: 1px solid var(--accent);
+	background-color: var(--accent);
+}

@@ -1,0 +1,39 @@
+.logo {
+    width: 100%;
+    aspect-ratio: 5/3;
+    overflow: hidden;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.logo img {
+    display: block;
+    object-fit: contain;
+}
+
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+}
+
+@media(min-width:800px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media(min-width:1100px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media(min-width:1500px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

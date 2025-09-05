@@ -1,0 +1,29 @@
+.button {
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--default-button-radius);
+    padding: .4rem;
+    border: none;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+}
+
+.button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    stroke: grey;
+    transition: all 450ms ease-in-out;
+}
+
+@media(hover:hover) {
+    .button:hover svg {
+        stroke: black;
+        transition: all 250ms ease-in-out;
+    }
+}

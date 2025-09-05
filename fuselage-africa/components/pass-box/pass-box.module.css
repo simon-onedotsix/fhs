@@ -1,0 +1,6 @@
+.passBox {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-self: flex-start;
+}

@@ -1,0 +1,12 @@
+.layout {
+    position: relative;
+}
+
+.heading {
+    border-radius: var(--default-radius);
+    padding: var(--space-xs) var(--space-sm);
+}
+
+/* .layout + * {
+    padding-top: 0;
+} */

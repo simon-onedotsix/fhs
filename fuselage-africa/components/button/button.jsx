@@ -1,0 +1,22 @@
+import CSS from './button.module.css'
+
+export const Button = ({ children, href, target, rel, disabled, outline, inverse, accent, secondary, decal }) => {
+	return (
+		<a 
+			href={href} 
+			className={`
+				${CSS.button} 
+				${outline ? CSS.outline : ''} 
+				${inverse ? CSS.inverse : ''} 
+				${accent ? CSS.accent : ''} 
+				${secondary ? CSS.secondary : ''} 
+				${decal}
+				${disabled ? CSS.disabled : ''}
+			`}
+			target={target}
+			rel={rel}
+		>
+			{children}
+		</a>
+	)
+}

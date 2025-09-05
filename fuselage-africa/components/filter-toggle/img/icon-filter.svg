@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 30 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="icon-filter">
+        <g>
+            <path d="M1.661,4.35L17.441,4.35" style="fill:none;stroke-width:2px;"/>
+            <path d="M23.029,4.35L28.692,4.35" style="fill:none;stroke-width:2px;"/>
+            <circle cx="20.235" cy="4.35" r="2.794" style="fill:none;stroke-width:2px;"/>
+        </g>
+        <g>
+            <path d="M1.661,21.092L17.441,21.092" style="fill:none;stroke-width:2px;"/>
+            <path d="M23.029,21.092L28.692,21.092" style="fill:none;stroke-width:2px;"/>
+            <circle cx="20.235" cy="21.092" r="2.794" style="fill:none;stroke-width:2px;"/>
+        </g>
+        <g>
+            <path d="M28.692,12.721L12.913,12.721" style="fill:none;stroke-width:2px;"/>
+            <path d="M7.324,12.721L1.661,12.721" style="fill:none;stroke-width:2px;"/>
+            <circle cx="10.118" cy="12.721" r="2.794" style="fill:none;stroke-width:2px;"/>
+        </g>
+    </g>
+</svg>

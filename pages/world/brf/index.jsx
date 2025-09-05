@@ -306,11 +306,11 @@ export default function Page ({ sessions, speakers }) {
                 </div>
 
                 <Pop>
-                    <div className="container maxw-60 pt-lg columns-3 gap-md">
+                    <div className="container pt-lg columns-4 gap-md">
                         <section>
                             <p className='c-peach center pb-sm caps ls-2'>Founder Sponsor</p>
-                            <div style={{ width: 300, maxWidth: '70vw', margin: '0 auto' }}>
-                                <img src="/assets/img/brf/accor-one-living.svg" alt="logo" />
+                            <div style={{ width: `100%`, maxWidth: '70vw', margin: '0 auto' }}>
+                                <img src="/assets/img/brf/accor-one-living.svg" alt="logo" width={`100%`} />
                             </div>
                         </section>
                         <section>
@@ -321,8 +321,14 @@ export default function Page ({ sessions, speakers }) {
                         </section>
                         <section>
                             <p className='c-peach center pb-sm caps ls-2'>Sponsor</p>
-                            <div style={{ width: 627, maxWidth: '13vw', margin: '0 auto' }}>
+                            <div style={{ width: `100%`, maxWidth: '15rem', margin: '0 auto' }}>
                                 <img src="/assets/img/brf/marriott.svg" alt="logo" />
+                            </div>
+                        </section>
+                        <section>
+                            <p className='c-peach center pb-sm caps ls-2'>Media Partner</p>
+                            <div style={{ width: `100%`, maxWidth: '15rem', margin: '0 auto' }}>
+                                <img src="/assets/img/brf/bresi.png" alt="logo" width={`100%`} />
                             </div>
                         </section>
                     </div>
