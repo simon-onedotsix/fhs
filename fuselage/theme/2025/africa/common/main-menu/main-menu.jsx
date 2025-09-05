@@ -16,7 +16,7 @@ export const MainMenu = ({ otherEvents }) => {
     const { globals } = useContext(GlobalsContext)
     console.log( 'globals:', globals )
 
-    const { mainMenu } = globals.me.find( data => data.__typename === 'header_GlobalSet' )
+    const { mainMenu } = globals.africa.find( data => data.__typename === 'header_GlobalSet' )
     // console.log( 'sa:', globals.sa )
     // console.log( 'world mainMenu:', mainMenu )
 

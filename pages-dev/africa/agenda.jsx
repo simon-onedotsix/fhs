@@ -123,13 +123,13 @@ export default function Agenda ({ sessions, theme }) {
 		}
 		
 		// if track param is provided, set topic
-		// if ( router.isReady && router.query.track ) {
-		// 	setSelectedTopic(router.query.track)
-		// 	router.replace({
-		// 		pathname: router.pathname,
-		// 		search: new URLSearchParams(router.search).delete('track'),
-		// 	})
-		// }
+		if ( router.isReady && router.query.track ) {
+			setSelectedTopic(router.query.track)
+			router.replace({
+				pathname: router.pathname,
+				search: new URLSearchParams(router.search).delete('track'),
+			})
+		}
 	})
 
 
