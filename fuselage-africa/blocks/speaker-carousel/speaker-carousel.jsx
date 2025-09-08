@@ -3,7 +3,7 @@ import '@splidejs/react-splide/css'
 
 import { Reveal } from '../../animation/reveal'
 
-import { ArrowButton } from "../../components/arrow-button/arrow-button"
+import { ArrowButton } from '../../components/arrow-button/arrow-button'
 
 import Chevron from './img/slider-chevron-right.svg'
 
@@ -16,7 +16,7 @@ export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, th
 
         return (
             <p className={CSS.actions}>
-                <ArrowButton href={ctaLink}>{ ctaLabel }</ArrowButton>
+                <ArrowButton href={ctaLink} theme={{ arrow: `white`, border: `white`, label: `white`}}>{ ctaLabel }</ArrowButton>
             </p>
         )
     }
@@ -29,7 +29,7 @@ export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, th
 
                 <div className='container '>
                     <Reveal>
-                        <p className="fs-1 fw-700 lh-1 c-primary">{ heading }</p>
+                        <p className="fs-1 fw-700 lh-1">{ heading }</p>
                     </Reveal>
                 </div>
 

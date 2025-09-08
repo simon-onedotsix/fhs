@@ -37,7 +37,7 @@
     display: grid;
     grid-template-columns: 2rem auto;
 
-    background-color: white;
+    background-color: var(--secondary);
 }
 .cardGraphic {
     position: relative;

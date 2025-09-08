@@ -30,7 +30,7 @@ export const NewFeatures = () => {
         <section className={`${CSS.layout} block`}>
           
                 <div className={CSS.column}>
-                    <p className="fs-1 fw-600 c-primary lh-1 maxw-30">Why Invest in Africa?</p>
+                    <p className="fs-1 fw-600 lh-1 maxw-30">Why Invest in Africa?</p>
                     <p className='fs-5 maxw-35 mb-md'>Africa&apos;s hospitality market presents unmatched potential for investors:</p>
                     {
                         CARD_DATA_COL_1 &&

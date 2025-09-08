@@ -50,7 +50,7 @@ export default function Page ({ entry, seomatic }) {
 
             <Header compact />
             
-            { handleContentBlocks( entry.fhisContentBlocks, null, null, null ) }
+            { handleContentBlocks( entry.fhisContentBlocks, null, null, 'world' ) }
 
             <Footer />
             <LenisScroller />
