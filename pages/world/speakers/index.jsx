@@ -37,6 +37,8 @@ function Speakers({ seomatic, speakers }) {
 
 	// customise order (VIP speakers to top of list)
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
+		(speaker => speaker.firstName == 'HH Sheikh' && speaker.lastName === 'Ahmed bin Saeed Al Maktoum' ? 0 : 1),
+
 		(speaker => speaker.firstName == 'His Excellency' && speaker.lastName === 'Abdulla bin Touq Al Marri' ? 0 : 1),
 		(speaker => speaker.firstName == 'Naser' && speaker.lastName === 'Mohamed Ali Naser Alnuwais' ? 0 : 1),
 		(speaker => speaker.firstName == 'Markus' && speaker.lastName === 'Venzin' ? 0 : 1),
