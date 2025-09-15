@@ -12,13 +12,13 @@
 
     --bg-global: var(--primary);
 
-    --default-text-color: var(--accent);
-    --default-heading-color: var(--accent);
+    --default-text-color: rgb(56, 56, 56);
+    --default-heading-color: var(--secondary);
 
     --wash: #fafaf9;
     --light: #eae6e1;
-    --medium: #491465;
-    --dark: #290a3a;
+    --medium: #3C1053;
+    --dark: #3C1053;
 
     --error: rgb(255, 68, 0);
     --success: rgb(121, 173, 0);

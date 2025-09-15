@@ -12,7 +12,7 @@ import CSS from './footer.module.css'
 export const Footer = () => {
 
     const { globals } = useContext(GlobalsContext)
-    // console.log('globals from FOOTER:', globals)
+    console.log('globals from FOOTER:', globals)
 
     const hubspotForm = globals.global[2].hubspotForm[0]
     const contactInfo = globals.global[2].contactDetails[0].body
@@ -53,9 +53,9 @@ export const Footer = () => {
                     {
                         hubspotForm &&
                         <section className={CSS.section}>
-                            <p className='fs-5 fw-600 '>Want to stay updated on FHS?</p>
+                            <p className='fs-5 fw-600 '>Want to stay updated on FHS Africa?</p>
                             <p className='pb-xs'>If you haven&apos;t already registered your interest, simply submit your name and email and we&apos;ll make sure to keep you posted on all the exciting announcements we have in store for the event.</p>
-                            <HubspotForm portalId={hubspotForm.portalId} formId={hubspotForm.formId} />
+                            <HubspotForm portalId={"14527187"} formId={"3e0f88f4-3613-459c-9916-921e3d43cb0e"} />
                         </section>
                     }
 

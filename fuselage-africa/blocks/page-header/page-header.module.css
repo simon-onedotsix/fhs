@@ -6,7 +6,13 @@
 .brandPattern {
     grid-area: 1/1 / 2/2;
     position: relative;
-    min-height: 6rem;
+    /* min-height: 6rem; */
+    background-color: var(--secondary);
+    background-size: 10rem;
+    /* width: 70%; */
+    /* justify-self: flex-end; */
+    aspect-ratio: 1.5/1;
+    clip-path: polygon(0% 0%, 0 72%, 21% 100%, 100% 34%, 100% 0%);
 }
 .brandPattern img {
     object-fit: cover;
@@ -25,20 +31,25 @@
     .layout {
         position: relative;
         z-index: 2;
-        grid-template-columns: repeat(2, 50%);
+        grid-template-columns: 60% 40%;
     }
-    .layout + * {
+    /* .layout + * {
         padding-top: calc(var(--space-lg) + var(--space-lg));
-    }
+    } */
     
     .content {
         grid-area: 1/1 / 2/2;
         z-index: 2;
-        margin-bottom: calc( var(--space-lg) * -1);
+        align-self: flex-end;
+        padding-top: calc( var(--space-lg) * 1.5);
     }
     .brandPattern {
         grid-area: 1/2 / 2/3;
         position: relative;
+        /* width: 100%; */
+        background-size: 20rem;
+        aspect-ratio: 1.5/1;
+        clip-path: polygon(0% 0%, 0 72%, 21% 100%, 100% 34%, 100% 0%);
     }
     
 }

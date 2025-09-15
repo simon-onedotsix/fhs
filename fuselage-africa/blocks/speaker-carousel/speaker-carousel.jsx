@@ -25,7 +25,7 @@ export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, th
 
         <section className={`block bg-default`}>
 
-            <div className='bl-1 bc-primary pl-md'>
+            <div className='bc-primary'>
 
                 <div className='container '>
                     <Reveal>

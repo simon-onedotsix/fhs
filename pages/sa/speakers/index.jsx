@@ -27,7 +27,7 @@ import CSS from '../../../css/app/speakers-sa-2024.module.css'
 
 function Speakers({ seomatic, speakers }) {
 
-	console.log('speakers:', speakers)
+	// console.log('speakers:', speakers)
 
 	// sort speakers by lastName
 	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])

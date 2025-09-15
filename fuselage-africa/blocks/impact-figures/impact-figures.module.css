@@ -22,7 +22,7 @@
     grid-template-columns: repeat(2, 1fr);
 }
 .impactFigure  {
-    border-left: 1px solid var(--primary);
+    border-left: 1px solid white;
 }
 
 
@@ -56,8 +56,6 @@
         right: 0;
         width: 50vw;
         height: 12vw;
-    
-        border-top: 5vw solid var(--wash);
     }
     .graphic img {
         object-fit: cover;
@@ -74,6 +72,6 @@
         grid-template-columns: repeat(3, 1fr);
     }
     .impactFigure {
-        padding: 1rem var(--space-sm) 1rem var(--sideRuleSpace);
+        padding: 1rem var(--space-sm) 1rem var(--space-sm);
     }
 }
