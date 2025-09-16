@@ -128,7 +128,7 @@
     width: 100vw;
 
     padding: var(--space-md);
-    padding-top: calc(var(--space-lg) * 4.5);
+    padding-top: calc(var(--space-lg) * 2.5);
     overflow-y: scroll; 
     
     color: var(--secondary);

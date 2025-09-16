@@ -18,7 +18,7 @@ export const SpeakerCard = ({ url, photoUrl, fullName, jobTitle, company }) => {
                 </div>
             
                 <div className='pt-xs pr-xs'>
-                    <p className='fs-5 fw-600 lh-1'>{ fullName }</p>
+                    <p className='fs-5 fw-600 lh-1 c-secondary'>{ fullName }</p>
                     <p className='fs-sm mt-xxs'>{ jobTitle }{ jobTitle && <br/> }
                     <span className='fs-sm fw-500'>{ company }</span></p>
                 </div>

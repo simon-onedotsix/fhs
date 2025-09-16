@@ -71,3 +71,37 @@
 
 
 
+
+
+/* BRAND PATTERN */
+
+.brandPattern {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-size: 10rem;
+    width: 90%;
+    aspect-ratio: 4.5/3;
+    clip-path: polygon(100% 0%, 100% 41%, 0% 100%, 0% 0%);
+}
+.brandPattern img {
+    object-fit: cover;
+    object-position: left bottom;
+    width: 100%;
+    height: 100%;
+}
+@media(min-width:600px) {
+    .brandPattern {
+        background-size: 15rem;
+        width: 60%;
+    }
+}
+
+@media(min-width:900px) {
+    .brandPattern {
+        background-size: 20rem;
+        width: 46%;
+    }
+}

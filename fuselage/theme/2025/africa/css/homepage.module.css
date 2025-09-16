@@ -1,0 +1,48 @@
+.headline {
+    font-size: 12vw;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: .9;
+    letter-spacing: .05rem;
+
+    max-width: 55vw;
+}
+
+
+
+@media(min-width: 600px){
+    .headline {
+        font-size: 10vw;
+        margin-bottom: 1rem;
+    }
+}
+
+
+@media(min-width:900px){
+    .headline {
+        font-size: 7vw;
+        margin-bottom: 1.5rem;
+    }
+
+    .flashContainer {
+        position: absolute;
+        bottom: var(--space-md);
+        right: var(--space-md);
+    
+        max-width: 30vw;
+    }
+}
+
+
+.flash {
+    background-color: white;
+    border-radius: var(--default-radius);
+    padding: 2rem;
+
+    color: var(--default-text-color);
+}
+@media(max-width:1199px){
+    .flash {
+        margin-top: var(--space-md);
+    }
+}

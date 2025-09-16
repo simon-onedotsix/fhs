@@ -19,122 +19,48 @@ import CSS from '../../fuselage/theme/2024/world/css/themes.module.css'
 export const THEMES_DATA = [
     {
         id: '1',
-        imageUrl: '/assets/img/sa/event-themes/nextgen-talent.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/nextgen-talent.svg',
-        title: 'NextGen Talent & Hospitality Education',
-        body: '<p>Explore how Saudi Arabia is nurturing the next generation of hospitality leaders. Sessions in this track focus on bridging academic curricula with real-world industry demands, rebranding hospitality careers to attract youth, and leveraging public-private partnerships for workforce development. From innovative training models to tech-enhanced learning, discover strategies to equip tomorrow&apos;s talent with the skills and mindset to drive the Kingdom&apos;s hospitality sector forward.</p>'
+        imageUrl: '/assets/img/sa/event-themes/investment.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/investment.svg',
+        title: 'Investment & Real Estate',
+        body: '<p>Explore the latest opportunities and trends in Saudi hospitality investments, including innovative funding models and landmark real estate projects driving national growth.</p>'
     },
     {
         id: '2',
-        imageUrl: '/assets/img/sa/event-themes/investment.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/investment.svg',
-        title: 'Investment, Financing & Real Estate',
-        body: '<p>Delve into the financial landscape shaping Saudi Arabia&apos;s hospitality market. This track covers everything from raising capital and de-risking investments to innovative asset management and real estate opportunities. Hear from investors, developers, and financial experts as they share strategies, success stories, and market forecasts that will help you navigate—and thrive in—this vibrant, rapidly evolving industry.</p>'
+        imageUrl: '/assets/img/sa/event-themes/wellness.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/wellness.svg',
+        title: 'Wellness & Lifestyle',
+        body: '<p>Discover how hospitality in Saudi Arabia is embracing holistic wellness, integrating health tech, personalised experiences, and lifestyle-focused amenities to meet evolving guest expectations.</p>'
     },
     {
         id: '25',
-        imageUrl: '/assets/img/sa/event-themes/branded-residences.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/branded-residences.svg',
-        title: 'Branded Residences',
-        body: '<p>Explore the dynamic convergence of hospitality and real estate in our Branded Residences track. With Saudi Arabia emerging as a key player in luxury residential development, this series of sessions unpacks everything from market trends and legal frameworks to investor strategies and global buyer behavior. Hear directly from leading developers, operators, and marketing experts as they reveal how branding is transforming value creation, enhancing sales, and shaping the future of high-end living in the Kingdom.</p>'
-    },
-    {
-        id: '3',
-        imageUrl: '/assets/img/sa/event-themes/religious-tourism.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/religious-tourism.svg',
-        title: 'Religious Tourism',
-        body: '<p>Gain insights into the unique dynamics of Saudi Arabia&apos;s religious travel sector, a cornerstone of the Kingdom&apos;s hospitality landscape. Sessions in this track examine the future of pilgrimage management, the development of Mecca and Medina, and how technology and innovation can enhance experiences for millions of visitors. Learn how religious tourism can serve as a catalyst for broader destination growth and investment.</p>'
-    },
-    {
-        id: '4',
-        imageUrl: '/assets/img/sa/event-themes/destination-development.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/destination-development.svg',
-        title: 'Destination Development',
-        body: '<p>Discover how Saudi Arabia is transforming itself into a global tourism powerhouse through large-scale projects and forward-thinking urban planning. This track offers a deep dive into emerging destinations, mega-events, and tourism transformations reshaping cities like Riyadh and beyond. Uncover strategies for infrastructure growth, place-making, and leveraging heritage and cultural experiences to attract visitors from around the world.</p>'
-    },
-    {
-        id: '5',
         imageUrl: '/assets/img/sa/event-themes/technology.jpg',
         iconUrl: '/assets/img/sa/event-themes/icons/technology.svg',
         title: 'Technology & Innovation',
-        body: 'Stay ahead of the curve by exploring the cutting-edge technologies reshaping hospitality. This track highlights how AI, data analytics, and other digital tools can optimize operations, enhance guest experiences, and drive workforce training. From smart hotels to startup pitches, learn how innovation is revolutionizing Saudi Arabia&apos;s hospitality sector and positioning it for long-term success.</p>'
-    },
-    {
-        id: '6',
-        imageUrl: '/assets/img/sa/event-themes/luxury.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/luxury.svg',
-        title: 'Luxury, F&B, and Experiential Hospitality',
-        body: '<p>Step into the realm of high-end accommodations, world-class dining, and unforgettable guest experiences. In this track, industry leaders and innovators discuss how to build strong hospitality brands, deliver culinary excellence, and create immersive concepts that meet evolving consumer expectations. Whether exploring upscale resorts or alternative lodging, discover the strategies powering Saudi Arabia&apos;s move into the global luxury spotlight.</p>'
-    },
-    {
-        id: '7',
-        imageUrl: '/assets/img/sa/event-themes/sustainability.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/sustainability.svg',
-        title: 'Sustainability & ESG',
-        body: '<p>Explore the role of environmentally responsible and socially conscious practices in Saudi Arabia&apos;s booming hospitality sector. This track dives into topics like sustainable design, resource management, and community engagement, examining how hotels and destinations can balance growth with ethical stewardship. Join the conversation to learn best practices, innovative frameworks, and the latest ESG strategies shaping the future of hospitality.</p>'
-    }
-    
-]
-export const THEMES_DATA_AR = [
-    {
-        id: '1',
-        imageUrl: '/assets/img/sa/event-themes/nextgen-talent.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/nextgen-talent.svg',
-        title: 'المواهب من الجيل الجديد والتعليم في مجال الضيافة',
-        body: '<p>Explore how Saudi Arabia is nurturing the next generation of hospitality leaders. Sessions in this track focus on bridging academic curricula with real-world industry demands, rebranding hospitality careers to attract youth, and leveraging public-private partnerships for workforce development. From innovative training models to tech-enhanced learning, discover strategies to equip tomorrow&apos;s talent with the skills and mindset to drive the Kingdom&apos;s hospitality sector forward.</p>'
-    },
-    {
-        id: '2',
-        imageUrl: '/assets/img/sa/event-themes/investment.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/investment.svg',
-        title: 'الاستثمار والتمويل والعقارات',
-        body: '<p>Delve into the financial landscape shaping Saudi Arabia&apos;s hospitality market. This track covers everything from raising capital and de-risking investments to innovative asset management and real estate opportunities. Hear from investors, developers, and financial experts as they share strategies, success stories, and market forecasts that will help you navigate—and thrive in—this vibrant, rapidly evolving industry.</p>'
-    },
-    {
-        id: '25',
-        imageUrl: '/assets/img/sa/event-themes/branded-residences.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/branded-residences.svg',
-        title: 'Branded Residences',
-        body: '<p>Explore the dynamic convergence of hospitality and real estate in our Branded Residences track. With Saudi Arabia emerging as a key player in luxury residential development, this series of sessions unpacks everything from market trends and legal frameworks to investor strategies and global buyer behavior. Hear directly from leading developers, operators, and marketing experts as they reveal how branding is transforming value creation, enhancing sales, and shaping the future of high-end living in the Kingdom.</p>'
-    },
-    {
-        id: '3',
-        imageUrl: '/assets/img/sa/event-themes/religious-tourism.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/religious-tourism.svg',
-        title: 'السياحة الدينية',
-        body: '<p>Gain insights into the unique dynamics of Saudi Arabia&apos;s religious travel sector, a cornerstone of the Kingdom&apos;s hospitality landscape. Sessions in this track examine the future of pilgrimage management, the development of Mecca and Medina, and how technology and innovation can enhance experiences for millions of visitors. Learn how religious tourism can serve as a catalyst for broader destination growth and investment.</p>'
+        body: '<p>Uncover how AI, robotics, and smart solutions are reshaping guest experiences and operations, with Saudi properties leading regional adoption of cutting-edge hospitality technologies.</p>'
     },
     {
         id: '4',
-        imageUrl: '/assets/img/sa/event-themes/destination-development.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/destination-development.svg',
-        title: 'تطوير الوجهات',
-        body: '<p>Discover how Saudi Arabia is transforming itself into a global tourism powerhouse through large-scale projects and forward-thinking urban planning. This track offers a deep dive into emerging destinations, mega-events, and tourism transformations reshaping cities like Riyadh and beyond. Uncover strategies for infrastructure growth, place-making, and leveraging heritage and cultural experiences to attract visitors from around the world.</p>'
-    },
-    {
-        id: '5',
-        imageUrl: '/assets/img/sa/event-themes/technology.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/technology.svg',
-        title: 'التكنولوجيا والابتكار',
-        body: 'Stay ahead of the curve by exploring the cutting-edge technologies reshaping hospitality. This track highlights how AI, data analytics, and other digital tools can optimize operations, enhance guest experiences, and drive workforce training. From smart hotels to startup pitches, learn how innovation is revolutionizing Saudi Arabia&apos;s hospitality sector and positioning it for long-term success.</p>'
+        imageUrl: '/assets/img/sa/event-themes/food.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/food.svg',
+        title: 'F&B and Experiences',
+        body: '<p>Celebrate the rise of experiential dining and culinary excellence, as Saudi hotels and venues blend local flavors, creative concepts, and immersive events to redefine hospitality experiences.</p>'
     },
     {
         id: '6',
-        imageUrl: '/assets/img/sa/event-themes/luxury.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/luxury.svg',
-        title: 'الفخامة، الأطعمة والمشروبات، والضيافة التجريبية',
-        body: '<p>Step into the realm of high-end accommodations, world-class dining, and unforgettable guest experiences. In this track, industry leaders and innovators discuss how to build strong hospitality brands, deliver culinary excellence, and create immersive concepts that meet evolving consumer expectations. Whether exploring upscale resorts or alternative lodging, discover the strategies powering Saudi Arabia&apos;s move into the global luxury spotlight.</p>'
+        imageUrl: '/assets/img/sa/event-themes/talent.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/talent.svg',
+        title: 'Talent & Education',
+        body: '<p>Learn how Saudi Arabia is developing its hospitality workforce through modern training, education partnerships, and programs that align academic skills with industry needs.</p>'
     },
     {
         id: '7',
-        imageUrl: '/assets/img/sa/event-themes/sustainability.jpg',
-        iconUrl: '/assets/img/sa/event-themes/icons/sustainability.svg',
-        title: 'الاستدامة والمعايير البيئية والاجتماعية والحوكمة (ESG)',
-        body: '<p>Explore the role of environmentally responsible and socially conscious practices in Saudi Arabia&apos;s booming hospitality sector. This track dives into topics like sustainable design, resource management, and community engagement, examining how hotels and destinations can balance growth with ethical stewardship. Join the conversation to learn best practices, innovative frameworks, and the latest ESG strategies shaping the future of hospitality.</p>'
+        imageUrl: '/assets/img/sa/event-themes/branded-residences.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/branded-residences.svg',
+        title: 'Branded Residences Forum',
+        body: '<p>Examine the growth of luxury branded residences in Saudi Arabia, where top hotel brands offer private homes with premium services, creating new benchmarks in high-end living.</p>'
     }
     
 ]
-
 
 
 

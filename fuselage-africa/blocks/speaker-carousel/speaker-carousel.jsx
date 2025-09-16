@@ -1,3 +1,6 @@
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css'
 
@@ -9,23 +12,32 @@ import Chevron from './img/slider-chevron-right.svg'
 
 import CSS from './speaker-carousel.module.css'
 
-export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, theme  }) => {
+export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, theme }) => {
+
+    let ref = useRef(null)
+
+    let { scrollYProgress } = useScroll({ 
+        target: ref,
+        offset: ["start end", "end start"]
+    })
+
+    let y = useTransform( scrollYProgress, [0, 1], [`-20vh`, `20vh`])
 
     const handleCtaLink = () => {
         if ( !ctaLabel && !ctaLink ) return
 
         return (
             <p className={CSS.actions}>
-                <ArrowButton href={ctaLink} theme={{ arrow: `white`, border: `white`, label: `white`}}>{ ctaLabel }</ArrowButton>
+                <ArrowButton href={ctaLink} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>{ ctaLabel }</ArrowButton>
             </p>
         )
     }
 
     return (
 
-        <section className={`block bg-default`}>
+        <section ref={ref} className={`block bg-default`} style={{ position: 'relative' }}>
 
-            <div className='bc-primary'>
+            <div className='bc-primary' style={{ position: 'relative', zIndex: 2 }}>
 
                 <div className='container '>
                     <Reveal>
@@ -84,11 +96,15 @@ export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, th
 
                     {handleCtaLink()}
 
-
-                
-
                 </div>
             </div>
+
+            {/* <motion.div className={CSS.brandPattern}
+                style={{
+                    backgroundImage: `url(/assets/theme/africa/fhs-africa-battik-purple.png)`,
+                    backgroundPositionY: y
+                }}
+            /> */}
         </section>
 
     )

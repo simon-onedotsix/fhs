@@ -165,7 +165,9 @@ export const MainMenu = ({ otherEvents }) => {
                                 FHS Saudi Arabia
                             </ArrowButton>
                         </p>
+                    </section>
 
+                    <section className="c-white">
                         <p className="fs-4 fw-600 c-primary">Our Other Events</p>
                         {
                             otherEvents.length &&

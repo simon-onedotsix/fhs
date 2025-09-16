@@ -9,13 +9,17 @@ export const HeroUnitVideo = ({ children, video, poster }) => {
 
     if ( !video || !poster ) return
 
-    let  scroll  = useScroll()
-    let y = useTransform(scroll.scrollY, [0, 1000], ["0%", "30vh"])
-    
-    let patternY = useTransform(scroll.scrollY, [0, 1000], ["0%", "50vh"])
+    let ref = useRef(null)
+
+    let { scrollYProgress } = useScroll({ 
+        target: ref,
+        offset: ["start end", "end start"]
+    })
+
+    let y = useTransform( scrollYProgress, [0, 1], [`-20vh`, `20vh`])
 
     return (
-        <section className={CSS.layout}>
+        <section ref={ref} className={CSS.layout}>
                 
             <motion.div className={CSS.video} style={{ y }}>
 
@@ -37,8 +41,8 @@ export const HeroUnitVideo = ({ children, video, poster }) => {
 
             <motion.div className={CSS.brandPattern}
                 style={{
-                    backgroundImage: `url(/assets/theme/africa/fhs-africa-battik-yellow.png)`,
-                    backgroundPositionY: patternY
+                    backgroundImage: `url(/assets/theme/africa/fhs-africa-battik-purple.png)`,
+                    backgroundPositionY: y
                 }}
             />
 
