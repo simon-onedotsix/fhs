@@ -1,3 +1,36 @@
+.filterLayout {
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-xs) var(--space-md) var(--space-sm);
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 2rem;
+    row-gap: 1rem;
+
+    background-color: var(--secondary);
+}
+.filterLayout section {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: .25rem;
+    row-gap: 1rem;
+}
+    
+
+.searchLayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: .75rem;
+}
+
+
+
 /* LAYOUT –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 @media(max-width:799px){
@@ -14,44 +47,7 @@
         /* border: 1px dashed lime; */
     }
 
-
-    .filterLayout {
-        position: fixed;
-        z-index: 2;
-        inset: 0;
-        padding: var(--space-md);
-        padding-top: 6rem;
-        background-color: var(--dark);
-        display: none;
-    }
-    .filterLayout.active {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: .75rem;
-        z-index: 105;
-    }
-
-
-    .searchLayout {
-        position: fixed;
-        z-index: 2;
-        top: 0;
-        right: 0;
-        left:0;
-        padding: var(--space-md) 5.5rem var(--space-md) var(--space-md);
-        background-color: var(--dark);
-        display: none;
-    }
-    .searchLayout.active {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: .75rem;
-        z-index: 100;
-    }
-
-
+    
 
     .filterToggleContainer {
         padding-top: var(--space-sm);
@@ -182,29 +178,7 @@
     }
 
 
-    .filterLayout {
-        z-index: 10;
-        position: absolute;
-        top: 0;
-    }
-    .filterLayout.fixed {
-        position: fixed;
-        top: 150px;
-    }
     
-
-    .searchLayout {
-        z-index: 10;
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-    .searchLayout.fixed {
-        position: fixed;
-        top: 150px;
-        right: calc(var(--space-sm) + var(--space-lg));
-    }
-
 
 
     .filterGroup {
@@ -219,11 +193,9 @@
 }
 
 
-@media(min-width:1200px){
-    .searchLayout.fixed {
-        right: calc(var(--space-sm) + var(--space-lg));
-    }
-}
+
+
+
 
 .filterLayoutButtons {
     display: flex;
@@ -231,7 +203,6 @@
     justify-content: flex-start;
     gap: .2rem;
 }
-
 
 
 
@@ -243,7 +214,6 @@
     align-items: center;
     border: 1px solid var(--accent);
     border-radius: calc(var(--default-radius) * 0.5);
-    background-color: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(10px);
 }
 .search input::placeholder {
@@ -373,6 +343,7 @@
     border: none;
     font-family: inherit;
     font-size: inherit;
+    white-space: nowrap;
     color: white;
     background-color: transparent;
     
@@ -380,7 +351,7 @@
     
     display: flex;
     align-items: center;
-    gap: .51rem
+    gap: .5rem
 }
 .agendaFilterReset span {
     width: 2rem;

@@ -125,7 +125,7 @@ export default function Home ({ seomatic, speakers }) {
             <Intro>
                 <div className="formatted" style={{ overflow: 'hidden' }}>
                     <Slide>
-                        <p className="fs-5 maxw-45">FHS Africa is the continent's leading hospitality investment forum, uniting industry leaders, investors, and operators to drive growth and innovation. With a legacy of impactful connections and over <strong className="fw-600">$459&nbsp;million</strong> in business opportunities, this is where Africa&apos;s hospitality sector meets the world. Join us in <strong className="fw-600">Nairobi</strong> for FHS Africa 2026, where the future of African hospitality unfolds.</p>
+                        <p className="fs-5 maxw-45">FHS Africa is the continent&apos;s leading hospitality investment forum, uniting industry leaders, investors, and operators to drive growth and innovation. With a legacy of impactful connections and over <strong className="fw-600">$459&nbsp;million</strong> in business opportunities, this is where Africa&apos;s hospitality sector meets the world. Join us in <strong className="fw-600">Nairobi</strong> for FHS Africa 2026, where the future of African hospitality unfolds.</p>
                     </Slide>
                 </div>
             </Intro>
