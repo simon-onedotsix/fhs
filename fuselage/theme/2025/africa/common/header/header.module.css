@@ -70,9 +70,9 @@
 
 @media(min-width:900px){
     
-    .brand {
-        /* width: 20rem; */
-    }
+    /* .brand {
+        width: 20rem;
+    } */
     
     .shim {
         height: var(--header-height-compact);

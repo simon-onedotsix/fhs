@@ -13,14 +13,28 @@
     row-gap: 1rem;
 
     background-color: var(--secondary);
+
+    transform: translateY(100%);
+    transition: all 400ms cubic-bezier(.7, .1, .2, 1);
 }
+.filterLayout.active {
+    transform: translateY(0);
+}
+
+
+.filterActionsContainer {
+    position: fixed;
+    top: calc(-3rem - var(--space-sm));
+    right: var(--space-sm);
+}
+
+
 .filterLayout section {
     display: flex;
     flex-wrap: wrap;
     column-gap: .25rem;
     row-gap: 1rem;
 }
-    
 
 .searchLayout {
     display: flex;
@@ -28,6 +42,50 @@
     justify-content: flex-start;
     gap: .75rem;
 }
+
+
+
+
+
+.agendaActionsToggle {
+    position: relative;
+    cursor: pointer;
+    height: 48px;
+    width: 48px;
+    border: none;
+    border-radius: var(--default-button-radius);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .75rem;
+
+    background-color: white;
+    transition: all .35s ease;
+}
+@media(hover:hover){
+    .agendaActionsToggle:hover {
+        background-color: var(--accent);
+    }
+}
+.agendaActionsToggleWrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: .75rem;
+    align-items: center;
+
+    background-color: var(--primary-2);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5rem;
+
+    padding-left: 1.25rem;
+}
+.agendaActionsToggleWrapper span {
+    font-size: .8rem;
+}
+
+
+
 
 
 

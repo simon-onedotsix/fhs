@@ -6,7 +6,7 @@ import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller'
 import Head from "next/head"
 import { useRouter } from "next/router"
 
-import { Header } from '../../../../fuselage/theme/2025/africa/common/header/header'
+import { Header, HeaderShim } from '../../../../fuselage/theme/2025/africa/common/header/header'
 import { Footer } from '../../../../fuselage/theme/2025/africa/common/footer/footer'
 
 import { StickySidebar } from "../../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
@@ -79,6 +79,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
             <section className="block flush bg-default pt-0">
                 <StickySidebar size='small'>
                     <aside>
+                        <HeaderShim/>
                         <div className="p-md pt-0">
                             <p className="fs-6 fw-600 mb-sm">Filter</p>
                             { handleCategoryMenu() }
@@ -89,6 +90,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
                     </aside>
 
                     <main>
+                        <HeaderShim/>
                         <div className="p-md pt-0">
                             <p className="fs-0 fw-600">Content Library</p>
                         </div>

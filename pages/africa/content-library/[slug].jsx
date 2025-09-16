@@ -10,7 +10,7 @@ import Image from "next/image"
 import Link from "next/link"
 import {format} from 'date-fns'
 
-import { Header } from '../../../fuselage/theme/2025/africa/common/header/header'
+import { Header, HeaderShim } from '../../../fuselage/theme/2025/africa/common/header/header'
 import { Footer } from '../../../fuselage/theme/2025/africa/common/footer/footer'
 
 import { StickySidebar } from "../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
@@ -209,46 +209,42 @@ export default function Article ({ entry }) {
             </Head>
             
             <Header compact />
+
+            
                         
 
-            <section className="block flush pt-0">
+            <section className="block">
                 <div className="container">
                     <StickySidebar size='large' flipped>
 
                         <main>
-                            <div className="p-md pt-0">
-                                <div className="mb-sm pb-xs bb-1 bc-secondary flex jc-between">
-                                    <ArrowLink href="/africa/content-library" decal='fw-600'>Content library</ArrowLink>
-                                    {handleCategories()}                                
-                                </div>
-
-                                <p className="fs-1 fw-600 lh-1 mb-sm">{entry.title}</p>
-                                
-                                {handleHero()}
-
-                                {handleContentLibraryBlocks( entry )}
-
+                            <div className="mb-sm pb-xs bb-1 bc-secondary flex jc-between">
+                                <ArrowLink href="/africa/content-library" decal='fw-600'>Content library</ArrowLink>
+                                {handleCategories()}                                
                             </div>
+
+                            <p className="fs-1 fw-600 lh-1 mb-sm">{entry.title}</p>
+                            
+                            {handleHero()}
+
+                            {handleContentLibraryBlocks( entry )}                   
                         </main>
 
                         <aside>
-                            <div className="p-md pt-0">
-                                <div className="mb-sm pb-xs bb-1 bc-secondary">
-                                    <p className="fw-600">Published: { format(new Date(entry.postDate), 'd MMMM yyyy') }</p>
-                                </div>
-                                
-                                {handleProfileGroups()}
-
-                                <div className="py-xs">
-                                    <p className="fw-600 pb-xs">Share this article</p>
-                                    <div className="flex gap-xxs">
-                                        <ButtonSocial url={buildShareUrl(`https://www.linkedin.com/sharing/share-offsite/?url=`, router)} icon='linkedin' decal='bg-secondary' />
-                                        <ButtonSocial url={buildShareUrl(`https://www.facebook.com/sharer.php?u=`, router)} icon='facebook' decal='bg-secondary' />
-                                        <ButtonSocial url={buildShareUrl(`https://twitter.com/intent/tweet?url=`, router)} icon='twitter' decal='bg-secondary' />
-                                    </div>
-                                </div>
+                            <div className="mb-sm pb-xs bb-1 bc-secondary">
+                                <p className="fw-600">Published: { format(new Date(entry.postDate), 'd MMMM yyyy') }</p>
                             </div>
+                            
+                            {handleProfileGroups()}
 
+                            <div className="py-xs">
+                                <p className="fw-600 pb-xs">Share this article</p>
+                                <div className="flex gap-xxs">
+                                    <ButtonSocial url={buildShareUrl(`https://www.linkedin.com/sharing/share-offsite/?url=`, router)} icon='linkedin' decal='bg-secondary' />
+                                    <ButtonSocial url={buildShareUrl(`https://www.facebook.com/sharer.php?u=`, router)} icon='facebook' decal='bg-secondary' />
+                                    <ButtonSocial url={buildShareUrl(`https://twitter.com/intent/tweet?url=`, router)} icon='twitter' decal='bg-secondary' />
+                                </div>
+                            </div>                     
                         </aside>
 
                     </StickySidebar>
@@ -292,19 +288,14 @@ export async function getStaticProps({ params, preview, previewData }) {
     const entryQuery = await craftApolloClient( preview, previewData ).query({
         query: gql`
             query Entry {
-                entries(site: "${process.env.SITE_HANDLE_AFRICA}", slug: "${params.slug}") {
+                entry(site: "${process.env.SITE_HANDLE_AFRICA}", slug: "${params.slug}") {
                     ... on contentLibrary_article_Entry {
                         id
                         slug
                         title
                         postDate
-                        body
-                        hero {
-                            id
-                            url
-                            width
-                            height
-                        }
+         
+                       
                         ${QuerySEO}
                         contentLibraryContentBlocks {
                             ... on contentLibraryContentBlocks_text_BlockType {
@@ -418,7 +409,7 @@ export async function getStaticProps({ params, preview, previewData }) {
         `
     })
 
-    let entry = entryQuery.data.entries[0]
+    let entry = entryQuery.data.entry
 
     return { props: { entry }}
 }

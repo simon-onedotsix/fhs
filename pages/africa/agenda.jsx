@@ -96,6 +96,10 @@ export default function Agenda ({ sessions, theme }) {
 
 	const [ searchActive, setSearchActive ] = useState (false)
 	const [ search, setSearch ] = useState ('')
+	
+	const [ filtersVisible, setFiltersVisible ] = useState(false)
+
+
 
 	const locationSelect = useRef()
 
@@ -373,12 +377,23 @@ export default function Agenda ({ sessions, theme }) {
 						onClick={ ()=> window.print() }
 					><PrinterIcon />&ensp;Print Agenda</button>
 				</div>
+
+				
 				
 				{/* FILTERS */}
 				<div className="container agendaFilters">
-					{/* filters */}
-					<div className={CSS.filterLayout}>
+					<div className={`${CSS.filterLayout} ${filtersVisible ? CSS.active : ''}`}>
 
+						{/* toggle */}
+						<div className={CSS.filterActionsContainer}>							
+							<div className={CSS.agendaActionsToggleWrapper}>
+								<span>FILTER AGENDA</span>
+								
+								<button className={CSS.agendaActionsToggle} onClick={ () => setFiltersVisible(!filtersVisible) }><FilterIcon color={`var(--secondary)`} /></button>
+							</div>
+						</div>
+
+						{/* filters */}
 						<section>
 							{/* topics */}
 							{
@@ -465,8 +480,8 @@ export default function Agenda ({ sessions, theme }) {
 							}
 						</section>
 
+						{/* search */}
 						<section>
-							{/* search form */}
 							<div className={`${CSS.searchLayout} ${CSS.search} ${searchActive && CSS.active}`}>
 								<div className={CSS.searchFormContainer}>	
 									<input 
@@ -490,11 +505,6 @@ export default function Agenda ({ sessions, theme }) {
 						</section>
 
 					</div>
-
-				
-
-						
-				
 				</div>
 
 
@@ -506,8 +516,8 @@ export default function Agenda ({ sessions, theme }) {
 							if ( selectedDay && selectedDay !== day.time ) return
 
 							return (
-								<section key={index} className='day'>
-									<p key={index} className='dayDivider'> { day.day }</p>
+								<section key={index} className={CSS.day}>
+									<p key={index} className={CSS.dayDivider}> { day.day }</p>
 
 									{
 										day.timeslots.length 
@@ -796,6 +806,50 @@ const PrinterIcon = ({ color }) => {
 					<circle cx="2381.62" cy="248.903" r="0.906" style={{ fill: color ? color : 'white' }}/>
 					<g transform="matrix(1,0,0,1,2.95813,0)">
 						<circle cx="2381.62" cy="248.903" r="0.906" style={{ fill: color ? color : 'white' }}/>
+					</g>
+				</g>
+			</g>
+		</svg>
+	)
+}
+
+const FilterIcon = ({ color }) => {
+	return (
+		<svg width="100%" height="100%" viewBox="0 0 30 25" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeLinejoin:`round`, strokeMiterlimit: 1.5 }}>
+			<g transform="matrix(1,0,0,1,-2319,-177)">
+				<g id="icon-filter" transform="matrix(1,0,0,1,240.914,76.6167)">
+					<g>
+						<g transform="matrix(0.738468,0,0,1,543.84,0)">
+							<path d="M2079.44,104.826L2100.8,104.826" style={{ fill:`none`, stroke: color ? color : 'black', strokeWidth: 2.28 }}/>
+						</g>
+						<g transform="matrix(0.265026,0,0,1,1549.7,0)">
+							<path d="M2079.44,104.826L2100.8,104.826" style={{ fill:`none`, stroke: color ? color : 'black', strokeWidth: 2.73 }}/>
+						</g>
+						<g transform="matrix(0.637431,0,0,0.637431,743.862,40.9144)">
+							<circle cx="2124.38" cy="100.264" r="4.384" style={{ fill:`none`, stroke: color ? color : 'black', strokeWidth: 3.14 }}/>
+						</g>
+					</g>
+					<g transform="matrix(1,0,0,1,0,16.742)">
+						<g transform="matrix(0.738468,0,0,1,543.84,0)">
+							<path d="M2079.44,104.826L2100.8,104.826" style={{ fill:`none`, stroke: color ? color : 'black', strokeWidth: 2.28 }}/>
+						</g>
+						<g transform="matrix(0.265026,0,0,1,1549.7,0)">
+							<path d="M2079.44,104.826L2100.8,104.826" style={{ fill:`none`, stroke: color ? color : 'black', strokeWidth: 2.73 }}/>
+						</g>
+						<g transform="matrix(0.637431,0,0,0.637431,743.862,40.9144)">
+							<circle cx="2124.38" cy="100.264" r="4.384" style={{ fill:`none`, stroke: color ? color : 'black', strokeWidth: 3.14 }}/>
+						</g>
+					</g>
+					<g transform="matrix(1,0,0,1,0,-0.169219)">
+						<g transform="matrix(-0.738468,0,0,1,3642.06,8.54021)">
+							<path d="M2079.44,104.826L2100.8,104.826" style={{ fill:`none`, stroke: color ? color : 'black', strokeWidth: 2.28 }}/>
+						</g>
+						<g transform="matrix(-0.265026,0,0,1,2636.21,8.54021)">
+							<path d="M2079.44,104.826L2100.8,104.826" style={{ fill:`none`, stroke: color ? color : 'black', strokeWidth: 2.73 }}/>
+						</g>
+						<g transform="matrix(-0.637431,0,0,0.637431,3442.04,49.4546)">
+							<circle cx="2124.38" cy="100.264" r="4.384" style={{ fill:`none`, stroke: color ? color : 'black', strokeWidth: 3.14 }}/>
+						</g>
 					</g>
 				</g>
 			</g>

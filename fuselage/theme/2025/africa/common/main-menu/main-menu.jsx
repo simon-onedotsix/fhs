@@ -38,7 +38,7 @@ export const MainMenu = ({ otherEvents }) => {
                 </div>
 
                 <div className={CSS.toggleWrapper}>
-                    <caption>MENU</caption>
+                    <span>MENU</span>
                     
                     <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
                         <span/>
