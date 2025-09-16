@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client"
-import craftApolloClient from "../api/apollo"
+import craftApolloClient from "../../pages/api/apollo"
 
 import { useState, useRef, useEffect } from "react"
 
