@@ -92,7 +92,8 @@ export default function Article ({ entry }) {
                     }
                     
                     // image
-                    if ( block.__typename === 'contentLibraryContentBlocks_image_BlockType' ) {
+                    if (block.__typename === 'contentLibraryContentBlocks_image_BlockType') {
+                        if (!block.hero || !block.hero.length) return
                         return (
                             <div key={block.id} className="mt-sm"style={{ borderRadius: `var(--default-radius)`, overflow: `hidden`}}>
                                 <Image 
