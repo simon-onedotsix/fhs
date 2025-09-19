@@ -335,10 +335,9 @@ export default function Agenda ({ sessions, theme }) {
 
 			<PageHeader theme={``}>
 				<div className="formatted no-print">
-					<p className="fs-0 fw-600"><Reveal>2025 Agenda</Reveal></p>
+					<p className="fs-0 fw-600"><Reveal>2026 Agenda</Reveal></p>
 					<Slide>
-						<p className="mt-sm">For FHS Africa, our objective is to enhance networking opportunities by introducing innovative and engaging formats that foster meaningful connections among delegates. The program is carefully designed to encourage greater interaction between attendees and speakers, ensuring valuable discussions and insights in different rooms at the Westin.</p>
-						<p>Additionally, the most critical topics will be presented in a traditional conference format on Day 2 (18/02) at Boma Talks, held at the CCITC, providing a dedicated platform for in-depth discussions and thought leadership.</p>
+						<p className="mt-sm">For FHS Africa, our objective is to enhance networking opportunities by introducing innovative and engaging formats that foster meaningful connections among delegates. The program is carefully designed to encourage greater interaction between attendees and speakers, ensuring valuable discussions and insights.</p>
 					</Slide>
 				</div>
 			</PageHeader>
@@ -346,37 +345,14 @@ export default function Agenda ({ sessions, theme }) {
 			
 			<section className="block pt-0">
 
-				{/* intro/info */}
-				<div className="container columns-4 gap-sm pt-md">
-					<div className="formatted">
-						<h5>Boma Talks</h5>
-						<p className="fw-600 c-secondary">Taking place exclusively on 18th June at&nbsp;the CTICC</p>
-						<p>The term &ldquo;boma&ldquo; originates from Swahili, meaning an enclosure or fortification, and has evolved to signify a communal gathering place. Serving as the conference&apos;s main stage, Boma Talks will host all keynote presentations and pivotal panel discussions, providing a central platform for sharing insights and fostering dialogue among attendees.</p>
-					</div>
-					<div className="formatted">
-						<h5>Knowledge Station</h5>
-						<p className="fw-600 c-secondary">Location: Ground Floor, The Westin</p>
-						<p>A dedicated space for learning and inspiration, the Knowledge Station offers engaging workshops, in-depth case studies, and expert presentations. Designed to address key focus topics from the conference, this hub provides valuable insights and practical knowledge for attendees seeking deeper understanding and expertise.</p>
-					</div>
-					<div className="formatted">
-						<h5>Showcase Den</h5>
-						<p className="fw-600 c-secondary">Location: Ground Floor, The Westin</p>
-						<p>A dynamic platform for exploring investment opportunities, the Showcase Den highlights key destinations, country spotlights, and new project pitches. Designed to connect delegates with potential investments, this space offers valuable insights into emerging markets and groundbreaking developments in the industry.</p>
-					</div>
-					<div className="formatted">
-						<h5>Pioneer Camp</h5>
-						<p className="fw-600 c-secondary">Location: Mezzanine Level, The Westin</p>
-						<p>A collaborative space designed for in-depth discussions, the Pioneer Camp caters to the demand for smaller, longer conversations between delegates and experts. Through interactive roundtables, this hub fosters meaningful dialogue, tackles critical challenges, and develops practical solutions for the industry&apos;s future.</p>
-					</div>
-				</div>
 
-				<div className="printButton mt-md button-grid">
+				{/* <div className="printButton button-grid">
 					<Link href={'/africa/agenda-at-a-glance'}><a className={'button fs-6'}>Agenda at a glance</a></Link>
 					<button 
 						className={'button fs-6'}
 						onClick={ ()=> window.print() }
 					><PrinterIcon />&ensp;Print Agenda</button>
-				</div>
+				</div> */}
 
 				
 				
@@ -524,7 +500,7 @@ export default function Agenda ({ sessions, theme }) {
 										?
 											day.timeslots.map( (slot, index) => {
 												return (
-													<div key={index} className="sessions">
+													<div key={index} className={CSS.sessions}>
 														{
 															prioritiseSessions(slot.sessions).map( session => (
 																<Session key={session.id} session={session} theme={getSessionLocationTheme(session)} />
@@ -565,7 +541,7 @@ export const Session = ({ session }) => {
 
 		if ( !speakerData ) return
 
-		console.log('speakerData:', speakerData)
+		// console.log('speakerData:', speakerData)
 
 		let moderators = []
 		let speakers = []
@@ -657,7 +633,7 @@ export const Session = ({ session }) => {
 
 	return (
 	
-		<div className="sessionsWrapper">
+		<div className={CSS.sessionsWrapper}>
 			<div className={CSS.sessionHeader}>
 				<Duration startTime={session.beginsAt} endTime={session.endsAt} />
 				<Location session={session} />
@@ -882,7 +858,7 @@ export async function getStaticProps() {
 							}
 						}
 
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_AFRICA_2025}", page: 1, pageSize: 500) {
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_AFRICA_2026}", page: 1, pageSize: 500) {
 							id
 							titleTranslations {
 								value
@@ -927,10 +903,10 @@ export async function getStaticProps() {
 								photoUrl
 								organization
 								biography
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AFRICA_2025}") {
+								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AFRICA_2026}") {
 									eventProfile {
 										type
-										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
+										withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AFRICA_2026}") {
 											speakerOnPlannings {
 												id
 												title
@@ -946,7 +922,7 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
 					"page": 1
 				}
 			})

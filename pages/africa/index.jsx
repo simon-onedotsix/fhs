@@ -94,6 +94,8 @@ export default function Home ({ seomatic, speakers }) {
                     <span className="c-secondary"><Reveal>Together</Reveal></span> <Reveal><span className="c-secondary">we</span>&nbsp;invest</Reveal>
                 </p>
 
+                <p className="fs-4 mt-sm"><span className="fw-600">31 March - 1 April 2026</span> <br /> Radisson Blu Hotel, Nairobi Upper Hill, Kenya</p>
+
                 <div className='mt-sm'>
                     <ButtonGrid>
                         <Pop inline delay={.1}>

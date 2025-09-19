@@ -205,7 +205,7 @@ export default function Agenda ({ sessions, locations }) {
 				})
 			}
 
-			console.log('current session searchContent:', searchContent)
+			// console.log('current session searchContent:', searchContent)
 
 			if ( searchContent.includes(search.toLowerCase()) ) return session
 
@@ -380,7 +380,8 @@ export default function Agenda ({ sessions, locations }) {
 		let moderators = []
         let speakers = []
 
-		_.orderBy(speakerData, 'lastName').forEach( speaker => {
+		_.orderBy(speakerData, 'lastName').forEach(speaker => {
+			// console.log(speaker)
 			speaker.withEvent.eventProfile.type === 'Moderator' ? moderators.push( speaker ) : speakers.push( speaker )
 		})
 
@@ -552,7 +553,7 @@ export default function Agenda ({ sessions, locations }) {
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
 	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
 	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))	
-	console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
+	// console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
 	// console.log('SEARCH:', search)
 
 
@@ -801,7 +802,7 @@ export default function Agenda ({ sessions, locations }) {
 													<div className={CSS.sessions}>
 														{
 															prioriseStreams(slot.sessions, PRIORITISED_STREAMS).map((session, index) => {
-																console.log(session)
+																// console.log(session)
 																return (
 																	<div key={index} className={CSS.sessionsWrapper}>
 																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
@@ -1050,6 +1051,9 @@ const Close = () => {
 }
 
 
+
+
+
 export async function getStaticProps() {
 
 	const eventQuery = await fetch(
@@ -1120,7 +1124,7 @@ export async function getStaticProps() {
 								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2025}") {
 									eventProfile {
 										type
-										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
+										withEvent(eventId: "RXZlbnRfMjQwNDQ3Nw==") {
 											speakerOnPlannings {
 												id
 												title

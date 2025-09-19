@@ -318,7 +318,8 @@ export default function Agenda ({ sessions, locations }) {
 		let moderators = []
         let speakers = []
 
-		_.orderBy(speakerData, 'lastName').forEach( speaker => {
+		_.orderBy(speakerData, 'lastName').forEach(speaker => {
+			// console.log(speaker)
 			speaker.withEvent.eventProfile.type === 'Moderator' ? moderators.push( speaker ) : speakers.push( speaker )
 		})
 
