@@ -155,7 +155,7 @@
 
 [data-theme='africa'] footer .form input {
     border-bottom-color: var(--accent) !important;
-    color: var(--default-text-color) !important;
+    /* color: var(--default-text-color) !important; */
 }
 [data-theme='africa'] footer .form input:focus {
     border-bottom-color: rgba(255, 255, 255, 0.5) !important;

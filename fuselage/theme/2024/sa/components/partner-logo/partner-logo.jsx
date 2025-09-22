@@ -2,9 +2,9 @@ import Image from "next/image"
 
 import CSS from './partner-logo.module.css'
 
-export const PartnerLogo = ({ hero, size, alt, label }) => {
+export const PartnerLogo = ({ src, size, alt, label }) => {
 
-    if ( !hero.url ) return
+    if (!src) return
 
     const handleSize = () => {
         switch (size) {
@@ -21,9 +21,10 @@ export const PartnerLogo = ({ hero, size, alt, label }) => {
         <div>
             <div className={`${CSS.logo} ${handleSize()}`}> 
                 <Image
-                    src={hero.url}
+                    src={src}
                     alt={alt}
                     layout={`fill`}
+                    unoptimized
                 />
             </div>
             { label && <p className={CSS.label}>{label}</p> }

@@ -11,7 +11,7 @@ import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
 
-import { QuerySEO } from "../../graphql/queries"
+import handleSeomaticMeta from '../../lib/seomatic'
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Reveal } from "../../fuselage-africa/animation/reveal"
@@ -23,6 +23,7 @@ import { HeroUnitVideo } from "../../fuselage-africa/blocks/hero-unit-video/hero
 import { SpeakerCarousel } from "../../fuselage-africa/blocks/speaker-carousel/speaker-carousel"
 import { SpeakerCard } from "../../fuselage-africa/components/speaker-card/speaker-card"
 import { ImpactFiguresGrid, ImpactFigures, ImpactFigure, ImpactFigureSpacer } from "../../fuselage-africa/blocks/impact-figures/impact-figures"
+import { LogoGrid } from '../../fuselage-africa/layout/logo-grid/logo-grid'
 
 import { Button, ButtonGrid } from "../../fuselage/theme/2025/africa/components/button/button"
 import { PopupOverlay } from "../../fuselage/components/popup-overlay/popup-overlay"
@@ -33,20 +34,26 @@ import { Intro } from "../../fuselage/theme/2025/africa/blocks/intro/intro"
 
 
 import CSS from '../../fuselage/theme/2025/africa/css/homepage.module.css'
+import partnerCSS from '../../fuselage/theme/2025/africa/css/partners.module.css'
 
 
 
-export default function Home ({ seomatic, speakers }) {
+export default function Home ({ seomatic, partners, speakers }) {
 
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState()
 
-    // console.log('entry:', entry)
+    const STRATEGIC_PARTNERS = partners.find(group => group.id === "274375")
+
+    
+    // console.log('seomatic:', seomatic)
     // console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
-    // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))	
+    // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))
     // console.log('speakerData:', speakerData)
 
     // console.log('selectedCmsSpeakers:', selectedCmsSpeakers)
+    // console.log('partners:', partners)
+
 
 
     // scroll animation
@@ -83,7 +90,7 @@ export default function Home ({ seomatic, speakers }) {
         <>
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
-                {/* { handleSeomaticMeta( seomatic ) } */}
+                { handleSeomaticMeta( seomatic ) }
             </Head>
         
             <Header overlaid inverse />
@@ -94,7 +101,7 @@ export default function Home ({ seomatic, speakers }) {
                     <span className="c-secondary"><Reveal>Together</Reveal></span> <Reveal><span className="c-secondary">we</span>&nbsp;invest</Reveal>
                 </p>
 
-                <p className="fs-4 mt-sm"><span className="fw-600">31 March - 1 April 2026</span> <br /> Radisson Blu Hotel, Nairobi Upper Hill, Kenya</p>
+                <p className="fs-4 mt-xs"><span className="fw-600">31 March - 1 April 2026</span> <br /> Radisson Blu Hotel, Nairobi Upper Hill, Kenya</p>
 
                 <div className='mt-sm'>
                     <ButtonGrid>
@@ -131,6 +138,67 @@ export default function Home ({ seomatic, speakers }) {
                     </Slide>
                 </div>
             </Intro>
+
+
+
+
+            <section className={`block bg-default`}>
+                <div className='container center'>
+            
+                    <p className='fs-1 fw-700 lh-1 c-white mb-md'>2025 Strategic Partners</p>
+                    
+                    <LogoGrid>
+                        {
+                            STRATEGIC_PARTNERS.partners.length &&
+                            STRATEGIC_PARTNERS.partners.map( partner => {
+
+                                const handleLogoSize = ( size ) => {
+
+                                    if ( !size ) return
+
+                                    switch (size) {
+                                        case 'lg':
+                                            return partnerCSS.lg
+                                            break
+                                        
+                                        case 'md':
+                                            return partnerCSS.md
+                                            break
+                                        
+                                        case 'sm':
+                                            return partnerCSS.sm
+                                            break
+                                    
+                                        default:
+                                            break
+                                    }
+                                }
+
+                                if ( !partner.partnerLogo.length ) return
+                                return (
+                                    <Pop key={partner.id}>
+                                        <a className={partnerCSS.logoContainer} href={`/africa/partners/${partner.slug}`} rel="noreferrer" aria-label="Partner logo">
+                                            <div className={`${partnerCSS.logo} ${ handleLogoSize('md') } `}>
+                                                <Image 
+                                                    src={partner.partnerLogo[0].url} 
+                                                    layout='fill'
+                                                    alt=""
+                                                />
+                                            </div>
+                                        </a>
+                                    </Pop>
+                                )
+                            })
+                        }
+                    </LogoGrid>
+
+                    <div className="mt-sm center">
+                        <Pop inline><ArrowButton href={`/africa/partners`} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>See all sponsors and partners</ArrowButton></Pop>
+                    </div>
+                    
+                    
+                </div>
+            </section>
 
 
 
@@ -193,15 +261,42 @@ export async function getStaticProps({ preview, previewData }) {
     const data = await craftApolloClient( preview, previewData ).query({
         query: gql`
 			query Homepage {
-				entry(site: "${process.env.SITE_HANDLE}", id: "15757") {
-					... on ${process.env.SITE_HANDLE}Homepage_${process.env.SITE_HANDLE}Homepage_Entry {
-						${QuerySEO}
-					}
-				}
+				entry(site: "ahif", id: "15757") {
+                    ... on ahifHomepage_ahifHomepage_Entry {
+                        seomatic(asArray: true) {
+                            metaTitleContainer
+                            metaTagContainer
+                            metaLinkContainer
+                            metaScriptContainer
+                            metaJsonLdContainer
+                            metaSiteVarsContainer
+                            frontendTemplateContainer
+                        }
+                    }
+                }
+                partners: entries(site: "ahif", section: "partnerGroups") {
+                    ... on partnerGroups_default_Entry {
+                        id
+                        title
+                        partners {
+                            ... on partners_partner_Entry {
+                                id
+                                title
+                                partnerLogo {
+                                    id
+                                    url
+                                    width
+                                    height
+                                }
+                            }
+                        }
+                    }
+                }
 			}
         `
     })
     const pageData = data
+
 
     const swapcardData = await fetch(
 		"https://developer.swapcard.com/event-admin/graphql",
@@ -284,7 +379,8 @@ export async function getStaticProps({ preview, previewData }) {
 
     return { 
 		props: { 
-            // seomatic: pageData.data.entry.seomatic,
+            seomatic: pageData.data.entry.seomatic,
+            partners: pageData.data.partners,
             speakers: speakerData.data.eventPerson.nodes
 		}
 	}

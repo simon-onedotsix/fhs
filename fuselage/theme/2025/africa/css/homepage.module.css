@@ -33,6 +33,19 @@
     }
 }
 
+/* notebook */
+@media(max-height:760px) and (min-width:1200px) {
+    .headline {
+        font-size: 6vw;
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+
+
 
 .flash {
     background-color: white;

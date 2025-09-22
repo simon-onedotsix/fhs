@@ -39,10 +39,8 @@ export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, th
 
             <div className='bc-primary' style={{ position: 'relative', zIndex: 2 }}>
 
-                <div className='container '>
-                    <Reveal>
-                        <p className="fs-1 fw-700 lh-1">{ heading }</p>
-                    </Reveal>
+                <div className='container center'>
+                    <p className="fs-1 fw-700 lh-1">{ heading }</p>
                 </div>
 
                 <div className={`${CSS.layout} container`}>
@@ -99,12 +97,6 @@ export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, th
                 </div>
             </div>
 
-            {/* <motion.div className={CSS.brandPattern}
-                style={{
-                    backgroundImage: `url(/assets/theme/africa/fhs-africa-battik-purple.png)`,
-                    backgroundPositionY: y
-                }}
-            /> */}
         </section>
 
     )

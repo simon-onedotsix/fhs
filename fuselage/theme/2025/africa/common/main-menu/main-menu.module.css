@@ -83,7 +83,7 @@
         pointer-events: all;
     }
 
-    .toggleWrapper span {
+    .toggleWrapper .caption {
         display: none;
     }
 }

@@ -5,15 +5,15 @@
 }
 
 .arrows {
-    position: absolute;
+    /* position: absolute;
     bottom: -1rem;
     left: 1.5rem;
-    width: 3rem;
+    width: 3rem; */
 }
 
 .sliderButton {
-    background-color: var(--primary);
-    border: 1px solid white;
+    background-color: var(--secondary);
+    /* border: 1px solid white; */
     width: 3rem;
     height: 3rem;
     opacity: 1;
@@ -30,7 +30,7 @@
 }
 
 .actions {
-    margin-top: var(--space-md);
+    margin-top: 0;
 }
 
 
@@ -40,6 +40,7 @@
     }
     .actions {
         margin-top: var(--space-md);
+        text-align: center;
     }
 
 }
@@ -47,10 +48,10 @@
 
 @media(min-width:1200px) {
     .arrows {
-        position: absolute;
+        /* position: absolute;
         bottom: -3rem;
         left: 1.5rem;
-        width: 4.5rem;
+        width: 4.5rem; */
     }
     
     .sliderButton {
@@ -63,7 +64,7 @@
     }
 
     .actions {
-        margin-top: var(--space-sm);
+        margin-top: 0;
     }
 }
 

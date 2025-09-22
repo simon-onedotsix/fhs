@@ -1,3 +1,6 @@
+import { gql } from "@apollo/client"
+import craftApolloClient from "../../../pages/api/apollo"
+
 import Head from 'next/head'
 
 import parse from 'html-react-parser'
@@ -102,38 +105,34 @@ function Partner({ partner }) {
 			<Header compact />
 
 
-			<section className="block pt-0">
+			<section className="block pt-0 mt-lg">
 				<div className="container">
 
 					<StickySidebar size='medium'>
-
+						
 						<aside className="formatted">
 							<p className="fw-600"><ArrowLink href="/africa/partners">View all partners</ArrowLink></p>
 
-							<div className="bg-white p-sm mt-sm center rad-sm">
-								<div className={CSS.profileLogoWrapper}>
-                                    
-                                        <img
-                                            src={partner.logoUrl} 
-                                            alt=""
-                                        />
-								</div>
+							<div className={CSS.profileLogo}>
+								{
+									partner.partnerLogo.length &&
+									<div className={CSS.profileLogoWrapper}>
+										<img 
+											src={partner.partnerLogo[0].url} 
+											alt=""
+										/>
+									</div>
+								}
 							</div>
-
-							<div className="mt-sm">
-								{ handleLinkedIn() }
-								{ handleTwitter() }
-								{ handleFacebook() }
-							</div>
-							
 						</aside>
 						
 						<main className="maxw-60">
-							{/* <p className='fs-2 fw-600 lh-1 c-secondary maxw-40'>{GetBizzaboPartnerLevelTitle(partner.level)}</p> */}
-							<p className="fs-3 fw-600 caps">{partner.name}</p>	
+
+							{/* <p className='fs-2 fw-600 lh-1 c-secondary maxw-40'>partner.level</p> */}
+							<p className="fs-3 fw-600 caps">{ partner.title }</p>	
 							{
-								partner.htmlDescription &&
-								<p className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{ parse(String(partner.htmlDescription)) }</p>
+								partner.partnerProfile &&
+								<div className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{ parse(String(partner.partnerProfile)) }</div>
 							}
 							<p className="mt-md fw-600">{ handleWebsite() }</p>
 						</main>
@@ -168,43 +167,33 @@ export async function getStaticProps({ params }) {
 
 	// console.log('params',params)
 	
-	const result = await fetch(
-		"https://developer.swapcard.com/event-admin/graphql",
-		{
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				"Authorization": process.env.SWAPCARD_AUTH_KEY
-			},
-			body: JSON.stringify({
-				query: `
-                    query exhibitors($eventId: String!, $ids: [String!]) {
-                        exhibitors(eventId: $eventId, ids: $ids, page:1, pageSize:100) {
-                            id
-                            name
-                            logoUrl
-                            websiteUrl
-                            htmlDescription
-                        }
-                    }
-				`,
-				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2025,
-					"ids": [
-                        params.id
-                      ]
+	const partner = await craftApolloClient().query({
+        query: gql`
+			query Page {
+				entry(site: "ahif", slug: "${params.slug}" ) {
+					... on partners_partner_Entry {
+						id
+						slug
+						title
+						website
+						partnerProfile
+						partnerLogo {
+							id
+							url
+							width
+							height
+						}
+					}
 				}
-			})
-		}
-	)
-
-	const partner = await result.json()
+			}
+        `
+    })
 
 	return {
-		props: { partner: partner.data.exhibitors[0] }
+		props: { partner: partner.data.entry }
 	}
-
 }
+
 export default Partner
 
 

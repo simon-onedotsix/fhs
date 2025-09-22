@@ -1,0 +1,73 @@
+.logoContainer {
+    display: block;
+    background-color: white;
+    border-radius: var(--default-radius);
+    padding: 2rem;
+}
+
+.logo {
+    display: inline-block;
+    position: relative;
+    /* mix-blend-mode: multiply; */
+    aspect-ratio: 4/2;
+    width: 8rem;
+}
+.logo.lg {
+    width: 16rem;
+}
+.logo.md {
+    width: 10rem;
+}
+.logo.sm {
+    width: 6rem;
+}
+
+
+.logo img {
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width:600px) {
+    .logo {
+        width: 12rem;
+    }
+    .logo.lg {
+        width: 22rem;
+    }
+    .logo.md {
+        width: 16rem;
+    }
+    .logo.sm {
+        width: 8rem;
+    }
+}
+
+
+
+/* profile page */
+
+.profileLogo {
+    margin-top: var(--space-sm);
+    border-radius: var(--default-radius);
+    background-color: white;
+    padding: var(--space-sm);
+    aspect-ratio: 4/3;
+    display: grid;
+    align-items: center;
+}
+.profileLogoWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/2;
+}
+.profileLogoWrapper img {
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
