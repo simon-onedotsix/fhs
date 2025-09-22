@@ -39,7 +39,7 @@ function Speakers({ videos, craftCmsProfiles }) {
 
 			{/* highlights video */}
 
-			<section className="block bg-theme">
+			{/* <section className="block bg-theme">
 				<div className="container center">
 					<p className="fs-1 fw-500">Highlights</p>
 				</div>
@@ -53,7 +53,7 @@ function Speakers({ videos, craftCmsProfiles }) {
                         playing={false}
                     />
 				</div>
-			</section>
+			</section> */}
 
 
 
@@ -82,7 +82,7 @@ function Speakers({ videos, craftCmsProfiles }) {
 			<section className="block bg-neutral-01">
 				<div className="container">
 
-					<p className='fs-1 fw-600 c-secondary lh-1 center'>2025 Advisory Board</p>
+					<p className='fs-1 fw-600 c-secondary lh-1 center'>2026 Advisory Board</p>
 
 					<SpeakerGrid decal="gap-sm mt-md">
 						{craftCmsProfiles.map( speaker => (
@@ -119,7 +119,7 @@ export async function getStaticProps() {
 	const craftCmsProfiles = await craftApolloClient().query({
         query: gql`
             query Profiles {
-                entries(site: "${process.env.SITE_HANDLE_SA}", section: "profileGroups", id: "64046") {
+                entries(site: "${process.env.SITE_HANDLE_SA}", section: "profileGroups", id: "276876") {
 					... on profileGroups_default_Entry {
 						id
 						title

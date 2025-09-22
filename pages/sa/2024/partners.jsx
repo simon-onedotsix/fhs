@@ -94,7 +94,7 @@ function Partners() {
 												_.orderBy(group, 'name').map(partner => (
 													<PartnerLogo 
 														key={partner.id}
-														hero={{ url: partner.logoUrl }} 
+														src={partner.logoUrl ? partner.logoUrl : null } 
 														size={ category && category.size }
 													/>
 												))

@@ -51,7 +51,7 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 	
 
 
-	// console.log('swapcard partner data:', partnerData)
+	console.log('swapcard partner data:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
 	// console.log('swapcard partner categories:', swapcardPartnerGroups )
@@ -114,7 +114,7 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 														{
 															partner.logoUrl &&
 															<PartnerLogo 
-																hero={{ url: partner.logoUrl }} 
+																src={ partner.logoUrl } 
 																label={ partner.id === "RXhoaWJpdG9yXzIxNzg3Nzg=" && 'China' }
 															/>
 														}
@@ -256,7 +256,7 @@ export async function getStaticProps() {
 		}
 	)
 
-	// console.log(swapcardData)
+	console.log(swapcardData)
 	
 	const partnerData =  await swapcardData.json()
 	

@@ -67,7 +67,7 @@ function Partners() {
 												_.orderBy(group, [partner => partner.name?.toLowerCase()]).map(partner => (
 													<span key={partner.id} href={`/world/partners/${partner.id}`}>
 														<PartnerLogo 
-															hero={{ url: partner.logoUrl }} 
+															src={partner.logoUrl ? partner.logoUrl : null }  
 															size={ category && category.size }
 														/>
 													</span>

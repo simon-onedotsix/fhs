@@ -105,7 +105,7 @@ function Partners() {
 												_.orderBy( group, [(p) => p.name.toLowerCase()] ).map( partner => (
 													<PartnerLogo 
 														key={partner.id}
-														hero={{ url: partner.logoUrl ? partner.logoUrl : null }} 
+														src={partner.logoUrl ? partner.logoUrl : null } 
 														size={ category && category.size }
 													/>
 												))
