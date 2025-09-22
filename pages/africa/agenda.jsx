@@ -363,7 +363,7 @@ export default function Agenda ({ sessions, theme }) {
 
 					<section>
 						<h4>Pioneer Camp</h4>
-						<p>A collaborative space designed for in-depth discussions, the Pioneer Camp caters to the demand for smaller, longer conversations between delegates and experts. Through interactive roundtables, this hub fosters meaningful dialogue, tackles critical challenges, and develops practical solutions for the industry's future.</p>
+						<p>A collaborative space designed for in-depth discussions, the Pioneer Camp caters to the demand for smaller, longer conversations between delegates and experts. Through interactive roundtables, this hub fosters meaningful dialogue, tackles critical challenges, and develops practical solutions for the industry&apos;s future.</p>
 					</section>
 				</div>
 
