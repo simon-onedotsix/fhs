@@ -345,6 +345,28 @@ export default function Agenda ({ sessions, theme }) {
 			
 			<section className="block pt-0">
 
+				<div className="container columns-4 gap-md formatted">
+					<section>
+						<h4>Summit Stage</h4>
+						<p>The <strong className="fw-600">Summit Stage</strong> serves as the conference&apos;s central hub, hosting all <strong className="fw-600">keynote presentations and pivotal panel discussions</strong>. It is designed to bring together industry leaders, investors, policymakers, and innovators in one space, fostering meaningful dialogue and knowledge exchange. Attendees can expect high-level insights into global and regional hospitality trends, strategic investment opportunities, and emerging market dynamics.</p>
+					</section>
+
+					<section>
+						<h4>Knowledge Station</h4>
+						<p>A dedicated space for learning and inspiration, the Knowledge Station offers engaging workshops, in-depth case studies, and expert presentations. Designed to address key focus topics from the conference, this hub provides valuable insights and practical knowledge for attendees seeking deeper understanding and expertise.</p>
+					</section>
+
+					<section>
+						<h4>Showcase Den</h4>
+						<p>A dynamic platform for exploring investment opportunities, the Showcase Den highlights key destinations, country spotlights, and new project pitches. Designed to connect delegates with potential investments, this space offers valuable insights into emerging markets and groundbreaking developments in the industry.</p>
+					</section>
+
+					<section>
+						<h4>Pioneer Camp</h4>
+						<p>A collaborative space designed for in-depth discussions, the Pioneer Camp caters to the demand for smaller, longer conversations between delegates and experts. Through interactive roundtables, this hub fosters meaningful dialogue, tackles critical challenges, and develops practical solutions for the industry's future.</p>
+					</section>
+				</div>
+
 
 				{/* <div className="printButton button-grid">
 					<Link href={'/africa/agenda-at-a-glance'}><a className={'button fs-6'}>Agenda at a glance</a></Link>
