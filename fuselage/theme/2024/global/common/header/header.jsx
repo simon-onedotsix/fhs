@@ -23,9 +23,9 @@ const otherEvents = [
     },
     {
         id: 5,
-        title: 'FHS Africa (AHIF)',
-        url: 'https://www.ahif.com',
-        target: true
+        title: 'FHS Africa',
+        url: '/africa',
+        target: false
     },
     {
         id: 11,
