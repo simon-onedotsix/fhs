@@ -354,19 +354,20 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         <p className="fs-1 fw-600 lh-1 caps">Investors at FHS World</p>
                     </Fade>
                     <div className="columns-4 gap-sm mt-md">
-                        <InvestorImpact figure={239} label={"Investors"} />
-                        <InvestorImpact figure={4.5} prefix={"$"} unit={"tn"} label={"Assets Under Management"} />
-                        <InvestorImpact figure={78} label={"Introductions Facilitated"} />
-                        <InvestorImpact figure={22} label={"Meetings Scheduled"} />
+                        <InvestorImpact figure={70} label={"TOP-TIER INVESTORS CONFIRMED ALREADY"} />
+                        <InvestorImpact figure={1.84} prefix={"$"} unit={"tn"} label={"ASSETS UNDER MANAGEMENT"} />
+                        <InvestorImpact figure={50} unit={"%"} label={"INVESTORS ATTENDING FIRST TIME"} />
+                        <InvestorImpact figure={45} unit={"%"} label={"INVESTORS FROM NON-GCC COUNTRIES"} />
                     </div>
                     <p className="mt-md">
                         <Pop>
                             <ButtonKeyline 
-                                href={'/world/investors'} 
+                                href={'https://14527187.fs1.hubspotusercontent-na1.net/hubfs/14527187/FHS%20World%202025/Sample%20Investors.pdf?utm_campaign=FHS%20World%202025&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_ZjXU77wgbeP6Mk-gH3B2dnRljrMZNbQWuOUGEywiuegyGkftu7Da86ewwLfPW8t19fs4W'} 
                                 decal={'fs-5 fw-600'} 
                                 color={'var(--primary)'}
+                                target={'_blank'}
                             >
-                                View Past Investors
+                                View Sample List of Attending Investors
                             </ButtonKeyline>
                         </Pop>
                     </p>
