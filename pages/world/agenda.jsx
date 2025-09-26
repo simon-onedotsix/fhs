@@ -866,6 +866,13 @@ export default function Agenda ({ sessions, locations }) {
 																				}
 
 																				{
+																					session.id === "UGxhbm5pbmdfMzExNDgxMg==" &&
+																					<div className="mb-xs">
+																						<Button href={'/world/ais'} decal={'fw-600'} accent>Learn More</Button>
+																					</div>
+																				}
+
+																				{
 																					session.id === "UGxhbm5pbmdfMTc1MDU5MQ==" &&
 																					<div className="mb-xs">
 																						<Button href={'mailto:rabih.feghali@hamamea.org'} decal={'fw-600'} accent>Request To Attend</Button>
