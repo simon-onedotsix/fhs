@@ -201,7 +201,7 @@ export default function Agenda ({ sessions, locations }) {
 
 			if ( session.fields.length ) {
 				session.fields.forEach( field => {
-					searchContent = searchContent + ` ${field.value.toLowerCase()} `
+					searchContent = searchContent + ` ${field.value?.toLowerCase()} `
 				})
 			}
 
