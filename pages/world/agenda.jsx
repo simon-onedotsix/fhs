@@ -321,7 +321,7 @@ export default function Agenda ({ sessions, locations }) {
 	const getSessionLocation = ( sessionData ) => {
 		if ( !sessionData.fields ) return
 
-		let fieldsData = sessionData.fields.filter( (field) => field.definition.name === 'Location' )
+		let fieldsData = sessionData.fields.filter( (field) => field.definition?.name === 'Location' )
 
 		return fieldsData.map ( (topic, index) => (
 			<span key={index} className='sessionLocationTag fw-500'>{ topic.translations[0].value }</span> 
@@ -331,7 +331,7 @@ export default function Agenda ({ sessions, locations }) {
 	const getSessionFields = ( sessionData, fieldHandle ) => {
 		if ( !sessionData.fields || !fieldHandle ) return
 
-		let fieldsData = sessionData.fields.filter( (field) => field.definition.name === fieldHandle )
+		let fieldsData = sessionData.fields.filter( (field) => field.definition?.name === fieldHandle )
 
 		return fieldsData.map ( (topic, index) => (
 			<span key={index} className={`${CSS.sessionTag} fw-500`}>{ topic.translations[0].value }</span> 
@@ -347,7 +347,7 @@ export default function Agenda ({ sessions, locations }) {
 
 		// build arrays
 		sessionsData.forEach( (session) => {
-			let topics = session.fields.filter( (field) => field.definition.name === fieldHandle )
+			let topics = session.fields.filter( (field) => field.definition?.name === fieldHandle )
 			topics.forEach( (field) => {
 				fieldIds.push(field.id)
 				fieldObjects.push({ id: field.id, name: field.translations[0].value })
@@ -381,7 +381,16 @@ export default function Agenda ({ sessions, locations }) {
         let speakers = []
 
 		_.orderBy(speakerData, 'lastName').forEach(speaker => {
+
 			// console.log(speaker)
+			// console.dir(speaker.withEvent.eventProfile.fields)
+			
+			// let fields = speaker.withEvent.eventProfile.fields
+			// let type = fields.find(field => field.id === 'RmllbGRWYWx1ZV8yODA2MDM0MQ==')
+			// console.log('Type:', type)
+
+
+			// type?.id === 'RmllbGRWYWx1ZV8yODA2MDM0MQ==' ? moderators.push( speaker ) : speakers.push( speaker )
 			speaker.withEvent.eventProfile.type === 'Moderator' ? moderators.push( speaker ) : speakers.push( speaker )
 		})
 
@@ -1137,6 +1146,18 @@ export async function getStaticProps() {
 												title
 												beginsAt
 												endsAt
+											}
+										}
+										fields {
+											... on SelectField {
+												id
+												definition {
+													name
+												}
+												value
+												translations {
+													value
+												}
 											}
 										}
 									}
