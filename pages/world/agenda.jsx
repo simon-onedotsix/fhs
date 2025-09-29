@@ -376,6 +376,7 @@ export default function Agenda ({ sessions, locations }) {
 
 	// HANDLE SPEAKERS PER SESSION (pick out moderators)
 
+	// old method
 	const sortSpeakers = ( speakerData ) => {
 
 		if ( !speakerData ) return
@@ -426,6 +427,60 @@ export default function Agenda ({ sessions, locations }) {
 		return (
 			<div className={CSS.sessionSpeakerGrid}>
 				{ speakerData.map( speaker => renderSpeakerCard(speaker) ) }
+			</div>
+		)
+	}
+
+	// new method
+	const sortSpeakersAndModerators = (sessionData) => {
+
+		let moderatorID = null
+		const moderators = []
+		const speakers = []
+
+		// find moderatorID by targeting custom swapcard field
+		sessionData.fields.map(field => {
+			if (field.definition.id === "RmllbGREZWZpbml0aW9uXzg0NDQ3Nw==") {
+				moderatorID = field.value
+			}
+		})
+
+		// map through all the speakers (sorted into alpha order) and pull out the moderator (if one exists)
+		_.orderBy(sessionData.speakers, 'lastName').map(speaker => {
+			speaker.communityProfile.id === moderatorID ?
+				moderators.push(speaker)
+			: speakers.push(speaker)
+		})
+
+		// output the speakers
+		if ( moderators.length && speakers.length ) { 
+			return (
+				<>
+					{
+						moderators.length ?
+							<div>
+								<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
+								<div className={CSS.sessionSpeakerGrid}>
+									{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
+								</div>
+								{
+									speakers.length ?
+										<p style={{ color: `var(--accent)`, padding: `10px 0 0 0`}}>In conversation with</p>
+									: null
+								}
+							</div>
+						: null
+					}
+					<div className={CSS.sessionSpeakerGrid}>
+						{ speakers.map( speaker => renderSpeakerCard(speaker) ) }
+					</div>
+				</>
+			)
+		}
+
+		return (
+			<div className={CSS.sessionSpeakerGrid}>
+				{ sessionData.speakers.map( speaker => renderSpeakerCard(speaker) ) }
 			</div>
 		)
 	}
@@ -586,8 +641,7 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-
-
+	
 
 
 
@@ -829,7 +883,7 @@ export default function Agenda ({ sessions, locations }) {
 													<div className={CSS.sessions}>
 														{
 															prioriseStreams(slot.sessions, PRIORITISED_STREAMS).map((session, index) => {
-																// console.log(session)
+																// console.dir(session)
 
 																return (
 																	<div key={index} className={CSS.sessionsWrapper}>
@@ -866,8 +920,8 @@ export default function Agenda ({ sessions, locations }) {
 
 																			<div className={`${CSS.sessionContent} | columns-1 gap-xs`}>
 
-																				{/* <small style={{ color: 'orange'}}>{session.id}</small> */}
-																				{/* <small style={{ color: 'orange'}}>{session.priority}</small> */}
+																				{/* <small style={{ color: 'lime'}}>{session.id}</small> */}
+																				{/* <small style={{ color: 'lime'}}>{session.priority}</small> */}
 																				
 																				<p className={`${CSS.sessionTitle} | fs-3 fw-500 lh-1 c-white`}>
 																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
@@ -907,7 +961,9 @@ export default function Agenda ({ sessions, locations }) {
 																					</div>
 																				}
 																				
-																				{ sortSpeakers(session.speakers) }
+																				{/* { sortSpeakers(session.speakers) } */}
+																				
+																				{ sortSpeakersAndModerators(session) }
 																			</div>
 																			
 																		</div>
@@ -1147,8 +1203,19 @@ export async function getStaticProps() {
 										value
 									}
 								}
+									... on TextField {
+									id
+									definition {
+										id
+										name
+									}
+									value
+								}
 							}
 							speakers {
+								communityProfile {
+									id
+								}
 								firstName
 								id
 								jobTitle
