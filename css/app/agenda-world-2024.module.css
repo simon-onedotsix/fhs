@@ -727,6 +727,27 @@
 
 
 
+
+
+.banner {
+    background-color: var(--primary-2);
+    border-radius: calc(var(--default-radius) * 0.5);
+    padding: var(--space-sm);
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* title-block */
 
 .titleBlock {
@@ -750,6 +771,8 @@
     width: 1.5rem;
     height: 1.5rem;
 }
+
+
 
 
 

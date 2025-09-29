@@ -23,6 +23,9 @@ import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
 import { Button } from '../../fuselage/theme/2024/world/components/button/button'
 
+import { AisLockup } from "../../fuselage/theme/2025/ais/ais-brand/ais-brand"
+import { FhsLockup } from "../../fuselage/theme/2024/world/components/logos/fhs-brand"
+
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
 
@@ -803,8 +806,23 @@ export default function Agenda ({ sessions, locations }) {
 									{
 										day.timeslots.length ?
 										day.timeslots.map( (slot, index) => {
+
 											return (
 												<div key={index}>
+
+
+													{/* INJECTED BANNERS */}
+
+													{
+														slot.sessions[0].id === 'UGxhbm5pbmdfMzExNDgxMg==' &&
+														<div className={CSS.banner}><div style={{ width: 320 }}><img src="/assets/img/ais/ais-logo.svg" alt="" /></div></div>
+													}
+													
+													{
+														slot.sessions[0].id === 'UGxhbm5pbmdfMjcyMjczNA==' &&
+														<div className={CSS.banner}><FhsLockup inverse /></div>
+													}
+
 
 													{/* SESSIONS */}
 
@@ -812,6 +830,7 @@ export default function Agenda ({ sessions, locations }) {
 														{
 															prioriseStreams(slot.sessions, PRIORITISED_STREAMS).map((session, index) => {
 																// console.log(session)
+
 																return (
 																	<div key={index} className={CSS.sessionsWrapper}>
 																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
