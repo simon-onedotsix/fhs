@@ -12,7 +12,7 @@ export const OffsetCallout = ({ children, hero, theme }) => {
         `}
         >
 
-            <div className={`${CSS.content} ${theme ? theme : 'bg-white'}`} >
+            <div className={`${CSS.content} bg-white`} >
                 { children }
             </div>
            

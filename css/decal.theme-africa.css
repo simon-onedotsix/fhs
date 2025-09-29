@@ -72,6 +72,19 @@
 }
 
 
+[data-theme='africa'] .bg-white {
+    color: var(--default-text-color);
+}
+[data-theme='africa'] .bg-white .formatted h1,
+[data-theme='africa'] .bg-white .formatted h2,
+[data-theme='africa'] .bg-white .formatted h3,
+[data-theme='africa'] .bg-white .formatted h4,
+[data-theme='africa'] .bg-white .formatted h5,
+[data-theme='africa'] .bg-white .formatted h6 {
+    color: var(--primary);
+}
+
+
 [data-theme='africa'] .agenda-default{
     background-color: var(--accent);
 }
