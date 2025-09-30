@@ -434,22 +434,27 @@ export default function Agenda ({ sessions, locations }) {
 	// new method
 	const sortSpeakersAndModerators = (sessionData) => {
 
-		let moderatorID = null
+		const moderatorIDs = []
 		const moderators = []
 		const speakers = []
 
-		// find moderatorID by targeting custom swapcard field
+		// find moderatorIDs by targeting custom swapcard field at session-level
 		sessionData.fields.map(field => {
 			if (field.definition.id === "RmllbGREZWZpbml0aW9uXzg0NDQ3Nw==") {
-				moderatorID = field.value
+				if (field.value.includes(", ")) {
+					const mods = field.value.split(", ")
+					moderatorIDs.push(...mods)
+				} else {
+					moderatorIDs.push(_.replace(field.value, ',', ''))
+				}
 			}
 		})
 
 		// map through all the speakers (sorted into alpha order) and pull out the moderator (if one exists)
 		_.orderBy(sessionData.speakers, 'lastName').map(speaker => {
-			speaker.communityProfile.id === moderatorID ?
-				moderators.push(speaker)
-			: speakers.push(speaker)
+			moderatorIDs.includes(speaker.communityProfile.id) 
+				? moderators.push(speaker)
+				: speakers.push(speaker)
 		})
 
 		// output the speakers
