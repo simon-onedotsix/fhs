@@ -1,6 +1,3 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
 import HubspotForm from '../../components/hubspot-form/hubspot-form'
 
 export const Form = ({ portalId, formId, theme, maxWidth, children }) => {
@@ -21,11 +18,4 @@ export const Form = ({ portalId, formId, theme, maxWidth, children }) => {
         </section>
 
     )
-}
-
-Form.propTypes = {
-    portalId: PropTypes.string,
-    formId: PropTypes.string,
-    theme: PropTypes.string,
-    maxWidth: PropTypes.string
 }

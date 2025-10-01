@@ -157,6 +157,13 @@
 }
 
 
+/* default background */
+[data-theme='africa'] .bg-default .hs-form-field input,
+[data-theme='africa'] .bg-default .hs-form-field textarea {
+    color: var(--secondary);
+}
+
+
 [data-theme='africa'] footer.footer .hs-form-field textarea,
 [data-theme='africa'] footer.footer .hs-form-field input[type='text'],
 [data-theme='africa'] footer.footer .hs-form-field input[type='password'],
@@ -186,11 +193,11 @@
 /* checkbox */
 
 [data-theme='africa'] .form input[type="checkbox"] {
-    width: 1.1rem;
+    width: 1.1rem !important;
     height: 1.1rem;
     appearance: none; /* Removes default styles */
     background-color: transparent; /* Default background */
-    border: 1px solid var(--secondary);
+    border: 1px solid white;
     border-radius: 4px;
     cursor: pointer;
 
@@ -199,7 +206,7 @@
 
 [data-theme='africa'] .form input[type="checkbox"]:checked {
     background-color: var(--primary); /* Changes background when checked */
-    border-color: var(--primary);
+    border-color: white;
     background-image: url('/assets/ui/icon-tick.svg');
     background-repeat: no-repeat;
     background-size: .75rem;
@@ -220,6 +227,13 @@
 
 
 /* misc */
+
+
+[data-theme='africa'] form input::placeholder,
+[data-theme='africa'] form textarea::placeholder {
+  opacity: 0.5;
+  color: white;
+}
 
 
 [data-theme='africa'] .hs-form-required {

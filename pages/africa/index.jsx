@@ -109,7 +109,10 @@ export default function Home ({ seomatic, partners, speakers }) {
                             <Button href={'https://www.eventbooking.uk.com/AHIF-2026?_ga=2.7860276.723499015.1756208208-747783354.1720527023'}>Purchase Pass</Button>
                         </Pop>
                         <Pop inline delay={.2}>
-                            <Button href={'/get-involved-in-2026'}>Get Involved in 2026</Button>
+                            <Button href={'/africa/download-prospectus'}>Download Prospectus</Button>
+                        </Pop>
+                        <Pop inline delay={.2}>
+                            <Button href={'/africa/get-involved-in-2026'}>Get Involved in 2026</Button>
                         </Pop>
                     </ButtonGrid>
                 </div>
