@@ -74,6 +74,7 @@ export default function Page ({ sessions, locations }) {
                     <p className='fs-4 fw-600 c-accent caps center mt-sm'>27 October 2025 <br/>08:30–13:00</p>
                 </Pop>
 
+
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -81,6 +82,14 @@ export default function Page ({ sessions, locations }) {
                     className={`fs-5 c-white center mt-xs maxw-45 mx-auto`} 
                 >
                     Held as part of <strong className='fw-600'>FHS World</strong>, this summit aims to enhance economic and tourism partnerships between the UAE and African nations.
+                </motion.p>
+                <motion.p 
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ type: "spring", bounce: 0.25 }}
+                    className={`fs-5 c-accent center mt-sm maxw-45 mx-auto`} 
+                >
+                   This Summit is by invitation only. FHS Pass Delegate holders do not have access, as attendance is being managed directly by the Ministry of Economy and Tourism.
                 </motion.p>
 
 
@@ -191,11 +200,11 @@ export default function Page ({ sessions, locations }) {
 
             {/* AGENDA */}
             <section className="block">
-                <div className="container center">
+                {/* <div className="container center">
                     <p className='fs-2 fw-600 caps c-secondary'>2025 Agenda</p>
-                </div>
+                </div> */}
 
-                <div className="container maxw-50 columns-1 gap-xs">
+                {/* <div className="container maxw-50 columns-1 gap-xs">
                     {
                         sessions.length &&
                         filterSessionsByTopic( sessions, 'RmllbGRWYWx1ZV8yODE3NDU1NA==' ).map( session => (
@@ -221,8 +230,6 @@ export default function Page ({ sessions, locations }) {
                                         </div>
 
                                         <div className={`${CSSlite.sessionContent} | columns-1 gap-xs`}>
-
-                                            {/* <small style={{ color: 'orange'}}>{session.id}</small> */}
                                             
                                             <p className={`fs-5 fw-4500 c-white`}>
                                                 { session.titleTranslations[0].value }
@@ -243,14 +250,12 @@ export default function Page ({ sessions, locations }) {
                         
                         ))
                     }
-                </div>
+                </div> */}
 
                 <div className="container center">
-                    <p>
-                        <Pop>
-                            <Button href={`/world/agenda`}>View Full Agenda</Button>
-                        </Pop>
-                    </p>
+                    <Pop>
+                        <Button href={`/world/agenda`}>View Full Agenda</Button>
+                    </Pop>
                 </div>
             </section>
 
