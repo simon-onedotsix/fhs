@@ -311,7 +311,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                             <div className="formatted fs-5 mt-sm">
                                 <p>FHS World 2025 brings the global hospitality investment community together for 3 unmissable days of learning, networking, and deal-making. Shake hands with <strong className="fw-600">1600+</strong> global leaders in hospitality investment and <strong className="fw-600">300+ investors</strong> in the room.</p>
                                 <p>Benefit from business opportunities worth over <strong className="fw-600">$2 billion</strong> as you connect with C-level industry executives, developers, operators, owners, investors, and government leaders within the hospitality investment space.</p>
-                                <p>Join us as we celebrate <strong className="fw-600">20 years</strong> of bringing the hospitality investment community together - on this 20th anniversary edition of FHS World. We can't wait to welcome you.</p>
+                                <p>Join us as we celebrate <strong className="fw-600">20 years</strong> of bringing the hospitality investment community together - on this 20th anniversary edition of FHS World. We can&apos;t wait to welcome you.</p>
                             </div>
                         </Fade>
                             <div className="button-grid mt-sm">
