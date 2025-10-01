@@ -197,6 +197,160 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </HeroUnitVideo>
 
 
+
+            {/* INVESTORS */}
+
+            <section className="block bg-primary-2-dark">
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-1 fw-600 lh-1 caps">Investors at FHS World</p>
+                    </Fade>
+                    <div className="columns-4 gap-sm mt-md">
+                        <InvestorImpact figure={70} label={"TOP-TIER INVESTORS CONFIRMED ALREADY"} />
+                        <InvestorImpact figure={1.84} prefix={"$"} unit={"tn"} label={"ASSETS UNDER MANAGEMENT"} />
+                        <InvestorImpact figure={50} unit={"%"} label={"INVESTORS ATTENDING FIRST TIME"} />
+                        <InvestorImpact figure={45} unit={"%"} label={"INVESTORS FROM NON-GCC COUNTRIES"} />
+                    </div>
+                    <p className="mt-md">
+                        <Pop>
+                            <ButtonKeyline 
+                                href={'https://14527187.fs1.hubspotusercontent-na1.net/hubfs/14527187/FHS%20World%202025/Sample%20Investors.pdf?utm_campaign=FHS%20World%202025&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_ZjXU77wgbeP6Mk-gH3B2dnRljrMZNbQWuOUGEywiuegyGkftu7Da86ewwLfPW8t19fs4W'} 
+                                decal={'fs-5 fw-600'} 
+                                color={'var(--primary)'}
+                                target={'_blank'}
+                            >
+                                View Sample List of Attending Investors
+                            </ButtonKeyline>
+                        </Pop>
+                    </p>
+                </div>
+            </section>
+
+
+            {/* SPEAKER HIGHLIGHTS */}
+
+            {
+                selectedCmsSpeakers &&
+                <>
+                    <SpeakerCarousel 
+                        heading={`Featured Speakers`} 
+                        text={``}
+                        decal={'bg-secondary'}
+                        anchorId={``}
+                    >
+                        {
+                            selectedCmsSpeakers.profiles.map( profile => (
+                                <Pop key={profile.id}>
+                                    <SpeakerCard
+                                        url={`world/speakers/profile/${profile.slug}`}
+                                        photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
+                                        fullName={profile.title}
+                                        jobTitle={profile.positions[0].jobTitle}
+                                        company={profile.positions[0].organisation}
+                                    />
+                                </Pop>
+                            ))
+                        }
+                    </SpeakerCarousel>
+
+                    <div className="block bg-secondary">
+                        <div className='container center'>
+                            <div className="button-grid">
+                                <ArrowButton href={`/world/speakers`} theme={{ arrow: "c-primary", border: "c-primary", label: "c-primary"}} >View All Speakers</ArrowButton>
+                                <ArrowButton href={`/world/agenda`} theme={{ arrow: "c-primary", border: "c-primary", label: "c-primary"}} >View Agenda</ArrowButton>
+                            </div>
+                        </div>
+                    </div>
+                </>
+                
+            }
+
+
+            {/* THEMES */}
+
+            <div className={CSS.themeWrapper}>
+                <div className={CSS.themeWrapperGraphics}>
+                    <div className={CSS.graphic01}>
+                        <Pop>
+                            <Tri fill={''} />
+                        </Pop>
+                    </div>
+                </div>
+
+                <section className={`${CSS.themeWrapperContent} block`}>
+                    <ThemesSlider data={THEMES_DATA} link={'/world/themes'} linkLabel={'Learn More'} />
+                </section>
+            </div>
+
+            
+            {/* LAUNCH STATEMENT */}
+
+            <section className="block bg-white o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
+                <div className="container columns-2 gap-md formatted">
+
+                    <section className="flex jc-center ai-center">
+                        <motion.div 
+                            className={CSS.fhsGraphicWrapper}
+
+                            initial={{ x: 0 , y: 0, rotate: -45, scale: 0.1, opacity: 0 }}
+                            whileInView={{ x: 0, y: 0, rotate: 0, scale: 1, opacity: 1 }}
+                            // viewport={'once'}
+                            transition={{ type: "spring", bounce: 0.25 }}
+                        >
+                            <FhsIcon />
+                        </motion.div>
+                    </section>
+
+                    <section>
+                        <Fade>
+                            <p className='fs-0 fw-600 lh-1 maxw-45 c-primary'>
+                                Join Us at <span className="c-accent"> FHS&nbsp;World</span>&nbsp;2025
+                            </p>
+                        </Fade>
+                        <Fade>
+                            <div className="formatted fs-5 mt-sm">
+                                <p>FHS World 2025 brings the global hospitality investment community together for 3 unmissable days of learning, networking, and deal-making. Shake hands with <strong className="fw-600">1600+</strong> global leaders in hospitality investment and <strong className="fw-600">300+ investors</strong> in the room.</p>
+                                <p>Benefit from business opportunities worth over <strong className="fw-600">$2 billion</strong> as you connect with C-level industry executives, developers, operators, owners, investors, and government leaders within the hospitality investment space.</p>
+                                <p>Join us as we celebrate <strong className="fw-600">20 years</strong> of bringing the hospitality investment community together - on this 20th anniversary edition of FHS World. We can't wait to welcome you.</p>
+                            </div>
+                        </Fade>
+                            <div className="button-grid mt-sm">
+                                <Pop inline>
+                                    <Button 
+                                        href={`/world/purchase-pass`} 
+                                        theme={{ 
+                                            background: `var(--secondary-2)`, 
+                                            hover: `var(--secondary-2-dark)`, 
+                                            color: `white`
+                                        }} 
+                                        decal={`fs-5 fw-600`}
+                                        target={'_blank'}
+                                    >
+                                        Purchase Pass
+                                    </Button>
+                                </Pop>
+                                <Pop inline>
+                                    <Button 
+                                        href={`#sponsor-form`} 
+                                        theme={{ 
+                                            background: `var(--secondary-2)`, 
+                                            hover: `var(--secondary-2-dark)`, 
+                                            color: `white`
+                                        }} 
+                                        decal={`fs-5 fw-600`}
+                                    >
+                                        Become a Sponsor
+                                    </Button>
+                                </Pop>
+                            </div>
+                    </section>
+
+                </div>
+            </section>
+
+
+
+
             {/* PATRONAGE */}
             
             <section className="block bg-primary">
@@ -240,23 +394,6 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 </div>
             </section>
 
-
-
-            {/* THEMES */}
-
-            <div className={CSS.themeWrapper}>
-                <div className={CSS.themeWrapperGraphics}>
-                    <div className={CSS.graphic01}>
-                        <Pop>
-                            <Tri fill={''} />
-                        </Pop>
-                    </div>
-                </div>
-
-                <section className={`${CSS.themeWrapperContent} block`}>
-                    <ThemesSlider data={THEMES_DATA} link={'/world/themes'} linkLabel={'Learn More'} />
-                </section>
-            </div>
 
 
             
@@ -346,140 +483,10 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </section>
 
 
-            {/* INVESTORS */}
 
-            <section className="block bg-primary-2-dark">
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-1 fw-600 lh-1 caps">Investors at FHS World</p>
-                    </Fade>
-                    <div className="columns-4 gap-sm mt-md">
-                        <InvestorImpact figure={70} label={"TOP-TIER INVESTORS CONFIRMED ALREADY"} />
-                        <InvestorImpact figure={1.84} prefix={"$"} unit={"tn"} label={"ASSETS UNDER MANAGEMENT"} />
-                        <InvestorImpact figure={50} unit={"%"} label={"INVESTORS ATTENDING FIRST TIME"} />
-                        <InvestorImpact figure={45} unit={"%"} label={"INVESTORS FROM NON-GCC COUNTRIES"} />
-                    </div>
-                    <p className="mt-md">
-                        <Pop>
-                            <ButtonKeyline 
-                                href={'https://14527187.fs1.hubspotusercontent-na1.net/hubfs/14527187/FHS%20World%202025/Sample%20Investors.pdf?utm_campaign=FHS%20World%202025&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_ZjXU77wgbeP6Mk-gH3B2dnRljrMZNbQWuOUGEywiuegyGkftu7Da86ewwLfPW8t19fs4W'} 
-                                decal={'fs-5 fw-600'} 
-                                color={'var(--primary)'}
-                                target={'_blank'}
-                            >
-                                View Sample List of Attending Investors
-                            </ButtonKeyline>
-                        </Pop>
-                    </p>
-                </div>
-            </section>
-
-
-            
-            {/* LAUNCH STATEMENT */}
-
-            <section className="block bg-white o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
-                <div className="container columns-2 gap-md formatted">
-
-                    <section className="flex jc-center ai-center">
-                        <motion.div 
-                            className={CSS.fhsGraphicWrapper}
-
-                            initial={{ x: 0 , y: 0, rotate: -45, scale: 0.1, opacity: 0 }}
-                            whileInView={{ x: 0, y: 0, rotate: 0, scale: 1, opacity: 1 }}
-                            // viewport={'once'}
-                            transition={{ type: "spring", bounce: 0.25 }}
-                        >
-                            <FhsIcon />
-                        </motion.div>
-                    </section>
-
-                    <section>
-                        <Fade>
-                            <p className='fs-0 fw-600 lh-1 maxw-45 c-primary'>
-                                Join Us at <span className="c-accent"> FHS&nbsp;World</span>&nbsp;2025
-                            </p>
-                        </Fade>
-                        <Fade>
-                            <p className='fs-5 fw-500 maxw-45 mt-sm'>After an unforgettable edition in 2024, where <strong className="fw-900">1596 attendees</strong> from <strong className="fw-900">735 companies</strong> across <strong className="fw-900">60 countries</strong> came together, we&apos;re already gearing up for something even bigger.</p>
-                            <p>From the launch of the <Link href="/world/brf"><a>Branded Residences Forum</a></Link> and the Women in Tech semi-finals to the incredible momentum behind <Link href="/world/fhswomenpower"><a>#FHSWomenPower</a></Link> with 550+ women in attendance, FHS World 2024 was a celebration of innovation, investment, and inclusion.</p>
-                            <p>Now, it&apos;s your turn to be part of the story.</p>
-                            <p className="mb-sm">Join us at FHS World 2025 as we bring the global hospitality investment community back together to shape what&apos;s next. We can&apos;t wait to welcome you.</p>
-                        </Fade>
-                            <div className="button-grid">
-                                <Pop inline>
-                                    <Button 
-                                        href={`https://my.matterport.com/show/?m=DaYm3aXzc6n&ss=103&sr=1.79,.48`} 
-                                        theme={{ 
-                                            background: `var(--secondary-2)`, 
-                                            hover: `var(--secondary-2-dark)`, 
-                                            color: `white`
-                                        }} 
-                                        decal={`fs-5 fw-600`}
-                                        target={'_blank'}
-                                    >
-                                        Virtual Tour 2024
-                                    </Button>
-                                </Pop>
-                                <Pop inline>
-                                    <Button 
-                                        href={`/world/why-sponsor#partner-form`} 
-                                        theme={{ 
-                                            background: `var(--secondary-2)`, 
-                                            hover: `var(--secondary-2-dark)`, 
-                                            color: `white`
-                                        }} 
-                                        decal={`fs-5 fw-600`}
-                                    >
-                                        Get in touch
-                                    </Button>
-                                </Pop>
-                            </div>
-                    </section>
-
-                </div>
-            </section>
 
          
 
-
-            {/* SPEAKER HIGHLIGHTS */}
-
-            {
-                selectedCmsSpeakers &&
-                <>
-                    <SpeakerCarousel 
-                        heading={`Featured Speakers`} 
-                        text={``}
-                        decal={'bg-secondary'}
-                        anchorId={``}
-                    >
-                        {
-                            selectedCmsSpeakers.profiles.map( profile => (
-                                <Pop key={profile.id}>
-                                    <SpeakerCard
-                                        url={`world/speakers/profile/${profile.slug}`}
-                                        photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
-                                        fullName={profile.title}
-                                        jobTitle={profile.positions[0].jobTitle}
-                                        company={profile.positions[0].organisation}
-                                    />
-                                </Pop>
-                            ))
-                        }
-                    </SpeakerCarousel>
-
-                    <div className="block bg-secondary">
-                        <div className='container center'>
-                            <div className="button-grid">
-                                <ArrowButton href={`/world/speakers`} theme={{ arrow: "c-primary", border: "c-primary", label: "c-primary"}} >View All Speakers</ArrowButton>
-                                <ArrowButton href={`/world/agenda`} theme={{ arrow: "c-primary", border: "c-primary", label: "c-primary"}} >View Agenda</ArrowButton>
-                            </div>
-                        </div>
-                    </div>
-                </>
-                
-            }
 
 
             {/* IMPACT FIGURES */}
@@ -537,7 +544,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             {/* SPONSORSHIP FORM */}
 
-            <section className="block bg-white o-hidden">
+            <section id="sponsor-form" className="block bg-white o-hidden">
                 <div className="container columns-2 gap-lg">
                     <div className="formatted">
                         <Slide><h1>Become a <span className='c-secondary'>Sponsor</span></h1></Slide>
