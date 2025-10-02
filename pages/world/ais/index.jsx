@@ -51,9 +51,7 @@ const DELEGATIONS_DATA = [
     {
         country: "Republic of Madagascar",
         head: "Minister of Tourism and Handicraft",
-        names: [
-            "TBC"
-        ]
+        names: []
     },
     {
         country: "Republic of Cabo Verde",
@@ -119,17 +117,17 @@ const DELEGATIONS_DATA = [
     {
         country: "Kingdom of Lesotho",
         head: "Minister of Tourism, Sports, Arts and Culture",
-        names: ["TBC"]
+        names: []
     },
     {
         country: "Republic of Chad",
         head: "Minister of Tourism Development, Culture and Crafts",
-        names: ["TBC"]
+        names: []
     },
     {
         country: "Republic of Côte d'Ivoire",
         head: "Minister of Tourism and Leisure",
-        names: ["TBC"]
+        names: []
     }
 ]
 
@@ -232,7 +230,7 @@ export default function Page ({ sessions, locations }) {
 
             <FixedBackgroundImage backgroundImageUrl={`/assets/img/ais/africa-generic.jpg`}>
                 <div className="container center">
-                    <p className='fs-1 fw-600 c-primary lh-1'>Confirmed Ministers and Government Authorities</p>
+                    <p className='fs-1 fw-600 c-accent lh-1'>Confirmed Ministers and Government Authorities</p>
                 </div>
 
                 <div className="container columns-3 gap-md">
@@ -517,21 +515,27 @@ export async function getStaticProps() {
 const Delegation = ({ delegation }) => {
     return (
         <Pop>
-            <div style={{
-                height: `100%`,
-                backgroundColor: `rgba(60, 26, 82, 0.85)`,
-                padding: `var(--space-sm)`,
-                borderRadius: `1rem`
-            }}>
-                <Pop delay={.1}><p style={{ textWrap: 'balance'}} className='fs-5 fw-600'>{delegation.country}</p></Pop>
-                <Pop delay={.2}><p style={{ textWrap: 'balance'}} className='mt-xxs'>{delegation.head}</p></Pop>
+            <div
+                className='formatted'
+                style={{
+                    height: `100%`,
+                    backgroundColor: `rgba(60, 26, 82, 0.85)`,
+                    padding: `var(--space-sm)`,
+                    borderRadius: `1rem`
+                }}
+            >
+                <Pop delay={.1}><p style={{ textWrap: 'balance' }} className='fs-5 fw-600 c-accent mb-xxs'>{delegation.country}</p></Pop>
                 
+                <ul>
+                    <li style={{ textWrap: 'balance'}}>{delegation.head}</li>
+                    
 
-                {
-                    delegation.names.length
-                        ? delegation.names.map((name, index) => <Pop key={index} delay={.3}><p style={{ marginTop: 4, textWrap: 'balance'}}>{ name }</p></Pop>)
-                        : null
-                }
+                    {
+                        delegation.names.length
+                            ? delegation.names.map((name, index) => <li key={index}>{ name }</li>)
+                            : null
+                    }
+                </ul>
 
             </div>
         </Pop>
