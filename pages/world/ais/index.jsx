@@ -529,7 +529,7 @@ const Delegation = ({ delegation }) => {
 
                 {
                     delegation.names.length
-                        ? delegation.names.map((name, index) => <Pop delay={.3}><p style={{ marginTop: 4, textWrap: 'balance'}} key={index}>{ name }</p></Pop>)
+                        ? delegation.names.map((name, index) => <Pop key={index} delay={.3}><p style={{ marginTop: 4, textWrap: 'balance'}}>{ name }</p></Pop>)
                         : null
                 }
 
