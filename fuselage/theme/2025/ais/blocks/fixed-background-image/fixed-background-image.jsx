@@ -1,6 +1,6 @@
 import { Pop } from "../../../../../animation/animation"
 
-export const FixedBackgroundImage = ({ children, backgroundImageUrl }) => {
+export const FixedBackgroundImage = ({ children, backgroundImageUrl, flex }) => {
     return (
         <div className='block' style={{
             position: `relative`,
@@ -12,18 +12,12 @@ export const FixedBackgroundImage = ({ children, backgroundImageUrl }) => {
             backgroundSize: `cover`,
             backgroundPosition: `center`,
 
-            display: `flex`,
+            display: flex ? `flex` : `block`,
             justifyContent: `center`,
             alignItems: `center`
         }}>
             <div className="container">
-            
-                <Pop inline>
-                    <div className='maxw-40 bg-primary p-sm rad-sm center formatted' style={{ backgroundColor: `rgba(60, 26, 82, 0.75)`}}>
-                        { children }
-                    </div>
-                </Pop>
-                
+                {children}
             </div>
         </div>
     )

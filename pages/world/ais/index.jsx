@@ -40,6 +40,99 @@ import CSSagenda from '../../../css/app/agenda-world-2024.module.css'
 import CSSlite from '../../../css/app/agenda-world-2024-aag.module.css'
 
 
+const DELEGATIONS_DATA = [
+    {
+        country: "Arab Republic of Egypt",
+        head: "Deputy Minister of Tourism and Antiquities",
+        names: [
+            "Director General of International Relations and Agreements"
+        ]
+    },
+    {
+        country: "Republic of Madagascar",
+        head: "Minister of Tourism and Handicraft",
+        names: [
+            "TBC"
+        ]
+    },
+    {
+        country: "Republic of Cabo Verde",
+        head: "Minister of Tourism & Transport",
+        names: [
+            "President of the Board of the Cabo Verde Tourism Institute",
+            "CEO of Cabo Verde Trade Invest",
+            "Advisor to the Minister"
+        ]
+    },
+    {
+        country: "Federal Republic of Nigeria",
+        head: "Minister of Arts, Culture, Tourism and the Creative Economy",
+        names: [
+            "Permanent Secretary",
+            "Director of International Tourism Relations & Cooperation",
+            "Special Assistant to the Minister"
+        ]
+    },
+    {
+        country: "Republic of Botswana",
+        head: "Minister of Tourism and Environment",
+        names: [
+            "The Permanent Secretary",
+            "Chief Tourism Officer, Botswana Investment & Trade Center",
+            "CEO of Botswana Tourism Organisation"
+        ]
+    },
+    {
+        country: "Republic of Rwanda",
+        head: "Ambassador",
+        names: [
+            "Permanent Secretary ",
+            "Director General Gambia Toursim Board",
+            "Director General Gambia Toursim and Hospitality Institute",
+            "Director General National Center for Arts & culure"
+        ]
+    },
+    {
+        country: "Republic of Liberia",
+        head: "Minister of Information, Cultural Affairs & Tourism",
+        names: [
+            "Presidential Special Envoy on Toursim",
+            "Deputy Minister for Cultural Affairs and Toursim",
+            "Director, Bureau of Tourism"
+        ]
+    },
+    {
+        country: "Kingdom of Morocco",
+        head: "General Manager of the Tourism Engineering Company",
+        names: []
+    },
+    {
+        country: "Republic of Senegal",
+        head: "Minister of Culture, Handicrafts and Tourism",
+        names: [
+            "Director of Tourism Promotion",
+            "Direction of Investments and Tourism Developments",
+            "Director of General Administration and Equipment",
+            "Director General of SAPCO"
+        ]
+    },
+    {
+        country: "Kingdom of Lesotho",
+        head: "Minister of Tourism, Sports, Arts and Culture",
+        names: ["TBC"]
+    },
+    {
+        country: "Republic of Chad",
+        head: "Minister of Tourism Development, Culture and Crafts",
+        names: ["TBC"]
+    },
+    {
+        country: "Republic of Côte d'Ivoire",
+        head: "Minister of Tourism and Leisure",
+        names: ["TBC"]
+    }
+]
+
 
 export default function Page ({ sessions, locations }) {
 
@@ -137,23 +230,46 @@ export default function Page ({ sessions, locations }) {
             </HeroUnitVideo>
 
 
+            <FixedBackgroundImage backgroundImageUrl={`/assets/img/ais/africa-generic.jpg`}>
+                <div className="container center">
+                    <p className='fs-1 fw-600 c-primary lh-1'>Confirmed Ministers and Government Authorities</p>
+                </div>
+
+                <div className="container columns-3 gap-md">
+
+                    {
+                        DELEGATIONS_DATA.map((delegation, index) => <Delegation key={index} delegation={delegation} />)
+                    }
+
+                </div>
+            </FixedBackgroundImage>
+
+            
 
             {/* CALLOUTS */}
-            <FixedBackgroundImage backgroundImageUrl={`/assets/img/ais/ais-01.jpg`}>
-                <Pop inline delay={.1}>
-                    <p className='fs-2 fw-600 lh-2'>Why Africa</p>
-                </Pop>
-                <Pop inline delay={.2}>
-                    <p className="fs-5 c-white mt-sm">Africa&apos;s tourism and hospitality sector is expanding rapidly, with <strong className='fw-600'>577</strong> hotels and resorts in development, totaling <strong className='fw-600'>104,444</strong> rooms, a 13.3% year-on-year increase, outpacing global growth. International tourist arrivals reached <strong className='fw-600'>74</strong> million in 2024, up 12% from 2023 and 7% above 2019 levels.</p>
+            <FixedBackgroundImage backgroundImageUrl={`/assets/img/ais/ais-01.jpg`} flex>
+                <Pop inline>
+                    <div className='maxw-40 bg-primary p-sm rad-sm center formatted' style={{ backgroundColor: `rgba(60, 26, 82, 0.85)`}}>
+                        <Pop inline delay={.1}>
+                            <p className='fs-2 fw-600 lh-2'>Why Africa</p>
+                        </Pop>
+                        <Pop inline delay={.2}>
+                            <p className="fs-5 c-white mt-sm">Africa&apos;s tourism and hospitality sector is expanding rapidly, with <strong className='fw-600'>577</strong> hotels and resorts in development, totaling <strong className='fw-600'>104,444</strong> rooms, a 13.3% year-on-year increase, outpacing global growth. International tourist arrivals reached <strong className='fw-600'>74</strong> million in 2024, up 12% from 2023 and 7% above 2019 levels.</p>
+                        </Pop>
+                    </div>
                 </Pop>
             </FixedBackgroundImage>
             
-            <FixedBackgroundImage backgroundImageUrl={`/assets/img/ais/ais-02.jpg`}>
-                <Pop inline delay={.1}>
-                    <p className='fs-2 fw-600 lh-2'>Ministry of Economy & Tourism partners with The Bench to host &apos;UAE Africa Tourism Investment Summit&apos; at FHS World 2025</p>
-                </Pop>
-                <Pop inline delay={.2}>
-                    <p className="fs-5 c-white mt-sm">The event will gather <strong className='fw-600'>250+</strong> senior officials, investors, and tourism leaders from <strong className='fw-600'>53</strong> African nations to drive partnerships and boost investment in hospitality, tourism, and related sectors.</p>
+            <FixedBackgroundImage backgroundImageUrl={`/assets/img/ais/ais-02.jpg`} flex>
+                <Pop inline>
+                    <div className='maxw-40 bg-primary p-sm rad-sm center formatted' style={{ backgroundColor: `rgba(60, 26, 82, 0.85)`}}>
+                        <Pop inline delay={.1}>
+                            <p className='fs-2 fw-600 lh-2'>Ministry of Economy & Tourism partners with The Bench to host &apos;UAE Africa Tourism Investment Summit&apos; at FHS World 2025</p>
+                        </Pop>
+                        <Pop inline delay={.2}>
+                            <p className="fs-5 c-white mt-sm">The event will gather <strong className='fw-600'>250+</strong> senior officials, investors, and tourism leaders from <strong className='fw-600'>53</strong> African nations to drive partnerships and boost investment in hospitality, tourism, and related sectors.</p>
+                        </Pop>
+                    </div>
                 </Pop>
             </FixedBackgroundImage>
 
@@ -397,3 +513,27 @@ export async function getStaticProps() {
 }
 
 
+
+const Delegation = ({ delegation }) => {
+    return (
+        <Pop>
+            <div style={{
+                height: `100%`,
+                backgroundColor: `rgba(60, 26, 82, 0.85)`,
+                padding: `var(--space-sm)`,
+                borderRadius: `1rem`
+            }}>
+                <Pop delay={.1}><p style={{ textWrap: 'balance'}} className='fs-5 fw-600'>{delegation.country}</p></Pop>
+                <Pop delay={.2}><p style={{ textWrap: 'balance'}} className='mt-xxs'>{delegation.head}</p></Pop>
+                
+
+                {
+                    delegation.names.length
+                        ? delegation.names.map((name, index) => <Pop delay={.3}><p style={{ marginTop: 4, textWrap: 'balance'}} key={index}>{ name }</p></Pop>)
+                        : null
+                }
+
+            </div>
+        </Pop>
+    )
+}
