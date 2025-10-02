@@ -206,7 +206,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         <p className="fs-1 fw-600 lh-1 caps">Investors at FHS World</p>
                     </Fade>
                     <div className="columns-4 gap-sm mt-md">
-                        <InvestorImpact figure={70} label={"TOP-TIER INVESTORS CONFIRMED ALREADY"} />
+                        <InvestorImpact figure={300} unit={'+'} label={"INVESTORS"} />
                         <InvestorImpact figure={1.84} prefix={"$"} unit={"tn"} label={"ASSETS UNDER MANAGEMENT"} />
                         <InvestorImpact figure={50} unit={"%"} label={"INVESTORS ATTENDING FIRST TIME"} />
                         <InvestorImpact figure={45} unit={"%"} label={"INVESTORS FROM NON-GCC COUNTRIES"} />
