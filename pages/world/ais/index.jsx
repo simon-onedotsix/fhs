@@ -107,7 +107,7 @@ const DELEGATIONS_DATA = [
         ]
     },
     {
-        country: "Gambia",
+        country: "Republic of The Gambia",
         head: "Minister of the Ministry of Tourism, Arts and Culture",
         names: [
             "Permanent Secretary",
@@ -120,7 +120,6 @@ const DELEGATIONS_DATA = [
         country: "Republic of Kenya",
         head: "Principal secretary, State Department for Tourism",
         names: [
-            "Principal secretary, State Department for Tourism",
             "Head of Tourism Investment and Finance Directorate",
             "Chief Executive Officer (CEO), Tourism Fund",
             "CEO, Kenya Safari Lodges and Hotels",
