@@ -45,13 +45,9 @@ const DELEGATIONS_DATA = [
         country: "Arab Republic of Egypt",
         head: "Deputy Minister of Tourism and Antiquities",
         names: [
+            "Ambassador of the Arab Republic of Egypt to the UAE",
             "Director General of International Relations and Agreements"
         ]
-    },
-    {
-        country: "Republic of Madagascar",
-        head: "Minister of Tourism and Handicraft",
-        names: []
     },
     {
         country: "Republic of Cabo Verde",
@@ -82,12 +78,10 @@ const DELEGATIONS_DATA = [
     },
     {
         country: "Republic of Rwanda",
-        head: "Ambassador",
+        head: "Ambassador of the Republic of Rwanda to the UAE",
         names: [
-            "Permanent Secretary ",
-            "Director General Gambia Toursim Board",
-            "Director General Gambia Toursim and Hospitality Institute",
-            "Director General National Center for Arts & culure"
+            "Second Counsellor",
+            "Communications and Trade Officer"
         ]
     },
     {
@@ -96,13 +90,10 @@ const DELEGATIONS_DATA = [
         names: [
             "Presidential Special Envoy on Toursim",
             "Deputy Minister for Cultural Affairs and Toursim",
-            "Director, Bureau of Tourism"
+            "Director, Bureau of Tourism",
+            "Ambassador of the Republic of Liberia to the UAE",
+            "First Secretary, Embassy of Republic of Liberia"
         ]
-    },
-    {
-        country: "Kingdom of Morocco",
-        head: "General Manager of the Tourism Engineering Company",
-        names: []
     },
     {
         country: "Republic of Senegal",
@@ -111,7 +102,44 @@ const DELEGATIONS_DATA = [
             "Director of Tourism Promotion",
             "Direction of Investments and Tourism Developments",
             "Director of General Administration and Equipment",
-            "Director General of SAPCO"
+            "Director General of SAPCO",
+            "Ambassador of the Republic of Senegal to the UAE"
+        ]
+    },
+    {
+        country: "Gambia",
+        head: "Minister of the Ministry of Tourism, Arts and Culture",
+        names: [
+            "Permanent Secretary",
+            "Director General Gambia Toursim Board",
+            "Director General Gambia Toursim and Hospitality Institute",
+            "Director General National Center for Arts & culure"
+        ]
+    },
+    {
+        country: "Republic of Kenya",
+        head: "Principal secretary, State Department for Tourism",
+        names: [
+            "Principal secretary, State Department for Tourism",
+            "Head of Tourism Investment and Finance Directorate",
+            "Chief Executive Officer (CEO), Tourism Fund",
+            "CEO, Kenya Safari Lodges and Hotels",
+            "Technical Assistant to the Principal Secretary"
+        ]
+    },
+    {
+        country: "Kingdom of Morocco",
+        head: "General Manager of the Tourism Engineering Company",
+        names: [
+            "Ambassador of the Kingdom of Morocco to the UAE"
+        ]
+    },
+    {
+        country: "Republic of Angola",
+        head: "Minister of Tourism",
+        names: [
+            "Ambassador of Republic of Angola to the UAE",
+            "First Secretary, Embassy of Republic of Angola"
         ]
     },
     {
@@ -127,8 +155,36 @@ const DELEGATIONS_DATA = [
     {
         country: "Republic of Côte d'Ivoire",
         head: "Minister of Tourism and Leisure",
+        names: [
+            "Ambassador of the Republic of Côte d'Ivoire to the UAE"
+        ]
+    },
+    {
+        country: "State of Libya",
+        head: "Ambassador of the State of Libya to the UAE",
         names: []
-    }
+    },
+    {
+        country: "Democratic Republic of the Congo",
+        head: "Ambassador of the Democratic Republic of Congo to the UAE",
+        names: []
+    },
+    {
+        country: "Republic of Madagascar",
+        head: "Minister of Tourism and Handicraft",
+        names: []
+    },
+    {
+        country: "Republic of South Africa",
+        head: "Charge de Affairs of the Republic of South Africa to the UAE",
+        names: []
+    },
+    {
+        country: "Republic of South Sudan",
+        head: "Diplomat, Embassy of the Republic of South Sudan - Abu Dhabi",
+        names: []
+    },
+    
 ]
 
 
@@ -313,12 +369,12 @@ export default function Page ({ sessions, locations }) {
 
 
             {/* AGENDA */}
-            <section className="block">
-                {/* <div className="container center">
+            {/* <section className="block">
+                <div className="container center">
                     <p className='fs-2 fw-600 caps c-secondary'>2025 Agenda</p>
-                </div> */}
+                </div>
 
-                {/* <div className="container maxw-50 columns-1 gap-xs">
+                <div className="container maxw-50 columns-1 gap-xs">
                     {
                         sessions.length &&
                         filterSessionsByTopic( sessions, 'RmllbGRWYWx1ZV8yODE3NDU1NA==' ).map( session => (
@@ -364,14 +420,14 @@ export default function Page ({ sessions, locations }) {
                         
                         ))
                     }
-                </div> */}
+                </div>
 
                 <div className="container center">
                     <Pop>
                         <Button href={`/world/agenda`}>View Full Agenda</Button>
                     </Pop>
                 </div>
-            </section>
+            </section> */}
 
 
 
