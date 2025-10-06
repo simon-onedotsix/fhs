@@ -855,7 +855,7 @@ export default function Agenda ({ sessions, locations }) {
 				<main className={`${CSS.agenda} section columns-1 gap-sm mt-sm`}>	
 					
 					<section className={CSS.day}>
-						<p className={CSS.dayDivider} style={{ backgroundColor: `var(--primary-2)` }}>Pre-event HAMA Exclusive</p>
+						{/* <p className={CSS.dayDivider} style={{ backgroundColor: `var(--primary-2)` }}>Pre-event HAMA Exclusive</p> */}
 
 						<div className={CSS.sessions}>
 							<div className={CSS.session}>
