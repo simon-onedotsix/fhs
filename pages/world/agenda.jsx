@@ -923,7 +923,10 @@ export default function Agenda ({ sessions, locations }) {
 																	<div key={index} className={CSS.sessionsWrapper}>
 																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
 
-																		<div className={CSS.session}>
+																		<div
+																			className={CSS.session}
+																			style={{ display: session.categories.includes('UAE – Africa Tourism Investment Summit') ? 'none' : 'block' }}
+																		>
 
 																			{/* add to div below to colour-code headers => style={{ backgroundColor: session.color ? session.color : null }} */}
 																			<div className={`${CSS.sessionHeader} fw-500 c-white bg-medium`}>
