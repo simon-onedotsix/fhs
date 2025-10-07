@@ -192,7 +192,7 @@ export default function Page ({ sessions, locations }) {
     const lenis = useLenis()
 
 
-    // console.log('sessions:', sessions)
+    console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
     // console.log('AIS sessions:', filterSessionsByTopic( sessions, 'RmllbGRWYWx1ZV8yODE3NDU1NA==' ))
     
@@ -328,49 +328,10 @@ export default function Page ({ sessions, locations }) {
 
 
 
-
-            {/* TESTIMONIALS */}
-            <section className="block bg-default">
-                <div className="container maxw-70">
-
-                    <QuoteSlider 
-                        color={'white'}
-                        testimonials={[
-                            {
-                                quote: "The UAE Africa Tourism Investment Summit will serve as a strategic platform for exchanging insights and expertise between the UAE and African nations, supporting sustainable development efforts through the establishment of projects and partnerships that serve mutual interests. This aligns with the objectives of 'We the UAE 2031' vision, which aims to position the country as a leading global hub for the new economy, driven by international partnerships and future-focused sectors.",
-                                avatar: [
-                                    {
-                                        url: "/assets/img/ais/quotes/badreya-al-maidoor.jpg",
-                                        width: "800",
-                                        height: "800"
-                                    }
-                                ],
-                                fullName: "H.E. Badreya Al Maidoor",
-                                jobTitle: "Assistant Undersecretary of Support Services Sector at Ministry Of Economy, UAE"
-                            },
-                            {
-                                quote: "We are honoured to partner with the UAE Ministry of Economy & Tourism to launch the UAE Africa Tourism Investment Summit as part of FHS World 2025. This collaboration reflects our shared ambition to accelerate investment and development across Africa's hospitality sector. The UAE has long served as a bridge between global capital and emerging markets, and this new platform will strengthen the connections between African nations and the international investment community. Together, we are creating an ecosystem that fosters meaningful dialogue, unlocks deal flow, and drives long-term economic growth across the continent.",
-                                avatar: [
-                                    {
-                                        url: "/assets/img/ais/quotes/jonathan-worsley.jpg",
-                                        width: "800",
-                                        height: "800"
-                                    }
-                                ],
-                                fullName: "Jonathan Worsley",
-                                jobTitle: "Chairman & CEO of The Bench"
-                            }
-                        ]} />
-
-                </div>
-            </section>
-
-
-
             {/* AGENDA */}
             <section className="block">
                 <div className="container center">
-                    <p className='fs-2 fw-600 caps c-secondary'>2025 Agenda</p>
+                    <p className='fs-2 fw-600 caps c-secondary'>2025 AIS Agenda</p>
                 </div>
 
                 <div className="container maxw-50 columns-1 gap-xs">
@@ -423,10 +384,50 @@ export default function Page ({ sessions, locations }) {
 
                 <div className="container center">
                     <Pop>
-                        <Button href={`/world/agenda`}>View Full Agenda</Button>
+                        <Button href={`/world/agenda`}>View Full FHS World Agenda</Button>
                     </Pop>
                 </div>
             </section>
+
+
+
+
+            {/* TESTIMONIALS */}
+            <section className="block bg-default">
+                <div className="container maxw-70">
+
+                    <QuoteSlider 
+                        color={'white'}
+                        testimonials={[
+                            {
+                                quote: "The UAE Africa Tourism Investment Summit will serve as a strategic platform for exchanging insights and expertise between the UAE and African nations, supporting sustainable development efforts through the establishment of projects and partnerships that serve mutual interests. This aligns with the objectives of 'We the UAE 2031' vision, which aims to position the country as a leading global hub for the new economy, driven by international partnerships and future-focused sectors.",
+                                avatar: [
+                                    {
+                                        url: "/assets/img/ais/quotes/badreya-al-maidoor.jpg",
+                                        width: "800",
+                                        height: "800"
+                                    }
+                                ],
+                                fullName: "H.E. Badreya Al Maidoor",
+                                jobTitle: "Assistant Undersecretary of Support Services Sector at Ministry Of Economy, UAE"
+                            },
+                            {
+                                quote: "We are honoured to partner with the UAE Ministry of Economy & Tourism to launch the UAE Africa Tourism Investment Summit as part of FHS World 2025. This collaboration reflects our shared ambition to accelerate investment and development across Africa's hospitality sector. The UAE has long served as a bridge between global capital and emerging markets, and this new platform will strengthen the connections between African nations and the international investment community. Together, we are creating an ecosystem that fosters meaningful dialogue, unlocks deal flow, and drives long-term economic growth across the continent.",
+                                avatar: [
+                                    {
+                                        url: "/assets/img/ais/quotes/jonathan-worsley.jpg",
+                                        width: "800",
+                                        height: "800"
+                                    }
+                                ],
+                                fullName: "Jonathan Worsley",
+                                jobTitle: "Chairman & CEO of The Bench"
+                            }
+                        ]} />
+
+                </div>
+            </section>
+
 
 
 
