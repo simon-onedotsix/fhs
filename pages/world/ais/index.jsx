@@ -368,7 +368,7 @@ export default function Page ({ sessions, locations }) {
 
 
             {/* AGENDA */}
-            {/* <section className="block">
+            <section className="block">
                 <div className="container center">
                     <p className='fs-2 fw-600 caps c-secondary'>2025 Agenda</p>
                 </div>
@@ -426,7 +426,7 @@ export default function Page ({ sessions, locations }) {
                         <Button href={`/world/agenda`}>View Full Agenda</Button>
                     </Pop>
                 </div>
-            </section> */}
+            </section>
 
 
 
