@@ -41,23 +41,37 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 			})
 		})
 		
-		partnersArray.push(
-			{
-				group: category,
-				partners: partnerGroup
-			}
-		)
+		if (partnerGroup.length) {
+			partnersArray.push(
+				{
+					group: category,
+					partners: partnerGroup
+				}
+			)
+		}
 	})
 	
 
 
-	console.log('swapcard partner data:', partnerData)
+	// console.log('swapcard partner data:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
 	// console.log('swapcard partner categories:', swapcardPartnerGroups )
 	// console.log('PARTNERS ARRAY:', partnersArray)
 	// console.log('flags:', countryPavilions)
 
+
+	const CUSTOM_ORDERING = [
+		{ id: 'RmllbGRWYWx1ZV8yNjEwNTYyOA==', value: 'host-sponsor' },
+		{ id: 'RmllbGRWYWx1ZV8yODY1NTcyOQ==', value: 'strategic-partner' },
+		{ id: 'RmllbGRWYWx1ZV8yNjEwNTYxNg==', value: 'knowledge-partner' },
+		{ id: 'RmllbGRWYWx1ZV8yODY1NTcyOA==', value: 'headline-sponsor' },
+		{ id: 'RmllbGRWYWx1ZV8yODY1NTcyNw==', value: 'sponsor' },
+		{ id: 'RmllbGRWYWx1ZV8yNTg5NzkyNg==', value: 'exhibitor' },
+		{ id: 'RmllbGRWYWx1ZV8yNzc0MTg0MA==', value: 'tech-pavilion' },
+		{ id: 'RmllbGRWYWx1ZV8yNjY5MzQ2NQ==', value: 'supporter' },
+		{ id: 'RmllbGRWYWx1ZV8yODY1NTczMA==', value: 'media-partner' }
+	]
 
 
 	return (
@@ -101,12 +115,12 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 				<PartnerCategoryGrid>
 					{
 						partnersArray.length &&
-						partnersArray.map( (category, index) => (
+						_.orderBy(partnersArray, x => _.findIndex( CUSTOM_ORDERING, y => x.group.id === y.id )).map( (category, index) => (
 							<>
 								<PartnerCategory key={index}>
 
 									<div className="block pt-0">
-										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category.group.translations[0].value }</h4>
+										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{category.group.translations[0].value}</h4>
 										<PartnerLogoGrid>
 											{
 												_.orderBy( category.partners, [(p) => p.name.toLowerCase()] ).map(partner => (
@@ -128,7 +142,7 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 
 								{/* inject after sponsors category */}
 								{
-									category.group.id === "RmllbGRWYWx1ZV8yNTY4ODM0Mw==" &&
+									category.group.id === "RmllbGRWYWx1ZV8yODY1NTcyNw==" &&
 									<PartnerCategory>
 										<div className="block pt-0">
 										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>Country Pavilions</h4>
