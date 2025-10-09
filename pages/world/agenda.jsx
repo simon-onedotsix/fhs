@@ -907,7 +907,7 @@ export default function Agenda ({ sessions, locations }) {
 													}
 													
 													{
-														slot.sessions[0].id === 'UGxhbm5pbmdfMjcyMjczNA==' &&
+														slot.sessions[0].id === 'UGxhbm5pbmdfMzIwMDkyNg==' &&
 														<div className={CSS.banner}><FhsLockup inverse /></div>
 													}
 
