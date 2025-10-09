@@ -196,7 +196,7 @@ export default function Agenda () {
 											endTime={"2025-10-27 20:30:00"}
 											title={"FHS Welcome Reception"}
 											trackID={"5"}
-										><p>Shimmers, Jumeirah Mina Al 'Salam – Hosted by Jumeirah</p></Session>
+										><p>Shimmers, Jumeirah Mina Al &apos;Salam – Hosted by Jumeirah</p></Session>
 									</SessionGroup>
 									
 								</div>
