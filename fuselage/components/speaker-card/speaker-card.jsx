@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import CSS from './speaker-card.module.css'
 
-export const SpeakerCard = ({ url, color, photoUrl, fullName, jobTitle, company }) => {
+export const SpeakerCard = ({ url, color, photoUrl, fullName, jobTitle, company, specialField }) => {
     return (
         <a href={url} className={CSS.layout}>
             
@@ -15,7 +15,11 @@ export const SpeakerCard = ({ url, color, photoUrl, fullName, jobTitle, company 
                 }
             </div>
 
-            <div className={`pt-xs ${ color ? color : 'c-primary'}`}>
+            <div className={`pt-xs ${color ? color : 'c-primary'}`}>
+                {
+                    specialField &&
+                    <p className='fw-600 c-primary-2 lh-1 mb-xxs'>{specialField}</p>
+                }
                 <p className='fs-5 fw-600 lh-1 caps'>{ fullName }</p>
                 <p className='fs-sm fw-300 mt-xxs'>{ jobTitle }</p>
                 <p className='fs-sm fw-500'>{ company }</p>

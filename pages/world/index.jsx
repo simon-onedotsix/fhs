@@ -53,6 +53,8 @@ import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button
 import { HeroUnitVideo } from "../../fuselage/theme/2025/world/pages/home/hero-unit-video"
 import { ThemeBillboard, Tri } from "../../fuselage/theme/2025/world/pages/home/theme-billboard"
 
+import { getAllSpecialFields } from "../../lib/swapcard/get-all-special-fields"
+
 import CSS from '../../fuselage/theme/2024/world/css/homepage.module.css'
 
 
@@ -239,7 +241,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         anchorId={``}
                     >
                         {
-                            selectedCmsSpeakers.profiles.map( profile => (
+                            selectedCmsSpeakers.profiles.map(profile => (
                                 <Pop key={profile.id}>
                                     <SpeakerCard
                                         url={`world/speakers/profile/${profile.slug}`}
@@ -247,6 +249,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                                         fullName={profile.title}
                                         jobTitle={profile.positions[0].jobTitle}
                                         company={profile.positions[0].organisation}
+                                        specialField={profile.id === "247717" && "Award Winner – Lifetime Achievement Award"}
                                     />
                                 </Pop>
                             ))
