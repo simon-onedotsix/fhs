@@ -340,10 +340,16 @@ export default function Agenda ({ sessions, theme }) {
 						<p className="mt-sm">For FHS Africa, our objective is to enhance networking opportunities by introducing innovative and engaging formats that foster meaningful connections among delegates. The program is carefully designed to encourage greater interaction between attendees and speakers, ensuring valuable discussions and insights.</p>
 					</Slide>
 				</div>
+
 			</PageHeader>
+
 
 			
 			<section className="block pt-0">
+
+				<div className="container pt-xl pb-xl print-only">
+					<p className="fs-0 fw-600 c-black">FHS Africa 2026 Agenda</p>
+				</div>
 
 				<div className="container columns-4 gap-md formatted">
 					<section>
@@ -368,13 +374,13 @@ export default function Agenda ({ sessions, theme }) {
 				</div>
 
 
-				{/* <div className="printButton button-grid">
-					<Link href={'/africa/agenda-at-a-glance'}><a className={'button fs-6'}>Agenda at a glance</a></Link>
+				<div className="printButton button-grid mt-sm no-print">
+					{/* <Link href={'/africa/agenda-at-a-glance'}><a className={'button fs-6'}>Agenda at a glance</a></Link> */}
 					<button 
 						className={'button fs-6'}
 						onClick={ ()=> window.print() }
 					><PrinterIcon />&ensp;Print Agenda</button>
-				</div> */}
+				</div>
 
 				
 				
@@ -543,7 +549,7 @@ export default function Agenda ({ sessions, theme }) {
 					}
 				</div>
 
-
+				<div className="print-only" style={{ height: '4rem'}}/>
 			</section>
 
 

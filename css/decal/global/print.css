@@ -1,3 +1,7 @@
+.print-only {
+    display: none;
+}
+
 @media print {
     :root {
         --unit-xxs: .25rem;
@@ -21,5 +25,17 @@
     /* hide from printer */
     .no-print { display: none !important;}
 
+    body {
+        color: black!important;
+    }
+
+    .c-white { color: black !important; }
+
+
+    .print-only {
+        display: block;
+    }
 
 }
+
+

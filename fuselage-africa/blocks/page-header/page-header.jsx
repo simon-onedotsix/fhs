@@ -21,7 +21,7 @@ export function PageHeader({ children, theme }) {
 
     return (
         
-        <section ref={ref} className={`${CSS.layout} ${ theme ? theme : `bg-primary`}`} >
+        <section ref={ref} className={`${CSS.layout} ${ theme ? theme : `bg-primary`} no-print`} >
 
             <motion.div className={CSS.brandPattern}
                 style={{

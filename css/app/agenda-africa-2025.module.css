@@ -820,16 +820,24 @@
         gap: .5rem;
     }
 
+    .sessionContent {
+        background-color: transparent !important;
+        padding: 0;
+    }
+
     .dayDivider {
         background-color: white !important;
         border-top: 2px solid black;
         border-bottom: 2px solid black;
+        border-radius: 0;
         margin: 2rem 0;
+        color: black;
     }
 
     .sessionHeader {
         border-bottom: 1px solid rgb(200, 200, 200) !important;
         background-color: white !important;
+        padding-left: 0 !important;
     }
     .session {
         background-color: white !important;
