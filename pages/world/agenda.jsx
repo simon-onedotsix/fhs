@@ -854,33 +854,38 @@ export default function Agenda ({ sessions, locations }) {
 				{/* AGENDA */}
 				<main className={`${CSS.agenda} section columns-1 gap-sm mt-sm`}>	
 					
-					<section className={CSS.day}>
-						{/* <p className={CSS.dayDivider} style={{ backgroundColor: `var(--primary-2)` }}>Pre-event HAMA Exclusive</p> */}
+					{
+						!selectedDay && !selectedLocation && !selectedTopic
+						?
+							<section className={CSS.day}>
+								{/* <p className={CSS.dayDivider} style={{ backgroundColor: `var(--primary-2)` }}>Pre-event HAMA Exclusive</p> */}
 
-						<div className={CSS.sessions}>
-							<div className={CSS.session}>
-								{/* add to div below to colour-code headers => style={{ backgroundColor: session.color ? session.color : null }} */}
-								<div className={`${CSS.sessionHeader} fw-500 c-white bg-medium`}>
-									<div className={CSS.sessionTimings}>
-										<span>Sunday 26 October, 18:30 - 21:30</span>&ensp;
-										<span><StopwatchIcon fill={'var(--accent)'}/> 3 hours</span>
+								<div className={CSS.sessions}>
+									<div className={CSS.session}>
+										{/* add to div below to colour-code headers => style={{ backgroundColor: session.color ? session.color : null }} */}
+										<div className={`${CSS.sessionHeader} fw-500 c-white bg-medium`}>
+											<div className={CSS.sessionTimings}>
+												<span>Sunday 26 October, 18:30 - 21:30</span>&ensp;
+												<span><StopwatchIcon fill={'var(--accent)'}/> 3 hours</span>
+											</div>
+										</div>
+
+										<div className={`${CSS.sessionContent} | columns-1 gap-xs`}>
+
+											{/* <small style={{ color: 'lime'}}>{session.id}</small> */}
+											{/* <small style={{ color: 'lime'}}>{session.priority}</small> */}
+											
+											<p className={`${CSS.sessionTitle} | fs-3 fw-500 lh-1 c-white`}>
+												HAMA Cocktail Evening – Invitation Only
+											</p>
+											<p>Ciel Dubai Marina</p>
+										</div>
+										
 									</div>
 								</div>
-
-								<div className={`${CSS.sessionContent} | columns-1 gap-xs`}>
-
-									{/* <small style={{ color: 'lime'}}>{session.id}</small> */}
-									{/* <small style={{ color: 'lime'}}>{session.priority}</small> */}
-									
-									<p className={`${CSS.sessionTitle} | fs-3 fw-500 lh-1 c-white`}>
-										HAMA Cocktail Evening – Invitation Only
-									</p>
-									<p>Ciel Dubai Marina</p>
-								</div>
-								
-							</div>
-						</div>
-					</section>
+							</section>
+						: null
+				}
 					
 					{
 						buildAgenda( sessions ).length 
