@@ -22,7 +22,7 @@ import CSS from '../../fuselage/theme/2025/sa/css/agenda-compact.module.css'
 const tracks = [
 	{
 		id: "1",
-		title: "Workshop",
+		title: "F&B",
 		color: "#FFCFCF"
 	},
 	{
@@ -32,7 +32,7 @@ const tracks = [
 	},
 	{
 		id: "3",
-		title: "Session",
+		title: "Programme",
 		color: "#7DB4F2"
 	},
 	{
@@ -85,7 +85,7 @@ export default function Agenda () {
 
 				{/* INTRO */}
 				<div className="section mb-sm" style={{ zIndex: 2, position: 'relative' }}>
-					<p className="fs-1 fw-500">2025 Agenda at a Glance</p>
+					<p className="fs-1 fw-500">2025 Schedule at a Glance</p>
 					<div className="formatted mt-xs">
 						<p>Programme is subject to change.</p>
 					</div>
@@ -115,16 +115,17 @@ export default function Agenda () {
 											startTime={"2025-10-27 08:00:00"}
 											endTime={"2025-10-27 13:00:00"}
 											title={"UAE Africa Tourism Investment Summit"}
-										><p>(Invite-Only)</p></Session>
+											trackID={"3"}
+										><p className="c-accent">(Invite-Only, managed by UAE Ministry of Tourism and Economy)</p></Session>
 									</SessionGroup>
 									
 									<SessionGroup>
 										<Session
 											startTime={"2025-10-27 08:00:00"}
 											endTime={""}
-											title={"Registration & Welcome Coffee for FHS World delegates"}
-											trackID={"5"}
-										/>
+											title={"Exhibition Opening, Registration & Welcome Coffee for FHS World delegates"}
+											trackID={"3"}
+										><p>Arena Foyer</p></Session>
 									</SessionGroup>
 									
 									<SessionGroup>
@@ -133,7 +134,7 @@ export default function Agenda () {
 											endTime={"2025-10-27 11:30:00"}
 											title={"From First Timer to Power Player: Making the Most of FHS World"}
 											trackID={"3"}
-										/>
+										><p>Workshop Room Arena</p></Session>
 									</SessionGroup>
 									
 									<SessionGroup>
@@ -142,7 +143,7 @@ export default function Agenda () {
 											endTime={"2025-10-27 12:30:00"}
 											title={"Speed Networking"}
 											trackID={"5"}
-										/>
+										><p>Networking Lounge</p></Session>
 									</SessionGroup>
 									
 									<SessionGroup>
@@ -150,17 +151,17 @@ export default function Agenda () {
 											startTime={"2025-10-27 12:00:00"}
 											endTime={"2025-10-27 14:00:00"}
 											title={"Networking Lunch"}
-											trackID={"5"}
-										/>
+											trackID={"1"}
+										><p>Arena and Joharah Foyer</p></Session>
 									</SessionGroup>
 									
 									<SessionGroup>
 										<Session
 											startTime={"2025-10-27 13:30:00"}
 											endTime={"2025-10-27 13:40:00"}
-											title={"Welcome to FHS World 2025"}
-											trackID={"5"}
-										/>
+											title={"Official Opening: Welcome to FHS World 2025"}
+											trackID={"3"}
+										><p>Arena and Joharah Foyer</p></Session>
 									</SessionGroup>
 									
 									<SessionGroup>
@@ -176,9 +177,9 @@ export default function Agenda () {
 										<Session
 											startTime={"2025-10-27 16:30:00"}
 											endTime={"2025-10-27 17:00:00"}
-											title={"Curated Connections - AI's Role in Hospitality Investment"}
+											title={"Themed Social - AI's Role in Hospitality Investment"}
 											trackID={"3"}
-										/>
+										><p>Networking Lounge</p></Session>
 									</SessionGroup>
 									
 									<SessionGroup>
@@ -186,7 +187,7 @@ export default function Agenda () {
 											startTime={"2025-10-27 17:00:00"}
 											endTime={"2025-10-27 18:00:00"}
 											title={"Happy Hour in the Arena - Sponsored by Danube Hospitality Solutions"}
-											trackID={"3"}
+											trackID={"1"}
 										/>
 									</SessionGroup>
 									
@@ -195,7 +196,7 @@ export default function Agenda () {
 											startTime={"2025-10-27 18:30:00"}
 											endTime={"2025-10-27 20:30:00"}
 											title={"FHS Welcome Reception"}
-											trackID={"5"}
+											trackID={"1"}
 										><p>Shimmers, Jumeirah Mina Al &apos;Salam – Hosted by Jumeirah</p></Session>
 									</SessionGroup>
 									
@@ -222,7 +223,7 @@ export default function Agenda () {
 										<Session
 											startTime={"2025-10-28 08:00:00"}
 											endTime={""}
-											title={"Registration & Welcome Coffee for FHS World delegates"}
+											title={"Exhibition Opening, Registration & Welcome Coffee"}
 											trackID={"5"}
 										/>
 									</SessionGroup>
@@ -232,6 +233,7 @@ export default function Agenda () {
 											startTime={"2025-10-28 08:00:00"}
 											endTime={"2025-10-28 09:45:00"}
 											title={"Executive Investor Breakfast & Project Showcase – A Closed-Door Gathering"}
+											trackID={"3"}
 										/>
 									</SessionGroup>
 
@@ -239,7 +241,8 @@ export default function Agenda () {
 										<Session
 											startTime={"2025-10-28 09:30:00"}
 											endTime={""}
-											title={"Welcome Back"}
+											title={"Welcome Back for Day Two"}
+											trackID={"3"}
 										/>
 									</SessionGroup>
 
@@ -247,7 +250,8 @@ export default function Agenda () {
 										<Session
 											startTime={"2025-10-28 12:40:00"}
 											endTime={"2025-10-28 13:00:00"}
-											title={"FHS Awards"}
+											title={"Lifetime Achievement and FHS Awards"}
+											trackID={"3"}
 										/>
 									</SessionGroup>
 
@@ -256,7 +260,7 @@ export default function Agenda () {
 											startTime={"2025-10-28 13:00:00"}
 											endTime={"2025-10-28 14:00:00"}
 											title={"Networking Lunch"}
-											trackID={"5"}
+											trackID={"1"}
 										/>
 									</SessionGroup>
 
@@ -264,7 +268,7 @@ export default function Agenda () {
 										<Session
 											startTime={"2025-10-28 15:30:00"}
 											endTime={"2025-10-28 16:00:00"}
-											title={" Curated Connections - Future of Branded Residences"}
+											title={"Themed Social - Future of Branded Residences"}
 											trackID={"3"}
 										/>
 									</SessionGroup>
@@ -274,8 +278,8 @@ export default function Agenda () {
 											startTime={"2025-10-28 18:30:00"}
 											endTime={"2025-10-28 20:30:00"}
 											title={"FHS Evening Reception"}
-											trackID={"5"}
-										><p>Taj Exotica, The Palm – Hosted by IHCL</p></Session>
+											trackID={"1"}
+										><p>Taj Exotica, The Palm – Hosted by IHCL. Buses for delegates start leaving at 18:00, outside registration area.</p></Session>
 									</SessionGroup>
 								</div>
 							</main>
@@ -300,7 +304,7 @@ export default function Agenda () {
 										<Session
 											startTime={"2025-10-29 08:00:00"}
 											endTime={""}
-											title={"Registration & Welcome Coffee for FHS World delegates"}
+											title={"Exhibition Opens, Registration & Welcome Coffee for FHS World delegates"}
 											trackID={"5"}
 										/>
 									</SessionGroup>
@@ -309,7 +313,7 @@ export default function Agenda () {
 										<Session
 											startTime={"2025-10-29 09:30:00"}
 											endTime={""}
-											title={"Sessions begin on Summit Stage"}
+											title={"Welcome Back for Day Three"}
 											trackID={"3"}
 										/>
 									</SessionGroup>
@@ -318,7 +322,7 @@ export default function Agenda () {
 										<Session
 											startTime={"2025-10-29 12:00:00"}
 											endTime={"2025-10-29 12:30:00"}
-											title={"Curated Connections - Wellness & Wellbeing Trends in Hospitality"}
+											title={"Themed Social - Wellness & Wellbeing Trends in Hospitality"}
 											trackID={"3"}
 										/>
 									</SessionGroup>
@@ -328,7 +332,7 @@ export default function Agenda () {
 											startTime={"2025-10-29 13:00:00"}
 											endTime={"2025-10-29 14:00:00"}
 											title={"Networking Lunch"}
-											trackID={"5"}
+											trackID={"1"}
 										/>
 									</SessionGroup>
 
@@ -338,7 +342,7 @@ export default function Agenda () {
 											endTime={"2025-10-29 14:05:00"}
 											title={"Welcome to the Branded Residences Forum at FHS World 2025"}
 											trackID={"8"}
-										/>
+										><p>Summit Stage</p></Session>
 									</SessionGroup>
 
 									<SessionGroup>
@@ -346,6 +350,7 @@ export default function Agenda () {
 											startTime={"2025-10-29 17:45:00"}
 											endTime={"2025-10-29 18:00:00"}
 											title={"Closing Remarks"}
+											trackID={"3"}
 										/>
 									</SessionGroup>
 
@@ -354,7 +359,7 @@ export default function Agenda () {
 											startTime={"2025-10-29 18:30:00"}
 											endTime={""}
 											title={"Branded Residences Forum Cocktail Reception "}
-											trackID={"5"}
+											trackID={"1"}
 										><p>Mama Shelter (Invitation Only For BRF Delegates & Premium Pass Holders)</p></Session>
 									</SessionGroup>
 								</div>
