@@ -1,0 +1,350 @@
+.test {
+    border: 1px solid rgb(255, 0, 208);
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+}
+.header img {
+    mask-image: linear-gradient(black, 20%, transparent);
+    width: 100%;
+}
+
+
+/* LAYOUT –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.day {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.dayDivider {
+    background-color: white;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+
+
+
+
+@media(max-width:799px){
+
+    .utilities {
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        gap: .5rem;
+
+        min-height: 4.75rem;
+    }
+
+
+
+
+    .desktopOnly {
+        display: none;
+    }
+    
+    .agendaFilterResetWrapper {
+        flex: 0 !important;
+    }
+
+
+
+}
+
+
+/* DESKTOP ----------------------------------------------- */
+
+@media(min-width:800px){
+
+    .agenda {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: flex-start;
+        gap: 3vw;
+    }
+
+    .utilities {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+    .utilties,
+    .filters,
+    .search {
+        height: 3rem;
+    }
+
+
+
+    .agendaSidebarLayout {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        gap: var(--space-md);
+    }
+    .agendaSidebarLayout aside {
+        text-align: right;
+    }
+    .agendaSidebarLayout main,
+    .agendaSidebarLayout aside {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+    .agendaSidebarLayout main {
+        max-width: 45vw;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* STYLING ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+.sessions {
+    display: grid;
+    gap: 1rem;
+}
+.sessionGroupContainer {
+    background-color: var(--primary-2);
+    /* border: 1px solid var(--primary-2); */
+    border-radius: .5rem;
+    /* overflow: hidden; */
+}
+.sessionGroupHeader {
+    padding: .75rem 1rem;
+}
+.sessionGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    /* background-color: var(--primary); */
+    border-radius: .5rem;
+}
+.session {
+    flex: 1;
+    border-radius: calc(var(--default-radius) * 1);
+    /* overflow: hidden; */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    /* background-color: red;
+    padding: 1rem;
+    border-radius: .25rem; */
+    color: var(--primary);
+}
+
+.sessionHeader {
+    width: 100%;
+    padding-bottom: .5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: .5rem;
+    row-gap: .25rem;
+
+    color: white;
+}
+
+
+
+.featureWrapper {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: .25rem;
+    padding: .75rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+.heading {
+    background-color: var(--primary-2);
+    border-radius: .25rem;
+    padding: .2rem .5rem;
+}
+
+
+.sessionTitle {
+    max-width: 50rem;
+}
+
+.sessionTagGrid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .25rem;
+}
+
+
+.sessionTag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2rem;
+    background-color: var(--accent);
+    font-size: .8rem;
+}
+.sessionLocationTag {
+    display: inline-block;
+}
+
+
+
+
+.sessionStream {
+    padding: .5rem 1rem;
+    border-radius: calc(var(--default-radius) * 1);
+    background-color: var(--primary);
+    min-width: 6.25rem;
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 0 .75rem 0 .5rem;
+    font-size: 90%;
+    color: white;
+}
+.tag span {
+    display: inline-block;
+    width: .9rem;
+    height: .9rem;
+    border-radius: 2px;
+    margin-right: .5rem;
+}
+
+
+@media(max-width:600px) {
+    .sessionGroup {
+        flex-direction: column;
+    }
+    .sessionsWrapper {
+        position: relative;
+        flex:1;
+        display: flex;
+        gap: .5rem;
+    }
+
+}
+
+
+.timeslotHeader {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: .5rem;
+    row-gap: .25rem;
+
+    color: var(--primary-3);
+}
+.timeslotWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: .25rem;
+    padding: .75rem;
+}
+
+
+
+
+
+
+
+
+/* speakerGrid + speakerCard --------------------------------- */
+
+.sessionSpeakerGrid {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: var(--space-xs);
+}
+
+@media(min-width:600px) {
+    .sessionSpeakerGrid {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+    .sessionSpeaker {
+        width: 14vw;
+    }
+}
+
+.speakerPhoto {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+
+    transition: all 150ms ease-in-out;
+}
+.speakerPhoto img {
+    display: block;
+    max-width: 100px; 
+    max-height: 100px; 
+    border-radius: 100px; 
+}
+
+/* icon (if speaker has bio) */
+.speakerPhoto.bio {
+    cursor: pointer;
+}
+.speakerPhoto.bio span {
+    position: absolute;
+    top: -.25rem;
+    right: -.25rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--accent);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+
+    transform: scale(.3);
+    opacity: 0;
+    transition: all 150ms ease-in-out;
+}
+@media(hover:hover){
+    .speakerPhoto.bio:hover {
+        transform: scale(1.05);
+    }
+    .speakerPhoto.bio:hover span {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
