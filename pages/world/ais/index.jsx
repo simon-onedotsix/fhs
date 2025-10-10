@@ -249,15 +249,15 @@ export default function Page ({ sessions, locations }) {
                         <div className={CSS.patronBoxAvatar}>
                             <Pop>
                                 <div className={CSS.avatar}>
-                                    <Image src={"/assets/img/ais/al-marri.jpg"} layout='fill' alt="" unoptimized />
+                                    <Image src={"/assets/img/ais/mohammed-bin-rashid-al-maktoum.jpg"} layout='fill' alt="" unoptimized />
                                 </div>
                             </Pop>
                         </div>
 
                         <div className={CSS.patronBoxContent}>
                             <Pop>
-                                <p className="fs-4 fw-600">H.E. Abdulla bin Touq Al Marri</p>
-                                <p className="fs-5 mt-xxs">Minister of Economy and Tourism, United Arab Emirates</p>
+                                <p className="fs-4 fw-600">His Highness Sheikh Mohammed bin Rashid Al Maktoum</p>
+                                <p className="fs-5 mt-xxs">UAE Vice President, Prime Minister and Ruler of Dubai</p>
 
                             </Pop>
                         </div>

@@ -4,12 +4,12 @@
     grid-template-columns: 40% 20% 40%;
     grid-template-rows: 60% 40%;
 
-    width: 80vw;
+    max-width: 80vw;
     aspect-ratio: 31/12;
 }
 @media(min-width:600px){
     .lockupLayout {
-        width: 40vw;
+        max-width: 40vw;
     }
 }
 

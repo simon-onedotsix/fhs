@@ -52,6 +52,8 @@ import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button
 
 import { HeroUnitVideo } from "../../fuselage/theme/2025/world/pages/home/hero-unit-video"
 import { ThemeBillboard, Tri } from "../../fuselage/theme/2025/world/pages/home/theme-billboard"
+import { AisLockup } from '../../fuselage/theme/2025/ais/ais-brand/ais-brand' 
+import Ticker from "framer-motion-ticker"
 
 import { getAllSpecialFields } from "../../lib/swapcard/get-all-special-fields"
 
@@ -197,6 +199,67 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4'} poster={'https://cms.thebench.com/assets/video/fhs-2024-world-opt-poster.jpg'}>
                 <ThemeBillboard />
             </HeroUnitVideo>
+
+
+
+            
+
+            <section className="block o-hidden">
+                <Pop>
+                    <div className={`${CSS.aisPromo}`}>
+                        <header className={CSS.aisPromoHeader}>
+                            <Ticker>
+                                <p className="fs-3 fw-600">NEW For 2025</p>
+                                <p className="fs-3 fw-600">&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                                <p className="fs-3 fw-600">NEW For 2025</p>
+                                <p className="fs-3 fw-600">&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                                <p className="fs-3 fw-600">NEW For 2025</p>
+                                <p className="fs-3 fw-600">&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                                <p className="fs-3 fw-600">NEW For 2025</p>
+                                <p className="fs-3 fw-600">&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                            </Ticker>
+                        </header>
+
+                        <section>
+                            <AisLockup />
+                        </section>
+
+                        <section>
+                            <div className={CSS.aisPatronBox}>
+                                <div className={CSS.aisPatronBoxAvatar}>
+                                    <Pop delay={.1}>
+                                        <div className={CSS.aisAvatar}>
+                                            <Image src={"/assets/img/ais/mohammed-bin-rashid-al-maktoum.jpg"} layout='fill' alt="" unoptimized />
+                                        </div>
+                                    </Pop>
+                                </div>
+
+                                <div className={CSS.aisPatronBoxContent}>
+                                    <Pop delay={.2}>
+                                        <p className="fs-4 fw-600 c-secondary caps pb-xs">Under the Patronage of</p>
+                                        <p className="fs-5 fw-600">His Highness Sheikh Mohammed bin Rashid Al Maktoum</p>
+                                        <p className="fs-6 mt-xxs">UAE Vice President, Prime Minister and Ruler of Dubai</p>
+                                    </Pop>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section className="center">
+                            <Pop delay={.3}>
+                                <ButtonKeyline 
+                                    href={'/world/ais'} 
+                                    decal={'fs-5 fw-600'} 
+                                    color={'var(--primary)'}
+                                    target={'_blank'}
+                                >
+                                    Learn More
+                                </ButtonKeyline>
+                            </Pop>
+                        </section>
+
+                    </div>
+                </Pop>
+            </section>
 
 
 
@@ -484,11 +547,6 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     </Callout>
                 </div>
             </section>
-
-
-
-
-         
 
 
 
