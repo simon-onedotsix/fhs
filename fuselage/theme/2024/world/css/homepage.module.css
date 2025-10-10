@@ -230,7 +230,7 @@
 
 
 
-/* AIS promo */
+/* AIS promo --------------------------------------- */
 
 .aisPromo {
     position: relative;
@@ -256,6 +256,19 @@
     padding-top: .35rem;
 }
 
+.aisLogo {
+    width: 75vw;
+}
+@media (min-width:599px){
+    .aisLogo {
+        width: 50vw;
+    }
+}
+@media (min-width:899px){
+    .aisLogo {
+        width: 100%;
+    }
+}
 
 .aisPatronBox {
     display: inline-grid;
@@ -278,6 +291,14 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+
+.aisSlug {
+    display: inline-block;
+    background-color: white;
+    border-radius: 2rem;
+    padding: .125rem .75rem;
+    color: var(--primary-2);
 }
 
 @media (max-width:899px) {

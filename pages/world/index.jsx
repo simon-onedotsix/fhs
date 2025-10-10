@@ -208,20 +208,23 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 <Pop>
                     <div className={`${CSS.aisPromo}`}>
                         <header className={CSS.aisPromoHeader}>
-                            <Ticker>
-                                <p className="fs-3 fw-600">NEW For 2025</p>
-                                <p className="fs-3 fw-600">&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
-                                <p className="fs-3 fw-600">NEW For 2025</p>
-                                <p className="fs-3 fw-600">&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
-                                <p className="fs-3 fw-600">NEW For 2025</p>
-                                <p className="fs-3 fw-600">&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
-                                <p className="fs-3 fw-600">NEW For 2025</p>
-                                <p className="fs-3 fw-600">&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                            <Ticker duration={6}>
+                                <p className="fs-3 fw-600">Launching at FHS World 2025: <span className="fw-400">UAE Africa Tourism Investment Summit</span>&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                                <p className="fs-3 fw-600">Launching at FHS World 2025: <span className="fw-400">UAE Africa Tourism Investment Summit</span>&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                                <p className="fs-3 fw-600">Launching at FHS World 2025: <span className="fw-400">UAE Africa Tourism Investment Summit</span>&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                                <p className="fs-3 fw-600">Launching at FHS World 2025: <span className="fw-400">UAE Africa Tourism Investment Summit</span>&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
                             </Ticker>
                         </header>
 
-                        <section>
-                            <AisLockup />
+                        <section className="center">
+                            <Pop delay={.1}>
+                                <div className={CSS.aisLogo}>
+                                    <img src="/assets/img/ais/ais-logo.svg" alt="" />
+                                </div>
+                            </Pop>
+                            <Pop delay={.1}><p className="fs-5 fw-600 mt-xxs mb-xxs">27 October 2025</p></Pop>
+                            <Pop delay={.2}><p className={CSS.aisSlug}>Invitation Only</p></Pop>
+                            
                         </section>
 
                         <section>
@@ -238,7 +241,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                                     <Pop delay={.2}>
                                         <p className="fs-4 fw-600 c-secondary caps pb-xs">Under the Patronage of</p>
                                         <p className="fs-5 fw-600">His Highness Sheikh Mohammed bin Rashid Al Maktoum</p>
-                                        <p className="fs-6 mt-xxs">UAE Vice President, Prime Minister and Ruler of Dubai</p>
+                                        <p className="mt-xxs">UAE Vice President, Prime Minister and Ruler of Dubai</p>
                                     </Pop>
                                 </div>
                             </div>

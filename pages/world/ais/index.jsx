@@ -212,7 +212,7 @@ export default function Page ({ sessions, locations }) {
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4 '} poster={'/assets/video/fhs-2024-world-opt-poster.jpg'}>
 
-                <div className="mx-auto mt-lg mb-sm">
+                <div className={`${CSS.aisLogo} mx-auto mt-lg mb-sm`}>
                     <AisLockup />
                 </div>
 
