@@ -30,13 +30,39 @@ export default function Page ({ sessions }) {
     const lenis = useLenis()
 
 
-
+	// console.log(sessions)
     // console.log('topics:', getAllTopics(sessions))
-    // console.log('sessions:', filterSessionsByTopic(sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA=="))
+	// console.log('sessions:', filterSessionsByTopic(sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA=="))
+
+
+	
+	const getBrfSessions = (sessions) => {
+		const brfSessions = []
+		filterSessionsByTopic(sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==").map(session => brfSessions.push(session))
+		return brfSessions
+	}
+
+	const getBrfRelatedSessions = (sessions) => {
+		const relatedSessions = []
+		sessions.map(session => {
+			if (
+				session.id === "UGxhbm5pbmdfMjkwMTU4Mw==" ||
+				session.id === "UGxhbm5pbmdfMjYyODkwMQ==" ||
+				session.id === "UGxhbm5pbmdfMjYyODkxMQ==" ||
+				session.id === "UGxhbm5pbmdfMjYyODkwOA=="
+			){
+				relatedSessions.push({...session, tag: "fhs"})
+			}
+		})
+		return relatedSessions
+	}
+
+	const compiledAgenda = [...getBrfSessions(sessions), ...getBrfRelatedSessions(sessions)]
+	// console.log('compiled:', _.orderBy(compiledAgenda, 'beginsAt'))
 
 
 
-    const sortSpeakers = ( speakerData ) => {
+    const sortSpeakers = ( speakerData, tag ) => {
 
 		if ( !speakerData ) return
 
@@ -53,13 +79,13 @@ export default function Page ({ sessions }) {
 				{
 					moderators.length ?
 						<div>
-							<p className="c-secondary pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
+							<p className="c-secondary pb-xs" style={{ color: tag === "fhs" ? '#71CFEB' : 'c-secondary'}}>{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
 							<div className={CSS.sessionSpeakerGrid}>
 								{ moderators.map( moderator => <AgendaSpeakerCard key={moderator.id} color={'white'} speaker={moderator}/> ) }
 							</div>
 							{
 								speakers.length ?
-									<p style={{ color: `var(--accent)`, padding: `10px 0 0 0`}}>In conversation with</p>
+									<p style={{ color: tag === "fhs" ? '#71CFEB' : 'var(--accent)', padding: `10px 0 0 0`}}>In conversation with</p>
 								: null
 							}
 						</div>
@@ -96,7 +122,7 @@ export default function Page ({ sessions }) {
                     
                     {
                         sessions &&
-                        filterSessionsByTopic(sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==").map( session => (
+                        _.orderBy(compiledAgenda, 'beginsAt').map( session => (
 
                             <Pop key={session.id}>
                                 <div className={CSS.sessionsWrapper}>
@@ -108,8 +134,8 @@ export default function Page ({ sessions }) {
                                                     <>
                                                         {format( new Date(session.beginsAt), "HH:mm" )} - { format( new Date(session.endsAt), "HH:mm" )}
                                                         <p className='mt-xxs'>
-                                                            <StopwatchIcon fill={'var(--accent)'}/>
-                                                            <span className='fs-sm fw-500 c-secondary'> { convertSeconds(parseInt(new Date(session.endsAt).getTime() - new Date(session.beginsAt).getTime())/1000) }</span>
+                                                            <StopwatchIcon fill={session.tag === "fhs" ? '#71CFEB' : 'var(--accent)'}/>
+															<span className='fs-sm fw-500 c-secondary' style={{ color: session.tag === "fhs" ? '#71CFEB' : 'c-secondary'}}> { convertSeconds(parseInt(new Date(session.endsAt).getTime() - new Date(session.beginsAt).getTime())/1000) }</span>
                                                         </p>                                                    
                                                     </>
                                                 : null
@@ -118,7 +144,12 @@ export default function Page ({ sessions }) {
 
                                         <div className={`${CSSlite.sessionContent} | columns-1 gap-xs`}>
 
-                                            {/* <small style={{ color: 'orange'}}>{session.id}</small> */}
+											{/* <small style={{ color: 'orange'}}>{session.id}</small> */}
+											
+											{
+												session.tag === "fhs" &&
+												<p style={{ color: '#71CFEB', fontWeight: 600 }}>FHS session FREE for BRF pass holders</p>
+											}
                                             
                                             <p className={`fs-4 fw-500 c-white`}>
                                                 { session.titleTranslations[0].value }
@@ -130,7 +161,7 @@ export default function Page ({ sessions }) {
                                                 : null
                                             }
                                             
-                                            { sortSpeakers(session.speakers) }
+                                            { sortSpeakers(session.speakers, session.tag) }
                                         </div>
 
                                         </div>

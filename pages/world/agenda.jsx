@@ -979,6 +979,15 @@ export default function Agenda ({ sessions, locations }) {
 																									? <p className="flex ai-center fs-sm"><WarningIcon fill={`yellow`} />&ensp;Restricted Access</p>
 																									: null
 																							}
+
+																							{
+																								session.id === "UGxhbm5pbmdfMjkwMTU4Mw==" ||
+																								session.id === "UGxhbm5pbmdfMjYyODkwMQ==" ||
+																								session.id === "UGxhbm5pbmdfMjYyODkxMQ==" ||
+																								session.id === "UGxhbm5pbmdfMjYyODkwOA=="
+																									? <span className={`${CSS.sessionTag} fw-500`}>Free for BRF pass holders</span>
+																									: null
+																							}
 																						</div>
 																					: null
 																				}																		
