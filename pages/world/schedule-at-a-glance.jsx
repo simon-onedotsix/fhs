@@ -156,12 +156,12 @@ export default function Agenda () {
 										/>
 									</SessionGroup>
 									
-									<SessionGroup trackID={"3"}>
+									<SessionGroup trackID={"5"}>
 										<Session
 											startTime={"2025-10-27 16:30:00"}
 											endTime={"2025-10-27 17:00:00"}
 											title={"Themed Social - AI's Role in Hospitality Investment"}
-											trackID={"3"}
+											trackID={"5"}
 										><p>Networking Lounge</p></Session>
 									</SessionGroup>
 									
@@ -248,12 +248,12 @@ export default function Agenda () {
 										/>
 									</SessionGroup>
 
-									<SessionGroup trackID={"3"}>
+									<SessionGroup trackID={"5"}>
 										<Session
 											startTime={"2025-10-28 15:30:00"}
 											endTime={"2025-10-28 16:00:00"}
 											title={"Themed Social - Future of Branded Residences"}
-											trackID={"3"}
+											trackID={"5"}
 										/>
 									</SessionGroup>
 
@@ -303,12 +303,12 @@ export default function Agenda () {
 										/>
 									</SessionGroup>
 									
-									<SessionGroup trackID={"3"}>
+									<SessionGroup trackID={"5"}>
 										<Session
 											startTime={"2025-10-29 12:00:00"}
 											endTime={"2025-10-29 12:30:00"}
 											title={"Themed Social - Wellness & Wellbeing Trends in Hospitality"}
-											trackID={"3"}
+											trackID={"5"}
 										/>
 									</SessionGroup>
 
@@ -336,7 +336,7 @@ export default function Agenda () {
 											endTime={""}
 											title={"Branded Residences Forum Cocktail Reception "}
 											trackID={"1"}
-										><p>Mama Shelter (Invitation Only For BRF Delegates & Premium Pass Holders)</p></Session>
+										><p>Mama Shelter (For BRF Delegates & Premium Pass Holders)</p></Session>
 									</SessionGroup>
 								</div>
 							</main>
