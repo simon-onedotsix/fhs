@@ -390,7 +390,7 @@ export const Session = ({ startTime, endTime, title, trackID, children }) => {
 				<div className={CSS.session}>
 					<div className={CSS.sessionHeader}>
 						<Duration startTime={startTime} endTime={endTime} />
-						{ trackID && <Track trackID={trackID} />}
+						{/* { trackID && <Track trackID={trackID} />} */}
 					</div>
 					
 					<div className={CSS.sessionContent}>
@@ -461,11 +461,11 @@ export const Duration = ({ startTime, endTime }) => {
 	return (
 		<>
 			{ startTime && format( new Date(startTime), "HH:mm" ) } { startTime && endTime && "-"} { endTime && format( new Date(endTime), "HH:mm" ) }
-			{
+			{/* {
 				startTime &&  endTime ?
 				<span>&ensp;<StopwatchIcon fill={'white'}/> { convertSeconds(parseInt(new Date(endTime).getTime() - new Date(startTime).getTime())/1000) }</span>
 				: null
-			}
+			} */}
 		</>
 	)
 }
