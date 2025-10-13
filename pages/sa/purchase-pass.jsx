@@ -62,7 +62,6 @@ function PurchasePass({ seomatic, entry }) {
 					<section className={`block pb-0`}>
 						<div className="container">
 							<p className='fs-1 fw-600 c-secondary'>Purchase Pass</p>
-							<p className="maxw-40 mt-xs fs-5">Please make sure to check with your local Saudi consulate about latest updates on the visas before making your travel plans.</p>
 						</div>
 					</section>
 

@@ -338,14 +338,14 @@ export default function Page ({ sessions, speakers }) {
 
 
             {/* AWARDS */}
-            <section className='mt-md'>
+            {/* <section className='mt-md'>
                 <Ticker speed={5}>
                     <p className='fs-2 fw-600'>&darr; NEW for 2025 &darr; &thinsp;</p>
                     <p className='fs-2 c-accent'>
                         <Link href={`/world/brf/broker-award`}><a className='uLink'>Nominate now!</a></Link>&thinsp;
                     </p>
                 </Ticker>
-            </section>
+            </section> */}
 
             <section className="block">
                 <div className="container formatted center maxw-50">
