@@ -318,6 +318,7 @@ export const Passes = `
                 id
                 passTitle
                 passFlash
+                passCallout
                 passPriceIncreases
                 passDescription
                 passCurrency

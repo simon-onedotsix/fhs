@@ -9,7 +9,7 @@ import CSS from './pass.module.css'
 
 
 
-export const PassPriceBands = ({ flash, title, description, currency, priceBands, soldOut, priceIncreaseMessage, quantityRemaining, label, href }) => {
+export const PassPriceBands = ({ flash, title, callout, description, currency, priceBands, soldOut, priceIncreaseMessage, quantityRemaining, label, href }) => {
 
     const [ currentBand, setCurrentBand ] = useState()
     const [ nextBand, setNextBand ] = useState()
@@ -56,6 +56,12 @@ export const PassPriceBands = ({ flash, title, description, currency, priceBands
             }
 
             <section className={CSS.details}>
+
+                {
+                    callout &&
+                    <p className={CSS.callout}>{callout}</p>
+                }
+
                 <p className='fs-2 fw-600 lh-1 c-primary caps center pt-xs mx-auto'>{ title }</p>
                 {
                     currentBand && nextBand && priceIncreaseMessage ?
