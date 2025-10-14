@@ -924,6 +924,7 @@ export default function Agenda ({ sessions, locations }) {
 															prioriseStreams(slot.sessions, PRIORITISED_STREAMS).map((session, index) => {
 																// console.dir(session)
 
+																// hide AIS sessions
 																if ( session.categories.includes('UAE – Africa Tourism Investment Summit') ) return
 
 																return (
