@@ -300,7 +300,7 @@ export default function Agenda () {
 											endTime={""}
 											title={"Welcome Back for Day Three"}
 											trackID={"3"}
-										/>
+										><p>(BRF pass holders can also join the morning programme sessions.)</p></Session>
 									</SessionGroup>
 									
 									<SessionGroup trackID={"5"}>
