@@ -924,6 +924,8 @@ export default function Agenda ({ sessions, locations }) {
 															prioriseStreams(slot.sessions, PRIORITISED_STREAMS).map((session, index) => {
 																// console.dir(session)
 
+																if ( session.categories.includes('UAE – Africa Tourism Investment Summit') ) return
+
 																return (
 																	<div key={index} className={CSS.sessionsWrapper}>
 																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
