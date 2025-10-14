@@ -512,7 +512,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             {/* AIS PROMO */}
 
-            <section className="block bg-primary-2">
+            {/* <section className="block bg-primary-2">
                 <div className="container maxw-60">
                     <Callout flipped
                         image={{ url:'/assets/img/ais/ais-02.jpg', width:2000, height:1403 }}
@@ -549,7 +549,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         </Fade>
                     </Callout>
                 </div>
-            </section>
+            </section> */}
 
 
 
