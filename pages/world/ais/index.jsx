@@ -271,7 +271,7 @@ export default function Page ({ sessions, locations }) {
                             <p className='c-peach center pb-sm caps ls-2'>Brought to you by:</p>
                         <section className='flex ai-center gap-md jc-center'>
                             <div style={{ width: 400, maxWidth: '70vw', display: 'inline-block' }}>
-                                <img src="/assets/img/ais/uae-ministry.png" alt="logo" width="100%" />
+                                <img src="/assets/img/ais/uae-moet-inverse.png" alt="logo" width="100%" />
                             </div>
                             <div style={{ width: 150, maxWidth: '70vw', display: 'inline-block' }}>
                                 <img src="/assets/site/the-bench-inverse@2x.png" alt="logo" width="100%" />
