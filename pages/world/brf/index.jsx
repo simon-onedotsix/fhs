@@ -306,17 +306,25 @@ export default function Page ({ sessions, speakers }) {
                 </div>
 
                 <Pop>
-                    <div className="container pt-lg columns-4 gap-md">
+                    <div className="container pt-lg">
                         <section>
                             <p className='c-peach center pb-sm caps ls-2'>Founder Sponsor</p>
-                            <div style={{ width: `100%`, maxWidth: '70vw', margin: '0 auto' }}>
+                            <div style={{ width: `100%`, maxWidth: '22rem', margin: '0 auto' }}>
                                 <img src="/assets/img/brf/accor-one-living.svg" alt="logo" width={`100%`} />
                             </div>
                         </section>
+                    </div>
+                    <div className="container pt-sm columns-4 gap-md">
                         <section>
                             <p className='c-peach center pb-sm caps ls-2'>Strategic Partner</p>
                             <div style={{ width: 150, maxWidth: '30vw', margin: '0 auto' }}>
                                 <img src="/assets/img/brf/global-branded-residences.svg" alt="logo" />
+                            </div>
+                        </section>
+                        <section>
+                            <p className='c-peach center pb-sm caps ls-2'>Sponsor</p>
+                            <div style={{ width: `100%`, maxWidth: '15rem', margin: '0 auto' }}>
+                                <img src="/assets/img/brf/digivalet.png" alt="logo" width={`100%`} />
                             </div>
                         </section>
                         <section>
