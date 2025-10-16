@@ -361,6 +361,9 @@ export default function Page ({ sessions, speakers }) {
                     <p className='fs-5 mt-sm'>The World Branded Residences Awards recognise excellence and outstanding achievement among brokerages and individual brokers operating in the global branded residences market.</p>
                 </div>
                 <div className="container center">
+                    <p style={{ color: '#EF3742', fontWeight: 500 }}>Nominations are now closed.</p>
+                </div>
+                <div className="container center">
                     <Button href={'/world/brf/broker-award'}>Learn More</Button>
                 </div>
             </section>
