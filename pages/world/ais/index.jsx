@@ -170,7 +170,7 @@ const DELEGATIONS_DATA = [
     },
     {
         country: "Republic of Madagascar",
-        head: "Minister of Tourism and Handicraft",
+        head: "",
         names: []
     },
     {
@@ -280,6 +280,12 @@ export default function Page ({ sessions, locations }) {
                     </div>
                 </Pop>
 
+                <div className="container pt-lg">
+                    <Pop>
+                        <Button href={`#agenda`} decal={`fs-5`}>View Agenda</Button>
+                    </Pop>
+                </div>
+
             </HeroUnitVideo>
 
 
@@ -329,9 +335,9 @@ export default function Page ({ sessions, locations }) {
 
 
             {/* AGENDA */}
-            <section className="block">
+            <section id="agenda" className="block">
                 <div className="container center">
-                    <p className='fs-2 fw-600 caps c-secondary'>2025 AIS Agenda</p>
+                    <p className='fs-2 fw-600 caps c-secondary'>Agenda</p>
                 </div>
 
                 <div className="container maxw-50 columns-1 gap-xs">
@@ -583,8 +589,10 @@ const Delegation = ({ delegation }) => {
                 <Pop delay={.1}><p style={{ textWrap: 'balance' }} className='fs-5 fw-600 c-accent mb-xxs'>{delegation.country}</p></Pop>
                 
                 <ul>
-                    <li style={{ textWrap: 'balance'}}>{delegation.head}</li>
-                    
+                    {
+                        delegation.head &&
+                        <li style={{ textWrap: 'balance'}}>{delegation.head}</li>
+                    }
 
                     {
                         delegation.names.length
