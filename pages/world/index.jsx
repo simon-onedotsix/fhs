@@ -299,13 +299,13 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             {
                 selectedCmsSpeakers &&
-                <>
-                    <SpeakerCarousel 
-                        heading={`Featured Speakers`} 
-                        text={``}
-                        decal={'bg-secondary'}
-                        anchorId={``}
-                    >
+                <section className="block bg-secondary">
+
+                    <div className="container center">
+                        <p className="fs-0 fw-600 c-primary">Featured Speakers</p>
+                    </div>
+                        
+                    <div className="container columns-5 gap-sm">
                         {
                             selectedCmsSpeakers.profiles.map(profile => (
                                 <Pop key={profile.id}>
@@ -320,7 +320,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                                 </Pop>
                             ))
                         }
-                    </SpeakerCarousel>
+                    </div>
+                    
 
                     <div className="block bg-secondary">
                         <div className='container center'>
@@ -330,7 +331,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                             </div>
                         </div>
                     </div>
-                </>
+                </section>
                 
             }
 
