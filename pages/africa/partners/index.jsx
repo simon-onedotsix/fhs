@@ -2,6 +2,8 @@ import { gql } from "@apollo/client"
 import craftApolloClient from "../../../pages/api/apollo"
 import _ from 'lodash'
 
+import { Fragment } from "react/jsx-runtime"
+
 import Head from 'next/head'
 
 
@@ -16,7 +18,7 @@ import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } fr
 
 
 function Partners({ partners }) {
-	console.log('cms partner data:', partners)
+	// console.log('cms partner data:', partners)
 
 	
 	return (
@@ -42,7 +44,7 @@ function Partners({ partners }) {
 				{
 					partners.length &&
 					partners.map( (category, index) => (
-						<>
+						<Fragment key={index}>
 							<PartnerCategory key={index}>
 
 								<div className="block pt-0">
@@ -63,7 +65,7 @@ function Partners({ partners }) {
 								
 							</PartnerCategory>
 
-						</>
+						</Fragment>
 					))
 				}
 			</PartnerCategoryGrid>

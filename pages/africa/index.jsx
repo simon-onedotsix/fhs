@@ -43,7 +43,7 @@ export default function Home ({ seomatic, partners, speakers }) {
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState()
 
-    const STRATEGIC_PARTNERS = partners.find(group => group.id === "274375")
+    const STRATEGIC_PARTNERS = partners.find(group => group.id === "138675")
 
     
     // console.log('seomatic:', seomatic)
@@ -148,7 +148,7 @@ export default function Home ({ seomatic, partners, speakers }) {
             <section className={`block bg-default`}>
                 <div className='container center'>
             
-                    <p className='fs-1 fw-700 lh-1 c-white mb-md'>2025 Strategic Partners</p>
+                    <p className='fs-1 fw-700 lh-1 c-white mb-md'>2026 Strategic Partners</p>
                     
                     <LogoGrid>
                         {
