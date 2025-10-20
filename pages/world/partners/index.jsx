@@ -1,3 +1,4 @@
+import { Fragment } from 'react/jsx-runtime'
 import _ from 'lodash'
 
 import { gql } from "@apollo/client"
@@ -56,7 +57,7 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 	// console.log('swapcard partner data:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
-	// console.log('swapcard partner categories:', swapcardPartnerGroups )
+	console.log('swapcard partner categories:', swapcardPartnerGroups )
 	// console.log('PARTNERS ARRAY:', partnersArray)
 	// console.log('flags:', countryPavilions)
 
@@ -69,6 +70,7 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 		{ id: 'RmllbGRWYWx1ZV8yODY1NTcyNw==', value: 'sponsor' },
 		{ id: 'RmllbGRWYWx1ZV8yNTg5NzkyNg==', value: 'exhibitor' },
 		{ id: 'RmllbGRWYWx1ZV8yNzc0MTg0MA==', value: 'tech-pavilion' },
+		{ id: 'RmllbGRWYWx1ZV8yODc1NTU5MA==', value: 'startup-sponsor' },
 		{ id: 'RmllbGRWYWx1ZV8yNjY5MzQ2NQ==', value: 'supporter' },
 		{ id: 'RmllbGRWYWx1ZV8yODY1NTczMA==', value: 'media-partner' }
 	]
@@ -116,7 +118,7 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 					{
 						partnersArray.length &&
 						_.orderBy(partnersArray, x => _.findIndex( CUSTOM_ORDERING, y => x.group.id === y.id )).map( (category, index) => (
-							<>
+							<Fragment key={index}>
 								<PartnerCategory key={index}>
 
 									<div className="block pt-0">
@@ -148,8 +150,8 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>Country Pavilions</h4>
 											<PartnerLogoGrid>
 												{ 
-													countryPavilions.map( pavilion => (
-														<div key={pavilion.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+													countryPavilions.map( (pavilion, index) => (
+														<div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 															<Flag flagUrl={pavilion.flag[0].url} /> 
 															<p className='fs-5 fw-500 c-primary mt-xxs'>{pavilion.country}</p>
 														</div>
@@ -160,7 +162,7 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 									</PartnerCategory>
 
 								}
-							</>
+							</Fragment>
 						))
 					}
 				</PartnerCategoryGrid>
