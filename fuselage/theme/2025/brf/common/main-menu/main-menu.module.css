@@ -238,6 +238,7 @@
     transform: translateY(-2px);
     margin-right: .35rem;
     background-color: var(--accent);
+    color: var(--primary);
     border-radius: 2rem;
     padding: 3px 8px;
     font-size: .8rem;

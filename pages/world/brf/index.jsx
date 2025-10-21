@@ -334,6 +334,14 @@ export default function Page ({ sessions, speakers }) {
                             </div>
                         </section>
                         <section>
+                            <p className='c-peach center pb-sm caps ls-2'>Sponsor</p>
+                            <div style={{ width: `100%`, maxWidth: '13rem', margin: '0 auto' }}>
+                                <img src="/assets/img/brf/new-murabba.png" alt="logo" width={`100%`} />
+                            </div>
+                        </section>
+                    </div>
+                    <div className="container">
+                        <section>
                             <p className='c-peach center pb-sm caps ls-2'>Media Partner</p>
                             <div style={{ width: `100%`, maxWidth: '15rem', margin: '0 auto' }}>
                                 <img src="/assets/img/brf/bresi.png" alt="logo" width={`100%`} />

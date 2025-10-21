@@ -46,7 +46,8 @@ const DELEGATIONS_DATA = [
         head: "Deputy Minister of Tourism and Antiquities",
         names: [
             "Ambassador of the Arab Republic of Egypt to the UAE",
-            "Director General of International Relations and Agreements"
+            "Director General of International Relations and Agreements",
+            "Deputy Ministers of Housing, Utilities and Urban Communities"
         ]
     },
     {
@@ -166,21 +167,49 @@ const DELEGATIONS_DATA = [
     {
         country: "Democratic Republic of the Congo",
         head: "Ambassador of the Democratic Republic of Congo to the UAE",
-        names: []
-    },
-    {
-        country: "Republic of Madagascar",
-        head: "",
-        names: []
+        names: [
+            "Minister of Tourism"
+        ]
     },
     {
         country: "Republic of South Africa",
         head: "Charge de Affairs of the Republic of South Africa to the UAE",
-        names: []
+        names: [
+            "Minister of Tourism",
+            "Chairperson - Tourism Business Council of South Africa",
+            "Regional General Manager",
+            "Special Projects in the South African Department of Tourism",
+            "Community Outreach Officer for the Minister of Tourism",
+        ]
+    },
+        {
+        country: "Republic of Mauritius",
+        head: "Minister of Tourism",
+        names: [
+            "Principal Tourism Planning Executive of the Ministry of Tourism",
+            "Advisor on Information Matters of the Hon. Minister",
+            "Permanent Secretary of the Ministry of Tourism",
+        ]
     },
     {
         country: "Republic of South Sudan",
         head: "Diplomat, Embassy of the Republic of South Sudan - Abu Dhabi",
+        names: []
+    },
+    {
+        country: "Republic of Zimbabwe",
+        head: "Minister of Tourism and Hospitality Industry",
+        names: []
+    },
+    {
+        country: "Mozambique",
+        head: "Secretary of State for Tourism",
+        names: []
+    },
+
+    {
+        country: "Republic of Madagascar",
+        head: "",
         names: []
     },
     

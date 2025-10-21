@@ -84,7 +84,11 @@ export const MainMenu = ({ otherEvents }) => {
 
                                                                 if ( 
                                                                     link.hyperlink === '/world/ais' ||
-                                                                    link.hyperlink === '/world/brf/broker-award'
+                                                                    link.hyperlink === '/world/pitch-point' ||
+                                                                    link.hyperlink === '/world/impact-leader-award' ||
+                                                                    link.hyperlink === '/world/brf/broker-award' ||
+                                                                    link.hyperlink === '/world/happy-hour' ||
+                                                                    link.hyperlink === '/world/themed-socials'
                                                                 ) showFlash = true
                 
                                                                 if (link.hyperlink) return (
