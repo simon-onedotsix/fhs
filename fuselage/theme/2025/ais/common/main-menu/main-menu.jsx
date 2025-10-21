@@ -84,8 +84,16 @@ export const MainMenu = ({ otherEvents }) => {
 
                                                                 if ( 
                                                                     link.hyperlink === '/world/ais' ||
-                                                                    link.hyperlink === '/world/brf/broker-award'
+                                                                    link.hyperlink === '/world/pitch-point' ||
+                                                                    link.hyperlink === '/world/impact-leader-award' ||
+                                                                    link.hyperlink === '/world/brf/broker-award' ||
+                                                                    link.hyperlink === '/world/happy-hour' ||
+                                                                    link.hyperlink === '/world/themed-socials'
                                                                 ) showFlash = true
+                                                                
+                                                                if ( 
+                                                                    link.hyperlink === '/world/venue'
+                                                                ) showOffers = true
                 
                                                                 if (link.hyperlink) return (
                                                                     <li key={index}  style={{ paddingBottom: `.05vh` }}>
@@ -101,6 +109,10 @@ export const MainMenu = ({ otherEvents }) => {
                                                                                 {
                                                                                     showFlash &&
                                                                                     <span className={CSS.label}>New!</span>
+                                                                                }
+                                                                                {
+                                                                                    showOffers &&
+                                                                                    <span className={CSS.label}>See Offers</span>
                                                                                 }
                                                                                 { link.label }
                                                                             </a>

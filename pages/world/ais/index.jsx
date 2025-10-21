@@ -47,7 +47,7 @@ const DELEGATIONS_DATA = [
         names: [
             "Ambassador of the Arab Republic of Egypt to the UAE",
             "Director General of International Relations and Agreements",
-            "Deputy Ministers of Housing, Utilities and Urban Communities"
+            "Deputy Minister of Housing, Utilities and Urban Communities"
         ]
     },
     {
