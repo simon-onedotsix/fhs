@@ -81,6 +81,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                             item.menuLinks?.map( (link, index) => {
 
                                                                 let showFlash = false
+                                                                let showOffers = false
 
                                                                 if ( 
                                                                     link.hyperlink === '/world/ais' ||
