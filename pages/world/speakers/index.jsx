@@ -77,6 +77,16 @@ function Speakers({ seomatic, speakers }) {
 	console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 
+	const sortTaggedSpeakersToEndOfAgenda = ( speakerArray ) => {
+
+		if (!speakerArray) return
+
+		speakerArray.map(speaker => {
+			console.log(speaker)
+		})
+
+	}
+
 
 	return (
 		<>

@@ -26,7 +26,7 @@ import HubspotForm from '../../../fuselage/components/hubspot-form/hubspot-form'
 import { QuoteSlider } from '../../../fuselage/theme/2024/world/components/quote-slider/quote-slider'
 import { StopwatchIcon } from "../../../fuselage/components/icons/icons"
 
-import { convertSeconds, sortSpeakersAndModerators } from '../../../lib/agenda-utils'
+import { convertSeconds, sortSpeakersAndModerators } from '../../../lib/ais-agenda-utils'
 
 import { filterSessionsByTopic } from '../../../lib/swapcard/agenda-utils'
 
