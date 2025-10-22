@@ -26,7 +26,7 @@ import HubspotForm from '../../../fuselage/components/hubspot-form/hubspot-form'
 import { QuoteSlider } from '../../../fuselage/theme/2024/world/components/quote-slider/quote-slider'
 import { StopwatchIcon } from "../../../fuselage/components/icons/icons"
 
-import { convertSeconds, sortSpeakers } from '../../../lib/agenda-utils'
+import { convertSeconds, sortSpeakersAndModerators } from '../../../lib/agenda-utils'
 
 import { filterSessionsByTopic } from '../../../lib/swapcard/agenda-utils'
 
@@ -221,7 +221,7 @@ export default function Page ({ sessions, locations }) {
     const lenis = useLenis()
 
 
-    console.log('sessions:', sessions)
+    // console.log('sessions:', filterSessionsByTopic( sessions, 'RmllbGRWYWx1ZV8yODE3NDU1NA==' ))
 	// console.log('locations [swc]:', locations)
     // console.log('AIS sessions:', filterSessionsByTopic( sessions, 'RmllbGRWYWx1ZV8yODE3NDU1NA==' ))
     
@@ -406,7 +406,9 @@ export default function Page ({ sessions, locations }) {
                                                 : null
                                             }
                                             
-                                            { sortSpeakers(session.speakers) }
+                                            {/* {sortSpeakers(session.speakers)} */}
+                                            {sortSpeakersAndModerators(session)}
+                                            
                                         </div>
 
                                     </div>
@@ -548,8 +550,19 @@ export async function getStaticProps() {
 										value
 									}
 								}
+									... on TextField {
+									id
+									definition {
+										id
+										name
+									}
+									value
+								}
 							}
 							speakers {
+								communityProfile {
+									id
+								}
 								firstName
 								id
 								jobTitle
@@ -560,12 +573,24 @@ export async function getStaticProps() {
 								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2025}") {
 									eventProfile {
 										type
-										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
+										withEvent(eventId: "RXZlbnRfMjQwNDQ3Nw==") {
 											speakerOnPlannings {
 												id
 												title
 												beginsAt
 												endsAt
+											}
+										}
+										fields {
+											... on SelectField {
+												id
+												definition {
+													name
+												}
+												value
+												translations {
+													value
+												}
 											}
 										}
 									}

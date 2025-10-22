@@ -232,3 +232,52 @@
     right: -10vw;
     width: 40vw;
 }
+
+
+
+
+
+/* speakerGrid */
+
+.sessionSpeakerGrid {
+    display: inline-grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+}
+
+@media(min-width:1200px) {
+    .sessionSpeakerGrid {
+        display: inline-flex;
+        flex-wrap: wrap;
+    }
+    .sessionSpeaker {
+        width: 12vw;
+    }
+}
+
+.sessionTag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2rem;
+    background-color: var(--accent);
+    font-size: .8rem;
+}
+.sessionLocationTag {
+    display: inline-block;
+}
+
+.test {
+    border: 1px solid rgb(255, 0, 208);
+}
+
+.speakerTag {
+    display: inline-block;
+    margin-bottom: .5rem;
+    padding: 2px 8px;
+    border-radius: calc(var(--default-radius) * 2);
+    background-color: var(--accent);
+    color: black;
+    font-size: .8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}

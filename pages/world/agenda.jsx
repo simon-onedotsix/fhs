@@ -16,7 +16,7 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { Header } from '../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from "../../fuselage/theme/2024/world/common/footer/footer"
 
-import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon, WarningIcon } from "../../fuselage/components/icons/icons"
+import { TagIcon, StopwatchIcon, LocationIcon, WarningIcon } from "../../fuselage/components/icons/icons"
 
 import { Modal } from "../../fuselage/theme/2024/world/components/modal/modal"
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
@@ -38,6 +38,8 @@ import {
 } from '@szhsin/react-menu'
 import DROPDOWN from '../../css/app/dropdown-world-2024.module.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
+
+import { sortSpeakersAndModerators } from '../../lib/agenda-utils'
 
 import CSS from '../../css/app/agenda-world-2024.module.css'
 
@@ -432,83 +434,83 @@ export default function Agenda ({ sessions, locations }) {
 	}
 
 	// new method
-	const sortSpeakersAndModerators = (sessionData) => {
+	// const sortSpeakersAndModerators = (sessionData) => {
 
-		const moderatorIDs = []
-		const moderators = []
-		const speakers = []
+	// 	const moderatorIDs = []
+	// 	const moderators = []
+	// 	const speakers = []
 
-		// find moderatorIDs by targeting custom swapcard field at session-level
-		sessionData.fields.map(field => {
-			if (field.definition.id === "RmllbGREZWZpbml0aW9uXzg0NDQ3Nw==") {
-				if (field.value.includes(", ")) {
-					const mods = field.value.split(", ")
-					moderatorIDs.push(...mods)
-				} else {
-					moderatorIDs.push(_.replace(field.value, ',', ''))
-				}
-			}
-		})
+	// 	// find moderatorIDs by targeting custom swapcard field at session-level
+	// 	sessionData.fields.map(field => {
+	// 		if (field.definition.id === "RmllbGREZWZpbml0aW9uXzg0NDQ3Nw==") {
+	// 			if (field.value.includes(", ")) {
+	// 				const mods = field.value.split(", ")
+	// 				moderatorIDs.push(...mods)
+	// 			} else {
+	// 				moderatorIDs.push(_.replace(field.value, ',', ''))
+	// 			}
+	// 		}
+	// 	})
 
-		// map through all the speakers (sorted into alpha order) and pull out the moderator (if one exists)
-		_.orderBy(sessionData.speakers, 'lastName').map(speaker => {
-			moderatorIDs.includes(speaker.communityProfile.id) 
-				? moderators.push(speaker)
-				: speakers.push(speaker)
-		})
+	// 	// map through all the speakers (sorted into alpha order) and pull out the moderator (if one exists)
+	// 	_.orderBy(sessionData.speakers, 'lastName').map(speaker => {
+	// 		moderatorIDs.includes(speaker.communityProfile.id) 
+	// 			? moderators.push(speaker)
+	// 			: speakers.push(speaker)
+	// 	})
 
-		// output the speakers
-		if ( moderators.length && speakers.length ) { 
-			return (
-				<>
-					{
-						moderators.length ?
-							<div>
-								<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
-								<div className={CSS.sessionSpeakerGrid}>
-									{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
-								</div>
-								{
-									speakers.length ?
-										<p style={{ color: `var(--accent)`, padding: `10px 0 0 0`}}>In conversation with</p>
-									: null
-								}
-							</div>
-						: null
-					}
-					<div className={CSS.sessionSpeakerGrid}>
-						{ speakers.map( speaker => renderSpeakerCard(speaker) ) }
-					</div>
-				</>
-			)
-		}
+	// 	// output the speakers
+	// 	if ( moderators.length && speakers.length ) { 
+	// 		return (
+	// 			<>
+	// 				{
+	// 					moderators.length ?
+	// 						<div>
+	// 							<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
+	// 							<div className={CSS.sessionSpeakerGrid}>
+	// 								{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
+	// 							</div>
+	// 							{
+	// 								speakers.length ?
+	// 									<p style={{ color: `var(--accent)`, padding: `10px 0 0 0`}}>In conversation with</p>
+	// 								: null
+	// 							}
+	// 						</div>
+	// 					: null
+	// 				}
+	// 				<div className={CSS.sessionSpeakerGrid}>
+	// 					{ speakers.map( speaker => renderSpeakerCard(speaker) ) }
+	// 				</div>
+	// 			</>
+	// 		)
+	// 	}
 
-		return (
-			<div className={CSS.sessionSpeakerGrid}>
-				{ sessionData.speakers.map( speaker => renderSpeakerCard(speaker) ) }
-			</div>
-		)
-	}
+	// 	return (
+	// 		<div className={CSS.sessionSpeakerGrid}>
+	// 			{ sessionData.speakers.map( speaker => renderSpeakerCard(speaker) ) }
+	// 		</div>
+	// 	)
+	// }
 
-	const renderSpeakerCard = ( speaker ) => {
-		return (
-			<span
-				key={speaker.id} 
-				onClick={() => {
-					if ( speaker.biography ) {
-						setModalContent({
-							avatar: speaker.photoUrl,
-							name: `${speaker.firstName} ${speaker.lastName}`,
-							title: speaker.jobTitle,
-							company: speaker.organization,
-							bio: speaker.biography
-						})
-						setShowModal(true)
-					}
-				}
-			}><SpeakerCard key={speaker.id} speaker={speaker}/></span>
-		)
-	}
+	// const renderSpeakerCard = ( speaker ) => {
+	// 	return (
+	// 		<span
+	// 			key={speaker.id} 
+	// 			onClick={() => {
+	// 				if ( speaker.biography ) {
+	// 					setModalContent({
+	// 						avatar: speaker.photoUrl,
+	// 						name: `${speaker.firstName} ${speaker.lastName}`,
+	// 						title: speaker.jobTitle,
+	// 						company: speaker.organization,
+	// 						bio: speaker.biography
+	// 					})
+	// 					setShowModal(true)
+	// 				}
+	// 			}
+	// 		}><SpeakerCard key={speaker.id} speaker={speaker}/></span>
+	// 	)
+	// }
 
 
 
