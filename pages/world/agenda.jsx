@@ -39,7 +39,7 @@ import {
 import DROPDOWN from '../../css/app/dropdown-world-2024.module.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
 
-import { sortSpeakersAndModerators } from '../../lib/agenda-utils'
+import { sortSpeakersAndModerators, renderSpeakerCard } from '../../lib/agenda-utils'
 
 import CSS from '../../css/app/agenda-world-2024.module.css'
 
@@ -376,144 +376,6 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-	// HANDLE SPEAKERS PER SESSION (pick out moderators)
-
-	// old method
-	const sortSpeakers = ( speakerData ) => {
-
-		if ( !speakerData ) return
-
-		let moderators = []
-        let speakers = []
-
-		_.orderBy(speakerData, 'lastName').forEach(speaker => {
-
-			// console.log(speaker)
-			// console.dir(speaker.withEvent.eventProfile.fields)
-			
-			// let fields = speaker.withEvent.eventProfile.fields
-			// let type = fields.find(field => field.id === 'RmllbGRWYWx1ZV8yODA2MDM0MQ==')
-			// console.log('Type:', type)
-
-
-			// type?.id === 'RmllbGRWYWx1ZV8yODA2MDM0MQ==' ? moderators.push( speaker ) : speakers.push( speaker )
-			speaker.withEvent.eventProfile.type === 'Moderator' ? moderators.push( speaker ) : speakers.push( speaker )
-		})
-
-
-		if ( moderators.length && speakers.length ) { 
-			return (
-				<>
-					{
-						moderators.length ?
-							<div>
-								<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
-								<div className={CSS.sessionSpeakerGrid}>
-									{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
-								</div>
-								{
-									speakers.length ?
-										<p style={{ color: `var(--accent)`, padding: `10px 0 0 0`}}>In conversation with</p>
-									: null
-								}
-							</div>
-						: null
-					}
-					<div className={CSS.sessionSpeakerGrid}>
-						{ speakers.map( speaker => renderSpeakerCard(speaker) ) }
-					</div>
-				</>
-			)
-		}
-
-		return (
-			<div className={CSS.sessionSpeakerGrid}>
-				{ speakerData.map( speaker => renderSpeakerCard(speaker) ) }
-			</div>
-		)
-	}
-
-	// new method
-	// const sortSpeakersAndModerators = (sessionData) => {
-
-	// 	const moderatorIDs = []
-	// 	const moderators = []
-	// 	const speakers = []
-
-	// 	// find moderatorIDs by targeting custom swapcard field at session-level
-	// 	sessionData.fields.map(field => {
-	// 		if (field.definition.id === "RmllbGREZWZpbml0aW9uXzg0NDQ3Nw==") {
-	// 			if (field.value.includes(", ")) {
-	// 				const mods = field.value.split(", ")
-	// 				moderatorIDs.push(...mods)
-	// 			} else {
-	// 				moderatorIDs.push(_.replace(field.value, ',', ''))
-	// 			}
-	// 		}
-	// 	})
-
-	// 	// map through all the speakers (sorted into alpha order) and pull out the moderator (if one exists)
-	// 	_.orderBy(sessionData.speakers, 'lastName').map(speaker => {
-	// 		moderatorIDs.includes(speaker.communityProfile.id) 
-	// 			? moderators.push(speaker)
-	// 			: speakers.push(speaker)
-	// 	})
-
-	// 	// output the speakers
-	// 	if ( moderators.length && speakers.length ) { 
-	// 		return (
-	// 			<>
-	// 				{
-	// 					moderators.length ?
-	// 						<div>
-	// 							<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
-	// 							<div className={CSS.sessionSpeakerGrid}>
-	// 								{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
-	// 							</div>
-	// 							{
-	// 								speakers.length ?
-	// 									<p style={{ color: `var(--accent)`, padding: `10px 0 0 0`}}>In conversation with</p>
-	// 								: null
-	// 							}
-	// 						</div>
-	// 					: null
-	// 				}
-	// 				<div className={CSS.sessionSpeakerGrid}>
-	// 					{ speakers.map( speaker => renderSpeakerCard(speaker) ) }
-	// 				</div>
-	// 			</>
-	// 		)
-	// 	}
-
-	// 	return (
-	// 		<div className={CSS.sessionSpeakerGrid}>
-	// 			{ sessionData.speakers.map( speaker => renderSpeakerCard(speaker) ) }
-	// 		</div>
-	// 	)
-	// }
-
-	// const renderSpeakerCard = ( speaker ) => {
-	// 	return (
-	// 		<span
-	// 			key={speaker.id} 
-	// 			onClick={() => {
-	// 				if ( speaker.biography ) {
-	// 					setModalContent({
-	// 						avatar: speaker.photoUrl,
-	// 						name: `${speaker.firstName} ${speaker.lastName}`,
-	// 						title: speaker.jobTitle,
-	// 						company: speaker.organization,
-	// 						bio: speaker.biography
-	// 					})
-	// 					setShowModal(true)
-	// 				}
-	// 			}
-	// 		}><SpeakerCard key={speaker.id} speaker={speaker}/></span>
-	// 	)
-	// }
-
-
-
 
 	// dropdown ui classes
 
@@ -617,7 +479,90 @@ export default function Agenda ({ sessions, locations }) {
 	const TRACKS = _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc'])
 
 
+	const sortSpeakersAndModeratorAndInvestors = ( sessionData ) => {
 
+		const moderatorIDs = []
+		const moderators = []
+		const investorIDs = []
+		const investors = []
+		const speakers = []
+
+		// find moderatorIDs by targeting custom swapcard field at session-level
+		sessionData.fields.map(field => {
+			if (field.definition?.id === "RmllbGREZWZpbml0aW9uXzg0NDQ3Nw==") {
+				if (field.value.includes(", ")) {
+					const mods = field.value.split(", ")
+					mods.map(id => {
+						// target ali
+						id === "Q29tbXVuaXR5UHJvZmlsZV8zMTE2OTU2Mg=="
+							? moderatorIDs.push(id)
+							: investorIDs.push(id)
+					})
+				} else {
+					moderatorIDs.push(_.replace(field.value, ',', ''))
+				}
+			}
+		})
+
+		// map through all the speakers (sorted into alpha order) and pull out the moderator (if one exists)
+		_.orderBy(sessionData.speakers, 'lastName').map(speaker => {
+			if (moderatorIDs.includes(speaker.communityProfile.id)) {
+				moderators.push(speaker)
+			} else if (investorIDs.includes(speaker.communityProfile.id)) {
+				investors.push(speaker)
+			} else {
+				speakers.push(speaker)
+			 }
+		})
+		
+		 console.log('moderators:', moderators)
+		 console.log('investors:', investors)
+		 console.log('speakers:', speakers)
+
+		// output the speakers
+		if ( moderators.length && speakers.length ) { 
+			return (
+				<>
+					{
+						moderators.length ?
+							<div>
+								<div style={{ display: `flex`, flexWrap: `wrap`, gap: `var(--space-sm)` }}>
+									<section>
+										<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
+										<div className={CSS.sessionSpeakerGrid}>
+											{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
+										</div>
+									</section>
+
+									<section>
+										<p className="c-accent pb-xs">Investors</p>
+										<div className={CSS.sessionSpeakerGrid}>
+											{ investors.map( investor => renderSpeakerCard(investor) ) }
+										</div>
+									</section>
+								</div>
+
+								{
+									speakers.length ?
+										<p style={{ color: `var(--accent)`, padding: `10px 0 0 0`}}>In conversation with</p>
+									: null
+								}
+							</div>
+						: null
+					}
+					<div className={CSS.sessionSpeakerGrid}>
+						{ speakers.map( speaker => renderSpeakerCard(speaker) ) }
+					</div>
+				</>
+			)
+		}
+
+		return (
+			<div className={CSS.sessionSpeakerGrid}>
+				{ sessionData.speakers.map( speaker => renderSpeakerCard(speaker) ) }
+			</div>
+		)
+	}
 
 
 
@@ -1019,7 +964,12 @@ export default function Agenda ({ sessions, locations }) {
 																				
 																				{/* { sortSpeakers(session.speakers) } */}
 																				
-																				{ sortSpeakersAndModerators(session) }
+																				{/* custom speaker sorting for pitchpoint sessions */}
+																				{
+																					session.id === "UGxhbm5pbmdfMjc0MTYzNQ==" || session.id === "UGxhbm5pbmdfMjc0MTYzOA=="
+																					? sortSpeakersAndModeratorAndInvestors(session)
+																					: sortSpeakersAndModerators(session)
+																				}
 																			</div>
 																			
 																		</div>

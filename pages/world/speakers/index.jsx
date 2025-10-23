@@ -74,19 +74,47 @@ function Speakers({ seomatic, speakers }) {
 	// console.log('speakers:', speakers)
 	// console.log('speakers found:', speakers.length)
 	// console.log('ordered:', orderedSpeakers)
-	console.log('customOrderedSpeakers:', customOrderedSpeakers)
+	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 
-	const sortTaggedSpeakersToEndOfAgenda = ( speakerArray ) => {
+	const moveTaggedSpeakersToEnd = ( speakerArray ) => {
 
-		if (!speakerArray) return
+		if ( !speakerArray ) return
 
-		speakerArray.map(speaker => {
-			console.log(speaker)
+		const targettedSpeakers = []
+
+		speakerArray.map( speaker => {
+			speaker.withEvent.fields.map(field => {
+				// target the special field
+				if ( field.definition?.id === "RmllbGREZWZpbml0aW9uXzgzNzE0Mw==" ) {
+					// target young leader && tech startup && new brands (allow for typo duplicates in swapcard)
+					if ( field.id === "RmllbGRWYWx1ZV8yODc1OTI1MA==" || field.id === "RmllbGRWYWx1ZV8yODcxNjY5Ng==" || field.id === "RmllbGRWYWx1ZV8yODc5OTM4Nw==" || field.id === "RmllbGRWYWx1ZV8yODc5OTM3Mw==" ) {
+						
+						// cut from speakerArray and push to targettedSpeakers
+						const index = speakerArray.indexOf(speaker)
+						if (index > -1) {
+							speakerArray.splice(index, 1)
+							targettedSpeakers.push({ ...speaker, tag: field.value })
+						}
+					}
+				}
+			})
 		})
+		// console.log('speakers to move to end:', targettedSpeakers.length)
+		// console.log('remaining speakers:', speakerArray.length)
+		// console.log('speakers:', _.orderBy(targettedSpeakers, (i) => i.tag))
+
+		const reorderedSpeakers = _.orderBy(targettedSpeakers, (i) => i.tag)
+		
+		return [...speakerArray, ...reorderedSpeakers]
 
 	}
 
+	// moveTaggedSpeakersToEnd( customOrderedSpeakers )
+
+	const shuffledSpeakers = moveTaggedSpeakersToEnd( customOrderedSpeakers )
+	
+	// console.log('shuffled:', shuffledSpeakers.length)
 
 	return (
 		<>
@@ -108,7 +136,7 @@ function Speakers({ seomatic, speakers }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
 							speakers.length &&
-							customOrderedSpeakers.map( speaker => {
+							shuffledSpeakers.map( speaker => {
 
 								return (
 									<div key={speaker.id}>
