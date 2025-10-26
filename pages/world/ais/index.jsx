@@ -365,6 +365,13 @@ export default function Page ({ sessions, locations }) {
 
             {/* AGENDA */}
             <section id="agenda" className="block">
+
+                <div className='container center pb-md'>
+                    <Pop>
+                        <Button href={`https://cms.thebench.com/downloads/UAE-Africa-Summit-Booklet.pdf`} target={`_blank`}>Download UAE Africa Summit Booklet</Button>
+                    </Pop>
+                </div>
+
                 <div className="container center">
                     <p className='fs-2 fw-600 caps c-secondary'>Agenda</p>
                 </div>
