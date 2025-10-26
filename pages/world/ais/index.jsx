@@ -453,7 +453,7 @@ export default function Page ({ sessions, locations }) {
                                     }
                                 ],
                                 fullName: "H.E. Badreya Al Maidoor",
-                                jobTitle: "Assistant Undersecretary of Support Services Sector at Ministry Of Economy, UAE"
+                                jobTitle: "Assistant Undersecretary of Support Services Sector at UAE Ministry of Economy & Tourism"
                             },
                             {
                                 quote: "We are honoured to partner with the UAE Ministry of Economy & Tourism to launch the UAE Africa Tourism Investment Summit as part of FHS World 2025. This collaboration reflects our shared ambition to accelerate investment and development across Africa's hospitality sector. The UAE has long served as a bridge between global capital and emerging markets, and this new platform will strengthen the connections between African nations and the international investment community. Together, we are creating an ecosystem that fosters meaningful dialogue, unlocks deal flow, and drives long-term economic growth across the continent.",
