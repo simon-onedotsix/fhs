@@ -367,8 +367,9 @@ export default function Page ({ sessions, locations }) {
             <section id="agenda" className="block">
 
                 <div className='container center pb-md'>
+                    <p className='fs-3 fw-600 mb-sm'>Investment Mapping in the Tourism Sector in Africa</p>
                     <Pop>
-                        <Button href={`https://cms.thebench.com/downloads/UAE-Africa-Summit-Booklet.pdf`} target={`_blank`}>Download UAE Africa Summit Booklet</Button>
+                        <Button href={`https://cms.thebench.com/downloads/UAE-Africa-Summit-Booklet.pdf`} target={`_blank`}>Download Booklet</Button>
                     </Pop>
                 </div>
 
