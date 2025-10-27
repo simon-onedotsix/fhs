@@ -17,8 +17,11 @@ import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } fr
 
 
 
-function Partners({ partners }) {
-	// console.log('cms partner data:', partners)
+function Partners({ entry }) {
+	// console.log('cms partner entry:', entry)
+
+	const partners = entry.ahifContentBlocks.find(block => block.id === "177599").partnerGroups
+	// console.log('partners:', partners.partnerGroups)
 
 	
 	return (
@@ -87,20 +90,29 @@ export async function getStaticProps({ preview, previewData }) {
 	const data = await craftApolloClient( preview, previewData ).query({
 		query: gql`
 			query Partners {
-				partners: entries(site: "ahif", section: "partnerGroups") {
-					... on partnerGroups_default_Entry {
-						id
-						title
-						partners {
-							... on partners_partner_Entry {
+				entry(site: "ahif", id: "177588") {
+					... on ahifPages_page_Entry {
+						ahifContentBlocks {
+							... on ahifContentBlocks_partnerGroups_BlockType {
 								id
-								title
-								slug
-								partnerLogo {
-									id
-									url
-									width
-									height
+								partnerGroups {
+									... on partnerGroups_default_Entry {
+										id
+										title
+										partners {
+											... on partners_partner_Entry {
+												id
+												title
+												slug
+												partnerLogo {
+													id
+													url
+													width
+													height
+												}
+											}
+										}
+									}
 								}
 							}
 						}
@@ -114,7 +126,7 @@ export async function getStaticProps({ preview, previewData }) {
 
 	return { 
 		props: { 
-			partners: pageData.data.partners,
+			entry: pageData.data.entry
 		}
 	}
 }
