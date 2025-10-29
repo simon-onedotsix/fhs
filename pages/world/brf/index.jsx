@@ -363,7 +363,7 @@ export default function Page ({ sessions, speakers }) {
                 </Ticker>
             </section> */}
 
-            <section className="block">
+            {/* <section className="block">
                 <div className="container formatted center maxw-50">
                     <p className="fs-1 fw-600 lh-1">World Branded Residences Awards&nbsp;2025</p>
                     <p className='fs-5 mt-sm'>The World Branded Residences Awards recognise excellence and outstanding achievement among brokerages and individual brokers operating in the global branded residences market.</p>
@@ -374,7 +374,7 @@ export default function Page ({ sessions, speakers }) {
                 <div className="container center">
                     <Button href={'/world/brf/broker-award'}>Learn More</Button>
                 </div>
-            </section>
+            </section> */}
 
 
 
