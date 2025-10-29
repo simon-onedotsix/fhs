@@ -41,7 +41,7 @@ export const ThemesSlider = ({ data, heading, link, linkLabel }) => {
     return (
 		<>
 			<div className={`${CSS.header} block center formatted py-0 mb-sm`} dir={ locale === 'ar' ? "rtl" : "ltr" }>
-				<p className="fs-1 fw-600">{ heading ? heading : "Event Themes" }</p>
+				<p className="fs-1 fw-600">{ heading ? heading : "2025 Event Themes" }</p>
 			</div>
 
 

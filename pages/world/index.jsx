@@ -66,7 +66,7 @@ const photos = [
         "hero": [
             {
                 "id": "50183",
-                "url": "/assets/img/world/pages/home/fhs-world-2024-05.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2025-05.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -77,7 +77,7 @@ const photos = [
         "hero": [
             {
                 "id": "50184",
-                "url": "/assets/img/world/pages/home/fhs-world-2024-03.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2025-03.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -88,7 +88,7 @@ const photos = [
         "hero": [
             {
                 "id": "50186",
-                "url": "/assets/img/world/pages/home/fhs-world-2024-02.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2025-02.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -99,7 +99,7 @@ const photos = [
         "hero": [
             {
                 "id": "50187",
-                "url": "/assets/img/world/pages/home/fhs-world-2024-04.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2025-04.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -110,7 +110,7 @@ const photos = [
         "hero": [
             {
                 "id": "50189",
-                "url": "/assets/img/world/pages/home/fhs-world-2024-01.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2025-01.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -121,7 +121,7 @@ const photos = [
         "hero": [
             {
                 "id": "50193",
-                "url": "/assets/img/world/pages/home/fhs-world-2024-06.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2025-06.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -132,7 +132,7 @@ const photos = [
         "hero": [
             {
                 "id": "50187",
-                "url": "/assets/img/world/pages/home/fhs-world-2024-07.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2025-07.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -143,7 +143,7 @@ const photos = [
         "hero": [
             {
                 "id": "50189",
-                "url": "/assets/img/world/pages/home/fhs-world-2024-08.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2025-08.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -154,7 +154,7 @@ const photos = [
         "hero": [
             {
                 "id": "50193",
-                "url": "/assets/img/world/pages/home/fhs-world-2024-09.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2025-09.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -209,10 +209,12 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     <div className={`${CSS.aisPromo}`}>
                         <header className={CSS.aisPromoHeader}>
                             <Ticker duration={6}>
-                                <p className="fs-3 fw-600">Launching at FHS World 2025: <span className="fw-400">UAE Africa Tourism Investment Summit</span>&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
-                                <p className="fs-3 fw-600">Launching at FHS World 2025: <span className="fw-400">UAE Africa Tourism Investment Summit</span>&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
-                                <p className="fs-3 fw-600">Launching at FHS World 2025: <span className="fw-400">UAE Africa Tourism Investment Summit</span>&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
-                                <p className="fs-3 fw-600">Launching at FHS World 2025: <span className="fw-400">UAE Africa Tourism Investment Summit</span>&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                                <p className="fs-3 fw-600">Thank you for joining us&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                                <p className="fs-3 fw-600">Thank you for joining us&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                                <p className="fs-3 fw-600">Thank you for joining us&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                                <p className="fs-3 fw-600">Thank you for joining us&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                                <p className="fs-3 fw-600">Thank you for joining us&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
+                                <p className="fs-3 fw-600">Thank you for joining us&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
                             </Ticker>
                         </header>
 
@@ -302,7 +304,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 <section className="block bg-secondary">
 
                     <div className="container center">
-                        <p className="fs-0 fw-600 c-primary">Featured Speakers</p>
+                        <p className="fs-0 fw-600 c-primary">2025 Speakers</p>
                     </div>
                         
                     <div className="container columns-5 gap-sm">
@@ -374,14 +376,13 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     <section>
                         <Fade>
                             <p className='fs-0 fw-600 lh-1 maxw-45 c-primary'>
-                                Join Us at <span className="c-accent"> FHS&nbsp;World</span>&nbsp;2025
+                                Join Us at <span className="c-accent">Thank You for Joining Us at FHS&nbsp;World</span>&nbsp;2025
                             </p>
                         </Fade>
                         <Fade>
                             <div className="formatted fs-5 mt-sm">
-                                <p>FHS World 2025 brings the global hospitality investment community together for 3 unmissable days of learning, networking, and deal-making. Shake hands with <strong className="fw-600">1400+</strong> global leaders in hospitality investment and <strong className="fw-600">300+ investors</strong> in the room.</p>
-                                <p>Benefit from business opportunities worth over <strong className="fw-600">$2 billion</strong> as you connect with C-level industry executives, developers, operators, owners, investors, and government leaders within the hospitality investment space.</p>
-                                <p>Join us as we celebrate <strong className="fw-600">20 years</strong> of bringing the hospitality investment community together - on this 20th anniversary edition of FHS World. We can&apos;t wait to welcome you.</p>
+                                <p>FHS World 2025 brought the global hospitality investment community together for 3 unmissable days of learning, networking, and deal-making. We were joined by <span className="fw-600">60+ countries</span> and delegates from over <span className="fw-600">650 companies</span> attending throughout the day. Huge thank you to the <span className="fw-600">100+ sponsors and partners</span>!</p>
+                                <p className="fw-600">Registrations are open from 2026!</p>
                             </div>
                         </Fade>
                             <div className="button-grid mt-sm">
@@ -556,7 +557,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             {/* IMPACT FIGURES */}
 
-            <section className="block bg-white o-hidden">
+            {/* <section className="block bg-white o-hidden">
                 <div className="container">
                     <div className={CSS.impactFiguresGrid}>
                         <Slide><p className="fs-0 fw-700 c-primary lh-1">2024 in Numbers</p></Slide>
@@ -569,19 +570,19 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
 
             {/* VIDEO + PHOTO HIGHLIGHTS */}
 
             <section className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className={`${CSS.highlightVideoGrid} container`}>
-                    <Slide><p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS World 2024</span></p></Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=yv7QScRD9Nk`} />
+                    <Slide><p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS World 2025</span></p></Slide>
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=eNoxO4tT7To`} />
                 </div>
 
                 <div className={`${CSS.photoGrid} container`}>
-                    <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2024 in <span className='c-secondary'>Photos</span></p></Slide>
+                    <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2025 in <span className='c-secondary'>Photos</span></p></Slide>
                     
                     <div className="columns-3 gap-xs mt-md">
                         {

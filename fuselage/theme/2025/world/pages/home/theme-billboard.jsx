@@ -55,7 +55,7 @@ export const ThemeBillboard = () => {
                     </div>
 
                     <Fade delay={1.2}>
-                        <p className={`fs-5 fw-500 c-white mt-md`} >27-29 October 2025, Madinat Jumeirah, Dubai</p>
+                        <p className={`fs-5 fw-500 c-white mt-md`} >29 Septemeber - 1 October 2026, Madinat Jumeirah, Dubai</p>
                     </Fade>
 
                     <Fade delay={1.3}>

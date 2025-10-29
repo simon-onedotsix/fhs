@@ -90,7 +90,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                         <Link href={`/ae`}><a className={CSS.logo}><FhsLockup inverse /></a></Link>
                     </div>
                     <div className={CSS.venue}>
-                        <p className='lh-2'><span className='fw-600'>27-29 OCT 2025</span> <br/>Madinat Jumeirah, Dubai</p>
+                        <p className='lh-2'><span className='fw-600'>29 SEP - 1 OCT 2026</span> <br/>Madinat Jumeirah, Dubai</p>
                     </div>
                 </section>
                 
