@@ -276,10 +276,10 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         <p className="fs-1 fw-600 lh-1 caps">Investors at FHS World</p>
                     </Fade>
                     <div className="columns-4 gap-sm mt-md">
+                        <InvestorImpact figure={5.4} prefix={"$"} unit={"tn"} label={"ASSETS UNDER MANAGEMENT"} />
                         <InvestorImpact figure={300} unit={'+'} label={"INVESTORS"} />
-                        <InvestorImpact figure={5} prefix={"$"} unit={"tn"} label={"ASSETS UNDER MANAGEMENT"} />
-                        <InvestorImpact figure={50} unit={"%"} label={"INVESTORS ATTENDING FIRST TIME"} />
-                        <InvestorImpact figure={45} unit={"%"} label={"INVESTORS FROM NON-GCC COUNTRIES"} />
+                        <InvestorImpact figure={65} unit={"%"} label={"INVESTORS ATTENDING FIRST TIME"} />
+                        <InvestorImpact figure={35} unit={"%"} label={"INVESTORS FROM NON-GCC COUNTRIES"} />
                     </div>
                     <p className="mt-md">
                         <Pop>
@@ -376,7 +376,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                     <section>
                         <Fade>
                             <p className='fs-0 fw-600 lh-1 maxw-45 c-primary'>
-                                Join Us at <span className="c-accent">Thank You for Joining Us at FHS&nbsp;World</span>&nbsp;2025
+                                <span className="c-accent">Thank You</span> for Joining Us at <span className="c-accent">FHS&nbsp;World&nbsp;2025</span>
                             </p>
                         </Fade>
                         <Fade>
