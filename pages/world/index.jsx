@@ -382,7 +382,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         <Fade>
                             <div className="formatted fs-5 mt-sm">
                                 <p>FHS World 2025 brought the global hospitality investment community together for 3 unmissable days of learning, networking, and deal-making. We were joined by <span className="fw-600">60+ countries</span> and delegates from over <span className="fw-600">650 companies</span> attending throughout the day. Huge thank you to the <span className="fw-600">100+ sponsors and partners</span>!</p>
-                                <p className="fw-600">Registrations are open from 2026!</p>
+                                <p className="fw-600">Registrations are open for 2026!</p>
                             </div>
                         </Fade>
                             <div className="button-grid mt-sm">
