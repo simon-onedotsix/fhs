@@ -30,14 +30,13 @@ import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/anim
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 import { Award } from "../../fuselage/icons/award"
 import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
+import { Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticker/logo-ticker"
+import { PopOver } from "../../fuselage/components/popover/popover"
 
-// import { Ticker } from '../../fuselage/theme/2025/sa/components/ticker/ticker'
 import Ticker from 'framer-motion-ticker'
 
-import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
+import { FixedBackgroundImage } from "../../fuselage/theme/2025/ais/blocks/fixed-background-image/fixed-background-image"
 
-
-import handleContentBlocks from "../../lib/content-blocks"
 
 import { 
     QueryText, 
@@ -59,8 +58,7 @@ import handleSeomaticMeta from '../../lib/seomatic'
 
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
 
-import { THEMES_DATA, THEMES_DATA_AR } from "./themes"
-import { AwardWinnerCard } from "../../fuselage/components/award-winner-card/award-winner-card"
+import { THEMES_DATA } from "./themes"
 
 const ARTICLE_DATA = [
     {
@@ -137,13 +135,6 @@ const SPEAKER_DATA = [
         company: 'Alrajhi Capital',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgzMzQ4Nzk=`,
-        photoUrl: 'https://static.swapcard.com/public/images/b844c54d6f3e43f28533f8592e1e9216.jpeg',
-        fullName: 'Gregory Djerejian',
-        jobTitle: 'Group Head of Investments',
-        company: 'Red Sea Global',
-    },
-    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
         photoUrl: 'https://static.swapcard.com/public/images/be577fb8e2b044c98cc51dc0dc10fb55.jpeg',
         fullName: 'Nikolina Angelkova',
@@ -164,7 +155,6 @@ const SPEAKER_DATA = [
         jobTitle: 'Chief Executive Officer',
         company: 'Candy Capital',
     },
-
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1OTk1ODI=`,
         photoUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
@@ -173,77 +163,39 @@ const SPEAKER_DATA = [
         company: 'Sofitel Legend, Sofitel, MGallery & Emblems',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc2MDY1NjI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/aeeea1ec1faf489f89b37288836b84c9.jpeg',
-        fullName: 'Michael Acton Smith',
-        jobTitle: 'Co-founder',
-        company: 'Calm',
-    },
-    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
         photoUrl: 'https://static.swapcard.com/public/images/a96df3d5f0c84807a351df07dfc4e15c.jpeg',
         fullName: 'Dr. Abeer Alamri',
         jobTitle: 'Skills Development and Talent Optimization Expert',
         company: '',
     },
-]
-const SPEAKER_DATA_AR = [
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/0f3466754aec406ab2b64862743c639f.jpeg',
-        fullName: 'صاحب السمو الأمير بندر بن سعود بن خالد آل سعود',
-        jobTitle: 'الأمين العام، مؤسسة الملك فيصل | رئيس مجلس إدارة شركة الخزامى للاستثما',
-        company: '',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
-        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
-        fullName: 'Hossam Al-Basrawi',
+        url: `/sa/speakers/profile/khalid-saud-abu-haimed`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Abu-Haimed_Khalid-Saud_pic2.jpg',
+        fullName: 'Khalid Saud Abu Haimed',
         jobTitle: 'Chief Executive Officer',
-        company: 'Alrajhi Capital',
+        company: 'Al Khozama Investment Company',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzgzMzQ4Nzk=`,
-        photoUrl: 'https://static.swapcard.com/public/images/b844c54d6f3e43f28533f8592e1e9216.jpeg',
-        fullName: 'Gregory Djerejian',
-        jobTitle: 'Group Head of Investments',
-        company: 'Red Sea Global',
+        url: `/sa/speakers/profile/mae-al-mozaini`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Mozaini_Mae_hi-res-photo.jpeg',
+        fullName: 'Mae Al Mozaini',
+        jobTitle: 'Founder & CEO',
+        company: 'The Arab Institute for Women’s Empowerment - Nusf',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
-        photoUrl: 'https://static.swapcard.com/public/images/be577fb8e2b044c98cc51dc0dc10fb55.jpeg',
-        fullName: 'نيكولينا أنجيلكوفا',
-        jobTitle: 'وزيرة السياحة البلغارية السابقة | المالكة والمديرة التنفيذية لمكتب أنجيلكوفا للمحاماة والاستشارات',
-        company: '',
+        url: `/sa/speakers/profile/norah-al-tamimi`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Tamimi_Norah_sq.jpg',
+        fullName: 'Norah Al Tamimi',
+        jobTitle: 'Co-Founder',
+        company: 'AWN',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/a96df3d5f0c84807a351df07dfc4e15c.jpeg',
-        fullName: 'الدكتورة عبير العمري',
-        jobTitle: 'وكالة التخطيط الاستراتيجي والمتابعة',
-        company: 'وزارة السياحة',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc5MDEyNjk=`,
-        photoUrl: 'https://static.swapcard.com/public/images/7ffaec8014ff4f33bd453f98c0e67b51.jpeg',
-        fullName: 'نيك كاندي',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'كاندي كابيتال',
-    },
-
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1OTk1ODI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
-        fullName: 'مود بيلي',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'سوفيتيل ليجند، سوفيتيل، إم جاليري أند إمبلمز',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc2MDY1NjI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/aeeea1ec1faf489f89b37288836b84c9.jpeg',
-        fullName: 'مايكل أكتون سميث',
-        jobTitle: 'الشريك المؤسس',
-        company: 'شركة كالم (Calm)',
+        url: `/sa/speakers/profile/qusai-al-fakhri`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/MicrosoftTeams-image-1.png',
+        fullName: 'Qusai Al-Fakhr',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Tourism Development Fund',
     },
 ]
 const PHOTOS_DATA = [
@@ -347,21 +299,45 @@ const PHOTOS_DATA = [
         ]
     }
 ]
-const AWARD_WINNERS_DATA = [
+
+
+const AB_DATA = [
     {
-        awardTitle: "Future Leader Award",
-        avatarUrl: "https://static.swapcard.com/public/images/5d27d4543c2a4075b57e2c418d0fbda4.jpeg",
-        fullName: "Lama AlQawasmi",
-        title: "Co-Founder & COO",
-        organisation: "Hospitality Talents"
+        url: `/sa/speakers/profile/mohammad-al-athel`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Athel_Mohammad_photo.jpg',
+        fullName: 'Mohammad Alathel',
+        jobTitle: 'Founder and Managing Director',
+        company: 'Amsa Hospitality',
     },
     {
-        awardTitle: "Impact Leader Award",
-        avatarUrl: "https://static.swapcard.com/public/images/a8bd1871a3d04d8db3cd7156a77b5bee.jpeg",
-        fullName: "Narjes Mohammed",
-        title: "Revenue Manager",
-        organisation: "Makkah clock Royal Tower. A Fairmont Hotel"
+        url: `/sa/speakers/profile/marco-g-malacrida-2`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Malacrida_Marco-G_sq.jpg',
+        fullName: 'Marco G Malacrida',
+        jobTitle: 'Founder',
+        company: 'Italia Hospitality',
+    },
+    {
+        url: `/sa/speakers/profile/sultan-alotaibi`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Taiba-INvestments.jpg',
+        fullName: 'Sultan Alotaibi',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Taiba Investments',
+    },
+    {
+        url: `/sa/speakers/profile/sarah-gasim`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Gasim_Sarah_red.jpg',
+        fullName: 'Sarah Gasim',
+        jobTitle: 'Senior Vice President - Head of Hotels and Hospitality KSA',
+        company: 'JLL',
+    },
+    {
+        url: `/sa/speakers/profile/haifaa-alzahrani`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/IMG_3406.jpeg',
+        fullName: 'Haifaa Alzahrani',
+        jobTitle: 'Head of Hospitality Asset Management and Partnership',
+        company: 'Thakher Development',
     }
+    
 ]
 
 export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
@@ -395,8 +371,8 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
             {/* INTRO */}
             <div ref={introRef} className={CSS.themeWrapper}>
-                <motion.img className={CSS.deco01} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g1 }}/>
-                <motion.img className={CSS.deco02} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g2 }}/>
+                {/* <motion.img className={CSS.deco01} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g1 }}/>
+                <motion.img className={CSS.deco02} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g2 }}/> */}
 
                 <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-sa-opt.mp4'} poster={'/assets/video/fhs-2024-sa-opt-poster.jpg'}>
                     
@@ -404,9 +380,10 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         initial={{ y: 100, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ type: "spring", bounce: 0.25 }}
-                        className={`fs-0 fw-700 c-white lh-1 center`} 
+                        className={`fs-xl fw-700 c-white lh-1 center maxw-50 mx-auto`} 
+                        style={{ fontFamily: 'FHSmainBold'}}
                     >
-                        { locale === 'ar' ? "حيث تصنع الرؤية الفرص" : <>WHERE VISION <br/> SHAPES OPPORTUNITY</> }
+                        Where Opportunity Meets&nbsp;Capital
                         
                     </motion.p>
 
@@ -414,7 +391,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         initial={{ y: 100, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ type: "spring", bounce: 0.25 }}
-                        className={`fs-5 fw-500 c-white center mt-xs`} 
+                        className={`fs-4 fw-300 c-white center mt-xs`} 
                     >
                         20-22 April 2026, Mandarin Oriental Al Faisaliah, Riyadh
                         
@@ -507,23 +484,83 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         </p>
                     </div>
                 </section>
-
-
-                {/* SUPPORTERS */}
-                <section className="block bg-primary">
-                    <div className="container center">
-                        <p className="fs-3 fw-600 c-accent caps">{ locale === 'ar' ? "Supporters" : "Supporters" }</p>
-                            <Pop>
-                                <div className={`${CSS.sponsorLogoWrapper} mt-sm mx-auto`}>
-                                    <Image src={`/assets/site/sa/ministry-of-tourism.png`} width={1547} height={556}/>
-                                    <Image src={`/assets/site/sa/unt-white.png`} width={800} height={624}/>
-                                    <Image src={`/assets/site/sa/wsha-white.png`} width={1000} height={442}/>
-                                    <Image src={`/assets/site/sa/wttc-white.png`} width={800} height={712}/>
-                                </div>
-                            </Pop>
-                    </div>
-                </section>
             </div>
+
+            
+
+            {/* ADVISORY BOARD */}
+            <FixedBackgroundImage
+                backgroundImageUrl={`/assets/img/sa/homepage/ab-meeting-2025.jpg`}
+                overlay={`hsl(from var(--primary) h s l / .85)`}
+            >
+                
+                <div className="container center">
+                    <Pop><p className="fs-1 fw-600 c-white balance">Upcoming FHS Saudi Arabia Advisory Board Meeting</p></Pop>
+                </div>
+
+
+                <div className="container columns-3 gap-sm">
+                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-01.jpg" alt="" width={`100%`} style={{ borderRadius: `.5rem`}} /></Pop>
+                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-02.jpg" alt="" width={`100%`} style={{ borderRadius: `.5rem`}} /></Pop>
+                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-03.jpg" alt="" width={`100%`} style={{ borderRadius: `.5rem`}} /></Pop>
+                </div>
+
+
+                <div className="container center pt-sm">
+                    <Fade>
+                        <Pop><p className="fs-2 fw-600 c-white">Advisory Board Members</p></Pop>
+                    </Fade>
+                </div>
+
+                <div className="container columns-5 gap-sm">
+                    {
+                        AB_DATA.map( (profile, index) => (
+                            <Pop key={index}>
+                                <SpeakerCard
+                                    url={profile.url}
+                                    photoUrl={profile.photoUrl}
+                                    fullName={profile.fullName}
+                                    jobTitle={profile.jobTitle}
+                                    company={profile.company}
+                                    color={'c-white'}
+                                />
+                            </Pop>
+                        ))
+                    }
+                </div>
+
+                <div className="container center">
+                    <Pop>
+                        <ArrowButton 
+                            href={ '/sa/advisory-board' } 
+                            theme={{ arrow: `white`, border: `white`, label: `white`}}
+                        >
+                            View All Members
+                        </ArrowButton>
+                    </Pop>
+                </div>
+
+            </FixedBackgroundImage>
+
+
+
+
+            {/* SUPPORTERS */}
+            <section className="block bg-primary">
+                <div className="container center">
+                    <p className="fs-3 fw-600 c-accent caps">{ locale === 'ar' ? "Supporters" : "Supporters" }</p>
+                        <Pop>
+                            <div className={`${CSS.sponsorLogoWrapper} mt-sm mx-auto`}>
+                                <Image src={`/assets/site/sa/ministry-of-tourism.png`} width={1547} height={556}/>
+                                <Image src={`/assets/site/sa/unt-white.png`} width={800} height={624}/>
+                                <Image src={`/assets/site/sa/wsha-white.png`} width={1000} height={442}/>
+                                <Image src={`/assets/site/sa/wttc-white.png`} width={800} height={712}/>
+                            </div>
+                        </Pop>
+                </div>
+            </section>
+
+
 
             <div className="bg-secondary py-xs">
                 <Ticker>
@@ -589,12 +626,12 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             <section className="block bg-primary-2-dark">
                 <div className="container center">
                     <Fade>
-                        <p className="fs-0 fw-600 c-white">Featured Speakers</p>
+                        <p className="fs-1 fw-600 c-white">FHS Speakers</p>
                     </Fade>
                 </div>
-                <div className="container columns-5 gap-sm">
+                <div className="container columns-4 gap-sm maxw-65">
                     {
-                        (locale === 'ar' ? SPEAKER_DATA_AR : SPEAKER_DATA).map( (profile, index) => (
+                        SPEAKER_DATA.map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
                                     url={profile.url}
@@ -636,20 +673,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </ArticleScroller>
 
 
-            {/* AWARDS */}
-            {/* <section className="block bg-primary">
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-0 fw-600 c-white">2025 Award Winners</p>
-                    </Fade>
-                </div>
-                <div className="container columns-2 gap-md maxw-40">
-                    {
-                        AWARD_WINNERS_DATA.map( (winner, index ) => <AwardWinner winner={winner} key={index} />)
-                    }
-                </div>
-            </section> */}
-
 
             {/* VIDEO + PHOTO HIGHLIGHTS */}
             <section className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
@@ -679,6 +702,41 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 </div>
             </section>
 
+
+            {/* SPONSORS */}
+            <section className="block pt-0 pb-0">
+                <div className="container center">
+                    <Pop><p className="fs-1 fw-600 c-primary balance">Partners Joining Us</p></Pop>
+                </div>
+            </section>
+            <div className="py-xs mt-sm mb-lg">
+                <Ticker duration={25}>
+                    {
+                        partners.map(partner => (
+                            <div key={partner.id} style={{ marginRight: 10 }}>
+                                <Logo logoUrl={partner.logoUrl} />
+                            </div>
+                        ))
+                    }
+                </Ticker>
+            </div>
+
+            
+            {/* POPOVER */}
+            <PopOver>
+                <div className="formatted">
+                    <p className="fs-3 fw-600 lh-1 c-primary">Looking to attend?</p>
+                    <p>Register before 10th November.</p>
+                    <Pop inline>
+                        <Button 
+                            href={'/sa/purchase-pass'} 
+                            theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
+                            decal={'fw-600'} 
+                            accent
+                        >Purchase Pass</Button>
+                    </Pop>
+                </div>
+            </PopOver>
 
             
             <Footer />
@@ -832,7 +890,7 @@ export async function getStaticProps({ preview, previewData, locale }) {
     })
     const pageData = data
 
-    const swapcardData2025 = await fetch(
+    const swapcardData2026 = await fetch(
 		"https://developer.swapcard.com/event-admin/graphql",
 		{
 			method: "POST",
@@ -843,7 +901,7 @@ export async function getStaticProps({ preview, previewData, locale }) {
 			body: JSON.stringify({
 				query: `
 					query {
-						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2025}", page:1, pageSize: 200) {
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2026}", page:1, pageSize: 200) {
 							id
 							name
 							logoUrl
@@ -864,13 +922,13 @@ export async function getStaticProps({ preview, previewData, locale }) {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2026,
 					"page": 1
 				}
 			})
 		}
 	)
-	const partnerData2025 =  await swapcardData2025.json()
+	const partnerData2026 =  await swapcardData2026.json()
 
 
     return { 
@@ -879,7 +937,7 @@ export async function getStaticProps({ preview, previewData, locale }) {
 			entry: pageData.data.entry,
 			seomatic: pageData.data.entry.seomatic,
 			contentBlocks: pageData.data.entry.fhisContentBlocks,
-            partners: partnerData2025.data.exhibitors,
+            partners: partnerData2026.data.exhibitors,
             abVideos: pageData.data.abVideos.videos,
 		}
 	}

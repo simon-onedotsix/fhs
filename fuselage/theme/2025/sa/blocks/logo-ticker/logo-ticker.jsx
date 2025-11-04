@@ -8,12 +8,15 @@ import CSS from './logo-ticker.module.css'
 export const LogoTicker = ({ heading, speed, children }) => {
     return (
         <div className={CSS.container}>
-            <div className={CSS.sectionHeadingContainer}>
-                <span/>
-                <Slide>
-                    <p className={CSS.sectionHeading}>{ heading }</p>
-                </Slide>
-            </div>
+            {
+                heading &&
+                <div className={CSS.sectionHeadingContainer}>
+                    <span/>
+                    <Slide>
+                        <p className={CSS.sectionHeading}>{ heading }</p>
+                    </Slide>
+                </div>
+            }
             <div dir="ltr">
                 {/* <HorizontalTicker duration={ speed ? speed * 500 : 20000 }>
                     <div className={CSS.logos}>

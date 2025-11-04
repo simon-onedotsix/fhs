@@ -9,3 +9,7 @@ p + .h, p + .h1, p + .h2, p + .h3, p + .h4, p + .h5, p + .h6,
 p + h1, p + h2, p + h3, p + h4, p + h5, p + h6 {
     margin-top: calc(var(--default-line-height, 1.5) * 1rem);
 }
+
+.balance {
+    text-wrap: balance;
+}
