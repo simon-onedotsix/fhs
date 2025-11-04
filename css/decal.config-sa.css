@@ -24,10 +24,3 @@
     --default-button-radius: 3rem;
 
 }
-
-@font-face {
-    font-family: 'FHSmainBold';
-    src: url('/fonts/FHS-Main-Bold.woff2');
-    font-weight: bold;
-    font-style: bold;
-}

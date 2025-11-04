@@ -197,6 +197,34 @@ const SPEAKER_DATA = [
         jobTitle: 'Chief Executive Officer',
         company: 'Tourism Development Fund',
     },
+    {
+        url: `/sa/speakers/profile/hassan-ahdab`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Ahdab_Hassan.jpg',
+        fullName: 'Hassan Ahdab',
+        jobTitle: 'Chief Hospitality Operations Officer',
+        company: 'Taiba Investments',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk0MjU2ODU=`,
+        photoUrl: 'https://cdn-api.swapcard.com/public/images/5d687c7d1bd34fe383f0c0a3ba7da1c4.jpeg',
+        fullName: 'Sebastian Carre',
+        jobTitle: 'Group Head of Hospitality-Operations',
+        company: 'Red Sea Globa',
+    },
+    {
+        url: `/sa/speakers/profile/wahdan-alkadi`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/WAHDAN.webp',
+        fullName: 'Wahdan Alkadi',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Events Investment Fund',
+    },
+    {
+        url: `/sa/speakers/profile/samer-sabra`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/322541D7-4233-48BA-8AB5-766F54358317.jpeg',
+        fullName: 'Samer Sabra',
+        jobTitle: 'Chief of Hospitality Officer',
+        company: 'Jabal Omar Development Company',
+    },
 ]
 const PHOTOS_DATA = [
     {
@@ -299,8 +327,6 @@ const PHOTOS_DATA = [
         ]
     }
 ]
-
-
 const AB_DATA = [
     {
         url: `/sa/speakers/profile/mohammad-al-athel`,
@@ -308,13 +334,6 @@ const AB_DATA = [
         fullName: 'Mohammad Alathel',
         jobTitle: 'Founder and Managing Director',
         company: 'Amsa Hospitality',
-    },
-    {
-        url: `/sa/speakers/profile/marco-g-malacrida-2`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Malacrida_Marco-G_sq.jpg',
-        fullName: 'Marco G Malacrida',
-        jobTitle: 'Founder',
-        company: 'Italia Hospitality',
     },
     {
         url: `/sa/speakers/profile/sultan-alotaibi`,
@@ -380,10 +399,9 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         initial={{ y: 100, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ type: "spring", bounce: 0.25 }}
-                        className={`fs-xl fw-700 c-white lh-1 center maxw-50 mx-auto`} 
-                        style={{ fontFamily: 'FHSmainBold'}}
+                        className={`${CSS.headline} fs-xl fw-900 c-white lh-1 center mx-auto`}
                     >
-                        Where Opportunity Meets&nbsp;Capital
+                        Where Opportunity Meets Capital
                         
                     </motion.p>
 
@@ -490,14 +508,9 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
             {/* ADVISORY BOARD */}
             <FixedBackgroundImage
-                backgroundImageUrl={`/assets/img/sa/homepage/ab-meeting-2025.jpg`}
+                backgroundImageUrl={`/assets/img/sa/homepage/ab-meeting-2025-2.jpg`}
                 overlay={`hsl(from var(--primary) h s l / .85)`}
             >
-                
-                <div className="container center">
-                    <Pop><p className="fs-1 fw-600 c-white balance">Upcoming FHS Saudi Arabia Advisory Board Meeting</p></Pop>
-                </div>
-
 
                 <div className="container columns-3 gap-sm">
                     <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-01.jpg" alt="" width={`100%`} style={{ borderRadius: `.5rem`}} /></Pop>
@@ -512,7 +525,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     </Fade>
                 </div>
 
-                <div className="container columns-5 gap-sm">
+                <div className="container columns-4 gap-sm">
                     {
                         AB_DATA.map( (profile, index) => (
                             <Pop key={index}>
@@ -541,25 +554,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 </div>
 
             </FixedBackgroundImage>
-
-
-
-
-            {/* SUPPORTERS */}
-            <section className="block bg-primary">
-                <div className="container center">
-                    <p className="fs-3 fw-600 c-accent caps">{ locale === 'ar' ? "Supporters" : "Supporters" }</p>
-                        <Pop>
-                            <div className={`${CSS.sponsorLogoWrapper} mt-sm mx-auto`}>
-                                <Image src={`/assets/site/sa/ministry-of-tourism.png`} width={1547} height={556}/>
-                                <Image src={`/assets/site/sa/unt-white.png`} width={800} height={624}/>
-                                <Image src={`/assets/site/sa/wsha-white.png`} width={1000} height={442}/>
-                                <Image src={`/assets/site/sa/wttc-white.png`} width={800} height={712}/>
-                            </div>
-                        </Pop>
-                </div>
-            </section>
-
 
 
             <div className="bg-secondary py-xs">
@@ -664,6 +658,25 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </section>
 
 
+            {/* SPONSORS */}
+            <section className="block pb-0">
+                <div className="container center">
+                    <Pop><p className="fs-1 fw-600 c-primary balance">Partners Joining Us</p></Pop>
+                </div>
+            </section>
+            <div className="py-xs mt-sm mb-lg">
+                <Ticker duration={25}>
+                    {
+                        partners.map(partner => (
+                            <div key={partner.id} style={{ marginRight: 10 }}>
+                                <Logo logoUrl={partner.logoUrl} />
+                            </div>
+                        ))
+                    }
+                </Ticker>
+            </div>
+
+
             {/* ANNOUNCEMENTS */}
             <ArticleScroller>
                 {
@@ -703,23 +716,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </section>
 
 
-            {/* SPONSORS */}
-            <section className="block pt-0 pb-0">
-                <div className="container center">
-                    <Pop><p className="fs-1 fw-600 c-primary balance">Partners Joining Us</p></Pop>
-                </div>
-            </section>
-            <div className="py-xs mt-sm mb-lg">
-                <Ticker duration={25}>
-                    {
-                        partners.map(partner => (
-                            <div key={partner.id} style={{ marginRight: 10 }}>
-                                <Logo logoUrl={partner.logoUrl} />
-                            </div>
-                        ))
-                    }
-                </Ticker>
-            </div>
+            
 
             
             {/* POPOVER */}
