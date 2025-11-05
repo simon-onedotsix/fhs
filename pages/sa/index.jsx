@@ -197,34 +197,7 @@ const SPEAKER_DATA = [
         jobTitle: 'Chief Executive Officer',
         company: 'Tourism Development Fund',
     },
-    {
-        url: `/sa/speakers/profile/hassan-ahdab`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Ahdab_Hassan.jpg',
-        fullName: 'Hassan Ahdab',
-        jobTitle: 'Chief Hospitality Operations Officer',
-        company: 'Taiba Investments',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk0MjU2ODU=`,
-        photoUrl: 'https://cdn-api.swapcard.com/public/images/5d687c7d1bd34fe383f0c0a3ba7da1c4.jpeg',
-        fullName: 'Sebastian Carre',
-        jobTitle: 'Group Head of Hospitality-Operations',
-        company: 'Red Sea Globa',
-    },
-    {
-        url: `/sa/speakers/profile/wahdan-alkadi`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/WAHDAN.webp',
-        fullName: 'Wahdan Alkadi',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Events Investment Fund',
-    },
-    {
-        url: `/sa/speakers/profile/samer-sabra`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/322541D7-4233-48BA-8AB5-766F54358317.jpeg',
-        fullName: 'Samer Sabra',
-        jobTitle: 'Chief of Hospitality Officer',
-        company: 'Jabal Omar Development Company',
-    },
+    
 ]
 const PHOTOS_DATA = [
     {
@@ -355,7 +328,35 @@ const AB_DATA = [
         fullName: 'Haifaa Alzahrani',
         jobTitle: 'Head of Hospitality Asset Management and Partnership',
         company: 'Thakher Development',
-    }
+    },
+    {
+        url: `/sa/speakers/profile/hassan-ahdab`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Ahdab_Hassan.jpg',
+        fullName: 'Hassan Ahdab',
+        jobTitle: 'Chief Hospitality Operations Officer',
+        company: 'Taiba Investments',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk0MjU2ODU=`,
+        photoUrl: 'https://cdn-api.swapcard.com/public/images/5d687c7d1bd34fe383f0c0a3ba7da1c4.jpeg',
+        fullName: 'Sebastian Carre',
+        jobTitle: 'Group Head of Hospitality-Operations',
+        company: 'Red Sea Globa',
+    },
+    {
+        url: `/sa/speakers/profile/wahdan-alkadi`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/WAHDAN.webp',
+        fullName: 'Wahdan Alkadi',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Events Investment Fund',
+    },
+    {
+        url: `/sa/speakers/profile/samer-sabra`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/322541D7-4233-48BA-8AB5-766F54358317.jpeg',
+        fullName: 'Samer Sabra',
+        jobTitle: 'Chief of Hospitality Officer',
+        company: 'Jabal Omar Development Company',
+    },
     
 ]
 
@@ -393,7 +394,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 {/* <motion.img className={CSS.deco01} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g1 }}/>
                 <motion.img className={CSS.deco02} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g2 }}/> */}
 
-                <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-sa-opt.mp4'} poster={'/assets/video/fhs-2024-sa-opt-poster.jpg'}>
+                <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2025-sa-wrap-up-opt.mp4'} poster={'/assets/video/fhs-2025-sa-wrap-up-poster.jpg'}>
                     
                     <motion.p 
                         initial={{ y: 100, opacity: 0 }}
@@ -512,20 +513,13 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 overlay={`hsl(from var(--primary) h s l / .85)`}
             >
 
-                <div className="container columns-3 gap-sm">
-                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-01.jpg" alt="" width={`100%`} style={{ borderRadius: `.5rem`}} /></Pop>
-                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-02.jpg" alt="" width={`100%`} style={{ borderRadius: `.5rem`}} /></Pop>
-                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-03.jpg" alt="" width={`100%`} style={{ borderRadius: `.5rem`}} /></Pop>
-                </div>
-
-
                 <div className="container center pt-sm">
                     <Fade>
-                        <Pop><p className="fs-2 fw-600 c-white">Advisory Board Members</p></Pop>
+                        <Pop><p className="fs-1 fw-600 c-white">Advisory Board Members</p></Pop>
                     </Fade>
                 </div>
 
-                <div className="container columns-4 gap-sm">
+                <div className="container columns-4 gap-sm maxw-65">
                     {
                         AB_DATA.map( (profile, index) => (
                             <Pop key={index}>
