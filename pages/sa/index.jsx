@@ -402,7 +402,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         transition={{ type: "spring", bounce: 0.25 }}
                         className={`${CSS.headline} fs-xl fw-900 c-white lh-1 center mx-auto`}
                     >
-                        Where Opportunity Meets Capital
+                        Where Opportunity Meets&nbsp;Capital
                         
                     </motion.p>
 

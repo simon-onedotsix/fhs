@@ -297,15 +297,15 @@
 
 
 .headline {
-    font-size: 12vw;
+    font-size: 10vw;
 }
 @media(min-width:600px){
     .headline {
-        font-size: 9vw;
+        font-size: 7vw;
     }
 }
 @media(min-width:1200px){
     .headline {
-        font-size: 8vw;
+        font-size: 6vw;
     }
 }
