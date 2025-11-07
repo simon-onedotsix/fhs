@@ -72,14 +72,17 @@ export const MainMenu = ({ otherEvents }) => {
                 
                 <div className={`${CSS.mobileToggleActions} mobile-only mb-md`}>
                     <Button 
-                        href={`/sa/register-interest`} 
+                        href={`/sa/purchase-pass`} 
                         theme={{ 
                             color: `white`,
                             background: `var(--secondary)`, 
                             hover: `var(--secondary-dark)`, 
                         }} 
-                        decal={`fw-600`}
-                    >Register Interest for 2026</Button>
+                        decal={`fw-600 mobile-only`}
+                    >
+                        Register Now
+                    </Button>
+
                     <Button 
                         href={`/sa/become-a-sponsor#form`} 
                         theme={{ 

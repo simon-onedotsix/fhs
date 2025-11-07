@@ -714,7 +714,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
             
             {/* POPOVER */}
-            <PopOver>
+            {/* <PopOver>
                 <div className="formatted">
                     <p className="fs-3 fw-600 lh-1 c-primary">Looking to attend?</p>
                     <p>Register before 10th November.</p>
@@ -727,7 +727,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         >Purchase Pass</Button>
                     </Pop>
                 </div>
-            </PopOver>
+            </PopOver> */}
 
             
             <Footer />
