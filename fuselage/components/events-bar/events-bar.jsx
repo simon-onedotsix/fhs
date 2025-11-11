@@ -13,7 +13,7 @@ export const EventsBar = ({ hidden, thisEvent, eventsLabel, events, theme }) => 
             <div className={CSS.layout} style={{ color: theme ? theme.color : 'inherit'}}>
                 <section>
                     { thisEvent ? thisEvent : 'This event ' } { locale === 'ar' ? "تأتيكم قمة مستقبل الضيافة برعاية" : "is brought to you by" } <EventBarButton href={`https://www.thebench.com`} title={`The Bench`} target stroke={ theme ? theme.accent : `var(--accent)`} />
-                    &emsp;<EventBarButton href={`https://www.thebench.com/newsletter`} title={`Subscribe to our Newsletter`} target stroke={ theme ? theme.accent : `var(--accent)`} />
+                    &emsp;<EventBarButton href={`https://www.thebench.com/newsletter`} title={ locale === 'ar' ? `اشترك في نشرتنا` : `Subscribe to our Newsletter`} target stroke={ theme ? theme.accent : `var(--accent)`} />
                 </section>
 
                 <section className={CSS.events}>

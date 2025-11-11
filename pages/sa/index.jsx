@@ -58,7 +58,7 @@ import handleSeomaticMeta from '../../lib/seomatic'
 
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
 
-import { THEMES_DATA } from "./themes"
+import { THEMES_DATA, THEMES_DATA_AR } from "./themes"
 
 const ARTICLE_DATA = [
     {
@@ -89,29 +89,30 @@ const ARTICLE_DATA = [
 const ARTICLE_DATA_AR = [
     {
         heroUrl: '/assets/img/sa/press-release-1.webp',
-        title: 'شركة رؤى المدينة القابضة توقع اتفاقية مع هيلتون لافتتاح ثلاثة فنادق في مشروع رؤى المدينة',
-        excerpt: 'وقّعت شركة رؤى المدينة القابضة اتفاقية مع هيلتون لافتتاح ثلاثة فنادق تضم أكثر من 1600 غرفة.',
+        title: 'شركة رؤى المدينة القابضة توقّع اتفاقية مع هيلتون لافتتاح ثلاثة فنادق ضمن مشروع رؤى المدينة',
+        excerpt: `وقعت شركة رؤى المدينة القابضة اتفاقية مع هيلتون لافتتاح 3 فنادق تضم أكثر من 1600 غرفة فندقية.`,
         url: '/sa/content-library/rua-al-madinah-holding-signs-agreement-with-hilton-to-open-three-hotels-at-rua-al-madinah-project',
     },
     {
         heroUrl: '/assets/img/sa/press-release-2.webp',
-        title: 'مجموعة فنادق راديسون تسرّع استراتيجيتها التوسعية في المملكة العربية السعودية مع التركيز على المدن المقدسة',
-        excerpt: 'تواصل مجموعة فنادق راديسون تكثيف جهودها في المملكة العربية السعودية، بما يتماشى مع رؤية السعودية 2030 لقطاع الضيافة.',
+        title: 'مجموعة فنادق راديسون تسرّع استراتيجية توسّعها في السعودية مع التركيز على مكة والمدينة',
+        excerpt: 'تواصل مجموعة فنادق راديسون تكثيف جهودها في المملكة العربية السعودية، تماشياً مع رؤية السعودية 2030 لقطاع الضيافة.',
         url: '/sa/content-library/radisson-hotel-group-accelerates-expansion-strategy-in-saudi-arabia-with-focus-on-holy-cities',
     },
     {
         heroUrl: '/assets/img/sa/press-release-3.webp',
-        title: 'أكور تقود عملية توسع قطاع الضيافة في جميع أنحاء المملكة العربية السعودية',
-        excerpt: "بصفتها أكبر مشغل فنادق في المملكة، تقود أكور تحولًا استراتيجيًا في قطاع السياحة، مما يمثل عهدًا جديدًا من الضيافة في المملكة.",
+        title: `أكور تقود عملية توسع قطاع الضيافة في السعودية`,
+        excerpt: `بصفتها أكبر مشغّل فندقي في المملكة، تقود أكور التحول الاستراتيجي في قطاع السياحة، معلنةً حقبة جديدة للضيافة في المملكة.`,
         url: '/sa/content-library/accor-spearheads-hospitality-expansion-throughout-saudi-arabia-2',
     },
     {
         heroUrl: '/assets/img/sa/press-release-4.webp',
-        title: 'ماريوت الدولة والقمّة للضيافة توقعان اتفاقية لافتتاح فندق جي دبليو ماريوت في جدة',
-        excerpt: 'أعلنت شركة ماريوت الدولية، بالشراكة مع القمّة للضيافة (إحدى شركات مجموعة بن داود القابضة)، عن توقيع اتفاقية لإطلاق علامة جي دبليو ماريوت في جدة. سيتمتع الفندق بموقع مميز على كورنيش جدة، ليكون وجهة فاخرة للمسافرين الباحثين عن تجربة إقامة راقية على الواجهة البحرية تجمع بين الفخامة والخدمات المتميزة والرفاهية الشاملة.',
+        title: `ماريوت الدولية والقمة للضيافة توقّعان اتفاقية لافتتاح فندق جي دبليو ماريوت في جدة`,
+        excerpt: `أعلنت ماريوت الدولية والقمة للضيافة (أحد شركات بن داوود التجارية) اليوم عن توقيع اتفاقية لافتتاح فندق جي دبليو ماريوت في جدة. ومن المتوقع أن يكون الفندق الذي سيقام على كورنيش جدة ملاذًا للمسافرين الذين يبحثون عن وجهة شاطئية فاخرة تُقدّم تجارب ضيافة خدمات استثنائية وتجارب عافية شاملة.`,
         url: '',
     }
 ]
+
 const SPEAKER_DATA = [
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
@@ -199,6 +200,94 @@ const SPEAKER_DATA = [
     },
     
 ]
+const SPEAKER_DATA_AR = [
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/0f3466754aec406ab2b64862743c639f.jpeg',
+        fullName: 'صاحب السمو الملكي الأمير بندر بن سعود بن خالد آل سعود',
+        jobTitle: 'الأمين العام لمؤسسة الملك فيصل الخيرية | رئيس مجلس إدارة شركة الخزامى للاستثمار',
+        company: '',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk1MDI0MTI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/56724beae060457ea3b07e98cba20646.jpeg',
+        fullName: 'محمود عبد الهادي',
+        jobTitle: 'وكيل الوزارة لتمكين الوجهات السياحية',
+        company: 'وزارة السياحة السعودية',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
+        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
+        fullName: 'حسام البصراوي',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'الراجحي كابيتال',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
+        photoUrl: 'https://static.swapcard.com/public/images/be577fb8e2b044c98cc51dc0dc10fb55.jpeg',
+        fullName: 'نيكولينا أنجلكوفا',
+        jobTitle: 'وزيرة السياحة السابقة، بلغاريا | المالكة والرئيسة التنفيذية لمكتب أنجلكوفا للمحاماة والاستشارات',
+        company: '',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Inzerillo_Jerry_cr.jpg',
+        fullName: 'جيري إنزيريلو',
+        jobTitle: 'الرئيس التنفيذي لمجموعة شركة بوابة الدرعية المحدودة | نائب رئيس مجلس إدارة دليل فوربس للسفر',
+        company: '',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc5MDEyNjk=`,
+        photoUrl: 'https://static.swapcard.com/public/images/7ffaec8014ff4f33bd453f98c0e67b51.jpeg',
+        fullName: 'نيك كاندي',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'كاندي كابيتال',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1OTk1ODI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
+        fullName: 'مود بيلي',
+        jobTitle: 'الرئيسة التنفيذية',
+        company: 'سوفيتيل ليجند، سوفيتيل، إم غاليري، إمبليمز',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/a96df3d5f0c84807a351df07dfc4e15c.jpeg',
+        fullName: 'الدكتورة عبير العمري',
+        jobTitle: 'خبيرة في تطوير المهارات وتحسين المواهب',
+        company: '',
+    },
+    {
+        url: `/sa/speakers/profile/khalid-saud-abu-haimed`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Abu-Haimed_Khalid-Saud_pic2.jpg',
+        fullName: 'خالد سعود أبو حيمد',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'شركة الخزامى للاستثمار',
+    },
+    {
+        url: `/sa/speakers/profile/mae-al-mozaini`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Mozaini_Mae_hi-res-photo.jpeg',
+        fullName: 'مي المزيني',
+        jobTitle: 'المؤسسة والرئيسة التنفيذية',
+        company: 'المعهد العربي لتمكين المرأة – نصف',
+    },
+    {
+        url: `/sa/speakers/profile/norah-al-tamimi`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Tamimi_Norah_sq.jpg',
+        fullName: 'نورة التميمي',
+        jobTitle: 'مؤسسة مشاركة',
+        company: 'شركة مشاريع عون',
+    },
+    {
+        url: `/sa/speakers/profile/qusai-al-fakhri`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/MicrosoftTeams-image-1.png',
+        fullName: 'قصي الفخر',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'صندوق التنمية السياحي',
+    },
+    
+]
+
 const PHOTOS_DATA = [
     {
         "id": "13864",
@@ -300,6 +389,7 @@ const PHOTOS_DATA = [
         ]
     }
 ]
+
 const AB_DATA = [
     {
         url: `/sa/speakers/profile/mohammad-al-athel`,
@@ -359,6 +449,106 @@ const AB_DATA = [
     },
     
 ]
+const AB_DATA_AR = [
+    {
+        url: `/sa/speakers/profile/mohammad-al-athel`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Athel_Mohammad_photo.jpg',
+        fullName: 'محمد العذل',
+        jobTitle: 'المؤسس والرئيس التنفيذي',
+        company: 'شركة أمسا للضيافة',
+    },
+    {
+        url: `/sa/speakers/profile/sultan-alotaibi`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Taiba-INvestments.jpg',
+        fullName: 'سلطان العتيبي',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'طيبة للاستثمار',
+    },
+    {
+        url: `/sa/speakers/profile/sarah-gasim`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Gasim_Sarah_red.jpg',
+        fullName: 'سارة قاسم',
+        jobTitle: 'نائبة الرئيس الأولى ورئيسة قسم مجموعة فنادق السعودية',
+        company: 'شركة جيه إل إل',
+    },
+    {
+        url: `/sa/speakers/profile/haifaa-alzahrani`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/IMG_3406.jpeg',
+        fullName: 'هيفاء الزهراني',
+        jobTitle: 'رئيسة إدارة أصول الضيافة والشراكات',
+        company: 'ذاخر للتطوير',
+    },
+    {
+        url: `/sa/speakers/profile/hassan-ahdab`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Ahdab_Hassan.jpg',
+        fullName: 'حسن أحدب',
+        jobTitle: 'الرئيس التنفيذي للتشغيل الفندقي',
+        company: 'طيبة للاستثمار',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk0MjU2ODU=`,
+        photoUrl: 'https://cdn-api.swapcard.com/public/images/5d687c7d1bd34fe383f0c0a3ba7da1c4.jpeg',
+        fullName: 'سيباستيان كاري',
+        jobTitle: 'رئيس قطاع العمليات الفندقية للمجموعة',
+        company: 'البحر الأحمر الدولية',
+    },
+    {
+        url: `/sa/speakers/profile/wahdan-alkadi`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/WAHDAN.webp',
+        fullName: 'وهدان القاضي',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'صندوق الفعاليات الاستثماري',
+    },
+    {
+        url: `/sa/speakers/profile/samer-sabra`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/322541D7-4233-48BA-8AB5-766F54358317.jpeg',
+        fullName: 'سامر صبرا',
+        jobTitle: 'رئيس قطاع الضيافة',
+        company: 'شركة جبل عمر للتطوير',
+    },
+    
+]
+
+const QUOTES_DATA = [
+    {
+        avatarUrl: 'https://static.swapcard.com/public/images/9cf68577bdff4a38be44c9fbf2850f25.jpeg',
+        quote: "Being at FHS is like an obligation now! We attend both Saudi Arabia and World to present our company's developments, network and meet with colleagues and investors. This year was much stronger and more effective.",
+        fullName: "Hassan Ahdab",
+        title: "Chief Hospitality Operations Officer, Taiba Investments"
+    },
+    {
+        avatarUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
+        quote: "It's a blessing. Very energizing, very dynamic, very busy. Lots of beautiful encounters so far.",
+        fullName: "Maud Bailly",
+        title: "Chief Executive Officer, Sofitel Legend, Sofitel, MGallery & Emblems",
+    },
+    {
+        avatarUrl: 'https://static.swapcard.com/public/images/0ea10113e8f64d0795d891c9d1769812.jpeg',
+        quote: "As in every Future Hospitality Summit, we get quality conversations rather than the big quantities that we find in other exhibitions. So, this has been a really good exhibition so far. We've had some quality discussions.",
+        fullName: "Eddy Tannous",
+        title: "Chief Operating Officer, Rotana",
+    }
+]
+const QUOTES_DATA_AR = [
+    {
+        avatarUrl: 'https://static.swapcard.com/public/images/9cf68577bdff4a38be44c9fbf2850f25.jpeg',
+        quote: "لقد أصبحت المشاركة في قمة مستقبل الضيافة أمرًا لا بد منه الآن! نشارك في قمة مستقبل الضيافة في السعودية والنسخة العالمية للتعريف بمشاريع شركتنا، وبناء العلاقات، ومقابلة الزملاء والمستثمرين. إنّ قمة مستقبل الضيافة لهذا العام أقوى من السابقة وأكثر تأثيرًا.",
+        fullName: "حسن أحدب",
+        title: "الرئيس التنفيذي للتشغيل الفندقي، طيبة للاستثمار"
+    },
+    {
+        avatarUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
+        quote: "إنّ هذه القمة نعمة كبيرة، فهي فعالية مليئة بالطاقة والحيوية وحافلة باللقاءات المميزة.",
+        fullName: "مود بيلي",
+        title: "الرئيسة التنفيذية، سوفيتيل ليجند، سوفيتيل، إم غاليري، إمبليمز",
+    },
+    {
+        avatarUrl: 'https://static.swapcard.com/public/images/0ea10113e8f64d0795d891c9d1769812.jpeg',
+        quote: "كما هو الحال في كل نسخة من قمة مستقبل الضيافة، دائمًا نحظى بحوارات ذات جودة عالية بخلاف ما نجده في المؤتمرات والمعارض الأخرى. لقد كانت فعالية ممتازة حتى الآن وحصلنا خلالها على حوارات ونقاشات قيمة.",
+        fullName: "إدي طنوس",
+        title: "الرئيس التنفيذي للعمليات، روتانا",
+    }
+]
 
 export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
 
@@ -367,16 +557,6 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
     // console.log('entry:', entry)
     // console.log('partners:', partners)
-
-
-    // scroll animation
-    let introRef = useRef(null)
-    let headerScroll = useScroll({ 
-        target: introRef,
-        offset: ["start 100%", "end 0%"]
-    })
-    let g1 = useTransform( headerScroll.scrollYProgress, [0, 1], ["-15%", "20%"])
-    let g2 = useTransform( headerScroll.scrollYProgress, [0, 1], ["-15%", "40%"])
 
 
     return (
@@ -390,9 +570,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
             {/* INTRO */}
-            <div ref={introRef} className={CSS.themeWrapper}>
-                {/* <motion.img className={CSS.deco01} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g1 }}/>
-                <motion.img className={CSS.deco02} src="/assets/theme/sa-2025/gfk-01.svg" alt="" style={{ y: g2 }}/> */}
+            <div className={CSS.themeWrapper}>
 
                 <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2025-sa-wrap-up-opt.mp4'} poster={'/assets/video/fhs-2025-sa-wrap-up-poster.jpg'}>
                     
@@ -402,18 +580,24 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         transition={{ type: "spring", bounce: 0.25 }}
                         className={`${CSS.headline} fs-xl fw-900 c-white lh-1 center mx-auto`}
                     >
-                        Where Opportunity Meets&nbsp;Capital
-                        
+                        {
+                            locale === 'ar'
+                                ? <>حيث تلتقي الفرص برأس المال</>
+                                : <>Where Opportunity Meets&nbsp;Capital</>
+                        }
                     </motion.p>
 
                     <motion.p 
                         initial={{ y: 100, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
                         transition={{ type: "spring", bounce: 0.25 }}
-                        className={`fs-4 fw-300 c-white center mt-xs`} 
+                        className={`fs-4 fw-300 c-white center mt-sm`} 
                     >
-                        20-22 April 2026, Mandarin Oriental Al Faisaliah, Riyadh
-                        
+                        {
+                            locale === 'ar'
+                                ? `20-22 أبريل 2026، فندق ماندارين أورينتال الفيصلية، الرياض`
+                                : `20-22 April 2026, Mandarin Oriental Al Faisaliah, Riyadh`
+                        }
                     </motion.p>
 
                     <Fade>
@@ -424,7 +608,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                     theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                     decal={'fs-5 fw-600'} 
                                     accent
-                                >2025 Digital Resources</Button>
+                                >{ locale === 'ar' ? `الموارد الرقمية لعام 2025` : `2025 Digital Resources`}</Button>
                             </Pop>
                             <Pop inline>
                                 <Button 
@@ -432,7 +616,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                     theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                     decal={'fs-5 fw-600'} 
                                     accent
-                                >Post-Event Report</Button>
+                                >{ locale === 'ar' ? `تقرير ما بعد الحدث` : `Post-Event Report`}</Button>
                             </Pop>
                         </div>
                     </Fade>
@@ -515,13 +699,13 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
                 <div className="container center pt-sm">
                     <Fade>
-                        <Pop><p className="fs-1 fw-600 c-white">Advisory Board Members</p></Pop>
+                        <Pop><p className="fs-1 fw-600 c-white">{ locale === 'ar' ? `أعضاء المجلس الاستشاري` : `Advisory Board Members`}</p></Pop>
                     </Fade>
                 </div>
 
                 <div className="container columns-4 gap-sm maxw-65">
                     {
-                        AB_DATA.map( (profile, index) => (
+                        (locale === 'ar' ? AB_DATA_AR : AB_DATA).map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
                                     url={profile.url}
@@ -542,7 +726,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                             href={ '/sa/advisory-board' } 
                             theme={{ arrow: `white`, border: `white`, label: `white`}}
                         >
-                            View All Members
+                            { locale === 'ar' ? `عرض جميع الأعضاء` : `View All Members`}
                         </ArrowButton>
                     </Pop>
                 </div>
@@ -550,11 +734,22 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </FixedBackgroundImage>
 
 
-            <div className="bg-secondary py-xs">
-                <Ticker>
-                    <p className="fs-4">&ensp;&bull;&ensp;<strong>$1.6BN</strong> in business opportunities and deal volume gained in 2025 edition</p>
-                    <p className="fs-4">&ensp;&bull;&ensp;<strong>$1.6BN</strong> in business opportunities and deal volume gained in 2025 edition</p>
-                </Ticker>
+            {/* TICKER */}
+            <div className="bg-secondary py-xs" dir={`ltr`}>
+                {
+                    locale === 'ar'
+                        ? (
+                            <Ticker direction={1}>
+                                <p className="fs-4">&ensp;&bull;&ensp;• تحقيق 1.6 مليار دولار أمريكي من الفرص التجارية وحجم الصفقات في نسخة القيمة لعام 2025</p>
+                                <p className="fs-4">&ensp;&bull;&ensp;• تحقيق 1.6 مليار دولار أمريكي من الفرص التجارية وحجم الصفقات في نسخة القيمة لعام 2025</p>
+                            </Ticker>
+                        ) : (
+                            <Ticker>
+                                <p className="fs-4">&ensp;&bull;&ensp;<strong>$1.6BN</strong> in business opportunities and deal volume gained in 2025 edition</p>
+                                <p className="fs-4">&ensp;&bull;&ensp;<strong>$1.6BN</strong> in business opportunities and deal volume gained in 2025 edition</p>
+                            </Ticker>
+                        )
+                }
             </div>
 
 
@@ -569,18 +764,18 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                 theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                 decal={'fs-5 fw-600'} 
                                 accent
-                            >Download Attendee List</Button>
+                            >{ locale === 'ar' ? `حمّل قائمة الحضور` : `Download Attendee List`}</Button>
                         </Pop>
                     </div>
                 </TitleBlock>
-                <ImpactFigure decal={'bg-neutral-01'} figure={1106} impact={ locale === 'ar' ? "عدد الحضور" : 'Attendees'}  />
+                <ImpactFigure decal={'bg-neutral-01'} figure={1106} impact={ locale === 'ar' ? "عدد المشاركين" : 'Attendees'}  />
                 <ImpactFigure decal={'bg-neutral-02'} figure={37} impact={ locale === 'ar' ? "دولة" : 'Countries'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={153} impact={ locale === 'ar' ? "عدد المتحدثين" : 'Speakers'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={153} impact={ locale === 'ar' ? "متحدثًا" : 'Speakers'}  />
                 <ImpactFigure decal={'bg-neutral-01'} figure={85} impact={ locale === 'ar' ? "الجهات الراعية والشركاء" : 'Sponsors & Partners'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={68} unit={'%'} impact={ locale === 'ar' ? "كبار المديرين التنفيذيين ونواب الرؤساء والمديرين" : 'C-Level Executives, VP & Directors'}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={68} unit={'%'} impact={ locale === 'ar' ? "مدراء تنفيذيين، ونواب رؤساء، ومدراء" : 'C-Level Executives, VP & Directors'}  />
                 <ImpactFigure />
-                <ImpactFigure decal={'bg-neutral-01'} figure={24} unit={'%'} impact={'Investors'} />
-                <ImpactFigure decal={'bg-neutral-02'} prefix={'$'} figure={5.6} unit={'tn'} impact={'AUM'} />
+                <ImpactFigure decal={'bg-neutral-01'} figure={24} unit={'%'} impact={ locale === 'ar' ? `مستثمرين` : 'Investors'} />
+                <ImpactFigure decal={'bg-neutral-02'} prefix={'$'} figure={5.6} unit={'tn'} impact={ locale === 'ar' ? `تريليون دولار أمريكي أصول تحت الإدارة` : 'AUM'} />
                 <ImageBlock imageUrl={'/assets/img/sa/impact-hero.jpg'} />
             </ImpactGrid>
 
@@ -588,24 +783,17 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             {/* QUOTES */}
             <section className="block bg-primary o-hidden ">
                 <div className={`container columns-3 gap-md`}>
-                    <Quotation
-                        avatarUrl={'https://static.swapcard.com/public/images/9cf68577bdff4a38be44c9fbf2850f25.jpeg'}
-                        quote={"Being at FHS is like an obligation now! We attend both Saudi Arabia and World to present our company's developments, network and meet with colleagues and investors. This year was much stronger and more effective."}
-                        fullName={"Hassan Ahdab"}
-                        title={"Chief Hospitality Operations Officer, Taiba Investments"}
-                    />
-                    <Quotation
-                        avatarUrl={'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg'}
-                        quote={"It's a blessing. Very energizing, very dynamic, very busy. Lots of beautiful encounters so far."}
-                        fullName={"Maud Bailly"}
-                        title={"Chief Executive Officer, Sofitel Legend, Sofitel, MGallery & Emblems"}
-                    />
-                    <Quotation
-                        avatarUrl={'https://static.swapcard.com/public/images/0ea10113e8f64d0795d891c9d1769812.jpeg'}
-                        quote={"As in every Future Hospitality Summit, we get quality conversations rather than the big quantities that we find in other exhibitions. So, this has been a really good exhibition so far. We've had some quality discussions."}
-                        fullName={"Eddy Tannous"}
-                        title={"Chief Operating Officer, Rotana"}
-                    />
+                    {
+                        (locale === 'ar' ? QUOTES_DATA_AR : QUOTES_DATA).map((quote, index) => (
+                            <Quotation
+                                key={index}
+                                avatarUrl={quote.avatarUrl}
+                                quote={quote.quote}
+                                fullName={quote.fullName}
+                                title={quote.title}
+                            />
+                        ))
+                    }
                 </div>
             </section>
 
@@ -614,12 +802,12 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             <section className="block bg-primary-2-dark">
                 <div className="container center">
                     <Fade>
-                        <p className="fs-1 fw-600 c-white">FHS Speakers</p>
+                        <p className="fs-1 fw-600 c-white">{locale === 'ar' ? `المتحدثون في قمة مستقبل الضيافة` : `FHS Speakers`}</p>
                     </Fade>
                 </div>
                 <div className="container columns-4 gap-sm maxw-65">
                     {
-                        SPEAKER_DATA.map( (profile, index) => (
+                        (locale === 'ar' ? SPEAKER_DATA_AR : SPEAKER_DATA).map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
                                     url={profile.url}
@@ -648,17 +836,22 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
             {/* THEMES */}
             <section className="block bg-primary no-print" style={{ position: 'relative', zIndex: 2}}>
-                <ThemesSlider data={THEMES_DATA} link={'/sa/ai-session-summaries-2025'} linkLabel={'Download AI Session Summaries'} />
+                <ThemesSlider
+                    heading={locale === 'ar' ? `محاور فعالية 2026` : `2026 Event Themes` }
+                    data={locale === 'ar' ? THEMES_DATA_AR : THEMES_DATA}
+                    link={'/sa/ai-session-summaries-2025'}
+                    linkLabel={locale === 'ar' ? `حمل ملخصات جميع الجلسات` : 'Download AI Session Summaries'}
+                />
             </section>
 
 
             {/* SPONSORS */}
             <section className="block pb-0">
                 <div className="container center">
-                    <Pop><p className="fs-1 fw-600 c-primary balance">Partners Joining Us</p></Pop>
+                    <Pop><p className="fs-1 fw-600 c-primary balance">{locale === 'ar' ? `شركاؤنا` : `Partners Joining Us`}</p></Pop>
                 </div>
             </section>
-            <div className="py-xs mt-sm mb-lg">
+            <div className="py-xs mt-sm mb-lg" dir={`ltr`}>
                 <Ticker duration={25}>
                     {
                         partners.map(partner => (
@@ -684,12 +877,28 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             {/* VIDEO + PHOTO HIGHLIGHTS */}
             <section className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className={`${CSS.highlightVideoGrid} container`}>
-                    <Slide><p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS Saudi Arabia 2025</span></p></Slide>
+                    <Slide>
+                        {
+                            locale === 'ar' ? (
+                                <p className='fs-1 fw-700 lh-1 c-secondary'>أبرز اللحظات في قمة مستقبل الضيافة بالسعودية 2025</p>
+                            ): (
+                                <p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS Saudi Arabia 2025</span></p>   
+                            )
+                        }
+                    </Slide>
                     <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://cms.thebench.com/assets/video/fhs-2025-sa-highlights.mp4`}  poster={'https://cms.thebench.com/assets/video/fhs-2025-sa-highlights-poster.jpg'} controls={true} />
                 </div>
 
                 <div className={`${CSS.photoGrid} container`}>
-                    <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2025 in <span className='c-secondary'>Photos</span></p></Slide>
+                    <Slide>
+                        {
+                            locale === 'ar' ? (
+                                <p className='fs-0 fw-700 lh-1 mt-lg c-secondary'>2025 في صور</p>
+                            ): (
+                                <p className='fs-0 fw-700 lh-1 mt-lg'>2025 in <span className='c-secondary'>Photos</span></p> 
+                            )
+                        }
+                    </Slide>
                     
                     <div className="columns-3 gap-xs mt-md">
                         {
@@ -702,32 +911,17 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                             ))
                         }
                         <p className="mt-xs">
-                            <ArrowButton href={`https://www.flickr.com/photos/benchevents/albums/`} target='_blank' theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>View Full Gallery</ArrowButton>
+                            <ArrowButton
+                                href={`https://www.flickr.com/photos/benchevents/albums/`}
+                                target='_blank'
+                                theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)` }}
+                            >{locale === 'ar' ? `مشاهدة معرض الصور بالكامل` : `View Full Gallery<`}</ArrowButton>
                         </p>
                     </div>
 
                 </div>
             </section>
 
-
-            
-
-            
-            {/* POPOVER */}
-            {/* <PopOver>
-                <div className="formatted">
-                    <p className="fs-3 fw-600 lh-1 c-primary">Looking to attend?</p>
-                    <p>Register before 10th November.</p>
-                    <Pop inline>
-                        <Button 
-                            href={'/sa/purchase-pass'} 
-                            theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                            decal={'fw-600'} 
-                            accent
-                        >Purchase Pass</Button>
-                    </Pop>
-                </div>
-            </PopOver> */}
 
             
             <Footer />
@@ -775,33 +969,6 @@ export const StartupPromo = () => {
 }
 
 const TickIcon = () => <img src="/assets/ui/icon-tick.svg" alt="" style={{ height: 12, marginRight: 1 }} />
-
-const AwardWinner = ({ winner }) => {
-    return (
-        <Pop>
-            <div className={CSS.awardCard}>
-                <header>
-                    <Award />
-                    <p className="fs-4 caps lh-1">{winner.awardTitle}</p>
-                </header>
-
-                <Pop delay={.1}>
-                    <section>
-                        <img src={winner.avatarUrl} alt="" />
-                    </section>
-                </Pop>
-
-                <footer>
-                    <p className="fs-4 fw-600">{winner.fullName}</p>
-                    <p className="mt-xxs">{winner.title}</p>
-                    <p className="fw-600">{winner.organisation}</p>
-                </footer>
-            </div>
-        </Pop>
-    )
-}
-
-
 
 
 export async function getStaticProps({ preview, previewData, locale }) {

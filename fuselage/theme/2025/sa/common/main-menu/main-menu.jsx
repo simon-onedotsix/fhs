@@ -37,7 +37,7 @@ export const MainMenu = ({ otherEvents }) => {
                         }} 
                         decal={`fw-600 desktop-only`}
                     >
-                        Register Now
+                        { locale === 'ar' ? `سجل الآن` : `Register Now`}
                     </Button>
                     
                     <Button 
@@ -49,14 +49,19 @@ export const MainMenu = ({ otherEvents }) => {
                         }} 
                         decal={`fw-600 desktop-only`}
                     >
-                        Become a Sponsor
+                        { locale === 'ar' ? `انضم إلى رعاتنا` : `Become a Sponsor`}
                     </Button>
 
                     <Locales />
                 </div>
 
-                <div className={CSS.toggleWrapper}>
-                    <caption>MENU</caption>
+                <div
+                    className={CSS.toggleWrapper}
+                    style={{ 
+                        padding: locale === 'ar' ? '0 1.25rem 0 0' : '0 0 0 1.25rem'
+                    }}
+                >
+                    <caption>{ locale === 'ar' ? `القائمة` : `MENU`}</caption>
                     
                     <div className={`${CSS.toggle} ${ active && CSS.active }`} onClick={ () => setActive(!active) }>
                         <span/>

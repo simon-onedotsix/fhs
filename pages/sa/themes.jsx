@@ -61,6 +61,51 @@ export const THEMES_DATA = [
     }
     
 ]
+export const THEMES_DATA_AR = [
+    {
+        id: '1',
+        imageUrl: '/assets/img/sa/event-themes/investment.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/investment.svg',
+        title: 'الاستثمار والعقارات',
+        body: '<p>Explore the latest opportunities and trends in Saudi hospitality investments, including innovative funding models and landmark real estate projects driving national growth.</p>'
+    },
+    {
+        id: '2',
+        imageUrl: '/assets/img/sa/event-themes/wellness.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/wellness.svg',
+        title: 'الرفاهية وأسلوب الحياة',
+        body: '<p>Discover how hospitality in Saudi Arabia is embracing holistic wellness, integrating health tech, personalised experiences, and lifestyle-focused amenities to meet evolving guest expectations.</p>'
+    },
+    {
+        id: '25',
+        imageUrl: '/assets/img/sa/event-themes/technology.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/technology.svg',
+        title: 'التقنية والابتكار',
+        body: '<p>Uncover how AI, robotics, and smart solutions are reshaping guest experiences and operations, with Saudi properties leading regional adoption of cutting-edge hospitality technologies.</p>'
+    },
+    {
+        id: '4',
+        imageUrl: '/assets/img/sa/event-themes/food.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/food.svg',
+        title: 'المأكولات والمشروبات والتجارب',
+        body: '<p>Celebrate the rise of experiential dining and culinary excellence, as Saudi hotels and venues blend local flavors, creative concepts, and immersive events to redefine hospitality experiences.</p>'
+    },
+    {
+        id: '6',
+        imageUrl: '/assets/img/sa/event-themes/talent.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/talent.svg',
+        title: 'المواهب والتعليم',
+        body: '<p>Learn how Saudi Arabia is developing its hospitality workforce through modern training, education partnerships, and programs that align academic skills with industry needs.</p>'
+    },
+    {
+        id: '7',
+        imageUrl: '/assets/img/sa/event-themes/branded-residences.jpg',
+        iconUrl: '/assets/img/sa/event-themes/icons/branded-residences.svg',
+        title: 'منتدى الوحدات السكنية ذات العلامات الفندقية',
+        body: '<p>Examine the growth of luxury branded residences in Saudi Arabia, where top hotel brands offer private homes with premium services, creating new benchmarks in high-end living.</p>'
+    }
+    
+]
 
 
 

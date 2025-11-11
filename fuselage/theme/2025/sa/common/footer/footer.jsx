@@ -52,7 +52,7 @@ export const Footer = () => {
                             <p><Link href='/ae/contact-us'><a className='uLink'>{ locale === 'ar' ? "تواصل معنا" : "Contact us" }</a></Link></p>
                             <p><Link href='https://www.thebench.com/privacy'><a className='uLink' target='_blank'>{ locale === 'ar' ? "سياسة الخصوصية" : "Privacy Policy" }</a></Link></p>
                             <p><Link href='/code-of-conduct'><a className='uLink' >{ locale === 'ar' ? "مدونة قواعد السلوك" : "Code of Conduct" }</a></Link></p>
-                            <p><Link href='/terms-and-conditions'><a className='uLink' >Terms &amp; Conditions</a></Link></p>
+                            <p><Link href='/terms-and-conditions'><a className='uLink' >{ locale === 'ar' ? `الشروط والأحكام` : `Terms & Conditions`}</a></Link></p>
                         </div>
                     </section>
 

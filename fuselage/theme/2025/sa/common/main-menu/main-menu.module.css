@@ -48,6 +48,7 @@
 
     display: flex;
     gap: .5rem;
+    align-items: center;
 }
 
 
@@ -86,6 +87,7 @@
     .mobileToggleActions {
         display: grid !important;
         grid-template-columns: 1fr;
+        align-items: center;
         gap: 1rem;
     }
 
