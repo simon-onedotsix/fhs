@@ -97,7 +97,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                             <a className={CSS.logo}>
                                 <FhsLockup 
                                     inverse 
-                                    sectorLabel={"Saudi Arabia"} 
+                                    sectorLabel={locale === 'ar' ? "العربية السعودية" : "Saudi Arabia"} 
                                     sectorColor={"var(--accent)"} 
                                     topColor={"var(--secondary)"}
                                 />
