@@ -693,17 +693,38 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
             {/* ADVISORY BOARD */}
             <FixedBackgroundImage
-                backgroundImageUrl={`/assets/img/sa/homepage/ab-meeting-2025-2.jpg`}
+                backgroundImageUrl={`/assets/img/sa/homepage/ab-meeting-2025-group.jpg`}
                 overlay={`hsl(from var(--primary) h s l / .85)`}
             >
 
                 <div className="container center pt-sm">
                     <Fade>
-                        <Pop><p className="fs-1 fw-600 c-white">{ locale === 'ar' ? `أعضاء المجلس الاستشاري` : `Advisory Board Members`}</p></Pop>
+                        <Pop><p className="fs-1 fw-600 c-white">{ locale === 'ar' ? `اجتماع المجلس الاستشاري لعام 2026` : `2026 Advisory Board Meeting`}</p></Pop>
                     </Fade>
                 </div>
 
-                <div className="container columns-4 gap-sm maxw-65">
+                <div className="container columns-3 gap-sm">
+                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-01.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}}/></Pop>
+                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-02.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}}/></Pop>
+                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-03.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}}/></Pop>
+                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-04.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}}/></Pop>
+                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-05.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}}/></Pop>
+                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-06.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}}/></Pop>
+                </div>
+
+                <div className="container center">
+                    <Pop>
+                        <ArrowButton 
+                            href={ 'https://www.flickr.com/photos/benchevents/albums/72177720330222142/' } 
+                            theme={{ arrow: `white`, border: `white`, label: `white` }}
+                            target={`_blank`}
+                        >
+                            { locale === 'ar' ? `عرض المعرض الكامل` : `View Full Gallery`}
+                        </ArrowButton>
+                    </Pop>
+                </div>
+
+                <div className="container columns-4 gap-sm maxw-65 pt-md">
                     {
                         (locale === 'ar' ? AB_DATA_AR : AB_DATA).map( (profile, index) => (
                             <Pop key={index}>
