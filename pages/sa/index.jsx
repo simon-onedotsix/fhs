@@ -713,18 +713,28 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                 </div>
 
                 <div className="container center">
-                    <Pop>
-                        <ArrowButton 
-                            href={ 'https://www.flickr.com/photos/benchevents/albums/72177720330222142/' } 
-                            theme={{ arrow: `white`, border: `white`, label: `white` }}
-                            target={`_blank`}
-                        >
-                            { locale === 'ar' ? `عرض المعرض الكامل` : `View Full Gallery`}
-                        </ArrowButton>
-                    </Pop>
+                    <div className="button-grid">
+                        <Pop>
+                            <ArrowButton 
+                                href={ 'https://www.flickr.com/photos/benchevents/albums/72177720330222142/' } 
+                                theme={{ arrow: `white`, border: `white`, label: `white` }}
+                                target={`_blank`}
+                            >
+                                { locale === 'ar' ? `عرض المعرض الكامل` : `View Full Gallery`}
+                            </ArrowButton>
+                        </Pop>
+                        <Pop>
+                            <ArrowButton 
+                                href={ '/sa/advisory-board' } 
+                                theme={{ arrow: `white`, border: `white`, label: `white`}}
+                            >
+                                { locale === 'ar' ? `عرض جميع الأعضاء` : `View All Members`}
+                            </ArrowButton>
+                        </Pop>
+                    </div>
                 </div>
 
-                <div className="container columns-4 gap-sm maxw-65 pt-md">
+                {/* <div className="container columns-4 gap-sm maxw-65 pt-md">
                     {
                         (locale === 'ar' ? AB_DATA_AR : AB_DATA).map( (profile, index) => (
                             <Pop key={index}>
@@ -739,18 +749,8 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                             </Pop>
                         ))
                     }
-                </div>
+                </div> */}
 
-                <div className="container center">
-                    <Pop>
-                        <ArrowButton 
-                            href={ '/sa/advisory-board' } 
-                            theme={{ arrow: `white`, border: `white`, label: `white`}}
-                        >
-                            { locale === 'ar' ? `عرض جميع الأعضاء` : `View All Members`}
-                        </ArrowButton>
-                    </Pop>
-                </div>
 
             </FixedBackgroundImage>
 
