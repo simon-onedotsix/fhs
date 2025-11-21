@@ -140,7 +140,7 @@
     padding-top: calc(var(--space-lg) * 3);
     overflow-y: scroll; 
     
-    color: var(--secondary);
+    /* color: var(--secondary); */
 
     opacity: 0;
     pointer-events: none;

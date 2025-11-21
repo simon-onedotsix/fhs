@@ -9,17 +9,17 @@ import _ from 'lodash'
 import { format } from 'date-fns'
 import HTMLReactParser from 'html-react-parser'
 
-import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
-import { Pop, Fade, Slide } from '../../fuselage/animation/animation'
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
+import { Pop, Fade, Slide } from '../../../fuselage/animation/animation'
 
-import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
-import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
+import { Header } from '../../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
 
-import { StickySidebar } from '../../fuselage/theme/2024/global/components/sticky-sidebar/sticky-sidebar'
-import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from "../../fuselage/components/icons/icons"
-import { Modal } from "../../fuselage/theme/2024/sa/components/modal/modal"
+import { StickySidebar } from '../../../fuselage/theme/2024/global/components/sticky-sidebar/sticky-sidebar'
+import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from "../../../fuselage/components/icons/icons"
+import { Modal } from "../../../fuselage/theme/2024/sa/components/modal/modal"
 
-import CSS from '../../fuselage/theme/2025/sa/css/agenda-compact.module.css'
+import CSS from '../../../fuselage/theme/2025/sa/css/agenda-compact.module.css'
 
 
 
@@ -188,10 +188,7 @@ export default function Agenda ({ sessions, locations }) {
 
 				{/* INTRO */}
                 <div className="section mb-sm" style={{ zIndex: 2, position: 'relative' }}>
-                    <p className="fs-1 fw-500 maxw-40">Branded Residences at FHS&nbsp;Saudi Arabia</p>
-					<div className="formatted mt-xs">
-						<p>Programme is subject to change.</p>
-					</div>
+                    <p className="fs-1 fw-500 maxw-40">Branded Residences at FHS&nbsp;Saudi Arabia 2025</p>
                 </div>
 
 
@@ -205,7 +202,7 @@ export default function Agenda ({ sessions, locations }) {
 									<aside>
 										{/* <p className="fs-2">Day {index + 1}</p> */}
 										<Pop>
-											<p className={CSS.dayDivider}>{ day.day }</p>
+											<p className={CSS.dayDivider}>{ day.day } 2025</p>
 										</Pop>
 									</aside>
 

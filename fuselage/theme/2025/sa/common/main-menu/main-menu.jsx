@@ -145,7 +145,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                                         <Link href={link.hyperlink}>
                                                                             <a
                                                                                 className={` 
-                                                                                    ${link.size === 'sm' ? 'uLink' : 'uLink fs-6 fw-400'}
+                                                                                    ${link.size === 'sm' ? 'uLink' : 'uLink fs-6 fw-400 c-white'}
                                                                                     ${link.indent && 'ml-sm'}
                                                                                 `} 
                                                                                 target={ link.newWindow ? '_blank' : '_self'}
@@ -166,7 +166,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                                     <li 
                                                                         key={index}
                                                                         className={` 
-                                                                            ${link.size === 'sm' ? '' : 'fs-6 fw-400'}
+                                                                            ${link.size === 'sm' ? '' : 'fs-6 fw-400 c-white'}
                                                                             ${link.indent && 'ml-sm'}
                                                                         `}
                                                                     >{ link.label }</li>
