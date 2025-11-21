@@ -12,17 +12,79 @@ import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/anim
 import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
-import { Button } from '../../fuselage/theme/2024/world/components/button/button'
 import { ButtonKeyline } from '../../fuselage/theme/2024/world/components/button-keyline/button-keyline'
-import { ArticleScroller, Article } from "../../fuselage/theme/2025/sa/pages/networking/article-scroller"
-import { Billboard } from '../../fuselage/blocks/billboard/billboard'
 import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
 import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
+import { BarChart, Field } from '../../fuselage/theme/2025/sa/components/bar-chart/bar-chart'
 
 
 
 import CSS from '../../fuselage/theme/2025/sa/css/investors.module.css'
 
+
+const INDUSTRY_DATA = [
+    {
+        label: 'Investment Company',
+        value: 26.5
+    },
+    {
+        label: 'Developer',
+        value: 24.5
+    },
+    {
+        label: 'Development Project',
+        value: 11.9
+    },
+    {
+        label: 'Sovereign Fund',
+        value: 9.5
+    },
+    {
+        label: 'REIT',
+        value: 7.5
+    },
+    {
+        label: 'Private Equity',
+        value: 4.3
+    },
+    {
+        label: 'Owner-operator',
+        value: 4.0
+    },
+    {
+        label: 'Asset Manager',
+        value: 2.8
+    },
+    {
+        label: 'Bank',
+        value: 2.4
+    },
+    {
+        label: 'Family Office',
+        value: 1.6
+    },
+    {
+        label: 'Government / Tourism Officiale',
+        value: 1.6
+    },
+    {
+        label: 'Other Financial Institution',
+        value: 1.2
+    },
+    {
+        label: 'VC',
+        value: 1.2
+    },
+    {
+        label: 'Restaurant Owner',
+        value: 0.8
+    },
+    {
+        label: 'RE',
+        value: 0.4
+    },
+    
+]
 
 
 export default function Page () {
@@ -37,78 +99,75 @@ export default function Page () {
 
             <div className="bg-primary o-hidden">
                 <PageHeroImage hero={{ url: '/assets/img/sa/investors/investors-hero.jpg', width: 6192, height: 4128 }} >
-                    <div className="container maxw-60 pb-md c-white center">
-                        <Reveal>
-                            {
-                                locale === 'ar'
-                                ?
-                                    <h1 className='fs-0'>Investors at FHS Saudi Arabia</h1>
-                                :
-                                    <h1 className='fs-0'>Investors at FHS Saudi Arabia</h1>
-                            }
-                        </Reveal>
-                    </div>
+                    
+                    <section className="block">
 
-
-                    {/* IMPACT */}
-
-                    <div className="container center">
-                        <Fade>
-                            <p className="fs-1 fw-600 lh-1">
+                        <div className="container maxw-60 pb-md c-white center">
+                            <Reveal>
                                 {
                                     locale === 'ar'
                                     ?
-                                       "2024 بالأرقام"
+                                        <h1 className='fs-0'>Investors at FHS Saudi Arabia</h1>
                                     :
-                                       "2024 in Numbers"
+                                        <h1 className='fs-0'>Investors at FHS Saudi Arabia</h1>
                                 }
-                            </p>
-                        </Fade>
-                        <div className="columns-4 gap-sm mt-md">
-                            <InvestorImpact figure={283} label={ locale === 'ar' ? "مستثمرًا" : "Investors"} />
-                            <InvestorImpact figure={22} unit={"%"} label={ locale === 'ar' ? "من الحضور" : "of Attendees"} />
-                            <InvestorImpact prefix={'$'} figure={1.1} unit={'B'} label={ locale === 'ar' ? "1.1 مليار دولار قيمة صفقات وفرص تجارية مُحققة في 2024" : "In business opportunities and deals volume gained"} />
-                            <InvestorImpact figure={17} label={ locale === 'ar' ? "" : "Deals Signed"} />
+                            </Reveal>
                         </div>
-                    </div>
 
 
-                    <div className="container pt-md">
-                        <div className="columns-3 gap-md ai-center">
-                            <section>
-                                <Slide>
-                                    <p className="fs-1 fw-600 lh-1 right">
-                                        {
-                                            locale === 'ar'
-                                            ?   "تحليل المستثمرين"
-                                            :   "Investor Breakdown"
-                                        }
-                                    </p>
-                                </Slide>
-                            </section>
+                        {/* IMPACT */}
 
-                            <Pop>
-                                <section className='center'>
-                                    <img src="/assets/img/sa/investors/fhs-investor-breakdown.svg" alt="graph" />
-                                </section>
-                            </Pop>
-
-                            <section>
-                                <ul className={CSS.graphKey}>
-                                    <GraphKey color={'#694094'}>{ locale === 'ar' ? "48% مشاريع تطوير / شركات حكومية" : "48% Development Project / Governmental Company" }</GraphKey>
-                                    <GraphKey color={'#9067BD'}>{ locale === 'ar' ? "25% شركات تطوير عقاري" : "25% Developers" }</GraphKey>
-                                    <GraphKey color={'#DFA46E'}>{ locale === 'ar' ? "11% شركات" : "11% Investment Company" }</GraphKey>
-                                    <GraphKey color={'#56E1B2'}>{ locale === 'ar' ? "10% مدراء أصول" : "10% Asset Manager" }</GraphKey>
-                                    <GraphKey color={'#FF4B4B'}>{ locale === 'ar' ? "3% شركات استثمار مباشر (Private Equity)" : "3% Private Equity" }</GraphKey>
-                                    <GraphKey color={'#36D0FF'}>{ locale === 'ar' ? "3% بنوك" : "3% Bank" }</GraphKey>
-                                </ul>
-                            </section>
+                        <div className="container center">
+                            <Fade>
+                                <p className="fs-1 fw-600 lh-1">
+                                    {
+                                        locale === 'ar'
+                                        ?
+                                        "2025 بالأرقام"
+                                        :
+                                        "2025 in Numbers"
+                                    }
+                                </p>
+                            </Fade>
+                            <div className="columns-4 gap-sm mt-md">
+                                <InvestorImpact figure={254} label={ locale === 'ar' ? "مستثمرًا" : "Investors"} />
+                                <InvestorImpact figure={20} unit={"%"} label={ locale === 'ar' ? "من الحضور" : "of Attendees"} />
+                                <InvestorImpact prefix={'$'} figure={1.6} unit={'B'} label={ locale === 'ar' ? "1.1 مليار دولار قيمة صفقات وفرص تجارية مُحققة في 2024" : "In business opportunities and deals volume gained"} />
+                                <InvestorImpact figure={11} label={ locale === 'ar' ? "" : "Deals Signed"} />
+                            </div>
                         </div>
-                    </div>
 
+                        </section>
+
+                        {/* INVESTORS */}
+
+                        <section className="block">
+                            
+                            <div className="container center">
+                                <p className="fs-1 fw-600 lh-1">
+                                    {
+                                        locale === 'ar'
+                                        ?   "تحليل المستثمرين"
+                                        :   "Investor Breakdown"
+                                    }
+                                </p>
+                            </div>
+                            
+                        <div className="container mx-auto maxw-50">
+                            <BarChart>
+                                {
+                                    INDUSTRY_DATA.map((field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0.4, max: 26.5 }} />)
+                                }
+                            </BarChart>
+                        </div>
+                    
+                    
+                    </section>
                 </PageHeroImage>
             </div>
 
+
+           
 
 
             {/* USPs */}
@@ -458,102 +517,161 @@ export default function Page () {
                     <p className='fs-1 fw-600 c-primary'>
                         {
                             locale === 'ar'
-                            ?   "عينة من قائمة المستثمرين في 2024"
-                            :   "SAMPLE LIST OF INVESTORS FROM 2024"
+                            ?   "عينة من قائمة المستثمرين في 20254"
+                            :   "SAMPLE LIST OF INVESTORS FROM 2025"
                         }
                     </p>
                 </div>
 
                 <div className="container formatted">
                     <article className={CSS.listing}>
-                        {
-                            locale === 'ar'
-                            ?
-                                <p>AB القابضة
-                                <br/>إيمز للضيافة
-                                <br/>AIRZAI
-                                <br/>شركة تطوير البلد
-                                <br/>مجموعة الحكير
-                                <br/>شركة الخزامى للاستثمار
-                                <br/>مجموعة المهيدب
-                                <br/>شركة العثيم للاستثمار
-                                <br/>مصرف الراجحي
-                                <br/>شركة الراية العقارية
-                                <br/>مجموعة التميمي
-                                <br/>ألفا كابيتال
-                                <br/>المصباح
-                                <br/>مجموعة السليمان
-                                <br/>أربيرو كابيتال
-                                <br/>شركة أردارا
-                                <br/>هيئة تطوير منطقة عسير (ASDA)
-                                <br/>أسفار
-                                <br/>بهيج
-                                <br/>بلو برونكو
-                                <br/>مجموعة بوتيك
-                                
-                                <br/>مجموعة كيان
-                                <br/>مجموعة شيفال
-                                <br/>كولمور كابيتال
-                                <br/>دلة العقارية
-                                <br/>شركة دان
-                                <br/>DAQ
-                                <br/>شركة المشاريع الأولى
-                                <br/>الهيئة العامة لعقارات الدولة
-                                <br/>مجموعة صديقي المغرب
-                                <br/>شركة تطوير العقارات الساحلية الخليجية
-                                <br/>فنادق هاشو
-                                <br/>هيسبيريا وورلد
-                                <br/>هاي هوم
-                                <br/>HMC
-                                <br/>شركة هوادي
-                                <br/>بيت جمانة
-                                <br/>KAAJ Ventures
-                                <br/>KEC
-                                <br/>حي الملك عبد الله المالي (KAFD)
-                                <br/>كينغستون كابيتال هولدينغ
-                                <br/>KSL كابيتال بارتنرز إنترناشيونال
-                                
-                                <br/>لدن
-                                <br/>لايفستايل ديفيلوبرز
-                                <br/>شركة إدارة صناديق المالديف
-                                <br/>مسار / تطوير أم القرى
-                                <br/>مجموعة موبكو
-                                <br/>ممتلكات
-                                <br/>نيوم
-                                <br/>شركة تطوير المربع الجديد (NMDC)
-                                <br/>OFC
-                                <br/>مجموعة العليان
-                                <br/>صندوق الاستثمارات العامة (PIF)
-                                <br/>شركة القدية للاستثمار
-                                <br/>راديك للتطوير العقاري
-                                <br/>شركة رسيل العقارية
-                                <br/>RCU
-                                <br/>شركة البحر الأحمر الدولية
-                                <br/>ريفاد العقارية
-                                <br/>ركاز
-                                <br/>أمانة منطقة الرياض
-                                <br/>روشن العقارية
-                                <br/>الهيئة الملكية للجبيل
-                                
-                                <br/>الهيئة الملكية لينبع
-                                <br/>شركة رؤى المدينة القابضة
-                                <br/>مجموعة سمايا
-                                <br/>مجموعة سعود العريفي
-                                <br/>شركة الضيافة السعودية
-                                <br/>الهيئة السعودية للسياحة
-                                <br/>سدكو كابيتال
-                                <br/>شركة مشاريع الترفيه السعودية &apos;سڤن&apos;
-                                <br/>هيئة الشارقة للاستثمار والتطوير (شروق)
-                                <br/>شركة شذا
-                                <br/>شركة سياحة المتقدمة المحدودة
-                                <br/>شركة السودة للتطوير
-                                <br/>شركة طيبة للاستثمار
-                                <br/>تشييد للتطوير العمراني
-                                <br/>صندوق التنمية السياحي (TDF)
-                                <br/>أوربان شيلتر للبنية التحتية</p>
-                            :
-                                <p>AB Holding<br/>AIMS Hospitality<br/>AIRZAI<br/>Al Balad Development Company<br/>Al Hokair Group<br/>Al Khozama Investment<br/>Al Muhaidib Holding<br/>Al Othaim Investment<br/>Al Rajhi Bank<br/>Al Raya Real Estate Co.<br/>Al Tamimi holding<br/>Alpha Capital<br/>Almaubah<br/>Alsulaiman Group<br/>Arbireo Capital<br/>ARDARA Company<br/>Aseer Development Authority (ASDA)<br/>ASFAR<br/>Baheej<br/>Blue Bronco<br/>Boutique Group<br/>Cayan Group<br/>Cheval Collection<br/>Coolmore Capital<br/>Dallah Real Estate<br/>Dan Company<br/>DAQ<br/>First Projects Co.<br/>General Authority for State Real Estate<br/>Group Sadiki Morocco<br/>Gulf Coast Real Estate Development Company<br/>Hashoo Hotels<br/>Hesperia World<br/>Hihome<br/>HMC<br/>Hwadi Company<br/>Jumana House<br/>KAAJ Ventures<br/>KEC<br/>King Abdullah Financial District (KAFD)<br/>Kingstone Capital Holding<br/>KSL Capital Partners International<br/>LADUN<br/>Lifestyle Developers<br/>Maldives Fund Management Corporation<br/>Masar / Umm Al Qura Development<br/>Mobco Group<br/>Mumtalakat<br/>NEOM<br/>New Murabba Development Company (NMDC)<br/>OFC<br/>Olayan Group<br/>Public Investment Fund (PIF)<br/>Qiddiya Investment Company<br/>Radic Real Estate Development<br/>Raseel Properties Co.<br/>RCU<br/>Red Sea Global<br/>REFAD Real Estate<br/>Rikaz<br/>Riyadh Municipality<br/>Roshn Real Estate<br/>Royal Commission of Jubail<br/>Royal Commission of Yanbu<br/>Rua Al Madinah Holding Company<br/>Samaya Group<br/>Saud Alarife Group<br/>Saudi Hospitality Company<br/>Saudi Tourism Authority<br/>SEDCO Capital<br/>SEVEN<br/>Sharjah Investment and Development Authority - Shurooq<br/>Shatha Co.<br/>Siyaha Advanced Limited Company<br/>Soudah Development Company<br/>Taiba Investment<br/>Tashyid Urban Development<br/>TDF (Tourism Development Fund)<br/>Urban Shelter Infrastructure</p>
-                        }
+                        <p>Abu Dhabi Capital Group<br/>
+                                Afyaa Holding<br/>
+                                AIMS Holding<br/>
+                                Aina Hospitality<br/>
+                                Ajbal Real Estate Development<br/>
+                                Ajdan Real Estate Development Co.<br/>
+                                Ameen Development Company<br/>
+                                Al Balad Development Company<br/>
+                                Al Khaldi Holding<br/>
+                                Al Khozama Investments<br/>
+                                Al Mashreq Hospitality<br/>
+                                Al Nokhbah<br/>
+                                Alola for RealEstate Development<br/>
+                                Al Othaim Investments<br/>
+                                AlRajhi Capital<br/>
+                                Aldossarygroup<br/>
+                                Aldyar Alarabiya Real Estate Development<br/>
+                                Al-Hassoun<br/>
+                                Center Company<br/>
+                                Almusbah<br/>
+                                Alrabwah Real Estate Development Company<br/>
+                                Alrajhi Bank<br/>
+                                Alrajhi Capital<br/>
+                                Alworoud Real Estate Investments<br/>
+                                Amek Group<br/>
+                                Angel Investor<br/>
+                                AOAR Holding Group<br/>
+                                Arbireo Hospitality Invest<br/>
+                                Ardara<br/>
+                                Argaam Investments<br/>
+                                Arkan Plaza Properties<br/>
+                                Aroundtown SA<br/>
+                                Aseel Holding<br/>
+                                Aseer Investment Company<br/>
+                                ASFAR<br/>
+                                Ashaad<br/>
+                                Awjholding<br/>
+                                Azhar<br/>
+                                BAAN Holding<br/>
+                                Baheej<br/>
+                                Baraka for Real Estate Development & Investment<br/>
+                                Baraka Investment<br/>
+                                Baraka MAF<br/>
+                                BAS Global Investments<br/>
+                                Boudl Hotels & Resorts<br/>
+                                Candy Capital<br/>
+                                Certares<br/>
+                                Confidential PIF Project<br/>
+                                Courbet Heritage<br/>
+                                CP Holdings Ltd.<br/>
+                                Daika Company Ltd<br/>
+                                Dammamdev<br/>
+                                Dan Company<br/>
+                                Diriyah Company<br/>
+                                El Mouradi Group<br/>
+                                Elaf Group<br/>
+                                EMERGING<br/>
+                                EQ Group<br/>
+                                Ezdaher Financing Company<br/>
+                                F.M. Abunayyan Holding<br/>
+                                Fawasel<br/>
+                                FIM Partners<br/>
+                                First Avenue for Real Estate Development<br/>
+                                FTG Development<br/>
+                                GCDC<br/>
+                                Growth Partner<br/>
+                                Gulf Coast Development Company<br/>
+                                Gulf Real Estate Co<br/>
+                                Hamat<br/>
+                                HQ Capital<br/>
+                                IHC<br/>
+                                Jabal Omar Development Company<br/>
+                                JP Morgan<br/>
+                                KAFD DMC<br/>
+                                KFSHRC<br/>
+                                King Abdullah Financial District DMC HQ<br/>
+                                Koushan Real Estate Development<br/>
+                                Kun Investment Holding<br/>
+                                Luxebridge Capital<br/>
+                                Masharee<br/>
+                                Maskan Arabia<br/>
+                                Mdr<br/>
+                                ME & West Investments<br/>
+                                Mered Investment Co LLC<br/>
+                                Millennium Hotels & Resorts<br/>
+                                Ministry of Tourism<br/>
+                                Miyar Capital<br/>
+                                Moqam Urban Development Co<br/>
+                                Naif Al Rajhi Investment Company<br/>
+                                NEOM<br/>
+                                New Murabba<br/>
+                                NHC<br/>
+                                Nmr<br/>
+                                Olayan Financing Company<br/>
+                                Osus Real Estate<br/>
+                                Pandox Germany<br/>
+                                PIF Projects<br/>
+                                PIF Subsidiary<br/>
+                                Polis<br/>
+                                Public Investment Fund<br/>
+                                Pygmalion Capital<br/>
+                                QUBE Development<br/>
+                                Radar Holdings<br/>
+                                RAFAL Real Estate Development Company<br/>
+                                Rajhi RIET<br/>
+                                Raseel Properties Co.<br/>
+                                Red Sea Global<br/>
+                                Refad Real Estate Company<br/>
+                                Retal<br/>
+                                Rikaz<br/>
+                                RIKAZ Properties<br/>
+                                Royal Commission for Jubail and Yanbu<br/>
+                                Royal Commission of Jubail & Yanbu<br/>
+                                Rua Al Madinah<br/>
+                                Sarcc-PIF Company<br/>
+                                Sateaa<br/>
+                                Saud Alarife Group<br/>
+                                Saudi Hospitality Company<br/>
+                                SBH<br/>
+                                SEDCO Capital<br/>
+                                SEDCO Holding Group<br/>
+                                Shada Hotels<br/>
+                                Shaden Hospitality<br/>
+                                Shaksy Group<br/>
+                                Sharjah Investment and Development Authority - Shurooq<br/>
+                                Sidra Capital<br/>
+                                Snasco<br/>
+                                Solidere<br/>
+                                Qortuba LLC<br/>
+                                Soudah Development<br/>
+                                Sumou Global Investment<br/>
+                                Sumou Holding<br/>
+                                Sumou Investment Global<br/>
+                                Taiba Investments<br/>
+                                Tanmeya Capital<br/>
+                                Tarfeehfakieh<br/>
+                                TDF<br/>
+                                Thakher Development Company<br/>
+                                Tourism Development Fund<br/>
+                                Trinity Investments<br/>
+                                UBS Saudi Arabia<br/>
+                                United Othaim<br/>
+                                Yanbu<br/>
+                                Umluj<br/>
+                                Al Wajh<br/>
+                                Duba Development Authority<br/>
+                                YUWDA</p>
                         
                     </article>
                 </div>
