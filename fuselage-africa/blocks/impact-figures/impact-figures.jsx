@@ -51,7 +51,7 @@ export const ImpactFigure = ({value, prefix, suffix, label}) => {
         <Pop>
             <div className={CSS.impactFigure}>
                 <p className={`impactFigureValue fs-0 fw-200 c-primary`}>{prefix}<AnimatedCounter from={0} to={parseInt(value)} />{suffix}</p>
-                <div className={`caps c-secondary fw-600 fs-6`}><Slide>{label}</Slide></div>
+                <div className={`caps c-secondary fw-600 fs-6`}><Pop inline delay={.35}>{label}</Pop></div>
             </div>
         </Pop>
     )

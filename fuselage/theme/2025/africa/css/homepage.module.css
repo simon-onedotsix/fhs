@@ -43,7 +43,19 @@
 
 
 
-
+.highlightVideoGrid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    width: 100%;
+    overflow: hidden;
+    
+    @media(min-width: 900px) {
+        grid-template-columns: 1fr 3fr;
+    }
+}
 
 
 
@@ -57,5 +69,39 @@
 @media(max-width:1199px){
     .flash {
         margin-top: var(--space-md);
+    }
+}
+
+
+
+
+
+/* partner logos */
+
+.logoContainer {
+    display: block;
+    background-color: white;
+    border-radius: var(--default-radius);
+    padding: 2rem;
+}
+
+.logo {
+    display: inline-block;
+    position: relative;
+    aspect-ratio: 4/2;
+    width: 8rem;
+}
+
+.logo img {
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width:600px) {
+    .logo {
+        width: 12rem;
     }
 }

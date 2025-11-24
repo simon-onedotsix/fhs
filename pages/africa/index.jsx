@@ -30,19 +30,109 @@ import { PopupOverlay } from "../../fuselage/components/popup-overlay/popup-over
 import { ArrowButton } from "../../fuselage-africa/components/arrow-button/arrow-button"
 
 import { Intro } from "../../fuselage/theme/2025/africa/blocks/intro/intro"
+import { FixedBackgroundImage } from "../../fuselage/theme/2025/africa/blocks/fixed-background-image/fixed-background-image"
+import { Quotation } from "../../fuselage-africa/components/quotation/quotation"
+import { VideoPlayer } from '../../fuselage-africa/components/video-player/video-player'
+import { Logo } from "../../fuselage/theme/2025/africa/components/logo-ticker/logo-ticker"
+import { ArticleScroller, Article } from "../../fuselage/theme/2025/africa/blocks/article-scroller/article-scroller"
 
+import Ticker from 'framer-motion-ticker'
 
 
 import CSS from '../../fuselage/theme/2025/africa/css/homepage.module.css'
-import partnerCSS from '../../fuselage/theme/2025/africa/css/partners.module.css'
 
 
+const QUOTES_DATA = [
+    {
+        avatarUrl: 'https://cdn-api.swapcard.com/public/images/8129ab6d05aa43a8817705e047b58f47.jpeg',
+        quote: "It's an incredible event, it's great to have all these people brought together. For me to get this recognition in front of so many peers of mine makes me very proud.",
+        fullName: "William Heinecke",
+        title: "Founder and Chairman, Minor International"
+    },
+    {
+        avatarUrl: 'https://static.swapcard.com/public/images/b67ba28418764310b01256ac98de3c59.jpeg',
+        quote: "The event has been great. I met a lot of people that I haven't seen in quite some time. It's a great networking event.",
+        fullName: "Marcel Von Aulock",
+        title: "CEO, Southern Sun",
+    },
+    {
+        avatarUrl: 'https://static.swapcard.com/public/images/fbfab4a15cf74a07b9742e0c0b601c64.jpeg',
+        quote: "FHS Africa was a great platform for us to share our news with the largest hotel management portfolio deal of the continent.",
+        fullName: "Bani Haddad",
+        title: "Founder and Managing Director, Aleph Hospitality",
+    }
+]
+const PHOTOS_DATA = [
+    {
+        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-01.jpg",
+        "width": 799,
+        "height": 533
+    },
+    {
+        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-02.jpg",
+        "width": 799,
+        "height": 533
+    },
+    {
+        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-04.jpg",
+        "width": 799,
+        "height": 533
+    },
+    {
+        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-05.jpg",
+        "width": 799,
+        "height": 533
+    },
+    {
+        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-06.jpg",
+        "width": 799,
+        "height": 533
+    },
+    {
+        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-07.jpg",
+        "width": 799,
+        "height": 533
+    },
+    {
+        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-13.jpg",
+        "width": 799,
+        "height": 533
+    },
+    {
+        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-03.jpg",
+        "width": 799,
+        "height": 533
+    },
+    {
+        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-09.jpg",
+        "width": 799,
+        "height": 533
+    },
+    {
+        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-23.jpg",
+        "width": 799,
+        "height": 533
+    },
+    {
+        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-11.jpg",
+        "width": 799,
+        "height": 533
+    },
+    {
+        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-12.jpg",
+        "width": 799,
+        "height": 533
+    },
+    
+]
 
-export default function Home ({ seomatic, partners, speakers }) {
+
+export default function Home ({ seomatic, partners, announcements, speakers }) {
 
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState()
 
+    const HOST_PARTNERS = partners.find(group => group.id === "274375")
     const STRATEGIC_PARTNERS = partners.find(group => group.id === "138675")
 
     
@@ -53,6 +143,7 @@ export default function Home ({ seomatic, partners, speakers }) {
 
     // console.log('selectedCmsSpeakers:', selectedCmsSpeakers)
     // console.log('partners:', partners)
+    // console.log('announcements:', announcements)
 
 
 
@@ -95,6 +186,8 @@ export default function Home ({ seomatic, partners, speakers }) {
         
             <Header overlaid inverse />
 
+
+
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/ahif-2024-opt.mp4'} poster={'https://cms.thebench.com/assets/video/ahif-2024-opt-poster.jpg'}>
                 
                 <p className={CSS.headline}>
@@ -105,9 +198,6 @@ export default function Home ({ seomatic, partners, speakers }) {
 
                 <div className='mt-sm'>
                     <ButtonGrid>
-                        <Pop inline delay={.1}>
-                            <Button href={'https://www.eventbooking.uk.com/AHIF-2026?_ga=2.7860276.723499015.1756208208-747783354.1720527023'}>Purchase Pass</Button>
-                        </Pop>
                         <Pop inline delay={.2}>
                             <Button href={'/africa/download-prospectus'}>Download Prospectus</Button>
                         </Pop>
@@ -117,71 +207,61 @@ export default function Home ({ seomatic, partners, speakers }) {
                     </ButtonGrid>
                 </div>
 
-                <div className={CSS.flashContainer}>
-                    <Pop>
-
-                        <div className={CSS.flash}>
-                            <p className="fs-3 fw-500 caps lh-1 c-primary">New for 2025!</p>
-                            <p className="fw-600 fs-2 lh-1 mt-xxs c-secondary">UAE Africa Tourism Investment Summit</p>
-                            <Pop inline delay={.2}>
-                                <p className='mt-xs'><ArrowButton href={`https://www.futurehospitality.com/world/ais`} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>Learn more</ArrowButton></p>
-                            </Pop>
-                        </div>
-                    </Pop>
-                </div>
-
             </HeroUnitVideo>
 
 
             
             <Intro>
-                <div className="formatted" style={{ overflow: 'hidden' }}>
+                <div className="formatted columns-2 gap-md ai-center" style={{ overflow: 'hidden' }}>
+                    <Pop>
+                        <div style={{ position: `relative`, aspectRatio: 16 / 9, backgroundColor: `black`, borderRadius: `var(--default-radius)`, overflow: `hidden` }}>
+                            <img src="/assets/img/africa/homepage/inset-2025.jpg" alt="" style={{ objectFit: `cover`, width: `100%` }} />
+                        </div>
+                    </Pop>
                     <Slide>
-                        <p className="fs-5 maxw-45">FHS Africa is the continent&apos;s leading hospitality investment forum, uniting industry leaders, investors, and operators to drive growth and innovation. With a legacy of impactful connections and over <strong className="fw-600">$459&nbsp;million</strong> in business opportunities, this is where Africa&apos;s hospitality sector meets the world. Join us in <strong className="fw-600">Nairobi</strong> for FHS Africa 2026, where the future of African hospitality unfolds.</p>
+                        <p className="fs-2 fw-600 c-primary caps maxw-20 lh-1">driving growth and innovation</p>
+                        <p className="fs-5 maxw-45 mt-sm">FHS Africa is the continent&apos;s leading hospitality investment forum, uniting industry leaders, investors, and operators to drive growth and innovation. With a legacy of impactful connections and over <strong className="fw-600">$459&nbsp;million</strong> in business opportunities, this is where Africa&apos;s hospitality sector meets the world. Join us in <strong className="fw-600">Nairobi</strong> for FHS Africa 2026, where the future of African hospitality unfolds.</p>
                     </Slide>
                 </div>
             </Intro>
 
 
-
-
             <section className={`block bg-default`}>
                 <div className='container center'>
             
-                    <p className='fs-1 fw-700 lh-1 c-white mb-md'>2026 Strategic Partners</p>
+                    <p className='fs-3 fw-500 lh-1 c-white mb-sm'>2026 Host Partner</p>
+                    <LogoGrid>
+                        {
+                            HOST_PARTNERS.partners.length &&
+                            HOST_PARTNERS.partners.map( partner => {
+                                if ( !partner.partnerLogo.length ) return
+                                return (
+                                    <Pop key={partner.id}>
+                                        <a className={CSS.logoContainer} href={`/africa/partners/${partner.slug}`} rel="noreferrer" aria-label="Partner logo">
+                                            <div className={CSS.logo}>
+                                                <Image 
+                                                    src={partner.partnerLogo[0].url} 
+                                                    layout='fill'
+                                                    alt=""
+                                                />
+                                            </div>
+                                        </a>
+                                    </Pop>
+                                )
+                            })
+                        }
+                    </LogoGrid>
                     
+                    <p className='fs-3 fw-500 lh-1 c-white mb-sm mt-md'>2026 Strategic Partners</p>
                     <LogoGrid>
                         {
                             STRATEGIC_PARTNERS.partners.length &&
                             STRATEGIC_PARTNERS.partners.map( partner => {
-
-                                const handleLogoSize = ( size ) => {
-
-                                    if ( !size ) return
-
-                                    switch (size) {
-                                        case 'lg':
-                                            return partnerCSS.lg
-                                            break
-                                        
-                                        case 'md':
-                                            return partnerCSS.md
-                                            break
-                                        
-                                        case 'sm':
-                                            return partnerCSS.sm
-                                            break
-                                    
-                                        default:
-                                            break
-                                    }
-                                }
-
                                 if ( !partner.partnerLogo.length ) return
                                 return (
                                     <Pop key={partner.id}>
-                                        <a className={partnerCSS.logoContainer} href={`/africa/partners/${partner.slug}`} rel="noreferrer" aria-label="Partner logo">
-                                            <div className={`${partnerCSS.logo} ${ handleLogoSize('md') } `}>
+                                        <a className={CSS.logoContainer} href={`/africa/partners/${partner.slug}`} rel="noreferrer" aria-label="Partner logo">
+                                            <div className={CSS.logo}>
                                                 <Image 
                                                     src={partner.partnerLogo[0].url} 
                                                     layout='fill'
@@ -204,9 +284,45 @@ export default function Home ({ seomatic, partners, speakers }) {
             </section>
 
 
+            {/* ADVISORY BOARD */}
+            <FixedBackgroundImage
+                backgroundImageUrl={`/assets/img/africa/homepage/ab-07.jpg`}
+                overlay={`hsl(from var(--secondary) h s l / .9)`}
+            >
 
+                <div className="container center pt-sm">
+                    <Fade>
+                        <Pop><p className="fs-1 fw-600 c-white maxw-40 mx-auto">2026 Advisory Board Meeting and Local Reception</p></Pop>
+                    </Fade>
+                </div>
 
-            <SpeakerCarousel heading={'2025 Featured Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See all speakers'}>
+                <div className="container columns-3 gap-sm">
+                    <Pop><img src="/assets/img/africa/homepage/ab-01.jpg" alt="" width={`100%`} style={{ borderRadius: `var(--default-radius)`}}/></Pop>
+                    <Pop><img src="/assets/img/africa/homepage/ab-02.jpg" alt="" width={`100%`} style={{ borderRadius: `var(--default-radius)`}}/></Pop>
+                    <Pop><img src="/assets/img/africa/homepage/ab-03.jpg" alt="" width={`100%`} style={{ borderRadius: `var(--default-radius)`}}/></Pop>
+                    <Pop><img src="/assets/img/africa/homepage/ab-04.jpg" alt="" width={`100%`} style={{ borderRadius: `var(--default-radius)`}}/></Pop>
+                    <Pop><img src="/assets/img/africa/homepage/ab-05.jpg" alt="" width={`100%`} style={{ borderRadius: `var(--default-radius)`}}/></Pop>
+                    <Pop><img src="/assets/img/africa/homepage/ab-06.jpg" alt="" width={`100%`} style={{ borderRadius: `var(--default-radius)`}}/></Pop>
+                </div>
+
+                <div className="container center">
+                    <div className="button-grid">
+                        <Pop>
+                            <ArrowButton 
+                                href={ '/africa/advisory-board' } 
+                                theme={{ arrow: `white`, border: `white`, label: `white`}}
+                            >
+                                See Advisory Board Members
+                            </ArrowButton>
+                        </Pop>
+                    </div>
+                </div>
+
+            </FixedBackgroundImage>
+
+            
+
+            <SpeakerCarousel heading={'2026 Confirmed Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See 2025 speakers'}>
                 {
                     customOrderedSpeakers.map( speaker => (
                         <Pop key={speaker.id}>
@@ -225,20 +341,122 @@ export default function Home ({ seomatic, partners, speakers }) {
 
 
 
+            {/* QUOTES */}
+            <section className="block bg-primary pt-0">
+                <div className={`container columns-3 gap-sm`}>
+                    {
+                        QUOTES_DATA.map((quote, index) => (
+                            <Quotation
+                                key={index}
+                                avatarUrl={quote.avatarUrl}
+                                quote={quote.quote}
+                                fullName={quote.fullName}
+                                title={quote.title}
+                            />
+                        ))
+                    }
+                </div>
+            </section>
+
+
+
             <ImpactFiguresGrid>
                 <div className="fs-0 fw-600 c-white lh-1"><Reveal>FHS&nbsp;Africa 2025</Reveal> <Reveal delay={0.1}>in numbers</Reveal></div>
 
                 <ImpactFigures>      
                     <ImpactFigure value="500" suffix="+" label="delegates" />
                     <ImpactFigure value="100" suffix="+" label="Investors" />
-                    <ImpactFigure value="248" prefix="$" suffix="M" label="AUM" />
+                    <ImpactFigure value="134.6" prefix="$" suffix="bn" label="AUM" />
                     <ImpactFigure value="100" suffix="+" label="speakers" />
                     <ImpactFigure value="35" suffix="%" label="International Attendees" />
                 </ImpactFigures>
             </ImpactFiguresGrid>
 
 
+            
+            {/* EVENT FEATURES */}
+            <section className="block bg-secondary">
 
+                <div className="container">
+                    <p className='fs-0 fw-500 lh-1 c-white'>Event Features</p>
+                </div>
+
+                {/* announcements */}
+                <ArticleScroller>
+                    {
+                        announcements.length &&
+                        announcements.map((article, index) => (
+                            <Article
+                                key={index}
+                                heroUrl={article.contentLibraryHero[0].url}
+                                title={article.title}
+                                excerpt={article.excerpt}
+                                url={`/africa/content-library/${article.slug}`}
+                            />
+                        ))
+                    }
+                </ArticleScroller>
+
+                {/* partners */}
+                <div className="container pt-lg">
+                    <div className="bg-white py-sm" style={{ borderRadius: `var(--default-radius)`}}>
+                        <Pop><p className="fs-1 fw-600 c-primary center balance">Partners Joining Us</p></Pop>
+
+                        <div className="py-xs mt-sm mb-sm">
+                            <Ticker duration={35}>
+                                {
+                                    partners.map(group => (
+                                        group.partners.map(partner => (
+                                            <div key={partner.id} style={{ marginRight: 20 }}>
+                                                <Logo logoUrl={partner.partnerLogo[0].url} />
+                                            </div>
+                                        ))
+                                    ))
+                                }
+                            </Ticker>
+                        </div>
+                    </div>
+                </div>
+
+                {/* video */}
+                <div className={`${CSS.highlightVideoGrid} container pt-md`}>
+                    <Slide>
+                        <p className='fs-1 fw-500 lh-1'>Highlights from <span className='c-primary'>FHS Africa 2025</span></p>   
+                    </Slide>
+                    <Pop>
+                        <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=6b4NyxwG7ic&list=PLvsWBxg_AZS5rmKLRXpnzwTny2AEADUHd&index=2`} controls={true} />
+                    </Pop>
+                </div>
+
+                {/* photos */}
+                <div className={`${CSS.photoGrid} container o-hidden`}>
+                    <Slide>
+                        <p className='fs-1 fw-500 lh-1 mt-lg'>2025 in <span className='c-primary'>Photos</span></p> 
+                    </Slide>
+                    
+                    <div className="columns-3 gap-xs mt-md">
+                        {
+                            PHOTOS_DATA.map( (photo, index) => (
+                                <Pop key={index}>
+                                    <div style={{ position: `relative`}}>
+                                        <Image src={photo.url} width={photo.width} height={photo.height} layout={`responsive`} alt="" style={{ borderRadius: `var(--default-radius)`}} />
+                                    </div>
+                                </Pop>
+                            ))
+                        }
+                        <p className="mt-xs">
+                            <ArrowButton
+                                href={`https://www.flickr.com/photos/benchevents/albums/`}
+                                target='_blank'
+                                theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white` }}
+                            >View Full Gallery</ArrowButton>
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+            
 
             <Footer />
             <LenisScroller />
@@ -291,6 +509,28 @@ export async function getStaticProps({ preview, previewData }) {
                                     width
                                     height
                                 }
+                            }
+                        }
+                    }
+                }
+                announcements: entries(site: "${process.env.SITE_HANDLE_AFRICA}", section: "contentLibrary", limit: 4, relatedTo: "7702") {
+                    ... on contentLibrary_article_Entry {
+                        id
+                        slug
+                        title
+                        postDate
+                        excerpt
+                        contentLibraryHero {
+                            id
+                            url
+                            width
+                            height
+                        }
+                        contentTypes {
+                            ... on contentLibrary_Category {
+                                id
+                                title
+                                slug
                             }
                         }
                     }
@@ -354,22 +594,28 @@ export async function getStaticProps({ preview, previewData }) {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
 					"cursor": {
 						"first": 200
 					},
 					"filters": {
                         "eventPeopleIds": [
-                            "RXZlbnRQZW9wbGVfMzkxMzc1MTc=",
-                            "RXZlbnRQZW9wbGVfMzc3MDU1NzU=",
-                            "RXZlbnRQZW9wbGVfMzg2NzYzOTY=",
-                            "RXZlbnRQZW9wbGVfMzg5NDMwNjM=",
-                            "RXZlbnRQZW9wbGVfMzgwNDA5MDA=",
-                            "RXZlbnRQZW9wbGVfMzgyNDYxODk=",
-                            "RXZlbnRQZW9wbGVfMzg1MzY2Mzc=",
-                            "RXZlbnRQZW9wbGVfMzgyMjM2Nzc=",
-                            "RXZlbnRQZW9wbGVfMzk5NTE5ODU=",
-                            "RXZlbnRQZW9wbGVfMzk3NjY4ODk="
+                            "RXZlbnRQZW9wbGVfNDM1NTg2NzM=",
+                            "RXZlbnRQZW9wbGVfNDM2MDI0MjY=",
+                            "RXZlbnRQZW9wbGVfNDI3NzA2ODM=",
+                            "RXZlbnRQZW9wbGVfNDM2MTEzNjA=",
+                            "RXZlbnRQZW9wbGVfNDM2MTE0NjA=",
+                            "RXZlbnRQZW9wbGVfNDM2MTE1ODg=",
+                            "RXZlbnRQZW9wbGVfNDM2MTE2Njg=",
+                            "RXZlbnRQZW9wbGVfNDM2MTE4MDQ=",
+                            "RXZlbnRQZW9wbGVfNDM2MTE4NjM=",
+                            "RXZlbnRQZW9wbGVfNDM2MTE5MDc=",
+                            "RXZlbnRQZW9wbGVfNDM2MTIwNzI=",
+                            "RXZlbnRQZW9wbGVfNDM2MTI2MDM=",
+                            "RXZlbnRQZW9wbGVfNDM2MTIyMDk=",
+                            "RXZlbnRQZW9wbGVfNDM2MTQxODE=",
+                            "RXZlbnRQZW9wbGVfNDM2MTQyNzg=",
+                            "RXZlbnRQZW9wbGVfNDM2NDkwMzE="
                         ]
                     }
 				}
@@ -384,6 +630,7 @@ export async function getStaticProps({ preview, previewData }) {
 		props: { 
             seomatic: pageData.data.entry.seomatic,
             partners: pageData.data.partners,
+            announcements: pageData.data.announcements,
             speakers: speakerData.data.eventPerson.nodes
 		}
 	}

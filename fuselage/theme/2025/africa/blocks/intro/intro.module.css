@@ -17,7 +17,7 @@
 }
 @media(min-width:600px){
     .layout {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
     .content {
         grid-area: 1/2 / 2/3;
