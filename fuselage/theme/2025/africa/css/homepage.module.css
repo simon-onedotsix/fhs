@@ -78,18 +78,45 @@
 
 /* partner logos */
 
+
+.partnerGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    text-align: center;
+}
+.partnerGroup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: var(--space-xs);
+    row-gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+
+@media(min-width:900px) {
+    .partnerGrid {
+        grid-template-columns: 1fr 4fr;
+        text-align: left;
+    }
+    .partnerGroup {
+        justify-content: flex-start;
+    }
+}
+
 .logoContainer {
     display: block;
     background-color: white;
     border-radius: var(--default-radius);
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .logo {
     display: inline-block;
     position: relative;
     aspect-ratio: 4/2;
-    width: 8rem;
+    width: 10rem;
 }
 
 .logo img {
@@ -100,8 +127,13 @@
     height: 100%;
 }
 
-@media(min-width:600px) {
+@media(min-width:900px) {
     .logo {
-        width: 12rem;
+        width: 12vw;
+    }
+}
+@media(min-width:1200px) {
+    .logo {
+        width: 12vw;
     }
 }
