@@ -289,7 +289,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
             
 
             {/* CONFIRMED SPEAKERS */}
-            <SpeakerCarousel heading={'2026 Confirmed Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See 2025 speakers'}>
+            <SpeakerCarousel heading={'2026 Confirmed Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See all speakers'}>
                 {
                     customOrderedSpeakers.map( speaker => (
                         <Pop key={speaker.id}>
@@ -623,27 +623,10 @@ export async function getStaticProps({ preview, previewData }) {
 				variables: {
 					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
 					"cursor": {
-						"first": 200
+						"first": 10
 					},
 					"filters": {
-                        "eventPeopleIds": [
-                            "RXZlbnRQZW9wbGVfNDM1NTg2NzM=",
-                            "RXZlbnRQZW9wbGVfNDM2MDI0MjY=",
-                            "RXZlbnRQZW9wbGVfNDI3NzA2ODM=",
-                            "RXZlbnRQZW9wbGVfNDM2MTEzNjA=",
-                            "RXZlbnRQZW9wbGVfNDM2MTE0NjA=",
-                            "RXZlbnRQZW9wbGVfNDM2MTE1ODg=",
-                            "RXZlbnRQZW9wbGVfNDM2MTE2Njg=",
-                            "RXZlbnRQZW9wbGVfNDM2MTE4MDQ=",
-                            "RXZlbnRQZW9wbGVfNDM2MTE4NjM=",
-                            "RXZlbnRQZW9wbGVfNDM2MTE5MDc=",
-                            "RXZlbnRQZW9wbGVfNDM2MTIwNzI=",
-                            "RXZlbnRQZW9wbGVfNDM2MTI2MDM=",
-                            "RXZlbnRQZW9wbGVfNDM2MTIyMDk=",
-                            "RXZlbnRQZW9wbGVfNDM2MTQxODE=",
-                            "RXZlbnRQZW9wbGVfNDM2MTQyNzg=",
-                            "RXZlbnRQZW9wbGVfNDM2NDkwMzE="
-                        ]
+                        "shouldBeInGroups": "RXZlbnRHcm91cF82NDI4ODI="
                     }
 				}
 			})

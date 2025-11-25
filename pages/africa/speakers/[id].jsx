@@ -70,8 +70,8 @@ function Speaker({ speaker }) {
 				<div className="container">
 					<Sidebar size='medium'>
 
-						<aside className="formatted">
-						<p className="fw-600">
+						<aside className="formatted pt-md">
+							<p className="fw-600">
                                 <ArrowLink 
                                     theme={{ color: `white`, stroke: `var(--accent)` }} 
                                     href="/africa/speakers"
@@ -104,7 +104,7 @@ function Speaker({ speaker }) {
 							</p>
 						</aside>
 
-						<main className="maxw-60">
+						<main className="maxw-60 pt-md">
 							<p className='fs-4 fw-600 lh-1 c-accent maxw-40'>Profile</p>
 							<p className="fs-3 fw-600 c-white caps mt-sm">{speaker.firstName} {speaker.lastName}</p>
 							<p className='c-white'>
@@ -160,12 +160,12 @@ export async function getStaticPaths() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
 					"cursor": {
 						"first": 300
 					},
 					"filters": {
-						"shouldBeInGroups": "RXZlbnRHcm91cF81OTg3MDU="
+						"shouldBeInGroups": "RXZlbnRHcm91cF82NDI4ODI="
 					}
 				}
 			})
@@ -234,10 +234,10 @@ export async function getStaticProps({ params }) {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
 					"filters": {
 						"eventPeopleIds": [params.id],
-						"shouldBeInGroups": "RXZlbnRHcm91cF81OTg3MDU="
+						"shouldBeInGroups": "RXZlbnRHcm91cF82NDI4ODI="
 					}
 				}
 			})

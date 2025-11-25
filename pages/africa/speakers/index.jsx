@@ -69,8 +69,8 @@ function Speakers({ speakers }) {
 			
 			<PageHeader>
 				<div className="formatted">
-					<h1>2025 Speakers</h1>
-					<p>Our speakers are chosen for their industry knowledge and insight. If you would like to be considered as a speaker for FHS Africa 2025 please contact <a href="mailto:mala.patel@thebench.com" target="_blank" rel="noreferrer noopener">mala.patel@thebench.com</a></p>
+					<h1>2026 Speakers</h1>
+					<p>Our speakers are chosen for their industry knowledge and insight. If you would like to be considered as a speaker for FHS Africa 2026 please contact <a href="mailto:mala.patel@thebench.com" target="_blank" rel="noreferrer noopener">mala.patel@thebench.com</a></p>
 				</div>
 			</PageHeader>
 
@@ -223,12 +223,12 @@ export async function getStaticProps() {
 						}
 					`,
 					variables: {
-						"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2025,
+						"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
 						"cursor": {
 							"first": 300
 						},
 						"filters": {
-							"shouldBeInGroups": "RXZlbnRHcm91cF81OTg3MDU="
+							"shouldBeInGroups": "RXZlbnRHcm91cF82NDI4ODI="
 						}
 					}
 			}
