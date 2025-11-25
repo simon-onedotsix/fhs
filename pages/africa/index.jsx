@@ -35,6 +35,7 @@ import { Quotation } from "../../fuselage-africa/components/quotation/quotation"
 import { VideoPlayer } from '../../fuselage-africa/components/video-player/video-player'
 import { Logo } from "../../fuselage/theme/2025/africa/components/logo-ticker/logo-ticker"
 import { ArticleScroller, Article } from "../../fuselage/theme/2025/africa/blocks/article-scroller/article-scroller"
+import { BrandBlock } from "../../fuselage/theme/2025/africa/blocks/brand-block/brand-block"
 
 import Ticker from 'framer-motion-ticker'
 
@@ -226,88 +227,99 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
             </Intro>
 
 
+            
             {/* PARTNERS */}
             <section className={`block bg-default`}>
+                <div className='container center'>
             
-                <div className={`${CSS.partnerGrid} container`}>
-                    <section>
-                        <p className='fs-4 fw-500 lh-1 c-white mb-sm'>Host Partner</p>
-                        <div className={CSS.partnerGroup}>
-                            {
-                                HOST_PARTNERS.partners.length &&
-                                HOST_PARTNERS.partners.map( partner => {
-                                    if ( !partner.partnerLogo.length ) return
-                                    return (
-                                        <Pop key={partner.id}>
-                                            <a className={CSS.logoContainer} href={`/africa/partners/${partner.slug}`} rel="noreferrer" aria-label="Partner logo">
-                                                <div className={CSS.logo}>
-                                                    <Image 
-                                                        src={partner.partnerLogo[0].url} 
-                                                        layout='fill'
-                                                        alt=""
-                                                    />
-                                                </div>
-                                            </a>
-                                        </Pop>
-                                    )
-                                })
-                            }
-                        </div>
-                    </section>
+                    <p className='fs-3 fw-500 lh-1 c-white mb-sm'>2026 Host Partner</p>
+                    <LogoGrid>
+                        {
+                            HOST_PARTNERS.partners.length &&
+                            HOST_PARTNERS.partners.map( partner => {
+                                if ( !partner.partnerLogo.length ) return
+                                return (
+                                    <Pop key={partner.id}>
+                                        <a className={CSS.logoContainer} href={`/africa/partners/${partner.slug}`} rel="noreferrer" aria-label="Partner logo">
+                                            <div className={CSS.logo}>
+                                                <Image 
+                                                    src={partner.partnerLogo[0].url} 
+                                                    layout='fill'
+                                                    alt=""
+                                                />
+                                            </div>
+                                        </a>
+                                    </Pop>
+                                )
+                            })
+                        }
+                    </LogoGrid>
                     
-                    <section>
-                        <p className='fs-4 fw-500 lh-1 c-white mb-sm'>Strategic Partners</p>
-                        <div className={CSS.partnerGroup}>
-                            {
-                                STRATEGIC_PARTNERS.partners.length &&
-                                STRATEGIC_PARTNERS.partners.map( partner => {
-                                    if ( !partner.partnerLogo.length ) return
-                                    return (
-                                        <Pop key={partner.id}>
-                                            <a className={CSS.logoContainer} href={`/africa/partners/${partner.slug}`} rel="noreferrer" aria-label="Partner logo">
-                                                <div className={CSS.logo}>
-                                                    <Image 
-                                                        src={partner.partnerLogo[0].url} 
-                                                        layout='fill'
-                                                        alt=""
-                                                    />
-                                                </div>
-                                            </a>
-                                        </Pop>
-                                    )
-                                })
-                            }
-                        </div>
-                    </section>
-                </div>
+                    <p className='fs-3 fw-500 lh-1 c-white mb-sm mt-md'>2026 Strategic Partners</p>
+                    <LogoGrid>
+                        {
+                            STRATEGIC_PARTNERS.partners.length &&
+                            STRATEGIC_PARTNERS.partners.map( partner => {
+                                if ( !partner.partnerLogo.length ) return
+                                return (
+                                    <Pop key={partner.id}>
+                                        <a className={CSS.logoContainer} href={`/africa/partners/${partner.slug}`} rel="noreferrer" aria-label="Partner logo">
+                                            <div className={CSS.logo}>
+                                                <Image 
+                                                    src={partner.partnerLogo[0].url} 
+                                                    layout='fill'
+                                                    alt=""
+                                                />
+                                            </div>
+                                        </a>
+                                    </Pop>
+                                )
+                            })
+                        }
+                    </LogoGrid>
 
-                <div className="container">
-                    <Pop inline><ArrowButton href={`/africa/partners`} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>See all sponsors and partners</ArrowButton></Pop>
+                    <div className="mt-sm center">
+                        <Pop inline><ArrowButton href={`/africa/partners`} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>See all sponsors and partners</ArrowButton></Pop>
+                    </div>
+                    
+                    
                 </div>
             </section>
 
             
 
-            {/* JOINING PARTNERS */}
-            <div className="container">
-                <div className="bg-white py-sm">
-                    <Pop><p className="fs-1 fw-600 c-primary center balance">Partners Joining Us</p></Pop>
+            {/* CONFIRMED SPEAKERS */}
+            <SpeakerCarousel heading={'2026 Confirmed Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See 2025 speakers'}>
+                {
+                    customOrderedSpeakers.map( speaker => (
+                        <Pop key={speaker.id}>
+                            <SpeakerCard 
+                                key={speaker.id}
+                                url={`/africa/speakers/${speaker.id}`}
+                                photoUrl={speaker.photoUrl}
+                                fullName={`${speaker.firstName} ${speaker.lastName}`}
+                                jobTitle={speaker.jobTitle}
+                                company={speaker.organization}
+                            />
+                        </Pop>
+                    ))
+                }
+            </SpeakerCarousel>
 
-                    <div className="py-xs mt-sm mb-sm">
-                        <Ticker duration={35}>
-                            {
-                                partners.map(group => (
-                                    group.partners.map(partner => (
-                                        <div key={partner.id} style={{ marginRight: 20 }}>
-                                            <Logo logoUrl={partner.partnerLogo[0].url} />
-                                        </div>
-                                    ))
-                                ))
-                            }
-                        </Ticker>
-                    </div>
-                </div>
-            </div>
+            
+
+            {/* IMPACT FIGURES */}
+            <ImpactFiguresGrid>
+                <div className="fs-0 fw-600 c-white lh-1"><Reveal>FHS&nbsp;Africa 2025</Reveal> <Reveal delay={0.1}>in numbers</Reveal></div>
+
+                <ImpactFigures>      
+                    <ImpactFigure value={500} suffix="+" label="delegates" />
+                    <ImpactFigure value={100} suffix="+" label="Investors" />
+                    <ImpactFigure value={134.6} prefix="$" suffix="bn" label="AUM" />
+                    <ImpactFigure value={100} suffix="+" label="speakers" />
+                    <ImpactFigure value={35} suffix="%" label="International Attendees" />
+                </ImpactFigures>
+            </ImpactFiguresGrid>
 
 
 
@@ -349,28 +361,33 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
             
 
-            {/* FEATURED SPEAKERS */}
-            <SpeakerCarousel heading={'2026 Confirmed Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See 2025 speakers'}>
-                {
-                    customOrderedSpeakers.map( speaker => (
-                        <Pop key={speaker.id}>
-                            <SpeakerCard 
-                                key={speaker.id}
-                                url={`/africa/speakers/${speaker.id}`}
-                                photoUrl={speaker.photoUrl}
-                                fullName={`${speaker.firstName} ${speaker.lastName}`}
-                                jobTitle={speaker.jobTitle}
-                                company={speaker.organization}
-                            />
-                        </Pop>
-                    ))
-                }
-            </SpeakerCarousel>
+            {/* KENYA 2025 */}
+            <BrandBlock>
+                
+                <div className="container">
+                    <p className="fs-1 fw-600 balance mb-md center">Last Time We Were In Kenya</p>
+                    <Pop><img src="/assets/img/africa/homepage/kenya/kenya-02.jpg" alt="" style={{ width: `100%`, borderRadius: `var(--default-radius)`}} /></Pop>
+                </div>
+              
+                <div className="container columns-3 gap-sm">      
+                    <ImpactFigure value={293} prefix="$" suffix="M" label="in business opportunities and deal volume gained at AHIF" />
+                    <ImpactFigure value={4.5} prefix="$" suffix="M" label="million average value of business opportunities gained" />
+                    <ImpactFigure value={3.1} suffix="%" label="of attendees surveyed left with business opportunities between 10-50 million USD from AHIF" />
+                </div>
 
+                <div className="container columns-2 gap-sm">
+                    <Pop><img src="/assets/img/africa/homepage/kenya/kenya-07.jpg" alt="" style={{ width: `100%`, borderRadius: `var(--default-radius)` }} /></Pop>
+                    <Pop><img src="/assets/img/africa/homepage/kenya/kenya-09.jpg" alt="" style={{ width: `100%`, borderRadius: `var(--default-radius)` }} /></Pop>
+                    <Pop><img src="/assets/img/africa/homepage/kenya/kenya-04.jpg" alt="" style={{ width: `100%`, borderRadius: `var(--default-radius)` }} /></Pop>
+                    <Pop><img src="/assets/img/africa/homepage/kenya/kenya-05.jpg" alt="" style={{ width: `100%`, borderRadius: `var(--default-radius)`}} /></Pop>
+                </div>
+
+            </BrandBlock>
+            
 
 
             {/* QUOTES */}
-            <section className="block bg-primary pt-0">
+            <section className="block bg-primary">
                 <div className={`container columns-3 gap-sm`}>
                     {
                         QUOTES_DATA.map((quote, index) => (
@@ -385,20 +402,6 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                     }
                 </div>
             </section>
-
-
-            {/* IMPACT FIGURES */}
-            <ImpactFiguresGrid>
-                <div className="fs-0 fw-600 c-white lh-1"><Reveal>FHS&nbsp;Africa 2025</Reveal> <Reveal delay={0.1}>in numbers</Reveal></div>
-
-                <ImpactFigures>      
-                    <ImpactFigure value="500" suffix="+" label="delegates" />
-                    <ImpactFigure value="100" suffix="+" label="Investors" />
-                    <ImpactFigure value="134.6" prefix="$" suffix="bn" label="AUM" />
-                    <ImpactFigure value="100" suffix="+" label="speakers" />
-                    <ImpactFigure value="35" suffix="%" label="International Attendees" />
-                </ImpactFigures>
-            </ImpactFiguresGrid>
 
 
             
@@ -420,6 +423,27 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                         ))
                     }
                 </ArticleScroller>
+
+                {/* partners */}
+                <div className="container pt-lg">
+                    <div className="bg-white py-sm" style={{ borderRadius: `var(--default-radius)`}}>
+                        <Pop><p className="fs-1 fw-600 c-primary center balance">Partners Joining Us</p></Pop>
+
+                        <div className="py-xs mt-sm mb-sm">
+                            <Ticker duration={35}>
+                                {
+                                    partners.map(group => (
+                                        group.partners.map(partner => (
+                                            <div key={partner.id} style={{ marginRight: 20 }}>
+                                                <Logo logoUrl={partner.partnerLogo[0].url} />
+                                            </div>
+                                        ))
+                                    ))
+                                }
+                            </Ticker>
+                        </div>
+                    </div>
+                </div>
 
                 {/* video */}
                 <div className={`${CSS.highlightVideoGrid} container pt-md`}>

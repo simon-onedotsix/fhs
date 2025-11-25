@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
 import { animate, useInView } from 'framer-motion'
 
-export const AnimatedCounter = ({ from, to, decimals, animationOptions }) => {
+export const AnimatedCounter = ({ from, to, animationOptions }) => {
     const ref = useRef(null)
     const inView = useInView(ref, {once: false})
 
@@ -18,7 +18,7 @@ export const AnimatedCounter = ({ from, to, decimals, animationOptions }) => {
             ease: 'easeOut',
             ...animationOptions,
             onUpdate(value) {
-                element.textContent = value.toFixed( decimals ? decimals : 0 )
+                element.textContent = value.toFixed( Number.isInteger(to) ? 0 : 1 )
             } 
         })
 

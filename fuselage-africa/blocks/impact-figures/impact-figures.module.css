@@ -6,10 +6,6 @@
 
 
 
-
-
-
-
 .container {
     position: relative;
     overflow: hidden;
@@ -77,6 +73,7 @@
     }
     .impactFigure {
         padding: 1rem var(--space-sm) 1rem var(--space-sm);
+        height: 100%;
     }
 }
 

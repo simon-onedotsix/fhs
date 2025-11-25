@@ -41,7 +41,7 @@ export const HeroUnitVideo = ({ children, video, poster }) => {
 
             <motion.div className={CSS.brandPattern}
                 style={{
-                    backgroundImage: `url(/assets/theme/africa/fhs-africa-battik-purple.png)`,
+                    backgroundImage: `url(/assets/theme/africa/fhs-africa-battik-yellow.png)`,
                     backgroundPositionY: y
                 }}
             />
