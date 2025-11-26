@@ -38,7 +38,7 @@ const otherEvents = [
     {
         id: 12,
         title: 'BRF',
-        url: '/world/brf',
+        url: '/sa/brf',
         target: true
     },
     {
