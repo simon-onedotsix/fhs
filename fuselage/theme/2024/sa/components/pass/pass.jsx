@@ -1,10 +1,97 @@
 import { useState, useEffect } from 'react'
 import { format, parseISO } from 'date-fns'
+import parse from 'html-react-parser'
 
 import Link from 'next/link'
 
 import CSS from './pass.module.css'
 
+
+
+export const PassPriceBands = ({ flash, title, callout, description, currency, priceBands, soldOut, priceIncreaseMessage, quantityRemaining, label, href }) => {
+
+    const [currentBand, setCurrentBand] = useState()
+    const [nextBand, setNextBand] = useState()
+
+    useEffect(() => {
+        // console.log('priceBands:', priceBands)
+    
+        if (!priceBands) return
+
+        let indexOfCurrent = 0
+    
+        priceBands.forEach((band, index) => {
+            // if ( new Date(parseISO(band.endDate)) < Date.now() ) console.log('expired')
+            // if ( new Date(parseISO(band.startDate)) > Date.now() ) console.log('not yet available')
+            // if ( new Date(parseISO(band.startDate)) < Date.now() && new Date(parseISO(band.endDate)) > Date.now() ) console.log('current')
+                    
+            if (new Date(parseISO(band.startDate)) < Date.now() && new Date(parseISO(band.endDate)) > Date.now()) {
+                setCurrentBand(band)
+                indexOfCurrent = index
+            }
+        })
+        
+        setNextBand(priceBands[indexOfCurrent + 1])
+
+        // console.log('currentBand:', currentBand )
+        // console.log('nextBand:', nextBand )
+
+    }, [])
+
+    return (
+        <div className={`${CSS.pass} ${soldOut && CSS.soldOut} bg-white p-sm`}>
+
+            {
+                soldOut &&
+                <div className={CSS.soldOutFlash}><span className='fs-2 fw-600 c-white caps center lh-1'>Sold out</span></div>
+            }
+
+
+            {
+                flash &&
+                <div className={CSS.flash}><span className='fw-600 fs-6 c-white caps'><TickIcon/>&ensp;{ flash }</span></div>
+            }
+
+            <section className={CSS.details}>
+
+                {
+                    callout &&
+                    <p className={CSS.callout}>{callout}</p>
+                }
+
+                <p className='fs-2 fw-600 lh-1 c-secondary'>{ title }</p>
+                {
+                    currentBand && nextBand && priceIncreaseMessage ?
+                        <div className="formatted mt-xs">
+                            <p className="fs-6">
+                                <span className="fw-800 c-primary">Only available at this rate before { format( new Date(currentBand.endDate), "d MMMM" ) }</span> when the price increases to <strong>{ currency } { nextBand.value }</strong>
+                            </p>
+                        </div>
+                    : null
+                }
+                
+                <div className="formatted mt-xs">{ description && parse(description) }</div>
+            </section>
+
+            <section className={CSS.actions}>
+                { 
+                    priceBands && currency ?
+                        <p className='fs-2 fw-600 c-secondary'>
+                            { currency } { currentBand ? currentBand.value : 'TBA' }
+                        </p>
+                    : null
+                }
+                
+                {
+                    quantityRemaining &&
+                    <div className="formatted fw-600">{ quantityRemaining } passes left at this rate</div>
+                }
+                
+                <a className={`${CSS.button} fs-6 fw-600 mt-xs`} href={ href } target='_blank'>{ label }</a>
+            </section>
+        </div>
+    )
+}
 
 
 export const Pass = ({ title, description, currency, value, from, to, href }) => {
