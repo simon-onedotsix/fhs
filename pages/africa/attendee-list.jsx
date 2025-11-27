@@ -3,6 +3,8 @@ import craftApolloClient from "../api/apollo"
 
 import parse from 'html-react-parser'
 
+import Head from "next/head"
+
 import { Header } from '../../fuselage/theme/2025/africa/common/header/header'
 import { Footer } from '../../fuselage/theme/2025/africa/common/footer/footer'
 import { PageHeader } from '../../fuselage-africa/blocks/page-header/page-header'
@@ -23,7 +25,11 @@ export default function AttendeeList ({ entry }) {
 
     return (
 
-        <>
+      <>
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/africa/favicon-16x16.png" sizes="16x16" />
+            </Head>
+        
             <Header compact />
 
             <PageHeader >

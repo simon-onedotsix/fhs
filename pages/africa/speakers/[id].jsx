@@ -62,7 +62,7 @@ function Speaker({ speaker }) {
 	return (
 
 		<>
-			<Head><link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" /></Head>
+			<Head><link rel="icon" type="image/png" href="/assets/favicons/africa/favicon-16x16.png" sizes="16x16" /></Head>
 
 			<Header compact />
 

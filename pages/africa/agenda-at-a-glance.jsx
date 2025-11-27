@@ -7,6 +7,8 @@ import _ from 'lodash'
 import { format } from 'date-fns'
 import parse from 'html-react-parser'
 
+import Head from "next/head"
+
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { Reveal } from '../../fuselage/animation/reveal'
 import { Pop, Fade, Slide } from '../../fuselage/animation/animation'
@@ -90,7 +92,10 @@ export default function Agenda ({ sessions, theme }) {
 
 
     return (
-        <>
+		<>
+			<Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/africa/favicon-16x16.png" sizes="16x16" />
+            </Head>
 
             <Header compact />
 

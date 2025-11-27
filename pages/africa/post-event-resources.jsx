@@ -86,7 +86,8 @@ export default function Page ({ seomatic, entry }) {
         <div style={{ width: `100%`, overflow: `hidden` }}>
 
             <Head>
-                { handleSeomaticMeta( seomatic ) }
+                <link rel="icon" type="image/png" href="/assets/favicons/africa/favicon-16x16.png" sizes="16x16" />
+				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
             <Header compact />

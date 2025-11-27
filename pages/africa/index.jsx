@@ -181,7 +181,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
     return (
         <>
             <Head>
-                <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
+                <link rel="icon" type="image/png" href="/assets/favicons/africa/favicon-16x16.png" sizes="16x16" />
                 { handleSeomaticMeta( seomatic ) }
             </Head>
         

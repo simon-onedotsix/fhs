@@ -329,232 +329,238 @@ export default function Agenda ({ sessions, theme }) {
 	
 
 	return (
-		<div style={{ width: `100%`, overflow: `hidden` }}>
-
-			<Header compact />
-
-			<PageHeader theme={``}>
-				<div className="formatted no-print">
-					<p className="fs-0 fw-600"><Reveal>2026 Agenda</Reveal></p>
-					<Slide>
-						<p className="mt-sm">For FHS Africa, our objective is to enhance networking opportunities by introducing innovative and engaging formats that foster meaningful connections among delegates. The program is carefully designed to encourage greater interaction between attendees and speakers, ensuring valuable discussions and insights.</p>
-					</Slide>
-				</div>
-
-			</PageHeader>
-
-
+		<>
+			<Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/africa/favicon-16x16.png" sizes="16x16" />
+			</Head>
 			
-			<section className="block pt-0">
+			<div style={{ width: `100%`, overflow: `hidden` }}>
 
-				<div className="container pt-xl pb-xl print-only">
-					<p className="fs-0 fw-600 c-black">FHS Africa 2026 Agenda</p>
-				</div>
+				<Header compact />
 
-				<div className="container columns-4 gap-md formatted">
-					<section>
-						<h4>Summit Stage</h4>
-						<p>The <strong className="fw-600">Summit Stage</strong> serves as the conference&apos;s central hub, hosting all <strong className="fw-600">keynote presentations and pivotal panel discussions</strong>. It is designed to bring together industry leaders, investors, policymakers, and innovators in one space, fostering meaningful dialogue and knowledge exchange. Attendees can expect high-level insights into global and regional hospitality trends, strategic investment opportunities, and emerging market dynamics.</p>
-					</section>
+				<PageHeader theme={``}>
+					<div className="formatted no-print">
+						<p className="fs-0 fw-600"><Reveal>2026 Agenda</Reveal></p>
+						<Slide>
+							<p className="mt-sm">For FHS Africa, our objective is to enhance networking opportunities by introducing innovative and engaging formats that foster meaningful connections among delegates. The program is carefully designed to encourage greater interaction between attendees and speakers, ensuring valuable discussions and insights.</p>
+						</Slide>
+					</div>
 
-					<section>
-						<h4>Knowledge Station</h4>
-						<p>A dedicated space for learning and inspiration, the Knowledge Station offers engaging workshops, in-depth case studies, and expert presentations. Designed to address key focus topics from the conference, this hub provides valuable insights and practical knowledge for attendees seeking deeper understanding and expertise.</p>
-					</section>
+				</PageHeader>
 
-					<section>
-						<h4>Showcase Den</h4>
-						<p>A dynamic platform for exploring investment opportunities, the Showcase Den highlights key destinations, country spotlights, and new project pitches. Designed to connect delegates with potential investments, this space offers valuable insights into emerging markets and groundbreaking developments in the industry.</p>
-					</section>
-
-					<section>
-						<h4>Pioneer Camp</h4>
-						<p>A collaborative space designed for in-depth discussions, the Pioneer Camp caters to the demand for smaller, longer conversations between delegates and experts. Through interactive roundtables, this hub fosters meaningful dialogue, tackles critical challenges, and develops practical solutions for the industry&apos;s future.</p>
-					</section>
-				</div>
-
-
-				<div className="printButton button-grid mt-sm no-print">
-					{/* <Link href={'/africa/agenda-at-a-glance'}><a className={'button fs-6'}>Agenda at a glance</a></Link> */}
-					<button 
-						className={'button fs-6'}
-						onClick={ ()=> window.print() }
-					><PrinterIcon />&ensp;Print Agenda</button>
-				</div>
 
 				
-				
-				{/* FILTERS */}
-				<div className="container agendaFilters">
-					<div className={`${CSS.filterLayout} ${filtersVisible ? CSS.active : ''}`}>
+				<section className="block pt-0">
 
-						{/* toggle */}
-						<div className={CSS.filterActionsContainer}>							
-							<div className={CSS.agendaActionsToggleWrapper}>
-								<span>FILTER AGENDA</span>
-								
-								<button className={CSS.agendaActionsToggle} onClick={ () => setFiltersVisible(!filtersVisible) }><FilterIcon color={`var(--secondary)`} /></button>
-							</div>
-						</div>
+					<div className="container pt-xl pb-xl print-only">
+						<p className="fs-0 fw-600 c-black">FHS Africa 2026 Agenda</p>
+					</div>
 
-						{/* filters */}
+					<div className="container columns-4 gap-md formatted">
 						<section>
-							{/* topics */}
-							{
-								groupFieldGroupsByName( sessions, 'Topics').length ?
-									<section className={CSS.filterLayoutButtons}>
-										{
-											groupFieldGroupsByName( sessions, 'Topics').map( (loc, index) => (
-												<button
-													key={index}
-													className={`${CSS.filterButton} ${ selectedTopic === loc.id ? CSS.active : null }`} 
-													onClick={ () => {
-														setSelectedTopic(loc.id)
-													}
-												}
-												>{loc.name}</button>
-											))
-										}
-										<button 
-											className={`${CSS.filterButton} ${ selectedTopic === null ? CSS.active : null }`} 
-											onClick={ () => {
-												setSelectedTopic(null)
-											}}
-										>All</button>
-									</section>
-								: null
-							}
+							<h4>Summit Stage</h4>
+							<p>The <strong className="fw-600">Summit Stage</strong> serves as the conference&apos;s central hub, hosting all <strong className="fw-600">keynote presentations and pivotal panel discussions</strong>. It is designed to bring together industry leaders, investors, policymakers, and innovators in one space, fostering meaningful dialogue and knowledge exchange. Attendees can expect high-level insights into global and regional hospitality trends, strategic investment opportunities, and emerging market dynamics.</p>
+						</section>
 
-							{/* days */}
-							<section className={CSS.filterLayoutButtons}>
+						<section>
+							<h4>Knowledge Station</h4>
+							<p>A dedicated space for learning and inspiration, the Knowledge Station offers engaging workshops, in-depth case studies, and expert presentations. Designed to address key focus topics from the conference, this hub provides valuable insights and practical knowledge for attendees seeking deeper understanding and expertise.</p>
+						</section>
+
+						<section>
+							<h4>Showcase Den</h4>
+							<p>A dynamic platform for exploring investment opportunities, the Showcase Den highlights key destinations, country spotlights, and new project pitches. Designed to connect delegates with potential investments, this space offers valuable insights into emerging markets and groundbreaking developments in the industry.</p>
+						</section>
+
+						<section>
+							<h4>Pioneer Camp</h4>
+							<p>A collaborative space designed for in-depth discussions, the Pioneer Camp caters to the demand for smaller, longer conversations between delegates and experts. Through interactive roundtables, this hub fosters meaningful dialogue, tackles critical challenges, and develops practical solutions for the industry&apos;s future.</p>
+						</section>
+					</div>
+
+
+					<div className="printButton button-grid mt-sm no-print">
+						{/* <Link href={'/africa/agenda-at-a-glance'}><a className={'button fs-6'}>Agenda at a glance</a></Link> */}
+						<button 
+							className={'button fs-6'}
+							onClick={ ()=> window.print() }
+						><PrinterIcon />&ensp;Print Agenda</button>
+					</div>
+
+					
+					
+					{/* FILTERS */}
+					<div className="container agendaFilters">
+						<div className={`${CSS.filterLayout} ${filtersVisible ? CSS.active : ''}`}>
+
+							{/* toggle */}
+							<div className={CSS.filterActionsContainer}>							
+								<div className={CSS.agendaActionsToggleWrapper}>
+									<span>FILTER AGENDA</span>
+									
+									<button className={CSS.agendaActionsToggle} onClick={ () => setFiltersVisible(!filtersVisible) }><FilterIcon color={`var(--secondary)`} /></button>
+								</div>
+							</div>
+
+							{/* filters */}
+							<section>
+								{/* topics */}
 								{
-									buildAgenda( sessions ).map( (day, index) => {
-										return (
+									groupFieldGroupsByName( sessions, 'Topics').length ?
+										<section className={CSS.filterLayoutButtons}>
+											{
+												groupFieldGroupsByName( sessions, 'Topics').map( (loc, index) => (
+													<button
+														key={index}
+														className={`${CSS.filterButton} ${ selectedTopic === loc.id ? CSS.active : null }`} 
+														onClick={ () => {
+															setSelectedTopic(loc.id)
+														}
+													}
+													>{loc.name}</button>
+												))
+											}
 											<button 
-												className={`
-													${CSS.filterButton} 
-													${ selectedDay === day.time.slice(0, 10) ? CSS.active : null }
-												`}
-												key={index} 
+												className={`${CSS.filterButton} ${ selectedTopic === null ? CSS.active : null }`} 
 												onClick={ () => {
-													setSelectedDay(day.time.slice(0, 10))
+													setSelectedTopic(null)
 												}}
-											>Day { index + 1 }</button>
-										)
-									})
+											>All</button>
+										</section>
+									: null
 								}
-								<button 
-									className={`${CSS.filterButton} ${ selectedDay === null ? CSS.active : null }`} 
-									onClick={ () => {
-										setSelectedDay(null)
-									}}
-								>All</button>
-							</section>
 
-							{/* locations */}
-							<section className={CSS.filterLayoutButtons}>
-								<select
-									ref={locationSelect}
-									className={CSS.filterSelect} 
-									onChange={ (e) => {
-										setSelectedLocation( e.target.value )
-									}}
-								>
-									<option value={null}>All locations</option>
+								{/* days */}
+								<section className={CSS.filterLayoutButtons}>
 									{
-										groupFieldGroupsByName( sessions, 'Location').map( filter => {
+										buildAgenda( sessions ).map( (day, index) => {
 											return (
-												<option key={filter.id} value={filter.id}>
-													{filter.name}
-												</option>
+												<button 
+													className={`
+														${CSS.filterButton} 
+														${ selectedDay === day.time.slice(0, 10) ? CSS.active : null }
+													`}
+													key={index} 
+													onClick={ () => {
+														setSelectedDay(day.time.slice(0, 10))
+													}}
+												>Day { index + 1 }</button>
 											)
 										})
 									}
-
-								</select>
-							</section> 
-
-							{/* reset filters */}
-							{
-								selectedDay || selectedLocation || selectedTopic ?
-									<section className={CSS.agendaFilterResetWrapper}>
-										<button className={CSS.agendaFilterReset} onClick={resetFilters}><span>&times;</span> Reset all filters</button>
-									</section>
-								: null
-							}
-						</section>
-
-						{/* search */}
-						<section>
-							<div className={`${CSS.searchLayout} ${CSS.search} ${searchActive && CSS.active}`}>
-								<div className={CSS.searchFormContainer}>	
-									<input 
-										type="text" 
-										placeholder="Search" 
-										onChange={ e => {
-											e.preventDefault()
-											setSearch(e.target.value) 
-										}}
-										value={search}
-									/>
-									
-									<button
-										className={`${CSS.searchReset} ${ search !== '' ? CSS.active : ''}`}
+									<button 
+										className={`${CSS.filterButton} ${ selectedDay === null ? CSS.active : null }`} 
 										onClick={ () => {
-											setSearch('')
+											setSelectedDay(null)
 										}}
-									>&times;</button>
-								</div>
-							</div>
-						</section>
-
-					</div>
-				</div>
-
-
-				{/* AGENDA */}
-				<div className="agenda | section columns-1 gap-sm mt-md pb-xl">				
-					{
-						buildAgenda( sessions ).map( (day, index) => {
-							
-							if ( selectedDay && selectedDay !== day.time ) return
-
-							return (
-								<section key={index} className={CSS.day}>
-									<p key={index} className={CSS.dayDivider}> { day.day }</p>
-
-									{
-										day.timeslots.length 
-										?
-											day.timeslots.map( (slot, index) => {
-												return (
-													<div key={index} className={CSS.sessions}>
-														{
-															prioritiseSessions(slot.sessions).map( session => (
-																<Session key={session.id} session={session} theme={getSessionLocationTheme(session)} />
-															))
-														}														
-													</div>
-												)
-											}) 
-										: 
-											<p className="fs-5 fw-400 py-xs">
-												No { getFieldGroupNameById( sessions, selectedTopic ) } sessions available { selectedLocation  ? 'at this location' : null } on this day.
-											</p>
-									}
-
+									>All</button>
 								</section>
-							)
-						})
-					}
-				</div>
 
-				<div className="print-only" style={{ height: '4rem'}}/>
-			</section>
+								{/* locations */}
+								<section className={CSS.filterLayoutButtons}>
+									<select
+										ref={locationSelect}
+										className={CSS.filterSelect} 
+										onChange={ (e) => {
+											setSelectedLocation( e.target.value )
+										}}
+									>
+										<option value={null}>All locations</option>
+										{
+											groupFieldGroupsByName( sessions, 'Location').map( filter => {
+												return (
+													<option key={filter.id} value={filter.id}>
+														{filter.name}
+													</option>
+												)
+											})
+										}
+
+									</select>
+								</section> 
+
+								{/* reset filters */}
+								{
+									selectedDay || selectedLocation || selectedTopic ?
+										<section className={CSS.agendaFilterResetWrapper}>
+											<button className={CSS.agendaFilterReset} onClick={resetFilters}><span>&times;</span> Reset all filters</button>
+										</section>
+									: null
+								}
+							</section>
+
+							{/* search */}
+							<section>
+								<div className={`${CSS.searchLayout} ${CSS.search} ${searchActive && CSS.active}`}>
+									<div className={CSS.searchFormContainer}>	
+										<input 
+											type="text" 
+											placeholder="Search" 
+											onChange={ e => {
+												e.preventDefault()
+												setSearch(e.target.value) 
+											}}
+											value={search}
+										/>
+										
+										<button
+											className={`${CSS.searchReset} ${ search !== '' ? CSS.active : ''}`}
+											onClick={ () => {
+												setSearch('')
+											}}
+										>&times;</button>
+									</div>
+								</div>
+							</section>
+
+						</div>
+					</div>
 
 
-		<LenisScroller />
-		</div>
+					{/* AGENDA */}
+					<div className="agenda | section columns-1 gap-sm mt-md pb-xl">				
+						{
+							buildAgenda( sessions ).map( (day, index) => {
+								
+								if ( selectedDay && selectedDay !== day.time ) return
+
+								return (
+									<section key={index} className={CSS.day}>
+										<p key={index} className={CSS.dayDivider}> { day.day }</p>
+
+										{
+											day.timeslots.length 
+											?
+												day.timeslots.map( (slot, index) => {
+													return (
+														<div key={index} className={CSS.sessions}>
+															{
+																prioritiseSessions(slot.sessions).map( session => (
+																	<Session key={session.id} session={session} theme={getSessionLocationTheme(session)} />
+																))
+															}														
+														</div>
+													)
+												}) 
+											: 
+												<p className="fs-5 fw-400 py-xs">
+													No { getFieldGroupNameById( sessions, selectedTopic ) } sessions available { selectedLocation  ? 'at this location' : null } on this day.
+												</p>
+										}
+
+									</section>
+								)
+							})
+						}
+					</div>
+
+					<div className="print-only" style={{ height: '4rem'}}/>
+				</section>
+
+
+			<LenisScroller />
+			</div>
+		</>
 	)
 }
 Agenda.theme = 'africa'

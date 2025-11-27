@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { Header } from '../../fuselage/theme/2025/africa/common/header/header'
 import { Footer } from '../../fuselage/theme/2025/africa/common/footer/footer'
 
@@ -20,6 +22,10 @@ export default function Investors ({ articles, speakers }) {
 
     return (
         <>
+            
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/africa/favicon-16x16.png" sizes="16x16" />
+            </Head>
 
             <Header compact/>
 

@@ -1,3 +1,4 @@
+import Head from "next/head"
 import Image from "next/image"
 
 import { Pop, Slide, Fade } from "../../fuselage/animation/animation"
@@ -14,8 +15,13 @@ import CSS from '../../fuselage/theme/2025/africa/css/pipelines-webinar.module.c
 
 export default function Page () {
     return (
-      <>
-        <Header compact />
+        <>
+            
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/africa/favicon-16x16.png" sizes="16x16" />
+            </Head>
+
+            <Header compact />
 
             <section className="block pt-0 bg-secondary">
                 
