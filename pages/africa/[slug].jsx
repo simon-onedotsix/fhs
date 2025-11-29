@@ -37,7 +37,7 @@ import handleSeomaticMeta from '../../lib/seomatic'
 
 export default function Page ({ entry, seomatic }) {
 
-    console.log('entry:', entry) 
+    // console.log('entry:', entry) 
   
     return (
         <>

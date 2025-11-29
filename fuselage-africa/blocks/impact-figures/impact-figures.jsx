@@ -22,13 +22,13 @@ export const ImpactFiguresGrid = ({ children }) => {
     
 
     return (
-        <section className={`${CSS.layout} block bg-primary pt-0`}>
-            <motion.div className={CSS.brandPattern}
+        <section className={`${CSS.layout} block bg-secondary`}>
+            {/* <motion.div className={CSS.brandPattern}
                 style={{
-                    backgroundImage: `url(/assets/theme/africa/fhs-africa-battik-yellow.png)`,
+                    backgroundImage: `url(/assets/theme/africa/fhs-africa-battik-orange.png)`,
                     backgroundPositionY: y
                 }}
-            />
+            /> */}
 
             { children }
         </section>

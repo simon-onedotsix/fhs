@@ -156,24 +156,6 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
     })
 
     let y = useTransform(scrollYProgress, [0, 1], ["-15%", "5%"])
-    
-
-
-    let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
-        
-    let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
-        (speaker => speaker.lastName === 'Heinecke' && speaker.firstName === "William" ? 0 : 1),
-        (speaker => speaker.lastName === 'Meyer' && speaker.firstName === "Dr. Ivan" ? 0 : 1),
-        (speaker => speaker.lastName === 'Green' && speaker.firstName === "David" ? 0 : 1),
-        (speaker => speaker.lastName === 'Nubi' && speaker.firstName === "Pelumi" ? 0 : 1),
-        (speaker => speaker.lastName === 'Granet' && speaker.firstName === "Olivier" ? 0 : 1),
-        
-        (speaker => speaker.lastName === 'Hutchinson' && speaker.firstName === "Guy" ? 0 : 1),
-        (speaker => speaker.lastName === 'Osei Baffour' && speaker.firstName === "Magdaline" ? 0 : 1),
-        (speaker => speaker.lastName === 'du Plessis' && speaker.firstName === "Dr Morné" ? 0 : 1),
-        (speaker => speaker.lastName === 'Getachew Belete' && speaker.firstName === "Tadiwos" ? 0 : 1),
-        (speaker => speaker.lastName === 'Tshivhengwa' && speaker.firstName === "Tshifhiwa" ? 0 : 1),
-    ])
 
 
 
@@ -212,7 +194,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
 
             
-            <Intro>
+            {/* <Intro>
                 <div className="formatted columns-2 gap-md ai-center" style={{ overflow: 'hidden' }}>
                     <Pop>
                         <div style={{ position: `relative`, aspectRatio: 16 / 9, backgroundColor: `black`, borderRadius: `var(--default-radius)`, overflow: `hidden` }}>
@@ -224,7 +206,56 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                         <p className="fs-5 maxw-45 mt-sm">FHS Africa is the continent&apos;s leading hospitality investment forum, uniting industry leaders, investors, and operators to drive growth and innovation. With a legacy of impactful connections and over <strong className="fw-600">$459&nbsp;million</strong> in business opportunities, this is where Africa&apos;s hospitality sector meets the world. Join us in <strong className="fw-600">Nairobi</strong> for FHS Africa 2026, where the future of African hospitality unfolds.</p>
                     </Slide>
                 </div>
-            </Intro>
+            </Intro> */}
+
+
+
+            {/* IMPACT FIGURES */}
+            <ImpactFiguresGrid>
+                <div className="fs-0 fw-600 c-white lh-1"><Reveal>FHS&nbsp;Africa 2025</Reveal> <Reveal delay={0.1}>in numbers</Reveal></div>
+
+                <ImpactFigures>      
+                    <ImpactFigure value={500} suffix="+" label="delegates" />
+                    <ImpactFigure value={100} suffix="+" label="Investors" />
+                    <ImpactFigure value={134.6} prefix="$" suffix="bn" label="AUM" />
+                    <ImpactFigure value={100} suffix="+" label="speakers" />
+                    <ImpactFigure value={35} suffix="%" label="International Attendees" />
+                </ImpactFigures>
+
+                <div className="container pt-sm">
+                    <Pop inline><ArrowButton href={`https://www.youtube.com/watch?v=6b4NyxwG7ic`} target={`_blank`} theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}>Watch 2025 Highlights</ArrowButton></Pop>
+                </div>
+            </ImpactFiguresGrid>
+
+
+
+            {/* TICKER */}
+            <div className="bg-secondary py-xs" dir={`ltr`}>
+                <Ticker>
+                    <p className="fs-4">&ensp;&bull;&ensp;<strong>$459 million</strong> in business opportunities and deal volume gained in 2025 edition</p>
+                    <p className="fs-4">&ensp;&bull;&ensp;<strong>$459 million</strong> in business opportunities and deal volume gained in 2025 edition</p>
+                </Ticker>
+            </div>
+
+            
+
+            {/* CONFIRMED SPEAKERS */}
+            <SpeakerCarousel heading={'2026 Confirmed Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See all speakers'}>
+                {
+                    speakers.map( speaker => (
+                        <Pop key={speaker.id}>
+                            <SpeakerCard 
+                                key={speaker.id}
+                                url={`/africa/speakers/${speaker.id}`}
+                                photoUrl={speaker.photoUrl}
+                                fullName={`${speaker.firstName} ${speaker.lastName}`}
+                                jobTitle={speaker.jobTitle}
+                                company={speaker.organization}
+                            />
+                        </Pop>
+                    ))
+                }
+            </SpeakerCarousel>
 
 
             
@@ -288,43 +319,27 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
             
 
-            {/* CONFIRMED SPEAKERS */}
-            <SpeakerCarousel heading={'2026 Confirmed Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See all speakers'}>
-                {
-                    customOrderedSpeakers.map( speaker => (
-                        <Pop key={speaker.id}>
-                            <SpeakerCard 
-                                key={speaker.id}
-                                url={`/africa/speakers/${speaker.id}`}
-                                photoUrl={speaker.photoUrl}
-                                fullName={`${speaker.firstName} ${speaker.lastName}`}
-                                jobTitle={speaker.jobTitle}
-                                company={speaker.organization}
+            {/* QUOTES */}
+            <section className="block bg-primary">
+                <div className={`container columns-3 gap-sm`}>
+                    {
+                        QUOTES_DATA.map((quote, index) => (
+                            <Quotation
+                                key={index}
+                                avatarUrl={quote.avatarUrl}
+                                quote={quote.quote}
+                                fullName={quote.fullName}
+                                title={quote.title}
                             />
-                        </Pop>
-                    ))
-                }
-            </SpeakerCarousel>
-
-            
-
-            {/* IMPACT FIGURES */}
-            <ImpactFiguresGrid>
-                <div className="fs-0 fw-600 c-white lh-1"><Reveal>FHS&nbsp;Africa 2025</Reveal> <Reveal delay={0.1}>in numbers</Reveal></div>
-
-                <ImpactFigures>      
-                    <ImpactFigure value={500} suffix="+" label="delegates" />
-                    <ImpactFigure value={100} suffix="+" label="Investors" />
-                    <ImpactFigure value={134.6} prefix="$" suffix="bn" label="AUM" />
-                    <ImpactFigure value={100} suffix="+" label="speakers" />
-                    <ImpactFigure value={35} suffix="%" label="International Attendees" />
-                </ImpactFigures>
-            </ImpactFiguresGrid>
+                        ))
+                    }
+                </div>
+            </section>
 
 
 
             {/* ADVISORY BOARD */}
-            <FixedBackgroundImage
+            {/* <FixedBackgroundImage
                 backgroundImageUrl={`/assets/img/africa/homepage/ab-07.jpg`}
                 overlay={`hsl(from var(--secondary) h s l / .9)`}
             >
@@ -357,12 +372,12 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                     </div>
                 </div>
 
-            </FixedBackgroundImage>
+            </FixedBackgroundImage> */}
 
             
 
             {/* KENYA 2025 */}
-            <BrandBlock>
+            {/* <BrandBlock>
                 
                 <div className="container">
                     <p className="fs-1 fw-600 balance mb-md center">Last Time We Were In Kenya</p>
@@ -382,27 +397,8 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                     <Pop><img src="/assets/img/africa/homepage/kenya/kenya-05.jpg" alt="" style={{ width: `100%`, borderRadius: `var(--default-radius)`}} /></Pop>
                 </div>
 
-            </BrandBlock>
+            </BrandBlock> */}
             
-
-
-            {/* QUOTES */}
-            <section className="block bg-primary">
-                <div className={`container columns-3 gap-sm`}>
-                    {
-                        QUOTES_DATA.map((quote, index) => (
-                            <Quotation
-                                key={index}
-                                avatarUrl={quote.avatarUrl}
-                                quote={quote.quote}
-                                fullName={quote.fullName}
-                                title={quote.title}
-                            />
-                        ))
-                    }
-                </div>
-            </section>
-
 
             
             {/* EVENT FEATURES */}
@@ -425,7 +421,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                 </ArticleScroller>
 
                 {/* partners */}
-                <div className="container pt-lg">
+                {/* <div className="container pt-lg">
                     <div className="bg-white py-sm" style={{ borderRadius: `var(--default-radius)`}}>
                         <Pop><p className="fs-1 fw-600 c-primary center balance">Partners Joining Us</p></Pop>
 
@@ -443,17 +439,17 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                             </Ticker>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* video */}
-                <div className={`${CSS.highlightVideoGrid} container pt-md`}>
+                {/* <div className={`${CSS.highlightVideoGrid} container pt-md`}>
                     <Slide>
                         <p className='fs-1 fw-500 lh-1'>Highlights from <span className='c-primary'>FHS Africa 2025</span></p>   
                     </Slide>
                     <Pop>
                         <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=6b4NyxwG7ic&list=PLvsWBxg_AZS5rmKLRXpnzwTny2AEADUHd&index=2`} controls={true} />
                     </Pop>
-                </div>
+                </div> */}
 
                 {/* photos */}
                 <div className={`${CSS.photoGrid} container o-hidden`}>
@@ -626,7 +622,14 @@ export async function getStaticProps({ preview, previewData }) {
 						"first": 10
 					},
 					"filters": {
-                        "shouldBeInGroups": "RXZlbnRHcm91cF82NDI4ODI="
+                        "shouldBeInGroups": "RXZlbnRHcm91cF82NDI4ODI=",
+                        "eventPeopleIds": [
+                            "RXZlbnRQZW9wbGVfNDM2MTE0NjA=",
+                            "RXZlbnRQZW9wbGVfNDI3NzA2ODM=",
+                            "RXZlbnRQZW9wbGVfNDM2MDI0MjY=",
+                            "RXZlbnRQZW9wbGVfNDM1NTg2NzM=",
+                            "RXZlbnRQZW9wbGVfNDM2MTEzNjA="
+                        ]
                     }
 				}
 			})
