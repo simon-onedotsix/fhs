@@ -341,42 +341,55 @@ export const QueryCustomQuoteImageGrid = `
 `
 
 
-
-
-
-// bizzabo related
-
-export const BizzaboPasses = `
-    ... on ${blocksHandle}ContentBlocks_bizzaboPasses_BlockType {
+export const Passes = `
+    ... on ${blocksHandle}ContentBlocks_passes_BlockType {
         id
-        bizzaboPasses {
-            ... on bizzaboPasses_BlockType {
+        theme
+        currency
+        passes {
+            ... on passes_pass_BlockType {
                 id
-                passName
+                passTitle
+                passDescription
+                passValue
+                availableFrom
+                expires
+                hyperlink
             }
-        }
-    }
-`
-export const BizzaboSpeakers = `
-    ... on ${blocksHandle}ContentBlocks_bizzaboSpeakers_BlockType {
-        id
-        theme
-    }
-`
-export const BizzaboPartners = `
-    ... on ${blocksHandle}ContentBlocks_bizzaboPartners_BlockType {
-        id
-        theme
-        heading
-        body
-        bizzaboSponsorCategories {
-            ... on bizzaboSponsorCategories_BlockType {
+            ... on passes_sectionHeading_BlockType {
                 id
-                sponsorshipLevel
-                sponsorshipType
                 heading
-                size
+            }
+            ... on passes_specialPass_BlockType {
+                id
+                specialPassTitle
+                specialPassDescription
+                specialPassValue
+                specialPassAvailableFrom
+                specialPassExpires
+                specialPassButtonLabel
+                specialPassHyperlink
+            }
+            ... on passes_passNew_BlockType {
+                id
+                passTitle
+                passFlash
+                passCallout
+                passPriceIncreases
+                passDescription
+                passCurrency
+                passPriceBands {
+                    endDate
+                    startDate
+                    value
+                }
+                passQuantityRemaining
+                passButtonLabel
+                passButtonUrl
+                passSoldOut
             }
         }
     }
 `
+
+
