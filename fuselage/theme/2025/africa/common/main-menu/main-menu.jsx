@@ -25,7 +25,7 @@ export const MainMenu = ({ otherEvents }) => {
             <div className={CSS.toggleContainer}>
                 <div className={`${CSS.toggleActions} ${ active && CSS.active }`}>
                     <Button 
-                        href={`https://www.eventbooking.uk.com/AHIF-2026/?_ga=2.228250205.1595208071.1756970246-747783354.1720527023`} 
+                        href={`/africa/purchase-pass`} 
                         theme={{ 
                             color: `var(--secondary)`,
                             background: `white`, 
@@ -33,7 +33,7 @@ export const MainMenu = ({ otherEvents }) => {
                         }} 
                         decal={`fw-600`}
                     >
-                        Purchase Pass
+                        Register Here
                     </Button>
                 </div>
 

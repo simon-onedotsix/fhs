@@ -37,7 +37,7 @@ export const MainMenu = ({ otherEvents }) => {
                         }} 
                         decal={`fw-600 desktop-only`}
                     >
-                        { locale === 'ar' ? `سجل الآن` : `Register Now`}
+                        { locale === 'ar' ? `سجل الآن` : `Register Here`}
                     </Button>
                     
                     <Button 

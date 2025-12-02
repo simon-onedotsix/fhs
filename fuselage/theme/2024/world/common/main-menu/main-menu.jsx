@@ -33,7 +33,7 @@ export const MainMenu = ({ otherEvents }) => {
                         }} 
                         decal={`fw-600`}
                     >
-                        Purchase Pass
+                        Register Here
                     </Button>
                     
                     <Button 

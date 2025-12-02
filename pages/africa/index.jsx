@@ -35,7 +35,7 @@ import { Quotation } from "../../fuselage-africa/components/quotation/quotation"
 import { VideoPlayer } from '../../fuselage-africa/components/video-player/video-player'
 import { Logo } from "../../fuselage/theme/2025/africa/components/logo-ticker/logo-ticker"
 import { ArticleScroller, Article } from "../../fuselage/theme/2025/africa/blocks/article-scroller/article-scroller"
-import { BrandBlock } from "../../fuselage/theme/2025/africa/blocks/brand-block/brand-block"
+import { ThemesSlider } from "../../fuselage-africa/blocks/themes-slider/themes-slider"
 
 import Ticker from 'framer-motion-ticker'
 
@@ -126,7 +126,45 @@ const PHOTOS_DATA = [
     },
     
 ]
-
+const THEMES_DATA = [
+    {
+        id: '1',
+        iconUrl: '/assets/img/africa/event-themes/investment.svg',
+        title: 'Investment financing and capital flows'
+    },
+    {
+        id: '2',
+        iconUrl: '/assets/img/africa/event-themes/operational-economics.svg',
+        title: 'Operational economics and profitability'
+    },
+    {
+        id: '3',
+        iconUrl: '/assets/img/africa/event-themes/brands.svg',
+        title: 'Homegrown Brands in Africa'
+    },
+    {
+        id: '4',
+        iconUrl: '/assets/img/africa/event-themes/branded-residences.svg',
+        title: 'Branded Residences'
+    },
+    {
+        id: '5',
+        iconUrl: '/assets/img/africa/event-themes/global-economy.svg',
+        title: 'Global economic shifts and geopolitical impacts'
+    },
+    {
+        id: '6',
+        iconUrl: '/assets/img/africa/event-themes/conservation.svg',
+        title: 'Conservation-led and sustainable hospitality'
+    },
+    {
+        id: '7',
+        iconUrl: '/assets/img/africa/event-themes/technology.svg',
+        title: 'Technology and AI'
+    },
+    
+    
+]
 
 export default function Home ({ seomatic, partners, announcements, speakers }) {
 
@@ -212,7 +250,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
             {/* IMPACT FIGURES */}
             <ImpactFiguresGrid>
-                <div className="fs-0 fw-600 c-white lh-1"><Reveal>FHS&nbsp;Africa 2025</Reveal> <Reveal delay={0.1}>in numbers</Reveal></div>
+                <div className="fs-0 fw-600 c-white lh-1"><Reveal delay={0.1}>In Numbers</Reveal></div>
 
                 <ImpactFigures>      
                     <ImpactFigure value={500} suffix="+" label="delegates" />
@@ -256,6 +294,18 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                     ))
                 }
             </SpeakerCarousel>
+
+
+
+            {/* THEMES */}
+            <section className="block bg-secondary no-print" style={{ position: 'relative', zIndex: 2}}>
+                <ThemesSlider
+                    heading={`2026 Event Themes`}
+                    data={THEMES_DATA}
+                    link={'/africa/agenda'}
+                    linkLabel={'View Agenda'}
+                />
+            </section>
 
 
             

@@ -26,48 +26,37 @@ const nextConfig = {
 
 	async redirects() {
 		return [
-		  {
-			source: '/ae/:path*',
-			destination: '/world/:path*',
-			permanent: true,
-		  },
-		  {
-			source: '/ais/:path*',
-			destination: '/world/ais/:path*',
-			permanent: true,
-		  },
-		  {
-			source: '/world/branded-residences-forum',
-			destination: '/world/brf',
-			permanent: true,
-		  },
-		  {
-			source: '/world/brf2025',
-			destination: '/world/brf',
-			permanent: true,
-		  },
-		  {
-			source: '/sa/post-event',
-			destination: '/sa/post-event-resources-2025',
-			permanent: true,
-		  },
-		  {
-			source: '/sa/grif',
-			destination: '/sa/',
-			permanent: true,
-			},
-		  
-		  
-		  {
-				source: '/africa/purchase-pass',
-				destination: 'https://www.eventbooking.uk.com/AHIF-2025/?_ga=2.121809099.1723537869.1730106145-200260928.1717500334',
-				permanent: true
+			{
+				source: '/ae/:path*',
+				destination: '/world/:path*',
+				permanent: true,
 			},
 			{
-				source: '/africa/register',
-				destination: 'https://www.eventbooking.uk.com/AHIF-2025/?_ga=2.121809099.1723537869.1730106145-200260928.1717500334',
-				permanent: true
-			}
+				source: '/ais/:path*',
+				destination: '/world/ais/:path*',
+				permanent: true,
+			},
+			{
+				source: '/world/branded-residences-forum',
+				destination: '/world/brf',
+				permanent: true,
+			},
+			{
+				source: '/world/brf2025',
+				destination: '/world/brf',
+				permanent: true,
+			},
+			{
+				source: '/sa/post-event',
+				destination: '/sa/post-event-resources-2025',
+				permanent: true,
+			},
+			{
+				source: '/sa/grif',
+				destination: '/sa/',
+				permanent: true,
+			},
+		  
 		]
 	}
 
