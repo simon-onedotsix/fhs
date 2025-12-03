@@ -35,6 +35,7 @@ import { Button } from "../../fuselage/theme/2024/world/components/button/button
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 import { FixedBackgroundImage } from "../../fuselage/theme/2025/ais/blocks/fixed-background-image/fixed-background-image"
 import { ImpactGrid, ImpactFigure, TitleBlock, ImageBlock } from "../../fuselage/theme/2025/sa/blocks/impact-grid/impact-grid"
+import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/animated-counter/animated-counter"
 import { SectionHeading } from "../../fuselage/theme/2025/sa/components/section-heading/section-heading"
 import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
