@@ -14,8 +14,6 @@ export const ArticleScroller = ({ children }) => {
     return (
 
         <section className={CSS.layout}>
-            <div className={CSS.graphic}><KeylineIcon /></div>
-
             <aside>
                 <SectionHeading heading={ locale === 'ar' ? "التوقيعات والإعلانات لعام 2025" : '2025 Signings & Announcements'} />
                 <div className='p-md'>
@@ -87,28 +85,5 @@ const PageIcon = () => {
             </g>
         </svg>
 
-    )
-}
-
-
-const KeylineIcon = () => {
-    return (
-        <svg width="100%" height="100%" viewBox="0 0 1019 1140" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeLinecap:`round`, strokeLinejoin:`round` }}>
-            <g transform="matrix(1,0,0,1,-2966,-385)">
-                <g transform="matrix(1.79157,0,0,1.68389,-1418.07,0)">
-                    <g id="fhs-icon-keyline" transform="matrix(0.404415,-3.65996e-32,-4.12798e-32,0.430276,2447.05,229.076)">
-                        <g opacity="0.24">
-                            <path d="M803.262,809.524L446.278,987.169" style={{ fill:`none`, fillRule:`nonzero`, stroke:`white`, strokeWidth:1 }}/>
-                            <path d="M443.004,582.217L443.004,983.781" style={{ fill:`none`, fillRule:`nonzero`, stroke:`white`, strokeWidth:1 }}/>
-                            <path d="M439.299,579.914L802.269,806.927" style={{ fill:`none`, fillRule:`nonzero`, stroke:`white`, strokeWidth:1 }}/>
-                            <path d="M1405.87,680.502L1405.87,899.385L228.415,1570.87L228.415,1085.79L456.578,1228L803.262,1028.27L803.262,595.903" style={{ fill:`none`, fillRule:`nonzero`, stroke:`white`, strokeWidth:1 }}/>
-                            <path d="M228.415,1570.87L0.749,1438.89L1.043,131.489" style={{ fill:`none`, fillRule:`nonzero`, stroke:`white`, strokeWidth:1 }}/>
-                            <path d="M228.89,705.141L228.957,865.825L663.622,1108.58" style={{ fill:`none`, fillRule:`nonzero`, stroke:`white`, strokeWidth:1 }}/>
-                            <path d="M1.043,131.489L413.526,371.171L228.913,475.847L228.913,705.141L605.978,480.703L994.788,706.609L993.998,918.649L1405.87,680.502L227.896,0.525L1.043,131.489Z" style={{ fill:`none`, fillRule:`nonzero`, stroke:`white`, strokeWidth:1 }}/>
-                        </g>
-                    </g>
-                </g>
-            </g>
-        </svg>
     )
 }

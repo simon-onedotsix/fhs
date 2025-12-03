@@ -7,7 +7,7 @@
         grid-template-columns: 1fr;
         gap: var(--space-md);
     
-        background-color: white;
+        background-color: #eee;
         width: 100%;
         overflow: hidden;
     }
@@ -22,12 +22,7 @@
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: var(--space-md);
-    
-        background-color: var(--neutral-02);
-        background-image: url('/assets/theme/sa-2025/gfk-03.svg');
-        background-repeat: no-repeat;
-        background-position: -40vw 40vw;
-        background-size: 70vw;
+        background-color: #eee;
     }
     .layout > aside {
         align-self: flex-start;

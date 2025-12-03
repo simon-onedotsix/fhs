@@ -26,7 +26,6 @@ export const Footer = () => {
 
     return (
         <footer className="block bg-neutral-02 no-print" style={{ position: 'relative', overflow: 'hidden' }}>
-            <img className={CSS.deco} src="/assets/theme/sa-2025/gfk-02.svg" alt=""/>
 
             <div className={`container columns-3 gap-md formatted`}>
 
