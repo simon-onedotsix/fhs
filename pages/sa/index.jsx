@@ -936,7 +936,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                                 href={`https://www.flickr.com/photos/benchevents/albums/`}
                                 target='_blank'
                                 theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)` }}
-                            >{locale === 'ar' ? `مشاهدة معرض الصور بالكامل` : `View Full Gallery<`}</ArrowButton>
+                            >{locale === 'ar' ? `مشاهدة معرض الصور بالكامل` : `View Full Gallery`}</ArrowButton>
                         </p>
                     </div>
 

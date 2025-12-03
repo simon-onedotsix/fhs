@@ -150,10 +150,10 @@
 }
 
 [data-theme='africa'] select.hs-input {
-    background-color: transparent;
-	color: white !important;
+    background-color: white;
+	/* color: white !important; */
     border-color: white !important;
-    background-image: url('/assets/ui/select-chevron-brf.svg');
+    background-image: url('/assets/ui/select-chevron.svg');
 }
 
 

@@ -14,9 +14,12 @@ export const Footer = () => {
     const { globals } = useContext(GlobalsContext)
     // console.log('globals from FOOTER:', globals)
 
-    const hubspotForm = globals.global[2].hubspotForm[0]
-    const contactInfo = globals.global[2].contactDetails[0].body
-    const socialConnections = globals.global[2].socialConnections
+    const localGlobals = globals['global']
+    // console.log(localGlobals)
+
+    const hubspotForm = localGlobals[2].hubspotForm[0]
+    const contactInfo = localGlobals[2].contactDetails[0].body
+    const socialConnections = localGlobals[2].socialConnections
 
     return (
         <footer className="block">
