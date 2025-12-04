@@ -100,6 +100,8 @@ export const Header = ({ compact, overlaid, inverse }) => {
 
             </header>
 
+            { compact && <HeaderShim /> }
+
         </>
     )
 }

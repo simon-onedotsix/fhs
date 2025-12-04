@@ -214,7 +214,7 @@ export default function Article ({ entry }) {
             
                         
 
-            <section className="block">
+            <section className="block pt-0">
                 <div className="container">
                     <StickySidebar size='large' flipped>
 

@@ -79,7 +79,6 @@ export default function ContentLibraryCategory ({ categories, category, articles
             <section className="block flush bg-default pt-0">
                 <StickySidebar size='small'>
                     <aside>
-                        <HeaderShim/>
                         <div className="p-md pt-0">
                             <p className="fs-6 fw-600 mb-sm">Filter</p>
                             { handleCategoryMenu() }
@@ -90,7 +89,6 @@ export default function ContentLibraryCategory ({ categories, category, articles
                     </aside>
 
                     <main>
-                        <HeaderShim/>
                         <div className="p-md pt-0">
                             <p className="fs-0 fw-600">Content Library</p>
                         </div>
