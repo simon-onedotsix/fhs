@@ -1,43 +1,5 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
-
-import { useState, useRef } from "react"
-
-import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
-import { motion, useScroll, useTransform } from "framer-motion"
-
-import _ from 'lodash'
-
-import { useRouter } from "next/router"
-import Head from "next/head"
-import Image from "next/image"
-import Link from "next/link"
-
-import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
-
-import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
-import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
-import { HeroUnitVideo } from "../../fuselage/theme/2025/sa/blocks/hero-unit-video/hero-unit-video"
-import { Button } from "../../fuselage/theme/2024/world/components/button/button"
-import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
-
-import { ArticleScroller, Article } from "../../fuselage/theme/2025/sa/blocks/article-scroller/article-scroller"
-import { SectionHeading } from "../../fuselage/theme/2025/sa/components/section-heading/section-heading"
-import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
-import { ImpactGrid, ImpactFigure, TitleBlock, ImageBlock } from "../../fuselage/theme/2025/sa/blocks/impact-grid/impact-grid"
-import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
-import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/animated-counter/animated-counter"
-import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
-import { Award } from "../../fuselage/icons/award"
-import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
-import { Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticker/logo-ticker"
-import { PopOver } from "../../fuselage/components/popover/popover"
-
-import Ticker from 'framer-motion-ticker'
-
-import { FixedBackgroundImage } from "../../fuselage/theme/2025/ais/blocks/fixed-background-image/fixed-background-image"
-
-
 import { 
     QueryText, 
     QueryFlipFlops, 
@@ -53,10 +15,43 @@ import {
     QueryImages,
 	QueryPartnerGroups
 } from "../../graphql/queries"
-
 import handleSeomaticMeta from '../../lib/seomatic'
 
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+import { motion, useScroll, useTransform } from "framer-motion"
+import Ticker from 'framer-motion-ticker'
+
+import { useRouter } from "next/router"
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
+
+import useCustomMediaQuery from "../../hooks/useCustomMediaQuery"
+
+import _ from 'lodash'
+
+import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
+import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
+import { Button } from "../../fuselage/theme/2024/world/components/button/button"
+import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
+import { FixedBackgroundImage } from "../../fuselage/theme/2025/ais/blocks/fixed-background-image/fixed-background-image"
+import { ImpactGrid, ImpactFigure, TitleBlock, ImageBlock } from "../../fuselage/theme/2025/sa/blocks/impact-grid/impact-grid"
+import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/animated-counter/animated-counter"
+import { SectionHeading } from "../../fuselage/theme/2025/sa/components/section-heading/section-heading"
+import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
+import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
+import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
+import { Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticker/logo-ticker"
+import { ArticleScroller, Article } from "../../fuselage/theme/2025/sa/blocks/article-scroller/article-scroller"
+import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
+
+import { VideoSection, Section } from '../../fuselage/theme/2026/sa/blocks/section'
+import { ThemeGraphic } from '../../fuselage/theme/2026/sa/theme/theme-graphic'
+
+
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
+
 
 import { THEMES_DATA, THEMES_DATA_AR } from "./themes"
 
@@ -550,81 +545,103 @@ const QUOTES_DATA_AR = [
     }
 ]
 
-export default function Home ({ entry, seomatic, contentBlocks, partners, abVideos }) {
 
 
+
+export default function Page({ seomatic, partners }) {
+    
     const { locale } = useRouter()
 
-    // console.log('entry:', entry)
-    // console.log('partners:', partners)
-
+    const isDesktop = useCustomMediaQuery('(min-width: 600px)');
 
     return (
-        <div dir={ locale === 'ar' ? 'rtl' : 'ltr' }>
+        <div>
+
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
-				{ handleSeomaticMeta( seomatic ) }
-			</Head>
-        
-            <Header overlaid inverse />
+                { handleSeomaticMeta( seomatic ) }
+            </Head>
+
+            <Header overlaid />
 
 
             {/* INTRO */}
-            <div className={CSS.themeWrapper}>
-
-                <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2025-sa-wrap-up-opt.mp4'} poster={'/assets/video/fhs-2025-sa-wrap-up-poster.jpg'}>
-                    
-                    <motion.p 
-                        initial={{ y: 100, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ type: "spring", bounce: 0.25 }}
-                        className={`${CSS.headline} fs-xl fw-900 c-white lh-1 center mx-auto`}
-                    >
+            <VideoSection
+                backgroundClass={`bg-primary`}
+                video={'https://cms.thebench.com/assets/video/fhs-2025-sa-wrap-up-opt.mp4'}
+                poster={'/assets/video/fhs-2025-sa-wrap-up-poster.jpg'}
+                minHeight={`100vh`}
+                themeGraphics={
+                    <div>
                         {
-                            locale === 'ar'
-                                ? <>حيث تلتقي الفرص برأس المال</>
-                                : <>Where Opportunity Meets&nbsp;Capital</>
+                            isDesktop
+                            ?
+                                <ThemeGraphic
+                                    src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                                    width={`45vw`}
+                                    coordinates={{ top: `50vh` }}
+                                />
+                            :
+                                <ThemeGraphic
+                                    src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                                    width={`50vw`}
+                                    coordinates={{ top: `33vh` }}
+                                />
                         }
-                    </motion.p>
+                    </div>
+                }
+            >
+               
+                <div style={{ height: isDesktop ? `30vh` : `45vh`}}/>
+                <motion.p 
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ type: "spring", bounce: 0.25 }}
+                    className={`${CSS.headline} fs-xl fw-900 c-white lh-1 center mx-auto`}
+                >
+                    {
+                        locale === 'ar'
+                            ? <>حيث تلتقي الفرص برأس المال</>
+                            : <>Where Opportunity Meets&nbsp;Capital</>
+                    }
+                </motion.p>
+                
+                <motion.p 
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ type: "spring", bounce: 0.25 }}
+                    className={`fs-4 fw-300 c-white center mt-sm`} 
+                >
+                    {
+                        locale === 'ar'
+                            ? `20-22 أبريل 2026، فندق ماندارين أورينتال الفيصلية، الرياض`
+                            : `20-22 April 2026, Mandarin Oriental Al Faisaliah, Riyadh`
+                    }
+                </motion.p>
 
-                    <motion.p 
-                        initial={{ y: 100, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ type: "spring", bounce: 0.25 }}
-                        className={`fs-4 fw-300 c-white center mt-sm`} 
-                    >
-                        {
-                            locale === 'ar'
-                                ? `20-22 أبريل 2026، فندق ماندارين أورينتال الفيصلية، الرياض`
-                                : `20-22 April 2026, Mandarin Oriental Al Faisaliah, Riyadh`
-                        }
-                    </motion.p>
-
-                    <Fade>
-                        <div className="mt-md center button-grid w-100pc">
-                            <Pop inline>
-                                <Button 
-                                    href={'/sa/post-event-resources-2025'} 
-                                    theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                    decal={'fs-5 fw-600'} 
-                                    accent
-                                >{ locale === 'ar' ? `الموارد الرقمية لعام 2025` : `2025 Digital Resources`}</Button>
-                            </Pop>
-                            <Pop inline>
-                                <Button 
-                                    href={'/sa/post-event-report-2025'} 
-                                    theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                    decal={'fs-5 fw-600'} 
-                                    accent
-                                >{ locale === 'ar' ? `تقرير ما بعد الحدث` : `Post-Event Report`}</Button>
-                            </Pop>
-                        </div>
-                    </Fade>
-                </HeroUnitVideo>
-
+                <Fade>
+                    <div className="mt-md center button-grid w-100pc">
+                        <Pop inline>
+                            <Button 
+                                href={'/sa/post-event-resources-2025'} 
+                                theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
+                                decal={'fs-5 fw-600'} 
+                                accent
+                            >{ locale === 'ar' ? `الموارد الرقمية لعام 2025` : `2025 Digital Resources`}</Button>
+                        </Pop>
+                        <Pop inline>
+                            <Button 
+                                href={'/sa/prospectus-download'} 
+                                theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
+                                decal={'fs-5 fw-600'} 
+                                accent
+                            >{ locale === 'ar' ? `2026 Prospectus` : `2026 Prospectus`}</Button>
+                        </Pop>
+                    </div>
+                </Fade>
 
                 {/* HOST SPONSOR */}
-                <section className="block bg-primary">
+                <section className="block">
                     <div className="container center">
                         <p className="fs-3 fw-600 c-accent caps">{ locale === 'ar' ? "الجهات الراعية المضيفة" : "Host Sponsors" }</p>
                             <Pop>
@@ -638,7 +655,7 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
                 {/* PATRONAGE */}
-                <section className="block bg-primary">
+                <section className="block">
                     <div className="container center">
                         <p className="fs-3 fw-600 c-accent caps pb-sm">{ locale === 'ar' ? "تحت رعاية" : "Under the Patronage of" }</p>
 
@@ -687,9 +704,9 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         </p>
                     </div>
                 </section>
-            </div>
 
-            
+            </VideoSection>
+
 
             {/* ADVISORY BOARD */}
             <FixedBackgroundImage
@@ -775,34 +792,65 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
 
 
             {/* IN NUMBERS */}
-            <ImpactGrid>
-                <TitleBlock>
-                    <SectionHeading heading={ locale === 'ar' ? "2025 بالأرقام" : '2025 in Numbers'} decal={'c-secondary'} />
-                    <div style={{ marginTop: `var(--space-sm)`, marginLeft: `var(--space-md)`}}>
-                        <Pop inline>
-                            <Button 
-                                href={'/sa/attendee-list-2025'} 
-                                theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                decal={'fs-5 fw-600'} 
-                                accent
-                            >{ locale === 'ar' ? `حمّل قائمة الحضور` : `Download Attendee List`}</Button>
-                        </Pop>
-                    </div>
-                </TitleBlock>
-                <ImpactFigure decal={'bg-neutral-01'} figure={1106} impact={ locale === 'ar' ? "عدد المشاركين" : 'Attendees'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={37} impact={ locale === 'ar' ? "دولة" : 'Countries'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={153} impact={ locale === 'ar' ? "متحدثًا" : 'Speakers'}  />
-                <ImpactFigure decal={'bg-neutral-01'} figure={85} impact={ locale === 'ar' ? "الجهات الراعية والشركاء" : 'Sponsors & Partners'}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={68} unit={'%'} impact={ locale === 'ar' ? "مدراء تنفيذيين، ونواب رؤساء، ومدراء" : 'C-Level Executives, VP & Directors'}  />
-                <ImpactFigure />
-                <ImpactFigure decal={'bg-neutral-01'} figure={24} unit={'%'} impact={ locale === 'ar' ? `مستثمرين` : 'Investors'} />
-                <ImpactFigure decal={'bg-neutral-02'} prefix={'$'} figure={5.6} unit={'tn'} impact={ locale === 'ar' ? `تريليون دولار أمريكي أصول تحت الإدارة` : 'AUM'} />
-                <ImageBlock imageUrl={'/assets/img/sa/impact-hero.jpg'} />
-            </ImpactGrid>
+            <Section
+                flush
+                backgroundClass={`bg-white`}
+                themeGraphics={
+                    <ThemeGraphic
+                        src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                        width={`80vw`}
+                        coordinates={{ left: `30vw`, top: `-20vh` }}
+                        opacity={.25}
+                    />
+                }
+            >
+                <ImpactGrid>
+                    <TitleBlock>
+                        <SectionHeading heading={ locale === 'ar' ? "2025 بالأرقام" : '2025 in Numbers'} decal={'c-secondary'} />
+                        <div style={{ marginTop: `var(--space-sm)`, marginLeft: `var(--space-md)`}}>
+                            <Pop inline>
+                                <Button 
+                                    href={'/sa/attendee-list-2025'} 
+                                    theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
+                                    decal={'fs-5 fw-600'} 
+                                    accent
+                                >{ locale === 'ar' ? `حمّل قائمة الحضور` : `Download Attendee List`}</Button>
+                            </Pop>
+                        </div>
+                    </TitleBlock>
 
+                    <ImpactFigure decal={'bg-neutral-01'} figure={1106} impact={ locale === 'ar' ? "عدد المشاركين" : 'Attendees'}  />
+                    <ImpactFigure decal={'bg-neutral-02'} figure={37} impact={ locale === 'ar' ? "دولة" : 'Countries'}  />
+                    <ImpactFigure decal={'bg-neutral-02'} figure={153} impact={ locale === 'ar' ? "متحدثًا" : 'Speakers'}  />
+                    <ImpactFigure decal={'bg-neutral-01'} figure={85} impact={ locale === 'ar' ? "الجهات الراعية والشركاء" : 'Sponsors & Partners'}  />
+                    <ImpactFigure decal={'bg-neutral-02'} figure={68} unit={'%'} impact={ locale === 'ar' ? "مدراء تنفيذيين، ونواب رؤساء، ومدراء" : 'C-Level Executives, VP & Directors'}  />
+                    <ImpactFigure />
+                    <ImpactFigure decal={'bg-neutral-01'} figure={24} unit={'%'} impact={ locale === 'ar' ? `مستثمرين` : 'Investors'} />
+                    <ImpactFigure decal={'bg-neutral-02'} prefix={'$'} figure={5.6} unit={'tn'} impact={ locale === 'ar' ? `تريليون دولار أمريكي أصول تحت الإدارة` : 'AUM'} />
+                    <ImageBlock imageUrl={'/assets/img/sa/impact-hero.jpg'} />
+                </ImpactGrid>
+            </Section>
+            
 
-            {/* QUOTES */}
-            <section className="block bg-primary o-hidden ">
+            {/* TESTIMONIALS */}
+            <Section
+                backgroundClass={`bg-primary`}
+                themeGraphics={
+                    isDesktop
+                    ?   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            opacity={.4}
+                            coordinates={{ top: `-50%`}}
+                        />
+                    :   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            opacity={.4}
+                            width="150vw"
+                            coordinates={{ top: `30%`}}
+                        />
+                        
+                }
+            >
                 <div className={`container columns-3 gap-md`}>
                     {
                         (locale === 'ar' ? QUOTES_DATA_AR : QUOTES_DATA).map((quote, index) => (
@@ -816,11 +864,28 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         ))
                     }
                 </div>
-            </section>
+            </Section>
 
-
+            
             {/* SPEAKERS */}
-            <section className="block bg-primary-2-dark">
+            <Section
+                backgroundClass={`bg-primary-2-dark`}
+                themeGraphics={
+                    isDesktop
+                    ?   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            width={`80vw`}
+                            opacity={.4}
+                            coordinates={{ bottom: 0, right: `-30vh`}}
+                        />
+                    :   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            opacity={.4}
+                            width="250vw"
+                            coordinates={{ top: `30%`}}
+                        />
+                }
+            >
                 <div className="container center">
                     <Fade>
                         <p className="fs-1 fw-600 c-white">{locale === 'ar' ? `المتحدثون في قمة مستقبل الضيافة` : `FHS Speakers`}</p>
@@ -852,18 +917,34 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                         </ArrowButton>
                     </Pop>
                 </div>
-            </section>
-
+            </Section>
+            
 
             {/* THEMES */}
-            <section className="block bg-primary no-print" style={{ position: 'relative', zIndex: 2}}>
+            <Section
+                backgroundClass={`bg-primary`}
+                themeGraphics={
+                    isDesktop
+                    ?   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            coordinates={{ top: `-20vh` }}
+                            opacity={.25}
+                        />
+                    :   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            opacity={.4}
+                            width="50vw"
+                            coordinates={{ top: `-5vh`}}
+                        />
+                }
+            >
                 <ThemesSlider
                     heading={locale === 'ar' ? `محاور فعالية 2026` : `2026 Event Themes` }
                     data={locale === 'ar' ? THEMES_DATA_AR : THEMES_DATA}
                     link={'/sa/ai-session-summaries-2025'}
                     linkLabel={locale === 'ar' ? `حمل ملخصات جميع الجلسات` : 'Download AI Session Summaries'}
                 />
-            </section>
+            </Section>
 
 
             {/* SPONSORS */}
@@ -894,9 +975,18 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
             </ArticleScroller>
 
 
-
             {/* VIDEO + PHOTO HIGHLIGHTS */}
-            <section className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
+            <Section
+                backgroundClass={`bg-white`}
+                themeGraphics={
+                    <ThemeGraphic
+                        src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                        width={`80vw`}
+                        coordinates={{ left: 0, top: `20vh` }}
+                        opacity={.25}
+                    />
+                }
+            >
                 <div className={`${CSS.highlightVideoGrid} container`}>
                     <Slide>
                         {
@@ -941,17 +1031,17 @@ export default function Home ({ entry, seomatic, contentBlocks, partners, abVide
                     </div>
 
                 </div>
-            </section>
+            </Section>
 
 
-            
             <Footer />
             <LenisScroller />
+
         </div>
     )
 }
-Home.theme = 'sa-2025'
 
+Page.theme = 'sa-2025'
 
 
 export const InvestorImpact = ({ prefix, figure, unit, label }) => {

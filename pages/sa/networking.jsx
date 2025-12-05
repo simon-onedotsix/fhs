@@ -16,7 +16,7 @@ import { Button } from '../../fuselage/theme/2024/world/components/button/button
 import { ButtonKeyline } from '../../fuselage/theme/2024/world/components/button-keyline/button-keyline'
 import { ArticleScroller, Article } from "../../fuselage/theme/2025/sa/pages/networking/article-scroller"
 import { Billboard } from '../../fuselage/blocks/billboard/billboard'
-
+import { PopOverlay } from "../../fuselage/components/popoverlay/popoverlay"
 
 
 import CSS from '../../fuselage/theme/2025/sa/css/networking.module.css'
@@ -467,6 +467,14 @@ export default function Page () {
                     
                 </div>
             </section>
+
+            <PopOverlay id={"sa2026prospectus"}>
+                <div className="formatted p-xs center">
+                    <img src="/assets/img/sa/2026-prospectus-cover.png" alt="" width={300} />
+                    <p className="fs-2 fw-600 c-primary lh-1 mt-sm">FHS Saudia Arabia 2026 Prospectus</p>
+                    <p className="mt-sm"><Button href={`/sa/prospectus-download`}>Download</Button></p>
+                </div>
+            </PopOverlay>
 
 
             <Footer />

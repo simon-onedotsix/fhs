@@ -24,6 +24,7 @@ import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
 import { Button } from '../../fuselage/theme/2024/sa/components/button/button'
 import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
+import { PopOverlay } from "../../fuselage/components/popoverlay/popoverlay"
 
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
@@ -917,6 +918,15 @@ export default function Agenda ({ sessions, locations }) {
 
             </Modal>
 
+
+			<PopOverlay id={"sa2026prospectus"}>
+				<div className="formatted p-xs center">
+					<img src="/assets/img/sa/2026-prospectus-cover.png" alt="" width={300} />
+					<p className="fs-2 fw-600 c-primary lh-1 mt-sm">FHS Saudia Arabia 2026 Prospectus</p>
+					<p className="mt-sm"><Button href={`/sa/prospectus-download`}>Download</Button></p>
+				</div>
+			</PopOverlay>
+			
 
             <Footer theme={{ footerBg: 'bg-white' }} />
             <LenisScroller />

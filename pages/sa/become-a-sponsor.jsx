@@ -22,6 +22,8 @@ import { VideoTestimonial } from '../../fuselage/theme/2025/sa/components/video-
 import { LogoTicker, Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticker/logo-ticker"
 import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
+import { Button } from '../../fuselage/theme/2024/sa/components/button/button'
+import { PopOverlay } from "../../fuselage/components/popoverlay/popoverlay"
 
 import useMasonry from "../../fuselage/layout/masonry/useMasonry"
 import Ticker from 'framer-motion-ticker'
@@ -393,6 +395,17 @@ export default function Page ({ partners }) {
                     </p>
                 </div>
             </section>
+
+
+
+
+            <PopOverlay id={"sa2026prospectus"}>
+                <div className="formatted p-xs center">
+                    <img src="/assets/img/sa/2026-prospectus-cover.png" alt="" width={300} />
+                    <p className="fs-2 fw-600 c-primary lh-1 mt-sm">FHS Saudia Arabia 2026 Prospectus</p>
+                    <p className="mt-sm"><Button href={`/sa/prospectus-download`}>Download</Button></p>
+                </div>
+            </PopOverlay>
 
 
 

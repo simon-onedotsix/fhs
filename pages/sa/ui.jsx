@@ -574,13 +574,6 @@ export default function Page({ seomatic, partners }) {
                             width={`45vw`}
                             coordinates={{ top: `50vh` }}
                         />
-                        <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            coordinates={{ right: `-40vw`, bottom: `-10vh` }}
-                            opacity={.25}
-                            width={`80vw`}
-                        />
-
                     </div>
                 }
             >
@@ -905,6 +898,7 @@ export default function Page({ seomatic, partners }) {
                     <ThemeGraphic
                         src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
                         coordinates={{ top: `-20vh` }}
+                        opacity={.25}
                     />
                 }
             >

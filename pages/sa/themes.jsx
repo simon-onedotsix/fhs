@@ -11,6 +11,7 @@ import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 import { HeroUnitImage } from '../../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
 
 import { Button } from '../../fuselage/theme/2024/world/components/button/button'
+import { PopOverlay } from "../../fuselage/components/popoverlay/popoverlay"
 
 import CSS from '../../fuselage/theme/2024/world/css/themes.module.css'
 
@@ -187,6 +188,14 @@ export default function Themes ({ sessions }) {
                 </ThemesLayout>
             </div>
         
+            
+            <PopOverlay id={"sa2026prospectus"}>
+                <div className="formatted p-xs center">
+                    <img src="/assets/img/sa/2026-prospectus-cover.png" alt="" width={300} />
+                    <p className="fs-2 fw-600 c-primary lh-1 mt-sm">FHS Saudia Arabia 2026 Prospectus</p>
+                    <p className="mt-sm"><Button href={`/sa/prospectus-download`}>Download</Button></p>
+                </div>
+            </PopOverlay>
 
 
             <Footer />

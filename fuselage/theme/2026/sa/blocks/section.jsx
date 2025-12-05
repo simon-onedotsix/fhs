@@ -2,10 +2,14 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import ReactPlayer from 'react-player'
 
+import useCustomMediaQuery from '../../../../../hooks/useCustomMediaQuery'
+
 
 import CSS from './section.module.css'
 
 export const VideoSection = ({ video, poster, themeGraphics, children, backgroundClass, minHeight }) => {
+
+    const isDesktop = useCustomMediaQuery('(min-width: 600px)');  
 
     const containerRef = useRef(null)
 
@@ -14,7 +18,12 @@ export const VideoSection = ({ video, poster, themeGraphics, children, backgroun
         offset: ["start end", "end start"]
     })
 
-    let videoY = useTransform(scrollYProgress, [0, 1], ["-30vh", "30vh"])
+    let videoY
+
+    isDesktop
+        ? videoY = useTransform(scrollYProgress, [0, 1], ["-30vh", "30vh"])
+        : videoY = useTransform(scrollYProgress, [0, 1], ["0vh", "0vh"])
+    
     let graphicY = useTransform(scrollYProgress, [0, 1], ["-15vh", "15vh"])
     
     return (
@@ -26,7 +35,7 @@ export const VideoSection = ({ video, poster, themeGraphics, children, backgroun
 
             {/* video */}
             <motion.div className={CSS.video} style={{ y: videoY }}>
-                <div className={CSS.videoWrapper}>
+                <div className={CSS.videoWrapper} style={{ marginTop: isDesktop ? 0 : 100 }}>
                     <ReactPlayer
                         url={video}
                         config={{ attributes: { poster: poster } }}
