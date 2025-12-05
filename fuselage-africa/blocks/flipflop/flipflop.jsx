@@ -7,7 +7,7 @@ export const FlipFlop = ({ children, theme, hero, flipped }) => {
     if ( !children ) return
     
     return (
-        <section className={`${CSS.layout} block ${flipped ? CSS.flipped : ''}`}>
+        <section className={`${CSS.layout} ${flipped ? CSS.flipped : ''}`}>
 
             <div className={CSS.image}>
                 <Image src={hero.url} layout='responsive' width={hero.width} height={hero.height} />
