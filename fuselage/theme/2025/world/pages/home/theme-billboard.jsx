@@ -59,9 +59,12 @@ export const ThemeBillboard = () => {
                     </Fade>
 
                     <Fade delay={1.3}>
-                        <div className="mt-sm">
+                        <div className="mt-sm button-grid">
                             <Pop inline>
                                 <Button href={`/world/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Here</Button>
+                            </Pop>
+                            <Pop inline>
+                                <Button href={`/world/download-post-event-report`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>2025 Post-event Report</Button>
                             </Pop>
                         </div>
                     </Fade>

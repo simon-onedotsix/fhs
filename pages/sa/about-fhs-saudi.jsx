@@ -24,31 +24,31 @@ import CSS from '../../css/app/lead-wall.module.css'
 const INDUSTRY_DATA = [
     {
         label: 'Hotel/Resort Operator',
-        value: 20.4
+        value: 19.6
     },
     {
         label: 'Tourism / Government Official',
-        value: 12
+        value: 11.3
     },
     {
         label: 'Consultant / Advisor',
-        value: 11.2
+        value: 9.5
     },
     {
         label: 'Hotel Developer / Builder',
-        value: 7.5
+        value: 8.7
     },
     {
         label: 'Architect / Designer',
-        value: 6.4
+        value: 7.4
     },
     {
         label: 'Investor (Equity) / Owner',
-        value: 6
+        value: 6.2
     },
     {
         label: 'Media',
-        value: 5.5
+        value: 5.9
     },
     {
         label: 'Asset Managers',
@@ -56,11 +56,11 @@ const INDUSTRY_DATA = [
     },
     {
         label: 'F&B Investor / Operator',
-        value: 5.6
+        value: 5.4
     },
     {
         label: 'Supplier',
-        value: 2.6
+        value: 4.6
     },
     {
         label: 'Real Estate Agent / Surveyor',
@@ -69,6 +69,10 @@ const INDUSTRY_DATA = [
     {
         label: 'Lawyer',
         value: 1.9
+    },
+    {
+        label: 'Organiser',
+        value: 1.2
     },
     {
         label: 'Bank / Lender',
@@ -83,101 +87,97 @@ const INDUSTRY_DATA = [
         value: 0.1
     },
     {
-        label: 'Other',
-        value: 9.9
+        label: 'Education, Student',
+        value: 0.1
     },
 ]
 const INDUSTRY_DATA_AR = [
     {
-        label: 'مشغلو الفنادق والمنتجعات',
-        value: 20.4
+        label: 'Hotel/Resort Operator',
+        value: 19.6
     },
     {
-        label: 'المسؤولون الحكوميون / السياحة',
-        value: 12
+        label: 'Tourism / Government Official',
+        value: 11.3
     },
     {
-        label: 'مستشارون / خبراء',
-        value: 11.2
+        label: 'Consultant / Advisor',
+        value: 9.5
     },
     {
-        label: 'مطورو / بُناة الفنادق',
-        value: 7.5
+        label: 'Hotel Developer / Builder',
+        value: 8.7
     },
     {
-        label: 'المعماريون / المصممون',
-        value: 6.4
+        label: 'Architect / Designer',
+        value: 7.4
     },
     {
-        label: 'المستثمرون (حقوق الملكية) / الملاك',
-        value: 6
+        label: 'Investor (Equity) / Owner',
+        value: 6.2
     },
     {
-        label: 'الإعلام',
-        value: 5.5
+        label: 'Media',
+        value: 5.9
     },
     {
-        label: 'مدراء الأصول',
+        label: 'Asset Managers',
         value: 5.6
     },
     {
-        label: 'المستثمرون / المشغلون في قطاع الطعام والشراب',
-        value: 5.6
+        label: 'F&B Investor / Operator',
+        value: 5.4
     },
     {
-        label: 'الموردون',
-        value: 2.6
+        label: 'Supplier',
+        value: 4.6
     },
     {
-        label: 'الوكلاء العقاريون / المسّاحون',
+        label: 'Real Estate Agent / Surveyor',
         value: 2.2
     },
     {
-        label: 'المحامون',
+        label: 'Lawyer',
         value: 1.9
     },
     {
-        label: 'البنوك / الجهات المُقرضة',
+        label: 'Organiser',
+        value: 1.2
+    },
+    {
+        label: 'Bank / Lender',
         value: 0.9
     },
     {
-        label: 'الطلاب',
+        label: 'Student',
         value: 0.3
     },
     {
-        label: 'التعليم',
+        label: 'Education',
         value: 0.1
     },
     {
-        label: 'أخرى',
-        value: 9.9
+        label: 'Education, Student',
+        value: 0.1
     },
 ]
 
 const LEVEL_DATA = [
     {
-        label: 'Director / Middle Management',
-        value: 23
-    },
-    {
-        label: 'Manager',
-        value: 18
+        label: 'Director / VP / Head / Principal',
+        value: 39
     },
     {
         label: 'Board Level / Owner / Partner / Chair / Founder',
-        value: 14
+        value: 22
     },
     {
         label: 'C-level',
-        value: 26
+        value: 21
     },
     {
-        label: 'VP / Head / Principal / Advisor',
-        value: 17
-    },
-    {
-        label: 'Other',
-        value: 2
+        label: 'Manager',
+        value: 19
     },
 ]
 const LEVEL_DATA_AR = [
@@ -240,7 +240,7 @@ export default function Page () {
                                 <>
                                     <p className='mt-sm'>Anchored in Riyadh, FHS Saudi Arabia attracts esteemed investors, hotel owners &amp; operators and leading C-level executives from the hospitality industry to focus on the region&apos;s booming hospitality landscape. Featuring insightful panel discussions, informative workshops and unparalleled networking opportunities, the region&apos;s hospitality community convenes to invest in the industry&apos;s future together.</p>
                                     
-                                    <p>FHS Saudi Arabia 2024 was a record-breaking edition, attracting over 1300+ delegates from 40 countries for 3 days of business, growth and networking at the iconic Mandarin Oriental Al Faisaliah Hotel, Riyadh.</p>
+                                    <p>FHS Saudi Arabia 2025 was a record-breaking edition, attracting over 1106+ delegates from 35 countries for 3 days of business, growth and networking at the iconic Mandarin Oriental Al Faisaliah Hotel, Riyadh.</p>
                                 </>
                         }
 
@@ -259,10 +259,10 @@ export default function Page () {
                         <p className='fs-1 fw-600'>
                             { locale === 'ar' ? "عدد الحضور" : "Who Attends" }
                         </p>
-                        <ImpactFigure figure={1329} impact={ locale === 'ar' ? "مشاركًا من جميع أنحاء العالم" : 'attendees from across the globe' }  />
+                        <ImpactFigure figure={1106} impact={ locale === 'ar' ? "مشاركًا من جميع أنحاء العالم" : 'attendees from across the globe' }  />
                         <p className='mt-sm'>
                             <button className='button fs-6' onClick={() => setShowPopover(true)}>
-                                { locale === 'ar' ? "حمل تقرير ما بعد الحدث لعام 2024" : "Download 2024 Post-event Report" }
+                                { locale === 'ar' ? "حمل تقرير ما بعد الحدث لعام 2025" : "Download 2025 Post-event Report" }
                             </button>
                         </p>
                     </div>
@@ -282,9 +282,9 @@ export default function Page () {
                         {
                             locale === 'ar'
                             ?
-                                INDUSTRY_DATA_AR.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0.3, max: 18 }} />)
+                                INDUSTRY_DATA_AR.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 22 }} />)
                             :
-                                INDUSTRY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0.3, max: 18 }} />)
+                                INDUSTRY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 22 }} />)
                         }
 
                     </BarChart>
@@ -304,9 +304,9 @@ export default function Page () {
                         {
                             locale === 'ar'
                             ?
-                                LEVEL_DATA_AR.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 5, max: 25 }} />)
+                                LEVEL_DATA_AR.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 42 }} />)
                             :
-                                LEVEL_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 5, max: 25 }} />)
+                                LEVEL_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 42 }} />)
                         }
 
                     </BarChart>
@@ -349,9 +349,9 @@ export default function Page () {
                     <button className={CSS.closeButton} onClick={() => setShowPopover(false)}>&times;</button>
                     <div className={CSS.contentScroller}>
                         <div className={CSS.content} dir='ltr'>
-                            <p className='fw-500 c-primary'>Please fill out the form to download the FHS Saudi Arabia 2024 post-event report.</p>
+                            <p className='fw-500 c-primary'>Please fill out the form to download the FHS Saudi Arabia 2025 post-event report.</p>
                             <section className='mt-md'>
-                                <HubspotForm portalId='14527187' formId='0113cdf5-eada-4d6b-83b5-1e5054fdc7e2' />
+                                <HubspotForm portalId='14527187' formId='5e8f3e03-d407-469a-9ff6-4b4dbf1065f1' />
                             </section>
                         </div>
                     </div>
