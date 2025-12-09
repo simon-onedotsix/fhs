@@ -45,6 +45,7 @@ import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-
 import { Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticker/logo-ticker"
 import { ArticleScroller, Article } from "../../fuselage/theme/2025/sa/blocks/article-scroller/article-scroller"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
+import { ImageGallery } from "../../fuselage/components/image-gallery/image-gallery"
 
 import { VideoSection, Section } from '../../fuselage/theme/2026/sa/blocks/section'
 import { ThemeGraphic } from '../../fuselage/theme/2026/sa/theme/theme-graphic'
@@ -714,6 +715,76 @@ export default function Page({ seomatic, partners }) {
                 overlay={`hsl(from var(--primary) h s l / .85)`}
             >
 
+                <div className="container c-white center">
+                        <Pop>
+                            <p className="fs-1 fw-600 lh-1">Setting the Agenda – 5 Market Insights from FHS Saudi&nbsp;Arabia Advisory Board</p>
+                        </Pop>
+                </div>
+
+                <div className="container columns-2 gap-md ai-center">
+                    <section>
+                        <Pop>
+                            <ImageGallery
+                                images={[
+                                    {src: "/assets/img/sa/homepage/ab-meeting-2025-01.jpg", alt: ""},
+                                    {src: "/assets/img/sa/homepage/ab-meeting-2025-02.jpg", alt: ""},
+                                    {src: "/assets/img/sa/homepage/ab-meeting-2025-03.jpg", alt: ""},
+                                    {src: "/assets/img/sa/homepage/ab-meeting-2025-04.jpg", alt: ""},
+                                    {src: "/assets/img/sa/homepage/ab-meeting-2025-05.jpg", alt: ""},
+                                    {src: "/assets/img/sa/homepage/ab-meeting-2025-06.jpg", alt: ""}
+                                ]}
+                            />
+                        </Pop>
+                    </section>
+
+                    <section className="formatted c-white">
+
+                        <Pop><p className="fs-5 pb-sm">Our Advisory Board recently convened to identify the critical challenges and opportunities shaping the Kingdom&apos;s hospitality landscape. As we look toward FHS Saudi Arabia 2026, here are the five strategic takeaways driving the conversation:</p></Pop>
+
+                        <ul>
+                           <Pop><li><strong>Diversifying Capital:</strong> The industry is looking to move beyond traditional banking reliance, exploring alternative finance structures and capital markets to fuel future growth.</li></Pop>
+
+                           <Pop><li><strong>Unlocking FDI:</strong> Clarifying foreign ownership regulations is seen as a crucial step to accelerate the booming market for branded residences and attract international investors.</li></Pop>
+
+                           <Pop><li><strong>Beyond Business Travel:</strong> With high performance in corporate sectors, the focus is shifting toward activating leisure tourism and boosting weekend occupancy in major cities like Riyadh.</li></Pop>
+
+                           <Pop><li><strong>Revitalizing Legacy Assets:</strong> As new giga-projects rise, there is a critical need to refurbish and repurpose existing hotels to ensure they remain competitive and compliant.</li></Pop>
+
+                           <Pop><li><strong>Championing Local Identity:</strong> While international luxury expands, there is a growing call to cultivate homegrown Saudi brands and nurture local talent to define the Kingdom&apos;s unique future.</li></Pop>
+                        </ul>
+
+                    </section>
+                </div>
+
+
+                <div className="container center">
+                    <div className="button-grid">
+                        <Pop>
+                            <ArrowButton 
+                                href={ 'https://www.flickr.com/photos/benchevents/albums/72177720330222142/' } 
+                                theme={{ arrow: `white`, border: `white`, label: `white` }}
+                                target={`_blank`}
+                            >
+                                { locale === 'ar' ? `عرض المعرض الكامل` : `View Full Gallery`}
+                            </ArrowButton>
+                        </Pop>
+                        <Pop>
+                            <ArrowButton 
+                                href={ '/sa/advisory-board' } 
+                                theme={{ arrow: `white`, border: `white`, label: `white`}}
+                            >
+                                { locale === 'ar' ? `عرض جميع الأعضاء` : `View All Members`}
+                            </ArrowButton>
+                        </Pop>
+                    </div>
+                </div>
+            </FixedBackgroundImage>
+            
+            {/* <FixedBackgroundImage
+                backgroundImageUrl={`/assets/img/sa/homepage/ab-meeting-2025-group.jpg`}
+                overlay={`hsl(from var(--primary) h s l / .85)`}
+            >
+
                 <div className="container center pt-sm">
                     <Fade>
                         <Pop><p className="fs-1 fw-600 c-white">{ locale === 'ar' ? `اجتماع المجلس الاستشاري لعام 2026` : `2026 Advisory Board Meeting`}</p></Pop>
@@ -750,26 +821,7 @@ export default function Page({ seomatic, partners }) {
                         </Pop>
                     </div>
                 </div>
-
-                {/* <div className="container columns-4 gap-sm maxw-65 pt-md">
-                    {
-                        (locale === 'ar' ? AB_DATA_AR : AB_DATA).map( (profile, index) => (
-                            <Pop key={index}>
-                                <SpeakerCard
-                                    url={profile.url}
-                                    photoUrl={profile.photoUrl}
-                                    fullName={profile.fullName}
-                                    jobTitle={profile.jobTitle}
-                                    company={profile.company}
-                                    color={'c-white'}
-                                />
-                            </Pop>
-                        ))
-                    }
-                </div> */}
-
-
-            </FixedBackgroundImage>
+            </FixedBackgroundImage> */}
 
 
             {/* TICKER */}
