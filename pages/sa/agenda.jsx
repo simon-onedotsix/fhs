@@ -575,7 +575,7 @@ export default function Agenda ({ sessions, locations }) {
 				{/* INTRO */}
                 <div className={`${CSS.titlebar} container`}>
 					<div className="formatted pb-sm">
-						<p className="fs-0 fw-500 c-secondary">2025 Agenda</p>
+						<p className="fs-0 fw-500 c-secondary">2026 Agenda</p>
 						<p>Programme is subject to change.</p>
 					</div>
 
@@ -812,19 +812,6 @@ export default function Agenda ({ sessions, locations }) {
 																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
 																				</p>
 
-																				{ 
-																					//target specific session
-																					session.id === "UGxhbm5pbmdfMjQ3NjM4NQ==" 
-																					?	
-																						<div className="columns-4 gap-xs">
-																							<img src="/assets/img/sa/agenda/reception-2.jpg" alt="" style={{ width: '100%' }} />
-																							<img src="/assets/img/sa/agenda/reception-3.jpg" alt="" style={{ width: '100%' }} />
-																							<img src="/assets/img/sa/agenda/reception-4.jpg" alt="" style={{ width: '100%' }} />
-																							<img src="/assets/img/sa/agenda/reception-1.jpg" alt="" style={{ width: '100%' }} />
-																						</div>
-																					: null
-																				}
-
 																				{
 																					getSessionFields( session, 'Topics').length ?
 																						<div className={CSS.sessionTagGrid}>
@@ -839,24 +826,8 @@ export default function Agenda ({ sessions, locations }) {
 																					? parse( session.descriptionTranslations[0].value )
 																					: null
 																				}
-																				
-																				{/* target specific session [custom speakers] */}
-																				{ 
-																					session.id === "UGxhbm5pbmdfMjQ3NjM4OA==" 
-																					&& displaySpeakers(session.speakers)
-																				}
 
-																				{
-																					session.id === "UGxhbm5pbmdfMjU4NDUwMQ==" 
-																					&& sortSpeakers(changeSpeakerStatus(session.speakers, "U3BlYWtlcihFdmVudF8xOTkyMjcyLEV2ZW50UGVvcGxlXzM5MTMzMDAzLFVzZXJfMTQ2Njc2OCk=", 'Speaker')) 
-																				}	
-
-																				{
-																					session.id !== "UGxhbm5pbmdfMjQ3NjM4OA==" && session.id !== "UGxhbm5pbmdfMjU4NDUwMQ=="
-																					? sortSpeakers(session.speakers) 
-																					: null
-																				}	
-																				{/* end target specific session [custom speakers] */}
+																				{ sortSpeakers(session.speakers) }																	
 																				
 																			</div>
 																			
@@ -1054,7 +1025,7 @@ export async function getStaticProps() {
 							}
 						}
 
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2025}", page: 1, pageSize: 500) {
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2026}", page: 1, pageSize: 500) {
 							id
 							titleTranslations {
 								value
@@ -1099,7 +1070,7 @@ export async function getStaticProps() {
 								photoUrl
 								organization
 								biography
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2025}") {
+								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2026}") {
 									eventProfile {
 										type
 										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
@@ -1118,7 +1089,7 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2026,
 					"page": 1
 				}
 			})
