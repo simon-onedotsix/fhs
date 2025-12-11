@@ -113,85 +113,58 @@ export default function Page () {
             <div className={CSS.themeWrapper}>
 
                 <div className="bg-primary">
-                    <PageHeroImage hero={{ url: '/assets/img/sa/nextgen-forum/bg-1.jpg', width: 2000, height: 1334 }} >
+                    <PageHeroImage hero={{ url: 'https://cms.thebench.com/assets/img/site/FHS-SA/MM1_0800.jpg', width: 2000, height: 1334 }} >
+                        
+                        
                         <div className="container maxw-60 pb-md c-white center">
                             <Reveal>
                                 <h1 className='fs-0 maxw-40'>{ locale === 'ar' ? "تجربة التواصل في قمة مستقبل الضيافة" : "The Networking Experience at FHS"}</h1>
                             </Reveal>
                         </div>
 
-                        <div className="container pb-lg">
+                        {/* <div className="container pb-lg">
                             <p className='fs-5 c-accent caps center'>Sponsored by:</p>
                             <Pop>
                                 <Image src={'/assets/img/sa/nextgen-forum/baraka-logo.png'} width={1000} height={499} layout='responsive' />
                             </Pop>
-                        </div>
+                        </div> */}
 
+                        <div className="block">
+                            <div className="container columns-2 gap-md ai-center">
+                                <Pop>
+                                    <div className={CSS.floaterImg}>
+                                        <Image src={"https://cms.thebench.com/assets/img/site/FHS-SA/RM200841.jpg"} layout='fill' />
+                                    </div>
+                                </Pop>
 
-                        <div className="container columns-2 gap-md ai-center">
-                            <Pop>
-                                <div className={CSS.floaterImg}>
-                                    <Image src={"https://cms.thebench.com/assets/img/site/FHS-SA/53726683447_d8d4a3f298_o.jpg"} layout='fill' />
+                                <div className="formatted">
+                                    <Slide>
+                                        <>
+                                                    <h2>Create valuable connections with leading investors, owners, operators and developers in the region</h2>
+                                            <p>Forge connections with 1000+ delegates from the region&apos;s hospitality ecosystem. Future Hospitality Summit is the leading platform for investors, hotel owners and operators to access lucrative investment opportunities, discuss industry challenges and solutions and impart invaluable knowledge to propel the industry forward.</p>
+                                            <p>Seize the opportunity to engage with the most influential and dynamic figures in Saudi Arabia&apos;s hospitality investment.</p>
+                                                </>
+                                    </Slide>
                                 </div>
-                            </Pop>
-
-                            <div className="formatted">
-                                <Slide>
-                                    {
-                                        locale === 'ar'
-                                        ?
-                                            <>
-                                                <h2>تواصل مع أكثر من 1000 مستثمر ومالك ورائد في قطاع الضيافة يساهمون في تشكيل مستقبل السياحة في المملكة</h2>
-                                                <p>مع توقع حضور أكثر من 1000 مشارك في قمة مستقبل الضيافة بالمملكة العربية السعودية 2025، ستتاح لك فرصة استثنائية للوصول إلى أبرز الشخصيات المؤثرة في دفع عجلة الاستثمار الفندقي في المنطقة. فمن المسؤولين الحكوميين والهيئات السياحية، إلى سلاسل الفنادق العالمية والمستثمرين والمطورين - جميع صُنّاع القرار الذين يُحدثون تحولاً في مشهد الضيافة السعودي سيتواجدون في مكان واحد.</p>
-                                                <p>هذا الحدث المهم هو فرصتك الذهبية للتواصل مع أصحاب الرؤى والقيادات التي تدفع أهداف رؤية السعودية 2030 السياحية الطموحة، بينما تضع نفسك في قلب أحد أكثر أسواق الضيافة حيوية في العالم. سجل الآن</p>
-                                            </>
-                                        :
-                                            <>
-                                                <h2>Connect with 1000+ hospitality investors, owners, and industry leaders shaping the Kingdom&apos;s tourism future</h2>
-                                                <p>With over 1000+ delegates expected at FHS Saudi Arabia 2025, you&apos;ll have unparalleled access to the most influential figures driving hospitality investment across the region. From government officials and tourism authorities to international hotel chains, investors, and developers—the key decision-makers transforming Saudi Arabia&apos;s hospitality landscape will all be in one place.</p>
-                                                <p>This premier gathering offers you the chance to connect with visionaries and leaders driving Saudi Arabia&apos;s ambitious Vision 2030 tourism goals, while positioning yourself at the center of one of the world&apos;s most dynamic hospitality markets.</p>
-                                            </>
-                                    }
-
-                                </Slide>
-
-                                <p className='mt-md'>
-                                    <Pop inline>
-                                        <Link href="/sa/purchase-pass">
-                                            <a className="button fs-5 caps">Register Now</a>
-                                        </Link>
-                                    </Pop>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="container columns-2 gap-md ai-center pt-lg">
-                            <div className="formatted">
-                                <Slide>
-                                    {
-                                        locale === 'ar'
-                                        ?
-                                            <>
-                                                <h2>فرص تواصل وتعارف مُنظمة بعناية</h2>
-                                                <p>شارك في العديد من فعاليات التعارف والتواصل المُنظمة بعناية لتمكين المشاركين من بناء العلاقات الوثيقة في بيئاتٍ فريدة من نوعها. نوفر لك تجارب محسوسة تشمل استراحات القهوة التفاعلية وجلسات التواصل السريع لبناء روابط وعلاقات دائمة.</p>
-                                                <p>في إطار تجربة التواصل والتعارف في قمة مستقبل الضيافة، يمكنك أيضًا المشاركة في جولاتٍ ميدانية تساعدك في بناء علاقات أفضل مع نظرائك. فقد أكد 98% من المشاركين في نسخة القمة عام 2023 أنَّ مشاركتهم في القمة مكنتهم من تحقيق أهدافهم في التواصل مع النظراء في القطاع وشركاء الأعمال.</p>
-                                            </>
-                                        :
-                                            <>
-                                                <h2>Curated Networking Opportunities</h2>
-                                                <p>Engage in a variety of curated networking opportunities to connect closely in unique environments. Our on-site experiences include brilliant coffee breaks and exciting speed networking sessions to foster lasting connections.</p>
-                                                <p>As part of the FHS Networking experience, you can also participate in site tours that offer an immersive experience to connect more deeply with your peers. 98% of delegates surveyed in 2024 indicated that FHS met their objective of networking with industry peers and business partners.</p>
-                                            </>
-                                    }
-                                </Slide>
                             </div>
 
-                            <Pop>
-                                <div className={CSS.floaterImg}>
-                                    <Image src={"https://cms.thebench.com/assets/img/site/FHS-SA/53261232098_7a73073d90_o.jpg"} layout='fill' />
+                            <div className="container columns-2 gap-md ai-center pt-lg">
+                                <div className="formatted">
+                                    <Slide>
+                                        <h2>Curated Networking Opportunities</h2>
+                                        <p>Engage in a variety of curated networking opportunities to connect closely in unique environments. Our on-site experiences include brilliant coffee breaks and exciting speed networking sessions to foster lasting connections.</p>
+                                        <p>As part of the FHS Networking experience, you can also participate in site tours that offer an immersive experience to connect more deeply with your peers. 96.7% of delegates surveyed in 2025 indicated that FHS met their objective of networking with industry peers and business partners.</p>
+                                    </Slide>
                                 </div>
-                            </Pop>
+
+                                <Pop>
+                                    <div className={CSS.floaterImg}>
+                                        <Image src={"https://cms.thebench.com/assets/img/site/FHS-SA/1747115701603.jpg"} layout='fill' />
+                                    </div>
+                                </Pop>
+                            </div>
                         </div>
+                        
                     </PageHeroImage>
                 </div>
 
@@ -278,42 +251,43 @@ export default function Page () {
                 <div className="container columns-2 gap-md ai-center">
                     <Pop>
                         <div className={CSS.floaterImg}>
-                            <Image src={"https://cms.thebench.com/assets/img/site/FHS-SA/Networking-Page-Artwork.jpg"} layout='fill' />
+                            <Image src={"https://cms.thebench.com/assets/img/site/FHS-SA/Screenshot-2025-05-01-131230.png"} layout='fill' />
                         </div>
                     </Pop>
 
                     <div className="formatted">
                         <Slide>
-                            {
-                                locale === 'ar'
-                                ?
-                                    <>
-                                        <h2>عزّز فرصك في التواصل عبر تطبيق قمة مستقبل الضيافة (FHS)</h2>
-                                        <p>سارع إلى بناء شبكة علاقاتك من الآن قبل وصولك إلى الرياض. تطبيق قمة مستقبل الضيافة بالمملكة العربية السعودية (FHS Saudi Arabia) يضع النظام الكامل للحدث بين يديك:</p>
-                                        <p>دليل الحضور: تصفّح القائمة الكاملة للمسجلين وابدأ المحادثات مع شركاء محتملين.</p>
-                                        <p>جدولة الاجتماعات: رتّب وأدِر لقاءاتك مع الشخصيات الرئيسية في القطاع مباشرة عبر التطبيق.</p>
-                                        <p>أجندة مخصصة: أنشئ جدولًا شخصيًا يوازن بين الجلسات التعليمية وأولويات التواصل.</p>
-                                        <p>تحديثات مباشرة: استقبل إشعارات حول فعاليات التواصل، الجلسات الخاصة، والإعلانات عن الصفقات طوال أيام القمة.</p>
-                                    </>
-                                :
-                                    <>
-                                        <h2>Power your networking with the FHS&nbsp;app</h2>
-                                        <p>Start building your network before you even arrive in Riyadh. The FHS Saudi Arabia mobile app puts the entire event ecosystem at your fingertips:</p>
-                                        <p><strong>Attendee Directory:</strong> Browse
-                                        the comprehensive list of registered delegates and initiate conversations with potential partners.</p>
-                                        <p><strong>Meeting Scheduler:</strong> Arrange and manage your meetings with key industry figures directly through the app.</p>
-                                        <p><strong>Personalised Agenda:</strong> Create a custom schedule that balances educational sessions with your networking priorities.</p>
-                                        <p><strong>Real-Time Updates:</strong> Receive notifications about networking events, special sessions, and deal announcements happening throughout the summit</p>
-                                        <p><span className="c-secondary"><br/></span></p>
-                                    </>
-                            }
-                            
-                            <p><a className="button" href="https://page.swapcard.com/app/the-bench/" target="_blank" rel="noreferrer noopener">
-                                { locale === 'ar' ? "حمل التطبيق الآن" : "Download the Event App" }
+                            <h2>Network Anytime, Anywhere with the FHS App</h2>
+                            <p>Our event app facilitates unlocking the full FHS experience.</p>
+                            <p>Delegates can download the app to explore the attendee list and interact to start networking ahead of the event. Use it to organise meetings with key individuals of your choice, explore the agenda and create a schedule based on your preferences.</p>
+                            <p>Utilise all that the event has to offer with a few taps.</p>
+                    
+                            <p><a className="button" href="https://www.linkedin.com/posts/future-hospitality-summit_start-networking-ahead-of-the-event-with-activity-7108474993906229248-heeH?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noreferrer noopener">
+                                More about the event app
                             </a><br/></p>
                         </Slide>
                     </div>
                 </div>      
+                
+                <div className="container columns-2 gap-md ai-center">
+                    <div className="formatted">
+                        <Slide>
+                            <h2>Curated Connections</h2>
+                            <p>Curated Connections, launched at FHS Saudi Arabia 2025, was designed to help delegates connect more meaningfully. These short, 20-minute informal sessions are grouped by shared interests—making it easier than ever to meet the right people.</p>
+                           
+                            <p><a className="button" href="/sa/curated-connections">
+                                Learn more
+                            </a><br/></p>
+                        </Slide>
+                    </div>
+                    
+                    <Pop>
+                        <div className={CSS.floaterImg}>
+                            <Image src={"https://cms.thebench.com/assets/img/site/FHS-SA/MM1_1348.jpg"} layout='fill' />
+                        </div>
+                    </Pop>    
+                </div> 
+                
             </section>
 
 
@@ -379,9 +353,9 @@ export default function Page () {
                     {
                         locale === 'ar'
                         ?
-                            <p className='fs-4'>قمة مستقبل الضيافة بالمملكة العربية السعودية لا يقتصر على بناء علاقات فحسب - بل يصنع شراكات أعمال طويلة الأمد تدفع مستقبل قطاع الضيافة في المملكة. فبفضل سجله الحافل في بناء روابط فعّالة داخل القطاع، يعدك مؤتمر 2025 بتوفير العلاقات التي ستشكل المرحلة المقبلة من نمو قطاع الضيافة في السعودية.</p>
+                            <p className='fs-4'>قمة مستقبل الضيافة بالمملكة العربية السعودية لا يقتصر على بناء علاقات فحسب - بل يصنع شراكات أعمال طويلة الأمد تدفع مستقبل قطاع الضيافة في المملكة. فبفضل سجله الحافل في بناء روابط فعّالة داخل القطاع، يعدك مؤتمر 2026 بتوفير العلاقات التي ستشكل المرحلة المقبلة من نمو قطاع الضيافة في السعودية.</p>
                         :
-                            <p className='fs-4'>FHS Saudi Arabia isn&apos;t just about making contacts—it&apos;s about creating lasting business relationships that drive the future of hospitality in the Kingdom. With a demonstrated track record of facilitating meaningful industry connections, our 2025 event promises to deliver the relationships that will shape the next phase of Saudi Arabia&apos;s hospitality growth.</p>
+                            <p className='fs-4'>FHS Saudi Arabia isn&apos;t just about making contacts—it&apos;s about creating lasting business relationships that drive the future of hospitality in the Kingdom. With a demonstrated track record of facilitating meaningful industry connections, our 2026 event promises to deliver the relationships that will shape the next phase of Saudi Arabia&apos;s hospitality growth.</p>
                     }
                 </div>
             </section>

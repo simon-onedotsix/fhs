@@ -64,12 +64,12 @@ function Partners({ partnerData, videoTestimonials }) {
 						<div className="container columns-3 gap-md">
 							{ videoTestimonials.map( entry => <VideoTestimonialCard key={entry.id} entry={entry} /> ) }
 						</div>
-						<div className="container center">
+						{/* <div className="container center">
 							<CTAButton
 								href={'/sa/video-testimonials'}
 								label={'More Testimonials'} 
 							/>
-						</div>
+						</div> */}
 					</section>
 				: null
 			}

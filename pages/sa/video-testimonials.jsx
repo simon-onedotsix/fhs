@@ -62,10 +62,10 @@ export const VideoTestimonialCard = ({ entry }) => {
             <div className="formatted mt-xs">
                 {
                     entry.testimonial &&
-                    <p className="fs-4 lh-2">&ldquo;{ entry.testimonial }&rdquo;</p>
+                    <p className="fs-4 lh-2 c-secondary">&ldquo;{ entry.testimonial }&rdquo;</p>
                 }
-                <p className="fw-600 lh-3 c-accent">{ entry.fullName } <br/>
-                <span className="fs-sm c-accent">{ entry.jobTitle }{ entry.organisation && ","} { entry.organisation }</span></p>
+                <p className="fw-600 lh-3">{ entry.fullName } <br/>
+                <span className="fs-sm">{ entry.jobTitle }{ entry.organisation && ","} { entry.organisation }</span></p>
             </div>
         </div>
     )

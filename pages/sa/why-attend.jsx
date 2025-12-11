@@ -73,7 +73,7 @@ export default function WhyAttend () {
             <section className="block pt-sm" id="delegate">
                 <div className="container maxw-70">
                     <Pop>
-                        <Card imageUrl={'/assets/img/sa/why-attend/why-attend-delegate.jpg'}>
+                        <Card imageUrl={'/assets/img/sa/why-attend/why-attend-delegate-2025.jpg'}>
                             <p className="fs-2 c-secondary lh-1">{ locale === 'ar' ? "الحضور كمشارك" : "Attend as a Delegate" }</p>
                             <div className="formatted mt-sm">
                                 {
@@ -98,7 +98,7 @@ export default function WhyAttend () {
 
                 <div className="container maxw-70" id="sponsor">
                     <Pop>
-                        <Card imageUrl={'/assets/img/sa/why-attend/why-attend-sponsor.jpg'}>
+                        <Card imageUrl={'/assets/img/sa/why-attend/why-attend-sponsor-2025.jpg'}>
                             <p className="fs-2 c-secondary lh-1">{ locale === 'ar' ? "كن أحد رعاة قمة مستقبل الضيافة بالمملكة العربية السعودية" : "Sponsor FHS Saudi Arabia" }</p>
                             <div className="formatted mt-sm">
                                 {
@@ -123,7 +123,7 @@ export default function WhyAttend () {
 
                 <div className="container maxw-70" id="investor">
                     <Pop>
-                        <Card imageUrl={'/assets/img/sa/why-attend/why-attend-investor.jpg'}>
+                        <Card imageUrl={'/assets/img/sa/why-attend/why-attend-investor-2025.jpg'}>
                             <p className="fs-2 c-secondary lh-1">{ locale === 'ar' ? "شارك كمستثمر أو مالك" : "Attend as an Investor or Owner" }</p>
                             <div className="formatted mt-sm">
                                 {

@@ -170,7 +170,7 @@ export default function Themes ({ sessions }) {
 
 
                 <HeroUnitImage imageUrl={'/assets/site/ae/hero-about-fhs-world.jpg'}>
-                    <p className='fs-1 fw-600 center'>2025 Event Themes</p>
+                    <p className='fs-1 fw-600 center'>2026 Event Themes</p>
                 </HeroUnitImage>
 
                 <ThemesLayout>
