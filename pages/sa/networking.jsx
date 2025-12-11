@@ -275,9 +275,9 @@ export default function Page () {
                             <h2>Curated Connections</h2>
                             <p>Curated Connections, launched at FHS Saudi Arabia 2025, was designed to help delegates connect more meaningfully. These short, 20-minute informal sessions are grouped by shared interests—making it easier than ever to meet the right people.</p>
                            
-                            <p><a className="button" href="/sa/curated-connections">
+                            <p><Link className="button" href="/sa/curated-connections">
                                 Learn more
-                            </a><br/></p>
+                            </Link><br/></p>
                         </Slide>
                     </div>
                     
