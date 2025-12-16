@@ -56,7 +56,7 @@ import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
 
 import { THEMES_DATA, THEMES_DATA_AR } from "./themes"
 
-const ARTICLE_DATA = [
+export const ARTICLE_DATA = [
     {
         heroUrl: '/assets/img/sa/press-release-1.webp',
         title: 'Rua Al Madinah Holding Signs Agreement With Hilton To Open Three Hotels At Rua Al Madinah Project',
@@ -82,7 +82,7 @@ const ARTICLE_DATA = [
         url: '',
     }
 ]
-const ARTICLE_DATA_AR = [
+export const ARTICLE_DATA_AR = [
     {
         heroUrl: '/assets/img/sa/press-release-1.webp',
         title: 'شركة رؤى المدينة القابضة توقّع اتفاقية مع هيلتون لافتتاح ثلاثة فنادق ضمن مشروع رؤى المدينة',

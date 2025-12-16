@@ -37,21 +37,6 @@ function Speakers({ seomatic, speakers }) {
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
 		(speaker => speaker.firstName == 'HH Prince Bandar bin Saud bin Khalid' && speaker.lastName === 'Al Saud' ? 0 : 1),
 		(speaker => speaker.firstName == 'Mahmoud' && speaker.lastName === 'Abdulhadi' ? 0 : 1),
-		(speaker => speaker.firstName == 'Sultan Bader' && speaker.lastName === 'Al-Otaibi' ? 0 : 1),
-		(speaker => speaker.firstName == 'Nick' && speaker.lastName === 'Candy' ? 0 : 1),
-		(speaker => speaker.firstName == 'Maud' && speaker.lastName === 'Bailly' ? 0 : 1),
-		(speaker => speaker.firstName == 'Jerry' && speaker.lastName === 'Inzerillo' ? 0 : 1),
-		
-		(speaker => speaker.firstName == 'Elie' && speaker.lastName === 'Younes' ? 0 : 1),
-		(speaker => speaker.firstName == 'Gregory' && speaker.lastName === 'Djerejian' ? 0 : 1),
-		(speaker => speaker.firstName == 'Serena' && speaker.lastName === 'Lim' ? 0 : 1),
-		
-		(speaker => speaker.firstName == 'Shaikha Al' && speaker.lastName === 'Nowais' ? 0 : 1),
-		(speaker => speaker.firstName == 'Hossam' && speaker.lastName === 'Al-Basrawi' ? 0 : 1),
-		(speaker => speaker.firstName == 'Sean' && speaker.lastName === 'Hehir' ? 0 : 1),
-		(speaker => speaker.firstName == 'Amin' && speaker.lastName === 'Ismail' ? 0 : 1),
-		(speaker => speaker.firstName == 'Omar' && speaker.lastName === 'Romero De Francisco' ? 0 : 1),
-		(speaker => speaker.firstName == 'Wahdan' && speaker.lastName === 'AlKadi' ? 0 : 1),
 	] )
 	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
@@ -70,12 +55,12 @@ function Speakers({ seomatic, speakers }) {
 			<section className="block bg-default">
 				<div className="container">
 
-					<p className='fs-1 fw-600 c-secondary lh-1 maxw-40'>2025 SPEAKERS</p>
+					<p className='fs-1 fw-600 c-secondary lh-1 maxw-40'>2026 SPEAKERS</p>
 					
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
-							speakers.length &&
-							customOrderedSpeakers.map( speaker => {
+							speakers.length ?
+							orderedSpeakers.map( speaker => {
 								if ( speaker.type ) return (
 									<div key={speaker.id}>
 										<Link href={`/sa/speakers/${speaker.id}`}>
@@ -108,6 +93,7 @@ function Speakers({ seomatic, speakers }) {
 									</div>
 								)
 							})
+								: <p>No speakers found.</p>
 						}
 					</SpeakerGrid>
 			
@@ -182,12 +168,12 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2026,
 					"cursor": {
 						"first": 300
 					},
 					"filters": {
-						"shouldBeInGroups": "RXZlbnRHcm91cF81MDg0MzQ="
+						"shouldBeInGroups": "RXZlbnRHcm91cF82MzIyMTI="
 					}
 				}
 			})

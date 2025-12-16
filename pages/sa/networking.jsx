@@ -21,84 +21,7 @@ import { PopOverlay } from "../../fuselage/components/popoverlay/popoverlay"
 
 import CSS from '../../fuselage/theme/2025/sa/css/networking.module.css'
 
-const ARTICLE_DATA = [
-    {
-        heroUrl: '/assets/img/sa/press-release-1.webp',
-        title: 'Rua Al Madinah Holding Signs Agreement With Hilton To Open Three Hotels At Rua Al Madinah Project',
-        excerpt: 'Rua Al Madinah Holding has signed an agreement with Hilton to open three hotels comprising of over 1600 keys.',
-        url: '/sa/content-library/rua-al-madinah-holding-signs-agreement-with-hilton-to-open-three-hotels-at-rua-al-madinah-project',
-    },
-    {
-        heroUrl: '/assets/img/sa/press-release-4.webp',
-        title: 'Marriott International and Al Qimmah Hospitality Sign Agreement to Open a JW Marriott Hotel in Jeddah',
-        excerpt: 'Marriott International, Inc. and Al Qimmah Hospitality (a subsidiary of BinDawood Trading) today announced the signing of an agreement to introduce the JW Marriott brand in Jeddah.',
-        url: '/sa/content-library/marriott-international-and-al-qimmah-hospitality-sign-agreement-to-open-a-jw-marriott-hotel-in-jeddah',
-    },
-    {
-        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/IHG_REFAD-Signing.jpg',
-        title: 'IHG Hotels & Resorts expands Luxury & Lifestyle footprint in Saudi Arabia with a new Hotel Indigo signing',
-        excerpt: "IHG Hotels & Resorts, one of the world's leading hotel companies, has signed a management agreement with Refad Real estate investment & development company.",
-        url: '/sa/content-library/ihg-hotels-resorts-expands-luxury-lifestyle-footprint-in-saudi-arabia-with-a-new-hotel-indigo-signing',
-    },
-    {
-        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/Inhabitr-Signing-FHS.jpg',
-        title: "Silicon Valley's Inhabitr Brings AI-Powered Furnishing Solutions to the Middle East",
-        excerpt: "Inhabitr, the first AI-powered commercial real estate furnishing platform, is excited to announce its expansion into the Middle East, marked by the opening of new office and design studios in Saudi Arabia.",
-        url: '/sa/content-library/silicon-valleys-inhabitr-brings-ai-powered-furnishing-solutions-to-the-middle-east',
-    },
-    {
-        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/ASFAR-Announces-Baheej-and-Kerten-Hospitality-Partnership-to-Elevate-Integrated-Living-in-Yanbu-1.jpg',
-        title: "ASFAR Announces Baheej and Kerten Hospitality Partnership to Elevate Integrated Living in Yanbu",
-        excerpt: "Baheej Tourism Development Company, a joint venture between ASFAR, the Saudi tourism investment company owned by PIF, and the Tamimi-AWN Alliance, has signed a strategic agreement with Kerten Hospitality, a global leader in the integrated living and hospitality sector.",
-        url: '/sa/content-library/asfar-announces-baheej-and-kerten-hospitality-partnership-to-elevate-integrated-living-in-yanbu',
-    },
-    {
-        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/FHS-Saudi-Arabia-2024-1.jpg',
-        title: "Kerten Hospitality Announces Record Expansion, Doubling Portfolio in First Quarter of 2024",
-        excerpt: "Kerten Hospitality, a global leader in bespoke hospitality and integrated living solutions, has announced it has doubled year-on-year growth in the first quarter of 2024",
-        url: '/sa/content-library/kerten-hospitality-announces-record-expansion-doubling-portfolio-in-first-quarter-of-2024',
-    },
-    
-]
-const ARTICLE_DATA_AR = [
-    {
-        heroUrl: '/assets/img/sa/press-release-1.webp',
-        title: 'رُوى المدينة القابضة توقّع اتفاقية مع هيلتون لافتتاح ثلاث فنادق ضمن مشروع رُوى المدينة',
-        excerpt: 'أعلنت شركة رُوى المدينة القابضة عن توقيع اتفاقية مع مجموعة Hilton لافتتاح ثلاث فنادق جديدة ضمن مشروع رُوى المدينة، تضم أكثر من 1600 غرفة.',
-        url: '/sa/content-library/rua-al-madinah-holding-signs-agreement-with-hilton-to-open-three-hotels-at-rua-al-madinah-project',
-    },
-    {
-        heroUrl: '/assets/img/sa/press-release-4.webp',
-        title: 'ماريوت الدولية و"القمّة للضيافة" يوقعان اتفاقية لافتتاح فندق JW Marriott في جدة',
-        excerpt: 'أعلنت شركة ماريوت الدولية والقمة للضيافة (إحدى الشركات التابعة لشركة بن داود التجارية) عن توقيع اتفاقية لإطلاق علامة JW Marriott في مدينة جدة.',
-        url: '/sa/content-library/marriott-international-and-al-qimmah-hospitality-sign-agreement-to-open-a-jw-marriott-hotel-in-jeddah',
-    },
-    {
-        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/IHG_REFAD-Signing.jpg',
-        title: 'مجموعة فنادق ومنتجعات IHG توسّع نطاق تواجدها في عالم الفخامة وأسلوب الحياة بالمملكة العربية السعودية بتوقيع اتفاقية فندق Indigo جديد',
-        excerpt: "أعلنت مجموعة فنادق ومنتجعات IHG، إحدى أبرز شركات الضيافة في العالم، عن توقيع اتفاقية إدارة مع شركة رفاد للتطوير والاستثمار العقاري.",
-        url: '/sa/content-library/ihg-hotels-resorts-expands-luxury-lifestyle-footprint-in-saudi-arabia-with-a-new-hotel-indigo-signing',
-    },
-    {
-        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/Inhabitr-Signing-FHS.jpg',
-        title: "شركة Inhabitr من وادي السيليكون تدخل الشرق الأوسط بحلول تأثيث تعتمد على الذكاء الاصطناعي",
-        excerpt: "أعلنت شركة Inhabitr، أول منصة تأثيث عقاري تجاري مدعومة بالذكاء الاصطناعي، عن توسعها في الشرق الأوسط بافتتاح مكاتب واستوديوهات تصميم جديدة في المملكة العربية السعودية.",
-        url: '/sa/content-library/silicon-valleys-inhabitr-brings-ai-powered-furnishing-solutions-to-the-middle-east',
-    },
-    {
-        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/ASFAR-Announces-Baheej-and-Kerten-Hospitality-Partnership-to-Elevate-Integrated-Living-in-Yanbu-1.jpg',
-        title: "شركة أسفار تعلن عن شراكة بين مجموعة بهيج وشركة كيرتن للضيافة (Kerten Hospitality)، لتعزيز مفهوم العيش المتكامل في ينبع",
-        excerpt: "أعلنت شركة بهيج للتطوير السياحي، وهي مشروع مشترك بين شركة أسفار (شركة استثمار سياحي تابعة لصندوق الاستثمارات العامة) وتحالف التميمي-AWN، عن توقيع اتفاقية استراتيجية مع شركة كيرتن للضيافة (Kerten Hospitality)، الرائدة في قطاع العيش المتكامل والضيافة عالميًا.",
-        url: '/sa/content-library/asfar-announces-baheej-and-kerten-hospitality-partnership-to-elevate-integrated-living-in-yanbu',
-    },
-    {
-        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/FHS-Saudi-Arabia-2024-1.jpg',
-        title: "كيرتن للضيافة (Kerten Hospitality) تعلن عن توسّع قياسي، وتضاعف محفظتها في الربع الأول من 2024",
-        excerpt: "أعلنت شركة كيرتن للضيافة (Kerten Hospitality)، الرائدة عالميًا في حلول الضيافة المخصصة ومفاهيم العيش المتكامل، عن تحقيق نمو سنوي مضاعف في الربع الأول من عام 2024.",
-        url: '/sa/content-library/kerten-hospitality-announces-record-expansion-doubling-portfolio-in-first-quarter-of-2024',
-    },
-    
-]
+import { ARTICLE_DATA, ARTICLE_DATA_AR } from '.'
 
 export default function Page () {
 
@@ -179,15 +102,15 @@ export default function Page () {
                         <p className="fs-1 fw-600 lh-1 maxw-40 mx-auto">
                             {
                                 locale === 'ar'
-                                ?   "إحصائيات التواصل من قمة مستقبل الضيافة بالمملكة العربية السعودية 2024"
-                                :   "Networking Stats from FHS Saudi Arabia 2024"
+                                ?   "إحصائيات التواصل من قمة مستقبل الضيافة بالمملكة العربية السعودية 2025"
+                                :   "Networking Stats from FHS Saudi Arabia 2025"
                             }
                         </p>
                     </Fade>
                     <div className="columns-3 gap-sm maxw-50 mx-auto mt-md">
-                        <InvestorImpact prefix={"$"} figure={1.1} unit={"B"} label={locale === 'ar' ? "مليار دولار قيمة الأعمال التجارية" : "in Business"} />
-                        <InvestorImpact figure={22} unit={"%"} label={locale === 'ar' ? "نسبة المستثمرين" : "Investors"} />
-                        <InvestorImpact figure={17} label={locale === 'ar' ? "صفقة تم توقيعها" : "Deals Signed"} />
+                        <InvestorImpact prefix={"$"} figure={1.6} unit={"B"} label={locale === 'ar' ? "مليار دولار قيمة الأعمال التجارية" : "in Business"} />
+                        <InvestorImpact figure={24} unit={"%"} label={locale === 'ar' ? "نسبة المستثمرين" : "Investors"} />
+                        <InvestorImpact figure={11} label={locale === 'ar' ? "صفقة تم توقيعها" : "Deals Signed"} />
                     </div>
                 </div>
             </section>
@@ -306,17 +229,13 @@ export default function Page () {
                         </p>
                     </Fade>
                     <p className='mt-sm'>
-                        {
-                            locale === 'ar'
-                            ?   "في قمة مستقبل الضيافة بالمملكة العربية السعودية 2024، تم الإعلان عن عدد من الصفقات والشراكات التي غيّرت قواعد اللعبة، منها توقيع اتفاقية بين فنادق ومنتجعات IHG، وشركة أسفار (ASFAR)، مجموعة بهيج، كيرتن للضيافة (Kerten Hospitality)، مجموعة السليمان، هليتون، ماريوت، رؤى المدينة، وغيرها من العلامات التجارية الأخرى."
-                            :   "At FHS Saudi Arabia 2024, industry-shaping deals and partnerships were announced on-site, including agreements between IHG Hotels and Resorts, ASFAR, Baheej Group, Kerten Hospitality, AlSulaiman Group, Hilton,Marriott, Rua Al Madinah and much more!"
-                        }
+                        At FHS Saudi Arabia 2025, industry-shaping deals and partnerships were announced on-site.
                     </p>
                     <p className='mt-md'>
                     </p>
                 </div>
 
-                <div className="container columns-3 gap-md">
+                <div className="container columns-2 gap-md maxw-70">
                     {
                         ( locale === 'ar' ? ARTICLE_DATA_AR : ARTICLE_DATA ).map(( article, index ) => (
                             <Pop key={index}>
