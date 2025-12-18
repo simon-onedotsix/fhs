@@ -153,7 +153,7 @@ export default function Page () {
                     
                 </div>
 
-                <div className="container center">
+                {/* <div className="container center">
                     <Pop>
                         <ButtonKeyline 
                             href={'https://cms.thebench.com/downloads/FHS-Saudi-Arabia-2024-Company-List.pdf'} 
@@ -164,7 +164,7 @@ export default function Page () {
                             {locale === 'ar' ? "عرض قائمة الحضور" : "View Attendee List"}
                         </ButtonKeyline>
                     </Pop>
-                </div>
+                </div> */}
             </section>
 
 
