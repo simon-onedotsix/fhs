@@ -22,15 +22,16 @@ import { QuerySEO, QueryCoutryPavilions } from "../../../graphql/queries"
 
 
 
-function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
+function Partners({ partnerData, videoTestimonials, flags }) {
 
 	const {countryPavilions} = flags.fhisContentBlocks.find( block => block.__typename === 'fhisContentBlocks_countryPavilions_BlockType' )
 
 
+	
 
 	// use fieldDefinitions to automate partner categorisation (requires ID of the selectFieldDefinition used to tag categories inside SC studio)
 
-	const swapcardPartnerGroups = partnerData.event.fieldDefinitions.find( arr => arr.id === "RmllbGREZWZpbml0aW9uXzc4MjgzNw==").optionsValues
+	const swapcardPartnerGroups = partnerData.event.fieldDefinitions.find( arr => arr.id === "RmllbGREZWZpbml0aW9uXzgzMTQ3MQ==").optionsValues
 	const partnersArray = []
 	
 	swapcardPartnerGroups.map(category => {
@@ -57,22 +58,23 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 	// console.log('swapcard partner data:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
-	console.log('swapcard partner categories:', swapcardPartnerGroups )
+	// console.log('swapcard partner categories:', swapcardPartnerGroups )
 	// console.log('PARTNERS ARRAY:', partnersArray)
 	// console.log('flags:', countryPavilions)
 
 
 	const CUSTOM_ORDERING = [
-		{ id: 'RmllbGRWYWx1ZV8yNjEwNTYyOA==', value: 'host-sponsor' },
-		{ id: 'RmllbGRWYWx1ZV8yODY1NTcyOQ==', value: 'strategic-partner' },
-		{ id: 'RmllbGRWYWx1ZV8yNjEwNTYxNg==', value: 'knowledge-partner' },
-		{ id: 'RmllbGRWYWx1ZV8yODY1NTcyOA==', value: 'headline-sponsor' },
-		{ id: 'RmllbGRWYWx1ZV8yODY1NTcyNw==', value: 'sponsor' },
-		{ id: 'RmllbGRWYWx1ZV8yNTg5NzkyNg==', value: 'exhibitor' },
-		{ id: 'RmllbGRWYWx1ZV8yNzc0MTg0MA==', value: 'tech-pavilion' },
-		{ id: 'RmllbGRWYWx1ZV8yODc1NTU5MA==', value: 'startup-sponsor' },
-		{ id: 'RmllbGRWYWx1ZV8yNjY5MzQ2NQ==', value: 'supporter' },
-		{ id: 'RmllbGRWYWx1ZV8yODY1NTczMA==', value: 'media-partner' }
+		
+		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQ0Mw==', value: 'founding-partner'},
+		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQxNw==', value: 'host-sponsor'},
+		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQ0Mg==', value: 'strategic-partner'},
+		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQxOQ==', value: 'strategic-partners'},
+		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQ0MQ==', value: 'headline-sponsor'},
+		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQyMA==', value: 'headline-sponsors'},
+		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQyMQ==', value: 'sponsors'},
+		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQyMg==', value: 'exhibitors'},
+		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQyMw==', value: 'supporters'},
+		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQyNA==', value: 'media-partners'},
 	]
 
 
@@ -81,7 +83,6 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
-				{ handleSeomaticMeta( seomatic ) }  
             </Head>
 
 			<Header compact/>
@@ -110,7 +111,7 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 
 			<section className='block py-0'>
 				<div className='container center formatted'>
-					<p className='fs-1 fw-600'>2025 Sponsors &amp; Partners</p>
+					<p className='fs-1 fw-600'>2026 Sponsors &amp; Partners</p>
 				</div>
 			</section>
 
@@ -141,27 +142,7 @@ function Partners({ seomatic, partnerData, videoTestimonials, flags }) {
 									</div>
 									
 								</PartnerCategory>
-
-								{/* inject after sponsors category */}
-								{
-									category.group.id === "RmllbGRWYWx1ZV8yODY1NTcyNw==" &&
-									<PartnerCategory>
-										<div className="block pt-0">
-										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>Country Pavilions</h4>
-											<PartnerLogoGrid>
-												{ 
-													countryPavilions.map( (pavilion, index) => (
-														<div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-															<Flag flagUrl={pavilion.flag[0].url} /> 
-															<p className='fs-5 fw-500 c-primary mt-xxs'>{pavilion.country}</p>
-														</div>
-													)) 
-												}
-											</PartnerLogoGrid>
-										</div>
-									</PartnerCategory>
-
-								}
+								
 							</Fragment>
 						))
 					}
@@ -193,7 +174,6 @@ export async function getStaticProps() {
 						title
 						slug
 					}
-					${QuerySEO}
 				}
 				entries(site: "${process.env.SITE_HANDLE_AE}", section: "videoTestimonials", limit: 3) {
 					... on videoTestimonials_videoTestimonial_Entry {
@@ -228,7 +208,7 @@ export async function getStaticProps() {
 			body: JSON.stringify({
 				query: `
 					query {
-						event(id: "${process.env.SWAPCARD_EVENT_ID_AE_2025}") {
+						event(id: "${process.env.SWAPCARD_EVENT_ID_AE_2026}") {
 							fieldDefinitions {
 								... on SelectFieldDefinition {
 									id
@@ -244,7 +224,7 @@ export async function getStaticProps() {
 								}
 							}
 						}
-						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2025}", page:1, pageSize: 200) {
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}", page:1, pageSize: 200) {
 							id
 							name
 							logoUrl
@@ -265,7 +245,7 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2026,
 					"page": 1
 				}
 			})
@@ -278,7 +258,6 @@ export async function getStaticProps() {
 	
 	return {
 		props: { 
-			seomatic: cmsData.data.entry.seomatic,
 			partnerData: partnerData.data,
 			videoTestimonials: cmsData.data.entries,
 			flags: cmsData.data.flags
