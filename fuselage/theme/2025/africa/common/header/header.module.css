@@ -30,12 +30,12 @@
 @media(max-width:599px){
     .compact {
         box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3);
+        background-color: var(--primary);
     }
 }
 
 @media(min-width:600px){
     .layout {
-        background-color: var(--primary);
         position: absolute;
         z-index: 3;
         width: 100%;
