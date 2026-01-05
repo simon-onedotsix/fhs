@@ -31,7 +31,7 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 
 	// use fieldDefinitions to automate partner categorisation (requires ID of the selectFieldDefinition used to tag categories inside SC studio)
 
-	const swapcardPartnerGroups = partnerData.event.fieldDefinitions.find( arr => arr.id === "RmllbGREZWZpbml0aW9uXzgzMTQ3MQ==").optionsValues
+	const swapcardPartnerGroups = partnerData.event.fieldDefinitions.find( arr => arr.id === "RmllbGREZWZpbml0aW9uXzg1NTI0Ng==").optionsValues
 	const partnersArray = []
 	
 	swapcardPartnerGroups.map(category => {
@@ -55,26 +55,23 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 	
 
 
-	// console.log('swapcard partner data:', partnerData)
+	console.log('swapcard partner data:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
-	// console.log('swapcard partner categories:', swapcardPartnerGroups )
+	console.log('swapcard partner categories:', swapcardPartnerGroups )
 	// console.log('PARTNERS ARRAY:', partnersArray)
 	// console.log('flags:', countryPavilions)
 
 
 	const CUSTOM_ORDERING = [
 		
-		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQ0Mw==', value: 'founding-partner'},
-		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQxNw==', value: 'host-sponsor'},
-		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQ0Mg==', value: 'strategic-partner'},
-		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQxOQ==', value: 'strategic-partners'},
-		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQ0MQ==', value: 'headline-sponsor'},
-		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQyMA==', value: 'headline-sponsors'},
-		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQyMQ==', value: 'sponsors'},
-		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQyMg==', value: 'exhibitors'},
-		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQyMw==', value: 'supporters'},
-		{ id: 'RmllbGRWYWx1ZV8yNzc4OTQyNA==', value: 'media-partners'},
+		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Nw==', value: 'headline-sponsor' },
+		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Ng==', value: 'strategic-partner' },
+		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2NA==', value: 'sponsor' },
+		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2OA==', value: 'country-pavilion' },
+		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2OQ==', value: 'brf-sponsor' },
+		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Mw==', value: 'exhibitor' },
+
 	]
 
 
