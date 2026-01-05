@@ -240,7 +240,7 @@ export default function Page () {
                                 <>
                                     <p className='mt-sm'>Anchored in Riyadh, FHS Saudi Arabia attracts esteemed investors, hotel owners &amp; operators and leading C-level executives from the hospitality industry to focus on the region&apos;s booming hospitality landscape. Featuring insightful panel discussions, informative workshops and unparalleled networking opportunities, the region&apos;s hospitality community convenes to invest in the industry&apos;s future together.</p>
                                     
-                                    <p>FHS Saudi Arabia 2025 was a record-breaking edition, attracting over 1106+ delegates from 35 countries for 3 days of business, growth and networking at the iconic Mandarin Oriental Al Faisaliah Hotel, Riyadh.</p>
+                                    <p>FHS Saudi Arabia 2025 attracted over 1106+ delegates from 35 countries for 3 days of business, growth and networking at the iconic Mandarin Oriental Al Faisaliah Hotel, Riyadh.</p>
                                 </>
                         }
 

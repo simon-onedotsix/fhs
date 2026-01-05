@@ -55,22 +55,22 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 	
 
 
-	console.log('swapcard partner data:', partnerData)
+	// console.log('swapcard partner data:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
-	console.log('swapcard partner categories:', swapcardPartnerGroups )
+	// console.log('swapcard partner categories:', swapcardPartnerGroups )
 	// console.log('PARTNERS ARRAY:', partnersArray)
 	// console.log('flags:', countryPavilions)
 
 
 	const CUSTOM_ORDERING = [
 		
-		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Nw==', value: 'headline-sponsor' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Ng==', value: 'strategic-partner' },
-		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2NA==', value: 'sponsor' },
+		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Nw==', value: 'headline-sponsor' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2OA==', value: 'country-pavilion' },
-		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2OQ==', value: 'brf-sponsor' },
+		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2NA==', value: 'sponsor' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Mw==', value: 'exhibitor' },
+		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2OQ==', value: 'brf-sponsor' },
 
 	]
 
