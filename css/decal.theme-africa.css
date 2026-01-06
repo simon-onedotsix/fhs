@@ -81,7 +81,7 @@
 [data-theme='africa'] .bg-white .formatted h4,
 [data-theme='africa'] .bg-white .formatted h5,
 [data-theme='africa'] .bg-white .formatted h6 {
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 
