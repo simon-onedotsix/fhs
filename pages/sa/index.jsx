@@ -386,6 +386,44 @@ const PHOTOS_DATA = [
     }
 ]
 
+const AMBASSADOR_DATA = [
+    {
+        url: `/sa/speakers/profile/rabih-feghali`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Feghali_Rabih_sm.jpg',
+        fullName: 'Rabih Feghali',
+        jobTitle: 'Board Member',
+        company: 'HAMA EMEA',
+    },
+    {
+        url: `/sa/speakers/profile/haifaa-alzahrani`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/IMG_3406.jpeg',
+        fullName: 'Haifaa Al Zahrani',
+        jobTitle: 'Head of Hospitality Asset Management and Partnerships',
+        company: 'Thakher Development',
+    },
+    {
+        url: `/sa/speakers/profile/fahad-al-fawaz-2`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Fahad-Al-Fawaz-1.jpg',
+        fullName: 'Fahad Al Fawaz',
+        jobTitle: 'Board Director & Board Committee Member',
+        company: 'Tabuk Investment Co. & Jenan Real Estate Co. & Gulf Liting Financing Co',
+    },
+    {
+        url: `/sa/speakers/profile/turab-saleem`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Saleem_Turab-Final-Photo.jpg',
+        fullName: 'Turab Saleem',
+        jobTitle: 'Hospitality Expert',
+        company: '',
+    },
+    // {
+    //     url: ``,
+    //     photoUrl: '',
+    //     fullName: 'Mohammed Al Nashwan',
+    //     jobTitle: 'Hotel Consultant',
+    //     company: 'Hartt Consulting',
+    // }    
+]
+
 const AB_DATA = [
     {
         url: `/sa/speakers/profile/mohammad-al-athel`,
@@ -824,6 +862,49 @@ export default function Page({ seomatic, partners }) {
             </FixedBackgroundImage> */}
 
 
+            {/* AMBASSADORS */}
+            <Section
+                backgroundClass={`bg-primary`}
+                themeGraphics={
+                    isDesktop
+                    ?   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            width={`60vw`}
+                            opacity={.4}
+                            coordinates={{ bottom: 0, right: `-30vh`}}
+                        />
+                    :   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            opacity={.4}
+                            width="180vw"
+                            coordinates={{ top: `30%`}}
+                        />
+                }
+            >
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-1 fw-600 c-white">FHS Saudi Arabia Ambassadors</p>
+                    </Fade>
+                </div>
+                <div className="container columns-4 gap-sm maxw-65">
+                    {
+                        AMBASSADOR_DATA.map( (profile, index) => (
+                            <Pop key={index}>
+                                <SpeakerCard
+                                    url={profile.url}
+                                    photoUrl={profile.photoUrl}
+                                    fullName={profile.fullName}
+                                    jobTitle={profile.jobTitle}
+                                    company={profile.company}
+                                    color={'white'}
+                                />
+                            </Pop>
+                        ))
+                    }
+                </div>
+            </Section>
+
+
             {/* TICKER */}
             <div className="bg-secondary py-xs" dir={`ltr`}>
                 {
@@ -886,7 +967,7 @@ export default function Page({ seomatic, partners }) {
 
             {/* TESTIMONIALS */}
             <Section
-                backgroundClass={`bg-primary`}
+                backgroundClass={`bg-primary-dark`}
                 themeGraphics={
                     isDesktop
                     ?   <ThemeGraphic
@@ -920,7 +1001,7 @@ export default function Page({ seomatic, partners }) {
 
             
             {/* SPEAKERS */}
-            <Section
+            {/* <Section
                 backgroundClass={`bg-primary-2-dark`}
                 themeGraphics={
                     isDesktop
@@ -969,7 +1050,7 @@ export default function Page({ seomatic, partners }) {
                         </ArrowButton>
                     </Pop>
                 </div>
-            </Section>
+            </Section> */}
             
 
             {/* THEMES */}

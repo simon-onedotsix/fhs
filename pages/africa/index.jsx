@@ -9,7 +9,6 @@ import { motion, useScroll, useTransform } from "framer-motion"
 
 import Head from "next/head"
 import Image from "next/image"
-import Link from "next/link"
 
 import handleSeomaticMeta from '../../lib/seomatic'
 
@@ -295,6 +294,44 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                 }
             </SpeakerCarousel>
 
+
+            
+            {/* AMBASSADORS */}
+            <section className="block bg-default">
+                <div className="container center">
+                    <p className="fs-1 fw-700 lh-1">FHS Africa Ambassadors</p>
+                </div>
+                <div className="container columns-3 gap-sm maxw-50">
+                    <Pop>
+                        <SpeakerCard 
+                            url={`/africa/speakers/RXZlbnRQZW9wbGVfNDM2MTE1ODg=`}
+                            photoUrl={`https://cms.thebench.com/assets/img/avatars/Trevor-Ward_Photo.png`}
+                            fullName={`Trevor Ward`}
+                            jobTitle={`Managing Director`}
+                            company={`W Hospitality Group`}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard 
+                            url={`/africa/speakers/RXZlbnRQZW9wbGVfNDM5MTc5NjA=`}
+                            photoUrl={`https://static.swapcard.com/public/images/c3a5b837c57945be9351b33454aaaf54.jpeg`}
+                            fullName={`Sisa Ntshona`}
+                            jobTitle={`Director`}
+                            company={`Living Lands Initiative (LLI)`}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard 
+                            url={`/africa/speakers/profile/andrew-mclachlan`}
+                            photoUrl={`https://cms.thebench.com/assets/img/avatars/andrew-m.png`}
+                            fullName={`Andrew McLachlan`}
+                            jobTitle={`Founder & Managing Director`}
+                            company={`Develop Hotels`}
+                        />
+                    </Pop>
+                </div>
+            </section>
+            
 
 
             {/* THEMES */}
