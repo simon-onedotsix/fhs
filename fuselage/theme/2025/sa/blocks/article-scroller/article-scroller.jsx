@@ -15,10 +15,10 @@ export const ArticleScroller = ({ children }) => {
 
         <section className={CSS.layout}>
             <aside>
-                <SectionHeading heading={ locale === 'ar' ? "التوقيعات والإعلانات لعام 2025" : '2025 Signings & Announcements'} />
+                <SectionHeading heading={ locale === 'ar' ? "إعلانات وتوقيعات عام 2025" : '2025 Signings & Announcements'} />
                 <div className='p-md'>
                     <Link href={'/sa/content-library/category/press-room'} >
-                        <a className={`${CSS.ctaButton} fs-5 fw-600`} >{ locale === 'ar' ? "آخر الأخبار والمستجدات" : <>Latest News &amp; Updates</> }</a>
+                        <a className={`${CSS.ctaButton} fs-5 fw-600`} >{ locale === 'ar' ? "أخر الأخبار والمستجدات" : <>Latest News &amp; Updates</> }</a>
                     </Link>
                 </div>
             </aside>

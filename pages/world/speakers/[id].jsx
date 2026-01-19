@@ -1,3 +1,5 @@
+import React from "react"
+
 import Image from "next/image"
 import Link from "next/link"
 import Head from "next/head"
@@ -34,7 +36,7 @@ function Speaker({ speaker }) {
 				<p className="fs-5 fw-400 mb-xs">See {speaker.firstName} {speaker.lastName} speak in the following sessions:</p>
 				{
 					groupSessionsByDays(speaker.withEvent.speakerOnPlannings).map( day => (
-						<>
+						<React.Fragment key={day.timeCode}>
 							<p key={day.timeCode} className={CSS.dayDivider}>{day.day}</p>
 							{ day.sessions?.map( session => {
 								return (
@@ -49,7 +51,7 @@ function Speaker({ speaker }) {
 									</div>
 								)
 							})}
-						</>
+						</React.Fragment>
 					))
 				}
 			</div>

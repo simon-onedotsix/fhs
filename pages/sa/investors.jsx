@@ -476,22 +476,25 @@ export default function Page () {
 
                 <div className="container columns-3 gap-md">
                     <Pop><Card heroUrl={'/assets/img/sa/networking/receptions.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "حفلات تواصل" : "Networking Receptions"}</p>
+                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "حفلات تواصل" : "Networking Receptions"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/speed-networking.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "جلسات تواصل سريع" : "Speed Networking"}</p>
+                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "جلسات تواصل سريع" : "Speed Networking"}</p>
                     </Card></Pop>
-                    <Pop><Card heroUrl={'/assets/img/sa/networking/lunch.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "استراحة غداء وقهوة خاصة" : "Curated Lunch & Coffee"}</p>
+                    <Pop><Card heroUrl={'/assets/img/sa/networking/closed-door-investors.jpg'}>
+                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "Closed-door Investor Sessions" : "Closed-door Investor Sessions"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/tours.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "جولات ميدانية" : "Site Tours"}</p>
+                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "جولات ميدانية" : "Site Tours"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/investors-lounge.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "ردهة المستثمرين" : "Investor's Lounge"}</p>
+                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "ردهة المستثمرين" : "Investor's Lounge"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/exhibition.jpg'}>
-                        <p className='fs-4 c-primary fw-600'>{locale === 'ar' ? "طابق المعرض" : "Exhibition Floor"}</p>
+                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "طابق المعرض" : "Exhibition Floor"}</p>
+                    </Card></Pop>
+                    <Pop><Card heroUrl={'/assets/img/sa/networking/pre-scheduled.jpg'}>
+                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "1-2-1 pre-scheduled meetings" : "1-2-1 pre-scheduled meetings"}</p>
                     </Card></Pop>
                     
                 </div>

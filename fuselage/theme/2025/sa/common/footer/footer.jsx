@@ -29,7 +29,7 @@ export const Footer = () => {
 
             <div className={`container columns-3 gap-md formatted`}>
 
-                    <section className={`${CSS.section}`}>
+                    <section className={`${CSS.section}`} dir={ locale === 'ar' && 'rtl'}>
                         <p className='fs-1 fw-600 lh-1 c-secondary'>{ locale === 'ar' ? "انضم إلى المحادثة!" : "Join the Conversation" }</p>
                         <p className='fs-5 fw-600 c-accent mt-sm'>#FutureHospitalitySummit</p>
                         <p className='flex flex-wrap gap-xxs mt-sm'>
@@ -65,7 +65,7 @@ export const Footer = () => {
                                 {
                                     locale === 'ar'
                                     ?
-                                        "هل ترغب بالاطلاع على آخر أخبار قمة مستقبل الضيافة؟"
+                                        "ابقَ على اطلاع بأخر أخبار قمة مستقبل الضيافة"
                                     :
                                         "Want to stay updated on FHS?"
                                 }
@@ -74,7 +74,7 @@ export const Footer = () => {
                                 {
                                     locale === "ar"
                                     ?
-                                        "إذا لم تسجل بعد، أرسل لنا اسمك وبريدك الإلكتروني، وسنوافيك بآخر المستجدات الحصرية المثيرة حول الحدث!"
+                                        "إذا لم تسجل اهتمامك بعد، أرسل لنا اسمك وبريدك الإلكتروني، وسنوافيك بآخر المستجدات الحصرية المثيرة حول الحدث!"
                                     :
                                         "If you haven't already registered your interest, simply submit your name and email and we'll make sure to keep you posted on all the exciting announcements we have in store for the event."
                                 }
@@ -85,7 +85,7 @@ export const Footer = () => {
                         </section>
                     }
 
-                    <section className={`${CSS.section} ${ locale === 'ar' && CSS.rtl }`}>
+                    <section className={`${CSS.section} ${ locale === 'ar' && CSS.rtl }`} dir={ locale === 'ar' && 'rtl'}>
                         <div>
                             <p className='fs-5 fw-600 c-secondary'>{ locale === 'ar' ? "الجهات المنظمة" : "Organisers" }</p>
                             <div className="mt-sm maxw-40">
@@ -98,7 +98,7 @@ export const Footer = () => {
                                     {
                                         locale === 'ar'
                                         ?
-                                            "تملك The Bench تاريخًا وخبرة طويلة في تنظيم أهم منتديات الاستثمار والمؤتمرات العالمية في أوروبا وإفريقيا والشرق الأوسط وأمريكا اللاتينية. تنظم الشركة سلسلة فعاليات قمة مستقبل الضيافة التي تشمل قمة مستقبل الضيافة العالمية في دبي، وقمة مستقبل الضيافة بالمملكة العربية السعودية، وقمة مستقبل الضيافة بإفريقيا، إلى جانب مؤتمر AviaDev إفريقيا."
+                                            "تملك The Bench تاريخًا طويلًا في مجال تنظيم الفعاليات حيث تمكنت من تنظيم أهم منتديات الاستثمار والمؤتمرات العالمية في أوروبا وإفريقيا والشرق الأوسط وأمريكا اللاتينية، وهي الجهة المنظمة لسلسلة فعاليات قمة مستقبل الضيافة التي تشمل قمة مستقبل الضيافة العالمية في دبي، وقمة مستقبل الضيافة في المملكة العربية السعودية، وقمة مستقبل الضيافة في إفريقيا، إلى جانب مؤتمر AviaDev إفريقيا."
                                         :
                                             "The Bench has established a legacy for delivering world-leading investment forums and conferences in Europe, Africa, the Middle East, and Latin America. The Bench organises the Future Hospitality Summit (FHS) series including FHS World in Dubai, FHS Saudi Arabia and FHS Africa - and the AviaDev Africa conference."
                                     }

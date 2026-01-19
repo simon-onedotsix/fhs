@@ -85,30 +85,91 @@ export const ARTICLE_DATA = [
 export const ARTICLE_DATA_AR = [
     {
         heroUrl: '/assets/img/sa/press-release-1.webp',
-        title: 'شركة رؤى المدينة القابضة توقّع اتفاقية مع هيلتون لافتتاح ثلاثة فنادق ضمن مشروع رؤى المدينة',
-        excerpt: `وقعت شركة رؤى المدينة القابضة اتفاقية مع هيلتون لافتتاح 3 فنادق تضم أكثر من 1600 غرفة فندقية.`,
+        title: `رؤى المدينة القابضة توقّع اتفاقية مع هيلتون لافتتاح ثلاث فنادق ضمن مشروع رُوى المدينة`,
+        excerpt: `أعلنت شركة رؤى المدينة القابضة عن توقيع اتفاقية مع مجموعة هيلتون لافتتاح ثلاث فنادق تضم أكثر من 1600 غرفة.`,
         url: '/sa/content-library/rua-al-madinah-holding-signs-agreement-with-hilton-to-open-three-hotels-at-rua-al-madinah-project',
     },
     {
         heroUrl: '/assets/img/sa/press-release-2.webp',
-        title: 'مجموعة فنادق راديسون تسرّع استراتيجية توسّعها في السعودية مع التركيز على مكة والمدينة',
-        excerpt: 'تواصل مجموعة فنادق راديسون تكثيف جهودها في المملكة العربية السعودية، تماشياً مع رؤية السعودية 2030 لقطاع الضيافة.',
+        title: `مجموعة فنادق راديسون تُسرّع استراتيجية التوسع في المملكة العربية السعودية مع التركيز على مكة والمدينة المنورة.`,
+        excerpt: `تواصل مجموعة فنادق راديسون تكثيف جهودها في المملكة العربية السعودية، تماشيًا مع رؤية السعودية 2030 لقطاع الضيافة.`,
         url: '/sa/content-library/radisson-hotel-group-accelerates-expansion-strategy-in-saudi-arabia-with-focus-on-holy-cities',
     },
     {
         heroUrl: '/assets/img/sa/press-release-3.webp',
-        title: `أكور تقود عملية توسع قطاع الضيافة في السعودية`,
-        excerpt: `بصفتها أكبر مشغّل فندقي في المملكة، تقود أكور التحول الاستراتيجي في قطاع السياحة، معلنةً حقبة جديدة للضيافة في المملكة.`,
+        title: `مجموعة أكور تتصدر توسع الضيافة في جميع أنحاء المملكة العربية السعودية`,
+        excerpt: `بصفتها أكبر مشغل فنادق في المملكة، تتصدر أكور عملية التحول الاستراتيجي لقطاع السياحة، لتعلن بذلك بداية عصر جديد للضيافة في المملكة.`,
         url: '/sa/content-library/accor-spearheads-hospitality-expansion-throughout-saudi-arabia-2',
     },
     {
         heroUrl: '/assets/img/sa/press-release-4.webp',
-        title: `ماريوت الدولية والقمة للضيافة توقّعان اتفاقية لافتتاح فندق جي دبليو ماريوت في جدة`,
-        excerpt: `أعلنت ماريوت الدولية والقمة للضيافة (أحد شركات بن داوود التجارية) اليوم عن توقيع اتفاقية لافتتاح فندق جي دبليو ماريوت في جدة. ومن المتوقع أن يكون الفندق الذي سيقام على كورنيش جدة ملاذًا للمسافرين الذين يبحثون عن وجهة شاطئية فاخرة تُقدّم تجارب ضيافة خدمات استثنائية وتجارب عافية شاملة.`,
+        title: `ماريوت الدولية و"القمة للضيافة" يوقعان اتفاقية لافتتاح فندق جي دبليو ماريوت في جدة`,
+        excerpt: `أعلنت شركة ماريوت الدولية والقمة للضيافة (إحدى الشركات التابعة لشركة بن داود التجارية) عن توقيع اتفاقية لإطلاق علامة جي دبليو ماريوت في مدينة جدة. سويف يقام فندق جي دبليو ماريوت على كورنيش جدة، ومن المتوقع أن يكون ملاذًا فاخرًا للمسافرين الباحثين عن تجربة إقامة فاخرة على الواجهة البحرية، مع خدمات استثنائية وتجارب شاملة للعافية والرفاهية.`,
         url: '',
     }
 ]
 
+const SPEAKER_DATA_SHORT = [
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/0f3466754aec406ab2b64862743c639f.jpeg',
+        fullName: 'HH Prince Bandar bin Saud bin Khalid Al Saud',
+        jobTitle: 'Secretary General, King Faisal Foundation (KFF) | Chairman of the Board of Directors, Al Khozama Investment Company',
+        company: '',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk1MDI0MTI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/56724beae060457ea3b07e98cba20646.jpeg',
+        fullName: 'Mahmoud Abdulhadi',
+        jobTitle: 'Deputy Minister, Destination Enablement',
+        company: 'Ministry of Tourism of Saudi Arabia',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
+        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
+        fullName: 'Hossam Al-Basrawi',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Alrajhi Capital',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
+        photoUrl: 'https://static.swapcard.com/public/images/be577fb8e2b044c98cc51dc0dc10fb55.jpeg',
+        fullName: 'Nikolina Angelkova',
+        jobTitle: 'Former Minister Tourism, Bulgaria | Owner and CEO, Angelkova law and Consultancy office',
+        company: '',
+    }
+    
+]
+const SPEAKER_DATA_AR_SHORT = [
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/0f3466754aec406ab2b64862743c639f.jpeg',
+        fullName: 'صاحب السمو الملكي الأمير بندر بن سعود بن خالد آل سعود',
+        jobTitle: 'الأمين العام لمؤسسة الملك فيصل الخيرية | رئيس مجلس إدارة شركة الخزامى للاستثمار',
+        company: '',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk1MDI0MTI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/56724beae060457ea3b07e98cba20646.jpeg',
+        fullName: 'محمود عبد الهادي',
+        jobTitle: 'وكيل الوزارة لتمكين الوجهات السياحية',
+        company: 'وزارة السياحة السعودية',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
+        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
+        fullName: 'حسام البصراوي',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'الراجحي كابيتال',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
+        photoUrl: 'https://static.swapcard.com/public/images/be577fb8e2b044c98cc51dc0dc10fb55.jpeg',
+        fullName: 'نيكولينا أنجلكوفا',
+        jobTitle: 'وزيرة السياحة السابقة، بلغاريا | المالكة والرئيسة التنفيذية لمكتب أنجلكوفا للمحاماة والاستشارات',
+        company: '',
+    }    
+]
 const SPEAKER_DATA = [
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
@@ -566,19 +627,19 @@ const QUOTES_DATA = [
 const QUOTES_DATA_AR = [
     {
         avatarUrl: 'https://static.swapcard.com/public/images/9cf68577bdff4a38be44c9fbf2850f25.jpeg',
-        quote: "لقد أصبحت المشاركة في قمة مستقبل الضيافة أمرًا لا بد منه الآن! نشارك في قمة مستقبل الضيافة في السعودية والنسخة العالمية للتعريف بمشاريع شركتنا، وبناء العلاقات، ومقابلة الزملاء والمستثمرين. إنّ قمة مستقبل الضيافة لهذا العام أقوى من السابقة وأكثر تأثيرًا.",
+        quote: "لقد أصبح التواجد في قمة مستقبل الضيافة أمرًا لا بد منه حيث نشارك في قمة مستقبل الضيافة بالمملكة العربية السعودية مرةً أخرى. الحضور في قمة مستقبل الضيافة أصبح أشبه بالالتزام الآن، حيث نشارك في نسختيّ السعودية والعالمية لعرض مشاريع شركتنا، وبناء شبكة علاقات قوية، والالتقاء بالزملاء والمستثمرين. لقد كانت نسخة هذا العام أقوى وأكثر فاعلية وتأثيرًا.",
         fullName: "حسن أحدب",
         title: "الرئيس التنفيذي للتشغيل الفندقي، طيبة للاستثمار"
     },
     {
         avatarUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
-        quote: "إنّ هذه القمة نعمة كبيرة، فهي فعالية مليئة بالطاقة والحيوية وحافلة باللقاءات المميزة.",
+        quote: "إنّ هذا الحدث نعمة حقيقية؛ فالطاقة والحيوية، والتفاعل والنشاط يفوق الخيال. لقد شهدنا حتى الآن العديد من اللقاءات الجميلة والمثمرة.",
         fullName: "مود بيلي",
         title: "الرئيسة التنفيذية، سوفيتيل ليجند، سوفيتيل، إم غاليري، إمبليمز",
     },
     {
         avatarUrl: 'https://static.swapcard.com/public/images/0ea10113e8f64d0795d891c9d1769812.jpeg',
-        quote: "كما هو الحال في كل نسخة من قمة مستقبل الضيافة، دائمًا نحظى بحوارات ذات جودة عالية بخلاف ما نجده في المؤتمرات والمعارض الأخرى. لقد كانت فعالية ممتازة حتى الآن وحصلنا خلالها على حوارات ونقاشات قيمة.",
+        quote: "كما هو الحال في كل نسخة من قمة مستقبل الضيافة، يمتاز الحدث بنقاشات وحوارات متميزة تهتم بجودة المحتوى بدلًا من الجلسات الكثيرة التي نراها في المؤتمرات الأخرى. تميزت القمة حتى الآن بمستوى رفيع للغاية، وقد أجرينا نقاشات مثمرة وذات قيمة كبيرة.",
         fullName: "إدي طنوس",
         title: "الرئيس التنفيذي للعمليات، روتانا",
     }
@@ -666,7 +727,7 @@ export default function Page({ seomatic, partners }) {
                                 theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                 decal={'fs-5 fw-600'} 
                                 accent
-                            >{ locale === 'ar' ? `الموارد الرقمية لعام 2025` : `2025 Digital Resources`}</Button>
+                            >{ locale === 'ar' ? `الموارد الرقمية 2025` : `2025 Digital Resources`}</Button>
                         </Pop>
                         <Pop inline>
                             <Button 
@@ -674,7 +735,7 @@ export default function Page({ seomatic, partners }) {
                                 theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                 decal={'fs-5 fw-600'} 
                                 accent
-                            >{ locale === 'ar' ? `2026 Prospectus` : `2026 Prospectus`}</Button>
+                            >{ locale === 'ar' ? `كتيب 2026` : `2026 Prospectus`}</Button>
                         </Pop>
                     </div>
                 </Fade>
@@ -682,7 +743,7 @@ export default function Page({ seomatic, partners }) {
                 {/* HOST SPONSOR */}
                 <section className="block">
                     <div className="container center">
-                        <p className="fs-3 fw-600 c-accent caps">{ locale === 'ar' ? "الجهات الراعية المضيفة" : "Host Sponsors" }</p>
+                        <p className="fs-3 fw-600 c-accent caps">{ locale === 'ar' ? "الجهات الراعية المستضيفة" : "Host Sponsors" }</p>
                             <Pop>
                                 <div className={`${CSS.hostSponsorLogoWrapper} mt-sm mx-auto`}>
                                     <Image src={`/assets/site/sa/mandarin-oriental-al-faisaliah-logo-update.png`} width={800} height={800}/>
@@ -753,9 +814,15 @@ export default function Page({ seomatic, partners }) {
                 overlay={`hsl(from var(--primary) h s l / .85)`}
             >
 
-                <div className="container c-white center">
+                <div className="container c-white center  maxw-60">
                         <Pop>
-                            <p className="fs-1 fw-600 lh-1">Setting the Agenda – 5 Market Insights from FHS Saudi&nbsp;Arabia Advisory Board</p>
+                        <p className="fs-1 fw-600 lh-1">
+                            {
+                                locale === 'ar'
+                                    ? "جدول الأعمال – رؤى السوق الخمسة من المجلس الاستشاري لقمة مستقبل الضيافة بالمملكة العربية السعودية"
+                                    : "Setting the Agenda – 5 Market Insights from FHS Saudi Arabia Advisory Board"
+                            }
+                        </p>
                         </Pop>
                 </div>
 
@@ -777,19 +844,45 @@ export default function Page({ seomatic, partners }) {
 
                     <section className="formatted c-white">
 
-                        <Pop><p className="fs-5 pb-sm">Our Advisory Board recently convened to identify the critical challenges and opportunities shaping the Kingdom&apos;s hospitality landscape. As we look toward FHS Saudi Arabia 2026, here are the five strategic takeaways driving the conversation:</p></Pop>
+                        {
+                            locale === 'ar'
+                                ? (
+                                    <>
+                                        <Pop><p className="fs-5 pb-sm" dir="rtl">اجتمع مجلسنا الاستشاري مؤخرًا لتحديد أبرز التحديات والفرص التي ترسم المشهد العام لقطاع الضيافة في المملكة العربية السعودية. ومع اقتراب موعد انعقاد قمة مستقبل الضيافة بالمملكة العربية السعودية 2026، دعونا نستعرض معًا خمس نقاط استراتيجية تقود دفة النقاش:</p></Pop>
 
-                        <ul>
-                           <Pop><li><strong>Diversifying Capital:</strong> The industry is looking to move beyond traditional banking reliance, exploring alternative finance structures and capital markets to fuel future growth.</li></Pop>
+                                        <ul dir="rtl">
+                                            <Pop><li>تنوع رأس المال: يتجه القطاع إلى تجاوز حدود التمويل المصرفي التقليدي، واستكشاف هياكل تمويل وأسواق رأس المال البديلة لدعم النمو المستقبلي.</li></Pop>
 
-                           <Pop><li><strong>Unlocking FDI:</strong> Clarifying foreign ownership regulations is seen as a crucial step to accelerate the booming market for branded residences and attract international investors.</li></Pop>
+                                            <Pop><li>تحفيز الاستثمار الأجنبي المباشر: إنّ توضيح أنظمة تملك الأجانب للعقارات في المملكة يعتبر خطوة مهمة لتسريع نمو سوق الوحدات السكنية ذات العلامات التجارية واستقطاب المستثمرين الدوليين.</li></Pop>
 
-                           <Pop><li><strong>Beyond Business Travel:</strong> With high performance in corporate sectors, the focus is shifting toward activating leisure tourism and boosting weekend occupancy in major cities like Riyadh.</li></Pop>
+                                            <Pop><li>ما بعد تجارب السفر لأغراض الأعمال: مع الأداء القوي لقطاع الشركات والمؤسسات، بدأ التركيز يتحول نحو تنشيط السياحة الترفيهية وزيادة نسب الإشغال في عطلات نهاية الأسبوع بالمدن الكبرى مثل الرياض.</li></Pop>
 
-                           <Pop><li><strong>Revitalizing Legacy Assets:</strong> As new giga-projects rise, there is a critical need to refurbish and repurpose existing hotels to ensure they remain competitive and compliant.</li></Pop>
+                                            <Pop><li>إحياء الأصول القائمة: بالتوازي مع صعود المشاريع العملاقة، بدأت تبرز الحاجة الملحّة إلى تحديث وإعادة توظيف الفنادق القائمة لضمان مواصلة قدرتها على التنافس والامتثال.</li></Pop>
 
-                           <Pop><li><strong>Championing Local Identity:</strong> While international luxury expands, there is a growing call to cultivate homegrown Saudi brands and nurture local talent to define the Kingdom&apos;s unique future.</li></Pop>
-                        </ul>
+                                            <Pop><li>تعزيز الهوية المحلية: في ظل توسّع العلامات الفاخرة العالمية، تتزايد الدعوات لدعم العلامات السعودية المحلية وتطوير الكفاءات والمواهب الوطنية لرسم مستقبل يعكس هوية المملكة الفريدة.</li></Pop>
+                                        </ul>
+                                    </>  
+                                )
+                                : (
+                                    <>
+                                        <Pop><p className="fs-5 pb-sm">Our Advisory Board recently convened to identify the critical challenges and opportunities shaping the Kingdom&apos;s hospitality landscape. As we look toward FHS Saudi Arabia 2026, here are the five strategic takeaways driving the conversation:</p></Pop>
+
+                                        <ul>
+                                            <Pop><li><strong>Diversifying Capital:</strong> The industry is looking to move beyond traditional banking reliance, exploring alternative finance structures and capital markets to fuel future growth.</li></Pop>
+
+                                            <Pop><li><strong>Unlocking FDI:</strong> Clarifying foreign ownership regulations is seen as a crucial step to accelerate the booming market for branded residences and attract international investors.</li></Pop>
+
+                                            <Pop><li><strong>Beyond Business Travel:</strong> With high performance in corporate sectors, the focus is shifting toward activating leisure tourism and boosting weekend occupancy in major cities like Riyadh.</li></Pop>
+
+                                            <Pop><li><strong>Revitalizing Legacy Assets:</strong> As new giga-projects rise, there is a critical need to refurbish and repurpose existing hotels to ensure they remain competitive and compliant.</li></Pop>
+
+                                            <Pop><li><strong>Championing Local Identity:</strong> While international luxury expands, there is a growing call to cultivate homegrown Saudi brands and nurture local talent to define the Kingdom&apos;s unique future.</li></Pop>
+                                        </ul>
+                                    </>   
+                                )
+                        }
+
+                        
 
                     </section>
                 </div>
@@ -862,7 +955,7 @@ export default function Page({ seomatic, partners }) {
             </FixedBackgroundImage> */}
 
 
-            {/* AMBASSADORS */}
+            {/* AMBASSADORS + SPEAKERS */}
             <Section
                 backgroundClass={`bg-primary`}
                 themeGraphics={
@@ -902,6 +995,49 @@ export default function Page({ seomatic, partners }) {
                         ))
                     }
                 </div>
+                
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-1 fw-600 c-white">2026 Speakers</p>
+                    </Fade>
+                </div>
+                <div className="container columns-4 gap-sm maxw-65" dir={ locale === 'ar' && 'rtl'}>
+                    {
+                        ( locale === 'ar' ? SPEAKER_DATA_AR_SHORT : SPEAKER_DATA_SHORT ).map( (profile, index) => (
+                            <Pop key={index}>
+                                <SpeakerCard
+                                    url={profile.url}
+                                    photoUrl={profile.photoUrl}
+                                    fullName={profile.fullName}
+                                    jobTitle={profile.jobTitle}
+                                    company={profile.company}
+                                    color={'white'}
+                                />
+                            </Pop>
+                        ))
+                    }
+                </div>
+                <div className="container center">
+                    <div className="button-grid">
+                        <Pop>
+                            <ArrowButton 
+                                href={ '/sa/fhs-speakers' } 
+                                theme={{ arrow: `white`, border: `white`, label: `white` }}
+                                target={`_blank`}
+                            >
+                               View FHS Speakers
+                            </ArrowButton>
+                        </Pop>
+                        <Pop>
+                            <ArrowButton 
+                                href={ '/sa/speakers' } 
+                                theme={{ arrow: `white`, border: `white`, label: `white`}}
+                            >
+                                View 2026 Speakers
+                            </ArrowButton>
+                        </Pop>
+                    </div>
+                </div>
             </Section>
 
 
@@ -911,8 +1047,8 @@ export default function Page({ seomatic, partners }) {
                     locale === 'ar'
                         ? (
                             <Ticker direction={1}>
-                                <p className="fs-4">&ensp;&bull;&ensp;• تحقيق 1.6 مليار دولار أمريكي من الفرص التجارية وحجم الصفقات في نسخة القيمة لعام 2025</p>
-                                <p className="fs-4">&ensp;&bull;&ensp;• تحقيق 1.6 مليار دولار أمريكي من الفرص التجارية وحجم الصفقات في نسخة القيمة لعام 2025</p>
+                                <p className="fs-4">&ensp;&bull;&ensp;• صفقات وفرص تجارية مُحققة بقيمة 1.6 مليار دولار في قمة مستقبل الضيافة 2025</p>
+                                <p className="fs-4">&ensp;&bull;&ensp;• صفقات وفرص تجارية مُحققة بقيمة 1.6 مليار دولار في قمة مستقبل الضيافة 2025</p>
                             </Ticker>
                         ) : (
                             <Ticker>
@@ -947,19 +1083,19 @@ export default function Page({ seomatic, partners }) {
                                     theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                     decal={'fs-5 fw-600'} 
                                     accent
-                                >{ locale === 'ar' ? `حمّل قائمة الحضور` : `Download Attendee List`}</Button>
+                                >{ locale === 'ar' ? `تحميل قائمة الحضور` : `Download Attendee List`}</Button>
                             </Pop>
                         </div>
                     </TitleBlock>
 
-                    <ImpactFigure decal={'bg-neutral-01'} figure={1106} impact={ locale === 'ar' ? "عدد المشاركين" : 'Attendees'}  />
+                    <ImpactFigure decal={'bg-neutral-01'} figure={1106} impact={ locale === 'ar' ? "مشاركًا" : 'Attendees'}  />
                     <ImpactFigure decal={'bg-neutral-02'} figure={37} impact={ locale === 'ar' ? "دولة" : 'Countries'}  />
                     <ImpactFigure decal={'bg-neutral-02'} figure={153} impact={ locale === 'ar' ? "متحدثًا" : 'Speakers'}  />
-                    <ImpactFigure decal={'bg-neutral-01'} figure={85} impact={ locale === 'ar' ? "الجهات الراعية والشركاء" : 'Sponsors & Partners'}  />
-                    <ImpactFigure decal={'bg-neutral-02'} figure={68} unit={'%'} impact={ locale === 'ar' ? "مدراء تنفيذيين، ونواب رؤساء، ومدراء" : 'C-Level Executives, VP & Directors'}  />
+                    <ImpactFigure decal={'bg-neutral-01'} figure={85} impact={ locale === 'ar' ? "عدد الشركاء والجهات الراعية" : 'Sponsors & Partners'}  />
+                    <ImpactFigure decal={'bg-neutral-02'} figure={68} unit={'%'} impact={ locale === 'ar' ? "من كبار المديرين التنفيذيين، ونواب الرؤساء، والمديرين" : 'C-Level Executives, VP & Directors'}  />
                     <ImpactFigure />
-                    <ImpactFigure decal={'bg-neutral-01'} figure={24} unit={'%'} impact={ locale === 'ar' ? `مستثمرين` : 'Investors'} />
-                    <ImpactFigure decal={'bg-neutral-02'} prefix={'$'} figure={5.6} unit={'tn'} impact={ locale === 'ar' ? `تريليون دولار أمريكي أصول تحت الإدارة` : 'AUM'} />
+                    <ImpactFigure decal={'bg-neutral-01'} figure={24} unit={'%'} impact={ locale === 'ar' ? `من المستثمرين` : 'Investors'} />
+                    <ImpactFigure decal={'bg-neutral-02'} prefix={'$'} figure={5.6} unit={'tn'} impact={ locale === 'ar' ? `تريليون دولار أمريكي إجمالي الأصول المُدارة` : 'AUM'} />
                     <ImageBlock imageUrl={'/assets/img/sa/impact-hero.jpg'} />
                 </ImpactGrid>
             </Section>
@@ -999,59 +1135,6 @@ export default function Page({ seomatic, partners }) {
                 </div>
             </Section>
 
-            
-            {/* SPEAKERS */}
-            {/* <Section
-                backgroundClass={`bg-primary-2-dark`}
-                themeGraphics={
-                    isDesktop
-                    ?   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            width={`80vw`}
-                            opacity={.4}
-                            coordinates={{ bottom: 0, right: `-30vh`}}
-                        />
-                    :   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            opacity={.4}
-                            width="250vw"
-                            coordinates={{ top: `30%`}}
-                        />
-                }
-            >
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-1 fw-600 c-white">{locale === 'ar' ? `المتحدثون في قمة مستقبل الضيافة` : `FHS Speakers`}</p>
-                    </Fade>
-                </div>
-                <div className="container columns-4 gap-sm maxw-65">
-                    {
-                        (locale === 'ar' ? SPEAKER_DATA_AR : SPEAKER_DATA).map( (profile, index) => (
-                            <Pop key={index}>
-                                <SpeakerCard
-                                    url={profile.url}
-                                    photoUrl={profile.photoUrl}
-                                    fullName={profile.fullName}
-                                    jobTitle={profile.jobTitle}
-                                    company={profile.company}
-                                    color={'white'}
-                                />
-                            </Pop>
-                        ))
-                    }
-                </div>
-                <div className="container center">
-                    <Pop>
-                        <ArrowButton 
-                            href={ '/sa/speakers' } 
-                            theme={{ arrow: `white`, border: `white`, label: `white`}}
-                        >
-                            { locale === 'ar' ? "عرض جميع المتحدثين" : "View All Speakers"}
-                        </ArrowButton>
-                    </Pop>
-                </div>
-            </Section> */}
-            
 
             {/* THEMES */}
             <Section
@@ -1075,7 +1158,7 @@ export default function Page({ seomatic, partners }) {
                     heading={locale === 'ar' ? `محاور فعالية 2026` : `2026 Event Themes` }
                     data={locale === 'ar' ? THEMES_DATA_AR : THEMES_DATA}
                     link={'/sa/ai-session-summaries-2025'}
-                    linkLabel={locale === 'ar' ? `حمل ملخصات جميع الجلسات` : 'Download AI Session Summaries'}
+                    linkLabel={locale === 'ar' ? `تحميل ملخصات جلسات بالذكاء الاصطناعي` : 'Download AI Session Summaries'}
                 />
             </Section>
 
@@ -1083,7 +1166,7 @@ export default function Page({ seomatic, partners }) {
             {/* SPONSORS */}
             <section className="block pb-0">
                 <div className="container center">
-                    <Pop><p className="fs-1 fw-600 c-primary balance">{locale === 'ar' ? `شركاؤنا` : `Partners Joining Us`}</p></Pop>
+                    <Pop><p className="fs-1 fw-600 c-primary balance">{locale === 'ar' ? `الشركاء الجدد` : `Partners Joining Us`}</p></Pop>
                 </div>
             </section>
             <div className="py-xs mt-sm mb-lg" dir={`ltr`}>
@@ -1124,7 +1207,7 @@ export default function Page({ seomatic, partners }) {
                     <Slide>
                         {
                             locale === 'ar' ? (
-                                <p className='fs-1 fw-700 lh-1 c-secondary'>أبرز اللحظات في قمة مستقبل الضيافة بالسعودية 2025</p>
+                                <p className='fs-1 fw-700 lh-1 c-secondary'>أبرز أحداث قمة مستقبل الضيافة بالمملكة العربية السعودية 2025</p>
                             ): (
                                 <p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS Saudi Arabia 2025</span></p>   
                             )
@@ -1159,7 +1242,7 @@ export default function Page({ seomatic, partners }) {
                                 href={`https://www.flickr.com/photos/benchevents/albums/`}
                                 target='_blank'
                                 theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)` }}
-                            >{locale === 'ar' ? `مشاهدة معرض الصور بالكامل` : `View Full Gallery`}</ArrowButton>
+                            >{locale === 'ar' ? `عرض المعرض الكامل` : `View Full Gallery`}</ArrowButton>
                         </p>
                     </div>
 
