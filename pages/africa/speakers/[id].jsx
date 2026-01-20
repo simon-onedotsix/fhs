@@ -178,9 +178,10 @@ export async function getStaticPaths() {
 
 
 	return {
-		paths: speakersData.data.eventPerson.nodes.map(speaker => ({ params: { id: speaker.id } })),
-		// paths: [],
-        fallback: false
+		// paths: speakersData.data.eventPerson.nodes.map(speaker => ({ params: { id: speaker.id } })),
+        // fallback: false
+		paths: [],
+		fallback: 'blocking',
     }
 }
 

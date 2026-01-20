@@ -29,7 +29,7 @@ export const Footer = () => {
 
             <div className={`container columns-3 gap-md formatted`}>
 
-                    <section className={`${CSS.section}`} dir={ locale === 'ar' && 'rtl'}>
+                    <section className={`${CSS.section}`} dir={ locale === 'ar' ? 'rtl' : ''}>
                         <p className='fs-1 fw-600 lh-1 c-secondary'>{ locale === 'ar' ? "انضم إلى المحادثة!" : "Join the Conversation" }</p>
                         <p className='fs-5 fw-600 c-accent mt-sm'>#FutureHospitalitySummit</p>
                         <p className='flex flex-wrap gap-xxs mt-sm'>
@@ -85,7 +85,7 @@ export const Footer = () => {
                         </section>
                     }
 
-                    <section className={`${CSS.section} ${ locale === 'ar' && CSS.rtl }`} dir={ locale === 'ar' && 'rtl'}>
+                    <section className={`${CSS.section} ${ locale === 'ar' && CSS.rtl }`} dir={ locale === 'ar' ? 'rtl' : ''}>
                         <div>
                             <p className='fs-5 fw-600 c-secondary'>{ locale === 'ar' ? "الجهات المنظمة" : "Organisers" }</p>
                             <div className="mt-sm maxw-40">

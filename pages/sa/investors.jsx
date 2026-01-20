@@ -169,8 +169,6 @@ export default function Page () {
             </div>
 
 
-           
-
 
             {/* USPs */}
 
@@ -474,7 +472,7 @@ export default function Page () {
                     </Fade>
                 </div>
 
-                <div className="container columns-3 gap-md">
+                <div className={`container ${CSS.cardFlexContainer}`}>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/receptions.jpg'}>
                         <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "حفلات تواصل" : "Networking Receptions"}</p>
                     </Card></Pop>
@@ -494,7 +492,7 @@ export default function Page () {
                         <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "طابق المعرض" : "Exhibition Floor"}</p>
                     </Card></Pop>
                     <Pop><Card heroUrl={'/assets/img/sa/networking/pre-scheduled.jpg'}>
-                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "1-2-1 pre-scheduled meetings" : "1-2-1 pre-scheduled meetings"}</p>
+                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "1-2-1 Pre-Scheduled Meetings" : "1-2-1 Pre-Scheduled Meetings"}</p>
                     </Card></Pop>
                     
                 </div>
