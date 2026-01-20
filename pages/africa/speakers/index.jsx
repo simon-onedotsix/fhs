@@ -30,7 +30,7 @@ function Speakers({ speakers }) {
 
 	const filteredSpeakers = []
 	speakers.map( speaker => {
-		if ( speaker.type === "Moderator" || speaker.type === "Speaker" ) filteredSpeakers.push(speaker)
+		if ( speaker.type === "Moderator" || speaker.type === "Speaker" || speaker.type === "Investor" ) filteredSpeakers.push(speaker)
 	})
 
 	// sort speakers by lastName
@@ -56,6 +56,7 @@ function Speakers({ speakers }) {
 	// console.log('contentBlocks:', contentBlocks)
 	// console.log('speakers found:', speakers.length)
 	// console.log('speaker data:', speakers)
+	// console.log('ordered speaker data:', orderedSpeakers)
 
 
 	return (
@@ -81,7 +82,7 @@ function Speakers({ speakers }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
 							speakers.length &&
-							customOrderedSpeakers.map( speaker => {
+							orderedSpeakers.map( speaker => {
 
 								return (
 									<div key={speaker.id}>

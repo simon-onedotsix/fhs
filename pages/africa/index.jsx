@@ -279,7 +279,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
             {/* CONFIRMED SPEAKERS */}
             <SpeakerCarousel heading={'2026 Confirmed Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See all speakers'}>
                 {
-                    speakers.map( speaker => (
+                    _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc']).map( speaker => (
                         <Pop key={speaker.id}>
                             <SpeakerCard 
                                 key={speaker.id}
@@ -301,14 +301,23 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                 <div className="container center">
                     <p className="fs-1 fw-700 lh-1">FHS Africa Ambassadors</p>
                 </div>
-                <div className="container columns-3 gap-sm maxw-50">
+                <div className="container columns-4 gap-sm maxw-65">
                     <Pop>
                         <SpeakerCard 
-                            url={`/africa/speakers/RXZlbnRQZW9wbGVfNDM2MTE1ODg=`}
-                            photoUrl={`https://cms.thebench.com/assets/img/avatars/Trevor-Ward_Photo.png`}
-                            fullName={`Trevor Ward`}
-                            jobTitle={`Managing Director`}
-                            company={`W Hospitality Group`}
+                            url={`/africa/speakers/RXZlbnRQZW9wbGVfNDQyNzg5MDY=`}
+                            photoUrl={`https://static.swapcard.com/public/images/e884bca75149479bab97d219dd636451.jpeg`}
+                            fullName={`Nils Heckscher`}
+                            jobTitle={`Managing Director- Head of Africa`}
+                            company={`PKF Hospitality`}
+                        />
+                    </Pop>
+                    <Pop>
+                        <SpeakerCard 
+                            url={`/africa/speakers/profile/andrew-mclachlan`}
+                            photoUrl={`https://cms.thebench.com/assets/img/avatars/andrew-m.png`}
+                            fullName={`Andrew McLachlan`}
+                            jobTitle={`Founder & Managing Director`}
+                            company={`Develop Hotels`}
                         />
                     </Pop>
                     <Pop>
@@ -322,13 +331,14 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                     </Pop>
                     <Pop>
                         <SpeakerCard 
-                            url={`/africa/speakers/profile/andrew-mclachlan`}
-                            photoUrl={`https://cms.thebench.com/assets/img/avatars/andrew-m.png`}
-                            fullName={`Andrew McLachlan`}
-                            jobTitle={`Founder & Managing Director`}
-                            company={`Develop Hotels`}
+                            url={`/africa/speakers/RXZlbnRQZW9wbGVfNDM2MTE1ODg=`}
+                            photoUrl={`https://cms.thebench.com/assets/img/avatars/Trevor-Ward_Photo.png`}
+                            fullName={`Trevor Ward`}
+                            jobTitle={`Managing Director`}
+                            company={`W Hospitality Group`}
                         />
                     </Pop>
+                    
                 </div>
             </section>
             
@@ -422,70 +432,6 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                     }
                 </div>
             </section>
-
-
-
-            {/* ADVISORY BOARD */}
-            {/* <FixedBackgroundImage
-                backgroundImageUrl={`/assets/img/africa/homepage/ab-07.jpg`}
-                overlay={`hsl(from var(--secondary) h s l / .9)`}
-            >
-
-                <div className="container center pt-sm">
-                    <Fade>
-                        <Pop><p className="fs-1 fw-600 c-white maxw-40 mx-auto">2026 Advisory Board Meeting and Local Reception</p></Pop>
-                    </Fade>
-                </div>
-
-                <div className="container columns-3 gap-sm">
-                    <Pop><img src="/assets/img/africa/homepage/ab-01.jpg" alt="" width={`100%`} style={{ borderRadius: `var(--default-radius)`}}/></Pop>
-                    <Pop><img src="/assets/img/africa/homepage/ab-02.jpg" alt="" width={`100%`} style={{ borderRadius: `var(--default-radius)`}}/></Pop>
-                    <Pop><img src="/assets/img/africa/homepage/ab-03.jpg" alt="" width={`100%`} style={{ borderRadius: `var(--default-radius)`}}/></Pop>
-                    <Pop><img src="/assets/img/africa/homepage/ab-04.jpg" alt="" width={`100%`} style={{ borderRadius: `var(--default-radius)`}}/></Pop>
-                    <Pop><img src="/assets/img/africa/homepage/ab-05.jpg" alt="" width={`100%`} style={{ borderRadius: `var(--default-radius)`}}/></Pop>
-                    <Pop><img src="/assets/img/africa/homepage/ab-06.jpg" alt="" width={`100%`} style={{ borderRadius: `var(--default-radius)`}}/></Pop>
-                </div>
-
-                <div className="container center">
-                    <div className="button-grid">
-                        <Pop>
-                            <ArrowButton 
-                                href={ '/africa/advisory-board' } 
-                                theme={{ arrow: `white`, border: `white`, label: `white`}}
-                            >
-                                See Advisory Board Members
-                            </ArrowButton>
-                        </Pop>
-                    </div>
-                </div>
-
-            </FixedBackgroundImage> */}
-
-            
-
-            {/* KENYA 2025 */}
-            {/* <BrandBlock>
-                
-                <div className="container">
-                    <p className="fs-1 fw-600 balance mb-md center">Last Time We Were In Kenya</p>
-                    <Pop><img src="/assets/img/africa/homepage/kenya/kenya-02.jpg" alt="" style={{ width: `100%`, borderRadius: `var(--default-radius)`}} /></Pop>
-                </div>
-              
-                <div className="container columns-3 gap-sm">      
-                    <ImpactFigure value={293} prefix="$" suffix="M" label="in business opportunities and deal volume gained at AHIF" />
-                    <ImpactFigure value={4.5} prefix="$" suffix="M" label="million average value of business opportunities gained" />
-                    <ImpactFigure value={3.1} suffix="%" label="of attendees surveyed left with business opportunities between 10-50 million USD from AHIF" />
-                </div>
-
-                <div className="container columns-2 gap-sm">
-                    <Pop><img src="/assets/img/africa/homepage/kenya/kenya-07.jpg" alt="" style={{ width: `100%`, borderRadius: `var(--default-radius)` }} /></Pop>
-                    <Pop><img src="/assets/img/africa/homepage/kenya/kenya-09.jpg" alt="" style={{ width: `100%`, borderRadius: `var(--default-radius)` }} /></Pop>
-                    <Pop><img src="/assets/img/africa/homepage/kenya/kenya-04.jpg" alt="" style={{ width: `100%`, borderRadius: `var(--default-radius)` }} /></Pop>
-                    <Pop><img src="/assets/img/africa/homepage/kenya/kenya-05.jpg" alt="" style={{ width: `100%`, borderRadius: `var(--default-radius)`}} /></Pop>
-                </div>
-
-            </BrandBlock> */}
-            
 
             
             {/* EVENT FEATURES */}
@@ -706,16 +652,24 @@ export async function getStaticProps({ preview, previewData }) {
 				variables: {
 					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
 					"cursor": {
-						"first": 10
+						"first": 20
 					},
 					"filters": {
                         "shouldBeInGroups": "RXZlbnRHcm91cF82NDI4ODI=",
                         "eventPeopleIds": [
-                            "RXZlbnRQZW9wbGVfNDM2MTE0NjA=",
                             "RXZlbnRQZW9wbGVfNDI3NzA2ODM=",
-                            "RXZlbnRQZW9wbGVfNDM2MDI0MjY=",
-                            "RXZlbnRQZW9wbGVfNDM1NTg2NzM=",
-                            "RXZlbnRQZW9wbGVfNDM2MTEzNjA="
+                            "RXZlbnRQZW9wbGVfNDM2MTE5MDc=",
+                            "RXZlbnRQZW9wbGVfNDM4OTUyMDI=",
+                            "RXZlbnRQZW9wbGVfNDM4OTUxNjA=",
+                            "RXZlbnRQZW9wbGVfNDQwNzg4MDA=",
+                            "RXZlbnRQZW9wbGVfNDM4OTUxODU=",
+                            "RXZlbnRQZW9wbGVfNDM4OTUxODk=",
+                            "RXZlbnRQZW9wbGVfNDM5Mjc2MDA=",
+                            "RXZlbnRQZW9wbGVfNDM5MzUxMTM=",
+                            "RXZlbnRQZW9wbGVfNDQxNDEyOTM=",
+                            "RXZlbnRQZW9wbGVfNDQyMjM1NjQ=",
+                            "RXZlbnRQZW9wbGVfNDQyNjQ3MTI=",
+                            "RXZlbnRQZW9wbGVfNDM2MTE4NjM="
                         ]
                     }
 				}
