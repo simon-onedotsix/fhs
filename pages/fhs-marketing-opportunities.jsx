@@ -14,8 +14,8 @@ import { LenisScroller } from '../fuselage/animation/lenis-scroller'
 
 import { Pop, Slide, Fade } from "../fuselage/theme/2023/ae/layout/animation/animation"
 
-import { Header } from '../fuselage/theme/2025/sa/common/header/header'
-import { Footer } from '../fuselage/theme/2025/sa/common/footer/footer'
+import { Header } from '../fuselage/theme/2024/global/common/header/header'
+import { Footer } from '../fuselage/theme/2024/global/common/footer/footer'
 
 
 export default function Page({ entry }) {
@@ -64,7 +64,7 @@ export default function Page({ entry }) {
     )
 }
 
-Page.theme = 'sa-2025'
+Page.theme = 'global-2024'
 
 
 
