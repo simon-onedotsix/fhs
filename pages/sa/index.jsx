@@ -476,13 +476,13 @@ const AMBASSADOR_DATA = [
         jobTitle: 'Hospitality Expert',
         company: '',
     },
-    // {
-    //     url: ``,
-    //     photoUrl: '',
-    //     fullName: 'Mohammed Al Nashwan',
-    //     jobTitle: 'Hotel Consultant',
-    //     company: 'Hartt Consulting',
-    // }    
+    {
+        url: `/sa/speakers/profile/mohammed-al-nashwan`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/al-nashwan.png',
+        fullName: 'Mohammed Al Nashwan',
+        jobTitle: 'Hotel Consultant',
+        company: 'Hartt Consulting',
+    }    
 ]
 
 const AB_DATA = [
@@ -664,6 +664,7 @@ export default function Page({ seomatic, partners }) {
 
             <Header overlaid />
 
+            
 
             {/* INTRO */}
             <VideoSection
@@ -807,6 +808,7 @@ export default function Page({ seomatic, partners }) {
 
             </VideoSection>
 
+            
 
             {/* ADVISORY BOARD */}
             <FixedBackgroundImage
@@ -911,48 +913,6 @@ export default function Page({ seomatic, partners }) {
                 </div>
             </FixedBackgroundImage>
             
-            {/* <FixedBackgroundImage
-                backgroundImageUrl={`/assets/img/sa/homepage/ab-meeting-2025-group.jpg`}
-                overlay={`hsl(from var(--primary) h s l / .85)`}
-            >
-
-                <div className="container center pt-sm">
-                    <Fade>
-                        <Pop><p className="fs-1 fw-600 c-white">{ locale === 'ar' ? `اجتماع المجلس الاستشاري لعام 2026` : `2026 Advisory Board Meeting`}</p></Pop>
-                    </Fade>
-                </div>
-
-                <div className="container columns-3 gap-sm">
-                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-01.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}}/></Pop>
-                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-02.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}}/></Pop>
-                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-03.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}}/></Pop>
-                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-04.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}}/></Pop>
-                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-05.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}}/></Pop>
-                    <Pop><img src="/assets/img/sa/homepage/ab-meeting-2025-06.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}}/></Pop>
-                </div>
-
-                <div className="container center">
-                    <div className="button-grid">
-                        <Pop>
-                            <ArrowButton 
-                                href={ 'https://www.flickr.com/photos/benchevents/albums/72177720330222142/' } 
-                                theme={{ arrow: `white`, border: `white`, label: `white` }}
-                                target={`_blank`}
-                            >
-                                { locale === 'ar' ? `عرض المعرض الكامل` : `View Full Gallery`}
-                            </ArrowButton>
-                        </Pop>
-                        <Pop>
-                            <ArrowButton 
-                                href={ '/sa/advisory-board' } 
-                                theme={{ arrow: `white`, border: `white`, label: `white`}}
-                            >
-                                { locale === 'ar' ? `عرض جميع الأعضاء` : `View All Members`}
-                            </ArrowButton>
-                        </Pop>
-                    </div>
-                </div>
-            </FixedBackgroundImage> */}
 
 
             {/* AMBASSADORS + SPEAKERS */}
@@ -974,34 +934,14 @@ export default function Page({ seomatic, partners }) {
                         />
                 }
             >
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-1 fw-600 c-white">FHS Saudi Arabia Ambassadors</p>
-                    </Fade>
-                </div>
-                <div className="container columns-4 gap-sm maxw-65">
-                    {
-                        AMBASSADOR_DATA.map( (profile, index) => (
-                            <Pop key={index}>
-                                <SpeakerCard
-                                    url={profile.url}
-                                    photoUrl={profile.photoUrl}
-                                    fullName={profile.fullName}
-                                    jobTitle={profile.jobTitle}
-                                    company={profile.company}
-                                    color={'white'}
-                                />
-                            </Pop>
-                        ))
-                    }
-                </div>
                 
+                {/* speakers */}
                 <div className="container center">
                     <Fade>
                         <p className="fs-1 fw-600 c-white">2026 Speakers</p>
                     </Fade>
                 </div>
-                <div className="container columns-4 gap-sm maxw-65" dir={ locale === 'ar' && 'rtl'}>
+                <div className="container columns-4 gap-sm maxw-60" dir={ locale === 'ar' && 'rtl'}>
                     {
                         ( locale === 'ar' ? SPEAKER_DATA_AR_SHORT : SPEAKER_DATA_SHORT ).map( (profile, index) => (
                             <Pop key={index}>
@@ -1038,8 +978,34 @@ export default function Page({ seomatic, partners }) {
                         </Pop>
                     </div>
                 </div>
+                
+                {/* ambassadors */}
+                <div className="container center pt-md">
+                    <Fade>
+                        <p className="fs-1 fw-600 c-white">FHS Saudi Arabia Ambassadors</p>
+                    </Fade>
+                </div>
+                <div className="container columns-5 gap-sm maxw-75">
+                    {
+                        AMBASSADOR_DATA.map( (profile, index) => (
+                            <Pop key={index}>
+                                <SpeakerCard
+                                    url={profile.url}
+                                    photoUrl={profile.photoUrl}
+                                    fullName={profile.fullName}
+                                    jobTitle={profile.jobTitle}
+                                    company={profile.company}
+                                    color={'white'}
+                                />
+                            </Pop>
+                        ))
+                    }
+                </div>
+                
+                
             </Section>
 
+            
 
             {/* TICKER */}
             <div className="bg-secondary py-xs" dir={`ltr`}>
@@ -1060,6 +1026,7 @@ export default function Page({ seomatic, partners }) {
             </div>
 
 
+            
             {/* IN NUMBERS */}
             <Section
                 flush
@@ -1101,6 +1068,7 @@ export default function Page({ seomatic, partners }) {
             </Section>
             
 
+
             {/* TESTIMONIALS */}
             <Section
                 backgroundClass={`bg-primary-dark`}
@@ -1135,6 +1103,7 @@ export default function Page({ seomatic, partners }) {
                 </div>
             </Section>
 
+            
 
             {/* THEMES */}
             <Section
@@ -1163,6 +1132,7 @@ export default function Page({ seomatic, partners }) {
             </Section>
 
 
+            
             {/* SPONSORS */}
             <section className="block pb-0">
                 <div className="container center">
@@ -1182,6 +1152,7 @@ export default function Page({ seomatic, partners }) {
             </div>
 
 
+            
             {/* ANNOUNCEMENTS */}
             <ArticleScroller>
                 {
@@ -1191,6 +1162,7 @@ export default function Page({ seomatic, partners }) {
             </ArticleScroller>
 
 
+            
             {/* VIDEO + PHOTO HIGHLIGHTS */}
             <Section
                 backgroundClass={`bg-white`}
