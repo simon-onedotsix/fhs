@@ -39,17 +39,12 @@ function Speakers({ speakers }) {
 
 	// customise order (VIP speakers to top of list)
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
-		(speaker => speaker.lastName === 'Heinecke' && speaker.firstName === "William" ? 0 : 1),
-		(speaker => speaker.lastName === 'Meyer' && speaker.firstName === "Dr. Ivan" ? 0 : 1),
-		(speaker => speaker.lastName === 'Green' && speaker.firstName === "David" ? 0 : 1),
-		(speaker => speaker.lastName === 'Nubi' && speaker.firstName === "Pelumi" ? 0 : 1),
-		(speaker => speaker.lastName === 'Granet' && speaker.firstName === "Olivier" ? 0 : 1),
-		
-		(speaker => speaker.lastName === 'Hutchinson' && speaker.firstName === "Guy" ? 0 : 1),
-		(speaker => speaker.lastName === 'Osei Baffour' && speaker.firstName === "Magdaline" ? 0 : 1),
-		(speaker => speaker.lastName === 'du Plessis' && speaker.firstName === "Dr Morné" ? 0 : 1),
-		(speaker => speaker.lastName === 'Getachew Belete' && speaker.firstName === "Tadiwos" ? 0 : 1),
-		(speaker => speaker.lastName === 'Tshivhengwa' && speaker.firstName === "Tshifhiwa" ? 0 : 1),
+		(speaker => speaker.firstName === "Srividya" && speaker.lastName === 'Jagannathan' ? 0 : 1),
+		(speaker => speaker.firstName === "Juliana" && speaker.lastName === 'Kagwa' ? 0 : 1),
+		(speaker => speaker.firstName === "Ashish" && speaker.lastName === 'Sharma' ? 0 : 1),
+		(speaker => speaker.firstName === "Jameel" && speaker.lastName === 'Verjee' ? 0 : 1),
+		(speaker => speaker.firstName === "Rosco" && speaker.lastName === 'Wendover' ? 0 : 1),
+
 	] )
 	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
@@ -82,7 +77,7 @@ function Speakers({ speakers }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
 							speakers.length &&
-							orderedSpeakers.map( speaker => {
+							customOrderedSpeakers.map( speaker => {
 
 								return (
 									<div key={speaker.id}>

@@ -297,7 +297,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
             
             {/* AMBASSADORS */}
-            <section className="block bg-default">
+            {/* <section className="block bg-default">
                 <div className="container center">
                     <p className="fs-1 fw-700 lh-1">FHS Africa Ambassadors</p>
                 </div>
@@ -340,7 +340,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                     </Pop>
                     
                 </div>
-            </section>
+            </section> */}
             
 
 
@@ -657,19 +657,11 @@ export async function getStaticProps({ preview, previewData }) {
 					"filters": {
                         "shouldBeInGroups": "RXZlbnRHcm91cF82NDI4ODI=",
                         "eventPeopleIds": [
-                            "RXZlbnRQZW9wbGVfNDI3NzA2ODM=",
-                            "RXZlbnRQZW9wbGVfNDM2MTE5MDc=",
+                            "RXZlbnRQZW9wbGVfNDQzMzM1OTA=",
+                            "RXZlbnRQZW9wbGVfNDQzMzI2ODA=",
                             "RXZlbnRQZW9wbGVfNDM4OTUyMDI=",
-                            "RXZlbnRQZW9wbGVfNDM4OTUxNjA=",
-                            "RXZlbnRQZW9wbGVfNDQwNzg4MDA=",
-                            "RXZlbnRQZW9wbGVfNDM4OTUxODU=",
-                            "RXZlbnRQZW9wbGVfNDM4OTUxODk=",
-                            "RXZlbnRQZW9wbGVfNDM5Mjc2MDA=",
-                            "RXZlbnRQZW9wbGVfNDM5MzUxMTM=",
-                            "RXZlbnRQZW9wbGVfNDQxNDEyOTM=",
-                            "RXZlbnRQZW9wbGVfNDQyMjM1NjQ=",
-                            "RXZlbnRQZW9wbGVfNDQyNjQ3MTI=",
-                            "RXZlbnRQZW9wbGVfNDM2MTE4NjM="
+                            "RXZlbnRQZW9wbGVfNDM2MTE4NjM=",
+                            "RXZlbnRQZW9wbGVfNDQxNDEyOTM="
                         ]
                     }
 				}

@@ -447,43 +447,7 @@ const PHOTOS_DATA = [
     }
 ]
 
-const AMBASSADOR_DATA = [
-    {
-        url: `/sa/speakers/profile/rabih-feghali`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Feghali_Rabih_sm.jpg',
-        fullName: 'Rabih Feghali',
-        jobTitle: 'Board Member',
-        company: 'HAMA EMEA',
-    },
-    {
-        url: `/sa/speakers/profile/haifaa-alzahrani`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/IMG_3406.jpeg',
-        fullName: 'Haifaa Al Zahrani',
-        jobTitle: 'Head of Hospitality Asset Management and Partnerships',
-        company: 'Thakher Development',
-    },
-    {
-        url: `/sa/speakers/profile/fahad-al-fawaz-2`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Fahad-Al-Fawaz-1.jpg',
-        fullName: 'Fahad Al Fawaz',
-        jobTitle: 'Board Director & Board Committee Member',
-        company: 'Tabuk Investment Co. & Jenan Real Estate Co. & Gulf Liting Financing Co',
-    },
-    {
-        url: `/sa/speakers/profile/turab-saleem`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Saleem_Turab-Final-Photo.jpg',
-        fullName: 'Turab Saleem',
-        jobTitle: 'Hospitality Expert',
-        company: '',
-    },
-    {
-        url: `/sa/speakers/profile/mohammed-al-nashwan`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/al-nashwan.png',
-        fullName: 'Mohammed Al Nashwan',
-        jobTitle: 'Hotel Consultant',
-        company: 'Hartt Consulting',
-    }    
-]
+
 
 const AB_DATA = [
     {
@@ -915,7 +879,7 @@ export default function Page({ seomatic, partners }) {
             
 
 
-            {/* AMBASSADORS + SPEAKERS */}
+            {/* SPEAKERS */}
             <Section
                 backgroundClass={`bg-primary`}
                 themeGraphics={
@@ -933,15 +897,14 @@ export default function Page({ seomatic, partners }) {
                             coordinates={{ top: `30%`}}
                         />
                 }
-            >
-                
-                {/* speakers */}
+            > 
+
                 <div className="container center">
                     <Fade>
                         <p className="fs-1 fw-600 c-white">2026 Speakers</p>
                     </Fade>
                 </div>
-                <div className="container columns-4 gap-sm maxw-60" dir={ locale === 'ar' && 'rtl'}>
+                <div className="container columns-4 gap-sm maxw-60" dir={ locale === 'ar' ? 'rtl' : ''}>
                     {
                         ( locale === 'ar' ? SPEAKER_DATA_AR_SHORT : SPEAKER_DATA_SHORT ).map( (profile, index) => (
                             <Pop key={index}>
@@ -978,30 +941,7 @@ export default function Page({ seomatic, partners }) {
                         </Pop>
                     </div>
                 </div>
-                
-                {/* ambassadors */}
-                <div className="container center pt-md">
-                    <Fade>
-                        <p className="fs-1 fw-600 c-white">FHS Saudi Arabia Ambassadors</p>
-                    </Fade>
-                </div>
-                <div className="container columns-5 gap-sm maxw-75">
-                    {
-                        AMBASSADOR_DATA.map( (profile, index) => (
-                            <Pop key={index}>
-                                <SpeakerCard
-                                    url={profile.url}
-                                    photoUrl={profile.photoUrl}
-                                    fullName={profile.fullName}
-                                    jobTitle={profile.jobTitle}
-                                    company={profile.company}
-                                    color={'white'}
-                                />
-                            </Pop>
-                        ))
-                    }
-                </div>
-                
+    
                 
             </Section>
 
