@@ -17,7 +17,6 @@
 }
 
 /* mobile */
-
 @media (max-width: 599px) {
     .wrapper {
         position: fixed;
@@ -47,7 +46,6 @@
 }
 
 /* tablet portrait */
-
 @media (min-width: 600px) and (max-width:1200px) {
     .wrapper {
         z-index: 10;
@@ -61,7 +59,6 @@
 }
 
 /* desktop */
-
 @media (min-width: 1200px) {
     .wrapper {
         z-index: 190;
@@ -72,6 +69,34 @@
     }
     .events {
         gap: var(--space-xs);
+    }
+}
+
+
+/* fix for overcrowding (event titles too long) */
+
+/* mobile */
+@media (max-width: 599px) {
+    .layout {
+        font-size: .75rem;
+    }
+}
+/* tablet portrait */
+@media (min-width: 600px) and (max-width:1200px) {
+    .layout {
+        font-size: 1.5vw !important;
+    }
+}
+/* desktop */
+@media (min-width: 1200px) {
+    .layout {
+        font-size: 1vw !important;
+    }
+}
+/* large desktop */
+@media (min-width: 1500px) {
+    .layout {
+        font-size: 1rem !important;
     }
 }
 

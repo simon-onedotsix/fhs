@@ -111,123 +111,6 @@ export const ARTICLE_DATA_AR = [
 
 const SPEAKER_DATA_SHORT = [
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/0f3466754aec406ab2b64862743c639f.jpeg',
-        fullName: 'HH Prince Bandar bin Saud bin Khalid Al Saud',
-        jobTitle: 'Secretary General, King Faisal Foundation (KFF) | Chairman of the Board of Directors, Al Khozama Investment Company',
-        company: '',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk1MDI0MTI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/56724beae060457ea3b07e98cba20646.jpeg',
-        fullName: 'Mahmoud Abdulhadi',
-        jobTitle: 'Deputy Minister, Destination Enablement',
-        company: 'Ministry of Tourism of Saudi Arabia',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
-        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
-        fullName: 'Hossam Al-Basrawi',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Alrajhi Capital',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
-        photoUrl: 'https://static.swapcard.com/public/images/be577fb8e2b044c98cc51dc0dc10fb55.jpeg',
-        fullName: 'Nikolina Angelkova',
-        jobTitle: 'Former Minister Tourism, Bulgaria | Owner and CEO, Angelkova law and Consultancy office',
-        company: '',
-    }
-    
-]
-const SPEAKER_DATA_AR_SHORT = [
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/0f3466754aec406ab2b64862743c639f.jpeg',
-        fullName: 'صاحب السمو الملكي الأمير بندر بن سعود بن خالد آل سعود',
-        jobTitle: 'الأمين العام لمؤسسة الملك فيصل الخيرية | رئيس مجلس إدارة شركة الخزامى للاستثمار',
-        company: '',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk1MDI0MTI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/56724beae060457ea3b07e98cba20646.jpeg',
-        fullName: 'محمود عبد الهادي',
-        jobTitle: 'وكيل الوزارة لتمكين الوجهات السياحية',
-        company: 'وزارة السياحة السعودية',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
-        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
-        fullName: 'حسام البصراوي',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'الراجحي كابيتال',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
-        photoUrl: 'https://static.swapcard.com/public/images/be577fb8e2b044c98cc51dc0dc10fb55.jpeg',
-        fullName: 'نيكولينا أنجلكوفا',
-        jobTitle: 'وزيرة السياحة السابقة، بلغاريا | المالكة والرئيسة التنفيذية لمكتب أنجلكوفا للمحاماة والاستشارات',
-        company: '',
-    }    
-]
-const SPEAKER_DATA = [
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/0f3466754aec406ab2b64862743c639f.jpeg',
-        fullName: 'HH Prince Bandar bin Saud bin Khalid Al Saud',
-        jobTitle: 'Secretary General, King Faisal Foundation (KFF) | Chairman of the Board of Directors, Al Khozama Investment Company',
-        company: '',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk1MDI0MTI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/56724beae060457ea3b07e98cba20646.jpeg',
-        fullName: 'Mahmoud Abdulhadi',
-        jobTitle: 'Deputy Minister, Destination Enablement',
-        company: 'Ministry of Tourism of Saudi Arabia',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
-        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
-        fullName: 'Hossam Al-Basrawi',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Alrajhi Capital',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
-        photoUrl: 'https://static.swapcard.com/public/images/be577fb8e2b044c98cc51dc0dc10fb55.jpeg',
-        fullName: 'Nikolina Angelkova',
-        jobTitle: 'Former Minister Tourism, Bulgaria | Owner and CEO, Angelkova law and Consultancy office',
-        company: '',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Inzerillo_Jerry_cr.jpg',
-        fullName: 'Jerry Inzerillo',
-        jobTitle: 'Group Chief Executive Officer, Diriyah Gate Company Limited | Vice Chairman, Forbes Travel Guide',
-        company: '',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc5MDEyNjk=`,
-        photoUrl: 'https://static.swapcard.com/public/images/7ffaec8014ff4f33bd453f98c0e67b51.jpeg',
-        fullName: 'Nick Candy',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Candy Capital',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1OTk1ODI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
-        fullName: 'Maud Bailly',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Sofitel Legend, Sofitel, MGallery & Emblems',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/a96df3d5f0c84807a351df07dfc4e15c.jpeg',
-        fullName: 'Dr. Abeer Alamri',
-        jobTitle: 'Skills Development and Talent Optimization Expert',
-        company: '',
-    },
-    {
         url: `/sa/speakers/profile/khalid-saud-abu-haimed`,
         photoUrl: 'https://cms.thebench.com/assets/img/avatars/Abu-Haimed_Khalid-Saud_pic2.jpg',
         fullName: 'Khalid Saud Abu Haimed',
@@ -235,112 +118,32 @@ const SPEAKER_DATA = [
         company: 'Al Khozama Investment Company',
     },
     {
-        url: `/sa/speakers/profile/mae-al-mozaini`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Mozaini_Mae_hi-res-photo.jpeg',
-        fullName: 'Mae Al Mozaini',
-        jobTitle: 'Founder & CEO',
-        company: 'The Arab Institute for Women’s Empowerment - Nusf',
-    },
-    {
-        url: `/sa/speakers/profile/norah-al-tamimi`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Tamimi_Norah_sq.jpg',
-        fullName: 'Norah Al Tamimi',
-        jobTitle: 'Co-Founder',
-        company: 'AWN',
-    },
-    {
-        url: `/sa/speakers/profile/qusai-al-fakhri`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/MicrosoftTeams-image-1.png',
-        fullName: 'Qusai Al-Fakhr',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ1OTg=`,
+        photoUrl: 'https://static.swapcard.com/public/images/b742f087d4d243e78bb70a6c54f13f67.png',
+        fullName: 'Sarmad Zok',
         jobTitle: 'Chief Executive Officer',
-        company: 'Tourism Development Fund',
-    },
-    
-]
-const SPEAKER_DATA_AR = [
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/0f3466754aec406ab2b64862743c639f.jpeg',
-        fullName: 'صاحب السمو الملكي الأمير بندر بن سعود بن خالد آل سعود',
-        jobTitle: 'الأمين العام لمؤسسة الملك فيصل الخيرية | رئيس مجلس إدارة شركة الخزامى للاستثمار',
-        company: '',
+        company: 'Kingdom Hotel Investments',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk1MDI0MTI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/56724beae060457ea3b07e98cba20646.jpeg',
-        fullName: 'محمود عبد الهادي',
-        jobTitle: 'وكيل الوزارة لتمكين الوجهات السياحية',
-        company: 'وزارة السياحة السعودية',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ1NzA=`,
+        photoUrl: 'https://static.swapcard.com/public/images/23164303eb9249b998d1cad542746fba.jpeg',
+        fullName: 'Dr. Aradhana Khowala',
+        jobTitle: 'Chief Executive Officer & Founder',
+        company: 'Aptamind Partners',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzY5MzgxNzg=`,
-        photoUrl: 'https://static.swapcard.com/public/images/ab06795985174d609056ebd5d02c872e.jpeg',
-        fullName: 'حسام البصراوي',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'الراجحي كابيتال',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ2MzQ=`,
+        photoUrl: 'https://static.swapcard.com/public/images/144a200935cd4bdfa2c5abf157ce8a37.png',
+        fullName: 'Muin Serhan',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Amsa Hospitality',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzcwNDU3NDA=`,
-        photoUrl: 'https://static.swapcard.com/public/images/be577fb8e2b044c98cc51dc0dc10fb55.jpeg',
-        fullName: 'نيكولينا أنجلكوفا',
-        jobTitle: 'وزيرة السياحة السابقة، بلغاريا | المالكة والرئيسة التنفيذية لمكتب أنجلكوفا للمحاماة والاستشارات',
-        company: '',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Inzerillo_Jerry_cr.jpg',
-        fullName: 'جيري إنزيريلو',
-        jobTitle: 'الرئيس التنفيذي لمجموعة شركة بوابة الدرعية المحدودة | نائب رئيس مجلس إدارة دليل فوربس للسفر',
-        company: '',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc5MDEyNjk=`,
-        photoUrl: 'https://static.swapcard.com/public/images/7ffaec8014ff4f33bd453f98c0e67b51.jpeg',
-        fullName: 'نيك كاندي',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'كاندي كابيتال',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1OTk1ODI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
-        fullName: 'مود بيلي',
-        jobTitle: 'الرئيسة التنفيذية',
-        company: 'سوفيتيل ليجند، سوفيتيل، إم غاليري، إمبليمز',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzc1ODUwMzU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/a96df3d5f0c84807a351df07dfc4e15c.jpeg',
-        fullName: 'الدكتورة عبير العمري',
-        jobTitle: 'خبيرة في تطوير المهارات وتحسين المواهب',
-        company: '',
-    },
-    {
-        url: `/sa/speakers/profile/khalid-saud-abu-haimed`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Abu-Haimed_Khalid-Saud_pic2.jpg',
-        fullName: 'خالد سعود أبو حيمد',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'شركة الخزامى للاستثمار',
-    },
-    {
-        url: `/sa/speakers/profile/mae-al-mozaini`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Mozaini_Mae_hi-res-photo.jpeg',
-        fullName: 'مي المزيني',
-        jobTitle: 'المؤسسة والرئيسة التنفيذية',
-        company: 'المعهد العربي لتمكين المرأة – نصف',
-    },
-    {
-        url: `/sa/speakers/profile/norah-al-tamimi`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Tamimi_Norah_sq.jpg',
-        fullName: 'نورة التميمي',
-        jobTitle: 'مؤسسة مشاركة',
-        company: 'شركة مشاريع عون',
-    },
-    {
-        url: `/sa/speakers/profile/qusai-al-fakhri`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/MicrosoftTeams-image-1.png',
-        fullName: 'قصي الفخر',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'صندوق التنمية السياحي',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQxOTMxMjE=`,
+        photoUrl: 'https://static.swapcard.com/public/images/8744509ba8354d31abfb050affddc9ed.jpeg',
+        fullName: 'Samer Sabra',
+        jobTitle: 'Chief Hospitality Officer',
+        company: 'Jabal Omar Development Company',
     },
     
 ]
@@ -775,7 +578,7 @@ export default function Page({ seomatic, partners }) {
             
 
             {/* ADVISORY BOARD */}
-            <FixedBackgroundImage
+            {/* <FixedBackgroundImage
                 backgroundImageUrl={`/assets/img/sa/homepage/ab-meeting-2025-group.jpg`}
                 overlay={`hsl(from var(--primary) h s l / .85)`}
             >
@@ -875,13 +678,13 @@ export default function Page({ seomatic, partners }) {
                         </Pop>
                     </div>
                 </div>
-            </FixedBackgroundImage>
+            </FixedBackgroundImage> */}
             
 
 
             {/* SPEAKERS */}
             <Section
-                backgroundClass={`bg-primary`}
+                backgroundClass={`bg-primary-2-dark`}
                 themeGraphics={
                     isDesktop
                     ?   <ThemeGraphic
@@ -904,9 +707,9 @@ export default function Page({ seomatic, partners }) {
                         <p className="fs-1 fw-600 c-white">2026 Speakers</p>
                     </Fade>
                 </div>
-                <div className="container columns-4 gap-sm maxw-60" dir={ locale === 'ar' ? 'rtl' : ''}>
+                <div className="container columns-5 gap-sm maxw-75" dir={ locale === 'ar' ? 'rtl' : ''}>
                     {
-                        ( locale === 'ar' ? SPEAKER_DATA_AR_SHORT : SPEAKER_DATA_SHORT ).map( (profile, index) => (
+                        SPEAKER_DATA_SHORT.map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
                                     url={profile.url}

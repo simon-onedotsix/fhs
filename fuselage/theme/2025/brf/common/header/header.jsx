@@ -30,15 +30,15 @@ const otherEvents = [
     },
     {
         id: 11,
-        title: 'BRF Asia',
+        title: 'Branded Residences Forum',
         url: 'https://www.brandedresidencesforum.com/',
         target: true
     },
     {
         id: 12,
-        title: 'BRF',
+        title: 'BRF @ FHS World',
         url: '/world/brf',
-        target: true
+        target: false
     },
     {
         id: 6,
