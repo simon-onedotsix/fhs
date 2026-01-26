@@ -18,7 +18,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
     const router = useRouter()
 
     // console.log('router:', router.query)
-    // console.log('categories:', categories)
+    console.log('categories:', categories)
     // console.log('category:', category)
     // console.log('articles:', articles)
 
@@ -164,7 +164,7 @@ export async function getStaticProps({ params }) {
                         }
                     }
                 }
-                categories (group: "contentLibrary", id: [7701, 7702, 7703, 121314]) {
+                categories (group: "contentLibrary", id: [7701, 7702, 7703, 7704, 121314]) {
                     id
                     title
                     slug

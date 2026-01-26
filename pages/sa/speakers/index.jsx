@@ -27,17 +27,18 @@ import CSS from '../../../css/app/speakers-sa-2024.module.css'
 
 function Speakers({ seomatic, speakers }) {
 
-	// console.log('speakers:', speakers)
+	console.log('speakers found:', speakers.length)
+	console.log('speakers:', speakers)
 
 	// sort speakers by lastName
 	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
-	// console.log('ordered:', orderedSpeakers)
+	// console.log('total ordered speakers:', orderedSpeakers.length)
 
 	// customise order (VIP speakers to top of list)
-	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
-		(speaker => speaker.firstName == 'HH Prince Bandar bin Saud bin Khalid' && speaker.lastName === 'Al Saud' ? 0 : 1),
-		(speaker => speaker.firstName == 'Mahmoud' && speaker.lastName === 'Abdulhadi' ? 0 : 1),
-	] )
+	// let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
+	// 	(speaker => speaker.firstName == 'HH Prince Bandar bin Saud bin Khalid' && speaker.lastName === 'Al Saud' ? 0 : 1),
+	// 	(speaker => speaker.firstName == 'Mahmoud' && speaker.lastName === 'Abdulhadi' ? 0 : 1),
+	// ] )
 	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 	return (
