@@ -32,7 +32,7 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 			<section className="block">
 				<div className="container">
 
-					<p className='fs-0 fw-600 lh-1'>2025 Advisory Board</p>
+					<p className='fs-0 fw-600 lh-1'>2026 Advisory Board</p>
 
 					<SpeakerGrid decal="gap-sm mt-md">
 						{craftCmsProfiles.map( speaker => (
@@ -103,7 +103,7 @@ export async function getStaticProps() {
 	const craftCmsProfiles = await craftApolloClient().query({
         query: gql`
             query Profiles {
-                entries(site: "${process.env.SITE_HANDLE_AE}", section: "profileGroups", id: "10222") {
+                entries(site: "${process.env.SITE_HANDLE_AE}", section: "profileGroups", id: "295858") {
 					... on profileGroups_default_Entry {
 						id
 						title
