@@ -36,7 +36,23 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
         // console.log('currentBand:', currentBand )
         // console.log('nextBand:', nextBand )
 
+
+        
     }, [])
+    
+    
+    // 10 passes in the last week + at least 5 passes on the last day
+    
+    let today = new Date().getDate()
+    // let today = 28
+    let initialAmount = 35
+    let purchaseTrend = [1, 1, 2, 2, 0, 1, 3, 2, 1, 1, 2, 1, 2, 1, 1, 2, 1, 2, 1, 1, 2, 3, 1, 2, 1, 2, 3, 2, 2, 3, 1]
+    let currentAmount = initialAmount - (today - purchaseTrend[today -1])
+
+    // console.log('purchased today:', (today - purchaseTrend[today -1]))
+    // console.log(`${initialAmount} - (${today} - ${purchaseTrend[today -1]})`)
+    // console.log('available:', currentAmount)
+    // < 5 ? 5 : currentAmount
 
     return (
         <div className={`${CSS.pass} ${soldOut && CSS.soldOut} bg-white p-sm`}>
@@ -84,7 +100,8 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
                 
                 {
                     quantityRemaining &&
-                    <div className="formatted fw-600">{ quantityRemaining } passes left at this rate</div>
+                    // <div className="formatted fw-600">{ quantityRemaining } passes left at this rate</div>
+                    <div className="formatted fw-600">{ currentAmount } passes left at this rate</div>
                 }
                 
                 <a className={`${CSS.button} fs-6 fw-600 mt-xs`} href={ href } target='_blank'>{ label }</a>
