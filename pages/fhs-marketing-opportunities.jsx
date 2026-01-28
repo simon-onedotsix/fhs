@@ -45,7 +45,11 @@ export default function Page({ entry }) {
                     {
                         cards && 
                         cards.map(card => (
-                            <Card key={card.id} heading={'Online Podcast'} image={{ url: card.hero[0].url, width: card.hero[0].width, height: card.hero[0].height }} >
+                            <Card
+                                key={card.id}
+                                heading={card.heading}
+                                image={{ url: card.hero[0].url, width: card.hero[0].width, height: card.hero[0].height }}
+                            >
                                 { parse(card.body) }
                             </Card>
                         ))
@@ -82,7 +86,7 @@ const Card = ({ image, heading, children }) => {
                 gap: `var(--space-xs)`
             }}
         >
-            <Fade><p><strong><span className="fs-3">{ heading }</span></strong></p></Fade>
+            <Fade><p><strong><span className="fs-3 lh-1">{ heading }</span></strong></p></Fade>
             <Pop><Image src={image.url} width={image.width} height={image.height} style={{ borderRadius: `.5rem`}}/></Pop>
             <Fade>
                 <div className='formatted'>

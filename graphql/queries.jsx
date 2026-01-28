@@ -47,6 +47,7 @@ export const QueryFloaters = `
         floaters {
             ... on floaters_BlockType {
                 id
+                heading
                 body
                 hero {
                     url
