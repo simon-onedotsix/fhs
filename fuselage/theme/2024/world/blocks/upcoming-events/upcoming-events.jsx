@@ -106,3 +106,80 @@ export const EventCard = ({ theme, title, logo, passLink, websiteLink }) => {
         </motion.div>
     )
 }
+
+
+
+export const EventCardLite = ({ heading, logo, venue, dates, dateOverride, websiteLink }) => {
+
+    let startDay = formatInTimeZone(new Date( dates.startDate ), 'Asia/Dubai', 'd')
+    let startMonth = formatInTimeZone(new Date( dates.startDate ), 'Asia/Dubai', 'MMMM')
+    let year = formatInTimeZone(new Date( dates.startDate ), 'Asia/Dubai', 'yyyy')
+    
+    let endDay
+    let endMonth
+
+    if (dates.endDate) {
+        endDay = formatInTimeZone(new Date( dates.endDate ), 'Asia/Dubai', 'd')
+        endMonth = formatInTimeZone(new Date( dates.endDate ), 'Asia/Dubai', 'MMMM')
+    }
+
+    return (
+        <motion.div 
+            initial={{ scale: .5, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ type: "spring", bounce: 0.25 }} 
+
+            className={CSS.eventCardLite} 
+        >
+
+            <p className={`${CSS.eventCardLiteHeading} fs-5 fw-600`}>{heading}</p>
+
+            <div className={CSS.eventCardLiteContent}>
+                {
+                    logo &&
+                    <div className={CSS.eventCardLiteLogo} style={{ height: '4.5rem', aspectRatio: logo.width / logo.height }}>
+                        <img src={logo.url} alt=''/>
+                    </div> 
+                }
+
+                <section>
+                    {
+                        dateOverride ?
+                            <p className='fs-4 fw-700 lh-2'>{dateOverride}</p>
+                        :
+                            <>
+                                {
+                                    startMonth === endMonth ?
+                                        <p className='fs-6 fw-600 lh-2'>
+                                            { startDay }-{ endDay } { startMonth } { year }
+                                        </p>
+                                    :
+                                        <p className='fs-6 fw-600 lh-2'>
+                                            { startDay } { startMonth } { dates.endDate && "-" } { endDay } { endMonth } { year }
+                                        </p>
+
+                                }
+                            </>
+                        }
+
+                    <p className='mt-xxs'>{venue}</p>
+                </section>
+
+                {
+                    websiteLink &&
+                    <div className={CSS.eventCardLiteActions}>
+                        <p className='fs-5'>
+                            <a className={CSS.websiteButton} href={websiteLink} target='_blank'>
+                                Website <ExternalLinkIcon />
+                            </a>
+                        </p>
+                    </div>
+                }
+            </div>
+                
+            
+            
+        </motion.div>
+    )
+}

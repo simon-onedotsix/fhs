@@ -494,7 +494,6 @@ export default function Page () {
                     <Pop><Card heroUrl={'/assets/img/sa/networking/pre-scheduled.jpg'}>
                         <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "1-2-1 Pre-Scheduled Meetings" : "1-2-1 Pre-Scheduled Meetings"}</p>
                     </Card></Pop>
-                    
                 </div>
 
                 <div className="container center">

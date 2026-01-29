@@ -5,6 +5,7 @@
 @import './decal.config-ae.css';
 @import './decal.config-africa.css';
 @import './decal.config-brf.css';
+@import './decal.config-egypt.css';
 
 @import './decal/decal.css';
 @import './decal.fonts.css';
@@ -20,7 +21,9 @@
 @import './decal.theme-sa-2024.css';
 @import './decal.theme-sa-2025.css';
 @import './decal.theme-world-2024.css';
+
 @import './decal.theme-africa.css';
+@import './decal.theme-egypt.css';
 
 @import './decal.theme-global-2024.css';
 

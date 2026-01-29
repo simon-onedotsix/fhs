@@ -12,7 +12,7 @@ export const PageHeroImage = ({ hero, children, inverse }) => {
 
 
     return (
-        <section style={{ position: 'relative' }}>
+        <section style={{ position: 'relative', overflow: 'hidden'}}>
                 
             <motion.div className={`${CSS.hero} ${inverse && CSS.inverse}`} style={{ y }}>
                 <div className={CSS.heroWrapper}>

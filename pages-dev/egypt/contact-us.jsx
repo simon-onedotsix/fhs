@@ -1,0 +1,105 @@
+import { useState, useRef } from "react"
+
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+import { motion, useScroll, useTransform } from "framer-motion"
+
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
+
+import Ticker from 'framer-motion-ticker'
+
+import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
+
+import { Header } from '../../fuselage/theme/egypt/common/header/header'
+import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
+
+import { Button } from "../../fuselage/theme/2024/world/components/button/button"
+import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
+import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
+
+import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
+import { PopupOverlay } from "../../fuselage/components/popup-overlay/popup-overlay"
+
+import { HeroUnitVideo } from "../../fuselage/theme/2025/world/pages/home/hero-unit-video"
+import { ThemeBillboard, Tri } from "../../fuselage/theme/2025/world/pages/home/theme-billboard"
+
+import CSS from '../../fuselage/theme/2024/world/css/homepage.module.css'
+
+
+
+export default function Page () {
+
+    return (
+        <>
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
+            </Head>
+        
+            <Header compact />
+            
+            <section className="block">
+                <div className="container">
+                    <h1 className="fs-0 caps">Contact Us</h1>
+                    <p className="balance">For any general event or registration queries, you can email us at <a href="mailto:hello@thebench.com">hello@thebench.com</a>. For specific queries, please contact the following members of our team for any assistance.</p>
+                </div>
+
+                <div className="container formatted columns-4 gap-md">
+                    <section>
+                        <h6>SPONSORSHIP ENQUIRIES</h6>
+                       <Photo src={"https://cms.thebench.com/assets/img/site/The-Bench/adult_2025-02-24-114332_lxdz.jpg"}/>
+                        <p><strong>Matthew Weihs</strong><br/>
+                        Growth Director, The Bench<br/>
+                        E: matthew.weihs@thebench.com</p>
+                    </section>
+
+                    <section>
+                        <h6>PROGRAMME ENQUIRIES</h6>
+                        <Photo src={"https://cms.thebench.com/assets/img/site/The-Bench/adult_2025-02-24-130915_gvpl.jpg"}/>
+                        <p><strong>Tanja Millner</strong><br/>
+                        Programme Director<br/>
+                        E: tanja.millner@thebench.com</p>
+                    </section>
+
+                    <section>
+                        <h6>MARKETING OR MEDIA ENQUIRIES</h6>
+                        <Photo src={"https://cms.thebench.com/assets/img/site/The-Bench/ahmed-adult.webp"}/>
+                        <p><strong>Muhammad Ahmed</strong><br/>
+                        Head of Marketing, The Bench<br/>
+                        E: muhammad.ahmed@thebench.com</p><br />
+
+                        <Photo src={"https://cms.thebench.com/assets/img/site/The-Bench/ibrahim-adult.webp"}/>
+                        <p><strong>Muhammad Ibrahim Mohsin</strong><br/>
+                        Marketing Lead, The Bench<br/>
+                        E: ibrahim.mohsin@thebench.com</p>
+                    </section>
+                    
+                    <section>
+                        <h6>INVESTOR RELATIONS ENQUIRIES</h6>
+                        <Photo src={"https://cms.thebench.com/assets/img/site/The-Bench/marina-adult.webp"}/>
+                        <p><strong>Marina Franolic</strong><br/>
+                        Head of Investor Relations<br/>
+                        E: marina.franolic@thebench.com</p>
+                    </section>
+                </div>
+            </section>
+
+
+       
+
+            <Footer />
+            <LenisScroller />
+
+        </>
+    )
+}
+Page.theme = 'egypt'
+
+
+const Photo = ({ src }) => {
+    return (
+        <div style={{ position: `relative`, width: `10rem`, aspectRatio: 1, borderRadius: `1rem`, overflow: `hidden`, marginBottom: `1rem` }}>
+            <img src={ src } alt="" style={{ objectFit: `cover`, width: `100%`, filter: `grayscale(100%)`}} />
+        </div> 
+    )
+}

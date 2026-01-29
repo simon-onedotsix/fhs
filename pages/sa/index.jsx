@@ -731,7 +731,7 @@ export default function Page({ seomatic, partners }) {
                                 theme={{ arrow: `white`, border: `white`, label: `white` }}
                                 target={`_blank`}
                             >
-                               View FHS Speakers
+                               View Past FHS Speakers
                             </ArrowButton>
                         </Pop>
                         <Pop>

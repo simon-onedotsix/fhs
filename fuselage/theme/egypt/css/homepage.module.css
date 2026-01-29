@@ -1,0 +1,9 @@
+.splitSection {
+    aspect-ratio: 16 / 6;
+}
+
+@media(max-width:599px) {
+    .splitSection {
+    aspect-ratio: 1/2;
+}
+}

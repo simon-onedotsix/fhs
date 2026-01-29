@@ -123,14 +123,14 @@ export const MainMenu = ({ otherEvents }) => {
                                                                                 target={ link.newWindow ? '_blank' : '_self'}
                                                                                 onClick={ () => setActive(false)}
                                                                             >
-                                                                                {
+                                                                                {/* {
                                                                                     showFlash &&
                                                                                     <span className={CSS.label}>New!</span>
                                                                                 }
                                                                                 {
                                                                                     showOffers &&
                                                                                     <span className={CSS.label}>See Offers</span>
-                                                                                }
+                                                                                } */}
                                                                                 { link.label }
                                                                             </a>
                                                                         </Link>    

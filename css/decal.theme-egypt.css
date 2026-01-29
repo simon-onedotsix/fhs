@@ -1,0 +1,267 @@
+/* FHS egypt theme */
+
+[data-theme='egypt'] body {
+	background-color: var(--bg-global);
+	color: white;
+}
+
+[data-theme='egypt'] strong {
+    font-weight: 600;
+}
+
+
+[data-theme='egypt'] .c-primary { color: var(--primary); }
+[data-theme='egypt'] .c-secondary { color: var(--secondary); }
+[data-theme='egypt'] .c-accent { color: var(--accent); }
+
+[data-theme='egypt'] .c-p { color: var(--default-text-color); }
+[data-theme='egypt'] .c-h { color: var(--default-heading-color); }
+
+[data-theme='egypt'] .c-black { color: black; }
+[data-theme='egypt'] .c-white { color: white; }
+
+[data-theme='egypt'] .c-light { color: var(--light) }
+[data-theme='egypt'] .c-medium { color: var(--medium) }
+
+
+
+
+[data-theme='egypt'] .bg-global { background-color: var(--bg-global); }
+
+[data-theme='egypt'] .bg-primary { background-color: var(--primary); }
+[data-theme='egypt'] .bg-secondary { background-color: var(--secondary); }
+[data-theme='egypt'] .bg-accent { background-color: var(--accent); }
+
+[data-theme='egypt'] .bg-wash { background-color: var(--wash);}
+[data-theme='egypt'] .bg-light { background-color: var(--light);}
+[data-theme='egypt'] .bg-medium { background-color: var(--medium);}
+[data-theme='egypt'] .bg-dark { background-color: var(--dark);}
+
+
+[data-theme='egypt'] .button {
+    border-color: var(--secondary);
+    background-color: var(--secondary);
+}
+[data-theme='egypt'] .button:hover {
+    border-color: white;
+    background-color: white;
+    color: var(--secondary);
+}
+
+
+
+/* BACKGROUNDS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+[data-theme='egypt'] .bg-secondary,
+[data-theme='egypt'] .bg-secondary .formatted h1,
+[data-theme='egypt'] .bg-secondary .formatted h2,
+[data-theme='egypt'] .bg-secondary .formatted h3,
+[data-theme='egypt'] .bg-secondary .formatted h4,
+[data-theme='egypt'] .bg-secondary .formatted h5,
+[data-theme='egypt'] .bg-secondary .formatted h6 {
+    color: white;
+}
+
+
+[data-theme='egypt'] .bg-medium,
+[data-theme='egypt'] .bg-medium .formatted h1,
+[data-theme='egypt'] .bg-medium .formatted h2,
+[data-theme='egypt'] .bg-medium .formatted h3,
+[data-theme='egypt'] .bg-medium .formatted h4,
+[data-theme='egypt'] .bg-medium .formatted h5,
+[data-theme='egypt'] .bg-medium .formatted h6 {
+    color: white;
+}
+
+
+[data-theme='egypt'] .bg-white {
+    color: var(--default-text-color);
+}
+[data-theme='egypt'] .bg-white .formatted h1,
+[data-theme='egypt'] .bg-white .formatted h2,
+[data-theme='egypt'] .bg-white .formatted h3,
+[data-theme='egypt'] .bg-white .formatted h4,
+[data-theme='egypt'] .bg-white .formatted h5,
+[data-theme='egypt'] .bg-white .formatted h6 {
+    color: var(--secondary);
+}
+
+
+[data-theme='egypt'] .agenda-default{
+    background-color: var(--accent);
+}
+[data-theme='egypt'] .agenda-01{
+    background-color: #ff7b00;
+}
+[data-theme='egypt'] .agenda-02{
+    background-color: #ffaa00;
+}
+[data-theme='egypt'] .agenda-03{
+    background-color: #00a6ff;
+}
+[data-theme='egypt'] .agenda-04{
+    background-color: #56b001;
+}
+[data-theme='egypt'] .agenda-05{
+    background-color: #7fb600;
+}
+
+
+
+
+/* FORMS ––––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+[data-theme='egypt'] .form input[type='submit'] {
+    color: var(--secondary);
+	background-color: white;
+    border: none;
+}
+
+[data-theme='egypt'] .form input[type='submit']:hover {
+	background-color: var(--accent);
+}
+
+
+/* HUBSPOT SPECIFIC */
+
+[data-theme='egypt'] .hs-form-field {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+[data-theme='egypt'] .hs-form-field > label {
+    font-weight: 600;
+}
+
+[data-theme='egypt'] .hs-form-field textarea,
+[data-theme='egypt'] .hs-form-field input[type='text'],
+[data-theme='egypt'] .hs-form-field input[type='password'],
+[data-theme='egypt'] .hs-form-field input[type='tel'],
+[data-theme='egypt'] .hs-form-field input[type='email'] {
+    width: 100% !important;
+    background-color: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-left: 0;
+    padding-right: 0;
+    color: white;
+    font-family: inherit;
+    border-bottom-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-theme='egypt'] select.hs-input {
+    background-color: white;
+	/* color: white !important; */
+    border-color: white !important;
+    background-image: url('/assets/ui/select-chevron.svg');
+}
+
+
+/* default background */
+[data-theme='egypt'] .bg-default .hs-form-field input,
+[data-theme='egypt'] .bg-default .hs-form-field textarea {
+    color: var(--secondary);
+}
+
+
+[data-theme='egypt'] footer.footer .hs-form-field textarea,
+[data-theme='egypt'] footer.footer .hs-form-field input[type='text'],
+[data-theme='egypt'] footer.footer .hs-form-field input[type='password'],
+[data-theme='egypt'] footer.footer .hs-form-field input[type='tel'],
+[data-theme='egypt'] footer.footer .hs-form-field input[type='email'] {
+    border-bottom-color: var(--accent) !important;
+}
+
+
+[data-theme='egypt'] footer .form input {
+    border-bottom-color: var(--accent) !important;
+    /* color: var(--default-text-color) !important; */
+}
+[data-theme='egypt'] footer .form input:focus {
+    border-bottom-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme='egypt'] footer .form input[type='submit'] {
+    color: var(--bg-global) !important;
+	background-color: white;
+    border: none;
+}
+[data-theme='egypt'] footer .form input[type='submit']:hover {
+	background-color: var(--accent);
+}
+
+/* checkbox */
+
+[data-theme='egypt'] .form input[type="checkbox"] {
+    width: 1.1rem !important;
+    height: 1.1rem;
+    appearance: none; /* Removes default styles */
+    background-color: transparent; /* Default background */
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+
+    margin-bottom: -3px;
+}
+
+[data-theme='egypt'] .form input[type="checkbox"]:checked {
+    background-color: var(--primary); /* Changes background when checked */
+    border-color: white;
+    background-image: url('/assets/ui/icon-tick.svg');
+    background-repeat: no-repeat;
+    background-size: .75rem;
+    background-position: center;
+}
+
+/* buttons */
+
+[data-theme='egypt'] .hs_submit, 
+[data-theme='egypt'] .hs-button, 
+[data-theme='egypt'] .hs-submit,
+[data-theme='egypt'] .hs_submit:hover, 
+[data-theme='egypt'] .hs-button:hover,
+[data-theme='egypt'] .hs-submit:hover {
+    border: none !important;
+}
+
+
+
+/* misc */
+
+
+[data-theme='egypt'] form input::placeholder,
+[data-theme='egypt'] form textarea::placeholder {
+  opacity: 0.5;
+  color: white;
+}
+
+
+[data-theme='egypt'] .hs-form-required {
+    color: var(--primary);
+}
+
+[data-theme='egypt'] .hs-error-msgs {
+    list-style: none;
+    color: var(--error);
+    font-weight: 400;
+    padding-left: 0;
+}
+
+[data-theme='egypt'] .hs-error-msg {
+    margin-top: .5rem;
+    color: var(--error);
+    font-weight: 400;
+}
+
+[data-theme='egypt'] .hs-main-font-element {
+    margin-top: .5rem;
+    font-weight: 400;
+}
+
+[data-theme='egypt'] .form-columns-2 {
+    max-width: 100% !important;
+}

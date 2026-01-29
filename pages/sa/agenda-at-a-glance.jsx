@@ -624,6 +624,32 @@ export const Session = ({ startTime, endTime, title, trackID }) => {
 	)
 }
 
+export const SessionLite = ({ startTime, endTime, title, description }) => {
+
+	return (
+		<Pop>
+			<div className={CSS.sessionsWrapper}>
+				<div className={CSS.session}>
+
+					{
+						startTime &&
+						<div className={CSS.sessionHeader}>
+							<Duration startTime={startTime} endTime={endTime} />
+						</div>
+					}
+					
+					<div className={CSS.sessionContent}>
+						<p className={`${CSS.sessionTitle} | fs-5 fw-500 lh-1-1 c-white`}>
+							{ title }
+						</p>
+						<p>{ description }</p>
+					</div>
+				</div>
+			</div>
+		</Pop>
+	)
+}
+
 export const Timeslot = ({ startTime, endTime, trackID, children }) => {
 
 	const t = tracks.find( track => track.id === trackID )

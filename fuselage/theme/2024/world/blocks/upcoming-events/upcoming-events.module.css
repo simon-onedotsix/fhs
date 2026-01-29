@@ -97,3 +97,51 @@
         stroke: var(--dark);
     }
 }
+
+
+
+
+.eventCardLite {
+    background-color: var(--dark);
+    border-radius: 1rem;
+    text-align: center;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.eventCardLiteLogo {
+   width: 100%;
+   margin: .5rem 0;
+}
+
+.eventCardLiteLogo img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.eventCardLiteHeading {
+    background-color: var(--primary);
+    padding: .5rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.eventCardLiteContent {
+    padding: var(--space-xs) var(--space-xs) var(--space-sm);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    
+}
+
+.eventCardLiteActions .websiteButton {
+    border: 1px solid white;
+    font-size: 1rem;
+}
