@@ -43,17 +43,32 @@ export default function Page ({ videoTestimonials }) {
            <Header compact />
 
 
-            <section className="block">
+            <section className="block bg-default">
                 <div className="container center">
                     <h1 className="fs-0 caps">Sponsors & Partners</h1>
                 </div>
 
-                <div className="container center formatted">
-                    <p>Our partners help shape the conversation and connect the market—supporting an environment designed for meaningful introductions and high-quality deal flow</p>
+                <div className="container center formatted maxw-55">
+                    <p className="fs-5">Our partners help shape the conversation and connect the market—supporting an environment designed for meaningful introductions and high-quality deal flow</p>
                 </div>
 
                 <div className="container center">
                     <Pop><p><ButtonKeyline href={`/egypt/forms/become-a-partner`}>Become A Partner</ButtonKeyline></p></Pop>
+                </div>
+            </section>
+
+
+
+            <section className="block bg-default">
+                <div className="container center">
+                    <p className="fs-4 fw-500 c-primary pb-xs">Headline Sponsors</p>
+                    <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/KOFISI-Logo.png`} />&emsp;
+                    <LogoBox size={250} logoUrl={`https://static.swapcard.com/public/images/509f8a7dcf094ebf9f9ad42481e5f9fe.png`} />
+                </div>
+
+                <div className="container center">
+                    <p className="fs-4 fw-500 c-primary pb-xs">Gold Sponsors</p>
+                    <LogoBox size={250} logoUrl={`/assets/img/egypt/partners/jll.png`} />
                 </div>
             </section>
 
@@ -109,6 +124,33 @@ export default function Page ({ videoTestimonials }) {
     )
 }
 Page.theme = 'egypt'
+
+
+
+const LogoBox = ({ logoUrl, size = 150}) => {
+    return (
+        <Pop inline>
+            <div
+                style={{
+                    position: `relative`,
+                    width: size,
+                    aspectRatio: 19 / 9,
+                    display: `flex`,
+                    justifyContent: `center`,
+                    alignItems: `center`,
+
+                    backgroundColor: `white`,
+                    padding: 20,
+                    borderRadius: 10
+                }}
+            >
+                <img src={logoUrl} alt="" style={{ objectFit: `contain`, width: `100%`, height: `100%`}} />
+            </div>
+        </Pop>
+    )
+}
+
+
 
 
 export async function getStaticProps() {

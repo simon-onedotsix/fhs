@@ -21,6 +21,38 @@ export const Footer = () => {
     const contactInfo = localGlobals[2].contactDetails[0].body
     const socialConnections = localGlobals[2].socialConnections
 
+
+    const EGYPT_SOCIAL_CONNECTIONS = [
+        {
+            "__typename": "socialConnections_BlockType",
+            "id": "9255",
+            "hyperlink": "https://www.facebook.com/people/FHS-Egypt/61587346197088/",
+            "icon": "facebook",
+            "label": null
+        },
+        {
+            "__typename": "socialConnections_BlockType",
+            "id": "9256",
+            "hyperlink": "https://x.com/fhsegypt",
+            "icon": "twitter",
+            "label": null
+        },
+        {
+            "__typename": "socialConnections_BlockType",
+            "id": "9257",
+            "hyperlink": "https://www.linkedin.com/showcase/fhs-egypt/",
+            "icon": "linkedin",
+            "label": null
+        },
+        {
+            "__typename": "socialConnections_BlockType",
+            "id": "9259",
+            "hyperlink": "https://www.instagram.com/fhsegypt/",
+            "icon": "instagram",
+            "label": null
+        }
+    ]
+
     return (
         <footer className={`${CSS.footer} block`}>
             <div className={`container columns-3 gap-md formatted`}>
@@ -30,8 +62,7 @@ export const Footer = () => {
                         <p className='fs-5 fw-600 c-accent mt-sm'>#FutureHospitalitySummit</p>
                         <p className='flex flex-wrap gap-xxs mt-sm'>
                             {
-                                socialConnections &&
-                                socialConnections.map( connection => {
+                                EGYPT_SOCIAL_CONNECTIONS.map( connection => {
                                     return (
                                         <ButtonSocial 
                                             key={connection.id} 
