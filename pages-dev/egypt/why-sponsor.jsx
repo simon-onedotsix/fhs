@@ -15,7 +15,7 @@ import { Header } from '../../fuselage/theme/egypt/common/header/header'
 import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
 
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
-import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
+import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 
 import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
@@ -48,7 +48,7 @@ export default function Page () {
                 </div>
 
                 <div className="container center">
-                    <p><ButtonKeyline href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></p>
+                    <Pop><p><ButtonKeyline href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></p></Pop>
                 </div>
             </section>
 
@@ -141,7 +141,7 @@ export default function Page () {
                         Mobile / WhatsApp: + 44 (0)7858 511012<br />
                         Email: <a href="matthew.weihs@thebench.com">matthew.weihs@thebench.com</a></p>
                         
-                        <p className="mt-sm"><ButtonKeyline href={`/egypt/contact-us`}>Contact Us</ButtonKeyline></p>
+                        <p className="mt-sm"><Pop inline><ButtonKeyline href={`/egypt/contact-us`}>Contact Us</ButtonKeyline></Pop></p>
                     </section>
                 </div>
             </section>

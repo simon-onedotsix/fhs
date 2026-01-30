@@ -88,6 +88,30 @@
     color: var(--secondary);
 }
 
+[data-theme='egypt'] .bg-dark {
+    color: white;
+}
+[data-theme='egypt'] .bg-dark .formatted h1,
+[data-theme='egypt'] .bg-dark .formatted h2,
+[data-theme='egypt'] .bg-dark .formatted h3,
+[data-theme='egypt'] .bg-dark .formatted h4,
+[data-theme='egypt'] .bg-dark .formatted h5,
+[data-theme='egypt'] .bg-dark .formatted h6 {
+    color: var(--secondary);
+}
+
+[data-theme='egypt'] .bg-default {
+    color: white;
+}
+[data-theme='egypt'] .bg-default .formatted h1,
+[data-theme='egypt'] .bg-default .formatted h2,
+[data-theme='egypt'] .bg-default .formatted h3,
+[data-theme='egypt'] .bg-default .formatted h4,
+[data-theme='egypt'] .bg-default .formatted h5,
+[data-theme='egypt'] .bg-default .formatted h6 {
+    color: var(--primary);
+}
+
 
 [data-theme='egypt'] .agenda-default{
     background-color: var(--accent);

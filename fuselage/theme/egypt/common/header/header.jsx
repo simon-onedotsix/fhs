@@ -76,7 +76,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                     eventsLabel={`Our events:`}
                     events={otherEvents} 
                     theme={{ 
-                        background: 'var(--blue-dark)',
+                        background: 'var(--primary)',
                         color: 'white',
                         accent: 'white'
                     }}
@@ -91,7 +91,8 @@ export const Header = ({ compact, overlaid, inverse }) => {
                             <a className={CSS.logo}>
                                 <FhsLockup
                                     sectorLabel={'EGYPT'}
-                                    sectorColor={'var(--primary)'}
+                                    sectorColor={'var(--accent)'}
+                                    topColor={`var(--primary)`}
                                     inverse
                                 />
                             </a>

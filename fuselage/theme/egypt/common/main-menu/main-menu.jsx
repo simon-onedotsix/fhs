@@ -186,9 +186,9 @@ export const MainMenu = ({ otherEvents }) => {
                     <Button 
                         href={`/egypt/forms/register-interest`} 
                         theme={{ 
-                            color: `var(--bg-global)`,
-                            background: `white`, 
-                            hover: `var(--blue-light)`
+                            color: `var(--secondary)`,
+                            background: `var(--accent)`, 
+                            hover: `white`
                         }} 
                         decal={`fw-600`}
                     >
@@ -198,9 +198,9 @@ export const MainMenu = ({ otherEvents }) => {
                     <Button 
                         href={`/egypt/forms/become-a-partner`} 
                         theme={{ 
-                            color: `var(--bg-global)`,
-                            background: `white`, 
-                            hover: `var(--blue-light)`
+                            color: `var(--secondary)`,
+                            background: `var(--accent)`, 
+                            hover: `white`
                         }} 
                         decal={`fw-600`}
                     >
@@ -239,7 +239,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                         className={`
                                                             ${CSS.heading}
                                                             fw-600
-                                                            ${item.headingSize === 'lg' ? 'fs-5 c-accent mb-xxs' : ''}
+                                                            ${item.headingSize === 'lg' ? 'fs-5 c-primary mb-xxs' : ''}
                                                             ${item.headingSize === 'md' ? 'fs-6' : ''}
                                                             ${item.headingSize === 'sm' ? 'fs-default' : ''}
                                                         `} 
@@ -299,11 +299,11 @@ export const MainMenu = ({ otherEvents }) => {
 
 
                     <section className="c-white">
-                        <p className="fs-4 fw-600 c-accent">Future Hospitality Events</p>
+                        <p className="fs-4 fw-600 c-primary">Future Hospitality Events</p>
                         <p className="mt-xs pb-xs">
                             <ArrowButton 
                                 href={ '/' } 
-                                theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
+                                theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}
                             >
                                 FHS
                             </ArrowButton>
@@ -311,7 +311,7 @@ export const MainMenu = ({ otherEvents }) => {
                         <p className="pb-xs">
                             <ArrowButton 
                                 href={ '/sa' } 
-                                theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
+                                theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}
                             >
                                 FHS Saudi Arabia
                             </ArrowButton>
@@ -319,7 +319,7 @@ export const MainMenu = ({ otherEvents }) => {
                         <p className="pb-xs">
                             <ArrowButton 
                                 href={ 'https://www.ahif.com' } 
-                                theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
+                                theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}
                             >
                                 FHS Africa
                             </ArrowButton>
@@ -327,7 +327,7 @@ export const MainMenu = ({ otherEvents }) => {
                         <p className="pb-sm">
                             <ArrowButton 
                                 href={ 'https://www.brandedresidencesforum.com/' } 
-                                theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
+                                theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}
                             >
                                 Branded Residences Forum
                             </ArrowButton>
@@ -335,7 +335,7 @@ export const MainMenu = ({ otherEvents }) => {
                     </section>
 
                     <section className="c-white">
-                        <p className="fs-4 fw-600 c-accent">Our Other Events</p>
+                        <p className="fs-4 fw-600 c-primary">Our Other Events</p>
                         {
                             otherEvents.length &&
                             otherEvents.map( event => {
@@ -343,7 +343,7 @@ export const MainMenu = ({ otherEvents }) => {
                                     <p key={event.id} className="mt-xs">
                                         <ArrowButton 
                                             href={ event.url } 
-                                            theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
+                                            theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}
                                             target={ event.target && '_blank' }
                                         >
                                             { event.title }

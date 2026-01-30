@@ -1,0 +1,32 @@
+.button {
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	font-family: var(--default-font-family);
+	padding: .75rem 2.5rem;
+	border: 1px solid var(--accent);
+	border-radius: var(--default-button-radius);
+	background-color: transparent;
+	color: white;
+	transition: all 500ms ease-in-out;
+	text-align: center;
+	font-weight: 500;
+}
+
+
+.button:hover {
+	transition: all 250ms ease-in-out;
+	background-color: white;
+	border-color: white;
+	color: var(--secondary);
+}
+
+
+.small {
+	padding: .25rem 1rem;
+}
+
+.disabled {
+	pointer-events: none;
+	opacity: .5;
+}

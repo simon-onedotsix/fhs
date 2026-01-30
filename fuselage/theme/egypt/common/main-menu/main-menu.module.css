@@ -5,12 +5,12 @@
     width: 48px;
     border-radius: var(--default-button-radius);
     border-radius: 3rem;
-    background-color: white;
+    background-color: var(--accent);
     transition: all .35s ease;
 }
 
 .toggle span {
-    background-color: var(--primary);
+    background-color: var(--secondary);
     border: none;
     height: 2px;
     width: 16px;
@@ -27,14 +27,14 @@
 .toggle.active span:nth-of-type(2) {transform: translateY(0) rotate(45deg);}
 .toggle.active span:nth-of-type(3) {transform: translateY(0) rotate(-45deg);}
 
-/* @media(hover:hover) {
+@media(hover:hover) {
     .toggle:hover {
-        background-color: var(--secondary-1-dark);
-    }
-    .toggle:hover span {
         background-color: white;
     }
-} */
+    /* .toggle:hover span {
+        background-color: white;
+    } */
+}
 
 
 

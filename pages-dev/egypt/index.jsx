@@ -17,7 +17,7 @@ import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/
 import { Header } from '../../fuselage/theme/egypt/common/header/header'
 import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
 
-import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
+import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 
@@ -125,7 +125,7 @@ export default function Home ({ data, content }) {
                         <h1 className="fs-0 caps">Where Legacy <br />Inspires Investment</h1>
                         <h4 className="fs-4">10/11 November 2026, Cairo</h4>
 
-                        <p className="mt-md"><ButtonKeyline href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></p>
+                        <p className="mt-md"><Pop><ButtonKeyline href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></Pop></p>
                     </div>
                 </section>
 
@@ -216,7 +216,7 @@ export default function Home ({ data, content }) {
                 </div>
 
                 <div className="container center">
-                    <p><ButtonKeyline href={`/egypt/forms/register-interest`}>Register Interest</ButtonKeyline></p>
+                    <p><Pop><ButtonKeyline href={`/egypt/forms/register-interest`}>Register Interest</ButtonKeyline></Pop></p>
                 </div>
             </section>
 
@@ -248,7 +248,7 @@ export default function Home ({ data, content }) {
                 </div>
 
                 <div className="container center">
-                    <p><ButtonKeyline href={`/egypt/speakers`}>View Past Speakers</ButtonKeyline></p>
+                    <p><Pop><ButtonKeyline href={`/egypt/speakers`}>View Past Speakers</ButtonKeyline></Pop></p>
                 </div>
             </section>
             
@@ -271,7 +271,7 @@ export default function Home ({ data, content }) {
                 </div>
 
                 <div className="container center">
-                    <p><ButtonKeyline href={`/egypt/agenda`}>View Agenda-at-glance</ButtonKeyline></p>
+                    <p><Pop><ButtonKeyline href={`/egypt/agenda`}>View Agenda-at-glance</ButtonKeyline></Pop></p>
                 </div>
             </section>
 

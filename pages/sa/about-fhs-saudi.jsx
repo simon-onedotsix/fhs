@@ -21,7 +21,7 @@ import CSS from '../../css/app/lead-wall.module.css'
 
 
 
-const INDUSTRY_DATA = [
+export const INDUSTRY_DATA = [
     {
         label: 'Hotel/Resort Operator',
         value: 19.6
@@ -162,7 +162,7 @@ const INDUSTRY_DATA_AR = [
     },
 ]
 
-const LEVEL_DATA = [
+export const LEVEL_DATA = [
     {
         label: 'Director / VP / Head / Principal',
         value: 39

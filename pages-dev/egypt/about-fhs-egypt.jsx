@@ -15,20 +15,17 @@ import { Header } from '../../fuselage/theme/egypt/common/header/header'
 import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
 
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
-import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
+import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 
-import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
-import { PopupOverlay } from "../../fuselage/components/popup-overlay/popup-overlay"
-
-import { HeroUnitVideo } from "../../fuselage/theme/2025/world/pages/home/hero-unit-video"
-import { ThemeBillboard, Tri } from "../../fuselage/theme/2025/world/pages/home/theme-billboard"
+import { BarChart, Field } from '../../fuselage/theme/egypt/components/bar-chart/bar-chart'
+import { INDUSTRY_DATA } from "../sa/about-fhs-saudi"
+import { LEVEL_DATA } from "../sa/about-fhs-saudi"
 
 import CSS from '../../fuselage/theme/2025/sa/css/investors.module.css'
 
-
-
-export default function Page () {
+export default function Page() {
+    
 
     return (
         <>
@@ -46,7 +43,7 @@ export default function Page () {
                     <h1 className="fs-0 caps">ABOUT FHS EGYPT</h1>
                 </div>
 
-                <div className="container center formatted">
+                <div className="container center formatted maxw-60">
                     <p>For over a decade, the Future Hospitality Summit has been a trusted platform for shaping hospitality investment across emerging and established markets. FHS Egypt builds on this legacy, bringing the FHS model to one of the region&apos;s most dynamic and historically significant hospitality markets. Designed as a focused investment forum, FHS Egypt connects global investors, developers, operators, and public-sector leaders to unlock new opportunities across Egypt&apos;s evolving tourism and real estate landscape.</p>
                     <p>Hosted in Cairo, FHS Egypt sits at the crossroads of Africa, the Middle East, and Europe, reflecting Egypt&apos;s strategic role as a regional gateway for capital and tourism. Backed by Egypt Vision 2030, the country is experiencing renewed momentum driven by infrastructure investment, tourism reform, and large-scale development across coastal, cultural, and urban destinations.</p>
                 </div>
@@ -65,8 +62,24 @@ export default function Page () {
                     <h1 className="fs-1">Audience Breakdown (Expected)</h1>
                 </div>
             
-                <div className="container center">
-                    <p>[ Can we copy &apos;By Industry&apos; & &apos;By Seniority&apos; from here: https://www.futurehospitality.com/sa/about-fhs-saudi ]</p>
+                <div className="container columns-2 gap-lg">
+                    <section>
+                        <p className="fs-4 pb-sm caps c-primary center">By Industry</p>
+                        <BarChart>
+                            {
+                                INDUSTRY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 22 }} />)
+                            }
+                        </BarChart>
+                    </section>
+                    
+                    <section>
+                        <p className="fs-4 pb-sm caps c-primary center">Job Seniority</p>
+                        <BarChart>
+                            {
+                                LEVEL_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 42 }} />)
+                            }
+                        </BarChart>
+                    </section>
                 </div>
             </section>
 

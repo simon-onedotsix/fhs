@@ -15,7 +15,7 @@ import { Header } from '../../fuselage/theme/egypt/common/header/header'
 import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
 
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
-import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
+import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
@@ -213,11 +213,11 @@ export default function Page () {
             <section className="block bg-default">
                 <div className="container center">
                     <h1 className="fs-0 caps">Speakers</h1>
-                    <p className="fs-5">FHS events bring together global leaders in hospitality investment, development, operations and government. Speakers for FHS Egypt will be announced soon</p>
+                    <p className="fs-5 maxw-55 mx-auto">FHS events bring together global leaders in hospitality investment, development, operations and government. Speakers for FHS Egypt will be announced soon</p>
                 </div>
 
                 <div className="container center">
-                    <p><ButtonKeyline href={`/egypt/forms/register-interest`}>Stay Updated</ButtonKeyline></p>
+                    <Pop><p><ButtonKeyline href={`/egypt/forms/register-interest`}>Stay Updated</ButtonKeyline></p></Pop>
                 </div>
             </section>
 

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Pop } from '../../../../../animation/animation'
 
 import Image from 'next/image'
 
@@ -169,10 +170,12 @@ export const EventCardLite = ({ heading, logo, venue, dates, dateOverride, websi
                 {
                     websiteLink &&
                     <div className={CSS.eventCardLiteActions}>
-                        <p className='fs-5'>
-                            <a className={CSS.websiteButton} href={websiteLink} target='_blank'>
-                                Website <ExternalLinkIcon />
-                            </a>
+                            <p className='fs-5'>
+                            <Pop delay={.1}>
+                                <a className={CSS.websiteButton} href={websiteLink} target='_blank'>
+                                    Website <ExternalLinkIcon />
+                                </a>
+                            </Pop>
                         </p>
                     </div>
                 }

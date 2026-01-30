@@ -6,19 +6,19 @@
     --blue-mid: #66AECE;
     --blue-dark: #258CBA;
 
-    --primary: var(--blue-dark);
-    --secondary: var(--blue-mid);
-    --accent: var(--blue-light);
+    --primary: #009CA6;
+    --secondary: #3C1053;
+    --accent: #F5812B;
 
-    --bg-global: hsl(from var(--primary) h s calc(l - 25) / 1);
+    --bg-global: hsl(from var(--secondary) h s calc(l - 0) / 1);
 
     --default-text-color: rgb(56, 56, 56);
     --default-heading-color: var(--secondary);
 
-    --wash: hsl(from var(--blue-light) h s calc(l + 10) / 1);
-    --light: hsl(from var(--blue-light) h s calc(l + 5) / 1);
-    --medium: hsl(from var(--primary) h s calc(l - 25) / 1);
-    --dark: hsl(from var(--primary) h s calc(l - 30) / 1);
+    --wash: hsl(from var(--primary) h s calc(l + 10) / 1);
+    --light: hsl(from var(--primary) h s calc(l + 5) / 1);
+    --medium: hsl(from var(--bg-global) h s calc(l + 5) / 1);
+    --dark: hsl(from var(--bg-global) h s calc(l - 5) / 1);
 
     --error: rgb(255, 68, 0);
     --success: rgb(121, 173, 0);
