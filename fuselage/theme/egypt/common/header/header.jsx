@@ -42,7 +42,7 @@ const otherEvents = [
     {
         id: 6,
         title: 'AviaDev',
-        url: 'https://www.aviationdevelop.com',
+        url: 'https://www.aviadev.com',
         target: true
     },
     {

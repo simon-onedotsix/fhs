@@ -153,9 +153,8 @@ export default function Home ({ data, content }) {
                         content:
                             <div style={{ padding: `var(--space-lg)`, pointerEvents: `none`}}>
                                 <SplitSection>
-                                    <div className="container maxw-50 center">
-                                    <p className="fs-1 fw-500 lh-1">EGYPT IS ENTERING A NEW GROWTH CYCLE</p>
-                                    <p className="fs-5 mt-sm">A rare combination of scale, connectivity and reform is accelerating hospitality investment across cultural, coastal and urban destinations</p>
+                                    <div className="container">
+                                    <p className="fs-1 fw-500 lh-1 maxw-45">EGYPT IS ENTERING A NEW GROWTH CYCLE</p>
                                 </div>
                                 </SplitSection>
                             </div>
@@ -166,7 +165,7 @@ export default function Home ({ data, content }) {
                             <Carousel>
                                 <Billboard hero={{ url: `/assets/img/egypt/homepage/egypt-01.jpg` }} tint={30}>
                                     <SplitSection bottom>
-                                        <div className="container center">
+                                        <div className="container center bg-black-60 p-sm rad-sm">
                                             <p className="fs-3 fw-600 lh-2 balance">Record-Breaking Tourism Demand</p>
                                             <p className="fs-5 balance">Egypt welcomed <strong>19 million tourists</strong> in 2025, marking a record year for inbound travel and highlighting sustained demand across leisure, cultural, and urban hospitality destinations.</p>
                                         </div>
@@ -175,7 +174,7 @@ export default function Home ({ data, content }) {
 
                                 <Billboard hero={{ url: `/assets/img/egypt/homepage/egypt-02.jpg` }} tint={30}>
                                     <SplitSection bottom>
-                                        <div className="container center">
+                                        <div className="container center bg-black-60 p-sm rad-sm">
                                             <p className="fs-3 fw-600 lh-2 balance">Growing Hospitality Investment Market</p>
                                             <p className="fs-5 balance">Egypt&apos;s hospitality sector is projected to reach a market value of <strong>USD 8.8 billion by 2033</strong>, with hotel revenues expected to grow from <strong>USD 2.85 billion to USD 3.60 billion</strong> between <strong>2025 and 2029</strong>, underpinned by new developments and expanding tourism flows.</p>
                                             <small>Source: IMARC Group 2025</small>
@@ -185,7 +184,7 @@ export default function Home ({ data, content }) {
 
                                 <Billboard hero={{ url: `/assets/img/egypt/homepage/africa-map.jpg` }} tint={30}>
                                     <SplitSection bottom>
-                                        <div className="container center">
+                                        <div className="container center bg-black-60 p-sm rad-sm">
                                             <p className="fs-3 fw-600 lh-2 balance">Strategic Gateway for Global Capital</p>
                                             <p className="fs-5 balance">Located at the crossroads of Africa, the Middle East, and Europe, Egypt&apos;s hospitality growth is supported by <strong>Egypt Vision 2030</strong>, driving investment in infrastructure, tourism incentives, and policy reform to create a compelling environment for long-term, scalable hospitality development.</p>
                                         </div>
@@ -226,7 +225,7 @@ export default function Home ({ data, content }) {
 
             <section className="block bg-dark">
                 <div className="container center">
-                    <p className="fs-1 fw-500">THESE HAVE SPOKEN AT OUR CONFERENCES</p>
+                    <p className="fs-1 fw-500">THEY HAVE SPOKEN AT OUR CONFERENCES</p>
                     <p className="fs-5 mt-xs">Speaker line-up coming soon</p>
                 </div>
 

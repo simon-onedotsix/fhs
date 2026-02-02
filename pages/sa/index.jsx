@@ -508,70 +508,90 @@ export default function Page({ seomatic, partners }) {
                     </div>
                 </Fade>
 
-                {/* HOST SPONSOR */}
-                <section className="block">
-                    <div className="container center">
-                        <p className="fs-3 fw-600 c-accent caps">{ locale === 'ar' ? "الجهات الراعية المستضيفة" : "Host Sponsors" }</p>
+
+                <section className="mt-lg">
+                    <div className={CSS.boxout}>
+
+                        {/* HOST SPONSOR */}
+                       
+                        <div className="center">
+                            <p className="fs-4 fw-600 c-accent caps pb-xs">{locale === 'ar' ? "الجهات الراعية المستضيفة" : "Host Sponsors"}</p>
+                        
                             <Pop>
-                                <div className={`${CSS.hostSponsorLogoWrapper} mt-sm mx-auto`}>
-                                    <Image src={`/assets/site/sa/mandarin-oriental-al-faisaliah-logo-update.png`} width={800} height={800}/>
-                                    <Image src={`/assets/site/sa/al-khozama-logo-2025.png`} width={830} height={427}/>
+                                <div className={`${CSS.hostSponsorLogoWrapper} mx-auto px-xs`}>
+                                    <div className={CSS.hostSponsorLogo}>
+                                        <Image src={`/assets/site/sa/mandarin-oriental-al-faisaliah-logo-update.png`} layout="fill"/>
+                                    </div>
+                                    <div className={CSS.hostSponsorLogo}>
+                                        <Image src={`/assets/site/sa/al-khozama-logo-2025.png`} layout="fill"/>
+                                    </div>
                                 </div>
                             </Pop>
-                    </div>
-                </section>
-
-
-                {/* PATRONAGE */}
-                <section className="block">
-                    <div className="container center">
-                        <p className="fs-3 fw-600 c-accent caps pb-sm">{ locale === 'ar' ? "تحت رعاية" : "Under the Patronage of" }</p>
-
-                        <div className={CSS.patronBox}>
-
-                            <div className={CSS.patronBoxAvatar}>
-                                <Pop>
-                                    <div className={CSS.avatar}>
-                                        <Image src={"https://static.swapcard.com/public/images/77e27e150ec94e1d8c549fbb6e6f065b.jpeg"} layout='fill' alt="" unoptimized />
-                                    </div>
-                                </Pop>
-                            </div>
-
-                            <div className={CSS.patronBoxContent}>
-                                <Pop>
-                                    {
-                                        locale === 'ar'
-                                        ?
-                                            <>
-                                                <p className="fs-4 fw-600">صاحب السمو الأمير بندر بن سعود بن خالد آل سعود</p>
-                                                <p className="fs-5 mt-xxs">
-                                                    الأمين العام لمؤسسة الملك فيصل (KFF)
-                                                <br/>
-                                                    رئيس مجلس إدارة الخزامى
-                                                </p>
-                                            </>
-                                        :
-                                            <>
-                                                <p className="fs-4 fw-600">HH Prince Bandar bin Saud bin Khalid Al Saud</p>
-                                                <p className="fs-5 mt-xxs">
-                                                    Secretary General King Faisal Foundation&nbsp;(KFF)<br/>
-                                                    Chairman of the Board of Directors Al&nbsp;Khozama
-                                                </p>
-                                            </>
-                                    }
-                                    
-
-                                </Pop>
-                            </div>
                         </div>
-                        
-                        <p className="mt-xs caps fs-sm c-accent">
-                            <Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}>
-                                <a className="uLink">{ locale === 'ar' ? "عرض السيرة الذاتية" : "View biography" }</a>
-                            </Link>
-                        </p>
+                      
+
+
+                        {/* PATRONAGE */}
+                    
+                        <div className="">
+                            <p className="fs-4 fw-600 c-accent caps pb-xs center balance lh-1">{ locale === 'ar' ? "تحت رعاية" : "Under the Patronage of" }</p>
+
+                            <div className={CSS.patronBox}>
+
+                                    <Pop>
+                                <div className={CSS.patronBoxAvatar}>
+                                        <div className={CSS.avatar}>
+                                            <Image src={"https://static.swapcard.com/public/images/77e27e150ec94e1d8c549fbb6e6f065b.jpeg"} layout='fill' alt="" unoptimized />
+                                        </div>
+                                </div>
+                                    </Pop>
+
+                                <div className={CSS.patronBoxContent}>
+                                    <Pop>
+                                        {
+                                            locale === 'ar'
+                                            ?
+                                                <>
+                                                    <p className="fs-5 fw-600">صاحب السمو الأمير بندر بن سعود بن خالد آل سعود</p>
+                                                    <p className="mt-xxs">
+                                                        الأمين العام لمؤسسة الملك فيصل (KFF)
+                                                    <br/>
+                                                        رئيس مجلس إدارة الخزامى
+                                                    </p>
+                                                    <p className="mt-xxss">
+                                                        <Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}>
+                                                            <a className="uLink c-accent">عرض السيرة الذاتية</a>
+                                                        </Link>
+                                                    </p>
+                                                </>
+                                            :
+                                                <>
+                                                    <p className="fs-5 fw-600 balance">HH Prince Bandar bin Saud bin Khalid Al Saud</p>
+                                                    <p className="mt-xxs">
+                                                        Secretary General King Faisal Foundation&nbsp;(KFF)<br/>
+                                                        Chairman of the Board of Directors Al&nbsp;Khozama
+                                                    </p>
+                                                    <p className="mt-xxss">
+                                                        <Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}>
+                                                            <a className="uLink c-accent">View biography</a>
+                                                        </Link>
+                                                    </p>
+                                                </>
+                                        }
+                                        
+
+                                    </Pop>
+                                </div>
+                            </div>
+                            
+                        </div>
+                      
+
                     </div>
                 </section>
+
+
+
 
             </VideoSection>
 

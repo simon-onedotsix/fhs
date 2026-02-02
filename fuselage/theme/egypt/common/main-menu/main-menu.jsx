@@ -318,7 +318,7 @@ export const MainMenu = ({ otherEvents }) => {
                         </p>
                         <p className="pb-xs">
                             <ArrowButton 
-                                href={ 'https://www.ahif.com' } 
+                                href={ '/africa' } 
                                 theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}
                             >
                                 FHS Africa

@@ -86,3 +86,10 @@ a { color: inherit; }
     
 }
 
+
+.logoGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-xs)
+}

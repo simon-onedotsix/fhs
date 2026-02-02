@@ -14,6 +14,7 @@ import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/
 import { Header } from '../../fuselage/theme/egypt/common/header/header'
 import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
 
+import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
 import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
@@ -36,22 +37,26 @@ export default function Page() {
             <Header compact />
 
 
-            {/* SECTION 1 */}
+            <PageHeroImage hero={{ url: '/assets/img/egypt/about/about-hero.jpg', width: 4122, height: 2845 }} >
+                            
+                <section className="block">
+                    <div className="container center">
+                        <h1 className="fs-0 caps">ABOUT FHS EGYPT</h1>
+                    </div>
+
+                    <div className="container center formatted maxw-60">
+                        <p>For over a decade, the Future Hospitality Summit has been a trusted platform for shaping hospitality investment across emerging and established markets. FHS Egypt builds on this legacy, bringing the FHS model to one of the region&apos;s most dynamic and historically significant hospitality markets. Designed as a focused investment forum, FHS Egypt connects global investors, developers, operators, and public-sector leaders to unlock new opportunities across Egypt&apos;s evolving tourism and real estate landscape.</p>
+                        <p>Hosted in Cairo, FHS Egypt sits at the crossroads of Africa, the Middle East, and Europe, reflecting Egypt&apos;s strategic role as a regional gateway for capital and tourism. Backed by Egypt Vision 2030, the country is experiencing renewed momentum driven by infrastructure investment, tourism reform, and large-scale development across coastal, cultural, and urban destinations.</p>
+                    </div>
+
+                    <div className="container center">
+                        <p><ButtonKeyline href={`/egypt/forms/become-a-partner`}>Partner with Us</ButtonKeyline></p>
+                    </div>
+                </section>
+
+            </PageHeroImage>
+
             
-            <section className="block">
-                <div className="container center">
-                    <h1 className="fs-0 caps">ABOUT FHS EGYPT</h1>
-                </div>
-
-                <div className="container center formatted maxw-60">
-                    <p>For over a decade, the Future Hospitality Summit has been a trusted platform for shaping hospitality investment across emerging and established markets. FHS Egypt builds on this legacy, bringing the FHS model to one of the region&apos;s most dynamic and historically significant hospitality markets. Designed as a focused investment forum, FHS Egypt connects global investors, developers, operators, and public-sector leaders to unlock new opportunities across Egypt&apos;s evolving tourism and real estate landscape.</p>
-                    <p>Hosted in Cairo, FHS Egypt sits at the crossroads of Africa, the Middle East, and Europe, reflecting Egypt&apos;s strategic role as a regional gateway for capital and tourism. Backed by Egypt Vision 2030, the country is experiencing renewed momentum driven by infrastructure investment, tourism reform, and large-scale development across coastal, cultural, and urban destinations.</p>
-                </div>
-
-                <div className="container center">
-                    <p><ButtonKeyline href={`/egypt/forms/become-a-partner`}>Partner with Us</ButtonKeyline></p>
-                </div>
-            </section>
 
 
 

@@ -44,13 +44,19 @@ export default function Page () {
                     <p className="balance maxw-55">For any general event or registration queries, you can email us at <a href="mailto:hello@thebench.com">hello@thebench.com</a>. For specific queries, please contact the following members of our team for any assistance.</p>
                 </div>
 
-                <div className="container formatted columns-4 gap-md">
+                <div className="container formatted columns-3 gap-md">
                     <section>
                         <h6>SPONSORSHIP ENQUIRIES</h6>
                        <Pop inline><Photo src={"https://cms.thebench.com/assets/img/site/The-Bench/adult_2025-02-24-114332_lxdz.jpg"}/></Pop>
                         <p><strong>Matthew Weihs</strong><br/>
                         Growth Director, The Bench<br/>
                         E: matthew.weihs@thebench.com</p>
+                        
+                        <h6>OPERATIONAL ENQUIRIES</h6>
+                       <Pop inline><Photo src={"https://cms.thebench.com/assets/img/avatars/Screenshot-2023-08-03-at-3.54.04-PM.png"}/></Pop>
+                        <p><strong>Mala Patel</strong><br/>
+                        Event Director – Africa | COO, AviaDev, The Bench<br/>
+                        E: mala.patel@thebench.com</p>
                     </section>
 
                     <section>
@@ -58,7 +64,13 @@ export default function Page () {
                         <Pop inline><Photo src={"https://cms.thebench.com/assets/img/site/The-Bench/adult_2025-02-24-130915_gvpl.jpg"}/></Pop>
                         <p><strong>Tanja Millner</strong><br/>
                         Programme Director<br/>
-                        E: tanja.millner@thebench.com</p>
+                            E: tanja.millner@thebench.com</p>
+                        
+                        <h6>INVESTOR RELATIONS ENQUIRIES</h6>
+                        <Pop inline><Photo src={"https://cms.thebench.com/assets/img/site/The-Bench/marina-adult.webp"}/></Pop>
+                        <p><strong>Marina Franolic</strong><br/>
+                        Head of Investor Relations<br/>
+                        E: marina.franolic@thebench.com</p>
                     </section>
 
                     <section>
@@ -74,13 +86,6 @@ export default function Page () {
                         E: ibrahim.mohsin@thebench.com</p>
                     </section>
                     
-                    <section>
-                        <h6>INVESTOR RELATIONS ENQUIRIES</h6>
-                        <Pop inline><Photo src={"https://cms.thebench.com/assets/img/site/The-Bench/marina-adult.webp"}/></Pop>
-                        <p><strong>Marina Franolic</strong><br/>
-                        Head of Investor Relations<br/>
-                        E: marina.franolic@thebench.com</p>
-                    </section>
                 </div>
             </section>
 

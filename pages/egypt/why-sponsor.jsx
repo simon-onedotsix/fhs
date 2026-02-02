@@ -14,6 +14,7 @@ import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/
 import { Header } from '../../fuselage/theme/egypt/common/header/header'
 import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
 
+import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
 import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
@@ -22,7 +23,7 @@ import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quo
 
 
 
-import CSS from '../../fuselage/theme/2025/sa/css/investors.module.css'
+import CSS from '../../fuselage/theme/egypt/css/sponsors.module.css'
 
 
 
@@ -36,21 +37,25 @@ export default function Page () {
         
             <Header compact />
 
+            <PageHeroImage hero={{ url: '/assets/img/egypt/why-sponsor/why-sponsor-hero.jpg', width: 2000, height: 1198 }} >
+            
+                <section className="block bg-default">
+                    <div className="container center maxw-45">
+                        <h1 className="fs-0 lh-1 caps">Why Partner with FHS Egypt 2026?</h1>
+                    </div>
 
-            <section className="block bg-default">
-                <div className="container center maxw-40">
-                    <h1 className="fs-0 lh-1 caps">Why Partner with FHS Egypt 2026?</h1>
-                </div>
+                    <div className="container center formatted">
+                        <p className="fs-4 fw-600 maxw-45 mx-auto">Partnering with FHS Egypt places your brand at the heart of North Africa&apos;s hospitality investment boom.</p>
+                        <p>Connect directly with senior investors, developers, and decision-makers shaping Egypt&apos;s tourism and infrastructure future. With high-impact visibility, curated networking, and access to active deal flow, FHS Egypt is where partnerships are built, influence is strengthened, and business gets done.</p>
+                    </div>
 
-                <div className="container center formatted">
-                    <p className="fs-4 fw-600 maxw-45 mx-auto">Partnering with FHS Egypt places your brand at the heart of North Africa&apos;s hospitality investment boom.</p>
-                    <p>Connect directly with senior investors, developers, and decision-makers shaping Egypt&apos;s tourism and infrastructure future. With high-impact visibility, curated networking, and access to active deal flow, FHS Egypt is where partnerships are built, influence is strengthened, and business gets done.</p>
-                </div>
+                    <div className="container center">
+                        <Pop><p><ButtonKeyline href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></p></Pop>
+                    </div>
+                </section>
 
-                <div className="container center">
-                    <Pop><p><ButtonKeyline href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></p></Pop>
-                </div>
-            </section>
+            </PageHeroImage>
+
 
 
 
