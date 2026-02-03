@@ -200,8 +200,6 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 <ThemeBillboard />
             </HeroUnitVideo>
 
-
-
             
 
             <section className="block o-hidden pt-xs">
