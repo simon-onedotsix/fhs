@@ -204,7 +204,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             
 
-            <section className="block o-hidden">
+            <section className="block o-hidden pt-xs">
                 <Pop>
                     <div className={`${CSS.aisPromo}`}>
                         <header className={CSS.aisPromoHeader}>
