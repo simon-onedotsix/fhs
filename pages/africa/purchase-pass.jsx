@@ -46,7 +46,7 @@ function PurchasePass({ seomatic, entry }) {
 
 			<Header compact />
 
-			<div style={{ height: `var(--space-lg)`}} />
+			{/* <div style={{ height: `var(--space-lg)`}} /> */}
 
 			{ handleContentBlocks( entry.ahifContentBlocks, null, null, null ) }
 
