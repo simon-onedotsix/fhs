@@ -34,9 +34,21 @@ const otherEvents = [
         target: true
     },
     {
+        id: 12,
+        title: 'BRF @ FHS World',
+        url: '/world/brf',
+        target: false
+    },
+    {
+        id: 13,
+        title: 'BRF @ FHS Saudi Arabia',
+        url: '/sa/brf',
+        target: false
+    },
+    {
         id: 6,
         title: 'AviaDev',
-        url: 'https://www.aviationdevelop.com',
+        url: 'https://www.aviadev.com',
         target: true
     },
     {

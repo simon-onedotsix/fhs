@@ -84,19 +84,19 @@
 /* tablet portrait */
 @media (min-width: 600px) and (max-width:1200px) {
     .layout {
-        font-size: 1.5vw !important;
+        font-size: 1.4vw !important;
     }
 }
 /* desktop */
 @media (min-width: 1200px) {
     .layout {
-        font-size: 1vw !important;
+        font-size: .9vw !important;
     }
 }
 /* large desktop */
 @media (min-width: 1500px) {
     .layout {
-        font-size: 1rem !important;
+        font-size: .9rem !important;
     }
 }
 

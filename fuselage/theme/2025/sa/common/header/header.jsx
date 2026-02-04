@@ -37,6 +37,12 @@ const otherEvents = [
     },
     {
         id: 12,
+        title: 'BRF @ FHS World',
+        url: '/world/brf',
+        target: false
+    },
+    {
+        id: 13,
         title: 'BRF @ FHS Saudi Arabia',
         url: '/sa/brf',
         target: false

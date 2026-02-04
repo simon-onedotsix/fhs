@@ -305,6 +305,19 @@ export default function Page ({ sessions, speakers }) {
             {/* SPONSORS */}
             <section className="block">
                 <div className="container center">
+                    <p className='fs-1 fw-600'>2026 Sponsors</p>
+                </div>
+                
+                <div className="container maxw-70 pt-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
+                    <PartnerLogo logoUrl={`/assets/img/brf/jabal-omar.svg`} maxWidth={10} />
+                </div>
+            </section>
+
+
+
+            {/* PASAT SPONSORS */}
+            <section className="block">
+                <div className="container center">
                     <p className='fs-1 fw-600'>Past BRF Sponsors</p>
                 </div>
                 
