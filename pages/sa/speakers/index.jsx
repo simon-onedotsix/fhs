@@ -32,7 +32,7 @@ function Speakers({ seomatic, speakers }) {
 
 	// sort speakers by lastName
 	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
-	// console.log('total ordered speakers:', orderedSpeakers.length)
+	console.log('total ordered speakers:', orderedSpeakers.length)
 
 	// customise order (VIP speakers to top of list)
 	// let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
