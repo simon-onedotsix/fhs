@@ -26,7 +26,7 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 
 	const {countryPavilions} = flags.fhisContentBlocks.find( block => block.__typename === 'fhisContentBlocks_countryPavilions_BlockType' )
 
-
+	console.log('country pavilions:', countryPavilions)
 	
 
 	// use fieldDefinitions to automate partner categorisation (requires ID of the selectFieldDefinition used to tag categories inside SC studio)
@@ -55,10 +55,10 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 	
 
 
-	// console.log('swapcard partner data:', partnerData)
+	console.log('swapcard partner data:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
-	// console.log('swapcard partner categories:', swapcardPartnerGroups )
+	console.log('swapcard partner categories:', swapcardPartnerGroups )
 	// console.log('PARTNERS ARRAY:', partnersArray)
 	// console.log('flags:', countryPavilions)
 
@@ -115,10 +115,31 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 				<PartnerCategoryGrid>
 					{
 						partnersArray.length &&
-						_.orderBy(partnersArray, x => _.findIndex( CUSTOM_ORDERING, y => x.group.id === y.id )).map( (category, index) => (
-							<Fragment key={index}>
-								<PartnerCategory key={index}>
+						_.orderBy(partnersArray, x => _.findIndex(CUSTOM_ORDERING, y => x.group.id === y.id)).map((category, index) => {
 
+							// replace SC pavilions category with CMS data
+							if (category.group.id === "RmllbGRWYWx1ZV8yOTM0Mzg2OA==") {
+								return (
+									<PartnerCategory>
+										<div className="block pt-0">
+										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>Country Pavilions</h4>
+											<PartnerLogoGrid>
+												{ 
+													countryPavilions.map( pavilion => (
+														<div key={pavilion.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+															<Flag flagUrl={pavilion.flag[0].url} /> 
+															<p className='fs-5 fw-500 c-primary mt-xxs'>{pavilion.country}</p>
+														</div>
+													)) 
+												}
+											</PartnerLogoGrid>
+										</div>
+									</PartnerCategory>
+								)
+							}
+
+							return (
+								<PartnerCategory key={index}>
 									<div className="block pt-0">
 										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{category.group.translations[0].value}</h4>
 										<PartnerLogoGrid>
@@ -129,7 +150,7 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 															partner.logoUrl &&
 															<PartnerLogo 
 																src={ partner.logoUrl } 
-																label={ partner.id === "RXhoaWJpdG9yXzIxNzg3Nzg=" && 'China' }
+																label={ partner.id === "RXhoaWJpdG9yXzIzOTI3MTI=" && 'China' }
 															/>
 														}
 													</a>
@@ -137,11 +158,9 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 											}
 										</PartnerLogoGrid>
 									</div>
-									
 								</PartnerCategory>
-								
-							</Fragment>
-						))
+							)
+						})
 					}
 				</PartnerCategoryGrid>
 				

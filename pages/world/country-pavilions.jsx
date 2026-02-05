@@ -64,7 +64,7 @@ export default function Page ({ entry }) {
             {/* END UPDATE TO USE CMS DATA */}
                 
                 <div className="container">
-                    <p className="fs-2 center pb-sm">Country Pavilions at FHS World 2025</p>
+                    <p className="fs-2 center pb-sm">Country Pavilions at FHS World 2026</p>
                 </div>
 
                 {

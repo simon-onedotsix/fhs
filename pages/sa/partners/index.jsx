@@ -89,9 +89,9 @@ function Partners({ partnerData, videoTestimonials }) {
 	})
 
 
-	console.log('swapcard partner data 2026:', partnerData)
-	console.log('categories:', categoriesArray)
-	console.log('orderedCategories:', orderedCategories)
+	// console.log('swapcard partner data 2026:', partnerData)
+	// console.log('categories:', categoriesArray)
+	// console.log('orderedCategories:', orderedCategories)
 
 
 	return (
@@ -171,10 +171,11 @@ function Partners({ partnerData, videoTestimonials }) {
 										<PartnerLogoGrid>
 											{
 												_.orderBy( group, [(p) => p.name.toLowerCase()] ).map( partner => (
-													<a key={partner.id} href={`/sa/partners/${partner.id}`}>
+													<a key={partner.id} href={`/sa/partners/${partner.id}`} style={{ textDecoration: 'none'}}>
 														<PartnerLogo 
 															src={partner.logoUrl ? partner.logoUrl : null} 
-															size={ category && category.size }
+															size={category && category.size}
+															label={partner.id === "RXhoaWJpdG9yXzIzOTI3MTM=" && 'China'}
 														/>
 													</a>
 												))

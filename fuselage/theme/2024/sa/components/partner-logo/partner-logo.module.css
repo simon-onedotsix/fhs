@@ -24,6 +24,7 @@
     margin-top: .5rem;
     text-transform: uppercase;
     font-size: small;
+    text-decoration: none !important;
 }
 
 .grid {
