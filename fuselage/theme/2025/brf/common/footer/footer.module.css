@@ -1,4 +1,7 @@
-
+.footer {
+    position: relative;
+    z-index: 2;
+}
 .hosts {
     display: grid;
     grid-template-columns: 1fr;

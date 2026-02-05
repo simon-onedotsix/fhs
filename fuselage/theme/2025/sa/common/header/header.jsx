@@ -10,7 +10,7 @@ import { FhsLockup } from '../../components/logos/fhs-brand'
 
 import CSS from './header.module.css'
 
-const otherEvents = [
+export const otherEvents = [
     {
         id: 1,
         title: 'FHS Home',
