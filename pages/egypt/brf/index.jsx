@@ -294,7 +294,7 @@ export default function Page ({ sessions, speakers }) {
 
                 <div className="mt-md center">
                     <Pop>
-                        <Button href={'/egypt/brf/agenda'}>View FHS Egypt Agenda</Button>
+                        <Button href={'/egypt/agenda'}>View FHS Egypt Agenda</Button>
                     </Pop>
                 </div>
 
@@ -303,7 +303,7 @@ export default function Page ({ sessions, speakers }) {
 
             
             {/* SPONSORS */}
-            <section className="block">
+            {/* <section className="block">
                 <div className="container center">
                     <p className='fs-1 fw-600'>2026 Sponsors</p>
                 </div>
@@ -311,11 +311,11 @@ export default function Page ({ sessions, speakers }) {
                 <div className="container maxw-70 pt-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
                     <PartnerLogo logoUrl={`/assets/img/brf/jabal-omar.svg`} maxWidth={10} />
                 </div>
-            </section>
+            </section> */}
 
 
 
-            {/* PASAT SPONSORS */}
+            {/* PAST SPONSORS */}
             <section className="block">
                 <div className="container center">
                     <p className='fs-1 fw-600'>Past BRF Sponsors</p>
@@ -334,11 +334,20 @@ export default function Page ({ sessions, speakers }) {
                
 
             {/* MARKET OVERVIEW */}
+
+
             <section className="block bg-default">
                 <div className="container formatted maxw-90">
-                    <Callout 
-                        image={{ url:'/assets/img/brf/brf-egypt-intro.jpg', width:1600, height:900 }}
-                    >
+                    <Callout image={{ url:'/assets/img/brf/brf-2024-image-08.jpg', width:2000, height:1333 }}>
+                        <Fade>
+                            <p className='fs-2 fw-600 lh-2'>Market Overview</p>
+                            <p className="fs-4 c-white">The branded residences sector has grown <strong>180% globally in the past decade</strong>, with 788 projects currently running and an additional <strong>900+</strong> launching globally (or in pipeline) over the next 5 to 6 years.</p>
+                        </Fade>
+                    </Callout>
+                </div>
+
+                <div className="container formatted maxw-90">
+                    <Callout flipped image={{ url:'/assets/img/brf/brf-egypt-intro.jpg', width:1600, height:900 }} >
                         <Fade>
                             <p className='fs-2 fw-600 lh-2'>Egypt in Focus</p>
                             <p className="fs-4 c-white">As leading real estate developers partner with global hospitality brands to unlock new value across mixed-use and resort destinations. In Egypt alone, 45% of high-net-worth investors now identify branded residences as a preferred asset class within the property market.</p>
@@ -385,7 +394,7 @@ export default function Page ({ sessions, speakers }) {
                 <ThemesSlider 
                     data={THEMES_DATA} 
                     heading={"2025 Branded Residences Forum Themes"}
-                    link={'/egypt/brf/agenda'} 
+                    link={'/egypt/agenda'} 
                     linkLabel={'View FHS Egypt Agenda'} 
                 />
             </section>
