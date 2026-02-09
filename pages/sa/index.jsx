@@ -874,7 +874,7 @@ export default function Page({ seomatic, partners }) {
                             theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `var(--primary)` }}
                             target={`_blank`}
                         >
-                            View Past FHS Speakers
+                            Hear from our sponsors
                         </ArrowButton>
                     </Pop>
                 </div>
