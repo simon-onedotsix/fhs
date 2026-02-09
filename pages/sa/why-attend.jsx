@@ -76,21 +76,8 @@ export default function WhyAttend () {
                         <Card imageUrl={'/assets/img/sa/why-attend/why-attend-delegate-2025.jpg'}>
                             <p className="fs-2 c-secondary lh-1">{ locale === 'ar' ? "الحضور كمشارك" : "Attend as a Delegate" }</p>
                             <div className="formatted mt-sm">
-                                {
-                                    locale === 'ar' 
-                                    ?
-                                        <>
-                                            <p className="fw-600">احصل على فرصة الوصول إلى قادة قطاع الضيافة في المنطقة تحت سقفٍ واحد، واطلع على أحدث الاتجاهات والرؤى المستقبلية!
-                                            </p>
-                                            <p>توفر القمة فرص فريدة للتواصل والتعارف، مما يمكنك من بناء العلاقات مع جمهورنا المتميز من مالكي ومشغلي الفنادق، وممثلي الحكومات، وشركاء الأعمال المحتملين، والمستثمرين. كما تركز ورش العمل والندوات التي تُقام خلال فعاليات القمة على تعزيز النمو المهني والابتكار، حيث يأتي كل ذلك ضمن إطار رؤية السعودية 2030 الطموحة.</p>
-                                        </>
-                                    :
-                                        <>
-                                            <p className="fw-600">Gain access to the region&apos;s leading industry leaders under one roof and access the latest trends and future directions in hospitality.</p>
-                                            <p>The summit provides unmatched networking opportunities, enabling delegates to connect with our premium audience of hotel owners and operators, government representatives, potential business partners, and investors. Workshops and seminars at the event focus on fostering professional growth and innovation, all within the context of Saudi Arabia&apos;s Vision 2030.</p>
-                                        </>
-                                }
-                                
+                                <p className="fw-600">Network with industry leaders and investors, access critical insights and turn conversations into partnerships.</p>
+                                <p>As a delegate you can find a multitude of curated networking opportunities, enabling you to connect closely with our premium audience of hotel owners and operators, developers, government representatives, potential business partners, and investors. Benefit from our action-packed agenda spanning three days with 150+ thought-leaders taking the stage.</p>
                             </div>
                         </Card>
                     </Pop>
@@ -101,21 +88,13 @@ export default function WhyAttend () {
                         <Card imageUrl={'/assets/img/sa/why-attend/why-attend-sponsor-2025.jpg'}>
                             <p className="fs-2 c-secondary lh-1">{ locale === 'ar' ? "كن أحد رعاة قمة مستقبل الضيافة بالمملكة العربية السعودية" : "Sponsor FHS Saudi Arabia" }</p>
                             <div className="formatted mt-sm">
-                                {
-                                    locale === 'ar' 
-                                    ?
-                                        <>
-                                            <p className="fw-600">استثمر في زيادة ظهور علامتك التجارية بين صُنّاع القرار المؤثرين في قطاع الاستثمار في الضيافة في المنطقة.
-                                            </p>
-                                            <p>تتيح لك باقات الرعاية المُصمَّمة خصيصًا فرص التفاعل المباشر مع الجمهور المستهدف من خلال الوصول إلى فرص التحدث ومساحات العرض. من خلال وضع علامتك التجارية بصفتك أحد قادة الفكر، يمكنك مشاركة خبراتك وترسيخ مكانتك في السوق، والاستفادة من المنصة لتتماشى مع الأهداف الطموحة للمنطقة.</p>
-                                        </>
-                                    :
-                                        <>
-                                            <p className="fw-600">Invest in increased brand visibility among influential decision-makers in the hospitality investment industry of the region.</p>
-                                            <p>Tailored sponsorship packages can provide direct engagement with the target audience through speaking opportunities and exhibition spaces. By positioning the brand as thought leaders, share your expertise and reinforce your authority in the market, leveraging the platform to align with the region&apos;s ambitious goals.</p>
-                                        </>
-                                }
-                                
+                                <p className="fw-600">“Being at FHS Saudi Arabia is an obligation” Hassan AhdabChief Hospitality Operations Officer, Taiba Investments</p>
+                                <p>Leverage visibility in front of a premium audience comprised of local and global hospitality investment leaders. Showcase your brand in a focused environment where organisations like yours can engage directly with capital partners, operators, and policymakers who are shaping the next phase of Riyadh&apos;s growth.</p>
+                                <p className='mt-sm'>
+                                    <a className='button fs-6' href={`https://youtu.be/JZtXoVLgCFg?si=CSrqL-V2FsoJjGFd`}>
+                                        Hear from our sponsors
+                                    </a>
+                                </p>
                             </div>
                         </Card>
                     </Pop>
@@ -126,21 +105,12 @@ export default function WhyAttend () {
                         <Card imageUrl={'/assets/img/sa/why-attend/why-attend-investor-2025.jpg'}>
                             <p className="fs-2 c-secondary lh-1">{ locale === 'ar' ? "شارك كمستثمر أو مالك" : "Attend as an Investor or Owner" }</p>
                             <div className="formatted mt-sm">
-                                {
-                                    locale === 'ar'
-                                    ?
-                                        <>
-                                            <p className="fw-600">يحصل المستثمرون في قمة مستقبل الضيافة بالمملكة العربية السعودية على فرص مربحة في قطاع الضيافة في المنطقة، من خلال التفاعل مع الشركات الناشئة المبتكرة، ومالكي ومشغلي الفنادق البارزة، والوصول إلى مشاريع ضخمة ومتميزة في المنطقة.
-                                            </p>
-                                            <p>توفر الجلسات الحصرية للمستثمرين رؤى استراتيجية حول اتجاهات السوق واستراتيجيات الاستثمار للاستفادة إلى أقصى حد من العائد على الاستثمار. كما تسهل القمة إقامة شراكات استراتيجية مع الأطراف المعنية الرئيسية في القطاع، مما يعزز النمو ويفتح آفاق تعاون قيّمة، لا سيما في السوق السعودي المزدهر.</p>
-                                        </>
-                                    :
-                                        <>
-                                            <p className="fw-600">Investors at FHS Saudi Arabia access lucrative opportunities within the regional hospitality sector, engaging with innovative start-ups and renowned hotel owners and operators and accessing vetted giga and mega projects in the region.</p>
-                                            <p>Exclusive investor sessions offer strategic insights into market trends and investment strategies to leverage current market trends for higher ROI. FHS Saudi Arabia also facilitates strategic partnerships with key industry stakeholders, driving growth and fostering valuable collaborations, particularly within the burgeoning Saudi market.</p>
-                                        </>
-                                }
-                                
+                                <p className="fw-600">FHS Saudi Arabia offers investors personalised access to local and cross-border partnerships. Investors gain exclusive access to the Investor Lounge built for curated, private meetings and investor-only gatherings during the summit. </p>
+                                <p className='mt-sm'>
+                                    <a className='button fs-6' href={`/sa/purchase-pass`}>
+                                        Register as Investor
+                                    </a>
+                                </p>
                             </div>
                         </Card>
                     </Pop>

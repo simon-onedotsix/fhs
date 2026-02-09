@@ -55,7 +55,7 @@ export const ImageBlock = ({ imageUrl }) => {
 
 
 
-const AnimatedCounter = ({ from, to, animationOptions }) => {
+export const AnimatedCounter = ({ from, to, animationOptions }) => {
     const ref = useRef(null)
     const inView = useInView(ref, {once: false})
 

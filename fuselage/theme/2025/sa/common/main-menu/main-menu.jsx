@@ -152,10 +152,10 @@ export const MainMenu = ({ otherEvents }) => {
                                                                                 onClick={ () => setActive(false)}
                                                                                 
                                                                             >
-                                                                                {
+                                                                                {/* {
                                                                                     showFlash &&
                                                                                     <span className={CSS.label}>New!</span>
-                                                                                }
+                                                                                } */}
                                                                                 { link.label }
                                                                             </a>
                                                                         </Link>    

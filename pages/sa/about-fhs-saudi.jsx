@@ -232,15 +232,15 @@ export default function Page () {
                             locale  === 'ar' 
                             ? 
                                 <>
-                                    <p className='mt-sm'>تُعقد قمة مستقبل الضيافة في مدينة الرياض، حيث تستقطب نخبة من المستثمرين ومالكي الفنادق والمشغلين وكبار المدراء التنفيذيين في قطاع الضيافة، للتعرف على مستقبل الصناعة المزدهر في المنطقة. يتضمن جدول أعمال القمة العديد من الجلسات النقاشية المتخصصة، وورش العمل التثقيفية، فضلًا عن فرص التواصل والتعارف المميزة، مما يجعلها الحدث الأبرز حيث يجتمع المهتمون والعاملون في قطاع الضيافة للاستثمار في مستقبل القطاع معًا.</p>
+                                    <p className='mt-sm'>Future Hospitality Summit Saudi Arabia is the Kingdom&apos;s most senior hospitality investment forum, bringing together government stakeholders, sovereign and institutional capital, leading developers, and global hotel and lifestyle operators. It is a deal-led platform focused on investment, partnerships, and delivery aligned directly with Vision 2030.</p>
                                     
-                                    <p>سجلت نسخة عام 2024 من القمة رقمًا قياسيًا من حيث أعداد الحضور بمشاركة أكثر من 1300 مشارك من 40 دولة على مدار 3 أيام من الأعمال والتواصل والنمو، وذلك في فندق ماندارين أورينتال الفيصلية الشهير بمدينة الرياض.</p>
+                                    <p>An esteemed collection of highly respected, experienced and knowledgeable local and global hospitality and tourism leaders will take to the stage at FHS Saudi Arabia 2026, where more than 1,100 global hospitality investors, innovators and decision-makers will gather to shape the future of hospitality in the Kingdom.</p>
                                 </>
                             :
                                 <>
-                                    <p className='mt-sm'>Anchored in Riyadh, FHS Saudi Arabia attracts esteemed investors, hotel owners &amp; operators and leading C-level executives from the hospitality industry to focus on the region&apos;s booming hospitality landscape. Featuring insightful panel discussions, informative workshops and unparalleled networking opportunities, the region&apos;s hospitality community convenes to invest in the industry&apos;s future together.</p>
+                                    <p className='mt-sm'>Future Hospitality Summit Saudi Arabia is the Kingdom&apos;s most senior hospitality investment forum, bringing together government stakeholders, sovereign and institutional capital, leading developers, and global hotel and lifestyle operators. It is a deal-led platform focused on investment, partnerships, and delivery aligned directly with Vision 2030.</p>
                                     
-                                    <p>FHS Saudi Arabia 2025 attracted over 1106+ delegates from 35 countries for 3 days of business, growth and networking at the iconic Mandarin Oriental Al Faisaliah Hotel, Riyadh.</p>
+                                    <p>An esteemed collection of highly respected, experienced and knowledgeable local and global hospitality and tourism leaders will take to the stage at FHS Saudi Arabia 2026, where more than 1,100 global hospitality investors, innovators and decision-makers will gather to shape the future of hospitality in the Kingdom.</p>
                                 </>
                         }
 
@@ -251,22 +251,22 @@ export default function Page () {
                             </a>
                         </p>
                     </div>
+
+
+                    <section className="block pt-0" style={{ position: 'relative', zIndex: 2 }}>
+                        <div className="container formatted center">
+                            <p className='fs-1 fw-600'>
+                                { locale === 'ar' ? "عدد الحضور" : "Who Attends" }
+                            </p>
+                            <ImpactFigure figure={1106} impact={ locale === 'ar' ? "مشاركًا من جميع أنحاء العالم" : 'attendees from across the globe' }  />
+                            <p className='mt-sm'>
+                                <button className='button fs-6' onClick={() => setShowPopover(true)}>
+                                    { locale === 'ar' ? "حمل تقرير ما بعد الحدث لعام 2025" : "Download 2025 Post-event Report" }
+                                </button>
+                            </p>
+                        </div>
+                    </section>
                 </PageHeroImage>
-
-
-                <section className="block pt-0" style={{ position: 'relative', zIndex: 2 }}>
-                    <div className="container formatted center">
-                        <p className='fs-1 fw-600'>
-                            { locale === 'ar' ? "عدد الحضور" : "Who Attends" }
-                        </p>
-                        <ImpactFigure figure={1106} impact={ locale === 'ar' ? "مشاركًا من جميع أنحاء العالم" : 'attendees from across the globe' }  />
-                        <p className='mt-sm'>
-                            <button className='button fs-6' onClick={() => setShowPopover(true)}>
-                                { locale === 'ar' ? "حمل تقرير ما بعد الحدث لعام 2025" : "Download 2025 Post-event Report" }
-                            </button>
-                        </p>
-                    </div>
-                </section>
             </div>
 
 

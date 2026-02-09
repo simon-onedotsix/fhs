@@ -34,10 +34,10 @@ import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
+import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
-import { FixedBackgroundImage } from "../../fuselage/theme/2025/ais/blocks/fixed-background-image/fixed-background-image"
 import { ImpactGrid, ImpactFigure, TitleBlock, ImageBlock } from "../../fuselage/theme/2025/sa/blocks/impact-grid/impact-grid"
-import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/animated-counter/animated-counter"
+import { AnimatedCounter } from "../../fuselage/theme/2025/sa/blocks/impact-grid/impact-grid"
 import { SectionHeading } from "../../fuselage/theme/2025/sa/components/section-heading/section-heading"
 import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
@@ -45,10 +45,13 @@ import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-
 import { Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticker/logo-ticker"
 import { ArticleScroller, Article } from "../../fuselage/theme/2025/sa/blocks/article-scroller/article-scroller"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
-import { ImageGallery } from "../../fuselage/components/image-gallery/image-gallery"
 
 import { VideoSection, Section } from '../../fuselage/theme/2026/sa/blocks/section'
 import { ThemeGraphic } from '../../fuselage/theme/2026/sa/theme/theme-graphic'
+
+import { Carousel } from "../../fuselage/blocks/carousel/carousel"
+import { Billboard } from '../../fuselage/blocks/billboard/billboard'
+import { SpeakerCarousel } from "../../fuselage/components/speaker-carousel/speaker-carousel"
 
 
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
@@ -109,7 +112,7 @@ export const ARTICLE_DATA_AR = [
     }
 ]
 
-const SPEAKER_DATA_SHORT = [
+const SPEAKER_DATA = [
     {
         url: `/sa/speakers/profile/khalid-saud-abu-haimed`,
         photoUrl: 'https://cms.thebench.com/assets/img/avatars/Abu-Haimed_Khalid-Saud_pic2.jpg',
@@ -124,13 +127,13 @@ const SPEAKER_DATA_SHORT = [
         jobTitle: 'Chief Executive Officer',
         company: 'Kingdom Hotel Investments',
     },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ1NzA=`,
-        photoUrl: 'https://static.swapcard.com/public/images/23164303eb9249b998d1cad542746fba.jpeg',
-        fullName: 'Dr. Aradhana Khowala',
-        jobTitle: 'Chief Executive Officer & Founder',
-        company: 'Aptamind Partners',
-    },
+    // {
+    //     url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ1NzA=`,
+    //     photoUrl: 'https://static.swapcard.com/public/images/23164303eb9249b998d1cad542746fba.jpeg',
+    //     fullName: 'Dr. Aradhana Khowala',
+    //     jobTitle: 'Chief Executive Officer & Founder',
+    //     company: 'Aptamind Partners',
+    // },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ2MzQ=`,
         photoUrl: 'https://static.swapcard.com/public/images/144a200935cd4bdfa2c5abf157ce8a37.png',
@@ -144,6 +147,27 @@ const SPEAKER_DATA_SHORT = [
         fullName: 'Samer Sabra',
         jobTitle: 'Chief Hospitality Officer',
         company: 'Jabal Omar Development Company',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ2Mjc=`,
+        photoUrl: 'https://static.swapcard.com/public/images/7b395ba5c8d146cb970582231d498e01.jpeg',
+        fullName: 'Sultan Bader Al-Otaibi',
+        jobTitle: 'Chief Executive Officer',
+        company: 'TAIBA',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ1NTIwMTM=`,
+        photoUrl: 'https://static.swapcard.com/public/images/fc2becbdfdef4dab87bed93998b8fdfe.jpeg',
+        fullName: 'Khalid Al Gahtani',
+        jobTitle: 'Chairman & CEO',
+        company: 'Rikaz Properties',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ0NDk5NDY=`,
+        photoUrl: 'https://cdn-api.swapcard.com/public/images/45881074548642c7881bc4ae6e0a4784.jpeg',
+        fullName: 'Tariq Dowidar',
+        jobTitle: 'Regional Vice President - Kingdom of Saudi Arabia',
+        company: 'Aleph Hospitality',
     },
     
 ]
@@ -495,7 +519,7 @@ export default function Page({ seomatic, partners }) {
                                 theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                 decal={'fs-5 fw-600'} 
                                 accent
-                            >{ locale === 'ar' ? `الموارد الرقمية 2025` : `2025 Digital Resources`}</Button>
+                            >{ locale === 'ar' ? `2025 Attendee List` : `2025 Attendee List`}</Button>
                         </Pop>
                         <Pop inline>
                             <Button 
@@ -507,6 +531,9 @@ export default function Page({ seomatic, partners }) {
                         </Pop>
                     </div>
                 </Fade>
+
+                
+
 
 
                 <section className="mt-lg">
@@ -552,13 +579,13 @@ export default function Page({ seomatic, partners }) {
                                             locale === 'ar'
                                             ?
                                                 <>
-                                                    <p className="fs-5 fw-600">صاحب السمو الأمير بندر بن سعود بن خالد آل سعود</p>
+                                                    <p className="fs-6 fw-600">صاحب السمو الأمير بندر بن سعود بن خالد آل سعود</p>
                                                     <p className="mt-xxs">
                                                         الأمين العام لمؤسسة الملك فيصل (KFF)
                                                     <br/>
                                                         رئيس مجلس إدارة الخزامى
                                                     </p>
-                                                    <p className="mt-xxss">
+                                                    <p className="mt-xxs">
                                                         <Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}>
                                                             <a className="uLink c-accent">عرض السيرة الذاتية</a>
                                                         </Link>
@@ -566,12 +593,12 @@ export default function Page({ seomatic, partners }) {
                                                 </>
                                             :
                                                 <>
-                                                    <p className="fs-5 fw-600 balance">HH Prince Bandar bin Saud bin Khalid Al Saud</p>
-                                                    <p className="mt-xxs">
+                                                    <p className="fs-6 fw-600 lh-1 balance">HH Prince Bandar bin Saud bin Khalid Al Saud</p>
+                                                    <p className="mt-xxs fs-xs">
                                                         Secretary General King Faisal Foundation&nbsp;(KFF)<br/>
                                                         Chairman of the Board of Directors Al&nbsp;Khozama
                                                     </p>
-                                                    <p className="mt-xxss">
+                                                    <p className="mt-xxs">
                                                         <Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}>
                                                             <a className="uLink c-accent">View biography</a>
                                                         </Link>
@@ -597,109 +624,80 @@ export default function Page({ seomatic, partners }) {
 
             
 
-            {/* ADVISORY BOARD */}
-            {/* <FixedBackgroundImage
-                backgroundImageUrl={`/assets/img/sa/homepage/ab-meeting-2025-group.jpg`}
-                overlay={`hsl(from var(--primary) h s l / .85)`}
-            >
 
-                <div className="container c-white center  maxw-60">
-                        <Pop>
-                        <p className="fs-1 fw-600 lh-1">
-                            {
-                                locale === 'ar'
-                                    ? "جدول الأعمال – رؤى السوق الخمسة من المجلس الاستشاري لقمة مستقبل الضيافة بالمملكة العربية السعودية"
-                                    : "Setting the Agenda – 5 Market Insights from FHS Saudi Arabia Advisory Board"
-                            }
-                        </p>
-                        </Pop>
+            {/* SLIDER */}
+            <Carousel>
+                    
+                <Billboard hero={{ url: `/assets/img/sa/homepage/sa-01.jpg` }} tint={30} height={isDesktop ? 60 : 100} horizontalAlign={'center'}>
+                    <div className={CSS.billboardBoxout}>
+                        <p className="fs-2 fw-500 lh-1">Hospitality Deal-Making Platform</p>
+
+                        <p>FHS Saudi Arabia brings together Saudi and international owners, developers, operators, brands and investors to accelerate cross-border partnerships and capital flows in hospitality.</p>
+                        <p>Featuring insightful panel discussions, informative workshops and unparalleled networking opportunities, the region&apos;s hospitality community convenes to invest in the industry&apos;s future together.</p>
+                    </div>
+                </Billboard>
+                    
+                <Billboard hero={{ url: `/assets/img/sa/homepage/sa-02.jpg` }} tint={30} height={isDesktop ? 60 : 100} horizontalAlign={'center'}>
+                    <div className={CSS.billboardBoxout}>
+                        <p className="fs-2 fw-500 lh-1">250+ Investors managing 5.61T in AUM</p>
+
+                        <p>The Summit&apos;s investor-led networking, including the Investor Lounge built for curated, private meetings, is designed to turn conversations into mandates, partnerships and transactions.</p>
+                    </div>
+                </Billboard>
+                    
+                <Billboard hero={{ url: `/assets/img/sa/homepage/sa-03.jpg` }} tint={30} height={isDesktop ? 60 : 100} horizontalAlign={'center'}>
+                    <div className={CSS.billboardBoxout}>
+                        <p className="fs-2 fw-500 lh-1">Shape Vision 2030&apos;s Final Growth Stage</p>
+
+                        <p>The Kingdom is focusing on mature fiscal management ensuring sustainable, long-term success. FHS Saudi Arabia will focus on current growth hotspots including public-private partnerships, secondary cities and giga projects set for completion.</p>
+                    </div>
+                </Billboard>
+                
+
+            </Carousel>
+
+
+
+            {/* WHO YOU WILL MEET */}
+            <section className="block bg-primary">
+                <div className="container center">
+                    <p className="fs-1 fw-500">WHO YOU CAN MEET</p>
+                    <p className="fs-5 mt-xs">If you&apos;re involved in hotels and hospitality investment, this is for you. Meet 1,100+ change-makers</p>
                 </div>
 
-                <div className="container columns-2 gap-md ai-center">
-                    <section>
-                        <Pop>
-                            <ImageGallery
-                                images={[
-                                    {src: "/assets/img/sa/homepage/ab-meeting-2025-01.jpg", alt: ""},
-                                    {src: "/assets/img/sa/homepage/ab-meeting-2025-02.jpg", alt: ""},
-                                    {src: "/assets/img/sa/homepage/ab-meeting-2025-03.jpg", alt: ""},
-                                    {src: "/assets/img/sa/homepage/ab-meeting-2025-04.jpg", alt: ""},
-                                    {src: "/assets/img/sa/homepage/ab-meeting-2025-05.jpg", alt: ""},
-                                    {src: "/assets/img/sa/homepage/ab-meeting-2025-06.jpg", alt: ""}
-                                ]}
-                            />
-                        </Pop>
-                    </section>
-
-                    <section className="formatted c-white">
-
-                        {
-                            locale === 'ar'
-                                ? (
-                                    <>
-                                        <Pop><p className="fs-5 pb-sm" dir="rtl">اجتمع مجلسنا الاستشاري مؤخرًا لتحديد أبرز التحديات والفرص التي ترسم المشهد العام لقطاع الضيافة في المملكة العربية السعودية. ومع اقتراب موعد انعقاد قمة مستقبل الضيافة بالمملكة العربية السعودية 2026، دعونا نستعرض معًا خمس نقاط استراتيجية تقود دفة النقاش:</p></Pop>
-
-                                        <ul dir="rtl">
-                                            <Pop><li>تنوع رأس المال: يتجه القطاع إلى تجاوز حدود التمويل المصرفي التقليدي، واستكشاف هياكل تمويل وأسواق رأس المال البديلة لدعم النمو المستقبلي.</li></Pop>
-
-                                            <Pop><li>تحفيز الاستثمار الأجنبي المباشر: إنّ توضيح أنظمة تملك الأجانب للعقارات في المملكة يعتبر خطوة مهمة لتسريع نمو سوق الوحدات السكنية ذات العلامات التجارية واستقطاب المستثمرين الدوليين.</li></Pop>
-
-                                            <Pop><li>ما بعد تجارب السفر لأغراض الأعمال: مع الأداء القوي لقطاع الشركات والمؤسسات، بدأ التركيز يتحول نحو تنشيط السياحة الترفيهية وزيادة نسب الإشغال في عطلات نهاية الأسبوع بالمدن الكبرى مثل الرياض.</li></Pop>
-
-                                            <Pop><li>إحياء الأصول القائمة: بالتوازي مع صعود المشاريع العملاقة، بدأت تبرز الحاجة الملحّة إلى تحديث وإعادة توظيف الفنادق القائمة لضمان مواصلة قدرتها على التنافس والامتثال.</li></Pop>
-
-                                            <Pop><li>تعزيز الهوية المحلية: في ظل توسّع العلامات الفاخرة العالمية، تتزايد الدعوات لدعم العلامات السعودية المحلية وتطوير الكفاءات والمواهب الوطنية لرسم مستقبل يعكس هوية المملكة الفريدة.</li></Pop>
-                                        </ul>
-                                    </>  
-                                )
-                                : (
-                                    <>
-                                        <Pop><p className="fs-5 pb-sm">Our Advisory Board recently convened to identify the critical challenges and opportunities shaping the Kingdom&apos;s hospitality landscape. As we look toward FHS Saudi Arabia 2026, here are the five strategic takeaways driving the conversation:</p></Pop>
-
-                                        <ul>
-                                            <Pop><li><strong>Diversifying Capital:</strong> The industry is looking to move beyond traditional banking reliance, exploring alternative finance structures and capital markets to fuel future growth.</li></Pop>
-
-                                            <Pop><li><strong>Unlocking FDI:</strong> Clarifying foreign ownership regulations is seen as a crucial step to accelerate the booming market for branded residences and attract international investors.</li></Pop>
-
-                                            <Pop><li><strong>Beyond Business Travel:</strong> With high performance in corporate sectors, the focus is shifting toward activating leisure tourism and boosting weekend occupancy in major cities like Riyadh.</li></Pop>
-
-                                            <Pop><li><strong>Revitalizing Legacy Assets:</strong> As new giga-projects rise, there is a critical need to refurbish and repurpose existing hotels to ensure they remain competitive and compliant.</li></Pop>
-
-                                            <Pop><li><strong>Championing Local Identity:</strong> While international luxury expands, there is a growing call to cultivate homegrown Saudi brands and nurture local talent to define the Kingdom&apos;s unique future.</li></Pop>
-                                        </ul>
-                                    </>   
-                                )
-                        }
-
-                        
-
-                    </section>
+                <div className="container columns-3 gap-sm center">
+                    <Card>
+                        <p className="fs-5">Hotel/Resort Operator</p>
+                        <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={19.6} />%</p>
+                    </Card>
+                    <Card>
+                        <p className="fs-5">Tourism / Government Official</p>
+                        <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={11.3} />%</p>
+                        </Card>
+                    <Card>
+                        <p className="fs-5">Consultant / Advisor</p>
+                        <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={9.5} />%</p>
+                        </Card>
+                    <Card>
+                        <p className="fs-5">Hotel Developer / Builder</p>
+                        <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={8.7} />%</p>
+                        </Card>
+                    <Card>
+                        <p className="fs-5">Architect / Designer</p>
+                        <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={7.4} />%</p>
+                        </Card>
+                    <Card>
+                        <p className="fs-5">Investor (Equity) / Owner</p>
+                        <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={6.2} />%</p>
+                        </Card>
                 </div>
-
 
                 <div className="container center">
-                    <div className="button-grid">
-                        <Pop>
-                            <ArrowButton 
-                                href={ 'https://www.flickr.com/photos/benchevents/albums/72177720330222142/' } 
-                                theme={{ arrow: `white`, border: `white`, label: `white` }}
-                                target={`_blank`}
-                            >
-                                { locale === 'ar' ? `عرض المعرض الكامل` : `View Full Gallery`}
-                            </ArrowButton>
-                        </Pop>
-                        <Pop>
-                            <ArrowButton 
-                                href={ '/sa/advisory-board' } 
-                                theme={{ arrow: `white`, border: `white`, label: `white`}}
-                            >
-                                { locale === 'ar' ? `عرض جميع الأعضاء` : `View All Members`}
-                            </ArrowButton>
-                        </Pop>
-                    </div>
+                    <p><Pop><ButtonKeyline href={`/sa/about-fhs-saudi`}>View full breakdown</ButtonKeyline></Pop></p>
                 </div>
-            </FixedBackgroundImage> */}
-            
+            </section>
+     
+
 
 
             {/* SPEAKERS */}
@@ -727,22 +725,26 @@ export default function Page({ seomatic, partners }) {
                         <p className="fs-1 fw-600 c-white">2026 Speakers</p>
                     </Fade>
                 </div>
-                <div className="container columns-5 gap-sm maxw-75" dir={ locale === 'ar' ? 'rtl' : ''}>
-                    {
-                        SPEAKER_DATA_SHORT.map( (profile, index) => (
-                            <Pop key={index}>
-                                <SpeakerCard
-                                    url={profile.url}
-                                    photoUrl={profile.photoUrl}
-                                    fullName={profile.fullName}
-                                    jobTitle={profile.jobTitle}
-                                    company={profile.company}
-                                    color={'white'}
-                                />
-                            </Pop>
-                        ))
-                    }
+
+                <div className="container" dir={ locale === 'ar' ? 'rtl' : ''}>
+                    <SpeakerCarousel>
+                        {
+                            SPEAKER_DATA.map( (profile, index) => (
+                                <Pop key={index}>
+                                    <SpeakerCard
+                                        url={profile.url}
+                                        photoUrl={profile.photoUrl}
+                                        fullName={profile.fullName}
+                                        jobTitle={profile.jobTitle}
+                                        company={profile.company}
+                                        color={'white'}
+                                    />
+                                </Pop>
+                            ))
+                        }
+                    </SpeakerCarousel>
                 </div>
+
                 <div className="container center">
                     <div className="button-grid">
                         <Pop>
@@ -863,6 +865,18 @@ export default function Page({ seomatic, partners }) {
                             />
                         ))
                     }
+                </div>
+
+                <div className="container center">
+                    <Pop>
+                        <ArrowButton 
+                            href={ 'https://youtu.be/JZtXoVLgCFg?si=CSrqL-V2FsoJjGFd' } 
+                            theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `var(--primary)` }}
+                            target={`_blank`}
+                        >
+                            View Past FHS Speakers
+                        </ArrowButton>
+                    </Pop>
                 </div>
             </Section>
 
@@ -1031,6 +1045,19 @@ export const StartupPromo = () => {
 }
 
 const TickIcon = () => <img src="/assets/ui/icon-tick.svg" alt="" style={{ height: 12, marginRight: 1 }} />
+
+
+const Card = ({ children }) => {
+    return (
+        <Pop>
+            <div className="bg-primary-2 p-sm" style={{ borderRadius: `1rem`, height: `100%`, display: `flex`, flexDirection: `column`, alignItems: `center`, justifyContent: `center` }}>
+                { children }
+            </div>
+        </Pop>
+    )
+}
+
+
 
 
 export async function getStaticProps({ preview, previewData, locale }) {

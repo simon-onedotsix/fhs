@@ -145,7 +145,6 @@ export default function Home ({ data, content }) {
 
 
             {/* SECTION 2 */}
-
             <LayerSection
                 layers={[
                     {

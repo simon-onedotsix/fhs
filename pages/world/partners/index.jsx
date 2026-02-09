@@ -120,7 +120,7 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 							// replace SC pavilions category with CMS data
 							if (category.group.id === "RmllbGRWYWx1ZV8yOTM0Mzg2OA==") {
 								return (
-									<PartnerCategory>
+									<PartnerCategory key={category.id}>
 										<div className="block pt-0">
 										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>Country Pavilions</h4>
 											<PartnerLogoGrid>

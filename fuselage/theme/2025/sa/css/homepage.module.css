@@ -3,6 +3,7 @@
     grid-template-columns: 1frr;
     gap: var(--space-md);
     align-items: flex-start;
+    justify-self: center;
 
     background-color: var(--primary-2);
     border-radius: 1rem;
@@ -11,6 +12,7 @@
 
 @media(min-width:1200px) {
     .boxout {
+        max-width: 65vw;
         grid-template-columns: 1fr 1fr;
         padding: var(--space-sm)
     }
@@ -19,6 +21,8 @@
 .hostSponsorLogo {
     position: relative;
     aspect-ratio: 16/9;
+    width: 70%;
+    justify-self: center;
 }
 
 .hostSponsorLogoWrapper img {
@@ -28,14 +32,17 @@
     .hostSponsorLogoWrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: var(--space-md);
+        gap: var(--space-sm);
+    }
+    .hostSponsorLogo {
+        width: 100%;
     }
 }
 
 .patronBox {
     display: inline-grid;
     grid-template-columns: 1fr;
-    gap: var(--space-sm);
+    gap: var(--space-xxs);
     align-items: center;
 }
 .patronBoxAvatar {
@@ -51,8 +58,7 @@
     .patronBox {
         grid-template-columns: 9rem 1fr; 
     }
-    .patronBoxAvatar {
-    }
+
     .patronBoxContent {
         text-align: left;
     }
@@ -74,14 +80,28 @@
 }
 @media(min-width:600px) {
     .avatar {
-        width: 100%;
+        width: 6rem;
     }
 }
 
 
 
 
+.billboardBoxout {
+    padding: var(--space-md);
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
 
+    max-width: 80vw;
+    text-align: center;
+
+}
+@media(min-width:600px) {
+    .billboardBoxout {
+        padding: var(--space-sm);
+        max-width: 60vw;
+    }
+}
 
 
 
