@@ -60,18 +60,11 @@ export default function Page ({ videoTestimonials }) {
 
 
             <section className="block bg-default">
-                <div className="container center">
-                    <p className="fs-4 fw-500 c-primary pb-xs">Headline Sponsors</p>
+                <div className="container center maxw-60">
+                    <p className="fs-4 fw-500 c-primary pb-xs">Partners</p>
                     <div className="logoGrid">
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/KOFISI-Logo.png`} />
                         <LogoBox size={250} logoUrl={`https://static.swapcard.com/public/images/509f8a7dcf094ebf9f9ad42481e5f9fe.png`} />
-
-                    </div>
-                </div>
-
-                <div className="container center">
-                    <p className="fs-4 fw-500 c-primary pb-xs">Gold Sponsors</p>
-                    <div className="logoGrid">
                         <LogoBox size={250} logoUrl={`/assets/img/egypt/partners/jll.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/KertenHospitality_Logo.jpg`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/wjcdzzravithipy9zpch.webp`} />
