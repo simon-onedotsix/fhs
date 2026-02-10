@@ -24,7 +24,7 @@ export const VideoSection = ({ video, poster, themeGraphics, children, backgroun
         ? videoY = useTransform(scrollYProgress, [0, 1], ["-30vh", "30vh"])
         : videoY = useTransform(scrollYProgress, [0, 1], ["0vh", "0vh"])
     
-    let graphicY = useTransform(scrollYProgress, [0, 1], ["-15vh", "15vh"])
+    let graphicY = useTransform(scrollYProgress, [0, 1], ["-35vh", "15vh"])
     
     return (
         <section
@@ -35,7 +35,7 @@ export const VideoSection = ({ video, poster, themeGraphics, children, backgroun
 
             {/* video */}
             <motion.div className={CSS.video} style={{ y: videoY }}>
-                <div className={CSS.videoWrapper} style={{ marginTop: isDesktop ? 0 : 100 }}>
+                <div className={CSS.videoWrapper}>
                     <ReactPlayer
                         url={video}
                         config={{ attributes: { poster: poster } }}

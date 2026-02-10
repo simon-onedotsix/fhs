@@ -472,7 +472,7 @@ export default function Page({ seomatic, partners }) {
                 backgroundClass={`bg-primary`}
                 video={'https://cms.thebench.com/assets/video/fhs-2025-sa-wrap-up-opt.mp4'}
                 poster={'/assets/video/fhs-2025-sa-wrap-up-poster.jpg'}
-                minHeight={`100vh`}
+                minHeight={isDesktop ? `100vh` : `50vh`}
                 themeGraphics={
                     <div>
                         {
@@ -494,7 +494,7 @@ export default function Page({ seomatic, partners }) {
                 }
             >
                
-                <div style={{ height: isDesktop ? `20vh` : `45vh`}}/>
+                <div style={{ height: isDesktop ? `20vh` : `30vh`}}/>
                 <motion.p 
                     initial={{ y: 100, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}

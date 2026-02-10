@@ -209,7 +209,10 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
 
 
-            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/ahif-2024-opt.mp4'} poster={'https://cms.thebench.com/assets/video/ahif-2024-opt-poster.jpg'}>
+            <HeroUnitVideo
+                video={'https://cms.thebench.com/assets/video/ahif-2024-opt.mp4'}
+                poster={'https://cms.thebench.com/assets/video/ahif-2024-opt-poster.jpg'}
+            >
                 
                 <p className={CSS.headline}>
                     <span className="c-secondary"><Reveal>Together</Reveal></span> <Reveal><span className="c-secondary">we</span>&nbsp;invest</Reveal>
