@@ -9,6 +9,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 
 import Head from "next/head"
 import Image from "next/image"
+import Link from "next/link"
 
 import handleSeomaticMeta from '../../lib/seomatic'
 
@@ -233,8 +234,8 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
             {/* TICKER */}
             <div className="bg-accent py-xs" dir={`ltr`}>
                 <Ticker duration={20}>
-                    <a href="/africa/webinar" className="fs-4 c-secondary" style={{ textDecoration: 'none'}}>&ensp;&bull;&ensp;<strong className="fw-700">FREE WEBINAR:</strong> How do Africa and the GCC fit into the current global turmoil? | <strong className="fw-600">20th February 2026</strong> | <strong className="fw-700 c-primary">REGISTER HERE</strong></a>
-                    <a href="/africa/webinar" className="fs-4 c-secondary" style={{ textDecoration: 'none'}}>&ensp;&bull;&ensp;<strong className="fw-700">FREE WEBINAR:</strong> How do Africa and the GCC fit into the current global turmoil? | <strong className="fw-600">20th February 2026</strong> | <strong className="fw-700 c-primary">REGISTER HERE</strong></a>
+                    <Link href="/africa/webinar"><a className="fs-4 c-secondary" style={{ textDecoration: 'none'}}>&ensp;&bull;&ensp;<strong className="fw-700">FREE WEBINAR:</strong> How do Africa and the GCC fit into the current global turmoil? | <strong className="fw-600">20th February 2026</strong> | <strong className="fw-700 c-primary">REGISTER HERE</strong></a></Link>
+                    <Link href="/africa/webinar"><a className="fs-4 c-secondary" style={{ textDecoration: 'none'}}>&ensp;&bull;&ensp;<strong className="fw-700">FREE WEBINAR:</strong> How do Africa and the GCC fit into the current global turmoil? | <strong className="fw-600">20th February 2026</strong> | <strong className="fw-700 c-primary">REGISTER HERE</strong></a></Link>
                 </Ticker>
             </div>
 
