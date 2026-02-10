@@ -122,7 +122,7 @@ export default function Home ({ data, content }) {
                 
                 <section className="block">
                     <div className="container center">
-                        <h1 className="fs-0 caps">Where Legacy <br />Inspires Investment</h1>
+                        <h1 className="fs-0 caps">Where Heritage <br />Inspires Investment</h1>
                         <h4 className="fs-4">10/11 November 2026, Cairo</h4>
 
                         <p className="mt-md"><Pop><ButtonKeyline href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></Pop></p>

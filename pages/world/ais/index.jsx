@@ -296,7 +296,7 @@ export default function Page ({ sessions, locations }) {
 
 
                 <Pop>
-                    <div className="container maxw-60 pt-lg">
+                    <div className="container maxw-60 py-lg">
                             <p className='c-peach center pb-sm caps ls-2'>Brought to you by:</p>
                         <section className='flex ai-center gap-md jc-center'>
                             <div style={{ width: 400, maxWidth: '70vw', display: 'inline-block' }}>
@@ -308,6 +308,17 @@ export default function Page ({ sessions, locations }) {
                         </section>
                     </div>
                 </Pop>
+
+
+                <Pop>
+                    <div className="container center bg-accent p-sm rad-md maxw-40">
+                        <p className='fs-4 pb-xs'>Investment Mapping in the Tourism Sector in Africa</p>
+                        <Pop>
+                            <Button href={`https://cms.thebench.com/downloads/UAE-Africa-Summit-Booklet.pdf`} target={`_blank`} decal={`fs-5`}>Download Booklet</Button>
+                        </Pop>
+                    </div>
+                </Pop>
+
 
                 <div className="container pt-lg">
                     <Pop>
