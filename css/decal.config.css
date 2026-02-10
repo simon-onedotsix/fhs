@@ -55,6 +55,8 @@
 
     --default-button-radius: 4rem;
 
+    --ui-ease: cubic-bezier(.7, .1, .2, 1);
+
     --gap-divider-color: currentColor;
 
     /* header */

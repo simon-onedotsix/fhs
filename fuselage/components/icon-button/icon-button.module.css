@@ -14,5 +14,6 @@
 }
 
 .iconContainer svg {
-    stroke: currentColor;
+    stroke: inherit;
+
 }

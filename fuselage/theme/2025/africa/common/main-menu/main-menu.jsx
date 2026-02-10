@@ -87,10 +87,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                                 let showFlash = false
 
                                                                 if ( 
-                                                                    link.hyperlink === '/world/ais' ||
-                                                                    link.hyperlink === '/world/pitch-point' ||
-                                                                    link.hyperlink === '/world/impact-leader-award' ||
-                                                                    link.hyperlink === '/world/brf/broker-award'
+                                                                    link.hyperlink === '/africa/webinar'
                                                                 ) showFlash = true
                 
                                                                 if (link.hyperlink) return (
@@ -104,11 +101,11 @@ export const MainMenu = ({ otherEvents }) => {
                                                                                 target={ link.newWindow ? '_blank' : '_self'}
                                                                                 onClick={ () => setActive(false)}
                                                                             >
+                                                                                { link.label }&ensp;
                                                                                 {
                                                                                     showFlash &&
-                                                                                    <span className={CSS.label}>New!</span>
+                                                                                    <span className={CSS.label}>Join Online</span>
                                                                                 }
-                                                                                { link.label }
                                                                             </a>
                                                                         </Link>    
                                                                     </li> 

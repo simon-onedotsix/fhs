@@ -65,6 +65,7 @@ export default function Page ({ videoTestimonials }) {
                     <div className="logoGrid">
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/KOFISI-Logo.png`} />
                         <LogoBox size={250} logoUrl={`https://static.swapcard.com/public/images/509f8a7dcf094ebf9f9ad42481e5f9fe.png`} />
+                        <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/ACT_Logo-1024x401.png`} />
                         <LogoBox size={250} logoUrl={`/assets/img/egypt/partners/jll.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/KertenHospitality_Logo.jpg`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/wjcdzzravithipy9zpch.webp`} />

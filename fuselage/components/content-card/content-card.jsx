@@ -8,7 +8,7 @@ import CSS from './content-card.module.css'
 
 export const ContentCard = ({ url, heroUrl, heading, excerpt, type, background }) => {
 
-    // console.log('contentTypes:', contentTypes)
+    // console.log('type:', type)
 
     return (
         <div className={CSS.layout} style={{ background: background ? `hsl( from ${background} h s calc(l - 4) )` : 'hsl( from var(--primary) h s calc(l - 4) )' }}>

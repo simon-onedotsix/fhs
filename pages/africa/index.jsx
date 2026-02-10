@@ -230,20 +230,15 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
             </HeroUnitVideo>
 
 
-            
-            {/* <Intro>
-                <div className="formatted columns-2 gap-md ai-center" style={{ overflow: 'hidden' }}>
-                    <Pop>
-                        <div style={{ position: `relative`, aspectRatio: 16 / 9, backgroundColor: `black`, borderRadius: `var(--default-radius)`, overflow: `hidden` }}>
-                            <img src="/assets/img/africa/homepage/inset-2025.jpg" alt="" style={{ objectFit: `cover`, width: `100%` }} />
-                        </div>
-                    </Pop>
-                    <Slide>
-                        <p className="fs-2 fw-600 c-primary caps maxw-20 lh-1">driving growth and innovation</p>
-                        <p className="fs-5 maxw-45 mt-sm">FHS Africa is the continent&apos;s leading hospitality investment forum, uniting industry leaders, investors, and operators to drive growth and innovation. With a legacy of impactful connections and over <strong className="fw-600">$459&nbsp;million</strong> in business opportunities, this is where Africa&apos;s hospitality sector meets the world. Join us in <strong className="fw-600">Nairobi</strong> for FHS Africa 2026, where the future of African hospitality unfolds.</p>
-                    </Slide>
-                </div>
-            </Intro> */}
+            {/* TICKER */}
+            <div className="bg-accent py-xs" dir={`ltr`}>
+                <Ticker duration={20}>
+                    <a href="/africa/webinar" className="fs-4 c-secondary" style={{ textDecoration: 'none'}}>&ensp;&bull;&ensp;<strong className="fw-700">FREE WEBINAR:</strong> How do Africa and the GCC fit into the current global turmoil? | <strong className="fw-600">20th February 2026</strong> | <strong className="fw-700 c-primary">REGISTER HERE</strong></a>
+                    <a href="/africa/webinar" className="fs-4 c-secondary" style={{ textDecoration: 'none'}}>&ensp;&bull;&ensp;<strong className="fw-700">FREE WEBINAR:</strong> How do Africa and the GCC fit into the current global turmoil? | <strong className="fw-600">20th February 2026</strong> | <strong className="fw-700 c-primary">REGISTER HERE</strong></a>
+                </Ticker>
+            </div>
+
+
 
 
 
@@ -294,54 +289,6 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                 }
             </SpeakerCarousel>
 
-
-            
-            {/* AMBASSADORS */}
-            {/* <section className="block bg-default">
-                <div className="container center">
-                    <p className="fs-1 fw-700 lh-1">FHS Africa Ambassadors</p>
-                </div>
-                <div className="container columns-4 gap-sm maxw-65">
-                    <Pop>
-                        <SpeakerCard 
-                            url={`/africa/speakers/RXZlbnRQZW9wbGVfNDQyNzg5MDY=`}
-                            photoUrl={`https://static.swapcard.com/public/images/e884bca75149479bab97d219dd636451.jpeg`}
-                            fullName={`Nils Heckscher`}
-                            jobTitle={`Managing Director- Head of Africa`}
-                            company={`PKF Hospitality`}
-                        />
-                    </Pop>
-                    <Pop>
-                        <SpeakerCard 
-                            url={`/africa/speakers/profile/andrew-mclachlan`}
-                            photoUrl={`https://cms.thebench.com/assets/img/avatars/andrew-m.png`}
-                            fullName={`Andrew McLachlan`}
-                            jobTitle={`Founder & Managing Director`}
-                            company={`Develop Hotels`}
-                        />
-                    </Pop>
-                    <Pop>
-                        <SpeakerCard 
-                            url={`/africa/speakers/RXZlbnRQZW9wbGVfNDM5MTc5NjA=`}
-                            photoUrl={`https://static.swapcard.com/public/images/c3a5b837c57945be9351b33454aaaf54.jpeg`}
-                            fullName={`Sisa Ntshona`}
-                            jobTitle={`Director`}
-                            company={`Living Lands Initiative (LLI)`}
-                        />
-                    </Pop>
-                    <Pop>
-                        <SpeakerCard 
-                            url={`/africa/speakers/RXZlbnRQZW9wbGVfNDM2MTE1ODg=`}
-                            photoUrl={`https://cms.thebench.com/assets/img/avatars/Trevor-Ward_Photo.png`}
-                            fullName={`Trevor Ward`}
-                            jobTitle={`Managing Director`}
-                            company={`W Hospitality Group`}
-                        />
-                    </Pop>
-                    
-                </div>
-            </section> */}
-            
 
 
             {/* THEMES */}

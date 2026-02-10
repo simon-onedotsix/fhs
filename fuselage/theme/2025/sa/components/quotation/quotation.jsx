@@ -18,7 +18,7 @@ export const Quotation = ({ avatarUrl, quote, fullName, title }) => {
             <main>
                 <OpenQuote/>
                 <Slide>
-                    <p className='fs-4 lh-2 quote'>{ quote }&nbsp;<CloseQuote/></p>
+                    <p className='fs-5 lh-2 quote'>{ quote }&nbsp;<CloseQuote/></p>
                     <p className='fw-600 mt-xs'>{ fullName }</p>
                     <p className='fw-300'>{ title }</p>
                 </Slide>
@@ -48,7 +48,7 @@ const OpenQuote = ({ color, height }) => {
 
 const CloseQuote = ({ color, height }) => {
     return (
-        <span style={{ display: 'inline-block ', aspectRatio: 1/1.5, height: height ? height : '1.5rem' }}>
+        <span style={{ display: 'inline-block ', aspectRatio: 1/1.5, height: height ? height : '1rem' }}>
             <svg width="100%" height="100%" viewBox="0 0 109 68" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeLinejoin:`round`, strokeMiterlimit:2 }}>
                 <g transform="matrix(1,0,0,1,-2055,-271)">
                     <g transform="matrix(1,0,0,1,-0.20768,0)">
