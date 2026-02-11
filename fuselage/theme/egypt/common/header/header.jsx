@@ -34,7 +34,7 @@ const otherEvents = [
         target: false
     },
     {
-        id: 12,
+        id: 15,
         title: 'FHS Egypt',
         url: '/egypt',
         target: false

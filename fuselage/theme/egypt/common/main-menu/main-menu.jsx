@@ -339,7 +339,7 @@ export const MainMenu = ({ otherEvents }) => {
                         {
                             otherEvents.length &&
                             otherEvents.map( event => {
-                                if ( event.id != 1 && event.id != 2 && event.id != 5 && event.id != 11 ) return (
+                                if ( event.id != 1 && event.id != 2 && event.id != 5 && event.id != 11 && event.id != 15 ) return (
                                     <p key={event.id} className="mt-xs">
                                         <ArrowButton 
                                             href={ event.url } 

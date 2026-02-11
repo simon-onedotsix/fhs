@@ -183,7 +183,7 @@ export default function Article ({ entry }) {
     return (
         <>
             <Head>
-                <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16" />
+                <link rel="icon" type="image/png" href="/assets/favicons/egypt/favicon-16x16.png" sizes="16x16" />
                 { handleSeomaticMeta( entry.seomatic ) }
             </Head>
             

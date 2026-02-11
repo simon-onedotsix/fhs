@@ -37,7 +37,7 @@ export default function Page ({ videoTestimonials }) {
     return (
         <>
             <Head>
-                <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
+                <link rel="icon" type="image/png" href="/assets/favicons/egypt/favicon-16x16.png" sizes="16x16" />
             </Head>
         
            <Header compact />
@@ -65,7 +65,7 @@ export default function Page ({ videoTestimonials }) {
                     <div className="logoGrid">
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/accor.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/ACT_Logo-1024x401.png`} />
-                        <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/BWH-Hotels-Logo_CMYK.png`} />
+                        <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/BWH-NEW-MUST-USE-THIS.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/explore-tech.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/TFGH-BLACK.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/hdl.png`} />
