@@ -69,7 +69,7 @@ export default function ContentLibrary ({ articles, categories }) {
                                 }
                             </div>
     
-                            <p className="mt-sm"><ArrowButton href={`/egypt/content-library/category/${category.slug}`} theme={{ arrow: `var(--primary-3)`, border: `var(--primary-3)`, label: `white`}}>See all in {category.title}</ArrowButton></p>
+                            <p className="mt-sm"><ArrowButton href={`/egypt/content-library/category/${category.slug}`} theme={{ arrow: `white`, border: `white`, label: `white`}}>See all in {category.title}</ArrowButton></p>
                         </section>
                     )
                 }
@@ -117,7 +117,7 @@ export async function getStaticProps() {
     const { data } = await craftApolloClient().query({
         query: gql`
             query Articles {
-                entries(site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}"], section: "contentLibrary") {
+                entries(site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}", "${process.env.SITE_HANDLE_EGYPT}"], section: "contentLibrary") {
                     ... on contentLibrary_article_Entry {
                         id
                         slug

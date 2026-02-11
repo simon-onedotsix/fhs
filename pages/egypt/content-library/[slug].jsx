@@ -245,7 +245,7 @@ export async function getStaticPaths() {
     const res = await craftApolloClient().query({
         query: gql`
             query Articles {
-                entries(site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}"], section: "contentLibrary") {
+                entries(site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}", "${process.env.SITE_HANDLE_EGYPT}"], section: "contentLibrary") {
                     slug
                 }
             }
@@ -267,7 +267,7 @@ export async function getStaticProps({ params, preview, previewData }) {
     const entryQuery = await craftApolloClient( preview, previewData ).query({
         query: gql`
             query Entry {
-                entries(site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}"], slug: "${params.slug}") {
+                entries(site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}", "${process.env.SITE_HANDLE_EGYPT}"], slug: "${params.slug}") {
                     ... on contentLibrary_article_Entry {
                         id
                         slug
