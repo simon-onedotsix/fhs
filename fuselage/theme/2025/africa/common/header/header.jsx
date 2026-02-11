@@ -28,10 +28,16 @@ const otherEvents = [
         target: false
     },
     {
-        id: 11,
-        title: 'Branded Residences Forum',
-        url: 'https://www.brandedresidencesforum.com/',
-        target: true
+        id: 2,
+        title: 'FHS Saudi Arabia',
+        url: '/sa',
+        target: false
+    },
+    {
+        id: 15,
+        title: 'FHS Egypt',
+        url: '/egypt',
+        target: false
     },
     {
         id: 12,

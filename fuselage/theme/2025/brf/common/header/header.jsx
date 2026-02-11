@@ -29,6 +29,12 @@ const otherEvents = [
         target: false
     },
     {
+        id: 15,
+        title: 'FHS Egypt',
+        url: '/egypt',
+        target: false
+    },
+    {
         id: 11,
         title: 'Branded Residences Forum',
         url: 'https://www.brandedresidencesforum.com/',

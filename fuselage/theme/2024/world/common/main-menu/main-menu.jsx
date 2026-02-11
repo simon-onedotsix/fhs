@@ -180,12 +180,20 @@ export const MainMenu = ({ otherEvents }) => {
                                 FHS Saudi Arabia
                             </ArrowButton>
                         </p>
-                        <p className="pb-sm">
+                        <p className="pb-xs">
                             <ArrowButton 
-                                href={ 'https://www.ahif.com' } 
+                                href={ '/africa' } 
                                 theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
                             >
                                 FHS Africa
+                            </ArrowButton>
+                        </p>
+                        <p className="pb-sm">
+                            <ArrowButton 
+                                href={ '/egypt' } 
+                                theme={{ arrow: `var(--accent)`, border: `var(--accent)`, label: `white`}}
+                            >
+                                FHS Egypt
                             </ArrowButton>
                         </p>
 
@@ -193,7 +201,7 @@ export const MainMenu = ({ otherEvents }) => {
                         {
                             otherEvents.length &&
                             otherEvents.map( event => {
-                                if ( event.id != 1 && event.id != 2 && event.id != 5 ) return (
+                                if ( event.id != 1 && event.id != 2 && event.id != 5 && event.id != 15 ) return (
                                     <p key={event.id} className="mt-xs">
                                         <ArrowButton 
                                             href={ event.url } 
