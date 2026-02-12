@@ -123,7 +123,7 @@ export default function Home ({ data, content }) {
                 <section className="block">
                     <div className="container center">
                         <h1 className="fs-0 caps">Where Heritage <br />Inspires Investment</h1>
-                        <h4 className="fs-4">10/11 November 2026, Cairo</h4>
+                        <h4 className="fs-4">10-11 November 2026, Sofitel Downtown Cairo Nile</h4>
 
                         <p className="mt-md"><Pop><ButtonKeyline href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></Pop></p>
                     </div>
@@ -220,11 +220,11 @@ export default function Home ({ data, content }) {
 
 
             
-            {/* SECTION 4 */}
+            {/* SPEAKERS */}
 
             <section className="block bg-dark">
                 <div className="container center">
-                    <p className="fs-1 fw-500">THEY HAVE SPOKEN AT OUR CONFERENCES</p>
+                    <p className="fs-1 fw-500 caps">Past FHS Speakers</p>
                     <p className="fs-5 mt-xs">Speaker line-up coming soon</p>
                 </div>
 
@@ -282,7 +282,7 @@ export default function Home ({ data, content }) {
                     <p className="fs-1 fw-500 caps">FHS Around the World</p>
                 </div>
 
-                <div className="container columns-5 gap-xs">
+                <div className="container columns-3 maxw-55 gap-xs">
                     {
                         data.events.map( event => {
                             return (
