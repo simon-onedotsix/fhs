@@ -739,7 +739,7 @@ export default function Page({ seomatic, partners }) {
                         </div>
                     </SlideoutCard>
 
-                    <SlideoutCard title={`Investors`} imageSrc={`/assets/img/sa/homepage/attends-02.jpg`}>
+                    <SlideoutCard title={`Investors`} imageSrc={`/assets/img/sa/homepage/attends-investors.jpg`}>
                         <div className="formatted">
                             <ul>
                                 <li>Institutional Hotel Investors</li>
@@ -762,7 +762,7 @@ export default function Page({ seomatic, partners }) {
                         </div>
                     </SlideoutCard>
 
-                    <SlideoutCard title={`Government Officials`} imageSrc={`/assets/img/sa/homepage/attends-04.jpg`}>
+                    <SlideoutCard title={`Government Officials`} imageSrc={`/assets/img/sa/homepage/attends-govt.jpg`}>
                         <div className="formatted">
                             <ul>
                                 <li>Ministry of Tourism</li>
@@ -773,7 +773,7 @@ export default function Page({ seomatic, partners }) {
                         </div>
                     </SlideoutCard>
 
-                    <SlideoutCard title={`Enables & Advisors`} imageSrc={`/assets/img/sa/homepage/attends-05.jpg`}>
+                    <SlideoutCard title={`Enablers & Advisors`} imageSrc={`/assets/img/sa/homepage/attends-enablers.jpg`}>
                         <div className="formatted">
                             <ul>
                                 <li>Lawyers</li>
