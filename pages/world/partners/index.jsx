@@ -65,6 +65,7 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 
 	const CUSTOM_ORDERING = [
 		
+		{ id: 'RmllbGRWYWx1ZV8yOTg2OTk2Mg==', value: 'host-sponsor' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Ng==', value: 'strategic-partner' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Nw==', value: 'headline-sponsor' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2OA==', value: 'country-pavilion' },
@@ -120,7 +121,7 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 							// replace SC pavilions category with CMS data
 							if (category.group.id === "RmllbGRWYWx1ZV8yOTM0Mzg2OA==") {
 								return (
-									<PartnerCategory key={category.id}>
+									<PartnerCategory key={index}>
 										<div className="block pt-0">
 										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>Country Pavilions</h4>
 											<PartnerLogoGrid>

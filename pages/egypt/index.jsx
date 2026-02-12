@@ -10,11 +10,13 @@ import Head from "next/head"
 import Ticker from 'framer-motion-ticker'
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
+import { Reveal } from "../../fuselage/animation/reveal"
 
 import { Header } from '../../fuselage/theme/egypt/common/header/header'
 import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
 import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 
+import { PageHeroThemed } from "../../fuselage/theme/egypt/page-hero-themed/page-hero-themed"
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
 import { ThemeBillboard } from "../../fuselage/theme/2025/world/pages/home/theme-billboard"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
@@ -107,10 +109,27 @@ export default function Home ({ data, content }) {
         
             <Header overlaid inverse />
 
+
+            <PageHeroThemed>
+
+                <section className="block">
+                    <div className="container pt-xl">
+                        <h1 className="fs-0 caps lh-0 c-secondary"><Reveal>Where Heritage <br />Inspires Investment</Reveal></h1>
+                        <h4 className="fs-4 c-secondary">10-11 November 2026, Sofitel Downtown Cairo Nile</h4>
+
+                        <p className="mt-md c-secondary">
+                            <Pop inline><ButtonKeyline decal={`fs-5`} href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></Pop>
+                        </p>
+                    </div>
+                </section>
+
+            </PageHeroThemed>
+
+            
             
             {/* ATF */}
 
-            <PageHeroImage hero={{ url: '/assets/img/egypt/homepage/fhs-egypt-hero.jpg', width: 1200, height: 630 }} >
+            {/* <PageHeroImage hero={{ url: '/assets/img/egypt/homepage/fhs-egypt-hero.jpg', width: 1200, height: 630 }} >
                 
                 <section className="block">
                     <div className="container center">
@@ -121,7 +140,7 @@ export default function Home ({ data, content }) {
                     </div>
                 </section>
 
-            </PageHeroImage>
+            </PageHeroImage> */}
 
 
 

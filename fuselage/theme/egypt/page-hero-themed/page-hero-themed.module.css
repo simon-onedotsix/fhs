@@ -1,0 +1,68 @@
+.layout {
+    position: relative;
+    display: grid;
+
+}
+
+.theme,
+.content {
+    grid-area: 1/1 / 2/2;
+}
+
+.theme {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    align-items: center;
+
+    background: #65D9E4;
+    background: linear-gradient(90deg,rgba(101, 217, 228, 1) 0%, rgba(173, 219, 224, 1) 35%);
+    overflow: hidden;
+}
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.dune {
+    grid-area: 1/1 / 2/2;
+    clip-path: polygon(0% 100%, 0% 87%, 70% 49%, 100% 67%, 100% 100%);
+    width: 100%;
+    aspect-ratio: 3/2;
+    transform-origin: bottom;
+}
+
+
+
+/* mobile */
+
+@media(max-width:599px){
+    .content {
+        padding-top: 8vh;
+    }
+}
+
+
+/* tablet portrait */
+
+@media(min-width:600px) and (max-width:899px){
+    .layout {
+        aspect-ratio: 5/3;
+    }
+    .content {
+        padding-top: 10vh;
+    }
+}
+
+/* desktop */
+
+@media(min-width:900px) {
+    .layout {
+        aspect-ratio: 16/7;
+    }
+    .dune {
+        aspect-ratio: 16 / 8;
+    }
+}

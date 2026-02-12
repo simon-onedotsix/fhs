@@ -13,7 +13,7 @@ export const ButtonKeyline = ({ children, href, target, rel, disabled, color, de
 		setIsHovered(false)
 	}
 	const buttonStyle = {
-		color: isHovered ? ( color ? color : 'var(--secondary)' ) : ( 'white' )
+		color: isHovered ? ( color ? color : 'var(--secondary)' ) : ( 'inherit' )
 	}
 
 	return (

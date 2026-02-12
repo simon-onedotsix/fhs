@@ -7,7 +7,7 @@
 	border: 1px solid var(--accent);
 	border-radius: var(--default-button-radius);
 	background-color: transparent;
-	color: white;
+	color: inherit;
 	transition: all 500ms ease-in-out;
 	text-align: center;
 	font-weight: 500;
