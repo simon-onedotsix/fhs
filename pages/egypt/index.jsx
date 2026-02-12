@@ -4,11 +4,8 @@ import craftApolloClient from "../api/apollo"
 import { useState, useRef } from "react"
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
-import { motion, useScroll, useTransform } from "framer-motion"
 
 import Head from "next/head"
-import Image from "next/image"
-import Link from "next/link"
 
 import Ticker from 'framer-motion-ticker'
 
@@ -16,23 +13,18 @@ import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/
 
 import { Header } from '../../fuselage/theme/egypt/common/header/header'
 import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
-
 import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
-import { Button } from "../../fuselage/theme/2024/world/components/button/button"
-import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
 
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
 import { ThemeBillboard } from "../../fuselage/theme/2025/world/pages/home/theme-billboard"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { PopupOverlay } from "../../fuselage/components/popup-overlay/popup-overlay"
-import { BillboardSlider } from '../../fuselage/blocks/billboard-slider/billboard-slider'
 import { Billboard } from '../../fuselage/blocks/billboard/billboard'
-import { UpcomingEvents, EventGroupCard, EventCard, EventCardLite } from '../../fuselage/theme/2024/world/blocks/upcoming-events/upcoming-events'
+import { EventCardLite } from '../../fuselage/theme/2024/world/blocks/upcoming-events/upcoming-events'
 import { ContentCard } from "../../fuselage/theme/2024/world/components/content-card/content-card"
-
 import { Carousel } from "../../fuselage/blocks/carousel/carousel"
 
-import { HeroUnitVideo } from "../../fuselage/theme/2025/world/pages/home/hero-unit-video"
+
 
 import CSS from '../../fuselage/theme/egypt/css/homepage.module.css'
 
@@ -116,7 +108,7 @@ export default function Home ({ data, content }) {
             <Header overlaid inverse />
 
             
-            {/* SECTION 1 */}
+            {/* ATF */}
 
             <PageHeroImage hero={{ url: '/assets/img/egypt/homepage/fhs-egypt-hero.jpg', width: 1200, height: 630 }} >
                 
@@ -141,68 +133,45 @@ export default function Home ({ data, content }) {
                     <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$3 billion</strong>  in business opportunities and deal volume gained in 2025 conferences</p>
                 </Ticker>
             </div>
+
+
+
+            {/* NEW GROWTH CYCLE */}
+            
+            <section className="block bg-secondary">
+                <div className="container center maxw-45">
+                    <p className="fs-1 fw-500 lh-1">EGYPT IS ENTERING A NEW GROWTH CYCLE</p>
+                </div>
+
+                <div className="container columns-3 gap-md">
+                    <div className="formatted">
+                        <Pop><img src="/assets/img/egypt/homepage/egypt-01.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <h3 className="balance">Record-Breaking Tourism Demand</h3>
+                        <p className="fs-6">Egypt welcomed 19 million tourists in 2025, setting a new inbound travel record and reinforcing strong demand across leisure and cultural destinations.</p>
+                    </div>
+                    
+                    <div className="formatted">
+                        <Pop><img src="/assets/img/egypt/homepage/egypt-02.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <h3 className="balance">Growing Hospitality Investment Market</h3>
+                        <p className="fs-6">Egypt&apos;s hospitality market is projected to reach USD 8.8 billion by 2033, supported by rising hotel revenues and continued tourism growth.</p>
+                        <small>Source: IMARC Group 2025</small>
+                    </div>
+
+                    <div className="formatted">
+                        <Pop><img src="/assets/img/egypt/homepage/africa-map.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <h3 className="balance">Strategic Gateway for Global Capital</h3>
+                        <p className="fs-6">Positioned between Africa, the Middle East, and Europe, Egypt&apos;s Vision 2030 is accelerating infrastructure and tourism investment to support long-term hospitality growth.</p>
+                    </div>
+                </div>
+            </section>
             
 
 
-            {/* SECTION 2 */}
-            <LayerSection
-                layers={[
-                    {
-                        zIndex: 2,
-                        content:
-                            <div style={{ padding: `var(--space-lg)`, pointerEvents: `none`}}>
-                                <SplitSection>
-                                    <div className="container">
-                                    <p className="fs-1 fw-500 lh-1 maxw-45">EGYPT IS ENTERING A NEW GROWTH CYCLE</p>
-                                </div>
-                                </SplitSection>
-                            </div>
-                    },
-                    {
-                        zIndex: 1,
-                        content:
-                            <Carousel>
-                                <Billboard hero={{ url: `/assets/img/egypt/homepage/egypt-01.jpg` }} tint={30}>
-                                    <SplitSection bottom>
-                                        <div className="container center bg-black-60 p-sm rad-sm">
-                                            <p className="fs-3 fw-600 lh-2 balance">Record-Breaking Tourism Demand</p>
-                                            <p className="fs-5 balance">Egypt welcomed <strong>19 million tourists</strong> in 2025, marking a record year for inbound travel and highlighting sustained demand across leisure, cultural, and urban hospitality destinations.</p>
-                                        </div>
-                                    </SplitSection>
-                                </Billboard>
+            {/* WHO YOU WILL MEET */}
 
-                                <Billboard hero={{ url: `/assets/img/egypt/homepage/egypt-02.jpg` }} tint={30}>
-                                    <SplitSection bottom>
-                                        <div className="container center bg-black-60 p-sm rad-sm">
-                                            <p className="fs-3 fw-600 lh-2 balance">Growing Hospitality Investment Market</p>
-                                            <p className="fs-5 balance">Egypt&apos;s hospitality sector is projected to reach a market value of <strong>USD 8.8 billion by 2033</strong>, with hotel revenues expected to grow from <strong>USD 2.85 billion to USD 3.60 billion</strong> between <strong>2025 and 2029</strong>, underpinned by new developments and expanding tourism flows.</p>
-                                            <small>Source: IMARC Group 2025</small>
-                                        </div>
-                                    </SplitSection>
-                                </Billboard>
-
-                                <Billboard hero={{ url: `/assets/img/egypt/homepage/africa-map.jpg` }} tint={30}>
-                                    <SplitSection bottom>
-                                        <div className="container center bg-black-60 p-sm rad-sm">
-                                            <p className="fs-3 fw-600 lh-2 balance">Strategic Gateway for Global Capital</p>
-                                            <p className="fs-5 balance">Located at the crossroads of Africa, the Middle East, and Europe, Egypt&apos;s hospitality growth is supported by <strong>Egypt Vision 2030</strong>, driving investment in infrastructure, tourism incentives, and policy reform to create a compelling environment for long-term, scalable hospitality development.</p>
-                                        </div>
-                                    </SplitSection>
-                                </Billboard>
-                            </Carousel>
-                    },
-                    
-
-                ]}
-            />
-
-
-            {/* SECTION 3 */}
-
-            <section className="block">
+            <section className="block bg-secondary">
                 <div className="container center">
                     <p className="fs-1 fw-500">WHO YOU WILL MEET</p>
-                    <p className="fs-5 mt-xs">300+ C-Level hospitality investment decision-makers</p>
                 </div>
 
                 <div className="container columns-5 gap-sm center formatted">
@@ -215,6 +184,27 @@ export default function Home ({ data, content }) {
 
                 <div className="container center">
                     <p><Pop><ButtonKeyline href={`/egypt/forms/register-interest`}>Register Interest</ButtonKeyline></Pop></p>
+                </div>
+            </section>
+
+
+            
+            {/* BRF */}
+
+            <section className="block bg-medium">
+                <div className="container center">
+                    <p className="fs-1 fw-500">Branded Residences at FHS Egypt</p>
+                </div>
+
+                <div className="container columns-2 gap-md ai-center">
+                    <Pop><img src="/assets/img/egypt/homepage/brf-egypt.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}} /></Pop>
+                    
+                    <section className="formatted">
+                        <p>Egypt is rapidly emerging as a leading branded residences market, with <strong>45% of high-net-worth investors</strong> identifying the segment as a key asset class, delivering <strong>8–12% yields vs. 5–7% for traditional hotels</strong>.</p>
+                        <p>Backed by <strong>Egypt Vision 2030</strong> and expanding partnerships between leading local developers and global brands, branded residences are reshaping mixed-use and resort development across the country.</p>
+                        <br />
+                        <p><Pop inline><ButtonKeyline href={`/egypt/brf`}>Learn More</ButtonKeyline></Pop></p>
+                    </section>
                 </div>
             </section>
 
@@ -252,7 +242,7 @@ export default function Home ({ data, content }) {
             
 
 
-            {/* SECTION 5 */}
+            {/* THEMES */}
 
             <section className="block">
                 <div className="container center">
@@ -275,7 +265,7 @@ export default function Home ({ data, content }) {
 
 
 
-            {/* SECTION 6 */}
+            {/* FHS EVENTS */}
 
             <section className="block">
                 <div className="container center">
@@ -313,9 +303,9 @@ export default function Home ({ data, content }) {
 
                                 
 
-            {/* SECTION 7 */}
+            {/* CONTENT-ARTICLES */}
 
-            <section className="block">
+            <section className="block bg-dark">
                 <div className="container center">
                     <p className="fs-1 fw-500 caps">THOUGHT LEADERSHIP IN ACTION</p>
                 </div>

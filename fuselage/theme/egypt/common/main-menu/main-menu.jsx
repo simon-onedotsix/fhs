@@ -122,6 +122,26 @@ const MENU_DATA = [
             {
                 "__typename": "columnData_heading_BlockType",
                 "id": "191096",
+                "heading": "Event Features",
+                "headingSize": "lg"
+            },
+            {
+                "__typename": "columnData_menuLinksGroup_BlockType",
+                "id": "191097",
+                "menuLinks": [
+                    {
+                        "__typename": "menuLinks_TableRow",
+                        "hyperlink": "/egypt/brf",
+                        "label": "Branded Residences Forum",
+                        "size": "md",
+                        "indent": false,
+                        "newWindow": false
+                    }                    
+                ]
+            },
+            {
+                "__typename": "columnData_heading_BlockType",
+                "id": "191096",
                 "heading": "Content Library",
                 "headingSize": "lg"
             },

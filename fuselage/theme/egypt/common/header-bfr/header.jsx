@@ -101,7 +101,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                     </div>
                     
                     <div className={CSS.venue}>
-                        <p className='lh-2'><span className='fw-600'>11 November 2026</span> <br/>Cairo</p>
+                        <p className='lh-2'><span className='fw-600'>10-11 November 2026</span> <br/>Sofitel Downtown Cairo Nile</p>
                     </div>
                     
                 </section>
