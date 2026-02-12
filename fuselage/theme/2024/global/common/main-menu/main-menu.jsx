@@ -123,7 +123,7 @@ export const MainMenu = ({ otherEvents }) => {
                             <ArrowButton href={`/africa`} theme={{ arrow: `var(--primary-3)`, border: `var(--primary-3)`, label: `white`}}>FHS Africa</ArrowButton>
                         </p>
                         <p className="mt-xs">
-                            <ArrowButton href={`/egypr`} theme={{ arrow: `var(--primary-3)`, border: `var(--primary-3)`, label: `white`}}>FHS Egypt</ArrowButton>
+                            <ArrowButton href={`/egypt`} theme={{ arrow: `var(--primary-3)`, border: `var(--primary-3)`, label: `white`}}>FHS Egypt</ArrowButton>
                         </p>
                     </section>
                     
