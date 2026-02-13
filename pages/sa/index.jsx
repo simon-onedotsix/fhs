@@ -643,7 +643,7 @@ export default function Page({ seomatic, partners }) {
                 <div className="container columns-2 gap-md ai-center">
                     <div className="formatted">
                         <p><strong>Future Hospitality Summit - Saudi Arabia</strong> brings together Saudi and international owners, developers, operators, brands and investors to accelerate cross-border partnerships and capital flows in hospitality. </p>
-                        <p>The platform spotlights investment opportunities across the full breadth of the Kingdom, working closely with partners like Al Rajhi Capital with a focus on the private sector and opportunities in secondary cities, as well as with the giga projects who have partnered with FHS since its launch in Saudi Arabia over nine years ago.</p>
+                        <p>The platform spotlights investment opportunities across the full breadth of the Kingdom, working closely with our partners with a focus on the private sector and opportunities in secondary cities, as well as with the giga projects who have partnered with FHS since its launch in Saudi Arabia over nine years ago.</p>
                         <p>In addition, the Summit&apos;s investor-led networking, including the Investor Lounge built for curated, private meetings, is designed to turn conversations into mandates, partnerships and transactions.</p>
                         <br />
 
@@ -670,6 +670,27 @@ export default function Page({ seomatic, partners }) {
                 </div>
             </section>
 
+
+
+            {/* SPONSORS */}
+            <section className="block pb-0">
+                <div className="container center">
+                    <Pop><p className="fs-1 fw-600 c-primary balance">Meet Our Partners</p></Pop>
+                </div>
+            </section>
+            <div className="py-xs mt-sm mb-lg" dir={`ltr`}>
+                <Ticker duration={25}>
+                    {
+                        partners.map(partner => (
+                            <div key={partner.id} style={{ marginRight: 10 }}>
+                                <Logo logoUrl={partner.logoUrl} />
+                            </div>
+                        ))
+                    }
+                </Ticker>
+            </div>
+
+            
 
 
             {/* 2025 RESULTS */}
@@ -885,25 +906,6 @@ export default function Page({ seomatic, partners }) {
             </Section>
 
 
-
-            {/* SPONSORS */}
-            <section className="block pb-0">
-                <div className="container center">
-                    <Pop><p className="fs-1 fw-600 c-primary balance">Meet Our Partners</p></Pop>
-                </div>
-            </section>
-            <div className="py-xs mt-sm mb-lg" dir={`ltr`}>
-                <Ticker duration={25}>
-                    {
-                        partners.map(partner => (
-                            <div key={partner.id} style={{ marginRight: 10 }}>
-                                <Logo logoUrl={partner.logoUrl} />
-                            </div>
-                        ))
-                    }
-                </Ticker>
-            </div>
-
             
 
             {/* TESTIMONIALS */}
@@ -1008,133 +1010,7 @@ export default function Page({ seomatic, partners }) {
             </Section>
 
 
-
-
-
-            {/* TICKER */}
-            {/* <div className="bg-secondary py-xs" dir={`ltr`}>
-                {
-                    locale === 'ar'
-                        ? (
-                            <Ticker direction={1}>
-                                <p className="fs-4">&ensp;&bull;&ensp;• صفقات وفرص تجارية مُحققة بقيمة 1.6 مليار دولار في قمة مستقبل الضيافة 2025</p>
-                                <p className="fs-4">&ensp;&bull;&ensp;• صفقات وفرص تجارية مُحققة بقيمة 1.6 مليار دولار في قمة مستقبل الضيافة 2025</p>
-                            </Ticker>
-                        ) : (
-                            <Ticker>
-                                <p className="fs-4">&ensp;&bull;&ensp;<strong>$1.6BN</strong> in business opportunities and deal volume gained in 2025 edition</p>
-                                <p className="fs-4">&ensp;&bull;&ensp;<strong>$1.6BN</strong> in business opportunities and deal volume gained in 2025 edition</p>
-                            </Ticker>
-                        )
-                }
-            </div> */}
-
-
             
-            {/* IN NUMBERS */}
-            {/* <Section
-                flush
-                backgroundClass={`bg-white`}
-                themeGraphics={
-                    <ThemeGraphic
-                        src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                        width={`80vw`}
-                        coordinates={{ left: `30vw`, top: `-20vh` }}
-                        opacity={.25}
-                    />
-                }
-            >
-                <ImpactGrid>
-                    <TitleBlock>
-                        <SectionHeading heading={ locale === 'ar' ? "2025 بالأرقام" : '2025 in Numbers'} decal={'c-secondary'} />
-                        <div style={{ marginTop: `var(--space-sm)`, marginLeft: `var(--space-md)`}}>
-                            <Pop inline>
-                                <Button 
-                                    href={'/sa/attendee-list-2025'} 
-                                    theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                    decal={'fs-5 fw-600'} 
-                                    accent
-                                >{ locale === 'ar' ? `تحميل قائمة الحضور` : `Download Attendee List`}</Button>
-                            </Pop>
-                        </div>
-                    </TitleBlock>
-
-                    <ImpactFigure decal={'bg-neutral-01'} figure={1106} impact={ locale === 'ar' ? "مشاركًا" : 'Attendees'}  />
-                    <ImpactFigure decal={'bg-neutral-02'} figure={37} impact={ locale === 'ar' ? "دولة" : 'Countries'}  />
-                    <ImpactFigure decal={'bg-neutral-02'} figure={153} impact={ locale === 'ar' ? "متحدثًا" : 'Speakers'}  />
-                    <ImpactFigure decal={'bg-neutral-01'} figure={85} impact={ locale === 'ar' ? "عدد الشركاء والجهات الراعية" : 'Sponsors & Partners'}  />
-                    <ImpactFigure decal={'bg-neutral-02'} figure={68} unit={'%'} impact={ locale === 'ar' ? "من كبار المديرين التنفيذيين، ونواب الرؤساء، والمديرين" : 'C-Level Executives, VP & Directors'}  />
-                    <ImpactFigure />
-                    <ImpactFigure decal={'bg-neutral-01'} figure={24} unit={'%'} impact={ locale === 'ar' ? `من المستثمرين` : 'Investors'} />
-                    <ImpactFigure decal={'bg-neutral-02'} prefix={'$'} figure={5.6} unit={'tn'} impact={ locale === 'ar' ? `تريليون دولار أمريكي إجمالي الأصول المُدارة` : 'AUM'} />
-                    <ImageBlock imageUrl={'/assets/img/sa/impact-hero.jpg'} />
-                </ImpactGrid>
-            </Section> */}
-            
-
-            
-            {/* VIDEO + PHOTO HIGHLIGHTS */}
-            {/* <Section
-                backgroundClass={`bg-white`}
-                themeGraphics={
-                    <ThemeGraphic
-                        src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                        width={`80vw`}
-                        coordinates={{ left: 0, top: `20vh` }}
-                        opacity={.25}
-                    />
-                }
-            >
-                <div className={`${CSS.highlightVideoGrid} container`}>
-                    <Slide>
-                        {
-                            locale === 'ar' ? (
-                                <p className='fs-1 fw-700 lh-1 c-secondary'>أبرز أحداث قمة مستقبل الضيافة بالمملكة العربية السعودية 2025</p>
-                            ): (
-                                <p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS Saudi Arabia 2025</span></p>   
-                            )
-                        }
-                    </Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://cms.thebench.com/assets/video/fhs-2025-sa-highlights.mp4`}  poster={'https://cms.thebench.com/assets/video/fhs-2025-sa-highlights-poster.jpg'} controls={true} />
-                </div>
-
-                <div className={`${CSS.photoGrid} container`}>
-                    <Slide>
-                        {
-                            locale === 'ar' ? (
-                                <p className='fs-0 fw-700 lh-1 mt-lg c-secondary'>2025 في صور</p>
-                            ): (
-                                <p className='fs-0 fw-700 lh-1 mt-lg'>2025 in <span className='c-secondary'>Photos</span></p> 
-                            )
-                        }
-                    </Slide>
-                    
-                    <div className="columns-3 gap-xs mt-md">
-                        {
-                            PHOTOS_DATA.map( (photo, index) => (
-                                <Pop key={index}>
-                                    <div key={photo.id} style={{ position: `relative`}}>
-                                        <Image src={photo.hero[0].url} width={photo.hero[0].width} height={photo.hero[0].height} layout={`responsive`} alt="" />
-                                    </div>
-                                </Pop>
-                            ))
-                        }
-                        <p className="mt-xs">
-                            <ArrowButton
-                                href={`https://www.flickr.com/photos/benchevents/albums/`}
-                                target='_blank'
-                                theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)` }}
-                            >{locale === 'ar' ? `عرض المعرض الكامل` : `View Full Gallery`}</ArrowButton>
-                        </p>
-                    </div>
-
-                </div>
-            </Section> */}
-
-            
-
-
-
 
 
             <Footer/>
