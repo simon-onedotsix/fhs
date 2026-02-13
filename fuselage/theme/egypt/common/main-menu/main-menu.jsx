@@ -106,7 +106,7 @@ const MENU_DATA = [
                     {
                         "__typename": "menuLinks_TableRow",
                         "hyperlink": "/egypt/partners",
-                        "label": "Sponsors & Partners",
+                        "label": "Sponsors & Supporters",
                         "size": "md",
                         "indent": false,
                         "newWindow": false
