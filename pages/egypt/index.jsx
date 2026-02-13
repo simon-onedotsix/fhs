@@ -147,9 +147,11 @@ export default function Home ({ data, content }) {
 
             {/* TICKER */}
             <div className="bg-primary py-xs">
-                <Ticker>
+                <Ticker duration={20}>
                     <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$3 billion</strong>  in business opportunities and deal volume gained in 2025 conferences</p>
-                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$3 billion</strong>  in business opportunities and deal volume gained in 2025 conferences</p>
+                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">95.8%</strong>  of FHS attendees achieved their networking goals last year</p>
+                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">91.5%</strong>  of FHS Attendees rated FHS speaker content as high value</p>
+                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">29 </strong>  landmark lotel signings announced on stage</p>
                 </Ticker>
             </div>
 
