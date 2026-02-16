@@ -1,6 +1,9 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
+import Head from "next/head"
+import Script from "next/script"
+
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { Pop, Fade } from "../../fuselage/animation/animation"
 
@@ -46,6 +49,11 @@ export default function Page ({ entry }) {
 
     return (
         <>
+                <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
+            </Head>
+            
             <Header compact />
 
             {/* UPDATE TO USE CMS DATA */}

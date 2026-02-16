@@ -3,7 +3,8 @@ import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 import _ from 'lodash'
 
-import Link from 'next/link'
+import Head from 'next/head'
+import Script from 'next/script'
 
 import { motion } from "framer-motion"
 
@@ -283,6 +284,11 @@ export default function Page ({ sessions, speakers }) {
 
     return (
         <>
+            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
+            </Head>
+            
             <Header overlaid />
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>

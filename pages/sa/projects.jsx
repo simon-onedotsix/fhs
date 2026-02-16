@@ -4,6 +4,7 @@ import craftApolloClient from "../api/apollo"
 import parse from 'html-react-parser'
 
 import Image from "next/image"
+import Script from "next/script"
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
@@ -22,6 +23,7 @@ export default function Page ({ entry }) {
 
     return (
         <div>
+            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 
             <Header compact />
 

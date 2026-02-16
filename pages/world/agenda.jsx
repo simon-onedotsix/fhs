@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 
 import Head from "next/head"
+import Script from "next/script"
 import { useRouter } from "next/router"
 
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
@@ -608,6 +609,7 @@ export default function Agenda ({ sessions, locations }) {
     return (
         <ReactLenis root>
 
+				<Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
 			</Head>

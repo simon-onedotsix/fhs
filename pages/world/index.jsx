@@ -9,6 +9,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
+import Script from "next/script"
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 
@@ -189,9 +190,10 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
     return (
         <>
+                <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
-                { handleSeomaticMeta( seomatic ) }
+                {handleSeomaticMeta(seomatic)}
             </Head>
         
             <Header overlaid inverse />

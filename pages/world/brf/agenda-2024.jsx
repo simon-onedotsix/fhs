@@ -5,6 +5,9 @@ import _ from 'lodash'
 import { format } from 'date-fns'
 import HTMLReactParser from 'html-react-parser'
 
+import Head from 'next/head'
+import Script from 'next/script'
+
 import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 
@@ -1616,6 +1619,11 @@ export default function Page () {
 
     return (
         <>
+            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
+            </Head>
+            
             <Header />
             
             <section className="block bg-default pt-0">

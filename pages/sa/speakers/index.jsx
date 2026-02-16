@@ -4,6 +4,7 @@ import craftApolloClient from "../../api/apollo"
 import _ from 'lodash'
 
 import Head from 'next/head'
+import Script from "next/script"
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -43,6 +44,8 @@ function Speakers({ seomatic, speakers }) {
 
 	return (
 		<div className="bg-default">
+
+			<Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />

@@ -2,6 +2,7 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import { useLenis } from '@studio-freight/react-lenis'
 
 import Head from 'next/head'
+import Script from 'next/script'
 
 import { Header } from '../../../fuselage/theme/2025/ais/common/header/header'
 import { Footer } from '../../../fuselage/theme/2025/ais/common/footer/footer'
@@ -18,9 +19,10 @@ export default function Page () {
 
     return (
         <>
+                <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
             <Head>
                 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, nocache, nositelinkssearchbox"/>
-                <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex, nocache, nositelinkssearchbox"/>
+                <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex, nocache, nositelinkssearchbox" />
             </Head>
             
             <Header overlaid inverse />

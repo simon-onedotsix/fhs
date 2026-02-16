@@ -4,6 +4,7 @@ import craftApolloClient from "../api/apollo"
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import Head from 'next/head'
+import Script from "next/script"
 
 import { 
     QueryText, 
@@ -39,9 +40,10 @@ function PurchasePass({ seomatic, entry }) {
 	return (
 		<>
 
+				<Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
-				{ handleSeomaticMeta( seomatic ) } 
+				{handleSeomaticMeta(seomatic)} 
             </Head>
 
 			<Header compact />

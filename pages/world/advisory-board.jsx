@@ -4,6 +4,7 @@ import craftApolloClient from "../api/apollo"
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import Script from "next/script"
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
@@ -22,9 +23,10 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 	return (
 		<>
 
+				<Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
-				{ handleSeomaticMeta( seomatic ) }
+				{handleSeomaticMeta(seomatic)}
             </Head>
 
             <Header compact />

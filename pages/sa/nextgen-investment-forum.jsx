@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 
 import Image from 'next/image'
+import Script from "next/script"
 
 import _ from 'lodash'
 import { format } from 'date-fns'
@@ -193,6 +194,8 @@ export default function Page ({ sessions, locations }) {
 
     return (
         <>
+            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+
             <Header compact />
 
                 {/* intro */}

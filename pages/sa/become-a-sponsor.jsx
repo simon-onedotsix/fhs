@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import Link from 'next/link'
+import Script from "next/script"
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Reveal } from "../../fuselage/animation/reveal"
@@ -172,7 +173,10 @@ export default function Page ({ partners }) {
     const masonryContainer = useMasonry()
 
     return (
-        <div dir={ locale === 'ar' ? 'rtl' : 'ltr' }>
+        <div dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+            
+            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+
             <Header compact />
 
             {/* intro */}

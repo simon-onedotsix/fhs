@@ -4,6 +4,7 @@ import craftApolloClient from "../api/apollo"
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import Head from "next/head"
+import Script from "next/script"
 import Image from 'next/image'
 
 import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
@@ -21,6 +22,9 @@ export default function AwardWinners ({ data }) {
     
     return (
         <div className="bg-theme">
+
+            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
             </Head>

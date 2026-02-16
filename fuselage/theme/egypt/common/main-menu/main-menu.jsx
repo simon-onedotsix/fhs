@@ -204,18 +204,6 @@ export const MainMenu = ({ otherEvents }) => {
             <div className={CSS.toggleContainer}>
                 <div className={`${CSS.toggleActions} ${ active && CSS.active }`}>
                     <Button 
-                        href={`/egypt/forms/register-interest`} 
-                        theme={{ 
-                            color: `var(--secondary)`,
-                            background: `var(--accent)`, 
-                            hover: `white`
-                        }} 
-                        decal={`fw-600`}
-                    >
-                        Register Interest
-                    </Button>
-                    
-                    <Button 
                         href={`/egypt/forms/become-a-partner`} 
                         theme={{ 
                             color: `var(--secondary)`,
@@ -225,6 +213,18 @@ export const MainMenu = ({ otherEvents }) => {
                         decal={`fw-600`}
                     >
                         Become A Partner
+                    </Button>
+                    
+                    <Button 
+                        href={`/egypt/purchase-pass`} 
+                        theme={{ 
+                            color: `var(--secondary)`,
+                            background: `var(--accent)`, 
+                            hover: `white`
+                        }} 
+                        decal={`fw-600`}
+                    >
+                        Register Here
                     </Button>
                 </div>
 

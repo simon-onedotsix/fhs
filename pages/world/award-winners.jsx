@@ -3,7 +3,7 @@ import craftApolloClient from "../api/apollo"
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
-import Image from 'next/image'
+import Script from "next/script"
 
 import { Header } from '../../fuselage/theme/2024/world/common/header/header'
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
@@ -22,6 +22,7 @@ export default function AwardWinners ({ data }) {
     return (
         <div className='bg-primary' style={{ backgroundColor: `var(--primary)`, backgroundImage: `url('/assets/theme/fhs-2024-global-bg.svg')`, backgroundSize: `100%` }}>
 
+                <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
             </Head>

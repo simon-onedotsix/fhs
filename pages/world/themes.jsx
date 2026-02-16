@@ -2,6 +2,7 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { motion, useScroll, useTransform } from "framer-motion"
 
 import Head from 'next/head'
+import Script from 'next/script'
 
 import _ from 'lodash'
 import parse from 'html-react-parser'
@@ -150,6 +151,7 @@ export default function Themes ({ sessions }) {
 
     return (
         <>
+                <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
 			</Head>

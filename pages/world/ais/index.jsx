@@ -10,6 +10,7 @@ import { motion } from "framer-motion"
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
+import Script from 'next/script'
 
 import { Header } from '../../../fuselage/theme/2025/ais/common/header/header'
 import { Footer } from '../../../fuselage/theme/2025/ais/common/footer/footer'
@@ -228,6 +229,7 @@ export default function Page ({ sessions, locations }) {
 
     return (
         <>
+                <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
             <Head>
                 <title>UAE Africa Tourism Investment Summit</title>
                 <meta name="UAE Africa Tourism Investment Summit" content="page-title"></meta>

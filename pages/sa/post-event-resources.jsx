@@ -4,6 +4,8 @@ import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 import { Client } from "@hubspot/api-client"
 
+import Script from "next/script"
+
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
@@ -86,6 +88,8 @@ export default function PostEvent ({ cmsEntryData }) {
 
     return (
         <>
+            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+
             <Header compact shim />
 
             

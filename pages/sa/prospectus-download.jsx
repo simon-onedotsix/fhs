@@ -2,6 +2,9 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import { useRouter } from "next/router"
 
+
+import Script from "next/script"
+
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 
 import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
@@ -19,6 +22,7 @@ export default function Page() {
 
     return (
         <div>
+            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 
             <Header compact />
 

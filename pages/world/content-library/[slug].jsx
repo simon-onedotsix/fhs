@@ -8,6 +8,8 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
 import Image from "next/image"
 import Link from "next/link"
+import Script from "next/script"
+
 import {format} from 'date-fns'
 
 import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
@@ -203,9 +205,10 @@ export default function Article ({ entry }) {
     return (
         <>
 
+                <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
-                { handleSeomaticMeta( entry.seomatic ) }
+                {handleSeomaticMeta(entry.seomatic)}
             </Head>
             
             <Header compact />

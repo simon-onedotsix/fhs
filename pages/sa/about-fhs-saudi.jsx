@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Script from "next/script"
 
 import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
@@ -218,7 +219,9 @@ export default function Page () {
 
 
     return (
-        <div dir={ locale === 'ar' ? 'rtl' : 'ltr' }>
+        <div dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+            
+            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 
             <Header compact />
 

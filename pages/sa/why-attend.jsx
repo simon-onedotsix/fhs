@@ -1,5 +1,6 @@
 import Head from "next/head"
 import Image from "next/image"
+import Script from "next/script"
 
 import { useRouter } from "next/router"
 
@@ -21,6 +22,7 @@ export default function WhyAttend () {
 
     return (
         <ReactLenis root>
+            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
         <div className="bg-pattern-blue"  dir={ locale === 'ar' ? 'rtl' : 'ltr' }>
             <Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />

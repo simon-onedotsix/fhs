@@ -25,6 +25,7 @@ import { useRouter } from "next/router"
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
+import Script from "next/script"
 
 import useCustomMediaQuery from "../../hooks/useCustomMediaQuery"
 
@@ -457,6 +458,7 @@ export default function Page({ seomatic, partners }) {
 
     return (
         <div>
+            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />

@@ -117,8 +117,9 @@ export default function Home ({ data, content }) {
                         <h1 className="fs-0 caps lh-0 c-secondary"><Reveal>Where Heritage <br />Inspires Investment</Reveal></h1>
                         <h4 className="fs-4 c-secondary">10-11 November 2026, Sofitel Downtown Cairo Nile</h4>
 
-                        <p className="mt-md c-secondary">
+                        <p className="mt-md c-secondary button-grid">
                             <Pop inline><ButtonKeyline decal={`fs-5`} href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></Pop>
+                            <Pop inline><ButtonKeyline decal={`fs-5`} href={`/egypt/forms/register-interest`}>Register Interest</ButtonKeyline></Pop>
                         </p>
                     </div>
                 </section>

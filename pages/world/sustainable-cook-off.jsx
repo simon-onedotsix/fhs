@@ -1,6 +1,9 @@
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
+import Head from 'next/head'
+import Script from 'next/script'
+
 import { motion, useScroll, useTransform } from "framer-motion"
 
 import { Header } from '../../fuselage/theme/2024/world/common/header/header'
@@ -23,6 +26,11 @@ export default function Page () {
 
     return (
         <>
+                <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
+            </Head>
+            
             <Header overlaid inverse />
 
             <HeroUnitVideo video={'/assets/img/world/pages/sustainable-cook-off/food-challenge-hero.mp4'} poster={'/assets/img/world/pages/sustainable-cook-off/food-challenge-hero.jpg'}>

@@ -2,6 +2,7 @@ import { gql } from "@apollo/client"
 import craftApolloClient from '../../../api/apollo'
 
 import Head from "next/head"
+import Script from "next/script"
 import Image from "next/image"
 
 import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller'
@@ -27,6 +28,9 @@ export default function Profile ({ profile }) {
 
     return (
         <>
+            
+            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
             </Head>
