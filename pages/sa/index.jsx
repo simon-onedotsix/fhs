@@ -183,229 +183,6 @@ const SPEAKER_DATA = [
     },
 ]
 
-const PHOTOS_DATA = [
-    {
-        "id": "13864",
-        "hero": [
-            {
-                "id": "50183",
-                "url": "/assets/img/sa/photos/2025-01.jpg",
-                "width": 1379,
-                "height": 919
-            }
-        ]
-    },
-    {
-        "id": "13865",
-        "hero": [
-            {
-                "id": "50184",
-                "url": "/assets/img/sa/photos/2025-02.jpg",
-                "width": 1379,
-                "height": 919
-            }
-        ]
-    },
-    {
-        "id": "13867",
-        "hero": [
-            {
-                "id": "50186",
-                "url": "/assets/img/sa/photos/2025-03.jpg",
-                "width": 1379,
-                "height": 919
-            }
-        ]
-    },
-    {
-        "id": "13868",
-        "hero": [
-            {
-                "id": "50187",
-                "url": "/assets/img/sa/photos/2025-04.jpg",
-                "width": 1379,
-                "height": 919
-            }
-        ]
-    },
-    {
-        "id": "50206",
-        "hero": [
-            {
-                "id": "50189",
-                "url": "/assets/img/sa/photos/2025-05.jpg",
-                "width": 1379,
-                "height": 919
-            }
-        ]
-    },
-    {
-        "id": "50207",
-        "hero": [
-            {
-                "id": "50193",
-                "url": "/assets/img/sa/photos/2025-06.jpg",
-                "width": 1379,
-                "height": 919
-            }
-        ]
-    },
-    {
-        "id": "13868",
-        "hero": [
-            {
-                "id": "50187",
-                "url": "/assets/img/sa/photos/2025-07.jpg",
-                "width": 1379,
-                "height": 919
-            }
-        ]
-    },
-    {
-        "id": "50206",
-        "hero": [
-            {
-                "id": "50189",
-                "url": "/assets/img/sa/photos/2025-08.jpg",
-                "width": 1379,
-                "height": 919
-            }
-        ]
-    },
-    {
-        "id": "50207",
-        "hero": [
-            {
-                "id": "50193",
-                "url": "/assets/img/sa/photos/2025-09.jpg",
-                "width": 1379,
-                "height": 919
-            }
-        ]
-    }
-]
-
-
-
-const AB_DATA = [
-    {
-        url: `/sa/speakers/profile/mohammad-al-athel`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Athel_Mohammad_photo.jpg',
-        fullName: 'Mohammad Alathel',
-        jobTitle: 'Founder and Managing Director',
-        company: 'Amsa Hospitality',
-    },
-    {
-        url: `/sa/speakers/profile/sultan-alotaibi`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Taiba-INvestments.jpg',
-        fullName: 'Sultan Alotaibi',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Taiba Investments',
-    },
-    {
-        url: `/sa/speakers/profile/sarah-gasim`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Gasim_Sarah_red.jpg',
-        fullName: 'Sarah Gasim',
-        jobTitle: 'Senior Vice President - Head of Hotels and Hospitality KSA',
-        company: 'JLL',
-    },
-    {
-        url: `/sa/speakers/profile/haifaa-alzahrani`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/IMG_3406.jpeg',
-        fullName: 'Haifaa Alzahrani',
-        jobTitle: 'Head of Hospitality Asset Management and Partnership',
-        company: 'Thakher Development',
-    },
-    {
-        url: `/sa/speakers/profile/hassan-ahdab`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Ahdab_Hassan.jpg',
-        fullName: 'Hassan Ahdab',
-        jobTitle: 'Chief Hospitality Operations Officer',
-        company: 'Taiba Investments',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk0MjU2ODU=`,
-        photoUrl: 'https://cdn-api.swapcard.com/public/images/5d687c7d1bd34fe383f0c0a3ba7da1c4.jpeg',
-        fullName: 'Sebastian Carre',
-        jobTitle: 'Group Head of Hospitality-Operations',
-        company: 'Red Sea Globa',
-    },
-    {
-        url: `/sa/speakers/profile/wahdan-alkadi`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/WAHDAN.webp',
-        fullName: 'Wahdan Alkadi',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Events Investment Fund',
-    },
-    {
-        url: `/sa/speakers/profile/samer-sabra`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/322541D7-4233-48BA-8AB5-766F54358317.jpeg',
-        fullName: 'Samer Sabra',
-        jobTitle: 'Chief of Hospitality Officer',
-        company: 'Jabal Omar Development Company',
-    },
-    
-]
-const AB_DATA_AR = [
-    {
-        url: `/sa/speakers/profile/mohammad-al-athel`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Athel_Mohammad_photo.jpg',
-        fullName: 'محمد العذل',
-        jobTitle: 'المؤسس والرئيس التنفيذي',
-        company: 'شركة أمسا للضيافة',
-    },
-    {
-        url: `/sa/speakers/profile/sultan-alotaibi`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Taiba-INvestments.jpg',
-        fullName: 'سلطان العتيبي',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'طيبة للاستثمار',
-    },
-    {
-        url: `/sa/speakers/profile/sarah-gasim`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Gasim_Sarah_red.jpg',
-        fullName: 'سارة قاسم',
-        jobTitle: 'نائبة الرئيس الأولى ورئيسة قسم مجموعة فنادق السعودية',
-        company: 'شركة جيه إل إل',
-    },
-    {
-        url: `/sa/speakers/profile/haifaa-alzahrani`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/IMG_3406.jpeg',
-        fullName: 'هيفاء الزهراني',
-        jobTitle: 'رئيسة إدارة أصول الضيافة والشراكات',
-        company: 'ذاخر للتطوير',
-    },
-    {
-        url: `/sa/speakers/profile/hassan-ahdab`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Ahdab_Hassan.jpg',
-        fullName: 'حسن أحدب',
-        jobTitle: 'الرئيس التنفيذي للتشغيل الفندقي',
-        company: 'طيبة للاستثمار',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfMzk0MjU2ODU=`,
-        photoUrl: 'https://cdn-api.swapcard.com/public/images/5d687c7d1bd34fe383f0c0a3ba7da1c4.jpeg',
-        fullName: 'سيباستيان كاري',
-        jobTitle: 'رئيس قطاع العمليات الفندقية للمجموعة',
-        company: 'البحر الأحمر الدولية',
-    },
-    {
-        url: `/sa/speakers/profile/wahdan-alkadi`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/WAHDAN.webp',
-        fullName: 'وهدان القاضي',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'صندوق الفعاليات الاستثماري',
-    },
-    {
-        url: `/sa/speakers/profile/samer-sabra`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/322541D7-4233-48BA-8AB5-766F54358317.jpeg',
-        fullName: 'سامر صبرا',
-        jobTitle: 'رئيس قطاع الضيافة',
-        company: 'شركة جبل عمر للتطوير',
-    },
-    
-]
-
 const QUOTES_DATA = [
     {
         avatarUrl: 'https://static.swapcard.com/public/images/9cf68577bdff4a38be44c9fbf2850f25.jpeg',
@@ -447,6 +224,32 @@ const QUOTES_DATA_AR = [
     }
 ]
 
+const INVESTORS = [
+    {title: "Aina Hospitality"},
+    {title: "Al Rajhi Capital"},
+    {title: "Al-Ameen Development Company"},
+    {title: "AQR-Refad Real Estate"},
+    {title: "Aseel Holding"},
+    {title: "BDPST Group"},
+    {title: "Bindawood Holding"},
+    {title: "Bugshan Investment"},
+    {title: "Capital Partners"},
+    {title: "Courbet Heritage"},
+    {title: "Ezdan"},
+    {title: "FIM Partners"},
+    {title: "First Projects Co."},
+    {title: "HAMA MEA"},
+    {title: "Jabal Omar Development Company"},
+    {title: "Kingdom Hotel Investments"},
+    {title: "Naif Al Rajhi Investment Company"},
+    {title: "Radar Holdings"},
+    {title: "RV Capital"},
+    {title: "SAB Invest"},
+    {title: "Saud Alarife Group"},
+    {title: "SEDCO Capital"},
+    {title: "Twenty14 Holdings"},
+    {title: "UBS Saudi Arabia"},
+]
 
 
 
@@ -677,7 +480,7 @@ export default function Page({ seomatic, partners }) {
             {/* SPONSORS */}
             <section className="block pb-0">
                 <div className="container center">
-                    <Pop><p className="fs-1 fw-600 c-primary balance">Meet Our Partners</p></Pop>
+                    <Pop><p className="fs-2 fw-600 c-primary balance">Meet Our Partners</p></Pop>
                 </div>
             </section>
             <div className="py-xs mt-sm mb-lg" dir={`ltr`}>
@@ -806,6 +609,24 @@ export default function Page({ seomatic, partners }) {
                         </div>
                     </SlideoutCard>
                     
+                </div>
+            </section>
+
+
+
+            {/* INVESTORS */}
+            <section className="bg-white">        
+                <div className="container py-xs" dir={`ltr`}>
+                    <Pop><p className="fs-2 fw-600 c-primary balance center pb-xs">First Confirmed Investors Include</p></Pop>
+                    <Ticker duration={25}>
+                        {
+                            INVESTORS.map((investor, index) => (
+                                <div key={index} style={{ marginRight: 10 }}>
+                                <p className="fs-5 fw-500"><span className="c-accent">&bull;</span> {investor.title}</p>
+                                </div>
+                            ))
+                        }
+                    </Ticker>
                 </div>
             </section>
 
@@ -1023,6 +844,11 @@ export default function Page({ seomatic, partners }) {
 }
 
 Page.theme = 'sa-2025'
+
+
+
+
+
 
 
 export const InvestorImpact = ({ prefix, figure, unit, label }) => {
