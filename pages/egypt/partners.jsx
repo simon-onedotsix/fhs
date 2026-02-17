@@ -45,7 +45,7 @@ export default function Page ({ videoTestimonials }) {
 
             <section className="block bg-default">
                 <div className="container center">
-                    <h1 className="fs-0 caps">Sponsors & Partners</h1>
+                    <h1 className="fs-0 caps">Partners and Supporters</h1>
                 </div>
 
                 <div className="container center formatted maxw-55">
