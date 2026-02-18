@@ -358,7 +358,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                     </LogoGrid>
 
                     <div className="mt-sm center">
-                        <Pop inline><ArrowButton href={`/africa/partners`} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>See all sponsors and partners</ArrowButton></Pop>
+                        <Pop inline><ArrowButton href={`/africa/partners`} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>See all Partners</ArrowButton></Pop>
                     </div>
                     
                     

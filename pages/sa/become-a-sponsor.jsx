@@ -245,7 +245,7 @@ export default function Page ({ partners }) {
             <section className="block bg-default">
                 <div className="container center">
                     <Fade>
-                        <p className="fs-1 fw-600 c-primary lh-1 caps">Sponsor Benefits</p>
+                        <p className="fs-1 fw-600 c-primary lh-1 caps">Partner Benefits</p>
                     </Fade>
                 </div>
 
@@ -327,7 +327,7 @@ export default function Page ({ partners }) {
             <section className="block bg-default pb-0">
                 <div className="container center">
                     <Fade>
-                        <p className="fs-1 fw-600 lh-1 caps c-primary pb-sm">2025 Sponsors</p>
+                        <p className="fs-1 fw-600 lh-1 caps c-primary pb-sm">2025 Partners</p>
                     </Fade>
                 </div>
             </section>

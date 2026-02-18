@@ -613,7 +613,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             <section id="sponsor-form" className="block bg-white o-hidden">
                 <div className="container columns-2 gap-lg">
                     <div className="formatted">
-                        <Slide><h1>Become a <span className='c-secondary'>Sponsor</span></h1></Slide>
+                        <Slide><h1>Become a <span className='c-secondary'>Partner</span></h1></Slide>
                         <Fade><p>For over two decades - government leaders, tourism ministries, global travel &amp; tourism associations, the world&apos;s most influential hospitality brands, hotel owners &amp; investors, renowned restaurant groups, airlines &amp; aviation authorities, destination developers, asset managers, financial groups and consultants - have been participating in The Bench&apos;s events for their respective objectives. These include AHIF, GRIF, FHS, AHF, IDEEA, AviaDev and RENEW - where industry players showcase their brands, position themselves as thought leaders or innovators, and connect with the right opportunities and knowledge. Speak with one of our sales team members to understand how you can make the most of this unique opportunity!<br /></p></Fade>
                     </div>
 

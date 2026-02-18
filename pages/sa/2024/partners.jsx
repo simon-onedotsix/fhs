@@ -61,7 +61,7 @@ function Partners() {
 			<section className='block'>
 
 				<div className='container center formatted'>
-					<p className='fs-1 fw-600'>2024 Sponsors &amp; Partners</p>
+					<p className='fs-1 fw-600'>2024 Partners</p>
 				</div>
 
 				<PartnerCategoryGrid>

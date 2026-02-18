@@ -357,7 +357,7 @@ export default function Page({ seomatic, partners }) {
                         {/* HOST SPONSOR */}
                        
                         <div className="center">
-                            <p className="fs-4 fw-600 c-accent caps pb-xs">{locale === 'ar' ? "الجهات الراعية المستضيفة" : "Host Sponsors"}</p>
+                            <p className="fs-4 fw-600 c-accent caps pb-xs">{locale === 'ar' ? "الجهات الراعية المستضيفة" : "Host Partners"}</p>
                         
                             <Pop>
                                 <div className={`${CSS.hostSponsorLogoWrapper} mx-auto px-xs`}>
@@ -771,7 +771,7 @@ export default function Page({ seomatic, partners }) {
                             theme={{ arrow: `white`, border: `white`, label: `white` }}
                             target={`_blank`}
                         >
-                            Hear from our sponsors
+                            Hear from our partners
                         </ArrowButton>
                     </Pop>
                 </div>

@@ -28,7 +28,7 @@ function Partners() {
 			<section className="block bg-default">
 
 				<div className='container center formatted'>
-					<p className='fs-1 fw-600 c-primary'>2023 Sponsors & Partners</p>
+					<p className='fs-1 fw-600 c-primary'>2023 Partners</p>
 				</div>
 			
 

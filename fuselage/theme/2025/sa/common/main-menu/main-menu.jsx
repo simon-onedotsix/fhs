@@ -49,7 +49,7 @@ export const MainMenu = ({ otherEvents }) => {
                         }} 
                         decal={`fw-600 desktop-only`}
                     >
-                        { locale === 'ar' ? `انضم إلى رعاتنا` : `Become a Sponsor`}
+                        { locale === 'ar' ? `انضم إلى رعاتنا` : `Become a Partner`}
                     </Button>
 
                     <Locales />
@@ -96,7 +96,7 @@ export const MainMenu = ({ otherEvents }) => {
                             hover: `var(--secondary-dark)`, 
                         }} 
                         decal={`fw-600 mobile-only`}
-                    >Become a Sponsor</Button>
+                    >Become a Partner</Button>
                 </div>
 
                 <nav className="columns-4 gap-md">

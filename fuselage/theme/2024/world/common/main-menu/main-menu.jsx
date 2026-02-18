@@ -45,7 +45,7 @@ export const MainMenu = ({ otherEvents }) => {
                         }} 
                         decal={`fw-600`}
                     >
-                        Become A Sponsor
+                        Become A Partner
                     </Button>
                 </div>
 

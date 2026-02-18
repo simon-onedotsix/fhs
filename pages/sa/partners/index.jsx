@@ -143,7 +143,7 @@ function Partners({ partnerData, videoTestimonials }) {
 
 				<div className='container center formatted'>
 					<p className='fs-1 fw-600'>2026 Partners</p>
-					<p><Link href="/sa/become-a-sponsor#form"><a className="button secondary">Become A Sponsor</a></Link></p>
+					<p><Link href="/sa/become-a-sponsor#form"><a className="button secondary">Become a Partner</a></Link></p>
 				</div>
 
 				<PartnerCategoryGrid>
@@ -269,7 +269,7 @@ function Partners({ partnerData, videoTestimonials }) {
 
 			<section className="block bg-default">
 				<div className="container flex jc-center flex-wrap gap-xs">
-					<Link href="/sa/2025/partners"><a className="button secondary">2025 Sponsors & Partners</a></Link> 
+					<Link href="/sa/2025/partners"><a className="button secondary">2025 Partners</a></Link> 
 					<Link href="/sa/become-a-sponsor#form"><a className="button secondary">Get in Touch</a></Link>
 				</div>
 			</section>
