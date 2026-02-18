@@ -78,6 +78,12 @@ export default function Page ({ videoTestimonials }) {
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/story-hospitality.png`} />
                     </div>
                 </div>
+                <div className="container center maxw-60">
+                    <p className="fs-4 fw-500 c-primary pb-xs">Media Partners</p>
+                    <div className="logoGrid">
+                        <LogoBox size={250} logoUrl={`https://static.swapcard.com/public/images/11f193c40366420997d7574694d63939.png`} />
+                    </div>
+                </div>
             </section>
 
 
