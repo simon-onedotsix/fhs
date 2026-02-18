@@ -26,7 +26,7 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 
 	const {countryPavilions} = flags.fhisContentBlocks.find( block => block.__typename === 'fhisContentBlocks_countryPavilions_BlockType' )
 
-	console.log('country pavilions:', countryPavilions)
+	// console.log('country pavilions:', countryPavilions)
 	
 
 	// use fieldDefinitions to automate partner categorisation (requires ID of the selectFieldDefinition used to tag categories inside SC studio)
@@ -110,7 +110,7 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 
 			<section className='block py-0'>
 				<div className='container center formatted'>
-					<p className='fs-1 fw-600'>2026 Sponsors &amp; Partners</p>
+					<p className='fs-1 fw-600'>2026 Partners</p>
 				</div>
 			</section>
 

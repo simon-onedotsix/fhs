@@ -142,7 +142,7 @@ function Partners({ partnerData, videoTestimonials }) {
 			<section className='block bg-default'>
 
 				<div className='container center formatted'>
-					<p className='fs-1 fw-600'>2026 Sponsors &amp; Partners</p>
+					<p className='fs-1 fw-600'>2026 Partners</p>
 					<p><Link href="/sa/become-a-sponsor#form"><a className="button secondary">Become A Sponsor</a></Link></p>
 				</div>
 

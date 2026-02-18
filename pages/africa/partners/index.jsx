@@ -39,7 +39,7 @@ function Partners({ entry }) {
 
 			<section className='block pb-0 mt-lg'>
 				<div className='container center formatted'>
-					<p className='fs-1 fw-600'>2026 Sponsors &amp; Partners</p>
+					<p className='fs-1 fw-600'>2026 Partners</p>
 				</div>
 			</section>
 
