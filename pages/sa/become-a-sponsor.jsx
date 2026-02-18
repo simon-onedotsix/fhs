@@ -233,7 +233,7 @@ export default function Page ({ partners }) {
                     <SectionHeading heading={'2025 in Numbers'} decal={'c-secondary'} />
                 </TitleBlock>
                 <ImpactFigure decal={'bg-neutral-01'} figure={1106} impact={"Attendees"}  />
-                <ImpactFigure decal={'bg-neutral-02'} figure={85} impact={"Sponsors"}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={85} impact={"`Partners`"}  />
                 <ImpactFigure decal={'bg-neutral-02'} figure={24} unit={"%"} impact={"Investors"}  />
                 <ImpactFigure decal={'bg-neutral-01'} prefix={"$"} figure={1.6} unit={"bn"} impact={"in Business Opportunities"}  />
                 <ImageBlock imageUrl={'/assets/img/sa/become-a-sponsor/sponsor-impact-inset.jpg'} />
