@@ -91,8 +91,8 @@ function Partners({ partnerData, videoTestimonials }) {
 
 
 	// console.log('swapcard partner data 2026:', partnerData)
-	// console.log('categories:', categoriesArray)
-	// console.log('orderedCategories:', orderedCategories)
+	console.log('categories:', categoriesArray)
+	console.log('orderedCategories:', orderedCategories)
 
 
 	return (
@@ -149,7 +149,7 @@ function Partners({ partnerData, videoTestimonials }) {
 				<PartnerCategoryGrid>
 					{
 						partnerData &&
-						_.orderBy(orderedCategories, 'priority').map( category => {
+						categoriesArray.map( category => {
 							const group = partnerData.exhibitors?.filter( partner => {
 								if (partner.fields[0]?.id === category.id ) return partner
 							})

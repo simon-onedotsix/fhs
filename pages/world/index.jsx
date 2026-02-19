@@ -198,7 +198,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
         
             <Header overlaid inverse />
 
-            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4'} poster={'https://cms.thebench.com/assets/video/fhs-2024-world-opt-poster.jpg'}>
+            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2025-world-opt.mp4'} poster={'https://cms.thebench.com/assets/video/fhs-2025-world-opt-poster.jpg'}>
                 <ThemeBillboard />
             </HeroUnitVideo>
 
@@ -578,7 +578,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             <section className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className={`${CSS.highlightVideoGrid} container`}>
                     <Slide><p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS World 2025</span></p></Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=eNoxO4tT7To`} />
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/fj2Q68dkw4c`} />
                 </div>
 
                 <div className={`${CSS.photoGrid} container`}>

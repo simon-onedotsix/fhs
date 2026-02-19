@@ -51,7 +51,7 @@ function Speakers({ speakers }) {
 	// console.log('contentBlocks:', contentBlocks)
 	// console.log('speakers found:', speakers.length)
 	// console.log('speaker data:', speakers)
-	// console.log('ordered speaker data:', orderedSpeakers)
+	console.log('ordered speaker data:', orderedSpeakers)
 
 
 	return (
