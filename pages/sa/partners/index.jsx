@@ -76,23 +76,23 @@ function Partners({ partnerData, videoTestimonials }) {
 	})
 	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
 
-	// 2025 custom ordering
+	// 2026 custom ordering
 	const orderedCategories = []
 	categoriesArray.forEach( category => {
 		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQxNw==') orderedCategories.push({ ...category, priority: 0 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0Mw==') orderedCategories.push({ ...category, priority: 1 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0MQ==') orderedCategories.push({ ...category, priority: 3 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0Mg==') orderedCategories.push({ ...category, priority: 2 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMQ==') orderedCategories.push({ ...category, priority: 4 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMg==') orderedCategories.push({ ...category, priority: 5 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyNA==') orderedCategories.push({ ...category, priority: 6 })
-		
+		if (category.id === 'RmllbGRWYWx1ZV8yOTkwNTIzNQ==') orderedCategories.push({ ...category, priority: 3 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0Mg==') orderedCategories.push({ ...category, priority: 4 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0MQ==') orderedCategories.push({ ...category, priority: 5 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMQ==') orderedCategories.push({ ...category, priority: 6 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMg==') orderedCategories.push({ ...category, priority: 7 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyNA==') orderedCategories.push({ ...category, priority: 8 })
 	})
 
 
 	// console.log('swapcard partner data 2026:', partnerData)
-	console.log('categories:', categoriesArray)
-	console.log('orderedCategories:', orderedCategories)
+	// console.log('categories:', categoriesArray)
+	// console.log('orderedCategories:', orderedCategories)
 
 
 	return (
@@ -149,7 +149,7 @@ function Partners({ partnerData, videoTestimonials }) {
 				<PartnerCategoryGrid>
 					{
 						partnerData &&
-						categoriesArray.map( category => {
+						_.orderBy(orderedCategories, "priority").map( category => {
 							const group = partnerData.exhibitors?.filter( partner => {
 								if (partner.fields[0]?.id === category.id ) return partner
 							})
@@ -160,6 +160,7 @@ function Partners({ partnerData, videoTestimonials }) {
 
 								// console.log(`GROUP: ${category.id} - ${category.name}`)
 
+								// add single-logo category ids to make them appear on one row
 								let specialCategories = [
 									'RmllbGRWYWx1ZV8yNTg5Nzk4NA==',
 									'RmllbGRWYWx1ZV8yMzk2Njg2MA==',
@@ -169,7 +170,7 @@ function Partners({ partnerData, videoTestimonials }) {
 								return (
 									<PartnerCategory key={category.id} width={ specialCategories.includes( category.id ) ? 1 : null }>
 
-										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{ category && category.name }</h4>
+										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{category && category.name}</h4>
 										<PartnerLogoGrid>
 											{
 												_.orderBy( group, [(p) => p.name.toLowerCase()] ).map( partner => (
