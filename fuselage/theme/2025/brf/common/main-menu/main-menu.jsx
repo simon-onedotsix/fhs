@@ -29,7 +29,7 @@ export const MainMenu = ({ otherEvents }) => {
                     </Button>
                     
                     <Button href={`/world/why-sponsor#partner-form`} m>
-                        Become A Sponsor
+                        Become A Partner
                     </Button>
                 </div>
 
