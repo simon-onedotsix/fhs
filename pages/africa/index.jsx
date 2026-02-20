@@ -234,17 +234,6 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
             </HeroUnitVideo>
 
 
-            {/* TICKER */}
-            <div className="bg-accent py-xs" dir={`ltr`}>
-                <Ticker duration={20}>
-                    <Link href="/africa/webinar"><a className="fs-4 c-secondary" style={{ textDecoration: 'none'}}>&ensp;&bull;&ensp;<strong className="fw-700">FREE WEBINAR:</strong> How do Africa and the GCC fit into the current global turmoil? | <strong className="fw-600">20th February 2026</strong> | <strong className="fw-700 c-primary">REGISTER HERE</strong></a></Link>
-                    <Link href="/africa/webinar"><a className="fs-4 c-secondary" style={{ textDecoration: 'none'}}>&ensp;&bull;&ensp;<strong className="fw-700">FREE WEBINAR:</strong> How do Africa and the GCC fit into the current global turmoil? | <strong className="fw-600">20th February 2026</strong> | <strong className="fw-700 c-primary">REGISTER HERE</strong></a></Link>
-                </Ticker>
-            </div>
-
-
-
-
 
             {/* IMPACT FIGURES */}
             <ImpactFiguresGrid>

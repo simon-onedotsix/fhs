@@ -616,7 +616,7 @@ export default function Page({ seomatic, partners }) {
 
             {/* INVESTORS */}
             <section className="bg-white">        
-                <div className="container py-xs" dir={`ltr`}>
+                <div className="container py-md" dir={`ltr`}>
                     <Pop><p className="fs-2 fw-600 c-primary balance center pb-xs">First Confirmed Investors Include</p></Pop>
                     <Ticker duration={25}>
                         {
@@ -654,7 +654,7 @@ export default function Page({ seomatic, partners }) {
 
                 <div className="container center">
                     <Fade>
-                        <p className="fs-2 fw-600 c-white">First Confirmed Speakers Include:</p>
+                        <p className="fs-2 fw-600 c-white">Confirmed Speakers Include:</p>
                     </Fade>
                 </div>
 

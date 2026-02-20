@@ -61,6 +61,11 @@ const nextConfig = {
 				destination: '/sa/become-a-partner',
 				permanent: true,
 			},
+			{
+				source: '/egypt/why-sponsor',
+				destination: '/egypt/why-partner',
+				permanent: true,
+			},
 		  
 		]
 	}

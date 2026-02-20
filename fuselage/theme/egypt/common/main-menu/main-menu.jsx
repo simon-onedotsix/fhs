@@ -88,7 +88,7 @@ const MENU_DATA = [
             {
                 "__typename": "columnData_heading_BlockType",
                 "id": "219179",
-                "heading": "Sponsorship",
+                "heading": "Partnership",
                 "headingSize": "lg"
             },
             {
@@ -97,8 +97,8 @@ const MENU_DATA = [
                 "menuLinks": [
                 {
                         "__typename": "menuLinks_TableRow",
-                        "hyperlink": "/egypt/why-sponsor",
-                        "label": "Why Sponsor?",
+                        "hyperlink": "/egypt/why-partner",
+                        "label": "Why Partner?",
                         "size": "md",
                         "indent": false,
                         "newWindow": false

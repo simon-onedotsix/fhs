@@ -86,9 +86,9 @@ export const MainMenu = ({ otherEvents }) => {
 
                                                                 let showFlash = false
 
-                                                                if ( 
-                                                                    link.hyperlink === '/africa/webinar'
-                                                                ) showFlash = true
+                                                                // if ( 
+                                                                //     link.hyperlink === '/africa/webinar'
+                                                                // ) showFlash = true
                 
                                                                 if (link.hyperlink) return (
                                                                     <li key={index}  style={{ paddingBottom: `.05vh` }}>
