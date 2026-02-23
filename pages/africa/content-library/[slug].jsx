@@ -278,8 +278,10 @@ export async function getStaticPaths() {
     const entries = await res.data.entries
 
     return {
-        paths: entries.map( entry => ({ params: { slug: entry.slug } })),
-        fallback: false
+        // paths: entries.map( entry => ({ params: { slug: entry.slug } })),
+        // fallback: false
+        paths: [],
+        fallback: 'blocking'
     }
 
 }
