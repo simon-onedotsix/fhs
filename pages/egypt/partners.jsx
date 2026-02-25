@@ -74,6 +74,7 @@ export default function Page ({ videoTestimonials }) {
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/KOFISI-Logo.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/wjcdzzravithipy9zpch.webp`} />
                         
+                        <LogoBox size={250} logoUrl={`https://static.swapcard.com/public/images/61cbc9d9864c4a4f92a07cda247fa600.png`} />
                         <LogoBox size={250} logoUrl={`https://static.swapcard.com/public/images/509f8a7dcf094ebf9f9ad42481e5f9fe.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/story-hospitality.png`} />
                     </div>
