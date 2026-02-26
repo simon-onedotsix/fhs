@@ -145,7 +145,7 @@ export default function Agenda ({ sessions, theme }) {
 				})
 			}
 
-			console.log('current session searchContent:', searchContent)
+			// console.log('current session searchContent:', searchContent)
 
 			if ( searchContent.includes(search.toLowerCase()) ) return session
 
@@ -531,13 +531,17 @@ export default function Agenda ({ sessions, theme }) {
 										{
 											day.timeslots.length 
 											?
-												day.timeslots.map( (slot, index) => {
+												day.timeslots.map((slot, index) => {
+
+													// check for timeslot containing session id – if found, reverse the order
+													let reverseOrder = (slot.sessions.find(session => session.id === "UGxhbm5pbmdfNDMyMjYyNw=="))
+													
 													return (
-														<div key={index} className={CSS.sessions}>
+														<div key={index} className={`${CSS.sessions} ${reverseOrder ? CSS.reversed : ''}`}>
 															{
-																prioritiseSessions(slot.sessions).map( session => (
-																	<Session key={session.id} session={session} theme={getSessionLocationTheme(session)} />
-																))
+																prioritiseSessions(slot.sessions).map(session => {
+																	return <Session key={session.id} session={session} theme={getSessionLocationTheme(session)} />
+																})
 															}														
 														</div>
 													)
@@ -575,6 +579,7 @@ export const Session = ({ session }) => {
 
 		if ( !speakerData ) return
 
+		// console.log('session ID:', session.id)
 		// console.log('speakerData:', speakerData)
 
 		let moderators = []
@@ -589,6 +594,20 @@ export const Session = ({ session }) => {
 				speakers.push(speaker)
 			}
 		})
+		
+
+		// function to handle speaker who is moderator in one session and speaker in another
+		if (session.id === 'UGxhbm5pbmdfMjk3MzgwMA==') {
+			speakerData.forEach(speaker => {
+				if (speaker.id === 'U3BlYWtlcihFdmVudF8yOTEzMTk5LEV2ZW50UGVvcGxlXzQ0ODY2NTY0LFVzZXJfMTEzNzgzNTAp') moderators.push(speaker)
+			})
+		}
+		function removeObjectWithId(arr, id) {
+			return arr.filter((obj) => obj.id !== id);
+		}
+		speakers = removeObjectWithId(speakers, 'U3BlYWtlcihFdmVudF8yOTEzMTk5LEV2ZW50UGVvcGxlXzQ0ODY2NTY0LFVzZXJfMTEzNzgzNTAp')
+		// END function to handle speaker who is moderator in one session and speaker in another
+
 
 
 		if ( moderators.length && speakers.length ) return (
@@ -596,7 +615,7 @@ export const Session = ({ session }) => {
 				{
 					moderators.length ?
 						<div>
-							<p className="fw-500" style={{ padding: `0 0 15px 0`}}>Moderator{ moderators.length > 1 && 's'}</p>
+							<p className="fw-500 c-primary" style={{ padding: `0 0 15px 0`}}>Moderator{ moderators.length > 1 && 's'}</p>
 							<div className={CSS.sessionSpeakerGrid}>
 								{ moderators.map( moderator => <SpeakerCard key={moderator.id} speaker={moderator} /> ) }
 							</div>
@@ -606,7 +625,7 @@ export const Session = ({ session }) => {
 				<div>
 					{
 						moderators.length && speakers.length ?
-							<p className="fw-500 mt-xxs" style={{ padding: `0 0 15px 0`}}>In conversation with</p>
+							<p className="fw-500 c-primary mt-xxs" style={{ padding: `0 0 15px 0`}}>In conversation with</p>
 						: null
 					}
 					<div className={CSS.sessionSpeakerGrid}>
@@ -674,13 +693,16 @@ export const Session = ({ session }) => {
 			</div>
 
 			<div className={`${setSessionTheme(session)} ${CSS.sessionContent} | columns-1 gap-xs`} >
+				
+				{/* <small style={{color: 'blue'}}>{session.id}</small> */}
+				
 				<p className="sessionTitle | fs-4 fw-600 lh-1 c-secondary">
 					{ parse(session.titleTranslations[0].value) }
 				</p>
 
 				{
 					session.descriptionTranslations.length ?
-					<div className="maxw-45">
+					<div className="maxw-45 c-secondary">
 						{parse( session.descriptionTranslations[0].value )}
 					</div>
 					: null
@@ -769,8 +791,8 @@ const SpeakerCard = ({ speaker, type }) => {
 					:	<div className={CSS.speakerPhoto}><img src={`/assets/ui/avatar-fallback.png`} alt="" /></div>
 
 				}
-				<p className="fw-600">{ speaker.firstName } { speaker.lastName }</p>
-				<p className="fs-sm lh-1">{ speaker.jobTitle }<br />{ speaker.organization }</p>
+				<p className="fw-600 c-secondary">{ speaker.firstName } { speaker.lastName }</p>
+				<p className="fs-sm lh-1 c-secondary">{ speaker.jobTitle }<br />{ speaker.organization }</p>
 			</div>
 
 			<Modal onClose={() => setShowModal(false)} show={showModal}>

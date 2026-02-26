@@ -586,6 +586,9 @@
     
     gap: .5rem;
 }
+.sessions.reversed {
+    flex-direction: row-reverse;
+}
 
 .session {
     container: session-container / inline-size;

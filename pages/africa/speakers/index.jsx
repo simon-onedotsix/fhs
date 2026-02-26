@@ -39,11 +39,18 @@ function Speakers({ speakers }) {
 
 	// customise order (VIP speakers to top of list)
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
-		(speaker => speaker.firstName === "Srividya" && speaker.lastName === 'Jagannathan' ? 0 : 1),
 		(speaker => speaker.firstName === "Juliana" && speaker.lastName === 'Kagwa' ? 0 : 1),
 		(speaker => speaker.firstName === "Ashish" && speaker.lastName === 'Sharma' ? 0 : 1),
+		(speaker => speaker.firstName === "Augusto" && speaker.lastName === 'Kalikemala' ? 0 : 1),
+		(speaker => speaker.firstName === "Clemence" && speaker.lastName === 'Lormand' ? 0 : 1),
+		(speaker => speaker.firstName === "Vimbai" && speaker.lastName === 'Masiyiwa' ? 0 : 1),
+
 		(speaker => speaker.firstName === "Jameel" && speaker.lastName === 'Verjee' ? 0 : 1),
 		(speaker => speaker.firstName === "Rosco" && speaker.lastName === 'Wendover' ? 0 : 1),
+		(speaker => speaker.firstName === "Artur" && speaker.lastName === 'Gerber' ? 0 : 1),
+		(speaker => speaker.firstName === "Olivier" && speaker.lastName === 'Granet' ? 0 : 1),
+		(speaker => speaker.firstName === "Mutheu" && speaker.lastName === 'Muna-Mwaniki' ? 0 : 1),
+
 
 	] )
 	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
@@ -51,7 +58,7 @@ function Speakers({ speakers }) {
 	// console.log('contentBlocks:', contentBlocks)
 	// console.log('speakers found:', speakers.length)
 	// console.log('speaker data:', speakers)
-	console.log('ordered speaker data:', orderedSpeakers)
+	// console.log('ordered speaker data:', orderedSpeakers)
 
 
 	return (
