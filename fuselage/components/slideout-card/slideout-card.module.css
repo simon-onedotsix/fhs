@@ -37,6 +37,7 @@
     transform: translateX(100%);
     background-color: hsl(from var(--primary) h s l / .75);
     opacity: 0;
+    padding-right: 2rem;
 }
 .layout:hover .overlay {
     transform: translateX(0);

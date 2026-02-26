@@ -36,11 +36,26 @@ function Speakers({ seomatic, speakers }) {
 	console.log('total ordered speakers:', orderedSpeakers.length)
 
 	// customise order (VIP speakers to top of list)
-	// let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
-	// 	(speaker => speaker.firstName == 'HH Prince Bandar bin Saud bin Khalid' && speaker.lastName === 'Al Saud' ? 0 : 1),
-	// 	(speaker => speaker.firstName == 'Mahmoud' && speaker.lastName === 'Abdulhadi' ? 0 : 1),
-	// ] )
-	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
+	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
+		(speaker => speaker.firstName == 'Phillip J.' && speaker.lastName === 'Jones' ? 0 : 1),
+		(speaker => speaker.firstName == 'Joanna' && speaker.lastName === 'Kurowska' ? 0 : 1),
+		(speaker => speaker.firstName == 'Elie' && speaker.lastName === 'Younes' ? 0 : 1),
+		(speaker => speaker.firstName == 'Tina' && speaker.lastName === 'Yu' ? 0 : 1),
+		(speaker => speaker.firstName == 'Khalid' && speaker.lastName === 'Al Gahtani' ? 0 : 1),
+		
+		(speaker => speaker.firstName == 'Hamza' && speaker.lastName === 'Farooqui' ? 0 : 1),
+		(speaker => speaker.firstName == 'Meshari' && speaker.lastName === 'Al Nahari' ? 0 : 1),
+		(speaker => speaker.firstName == 'Serena' && speaker.lastName === 'Lim' ? 0 : 1),
+		(speaker => speaker.firstName == 'Fatih' && speaker.lastName === 'Tamince' ? 0 : 1),
+		(speaker => speaker.firstName == 'Sultan Bader' && speaker.lastName === 'Al-Otaibi' ? 0 : 1),
+		
+		(speaker => speaker.firstName == 'Jaume' && speaker.lastName === 'Tàpies-Ibern' ? 0 : 1),
+		(speaker => speaker.firstName == 'Sarmad' && speaker.lastName === 'Zok' ? 0 : 1),
+		(speaker => speaker.firstName == 'Khalid Saud' && speaker.lastName === 'Abuhaimed' ? 0 : 1),
+		(speaker => speaker.firstName == 'Neil' && speaker.lastName === 'Gallagher' ? 0 : 1),
+		(speaker => speaker.firstName == 'Kholoud' && speaker.lastName === 'Almanea' ? 0 : 1),
+	] )
+	console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 	return (
 		<div className="bg-default">
@@ -64,7 +79,7 @@ function Speakers({ seomatic, speakers }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
 							speakers.length ?
-							orderedSpeakers.map( speaker => {
+							customOrderedSpeakers.map( speaker => {
 								if ( speaker.type ) return (
 									<div key={speaker.id}>
 										<Link href={`/sa/speakers/${speaker.id}`}>

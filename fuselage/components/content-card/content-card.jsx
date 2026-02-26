@@ -1,3 +1,5 @@
+import { useRouter } from "next/router"
+
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -8,6 +10,8 @@ import CSS from './content-card.module.css'
 
 export const ContentCard = ({ url, heroUrl, heading, excerpt, type, background }) => {
 
+    const { locale } = useRouter()
+    
     // console.log('type:', type)
 
     return (
@@ -24,7 +28,7 @@ export const ContentCard = ({ url, heroUrl, heading, excerpt, type, background }
                 </a>
             </Link>
 
-            <div className='formatted pt-xs'>
+            <div className='formatted pt-xs' dir={ locale === 'ar' ? 'rtl' : '' }>
                 <Link href={url}><a className={`${CSS.titleLink} h fs-4 fw-600 lh-2 mt-xxs`}>{ heading }</a></Link>
                 <p className='mt-xxs'>{ excerpt }</p>
                                 

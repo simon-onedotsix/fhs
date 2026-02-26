@@ -1,8 +1,12 @@
+import { useRouter } from "next/router"
+
 import Link from 'next/link'
 import CSS from './icon-button.module.css'
 
 
 export const IconButton = ({ href, type }) => {
+
+    const { locale } = useRouter()
 
     // console.log('type:', type)
 
@@ -40,7 +44,7 @@ export const IconButton = ({ href, type }) => {
             case 'press-room' : return 'Read'
                 break
 
-            default: return 'Read more'
+            default: return locale === 'ar' ? 'اعرف المزيد' : 'Read more'
         }
     }
 

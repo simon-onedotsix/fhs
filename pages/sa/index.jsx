@@ -182,6 +182,78 @@ const SPEAKER_DATA = [
         company: 'The First Group Hospitality',
     },
 ]
+const SPEAKER_DATA_AR = [
+    {
+        url: `/sa/speakers/profile/khalid-saud-abu-haimed`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Abu-Haimed_Khalid-Saud_pic2.jpg',
+        fullName: 'خالد سعود أبو حيمد',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'شركة الخزامى للاستثمار',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ1OTg=`,
+        photoUrl: 'https://static.swapcard.com/public/images/b742f087d4d243e78bb70a6c54f13f67.png',
+        fullName: 'سرمد زوك',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'شركة المملكة للاستثمارات الفندقية ',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ2NDI1Nzg=`,
+        photoUrl: 'https://static.swapcard.com/public/images/cca0cb3e45514a56a843e289363626ad.jpeg',
+        fullName: 'سيرينا ليم',
+        jobTitle: 'الرئيسة التنفيذية للنمو',
+        company: 'شركة أسكوت المحدودة',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ1NTIyMzA=`,
+        photoUrl: 'https://static.swapcard.com/public/images/e0dd7c51a08843e895efbd901a951270.jpeg',
+        fullName: 'مشاري النهاري',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'شركة عسير للاستثمار',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ1MjQ1MzQ=`,
+        photoUrl: 'https://static.swapcard.com/public/images/f9b108a49ff54ba284bee694ea4c4e18.jpeg',
+        fullName: 'تينا يو',
+        jobTitle: 'شريك',
+        company: 'شركة KSL Capital Partners',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ2Mjc=`,
+        photoUrl: 'https://static.swapcard.com/public/images/7b395ba5c8d146cb970582231d498e01.jpeg',
+        fullName: 'سلطان بدر العتيبي',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'شركة طيبة',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ1NTIwMTM=`,
+        photoUrl: 'https://static.swapcard.com/public/images/fc2becbdfdef4dab87bed93998b8fdfe.jpeg',
+        fullName: 'خالد القحطاني',
+        jobTitle: 'رئيس مجلس الإدارة والرئيس التنفيذي',
+        company: 'شركة ركاز العقارية',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQxOTM1NDA=`,
+        photoUrl: 'https://static.swapcard.com/public/images/7b17a5205c6842d1aab87311c6cf6908.jpeg',
+        fullName: 'خلود المانع',
+        jobTitle: 'مديرة التطوير',
+        company: 'شركة Ennismore',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQxOTMxMjE=`,
+        photoUrl: 'https://static.swapcard.com/public/images/8744509ba8354d31abfb050affddc9ed.jpeg',
+        fullName: 'سامر صبرا',
+        jobTitle: 'رئيس قطاع الضيافة',
+        company: 'شركة جبل عمر للتطوير',
+    },
+    {
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ2NDM=`,
+        photoUrl: 'https://static.swapcard.com/public/images/d6420770cfd3481d868f1c4612c6da09.jpeg',
+        fullName: 'ديفيد تومسون',
+        jobTitle: 'نائب الرئيس الأول للتطوير',
+        company: 'شركة The First Group Hospitality',
+    },
+]
 
 const QUOTES_DATA = [
     {
@@ -334,7 +406,7 @@ export default function Page({ seomatic, partners }) {
                                 theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                 decal={'fs-5 fw-600'} 
                                 accent
-                            >{ locale === 'ar' ? `2026 Attendee List` : `2026 Attendee List`}</Button>
+                            >{ locale === 'ar' ? `قائمة الحضور لعام 2026` : `2026 Attendee List`}</Button>
                         </Pop>
                         <Pop inline>
                             <Button 
@@ -442,14 +514,32 @@ export default function Page({ seomatic, partners }) {
             {/* DEAL PLATFORM */}
             <section className="block bg-primary">
                 <div className="container center maxw-50">
-                    <p className="fs-2 fw-500">Deal-Making Platform for Saudi Arabia – Driving Vision 2030&apos;s Hospitality Transformation</p>
+                    <p className="fs-2 fw-500">
+                        {
+                            locale === 'ar'
+                                ? `منصة إبرام الصفقات في المملكة العربية السعودية – نحو تسريع تحوّل قطاع الضيافة ضمن رؤية 2030`
+                                : `Deal-Making Platform for Saudi Arabia – Driving Vision 2030&apos;s Hospitality Transformation`
+                        }
+                    </p>
                 </div>
 
                 <div className="container columns-2 gap-md ai-center">
                     <div className="formatted">
-                        <p><strong>Future Hospitality Summit - Saudi Arabia</strong> brings together Saudi and international owners, developers, operators, brands and investors to accelerate cross-border partnerships and capital flows in hospitality. </p>
-                        <p>The platform spotlights investment opportunities across the full breadth of the Kingdom, working closely with our partners with a focus on the private sector and opportunities in secondary cities, as well as with the giga projects who have partnered with FHS since its launch in Saudi Arabia over nine years ago.</p>
-                        <p>In addition, the Summit&apos;s investor-led networking, including the Investor Lounge built for curated, private meetings, is designed to turn conversations into mandates, partnerships and transactions.</p>
+                        {
+                            locale === 'ar'
+                                ? <>
+                                    <p>تجمع قمة مستقبل الضيافة بالمملكة العربية السعودية نخبة من المُلّاك والمطورين والمشغلين والعلامات التجارية والمستثمرين من داخل المملكة وخارجها، بهدف تسريع الشراكات العابرة للحدود وتعزيز تدفقات رأس المال في قطاع الضيافة. </p>
+                                    <p>تسلّط المنصة الضوء على الفرص الاستثمارية في مختلف مناطق المملكة، من خلال التعاون الوثيق مع شركائنا، مع تركيزٍ خاص على دور القطاع الخاص والفرص المتاحة في المدن الثانوية، إلى جانب المشاريع العملاقة التي تتعاون مع القمة منذ انطلاقها في السعودية على مدار تسعة أعوام مضت.</p>
+                                    <p>إضافةً إلى ذلك، صُممت جلسات بناء العلاقات والتعارف بقيادة المستثمرين خلال القمة، بما في ذلك صالة المستثمرين المُخصّصة للاجتماعات المنسّقة والخاصة، للانتقال من مرحلة النقاشات إلى تفويضات، وشراكات، وصفقات فعلية.</p>
+                                </>
+                                : <>
+                                    <p><strong>Future Hospitality Summit - Saudi Arabia</strong> brings together Saudi and international owners, developers, operators, brands and investors to accelerate cross-border partnerships and capital flows in hospitality. </p>
+                                    <p>The platform spotlights investment opportunities across the full breadth of the Kingdom, working closely with our partners with a focus on the private sector and opportunities in secondary cities, as well as with the giga projects who have partnered with FHS since its launch in Saudi Arabia over nine years ago.</p>
+                                    <p>In addition, the Summit&apos;s investor-led networking, including the Investor Lounge built for curated, private meetings, is designed to turn conversations into mandates, partnerships and transactions.</p>
+                                </>
+
+                        }
+                        
                         <br />
 
                        <Pop inline>
@@ -459,7 +549,11 @@ export default function Page({ seomatic, partners }) {
                                 theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                 decal={'fs-5 fw-600'} 
                                 accent
-                            >Watch 2025 Highlights</Button>
+                            >{
+                                    locale === 'ar'
+                                        ? `شاهد أبرز اللحظات من قمة عام 2025`
+                                        : `Watch 2025 Highlights`
+                            }</Button>
                         </Pop>
                     </div>
 
@@ -480,7 +574,11 @@ export default function Page({ seomatic, partners }) {
             {/* SPONSORS */}
             <section className="block pb-0">
                 <div className="container center">
-                    <Pop><p className="fs-2 fw-600 c-primary balance">Meet Our Partners</p></Pop>
+                    <Pop><p className="fs-2 fw-600 c-primary balance">{
+                        locale === 'ar'
+                            ? `تعرف على شركائنا`
+                            : `Meet Our Partners`
+                    }</p></Pop>
                 </div>
             </section>
             <div className="py-xs mt-sm mb-lg" dir={`ltr`}>
@@ -501,41 +599,47 @@ export default function Page({ seomatic, partners }) {
             {/* 2025 RESULTS */}
             <section className="block bg-primary">
                 <div className="container center">
-                    <p className="fs-2 fw-500">Results We Delivered in 2025</p>
+                    <p className="fs-2 fw-500">
+                        {
+                            locale === 'ar'
+                                ? `النتائج اللي حققناها في 2025`
+                                : `Results We Delivered in 2025`
+                        }
+                    </p>
                 </div>
 
                 <div className="container columns-4 gap-sm center">
                     <Card>
                         <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={1106} /></p>
-                        <p className="fs-5 lh-1">Attendees</p>
+                        <p className="fs-5 lh-1">{ locale === 'ar' ? `مشاركًا` : `Attendees` }</p>
                     </Card>
                     <Card>
                         <p className="fs-2 fw-300 lh-1">$<AnimatedCounter from={0} to={1.6} />B</p>
-                        <p className="fs-5 lh-1">Business Opportunities</p>
+                        <p className="fs-5 lh-1">{ locale === 'ar' ? `مليار دولار قيمة الفرص التجارية` : `Business Opportunities` }</p>
                     </Card>
                     <Card>
                         <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={24} />%</p>
-                        <p className="fs-5 lh-1">Active Investors</p>
+                        <p className="fs-5 lh-1">{ locale === 'ar' ? `مستثمرون نشطون` : `Active Investors` }</p>
                     </Card>
                     <Card>
                         <p className="fs-2 fw-300 lh-1">$<AnimatedCounter from={0} to={5.6} />tn</p>
-                        <p className="fs-5 lh-1">Assets Under Management (AUM)</p>
+                        <p className="fs-5 lh-1">{ locale === 'ar' ? `تريليون دولار إجمالي الأصول المُدارة` : `Assets Under Management (AUM)` }</p>
                     </Card>
                     <Card>
                         <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={62} />%</p>
-                        <p className="fs-5 lh-1">Saudi Decision-Makers</p>
+                        <p className="fs-5 lh-1">{locale === 'ar' ? `صنّاع قرار من المملكة العربية السعودية` : `Saudi Decision-Makers`}</p>
                     </Card>
                     <Card>
                         <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={81} />%</p>
-                        <p className="fs-5 lh-1">C-Level Representation</p>
+                        <p className="fs-5 lh-1">{ locale === 'ar' ? `نسبة الحضور من القيادات التنفيذية العليا` : `C-Level Representation` }</p>
                     </Card>
                     <Card>
                         <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={11} /></p>
-                        <p className="fs-5 lh-1">Landmark Deals Announced</p>
+                        <p className="fs-5 lh-1">{ locale === 'ar' ? `صفقة محورية تم الإعلان عنها` : `Landmark Deals Announced` }</p>
                     </Card>
                     <Card>
                         <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={153} /></p>
-                        <p className="fs-5 lh-1">Speakers</p>
+                        <p className="fs-5 lh-1">{ locale === 'ar' ? `متحدثًا` : `Speakers` }</p>
                     </Card>
                 </div>
 
@@ -549,63 +653,120 @@ export default function Page({ seomatic, partners }) {
             {/* WHO ATTENDS */}
             <section className="block bg-primary">
                 <div className="container center">
-                    <p className="fs-2 fw-500">Who Attends</p>
+                    <p className="fs-2 fw-500">
+                        { locale === 'ar' ? `الحضور` : `Who Attends` }
+                    </p>
                 </div>
 
-                <div className="container columns-5 gap-sm">
+                <div className="container columns-5 gap-sm" dir={locale === 'ar' ?'rtl' : ''}>
 
-                    <SlideoutCard title={`Developers`} imageSrc={`/assets/img/sa/homepage/attends-01.jpg`}>
+                    <SlideoutCard title={locale === 'ar' ? `المطورون` : `Developers`} imageSrc={`/assets/img/sa/homepage/attends-01.jpg`}>
                         <div className="formatted">
-                            <ul>
-                                <li>Mega-Project Development Companies</li>
-                                <li>Secondary Cities Development Teams</li>
-                                <li>Branded Residences Developers</li>
-                                <li>Mixed-Use & Masterplan Developers</li>
-                            </ul>
+                            {
+                                locale === 'ar'
+                                    ?
+                                    <ul>
+                                        <li>شركات تطوير المشاريع العملاقة</li>
+                                        <li>فرق تطوير المدن الثانوية</li>
+                                        <li>مطورو الوحدات السكنية ذات العلامات الفندقية</li>
+                                        <li>مطورو المشاريع متعددة الاستخدامات والمخططات الرئيسية</li>
+                                    </ul>
+                                    :
+                                    <ul>
+                                        <li>Mega-Project Development Companies</li>
+                                        <li>Secondary Cities Development Teams</li>
+                                        <li>Branded Residences Developers</li>
+                                        <li>Mixed-Use & Masterplan Developers</li>
+                                    </ul>   
+                            }
                         </div>
                     </SlideoutCard>
 
-                    <SlideoutCard title={`Investors`} imageSrc={`/assets/img/sa/homepage/attends-investors.jpg`}>
+                    <SlideoutCard title={locale === 'ar' ? `المستثمرون` : `Investors`} imageSrc={`/assets/img/sa/homepage/attends-investors.jpg`}>
                         <div className="formatted">
-                            <ul>
-                                <li>Institutional Hotel Investors</li>
-                                <li>Banks</li>
-                                <li>Family Offices</li>
-                                <li>Private Equity Funds</li>
-                                <li>Sovereign Wealth Funds</li>
-                            </ul>
+                            {
+                                locale === 'ar'
+                                    ?
+                                    <ul>
+                                        <li>المستثمرون في قطاع الفنادق من المؤسسات</li>
+                                        <li>البنوك</li>
+                                        <li>المكاتب العائلية</li>
+                                        <li>صناديق الأسهم الخاصة</li>
+                                        <li>صناديق الثروة السيادية</li>
+                                    </ul>
+                                    :
+                                    <ul>
+                                        <li>Institutional Hotel Investors</li>
+                                        <li>Banks</li>
+                                        <li>Family Offices</li>
+                                        <li>Private Equity Funds</li>
+                                        <li>Sovereign Wealth Funds</li>
+                                    </ul>
+                            }
                         </div>
                     </SlideoutCard>
 
-                    <SlideoutCard title={`Operators`} imageSrc={`/assets/img/sa/homepage/attends-03.jpg`}>
+                    <SlideoutCard title={locale === 'ar' ? `المشغّلون` : `Operators`} imageSrc={`/assets/img/sa/homepage/attends-03.jpg`}>
                         <div className="formatted">
-                            <ul>
-                                <li>Saudi-Owned Hotel Operators</li>
-                                <li>International Hotel Chains</li>
-                                <li>Boutique & Lifestyle Brands</li>
-                                <li>Wellness & Spa Brands</li>
-                            </ul>
+                            {
+                                locale === 'ar'
+                                    ?
+                                    <ul>
+                                        <li>مشغلو الفنادق السعوديون</li>
+                                        <li>سلاسل الفنادق الدولية</li>
+                                        <li>فنادق البوتيك والعلامات التجارية الخاصة بأسلوب الحياة</li>
+                                        <li>العلامات التجارية في مجال العافية والسبا</li>
+                                    </ul>
+                                    :
+                                    <ul>
+                                        <li>Saudi-Owned Hotel Operators</li>
+                                        <li>International Hotel Chains</li>
+                                        <li>Boutique & Lifestyle Brands</li>
+                                        <li>Wellness & Spa Brands</li>
+                                    </ul>
+                            }
                         </div>
                     </SlideoutCard>
 
-                    <SlideoutCard title={`Government Officials`} imageSrc={`/assets/img/sa/homepage/attends-govt.jpg`}>
+                    <SlideoutCard title={locale === 'ar' ? `الجهات الحكومية` : `Government Officials`} imageSrc={`/assets/img/sa/homepage/attends-govt.jpg`}>
                         <div className="formatted">
-                            <ul>
-                                <li>Ministry of Tourism</li>
-                                <li>Ministry of Investment</li>
-                                <li>Saudi Tourism Authority</li>
-                                <li>Royal Commissions</li>
-                            </ul>
+                            {
+                                locale === 'ar'
+                                    ?
+                                    <ul>
+                                        <li>وزارة السياحة</li>
+                                        <li>وزارة الاستثمار</li>
+                                        <li>الهيئة السعودية للسياحة</li>
+                                        <li>الهيئات الملكية</li>
+                                    </ul>
+                                    :
+                                    <ul>
+                                        <li>Ministry of Tourism</li>
+                                        <li>Ministry of Investment</li>
+                                        <li>Saudi Tourism Authority</li>
+                                        <li>Royal Commissions</li>
+                                    </ul>
+                            }
                         </div>
                     </SlideoutCard>
 
-                    <SlideoutCard title={`Enablers & Advisors`} imageSrc={`/assets/img/sa/homepage/attends-enablers.jpg`}>
+                    <SlideoutCard title={locale === 'ar' ? `مُمكّنو القطاع والمستشارون` : `Enablers & Advisors`} imageSrc={`/assets/img/sa/homepage/attends-enablers.jpg`}>
                         <div className="formatted">
-                            <ul>
-                                <li>Lawyers</li>
-                                <li>Consultant</li>
-                                <li>Designers</li>
-                            </ul>
+                            {
+                                locale === 'ar'
+                                    ?
+                                    <ul>
+                                        <li>المحامون</li>
+                                        <li>المستشارون</li>
+                                        <li>المصممون</li>
+                                    </ul>
+                                    :
+                                    <ul>
+                                        <li>Lawyers</li>
+                                        <li>Consultant</li>
+                                        <li>Designers</li>
+                                    </ul>
+                            }
                         </div>
                     </SlideoutCard>
                     
@@ -617,7 +778,13 @@ export default function Page({ seomatic, partners }) {
             {/* INVESTORS */}
             <section className="bg-white">        
                 <div className="container py-md" dir={`ltr`}>
-                    <Pop><p className="fs-2 fw-600 c-primary balance center pb-xs">First Confirmed Investors Include</p></Pop>
+                    <Pop><p className="fs-2 fw-600 c-primary balance center pb-xs">
+                        {
+                            locale === 'ar'
+                                ? `تشمل قائمة المستثمرين المؤكد حضورهم حتى هذه اللحظة:`
+                                : `First Confirmed Investors Include`
+                        }
+                    </p></Pop>
                     <Ticker duration={25}>
                         {
                             INVESTORS.map((investor, index) => (
@@ -654,13 +821,19 @@ export default function Page({ seomatic, partners }) {
 
                 <div className="container center">
                     <Fade>
-                        <p className="fs-2 fw-600 c-white">Confirmed Speakers Include:</p>
+                        <p className="fs-2 fw-600 c-white">
+                            {
+                                locale === 'ar'
+                                    ? `قائمة المتحدثين المؤكدين:`
+                                    : `Confirmed Speakers Include:`
+                            }
+                        </p>
                     </Fade>
                 </div>
 
                 <div className="container columns-5 gap-sm" dir={ locale === 'ar' ? 'rtl' : ''}>
                     {
-                        SPEAKER_DATA.map( (profile, index) => (
+                        ( locale === 'ar' ? SPEAKER_DATA_AR : SPEAKER_DATA ).map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
                                     url={profile.url}
@@ -682,7 +855,7 @@ export default function Page({ seomatic, partners }) {
                                 href={ '/sa/speakers' } 
                                 theme={{ arrow: `white`, border: `white`, label: `white`}}
                             >
-                                View 2026 Speakers
+                                { locale === 'ar' ? `عرض قائمة المتحدثين في قمة مستقبل الضيافة 2026` : `View 2026 Speakers` }
                             </ArrowButton>
                         </Pop>
                         <Pop>
@@ -691,7 +864,7 @@ export default function Page({ seomatic, partners }) {
                                 theme={{ arrow: `white`, border: `white`, label: `white` }}
                                 target={`_blank`}
                             >
-                               View Past FHS Speakers
+                                { locale === 'ar' ? `عرض المتحدثين السابقين في قمة مستقبل الضيافة` : `View Past FHS Speakers` }
                             </ArrowButton>
                         </Pop>
                     </div>
@@ -771,7 +944,7 @@ export default function Page({ seomatic, partners }) {
                             theme={{ arrow: `white`, border: `white`, label: `white` }}
                             target={`_blank`}
                         >
-                            Hear from our partners
+                            { locale === 'ar' ? `اسمع من شركائنا` : `Hear from our partners` }
                         </ArrowButton>
                     </Pop>
                 </div>
@@ -801,7 +974,13 @@ export default function Page({ seomatic, partners }) {
 
                 <div className="container center">
                     <Fade>
-                        <p className="fs-2 fw-600 c-white">2025 Signings &amp; Announcements</p>
+                        <p className="fs-2 fw-600 c-white">
+                            {
+                                locale === 'ar'
+                                    ? `إعلانات وتوقيعات عام 2025`
+                                    : `2025 Signings & Announcements`
+                            }
+                        </p>
                     </Fade>
                 </div>
 
@@ -826,7 +1005,12 @@ export default function Page({ seomatic, partners }) {
                             theme={{ arrow: `white`, border: `white`, label: `white` }}
                             target={`_blank`}
                         >
-                            Latest News &amp; Updates
+                            {
+                                locale === 'ar'
+                                    ? `أخر الأخبار والمستجدات`
+                                    : `Latest News & Updates`
+                            }
+                            
                         </ArrowButton>
                     </Pop>
                 </div>
