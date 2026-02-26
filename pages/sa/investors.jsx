@@ -260,6 +260,31 @@ export default function Page () {
                         </div>
                     </Pop>
                 </div>
+
+                <div className="container columns-2 gap-md ai-center pt-lg">
+                    <Pop>
+                        <div className={CSS.floaterImg}>
+                            <Image src={"/assets/img/sa/investors/dealroom.jpg"} layout='fill' />
+                        </div>
+                    </Pop>
+
+                    <div className="formatted">
+                        <Slide>
+
+                            <h2>FHS DEALROOM</h2>
+                            <p>FHS Dealroom is an exclusive showcase, featuring premier real estate investment opportunities and cutting-edge projects presented by our distinguished investors and partners.</p>
+                            <p>Projects are published on the FHS website and gain exposure to a network of over 113,000 engaged users. Select projects will also be featured during the Investor Breakfast, an exclusive setting designed to connect senior decision-makers with high-value opportunities and focused discussion.</p>
+                            <p className='mt-md'>
+                                <Pop inline>
+                                    <Link href="https://share.hsforms.com/1zaAPAyl_QL6Nl3XPCTbB_A8nd8z" target="_blank">
+                                        <a className="button fs-5 caps">Submit Project</a>
+                                    </Link>
+                                </Pop>
+                            </p>
+                            
+                        </Slide>
+                    </div>
+                </div>
             </section>
            
 
