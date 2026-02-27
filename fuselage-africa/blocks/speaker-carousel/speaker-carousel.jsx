@@ -29,6 +29,7 @@ export const SpeakerCarousel = ({ children, heading, text, ctaLink, ctaLabel, th
         return (
             <p className={CSS.actions}>
                 <ArrowButton href={ctaLink} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>{ ctaLabel }</ArrowButton>
+                <ArrowButton href={`/africa/agenda`} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>View Agenda</ArrowButton>
             </p>
         )
     }

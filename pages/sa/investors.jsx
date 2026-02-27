@@ -44,7 +44,7 @@ const INDUSTRY_DATA = [
     },
     {
         label: 'REIT',
-        value: 7.5
+        value: 7.9
     },
     {
         label: 'Private Equity',
@@ -81,10 +81,6 @@ const INDUSTRY_DATA = [
     {
         label: 'Restaurant Owner',
         value: 0.8
-    },
-    {
-        label: 'RE',
-        value: 0.4
     },
     
 ]
@@ -143,40 +139,26 @@ export default function Page () {
                             </div>
                         </div>
 
-                        </section>
-
-                        {/* INVESTORS */}
-
-                        <section className="block">
-                            
-                            <div className="container center">
-                                <p className="fs-1 fw-600 lh-1">
-                                    {
-                                        locale === 'ar'
-                                        ?   "تحليل المستثمرين"
-                                        :   "Investor Breakdown"
-                                    }
-                                </p>
-                            </div>
-                            
-                        <div className="container mx-auto maxw-50">
-                            <BarChart>
-                                {
-                                    INDUSTRY_DATA.map((field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0.4, max: 26.5 }} />)
-                                }
-                            </BarChart>
-                        </div>
-                    
-                    
                     </section>
                 </PageHeroImage>
             </div>
 
 
 
+            <section className="block bg-primary">
+                <div className="container center formatted">
+                    <Pop inline>
+                        <Link href="https://share.hsforms.com/1QE6T_8dHTi-yjWLzMytQmw8nd8z" target="_blank">
+                            <a className="button fs-5 caps">Apply for Investor Pass</a>
+                        </Link>
+                    </Pop>
+                </div>
+            </section>
+
+
             {/* USPs */}
 
-            <section className="block bg-primary pt-0 o-hidden">
+            <section className="block bg-primary o-hidden">
                 <div className="container columns-2 gap-md ai-center pt-md">
                     <Pop>
                         <div className={CSS.floaterImg}>
@@ -200,68 +182,41 @@ export default function Page () {
                                     </>
                             }
                         </Slide>
-
-                        {/* <p className='mt-md'>
-                            <Pop inline>
-                                <Link href="https://share.hsforms.com/165e0aXCeSsG2vZWX3GsGeQ8nd8z" target="_blank">
-                                    <a className="button fs-5 caps">
-                                        {
-                                            locale === 'ar'
-                                            ?   "سجّل اهتمامك للحصول على تذكرة المستثمر"
-                                            :   "Register Interest for Investor Pass"
-                                        }
-                                    </a>
-                                </Link>
-                            </Pop>
-                        </p> */}
                     </div>
                 </div>
+            </section>
 
-                <div className="container columns-2 gap-md ai-center pt-lg">
-                    <div className="formatted">
-                        <Slide>
-                            {
-                                locale === 'ar'
-                                ?
-                                    <>
-                                        <h2>مزايا حصرية لتذكرة المستثمر</h2>
-                                        <ul>
-                                            <li><strong><u>الوصول إلى صالة المستثمرين </u> - </strong> منطقة حصرية مخصصة بالدعوات فقط للتواصل، حيث يلتقي كبار المستثمرين والمطورين والمشغلين الرائدين لمناقشة صفقات استثمارية عالية التأثير في بيئة حصرية، مع عروض تقديمية مخصصة متاحة فقط للمالكين والمستثمرين.</li>
-                                            <li><strong><u>اجتماعات فردية مُرتبة مسبقًا </u> - </strong> لقاءات مخصصة مع كبار مشغلي الضيافة، ومديري الأصول، والقادة الماليين لاستكشاف شراكات استثمارية مثمرة.</li>
-                                            <li><strong><u>دعوة لحضور فعاليات المستثمرين المغلقة </u> - </strong>فرصة للمشاركة في اجتماع مائدة مستديرة خاص أو فعالية تواصل تركز على المستثمرين خلال 12 شهرًا من التسجيل، للبقاء على اطلاع دائم بأهم الفرص في القطاع. تُنظَّم هذه الفعاليات في مختلف أنحاء العالم، مما يوفر منصة أساسية للقاء والتواصل مع مستثمرين آخرين.</li></ul>
-                                            <p className='mt-md'>
-                                                <Pop inline>
-                                                    <Link href="/sa/download-investor-prospectus" target="_blank">
-                                                        <a className="button fs-5 caps">Download Investor Prospectus</a>
-                                                    </Link>
-                                                </Pop>
-                                            </p>
-                                    </>
-                                :
-                                    <>
-                                        <h2>EXCLUSIVE INVESTOR PASS BENEFITS</h2>
-                                        <ul><li><strong><u>Access to the Investors Lounge</u> - </strong>A private, invitation-only networking zone where top-tier investors, developers, and leading operators discuss high-impact investment deals in an exclusive setting. There, tailor-made presentations are accessible exclusively to owners and investors.</li><li><strong><u>Pre-arranged 1:1 Meetings</u> - </strong>Personalised introductions to leading hospitality operators, asset managers, and financial leaders to explore investment partnerships.</li><li><strong><u>VIP Invitation to Curated Investment Project Presentations</u> - </strong>Invitation-only access to carefully selected investment opportunities, presented directly by owners and developers to an audience of qualified investors, alongside exclusive closed-door sessions curated specifically for investors.</li><li><strong><u>Invitation to Closed-Door Investor Events</u> - </strong>Join a private, investor-focused roundtable or networking event within 12 months of registration to stay engaged with the industry&apos; s biggest opportunities. These events are organised around the world, providing a key platform to meet and connect with other investors.</li></ul>
-                                        <p className='mt-md'>
-                                            <Pop inline>
-                                                <Link href="/sa/download-investor-prospectus" target="_blank">
-                                                    <a className="button fs-5 caps">Download Investor Prospectus</a>
-                                                </Link>
-                                            </Pop>
-                                        </p>
-                                    </>
-                            }
-                            
-                        </Slide>
-                    </div>
 
-                    <Pop>
-                        <div className={CSS.floaterImg}>
-                            <Image src={"https://cms.thebench.com/assets/img/site/FHS-SA/53727951317_1d28a7d78f_o.jpg"} layout='fill' />
-                        </div>
-                    </Pop>
+            <section className="block bg-primary o-hidden">
+                <div className="container formatted center">
+                    <h2>EXCLUSIVE INVESTOR PASS BENEFITS</h2>
                 </div>
 
-                <div className="container columns-2 gap-md ai-center pt-lg">
+                <div className={`container ${CSS.cardFlexContainer}`}>
+                    <Pop><Card heroUrl={'/assets/img/sa/networking/closed-door-investors.jpg'}>
+                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "Closed-door Investor Sessions" : "Closed-door Investor Sessions"}</p>
+                    </Card></Pop>
+                    <Pop><Card heroUrl={'/assets/img/sa/networking/investors-lounge.jpg'}>
+                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "ردهة المستثمرين" : "Investor's Lounge"}</p>
+                    </Card></Pop>
+                    <Pop><Card heroUrl={'/assets/img/sa/networking/pre-scheduled.jpg'}>
+                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "1-2-1 Pre-Scheduled Meetings" : "1-2-1 Pre-Scheduled Meetings"}</p>
+                    </Card></Pop>
+                </div>
+
+                <div className="container formatted center">
+                    <p className='mt-md'>
+                        <Pop inline>
+                            <Link href="/sa/download-investor-prospectus" target="_blank">
+                                <a className="button fs-5 caps">Download Investor Prospectus</a>
+                            </Link>
+                        </Pop>
+                    </p>
+                </div>
+            </section>
+
+            <section className="block bg-primary o-hidden">
+                <div className="container columns-2 gap-md ai-center">
                     <Pop>
                         <div className={CSS.floaterImg}>
                             <Image src={"/assets/img/sa/investors/dealroom.jpg"} layout='fill' />
@@ -272,8 +227,7 @@ export default function Page () {
                         <Slide>
 
                             <h2>FHS DEALROOM</h2>
-                            <p>FHS Dealroom is an exclusive showcase, featuring premier real estate investment opportunities and cutting-edge projects presented by our distinguished investors and partners.</p>
-                            <p>Projects are published on the FHS website and gain exposure to a network of over 113,000 engaged users. Select projects will also be featured during the Investor Breakfast, an exclusive setting designed to connect senior decision-makers with high-value opportunities and focused discussion.</p>
+                            <p>Publish your project on the FHS website (subject to the investor&apos;s preference) for exposure to our global network of over 113,000 engaged users, connecting you with targeted investors and industry leaders. Select projects will be featured in our exclusive DealRoom at the Investor Breakfast, where senior decision-makers from top investment firms, REITs, family offices, and financial institutions can engage directly with owners, ensuring transparent dialogue and access to active capital.</p>
                             <p className='mt-md'>
                                 <Pop inline>
                                     <Link href="https://share.hsforms.com/1zaAPAyl_QL6Nl3XPCTbB_A8nd8z" target="_blank">
@@ -304,7 +258,7 @@ export default function Page () {
                             :
                                 <>
                                     <p className='fs-1 fw-600'>Investor Spotlight at FHS Saudi Arabia</p>
-                                    <p className='fs-3 mt-sm'>A sneak peak at Investor focused sessions</p>
+                                    <p className='fs-3 mt-sm'>A sneak peak at Investor-focused sessions</p>
                                 </>
                         }
                     </Fade>
@@ -313,77 +267,37 @@ export default function Page () {
                 <div className="container columns-3 gap-sm formatted">
                     <Pop>
                         <article className={CSS.previewCard}>
-                            {
-                                locale === 'ar'
-                                ?
-                                    <>
-                                        <p className='fs-4 lh-3'>ما بعد الصافرة: الأثر المتسلسل الذي نشأ عن كأس العالم فيفا 2034 على قطاع الضيافة السعودي</p>
-                                        <p className='fw-600'>Speaker:</p>
-                                        <li><strong>Dr. Sarah Gasim</strong>, Senior Vice President, Head of Hotels KSA, JLL</li>
-                                    </>
-                                :
-                                <>
-                                        <p className='fs-4 lh-3'>Beyond the Whistle: The FIFA World Cup 2034&apos;s Ripple Effect on the Saudi Hospitality Sector</p>
-                                        <p className='fw-600'>Speaker:</p>
-                                        <li><strong>Dr. Sarah Gasim</strong>, Senior Vice President, Head of Hotels KSA, JLL</li>
-                                    </>
-                            }
-                            <ul>
-                            </ul>
+                            <p className='fs-4 lh-3'>Reforms to Returns: How New Regulations &amp; Incentives are Powering Saudi Investment</p>
                         </article>
                     </Pop>
 
                     <Pop>
                         <article className={CSS.previewCard}>
-                            {
-                                locale === 'ar'
-                                ?
-                                    <>
-                                        <p className='fs-4 lh-3'>توقعات السياحة في السعودية: رسم خريطة المستقبل من</p>
-                                        <p className='fw-600'>Speaker:</p>
-                                        <li><strong>Muhammad Bassrawi</strong>, President Domestic Tourism Business Unit, Saudi Tourism Authority</li>
-                                    </>
-                                :
-                                <>
-                                        <p className='fs-4 lh-3'>Saudi Arabia Tourism Outlook: Shaping the Future from 2025 to 2040</p>
-                                        <p className='fw-600'>Speaker:</p>
-                                        <li><strong>Muhammad Bassrawi</strong>, President Domestic Tourism Business Unit, Saudi Tourism Authority</li>
-                                    </>
-                            }
-                            <ul>
-                            </ul>
+                            <p className='fs-4 lh-3'>Investing into the Kingdom: Connecting Global Capital with Saudi&apos;s High-End Hospitality Pipeline</p>
                         </article>
                     </Pop>
 
                     <Pop>
                         <article className={CSS.previewCard}>
-                            {
-                                locale === 'ar'
-                                ?
-                                    <>
-                                        <p className='fs-4 lh-3'>من مشغلي المنشآت التي تعمل بنظام &quot;وايت ليبل&quot; والامتيازات التجارية إلى اتفاقيات الإدارة التقليدية - ما هو مستقبل إدارة الفنادق؟</p>
-                                        <p className='fw-600'>Speakers:</p>
-                                        <ul>
-                                            <li><strong>Scott Antel</strong>, Founder & Owner, Scott&apos;s FZ LLE</li>
-                                            <li><strong>Victor Abou Ghanem</strong>, Chief Executive Officer, Story Hospitality</li>
-                                            <li><strong>Tariq Dowidar</strong>, Vice President KSA, Aleph Hospitality</li>
-                                            <li><strong>David Thomson</strong>, Senior Vice President of Business Development, The First Group</li>
-                                            <li><strong>Eddy Tannous</strong>, Chief Operating Officer, Rotana</li>
-                                        </ul>
-                                    </>
-                                :
-                                    <>
-                                        <p className='fs-4 lh-3'>From White Label Operators, Franchising to Traditional Management Agreements - What is the Future?</p>
-                                        <p className='fw-600'>Speakers:</p>
-                                        <ul>
-                                            <li><strong>Scott Antel</strong>, Founder & Owner, Scott&apos;s FZ LLE</li>
-                                            <li><strong>Victor Abou Ghanem</strong>, Chief Executive Officer, Story Hospitality</li>
-                                            <li><strong>Tariq Dowidar</strong>, Vice President KSA, Aleph Hospitality</li>
-                                            <li><strong>David Thomson</strong>, Senior Vice President of Business Development, The First Group</li>
-                                            <li><strong>Eddy Tannous</strong>, Chief Operating Officer, Rotana</li>
-                                        </ul>
-                                    </>
-                            }
+                            <p className='fs-4 lh-3'>Investor-Ready Saudi: Unlocking Capital Through IB, JV Structuring &amp; Fundraising</p>
+                        </article>
+                    </Pop>
+
+                    <Pop>
+                        <article className={CSS.previewCard}>
+                            <p className='fs-4 lh-3'>Beyond Bank Debt: Alternative Funding and Fund Structures for Hospitality Growth in Saudi Arabia (Closed Door Workshop)</p>
+                        </article>
+                    </Pop>
+
+                    <Pop>
+                        <article className={CSS.previewCard}>
+                            <p className='fs-4 lh-3'>The State of Branded Residential Development in Saudi Arabia 2026</p>
+                        </article>
+                    </Pop>
+
+                    <Pop>
+                        <article className={CSS.previewCard}>
+                            <p className='fs-4 lh-3'>Unlocking Investment: How to Navigate Saudi Arabia&apos;s Regulatory and Multi-Authority Landscape</p>
                         </article>
                     </Pop>
                 </div>
@@ -403,10 +317,11 @@ export default function Page () {
             </section>
 
 
+            
             {/* INVESTOR SPEAKERS */}
             
             <SpeakerCarousel 
-                heading={`Investor-Speakers at FHS Saudi Arabia 2025`} 
+                heading={`Investor-Speakers at FHS Saudi Arabia 2026`} 
                 color={`c-white`}
                 text={``}
                 decal={'bg-primary'}
@@ -417,10 +332,82 @@ export default function Page () {
                 <Pop>
                     <SpeakerCard
                     color={'c-accent'}
-                        photoUrl={'https://static.swapcard.com/public/images/2540878a4ce149da8e5f9cb8384277cc.jpeg'}
-                        fullName={'Khalid Saud Abu Haimed'}
+                        photoUrl={'https://static.swapcard.com/public/images/b742f087d4d243e78bb70a6c54f13f67.png'}
+                        fullName={'Sarmad Zok'}
+                        jobTitle={'Chief Executive Officer'}
+                        company={'Kingdom Hotel Investments'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/144a200935cd4bdfa2c5abf157ce8a37.png'}
+                        fullName={'Muin Serhan'}
+                        jobTitle={'Chief Executive Officer'}
+                        company={'Amsa Hospitality'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/6ca30824e50d47d68b7cc5d3c3baa322.jpeg'}
+                        fullName={'Jaume Tàpies-Ibern'}
+                        jobTitle={'Founder & Co-Chairman'}
+                        company={'Aina Hospitality'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/7b17a5205c6842d1aab87311c6cf6908.jpeg'}
+                        fullName={'Kholoud Almanea'}
+                        jobTitle={'Development Manager'}
+                        company={'Ennismore'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/8744509ba8354d31abfb050affddc9ed.jpeg'}
+                        fullName={'Samer Sabra'}
+                        jobTitle={'Chief Hospitality Officer'}
+                        company={'Jabal Omar Development Company'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/e9a2e33c4ec841f1a7b2adec77d63701.jpeg'}
+                        fullName={'Mounib Hammoud'}
+                        jobTitle={'Mega Project Consultant'}
+                        company={'AlNahla Group'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/e0dd7c51a08843e895efbd901a951270.jpeg'}
+                        fullName={'Meshari Al Nahari'}
+                        jobTitle={'Chief Executive Officer'}
+                        company={'Aseer Investment'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://cdn-api.swapcard.com/public/images/047feab9eb2745eb9cc8cbfdd1cd09e2.jpeg'}
+                        fullName={'Khalid Saud Abuhaimed'}
                         jobTitle={'Chief Executive Officer'}
                         company={'Al Khozama Investment Company'}
+                    />
+                </Pop>
+                <Pop>
+                    <SpeakerCard
+                    color={'c-accent'}
+                        photoUrl={'https://static.swapcard.com/public/images/699febbc64ce499b998fac5842cf2455.jpeg'}
+                        fullName={'Khalid Al Gahtani'}
+                        jobTitle={'Chairman & CEO'}
+                        company={'Rikaz Properties'}
                     />
                 </Pop>
                 <Pop>
@@ -429,119 +416,61 @@ export default function Page () {
                         photoUrl={'https://static.swapcard.com/public/images/7b395ba5c8d146cb970582231d498e01.jpeg'}
                         fullName={'Sultan Bader Al-Otaibi'}
                         jobTitle={'Chief Executive Officer'}
-                        company={'Taiba Investments'}
+                        company={'TAIBA'}
                     />
                 </Pop>
                 <Pop>
                     <SpeakerCard
                     color={'c-accent'}
-                        photoUrl={'https://cms.thebench.com/assets/img/avatars/Ahdab_Hassan.jpg'}
-                        fullName={'Hassan Ahdab'}
-                        jobTitle={'Chief Hospitality Operations Officer'}
-                        company={'Taiba Investments'}
+                        photoUrl={'https://static.swapcard.com/public/images/cc513b964f454364b47f376cb3d19b0e.png'}
+                        fullName={'Tarek Elkady'}
+                        jobTitle={'Vice President Investments'}
+                        company={'Osoolre'}
                     />
                 </Pop>
                 <Pop>
                     <SpeakerCard
                     color={'c-accent'}
-                        photoUrl={'https://static.swapcard.com/public/images/7a338419909044c5b3a29f6d9820e408.jpeg'}
-                        fullName={'Fahad Mohammed Alobailan'}
+                        photoUrl={'https://static.swapcard.com/public/images/4647f1b3e985405383b25e68d832ede9.jpeg'}
+                        fullName={'Hamza Farooqui'}
                         jobTitle={'Chief Executive Officer'}
-                        company={'BAAN Holding'}
+                        company={'Millat Global'}
                     />
                 </Pop>
-                <Pop>
-                    <SpeakerCard
-                    color={'c-accent'}
-                        photoUrl={'https://static.swapcard.com/public/images/323171e14d9b42c593b657cec119176e.jpeg'}
-                        fullName={'Sean Hehir'}
-                        jobTitle={'President & CEO'}
-                        company={'Trinity Investments'}
-                    />
-                </Pop>
-                <Pop>
-                    <SpeakerCard
-                    color={'c-accent'}
-                        photoUrl={'https://static.swapcard.com/public/images/97a1ef7bc8bb47fc9a6ce1108c7fc3a3.jpeg'}
-                        fullName={'Nick Candy'}
-                        jobTitle={'Chief Executive Officer'}
-                        company={'Candy Capital'}
-                    />
-                </Pop>
-                <Pop>
-                    <SpeakerCard
-                    color={'c-accent'}
-                        photoUrl={'https://static.swapcard.com/public/images/8cadb1f6b939436ab08ad4dd957f35e2.jpeg'}
-                        fullName={'Sundip Patel'}
-                        jobTitle={'Chief Executive Officer'}
-                        company={'Ezdaher Financing Company'}
-                    />
-                </Pop>
-                <Pop>
-                    <SpeakerCard
-                    color={'c-accent'}
-                        photoUrl={'https://static.swapcard.com/public/images/1de1fe42566f4d0dbdb24885e0724c4b.jpeg'}
-                        fullName={'Amit Nayak'}
-                        jobTitle={'Vice President'}
-                        company={'HAMA MEA'}
-                    />
-                </Pop>
+                
 
             </SpeakerCarousel>
 
             
 
+            {/* INVESTORS */}
 
-            {/* FEATURES */}
-
-            <section className="block bg-primary-2">
-                <div className="container center maxw-40">
-                    <Fade>
-                        <p className='fs-2 fw-600 lh-2'>{locale === 'ar' ? "حيث تثمر محادثات المستثمرين عن صفقات كبيرة" : "Where Investor Conversations Spark Landmark Deals"}</p>
-                    </Fade>
+            <section className="block bg-primary">
+                    
+                    <div className="container center">
+                        <p className="fs-1 fw-600 lh-1">
+                            {
+                                locale === 'ar'
+                                ?   "تحليل المستثمرين"
+                                :   "Investor Breakdown"
+                            }
+                        </p>
+                    </div>
+                    
+                <div className="container mx-auto maxw-50">
+                    <BarChart>
+                        {
+                            INDUSTRY_DATA.map((field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0.4, max: 26.5 }} />)
+                        }
+                    </BarChart>
                 </div>
-
-                <div className={`container ${CSS.cardFlexContainer}`}>
-                    <Pop><Card heroUrl={'/assets/img/sa/networking/receptions.jpg'}>
-                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "حفلات تواصل" : "Networking Receptions"}</p>
-                    </Card></Pop>
-                    <Pop><Card heroUrl={'/assets/img/sa/networking/speed-networking.jpg'}>
-                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "جلسات تواصل سريع" : "Speed Networking"}</p>
-                    </Card></Pop>
-                    <Pop><Card heroUrl={'/assets/img/sa/networking/closed-door-investors.jpg'}>
-                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "Closed-door Investor Sessions" : "Closed-door Investor Sessions"}</p>
-                    </Card></Pop>
-                    <Pop><Card heroUrl={'/assets/img/sa/networking/tours.jpg'}>
-                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "جولات ميدانية" : "Site Tours"}</p>
-                    </Card></Pop>
-                    <Pop><Card heroUrl={'/assets/img/sa/networking/investors-lounge.jpg'}>
-                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "ردهة المستثمرين" : "Investor's Lounge"}</p>
-                    </Card></Pop>
-                    <Pop><Card heroUrl={'/assets/img/sa/networking/exhibition.jpg'}>
-                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "طابق المعرض" : "Exhibition Floor"}</p>
-                    </Card></Pop>
-                    <Pop><Card heroUrl={'/assets/img/sa/networking/pre-scheduled.jpg'}>
-                        <p className='fs-4 c-primary fw-600 lh-1'>{locale === 'ar' ? "1-2-1 Pre-Scheduled Meetings" : "1-2-1 Pre-Scheduled Meetings"}</p>
-                    </Card></Pop>
-                </div>
-
-                <div className="container center">
-                    <Pop>
-                        <ButtonKeyline 
-                            href={'https://cms.thebench.com/downloads/FHS-Saudi-Arabia-2024-Company-List.pdf'} 
-                            decal={'fs-5 fw-600'} 
-                            color={'var(--secondary)'}
-                            target={'_blank'}
-                        >
-                            {locale === 'ar' ? "عرض قائمة الحضور" : "View Attendee List"}
-                        </ButtonKeyline>
-                    </Pop>
-                </div>
+            
+            
             </section>
 
 
 
-            {/* 2024 INVESTORS */}
+            {/* PAST INVESTORS */}
             
             <section className="block bg-default">
                 <div className="container center">

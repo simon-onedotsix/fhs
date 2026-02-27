@@ -50,8 +50,6 @@ function Speakers({ speakers }) {
 		(speaker => speaker.firstName === "Artur" && speaker.lastName === 'Gerber' ? 0 : 1),
 		(speaker => speaker.firstName === "Olivier" && speaker.lastName === 'Granet' ? 0 : 1),
 		(speaker => speaker.firstName === "Mutheu" && speaker.lastName === 'Muna-Mwaniki' ? 0 : 1),
-
-
 	] )
 	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 

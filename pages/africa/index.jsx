@@ -174,6 +174,21 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
     const HOST_PARTNERS = partners.find(group => group.id === "274375")
     const STRATEGIC_PARTNERS = partners.find(group => group.id === "138675")
 
+
+    let customOrderedSpeakers = _.sortBy(speakers, [
+        (speaker => speaker.firstName === "Juliana" && speaker.lastName === 'Kagwa' ? 0 : 1),
+        (speaker => speaker.firstName === "Ashish" && speaker.lastName === 'Sharma' ? 0 : 1),
+        (speaker => speaker.firstName === "Augusto" && speaker.lastName === 'Kalikemala' ? 0 : 1),
+        (speaker => speaker.firstName === "Clemence" && speaker.lastName === 'Lormand' ? 0 : 1),
+        (speaker => speaker.firstName === "Vimbai" && speaker.lastName === 'Masiyiwa' ? 0 : 1),
+
+        (speaker => speaker.firstName === "Jameel" && speaker.lastName === 'Verjee' ? 0 : 1),
+        (speaker => speaker.firstName === "Rosco" && speaker.lastName === 'Wendover' ? 0 : 1),
+        (speaker => speaker.firstName === "Artur" && speaker.lastName === 'Gerber' ? 0 : 1),
+        (speaker => speaker.firstName === "Olivier" && speaker.lastName === 'Granet' ? 0 : 1),
+        (speaker => speaker.firstName === "Mutheu" && speaker.lastName === 'Muna-Mwaniki' ? 0 : 1),
+    ] )
+
     
     // console.log('seomatic:', seomatic)
     // console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
@@ -267,7 +282,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
             {/* CONFIRMED SPEAKERS */}
             <SpeakerCarousel heading={'2026 Confirmed Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See all speakers'}>
                 {
-                    _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc']).map( speaker => (
+                    customOrderedSpeakers.map( speaker => (
                         <Pop key={speaker.id}>
                             <SpeakerCard 
                                 key={speaker.id}
@@ -597,11 +612,16 @@ export async function getStaticProps({ preview, previewData }) {
 					"filters": {
                         "shouldBeInGroups": "RXZlbnRHcm91cF82NDI4ODI=",
                         "eventPeopleIds": [
-                            "RXZlbnRQZW9wbGVfNDQzMzM1OTA=",
                             "RXZlbnRQZW9wbGVfNDQzMzI2ODA=",
                             "RXZlbnRQZW9wbGVfNDM4OTUyMDI=",
+                            "RXZlbnRQZW9wbGVfNDQ5MTQ4NDY=",
+                            "RXZlbnRQZW9wbGVfNDQ3NDI3MDM=",
+                            "RXZlbnRQZW9wbGVfNDQ3NDI2NzE=",
                             "RXZlbnRQZW9wbGVfNDM2MTE4NjM=",
-                            "RXZlbnRQZW9wbGVfNDQxNDEyOTM="
+                            "RXZlbnRQZW9wbGVfNDQxNDEyOTM=",
+                            "RXZlbnRQZW9wbGVfNDQ0OTI2OTE=",
+                            "RXZlbnRQZW9wbGVfNDM5NjkzNDk=",
+                            "RXZlbnRQZW9wbGVfNDQzMzQ0OTg="
                         ]
                     }
 				}
