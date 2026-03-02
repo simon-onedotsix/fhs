@@ -518,7 +518,7 @@ export default function Page({ seomatic, partners }) {
                         {
                             locale === 'ar'
                                 ? `منصة إبرام الصفقات في المملكة العربية السعودية – نحو تسريع تحوّل قطاع الضيافة ضمن رؤية 2030`
-                                : `Deal-Making Platform for Saudi Arabia – Driving Vision 2030&apos;s Hospitality Transformation`
+                                : `Deal-Making Platform for Saudi Arabia – Driving Vision 2030's Hospitality Transformation`
                         }
                     </p>
                 </div>
