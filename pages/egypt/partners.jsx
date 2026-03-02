@@ -63,7 +63,6 @@ export default function Page ({ videoTestimonials }) {
                 <div className="container center maxw-60">
                     <p className="fs-4 fw-500 c-primary pb-xs">Partners</p>
                     <div className="logoGrid">
-                        <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/accor.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/ACT_Logo-1024x401.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/BWH-NEW-MUST-USE-THIS.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/explore-tech.png`} />

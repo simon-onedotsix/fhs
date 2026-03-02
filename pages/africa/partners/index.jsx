@@ -1,9 +1,4 @@
-import { gql } from "@apollo/client"
-import craftApolloClient from "../../../pages/api/apollo"
 import _ from 'lodash'
-
-import { Fragment } from "react/jsx-runtime"
-
 import Head from 'next/head'
 
 
@@ -16,14 +11,40 @@ import { PartnerCategoryGrid, PartnerCategory, PartnerLogoGrid, PartnerLogo } fr
 
 
 
+function Partners({ partnerData }) {
 
-function Partners({ entry }) {
-	// console.log('cms partner entry:', entry)
 
-	const partners = entry.ahifContentBlocks.find(block => block.id === "177599").partnerGroups
-	// console.log('partners:', partners.partnerGroups)
-
+	// programatically build array of unique types pulled from exhibitor data
+	const allCategoriesArray = []
+	partnerData.exhibitors?.forEach( obj => {
+		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0]?.id, name: obj.fields[0]?.translations[0].value, size: ''})
+	})
+	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
 	
+
+	// 2026 custom ordering
+	const orderedCategories = []
+	categoriesArray.forEach( category => {
+		if (category.id === 'RmllbGRWYWx1ZV8xNTAzNDczOQ==') orderedCategories.push({ ...category, priority: 0 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMjM5NDE1NA==') orderedCategories.push({ ...category, priority: 1 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzM1MDgyNw==') orderedCategories.push({ ...category, priority: 3 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzM1MDg0OA==') orderedCategories.push({ ...category, priority: 4 })
+		if (category.id === 'RmllbGRWYWx1ZV8yOTk2MzQ4OQ==') orderedCategories.push({ ...category, priority: 5 })
+		if (category.id === 'RmllbGRWYWx1ZV8yOTk2MzUxMA==') orderedCategories.push({ ...category, priority: 6 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzM1MTMyNw==') orderedCategories.push({ ...category, priority: 7 })
+		if (category.id === 'RmllbGRWYWx1ZV8yMzkxMjA4NA==') orderedCategories.push({ ...category, priority: 8 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzM1MTUxNQ==') orderedCategories.push({ ...category, priority: 9 })
+		if (category.id === 'RmllbGRWYWx1ZV8xOTE4ODg3Mg==') orderedCategories.push({ ...category, priority: 9 })
+		if (category.id === 'RmllbGRWYWx1ZV8xOTE4ODgzNg==') orderedCategories.push({ ...category, priority: 9 })
+		
+	})
+
+	// console.log('swapcard partner data:', partnerData)
+	// console.log('categories:', categoriesArray)
+	// console.log('orderedCategories:', orderedCategories)
+	
+
+
 	return (
 		<>
 
@@ -37,42 +58,46 @@ function Partners({ entry }) {
 
 			{/* PARTNERS */}
 
-			<section className='block pb-0 mt-lg'>
+			<section className='block'>
 				<div className='container center formatted'>
 					<p className='fs-1 fw-600'>2026 Partners</p>
 				</div>
-			</section>
-
-			<PartnerCategoryGrid>
-				{
-					partners.length &&
-					partners.map( (category, index) => (
-						<Fragment key={index}>
-							<PartnerCategory key={index}>
-
-								<div className="block pt-0">
-									<h4 className='fs-5 fw-600 caps pb-xs'>{ category.title }</h4>
-									<PartnerLogoGrid>
-										{
-											_.orderBy( category.partners, [(p) => p.title.toLowerCase()] ).map(partner => (
-												<a key={partner.id} href={`/africa/partners/${partner.slug}`}>
-													{
-														partner.partnerLogo?.length &&
-														<PartnerLogo src={ partner.partnerLogo[0].url } />
-													}
-												</a>
-											))
-										}
-									</PartnerLogoGrid>
-								</div>
-								
-							</PartnerCategory>
-
-						</Fragment>
-					))
-				}
-			</PartnerCategoryGrid>
 				
+				<div className='center'>
+					{
+						partnerData &&
+						_.orderBy(orderedCategories, "priority").map( category => {
+							const group = partnerData.exhibitors?.filter( partner => {
+								if (partner.fields[0]?.id === category.id ) return partner
+							})
+							
+							// console.log('group:', group)
+
+							if ( group.length > 0 ) {
+								return (
+									<PartnerCategory key={category.id}>
+
+										<h4 className='fs-5 fw-600 c-white caps pt-md pb-xs'>{category && category.name}</h4>
+										<PartnerLogoGrid>
+											{
+												_.orderBy( group, [(p) => p.name.toLowerCase()] ).map( partner => (
+													<a key={partner.id} href={`/africa/partners/${partner.id}`} style={{ textDecoration: 'none'}}>
+														<PartnerLogo 
+															src={partner.logoUrl ? partner.logoUrl : null} 
+														/>
+													</a>
+												))
+											}
+										</PartnerLogoGrid>
+										
+									</PartnerCategory>
+								)
+							}
+							
+						})
+					}
+				</div>
+			</section>
 			
 
 			<Footer theme={{ footerBg: 'bg-white' }} />
@@ -87,46 +112,70 @@ Partners.theme = 'africa'
 
 export async function getStaticProps({ preview, previewData }) {
 
-	const data = await craftApolloClient( preview, previewData ).query({
-		query: gql`
-			query Partners {
-				entry(site: "ahif", id: "177588") {
-					... on ahifPages_page_Entry {
-						ahifContentBlocks {
-							... on ahifContentBlocks_partnerGroups_BlockType {
-								id
-								partnerGroups {
-									... on partnerGroups_default_Entry {
+
+	const swapcardData = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query {
+						event(id: "${process.env.SWAPCARD_EVENT_ID_AFRICA_2026}") {
+							fieldDefinitions {
+								... on SelectFieldDefinition {
+									id
+									name
+									optionsValues {
 										id
-										title
-										partners {
-											... on partners_partner_Entry {
-												id
-												title
-												slug
-												partnerLogo {
-													id
-													url
-													width
-													height
-												}
-											}
+										value
+										translations {
+											language
+											value
 										}
 									}
 								}
 							}
 						}
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_AFRICA_2026}", page:1, pageSize: 200) {
+							id
+							name
+							logoUrl
+							fields {
+								... on SelectField {
+									id
+									value
+									definition {
+										id
+										name
+									}
+									translations {
+										value
+									}
+								}
+							}
+						}
 					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
+					"page": 1
 				}
-			}
-		`
-	})
-	const pageData = data
+			})
+		}
+	)
+
+	console.log(swapcardData)
+	
+	const partnerData =  await swapcardData.json()
 
 
 	return { 
 		props: { 
-			entry: pageData.data.entry
+			partnerData: partnerData.data
 		}
 	}
 }

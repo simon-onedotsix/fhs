@@ -55,6 +55,8 @@ export const VideoSection = ({ video, poster, themeGraphics, children, backgroun
                 {themeGraphics}
             </motion.div>
 
+            {/* <div className='p-sm bg-white' style={{ position: `relative`, zIndex: 200, height: 200 }}>emieworforewi</div> */}
+
             {/* content */}
             <div className={`${CSS.content} block`}>
                 {children}

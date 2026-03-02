@@ -1,14 +1,14 @@
-import { gql } from "@apollo/client"
-import craftApolloClient from "../../../pages/api/apollo"
-
 import Head from 'next/head'
+import Script from "next/script"
 
 import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/theme/2025/africa/common/header/header'
-import { Footer } from '../../../fuselage/theme/2025/africa/common/footer/footer'
+import { Header } from '../../../fuselage/theme/2025/sa/common/header/header'
+import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
+
+import { HeaderShim } from '../../../fuselage/global-sa/header/header'
 
 import { OffsiteLink } from '../../../fuselage/components/offsite-link/offsite-link'
 import { StickySidebar } from '../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
@@ -20,40 +20,6 @@ import CSS from '../../../css/app/partners.module.css'
 function Partner({ partner }) {
 
 	// console.log('partner:', partner)
-
-	const handleLinkedIn = () => {
-		if ( partner.linkedin ) {
-			return (
-				<>
-					<ButtonSocial 
-						icon='linkedin' 
-						url={partner.linkedin} 
-						alt='linkedin'
-						target='_blank'
-						rel='noreferrer'
-						decal={'bg-secondary'}
-					/>&ensp;
-				</>
-			)
-		}
-	}
-	const handleTwitter = () => {
-		if ( partner.twitter ) {
-			return (
-				<>
-					<ButtonSocial 
-						icon='twitter' 
-						url={`https://www.twitter.com/${partner.twitter}`} 
-						alt='twitter'
-						target='_blank'
-						rel='noreferrer'
-						decal={'bg-secondary'}
-					/>&ensp;
-				</>
-			)
-		}
-	}
-	const handleFacebook = () => {
 		if ( partner.facebook ) {
 			return (
 				<ButtonSocial 
@@ -66,7 +32,7 @@ function Partner({ partner }) {
 				/>
 			)
 		}
-	}
+
 	const handleWebsite = () => {
 		if( partner.websiteUrl ) {
 
@@ -98,41 +64,41 @@ function Partner({ partner }) {
 	return (
 
 		<>
+			<Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+
 			<Head>
-				<link rel="icon" type="image/png" href="/assets/favicons/africa/favicon-16x16.png" sizes="16x16" />
+				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
 			</Head>
 
 			<Header compact />
 
-
-			<section className="block pt-0 mt-lg">
+			<section className="block pt-0">
 				<div className="container">
 
 					<StickySidebar size='medium'>
-						
+
 						<aside className="formatted">
+							<HeaderShim/>
 							<p className="fw-600"><ArrowLink href="/africa/partners">View all partners</ArrowLink></p>
 
-							<div className={CSS.profileLogo}>
-								{
-									partner.partnerLogo.length &&
-									<div className={CSS.profileLogoWrapper}>
-										<img 
-											src={partner.partnerLogo[0].url} 
-											alt=""
-										/>
-									</div>
-								}
+							<div className="bg-white p-sm mt-sm center rad-sm">
+								<div className={CSS.profileLogoWrapper}>
+                                    
+                                        <img
+                                            src={partner.logoUrl} 
+                                            alt=""
+                                        />
+								</div>
 							</div>
 						</aside>
 						
 						<main className="maxw-60">
-
-							{/* <p className='fs-2 fw-600 lh-1 c-secondary maxw-40'>partner.level</p> */}
-							<p className="fs-3 fw-600 caps">{ partner.title }</p>	
+							<HeaderShim/>
+							{/* <p className='fs-2 fw-600 lh-1 c-secondary maxw-40'>{GetBizzaboPartnerLevelTitle(partner.level)}</p> */}
+							<p className="fs-3 fw-600 caps c-secondary">{partner.name}</p>	
 							{
-								partner.partnerProfile &&
-								<div className="mt-sm maxw-50" style={{ whiteSpace: `pre-line` }}>{ parse(String(partner.partnerProfile)) }</div>
+								partner.htmlDescription &&
+								<div className="mt-sm maxw-50 formatted">{ parse(String(partner.htmlDescription)) }</div>
 							}
 							<p className="mt-md fw-600">{ handleWebsite() }</p>
 						</main>
@@ -167,33 +133,42 @@ export async function getStaticProps({ params }) {
 
 	// console.log('params',params)
 	
-	const partner = await craftApolloClient().query({
-        query: gql`
-			query Page {
-				entry(site: "ahif", slug: "${params.slug}" ) {
-					... on partners_partner_Entry {
-						id
-						slug
-						title
-						website
-						partnerProfile
-						partnerLogo {
-							id
-							url
-							width
-							height
-						}
-					}
+	const result = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+                    query exhibitors($eventId: String!, $ids: [String!]) {
+                        exhibitors(eventId: $eventId, ids: $ids, page:1, pageSize:100) {
+                            id
+                            name
+                            logoUrl
+                            websiteUrl
+                            htmlDescription
+                        }
+                    }
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
+					"ids": [
+                        params.id
+                      ]
 				}
-			}
-        `
-    })
+			})
+		}
+	)
+	const partner = await result.json()
 
 	return {
-		props: { partner: partner.data.entry }
+		props: { partner: partner.data.exhibitors[0] }
 	}
-}
 
+}
 export default Partner
 
 

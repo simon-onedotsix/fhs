@@ -370,6 +370,10 @@ export default function Page({ seomatic, partners }) {
                     </div>
                 }
             >
+
+                <div className="bg-white p-sm center" style={{ position: `absolute`, top: 0, right: 0, left: 0 }}>
+                    <p><strong>FHS Saudi Arabia is taking place as scheduled.</strong> We are closely monitoring the situation and will update this page should anything change.</p>
+                </div>
                
                 <div style={{ height: isDesktop ? `20vh` : `30vh`}}/>
                 <motion.p 
