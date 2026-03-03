@@ -371,8 +371,8 @@ export default function Page({ seomatic, partners }) {
                 }
             >
 
-                <div className="bg-white p-sm center" style={{ position: `absolute`, top: 0, right: 0, left: 0 }}>
-                    <p><strong>FHS Saudi Arabia is taking place as scheduled.</strong> We are closely monitoring the situation and will update this page should anything change.</p>
+                <div className="bg-white p-xs center balance" style={{ position: `absolute`, top: 0, right: 0, left: 0 }}>
+                    <p><strong>FHS Saudi Arabia is currently going ahead as scheduled.</strong> We place the utmost importance on the safety and wellbeing of our customers, partners and colleagues. The situation in the region is under close review, and we will provide updates here should circumstances change.</p>
                 </div>
                
                 <div style={{ height: isDesktop ? `20vh` : `30vh`}}/>
