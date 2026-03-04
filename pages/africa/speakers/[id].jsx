@@ -43,7 +43,7 @@ function Speaker({ speaker }) {
 											{ session.beginsAt && format( new Date(session.beginsAt), "HH:mm" ) }
 											{ session.endsAt && ` - ${format( new Date(session.endsAt), "HH:mm" )}` }
 										</p>
-										<Link href={`/world/agenda#${session.id.slice(0, -2)}`}>
+										<Link href={`/africa/agenda?session=${session.id.slice(0, -2)}`}>
 											<a className={CSS.titleLink}>{ session.title }</a>
 										</Link>
 									</div>

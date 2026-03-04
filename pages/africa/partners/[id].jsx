@@ -5,8 +5,8 @@ import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/theme/2025/sa/common/header/header'
-import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
+import { Header } from '../../../fuselage/theme/2025/africa/common/header/header'
+import { Footer } from '../../../fuselage/theme/2025/africa/common/footer/footer'
 
 import { HeaderShim } from '../../../fuselage/global-sa/header/header'
 

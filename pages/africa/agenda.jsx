@@ -88,7 +88,10 @@ let PRIORITISED_STREAMS = [
 // end stream order
 
 
-export default function Agenda ({ sessions, theme }) {
+export default function Agenda({ sessions, theme }) {
+	
+	const lenis = useLenis()
+	const router = useRouter()
 
 	const [ selectedTopic, setSelectedTopic ] = useState (null)
 	const [ selectedDay, setSelectedDay ] = useState (null)
@@ -99,10 +102,28 @@ export default function Agenda ({ sessions, theme }) {
 	
 	const [ filtersVisible, setFiltersVisible ] = useState(false)
 
-
-
 	const locationSelect = useRef()
 
+
+	useEffect(() => {
+		// if session param is provided, scroll to session
+		if (lenis && router.isReady && router.query.session) {
+			lenis.scrollTo(`#${router.query.session}`, { duration: 1 })
+			router.replace({
+				pathname: router.pathname,
+				search: new URLSearchParams(router.search).delete('session'),
+			})
+		}
+		
+		// if track param is provided, set topic
+		if ( router.isReady && router.query.track ) {
+			setSelectedTopic(router.query.track)
+			router.replace({
+				pathname: router.pathname,
+				search: new URLSearchParams(router.search).delete('track'),
+			})
+		}
+	})
 	
 
 	// FILTERS
@@ -329,7 +350,7 @@ export default function Agenda ({ sessions, theme }) {
 	
 
 	return (
-		<>
+		<ReactLenis root>
 			<Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/africa/favicon-16x16.png" sizes="16x16" />
 			</Head>
@@ -340,7 +361,7 @@ export default function Agenda ({ sessions, theme }) {
 
 				<PageHeader theme={``}>
 					<div className="formatted no-print">
-						<p className="fs-0 fw-600"><Reveal>2026 Agenda</Reveal></p>
+						<div className="fs-0 fw-600"><Reveal>2026 Agenda</Reveal></div>
 						<Slide>
 							<p className="mt-sm">For FHS Africa, our objective is to enhance networking opportunities by introducing innovative and engaging formats that foster meaningful connections among delegates. The program is carefully designed to encourage greater interaction between attendees and speakers, ensuring valuable discussions and insights.</p>
 						</Slide>
@@ -564,7 +585,7 @@ export default function Agenda ({ sessions, theme }) {
 
 			<LenisScroller />
 			</div>
-		</>
+		</ReactLenis>
 	)
 }
 Agenda.theme = 'africa'
@@ -597,15 +618,15 @@ export const Session = ({ session }) => {
 		
 
 		// function to handle speaker who is moderator in one session and speaker in another
-		if (session.id === 'UGxhbm5pbmdfMjk3MzgwMA==') {
-			speakerData.forEach(speaker => {
-				if (speaker.id === 'U3BlYWtlcihFdmVudF8yOTEzMTk5LEV2ZW50UGVvcGxlXzQ0ODY2NTY0LFVzZXJfMTEzNzgzNTAp') moderators.push(speaker)
-			})
-		}
-		function removeObjectWithId(arr, id) {
-			return arr.filter((obj) => obj.id !== id);
-		}
-		speakers = removeObjectWithId(speakers, 'U3BlYWtlcihFdmVudF8yOTEzMTk5LEV2ZW50UGVvcGxlXzQ0ODY2NTY0LFVzZXJfMTEzNzgzNTAp')
+		// if (session.id === 'UGxhbm5pbmdfMjk3MzgwMA==') {
+		// 	speakerData.forEach(speaker => {
+		// 		if (speaker.id === 'U3BlYWtlcihFdmVudF8yOTEzMTk5LEV2ZW50UGVvcGxlXzQ0ODY2NTY0LFVzZXJfMTEzNzgzNTAp') moderators.push(speaker)
+		// 	})
+		// }
+		// function removeObjectWithId(arr, id) {
+		// 	return arr.filter((obj) => obj.id !== id);
+		// }
+		// speakers = removeObjectWithId(speakers, 'U3BlYWtlcihFdmVudF8yOTEzMTk5LEV2ZW50UGVvcGxlXzQ0ODY2NTY0LFVzZXJfMTEzNzgzNTAp')
 		// END function to handle speaker who is moderator in one session and speaker in another
 
 
@@ -686,7 +707,7 @@ export const Session = ({ session }) => {
 
 	return (
 	
-		<div className={CSS.sessionsWrapper}>
+		<div className={CSS.sessionsWrapper} id={session.id.slice(0, -2)}>
 			<div className={CSS.sessionHeader}>
 				<Duration startTime={session.beginsAt} endTime={session.endsAt} />
 				<Location session={session} />
