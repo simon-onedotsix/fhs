@@ -600,8 +600,8 @@ export const Session = ({ session }) => {
 
 		if ( !speakerData ) return
 
-		// console.log('session ID:', session.id)
-		// console.log('speakerData:', speakerData)
+		console.log('session ID:', session.id)
+		console.log('speakerData:', speakerData)
 
 		let moderators = []
 		let speakers = []
@@ -609,7 +609,7 @@ export const Session = ({ session }) => {
 
 		// if the first speaker is a moderator, move to separate array
 		speakerData.forEach( (speaker, index) => {
-			if (speaker.withEvent?.eventProfile.type === 'Moderator' && index === 0) {
+			if (speaker.withEvent?.eventProfile.type === 'Moderator') {
 				moderators.push(speaker)
 			} else {
 				speakers.push(speaker)
