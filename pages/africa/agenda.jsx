@@ -143,7 +143,7 @@ export default function Agenda({ sessions, theme }) {
 		if (!sessionsData) return 
 		
 
-		// customise layout of targeted sessions ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+		// customise layout of targeted sessions –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– [see below]
 		
 		// extract sessions [UGxhbm5pbmdfNDM2NzA1OQ==] followed by [UGxhbm5pbmdfNDM0MTYwOQ==]
 		// add inside session [UGxhbm5pbmdfNDMwNTczOA==] in unique timeslot => 16:30 - 18:00 • 1 hour 30 minutes • Summit Stage
@@ -287,7 +287,7 @@ export default function Agenda({ sessions, theme }) {
 		// apply filters to sessions
 
 		const filteredTimeslots = _.groupBy(filterSessions(sessionsData), 'beginsAt')
-
+		
 		// group by identical start and end times
 		// const filteredTimeslots = _.groupBy(filterSessions(sessionsData), (item) => `${item.beginsAt}_${item.endsAt}`)
 		
@@ -312,12 +312,23 @@ export default function Agenda({ sessions, theme }) {
 
 		
 		
-		// insert custom timeslot --------------------------------------------------------------------
-		agenda[2].timeslots.splice(agenda[2].timeslots.length -1, 0, customTimeslot)
+		// insert custom timeslot -------------------------------------------------------------------- [see above]
+
+		// find the day on which the session falls
+		const targetDay = agenda.find(day => day.time === customTimeslot.beginsAt.slice(0, 10))
+		// console.log('targetDay:', targetDay)
+		
+		// find the index of the session occurring directly after
+		const targetSlotIndex = targetDay.timeslots.findIndex(slot => slot.beginsAt >= customTimeslot.beginsAt)
+		// console.log('targetSlotIndex:', targetSlotIndex)
+		
+		// insert the custom timeslot
+		targetDay.timeslots.splice(targetSlotIndex, 0, customTimeslot)
+
 		// END insert custom timeslot ----------------------------------------------------------------
 		
 		
-		console.log('agenda:', agenda)
+		// console.log('agenda:', agenda)
 		return agenda
 
 
