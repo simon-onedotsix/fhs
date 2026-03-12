@@ -140,7 +140,51 @@ export default function Agenda({ sessions, theme }) {
 		
 	const buildAgenda = ( sessionsData ) => {
 
-		if ( !sessionsData ) return 
+		if (!sessionsData) return 
+		
+
+		// customise layout of targeted sessions ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+		
+		// extract sessions [UGxhbm5pbmdfNDM2NzA1OQ==] followed by [UGxhbm5pbmdfNDM0MTYwOQ==]
+		// add inside session [UGxhbm5pbmdfNDMwNTczOA==] in unique timeslot => 16:30 - 18:00 • 1 hour 30 minutes • Summit Stage
+		// console.log('INPUT:', sessionsData.length)
+
+		// creat new timeslot
+		const customTimeslot = {
+			beginsAt: "",
+			endsAt: "",
+			title: "",
+			sessions: []
+		}
+
+		sessionsData.map(session => {
+			// get the parent session timings and create title fot new timeslot
+			if (session.id === "UGxhbm5pbmdfNDMwNTczOA==") {
+				customTimeslot.beginsAt = session.beginsAt
+				customTimeslot.endsAt = session.endsAt
+				customTimeslot.title = session.titleTranslations[0].value
+			}
+			// add the child sessions to the new timeslot
+			if (session.id === "UGxhbm5pbmdfNDM2NzA1OQ==" || session.id === "UGxhbm5pbmdfNDM0MTYwOQ==") {
+				customTimeslot.sessions.push(session)
+			}
+		})
+		// console.log('customTimeslot:', customTimeslot)
+
+
+		
+		// remove sessions from original agenda
+		const sessionsToRemove = ["UGxhbm5pbmdfNDMwNTczOA==", "UGxhbm5pbmdfNDM2NzA1OQ==", "UGxhbm5pbmdfNDM0MTYwOQ=="]
+		const customSessionsData = sessionsData.filter(session => !sessionsToRemove.includes(session.id))
+		// console.log('customSessionsData:', customSessionsData.length)
+		// console.log('customSessionsData:', _.orderBy(customSessionsData, 'beginsAt'))
+		
+
+		sessionsData = customSessionsData
+				
+		// END customise layout of targeted sessions ––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
 
 
 		// text search filtering
@@ -243,6 +287,9 @@ export default function Agenda({ sessions, theme }) {
 		// apply filters to sessions
 
 		const filteredTimeslots = _.groupBy(filterSessions(sessionsData), 'beginsAt')
+
+		// group by identical start and end times
+		// const filteredTimeslots = _.groupBy(filterSessions(sessionsData), (item) => `${item.beginsAt}_${item.endsAt}`)
 		
 	
 		// build agenda
@@ -263,8 +310,18 @@ export default function Agenda({ sessions, theme }) {
 			agenda.push( { ...day , timeslots: slots } )
 		})
 
-		// console.log('agenda:', agenda)
+		
+		
+		// insert custom timeslot --------------------------------------------------------------------
+		agenda[2].timeslots.splice(agenda[2].timeslots.length -1, 0, customTimeslot)
+		// END insert custom timeslot ----------------------------------------------------------------
+		
+		
+		console.log('agenda:', agenda)
 		return agenda
+
+
+
 	}
 
 
@@ -556,16 +613,42 @@ export default function Agenda({ sessions, theme }) {
 
 													// check for timeslot containing session id – if found, reverse the order
 													let reverseOrder = (slot.sessions.find(session => session.id === "UGxhbm5pbmdfNDMyMjYyNw=="))
+
+													// do custom layout for timeslot with title key
+													return slot.title
+														? (
+															// custom session layout
+															<div
+																key={index}
+																className="bg-accent"
+																style={{
+																	padding: `0.5rem`,
+																	borderRadius: `calc(var(--default-radius) * 0.5)`,
+																	backgroundColor: `hsl(from var(--accent) h s l / .75)`
+																}}
+															>
+																<p className="sessionTitle | fs-4 fw-600 lh-1 c-secondary mb-xs pt-xs px-xs">{slot.title}</p>
+																<div key={index} className={`${CSS.sessions} ${reverseOrder ? CSS.reversed : ''}`}>
+																	{
+																		prioritiseSessions(slot.sessions).map(session => {
+																			return <Session key={session.id} session={session} theme={getSessionLocationTheme(session)} />
+																		})
+																	}														
+																</div>
+															</div>
+														
+														) : (
+															// normal session handeling
+															<div key={index} className={`${CSS.sessions} ${reverseOrder ? CSS.reversed : ''}`}>
+																{
+																	prioritiseSessions(slot.sessions).map(session => {
+																		return <Session key={session.id} session={session} theme={getSessionLocationTheme(session)} />
+																	})
+																}														
+															</div>
+
+														)
 													
-													return (
-														<div key={index} className={`${CSS.sessions} ${reverseOrder ? CSS.reversed : ''}`}>
-															{
-																prioritiseSessions(slot.sessions).map(session => {
-																	return <Session key={session.id} session={session} theme={getSessionLocationTheme(session)} />
-																})
-															}														
-														</div>
-													)
 												}) 
 											: 
 												<p className="fs-5 fw-400 py-xs">
@@ -600,8 +683,8 @@ export const Session = ({ session }) => {
 
 		if ( !speakerData ) return
 
-		console.log('session ID:', session.id)
-		console.log('speakerData:', speakerData)
+		// console.log('session ID:', session.id)
+		// console.log('speakerData:', speakerData)
 
 		let moderators = []
 		let speakers = []
@@ -715,7 +798,7 @@ export const Session = ({ session }) => {
 
 			<div className={`${setSessionTheme(session)} ${CSS.sessionContent} | columns-1 gap-xs`} >
 				
-				{/* <small style={{color: 'blue'}}>{session.id}</small> */}
+				{/* <small style={{color: 'lime', backgroundColor: 'blue'}}>{session.id}</small> */}
 				
 				<p className="sessionTitle | fs-4 fw-600 lh-1 c-secondary">
 					{ parse(session.titleTranslations[0].value) }

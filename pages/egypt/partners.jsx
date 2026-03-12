@@ -65,7 +65,6 @@ export default function Page ({ videoTestimonials }) {
                     <div className="logoGrid">
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/ACT_Logo-1024x401.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/BWH-NEW-MUST-USE-THIS.png`} />
-                        <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/explore-tech.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/TFGH-BLACK.png`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/hdl.png`} />
                         <LogoBox size={250} logoUrl={`/assets/img/egypt/partners/jll.png`} />
@@ -75,6 +74,7 @@ export default function Page ({ videoTestimonials }) {
                         
                         <LogoBox size={250} logoUrl={`https://static.swapcard.com/public/images/61cbc9d9864c4a4f92a07cda247fa600.png`} />
                         <LogoBox size={250} logoUrl={`https://static.swapcard.com/public/images/509f8a7dcf094ebf9f9ad42481e5f9fe.png`} />
+                        <LogoBox size={250} logoUrl={`https://static.swapcard.com/public/images/0b79ae913b7f41dc8f7a9c68b6ee2620.jpeg`} />
                         <LogoBox size={250} logoUrl={`https://cms.thebench.com/assets/img/logos/story-hospitality.png`} />
                     </div>
                 </div>
