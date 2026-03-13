@@ -344,7 +344,7 @@ export default function Page({ seomatic, partners }) {
 
             
             <div className="py-xs" dir={`ltr`}>
-                <a style={{ textDecoration: 'none' }} href="https://events.teams.microsoft.com/event/217ca359-d99d-4a4c-8584-7ff62df258b0@8cdb290b-4b7e-4a51-8886-7b658cef30e5" target="_blank">
+                <a style={{ textDecoration: 'none' }} href="https://events.teams.microsoft.com/event/217ca359-d99d-4a4c-8584-7ff62df258b0@8cdb290b-4b7e-4a51-8886-7b658cef30e5" target="_blank" rel="noreferrer">
                     <Ticker duration={12}>
                         <p className="fs-6 c-primary"><span className="fw-900 caps c-secondary">Live Webinar</span> -  <span className="fw-600">The Middle East Outlook:</span> Assessing the Impact on Global Travel and Hospitality - <span className="fw-900 caps c-secondary">Register Now</span>&emsp;</p>
                         <p className="fs-6 c-primary"><span className="fw-900 caps c-secondary">Live Webinar</span> -  <span className="fw-600">The Middle East Outlook:</span> Assessing the Impact on Global Travel and Hospitality - <span className="fw-900 caps c-secondary">Register Now</span>&emsp;</p>
