@@ -133,11 +133,7 @@ export const MainMenu = ({ otherEvents }) => {
                                                                 let showFlash = false
 
                                                                 if ( 
-                                                                    link.hyperlink === '/sa/brf' ||
-                                                                    link.hyperlink === '/sa/projects' ||
-                                                                    link.hyperlink === '/sa/net-positive-solutions-lab' ||
-                                                                    link.hyperlink === '/sa/nextgen-investment-forum' ||
-                                                                    link.hyperlink === '/sa/curated-connections'
+                                                                    link.hyperlink === '/sa/webinar'
                                                                 ) showFlash = true
                 
                                                                 if (link.hyperlink) return (
@@ -152,11 +148,12 @@ export const MainMenu = ({ otherEvents }) => {
                                                                                 onClick={ () => setActive(false)}
                                                                                 
                                                                             >
-                                                                                {/* {
-                                                                                    showFlash &&
-                                                                                    <span className={CSS.label}>New!</span>
-                                                                                } */}
                                                                                 { link.label }
+                                                                                
+                                                                                {
+                                                                                    showFlash &&
+                                                                                    <span className={CSS.label} style={{ marginLeft: 6}}>Limited time only</span>
+                                                                                }
                                                                             </a>
                                                                         </Link>    
                                                                     </li> 

@@ -633,13 +633,13 @@ export default function Agenda({ sessions, theme }) {
 																key={index}
 																className="bg-accent"
 																style={{
-																	padding: `0.5rem`,
+																	padding: `1.5rem`,
 																	borderRadius: `calc(var(--default-radius) * 0.5)`,
 																	backgroundColor: `hsl(from var(--accent) h s l / .75)`
 																}}
 															>
-																<p className="sessionTitle | fs-4 fw-600 lh-1 c-secondary mb-xs pt-xs px-xs">{slot.title}</p>
-																<div key={index} className={`${CSS.sessions} ${reverseOrder ? CSS.reversed : ''}`}>
+																<p className="sessionTitle | fs-4 fw-600 lh-1 c-secondary mb-xs">{slot.title}</p>
+																<div key={index} style={{ display: `grid`, gridTemplateColumns: `1fr`, gap: `.5rem`}}>
 																	{
 																		prioritiseSessions(slot.sessions).map(session => {
 																			return <Session key={session.id} session={session} theme={getSessionLocationTheme(session)} />
