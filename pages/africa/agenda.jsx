@@ -323,7 +323,7 @@ export default function Agenda({ sessions, theme }) {
 		// console.log('targetSlotIndex:', targetSlotIndex)
 		
 		// insert the custom timeslot
-		targetDay.timeslots.splice(targetSlotIndex, 0, customTimeslot)
+		targetDay.timeslots.splice(targetSlotIndex + 1, 0, customTimeslot)
 
 		// END insert custom timeslot ----------------------------------------------------------------
 		

@@ -36,11 +36,12 @@ function Partners({ partnerData }) {
 		if (category.id === 'RmllbGRWYWx1ZV8yNzM1MTUxNQ==') orderedCategories.push({ ...category, priority: 9 })
 		if (category.id === 'RmllbGRWYWx1ZV8xOTE4ODg3Mg==') orderedCategories.push({ ...category, priority: 9 })
 		if (category.id === 'RmllbGRWYWx1ZV8xOTE4ODgzNg==') orderedCategories.push({ ...category, priority: 9 })
+		if (category.id === 'RmllbGRWYWx1ZV8zMDA0MTcxNw==') orderedCategories.push({ ...category, priority: 10 })
 		
 	})
 
 	// console.log('swapcard partner data:', partnerData)
-	// console.log('categories:', categoriesArray)
+	console.log('categories:', categoriesArray)
 	// console.log('orderedCategories:', orderedCategories)
 	
 
