@@ -119,7 +119,7 @@ export default function Agenda () {
 							<aside>
 								<p className="fs-2">Day 1</p>
 								<Pop>
-									<p className={CSS.dayDivider}>Monday, 20 April 2026</p>
+									<p className={CSS.dayDivider}>Monday, 22 June 2026</p>
 								</Pop>
 							</aside>
 
@@ -154,7 +154,7 @@ export default function Agenda () {
 							<aside>
 								<p className="fs-2">Day 2</p>
 								<Pop>
-									<p className={CSS.dayDivider}>Tuesday, 21 April 2026</p>
+									<p className={CSS.dayDivider}>Tuesday, 23 June 2026</p>
 								</Pop>
 							</aside>
 
@@ -209,7 +209,7 @@ export default function Agenda () {
 							<aside>
 								<p className="fs-2">Day 3</p>
 								<Pop>
-									<p className={CSS.dayDivider}>Wednesday, 22 April 2026</p>
+									<p className={CSS.dayDivider}>Wednesday, 24 June 2026</p>
 								</Pop>
 							</aside>
 
