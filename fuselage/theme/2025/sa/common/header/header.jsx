@@ -118,7 +118,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                     </div>
                     <div className={CSS.venue}>
                         <p className='lh-2 c-white'>
-                            <span className='fw-600'>20-22 April 2026</span> <br/>Mandarin Oriental Al Faisaliah, Riyadh
+                            <span className='fw-600'>22-24 June 2026</span> <br/>Mandarin Oriental Al Faisaliah, Riyadh
                         </p>
                     </div>
                 </section>

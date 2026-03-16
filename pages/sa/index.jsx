@@ -406,8 +406,8 @@ export default function Page({ seomatic, partners }) {
                 >
                     {
                         locale === 'ar'
-                            ? `20-22 أبريل 2026، فندق ماندارين أورينتال الفيصلية، الرياض`
-                            : `20-22 April 2026, Mandarin Oriental Al Faisaliah, Riyadh`
+                            ? `22-24 June 2026, Mandarin Oriental Al Faisaliah, Riyadh`
+                            : `22-24 June 2026, Mandarin Oriental Al Faisaliah, Riyadh`
                     }
                 </motion.p>
 
