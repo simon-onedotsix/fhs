@@ -305,7 +305,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
             <section className="block bg-primary pt-0">
                 <Pop>
                     <div className="container center formatted bg-white p-sm rad-sm">
-                        <p className="fs-1 fw-600  c-primary">Look who's attending FHS Africa 2026</p>
+                        <p className="fs-1 fw-600  c-primary">Look who&apos;s attending FHS Africa 2026</p>
                         <p className="fs-4 pb-xs">Is your company represented?</p>
 
                         <Pop inline delay={.2}>
