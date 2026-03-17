@@ -243,6 +243,9 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                         <Pop inline delay={.2}>
                             <Button href={'/africa/get-involved-in-2026'}>Get Involved in 2026</Button>
                         </Pop>
+                        <Pop inline delay={.2}>
+                            <Button href={'/africa/fhs-africa-investor-list-2026'}>Confirmed Investors for 2026</Button>
+                        </Pop>
                     </ButtonGrid>
                 </div>
 
@@ -296,6 +299,21 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                     ))
                 }
             </SpeakerCarousel>
+
+
+
+            <section className="block bg-primary pt-0">
+                <Pop>
+                    <div className="container center formatted bg-white p-sm rad-sm">
+                        <p className="fs-1 fw-600  c-primary">Look who's attending FHS Africa 2026</p>
+                        <p className="fs-4 pb-xs">Is your company represented?</p>
+
+                        <Pop inline delay={.2}>
+                            <Button href={'/africa/attendee-list-2026'}>View Company List</Button>
+                        </Pop>
+                    </div>
+                </Pop>
+            </section>
 
 
 
