@@ -130,11 +130,11 @@ export const MainMenu = ({ otherEvents }) => {
                                                         {
                                                             item.menuLinks?.map( (link, index) => {
 
-                                                                let showFlash = false
+                                                                // let showFlash = false
 
-                                                                if ( 
-                                                                    link.hyperlink === '/sa/webinar'
-                                                                ) showFlash = true
+                                                                // if ( 
+                                                                //     link.hyperlink === '/sa/webinar'
+                                                                // ) showFlash = true
                 
                                                                 if (link.hyperlink) return (
                                                                     <li key={index}  style={{ paddingBottom: 0 }}>
@@ -150,10 +150,10 @@ export const MainMenu = ({ otherEvents }) => {
                                                                             >
                                                                                 { link.label }
                                                                                 
-                                                                                {
+                                                                                {/* {
                                                                                     showFlash &&
                                                                                     <span className={CSS.label} style={{ marginLeft: 6}}>Limited time only</span>
-                                                                                }
+                                                                                } */}
                                                                             </a>
                                                                         </Link>    
                                                                     </li> 
