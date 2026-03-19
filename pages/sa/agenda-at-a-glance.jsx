@@ -80,7 +80,32 @@ const tracks = [
 
 
 
-export default function Agenda () {
+export default function Agenda() {
+	
+	return (
+		<ReactLenis root>
+			<Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+
+			<Head>
+				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
+			</Head>
+
+			<Header compact shim />
+
+
+			<section className="block">
+				<div className="container">
+					<p className="fs-1 fw-500">Schedule at a Glance</p>
+					<div className="formatted mt-xs">
+						<p>The agenda will be available shortly.</p>
+					</div>
+				</div>
+			</section>
+			
+
+			<Footer theme={{ footerBg: 'bg-white' }} />
+		</ReactLenis>
+	)
 
     return (
 		<ReactLenis root>
