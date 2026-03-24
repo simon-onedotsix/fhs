@@ -370,15 +370,15 @@
     border: none;
     font-family: inherit;
     font-size: inherit;
-    color: white;
+    color: var(--secondary);
     width: 100%;
     padding: .75rem 2.5rem .75rem 1rem;
     border: 1px solid var(--accent);
     border-radius: calc(var(--default-radius) * 0.5);
-    background-color: transparent;
+    background-color: var(--accent);
     backdrop-filter: blur(10px);
 
-    background-image: url('/assets/ui/select-chevron-sa-2024.svg');
+    background-image: url('/assets/ui/select-chevron-africa.svg');
     background-size: 1rem;
     background-repeat: no-repeat;
     background-position: calc(100% - 1rem);

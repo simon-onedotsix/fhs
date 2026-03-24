@@ -316,14 +316,19 @@ export default function Agenda({ sessions, theme }) {
 
 		// find the day on which the session falls
 		const targetDay = agenda.find(day => day.time === customTimeslot.beginsAt.slice(0, 10))
-		// console.log('targetDay:', targetDay)
+		console.log('targetDay:', targetDay)
 		
 		// find the index of the session occurring directly after
-		const targetSlotIndex = targetDay.timeslots.findIndex(slot => slot.beginsAt >= customTimeslot.beginsAt)
-		// console.log('targetSlotIndex:', targetSlotIndex)
+		const targetSlotIndex = undefined
+		targetDay
+			? targetSlotIndex = targetDay.timeslots.findIndex(slot => slot.beginsAt >= customTimeslot.beginsAt)
+			: targetSlotIndex = 0
+		console.log('targetSlotIndex:', targetSlotIndex)
 		
 		// insert the custom timeslot
-		targetDay.timeslots.splice(targetSlotIndex + 1, 0, customTimeslot)
+		if (targetDay) {
+			targetDay.timeslots.splice(  targetSlotIndex + 1, 0, customTimeslot)
+		}
 
 		// END insert custom timeslot ----------------------------------------------------------------
 		
@@ -558,7 +563,7 @@ export default function Agenda({ sessions, theme }) {
 										{
 											groupFieldGroupsByName( sessions, 'Location').map( filter => {
 												return (
-													<option key={filter.id} value={filter.id}>
+													<option key={filter.id} value={filter.id} id={filter.name}>
 														{filter.name}
 													</option>
 												)
@@ -624,6 +629,11 @@ export default function Agenda({ sessions, theme }) {
 
 													// check for timeslot containing session id – if found, reverse the order
 													let reverseOrder = (slot.sessions.find(session => session.id === "UGxhbm5pbmdfNDMyMjYyNw=="))
+
+													// console.log('filter:', selectedLocation)
+
+													// only include custom timeslot if there no location selected or just one is selected
+													if ( slot.title && selectedLocation && selectedLocation !== "RmllbGRWYWx1ZV8xOTEwNTI2NA==" ) return
 
 													// do custom layout for timeslot with title key
 													return slot.title
@@ -870,7 +880,7 @@ export const Location = ({ session }) => {
 	let location = fieldsData[0]?.translations[0].value
 
 	if (location) return (
-		<p className={CSS.tag}><CompassIcon fill={'var(--primary'} />{ location }</p>
+		<p className={CSS.tag}><CompassIcon fill={'var(--primary)'} />{ location }</p>
 	)
 	return
 }
