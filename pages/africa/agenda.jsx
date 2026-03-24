@@ -319,7 +319,7 @@ export default function Agenda({ sessions, theme }) {
 		console.log('targetDay:', targetDay)
 		
 		// find the index of the session occurring directly after
-		const targetSlotIndex = undefined
+		let targetSlotIndex = undefined
 		targetDay
 			? targetSlotIndex = targetDay.timeslots.findIndex(slot => slot.beginsAt >= customTimeslot.beginsAt)
 			: targetSlotIndex = 0

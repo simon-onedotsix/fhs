@@ -9,6 +9,7 @@ const nextConfig = {
 	i18n: {
 		locales: ['en', 'ar'],
 		defaultLocale: 'en',
+		ignoreRoutes: [ '/africa', '/world', '/egypt', '/ais', '/brf' ]
 	},
 
 	images: {
