@@ -316,14 +316,14 @@ export default function Agenda({ sessions, theme }) {
 
 		// find the day on which the session falls
 		const targetDay = agenda.find(day => day.time === customTimeslot.beginsAt.slice(0, 10))
-		console.log('targetDay:', targetDay)
+		// console.log('targetDay:', targetDay)
 		
 		// find the index of the session occurring directly after
 		let targetSlotIndex = undefined
 		targetDay
 			? targetSlotIndex = targetDay.timeslots.findIndex(slot => slot.beginsAt >= customTimeslot.beginsAt)
 			: targetSlotIndex = 0
-		console.log('targetSlotIndex:', targetSlotIndex)
+		// console.log('targetSlotIndex:', targetSlotIndex)
 		
 		// insert the custom timeslot
 		if (targetDay) {
@@ -333,7 +333,7 @@ export default function Agenda({ sessions, theme }) {
 		// END insert custom timeslot ----------------------------------------------------------------
 		
 		
-		// console.log('agenda:', agenda)
+		console.log('agenda:', agenda)
 		return agenda
 
 
@@ -410,6 +410,13 @@ export default function Agenda({ sessions, theme }) {
 			} else {
 				session = { ...session, priority: -1 }
 			}
+
+			// START custom prioritisation for specific session/s
+			if (session.id === "UGxhbm5pbmdfNDI1NTEyMA==") {
+				session = { ...session, priority: 10 }
+			}
+			// END custom prioritisation for specific session/s
+
 			return session
 		})
 
@@ -754,7 +761,7 @@ export const Session = ({ session }) => {
 						: null
 					}
 					<div className={CSS.sessionSpeakerGrid}>
-						{ speakers.map( speaker => <SpeakerCard key={speaker.id} speaker={speaker} /> ) }
+						{ _.orderBy(speakers, 'lastName').map( speaker => <SpeakerCard key={speaker.id} speaker={speaker} /> ) }
 					</div>
 				</div>
 
@@ -763,7 +770,7 @@ export const Session = ({ session }) => {
 
 		return (
 			<div className={CSS.sessionSpeakerGrid}>
-				{ speakerData.map( speaker => <SpeakerCard key={speaker.id} speaker={speaker} /> ) }
+				{ _.orderBy(speakerData, 'lastName').map( speaker => <SpeakerCard key={speaker.id} speaker={speaker} /> ) }
 			</div>
 		)
 	}
