@@ -43,7 +43,7 @@ const TIER_DATA = [
         color: '#DFA258',
         badgeUrl: '/assets/theme/fhs-pin-gold.png',
         criteria: '<p>Attended 5 or more editions of FHS</p>',
-        benefits: '<ul><li><strong>10% Discount on Delegate Tickets:</strong> Maximize your savings with the highest discount on event tickets.</li><li><strong>10% Discount on Colleague/Friend Tickets:</strong> Significant savings for your colleagues and friends.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Continue to receive exclusive industry insights and content.</li><li><strong>Loyalty Pins/Badges + Event Preparation Kits:</strong> Get special loyalty pins or badges along with event preparation kits provided on-site.</li><li><strong>Hotel/Restaurant Vouchers:</strong> Free hotel nights/restaurant/activity vouchers from our sponsors/partners.</li><li><strong>Featured on FHS Website:</strong> Prominent recognition on our website.</li><li><strong>Priority Access to Site Tours and On-Site Activities:</strong> Maintain priority booking status for all activities.</li><li><strong>Access to Networking Receptions:</strong> Full access to all networking receptions at FHS and other Bench conferences.</li><li><strong>Opportunity to be Interviewed On-Site:</strong> Gain visibility by being interviewed by the FHS team on-site.</li></ul>'
+        benefits: '<ul><li><strong>10% Discount on Delegate Tickets:</strong> Maximize your savings with the highest discount on event tickets.</li><li><strong>10% Discount on Colleague/Friend Tickets:</strong> Significant savings for your colleagues and friends.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Continue to receive exclusive industry insights and content.</li><li><strong>Loyalty Pins/Badges + Event Preparation Kits:</strong> Get special loyalty pins or badges along with event preparation kits provided on-site.</li><li><strong>Hotel/Restaurant Vouchers:</strong> Free hotel nights/restaurant/activity vouchers from our sponsors/partners.</li><li><strong>Featured on FHS Website:</strong> Prominent recognition on our website.</li><li><strong>Priority Access to Site Tours and On-Site Activities:</strong> Maintain priority booking status for all activities.</li><li><strong>Access to Networking Receptions:</strong> Full access to all networking receptions at FHS and other Bench conferences.</li></ul>'
     }
 ]
 
@@ -142,9 +142,11 @@ export default function Club ({ events }) {
                 <section className="block pt-0">
                     <div className="container center formatted">
                         <p className='fs-2 fw-600 center'>Tiers</p>
-                        <p className='fs-6 maxw-50 mx-auto mt-md'>Our loyalty programme is divided into three distinct tiers, each offering a range of exclusive benefits. Your tier is determined based on your attendance at the most recent 6 editions of FHS which for now includes:</p>
+                        <p className='fs-6 maxw-50 mx-auto mt-md'>Our loyalty programme is divided into three distinct tiers, each offering a range of exclusive benefits. Your tier is determined based on your attendance at the most recent 9 editions of FHS which for now includes:</p>
                         <div className={CSS.eligibilityTable}>
-                            <span>FHS Saudi Arabia (2023, 2024, 2025)</span> <span>FHS World (2023, 2024, 2025)</span>
+                            <span>FHS Africa (2024, 2025, 2026)</span>
+                            <span>FHS Saudi Arabia (2023, 2024, 2025)</span>
+                            <span>FHS World (2023, 2024, 2025)</span>
                         </div>
                         <p>Please note that membership status will reset at every FHS event to include the recent most 6 editions.</p>
                     </div>

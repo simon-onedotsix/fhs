@@ -124,6 +124,7 @@
 
 
 
+
 .eligibilityTable {
     display: inline-flex;
     background-color: var(--primary);
@@ -135,6 +136,16 @@
     display: block;
     padding: .5rem 1rem;
 }
-.eligibilityTable span:first-child {
+.eligibilityTable span:not(:last-child) {
     border-right: 1px solid var(--primary-2);
+}
+
+@media(max-width:599px){
+    .eligibilityTable {
+        flex-direction: column;
+    }
+    .eligibilityTable span:not(:last-child) {
+        border-bottom: 1px solid var(--primary-2);
+        border-right: none;
+    }
 }
