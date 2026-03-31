@@ -1,4 +1,5 @@
 import { useState, Fragment } from "react"
+import { format } from 'date-fns'
 
 import Link from "next/link"
 
@@ -12,7 +13,7 @@ import { Button } from "../buttons/button"
 
 import CSS from './header.module.css'
 
-export const Header = ({ site, handle, mainMenu, ctas }) => {
+export const Header = ({ site, handle, event, mainMenu, ctas }) => {
 
     const [navActive, setNavActive] = useState(false)
 
@@ -23,15 +24,24 @@ export const Header = ({ site, handle, mainMenu, ctas }) => {
         <header>
 
             <nav className={CSS.header}>
-                <section>
+                <section className={CSS.brand}>
                     <Link href={site ? `${site}` : `/`}>
-                        <FhsLockup
-                            region={handle}
-                            leftColor={`white`}
-                            topColor={`var(--secondary)`}
-                            bottomColor={`var(--accent)`}
-                        />
+                        <a style={{ textDecoration: `none`}}>
+                            <FhsLockup
+                                region={handle}
+                                leftColor={`white`}
+                                topColor={`var(--secondary)`}
+                                bottomColor={`var(--accent)`}
+                            />
+                        </a>
                     </Link>
+                    
+                    {
+                        event?.startDate &&
+                        <p className={CSS.venue}><span className='fw-600'>
+                            <span className="caps">{format(new Date(event.startDate), "dd MMM")}{ event.endDate ? ` - ${format(new Date(event.endDate), "dd MMM")}` : ` `} {format( new Date(event.startDate), "yyyy" )}</span></span> <br />{event.venue}
+                        </p>
+                    }
                 </section>
 
                 <section className={`${CSS.mainMenu} ${navActive && CSS.active}`}>

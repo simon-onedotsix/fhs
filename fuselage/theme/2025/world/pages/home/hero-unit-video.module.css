@@ -4,7 +4,7 @@
 
 .video {
     position: absolute;
-    top: 6.5rem;
+    top: 3.5rem;
     width: 100%;
     opacity: .6;
     mix-blend-mode: hard-light;
@@ -28,7 +28,7 @@
     justify-content: flex-end;
 
     overflow-x: hidden;
-    padding-top: calc(var(--space-xl) * 4);
+    padding-top: calc(var(--space-xl) * 3);
 }
 
 

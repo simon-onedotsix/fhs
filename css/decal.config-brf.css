@@ -12,6 +12,18 @@
     --secondary: #161c1e;
     --accent: white;
 
+    /* start 2026 styles */
+    --fg:#2E3D40;
+    --bg:white;
+
+    --ui-ease: cubic-bezier(.7, .1, .2, 1);
+    --ui-radius: 3rem;
+
+    --base-font-size: 1rem;
+    --base-line-height: 1.6;
+    --base-font-weight: 300;
+    /* end 2026 styles */
+
     --bg-global: var(--primary);
 
     --secondary: var(--graphite);

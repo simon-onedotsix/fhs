@@ -2,9 +2,9 @@
 
     /* colour */
 
-    --primary-ae: #33408b;
-    --secondary-ae: #ff00de;
-    --accent-ae: #ff00de;
+    --primary: #3C1A52;
+    --secondary: #71CFEB;
+    --accent: #EF3742;
 
     --bg-global-ae: rgb(255, 255, 255);
 
@@ -19,5 +19,25 @@
     --error-ae: rgb(255, 68, 0);
     --success-ae: rgb(121, 173, 0);
     --warning-ae: rgb(255, 166, 0);
+
+    
+
+    /* start 2026 styles */
+
+    --brand-1: #391c53;
+    --brand-2: #6e439a;
+    --brand-3: #9A73AC;
+
+    --bg: white;
+    --fg: var(--brand-2);
+
+    --ui-ease: cubic-bezier(.7, .1, .2, 1);
+    --ui-radius: 3rem;
+
+    --base-font-size: 1rem;
+    --base-line-height: 1.6;
+    --base-font-weight: 300;
+
+    /* end 2026 styles */
 
 }

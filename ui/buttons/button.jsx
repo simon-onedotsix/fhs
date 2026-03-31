@@ -11,20 +11,19 @@ export const Button = ({ href = '/', label, target, outline, fake }) => {
     )
 
     if (target) return (
-        <a
+        <Link
             href={href}
-            className={`${CSS.ui} ${outline ? CSS.outline : ''}`}
             target={target}
             rel={`noreferrer`}
         >
-            {label}
-        </a>
+            <a className={`${CSS.ui} ${outline ? CSS.outline : ''}`}>{label}</a>
+        </Link>
     )
 
     return (
-        <a href={href} className={`${CSS.ui} ${outline ? CSS.outline : ''}`}>
-            {label}
-        </a>
+        <Link href={href} >
+            <a className={`${CSS.ui} ${outline ? CSS.outline : ''}`}>{label}</a>
+        </Link>
     )
 }
 

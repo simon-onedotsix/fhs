@@ -1,18 +1,17 @@
 .ui {
     display: inline-block;
     cursor: pointer;
-    background-color: var(--secondary);
+    background-color: var(--fg);
     padding: .75rem 1.5rem;
     
-    border: 1px solid var(--secondary);
-    border-radius: 2rem;
+    border: 1px solid var(--fg);
+    border-radius: var(--ui-radius);
 
-    color: var(--primary);
+    color: var(--bg);
     font-size: inherit;
     font-family: inherit;
     font-weight: 650;
     text-decoration: none;
-    text-align: center;
 
     transition: all 200ms ease-in-out;
 
@@ -21,14 +20,15 @@
 .outline {
     background-color: transparent;
 
-    color: var(white);
+    color: var(--fg);
 }
 
 
 @media(hover:hover){
     .ui:hover {
-        background-color: white;
-        border-color: white;
+        background-color: hsl(from var(--bg) h s calc( l + 10) / 1);
+        border-color: hsl(from var(--bg) h s calc( l + 10) / 1);
+        color: var(--fg);
     }
 }
 

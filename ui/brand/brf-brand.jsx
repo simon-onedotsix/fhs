@@ -1,4 +1,4 @@
-import CSS from '@/ui/brand/brf-brand.module.css'
+import CSS from './brf-brand.module.css'
 
 export const BrfLockup = ({ region }) => {
     return (

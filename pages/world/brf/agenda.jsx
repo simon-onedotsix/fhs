@@ -8,7 +8,9 @@ import HTMLReactParser from 'html-react-parser'
 import Head from 'next/head'
 import Script from 'next/script'
 
-import { Header } from '../../../fuselage/theme/2025/brf/common/header/header'
+import { HeaderBRF } from '../../../ui/site/header-brf'
+import { BRF_FHS_WORLD as header } from '../../../fixtures/nav'
+
 import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
 
 import { Button } from '../../../fuselage/theme/2025/brf/components/button/button'
@@ -116,9 +118,17 @@ export default function Page ({ sessions }) {
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
 			</Head>
 
-            <Header />
+            <HeaderBRF
+				site={`/world/brf`}
+				parentSite={`/world`}
+				handle={`At FHS World`}
+				parentHandle={`FHS World`}
+				event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+			/>
             
-            <section className="block bg-default pt-0">
+            <section className="block bg-default">
                 <div className="container maxw-70 center">
                     <p className='fs-1 fw-600 c-secondary'>2025 Branded Residences Forum Agenda</p>
                     <p className='fs-4 mt-sm'>Wednesday 29 October</p>

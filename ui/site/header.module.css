@@ -4,6 +4,15 @@
     border-bottom: 1px solid hsl(from var(--primary) h s calc( l + 6 ) / 1);
 }
 
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.venue {
+    font-size: .9rem;
+    line-height: 1.2;
+}
 
 .mainMenu ul a {
     font-weight: 400;
@@ -32,6 +41,9 @@
 
     .header {
 
+        position: fixed;
+        width: 100%;
+
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -39,6 +51,10 @@
 
         background-color: hsl(from var(--primary) h s calc( l + 0 ) / 1);
         padding: var(--space-sm);
+    }
+
+    .brand {
+        gap: 1rem;
     }
 
     
@@ -193,6 +209,10 @@
 
         background-color: hsl(from var(--primary) h s calc( l + 0 ) / 1);;
         padding: var(--space-xs) var(--space-sm);
+    }
+
+    .brand {
+        gap: 2rem;
     }
 
     .mainMenu {

@@ -11,16 +11,14 @@ import Image from "next/image"
 import Link from "next/link"
 import Script from "next/script"
 
-
-// BEGIN new static nav
-// import { Header } from '../../ui/site/header'
-// import { FHS_WORLD as header } from '../../fixtures/nav'
-// END new static nav
-
-
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 
-import { Header } from '../../fuselage/theme/2024/world/common/header/header'
+
+
+import { Header } from '../../ui/site/header'
+import { FHS_WORLD as header } from '../../fixtures/nav'
+
+
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 
 import { FhsIcon, FhsIconKeyline } from "../../fuselage/theme/2024/world/components/logos/fhs-brand"
@@ -204,14 +202,15 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </Head>
         
             
-            {/* <Header
+            <Header
 				site={`/world`}
-				handle={`World`}
+                handle={`World`}
+                event={header.data.event}
 				mainMenu={header.data.mainMenu}
 				ctas={header.data.event.headerCtas}
-            /> */}
+            />
             
-            <Header compact shim />
+            {/* <Header compact shim /> */}
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2025-world-opt.mp4'} poster={'https://cms.thebench.com/assets/video/fhs-2025-world-opt-poster.jpg'}>
                 <ThemeBillboard />

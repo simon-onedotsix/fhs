@@ -8,7 +8,14 @@ import Script from 'next/script'
 
 import { motion } from "framer-motion"
 
-import { Header } from '../../../fuselage/theme/2025/brf/common/header/header'
+
+// BEGIN new static nav
+import { HeaderBRF } from '../../../ui/site/header-brf'
+import { BRF_FHS_WORLD as header } from '../../../fixtures/nav'
+
+// END new static nav
+
+
 import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
 import { HeroUnitVideo } from "../../../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video"
 import { Button } from "../../../fuselage/theme/2025/brf/components/button/button"
@@ -289,7 +296,18 @@ export default function Page ({ sessions, speakers }) {
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
             </Head>
             
-            <Header overlaid />
+
+            <HeaderBRF
+                site={`/world/brf`}
+                parentSite={`/world`}
+                handle={`At FHS World`}
+                parentHandle={`FHS World`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
+
+
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>
 

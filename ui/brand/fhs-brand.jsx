@@ -5,7 +5,7 @@ export const FhsLockup = ({ bottomColor, region, topColor, leftColor, inverse })
         <div className={CSS.layout}>
             <FhsIcon leftColor={leftColor} topColor={topColor} bottomColor={bottomColor} />
             <div>
-                <p className={CSS.brand} style={{ color: inverse ? 'var(--bg)' : 'var(--fg)'}}>FHS</p>
+                <p className={CSS.brand} style={{ color: 'white'}}>FHS</p>
                 <p className={CSS.sector} style={{ color: bottomColor ? bottomColor : 'var(--accent)' }}>{ region ? region : '' }</p>
             </div>
         </div>

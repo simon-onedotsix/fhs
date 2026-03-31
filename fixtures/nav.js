@@ -284,8 +284,8 @@ export const FHS_WORLD = {
             "id": "2",
             "title": "FHS World",
             "venue": "Madinat Jumeirah, Dubai",
-            "startDate": "2025-10-27T07:00:00+00:00",
-            "endDate": "2025-10-29T07:00:00+00:00",
+            "startDate": "2026-09-29T07:00:00+00:00",
+            "endDate": "2026-10-01T07:00:00+00:00",
             "seoImage": [
                 {
                     "url": "https://cms.thebench.test/assets/img/events/FHS-World/world.jpg"
@@ -817,6 +817,57 @@ export const FHS_EGYPT = {
                 {
                     "label": "Become a Partner",
                     "hyperlink": "/egypt/become-a-partner",
+                    "openInNewWindow": false
+                }
+            ]
+        }
+    }
+}
+
+
+// BRF sub-events
+
+export const BRF_FHS_WORLD = {
+    "data": {
+        "mainMenu": [
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "About",
+                "navUrl": "/world/brf",
+                "children": []
+            },
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "Agenda",
+                "navUrl": "/world/brf/agenda",
+                "children": []
+            },
+            
+        ],
+        "event": {
+            "id": "2",
+            "title": "BRF at FHS World",
+            "venue": "Madinat Jumeirah, Dubai",
+            "startDate": "2026-10-01T07:00:00+00:00",
+            "endDate": null,
+            "seoImage": [
+                {
+                    "url": "https://cms.thebench.test/assets/img/events/FHS-World/world.jpg"
+                }
+            ],
+            "metaTitle": null,
+            "metaDescription": null,
+            "headerCtas": [
+                {
+                    "label": "Register Here",
+                    "hyperlink": "/world/purchase-pass",
+                    "openInNewWindow": false
+                },
+                {
+                    "label": "Become a Partner",
+                    "hyperlink": "/world/why-sponsor#partner-form",
                     "openInNewWindow": false
                 }
             ]

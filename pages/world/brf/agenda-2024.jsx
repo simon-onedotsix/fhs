@@ -8,7 +8,9 @@ import HTMLReactParser from 'html-react-parser'
 import Head from 'next/head'
 import Script from 'next/script'
 
-import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
+import { HeaderBRF } from '../../../ui/site/header-brf'
+import { BRF_FHS_WORLD as header } from '../../../fixtures/nav'
+
 import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 
 import { Pop } from "../../../fuselage/theme/2023/ae/layout/animation/animation"
@@ -1624,7 +1626,15 @@ export default function Page () {
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
             </Head>
             
-            <Header />
+            <HeaderBRF
+                site={`/world/brf`}
+                parentSite={`/world`}
+                handle={`At FHS World`}
+                parentHandle={`FHS World`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
             
             <section className="block bg-default pt-0">
                 <div className="container maxw-70 center">
