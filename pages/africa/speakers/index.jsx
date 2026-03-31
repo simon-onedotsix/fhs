@@ -40,7 +40,6 @@ function Speakers({ speakers }) {
 
 	// customise order (VIP speakers to top of list)
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
-		(speaker => speaker.firstName === "Hon. Rebecca" && speaker.lastName === 'Miano, EGH' ? 0 : 1),
 		(speaker => speaker.firstName === "Augusto" && speaker.lastName === 'Kalikemala' ? 0 : 1),
 		(speaker => speaker.firstName === "Ashish" && speaker.lastName === 'Sharma' ? 0 : 1),
 		(speaker => speaker.firstName === "Juliana" && speaker.lastName === 'Kagwa' ? 0 : 1),

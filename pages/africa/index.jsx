@@ -176,7 +176,6 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
 
     let customOrderedSpeakers = _.sortBy(speakers, [
-        (speaker => speaker.firstName === "Hon. Rebecca" && speaker.lastName === 'Miano, EGH' ? 0 : 1),
 		(speaker => speaker.firstName === "Augusto" && speaker.lastName === 'Kalikemala' ? 0 : 1),
 		(speaker => speaker.firstName === "Ashish" && speaker.lastName === 'Sharma' ? 0 : 1),
 		(speaker => speaker.firstName === "Juliana" && speaker.lastName === 'Kagwa' ? 0 : 1),
@@ -193,7 +192,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
     // console.log('seomatic:', seomatic)
     // console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
     // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))
-    // console.log('speakerData:', speakerData)
+    console.log('speakerData:', speakers)
 
     // console.log('selectedCmsSpeakers:', selectedCmsSpeakers)
     // console.log('partners:', partners)
@@ -630,7 +629,6 @@ export async function getStaticProps({ preview, previewData }) {
 					"filters": {
                         "shouldBeInGroups": "RXZlbnRHcm91cF82NDI4ODI=",
                         "eventPeopleIds": [
-                            "RXZlbnRQZW9wbGVfNDU0MTM5MTM=",
                             "RXZlbnRQZW9wbGVfNDQzMzI2ODA=",
                             "RXZlbnRQZW9wbGVfNDM4OTUyMDI=",
                             "RXZlbnRQZW9wbGVfNDQ5MTQ4NDY=",
