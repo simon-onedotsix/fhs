@@ -176,17 +176,17 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
 
     let customOrderedSpeakers = _.sortBy(speakers, [
-        (speaker => speaker.firstName === "Juliana" && speaker.lastName === 'Kagwa' ? 0 : 1),
-        (speaker => speaker.firstName === "Ashish" && speaker.lastName === 'Sharma' ? 0 : 1),
-        (speaker => speaker.firstName === "Augusto" && speaker.lastName === 'Kalikemala' ? 0 : 1),
-        (speaker => speaker.firstName === "Clemence" && speaker.lastName === 'Lormand' ? 0 : 1),
-        (speaker => speaker.firstName === "Vimbai" && speaker.lastName === 'Masiyiwa' ? 0 : 1),
+        (speaker => speaker.firstName === "Hon. Rebecca" && speaker.lastName === 'Miano, EGH' ? 0 : 1),
+		(speaker => speaker.firstName === "Augusto" && speaker.lastName === 'Kalikemala' ? 0 : 1),
+		(speaker => speaker.firstName === "Ashish" && speaker.lastName === 'Sharma' ? 0 : 1),
+		(speaker => speaker.firstName === "Juliana" && speaker.lastName === 'Kagwa' ? 0 : 1),
+		(speaker => speaker.firstName === "Vimbai" && speaker.lastName === 'Masiyiwa' ? 0 : 1),
 
-        (speaker => speaker.firstName === "Jameel" && speaker.lastName === 'Verjee' ? 0 : 1),
-        (speaker => speaker.firstName === "Rosco" && speaker.lastName === 'Wendover' ? 0 : 1),
-        (speaker => speaker.firstName === "Artur" && speaker.lastName === 'Gerber' ? 0 : 1),
-        (speaker => speaker.firstName === "Olivier" && speaker.lastName === 'Granet' ? 0 : 1),
-        (speaker => speaker.firstName === "Mutheu" && speaker.lastName === 'Muna-Mwaniki' ? 0 : 1),
+		(speaker => speaker.firstName === "Jameel" && speaker.lastName === 'Verjee' ? 0 : 1),
+		(speaker => speaker.firstName === "Rosco" && speaker.lastName === 'Wendover' ? 0 : 1),
+		(speaker => speaker.firstName === "Artur" && speaker.lastName === 'Gerber' ? 0 : 1),
+		(speaker => speaker.firstName === "Buhle" && speaker.lastName === 'Ndlovu' ? 0 : 1),
+		(speaker => speaker.firstName === "Mutheu" && speaker.lastName === 'Muna-Mwaniki' ? 0 : 1),
     ] )
 
     
@@ -285,8 +285,8 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
             {/* CONFIRMED SPEAKERS */}
             <SpeakerCarousel heading={'2026 Confirmed Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See all speakers'}>
                 {
-                    customOrderedSpeakers.map( speaker => (
-                        <Pop key={speaker.id}>
+                    customOrderedSpeakers.map( (speaker, index) => (
+                        <Pop key={index}>
                             <SpeakerCard 
                                 key={speaker.id}
                                 url={`/africa/speakers/${speaker.id}`}
@@ -630,6 +630,7 @@ export async function getStaticProps({ preview, previewData }) {
 					"filters": {
                         "shouldBeInGroups": "RXZlbnRHcm91cF82NDI4ODI=",
                         "eventPeopleIds": [
+                            "RXZlbnRQZW9wbGVfNDU0MTM5MTM=",
                             "RXZlbnRQZW9wbGVfNDQzMzI2ODA=",
                             "RXZlbnRQZW9wbGVfNDM4OTUyMDI=",
                             "RXZlbnRQZW9wbGVfNDQ5MTQ4NDY=",
@@ -639,7 +640,8 @@ export async function getStaticProps({ preview, previewData }) {
                             "RXZlbnRQZW9wbGVfNDQxNDEyOTM=",
                             "RXZlbnRQZW9wbGVfNDQ0OTI2OTE=",
                             "RXZlbnRQZW9wbGVfNDM5NjkzNDk=",
-                            "RXZlbnRQZW9wbGVfNDQzMzQ0OTg="
+                            "RXZlbnRQZW9wbGVfNDQzMzQ0OTg=",
+                            "RXZlbnRQZW9wbGVfNDU0NDc0NTk="
                         ]
                     }
 				}

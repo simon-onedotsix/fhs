@@ -30,7 +30,8 @@ function Speakers({ speakers }) {
 
 	const filteredSpeakers = []
 	speakers.map( speaker => {
-		if ( speaker.type === "Moderator" || speaker.type === "Speaker" || speaker.type === "Investor" ) filteredSpeakers.push(speaker)
+		if ( speaker.type === "Moderator" || speaker.type === "Speaker" || speaker.type === "Investor" || speaker.id === 
+"RXZlbnRQZW9wbGVfNDU0MTM5MTM=" ) filteredSpeakers.push(speaker)
 	})
 
 	// sort speakers by lastName
@@ -39,23 +40,23 @@ function Speakers({ speakers }) {
 
 	// customise order (VIP speakers to top of list)
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
-		(speaker => speaker.firstName === "Juliana" && speaker.lastName === 'Kagwa' ? 0 : 1),
-		(speaker => speaker.firstName === "Ashish" && speaker.lastName === 'Sharma' ? 0 : 1),
+		(speaker => speaker.firstName === "Hon. Rebecca" && speaker.lastName === 'Miano, EGH' ? 0 : 1),
 		(speaker => speaker.firstName === "Augusto" && speaker.lastName === 'Kalikemala' ? 0 : 1),
-		(speaker => speaker.firstName === "Clemence" && speaker.lastName === 'Lormand' ? 0 : 1),
+		(speaker => speaker.firstName === "Ashish" && speaker.lastName === 'Sharma' ? 0 : 1),
+		(speaker => speaker.firstName === "Juliana" && speaker.lastName === 'Kagwa' ? 0 : 1),
 		(speaker => speaker.firstName === "Vimbai" && speaker.lastName === 'Masiyiwa' ? 0 : 1),
 
 		(speaker => speaker.firstName === "Jameel" && speaker.lastName === 'Verjee' ? 0 : 1),
 		(speaker => speaker.firstName === "Rosco" && speaker.lastName === 'Wendover' ? 0 : 1),
 		(speaker => speaker.firstName === "Artur" && speaker.lastName === 'Gerber' ? 0 : 1),
-		(speaker => speaker.firstName === "Olivier" && speaker.lastName === 'Granet' ? 0 : 1),
+		(speaker => speaker.firstName === "Buhle" && speaker.lastName === 'Ndlovu' ? 0 : 1),
 		(speaker => speaker.firstName === "Mutheu" && speaker.lastName === 'Muna-Mwaniki' ? 0 : 1),
 	] )
 	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 	// console.log('contentBlocks:', contentBlocks)
-	// console.log('speakers found:', speakers.length)
-	// console.log('speaker data:', speakers)
+	console.log('speakers found:', speakers.length)
+	console.log('speaker data:', speakers)
 	// console.log('ordered speaker data:', orderedSpeakers)
 
 
