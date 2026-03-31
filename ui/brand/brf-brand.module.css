@@ -1,0 +1,16 @@
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .125rem
+}
+
+.label {
+    color: var(--brand-2);
+    font-weight: 500;
+    font-size: .6rem;
+}
+
+.layout svg {
+    aspect-ratio: 3/1.8;
+    width: 4.5rem;
+}

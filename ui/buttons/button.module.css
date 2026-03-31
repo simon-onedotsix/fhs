@@ -1,0 +1,58 @@
+.ui {
+    display: inline-block;
+    cursor: pointer;
+    background-color: var(--secondary);
+    padding: .75rem 1.5rem;
+    
+    border: 1px solid var(--secondary);
+    border-radius: 2rem;
+
+    color: var(--primary);
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 650;
+    text-decoration: none;
+    text-align: center;
+
+    transition: all 200ms ease-in-out;
+
+}
+
+.outline {
+    background-color: transparent;
+
+    color: var(white);
+}
+
+
+@media(hover:hover){
+    .ui:hover {
+        background-color: white;
+        border-color: white;
+    }
+}
+
+
+
+
+/* button grid */
+
+@media(max-width:599px) {
+    .grid {
+        display: grid;
+        gap: .25rem;
+    }
+    .grid .button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media(min-width:600px) {
+    .grid {
+        display: flex;
+        align-items: center;
+        gap: .25rem;
+        flex-wrap: wrap;
+    }
+}
