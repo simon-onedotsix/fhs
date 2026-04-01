@@ -4,7 +4,9 @@ import { useLenis } from '@studio-freight/react-lenis'
 import Head from 'next/head'
 import Script from 'next/script'
 
-import { Header } from '../../../fuselage/theme/2025/ais/common/header/header'
+import { Header } from '../../../ui/site/header'
+import { FHS_WORLD as header } from '../../../fixtures/nav'
+
 import { Footer } from '../../../fuselage/theme/2025/ais/common/footer/footer'
 
 import HubspotForm from '../../../fuselage/components/hubspot-form/hubspot-form'
@@ -25,7 +27,13 @@ export default function Page () {
                 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex, nocache, nositelinkssearchbox" />
             </Head>
             
-            <Header overlaid inverse />
+            <Header
+				site={`/world`}
+                handle={`World`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
             {/* HEADING */}
             <section className="block bg-default">

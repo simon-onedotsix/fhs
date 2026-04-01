@@ -12,7 +12,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Script from 'next/script'
 
-import { Header } from '../../../fuselage/theme/2025/ais/common/header/header'
+import { Header } from '../../../ui/site/header'
+import { FHS_WORLD as header } from '../../../fixtures/nav'
+
 import { Footer } from '../../../fuselage/theme/2025/ais/common/footer/footer'
 
 import { AisMotifBackground, AisLockup } from '../../../fuselage/theme/2025/ais/ais-brand/ais-brand'
@@ -239,7 +241,13 @@ export default function Page ({ sessions, locations }) {
 
          
 
-            <Header overlaid inverse />
+            <Header
+				site={`/world`}
+                handle={`World`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2024-world-opt.mp4 '} poster={'/assets/video/fhs-2024-world-opt-poster.jpg'}>
 
