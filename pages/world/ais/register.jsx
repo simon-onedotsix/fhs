@@ -4,6 +4,7 @@ import { useLenis } from '@studio-freight/react-lenis'
 import Head from 'next/head'
 import Script from 'next/script'
 
+import { EventsBar } from "../../../ui/site/eventsbar"
 import { Header } from '../../../ui/site/header'
 import { FHS_WORLD as header } from '../../../fixtures/nav'
 
@@ -27,6 +28,7 @@ export default function Page () {
                 <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex, nocache, nositelinkssearchbox" />
             </Head>
             
+            <EventsBar site={'/world'} />
             <Header
 				site={`/world`}
                 handle={`World`}

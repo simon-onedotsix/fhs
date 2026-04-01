@@ -14,7 +14,7 @@ import Script from "next/script"
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 
 
-
+import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
 import { FHS_WORLD as header } from '../../fixtures/nav'
 
@@ -202,6 +202,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </Head>
         
             
+            <EventsBar site={'/world'} />
             <Header
 				site={`/world`}
                 handle={`World`}

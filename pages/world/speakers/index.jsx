@@ -12,6 +12,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Script from 'next/script'
 
+import { EventsBar } from "../../../ui/site/eventsbar"
 import { Header } from '../../../ui/site/header'
 import { FHS_WORLD as header } from '../../../fixtures/nav'
 
@@ -128,6 +129,7 @@ function Speakers({ seomatic, speakers }) {
 				{handleSeomaticMeta(seomatic)}
             </Head>
 
+			<EventsBar site={'/world'} />
             <Header
 				site={`/world`}
                 handle={`World`}

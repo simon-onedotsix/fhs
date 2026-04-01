@@ -7,6 +7,7 @@ import Script from "next/script"
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { Pop, Fade } from "../../fuselage/animation/animation"
 
+import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
 import { FHS_WORLD as header } from '../../fixtures/nav'
 
@@ -56,6 +57,7 @@ export default function Page ({ entry }) {
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
             </Head>
             
+            <EventsBar site={'/world'} />
             <Header
 				site={`/world`}
                 handle={`World`}

@@ -5,6 +5,7 @@ import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
+import { EventsBar } from "../../../ui/site/eventsbar"
 import { Header } from '../../../ui/site/header'
 import { FHS_WORLD as header } from '../../../fixtures/nav'
 
@@ -104,6 +105,7 @@ function Partner({ partner }) {
 			</Head>
 
 
+			<EventsBar site={'/world'} />
 			<Header
 				site={`/world`}
 				handle={`World`}

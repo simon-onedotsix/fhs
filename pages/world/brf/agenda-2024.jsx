@@ -8,6 +8,7 @@ import HTMLReactParser from 'html-react-parser'
 import Head from 'next/head'
 import Script from 'next/script'
 
+import { EventsBar } from "../../../ui/site/eventsbar"
 import { HeaderBRF } from '../../../ui/site/header-brf'
 import { BRF_FHS_WORLD as header } from '../../../fixtures/nav'
 
@@ -1626,6 +1627,7 @@ export default function Page () {
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
             </Head>
             
+            <EventsBar site={'/world/brf'} />
             <HeaderBRF
                 site={`/world/brf`}
                 parentSite={`/world`}

@@ -7,6 +7,7 @@ import Head from "next/head"
 import Script from "next/script"
 import { useRouter } from "next/router"
 
+import { EventsBar } from "../../../ui/site/eventsbar"
 import { Header } from '../../../../ui/site/header'
 import { FHS_WORLD as header } from '../../../../fixtures/nav'
 
@@ -78,6 +79,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
                 <title>FHS | Content Library</title>
             </Head>
 
+            <EventsBar site={'/world'} />
             <Header
 				site={`/world`}
                 handle={`World`}

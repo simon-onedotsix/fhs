@@ -115,6 +115,20 @@ export const FHS_WORLD = {
                         "title": "Award Winners",
                         "navUrl": "/world/award-winners",
                         "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "148",
+                        "title": "Content Library",
+                        "navUrl": "/world/content-library",
+                        "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "148",
+                        "title": "Contact Us",
+                        "navUrl": "/world/contact-us",
+                        "target": false
                     }
                 ]
             },

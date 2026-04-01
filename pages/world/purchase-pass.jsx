@@ -25,6 +25,7 @@ import {
 
 import handleContentBlocks from "../../lib/content-blocks"
 
+import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
 import { FHS_WORLD as header } from '../../fixtures/nav'
 
@@ -48,6 +49,7 @@ function PurchasePass({ seomatic, entry }) {
 				{handleSeomaticMeta(seomatic)} 
             </Head>
 
+			<EventsBar site={'/world'} />
 			<Header
 				site={`/world`}
 				handle={`World`}

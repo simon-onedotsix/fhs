@@ -12,6 +12,7 @@ import Script from "next/script"
 
 import {format} from 'date-fns'
 
+import { EventsBar } from "../../../ui/site/eventsbar"
 import { Header } from '../../../ui/site/header'
 import { FHS_WORLD as header } from '../../../fixtures/nav'
 
@@ -213,6 +214,7 @@ export default function Article ({ entry }) {
                 {handleSeomaticMeta(entry.seomatic)}
             </Head>
             
+            <EventsBar site={'/world'} />
             <Header
                 site={`/world`}
                 handle={`World`}

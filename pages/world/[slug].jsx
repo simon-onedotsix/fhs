@@ -6,6 +6,7 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import Head from "next/head"
 import Script from "next/script"
 
+import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
 import { FHS_WORLD as header } from '../../fixtures/nav'
 
@@ -52,6 +53,7 @@ export default function Page ({ entry, seomatic }) {
                 {handleSeomaticMeta(seomatic)}
             </Head>
 
+            <EventsBar site={'/world'} />
             <Header
                 site={`/world`}
                 handle={`World`}

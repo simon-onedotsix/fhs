@@ -12,6 +12,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Script from 'next/script'
 
+import { EventsBar } from "../../../ui/site/eventsbar"
 import { Header } from '../../../ui/site/header'
 import { FHS_WORLD as header } from '../../../fixtures/nav'
 
@@ -240,7 +241,7 @@ export default function Page ({ sessions, locations }) {
             <BrandBackground/>
 
          
-
+            <EventsBar site={'/world'} />
             <Header
 				site={`/world`}
                 handle={`World`}

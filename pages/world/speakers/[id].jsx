@@ -9,6 +9,7 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
 import { format } from 'date-fns'
 
+import { EventsBar } from "../../../ui/site/eventsbar"
 import { Header } from '../../../ui/site/header'
 import { FHS_WORLD as header } from '../../../fixtures/nav'
 
@@ -73,6 +74,7 @@ function Speaker({ speaker }) {
 			</Head>
 
 
+			<EventsBar site={'/world'} />
 			<Header
 				site={`/world`}
 				handle={`World`}
