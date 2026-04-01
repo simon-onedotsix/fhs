@@ -268,7 +268,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                 </ImpactFigures>
 
                 <div className="container pt-sm">
-                    <Pop inline><ArrowButton href={`https://www.youtube.com/watch?v=6b4NyxwG7ic`} target={`_blank`} theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}>Watch 2025 Highlights</ArrowButton></Pop>
+                    <Pop inline><ArrowButton href={`https://youtu.be/S7pgVStmtlU`} target={`_blank`} theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}>Watch 2026 Highlights</ArrowButton></Pop>
                 </div>
             </ImpactFiguresGrid>
 
@@ -284,7 +284,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
             
 
-            {/* CONFIRMED SPEAKERS */}
+            {/* SPEAKERS */}
             <SpeakerCarousel heading={'2026 Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See all speakers'}>
                 {
                     customOrderedSpeakers.map( (speaker, index) => (
