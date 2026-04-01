@@ -53,6 +53,9 @@
         background-color: hsl(from var(--primary) h s calc( l + 0 ) / 1);
         padding: var(--space-sm);
     }
+    .spacer {
+        height: 73px;
+    }
 
     .brand {
         gap: 1rem;
