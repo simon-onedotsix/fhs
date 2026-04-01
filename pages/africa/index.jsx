@@ -65,65 +65,55 @@ const QUOTES_DATA = [
 ]
 const PHOTOS_DATA = [
     {
-        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-01.jpg",
+        "url": "/assets/img/africa/homepage/gallery-2026/africa-2026-01.jpg",
         "width": 799,
         "height": 533
     },
     {
-        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-02.jpg",
+        "url": "/assets/img/africa/homepage/gallery-2026/africa-2026-02.jpg",
         "width": 799,
         "height": 533
     },
     {
-        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-04.jpg",
+        "url": "/assets/img/africa/homepage/gallery-2026/africa-2026-03.jpg",
         "width": 799,
         "height": 533
     },
     {
-        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-05.jpg",
+        "url": "/assets/img/africa/homepage/gallery-2026/africa-2026-04.jpg",
         "width": 799,
         "height": 533
     },
     {
-        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-06.jpg",
+        "url": "/assets/img/africa/homepage/gallery-2026/africa-2026-05.jpg",
         "width": 799,
         "height": 533
     },
     {
-        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-07.jpg",
+        "url": "/assets/img/africa/homepage/gallery-2026/africa-2026-06.jpg",
         "width": 799,
         "height": 533
     },
     {
-        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-13.jpg",
+        "url": "/assets/img/africa/homepage/gallery-2026/africa-2026-07.jpg",
         "width": 799,
         "height": 533
     },
     {
-        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-03.jpg",
+        "url": "/assets/img/africa/homepage/gallery-2026/africa-2026-08.jpg",
         "width": 799,
         "height": 533
     },
     {
-        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-09.jpg",
+        "url": "/assets/img/africa/homepage/gallery-2026/africa-2026-09.jpg",
         "width": 799,
         "height": 533
     },
     {
-        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-23.jpg",
+        "url": "/assets/img/africa/homepage/gallery-2026/africa-2026-10.jpg",
         "width": 799,
         "height": 533
-    },
-    {
-        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-11.jpg",
-        "width": 799,
-        "height": 533
-    },
-    {
-        "url": "/assets/img/africa/homepage/gallery-2025/ahif-2025-12.jpg",
-        "width": 799,
-        "height": 533
-    },
+    }
     
 ]
 const THEMES_DATA = [
@@ -465,7 +455,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                         <p className='fs-1 fw-500 lh-1 mt-lg'>2026 in <span className='c-primary'>Photos</span></p> 
                     </Slide>
                     
-                    <div className="columns-3 gap-xs mt-md">
+                    <div className="columns-2 gap-xs mt-md">
                         {
                             PHOTOS_DATA.map( (photo, index) => (
                                 <Pop key={index}>
@@ -475,13 +465,13 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                                 </Pop>
                             ))
                         }
-                        <p className="mt-xs">
+                        {/* <p className="mt-xs">
                             <ArrowButton
                                 href={`https://www.flickr.com/photos/benchevents/albums/`}
                                 target='_blank'
                                 theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white` }}
                             >View Full Gallery</ArrowButton>
-                        </p>
+                        </p> */}
                     </div>
 
                 </div>
