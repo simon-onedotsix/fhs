@@ -102,7 +102,7 @@ export const Header = ({ compact, overlaid, inverse }) => {
                         <Link href={`/africa`}><a className={CSS.logo}><FhsLockup inverse sectorColor={`#3C1053`} topColor={`#FFB600`} sectorLabel={`Africa`} /></a></Link>
                     </div>
                     <div className={CSS.venue}>
-                        <p className='lh-2'><span className='fw-600'>31 March - 1 April 2026</span> <br/>Radisson Blu Hotel, Nairobi Upper Hill, Kenya</p>
+                        <p className='lh-2'><span className='fw-600'>2027</span> <br/>South Africa</p>
                     </div>
                 </section>
                 

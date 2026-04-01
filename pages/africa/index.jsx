@@ -232,9 +232,9 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                     <span className="c-secondary"><Reveal>Together</Reveal></span> <Reveal><span className="c-secondary">we</span>&nbsp;invest</Reveal>
                 </p>
 
-                <p className="fs-4 mt-xs"><span className="fw-600">31 March - 1 April 2026</span> <br /> Radisson Blu Hotel, Nairobi Upper Hill, Kenya</p>
+                <p className="fs-2 mt-xs"><span className="fw-600">2027</span> South Africa</p>
 
-                <div className='mt-sm'>
+                {/* <div className='mt-sm'>
                     <ButtonGrid>
                         <Pop inline delay={.2}>
                             <Button href={'/africa/download-prospectus'}>Download Prospectus</Button>
@@ -246,7 +246,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                             <Button href={'/africa/fhs-africa-investor-list-2026'}>Confirmed Investors for 2026</Button>
                         </Pop>
                     </ButtonGrid>
-                </div>
+                </div> */}
 
             </HeroUnitVideo>
 
@@ -257,11 +257,14 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                 <div className="fs-0 fw-600 c-white lh-1"><Reveal delay={0.1}>In Numbers</Reveal></div>
 
                 <ImpactFigures>      
-                    <ImpactFigure value={500} suffix="+" label="delegates" />
-                    <ImpactFigure value={100} suffix="+" label="Investors" />
-                    <ImpactFigure value={134.6} prefix="$" suffix="bn" label="AUM" />
-                    <ImpactFigure value={100} suffix="+" label="speakers" />
-                    <ImpactFigure value={35} suffix="%" label="International Attendees" />
+                    <ImpactFigure value={450} suffix="+" label="Attendees" />
+                    <ImpactFigure value={80} suffix="+" label="Investors" />
+                    <ImpactFigure value={83} label="speakers" />
+                    <ImpactFigure value={70} suffix="%" label="Africans" />
+                    <ImpactFigure value={37} label="Countries Represented" />
+                    <ImpactFigure value={59.8} prefix="$" suffix="Bn" label="Assets Under Management" />
+                    <ImpactFigure value={57} label="Partners" />
+                    <ImpactFigure value={30} suffix="%" label="Internationals" />
                 </ImpactFigures>
 
                 <div className="container pt-sm">
@@ -282,7 +285,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
             
 
             {/* CONFIRMED SPEAKERS */}
-            <SpeakerCarousel heading={'2026 Confirmed Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See all speakers'}>
+            <SpeakerCarousel heading={'2026 Speakers'} ctaLink={'/africa/speakers'} ctaLabel={'See all speakers'}>
                 {
                     customOrderedSpeakers.map( (speaker, index) => (
                         <Pop key={index}>
@@ -301,7 +304,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
 
 
-            <section className="block bg-primary pt-0">
+            {/* <section className="block bg-primary pt-0">
                 <Pop>
                     <div className="container center formatted bg-white p-sm rad-sm">
                         <p className="fs-1 fw-600  c-primary">Look who&apos;s attending FHS Africa 2026</p>
@@ -312,7 +315,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                         </Pop>
                     </div>
                 </Pop>
-            </section>
+            </section> */}
 
 
 
@@ -459,7 +462,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                 {/* photos */}
                 <div className={`${CSS.photoGrid} container o-hidden`}>
                     <Slide>
-                        <p className='fs-1 fw-500 lh-1 mt-lg'>2025 in <span className='c-primary'>Photos</span></p> 
+                        <p className='fs-1 fw-500 lh-1 mt-lg'>2026 in <span className='c-primary'>Photos</span></p> 
                     </Slide>
                     
                     <div className="columns-3 gap-xs mt-md">

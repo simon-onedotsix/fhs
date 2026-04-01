@@ -16,7 +16,7 @@ export const ArticleScroller = ({ children }) => {
         <section className={CSS.layout}>
             <aside>
                 <Slide>
-                    <p className='fs-1 fw-500 lh-1'>2025 Signings <span className='c-primary'>& Announcements</span></p>
+                    <p className='fs-1 fw-500 lh-1'>2026 Signings <span className='c-primary'>& Announcements</span></p>
                 </Slide>
                 <div className='pt-md'>
                     <Button inverse href={'/africa/content-library/category/press-room'}>Latest News &amp; Updates</Button>
