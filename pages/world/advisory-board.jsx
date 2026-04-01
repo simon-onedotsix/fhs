@@ -8,7 +8,9 @@ import Script from "next/script"
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../fuselage/theme/2024/world/common/header/header'
+import { Header } from '../../ui/site/header'
+import { FHS_WORLD as header } from '../../fixtures/nav'
+
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 import { SpeakerGrid } from '../../fuselage/layout/speaker-grid/speaker-grid'
 
@@ -29,7 +31,13 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 				{handleSeomaticMeta(seomatic)}
             </Head>
 
-            <Header compact />
+			<Header
+				site={`/world`}
+				handle={`World`}
+				event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+			/>
 
 			<section className="block">
 				<div className="container">

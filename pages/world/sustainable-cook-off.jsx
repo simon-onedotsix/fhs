@@ -6,7 +6,9 @@ import Script from 'next/script'
 
 import { motion, useScroll, useTransform } from "framer-motion"
 
-import { Header } from '../../fuselage/theme/2024/world/common/header/header'
+import { Header } from '../../ui/site/header'
+import { FHS_WORLD as header } from '../../fixtures/nav'
+
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 import { HeroUnitVideo } from "../../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
@@ -31,7 +33,13 @@ export default function Page () {
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
             </Head>
             
-            <Header overlaid inverse />
+            <Header
+                site={`/world`}
+                handle={`World`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 
             <HeroUnitVideo video={'/assets/img/world/pages/sustainable-cook-off/food-challenge-hero.mp4'} poster={'/assets/img/world/pages/sustainable-cook-off/food-challenge-hero.jpg'}>
                 <motion.p 

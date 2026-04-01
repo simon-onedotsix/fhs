@@ -9,7 +9,9 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
 import { format } from 'date-fns'
 
-import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
+import { Header } from '../../../ui/site/header'
+import { FHS_WORLD as header } from '../../../fixtures/nav'
+
 import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 import { Sidebar } from "../../../fuselage/layout/sidebar/sidebar"
 import { ArrowLink } from '../../../fuselage/components/arrow-link/arrow-link'
@@ -70,7 +72,14 @@ function Speaker({ speaker }) {
 				<link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
 			</Head>
 
-			<Header compact />
+
+			<Header
+				site={`/world`}
+				handle={`World`}
+				event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+			/>
 
 			<section className="block">
 				<div className="container">

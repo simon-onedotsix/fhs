@@ -4,7 +4,9 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import Head from 'next/head'
 import Script from 'next/script'
 
-import { Header } from '../../fuselage/theme/2024/world/common/header/header'
+import { Header } from '../../ui/site/header'
+import { FHS_WORLD as header } from '../../fixtures/nav'
+
 import { Footer } from "../../fuselage/theme/2024/world/common/footer/footer"
 import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'
 
@@ -125,7 +127,13 @@ export default function AboutPage () {
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
             </Head>
             
-            <Header compact />
+            <Header
+				site={`/world`}
+                handle={`World`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
 
             <PageHeroImage hero={{ url: '/assets/site/ae/hero-about-fhs-world.jpg', width: 6048, height: 3422 }} >

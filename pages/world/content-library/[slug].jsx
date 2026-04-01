@@ -12,7 +12,9 @@ import Script from "next/script"
 
 import {format} from 'date-fns'
 
-import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
+import { Header } from '../../../ui/site/header'
+import { FHS_WORLD as header } from '../../../fixtures/nav'
+
 import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
 
 import { StickySidebar } from "../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
@@ -211,7 +213,13 @@ export default function Article ({ entry }) {
                 {handleSeomaticMeta(entry.seomatic)}
             </Head>
             
-            <Header compact />
+            <Header
+                site={`/world`}
+                handle={`World`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
                         
 
             <section className="block flush pt-0">

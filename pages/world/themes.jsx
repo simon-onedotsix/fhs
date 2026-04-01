@@ -7,7 +7,9 @@ import Script from 'next/script'
 import _ from 'lodash'
 import parse from 'html-react-parser'
 
-import { Header } from '../../fuselage/theme/2024/world/common/header/header'
+import { Header } from '../../ui/site/header'
+import { FHS_WORLD as header } from '../../fixtures/nav'
+
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 import { HeroUnitImage } from '../../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
 
@@ -156,7 +158,13 @@ export default function Themes ({ sessions }) {
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
 			</Head>
         
-            <Header compact />
+            <Header
+				site={`/world`}
+                handle={`World`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
 
             <HeroUnitImage imageUrl={'/assets/site/ae/hero-about-fhs-world.jpg'}>

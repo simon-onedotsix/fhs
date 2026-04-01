@@ -10,7 +10,9 @@ import { format } from 'date-fns'
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { Pop, Fade } from '../../fuselage/animation/animation'
 
-import { Header } from '../../fuselage/theme/2024/world/common/header/header'
+import { Header } from '../../ui/site/header'
+import { FHS_WORLD as header } from '../../fixtures/nav'
+
 import { Footer } from "../../fuselage/theme/2024/world/common/footer/footer"
 
 import { StickySidebar } from '../../fuselage/theme/2024/global/components/sticky-sidebar/sticky-sidebar'
@@ -56,7 +58,13 @@ export default function Agenda () {
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
 			</Head>
 
-			<Header compact shim />
+            <Header
+				site={`/world`}
+                handle={`World`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
 			<section className={CSS.header}>
 				<Image src={'/assets/img/world/pages/home/fhs-world-2024-05.jpg'} layout="responsive" width={1000} height={588} />
