@@ -7,6 +7,7 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import Head from 'next/head'
 import Link from "next/link"
 import Script from "next/script"
+import { Pop } from "../../fuselage/animation/animation"
 
 import { Button } from "../../fuselage/theme/2024/sa/components/button/button"
 
@@ -62,10 +63,16 @@ function PurchasePass({ seomatic, entry }) {
 
 				<div style={{ position: 'relative', zIndex: 2 }}>
 					<section className={`block pb-0`}>
-						<div className="container">
-							<p className='fs-1 fw-600 c-secondary'>Purchase Pass</p>
-							<br />
-							<p className="maxw-45">Discounted rates below are exclusively available for hotel operators, owners, developers, investors/banks, consultants, architects, lawyers, Govt. officials. If your organisation does not fall within these categories, please email <a href="hello@thebench.com">hello@thebench.com</a> to register.</p>
+						<div className="container columns-2 gap-md">
+							<div>
+								<p className='fs-1 fw-600 c-secondary'>Purchase Pass</p>
+								<br />
+								<p className="maxw-45">Discounted rates below are exclusively available for hotel operators, owners, developers, investors/banks, consultants, architects, lawyers, Govt. officials. If your organisation does not fall within these categories, please email <a href="hello@thebench.com">hello@thebench.com</a> to register.</p>
+							</div>
+
+							<Card>
+								<img src="https://static.swapcard.com/public/images/9885a71a05aa47359fb09142449b455e.png" alt="" width={`200`} />
+							</Card>
 						</div>
 					</section>
 
@@ -128,3 +135,24 @@ export async function getStaticProps({ locale }) {
 export default PurchasePass
 
 
+
+
+
+
+const Card = ({ children }) => {
+	return (
+		<Pop>
+			<div className="bg-white" style={{ width: `max-content`}}>
+				<header className="bg-secondary" style={{ padding: `.5rem`, textAlign: `center` }}>
+					<p>Registration Sponsor</p>
+				</header>
+				
+				<Pop delay={.1}>
+					<div className="py-xs px-md center">
+						{ children }
+					</div>
+				</Pop>
+			</div>
+		</Pop>
+	)
+}
