@@ -30,12 +30,12 @@ export const HeaderBRF = ({ site, parentSite, handle = 'At FHS', parentHandle = 
                             <BrfLockup region={handle} />
                         </Link>
 
-                        {
+                        {/* {
                             event?.startDate &&
                             <p className={CSS.venue}><span className='fw-600'>
                                 <span className="caps">{format(new Date(event.startDate), "dd MMM")}{ event.endDate ? ` - ${format(new Date(event.endDate), "dd MMM")}` : ` `} {format( new Date(event.startDate), "yyyy" )}</span></span> <br />{event.venue}
                             </p>
-                        }
+                        } */}
                     </section>
 
                     <section className={`${CSS.mainMenu} ${navActive && CSS.active}`}>

@@ -324,8 +324,8 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                         
                     <div className="container columns-5 gap-sm">
                         {
-                            selectedCmsSpeakers.profiles.map(profile => (
-                                <Pop key={profile.id}>
+                            selectedCmsSpeakers.profiles.map((profile, index) => (
+                                <Pop key={index}>
                                     <SpeakerCard
                                         url={`world/speakers/profile/${profile.slug}`}
                                         photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
