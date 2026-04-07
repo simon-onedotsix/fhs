@@ -63,16 +63,17 @@ function PurchasePass({ seomatic, entry }) {
 
 				<div style={{ position: 'relative', zIndex: 2 }}>
 					<section className={`block pb-0`}>
-						<div className="container columns-2 gap-md">
+						<div className="container columns-1 gap-md">
 							<div>
 								<p className='fs-1 fw-600 c-secondary'>Purchase Pass</p>
 								<br />
 								<p className="maxw-45">Discounted rates below are exclusively available for hotel operators, owners, developers, investors/banks, consultants, architects, lawyers, Govt. officials. If your organisation does not fall within these categories, please email <a href="hello@thebench.com">hello@thebench.com</a> to register.</p>
 							</div>
 
-							<Card>
+							<div>
+								<p className="fw-600 c-secondary">Registration Sponsor</p>
 								<img src="https://static.swapcard.com/public/images/9885a71a05aa47359fb09142449b455e.png" alt="" width={`200`} />
-							</Card>
+							</div>
 						</div>
 					</section>
 
@@ -142,7 +143,7 @@ export default PurchasePass
 const Card = ({ children }) => {
 	return (
 		<Pop>
-			<div className="bg-white" style={{ width: `max-content`}}>
+			<div style={{ width: `max-content`, border: `1px solid var(--secondary)` }}>
 				<header className="bg-secondary" style={{ padding: `.5rem`, textAlign: `center` }}>
 					<p>Registration Sponsor</p>
 				</header>
