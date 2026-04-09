@@ -12,20 +12,20 @@ import { format } from 'date-fns'
 import { formatInTimeZone } from 'date-fns-tz'
 import parse from 'html-react-parser'
 
-import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../fuselage/theme/2024/world/common/header/header'
-import { Footer } from "../../fuselage/theme/2024/world/common/footer/footer"
+import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
+import { Footer } from "../../../fuselage/theme/2024/world/common/footer/footer"
 
-import { TagIcon, StopwatchIcon, LocationIcon, WarningIcon } from "../../fuselage/components/icons/icons"
+import { TagIcon, StopwatchIcon, LocationIcon, WarningIcon } from "../../../fuselage/components/icons/icons"
 
-import { Modal } from "../../fuselage/theme/2024/world/components/modal/modal"
-import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
-import { Avatar } from '../../fuselage/components/avatar/avatar'
-import { Button } from '../../fuselage/theme/2024/world/components/button/button'
+import { Modal } from "../../../fuselage/theme/2024/world/components/modal/modal"
+import { Sidebar } from "../../../fuselage/layout/sidebar/sidebar"
+import { Avatar } from '../../../fuselage/components/avatar/avatar'
+import { Button } from '../../../fuselage/theme/2024/world/components/button/button'
 
-import { AisLockup } from "../../fuselage/theme/2025/ais/ais-brand/ais-brand"
-import { FhsLockup } from "../../fuselage/theme/2024/world/components/logos/fhs-brand"
+import { AisLockup } from "../../../fuselage/theme/2025/ais/ais-brand/ais-brand"
+import { FhsLockup } from "../../../fuselage/theme/2024/world/components/logos/fhs-brand"
 
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
@@ -37,12 +37,12 @@ import {
 	MenuItem as MenuItemInner,
 	SubMenu as SubMenuInner 
 } from '@szhsin/react-menu'
-import DROPDOWN from '../../css/app/dropdown-world-2024.module.css'
+import DROPDOWN from '../../../css/app/dropdown-world-2024.module.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
 
-import { sortSpeakersAndModerators, renderSpeakerCard } from '../../lib/agenda-utils'
+import { sortSpeakersAndModerators, renderSpeakerCard } from '../../../lib/agenda-utils'
 
-import CSS from '../../css/app/agenda-world-2024.module.css'
+import CSS from '../../../css/app/agenda-world-2024.module.css'
 
 
 
@@ -623,7 +623,7 @@ export default function Agenda ({ sessions, locations }) {
 				{/* INTRO */}
                 <div className="section mb-sm">
 					<div className={CSS.titleBlock}>
-						<p className="fs-0 fw-500">2026 Agenda</p>
+						<p className="fs-0 fw-500">2025 Agenda</p>
 						<button 
 							className={CSS.printButton}
 							onClick={ ()=> window.print() }
@@ -802,6 +802,39 @@ export default function Agenda ({ sessions, locations }) {
 
 				{/* AGENDA */}
 				<main className={`${CSS.agenda} section columns-1 gap-sm mt-sm`}>	
+					
+					{
+						!selectedDay && !selectedLocation && !selectedTopic
+						?
+							<section className={CSS.day}>
+								{/* <p className={CSS.dayDivider} style={{ backgroundColor: `var(--primary-2)` }}>Pre-event HAMA Exclusive</p> */}
+
+								<div className={CSS.sessions}>
+									<div className={CSS.session}>
+										{/* add to div below to colour-code headers => style={{ backgroundColor: session.color ? session.color : null }} */}
+										<div className={`${CSS.sessionHeader} fw-500 c-white bg-medium`}>
+											<div className={CSS.sessionTimings}>
+												<span>Sunday 26 October, 18:30 - 21:30</span>&ensp;
+												<span><StopwatchIcon fill={'var(--accent)'}/> 3 hours</span>
+											</div>
+										</div>
+
+										<div className={`${CSS.sessionContent} | columns-1 gap-xs`}>
+
+											{/* <small style={{ color: 'lime'}}>{session.id}</small> */}
+											{/* <small style={{ color: 'lime'}}>{session.priority}</small> */}
+											
+											<p className={`${CSS.sessionTitle} | fs-3 fw-500 lh-1 c-white`}>
+												HAMA Cocktail Evening – Invitation Only
+											</p>
+											<p>Ciel Dubai Marina</p>
+										</div>
+										
+									</div>
+								</div>
+							</section>
+						: null
+				}
 					
 					{
 						buildAgenda( sessions ).length 
@@ -1142,7 +1175,7 @@ export async function getStaticProps() {
 							}
 						}
 
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}", page: 1, pageSize: 500) {
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2025}", page: 1, pageSize: 500) {
 							id
 							titleTranslations {
 								value
@@ -1198,7 +1231,7 @@ export async function getStaticProps() {
 								photoUrl
 								organization
 								biography
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}") {
+								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2025}") {
 									eventProfile {
 										type
 										withEvent(eventId: "RXZlbnRfMjQwNDQ3Nw==") {
@@ -1229,7 +1262,7 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2026,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2025,
 					"page": 1
 				}
 			})
