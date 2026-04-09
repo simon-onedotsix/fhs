@@ -315,7 +315,7 @@ export const FHS_WORLD = {
                 },
                 {
                     "label": "Become a Partner",
-                    "hyperlink": "/world/become-a-partner",
+                    "hyperlink": "/world/why-sponsor#partner-form",
                     "openInNewWindow": false
                 }
             ]

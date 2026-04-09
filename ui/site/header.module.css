@@ -208,7 +208,7 @@
         display: grid;
         grid-template-columns: auto 1fr;
         align-items: center;
-        gap: 2rem;
+        gap: 4rem;
 
         background-color: hsl(from var(--primary) h s calc( l + 0 ) / 1);;
         padding: var(--space-xs) var(--space-sm);
