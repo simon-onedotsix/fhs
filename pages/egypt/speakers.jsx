@@ -177,7 +177,7 @@ const SPEAKER_DATA = [
     },
     {
         url: `/world/2024/speakers`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/profile_picture-2.jpeg',
+        photoUrl: 'https://static.swapcard.com/public/images/79c118f294c24c3b90c2504e9ba9b93b.jpeg',
         fullName: 'Pier Paolo Righi',
         jobTitle: 'CEO & President',
         company: 'Karl Lagerfeld',
