@@ -7,8 +7,11 @@ import Script from "next/script"
 
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 
-import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_SA as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
+
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 import { VideoSection, Section } from '../../fuselage/theme/2026/sa/blocks/section'
 import { ThemeGraphic } from '../../fuselage/theme/2026/sa/theme/theme-graphic'
@@ -24,7 +27,14 @@ export default function Page() {
         <div>
             <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 
-            <Header compact />
+            <EventsBar site={'/sa'} />
+            <Header
+                site={`/sa`}
+                handle={`Saudi Arabia`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 
             <Section
                 backgroundClass={`bg-white`}

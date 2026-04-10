@@ -1,6 +1,6 @@
 export const FHS = {
     "data": {
-        "entries": [
+        "mainMenu": [
             {
                 "__typename": "section_Entry",
                 "id": "115",
@@ -352,13 +352,13 @@ export const FHS_SA = {
                         "navUrl": "/sa/why-attend",
                         "target": false
                     },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "195",
-                        "title": "Networking",
-                        "navUrl": "/sa/networking",
-                        "target": false
-                    },
+                    // {
+                    //     "__typename": "navigation_Entry",
+                    //     "id": "195",
+                    //     "title": "Networking",
+                    //     "navUrl": "/sa/networking",
+                    //     "target": false
+                    // },
                     {
                         "__typename": "navigation_Entry",
                         "id": "197",
@@ -374,11 +374,39 @@ export const FHS_SA = {
                         "target": false
                     },
                     {
-                        "__typename": "navigation_Entry",
-                        "id": "241",
+                        "__typename": "subsection_Entry",
+                        "id": "223",
                         "title": "Content Library",
-                        "navUrl": "/sa/content-library",
-                        "target": false
+                        "children": [
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "225",
+                                "title": "Podcasts",
+                                "navUrl": "/sa/content-library/category/podcast",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "227",
+                                "title": "Press Room",
+                                "navUrl": "/sa/content-library/category/press-room",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "229",
+                                "title": "Industry News",
+                                "navUrl": "/sa/content-library/category/industry-news",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "229",
+                                "title": "Reports",
+                                "navUrl": "/sa/content-library/category/reports",
+                                "target": false
+                            }
+                        ]
                     },
                     {
                         "__typename": "navigation_Entry",
@@ -408,13 +436,13 @@ export const FHS_SA = {
                         "navUrl": "/sa/agenda",
                         "target": false
                     },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "203",
-                        "title": "Schedule at a Glance",
-                        "navUrl": "/sa/agenda-at-a-glance",
-                        "target": false
-                    },
+                    // {
+                    //     "__typename": "navigation_Entry",
+                    //     "id": "203",
+                    //     "title": "Schedule at a Glance",
+                    //     "navUrl": "/sa/agenda-at-a-glance",
+                    //     "target": false
+                    // },
                     {
                         "__typename": "navigation_Entry",
                         "id": "205",
@@ -481,8 +509,22 @@ export const FHS_SA = {
                     {
                         "__typename": "navigation_Entry",
                         "id": "221",
+                        "title": "Live Webinar",
+                        "navUrl": "/sa/webinar",
+                        "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "221",
                         "title": "FHS Startup Zone",
                         "navUrl": "/sa/startup-den",
+                        "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "221",
+                        "title": "FHS Dealroom",
+                        "navUrl": "/sa/fhs-dealroom",
                         "target": false
                     },
                     {
@@ -525,13 +567,13 @@ export const FHS_SA = {
                                 "navUrl": "/sa/curated-connections",
                                 "target": false
                             },
-                            {
-                                "__typename": "navigation_Entry",
-                                "id": "235",
-                                "title": "Networking Receptions",
-                                "navUrl": "/sa/networking-receptions",
-                                "target": false
-                            },
+                            // {
+                            //     "__typename": "navigation_Entry",
+                            //     "id": "235",
+                            //     "title": "Networking Receptions",
+                            //     "navUrl": "/sa/networking-receptions",
+                            //     "target": false
+                            // },
                             {
                                 "__typename": "navigation_Entry",
                                 "id": "237",
@@ -646,6 +688,13 @@ export const FHS_AFRICA = {
                     },
                     {
                         "__typename": "navigation_Entry",
+                        "id": "257",
+                        "title": "Charity Partner",
+                        "navUrl": "/africa/our-chosen-charity",
+                        "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
                         "id": "94",
                         "title": "2026 Speakers",
                         "navUrl": "/africa/speakers",
@@ -692,6 +741,13 @@ export const FHS_AFRICA = {
                         "title": "Networking Opportunities",
                         "navUrl": "/africa/networking-receptions",
                         "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "272",
+                        "title": "FHS Dealroom",
+                        "navUrl": "/africa/fhs-dealroom",
+                        "target": false
                     }
                 ]
             }
@@ -737,11 +793,39 @@ export const FHS_EGYPT = {
                         "target": false
                     },
                     {
-                        "__typename": "navigation_Entry",
-                        "id": "301",
+                        "__typename": "subsection_Entry",
+                        "id": "223",
                         "title": "Content Library",
-                        "navUrl": "/egypt/content-library",
-                        "target": false
+                        "children": [
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "229",
+                                "title": "Videos",
+                                "navUrl": "/egypt/content-library/category/videos-and-webinars",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "225",
+                                "title": "Podcasts",
+                                "navUrl": "/egypt/content-library/category/podcast",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "227",
+                                "title": "Press Room",
+                                "navUrl": "/egypt/content-library/category/press-room",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "229",
+                                "title": "Reports",
+                                "navUrl": "/egypt/content-library/category/reports",
+                                "target": false
+                            }
+                        ]
                     },
                     {
                         "__typename": "navigation_Entry",
@@ -882,6 +966,102 @@ export const BRF_FHS_WORLD = {
                 {
                     "label": "Become a Partner",
                     "hyperlink": "/world/why-sponsor#partner-form",
+                    "openInNewWindow": false
+                }
+            ]
+        }
+    }
+}
+
+export const BRF_FHS_SA = {
+    "data": {
+        "mainMenu": [
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "About",
+                "navUrl": "/sa/brf",
+                "children": []
+            },
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "Agenda",
+                "navUrl": "/sa/brf/agenda-2025",
+                "children": []
+            },
+            
+        ],
+        "event": {
+            "id": "2",
+            "title": "BRF at FHS World",
+            "venue": "Madinat Jumeirah, Dubai",
+            "startDate": "2026-10-01T07:00:00+00:00",
+            "endDate": null,
+            "seoImage": [
+                {
+                    "url": "https://cms.thebench.test/assets/img/events/FHS-World/sa.jpg"
+                }
+            ],
+            "metaTitle": null,
+            "metaDescription": null,
+            "headerCtas": [
+                {
+                    "label": "Register Here",
+                    "hyperlink": "/sa/purchase-pass",
+                    "openInNewWindow": false
+                },
+                {
+                    "label": "Become a Partner",
+                    "hyperlink": "/sa/why-sponsor#partner-form",
+                    "openInNewWindow": false
+                }
+            ]
+        }
+    }
+}
+
+export const BRF_FHS_EGYPT = {
+    "data": {
+        "mainMenu": [
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "About",
+                "navUrl": "/egypt/brf",
+                "children": []
+            },
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "Agenda",
+                "navUrl": "/egypt/brf/agenda",
+                "children": []
+            },
+            
+        ],
+        "event": {
+            "id": "2",
+            "title": "BRF at FHS egypt",
+            "venue": "Madinat Jumeirah, Dubai",
+            "startDate": "2026-10-01T07:00:00+00:00",
+            "endDate": null,
+            "seoImage": [
+                {
+                    "url": "https://cms.thebench.test/assets/img/events/FHS-egypt/egypt.jpg"
+                }
+            ],
+            "metaTitle": null,
+            "metaDescription": null,
+            "headerCtas": [
+                {
+                    "label": "Register Here",
+                    "hyperlink": "/egypt/purchase-pass",
+                    "openInNewWindow": false
+                },
+                {
+                    "label": "Become a Partner",
+                    "hyperlink": "/egypt/why-sponsor#partner-form",
                     "openInNewWindow": false
                 }
             ]

@@ -4,10 +4,12 @@ import Head from 'next/head'
 
 import parse from 'html-react-parser'
 
-import { Header } from '../fuselage/theme/2024/global/common/header/header'
+import { EventsBar } from "../ui/site/eventsbar"
+import { Header } from '../ui/site/header'
+import { FHS as header } from '../fixtures/nav'
 import { Footer } from '../fuselage/theme/2024/global/common/footer/footer'
-import { HeroUnitImage } from '../fuselage/blocks/hero-unit-image/hero-unit-image'
 
+import { HeroUnitImage } from '../fuselage/blocks/hero-unit-image/hero-unit-image'
 import { Waypoint } from '../fuselage/theme/2024/global/components/waypoint/waypoint'
 import { ProfileCard } from '../fuselage/theme/2024/global/components/profile-card/profile-card'
 import { StickySidebar } from '../fuselage/theme/2024/global/components/sticky-sidebar/sticky-sidebar'
@@ -94,7 +96,14 @@ export default function AboutFhs ({ data }) {
                 <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16" />
             </Head>
 
-            <Header overlaid inverse />
+
+            <EventsBar site={'/'} />
+            <Header
+                site={``}
+                handle={``}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+            />
 
             <HeroUnitImage 
                 heading={"About FHS"} 

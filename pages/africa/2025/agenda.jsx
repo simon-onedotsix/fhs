@@ -18,12 +18,13 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import { Reveal } from '../../../fuselage/animation/reveal'
 import { Pop, Fade, Slide } from '../../../fuselage/animation/animation'
 
-import { Header } from '../../../fuselage/theme/2025/africa/common/header/header'
-import { Footer } from '../../../fuselage/theme/2025/africa/common/footer/footer'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_AFRICA as header } from '../../../fixtures/nav'
+
+
 import { PageHeader } from '../../../fuselage-africa/blocks/page-header/page-header'
-
 import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from "../../../fuselage/components/icons/icons"
-
 import { Modal } from "../../../fuselage/theme/2024/world/components/modal/modal"
 import { Sidebar } from "../../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../../fuselage/components/avatar/avatar'
@@ -331,7 +332,14 @@ export default function Agenda ({ sessions, theme }) {
 	return (
 		<div style={{ width: `100%`, overflow: `hidden` }}>
 
-			<Header compact />
+			<EventsBar site={'/africa'} />
+			<Header
+				site={`/africa`}
+				handle={`Africa`}
+				event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+			/>
 
 			<PageHeader theme={``}>
 				<div className="formatted no-print">

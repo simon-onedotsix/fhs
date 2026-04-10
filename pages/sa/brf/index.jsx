@@ -8,7 +8,12 @@ import Script from "next/script"
 
 import { motion } from "framer-motion"
 
-import { Header } from '../../../fuselage/theme/2025/brf/sa/common/header/header'
+
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { HeaderBRF } from '../../../ui/site/header-brf'
+import { BRF_FHS_SA as header } from '../../../fixtures/nav'
+
+// import { Header } from '../../../fuselage/theme/2025/brf/sa/common/header/header'
 import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
 import { HeroUnitVideo } from "../../../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video"
 import { Button } from "../../../fuselage/theme/2025/brf/components/button/button"
@@ -286,7 +291,19 @@ export default function Page ({ sessions, speakers }) {
         <>
             <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 
-            <Header overlaid />
+            
+            <EventsBar site={'/sa/brf'} />
+            <HeaderBRF
+                site={`/sa/brf`}
+                parentSite={`/sa`}
+                handle={`At FHS Saudi Arabia`}
+                parentHandle={`FHS Saudi Arabia`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
+
+            
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>
 

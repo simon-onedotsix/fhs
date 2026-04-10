@@ -16,7 +16,10 @@ import handleSeomaticMeta from '../../lib/seomatic'
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Reveal } from "../../fuselage-africa/animation/reveal"
 
-import { Header } from '../../fuselage/theme/2025/africa/common/header/header'
+
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_AFRICA as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2025/africa/common/footer/footer'
 
 import { HeroUnitVideo } from "../../fuselage-africa/blocks/hero-unit-video/hero-unit-video"
@@ -209,7 +212,14 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                 { handleSeomaticMeta( seomatic ) }
             </Head>
         
-            <Header overlaid inverse />
+            <EventsBar site={'/africa'} />
+            <Header
+                site={`/africa`}
+                handle={`Africa`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 
 
 

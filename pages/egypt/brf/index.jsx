@@ -7,7 +7,11 @@ import Link from 'next/link'
 
 import { motion } from "framer-motion"
 
-import { Header } from '../../../fuselage/theme/egypt/common/header-bfr/header'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { HeaderBRF } from '../../../ui/site/header-brf'
+import { BRF_FHS_EGYPT as header } from '../../../fixtures/nav'
+
+
 import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
 import { HeroUnitVideo } from "../../../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video"
 import { Button } from "../../../fuselage/theme/2025/brf/components/button/button"
@@ -283,7 +287,19 @@ export default function Page ({ sessions, speakers }) {
 
     return (
         <>
-            <Header overlaid />
+            <EventsBar site={'/egypt/brf'} />
+            <HeaderBRF
+                site={`/egypt/brf`}
+                parentSite={`/egypt`}
+                handle={`At FHS Egypt`}
+                parentHandle={`FHS Egypt`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
+
+
+
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>
 

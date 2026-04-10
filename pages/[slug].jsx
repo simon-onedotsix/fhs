@@ -5,7 +5,9 @@ import { LenisScroller } from '../fuselage/animation/lenis-scroller'
 
 import Head from "next/head"
 
-import { Header } from '../fuselage/theme/2024/world/common/header/header'
+import { EventsBar } from "../ui/site/eventsbar"
+import { Header } from '../ui/site/header'
+import { FHS as header } from '../fixtures/nav'
 import { Footer } from '../fuselage/theme/2024/world/common/footer/footer'
 
 import handleContentBlocks from "../lib/content-blocks"
@@ -43,7 +45,14 @@ export default function Page ({ entry, seomatic }) {
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-            <Header compact />
+
+            <EventsBar site={'/'} />
+            <Header
+                site={``}
+                handle={``}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+            />
             
             { handleContentBlocks( entry.fhisContentBlocks, null, null, null ) }
 

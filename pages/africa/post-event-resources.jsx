@@ -7,7 +7,9 @@ import Head from "next/head"
 
 import parse from 'html-react-parser'
 
-import { Header } from '../../fuselage/theme/2025/africa/common/header/header'
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_AFRICA as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2025/africa/common/footer/footer'
 import handleSeomaticMeta from "../../lib/seomatic"
 import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'
@@ -90,7 +92,14 @@ export default function Page ({ seomatic, entry }) {
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-            <Header compact />
+            <EventsBar site={'/africa'} />
+            <Header
+                site={`/africa`}
+                handle={`Africa`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 
             <div className={`${CSS.overlay} ${ !allowed && CSS.active }`}>
 

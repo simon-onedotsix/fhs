@@ -12,10 +12,14 @@ import Ticker from 'framer-motion-ticker'
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Reveal } from "../../fuselage/animation/reveal"
 
-import { Header } from '../../fuselage/theme/egypt/common/header/header'
-import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
-import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_EGYPT as header } from '../../fixtures/nav'
+import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
+
+
+import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 import { PageHeroThemed } from "../../fuselage/theme/egypt/page-hero-themed/page-hero-themed"
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
 import { ThemeBillboard } from "../../fuselage/theme/2025/world/pages/home/theme-billboard"
@@ -107,7 +111,15 @@ export default function Home ({ data, content }) {
                 <link rel="icon" type="image/png" href="/assets/favicons/egypt/favicon-16x16.png" sizes="16x16" />
             </Head>
         
-            <Header overlaid inverse />
+            
+            <EventsBar site={'/egypt'} />
+            <Header
+                site={`/egypt`}
+                handle={`Egypt`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 
 
             <PageHeroThemed>

@@ -6,7 +6,9 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import Head from "next/head"
 import Script from "next/script"
 
-import { Header } from '../../../fuselage/theme/2025/brf/sa/common/header/header'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { HeaderBRF } from '../../../ui/site/header-brf'
+import { BRF_FHS_SA as header } from '../../../fixtures/nav'
 import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
 
 import handleContentBlocks from "../../../lib/content-blocks"
@@ -50,7 +52,16 @@ export default function Page ({ entry, seomatic }) {
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-            <Header compact />
+            <EventsBar site={'/sa/brf'} />
+            <HeaderBRF
+                site={`/sa/brf`}
+                parentSite={`/sa`}
+                handle={`At FHS Saudi Arabia`}
+                parentHandle={`FHS Saudi Arabia`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
             
             { handleContentBlocks( entry.fhisContentBlocks, null, null, 'world' ) }
 

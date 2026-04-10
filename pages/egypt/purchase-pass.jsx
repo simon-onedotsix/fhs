@@ -6,7 +6,9 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import Head from 'next/head'
 
-import { Header } from '../../fuselage/theme/egypt/common/header/header'
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_EGYPT as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
 import { PassPriceBands, Pass, SpecialPass, PassGrid, PassGridSectionHeading } from '../../fuselage/theme/2024/world/components/pass/pass'
 
@@ -23,7 +25,14 @@ function PurchasePass({ entry }) {
 				<link rel="icon" type="image/png" href="/assets/favicons/egypt/favicon-16x16.png" sizes="16x16" /> 
             </Head>
 
-			<Header compact shim />
+            <EventsBar site={'/egypt'} />
+            <Header
+                site={`/egypt`}
+                handle={`Egypt`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 
 			
 			<div className={`block bg-secondary`}>

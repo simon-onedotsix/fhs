@@ -4,7 +4,9 @@ import Image from "next/image"
 import { Pop, Slide, Fade } from "../../fuselage/animation/animation"
 import { Reveal } from "../../fuselage/animation/reveal"
 
-import { Header } from '../../fuselage/theme/2025/africa/common/header/header'
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_AFRICA as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2025/africa/common/footer/footer'
 
 import { Button } from "../../fuselage/components/button/button"
@@ -21,7 +23,14 @@ export default function Page () {
                 <link rel="icon" type="image/png" href="/assets/favicons/africa/favicon-16x16.png" sizes="16x16" />
             </Head>
 
-            <Header compact />
+            <EventsBar site={'/africa'} />
+            <Header
+                site={`/africa`}
+                handle={`Africa`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 
             <section className="block pt-0 bg-secondary">
                 

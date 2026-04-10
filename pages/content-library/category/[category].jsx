@@ -6,8 +6,11 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import Head from "next/head"
 import { useRouter } from "next/router"
 
-import { Header } from '../../../fuselage/theme/2024/global/common/header/header'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS as header } from '../../../fixtures/nav'
 import { Footer } from '../../../fuselage/theme/2024/global/common/footer/footer'
+
 import { StickySidebar } from "../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
 import { ContentCard } from "../../../fuselage/components/content-card/content-card"
 import { ArrowLink } from "../../../fuselage/components/arrow-link/arrow-link"
@@ -74,7 +77,13 @@ export default function ContentLibraryCategory ({ categories, category, articles
                 <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16" />
             </Head>
 
-            <Header compact inverse />
+            <EventsBar site={'/'} />
+            <Header
+                site={``}
+                handle={``}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+            />
 
             <section className="block pt-0">
                 <StickySidebar size='small'>

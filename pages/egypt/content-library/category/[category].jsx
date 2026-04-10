@@ -6,7 +6,9 @@ import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller'
 import Head from "next/head"
 import { useRouter } from "next/router"
 
-import { Header } from '../../../../fuselage/theme/egypt/common/header/header'
+import { EventsBar } from "../../../../ui/site/eventsbar"
+import { Header } from '../../../../ui/site/header'
+import { FHS_EGYPT as header } from '../../../../fixtures/nav'
 import { Footer } from '../../../../fuselage/theme/egypt/common/footer/footer'
 import { StickySidebar } from "../../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
 import { ContentCard } from "../../../../fuselage/components/content-card/content-card"
@@ -74,7 +76,14 @@ export default function ContentLibraryCategory ({ categories, category, articles
                 <link rel="icon" type="image/png" href="/assets/favicons/egypt/favicon-16x16.png" sizes="16x16" />
             </Head>
 
-            <Header compact inverse />
+            <EventsBar site={'/egypt'} />
+            <Header
+                site={`/egypt`}
+                handle={`Egypt`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 
             <section className="block pt-0">
                 <StickySidebar size='small'>

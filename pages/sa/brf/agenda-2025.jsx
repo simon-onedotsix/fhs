@@ -13,7 +13,9 @@ import HTMLReactParser from 'html-react-parser'
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import { Pop, Fade, Slide } from '../../../fuselage/animation/animation'
 
-import { Header } from '../../../fuselage/theme/2025/sa/common/header/header'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { HeaderBRF } from '../../../ui/site/header-brf'
+import { BRF_FHS_SA as header } from '../../../fixtures/nav'
 import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { StickySidebar } from '../../../fuselage/theme/2024/global/components/sticky-sidebar/sticky-sidebar'
@@ -179,7 +181,16 @@ export default function Agenda ({ sessions, locations }) {
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
 			</Head>
 
-            <Header compact shim />
+            <EventsBar site={'/sa/brf'} />
+            <HeaderBRF
+                site={`/sa/brf`}
+                parentSite={`/sa`}
+                handle={`At FHS Saudi Arabia`}
+                parentHandle={`FHS Saudi Arabia`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
 			<section className={CSS.header}>
                 <Image src={'/assets/img/sa/why-attend/why-attend-hero.jpg'} layout="responsive" width={1920} height={910} />
@@ -254,7 +265,7 @@ export default function Agenda ({ sessions, locations }) {
         </ReactLenis>
     )
 }
-Agenda.theme = 'sa-2025'
+Agenda.theme = 'brf'
 
 
 

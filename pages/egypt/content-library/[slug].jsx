@@ -9,7 +9,9 @@ import Image from "next/image"
 import Head from 'next/head'
 import {format} from 'date-fns'
 
-import { Header } from '../../../fuselage/theme/egypt/common/header/header'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_EGYPT as header } from '../../../fixtures/nav'
 import { Footer } from '../../../fuselage/theme/egypt/common/footer/footer'
 
 import { StickySidebar } from "../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
@@ -187,7 +189,14 @@ export default function Article ({ entry }) {
                 { handleSeomaticMeta( entry.seomatic ) }
             </Head>
             
-            <Header compact />
+            <EventsBar site={'/egypt'} />
+            <Header
+                site={`/egypt`}
+                handle={`Egypt`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 
             <section className="block pt-0">
                 <div className="container">

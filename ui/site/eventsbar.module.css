@@ -2,6 +2,7 @@
     position: relative;
     z-index: 100;
     background-color: hsl(from var(--primary) h s calc(l - 4) / 1);
+    color: white;
 }
 
 /* devices */

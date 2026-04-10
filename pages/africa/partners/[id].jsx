@@ -5,7 +5,9 @@ import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/theme/2025/africa/common/header/header'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_AFRICA as header } from '../../../fixtures/nav'
 import { Footer } from '../../../fuselage/theme/2025/africa/common/footer/footer'
 
 import { HeaderShim } from '../../../fuselage/global-sa/header/header'
@@ -70,7 +72,14 @@ function Partner({ partner }) {
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
 			</Head>
 
-			<Header compact />
+            <EventsBar site={'/africa'} />
+            <Header
+                site={`/africa`}
+                handle={`Africa`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 
 			<section className="block pt-0">
 				<div className="container">

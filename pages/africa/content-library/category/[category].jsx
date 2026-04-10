@@ -6,7 +6,9 @@ import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller'
 import Head from "next/head"
 import { useRouter } from "next/router"
 
-import { Header, HeaderShim } from '../../../../fuselage/theme/2025/africa/common/header/header'
+import { EventsBar } from "../../../../ui/site/eventsbar"
+import { Header } from '../../../../ui/site/header'
+import { FHS_AFRICA as header } from '../../../../fixtures/nav'
 import { Footer } from '../../../../fuselage/theme/2025/africa/common/footer/footer'
 
 import { StickySidebar } from "../../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
@@ -74,7 +76,14 @@ export default function ContentLibraryCategory ({ categories, category, articles
                 <title>FHS | Content Library</title>
             </Head>
 
-            <Header compact />
+            <EventsBar site={'/africa'} />
+            <Header
+                site={`/africa`}
+                handle={`Africa`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 
             <section className="block flush bg-default pt-0">
                 <StickySidebar size='small'>

@@ -9,8 +9,11 @@ import Head from 'next/head'
 import _ from 'lodash'
 import parse from 'html-react-parser'
 
-import { Header } from '../fuselage/theme/2024/global/common/header/header'
+import { EventsBar } from "../ui/site/eventsbar"
+import { Header } from '../ui/site/header'
+import { FHS as header } from '../fixtures/nav'
 import { Footer } from '../fuselage/theme/2024/global/common/footer/footer'
+
 import { HeroUnitImage } from '../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
 import { FhsLockup } from "../fuselage/theme/2024/global/components/logos/fhs-brand"
 import { Button } from '../fuselage/theme/2024/world/components/button/button'
@@ -121,7 +124,14 @@ export default function Club ({ events }) {
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
 			</Head>
         
-            <Header overlaid />
+
+            <EventsBar site={'/'} />
+            <Header
+                site={``}
+                handle={``}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+            />
 
             <div className="bg-pattern-primary-50">
 

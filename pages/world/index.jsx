@@ -17,8 +17,6 @@ import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/
 import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
 import { FHS_WORLD as header } from '../../fixtures/nav'
-
-
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 
 import { FhsIcon, FhsIconKeyline } from "../../fuselage/theme/2024/world/components/logos/fhs-brand"

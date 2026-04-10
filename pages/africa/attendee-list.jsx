@@ -5,12 +5,13 @@ import parse from 'html-react-parser'
 
 import Head from "next/head"
 
-import { Header } from '../../fuselage/theme/2025/africa/common/header/header'
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_AFRICA as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2025/africa/common/footer/footer'
+
 import { PageHeader } from '../../fuselage-africa/blocks/page-header/page-header'
-
 import HubspotForm from '../../fuselage-africa/components/hubspot-form/hubspot-form'
-
 import { StickySidebar } from "../../fuselage-africa/components/sticky-sidebar/sticky-sidebar"
 
 export default function AttendeeList ({ entry }) {
@@ -30,7 +31,14 @@ export default function AttendeeList ({ entry }) {
                 <link rel="icon" type="image/png" href="/assets/favicons/africa/favicon-16x16.png" sizes="16x16" />
             </Head>
         
-            <Header compact />
+            <EventsBar site={'/africa'} />
+            <Header
+                site={`/africa`}
+                handle={`Africa`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 
             <PageHeader >
                 <p className='fs-1 fw-600 lh-1'>{ entry.title }</p>

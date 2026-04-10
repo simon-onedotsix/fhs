@@ -8,8 +8,11 @@ import Script from "next/script"
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_SA as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
+
 import { ThemeBg } from '../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
 import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'
 import handleContentBlocks from "../../lib/content-blocks-sa"
@@ -90,7 +93,14 @@ export default function PostEvent ({ cmsEntryData }) {
         <>
             <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 
-            <Header compact shim />
+            <EventsBar site={'/sa'} />
+            <Header
+				site={`/sa`}
+                handle={`Saudi Arabia`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
             
             <div className={`${CSS.overlay} ${ !allowed && CSS.active }`}>

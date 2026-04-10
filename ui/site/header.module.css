@@ -2,6 +2,7 @@
     position: relative;
     z-index: 100;
     border-bottom: 1px solid hsl(from var(--primary) h s calc( l + 6 ) / 1);
+    color: white;
 }
 
 .brand {
@@ -17,6 +18,7 @@
 .mainMenu ul a {
     font-weight: 400;
 }
+.mainMenu a,
 .mainMenu .deviceOnly a {
     text-decoration: none;
 }

@@ -8,7 +8,9 @@ import { LenisScroller } from '../fuselage/animation/lenis-scroller'
 import { QuerySEO } from "../graphql/queries"
 import handleSeomaticMeta from '../lib/seomatic'
 
-import { Header } from '../fuselage/theme/2024/global/common/header/header'
+import { EventsBar } from "../ui/site/eventsbar"
+import { Header } from '../ui/site/header'
+import { FHS as header } from '../fixtures/nav'
 import { Footer } from '../fuselage/theme/2024/global/common/footer/footer'
 
 import { HeroUnitVideo } from '../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video'
@@ -18,7 +20,6 @@ import { ContentCard } from "../fuselage/theme/2024/world/components/content-car
 
 
 import { ArrowButton } from '../fuselage/components/arrow-button/arrow-button'
-import { AngledSection } from '../fuselage/blocks/angled-section/angled-section'
 import { Floater, Floaters, FloaterLogo, FloaterWebsiteButton } from '../fuselage/blocks/floater/floater'
 import { SpeakerCard } from '../fuselage/components/speaker-card/speaker-card'
 
@@ -29,6 +30,7 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
     // console.log('contentLibraryPosts:', data.contentLibraryPosts)
     // console.log('podcasts:', podcasts)
     // console.log('industryNews:', industryNews)
+    
     
 
     const handleUpcomingEvents = ( events ) => {
@@ -191,7 +193,13 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
             </Head>
 
 
-            <Header overlaid inverse />
+            <EventsBar site={'/'} />
+            <Header
+                site={``}
+                handle={``}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+            />
 
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2023-opt.mp4'} poster={'/assets/video/fhs-2023-opt-poster.jpg'}>

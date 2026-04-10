@@ -14,7 +14,9 @@ import { Reveal } from '../../fuselage/animation/reveal'
 import { Pop, Fade, Slide } from '../../fuselage/animation/animation'
 
 
-import { Header } from '../../fuselage/theme/2025/africa/common/header/header'
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_AFRICA as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2025/africa/common/footer/footer'
 import { PageHeader } from '../../fuselage-africa/blocks/page-header/page-header'
 
@@ -97,7 +99,14 @@ export default function Agenda ({ sessions, theme }) {
                 <link rel="icon" type="image/png" href="/assets/favicons/africa/favicon-16x16.png" sizes="16x16" />
             </Head>
 
-            <Header compact />
+			<EventsBar site={'/africa'} />
+			<Header
+				site={`/africa`}
+				handle={`Africa`}
+				event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+			/>
 
             <PageHeader theme={``}>
                 <div className="formatted no-print">

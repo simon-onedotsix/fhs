@@ -7,10 +7,12 @@ import Script from "next/script"
 import _ from 'lodash'
 import parse from 'html-react-parser'
 
-import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_SA as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
-import { HeroUnitImage } from '../../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
 
+import { HeroUnitImage } from '../../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
 import { Button } from '../../fuselage/theme/2024/world/components/button/button'
 import { PopOverlay } from "../../fuselage/components/popoverlay/popoverlay"
 
@@ -169,7 +171,15 @@ export default function Themes ({ sessions }) {
 			</Head>
 
             <div className='bg-primary'>
-                <Header compact />
+                
+                <EventsBar site={'/sa'} />
+                <Header
+                    site={`/sa`}
+                    handle={`Saudi Arabia`}
+                    event={header.data.event}
+                    mainMenu={header.data.mainMenu}
+                    ctas={header.data.event.headerCtas}
+                />
 
 
                 <HeroUnitImage imageUrl={'/assets/site/ae/hero-about-fhs-world.jpg'}>

@@ -7,8 +7,11 @@ import Link from 'next/link'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../fuselage/theme/2025/africa/common/header/header'
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_AFRICA as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2025/africa/common/footer/footer'
+
 import { PageHeader } from '../../fuselage-africa/blocks/page-header/page-header'
 import { SpeakerGrid } from '../../fuselage/layout/speaker-grid/speaker-grid'
 
@@ -28,7 +31,14 @@ function Speakers({ seomatic, craftCmsProfiles }) {
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-			<Header compact />
+            <EventsBar site={'/africa'} />
+            <Header
+                site={`/africa`}
+                handle={`Africa`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 			
 			<PageHeader>
 				<p className='fs-1 fw-600 lh-1'>Advisory Board</p>

@@ -31,8 +31,11 @@ import useCustomMediaQuery from "../../hooks/useCustomMediaQuery"
 
 import _ from 'lodash'
 
-import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_SA as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
+
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
 import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
@@ -340,7 +343,15 @@ export default function Page({ seomatic, partners }) {
                 { handleSeomaticMeta( seomatic ) }
             </Head>
 
-            <Header compact />
+            
+            <EventsBar site={'/sa'} />
+            <Header
+				site={`/sa`}
+                handle={`Saudi Arabia`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
             
 

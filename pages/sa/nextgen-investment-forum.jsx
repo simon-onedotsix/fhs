@@ -15,8 +15,11 @@ import parse from 'html-react-parser'
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Reveal } from "../../fuselage/animation/reveal"
 
-import { Header } from '../../fuselage/theme/2025/sa/common/header/header'
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_SA as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
+
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
 import { FhsLockup } from '../../fuselage/theme/2025/sa/components/logos/fhs-brand'
 import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
@@ -196,7 +199,14 @@ export default function Page ({ sessions, locations }) {
         <>
             <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 
-            <Header compact />
+            <EventsBar site={'/sa'} />
+            <Header
+				site={`/sa`}
+                handle={`Saudi Arabia`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
                 {/* intro */}
 

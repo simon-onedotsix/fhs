@@ -11,7 +11,9 @@ import Ticker from 'framer-motion-ticker'
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 
-import { Header } from '../../fuselage/theme/egypt/common/header/header'
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_EGYPT as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
 
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
@@ -34,7 +36,14 @@ export default function Page() {
                 <link rel="icon" type="image/png" href="/assets/favicons/egypt/favicon-16x16.png" sizes="16x16" />
             </Head>
         
-            <Header compact />
+            <EventsBar site={'/egypt'} />
+            <Header
+                site={`/egypt`}
+                handle={`Egypt`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
 
 
             <PageHeroImage hero={{ url: '/assets/img/egypt/about/about-hero.jpg', width: 4122, height: 2845 }} >

@@ -7,7 +7,9 @@ import { LenisScroller } from '../fuselage/animation/lenis-scroller'
 
 import Image from 'next/image'
 
-import { Header } from '../fuselage/theme/2024/global/common/header/header'
+import { EventsBar } from "../ui/site/eventsbar"
+import { Header } from '../ui/site/header'
+import { FHS as header } from '../fixtures/nav'
 import { Footer } from '../fuselage/theme/2024/global/common/footer/footer'
 
 import { CtaTab } from '../fuselage/components/cta-tab/cta-tab'
@@ -27,7 +29,15 @@ export default function AwardWinners ({ data }) {
                 <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16" />
             </Head>
 
-            <Header overlaid inverse />
+
+            <EventsBar site={'/'} />
+            <Header
+                site={``}
+                handle={``}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+            />
+
 
             <HeroUnitImage 
                 heading={data.title} 

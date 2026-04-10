@@ -14,7 +14,9 @@ import { LenisScroller } from '../fuselage/animation/lenis-scroller'
 
 import { Pop, Slide, Fade } from "../fuselage/theme/2023/ae/layout/animation/animation"
 
-import { Header } from '../fuselage/theme/2024/global/common/header/header'
+import { EventsBar } from "../ui/site/eventsbar"
+import { Header } from '../ui/site/header'
+import { FHS as header } from '../fixtures/nav'
 import { Footer } from '../fuselage/theme/2024/global/common/footer/footer'
 
 
@@ -29,8 +31,16 @@ export default function Page({ entry }) {
     const { locale } = useRouter()
 
     return (
-        <div dir={ locale === 'ar' ? 'rtl' : 'ltr' }>
-            <Header compact />
+        <div dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+            
+            
+            <EventsBar site={'/'} />
+            <Header
+                site={``}
+                handle={``}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+            />
 
 
             <section className="block bg-primary">

@@ -5,7 +5,9 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import Head from "next/head"
 
-import { Header } from '../../fuselage/theme/2025/africa/common/header/header'
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_AFRICA as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2025/africa/common/footer/footer'
 
 import handleContentBlocks from "../../lib/content-blocks-africa"
@@ -47,7 +49,14 @@ export default function Page ({ entry, seomatic }) {
 				{ handleSeomaticMeta( seomatic ) }
             </Head>
 
-            <Header compact />
+            <EventsBar site={'/africa'} />
+            <Header
+                site={`/africa`}
+                handle={`Africa`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
             
             { handleContentBlocks( entry.ahifContentBlocks ) }
 
