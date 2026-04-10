@@ -767,8 +767,8 @@ export const FHS_AFRICA = {
             "metaDescription": null,
             "headerCtas": [
                 {
-                    "label": "Register Here",
-                    "hyperlink": "/africa/purchase-pass",
+                    "label": "Register Interest for 2027",
+                    "hyperlink": "/africa/register-interest-for-2027",
                     "openInNewWindow": false
                 }
             ]
