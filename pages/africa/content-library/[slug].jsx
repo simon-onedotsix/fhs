@@ -218,7 +218,7 @@ export default function Article ({ entry }) {
                 event={header.data.event}
                 mainMenu={header.data.mainMenu}
                 ctas={header.data.event.headerCtas}
-            />>
+            />
 
             
                         
