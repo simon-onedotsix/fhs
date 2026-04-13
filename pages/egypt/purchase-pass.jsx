@@ -39,6 +39,9 @@ function PurchasePass({ entry }) {
 				<div className="container">
 					<p className='fs-1 fw-600'>Purchase Pass</p>
 				</div>
+				<div className="container">
+					<p className="maxw-50">Discounted rates below are exclusively available for hotel operators, owners, developers, investors/banks, consultants, architects, lawyers, Govt. officials. If your organisation does not fall within these categories, please email <a href="mailto:hello@thebench.com">hello@thebench.com</a> to register.</p>
+				</div>
 
 				<div className="container">
 					<PassGrid>
