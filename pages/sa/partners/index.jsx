@@ -83,17 +83,17 @@ function Partners({ partnerData, videoTestimonials }) {
 	categoriesArray.forEach( category => {
 		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQxNw==') orderedCategories.push({ ...category, priority: 0 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0Mw==') orderedCategories.push({ ...category, priority: 1 })
-		if (category.id === 'RmllbGRWYWx1ZV8yOTkwNTIzNQ==') orderedCategories.push({ ...category, priority: 3 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0Mg==') orderedCategories.push({ ...category, priority: 4 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0MQ==') orderedCategories.push({ ...category, priority: 5 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMQ==') orderedCategories.push({ ...category, priority: 6 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0Mg==') orderedCategories.push({ ...category, priority: 3 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0MQ==') orderedCategories.push({ ...category, priority: 4 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMQ==') orderedCategories.push({ ...category, priority: 5 })
+		if (category.id === 'RmllbGRWYWx1ZV8yOTkwNTIzNQ==') orderedCategories.push({ ...category, priority: 6 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMg==') orderedCategories.push({ ...category, priority: 7 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyNA==') orderedCategories.push({ ...category, priority: 8 })
 	})
 
 
 	// console.log('swapcard partner data 2026:', partnerData)
-	// console.log('categories:', categoriesArray)
+	console.log('categories:', categoriesArray)
 	// console.log('orderedCategories:', orderedCategories)
 
 
