@@ -80,7 +80,7 @@
     .filterToggle.fixed {
         position: fixed;
         z-index: 6;
-        top: var(--space-md);
+        top: 100px;
         /* left: var(--space-md); */
     }
     .filterToggle.active {
@@ -126,7 +126,7 @@
     .searchToggle.fixed {
         position: fixed;
         z-index: 105;
-        top: var(--space-md);
+        top: 100px;
         left: calc(var(--space-md) + 3.5rem);
     }
     .searchToggle.active {
@@ -189,7 +189,7 @@
     }
     .filterLayout.fixed {
         position: fixed;
-        top: 150px;
+        top: 30px;
     }
     
 
@@ -201,7 +201,7 @@
     }
     .searchLayout.fixed {
         position: fixed;
-        top: 150px;
+        top: 30px;
         right: calc(var(--space-sm) + var(--space-lg));
     }
 
@@ -448,12 +448,12 @@
 
 
 
-/* ACTIONS */
+/* ACTIONS (scroll-to-top button) */
 
 .actions {
     position: fixed;
     z-index: 5;
-    bottom: var(--space-sm);
+    bottom: 4rem;
     right: var(--space-sm)
 }
 

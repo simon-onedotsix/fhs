@@ -97,11 +97,11 @@ export default function Agenda ({ sessions, locations }) {
 	// utilties menu pinning
 	const [utilties, utiltiesInView] = useInView({
 		threshold: 1,
-		rootMargin: '-150px 0px 0px 0px'
+		rootMargin: '-30px 0px 0px 0px'
 	})
 	const [toggles, togglesInView] = useInView({
 		threshold: 1,
-		rootMargin: '0px 0px 0px 0px'
+		rootMargin: '-70px 0px 0px 0px'
 	})
 
 

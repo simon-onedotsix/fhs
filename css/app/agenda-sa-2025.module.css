@@ -86,7 +86,7 @@
     .filterToggle.fixed {
         position: fixed;
         z-index: 6;
-        top: var(--space-md);
+        top: 100px;
     }
     .filterToggle.active {
         position: fixed;
@@ -129,7 +129,7 @@
     .searchToggle.fixed {
         position: fixed;
         z-index: 205;
-        top: var(--space-md);
+        top: 100px;
         left: calc(var(--space-md) + 3.5rem);
     }
     .searchToggle.active {
@@ -466,7 +466,7 @@
 .actions {
     position: fixed;
     z-index: 5;
-    bottom: var(--space-sm);
+    bottom: 4rem;
     right: var(--space-sm)
 }
 
