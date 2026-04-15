@@ -598,7 +598,7 @@ export default function Page({ seomatic, partners }) {
                 </div>
             </section>
             <div className="py-xs mt-sm mb-lg" dir={`ltr`}>
-                <Ticker duration={25}>
+                <Ticker duration={50}>
                     {
                         partners.map(partner => (
                             <div key={partner.id} style={{ marginRight: 10 }}>

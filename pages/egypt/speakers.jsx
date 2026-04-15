@@ -80,6 +80,13 @@ const SPEAKER_DATA = [
         company: 'Rotana Hotel Management Corporation PJSC',
     },
     {
+        url: `/sa/speakers/profile/hala-matar-choufany`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/HMC-2.jpg',
+        fullName: 'Hala Matar Choufany',
+        jobTitle: 'President, HVS Middle East, Africa & South Asia',
+        company: 'Managing Partner, HVS Dubai',
+    },
+    {
         url: `/sa/2025/speakers`,
         photoUrl: 'https://cms.thebench.com/assets/img/avatars/Al-Otaibi_Sultan_photo.jpg',
         fullName: 'Sultan Bader Al-Otaibi',
