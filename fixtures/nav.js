@@ -243,6 +243,13 @@ export const FHS_WORLD = {
                         "target": false
                     },
                     {
+                        "__typename": "navigation_Entry",
+                        "id": "159",
+                        "title": "FHS Gathering: Business Unusual",
+                        "navUrl": "/world/business-unusual-how-are-we-coping",
+                        "target": false
+                    },
+                    {
                         "__typename": "subsection_Entry",
                         "id": "179",
                         "title": "Awards",
