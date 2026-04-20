@@ -98,11 +98,11 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
                     : null
                 }
                 
-                {
+                {/* {
                     quantityRemaining &&
                     // <div className="formatted fw-600">{ quantityRemaining } passes left at this rate</div>
                     <div className="formatted fw-600">{ currentAmount } passes left at this rate</div>
-                }
+                } */}
                 
                 <a className={`${CSS.button} fs-6 fw-600 mt-xs`} href={ href } target='_blank'>{ label }</a>
             </section>
