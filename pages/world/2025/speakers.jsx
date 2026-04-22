@@ -27,106 +27,17 @@ import { getAllSpecialFields } from '../../../lib/swapcard/get-all-special-field
 import CSS from '../../../css/app/speakers.module.css'
 
 
+import { speakerData } from '../../../data/legacy/ae/2025/sc-speakers'
 
 
-function Speakers({ seomatic, speakers }) {
-
-	const [ filter, setFilter ] = useState( null )
-
-	
-
-	// sort speakers by lastName
-	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") ], ['asc'])
-	
-
-	// customise order (VIP speakers to top of list)
-	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
-		(speaker => speaker.firstName == 'HH Sheikh' && speaker.lastName === 'Ahmed bin Saeed Al Maktoum' ? 0 : 1),
-		(speaker => speaker.firstName == 'His Excellency' && speaker.lastName === 'Abdulla bin Touq Al Marri' || speaker.id == "RXZlbnRQZW9wbGVfNDEwMzg5NzY=" ? 0 : 1),
-		(speaker => speaker.firstName == 'Naser' && speaker.lastName === 'Mohamed Ali Naser Alnuwais' || speaker.id == "RXZlbnRQZW9wbGVfNDA3MTM1NzY=" ? 0 : 1),
-		(speaker => speaker.firstName == 'Abdullah' && speaker.lastName === 'Ahmed Al Moosa' || speaker.id == "RXZlbnRQZW9wbGVfNDEyMzM5MDM=" ? 0 : 1),
-		(speaker => speaker.firstName == 'Her Excellency Shaikha' && speaker.lastName === 'Nasser Al Nowais' || speaker.id == "RXZlbnRQZW9wbGVfNDA2MDQ1NDk=" ? 0 : 1),
-		
-		(speaker => speaker.firstName == 'Alan' && speaker.lastName === 'Faena' ? 0 : 1),
-		(speaker => speaker.firstName == 'H.E. Ahmed' && speaker.lastName === 'Obaid Al Qaseer' || speaker.id == "RXZlbnRQZW9wbGVfNDIwNzM2NzA=" ? 0 : 1),
-		(speaker => speaker.firstName == 'Eleonora' && speaker.lastName === 'Srugo' ? 0 : 1),
-		(speaker => speaker.firstName == 'Nick' && speaker.lastName === 'Candy' ? 0 : 1),
-		(speaker => speaker.firstName == 'Pansy' && speaker.lastName === 'Ho' || speaker.id == "RXZlbnRQZW9wbGVfNDI1NTAwNjI=" ? 0 : 1),
-		
-		(speaker => speaker.firstName == 'Marc' && speaker.lastName === 'Dardenne' ? 0 : 1),
-		(speaker => speaker.firstName == 'Oliver' && speaker.lastName === 'Hogg' ? 0 : 1),
-		(speaker => speaker.firstName == 'Christoph' && speaker.lastName === 'Hoffmann' ? 0 : 1),
-		(speaker => speaker.firstName == 'Marc' && speaker.lastName === 'Socker' ? 0 : 1),
-		(speaker => speaker.firstName == 'Abdulla Rashed' && speaker.lastName === 'Al Abdouli' ? 0 : 1),
-		
-		(speaker => speaker.firstName == 'Thomas' && speaker.lastName === 'B. Meier' ? 0 : 1),
-		(speaker => speaker.firstName == 'Neil' && speaker.lastName === 'Benjelloun' ? 0 : 1),
-		(speaker => speaker.firstName == 'Stephen' && speaker.lastName === 'Sackur' ? 0 : 1),
-		(speaker => speaker.firstName == 'Markus' && speaker.lastName === 'Venzin' ? 0 : 1),
-		(speaker => speaker.firstName == 'Saurabh' && speaker.lastName === 'Bakshi' ? 0 : 1),
-		
-		(speaker => speaker.firstName == 'Philip' && speaker.lastName === 'Martin Barnes' ? 0 : 1),
-		(speaker => speaker.firstName == 'Faizal' && speaker.lastName === 'Kottikollon' ? 0 : 1),
-		(speaker => speaker.firstName == 'Hans' && speaker.lastName === 'Meyer' ? 0 : 1),
-		(speaker => speaker.firstName == 'Gregory' && speaker.lastName === 'Lanter' ? 0 : 1),
-		(speaker => speaker.firstName == 'Dimitris' && speaker.lastName === 'Manikis' ? 0 : 1),
-		(speaker => speaker.firstName == 'Haitham' && speaker.lastName === 'Mattar' ? 0 : 1),
-	] )
-	
-	
-	
-	// console.log('speakers:', speakers)
-	console.log('speakers found:', speakers.length)
-	// console.log('ordered:', orderedSpeakers)
-	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
-
-
-	const moveTaggedSpeakersToEnd = ( speakerArray ) => {
-
-		if ( !speakerArray ) return
-
-		const targettedSpeakers = []
-
-		speakerArray.map( speaker => {
-			speaker.withEvent.fields.map(field => {
-				// target the special field
-				if ( field.definition?.id === "RmllbGREZWZpbml0aW9uXzgzNzE0Mw==" ) {
-					// target young leader && tech startup && new brands (allow for typo duplicates in swapcard)
-					if ( field.id === "RmllbGRWYWx1ZV8yODc1OTI1MA==" || field.id === "RmllbGRWYWx1ZV8yODcxNjY5Ng==" || field.id === "RmllbGRWYWx1ZV8yODc5OTM4Nw==" || field.id === "RmllbGRWYWx1ZV8yODc5OTM3Mw==" ) {
-						
-						// cut from speakerArray and push to targettedSpeakers
-						const index = speakerArray.indexOf(speaker)
-						if (index > -1) {
-							speakerArray.splice(index, 1)
-							targettedSpeakers.push({ ...speaker, tag: field.value })
-						}
-					}
-				}
-			})
-		})
-		// console.log('speakers to move to end:', targettedSpeakers.length)
-		// console.log('remaining speakers:', speakerArray.length)
-		// console.log('speakers:', _.orderBy(targettedSpeakers, (i) => i.tag))
-
-		const reorderedSpeakers = _.orderBy(targettedSpeakers, (i) => i.tag)
-		
-		return [...speakerArray, ...reorderedSpeakers]
-
-	}
-
-	// moveTaggedSpeakersToEnd( customOrderedSpeakers )
-
-	const shuffledSpeakers = moveTaggedSpeakersToEnd( customOrderedSpeakers )
-	
-	// console.log('shuffled:', shuffledSpeakers.length)
+function Speakers() {
 
 	return (
 		<>
+			<Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 
-				<Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
-				{handleSeomaticMeta(seomatic)}
             </Head>
 
 			<EventsBar site={'/world'} />
@@ -147,13 +58,13 @@ function Speakers({ seomatic, speakers }) {
 					
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
-							speakers.length &&
-							shuffledSpeakers.map( speaker => {
+							speakerData.length &&
+							speakerData.map( speaker => {
 
 								return (
 									<div key={speaker.id}>
 										<Link href={`/world/speakers/${speaker.id}`}>
-											<a className={CSS.avatar}>
+											<div className={CSS.avatar}>
 												{
 													speaker.photoUrl ? 
 													<Image 
@@ -170,7 +81,7 @@ function Speakers({ seomatic, speakers }) {
 														alt=""
 													/>
 												}
-											</a>
+											</div>
 										</Link>
 										<div>
 											<p className='mt-xs' >
