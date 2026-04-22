@@ -1,27 +1,29 @@
 import { useState } from 'react'
 
 import { gql } from "@apollo/client"
-import craftApolloClient from "../../../api/apollo"
+import craftApolloClient from "../../api/apollo"
 
 
-import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller' 
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller' 
 import _ from 'lodash'
 
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Header } from '../../../../fuselage/theme/2024/world/common/header/header'
-import { Footer } from '../../../../fuselage/theme/2024/world/common/footer/footer'
-import { SpeakerGrid } from "../../../../fuselage/layout/speaker-grid/speaker-grid"
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_WORLD as header } from '../../../fixtures/nav'
+import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
+import { SpeakerGrid } from "../../../fuselage/layout/speaker-grid/speaker-grid"
 
-import handleSeomaticMeta from '../../../../lib/seomatic'
+import handleSeomaticMeta from '../../../lib/seomatic'
 
-import CSS from '../../../../css/app/speakers.module.css'
+import CSS from '../../../css/app/speakers.module.css'
 
 
 // import legacy data
-import { bzSpeakers as speakers } from "../../../../data/legacy/ae/2024/bz-speakers"
+import { bzSpeakers as speakers } from "../../../data/legacy/ae/2024/bz-speakers"
 
 
 function Speakers() {
@@ -74,7 +76,14 @@ function Speakers() {
 				<link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
             </Head>
 
-            <Header compact />
+            <EventsBar site={'/world'} />
+			<Header
+				site={`/world`}
+				handle={`World`}
+				event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+			/>
 
 			<section className="block">
 				<div className="container">
@@ -106,6 +115,7 @@ function Speakers() {
 														width={370} 
 														height={370} 
 														alt=""
+														unoptimized
 													/>
 													: 
 													<Image 
@@ -113,6 +123,7 @@ function Speakers() {
 														width={370} 
 														height={370} 
 														alt=""
+														unoptimized
 													/>
 												}
 											</span>

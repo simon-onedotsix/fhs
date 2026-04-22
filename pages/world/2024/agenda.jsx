@@ -13,7 +13,9 @@ import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/theme/2024/world/common/header/header'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_WORLD as header } from '../../../fixtures/nav'
 import { Footer } from "../../../fuselage/theme/2024/world/common/footer/footer"
 
 import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from "../../../fuselage/components/icons/icons"
@@ -578,7 +580,14 @@ export default function Agenda () {
 				<link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
 			</Head>
 
-            <Header compact shim />
+            <EventsBar site={'/world'} />
+			<Header
+				site={`/world`}
+				handle={`World`}
+				event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+			/>
 
             <section className={`${CSS.agendaWrapper} block`}>
                 

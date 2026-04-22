@@ -299,7 +299,98 @@ export const FHS_WORLD = {
                         "target": false
                     }
                 ]
-            }
+            },
+            {
+                "__typename": "section_Entry",
+                "id": "519",
+                "title": "Editions",
+                "children": [
+                    {
+                        "__typename": "subsection_Entry",
+                        "id": "523",
+                        "title": "2025",
+                        "children": [
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "525",
+                                "title": "Agenda",
+                                "navUrl": "/world/2025/agenda",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "527",
+                                "title": "Speakers",
+                                "navUrl": "/world/2025/speakers",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "529",
+                                "title": "Partners",
+                                "navUrl": "/world/2025/partners",
+                                "target": false
+                            }
+                        ]
+                    },
+                    {
+                        "__typename": "subsection_Entry",
+                        "id": "623",
+                        "title": "2024",
+                        "children": [
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "625",
+                                "title": "Agenda",
+                                "navUrl": "/world/2024/agenda",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "627",
+                                "title": "Speakers",
+                                "navUrl": "/world/2024/speakers",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "629",
+                                "title": "Partners",
+                                "navUrl": "/world/2024/partners",
+                                "target": false
+                            }
+                        ]
+                    },
+                    {
+                        "__typename": "subsection_Entry",
+                        "id": "523",
+                        "title": "2023",
+                        "children": [
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "525",
+                                "title": "Agenda",
+                                "navUrl": "/world/2023/agenda",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "527",
+                                "title": "Speakers",
+                                "navUrl": "/world/2023/speakers",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "529",
+                                "title": "Partners",
+                                "navUrl": "/world/2023/partners",
+                                "target": false
+                            }
+                        ]
+                    },
+                ]
+            },
         ],
         "event": {
             "id": "2",
@@ -598,7 +689,98 @@ export const FHS_SA = {
                         ]
                     }
                 ]
-            }
+            },
+            {
+                "__typename": "section_Entry",
+                "id": "519",
+                "title": "Editions",
+                "children": [
+                    {
+                        "__typename": "subsection_Entry",
+                        "id": "523",
+                        "title": "2025",
+                        "children": [
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "525",
+                                "title": "Agenda",
+                                "navUrl": "/sa/2025/agenda",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "527",
+                                "title": "Speakers",
+                                "navUrl": "/sa/2025/speakers",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "529",
+                                "title": "Partners",
+                                "navUrl": "/sa/2025/partners",
+                                "target": false
+                            }
+                        ]
+                    },
+                    {
+                        "__typename": "subsection_Entry",
+                        "id": "623",
+                        "title": "2024",
+                        "children": [
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "625",
+                                "title": "Agenda",
+                                "navUrl": "/sa/2024/agenda",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "627",
+                                "title": "Speakers",
+                                "navUrl": "/sa/2024/speakers",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "629",
+                                "title": "Partners",
+                                "navUrl": "/sa/2024/partners",
+                                "target": false
+                            }
+                        ]
+                    },
+                    {
+                        "__typename": "subsection_Entry",
+                        "id": "523",
+                        "title": "2023",
+                        "children": [
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "525",
+                                "title": "Agenda",
+                                "navUrl": "/sa/2023/agenda",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "527",
+                                "title": "Speakers",
+                                "navUrl": "/sa/2023/speakers",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "529",
+                                "title": "Partners",
+                                "navUrl": "/sa/2023/partners",
+                                "target": false
+                            }
+                        ]
+                    },
+                ]
+            },
         ],
         "event": {
             "id": "2",

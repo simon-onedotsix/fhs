@@ -2,15 +2,17 @@ import _ from 'lodash'
 
 import Head from 'next/head'
 
-import { LenisScroller } from '../../../../fuselage/animation/lenis-scroller'
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../../fuselage/theme/2024/world/common/header/header'
-import { Footer } from '../../../../fuselage/theme/2024/world/common/footer/footer'
-import { PartnerLogoGrid, PartnerLogo } from '../../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_WORLD as header } from '../../../fixtures/nav'
+import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
+import { PartnerLogoGrid, PartnerLogo } from '../../../fuselage/theme/2024/sa/components/partner-logo/partner-logo'
 
 
 
-import { bzPartners as partnerData } from "../../../../data/legacy/ae/2024/bz-partners"
+import { bzPartners as partnerData } from "../../../data/legacy/ae/2024/bz-partners"
 
 
 
@@ -34,7 +36,14 @@ function Partners() {
 				<link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
             </Head>
 
-			<Header compact/>
+			<EventsBar site={'/world'} />
+			<Header
+				site={`/world`}
+				handle={`World`}
+				event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+			/>
 
 
 

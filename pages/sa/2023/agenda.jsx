@@ -8,8 +8,11 @@ import { formatInTimeZone } from 'date-fns-tz'
 import _ from 'lodash'
 import { toHoursAndMinutes } from "../../../lib/agenda-utils"
 
-import { Header } from '../../../fuselage/theme/2023/sa/global/header/header'
-import { Footer } from '../../../fuselage/global-sa/footer/footer'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_SA as header } from '../../../fixtures/nav'
+import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
+
 import { Session, SessionSpeaker, SessionSpeakerGrid } from '../../../fuselage/components/session/session'
 import { Button } from "../../../fuselage/components/button/button"
 import { Modal } from "../../../fuselage/components/modal/modal"
@@ -452,21 +455,14 @@ export default function Agenda () {
 
     return (
         <>
-
-            <Header 
-				compact 
-				shim
-				path={'/partners'}
-				theme={{ 
-					primary: 'white', 
-					secondary: 'var(--secondary)', 
-					text: 'white',
-					buttons: 'var(--primary)',
-					buttonText: 'white',
-					headerBg: 'linear-gradient(90deg, #7A4AFF 0%, var(--secondary) 73%)',
-					overlayBg: 'var(--primary)',
-				}}
-			/>
+            <EventsBar site={'/sa'} />
+            <Header
+				site={`/sa`}
+                handle={`Saudi Arabia`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
 
             <section className="block">

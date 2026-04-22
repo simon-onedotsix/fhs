@@ -36,13 +36,6 @@ export const Header = ({ site, handle, event, mainMenu, ctas }) => {
                                 />
                             </a>
                         </Link>
-                        
-                        {/* {
-                            event?.startDate &&
-                            <p className={CSS.venue}><span className='fw-600'>
-                                <span className="caps">{format(new Date(event.startDate), "dd MMM")}{ event.endDate ? ` - ${format(new Date(event.endDate), "dd MMM")}` : ` `} {format( new Date(event.startDate), "yyyy" )}</span></span> <br />{event.venue}
-                            </p>
-                        } */}
                     </section>
 
                     <section className={`${CSS.mainMenu} ${navActive && CSS.active}`}>
@@ -50,19 +43,19 @@ export const Header = ({ site, handle, event, mainMenu, ctas }) => {
                             <li className={CSS.deviceOnly}><Link href={`${site && `${site}`}/`}><a>Home</a></Link></li>
 
                             {
-                                mainMenu?.map(item => {
+                                mainMenu?.map((item, index) => {
                                     if (item.children.length) {
                                         // level-1
                                         return (
-                                            <li key={item.id}>
+                                            <li key={index}>
                                                 <span className={CSS.title}>{item.title}<Chevron /></span>
                                                 <ul>
                                                     {
-                                                        item.children.map(child => {
+                                                        item.children.map((child, index) => {
                                                             // level-2
                                                             if (child.children?.length) {
                                                                 return (
-                                                                    <li key={child.id}><p>{child.title}</p>
+                                                                    <li key={index}><p>{child.title}</p>
                                                                         <ul>
                                                                             { child.children?.map(subItem => handleMenuItem(subItem)) }
                                                                         </ul>

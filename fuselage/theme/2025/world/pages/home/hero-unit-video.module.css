@@ -4,7 +4,7 @@
 
 .video {
     position: absolute;
-    top: 3.5rem;
+    /* top: 3.5rem; */
     width: 100%;
     opacity: .6;
     mix-blend-mode: hard-light;

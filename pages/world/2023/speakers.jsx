@@ -1,21 +1,24 @@
-import { ThemeBg } from "../../../../fuselage/theme/2023/ae/theme-bg"
+import { ThemeBg } from "../../../fuselage/theme/2023/ae/theme-bg"
 
 import _ from 'lodash'
 
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Header, HeaderShim } from '../../../../fuselage/theme/2022/ae/global/header/header'
-import { Footer } from '../../../../fuselage/global-ae/footer/footer'
-import { SpeakerGrid } from "../../../../fuselage/layout/speaker-grid/speaker-grid"
-import { Container } from "../../../../fuselage/theme/2023/ae/layout/container/container"
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_WORLD as header } from '../../../fixtures/nav'
+import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
+
+import { SpeakerGrid } from "../../../fuselage/layout/speaker-grid/speaker-grid"
+import { Container } from "../../../fuselage/theme/2023/ae/layout/container/container"
 
 
-import CSS from '../../../../css/app/speakers.module.css'
+import CSS from '../../../css/app/speakers.module.css'
 
 
 // import legacy data
-import { bzSpeakers } from "../../../../data/legacy/ae/2023/bz-speakers"
+import { bzSpeakers } from "../../../data/legacy/ae/2023/bz-speakers"
 
 
 
@@ -44,25 +47,17 @@ function Speakers() {
 	return (
 		<>
 
-			<ThemeBg />
+            <EventsBar site={'/world'} />
+            <Header
+				site={`/world`}
+                handle={`World`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
-            <Header 
-				compact 
-				shim 
-				theme={{ 
-					primary: 'var(--primary)', 
-					secondary: 'var(--secondary)', 
-					text: 'var(--primary)',
-					buttons: 'var(--primary)',
-					buttonText: 'white',
-					headerBg: '#ffffffee',
-					overlayBg: 'var(--primary)',
-				}}
-				path={`/speakers`}
-			/>
-
-			<section className="block flush">
-				<Container flushRight maxWidth={`85%`} decal={`bg-white-90 p-md`}>
+			<section className="block">
+			
 
 					{/* bizzabo speakers */}
 
@@ -106,7 +101,7 @@ function Speakers() {
 						}
 					</SpeakerGrid>
 			
-				</Container>
+		
 				
 			</section>
 			
@@ -115,7 +110,7 @@ function Speakers() {
 	)
 }
 
-Speakers.theme = 'ae-2023'
+Speakers.theme = 'world-2024'
 
 
 

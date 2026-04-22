@@ -38,11 +38,11 @@
 
 /* TABLET + MOBILE */
 
-@media(max-width:1299px) {
+@media(max-width:1219px) {
 
     .header {
 
-        position: fixed;
+        position: relative;
         width: 100%;
 
         display: flex;
@@ -54,7 +54,7 @@
         padding: var(--space-sm);
     }
     .spacer {
-        height: 73px;
+        height: 0px;
     }
 
     .brand {
@@ -175,6 +175,8 @@
     }
     .toggle {
         z-index: 5;
+        position: fixed;
+        right: var(--space-sm);
     }
     .closeButton {
         z-index: 10;
@@ -199,7 +201,7 @@
 
 /* DESKTOP */
 
-@media(min-width:1300px) {
+@media(min-width:1220px) {
 
     .deviceOnly {
         display: none !important;

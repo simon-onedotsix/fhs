@@ -7,13 +7,14 @@
 
 /* devices */
 
-@media(max-width: 1299px){
+@media(max-width: 1219px){
     .layout {
         position: fixed;
-        bottom: calc( -12.25rem - 1px );
+        bottom: calc( -9.25rem - 1px );
         left: 0;
         right: 0;
-        height: 15rem;
+        height: 12rem;
+        /* height: max-content; */
 
         display: flex;
         flex-direction: column;
@@ -48,7 +49,7 @@
 
 /* desktop */
 
-@media(min-width: 1300px){
+@media(min-width: 1220px){
     .layout,
     .header p {
         padding: .25rem .5rem;

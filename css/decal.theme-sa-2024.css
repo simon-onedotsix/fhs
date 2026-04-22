@@ -7,13 +7,22 @@
 
     /* colour */
 
-    --primary: #794DF6;
-    --secondary: #3f058b;
-    --accent: aqua;
+    --primary: #3C1A52;
+    --primary-1: #3C1A52;
+    --primary-2: #6E439A;
+    --primary-2-dark: #5a3182;
+    --primary-3: #9972AB;
+    
+    --secondary: #00744B;
+    --secondary-dark: #00442c;
+    
+    --accent: #DFA46E;
+    --accent-dark: #b98350;
+    --accent-2: rgb(110, 78, 45);
 
     --bg-global: #3f058b;
 
-    --default-text-color: rgb(255, 255, 255);
+    --default-text-color: black;
     --default-heading-color: var(--accent);
 
     --wash: #F9F9FA;

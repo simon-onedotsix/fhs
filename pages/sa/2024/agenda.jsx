@@ -13,10 +13,10 @@ import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 
-import { Header } from '../../../fuselage/theme/2024/sa/globals/header/header'
-import { Footer } from "../../../fuselage/theme/2024/sa/globals/footer/footer"
-import { ThemeBg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-bg'
-import { ThemeFg } from '../../../fuselage/theme/2024/sa/blocks/theme/theme-fg'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_SA as header } from '../../../fixtures/nav'
+import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from "../../../fuselage/components/icons/icons"
 
@@ -348,13 +348,13 @@ export default function Agenda () {
 				{
 					moderators.length ?
 						<div>
-							<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
+							<p className="c-secondary pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
 							<div className='sessionSpeakerGrid'>
 								{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
 							</div>
 							{
 								speakers.length ?
-									<p style={{ color: `aqua`, padding: `10px 0 0 0`}}>In conversation with</p>
+									<p style={{ color: `var(--secondary)`, padding: `10px 0 0 0`}}>In conversation with</p>
 								: null
 							}
 						</div>
@@ -494,8 +494,8 @@ export default function Agenda () {
 
 
 
-	console.log('sessions:', sessions)
-	console.log('locations [swc]:', locations)
+	// console.log('sessions:', sessions)
+	// console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
 	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
@@ -544,10 +544,14 @@ export default function Agenda () {
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
 			</Head>
 
-            <Header compact shim />
-
-            <ThemeBg />
-            <ThemeFg />
+            <EventsBar site={'/sa'} />
+            <Header
+				site={`/sa`}
+                handle={`Saudi Arabia`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
 
             <section className="block">
@@ -759,9 +763,9 @@ export default function Agenda () {
 																return (
 																	<div key={index} className="sessionsWrapper">
 																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
-																		<div className='session | bg-glass'>
+																		<div className='session'>
 
-																			<div className='sessionHeader fw-500 c-white'>
+																			<div className='sessionHeader fw-500'>
 																				{
 																					session.beginsAt && session.endsAt ?
 																						<div>
@@ -790,7 +794,7 @@ export default function Agenda () {
 																				</p>
 																																									
 																				<div className='sessionTagGrid'>
-																					{session.fields.length ? <TagIcon fill={`var(--primary)`} /> : null}
+																					{session.fields.length ? <TagIcon fill={`var(--secondary)`} /> : null}
 																					{getSessionFields( session, 'Topics')}
 																				</div>
 
@@ -853,7 +857,7 @@ export default function Agenda () {
                                 :
                                 <Avatar src={`/assets/ui/avatar-fallback.png`}/>
                         }
-                        <p className="fs-5 fw-600 c-white mt-xs lh-1">{ modalContent.name }</p>
+                        <p className="fs-5 fw-600 mt-xs lh-1">{ modalContent.name }</p>
                         <p className="fs-sm fw-400 c-accent mt-xs">{modalContent.title} <br/>{modalContent.company}</p>
                     </aside>
                     

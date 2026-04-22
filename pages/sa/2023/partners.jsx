@@ -1,8 +1,10 @@
-import { Header } from '../../../../fuselage/theme/2023/sa/global/header/header'
-import { Footer } from '../../../../fuselage/global-sa/footer/footer'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_SA as header } from '../../../fixtures/nav'
+import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
 
-import { GetLegacyBizzaboPartners } from "../../../../lib/bizzabo-partners"
-import { bzPartnerCategories, bzPartners } from '../../../../data/legacy/sa/2023/bz-partners'
+import { GetLegacyBizzaboPartners } from "../../../lib/bizzabo-partners"
+import { bzPartnerCategories, bzPartners } from '../../../data/legacy/sa/2023/bz-partners'
 
 
 function Partners() {
@@ -10,20 +12,14 @@ function Partners() {
 	return (
 		<div className='bg-white'>
 
-			<Header 
-				compact 
-				shim
-				path={'/partners'}
-				theme={{ 
-					primary: 'white', 
-					secondary: 'var(--secondary)', 
-					text: 'white',
-					buttons: 'var(--primary)',
-					buttonText: 'white',
-					headerBg: 'linear-gradient(90deg, #7A4AFF 0%, var(--secondary) 73%)',
-					overlayBg: 'var(--primary)',
-				}}
-			/>
+            <EventsBar site={'/sa'} />
+            <Header
+				site={`/sa`}
+                handle={`Saudi Arabia`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
 			<section className="block bg-default">
 
@@ -60,7 +56,7 @@ function Partners() {
 	)
 }
 
-Partners.theme = 'sa-2023'
+Partners.theme = 'sa-2025'
 
 
 

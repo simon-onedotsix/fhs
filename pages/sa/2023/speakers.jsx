@@ -1,19 +1,22 @@
-import Layout from '../../../../fuselage/templates/sa/layout'
+import Layout from '../../../fuselage/templates/sa/layout'
 
 import _ from 'lodash'
 
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Header } from '../../../../fuselage/theme/2023/sa/global/header/header'
-import { Footer } from '../../../../fuselage/global-sa/footer/footer'
-import { SpeakerGrid } from "../../../../fuselage/layout/speaker-grid/speaker-grid"
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_SA as header } from '../../../fixtures/nav'
+import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
+
+import { SpeakerGrid } from "../../../fuselage/layout/speaker-grid/speaker-grid"
 
 // legacy data
 
-import { bzSpeakers } from '../../../../data/legacy/sa/2023/bz-speakers'
+import { bzSpeakers } from '../../../data/legacy/sa/2023/bz-speakers'
 
-import CSS from '../../../../css/app/speakers.module.css'
+import CSS from '../../../css/app/speakers.module.css'
 
 function Speakers({ bizzaboSpeakers }) {
 
@@ -37,22 +40,16 @@ function Speakers({ bizzaboSpeakers }) {
 	return (
 		<div className='bg-secondary'>
 
-			<Header 
-				compact 
-				shim
-				path={'/partners'}
-				theme={{ 
-					primary: 'white', 
-					secondary: 'var(--secondary)', 
-					text: 'white',
-					buttons: 'var(--primary)',
-					buttonText: 'white',
-					headerBg: 'linear-gradient(90deg, #7A4AFF 0%, var(--secondary) 73%)',
-					overlayBg: 'var(--primary)',
-				}}
-			/>
+            <EventsBar site={'/sa'} />
+            <Header
+				site={`/sa`}
+                handle={`Saudi Arabia`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
+            />
 
-			<section className="block bg-theme">
+			<section className="block bg-white">
 				<div className="container">
 
 					{/* bizzabo speakers */}
@@ -71,6 +68,7 @@ function Speakers({ bizzaboSpeakers }) {
 												width={370} 
 												height={370} 
 												alt=""
+												unoptimized
 											/>
 											: 
 											<Image 
@@ -78,6 +76,7 @@ function Speakers({ bizzaboSpeakers }) {
 												width={370} 
 												height={370} 
 												alt=""
+												unoptimized
 											/>
 										}
 									</span>

@@ -7,8 +7,11 @@ import { formatInTimeZone } from 'date-fns-tz'
 import _ from 'lodash'
 import { toHoursAndMinutes } from "../../../lib/agenda-utils"
 
-import { Header, HeaderShim } from '../../../fuselage/theme/2022/ae/global/header/header'
-import { Footer } from '../../../fuselage/global-ae/footer/footer'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_WORLD as header } from '../../../fixtures/nav'
+import { Footer } from '../../../fuselage/theme/2024/world/common/footer/footer'
+
 import { Session, SessionSpeaker, SessionSpeakerGrid } from '../../../fuselage/components/session/session'
 import { Button } from "../../../fuselage/components/button/button"
 import { Modal } from "../../../fuselage/components/modal/modal"
@@ -264,8 +267,8 @@ export default function Agenda () {
                                 {
                                     session.id === 1177361 ?
                                         <div key={`banner${session.id}`} className='pb-sm formatted mb-xs bg-light'>
-                                            <p className='fs-4 fw-600 c-primary bg-primary px-sm py-xs mb-xs mt-xs' style={{ background: `rgb(76, 131, 189)`}}>FHS Intelligence Talks</p>
-                                            <p className='fs-5 c-primary pt-xs px-sm'>A marketing snapshot of key trends as they relate to the hospitality sector. Understanding the fundamentals underpinning the market from performance, pipeline, costs, AI, and contracts. The Talks allow each speaker 10 minutes presentation followed by Q&amp;A.</p>
+                                            <p className='fs-4 fw-600 bg-primary px-sm py-xs mb-xs mt-xs' style={{ background: `rgb(76, 131, 189)`}}>FHS Intelligence Talks</p>
+                                            <p className='fs-5 pt-xs px-sm'>A marketing snapshot of key trends as they relate to the hospitality sector. Understanding the fundamentals underpinning the market from performance, pipeline, costs, AI, and contracts. The Talks allow each speaker 10 minutes presentation followed by Q&amp;A.</p>
                                         </div>
                                     : ''
                                 }
@@ -277,7 +280,7 @@ export default function Agenda () {
                                     tags={sessionTags}
                                     theme={getSessionTheme(sessionTags)}
                                 >   
-                                    <p className='h3 c-primary'>{ session.title }</p>
+                                    <p className='h3'>{ session.title }</p>
                                     {/* <small style={{ color: `orangered`}}>{ session.id }</small> */}
                                     
                                     {
@@ -550,19 +553,13 @@ export default function Agenda () {
                 { handleSeomaticMeta( cmsAgendaSettings.seomatic ) }
 			</Head>
 
-            <Header 
-                compact 
-                shim 
-                theme={{ 
-                    primary: 'var(--primary)', 
-                    secondary: 'var(--secondary)', 
-                    text: 'var(--primary)',
-                    buttons: 'var(--primary)',
-                    buttonText: 'white',
-                    headerBg: '#ffffffee',
-                    overlayBg: 'var(--primary)',
-                }}
-                path={`/agenda`}
+            <EventsBar site={'/world'} />
+            <Header
+				site={`/world`}
+                handle={`World`}
+                event={header.data.event}
+				mainMenu={header.data.mainMenu}
+				ctas={header.data.event.headerCtas}
             />
 
 
@@ -708,7 +705,7 @@ export default function Agenda () {
     )
 }
 
-Agenda.theme = 'ae-2023'
+Agenda.theme = 'world-2024'
 
 
 
