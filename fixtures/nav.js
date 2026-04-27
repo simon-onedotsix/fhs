@@ -46,13 +46,6 @@ export const FHS = {
                 "title": "FHS Club",
                 "navUrl": "/fhs-club",
                 "children": []
-            },
-            {
-                "__typename": "navigation_Entry",
-                "id": "317",
-                "title": "Contact Us",
-                "navUrl": "/contact-us",
-                "children": []
             }
         ]
     }
