@@ -1103,7 +1103,7 @@ export const FHS_EGYPT = {
                 },
                 {
                     "label": "Become a Partner",
-                    "hyperlink": "/egypt/become-a-partner",
+                    "hyperlink": "/egypt/forms/become-a-partner",
                     "openInNewWindow": false
                 }
             ]
