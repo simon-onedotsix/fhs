@@ -13,7 +13,7 @@ import { Button } from "../buttons/button"
 
 import CSS from './header.module.css'
 
-export const Header = ({ site, handle, event, mainMenu, ctas }) => {
+export const Header = ({ site, handle, event, mainMenu, ctas, children }) => {
 
     const [navActive, setNavActive] = useState(false)
 
@@ -76,6 +76,7 @@ export const Header = ({ site, handle, event, mainMenu, ctas }) => {
                         </ul>
 
                         <section className={CSS.actions}>
+                           { children }
                             {
                                 ctas?.map((cta, index) => (
                                     <Button

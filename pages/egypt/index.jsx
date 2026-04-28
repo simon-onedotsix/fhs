@@ -4,6 +4,7 @@ import craftApolloClient from "../api/apollo"
 import { useState, useRef } from "react"
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+import useCustomMediaQuery from '../../hooks/useCustomMediaQuery'
 
 import Head from "next/head"
 
@@ -17,6 +18,8 @@ import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
 import { FHS_EGYPT as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
+
+import { Countdown } from "../../fuselage/theme/egypt/components/countdown/countdown"
 
 
 import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
@@ -102,8 +105,9 @@ export default function Home ({ data, content }) {
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState()
 
-    console.log(content)
+    // console.log(content)
 
+    const isDesktop = useCustomMediaQuery('(min-width: 600px)');
 
     return (
         <>
@@ -122,16 +126,20 @@ export default function Home ({ data, content }) {
             />
 
 
+
             <PageHeroThemed>
 
                 <section className="block">
-                    <div className="container pt-xl">
+                    <div className="container" style={{ paddingTop: isDesktop ? `4.5vh` : `10rem` }}>
+
+                        <Countdown expiryDate={'05/01/2026'}/>
+                        
                         <h1 className="fs-0 caps lh-0 c-secondary"><Reveal>Where Heritage <br />Inspires Investment</Reveal></h1>
                         <h4 className="fs-4 c-secondary">10-11 November 2026, Sofitel Downtown Cairo Nile</h4>
 
                         <p className="mt-md c-secondary button-grid">
                             <Pop inline><ButtonKeyline decal={`fs-5`} href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></Pop>
-                            <Pop inline><ButtonKeyline decal={`fs-5`} href={`/egypt/forms/register-interest`}>Register Interest</ButtonKeyline></Pop>
+                            <Pop inline><ButtonKeyline decal={`fs-5`} href={`https://share.hsforms.com/12LxArJVDTpurv9TCoLcoig8nd8z`} target={`_blank`} rel={`noreferrer`}>Download Hotel Chain Development Report</ButtonKeyline></Pop>
                         </p>
                     </div>
                 </section>

@@ -62,6 +62,9 @@
         gap: 1rem;
     }
 
+    .actions {
+        text-align: center;
+    }
     
     .mainMenu {
         position: fixed;
@@ -220,6 +223,10 @@
 
     .brand {
         gap: 2rem;
+    }
+
+    .actions {
+        align-items: center;
     }
 
     .mainMenu {

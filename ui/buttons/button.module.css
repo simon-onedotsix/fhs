@@ -1,5 +1,8 @@
 .ui {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     cursor: pointer;
     background-color: var(--fg);
     padding: .75rem 1.5rem;
