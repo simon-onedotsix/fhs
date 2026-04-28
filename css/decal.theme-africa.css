@@ -252,6 +252,9 @@
     color: var(--error);
     font-weight: 400;
 }
+[data-theme='africa'] .bg-default .hs-error-msg {
+    color: var(--secondary);
+}
 
 [data-theme='africa'] .hs-main-font-element {
     margin-top: .5rem;

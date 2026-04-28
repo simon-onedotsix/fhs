@@ -17,7 +17,7 @@ export const Header = ({ site, handle, event, mainMenu, ctas }) => {
 
     const [navActive, setNavActive] = useState(false)
 
-    console.log(mainMenu)
+    // console.log(mainMenu)
    
     
     return (

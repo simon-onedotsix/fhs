@@ -51,7 +51,7 @@ export default function Page ({ seomatic, entry }) {
 
 
     useEffect( ()=> {
-        if ( !localStorage.getItem("ahifSaPostEvent") === "true" ) {
+        if ( !localStorage.getItem("ahifPostEvent") === "true" ) {
             setAllowed( true )
         } else {
             setAllowed( false )
@@ -64,7 +64,7 @@ export default function Page ({ seomatic, entry }) {
 
         const reqBody = { email: emailInputRef.current.value }
 
-        fetch('/api/delegate-auth', {
+        fetch('/api/africa/delegate-auth', {
             method: 'POST',
             body: JSON.stringify(reqBody),
             headers: {
@@ -76,7 +76,7 @@ export default function Page ({ seomatic, entry }) {
             console.log(data)
             if ( data.authorised === true ) {
                 setAllowed( true )
-                localStorage.setItem("ahifSaPostEvent", "true")
+                localStorage.setItem("ahifPostEvent", "true")
             } else {
                 setAllowed( false )
                 setMessage("<p><span className='fw-500'>Email not found!</span> See below to register for access.</p>")
@@ -107,7 +107,7 @@ export default function Page ({ seomatic, entry }) {
                     <div className={CSS.contentScroller}>
                         <div className={CSS.content}>
                             <div className="container center">
-                                <p className='fs-2 fw-600 lh-1 c-primary'>AHIF 2024 - Resources</p>
+                                <p className='fs-2 fw-600 lh-1 c-primary'>AHIF 2026 - Resources</p>
                             </div>
                             <div className="container center">
                                 <p>Please enter your email below to access.</p>
@@ -134,12 +134,12 @@ export default function Page ({ seomatic, entry }) {
 
             <div className={`${CSS.formOverlay} ${ showForm && CSS.active }`}>
 
-                <section className={CSS.container}>
+                <section className={`${CSS.container} bg-medium`}>
                     <button className={CSS.closeButton} onClick={() => setShowForm(false)}>&times;</button>
                     <div className={CSS.contentScroller}>
                         <div className={CSS.content}>
-                            <p className='mb-sm maxw-30'>Please complete the form below to register and access content and insights from AHIF 2024.</p>
-                            <HubspotForm portalId={'14527187'} formId={'e0d57b72-5b81-4e0b-9b04-52cd7bdc9488'} />
+                            <p className='mb-sm maxw-30'>Please complete the form below to register and access content and insights from AHIF 2026.</p>
+                            <HubspotForm portalId={'14527187'} formId={'e2a73752-605a-41f7-896e-87cf981a040e'} />
                         </div>
                     </div>
                 </section>
@@ -161,7 +161,7 @@ export async function getStaticProps({ preview, previewData }) {
     const entryData = await craftApolloClient( preview, previewData ).query({
         query: gql`
             query Page {
-                entry(site: "${process.env.SITE_HANDLE_AFRICA}", id: "205768") {
+                entry(site: "${process.env.SITE_HANDLE_AFRICA}", id: "305053") {
                     ... on ${process.env.SITE_HANDLE_AFRICA}Pages_page_Entry {
                         id
                         title

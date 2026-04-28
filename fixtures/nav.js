@@ -870,7 +870,7 @@ export const FHS_AFRICA = {
                     },
                     {
                         "__typename": "navigation_Entry",
-                        "id": "257",
+                        "id": "257r",
                         "title": "Charity Partner",
                         "navUrl": "/africa/our-chosen-charity",
                         "target": false
@@ -919,7 +919,7 @@ export const FHS_AFRICA = {
                 "children": [
                     {
                         "__typename": "navigation_Entry",
-                        "id": "272",
+                        "id": "27s2",
                         "title": "Networking Opportunities",
                         "navUrl": "/africa/networking-receptions",
                         "target": false

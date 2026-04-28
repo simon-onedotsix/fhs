@@ -17,10 +17,10 @@
 
     --wash: #fafaf9;
     --light: #eae6e1;
-    --medium: #3C1053;
+    --medium: #51196f;
     --dark: #3C1053;
 
-    --error: var(--purple);
+    --error: var(--primary);
     --success: rgb(121, 173, 0);
     --warning: rgb(255, 166, 0);
 
