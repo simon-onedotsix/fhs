@@ -74,7 +74,7 @@ export default function Page ({ seomatic, entry }) {
         .then( response => response.json() )
         .then( (data) => {
             console.log(data)
-            if ( data.authorised === true ) {
+            if ( data.isOnList === true ) {
                 setAllowed( true )
                 localStorage.setItem("ahifPostEvent", "true")
             } else {
