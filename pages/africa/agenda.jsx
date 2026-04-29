@@ -125,7 +125,7 @@ export default function Agenda({ sessions, theme }) {
 				search: new URLSearchParams(router.search).delete('track'),
 			})
 		}
-	})
+	}, [lenis, router])
 	
 
 	// FILTERS

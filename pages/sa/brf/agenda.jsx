@@ -448,7 +448,7 @@ const SpeakerCard = ({ speaker, type }) => {
 			<Modal onClose={() => setShowModal(false)} show={showModal}>
 				<div style={{ maxHeight: '80vh', overflowY: 'scroll', paddingRight: 10 }}>
 					<p className="fs-5 fw-600 c-dark">{ modalContent.name }</p>
-					<p className="fs-sm" className="c-dark">{ modalContent.title }<br />{ modalContent.company }</p>
+					<p className="fs-sm c-dark">{ modalContent.title }<br />{ modalContent.company }</p>
 					<p className="mt-xs c-dark">{modalContent.bio}</p>
 				</div>
 			</Modal>
