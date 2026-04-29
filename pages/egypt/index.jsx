@@ -139,7 +139,7 @@ export default function Home ({ data, content }) {
 
                         <p className="mt-md c-secondary button-grid">
                             <Pop inline><ButtonKeyline decal={`fs-5`} href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></Pop>
-                            <Pop inline><ButtonKeyline decal={`fs-5`} href={`https://share.hsforms.com/12LxArJVDTpurv9TCoLcoig8nd8z`} target={`_blank`} rel={`noreferrer`}>Download Hotel Chain Development Report</ButtonKeyline></Pop>
+                            <Pop inline><ButtonKeyline decal={`fs-5`} href={`/egypt/forms/register-interest`} >Register Interest</ButtonKeyline></Pop>
                         </p>
                     </div>
                 </section>
@@ -147,27 +147,9 @@ export default function Home ({ data, content }) {
             </PageHeroThemed>
 
             
-            
-            {/* ATF */}
-
-            {/* <PageHeroImage hero={{ url: '/assets/img/egypt/homepage/fhs-egypt-hero.jpg', width: 1200, height: 630 }} >
-                
-                <section className="block">
-                    <div className="container center">
-                        <h1 className="fs-0 caps">Where Heritage <br />Inspires Investment</h1>
-                        <h4 className="fs-4">10-11 November 2026, Sofitel Downtown Cairo Nile</h4>
-
-                        <p className="mt-md"><Pop><ButtonKeyline href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></Pop></p>
-                    </div>
-                </section>
-
-            </PageHeroImage> */}
-
-
-
 
             {/* TICKER */}
-            <div className="bg-primary py-xs">
+            <div className="bg-secondary py-xs">
                 <Ticker duration={20}>
                     <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$3 billion</strong>  in business opportunities and deal volume gained in 2025 conferences</p>
                     <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">95.8%</strong>  of FHS attendees achieved their networking goals last year</p>
@@ -176,6 +158,39 @@ export default function Home ({ data, content }) {
                 </Ticker>
             </div>
 
+
+
+            {/* NEW GROWTH CYCLE */}
+            
+            <section className="block bg-primary">
+                <div className="container center">
+                    <p className="fs-1 fw-500 lh-1 caps balance">Key Egypt Insights from the Hotel Chain Development Pipeline Report</p>
+                </div>
+
+                <div className="container columns-3 gap-md">
+                    <div className="formatted">
+                        <Pop><img src="/assets/img/egypt/homepage/egypt-03.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <h3 className="balance">Africa&apos;s #1 Hospitality Market</h3>
+                        <p className="fs-6">Supporting text: Egypt leads the continent with <strong>185 hotels and 45,984 rooms in the pipeline</strong>, making it by far the largest hospitality development market in Africa.</p>
+                    </div>
+                    
+                    <div className="formatted">
+                        <Pop><img src="/assets/img/egypt/homepage/egypt-04.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <h3 className="balance">Over One-Third of Africa&apos;s Pipeline</h3>
+                        <p className="fs-6">Egypt accounts for <strong>37.1%</strong> of all hotel pipeline rooms in Africa, underlining its central role in shaping the continent&apos;s tourism future.</p>
+                    </div>
+
+                    <div className="formatted">
+                        <Pop><img src="/assets/img/egypt/homepage/egypt-05.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <h3 className="balance">Exceptional Growth Momentum</h3>
+                        <p className="fs-6">The country&apos;s pipeline grew by <strong>35.5% year-on-year</strong>, with <strong>53 new deals signed in 2025</strong>, reflecting strong investor confidence and rapid expansion.</p>
+                    </div>
+                </div>
+
+                <div className="container center">
+                    <Pop inline><ButtonKeyline decal={`fs-5`} href={`https://share.hsforms.com/12LxArJVDTpurv9TCoLcoig8nd8z`} target={`_blank`} rel={`noreferrer`}>Download Hotel Chain Development Report</ButtonKeyline></Pop>
+                </div>
+            </section>
 
 
             {/* NEW GROWTH CYCLE */}
