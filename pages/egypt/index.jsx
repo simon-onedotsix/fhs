@@ -21,7 +21,7 @@ import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
 
 import { Countdown } from "../../fuselage/theme/egypt/components/countdown/countdown"
 
-
+import { Button } from "../../ui/buttons/button"
 import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 import { PageHeroThemed } from "../../fuselage/theme/egypt/page-hero-themed/page-hero-themed"
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
@@ -171,7 +171,7 @@ export default function Home ({ data, content }) {
                     <div className="formatted">
                         <Pop><img src="/assets/img/egypt/homepage/egypt-03.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
                         <h3 className="balance">Africa&apos;s #1 Hospitality Market</h3>
-                        <p className="fs-6">Supporting text: Egypt leads the continent with <strong>185 hotels and 45,984 rooms in the pipeline</strong>, making it by far the largest hospitality development market in Africa.</p>
+                        <p className="fs-6">Egypt leads the continent with <strong>185 hotels and 45,984 rooms in the pipeline</strong>, making it by far the largest hospitality development market in Africa.</p>
                     </div>
                     
                     <div className="formatted">
@@ -188,7 +188,7 @@ export default function Home ({ data, content }) {
                 </div>
 
                 <div className="container center">
-                    <Pop inline><ButtonKeyline decal={`fs-5`} href={`https://share.hsforms.com/12LxArJVDTpurv9TCoLcoig8nd8z`} target={`_blank`} rel={`noreferrer`}>Download Hotel Chain Development Report</ButtonKeyline></Pop>
+                    <Pop inline><Button decal={`fs-5`} href={`https://share.hsforms.com/12LxArJVDTpurv9TCoLcoig8nd8z`} target={`_blank`} rel={`noreferrer`} label={`Download Hotel Chain Development Report`}></Button></Pop>
                 </div>
             </section>
 

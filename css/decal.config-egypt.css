@@ -10,6 +10,9 @@
     --secondary: #3C1053;
     --accent: #F5812B;
 
+    --bg: white;
+    --fg: var(--secondary);
+
     --bg-global: hsl(from var(--secondary) h s calc(l - 0) / 1);
 
     --default-text-color: rgb(56, 56, 56);
