@@ -16,7 +16,7 @@ import { Pop, Fade, Slide } from '../../../fuselage/animation/animation'
 import { EventsBar } from "../../../ui/site/eventsbar"
 import { HeaderBRF } from '../../../ui/site/header-brf'
 import { BRF_FHS_SA as header } from '../../../fixtures/nav'
-import { Footer } from '../../../fuselage/theme/2025/sa/common/footer/footer'
+import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
 
 import { StickySidebar } from '../../../fuselage/theme/2024/global/components/sticky-sidebar/sticky-sidebar'
 import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from "../../../fuselage/components/icons/icons"

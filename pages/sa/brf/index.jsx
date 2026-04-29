@@ -308,13 +308,13 @@ export default function Page ({ sessions, speakers }) {
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>
 
                 <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>Where brands shape the future of living</p>
-                <p className='fs-3 fw-600 c-white caps center mt-sm'>23 April 2026</p>
+                <p className='fs-3 fw-600 c-white caps center mt-sm'>24 June 2026</p>
                 <p className='fs-4 fw-600 center'>Mandarin Oriental Al Faisaliah, Saudi Arabia</p>
 
 
                 <div className="mt-md center">
                     <Pop>
-                        <Button href={'/sa/brf/agenda-2025'}>View BRF 2025 Agenda</Button>
+                        <Button href={'/sa/brf/agenda'}>View BRF 2026 Agenda</Button>
                     </Pop>
                 </div>
 
@@ -335,21 +335,7 @@ export default function Page ({ sessions, speakers }) {
 
 
 
-            {/* PASAT SPONSORS */}
-            <section className="block">
-                <div className="container center">
-                    <p className='fs-1 fw-600'>Past BRF Sponsors</p>
-                </div>
-                
-                <div className="container maxw-70 pt-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
-                    <PartnerLogo logoUrl={`/assets/img/brf/accor-one-living.svg`} maxWidth={16} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/global-branded-residences.svg`} maxWidth={8} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/digivalet.png`} maxWidth={12} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/marriott.svg`} maxWidth={12} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/new-murabba.png`} maxWidth={10} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/bresi.png`} maxWidth={12} />
-                </div>
-            </section>
+            
 
                
 
@@ -371,7 +357,7 @@ export default function Page ({ sessions, speakers }) {
 
 
             {/* FEATURED SPEAKERS */}
-            {
+            {/* {
                 sessions &&
                 <SpeakerCarousel 
                     heading={`2025 Speakers`} 
@@ -397,18 +383,36 @@ export default function Page ({ sessions, speakers }) {
                         ))
                     }
                 </SpeakerCarousel>
-            }
+            } */}
 
             
 
             {/* THEMES */}
-            <section className="block bg-default">
+            {/* <section className="block bg-default">
                 <ThemesSlider 
                     data={THEMES_DATA} 
                     heading={"2025 Branded Residences Forum Themes"}
                     link={'/sa/brf/agenda-2025'} 
                     linkLabel={'View 2025 Agenda'} 
                 />
+            </section> */}
+
+
+
+            {/* PAST SPONSORS */}
+            <section className="block">
+                <div className="container center">
+                    <p className='fs-1 fw-600'>Past BRF Sponsors</p>
+                </div>
+                
+                <div className="container maxw-70 pt-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
+                    <PartnerLogo logoUrl={`/assets/img/brf/accor-one-living.svg`} maxWidth={16} />
+                    <PartnerLogo logoUrl={`/assets/img/brf/global-branded-residences.svg`} maxWidth={8} />
+                    <PartnerLogo logoUrl={`/assets/img/brf/digivalet.png`} maxWidth={12} />
+                    <PartnerLogo logoUrl={`/assets/img/brf/marriott.svg`} maxWidth={12} />
+                    <PartnerLogo logoUrl={`/assets/img/brf/new-murabba.png`} maxWidth={10} />
+                    <PartnerLogo logoUrl={`/assets/img/brf/bresi.png`} maxWidth={12} />
+                </div>
             </section>
 
 

@@ -658,13 +658,13 @@ export const FHS_SA = {
                                 "navUrl": "/sa/curated-connections",
                                 "target": false
                             },
-                            // {
-                            //     "__typename": "navigation_Entry",
-                            //     "id": "235",
-                            //     "title": "Networking Receptions",
-                            //     "navUrl": "/sa/networking-receptions",
-                            //     "target": false
-                            // },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "235",
+                                "title": "Networking Receptions",
+                                "navUrl": "/sa/networking-receptions",
+                                "target": false
+                            },
                             {
                                 "__typename": "navigation_Entry",
                                 "id": "237",
@@ -1169,7 +1169,7 @@ export const BRF_FHS_SA = {
                 "__typename": "navigation_Entry",
                 "id": "279",
                 "title": "Agenda",
-                "navUrl": "/sa/brf/agenda-2025",
+                "navUrl": "/sa/brf/agenda",
                 "children": []
             },
             

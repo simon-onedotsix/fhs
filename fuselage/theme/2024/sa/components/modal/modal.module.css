@@ -79,6 +79,6 @@
 
 @media(hover:hover) {
     .closeButton:hover svg {
-        stroke: white;
+        stroke: var(--primary);
     }
 }
