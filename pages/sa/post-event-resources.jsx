@@ -64,9 +64,13 @@ export default function PostEvent ({ cmsEntryData }) {
     function formHandler ( e ) {
         e.preventDefault()
 
-        const reqBody = { email: emailInputRef.current.value }
+        // SET HUBSPOT LIST ID BELOW
+        const reqBody = {
+            email: emailInputRef.current.value,
+            hubspotListId: '1237'
+        }
 
-        fetch('/api/sa/delegate-auth', {
+        fetch('/api/delegate-auth', {
             method: 'POST',
             body: JSON.stringify(reqBody),
             headers: {
@@ -76,9 +80,9 @@ export default function PostEvent ({ cmsEntryData }) {
         .then( response => response.json() )
         .then( (data) => {
             console.log(data)
-            if ( data.authorised === true ) {
+            if ( data.isOnList === true ) {
                 setAllowed( true )
-                localStorage.setItem("fhsSaPostEvent2025", "true")
+                localStorage.setItem("ahifPostEvent", "true")
             } else {
                 setAllowed( false )
                 setMessage("<p><span className='fw-500'>Email not found!</span> See below to register for access.</p>")

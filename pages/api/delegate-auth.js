@@ -12,6 +12,7 @@ async function handler (req, res) {
     if ( req.method === 'POST') {
 
         const email = req.body.email
+        const listId = req.body.hubspotListId
         // console.log('email:', email)
         
         let contact = undefined
@@ -67,7 +68,7 @@ async function handler (req, res) {
             const data = await response.json()
             // console.log('data:', data)
             
-            isOnList = data.results.some(m => m.listId === '2875')
+            isOnList = data.results.some(m => m.listId === listId)
         }
         console.log('isOnList:', isOnList)
 

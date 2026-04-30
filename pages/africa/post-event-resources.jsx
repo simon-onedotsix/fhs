@@ -62,9 +62,13 @@ export default function Page ({ seomatic, entry }) {
     function formHandler ( e ) {
         e.preventDefault()
 
-        const reqBody = { email: emailInputRef.current.value }
+        // SET HUBSPOT LIST ID BELOW
+        const reqBody = {
+            email: emailInputRef.current.value,
+            hubspotListId: '2875'
+        }
 
-        fetch('/api/africa/delegate-auth', {
+        fetch('/api/delegate-auth', {
             method: 'POST',
             body: JSON.stringify(reqBody),
             headers: {
