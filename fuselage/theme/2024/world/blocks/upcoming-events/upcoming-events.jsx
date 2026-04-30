@@ -124,6 +124,8 @@ export const EventCardLite = ({ heading, logo, venue, dates, dateOverride, websi
         endMonth = formatInTimeZone(new Date( dates.endDate ), 'Asia/Dubai', 'MMMM')
     }
 
+    console.log(heading, dateOverride)
+
     return (
         <motion.div 
             initial={{ scale: .5, opacity: 0 }}

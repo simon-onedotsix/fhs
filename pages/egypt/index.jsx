@@ -331,7 +331,8 @@ export default function Home ({ data, content }) {
 
                 <div className="container columns-3 maxw-55 gap-xs">
                     {
-                        data.events.map( event => {
+                        data.events.map(event => {
+                            console.log(event)
                             return (
                                 <div key={event.id} className={`columns-1 gap-xs`}>                                
                                     {
@@ -347,6 +348,7 @@ export default function Home ({ data, content }) {
                                                 passLink={stream.purchasePassLink} 
                                                 websiteLink={stream.websiteLink} 
                                                 theme={event.theme} 
+                                                dateOverride={event.dateOverride}
                                             />
                                         ))
                                     }
