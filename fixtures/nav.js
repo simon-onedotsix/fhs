@@ -69,13 +69,6 @@ export const FHS_WORLD = {
                     },
                     {
                         "__typename": "navigation_Entry",
-                        "id": "137",
-                        "title": "Investors at FHS World",
-                        "navUrl": "/world/investors",
-                        "target": false
-                    },
-                    {
-                        "__typename": "navigation_Entry",
                         "id": "139",
                         "title": "Why Attend",
                         "navUrl": "/world/why-attend",
@@ -124,6 +117,13 @@ export const FHS_WORLD = {
                         "target": false
                     }
                 ]
+            },
+            {
+                "__typename": "navigation_Entry",
+                "id": "12137",
+                "title": "Investors",
+                "navUrl": "/world/investors",
+                "children": []
             },
             {
                 "__typename": "section_Entry",
@@ -431,13 +431,6 @@ export const FHS_SA = {
                     },
                     {
                         "__typename": "navigation_Entry",
-                        "id": "191",
-                        "title": "Investors",
-                        "navUrl": "/sa/investors",
-                        "target": false
-                    },
-                    {
-                        "__typename": "navigation_Entry",
                         "id": "193",
                         "title": "Why Attend",
                         "navUrl": "/sa/why-attend",
@@ -514,6 +507,27 @@ export const FHS_SA = {
                         "target": false
                     }
                 ]
+            },
+            {
+               "__typename": "section_Entry",
+                "id": "187",
+                "title": "Investors",
+                "children": [
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "191",
+                        "title": "Investors",
+                        "navUrl": "/sa/investors",
+                        "children": []
+                    },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "221",
+                        "title": "FHS Dealroom",
+                        "navUrl": "/sa/fhs-dealroom",
+                        "target": false
+                    },
+                ] 
             },
             {
                 "__typename": "section_Entry",
@@ -609,13 +623,6 @@ export const FHS_SA = {
                         "id": "221",
                         "title": "FHS Startup Zone",
                         "navUrl": "/sa/startup-den",
-                        "target": false
-                    },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "221",
-                        "title": "FHS Dealroom",
-                        "navUrl": "/sa/fhs-dealroom",
                         "target": false
                     },
                     {
@@ -828,13 +835,6 @@ export const FHS_AFRICA = {
                     },
                     {
                         "__typename": "navigation_Entry",
-                        "id": "251",
-                        "title": "Investors",
-                        "navUrl": "/africa/investors",
-                        "target": false
-                    },
-                    {
-                        "__typename": "navigation_Entry",
                         "id": "274",
                         "title": "Content Library",
                         "navUrl": "/africa/content-library",
@@ -848,6 +848,13 @@ export const FHS_AFRICA = {
                         "target": false
                     }
                 ]
+            },
+            {
+                "__typename": "navigation_Entry",
+                "id": "251",
+                "title": "Investors",
+                "navUrl": "/africa/investors",
+                "children": []
             },
             {
                 "__typename": "section_Entry",

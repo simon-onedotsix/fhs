@@ -38,7 +38,7 @@
 
 /* TABLET + MOBILE */
 
-@media(max-width:1219px) {
+@media(max-width:999px) {
 
     .header {
 
@@ -188,7 +188,7 @@
 
 /* MOBILE */
 
-@media(max-width:599px) {
+@media(max-width:1259px) {
     .mainMenu {
         left: 100vw;
         width: 100vw;
@@ -201,7 +201,7 @@
 
 /* DESKTOP */
 
-@media(min-width:1220px) {
+@media(min-width:1260px) {
 
     .deviceOnly {
         display: none !important;
@@ -211,7 +211,7 @@
         display: grid;
         grid-template-columns: auto 1fr;
         align-items: center;
-        gap: 4rem;
+        gap: 2rem;
 
         background-color: hsl(from var(--primary) h s calc( l + 0 ) / 1);;
         padding: var(--space-xs) var(--space-sm);
@@ -305,5 +305,4 @@
     .mainMenu ul a:hover {
         background-color: rgba(0, 0, 0, 0.2);
     }
-}
-
+}}
