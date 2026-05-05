@@ -13,7 +13,7 @@ export const PageHeader = () => {
                     <div className="formatted mt-sm">
                         <p className='fs-6'>If you are a hotel owner or investor currently with hotel assets, or looking to acquire hotel assets, and would like to attend the conference as our guest, please contact <a href="mailto:marina.franolic@thebench.com">Marina&nbsp;Franolic</a>.</p>
 
-                        <p className='mt-sm'><Button href={'/africa/investor-pass'} decal={'fs-6 fw-600'} outline>Register Interest for Investor Pass</Button></p>
+                        <p className='mt-sm'><Button href={'/africa/register-interest-for-2027'} decal={'fs-6 fw-600'} outline>Register Interest for 2027</Button></p>
 
                         <h4 className='pt-sm'>Criteria for approval</h4>
                         <ul>

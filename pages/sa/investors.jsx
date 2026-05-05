@@ -342,15 +342,6 @@ export default function Page () {
                 <Pop>
                     <SpeakerCard
                     color={'c-accent'}
-                        photoUrl={'https://static.swapcard.com/public/images/b742f087d4d243e78bb70a6c54f13f67.png'}
-                        fullName={'Sarmad Zok'}
-                        jobTitle={'Chief Executive Officer'}
-                        company={'Kingdom Hotel Investments'}
-                    />
-                </Pop>
-                <Pop>
-                    <SpeakerCard
-                    color={'c-accent'}
                         photoUrl={'https://static.swapcard.com/public/images/144a200935cd4bdfa2c5abf157ce8a37.png'}
                         fullName={'Muin Serhan'}
                         jobTitle={'Chief Executive Officer'}
