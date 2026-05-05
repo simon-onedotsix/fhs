@@ -111,7 +111,7 @@ export default function Page ({ seomatic, entry }) {
                     <div className={CSS.contentScroller}>
                         <div className={CSS.content}>
                             <div className="container center">
-                                <p className='fs-2 fw-600 lh-1 c-primary'>AHIF 2026 - Resources</p>
+                                <p className='fs-2 fw-600 lh-1 c-primary'>FHS Africa 2026 - Resources</p>
                             </div>
                             <div className="container center">
                                 <p>Please enter your email below to access.</p>
@@ -127,7 +127,7 @@ export default function Page ({ seomatic, entry }) {
                                 }
                             </div>
                             <div className="container center">
-                                <p className='fw-500 c-primary'>Didn&apos;t attend AHIF this year? <br/>Click <span className='underline' onClick={() => setShowForm(true)}>here</span> to register for access.</p>
+                                <p className='fw-500 c-primary'>Didn&apos;t attend FHS Africa this year? <br/>Click <span className='underline' onClick={() => setShowForm(true)}>here</span> to register for access.</p>
                             </div>
                         </div>
                     </div>
@@ -142,7 +142,7 @@ export default function Page ({ seomatic, entry }) {
                     <button className={CSS.closeButton} onClick={() => setShowForm(false)}>&times;</button>
                     <div className={CSS.contentScroller}>
                         <div className={CSS.content}>
-                            <p className='mb-sm maxw-30'>Please complete the form below to register and access content and insights from AHIF 2026.</p>
+                            <p className='mb-sm maxw-30'>Please complete the form below to register and access content and insights from FHS Africa 2026.</p>
                             <HubspotForm portalId={'14527187'} formId={'e2a73752-605a-41f7-896e-87cf981a040e'} />
                         </div>
                     </div>

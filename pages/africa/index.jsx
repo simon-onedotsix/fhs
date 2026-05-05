@@ -185,7 +185,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
     // console.log('seomatic:', seomatic)
     // console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
     // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))
-    console.log('speakerData:', speakers)
+    // console.log('speakerData:', speakers)
 
     // console.log('selectedCmsSpeakers:', selectedCmsSpeakers)
     // console.log('partners:', partners)
@@ -234,19 +234,16 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
                 <p className="fs-2 mt-xs"><span className="fw-600">2027</span> South Africa</p>
 
-                {/* <div className='mt-sm'>
+                <div className='mt-sm'>
                     <ButtonGrid>
                         <Pop inline delay={.2}>
-                            <Button href={'/africa/download-prospectus'}>Download Prospectus</Button>
+                            <Button href={'/africa/register-interest-for-2027'}>Register Interest for 2027</Button>
                         </Pop>
                         <Pop inline delay={.2}>
-                            <Button href={'/africa/get-involved-in-2026'}>Get Involved in 2026</Button>
-                        </Pop>
-                        <Pop inline delay={.2}>
-                            <Button href={'/africa/fhs-africa-investor-list-2026'}>Confirmed Investors for 2026</Button>
+                            <Button href={'/africa/post-event-resources'}>Post Event Resources 2026</Button>
                         </Pop>
                     </ButtonGrid>
-                </div> */}
+                </div>
 
             </HeroUnitVideo>
 
