@@ -1111,6 +1111,35 @@ export const FHS_EGYPT = {
     }
 }
 
+export const FHS_LIVING = {
+    "data": {
+        "mainMenu": [
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "About",
+                "navUrl": '/living',
+                "children": []
+            },
+        ],
+        "event": {
+            "id": "122",
+            "title": "FHS Living",
+            "venue": "",
+            "startDate": "",
+            "endDate": "",
+            "seoImage": [
+                {
+                    "url": ""
+                }
+            ],
+            "metaTitle": null,
+            "metaDescription": null,
+            "headerCtas": []
+        }
+    }
+}
+
 
 // BRF sub-events
 
