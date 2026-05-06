@@ -109,7 +109,7 @@ export default function ContentLibraryCategory ({ categories, category, articles
     )
 }
 
-ContentLibraryCategory.theme = 'world-2024'
+ContentLibraryCategory.theme = 'global-2024'
 
 
 

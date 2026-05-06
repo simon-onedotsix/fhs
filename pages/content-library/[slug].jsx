@@ -245,7 +245,7 @@ export default function Article ({ entry }) {
 
 }
 
-Article.theme = 'world-2024'
+Article.theme = 'global-2024'
 
 
 export async function getStaticPaths() {

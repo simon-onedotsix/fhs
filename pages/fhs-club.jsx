@@ -285,7 +285,7 @@ export default function Club ({ events }) {
     )
 }
 
-Club.theme = 'world-2024'
+Club.theme = 'global-2024'
 
 
 

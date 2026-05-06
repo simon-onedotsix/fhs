@@ -117,7 +117,7 @@ export default function ContentLibrary ({ articles, categories }) {
     
 }
 
-ContentLibrary.theme = 'world-2024'
+ContentLibrary.theme = 'global-2024'
 
 
 

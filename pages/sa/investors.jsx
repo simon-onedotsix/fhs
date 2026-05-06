@@ -172,7 +172,7 @@ export default function Page () {
                 <div className="container columns-2 gap-md ai-center pt-md">
                     <Pop>
                         <div className={CSS.floaterImg}>
-                            <Image src={"https://cms.thebench.com/assets/img/site/FHS-SA/53727899164_7a536940b1_o.jpg"} layout='fill' />
+                            <Image src={"https://cms.thebench.com/assets/img/site/FHS-SA/sa-investors.jpg"} layout='fill' />
                         </div>
                     </Pop>
 
