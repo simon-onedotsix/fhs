@@ -1121,6 +1121,27 @@ export const FHS_LIVING = {
                 "navUrl": '/living',
                 "children": []
             },
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "Programme",
+                "navUrl": '/living',
+                "children": []
+            },
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "Event Features",
+                "navUrl": '/living',
+                "children": []
+            },
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "Partnerships",
+                "navUrl": '/living',
+                "children": []
+            },
         ],
         "event": {
             "id": "122",
@@ -1135,7 +1156,13 @@ export const FHS_LIVING = {
             ],
             "metaTitle": null,
             "metaDescription": null,
-            "headerCtas": []
+            "headerCtas": [
+                {
+                    "label": "Register Interest",
+                    "hyperlink": "/living/register-interest",
+                    "openInNewWindow": false
+                },
+            ]
         }
     }
 }

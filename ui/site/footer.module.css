@@ -1,0 +1,52 @@
+.layout {
+    padding: var(--space-sm);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+
+@media (max-width: 899px){
+    .layout {
+        padding-bottom: var(--space-xl);
+        gap: var(--space-md);
+    }
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: .5rem;
+    }
+}
+
+@media (min-width:600px){
+    .layout {
+        grid-template-columns: auto 1fr auto;
+        gap: var(--space-sm);
+    }
+    .menu {
+        display: flex;
+        justify-content: center;
+        gap: var(--space-sm);
+    }
+}
+
+
+
+
+
+
+.credits {
+    display: flex;
+    gap: var(--space-md);
+}
+.credits section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+}
+.credits section label {
+    font-size: .7rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}

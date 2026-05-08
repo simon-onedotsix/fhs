@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client"
-import craftApolloClient from "../../pages/api/apollo"
+import craftApolloClient from "../api/apollo"
 
 import { useState, useRef } from "react"
 
@@ -45,7 +45,7 @@ export default function Home () {
 
 
             
-            <div className="block bg-primary py-xs">
+            <div className="block bg-secondary py-xs">
                 <div className="container">
                     <p className="fs-2">Register Interest</p>
                 </div>
