@@ -13,7 +13,7 @@ import Head from "next/head"
 import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
 import { FHS_LIVING as header } from '../../fixtures/nav'
-import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
+import { Footer } from "../../ui/site/footer"
 
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 
