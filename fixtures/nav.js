@@ -1111,6 +1111,7 @@ export const FHS_EGYPT = {
     }
 }
 
+// temp menu
 export const FHS_LIVING = {
     "data": {
         "mainMenu": [],
@@ -1190,6 +1191,9 @@ export const FHS_LIVING = {
 
 
 // BRF sub-events
+
+
+
 
 export const BRF_FHS_WORLD = {
     "data": {
