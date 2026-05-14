@@ -44,15 +44,15 @@ export const WEBINAR_SPEAKER_DATA = [
         url: ``,
         photoUrl: '/assets/img/egypt/webinar/hala.png',
         fullName: 'HALA MATAR CHOUFANY',
-        jobTitle: 'President, HVS MEA & South Asia | Managing Partner',
-        company: 'HVS Dubai',
+        jobTitle: 'President',
+        company: 'HVS Middle East, Africa and South Asia',
     },
     {
         url: ``,
         photoUrl: '/assets/img/egypt/webinar/alain.jpg',
         fullName: 'ALAIN DEBARE',
-        jobTitle: 'Partner - Head of Investments and Asset Management,',
-        company: 'HVS MEA',
+        jobTitle: 'Partner – Head of Investments and Asset Management',
+        company: 'HVS Middle East and Africa',
     },
     {
         url: ``,
@@ -139,10 +139,6 @@ export default function Home () {
                 <div className="container center maxw-50 formatted">
                     <p>Egypt remains Africa&apos;s leading hospitality investment market, with a record pipeline of 185 hotels and nearly 46,000 rooms, more than four times that of Morocco. Greater Cairo alone represents 18% of the continent&apos;s total hotel pipeline, underscoring the scale of opportunity.</p>
                     <p>On 21 May, this FHS Egypt Webinar will convene leading voices from across the Industry to discuss hospitality transactions and development pipelines, investment appetite and financing realities, government priorities driving tourism growth, and where the market is heading next.</p>
-                </div>
-
-                <div className="container center">
-                    <Pop inline><Button decal={`fs-5`} href={`https://events.teams.microsoft.com/event/4c624ff1-c2c0-4bda-8ac7-bd2aeafce113@8cdb290b-4b7e-4a51-8886-7b658cef30e5`} target={`_blank`} rel={`noreferrer`} label={`Register for Webinar`}></Button></Pop>
                 </div>
             </section>
 
