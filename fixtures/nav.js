@@ -1043,6 +1043,13 @@ export const FHS_EGYPT = {
                         "title": "Speakers",
                         "navUrl": "/egypt/speakers",
                         "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "289",
+                        "title": "Webinar",
+                        "navUrl": "/egypt/webinar",
+                        "target": false
                     }
                 ]
             },
