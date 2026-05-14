@@ -594,8 +594,8 @@ export const FHS_SA = {
                         "__typename": "navigation_Entry",
                         "id": "215",
                         "title": "Floor Plan",
-                        "navUrl": "https://floorplan.live/interactive/shows/3936/views/3/plan",
-                        "target": false
+                        "navUrl": "https://floorplan.live/interactive/shows/4222/views/3/plan",
+                        "target": true
                     },
                     {
                         "__typename": "navigation_Entry",
