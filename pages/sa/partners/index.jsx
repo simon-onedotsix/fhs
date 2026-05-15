@@ -29,21 +29,21 @@ import { ThemeGraphic } from '../../../fuselage/theme/2026/sa/theme/theme-graphi
 
 
 const AMBASSADOR_DATA = [
+	{
+        url: `/sa/speakers/profile/mohammed-al-nashwan`,
+        photoUrl: 'https://static.swapcard.com/public/images/301ecbac6ae64d1aa72e7f8626b4694a.jpeg',
+        fullName: 'Mohammed Al Nashwan',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Hartt Hospitality Consulting Co.',
+	},
     {
-        url: `/sa/speakers/profile/rabih-feghali`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Rabih-Feghali-2026.jpg',
-        fullName: 'Rabih Feghali',
-        jobTitle: 'Board Member',
-        company: 'HAMA EMEA',
+        url: `/sa/speakers/profile/turab-saleem`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Saleem_Turab-Final-Photo.jpg',
+        fullName: 'Turab Saleem',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Perfetti Hospitality',
     },
-    {
-        url: `/sa/speakers/profile/haifaa-alzahrani`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/IMG_3406.jpeg',
-        fullName: 'Haifaa Al Zahrani',
-        jobTitle: 'Head of Hospitality Asset Management and Partnerships',
-        company: 'Thakher Development',
-    },
-    {
+	{
         url: `/sa/speakers/profile/fahad-al-fawaz-2`,
         photoUrl: 'https://cms.thebench.com/assets/img/avatars/Fahad-Al-Fawaz-1.jpg',
         fullName: 'Fahad Al Fawaz',
@@ -51,19 +51,19 @@ const AMBASSADOR_DATA = [
         company: 'Tabuk Investment Co. & Jenan Real Estate Co. & Gulf Liting Financing Co',
     },
     {
-        url: `/sa/speakers/profile/turab-saleem`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Saleem_Turab-Final-Photo.jpg',
-        fullName: 'Turab Saleem',
-        jobTitle: 'Hospitality Expert',
-        company: '',
+        url: `/sa/speakers/profile/haifaa-alzahrani`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/IMG_3406.jpeg',
+        fullName: 'Haifaa Al Zahrani',
+        jobTitle: 'Passenger Experience and Accreditation Director',
+        company: 'Jeddah Airports',
     },
-    {
-        url: `/sa/speakers/profile/mohammed-al-nashwan`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/al-nashwan.png',
-        fullName: 'Mohammed Al Nashwan',
-        jobTitle: 'Hotel Consultant',
-        company: 'Hartt Consulting',
-    }    
+	{
+        url: `/sa/speakers/profile/rabih-feghali`,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Rabih-Feghali-2026.jpg',
+        fullName: 'Rabih Feghali',
+        jobTitle: 'Board Member',
+        company: 'HAMA EMEA',
+    },
 ]
 
 

@@ -140,7 +140,7 @@ const SPEAKER_DATA = [
         photoUrl: 'https://static.swapcard.com/public/images/e0dd7c51a08843e895efbd901a951270.jpeg',
         fullName: 'Meshari Al Nahari',
         jobTitle: 'Chief Executive Officer',
-        company: 'Aseer Investment',
+        company: 'ASFAR & Aseer Investment Company',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDU4NzkyMDQ=`,
@@ -210,9 +210,9 @@ const SPEAKER_DATA_AR = [
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ1NTIyMzA=`,
         photoUrl: 'https://static.swapcard.com/public/images/e0dd7c51a08843e895efbd901a951270.jpeg',
-        fullName: 'مشاري النهاري',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'شركة عسير للاستثمار',
+        fullName: 'Meshari Al Nahari',
+        jobTitle: 'Chief Executive Officer',
+        company: 'ASFAR & Aseer Investment Company',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDU4NzkyMDQ=`,
