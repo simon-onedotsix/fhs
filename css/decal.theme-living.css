@@ -1,8 +1,10 @@
 /* FHS egypt theme */
 
+
 [data-theme='living'] body {
-	background-color: var(--bg);
+	background-color: var(--primary);
 	color: white;
+    min-height: 100vh;
 }
 
 [data-theme='living'] strong {

@@ -18,7 +18,7 @@ export const EventsBar = ({ site }) => {
     return (
         <div className={`${CSS.layout} ${active && CSS.active}`}>
             <section className={CSS.header}>
-                <p>Brought to you by <a href="https://www.thebench.com" className='uLink fw-600' target='_blank' rel='noreferrer'>The Bench</a></p>
+                <p>Brought to you by&thinsp;<a href="https://www.thebench.com" className='uLink fw-600' target='_blank' rel='noreferrer'>The Bench</a></p>
 
                 <button className={CSS.toggle} onClick={() => setActive(!active)}><Chevron direction={ active ? 'up' : 'down'} /></button>
             </section>

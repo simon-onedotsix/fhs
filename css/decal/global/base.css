@@ -1,7 +1,6 @@
 html {
     background-color: var(--global-bg, white);
     color: var(--default-text-color, rgb(40, 40, 40));
-    /* scroll-behavior: smooth; */
 }
 
 body {

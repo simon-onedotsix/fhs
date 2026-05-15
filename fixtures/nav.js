@@ -1135,7 +1135,13 @@ export const FHS_LIVING = {
             ],
             "metaTitle": null,
             "metaDescription": null,
-            "headerCtas": []
+            "headerCtas": [
+                {
+                    "label": "Register Interest",
+                    "hyperlink": "/living/register-interest",
+                    "openInNewWindow": false
+                },
+            ]
         }
     }
 }

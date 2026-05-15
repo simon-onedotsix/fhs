@@ -6,7 +6,7 @@ import CSS from './footer.module.css'
 
 export const Footer = () => {
     return (
-        <footer className={`${CSS.layout} bg-secondary`}>
+        <footer className={`${CSS.layout} bg-primary`}>
 
             <div className={CSS.brand}>
                 <Link href={`/living`}>
@@ -22,8 +22,8 @@ export const Footer = () => {
             </div>
 
             <div className={CSS.menu}>
-                <Link href={`/`}><a className="uLink fw-500">Contact Us</a></Link>
-                <Link href={`/`}><a className="uLink fw-500">Subscribe to Newsletter</a></Link>
+                <Link href={`/living/contact-us`}><a className="uLink fw-500">Contact Us</a></Link>
+                <Link href={`/living/register-interest`}><a className="uLink fw-500">Register Interest</a></Link>
             </div>
 
             <div className={CSS.credits}>
