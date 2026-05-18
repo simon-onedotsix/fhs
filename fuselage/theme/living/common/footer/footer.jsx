@@ -43,6 +43,13 @@ export const Footer = () => {
             "hyperlink": "https://www.instagram.com/fhs.living/",
             "icon": "instagram",
             "label": null
+        },
+        {
+            "__typename": "socialConnections_BlockType",
+            "id": "334we",
+            "hyperlink": " https://www.youtube.com/@futurehospitalitysummit",
+            "icon": "youtube",
+            "label": null
         }
     ]
 

@@ -29,7 +29,7 @@ export default function Home () {
     return (
         <>
             <Head>
-                <link rel="icon" type="image/png" href="/assets/favicons/egypt/favicon-16x16.png" sizes="16x16" />
+                <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
             </Head>
         
             
@@ -62,7 +62,7 @@ export default function Home () {
                         </p>
                     </div>
 
-                    <div>
+                    {/* <div>
                         <p className="fw-600 c-accent">OPERATIONAL ENQUIRIES</p>
                         <Avatar src={`https://cms.thebench.com/assets/img/avatars/tess-pearson.jpg`} />
                         <p>
@@ -70,7 +70,7 @@ export default function Home () {
                             Event Director<br />
                             E: <a href="mailto:tess.pearson@thebench.com">tess.pearson@thebench.com</a>
                         </p>
-                    </div>
+                    </div> */}
 
                     <div>
                         <p className="fw-600 c-accent">PROGRAMME ENQUIRIES</p>

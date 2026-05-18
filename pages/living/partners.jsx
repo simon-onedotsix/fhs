@@ -33,7 +33,7 @@ export default function Page ({ videoTestimonials }) {
     return (
         <>
             <Head>
-                <link rel="icon" type="image/png" href="/assets/favicons/egypt/favicon-16x16.png" sizes="16x16" />
+                <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
             </Head>
         
             
@@ -61,12 +61,17 @@ export default function Page ({ videoTestimonials }) {
                     <div className="container formatted center">
                         <p className="fs-6 maxw-55 balance">Our partners help shape the conversation and connect the market - supporting an environment designed for meaningful introductions and high, quality deal flow.</p>            
                     </div>
+
+                    <p className="mt-sm"><Pop inline><Button inverse href={`/living/register-interest`} label={`Download Brochure`}/></Pop></p>
                 </section>
             </PageHero>
 
 
 
             <section className="block bg-primary">
+                <div className="container center">
+                    <p className="fs-4 fw-600 c-accent">FHS Living 2027 partners to be announced soon</p>
+                </div>
                 <div className="container">
                     <p className="fs-2 fw-500 caps center">What partnership delivers</p>
                 </div>
@@ -124,7 +129,7 @@ export default function Page ({ videoTestimonials }) {
 
             <section className="block bg-white">
                 <div className="container">
-                    <p className="fs-2 fw-500 caps center c-primary">2026 FHS Partners</p>
+                    <p className="fs-2 fw-500 caps center c-primary">PARTNERS - 2026 FHS EVENTS</p>
                 </div>
 
                 <div className="container" style={{ display: `flex`, flexWrap: `wrap`, gap: `4rem`, justifyContent: `center`}}>

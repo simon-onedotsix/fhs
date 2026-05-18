@@ -32,7 +32,7 @@ export default function Page ({ data }) {
     return (
         <>
             <Head>
-                <link rel="icon" type="image/png" href="/assets/favicons/egypt/favicon-16x16.png" sizes="16x16" />
+                <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
             </Head>
         
             
@@ -47,7 +47,7 @@ export default function Page ({ data }) {
 
 
             {/* INTRO */}
-            <PageHero hero={{url: `/assets/img/living/about/page-hero.jpg`, width: 595, height: 335}}>
+            <PageHero hero={{url: `/assets/img/living/about/about-hero.jpg`, width: 595, height: 335}}>
                 <section className="">
                     <div className="container">
                         <p className="fs-1 fw-400 lh-1 maxw-50">Built by the architects of global hospitality investment platforms. Built for what comes next.</p>
@@ -102,16 +102,19 @@ export default function Page ({ data }) {
 
                 <div className="container columns-3 gap-md">
                     <div className="formatted balance">
+                        <Pop inline><p className="fs-xl fw-600 lh-1 c-accent">01</p></Pop>
                         <h5>The scale of European living investment</h5>
                         <p>Living has become Europe&apos;s largest real estate investment class, drawing €46.9 billion in 2025 alone. Capital is moving toward operationally-managed assets that generate stable, contractual income streams - branded residences, student accommodation, senior living and serviced apartments are now core institutional categories.</p>
                     </div>
                     
                     <div className="formatted balance">
+                        <Pop inline><p className="fs-xl fw-600 lh-1 c-accent">02</p></Pop>
                         <h5>The demand for cross-category dealmaking</h5>
                         <p>The growth of the living sector across Europe has created a need for a forum that brings its constituent asset classes together in a single, investment-led environment. FHS Living aggregates the full living spectrum - giving capital allocators, developers and operators a single curated point of access to cross-category opportunity.</p>
                     </div>
                     
                     <div className="formatted balance">
+                        <Pop inline><p className="fs-xl fw-600 lh-1 c-accent">03</p></Pop>
                         <h5>The platform the industry has validated</h5>
                         <p>Conversations with senior industry leaders confirmed the same message: the European living investment community needs a dedicated forum, built for dealmaking, bringing together the right people at the right moment.</p>
                     </div>
@@ -120,7 +123,7 @@ export default function Page ({ data }) {
 
 
             {/* GEOPOLITICS */}
-            <section className="block bg-primary">
+            {/* <section className="block bg-primary">
                 <div className="container">
                     <p className="fs-2 fw-600 caps center">The geopolitical moment</p>
                 </div>
@@ -136,8 +139,10 @@ export default function Page ({ data }) {
                         <p>FHS Living sits at the intersection of this capital shift. Paris in February 2027 is the year-opening capital deployment moment - post-Davos, ahead of the major spring conferences, at the point when institutional capital is setting its strategy for the year ahead.</p>
                     </div>
                 </div>
-            </section>
+            </section> */}
             
+
+            {/* THREE DECADES */}
             <section className="block bg-primary">
                 <div className="container">
                     <p className="fs-2 fw-600 caps center">Three decades of connecting capital and hospitality</p>

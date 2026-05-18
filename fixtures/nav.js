@@ -1150,6 +1150,13 @@ export const FHS_LIVING = {
                 "navUrl": '/living/partners',
                 "children": []
             },
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "Contact Us",
+                "navUrl": '/living/contact-us',
+                "children": []
+            },
         ],
         "event": {
             "id": "122",

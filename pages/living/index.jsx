@@ -20,7 +20,7 @@ import { PageHero } from "../../ui/modules/page-hero"
 
 import { Button, ButtonGrid } from "../../ui/buttons/button"
 import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
-import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
+import { SpeakerCard } from "../../ui/components/speaker-card"
 import { FhsIconKeyline } from "../../fuselage/theme/2024/global/components/logos/fhs-brand"
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 
@@ -92,16 +92,17 @@ const QUOTES_DATA = [
 ]
 
 
-export default function Home ({ data }) {
+export default function Home ({ data, advisors }) {
 
     // console.log(content)
+    // console.log("advisors:", advisors.profiles)
 
     const isDesktop = useCustomMediaQuery('(min-width: 600px)');
 
     return (
         <>
             <Head>
-                <link rel="icon" type="image/png" href="/assets/favicons/egypt/favicon-16x16.png" sizes="16x16" />
+                <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
             </Head>
         
             
@@ -167,7 +168,7 @@ export default function Home ({ data }) {
                 <div className="container columns-3 gap-md">
                     <div className="formatted">
                         <Pop>
-                            <img src="/assets/img/living/homepage/pillar-01.jpg" alt="" width="100%" style={{ borderRadius: `1rem`, marginBottom: 20 }} />
+                            <img src="/assets/img/living/homepage/convergence.jpg" alt="" width="100%" style={{ borderRadius: `1rem`, marginBottom: 20 }} />
                         </Pop>
                         <h5>Convergence</h5>
                         <p>One platform for the full living asset class. Branded residences, PBSA, senior living, serviced living, co-living, shared ownership, club concepts, mixed-use and hotels - brought together because that is how capital is increasingly being deployed across Europe.</p>
@@ -175,7 +176,7 @@ export default function Home ({ data }) {
          
                     <div className="formatted">
                         <Pop>
-                            <img src="/assets/img/living/homepage/pillar-02.jpg" alt="" width="100%" style={{ borderRadius: `1rem`, marginBottom: 20 }} />
+                            <img src="/assets/img/living/homepage/curation.jpg" alt="" width="100%" style={{ borderRadius: `1rem`, marginBottom: 20 }} />
                         </Pop>
                         <h5>Curation</h5>
                         <p>Pre-scheduled 1:1 introductions between capital allocators, developers and operators, matched on investment criteria and development priorities. Complemented by an Investor Lounge, a live Deal Room, site tours of active Paris projects, and den-style social sessions designed to move conversations into transactions.</p>
@@ -183,7 +184,7 @@ export default function Home ({ data }) {
              
                     <div className="formatted">
                         <Pop>
-                            <img src="/assets/img/living/homepage/pillar-03.jpg" alt="" width="100%" style={{ borderRadius: `1rem`, marginBottom: 20 }} />
+                            <img src="/assets/img/living/homepage/capital.jpg" alt="" width="100%" style={{ borderRadius: `1rem`, marginBottom: 20 }} />
                         </Pop>
                         <h5>Capital</h5>
                         <p>An agenda built around investment decisions. Every session from Underwriting Living Assets to Europe Meets Middle East is structured to support capital deployment, informed by the C-Level decision-makers who will be in the room.</p>
@@ -200,14 +201,13 @@ export default function Home ({ data }) {
 
                 <div className="container columns-5 gap-sm center">
                     {
-                        SPEAKER_DATA.map( (profile, index) => (
+                        advisors.profiles.map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
-                                    url={profile.url}
-                                    photoUrl={profile.photoUrl}
-                                    fullName={profile.fullName}
-                                    jobTitle={profile.jobTitle}
-                                    company={profile.company}
+                                    url={``}
+                                    photoUrl={profile.avatar[0].url}
+                                    fullName={profile.title}
+                                    positions={profile.positions}
                                     color={'white'}
                                 />
                             </Pop>
@@ -336,7 +336,6 @@ export default function Home ({ data }) {
 
             
             {/* FHS EVENTS */}
-            
             <section className="block bg-secondary">
                 <div className="container center">
                     <p className="fs-1 fw-500 caps">FHS Around the World</p>
@@ -496,7 +495,7 @@ export async function getStaticProps() {
 
     const { data } = await craftApolloClient().query({
         query: gql`
-            query LandingPage {
+            query Data {
                 entry(site: "${process.env.SITE_HANDLE}", id: "77020") {
                     ... on ${process.env.SITE_HANDLE}Homepage_${process.env.SITE_HANDLE}Homepage_Entry {
                         id
@@ -528,7 +527,36 @@ export async function getStaticProps() {
                             }
                         }
                     }
-                }                
+                }
+                advisors: entry(site: "${process.env.SITE_HANDLE_LIVING}", section: "profileGroups", id: "310153") {
+                    ... on profileGroups_default_Entry {
+						id
+						title
+						profiles {
+							... on profiles_profile_Entry {
+								id
+								slug
+								title
+								avatar {
+									... on avatars_Asset {
+										id
+										url
+										width
+										height
+									}
+								}
+								positions {
+									... on positions_BlockType {
+										id
+										jobTitle
+										organisation
+									}
+								}
+								profile
+							}
+						}
+					}
+                } 
             }
           
         `
@@ -537,6 +565,7 @@ export async function getStaticProps() {
         return {
         props: {
             data: data.entry,
+            advisors: data.advisors
         },
     }
 }
