@@ -114,7 +114,7 @@ export default function Page ({ videoTestimonials }) {
                     <p className="fs-2 fw-500 caps center"> Hear Directly From FHS Partners</p>
                 </div>
                 <div className="container columns-3 gap-md">
-                    { videoTestimonials.map( entry => <Pop><VideoTestimonialCard key={entry.id} entry={entry} /></Pop> ) }
+                    { videoTestimonials.map( (entry, index) => <Pop key={index}><VideoTestimonialCard entry={entry} /></Pop> ) }
                 </div>
             </section>
 

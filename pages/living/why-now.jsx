@@ -60,7 +60,7 @@ export default function Page () {
                 <div className="container columns-3 gap-md">
                     <div>
                         <p className="fs-2 fw-300 lh-1">€<AnimatedCounter from={0} to={46.9} /> billion</p>
-                        <p className="fs-5 lh-1 mt-xxs balance">invested in European living in 2025 -  the continent's largest real estate investment class.</p>
+                        <p className="fs-5 lh-1 mt-xxs balance">invested in European living in 2025 -  the continent&apos;s largest real estate investment class.</p>
                     </div>
                     
                     <div>

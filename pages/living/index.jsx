@@ -161,7 +161,7 @@ export default function Home ({ data }) {
             <section className="block bg-secondary">
                 <div className="container center formatted">
                     <p className="fs-2 fw-500 caps">What defines FHS Living</p>
-                    <p className="fs-6 balance">FHS Living is a high-impact initiative designed to funnel capital, especially from the Middle East, towards a carefully selected mix of living assets - addressing the growing "lanyard fatigue" of the European hospitality conferencing market.</p>
+                    <p className="fs-6 balance">FHS Living is a high-impact initiative designed to funnel capital, especially from the Middle East, towards a carefully selected mix of living assets - addressing the growing &quot;lanyard fatigue&quot; of the European hospitality conferencing market.</p>
                 </div>
 
                 <div className="container columns-3 gap-md">

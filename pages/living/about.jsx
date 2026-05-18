@@ -103,7 +103,7 @@ export default function Page ({ data }) {
                 <div className="container columns-3 gap-md">
                     <div className="formatted balance">
                         <h5>The scale of European living investment</h5>
-                        <p>Living has become Europe's largest real estate investment class, drawing €46.9 billion in 2025 alone. Capital is moving toward operationally-managed assets that generate stable, contractual income streams - branded residences, student accommodation, senior living and serviced apartments are now core institutional categories.</p>
+                        <p>Living has become Europe&apos;s largest real estate investment class, drawing €46.9 billion in 2025 alone. Capital is moving toward operationally-managed assets that generate stable, contractual income streams - branded residences, student accommodation, senior living and serviced apartments are now core institutional categories.</p>
                     </div>
                     
                     <div className="formatted balance">
@@ -132,7 +132,7 @@ export default function Page ({ data }) {
         
                     <div className="formatted" style={{ alignSelf: `center`}}>
                         <p>Geopolitical shifts across the Middle East have accelerated the movement of global capital toward European real estate. Middle Eastern and Asian family offices - historically focused on hotel assets are increasingly directing capital toward European cities including Paris, Amsterdam and Madrid, where long-duration stability and premium returns converge.</p>
-                        <p>Sharia-compliant living assets - student accommodation, senior living and branded residences offer a particularly attractive entry point: stable income, long-duration yield, and exposure to the operational performance of Europe's most structurally undersupplied real estate categories.</p>
+                        <p>Sharia-compliant living assets - student accommodation, senior living and branded residences offer a particularly attractive entry point: stable income, long-duration yield, and exposure to the operational performance of Europe&apos;s most structurally undersupplied real estate categories.</p>
                         <p>FHS Living sits at the intersection of this capital shift. Paris in February 2027 is the year-opening capital deployment moment - post-Davos, ahead of the major spring conferences, at the point when institutional capital is setting its strategy for the year ahead.</p>
                     </div>
                 </div>
@@ -145,7 +145,7 @@ export default function Page ({ data }) {
 
                 <div className="container columns-2 gap-md">
                     <div className="formatted" style={{ alignSelf: `center`}}>
-                        <p>The Bench has spent three decades building the infrastructure of global hospitality investment. Jonathan Worsley co-founded the International Hotel Investment Forum (IHIF) in the late 1990s - the event that defined the European hotel investment calendar for a generation. Tess Pearson served as IHIF's Event Director for 28 years and now leads FHS Living in the same role.</p>
+                        <p>The Bench has spent three decades building the infrastructure of global hospitality investment. Jonathan Worsley co-founded the International Hotel Investment Forum (IHIF) in the late 1990s - the event that defined the European hotel investment calendar for a generation. Tess Pearson served as IHIF&apos;s Event Director for 28 years and now leads FHS Living in the same role.</p>
                         <p>The FHS franchise - Future Hospitality Summit World, Saudi Arabia, Africa, Egypt and Branded Residences Forum gives FHS Living a global network spanning the Middle East, Africa, Asia and Europe. That network, built over 20 years, is the foundation FHS Living is built on.</p>
                     </div>
         
