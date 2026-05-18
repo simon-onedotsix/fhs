@@ -47,7 +47,8 @@ export default function Home () {
             
             <div className="block bg-secondary py-xs">
                 <div className="container">
-                    <p className="fs-2">Register Interest</p>
+                    <p className="fs-2">Register your interest in FHS Living</p>
+                    <p className="maxw-60 mt-sm">FHS Living Paris 2027 is a founding-edition event. Places are curated and limited. Register your interest now to be among the first to receive programme updates, early bird delegate pricing and partnership information.</p>
                 </div>
 
                 <div className="container">

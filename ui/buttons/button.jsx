@@ -2,10 +2,14 @@ import Link from 'next/link'
 
 import CSS from './button.module.css'
 
-export const Button = ({ href = '/', label, target, outline, fake }) => {
+export const Button = ({ href = '/', label, target, inverse, outline, fake }) => {
 
     if (fake) return (
-        <span className={`${CSS.ui} ${outline ? CSS.outline : ''}`}>
+        <span className={`
+            ${CSS.ui} 
+            ${inverse ? CSS.inverse : ''}
+            ${outline ? CSS.outline : ''}
+        `}>
             {label}
         </span>
     )
@@ -16,13 +20,21 @@ export const Button = ({ href = '/', label, target, outline, fake }) => {
             target={target}
             rel={`noreferrer`}
         >
-            <a className={`${CSS.ui} ${outline ? CSS.outline : ''}`}>{label}</a>
+            <a className={`
+                ${CSS.ui} 
+                ${inverse ? CSS.inverse : ''}
+                ${outline ? CSS.outline : ''}
+            `}>{label}</a>
         </Link>
     )
 
     return (
         <Link href={href} >
-            <a className={`${CSS.ui} ${outline ? CSS.outline : ''}`}>{label}</a>
+            <a className={`
+                ${CSS.ui} 
+                ${inverse ? CSS.inverse : ''}
+                ${outline ? CSS.outline : ''}
+            `}>{label}</a>
         </Link>
     )
 }

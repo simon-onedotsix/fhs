@@ -43,7 +43,7 @@ function Partners({ partnerData }) {
 	})
 
 	// console.log('swapcard partner data:', partnerData)
-	console.log('categories:', categoriesArray)
+	// console.log('categories:', categoriesArray)
 	// console.log('orderedCategories:', orderedCategories)
 	
 

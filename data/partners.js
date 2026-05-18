@@ -1490,8 +1490,1134 @@ const saudiPartners2026 = [
     }
 ]
 
-const africaPartners = []
+const africaPartners2026 = [
+    {
+        "id": "RXhoaWJpdG9yXzIzNTEwMTY=",
+        "name": "BWH",
+        "logoUrl": "https://static.swapcard.com/public/images/53578fe1764e43a8abc0742bca5afc31.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yMjM5NDE1NA==",
+                "value": "strategic-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Strategic Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzIzNTEwMTc=",
+        "name": "Club Med",
+        "logoUrl": "https://static.swapcard.com/public/images/94523ce7fd344bfa9978a0551fbaa56a.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yMjM5NDE1NA==",
+                "value": "strategic-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Strategic Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzIzNTEwMTg=",
+        "name": "IHG",
+        "logoUrl": "https://static.swapcard.com/public/images/8dcad373d71b452a845a943dbba824e1.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yMjM5NDE1NA==",
+                "value": "strategic-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Strategic Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzIzNTEwMTk=",
+        "name": "Radisson Hotel Group",
+        "logoUrl": "https://static.swapcard.com/public/images/b4c15c727dd4455282d40731956c03c7.jpeg",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yMjM5NDE1NA==",
+                "value": "strategic-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Strategic Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzIzNTEwMjM=",
+        "name": "TUI",
+        "logoUrl": "https://static.swapcard.com/public/images/1d00d112b28c4452ab24080fdb219a08.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDgyNw==",
+                "value": "headline-sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Headline Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzIzNTEwMjc=",
+        "name": "The First Group Hospitality",
+        "logoUrl": "https://static.swapcard.com/public/images/44d9b23ceccc4b7a8615e97fca341a56.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDgyNw==",
+                "value": "headline-sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Headline Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzIzODA3Mjc=",
+        "name": "Accor",
+        "logoUrl": "https://static.swapcard.com/public/images/da3bd47978f243f19aef6c4cb8ab078c.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yMjM5NDE1NA==",
+                "value": "strategic-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Strategic Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjA5MjQ=",
+        "name": "Clique Ltd",
+        "logoUrl": "https://static.swapcard.com/public/images/62fdc685f0ac4d118939995f1aefb1fc.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDg0OA==",
+                "value": "sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjY5NzQ=",
+        "name": "Westmont Hospitality Group",
+        "logoUrl": "https://static.swapcard.com/public/images/31ec17002f804e2ea27ac2bb98da0edb.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xNTAzNDczOQ==",
+                "value": "Host Sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Host Partner"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjY5Nzc=",
+        "name": "ACT",
+        "logoUrl": "https://static.swapcard.com/public/images/c185963a492e4d88ac0fe3c675b17d71.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDgyNw==",
+                "value": "headline-sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Headline Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMDk=",
+        "name": "CityBlue Hotels",
+        "logoUrl": "https://static.swapcard.com/public/images/80ebdec2e1e84f2da995d0568560a8de.jpeg",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDgyNw==",
+                "value": "headline-sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Headline Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMTA=",
+        "name": "COMPAGNIE HOTELIERE ET IMMOBILIERE DU CONGO (CHIC)",
+        "logoUrl": "https://static.swapcard.com/public/images/8cca510d73c84298ad51919cb4e1c940.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDgyNw==",
+                "value": "headline-sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Headline Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMTQ=",
+        "name": "Hansgrohe",
+        "logoUrl": "https://static.swapcard.com/public/images/7a404902adaa446c8b44f8b677958207.jpeg",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDgyNw==",
+                "value": "headline-sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Headline Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMTU=",
+        "name": "KOFISI",
+        "logoUrl": "https://static.swapcard.com/public/images/97013a2e8bf34edaae455872e6777acc.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDgyNw==",
+                "value": "headline-sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Headline Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMTY=",
+        "name": "QUO",
+        "logoUrl": "https://static.swapcard.com/public/images/6cb17ebbbf0147688e5a2d01894aecff.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDgyNw==",
+                "value": "headline-sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Headline Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMTk=",
+        "name": "Rotana",
+        "logoUrl": "https://static.swapcard.com/public/images/5b03689fc7454301afa00324844a1375.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDgyNw==",
+                "value": "headline-sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Headline Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMjE=",
+        "name": "Aleph Hospitality",
+        "logoUrl": "https://static.swapcard.com/public/images/6750646b33cc41f99cc6bf5c147f950b.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDg0OA==",
+                "value": "sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMjI=",
+        "name": "Gary Greene Design",
+        "logoUrl": "https://static.swapcard.com/public/images/6b1644110dca41cb98aee9cbac1b5de0.jpeg",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDg0OA==",
+                "value": "sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMjM=",
+        "name": "Knight Frank",
+        "logoUrl": "https://static.swapcard.com/public/images/67a90ff6242246c39c14ffa31e137a96.webp",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDg0OA==",
+                "value": "sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMjQ=",
+        "name": "STR",
+        "logoUrl": "https://static.swapcard.com/public/images/e8257ae6975a4ea891e3b0c8cbe95236.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDg0OA==",
+                "value": "sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMjY=",
+        "name": "Education Partner",
+        "logoUrl": "https://static.swapcard.com/public/images/6ef5b5d205f54bf7839a848bcb5cfc37.jpeg",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yOTk2MzQ4OQ==",
+                "value": "education-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Education Partner"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMzI=",
+        "name": "AIRE",
+        "logoUrl": "https://static.swapcard.com/public/images/877304e2d69a416f9fce115ec0a7c85d.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDg0OA==",
+                "value": "sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMzM=",
+        "name": "Develop Hotels Inc",
+        "logoUrl": "https://static.swapcard.com/public/images/7db52b778773412d8018e5f66fc54189.webp",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MTMyNw==",
+                "value": "event-ambassador",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Event Ambassadors"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMzQ=",
+        "name": "Hotel Partners Africa",
+        "logoUrl": "https://static.swapcard.com/public/images/022b1c424203481f9299260392391177.webp",
+        "fields": []
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMzU=",
+        "name": "PKF hospitality group",
+        "logoUrl": "https://static.swapcard.com/public/images/fca27dbda32b4bc2b47896fcef92ff70.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MTMyNw==",
+                "value": "event-ambassador",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Event Ambassadors"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMzY=",
+        "name": "Voltere by Egis",
+        "logoUrl": "https://static.swapcard.com/public/images/ef438807087448828b253cdb7a59fc4b.webp",
+        "fields": []
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMzc=",
+        "name": "W Hospitality Group",
+        "logoUrl": "https://static.swapcard.com/public/images/cbd214340a934941979a47032e5d35fc.webp",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MTMyNw==",
+                "value": "event-ambassador",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Event Ambassadors"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwMzg=",
+        "name": "Kenya Airways",
+        "logoUrl": "https://static.swapcard.com/public/images/5dc9f4f1b86a4752bcda3dd076f6813c.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yMzkxMjA4NA==",
+                "value": "official-carriers",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Official Carrier"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwNDQ=",
+        "name": "APO Group",
+        "logoUrl": "https://static.swapcard.com/public/images/a392171ee6224b4ba686a1eb79576500.jpeg",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MTUxNQ==",
+                "value": "pan-africa-publication-relations-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Pan Africa Publication Relations Partner"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwNDU=",
+        "name": "Kleber Group",
+        "logoUrl": "https://static.swapcard.com/public/images/804f21a62f924d5fb6c2f3cfb85ed82f.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MTUxNQ==",
+                "value": "pan-africa-publication-relations-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Pan Africa Publication Relations Partner"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwNjg=",
+        "name": "Trianum Hospitality",
+        "logoUrl": "https://static.swapcard.com/public/images/66d776661a1c4931866e2cc22c8ddcc8.jpeg",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yOTk2MzUxMA==",
+                "value": "networking-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Networking Partner"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwNzU=",
+        "name": "Uganda Tourism Board",
+        "logoUrl": "https://static.swapcard.com/public/images/379565ba8c7842c8bb7461b1406c3238.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDgyNw==",
+                "value": "headline-sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Headline Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwOTE=",
+        "name": "Wyndham Hotels & Resorts",
+        "logoUrl": "https://static.swapcard.com/public/images/e5cce1024ec74df18016a7d1bc86bd48.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDg0OA==",
+                "value": "sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcwOTk=",
+        "name": "Planet Food",
+        "logoUrl": "https://static.swapcard.com/public/images/edcab36d15dc4ba683d2c7e9943706d7.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yOTk2MzUxMA==",
+                "value": "networking-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Networking Partner"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxMjQ=",
+        "name": "Africa Hotel Report",
+        "logoUrl": "https://static.swapcard.com/public/images/7e5ca6ba7b9a47ddba8fc05def7013e8.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODg3Mg==",
+                "value": "media-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Media Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxMzQ=",
+        "name": "African Travel Times",
+        "logoUrl": "https://static.swapcard.com/public/images/1eaf6020d3844956bf53c5ac3c26ff18.jpeg",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODg3Mg==",
+                "value": "media-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Media Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxNTA=",
+        "name": "The Afritraveller",
+        "logoUrl": "https://static.swapcard.com/public/images/b18a3d753e6a493f8bc59c6cc53ba6e1.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODg3Mg==",
+                "value": "media-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Media Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxNTE=",
+        "name": "Breaking Travel News",
+        "logoUrl": "https://static.swapcard.com/public/images/eb34fffe429d4067bfa28f3dec168e55.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODg3Mg==",
+                "value": "media-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Media Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxNTM=",
+        "name": "Go Places Digital",
+        "logoUrl": "https://static.swapcard.com/public/images/e3fa3ac36373418f9884c4e2f1f8bb9a.webp",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODg3Mg==",
+                "value": "media-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Media Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxNTQ=",
+        "name": "Hozpitality.com",
+        "logoUrl": "https://static.swapcard.com/public/images/eb364f2ad64d4c439c790f8838fcd55d.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODg3Mg==",
+                "value": "media-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Media Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxNTU=",
+        "name": "Pan African Voice",
+        "logoUrl": "https://static.swapcard.com/public/images/604170f726cd4aa1945cd3ff4f0b01b8.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODg3Mg==",
+                "value": "media-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Media Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxNTY=",
+        "name": "Travel & Tour World",
+        "logoUrl": "https://static.swapcard.com/public/images/fd1b9473a5834bd391d85b63a6ff6a8d.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODg3Mg==",
+                "value": "media-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Media Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxNTc=",
+        "name": "Travelscope",
+        "logoUrl": "https://static.swapcard.com/public/images/3119fb948fa84ac3b08b67b704043e31.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODg3Mg==",
+                "value": "media-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Media Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxNTg=",
+        "name": "Voyages Afriq",
+        "logoUrl": "https://static.swapcard.com/public/images/3fc61900d9d641b285210457a1e70437.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODg3Mg==",
+                "value": "media-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Media Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxNTk=",
+        "name": "FEDHASA",
+        "logoUrl": "https://static.swapcard.com/public/images/071b6e1550df402582c4cde2dd29d530.jpeg",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODgzNg==",
+                "value": "supporter",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Supporters"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxODk=",
+        "name": "Kenya Association of Hotelkeepers",
+        "logoUrl": "https://static.swapcard.com/public/images/96684536b22746f7929bcddfed3f6e38.jpeg",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODgzNg==",
+                "value": "supporter",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Supporters"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxOTA=",
+        "name": "SADC Business Council",
+        "logoUrl": "https://static.swapcard.com/public/images/2fa0fabee40e49a7a393b12255c44a23.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODgzNg==",
+                "value": "supporter",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Supporters"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MjcxOTE=",
+        "name": "Uganda Hotel Owners Association",
+        "logoUrl": "https://static.swapcard.com/public/images/919cbdc45ec948f5b282c5e8d00fb18a.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODgzNg==",
+                "value": "supporter",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Supporters"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0Mjg3NDI=",
+        "name": "LMR - Choice Hotels",
+        "logoUrl": "https://static.swapcard.com/public/images/8af97491e19946d696b797bf8675f9cd.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDg0OA==",
+                "value": "sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0Mjk0NjE=",
+        "name": "TUKO",
+        "logoUrl": "https://static.swapcard.com/public/images/a3f00835416f4b4791ac24aa69ca45c2.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODg3Mg==",
+                "value": "media-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Media Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MzA3NzU=",
+        "name": "MIC Global Risks",
+        "logoUrl": "https://static.swapcard.com/public/images/7895d18ec4ac4130a39126b22199a619.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yOTk2MzUxMA==",
+                "value": "networking-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Networking Partner"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MzMyNTM=",
+        "name": "It's a Penalty",
+        "logoUrl": "https://static.swapcard.com/public/images/e8b2c50e5c624b9692e9eba22160286d.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODgzNg==",
+                "value": "supporter",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Supporters"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MzMyNTY=",
+        "name": "Raising Futures Kenya",
+        "logoUrl": "https://static.swapcard.com/public/images/8b75aac35ca1456582377ae031f8fb9a.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8zMDA0MTcxNw==",
+                "value": "charity-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Charity Partner"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0MzcyMDI=",
+        "name": "Africa GCC Council",
+        "logoUrl": "https://static.swapcard.com/public/images/33b2c598b77149789261baaf7f12b826.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODgzNg==",
+                "value": "supporter",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Supporters"
+                    }
+                ]
+            },
+            {
+                "id": "RmllbGRWYWx1ZV8yNzc4OTQyMw==",
+                "value": "supporters",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzgzMTQ3MQ==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Supporters"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0Mzc4NDA=",
+        "name": "Ozti",
+        "logoUrl": "https://static.swapcard.com/public/images/59a662f822ed46788cac0ea1f95b6947.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yOTk2MzUxMA==",
+                "value": "networking-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Networking Partner"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0Mzc4NTQ=",
+        "name": "Kora",
+        "logoUrl": "https://static.swapcard.com/public/images/350356c9e4cc4770bb66456fc18395bc.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8yNzM1MDg0OA==",
+                "value": "sponsor",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Partners"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "RXhoaWJpdG9yXzI0Mzg2NjE=",
+        "name": "Travel News East Africa",
+        "logoUrl": "https://static.swapcard.com/public/images/b08f0198f4ee4fbb83a69e0ba4383a45.png",
+        "fields": [
+            {
+                "id": "RmllbGRWYWx1ZV8xOTE4ODg3Mg==",
+                "value": "media-partner",
+                "definition": {
+                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
+                    "name": "Type"
+                },
+                "translations": [
+                    {
+                        "value": "Media Partners"
+                    }
+                ]
+            }
+        ]
+    }
+]
 
 
 
-export const partners = [ ...worldPartners2026, ...saudiPartners2026 ]
+export const partners = [ ...worldPartners2026, ...saudiPartners2026, ...africaPartners2026 ]

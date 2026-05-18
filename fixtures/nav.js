@@ -1118,10 +1118,39 @@ export const FHS_EGYPT = {
     }
 }
 
-// temp menu
+
 export const FHS_LIVING = {
     "data": {
-        "mainMenu": [],
+        "mainMenu": [
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "About",
+                "navUrl": '/living/about',
+                "children": []
+            },
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "Why Now?",
+                "navUrl": '/living/why-now',
+                "children": []
+            },
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "Programme",
+                "navUrl": '/living/programme',
+                "children": []
+            },
+            {
+                "__typename": "navigation_Entry",
+                "id": "279",
+                "title": "Partners",
+                "navUrl": '/living/partners',
+                "children": []
+            },
+        ],
         "event": {
             "id": "122",
             "title": "FHS Living",
@@ -1145,62 +1174,6 @@ export const FHS_LIVING = {
         }
     }
 }
-
-// export const FHS_LIVING = {
-//     "data": {
-//         "mainMenu": [
-//             {
-//                 "__typename": "navigation_Entry",
-//                 "id": "279",
-//                 "title": "About",
-//                 "navUrl": '/living',
-//                 "children": []
-//             },
-//             {
-//                 "__typename": "navigation_Entry",
-//                 "id": "279",
-//                 "title": "Programme",
-//                 "navUrl": '/living',
-//                 "children": []
-//             },
-//             {
-//                 "__typename": "navigation_Entry",
-//                 "id": "279",
-//                 "title": "Event Features",
-//                 "navUrl": '/living',
-//                 "children": []
-//             },
-//             {
-//                 "__typename": "navigation_Entry",
-//                 "id": "279",
-//                 "title": "Partnerships",
-//                 "navUrl": '/living',
-//                 "children": []
-//             },
-//         ],
-//         "event": {
-//             "id": "122",
-//             "title": "FHS Living",
-//             "venue": "",
-//             "startDate": "",
-//             "endDate": "",
-//             "seoImage": [
-//                 {
-//                     "url": ""
-//                 }
-//             ],
-//             "metaTitle": null,
-//             "metaDescription": null,
-//             "headerCtas": [
-//                 {
-//                     "label": "Register Interest",
-//                     "hyperlink": "/living/register-interest",
-//                     "openInNewWindow": false
-//                 },
-//             ]
-//         }
-//     }
-// }
 
 
 // BRF sub-events

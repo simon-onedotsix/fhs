@@ -1,0 +1,36 @@
+.layout {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.hero {
+    position: absolute;
+    inset: 0;
+    bottom: -3vh;
+    mix-blend-mode: hard-light;
+}
+.hero img {
+    filter: saturate(.8) contrast(1.2) brightness(1);
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: .35;
+}
+
+
+.overlay {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-wrap: balance;
+    background: linear-gradient(
+        to right, 
+        hsl(from var(--fg) h s calc( l - 5) / .8) 30%, 
+        hsl(from var(--fg) h s calc( l - 5) / 0)
+    );
+}

@@ -14,13 +14,19 @@ import Head from "next/head"
 import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
 import { FHS_LIVING as header } from '../../fixtures/nav'
-import { Footer } from "../../ui/site/footer"
+import { Footer } from '../../fuselage/theme/living/common/footer/footer'
+
+import { PageHero } from "../../ui/modules/page-hero"
 
 import { Button, ButtonGrid } from "../../ui/buttons/button"
 import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { FhsIconKeyline } from "../../fuselage/theme/2024/global/components/logos/fhs-brand"
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
+
+import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
+import { SlideoutCard } from "../../fuselage/components/slideout-card/slideout-card"
+import { EventCardLite } from '../../fuselage/theme/2024/world/blocks/upcoming-events/upcoming-events'
 
 
 
@@ -64,8 +70,29 @@ const SPEAKER_DATA = [
     },
 ]
 
+const QUOTES_DATA = [
+    {
+        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/Jeff-Tisdall.jpeg',
+        quote: "The market is still fragmented. Large events are too broad, and niche ones don't have the right scale.",
+        fullName: "Jeff Tisdall",
+        title: "Chief Business Officer, Accor One Living"
+    },
+    {
+        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/Dirk-Bakker.jpg',
+        quote: "A conference that brings all of this together would be a huge success.",
+        fullName: "Dirk Bakker",
+        title: "Chief Executive Officer, Necron Hospitality",
+    },
+    {
+        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/kasper-ravn-wigen.webp',
+        quote: "I wish there was a business event that brings together key living categories across European real estate in a single place.",
+        fullName: "Kasper Ravn Wigen",
+        title: "Global Marketing Director, Yugo",
+    }
+]
 
-export default function Home () {
+
+export default function Home ({ data }) {
 
     // console.log(content)
 
@@ -87,62 +114,88 @@ export default function Home () {
                 ctas={header.data.event.headerCtas}
             />
 
-
-
             {/* INTRO */}
-            <section className="block bg-secondary py-xs" style={{ position: `relative`, overflow: `hidden` }}>
-                <div className="container" style={{ position: `relative`, zIndex: 2 }}>
-                    <p className="fs-1 fw-600 caps lh-1 maxw-45">Connecting Global Capital with Living, Lifestyle &amp; Hospitality</p>
-                    <p className="fs-5 fw-500 caps mt-sm mb-sm">February 2027 | <span className="c-accent">Paris</span>, France</p>
-                    <ButtonGrid>
-                        <Button href={`/download-brochure`} label={`Download Brochure`} />
-                        <Button href={`/register-interest`} label={`Register Interest`} />
-                    </ButtonGrid>
-                </div>
-
-                <div style={{ position: `absolute`, top: `-10vw`, right: `-15vw`, width: `55vw`, aspectRatio: 1 }}>
-                    <FhsIconKeyline topColor={`var(--primary)`} sectorColor={`var(--primary)`} />
-                </div>
-            </section>
-
-
-            {/* CHAIRMAN LETTER */}
-            <section className="block bg-white">
-                <div
-                    className="container"
-                    style={
-                        isDesktop ?
-                        {
-                            display: `grid`,
-                            gridTemplateColumns: `3fr 1fr`,
-                            gap: `var(--space-md)`
-                        }:{
-                            display: `flex`,
-                            flexDirection: `column-reverse`,
-                            gap: `var(--space-md)`,
-                            textAlign: `center`
-                        }
-                    }
-                >
-                    <div className="formatted">
-                        <p className="fs-2 fw-600 c-primary caps lh-1">Letter from the Chairman</p>
-                        <p>Hospitality is no longer a standalone asset class. It is becoming a layer of value across how people live, work and experience space. The industry needs a platform that reflects this - and we have built it.</p>
-                        <p><strong>FHS Living</strong> has been designed as a curated forum where global capital meets developers and operators across the full spectrum of living and hospitality assets. A place where operational expertise and real estate ownership converge. A place where deals are initiated, partnerships are formed, and new models of living are defined.</p>
-                        <p>We believe this is one of those moments, and we look forward to building it together… with you.</p>
-                        <p>Jonathan Worsley, Chairman, <strong>The Bench</strong></p>
+            <PageHero hero={{url: `/assets/img/living/homepage/page-hero.jpg`, width: 595, height: 335}}>    
+                <section className="">
+                    <div className="container">
+                        <p className="fs-1 fw-600 caps lh-1 maxw-45">Connecting Global Capital with Europe&apos;s Living, Lifestyle &amp; Hospitality</p>
+                        <p className="fs-5 fw-500 caps mt-sm mb-sm">Founding Edition | February 2027 | <span className="c-accent">Paris</span>, France</p>
                     </div>
 
-                    <Pop>
-                        <img src="https://cms.thebench.com/assets/img/site/The-Bench/image-16.png" alt="" width={ isDesktop ? `100%` : `60%`} style={{ borderRadius: `30rem`}} />
-                    </Pop>
+                    <div className="container formatted">
+                        <p className="fs-6 fw-600 c-accent">Asset Classes:</p>
+                        <p className="fs-5 balance">Branded Residences <span className="c-accent">&bull;</span> Student Accommodation <span className="c-accent">&bull;</span> Senior Living <span className="c-accent">&bull;</span> Serviced Living <span className="c-accent">&bull;</span> Co-Living <span className="c-accent">&bull;</span> Shared Ownership <span className="c-accent">&bull;</span> Club Concepts <span className="c-accent">&bull;</span> Mixed Use <span className="c-accent">&bull;</span> Hotels &amp; Resorts</p>
+                    </div>
+                </section>
+            </PageHero>
+
+
+            {/* IMPACT */}
+            <section className="block bg-secondary">
+                <div className="container columns-3 gap-sm">
+                    <Card>
+                        <div className="formatted center">
+                            <p className="fs-1">€46.9B</p>
+                            <p className="fs-5 lh-1 balance">Invested in European living in 2025</p>
+                        </div>
+                    </Card>
+
+                    <Card>
+                        <div className="formatted center">
+                            <p className="fs-1">€50B</p>
+                            <p className="fs-5 lh-1 balance">Of fresh capital planned for European living over the next three years</p>
+                        </div>
+                    </Card>
+
+                    <Card>
+                        <div className="formatted center">
+                            <p className="fs-1">9.6M</p>
+                            <p className="fs-5 lh-1 balance">Home shortfall across Europe - structural, enduring demand</p>
+                        </div>
+                    </Card>
                 </div>
             </section>
 
 
-            {/* SPEAKERS */}
+            {/* PILLARS */}
+            <section className="block bg-secondary">
+                <div className="container center formatted">
+                    <p className="fs-2 fw-500 caps">What defines FHS Living</p>
+                    <p className="fs-6 balance">FHS Living is a high-impact initiative designed to funnel capital, especially from the Middle East, towards a carefully selected mix of living assets - addressing the growing "lanyard fatigue" of the European hospitality conferencing market.</p>
+                </div>
+
+                <div className="container columns-3 gap-md">
+                    <div className="formatted">
+                        <Pop>
+                            <img src="/assets/img/living/homepage/pillar-01.jpg" alt="" width="100%" style={{ borderRadius: `1rem`, marginBottom: 20 }} />
+                        </Pop>
+                        <h5>Convergence</h5>
+                        <p>One platform for the full living asset class. Branded residences, PBSA, senior living, serviced living, co-living, shared ownership, club concepts, mixed-use and hotels - brought together because that is how capital is increasingly being deployed across Europe.</p>
+                    </div>
+         
+                    <div className="formatted">
+                        <Pop>
+                            <img src="/assets/img/living/homepage/pillar-02.jpg" alt="" width="100%" style={{ borderRadius: `1rem`, marginBottom: 20 }} />
+                        </Pop>
+                        <h5>Curation</h5>
+                        <p>Pre-scheduled 1:1 introductions between capital allocators, developers and operators, matched on investment criteria and development priorities. Complemented by an Investor Lounge, a live Deal Room, site tours of active Paris projects, and den-style social sessions designed to move conversations into transactions.</p>
+                    </div>
+             
+                    <div className="formatted">
+                        <Pop>
+                            <img src="/assets/img/living/homepage/pillar-03.jpg" alt="" width="100%" style={{ borderRadius: `1rem`, marginBottom: 20 }} />
+                        </Pop>
+                        <h5>Capital</h5>
+                        <p>An agenda built around investment decisions. Every session from Underwriting Living Assets to Europe Meets Middle East is structured to support capital deployment, informed by the C-Level decision-makers who will be in the room.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            {/* ADVISORS */}
             <section className="block bg-primary">
                 <div className="container center">
-                    <p className="fs-2 fw-500 caps">Envisioned Speakers</p>
+                    <p className="fs-2 fw-500 caps">Founding Advisors</p>
                 </div>
 
                 <div className="container columns-5 gap-sm center">
@@ -164,53 +217,39 @@ export default function Home () {
 
                 <div className="container center">
                     <div className="button-grid">
-                        <p><Pop><Button href={`/living/speakers`} label={`View All Speakers`}/></Pop></p>
-                        <p><Pop><Button href={`/living/agenda`} label={`Full Agenda`}/></Pop></p>
+                        {/* <p><Pop><Button href={`/living/speakers`} label={`View All Speakers`}/></Pop></p> */}
+                        <p><Pop><Button href={`/living/programme`} label={`Full Agenda`}/></Pop></p>
                     </div>
                 </div>
             </section>
 
 
-            {/* WHY EUROPE? */}
-            <section className="block bg-white">
+            {/* QUOTES */}
+            <section className="block bg-secondary">
                 <div className="container">
-                    <p className="fs-2 fw-600 c-primary caps center">Why <span className="c-accent">FHS Living</span> in Europe</p>
+                    <p className="fs-2 fw-600 caps center">What the industry is saying</p>
                 </div>
 
-                <div className="container columns-2 gap-sm">
-                    <Card>
-                        <div className="formatted" style={{ alignSelf: `flex-start`}}>
-                            <p className="fs-3 fw-600 caps lh-2 balance">The <span className="c-accent">Alternative</span> Hospitality Demand</p>
-                            <ul>
-                                <li>Europe faces a 9.6 million home shortfall (CBRE)</li>
-                                <li>PBSA investment has grown at 11% annually (JLL)</li>
-                                <li>Occupancy in student housing averages 97% (BONARD)</li>
-                                <li>Care homes were the fastest-growing living investment sector in EMEA in 2025, with investment soaring 165% year- on-year to approximately €14.4 Billion (JLL)</li>
-                                <li>Number branded residences schemes in Europe is expected to more than double, rising from 141 at the end of 2025 to over 300 schemes by 2032 (Savills)</li>
-                            </ul>
-                        </div>
-                    </Card>
-
-                    <Card>
-                        <div className="formatted" style={{ alignSelf: `flex-start`}}>
-                            <p className="fs-3 fw-600 caps lh-2 balance">A <span className="c-accent">Fragmented</span> Market</p>
-                            <p>There is no Europe region focused conference today that aggregates:</p>
-                            <ul>
-                                <li>Living asset classes: Branded Residences, Student Accommodation, Senior Living, Serviced Living</li>
-                                <li>Prioritises investors and developers</li>
-                                <li>Operates as a curated investment marketplace</li>
-                            </ul>
-                            <p>FHS Living addresses this gap, envisioned to deliver a 2-Day agenda packed with meaningful investment insights and networking across key living asset categories.</p>
-                        </div>
-                    </Card>
+                <div className={`container columns-3 gap-md`}>
+                    {
+                        QUOTES_DATA.map((quote, index) => (
+                            <Quotation
+                                key={index}
+                                avatarUrl={quote.avatarUrl}
+                                quote={quote.quote}
+                                fullName={quote.fullName}
+                                title={quote.title}
+                            />
+                        ))
+                    }
                 </div>
             </section>
- 
 
+            
             {/* WHO ATTENDS */}
             <section className="block bg-secondary">
                 <div className="container">
-                    <p className="fs-2 fw-600 caps center">Who Attends <span className="c-accent">FHS Living</span></p>
+                    <p className="fs-2 fw-600 caps center">Who gathers in Paris</p>
                 </div>
 
                 <div className="container">
@@ -246,41 +285,92 @@ export default function Home () {
                     </ImpactWrapper>
                 </div>
             </section>
+ 
 
-            
-            {/* TESTIMONIALS */}
-            <section className="block bg-white">
-                <div className="container center">
-                    <p className="fs-2 fw-600 c-primary caps center">Words From Our Partners</p>
+            {/* THE EXPERIENCE  */}
+            <section className="block bg-secondary">
+                <div className="container">
+                    <p className="fs-2 fw-600 caps center">The FHS Living experience</p>
                 </div>
 
-                <div className="container columns-2 gap-sm">
-                    <PartnerCard photoUrl={`https://cms.thebench.com/assets/img/avatars/Jeff-Tisdall.jpeg`}>
-                        <p>“The market is still fragmented. Large events are too broad, and niche ones don&apos;t have the right scale.”</p>
-                        <p className="fw-600 mt-xxs">Jeff Tisdall</p>
-                        <p>Chief Business Officer, Accor One Living</p>
-                    </PartnerCard>
+                <div className="container columns-3 gap-sm">
+                    <SlideoutCard title={`Curated 1:1 meetings`} imageSrc={`/assets/img/living/homepage/attendees-01.jpg`}>
+                        <div className="formatted balance">
+                            <p className="fs-6">Pre-qualified, pre-scheduled introductions across capital, development and operations</p>
+                        </div>
+                    </SlideoutCard>
+
+                    <SlideoutCard title={`Leadership stage`} imageSrc={`/assets/img/living/homepage/attendees-02.jpg`}>
+                        <div className="formatted balance">
+                            <p className="fs-6">On-stage 1:1 interviews with senior industry leaders</p>
+                        </div>
+                    </SlideoutCard>
                     
-                    <PartnerCard photoUrl={`https://cms.thebench.com/assets/img/avatars/Dirk-Bakker.jpg`}>
-                        <p>“A conference that brings all of this together would be a huge success.”</p>
-                        <p className="fw-600 mt-xxs">Dirk Bakker</p>
-                        <p>Chief Executive Officer, Necron Hospitality</p>
-                    </PartnerCard>
+                    <SlideoutCard title={`Investor site tours`} imageSrc={`/assets/img/living/homepage/attendees-03.jpg`}>
+                        <div className="formatted balance">
+                            <p className="fs-6">Live project walkthroughs across Paris</p>
+                        </div>
+                    </SlideoutCard>
                     
-                    <PartnerCard photoUrl={`https://cms.thebench.com/assets/img/avatars/kasper-ravn-wigen.webp`}>
-                        <p>“I wish there was a business event that brings together key living categories across European real estate in a single place.”</p>
-                        <p className="fw-600 mt-xxs">Kasper Ravn Wigen</p>
-                        <p>Global Marketing Director, Yugo</p>
-                    </PartnerCard>
+                    <SlideoutCard title={`Deal Room`} imageSrc={`/assets/img/living/homepage/attendees-04.jpg`}>
+                        <div className="formatted balance">
+                            <p className="fs-6">Active development opportunities presented to pre-qualified capital</p>
+                        </div>
+                    </SlideoutCard>
                     
-                    <PartnerCard photoUrl={`https://static.swapcard.com/public/images/17a8fd55607b40008b6b49ac4cde22e7.jpeg`}>
-                        <p>“Luxury hospitality, branded residences and mixed-use projects continue to attract strong interest, with branded residences offering an efficient route to fund development through presales.” </p>
-                        <p className="fw-600 mt-xxs">Larissa Esser</p>
-                        <p>Colliers</p>
-                    </PartnerCard>
+                    <SlideoutCard title={`Exclusive receptions`} imageSrc={`/assets/img/living/homepage/attendees-05.jpg`}>
+                        <div className="formatted balance">
+                            <p className="fs-6">Hosted dinners and curated social sessions</p>
+                        </div>
+                    </SlideoutCard>
+                    
+                    <SlideoutCard title={`Exhibition & showcase`} imageSrc={`/assets/img/living/homepage/attendees-06.jpg`}>
+                        <div className="formatted balance">
+                            <p className="fs-6">Partner platforms and project announcements</p>
+                        </div>
+                    </SlideoutCard>
+                    
                 </div>
+
             </section>
 
+            
+            {/* FHS EVENTS */}
+            
+            <section className="block bg-secondary">
+                <div className="container center">
+                    <p className="fs-1 fw-500 caps">FHS Around the World</p>
+                </div>
+
+                <div className="container columns-3 maxw-55 gap-xs">
+                    {
+                        data.events.map(event => {
+                            console.log(event)
+                            return (
+                                <div key={event.id} className={`columns-1 gap-xs`}>                                
+                                    {
+                                        event.streams &&
+                                        event.streams.map( stream => (
+                                            <EventCardLite
+                                                key={stream.id}
+                                                heading={event.heading}
+                                                title={stream.heading}
+                                                dates={{ startDate: event.startDate, endDate: event.endDate}}
+                                                venue={event.venue}
+                                                logo={stream.logo[0]}
+                                                passLink={stream.purchasePassLink} 
+                                                websiteLink={stream.websiteLink} 
+                                                theme={event.theme} 
+                                                dateOverride={event.dateOverride}
+                                            />
+                                        ))
+                                    }
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+            </section>
             
             
 
@@ -295,10 +385,10 @@ Home.theme = 'living'
 
 
 
-const Card = ({ children }) => {
+export const Card = ({ children }) => {
     return (
         <Pop>
-            <div className="bg-primary p-sm c-white" style={{ borderRadius: `1rem`, height: `100%`, display: `flex`, alignItems: `center`, justifyContent: `center` }}>
+            <div className="bg-primary p-sm c-white" style={{ borderRadius: `1rem`, height: `100%` }}>
                 { children }
             </div>
         </Pop>
@@ -391,4 +481,62 @@ const PartnerCard = ({ photoUrl, children }) => {
             </div>
         </Pop>
     )
+}
+
+
+
+
+
+
+
+
+
+
+export async function getStaticProps() {
+
+    const { data } = await craftApolloClient().query({
+        query: gql`
+            query LandingPage {
+                entry(site: "${process.env.SITE_HANDLE}", id: "77020") {
+                    ... on ${process.env.SITE_HANDLE}Homepage_${process.env.SITE_HANDLE}Homepage_Entry {
+                        id
+                        title
+                        theme
+                        events {
+                            ... on events_BlockType {
+                                id
+                                heading
+                                startDate
+                                endDate
+                                dateOverride
+                                venue
+                                theme
+                                streams {
+                                    ... on streams_stream_BlockType {
+                                        id
+                                        logo {
+                                            id
+                                            url
+                                            width
+                                            height
+                                        }
+                                        heading
+                                        purchasePassLink
+                                        websiteLink
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }                
+            }
+          
+        `
+        })
+
+        return {
+        props: {
+            data: data.entry,
+        },
+    }
 }

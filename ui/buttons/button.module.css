@@ -20,6 +20,12 @@
 
 }
 
+.inverse {
+    border-color: var(--bg);
+    background-color: var(--bg);
+    color: var(--fg);
+}
+
 .outline {
     background-color: transparent;
 
@@ -29,9 +35,14 @@
 
 @media(hover:hover){
     .ui:hover {
-        background-color: hsl(from var(--bg) h s calc( l + 10) / 1);
-        border-color: hsl(from var(--bg) h s calc( l + 10) / 1);
+        background-color: var(--bg);
+        border-color: var(--bg);
         color: var(--fg);
+    }
+    .inverse:hover {
+        border-color:var(--fg);
+        background-color: var(--fg);
+        color: var(--bg);
     }
 }
 
