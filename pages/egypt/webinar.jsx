@@ -63,7 +63,7 @@ export const WEBINAR_SPEAKER_DATA = [
     },
     {
         url: ``,
-        photoUrl: '/assets/img/egypt/webinar/ghada.jpg',
+        photoUrl: '/assets/img/egypt/webinar/ghada-shalaby.jpg',
         fullName: 'HE DR. GHADA SHALABY',
         jobTitle: 'Former Vice Minister',
         company: 'Ministry of Tourism and Antiquities of Egypt',

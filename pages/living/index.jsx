@@ -103,6 +103,7 @@ export default function Home ({ data, advisors }) {
         <>
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
+                <meta content="/assets/img/living/seo/seo-image.jpg" property="og:image"></meta>
             </Head>
         
             
