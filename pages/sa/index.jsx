@@ -834,14 +834,14 @@ export default function Page({ seomatic, partners }) {
             {/* LINKEDIN POSTS */}
             <section className="block bg-primary">
                 <div className="container columns-3 gap-sm">
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7460561820857192448?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7462362617035038720?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459556895830269952?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459158907719073792?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459132983875276800?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7458116318257410049?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7458116318257410049?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459609101669597184?collapsed=1" height="670" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7460561820857192448?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7462362617035038720?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459556895830269952?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459158907719073792?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459132983875276800?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7458116318257410049?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7458116318257410049?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459609101669597184?collapsed=1" height="670" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
                 </div>
             </section>
 
