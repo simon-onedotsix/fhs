@@ -129,11 +129,11 @@ const SPEAKER_DATA = [
         company: 'Ministry of Transport and Logistics Services',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ2NDI1Nzg=`,
-        photoUrl: 'https://static.swapcard.com/public/images/cca0cb3e45514a56a843e289363626ad.jpeg',
-        fullName: 'Serena Lim',
-        jobTitle: 'Chief Growth Officer',
-        company: 'The Ascott Limited',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDYwNTk5MDI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/b8726b4ca45c4ca397593a045c5de2c7.jpeg',
+        fullName: 'Omar Alabdullatif',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Blacksand',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ1NTIyMzA=`,
@@ -164,11 +164,11 @@ const SPEAKER_DATA = [
         company: 'Rikaz Properties',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQxOTM1NDA=`,
-        photoUrl: 'https://static.swapcard.com/public/images/7b17a5205c6842d1aab87311c6cf6908.jpeg',
-        fullName: 'Kholoud Almanea',
-        jobTitle: 'Development Manager',
-        company: 'Ennismore',
+        url: ``,
+        photoUrl: '',
+        fullName: 'Hossam Al-Basrawi',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Alrajhi Capital',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQxOTMxMjE=`,
@@ -178,11 +178,11 @@ const SPEAKER_DATA = [
         company: 'Jabal Omar Development Company',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ2NDM=`,
-        photoUrl: 'https://static.swapcard.com/public/images/d6420770cfd3481d868f1c4612c6da09.jpeg',
-        fullName: 'David Thomson',
-        jobTitle: 'Senior Vice President Development',
-        company: 'The First Group Hospitality',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDUwMDY1OTU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/3aa57389f5ad4d348d08b5ce7f27808b.jpeg',
+        fullName: 'Gregory Djerejian',
+        jobTitle: 'Group Head of Investments and Group Chief Legal Officer',
+        company: 'Red Sea Global',
     },
 ]
 const SPEAKER_DATA_AR = [
@@ -201,11 +201,11 @@ const SPEAKER_DATA_AR = [
         company: 'Ministry of Transport and Logistics Services',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ2NDI1Nzg=`,
-        photoUrl: 'https://static.swapcard.com/public/images/cca0cb3e45514a56a843e289363626ad.jpeg',
-        fullName: 'سيرينا ليم',
-        jobTitle: 'الرئيسة التنفيذية للنمو',
-        company: 'شركة أسكوت المحدودة',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDYwNTk5MDI=`,
+        photoUrl: 'https://static.swapcard.com/public/images/b8726b4ca45c4ca397593a045c5de2c7.jpeg',
+        fullName: 'Omar Alabdullatif',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Blacksand',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ1NTIyMzA=`,
@@ -236,11 +236,11 @@ const SPEAKER_DATA_AR = [
         company: 'شركة ركاز العقارية',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQxOTM1NDA=`,
-        photoUrl: 'https://static.swapcard.com/public/images/7b17a5205c6842d1aab87311c6cf6908.jpeg',
-        fullName: 'خلود المانع',
-        jobTitle: 'مديرة التطوير',
-        company: 'شركة Ennismore',
+        url: ``,
+        photoUrl: '',
+        fullName: 'Hossam Al-Basrawi',
+        jobTitle: 'Chief Executive Officer',
+        company: 'Alrajhi Capital',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQxOTMxMjE=`,
@@ -250,11 +250,11 @@ const SPEAKER_DATA_AR = [
         company: 'شركة جبل عمر للتطوير',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ2NDM=`,
-        photoUrl: 'https://static.swapcard.com/public/images/d6420770cfd3481d868f1c4612c6da09.jpeg',
-        fullName: 'ديفيد تومسون',
-        jobTitle: 'نائب الرئيس الأول للتطوير',
-        company: 'شركة The First Group Hospitality',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDUwMDY1OTU=`,
+        photoUrl: 'https://static.swapcard.com/public/images/3aa57389f5ad4d348d08b5ce7f27808b.jpeg',
+        fullName: 'Gregory Djerejian',
+        jobTitle: 'Group Head of Investments and Group Chief Legal Officer',
+        company: 'Red Sea Global',
     },
 ]
 
@@ -300,30 +300,43 @@ const QUOTES_DATA_AR = [
 ]
 
 const INVESTORS = [
-    {title: "Aina Hospitality"},
-    {title: "Al Rajhi Capital"},
-    {title: "Al-Ameen Development Company"},
-    {title: "AQR-Refad Real Estate"},
-    {title: "Aseel Holding"},
-    {title: "BDPST Group"},
-    {title: "Bindawood Holding"},
-    {title: "Bugshan Investment"},
-    {title: "Capital Partners"},
-    {title: "Courbet Heritage"},
-    {title: "Ezdan"},
-    {title: "FIM Partners"},
-    {title: "First Projects Co."},
-    {title: "HAMA MEA"},
-    {title: "Jabal Omar Development Company"},
-    {title: "Kingdom Hotel Investments"},
-    {title: "Naif Al Rajhi Investment Company"},
-    {title: "Radar Holdings"},
-    {title: "RV Capital"},
-    {title: "SAB Invest"},
-    {title: "Saud Alarife Group"},
-    {title: "SEDCO Capital"},
-    {title: "Twenty14 Holdings"},
-    {title: "UBS Saudi Arabia"},
+    { title: "AINA Hospitality"},
+    { title: "Al Rajhi Capital"},
+    { title: "Al-Ameen Development Company"},
+    { title: "Almusbah"},
+    { title: "AOAR Group"},
+    { title: "AQR - Refad Real Estate"},
+    { title: "Arbireo Capital"},
+    { title: "Aseer Investment Company"},
+    { title: "Aseel Holding"},
+    { title: "BDPST Group"},
+    { title: "Blacksand"},
+    { title: "Bugshan Investment"},
+    { title: "Courbet Heritage"},
+    { title: "Dan Company"},
+    { title: "Ezdaher"},
+    { title: "First Projects Co."},
+    { title: "GLOBAL MUTUAL"},
+    { title: "HAMA MEA"},
+    { title: "Jabal Ohod Holding"},
+    { title: "Jabal Omar Development Company"},
+    { title: "JP Morgan"},
+    { title: "Majid Al Futtaim Development"},
+    { title: "Millat Group"},
+    { title: "Naif Al Rajhi Investment Company"},
+    { title: "New Murabba"},
+    { title: "Polis SGR p.A."},
+    { title: "Pulse Hotels and Resorts"},
+    { title: "Radar Holdings"},
+    { title: "RG"},
+    { title: "RV Capital"},
+    { title: "SAB Invest"},
+    { title: "Saud AlArife Group"},
+    { title: "SEDCO Capital"},
+    { title: "SOBCO"},
+    { title: "Soudah Development Company"},
+    { title: "Thameen Real Estate"},
+    { title: "Twenty14 Holdings"},
 ]
 
 
@@ -525,69 +538,85 @@ export default function Page({ seomatic, partners }) {
 
             </VideoSection>
 
-            
 
-            {/* DEAL PLATFORM */}
-            <section className="block bg-primary">
-                <div className="container center maxw-50">
-                    <p className="fs-2 fw-500">
-                        {
-                            locale === 'ar'
-                                ? `منصة إبرام الصفقات في المملكة العربية السعودية – نحو تسريع تحوّل قطاع الضيافة ضمن رؤية 2030`
-                                : `Deal-Making Platform for Saudi Arabia – Driving Vision 2030's Hospitality Transformation`
-                        }
-                    </p>
+
+            {/* SPEAKERS */}
+            <Section
+                backgroundClass={`bg-primary-2-dark`}
+                themeGraphics={
+                    isDesktop
+                    ?   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            width={`60vw`}
+                            opacity={.4}
+                            coordinates={{ bottom: 0, right: `-30vh`}}
+                        />
+                    :   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            opacity={.4}
+                            width="180vw"
+                            coordinates={{ top: `30%`}}
+                        />
+                }
+            > 
+
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-2 fw-600 c-white">
+                            {
+                                locale === 'ar'
+                                    ? `قائمة المتحدثين المؤكدين:`
+                                    : `Confirmed Speakers Include:`
+                            }
+                        </p>
+                    </Fade>
                 </div>
 
-                <div className="container columns-2 gap-md ai-center">
-                    <div className="formatted">
-                        {
-                            locale === 'ar'
-                                ? <>
-                                    <p>تجمع قمة مستقبل الضيافة بالمملكة العربية السعودية نخبة من المُلّاك والمطورين والمشغلين والعلامات التجارية والمستثمرين من داخل المملكة وخارجها، بهدف تسريع الشراكات العابرة للحدود وتعزيز تدفقات رأس المال في قطاع الضيافة. </p>
-                                    <p>تسلّط المنصة الضوء على الفرص الاستثمارية في مختلف مناطق المملكة، من خلال التعاون الوثيق مع شركائنا، مع تركيزٍ خاص على دور القطاع الخاص والفرص المتاحة في المدن الثانوية، إلى جانب المشاريع العملاقة التي تتعاون مع القمة منذ انطلاقها في السعودية على مدار تسعة أعوام مضت.</p>
-                                    <p>إضافةً إلى ذلك، صُممت جلسات بناء العلاقات والتعارف بقيادة المستثمرين خلال القمة، بما في ذلك صالة المستثمرين المُخصّصة للاجتماعات المنسّقة والخاصة، للانتقال من مرحلة النقاشات إلى تفويضات، وشراكات، وصفقات فعلية.</p>
-                                </>
-                                : <>
-                                    <p><strong>Future Hospitality Summit - Saudi Arabia</strong> brings together Saudi and international owners, developers, operators, brands and investors to accelerate cross-border partnerships and capital flows in hospitality. </p>
-                                    <p>The platform spotlights investment opportunities across the full breadth of the Kingdom, working closely with our partners with a focus on the private sector and opportunities in secondary cities, as well as with the giga projects who have partnered with FHS since its launch in Saudi Arabia over nine years ago.</p>
-                                    <p>In addition, the Summit&apos;s investor-led networking, including the Investor Lounge built for curated, private meetings, is designed to turn conversations into mandates, partnerships and transactions.</p>
-                                </>
+                <div className="container columns-5 gap-sm" dir={ locale === 'ar' ? 'rtl' : ''}>
+                    {
+                        ( locale === 'ar' ? SPEAKER_DATA_AR : SPEAKER_DATA ).map( (profile, index) => (
+                            <Pop key={index}>
+                                <SpeakerCard
+                                    url={profile.url}
+                                    photoUrl={profile.photoUrl}
+                                    fullName={profile.fullName}
+                                    jobTitle={profile.jobTitle}
+                                    company={profile.company}
+                                    color={'white'}
+                                />
+                            </Pop>
+                        ))
+                    }
+                </div>
 
-                        }
-                        
-                        <br />
-
-                       <Pop inline>
-                            <Button 
-                                href={'https://www.youtube.com/watch?v=rGvCQZDeCZI'} 
+                <div className="container center">
+                    <div className="button-grid">
+                        <Pop>
+                            <ArrowButton 
+                                href={ '/sa/speakers' } 
+                                theme={{ arrow: `white`, border: `white`, label: `white`}}
+                            >
+                                { locale === 'ar' ? `عرض قائمة المتحدثين في قمة مستقبل الضيافة 2026` : `View 2026 Speakers` }
+                            </ArrowButton>
+                        </Pop>
+                        <Pop>
+                            <ArrowButton 
+                                href={ '/sa/fhs-speakers' } 
+                                theme={{ arrow: `white`, border: `white`, label: `white` }}
                                 target={`_blank`}
-                                theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                decal={'fs-5 fw-600'} 
-                                accent
-                            >{
-                                    locale === 'ar'
-                                        ? `شاهد أبرز اللحظات من قمة عام 2025`
-                                        : `Watch 2025 Highlights`
-                            }</Button>
+                            >
+                                { locale === 'ar' ? `عرض المتحدثين السابقين في قمة مستقبل الضيافة` : `View Past FHS Speakers` }
+                            </ArrowButton>
                         </Pop>
                     </div>
-
-                    <Pop>
-                        <ImageGallery images={[
-                            { src: '/assets/img/sa/homepage/fhs-2025-01.jpg'},
-                            { src: '/assets/img/sa/homepage/fhs-2025-02.jpg'},
-                            { src: '/assets/img/sa/homepage/fhs-2025-03.jpg'},
-                            { src: '/assets/img/sa/homepage/fhs-2025-04.jpg'},
-                            { src: '/assets/img/sa/homepage/fhs-2025-05.jpg'},
-                        ]} />
-                    </Pop>
                 </div>
-            </section>
+    
+                
+            </Section>
 
 
 
-            {/* SPONSORS */}
+            {/* PARTNERS */}
             <section className="block pb-0">
                 <div className="container center">
                     <Pop><p className="fs-2 fw-600 c-primary balance">{
@@ -609,65 +638,34 @@ export default function Page({ seomatic, partners }) {
                 </Ticker>
             </div>
 
-            
 
 
-            {/* 2025 RESULTS */}
-            <section className="block bg-primary">
-                <div className="container center">
-                    <p className="fs-2 fw-500">
+            {/* INVESTORS */}
+            <section className="bg-primary">        
+                <div className="container py-md" dir={`ltr`}>
+                    <Pop><p className="fs-2 fw-600 balance center pb-xs">
                         {
                             locale === 'ar'
-                                ? `النتائج اللي حققناها في 2025`
-                                : `Results We Delivered in 2025`
+                                ? `تشمل قائمة المستثمرين المؤكد حضورهم حتى هذه اللحظة:`
+                                : `First Confirmed Investors Include`
                         }
-                    </p>
-                </div>
-
-                <div className="container columns-4 gap-sm center">
-                    <Card>
-                        <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={1106} /></p>
-                        <p className="fs-5 lh-1">{ locale === 'ar' ? `مشاركًا` : `Attendees` }</p>
-                    </Card>
-                    <Card>
-                        <p className="fs-2 fw-300 lh-1">$<AnimatedCounter from={0} to={1.6} />B</p>
-                        <p className="fs-5 lh-1">{ locale === 'ar' ? `مليار دولار قيمة الفرص التجارية` : `Business Opportunities` }</p>
-                    </Card>
-                    <Card>
-                        <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={24} />%</p>
-                        <p className="fs-5 lh-1">{ locale === 'ar' ? `مستثمرون نشطون` : `Active Investors` }</p>
-                    </Card>
-                    <Card>
-                        <p className="fs-2 fw-300 lh-1">$<AnimatedCounter from={0} to={5.6} />tn</p>
-                        <p className="fs-5 lh-1">{ locale === 'ar' ? `تريليون دولار إجمالي الأصول المُدارة` : `Assets Under Management (AUM)` }</p>
-                    </Card>
-                    <Card>
-                        <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={62} />%</p>
-                        <p className="fs-5 lh-1">{locale === 'ar' ? `صنّاع قرار من المملكة العربية السعودية` : `Saudi Decision-Makers`}</p>
-                    </Card>
-                    <Card>
-                        <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={81} />%</p>
-                        <p className="fs-5 lh-1">{ locale === 'ar' ? `نسبة الحضور من القيادات التنفيذية العليا` : `C-Level Representation` }</p>
-                    </Card>
-                    <Card>
-                        <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={11} /></p>
-                        <p className="fs-5 lh-1">{ locale === 'ar' ? `صفقة محورية تم الإعلان عنها` : `Landmark Deals Announced` }</p>
-                    </Card>
-                    <Card>
-                        <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={153} /></p>
-                        <p className="fs-5 lh-1">{ locale === 'ar' ? `متحدثًا` : `Speakers` }</p>
-                    </Card>
-                </div>
-
-                <div className="container center">
-                    <p><Pop><ButtonKeyline href={`/sa/about-fhs-saudi`}>View full breakdown</ButtonKeyline></Pop></p>
+                    </p></Pop>
+                    <Ticker duration={40}>
+                        {
+                            INVESTORS.map((investor, index) => (
+                                <div key={index} style={{ marginRight: 10 }}>
+                                    <p className="fs-5 fw-500"><span className="c-accent">&bull;</span> {investor.title}</p>
+                                </div>
+                            ))
+                        }
+                    </Ticker>
                 </div>
             </section>
      
 
             
             {/* WHO ATTENDS */}
-            <section className="block bg-primary">
+            <section className="block bg-primary-2">
                 <div className="container center">
                     <p className="fs-2 fw-500">
                         { locale === 'ar' ? `الحضور` : `Who Attends` }
@@ -791,106 +789,6 @@ export default function Page({ seomatic, partners }) {
 
 
 
-            {/* INVESTORS */}
-            <section className="bg-white">        
-                <div className="container py-md" dir={`ltr`}>
-                    <Pop><p className="fs-2 fw-600 c-primary balance center pb-xs">
-                        {
-                            locale === 'ar'
-                                ? `تشمل قائمة المستثمرين المؤكد حضورهم حتى هذه اللحظة:`
-                                : `First Confirmed Investors Include`
-                        }
-                    </p></Pop>
-                    <Ticker duration={25}>
-                        {
-                            INVESTORS.map((investor, index) => (
-                                <div key={index} style={{ marginRight: 10 }}>
-                                <p className="fs-5 fw-500"><span className="c-accent">&bull;</span> {investor.title}</p>
-                                </div>
-                            ))
-                        }
-                    </Ticker>
-                </div>
-            </section>
-
-
-
-            {/* SPEAKERS */}
-            <Section
-                backgroundClass={`bg-primary-2-dark`}
-                themeGraphics={
-                    isDesktop
-                    ?   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            width={`60vw`}
-                            opacity={.4}
-                            coordinates={{ bottom: 0, right: `-30vh`}}
-                        />
-                    :   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            opacity={.4}
-                            width="180vw"
-                            coordinates={{ top: `30%`}}
-                        />
-                }
-            > 
-
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-2 fw-600 c-white">
-                            {
-                                locale === 'ar'
-                                    ? `قائمة المتحدثين المؤكدين:`
-                                    : `Confirmed Speakers Include:`
-                            }
-                        </p>
-                    </Fade>
-                </div>
-
-                <div className="container columns-5 gap-sm" dir={ locale === 'ar' ? 'rtl' : ''}>
-                    {
-                        ( locale === 'ar' ? SPEAKER_DATA_AR : SPEAKER_DATA ).map( (profile, index) => (
-                            <Pop key={index}>
-                                <SpeakerCard
-                                    url={profile.url}
-                                    photoUrl={profile.photoUrl}
-                                    fullName={profile.fullName}
-                                    jobTitle={profile.jobTitle}
-                                    company={profile.company}
-                                    color={'white'}
-                                />
-                            </Pop>
-                        ))
-                    }
-                </div>
-
-                <div className="container center">
-                    <div className="button-grid">
-                        <Pop>
-                            <ArrowButton 
-                                href={ '/sa/speakers' } 
-                                theme={{ arrow: `white`, border: `white`, label: `white`}}
-                            >
-                                { locale === 'ar' ? `عرض قائمة المتحدثين في قمة مستقبل الضيافة 2026` : `View 2026 Speakers` }
-                            </ArrowButton>
-                        </Pop>
-                        <Pop>
-                            <ArrowButton 
-                                href={ '/sa/fhs-speakers' } 
-                                theme={{ arrow: `white`, border: `white`, label: `white` }}
-                                target={`_blank`}
-                            >
-                                { locale === 'ar' ? `عرض المتحدثين السابقين في قمة مستقبل الضيافة` : `View Past FHS Speakers` }
-                            </ArrowButton>
-                        </Pop>
-                    </div>
-                </div>
-    
-                
-            </Section>
-
-
-
             {/* THEMES */}
             <Section
                 backgroundClass={`bg-primary`}
@@ -918,11 +816,44 @@ export default function Page({ seomatic, partners }) {
             </Section>
 
 
+
+            {/* RESULTS 2025 */}
+            <div className="bg-primary-2 py-xs">
+                <Ticker duration={15}>
+                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">1106</strong> Attendees</p>
+                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$1.6B</strong> Business Opportunities</p>
+                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">24%</strong> Active Investors</p>
+                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$5.6tn</strong> Assets Under Management (AUM)</p>
+                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">81%</strong> C-Level Representation</p>
+                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">11</strong> Landmark Deals Announced</p>
+                </Ticker>
+            </div>
+
+
+            
+            {/* LINKEDIN POSTS */}
+            <section className="block bg-primary">
+                <div className="container columns-3 gap-sm">
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7460561820857192448?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7462362617035038720?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459556895830269952?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459158907719073792?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459132983875276800?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7458116318257410049?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7458116318257410049?collapsed=1" height="500" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459609101669597184?collapsed=1" height="670" width="100%" frameborder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                </div>
+            </section>
+
+
+            
+
+
             
 
             {/* TESTIMONIALS */}
             <Section
-                backgroundClass={`bg-primary`}
+                backgroundClass={`bg-primary-2`}
                 themeGraphics={
                     isDesktop
                     ?   <ThemeGraphic
@@ -970,7 +901,7 @@ export default function Page({ seomatic, partners }) {
 
             {/* ANNOUNCEMENTS */}
             <Section
-                backgroundClass={`bg-primary-2`}
+                backgroundClass={`bg-primary`}
                 themeGraphics={
                     isDesktop
                     ?   <ThemeGraphic

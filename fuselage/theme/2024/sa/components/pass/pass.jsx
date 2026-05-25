@@ -4,6 +4,8 @@ import parse from 'html-react-parser'
 
 import Link from 'next/link'
 
+import useCustomMediaQuery from '../../../../../../hooks/useCustomMediaQuery'
+
 import CSS from './pass.module.css'
 
 
@@ -55,7 +57,7 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
     // < 5 ? 5 : currentAmount
 
     return (
-        <div className={`${CSS.pass} ${soldOut && CSS.soldOut} bg-white p-sm`}>
+        <div className={`${CSS.specialPass} ${soldOut && CSS.soldOut} bg-white p-sm`}>
 
             {
                 soldOut &&
@@ -68,31 +70,18 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
                 <div className={CSS.flash}><span className='fw-600 fs-6 c-white caps'><TickIcon/>&ensp;{ flash }</span></div>
             }
 
-            <section className={CSS.details}>
+            <section className={CSS.actions}>
 
                 {
                     callout &&
                     <p className={CSS.callout}>{callout}</p>
                 }
 
-                <p className='fs-2 fw-600 lh-1 c-secondary'>{ title }</p>
-                {
-                    currentBand && nextBand && priceIncreaseMessage ?
-                        <div className="formatted mt-xs">
-                            <p className="fs-6">
-                                <span className="fw-800 c-primary">Only available at this rate before { format( new Date(currentBand.endDate), "d MMMM" ) }</span> when the price increases to <strong>{ currency } { nextBand.value }</strong>
-                            </p>
-                        </div>
-                    : null
-                }
+                <p className='fs-2 fw-600 lh-1 c-secondary'>{title}</p>
                 
-                <div className="formatted mt-xs">{ description && parse(description) }</div>
-            </section>
-
-            <section className={CSS.actions}>
                 { 
                     priceBands && currency ?
-                        <p className='fs-2 fw-600 c-secondary'>
+                        <p className='fs-2 fw-600 c-primary'>
                             { currency } { currentBand ? currentBand.value : 'TBA' }
                         </p>
                     : null
@@ -105,6 +94,20 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
                 } */}
                 
                 <a className={`${CSS.button} fs-6 fw-600 mt-xs`} href={ href } target='_blank'>{ label }</a>
+                {
+                    currentBand && nextBand && priceIncreaseMessage ?
+                        <div className="formatted mt-xs">
+                            <p className="fs-6">
+                                <span className="fw-800 c-primary">Only available at this rate before { format( new Date(currentBand.endDate), "d MMMM" ) }</span> when the price increases to <strong>{ currency } { nextBand.value }</strong>
+                            </p>
+                        </div>
+                    : null
+                }
+                
+            </section>
+
+            <section className={CSS.details}>
+                <div className="formatted">{ description && parse(description) }</div>
             </section>
         </div>
     )

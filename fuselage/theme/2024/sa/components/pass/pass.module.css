@@ -3,10 +3,27 @@
     flex-direction: column;
     justify-content: space-between;
     gap: var(--space-xs);
-    border-radius: var(--default-radius);
+    border-radius: 1rem;
     background-color: white;
 }
 
+
+
+.specialPass {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    border-radius: 1rem;
+    background-color: white;
+}
+@media(min-width:900px){
+    .specialPass {
+        grid-template-columns: 2fr 3fr;
+    }
+}
+
+
+.specialPass.expired,
 .pass.expired {
     pointer-events: none;
     opacity: .4;

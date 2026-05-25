@@ -21,3 +21,8 @@ export default function useCustomMediaQuery(mediaQuery) {
 
   return matches;
 }
+
+
+
+// useage
+// const isDesktop = useCustomMediaQuery('(min-width: 600px)')
