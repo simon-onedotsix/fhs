@@ -88,12 +88,13 @@ function Partners({ partnerData, videoTestimonials }) {
 		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMQ==') orderedCategories.push({ ...category, priority: 5 })
 		if (category.id === 'RmllbGRWYWx1ZV8yOTkwNTIzNQ==') orderedCategories.push({ ...category, priority: 6 })
 		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMg==') orderedCategories.push({ ...category, priority: 7 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyNA==') orderedCategories.push({ ...category, priority: 8 })
+		if (category.id === 'RmllbGRWYWx1ZV8zMDY1OTMzMw==') orderedCategories.push({ ...category, priority: 8 })
+		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyNA==') orderedCategories.push({ ...category, priority: 9 })
 	})
 
 
 	// console.log('swapcard partner data 2026:', partnerData)
-	console.log('categories:', categoriesArray)
+	// console.log('categories:', categoriesArray)
 	// console.log('orderedCategories:', orderedCategories)
 
 
