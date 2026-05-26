@@ -944,7 +944,7 @@ export const FHS_AFRICA = {
         "event": {
             "id": "2",
             "title": "FHS Africa",
-            "venue": "Nairobi, Kenya",
+            "venue": "Speke Resort Munyonyo, Kampala, Uganda",
             "startDate": "2026-03-31T07:00:00+00:00",
             "endDate": "2026-04-01T07:00:00+00:00",
             "seoImage": [

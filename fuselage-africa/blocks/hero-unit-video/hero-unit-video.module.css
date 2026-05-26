@@ -4,7 +4,7 @@
 
 .video {
     position: absolute;
-    top: 6.5rem;
+    /* top: 6.5rem; */
     width: 100%;
     opacity: .7;
     mix-blend-mode: multiply;
@@ -28,12 +28,12 @@
     justify-content: flex-end;
 
     overflow-x: hidden;
-    padding: calc(var(--space-xl) * 5) var(--space-md) var(--space-md);
+    padding: calc(var(--space-xl) * 3) var(--space-md) var(--space-md);
 }
 
 @media(max-width:599px){
     .layout {
-        min-height: 88vh;
+        min-height: 60vh;
     }
 }
 

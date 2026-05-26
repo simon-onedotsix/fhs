@@ -232,9 +232,10 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                     <span className="c-secondary"><Reveal>Together</Reveal></span> <Reveal><span className="c-secondary">we</span>&nbsp;invest</Reveal>
                 </p>
 
-                <p className="fs-2 mt-xs"><span className="fw-600">2027</span> South Africa</p>
+                <p className="fs-3 mt-xs"><span className="fw-600">2-3 February, 2027</span></p>
+                <p className="fs-4 balance lh-1">Speke Resort Munyonyo, Kampala, Uganda</p>
 
-                <div className='mt-sm'>
+                <div className='mt-md'>
                     <ButtonGrid>
                         <Pop inline delay={.2}>
                             <Button href={'/africa/register-interest-for-2027'}>Register Interest for 2027</Button>

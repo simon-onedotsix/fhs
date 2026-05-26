@@ -16,7 +16,7 @@ export const HeroUnitVideo = ({ children, video, poster }) => {
         offset: ["start end", "end start"]
     })
 
-    let y = useTransform( scrollYProgress, [0, 1], [`-20vh`, `20vh`])
+    let y = useTransform( scrollYProgress, [0, 1], [`-20vh`, `15vh`])
 
     return (
         <section ref={ref} className={CSS.layout}>
