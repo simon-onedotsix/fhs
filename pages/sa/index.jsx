@@ -165,7 +165,7 @@ const SPEAKER_DATA = [
     },
     {
         url: ``,
-        photoUrl: '',
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/hossam-al-basrawi.jpg',
         fullName: 'Hossam Al-Basrawi',
         jobTitle: 'Chief Executive Officer',
         company: 'Alrajhi Capital',
@@ -237,7 +237,7 @@ const SPEAKER_DATA_AR = [
     },
     {
         url: ``,
-        photoUrl: '',
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/hossam-al-basrawi.jpg',
         fullName: 'Hossam Al-Basrawi',
         jobTitle: 'Chief Executive Officer',
         company: 'Alrajhi Capital',
@@ -647,7 +647,7 @@ export default function Page({ seomatic, partners }) {
                         {
                             locale === 'ar'
                                 ? `تشمل قائمة المستثمرين المؤكد حضورهم حتى هذه اللحظة:`
-                                : `First Confirmed Investors Include`
+                                : `Confirmed Investors Include`
                         }
                     </p></Pop>
                     <Ticker duration={40}>
