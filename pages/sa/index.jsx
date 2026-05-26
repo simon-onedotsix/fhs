@@ -672,7 +672,16 @@ export default function Page({ seomatic, partners }) {
                     </p>
                 </div>
 
-                <div className="container columns-5 gap-sm" dir={locale === 'ar' ?'rtl' : ''}>
+                <div
+                    className="container"
+                    dir={locale === 'ar' ? 'rtl' : ''}
+                    style={{
+                        display: `flex`,
+                        gap: `var(--space-sm)`,
+                        flexWrap: `wrap`,
+                        justifyContent: `center`
+                    }}
+                >
 
                     <SlideoutCard title={locale === 'ar' ? `المطورون` : `Developers`} imageSrc={`/assets/img/sa/homepage/attends-01.jpg`}>
                         <div className="formatted">
@@ -834,22 +843,17 @@ export default function Page({ seomatic, partners }) {
             {/* LINKEDIN POSTS */}
             <section className="block bg-primary">
                 <div className="container columns-3 gap-sm">
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7460561820857192448?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7462362617035038720?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459556895830269952?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459158907719073792?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459132983875276800?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7458116318257410049?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7458116318257410049?collapsed=1" height="500" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
-                    <Pop><iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7459609101669597184?collapsed=1" height="670" width="100%" frameBorder="0" allowfullscreen="" title="Embedded post"></iframe></Pop>
+                    <Pop><a href="https://www.linkedin.com/posts/miretpadovani_fhssaudiarabia-share-7460561820857192448-LSCp" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-01.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)`}} /></a></Pop>
+                    <Pop><a href="https://www.linkedin.com/posts/coachpedari_fhssaudiarabia-saudiarabia-vision2030-share-7462362617035038720-6TS2" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-02.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)`}} /></a></Pop>
+                    <Pop><a href="https://www.linkedin.com/posts/nuno-p-fernandes-f-950a50254_im-excited-to-attend-fhs-saudi-arabia-2026-share-7459556895830269952-QDLs" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-03.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)`}} /></a></Pop>
+                    <Pop><a href="https://www.linkedin.com/posts/bandaradnan_fhs-futurehospitalitysummit-fhssaudiarabia-share-7459158907719073792-FE3i/" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-04.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)`}} /></a></Pop>
+                    <Pop><a href="https://www.linkedin.com/posts/huda-al-kharji-4568a8195_im-excited-to-be-attending-fhs-saudi-arabia-share-7459132983875276800-W93-/" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-05.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)`}} /></a></Pop>
+                    <Pop><a href="https://www.linkedin.com/posts/daniel-johansson-b155aa9_im-excited-to-attend-fhs-saudi-arabia-2026-share-7458116318257410049-XaBq" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-06.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)`}} /></a></Pop>
+                    <Pop><a href="https://www.linkedin.com/posts/futurehospitalitysummit-fhs-share-7459609101669597184-iH3h" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-08.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)`}} /></a></Pop>
                 </div>
             </section>
 
 
-            
-
-
-            
 
             {/* TESTIMONIALS */}
             <Section
