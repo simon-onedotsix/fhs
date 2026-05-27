@@ -51,6 +51,33 @@ import CSS from '../../css/app/agenda-sa-2025.module.css'
 
 import { THEMES_DATA } from "./themes"
 
+const startupSpeakerTags = [
+			{
+				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ2MjkzMDk4LFVzZXJfMjI3OTQwODIp',
+				firstName: 'Rema',
+				lastName: 'Alyahya',
+				tag: 'Judge'
+			},
+			{
+				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ2NTUzNzUyLFVzZXJfMjQwNzI2MTQp',
+				firstName: 'Yasser',
+				lastName: 'AlSharif',
+				tag: 'Judge'
+			},
+			{
+				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ2NjU1NTA0LFVzZXJfMjU1MjI0MTUp',
+				firstName: 'Saad',
+				lastName: 'Shabbir',
+				tag: 'Judge'
+			},
+			{
+				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ2NjQ4NjI2LFVzZXJfMzIzOTc4OCk=',
+				firstName: 'Sabrine',
+				lastName: 'Chennaoui',
+				tag: 'Participant'
+			},
+		]
+
 
 export default function Agenda ({ sessions, locations }) {
 
@@ -544,7 +571,20 @@ export default function Agenda ({ sessions, locations }) {
 	// end custom topic selection and ordering
 
 
+	const tagSpeakers = (speakers, tags) => {
 
+		// tags = array of objects: { id: speakerId, tag: 'judge' }
+
+		const tagMap = new Map(tags.map(tag => [tag.id, tag]))
+		
+		const taggedSpeakers = speakers.map(speaker => {
+			const tagObj = tagMap.get(speaker.id)
+			return { ...speaker, ...tagObj }
+		})
+
+		return taggedSpeakers
+
+	}
 
 
 	const breakTitle = ( trigger, titleString, splitPoint ) => {
@@ -838,8 +878,12 @@ export default function Agenda ({ sessions, locations }) {
 																					? parse( session.descriptionTranslations[0].value )
 																					: null
 																				}
-
-																				{ sortSpeakers(session.speakers) }																	
+																				
+																				{
+																					session.id === "UGxhbm5pbmdfNDQwNjYzNw=="
+																						? sortSpeakers(tagSpeakers(session.speakers, startupSpeakerTags))
+																						: sortSpeakers(session.speakers)	
+																				}	
 																				
 																			</div>
 																			
@@ -938,6 +982,8 @@ const SpeakerCard = ({ speaker, type }) => {
 				}
 			</span>
 
+			{speaker.tag && <p className="fs-sm fw-600 caps c-accent">{speaker.tag}</p>}
+			
 			<p className="fw-600">{ speaker.firstName } { speaker.lastName }</p>
 			<p className="fs-sm lh-1">{ speaker.jobTitle }<br />{ speaker.organization }</p>
 		</div>
