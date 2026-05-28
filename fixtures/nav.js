@@ -970,7 +970,7 @@ export const FHS_EGYPT = {
         "mainMenu": [
             {
                 "__typename": "navigation_Entry",
-                "id": "279",
+                "id": "fgh35tjymnbbb",
                 "title": "About",
                 "navUrl": null,
                 "children": [
@@ -1124,35 +1124,42 @@ export const FHS_LIVING = {
         "mainMenu": [
             {
                 "__typename": "navigation_Entry",
-                "id": "279",
+                "id": "s02487tr",
                 "title": "About",
                 "navUrl": '/living/about',
                 "children": []
             },
             {
                 "__typename": "navigation_Entry",
-                "id": "279",
+                "id": "356786",
                 "title": "Why Now?",
                 "navUrl": '/living/why-now',
                 "children": []
             },
             {
                 "__typename": "navigation_Entry",
-                "id": "279",
+                "id": "345jt",
                 "title": "Programme",
                 "navUrl": '/living/programme',
                 "children": []
             },
             {
                 "__typename": "navigation_Entry",
-                "id": "279",
+                "id": "26549",
+                "title": "Founding Advisors",
+                "navUrl": '/living/founding-advisors',
+                "children": []
+            },
+            {
+                "__typename": "navigation_Entry",
+                "id": "345ujj",
                 "title": "Partners",
                 "navUrl": '/living/partners',
                 "children": []
             },
             {
                 "__typename": "navigation_Entry",
-                "id": "279",
+                "id": "ffdghertj",
                 "title": "Contact Us",
                 "navUrl": '/living/contact-us',
                 "children": []
@@ -1193,14 +1200,14 @@ export const BRF_FHS_WORLD = {
         "mainMenu": [
             {
                 "__typename": "navigation_Entry",
-                "id": "279",
+                "id": "etrhh35",
                 "title": "About",
                 "navUrl": "/world/brf",
                 "children": []
             },
             {
                 "__typename": "navigation_Entry",
-                "id": "279",
+                "id": "werhjfw",
                 "title": "Agenda",
                 "navUrl": "/world/brf/agenda",
                 "children": []
@@ -1241,14 +1248,14 @@ export const BRF_FHS_SA = {
         "mainMenu": [
             {
                 "__typename": "navigation_Entry",
-                "id": "279",
+                "id": "2456346u",
                 "title": "About",
                 "navUrl": "/sa/brf",
                 "children": []
             },
             {
                 "__typename": "navigation_Entry",
-                "id": "279",
+                "id": "ngdrtyh",
                 "title": "Agenda",
                 "navUrl": "/sa/brf/agenda",
                 "children": []
@@ -1296,7 +1303,7 @@ export const BRF_FHS_EGYPT = {
             },
             {
                 "__typename": "navigation_Entry",
-                "id": "279",
+                "id": "dfghterthm",
                 "title": "Agenda",
                 "navUrl": "/egypt/brf/agenda",
                 "children": []

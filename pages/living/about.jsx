@@ -12,7 +12,7 @@ import Head from "next/head"
 
 
 import { EventsBar } from "../../ui/site/eventsbar"
-import { Header } from '../../ui/site/header'
+import { Header } from '../../ui/site/header-living'
 import { FHS_LIVING as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/living/common/footer/footer'
 
@@ -62,7 +62,7 @@ export default function Page ({ data }) {
 
 
             {/* CHAIRMAN LETTER */}
-            <section className="block bg-white">
+            <section className="block bg-wash">
                 <div
                     className="container"
                     style={
@@ -102,19 +102,19 @@ export default function Page ({ data }) {
 
                 <div className="container columns-3 gap-md">
                     <div className="formatted balance">
-                        <Pop inline><p className="fs-xl fw-600 lh-1 c-accent">01</p></Pop>
+                        <Pop inline><p className="fs-xl fw-600 lh-1 c-primary">01</p></Pop>
                         <h5>The scale of European living investment</h5>
                         <p>Living has become Europe&apos;s largest real estate investment class, drawing €46.9 billion in 2025 alone. Capital is moving toward operationally-managed assets that generate stable, contractual income streams - branded residences, student accommodation, senior living and serviced apartments are now core institutional categories.</p>
                     </div>
                     
                     <div className="formatted balance">
-                        <Pop inline><p className="fs-xl fw-600 lh-1 c-accent">02</p></Pop>
+                        <Pop inline><p className="fs-xl fw-600 lh-1 c-primary">02</p></Pop>
                         <h5>The demand for cross-category dealmaking</h5>
                         <p>The growth of the living sector across Europe has created a need for a forum that brings its constituent asset classes together in a single, investment-led environment. FHS Living aggregates the full living spectrum - giving capital allocators, developers and operators a single curated point of access to cross-category opportunity.</p>
                     </div>
                     
                     <div className="formatted balance">
-                        <Pop inline><p className="fs-xl fw-600 lh-1 c-accent">03</p></Pop>
+                        <Pop inline><p className="fs-xl fw-600 lh-1 c-primary">03</p></Pop>
                         <h5>The platform the industry has validated</h5>
                         <p>Conversations with senior industry leaders confirmed the same message: the European living investment community needs a dedicated forum, built for dealmaking, bringing together the right people at the right moment.</p>
                     </div>

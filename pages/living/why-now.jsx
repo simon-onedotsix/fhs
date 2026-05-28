@@ -11,7 +11,7 @@ import Head from "next/head"
 
 
 import { EventsBar } from "../../ui/site/eventsbar"
-import { Header } from '../../ui/site/header'
+import { Header } from '../../ui/site/header-living'
 import { FHS_LIVING as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/living/common/footer/footer'
 
@@ -60,27 +60,27 @@ export default function Page () {
                 <div className="container columns-3 gap-md">
                     <div>
                         <p className="fs-2 fw-300 lh-1">€<AnimatedCounter from={0} to={46.9} /> billion</p>
-                        <p className="fs-5 lh-1 mt-xxs balance">invested in European living in 2025 -  the continent&apos;s largest real estate investment class.</p>
+                        <p className="fs-5 lh-1 mt-xxs balance c-magenta">invested in European living in 2025 -  the continent&apos;s largest real estate investment class.</p>
                     </div>
                     
                     <div>
                         <p className="fs-2 fw-300 lh-1">€<AnimatedCounter from={0} to={50} /> billion</p>
-                        <p className="fs-5 lh-1 mt-xxs balance">of fresh capital planned specifically for European living sectors over the next three years.</p>
+                        <p className="fs-5 lh-1 mt-xxs balance c-magenta">of fresh capital planned specifically for European living sectors over the next three years.</p>
                     </div>
                     
                     <div>
                         <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={9.6} /> million</p>
-                        <p className="fs-5 lh-1 mt-xxs balance">home shortfall across Europe - structural undersupply driving long-term institutional demand across every living category.</p>
+                        <p className="fs-5 lh-1 mt-xxs balance c-magenta">home shortfall across Europe - structural undersupply driving long-term institutional demand across every living category.</p>
                     </div>
                     
                     <div>
                         <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={165} />% year-on-year growth</p>
-                        <p className="fs-5 lh-1 mt-xxs balance">in care home investment across EMEA in 2025, reaching €14.4 billion.</p>
+                        <p className="fs-5 lh-1 mt-xxs balance c-magenta">in care home investment across EMEA in 2025, reaching €14.4 billion.</p>
                     </div>
                     
                     <div>
                         <p className="fs-2 fw-300 lh-1"><AnimatedCounter from={0} to={300} />+ schemes</p>
-                        <p className="fs-5 lh-1 mt-xxs balance">Branded residences expected in Europe by 2032 - more than double the 141 operating today.</p>
+                        <p className="fs-5 lh-1 mt-xxs balance c-magenta">Branded residences expected in Europe by 2032 - more than double the 141 operating today.</p>
                     </div>
                 </div>
             </section>

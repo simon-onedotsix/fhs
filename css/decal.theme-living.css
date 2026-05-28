@@ -1,4 +1,4 @@
-/* FHS egypt theme */
+/* FHS living theme */
 
 
 [data-theme='living'] body {
@@ -15,6 +15,12 @@
 [data-theme='living'] .c-primary { color: var(--primary); }
 [data-theme='living'] .c-secondary { color: var(--secondary); }
 [data-theme='living'] .c-accent { color: var(--accent); }
+
+[data-theme='living'] .c-purple { color: var(--purple); }
+[data-theme='living'] .c-burgundy { color: var(--burgundy); }
+[data-theme='living'] .c-magenta { color: var(--magenta); }
+[data-theme='living'] .c-cream { color: var(--cream); }
+[data-theme='living'] .c-rose { color: var(--rose); }
 
 [data-theme='living'] .c-p { color: var(--default-text-color); }
 [data-theme='living'] .c-h { color: var(--default-heading-color); }
@@ -90,6 +96,30 @@
 [data-theme='living'] .bg-white .formatted h4,
 [data-theme='living'] .bg-white .formatted h5,
 [data-theme='living'] .bg-white .formatted h6 {
+    color: var(--secondary);
+}
+
+[data-theme='living'] .bg-wash {
+    color: var(--default-text-color);
+}
+[data-theme='living'] .bg-wash .formatted h1,
+[data-theme='living'] .bg-wash .formatted h2,
+[data-theme='living'] .bg-wash .formatted h3,
+[data-theme='living'] .bg-wash .formatted h4,
+[data-theme='living'] .bg-wash .formatted h5,
+[data-theme='living'] .bg-wash .formatted h6 {
+    color: var(--secondary);
+}
+
+[data-theme='living'] .bg-light {
+    color: var(--default-text-color);
+}
+[data-theme='living'] .bg-light .formatted h1,
+[data-theme='living'] .bg-light .formatted h2,
+[data-theme='living'] .bg-light .formatted h3,
+[data-theme='living'] .bg-light .formatted h4,
+[data-theme='living'] .bg-light .formatted h5,
+[data-theme='living'] .bg-light .formatted h6 {
     color: var(--secondary);
 }
 

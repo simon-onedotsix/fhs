@@ -124,7 +124,7 @@ export const EventCardLite = ({ heading, logo, venue, dates, dateOverride, websi
         endMonth = formatInTimeZone(new Date( dates.endDate ), 'Asia/Dubai', 'MMMM')
     }
 
-    console.log(heading, dateOverride)
+    // console.log(heading, dateOverride)
 
     return (
         <motion.div 
@@ -172,13 +172,13 @@ export const EventCardLite = ({ heading, logo, venue, dates, dateOverride, websi
                 {
                     websiteLink &&
                     <div className={CSS.eventCardLiteActions}>
-                            <p className='fs-5'>
+                            <span className='fs-5'>
                             <Pop delay={.1}>
                                 <a className={CSS.websiteButton} href={websiteLink} target='_blank'>
                                     Website <ExternalLinkIcon />
                                 </a>
                             </Pop>
-                        </p>
+                        </span>
                     </div>
                 }
             </div>

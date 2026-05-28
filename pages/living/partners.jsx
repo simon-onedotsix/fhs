@@ -13,7 +13,7 @@ import Head from "next/head"
 
 
 import { EventsBar } from "../../ui/site/eventsbar"
-import { Header } from '../../ui/site/header'
+import { Header } from '../../ui/site/header-living'
 import { FHS_LIVING as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/living/common/footer/footer'
 
@@ -70,7 +70,7 @@ export default function Page ({ videoTestimonials }) {
 
             <section className="block bg-primary">
                 <div className="container center">
-                    <p className="fs-4 fw-600 c-accent">FHS Living 2027 partners to be announced soon</p>
+                    <p className="fs-4 fw-600 c-magenta">FHS Living 2027 partners to be announced soon</p>
                 </div>
                 <div className="container">
                     <p className="fs-2 fw-500 caps center">What partnership delivers</p>
@@ -81,7 +81,7 @@ export default function Page ({ videoTestimonials }) {
                         <Pop>
                             <img src="/assets/img/living/partners/partners-01.jpg" width="100%" alt="" style={{ borderRadius: `1rem`, marginBottom: 20 }}/>
                         </Pop>
-                        <h4 className="c-accent lh-2">A curated room of capital allocators</h4>
+                        <h4 className="c-magenta lh-2">A curated room of capital allocators</h4>
                         <p>FHS Living partners are introduced to a room of pre-qualified capital allocators - LPs, sovereign wealth funds, family offices and pension funds actively deploying into European living assets.</p>
                     </article>
 
@@ -89,7 +89,7 @@ export default function Page ({ videoTestimonials }) {
                         <Pop>
                             <img src="/assets/img/living/partners/partners-02.jpg" width="100%" alt="" style={{ borderRadius: `1rem`, marginBottom: 20 }}/>
                         </Pop>
-                        <h4 className="c-accent lh-2">Pre-scheduled 1:1 investor meetings</h4>
+                        <h4 className="c-magenta lh-2">Pre-scheduled 1:1 investor meetings</h4>
                         <p>Partners receive curated, pre-scheduled introductions with investors matched to their specific criteria - arranged by the FHS Living investor relations team in advance of the event.</p>
                     </article>
 
@@ -97,7 +97,7 @@ export default function Page ({ videoTestimonials }) {
                         <Pop>
                             <img src="/assets/img/living/partners/partners-03.jpg" width="100%" alt="" style={{ borderRadius: `1rem`, marginBottom: 20 }}/>
                         </Pop>
-                        <h4 className="c-accent lh-2">Thought leadership and programme presence</h4>
+                        <h4 className="c-magenta lh-2">Thought leadership and programme presence</h4>
                         <p>FHS Living is built around investor-first content and curated conversations. Partners could receive speaker positions, Advisory Board seats, project announcement opportunities and sustained marketing presence throughout the campaign leading to Paris (depending on the package).</p>
                     </article>
 
@@ -105,7 +105,7 @@ export default function Page ({ videoTestimonials }) {
                         <Pop>
                             <img src="/assets/img/living/partners/partners-04.jpg" width="100%" alt="" style={{ borderRadius: `1rem`, marginBottom: 20 }}/>
                         </Pop>
-                        <h4 className="c-accent lh-2">Exhibition and showcase presence</h4>
+                        <h4 className="c-magenta lh-2">Exhibition and showcase presence</h4>
                         <p>Partners have a dedicated physical presence on the exhibition floor. Your stand is your base of operations for two days: a space to host conversations, display projects, and engage the delegate community as it moves through the event. (depending on the package).</p>
                     </article>
 

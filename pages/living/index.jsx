@@ -12,7 +12,7 @@ import Head from "next/head"
 
 
 import { EventsBar } from "../../ui/site/eventsbar"
-import { Header } from '../../ui/site/header'
+import { Header } from '../../ui/site/header-living'
 import { FHS_LIVING as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/living/common/footer/footer'
 
@@ -121,12 +121,12 @@ export default function Home ({ data, advisors }) {
                 <section className="">
                     <div className="container">
                         <p className="fs-1 fw-600 caps lh-1 maxw-45">Connecting Global Capital with Europe&apos;s Living, Lifestyle &amp; Hospitality</p>
-                        <p className="fs-5 fw-500 caps mt-sm mb-sm">Founding Edition | February 2027 | <span className="c-accent">Paris</span>, France</p>
+                        <p className="fs-5 fw-500 caps mt-sm mb-sm">Founding Edition | February 2027 | <span className="c-magenta">Paris</span>, France</p>
                     </div>
 
                     <div className="container formatted">
-                        <p className="fs-6 fw-600 c-accent">Asset Classes:</p>
-                        <p className="fs-5 balance">Branded Residences <span className="c-accent">&bull;</span> Student Accommodation <span className="c-accent">&bull;</span> Senior Living <span className="c-accent">&bull;</span> Serviced Living <span className="c-accent">&bull;</span> Co-Living <span className="c-accent">&bull;</span> Shared Ownership <span className="c-accent">&bull;</span> Club Concepts <span className="c-accent">&bull;</span> Mixed Use <span className="c-accent">&bull;</span> Hotels &amp; Resorts</p>
+                        <p className="fs-6 fw-600 c-magenta">Asset Classes:</p>
+                        <p className="fs-5 balance">Branded Residences <span className="c-magenta">&bull;</span> Student Accommodation <span className="c-magenta">&bull;</span> Senior Living <span className="c-magenta">&bull;</span> Serviced Living <span className="c-magenta">&bull;</span> Co-Living <span className="c-magenta">&bull;</span> Shared Ownership <span className="c-magenta">&bull;</span> Club Concepts <span className="c-magenta">&bull;</span> Mixed Use <span className="c-magenta">&bull;</span> Hotels &amp; Resorts</p>
                     </div>
                 </section>
             </PageHero>
@@ -152,7 +152,7 @@ export default function Home ({ data, advisors }) {
                     <Card>
                         <div className="formatted center">
                             <p className="fs-1">9.6M</p>
-                            <p className="fs-5 lh-1 balance">Home shortfall across Europe - structural, enduring demand</p>
+                            <p className="fs-5 lh-1 balance c-cream">Home shortfall across Europe - structural, enduring demand</p>
                         </div>
                     </Card>
                 </div>
@@ -191,6 +191,12 @@ export default function Home ({ data, advisors }) {
                         <p>An agenda built around investment decisions. Every session from Underwriting Living Assets to Europe Meets Middle East is structured to support capital deployment, informed by the C-Level decision-makers who will be in the room.</p>
                     </div>
                 </div>
+
+                <div className="container center">
+                    <div className="button-grid">
+                        <Pop><p><Button href={`/living/programme`} label={`Full Agenda`} inverse/></p></Pop>
+                    </div>
+                </div>
             </section>
 
 
@@ -205,6 +211,7 @@ export default function Home ({ data, advisors }) {
                         advisors.profiles.map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
+                                    key={index}
                                     url={``}
                                     photoUrl={profile.avatar[0].url}
                                     fullName={profile.title}
@@ -218,8 +225,7 @@ export default function Home ({ data, advisors }) {
 
                 <div className="container center">
                     <div className="button-grid">
-                        {/* <p><Pop><Button href={`/living/speakers`} label={`View All Speakers`}/></Pop></p> */}
-                        <p><Pop><Button href={`/living/programme`} label={`Full Agenda`}/></Pop></p>
+                        <Pop><p><Button href={`/living/founding-advisors`} label={`View All`} inverse/></p></Pop>
                     </div>
                 </div>
             </section>
@@ -294,7 +300,7 @@ export default function Home ({ data, advisors }) {
                     <p className="fs-2 fw-600 caps center">The FHS Living experience</p>
                 </div>
 
-                <div className="container columns-3 gap-sm">
+                <div className="container flex flex-wrap gap-sm jc-center">
                     <SlideoutCard title={`Curated 1:1 meetings`} imageSrc={`/assets/img/living/homepage/attendees-01.jpg`}>
                         <div className="formatted balance">
                             <p className="fs-6">Pre-qualified, pre-scheduled introductions across capital, development and operations</p>
@@ -345,7 +351,7 @@ export default function Home ({ data, advisors }) {
                 <div className="container columns-3 maxw-55 gap-xs">
                     {
                         data.events.map(event => {
-                            console.log(event)
+                            // console.log(event)
                             return (
                                 <div key={event.id} className={`columns-1 gap-xs`}>                                
                                     {
@@ -424,7 +430,7 @@ const Impact = ({ title, percent, children }) => {
 
     return (
         <Pop delay={.1}>
-            <p className="fs-4 caps center mb-sm">{title}</p>
+            <p className="fs-4 caps center mb-sm c-magenta">{title}</p>
             <div
                 style={{
                     position: `relative`,
@@ -434,7 +440,7 @@ const Impact = ({ title, percent, children }) => {
                     justifyContent: `center`,
 
                     aspectRatio: 1,
-                    border: `1px solid var(--accent)`,
+                    border: `1px solid var(--magenta)`,
                     borderRadius: `50rem`,
                     padding: `2rem`,
                     
@@ -442,7 +448,7 @@ const Impact = ({ title, percent, children }) => {
                 }}
             >
                 <p
-                    className="fw-600"
+                    className="fw-600 c-ma"
                     style={{
                         position: `absolute`,
                         top: `-1.5rem`,
@@ -533,7 +539,7 @@ export async function getStaticProps() {
                     ... on profileGroups_default_Entry {
 						id
 						title
-						profiles {
+						profiles(limit: 10) {
 							... on profiles_profile_Entry {
 								id
 								slug

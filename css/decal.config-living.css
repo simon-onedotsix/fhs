@@ -2,24 +2,27 @@
 
     /* colour */
 
-    --blue-light: #9BCADF;
-    --blue-mid: #66AECE;
-    --blue-dark: #258CBA;
+    --purple: #3C1A53;
+    --burgundy: #7F0A64;
+    --magenta: #B03D9E;
+    --cream: #FFD4CC;
+    --rose: #F4A8A8;
 
-    --primary: #582f9b;
-    --secondary: #361f59;
-    --accent: #bd73eb;
+    --primary: var(--purple);
+    /* --secondary: hsl(from var(--primary) h s calc(l + 6) / 1); */
+    --secondary: var(--burgundy);
+    --accent: var(--cream);
 
     --bg: white;
-    --fg: var(--secondary);
+    --fg: hsl(from var(--primary) h s calc(l + 6) / 1);
 
     --bg-global: hsl(from var(--secondary) h s calc(l - 0) / 1);
 
     --default-text-color: rgb(56, 56, 56);
-    --default-heading-color: var(--secondary);
+    --default-heading-color: var(--magenta);
 
-    --wash: hsl(from var(--primary) h s calc(l + 10) / 1);
-    --light: hsl(from var(--primary) h s calc(l + 5) / 1);
+    --wash: var(--cream);
+    --light: var(--rose);
     --medium: hsl(from var(--bg-global) h s calc(l + 5) / 1);
     --dark: hsl(from var(--bg-global) h s calc(l - 5) / 1);
 

@@ -11,7 +11,7 @@ import Head from "next/head"
 
 
 import { EventsBar } from "../../ui/site/eventsbar"
-import { Header } from '../../ui/site/header'
+import { Header } from '../../ui/site/header-living'
 import { FHS_LIVING as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/living/common/footer/footer'
 
