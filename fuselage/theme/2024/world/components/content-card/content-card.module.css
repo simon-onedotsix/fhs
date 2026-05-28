@@ -17,7 +17,7 @@
     overflow: hidden;
     align-items: center;
     justify-content: center;
-    border-radius: var(--default-radius);
+    border-radius: 1rem;
 }
 .hero img {
     display: block;

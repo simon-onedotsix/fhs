@@ -522,7 +522,7 @@ export const FHS_SA = {
                     },
                     {
                         "__typename": "navigation_Entry",
-                        "id": "221",
+                        "id": "221234",
                         "title": "FHS Dealroom",
                         "navUrl": "/sa/fhs-dealroom",
                         "target": false
@@ -620,7 +620,7 @@ export const FHS_SA = {
                     },
                     {
                         "__typename": "navigation_Entry",
-                        "id": "221",
+                        "id": "654",
                         "title": "FHS Startup Zone",
                         "navUrl": "/sa/startup-den",
                         "target": false
