@@ -38,7 +38,7 @@ export const FhsLivingLockup = ({ region, inverse }) => {
             <FhsLivingIcon />
             <div>
                 <p className={CSS.brand} style={{ color: 'white'}}>FHS</p>
-                <p className={CSS.sector} style={{ color: 'var(--accent)' }}>{ region ? region : '' }</p>
+                <p className={CSS.sector} style={{ color: 'var(--magenta)' }}>{ region ? region : '' }</p>
             </div>
         </div>
     )
