@@ -672,13 +672,13 @@ export const FHS_SA = {
                                 "navUrl": "/sa/networking-receptions",
                                 "target": false
                             },
-                            // {
-                            //     "__typename": "navigation_Entry",
-                            //     "id": "237",
-                            //     "title": "Sports & Wellness",
-                            //     "navUrl": "/sa/sports-and-wellness",
-                            //     "target": false
-                            // },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "237",
+                                "title": "Sports & Wellness",
+                                "navUrl": "/sa/sports-and-wellness",
+                                "target": false
+                            },
                             {
                                 "__typename": "navigation_Entry",
                                 "id": "239",
