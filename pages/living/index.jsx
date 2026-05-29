@@ -535,7 +535,7 @@ export async function getStaticProps() {
                         }
                     }
                 }
-                advisors: entry(site: "${process.env.SITE_HANDLE_LIVING}", section: "profileGroups", id: "310153") {
+                advisors: entry(site: "${process.env.SITE_HANDLE_LIVING}", section: "profileGroups", id: "312271") {
                     ... on profileGroups_default_Entry {
 						id
 						title
