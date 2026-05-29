@@ -25,8 +25,14 @@ export const ContentCard = ({ url, heroUrl, heading, excerpt, type }) => {
             </Link>
 
             <div className='formatted pt-xs'>
-                <Link href={url}><a className={`${CSS.titleLink} h fs-4 fw-600 lh-2 mt-xxs`}>{ heading }</a></Link>
-                <p className='mt-xxs'>{ excerpt }</p>
+                <Link href={url}>
+                    <a className={`${CSS.titleLink} h fs-4 fw-600 lh-2 mt-xxs`}>{heading}</a>
+                </Link>
+
+                {
+                    excerpt &&
+                    <p className='mt-xxs'>{ excerpt }</p>
+                }
                                 
                 <p className='fw-500'>
                     <IconButton href={url} type={type} />

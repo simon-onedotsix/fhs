@@ -610,15 +610,6 @@ export default function Page({ seomatic, partners, content }) {
                                 { locale === 'ar' ? `عرض قائمة المتحدثين في قمة مستقبل الضيافة 2026` : `View 2026 Speakers` }
                             </ArrowButton>
                         </Pop>
-                        <Pop>
-                            <ArrowButton 
-                                href={ '/sa/fhs-speakers' } 
-                                theme={{ arrow: `white`, border: `white`, label: `white` }}
-                                target={`_blank`}
-                            >
-                                { locale === 'ar' ? `عرض المتحدثين السابقين في قمة مستقبل الضيافة` : `View Past FHS Speakers` }
-                            </ArrowButton>
-                        </Pop>
                     </div>
                 </div>
     
@@ -870,13 +861,21 @@ export default function Page({ seomatic, partners, content }) {
                                 url={`/egypt/content-library/${entry.slug}`}
                                 heroUrl={entry.contentLibraryHero && entry.contentLibraryHero[0] ? entry.contentLibraryHero[0].url : null}
                                 heading={entry.title}
-                                excerpt={entry.excerpt}
+                                // excerpt={entry.excerpt}
                                 contentTypes={entry.contentTypes}
                                 postDate={entry.postDate}
                                 type={entry.contentTypes[0].slug}
                             />
                         ))
                     }
+                </div>
+
+                <div className="container center">
+                    <div className="button-grid">
+                        <Pop><ArrowButton href={ '/sa/content-library/category/industry-news' } theme={{ arrow: `white`, border: `white`, label: `white`}} >Industry News</ArrowButton></Pop>
+                        <Pop><ArrowButton href={ '/sa/content-library/category/podcast' } theme={{ arrow: `white`, border: `white`, label: `white`}} >Podcasts</ArrowButton></Pop>
+                        <Pop><ArrowButton href={ '/sa/content-library/category/press-room' } theme={{ arrow: `white`, border: `white`, label: `white`}} >Press Room</ArrowButton></Pop>
+                    </div>
                 </div>
             </section>
 
