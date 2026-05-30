@@ -23,7 +23,7 @@ import { SpeakerCard } from "../../ui/components/speaker-card"
 
 export default function Home ({ advisors }) {
 
-    // console.log(content)
+    console.log('advisors;', advisors)
 
     const isDesktop = useCustomMediaQuery('(min-width: 600px)');
 
@@ -58,7 +58,7 @@ export default function Home ({ advisors }) {
                                 <SpeakerCard
                                     key={index}
                                     url={``}
-                                    photoUrl={profile.avatar[0].url}
+                                    photoUrl={profile.avatar[0]?.url}
                                     fullName={profile.title}
                                     positions={profile.positions}
                                     color={'white'}
