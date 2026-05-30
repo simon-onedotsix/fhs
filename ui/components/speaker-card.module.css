@@ -2,6 +2,9 @@
     display: block;
     text-decoration: none;
 }
+.link {
+    text-decoration: none;
+}
 .photoContainer {
     position: relative;
     aspect-ratio: 1/1;

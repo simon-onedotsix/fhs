@@ -3,8 +3,21 @@ import Image from 'next/image'
 import CSS from './speaker-card.module.css'
 
 export const SpeakerCard = ({ url, color, photoUrl, fullName, positions, jobTitle, company, specialField }) => {
+    if (url) return (
+        <a href={url} className={CSS.link}>
+            <Layout url={url} color={color} photoUrl={photoUrl} fullName={fullName} positions={positions} jobTitle={jobTitle} company={company} specialField={specialField} />
+        </a>
+    )
+
+    return <Layout url={url} color={color} photoUrl={photoUrl} fullName={fullName} positions={positions} jobTitle={jobTitle} company={company} specialField={specialField} />
+}
+
+
+
+
+const Layout = ({ url, color, photoUrl, fullName, positions, jobTitle, company, specialField }) => {
     return (
-        <a href={url} className={CSS.layout}>
+        <div className={CSS.layout}>
             
             <div className={CSS.photoContainer}>
                 {
@@ -39,6 +52,6 @@ export const SpeakerCard = ({ url, color, photoUrl, fullName, positions, jobTitl
                 }
             </div>
 
-        </a>
+        </div>
     )
 }
