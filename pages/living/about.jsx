@@ -150,8 +150,8 @@ export default function Page ({ data }) {
 
                 <div className="container columns-2 gap-md">
                     <div className="formatted" style={{ alignSelf: `center`}}>
-                        <p>The Bench has spent three decades building the infrastructure of global hospitality investment. Jonathan Worsley co-founded the International Hotel Investment Forum (IHIF) in the late 1990s - the event that defined the European hotel investment calendar for a generation. Tess Pearson served as IHIF&apos;s Event Director for 28 years and now leads FHS Living in the same role.</p>
-                        <p>The FHS franchise - Future Hospitality Summit World, Saudi Arabia, Africa, Egypt and Branded Residences Forum gives FHS Living a global network spanning the Middle East, Africa, Asia and Europe. That network, built over 20 years, is the foundation FHS Living is built on.</p>
+                        <p>The Bench has spent three decades building the infrastructure of global hospitality investment. The FHS franchise - Future Hospitality Summit World, Saudi Arabia, Africa, Egypt and Branded Residences Forum gives FHS Living a global network spanning the Middle East, Africa, Asia and Europe. That network, built over 20 years, is the foundation FHS Living is built on.</p>
+                        <p>Across our 2025 FHS conferences, we brought together more than 3,000 C-level decision-makers, including 621 investors representing over USD 11 trillion in assets under management, and facilitated USD 3 billion in business opportunities. FHS Living carries that same convening power, focused on the living sector and anchored in Europe.</p>
                     </div>
         
                     <Pop>
