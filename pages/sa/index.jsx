@@ -198,30 +198,30 @@ const SPEAKER_DATA_AR = [
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDU5MjM3ODY=`,
         photoUrl: 'https://static.swapcard.com/public/images/20c5160961534044aaa6f2f8bb4724a8.jpeg',
-        fullName: 'Dr. Abdullah Alabdulkarim',
-        jobTitle: 'Deputy Minister for Sectorial Human Capability Development',
-        company: 'Ministry of Transport and Logistics Services',
+        fullName: 'د. عبد الله العبد الكريم',
+        jobTitle: 'وكيل الوزارة لتنمية القدرات البشرية في وزارة النقل والخدمات اللوجستية',
+        company: '',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDYwNTk5MDI=`,
         photoUrl: 'https://static.swapcard.com/public/images/b8726b4ca45c4ca397593a045c5de2c7.jpeg',
-        fullName: 'Omar Alabdullatif',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Blacksand',
+        fullName: 'عمر العبد اللطيف',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'شركة بلاك ساند',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ1NTIyMzA=`,
         photoUrl: 'https://static.swapcard.com/public/images/e0dd7c51a08843e895efbd901a951270.jpeg',
-        fullName: 'Meshari Al Nahari',
-        jobTitle: 'Chief Executive Officer',
-        company: 'ASFAR & Aseer Investment Company',
+        fullName: 'مشاري النهاري',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'شركة أسفار وعسير للاستثمار',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDU4NzkyMDQ=`,
         photoUrl: 'https://static.swapcard.com/public/images/712a64a2e79245bfbe56770cc0001b6b.jpeg',
-        fullName: 'Ragad Al-Nasser',
-        jobTitle: 'Chief Investment Officer',
-        company: 'Jabal Ohod Holding',
+        fullName: 'رغد آل ناصر',
+        jobTitle: 'الرئيس التنفيذي للاستثمار',
+        company: 'شركة جبل أحد القابضة',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ2Mjc=`,
@@ -240,9 +240,9 @@ const SPEAKER_DATA_AR = [
     {
         url: ``,
         photoUrl: 'https://cms.thebench.com/assets/img/avatars/hossam-al-basrawi.jpg',
-        fullName: 'Hossam Al-Basrawi',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Alrajhi Capital',
+        fullName: 'حسام البصراوي',
+        jobTitle: 'الرئيس التنفيذي',
+        company: 'شركة الراجحي المالية',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQxOTMxMjE=`,
@@ -254,9 +254,9 @@ const SPEAKER_DATA_AR = [
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDUwMDY1OTU=`,
         photoUrl: 'https://static.swapcard.com/public/images/3aa57389f5ad4d348d08b5ce7f27808b.jpeg',
-        fullName: 'Gregory Djerejian',
-        jobTitle: 'Group Head of Investments and Group Chief Legal Officer',
-        company: 'Red Sea Global',
+        fullName: 'غريغوري جيريجان',
+        jobTitle: 'رئيس إدارة الاستثمار والشؤون القانونية للمجموعة',
+        company: 'شركة البحر الأحمر الدولية',
     },
 ]
 
@@ -301,6 +301,45 @@ const QUOTES_DATA_AR = [
     }
 ]
 
+const INVESTORS_AR = [
+    { title: "آينا للضيافة"},
+    { title: "شركة الراجحي المالية"},
+    { title: "شركة الأمين للتطوير"},
+    { title: "المصباح"},
+    { title: "مجموعة أوار"},
+    { title: "إيه كيو آر - رفاد العقارية"},
+    { title: "أربيريو كابيتال"},
+    { title: "شركة عسير للاستثمار"},
+    { title: "أصيل القابضة"},
+    { title: "مجموعة بودابست"},
+    { title: "بلاك ساند"},
+    { title: "بقشان للاستثمار"},
+    { title: "كوربيه هيريتيج"},
+    { title: "شركة دان"},
+    { title: "إزدهار"},
+    { title: "شركة فيرست بروجيكتس"},
+    { title: "جلوبال ميوتشال"},
+    { title: "منظمة مديري أصول الضيافة في الشرق الأوسط وإفريقيا"},
+    { title: "جبل أحد القابضة"},
+    { title: "شركة جبل عمر للتطوير"},
+    { title: "جي بي مورغان"},
+    { title: "ماجد الفطيم للتطوي"},
+    { title: "مجموعة ميلات"},
+    { title: "شركة نايف الراجحي الاستثمارية"},
+    { title: "المربع الجديد"},
+    { title: "بوليس لإدارة الأصول ش.م.ع"},
+    { title: "فنادق ومنتجعات بالس"},
+    { title: "رادار القابضة"},
+    { title: "آر جي"},
+    { title: "آر في كابيتال"},
+    { title: "إس إيه بي للاستثمار"},
+    { title: "مجموعة سعود العريفي"},
+    { title: "سدكو كابيتال"},
+    { title: "سوبكو"},
+    { title: "شركة السودة للتطوير"},
+    { title: "ثمين العقارية"},
+    { title: "توينتي 14 القابضة"},
+]
 const INVESTORS = [
     { title: "AINA Hospitality"},
     { title: "Al Rajhi Capital"},
@@ -341,9 +380,163 @@ const INVESTORS = [
     { title: "Twenty14 Holdings"},
 ]
 
+const THOUGHT_LEADERSHIP = [
+    {
+        "__typename": "contentLibrary_article_Entry",
+        "id": "310910",
+        "slug": "fhs-podcast-episode-141-title-saudi-arabias-tourism-transformation-through-the-eyes-of-rotana",
+        "title": "FHS Podcast Episode 141: Saudi Arabia’s Tourism Transformation Through the Eyes of Rotana",
+        "postDate": "2026-05-25T07:32:00+01:00",
+        "excerpt": "In this episode of the FHS podcast, Eddy Tannous, Chief Operating Officer, Rotana Hotels, shares Rotana's expansion strategy in the Kingdom. From expansion into secondary cities to bringing the world to Saudi Arabia with events like the Expo and the World Cup, Saudi Arabia is planning the next chapter of global hospitality, and Rotana is spearheading this transformation.",
+        "contentLibraryHero": [
+            {
+                "__typename": "contentLibrary_Asset",
+                "id": "310911",
+                "url": "https://cms.thebench.com/assets/content-library/img/FHS-SA/Eddy-Tannous_Thumbnail_16x9.jpg",
+                "width": 1920,
+                "height": 1080
+            }
+        ],
+        "contentTypes": [
+            {
+                "__typename": "contentLibrary_Category",
+                "id": "7701",
+                "title": "Podcast",
+                "slug": "podcast"
+            }
+        ]
+    },
+    {
+        "__typename": "contentLibrary_article_Entry",
+        "id": "310543",
+        "slug": "fhs-saudi-arabia-pre-event-feature-hospitality-investment-outlook",
+        "title": "FHS Saudi Arabia Pre-event feature: hospitality investment outlook",
+        "postDate": "2026-05-21T13:58:00+01:00",
+        "excerpt": "Saudi Arabia is set to deliver 358,000 new hotel rooms to meet rising tourism demand and prepare for major upcoming global events, unleashing a wealth of hospitality investment opportunities in the Kingdom.",
+        "contentLibraryHero": [
+            {
+                "__typename": "contentLibrary_Asset",
+                "id": "310544",
+                "url": "https://cms.thebench.com/assets/content-library/img/FHS-SA/pre-event-feature.png",
+                "width": 1280,
+                "height": 720
+            }
+        ],
+        "contentTypes": [
+            {
+                "__typename": "contentLibrary_Category",
+                "id": "7702",
+                "title": "Press room",
+                "slug": "press-room"
+            }
+        ]
+    },
+    {
+        "__typename": "contentLibrary_article_Entry",
+        "id": "310245",
+        "slug": "fhs-podcast-episode-138-the-attention-economy-of-hospitality-with-michael-cirino",
+        "title": "FHS Podcast Episode 138: The Attention Economy of Hospitality with Michael Cirino",
+        "postDate": "2026-05-19T07:15:00+01:00",
+        "excerpt": "In this episode of FHS Podcast, we talk about the attention economy of hospitality; it’s no longer enough to build beautiful spaces. The real challenge is creating moments that capture attention, spark emotion, and stay with people long after they leave.\nJoining us is Michael Cirino, Founder and Chief Creative Officer of House of Attention, an award-winning creative studio redefining what hospitality experiences can be. With over two decades of work at the intersection of storytelling, technology, and physical space, Michael has built immersive concepts that blur the lines between dining, entertainment, art, and brand.",
+        "contentLibraryHero": [
+            {
+                "__typename": "contentLibrary_Asset",
+                "id": "310246",
+                "url": "https://cms.thebench.com/assets/content-library/img/FHS-SA/Michael-Cirino_Thumbnail_16x9.jpg",
+                "width": 1920,
+                "height": 1080
+            }
+        ],
+        "contentTypes": [
+            {
+                "__typename": "contentLibrary_Category",
+                "id": "7701",
+                "title": "Podcast",
+                "slug": "podcast"
+            }
+        ]
+    }
+]
 
+const THOUGHT_LEADERSHIP_AR = [
+    {
+        "__typename": "contentLibrary_article_Entry",
+        "id": "310910",
+        "slug": "fhs-podcast-episode-141-title-saudi-arabias-tourism-transformation-through-the-eyes-of-rotana",
+        "title": "بودكاست قمة مستقبل الضيافة – الحلقة 141: تحوّل السياحة في السعودية من منظور مجموعة روتانا",
+        "postDate": "2026-05-25T07:32:00+01:00",
+        "excerpt": "In this episode of the FHS podcast, Eddy Tannous, Chief Operating Officer, Rotana Hotels, shares Rotana's expansion strategy in the Kingdom. From expansion into secondary cities to bringing the world to Saudi Arabia with events like the Expo and the World Cup, Saudi Arabia is planning the next chapter of global hospitality, and Rotana is spearheading this transformation.",
+        "contentLibraryHero": [
+            {
+                "__typename": "contentLibrary_Asset",
+                "id": "310911",
+                "url": "https://cms.thebench.com/assets/content-library/img/FHS-SA/Eddy-Tannous_Thumbnail_16x9.jpg",
+                "width": 1920,
+                "height": 1080
+            }
+        ],
+        "contentTypes": [
+            {
+                "__typename": "contentLibrary_Category",
+                "id": "7701",
+                "title": "Podcast",
+                "slug": "استمع الآن"
+            }
+        ]
+    },
+    {
+        "__typename": "contentLibrary_article_Entry",
+        "id": "310543",
+        "slug": "fhs-saudi-arabia-pre-event-feature-hospitality-investment-outlook",
+        "title": "مقال ما قبل قمة مستقبل الضيافة بالمملكة العربية السعودية: نظرة على آفاق الاستثمار في قطاع الضيافة",
+        "postDate": "2026-05-21T13:58:00+01:00",
+        "excerpt": "Saudi Arabia is set to deliver 358,000 new hotel rooms to meet rising tourism demand and prepare for major upcoming global events, unleashing a wealth of hospitality investment opportunities in the Kingdom.",
+        "contentLibraryHero": [
+            {
+                "__typename": "contentLibrary_Asset",
+                "id": "310544",
+                "url": "https://cms.thebench.com/assets/content-library/img/FHS-SA/pre-event-feature.png",
+                "width": 1280,
+                "height": 720
+            }
+        ],
+        "contentTypes": [
+            {
+                "__typename": "contentLibrary_Category",
+                "id": "7702",
+                "title": "Press room",
+                "slug": "اقرأ الآن"
+            }
+        ]
+    },
+    {
+        "__typename": "contentLibrary_article_Entry",
+        "id": "310245",
+        "slug": "fhs-podcast-episode-138-the-attention-economy-of-hospitality-with-michael-cirino",
+        "title": "بودكاست قمة مستقبل الضيافة – الحلقة 138: اقتصاد جذب الانتباه في قطاع الضيافة مع مايكل سيرينو",
+        "postDate": "2026-05-19T07:15:00+01:00",
+        "excerpt": "In this episode of FHS Podcast, we talk about the attention economy of hospitality; it’s no longer enough to build beautiful spaces. The real challenge is creating moments that capture attention, spark emotion, and stay with people long after they leave.\nJoining us is Michael Cirino, Founder and Chief Creative Officer of House of Attention, an award-winning creative studio redefining what hospitality experiences can be. With over two decades of work at the intersection of storytelling, technology, and physical space, Michael has built immersive concepts that blur the lines between dining, entertainment, art, and brand.",
+        "contentLibraryHero": [
+            {
+                "__typename": "contentLibrary_Asset",
+                "id": "310246",
+                "url": "https://cms.thebench.com/assets/content-library/img/FHS-SA/Michael-Cirino_Thumbnail_16x9.jpg",
+                "width": 1920,
+                "height": 1080
+            }
+        ],
+        "contentTypes": [
+            {
+                "__typename": "contentLibrary_Category",
+                "id": "7701",
+                "title": "Podcast",
+                "slug": "استمع الآن"
+            }
+        ]
+    }
+]
 
-export default function Page({ seomatic, partners, content }) {
+export default function Page({ seomatic, partners }) {
     
     const { locale } = useRouter()
 
@@ -425,7 +618,7 @@ export default function Page({ seomatic, partners, content }) {
                 >
                     {
                         locale === 'ar'
-                            ? `22-24 June 2026, Mandarin Oriental Al Faisaliah, Riyadh`
+                            ? `20-22 أبريل 2026، فندق ماندارين أورينتال الفيصلية، الرياض`
                             : `22-24 June 2026, Mandarin Oriental Al Faisaliah, Riyadh`
                     }
                 </motion.p>
@@ -545,14 +738,28 @@ export default function Page({ seomatic, partners, content }) {
 
             {/* RESULTS 2025 */}
             <div className="bg-primary-2 py-xs">
-                <Ticker duration={15}>
-                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">1106</strong> Attendees</p>
-                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$1.6B</strong> Business Opportunities</p>
-                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">24%</strong> Active Investors</p>
-                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$5.6tn</strong> Assets Under Management (AUM)</p>
-                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">81%</strong> C-Level Representation</p>
-                    <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">11</strong> Landmark Deals Announced</p>
-                </Ticker>
+                {
+                    locale === 'ar'
+                        ?
+                            <Ticker duration={15} direction={1}>
+                                <p className="fs-4" dir="rtl">&ensp;&bull;&ensp;<strong className="fw-600">1106</strong> مشاركًا</p>
+                                <p className="fs-4" dir="rtl">&ensp;&bull;&ensp;<strong className="fw-600">$1.6B</strong> مليار دولار قيمة الفرص التجارية</p>
+                                <p className="fs-4" dir="rtl">&ensp;&bull;&ensp;<strong className="fw-600">24%</strong> نسبة الحضور من المستثمرين النشطين</p>
+                                <p className="fs-4" dir="rtl">&ensp;&bull;&ensp;<strong className="fw-600">$5.6tn</strong> تريليون دولار إجمالي الأصول المُدارة</p>
+                                <p className="fs-4" dir="rtl">&ensp;&bull;&ensp;<strong className="fw-600">81%</strong> نسبة الحضور من القيادات التنفيذية العليا</p>
+                                <p className="fs-4" dir="rtl">&ensp;&bull;&ensp;<strong className="fw-600">11</strong> صفقة محورية تم الإعلان عنها</p>
+                            </Ticker>
+                        :
+                            <Ticker duration={15}>
+                                <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">1106</strong> Attendees</p>
+                                <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$1.6B</strong> Business Opportunities</p>
+                                <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">24%</strong> Active Investors</p>
+                                <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$5.6tn</strong> Assets Under Management (AUM)</p>
+                                <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">81%</strong> C-Level Representation</p>
+                                <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">11</strong> Landmark Deals Announced</p>
+                            </Ticker>
+                        
+                }
             </div>
 
 
@@ -579,7 +786,11 @@ export default function Page({ seomatic, partners, content }) {
 
                 <div className="container center">
                     <Fade>
-                        <p className="fs-2 fw-600 c-white">Thought Leaders Taking The Stage</p>
+                        {
+                            locale === 'ar'
+                            ? <p className="fs-2 fw-600 c-white">قادة الفكر على منصة المسرح</p>
+                            : <p className="fs-2 fw-600 c-white">Thought Leaders Taking The Stage</p>
+                        }
                     </Fade>
                 </div>
 
@@ -607,7 +818,7 @@ export default function Page({ seomatic, partners, content }) {
                                 href={ '/sa/speakers' } 
                                 theme={{ arrow: `white`, border: `white`, label: `white`}}
                             >
-                                { locale === 'ar' ? `عرض قائمة المتحدثين في قمة مستقبل الضيافة 2026` : `View 2026 Speakers` }
+                                { locale === 'ar' ? `عرض أسماء المتحدثين 2026` : `View 2026 Speakers` }
                             </ArrowButton>
                         </Pop>
                     </div>
@@ -644,16 +855,36 @@ export default function Page({ seomatic, partners, content }) {
             {/* INVESTORS */}
             <section className="bg-primary">        
                 <div className="container py-md" dir={`ltr`}>
-                    <Pop><p className="fs-2 fw-600 balance center pb-sm">Capital in the Room</p></Pop>
-                    <Ticker duration={40}>
+                    <Pop>
                         {
-                            INVESTORS.map((investor, index) => (
-                                <div key={index} style={{ marginRight: 10 }}>
-                                    <p className="fs-5 fw-500"><span className="c-accent">&bull;</span> {investor.title}</p>
-                                </div>
-                            ))
+                            locale === 'ar'
+                                ? <p className="fs-2 fw-600 balance center pb-sm">المستثمرون الحضور</p>
+                                : <p className="fs-2 fw-600 balance center pb-sm">Capital in the Room</p>
                         }
-                    </Ticker>
+                    </Pop>
+                    {
+                        locale === 'ar'
+                        ?
+                            <Ticker duration={40} direction={1}>
+                                {
+                                    INVESTORS_AR.map((investor, index) => (
+                                        <div key={index} style={{ marginRight: 10 }}>
+                                            <p className="fs-5 fw-500"><span className="c-accent">&bull;</span> {investor.title}</p>
+                                        </div>
+                                    ))
+                                }
+                            </Ticker>
+                        :
+                            <Ticker duration={40}>
+                                {
+                                    INVESTORS.map((investor, index) => (
+                                        <div key={index} style={{ marginRight: 10 }}>
+                                            <p className="fs-5 fw-500"><span className="c-accent">&bull;</span> {investor.title}</p>
+                                        </div>
+                                    ))
+                                }
+                            </Ticker>
+                    }
                 </div>
             </section>
      
@@ -824,7 +1055,7 @@ export default function Page({ seomatic, partners, content }) {
             {/* LINKEDIN POSTS */}
             <section className="block bg-primary-2">
                 <div className="container center">
-                    <Pop><p className="fs-2 fw-600 balance">Join The Buzz</p></Pop>
+                    <Pop><p className="fs-2 fw-600 balance">{ locale === 'ar' ? 'انضم إلى الحدث' : 'Join The Buzz'}</p></Pop>
                 </div>
 
                 <div className="container columns-3 gap-sm">
@@ -849,13 +1080,12 @@ export default function Page({ seomatic, partners, content }) {
             {/* THOUGHT LEADERSHIP */}
             <section className="block bg-primary">
                 <div className="container center">
-                    <Pop><p className="fs-2 fw-600 balance">Thought Leadership in Action</p></Pop>
+                    <Pop><p className="fs-2 fw-600 balance">{locale === 'ar' ? 'القيادة الفكرية في قلب الحدث' : 'Thought Leadership in Action'}</p></Pop>
                 </div>
 
-                <div className="container columns-3 gap-sm">
+                <div className="container columns-3 gap-sm" dir={`rtl`}>
                     {
-                        content &&
-                        content.map((entry, index) => (
+                        (locale === 'ar' ? THOUGHT_LEADERSHIP_AR : THOUGHT_LEADERSHIP).map((entry, index) => (
                             <Post
                                 key={index}
                                 url={`/egypt/content-library/${entry.slug}`}
@@ -872,9 +1102,21 @@ export default function Page({ seomatic, partners, content }) {
 
                 <div className="container center">
                     <div className="button-grid">
-                        <Pop><ArrowButton href={ '/sa/content-library/category/industry-news' } theme={{ arrow: `white`, border: `white`, label: `white`}} >Industry News</ArrowButton></Pop>
-                        <Pop><ArrowButton href={ '/sa/content-library/category/podcast' } theme={{ arrow: `white`, border: `white`, label: `white`}} >Podcasts</ArrowButton></Pop>
-                        <Pop><ArrowButton href={ '/sa/content-library/category/press-room' } theme={{ arrow: `white`, border: `white`, label: `white`}} >Press Room</ArrowButton></Pop>
+                        <Pop>
+                            <ArrowButton href={ '/sa/content-library/category/industry-news' } theme={{ arrow: `white`, border: `white`, label: `white`}} >
+                                {locale === 'ar' ? 'أخبار القطاع' : 'Industry News'}
+                            </ArrowButton>
+                        </Pop>
+                        <Pop>
+                            <ArrowButton href={ '/sa/content-library/category/podcast' } theme={{ arrow: `white`, border: `white`, label: `white`}} >
+                                {locale === 'ar' ? 'البودكاست' : 'Podcasts'}
+                            </ArrowButton>
+                        </Pop>
+                        <Pop>
+                            <ArrowButton href={ '/sa/content-library/category/press-room' } theme={{ arrow: `white`, border: `white`, label: `white`}} >
+                                {locale === 'ar' ? 'غرفة المؤتمرات الصحفية' : 'Press Room'}
+                            </ArrowButton>
+                        </Pop>
                     </div>
                 </div>
             </section>
@@ -1153,32 +1395,6 @@ export async function getStaticProps({ preview, previewData, locale }) {
 					}
 				}
 
-                podcasts: entries(
-                    section: "contentLibrary"
-                    site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}"]
-                    id: [ 310910, 310245, 310543 ]
-                ){
-                    ... on contentLibrary_article_Entry {
-                        id
-                        slug
-                        title
-                        postDate
-                        excerpt
-                        contentLibraryHero {
-                            id
-                            url
-                            width
-                            height
-                        }
-                        contentTypes {
-                            ... on contentLibrary_Category {
-                                id
-                                title
-                                slug
-                            }
-                        }
-                    }
-                }
 			}
 			
         `
@@ -1234,7 +1450,6 @@ export async function getStaticProps({ preview, previewData, locale }) {
 			contentBlocks: pageData.data.entry.fhisContentBlocks,
             partners: partnerData2026.data.exhibitors,
             abVideos: pageData.data.abVideos.videos,
-            content: pageData.data.podcasts,
 		}
 	}
 }

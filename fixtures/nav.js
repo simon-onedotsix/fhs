@@ -478,14 +478,14 @@ export const FHS_SA = {
                             },
                             {
                                 "__typename": "navigation_Entry",
-                                "id": "229",
+                                "id": "reg35yrg",
                                 "title": "Industry News",
                                 "navUrl": "/sa/content-library/category/industry-news",
                                 "target": false
                             },
                             {
                                 "__typename": "navigation_Entry",
-                                "id": "229",
+                                "id": "2346345673",
                                 "title": "Reports",
                                 "navUrl": "/sa/content-library/category/reports",
                                 "target": false
@@ -646,7 +646,7 @@ export const FHS_SA = {
                             },
                             {
                                 "__typename": "navigation_Entry",
-                                "id": "229",
+                                "id": "254665424576",
                                 "title": "Impact Leader Award",
                                 "navUrl": "/sa/impact-leader-award",
                                 "target": false
@@ -988,7 +988,7 @@ export const FHS_EGYPT = {
                         "children": [
                             {
                                 "__typename": "navigation_Entry",
-                                "id": "229",
+                                "id": "6573568",
                                 "title": "Videos",
                                 "navUrl": "/egypt/content-library/category/videos-and-webinars",
                                 "target": false

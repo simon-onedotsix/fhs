@@ -43,6 +43,12 @@ export const IconButton = ({ href, type }) => {
 
             case 'press-room' : return 'Read'
                 break
+            
+            case 'اقرأ الآن' : return 'اقرأ الآن'
+                break
+            
+            case 'استمع الآن' : return 'استمع الآن'
+                break
 
             default: return 'Read more'
         }
