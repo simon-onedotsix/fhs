@@ -424,6 +424,7 @@ export default function Page({ seomatic, partners }) {
                                 accent
                             >{ locale === 'ar' ? `قائمة الحضور لعام 2026` : `2026 Attendee List`}</Button>
                         </Pop>
+
                         <Pop inline>
                             <Button 
                                 href={'/sa/prospectus-download'} 
@@ -431,6 +432,15 @@ export default function Page({ seomatic, partners }) {
                                 decal={'fs-5 fw-600'} 
                                 accent
                             >{ locale === 'ar' ? `كتيب 2026` : `2026 Prospectus`}</Button>
+                        </Pop>
+
+                        <Pop inline>
+                            <Button 
+                                href={'/sa/attending-investors-2026'} 
+                                theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
+                                decal={'fs-5 fw-600'} 
+                                accent
+                            >{ locale === 'ar' ? `2026 Investor Attendees` : `2026 Investor Attendees`}</Button>
                         </Pop>
                     </div>
                 </Fade>

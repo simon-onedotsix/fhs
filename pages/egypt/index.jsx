@@ -140,7 +140,7 @@ export default function Home ({ data, content }) {
                         <p className="mt-md c-secondary button-grid">
                             <Pop inline><ButtonKeyline decal={`fs-5`} href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></Pop>
                             <Pop inline><ButtonKeyline decal={`fs-5`} href={`/egypt/forms/register-interest`} >Register Interest</ButtonKeyline></Pop>
-                            <Pop inline><ButtonKeyline decal={`fs-5`} href={`https://events.teams.microsoft.com/event/4c624ff1-c2c0-4bda-8ac7-bd2aeafce113@8cdb290b-4b7e-4a51-8886-7b658cef30e5`} target={`_blank`} >Sign up for the Webinar</ButtonKeyline></Pop>
+                            <Pop inline><ButtonKeyline decal={`fs-5`} href={`https://youtu.be/l1e0wJV3T90`} target={`_blank`} >Watch the Webinar</ButtonKeyline></Pop>
                         </p>
                     </div>
                 </section>
@@ -150,7 +150,7 @@ export default function Home ({ data, content }) {
             
 
             {/* TICKER */}
-            <div className="bg-secondary py-xs">
+            <div className="bg-primary py-xs">
                 <Ticker duration={20}>
                     <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$3 billion</strong>  in business opportunities and deal volume gained in 2025 conferences</p>
                     <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">95.8%</strong>  of FHS attendees achieved their networking goals last year</p>
@@ -159,41 +159,6 @@ export default function Home ({ data, content }) {
                 </Ticker>
             </div>
 
-
-            {/* WEBINAR */}
-            <section className="block bg-primary">
-                            <div className="container center">
-                                <p className="fs-1 fw-500 lh-1 balance">WEBINAR: Egypt&apos;s Hospitality Market: Between Global Ambition and Local Reality</p>
-                            </div>
-            
-                            <div className="container center">
-                                <p className="fs-5"><strong>Thursday, 21 May</strong> | <strong>15:00 – 16:00</strong> (Egypt Standard Time)</p>
-                            </div>
-
-                            <div className="container center">
-                                <p className="fs-2 fw-600 c-secondary">Confirmed Speakers</p>
-                            </div>
-            
-                            <div className="container columns-4 gap-sm maxw-60 center">
-                                {
-                                    WEBINAR_SPEAKER_DATA.map( (profile, index) => (
-                                        <Pop key={index}>
-                                            <SpeakerCard
-                                                photoUrl={profile.photoUrl}
-                                                fullName={profile.fullName}
-                                                jobTitle={profile.jobTitle}
-                                                company={profile.company}
-                                                color={'white'}
-                                            />
-                                        </Pop>
-                                    ))
-                                }
-                            </div>
-            
-                            <div className="container center">
-                                <Pop inline><Button decal={`fs-5`} href={`https://events.teams.microsoft.com/event/4c624ff1-c2c0-4bda-8ac7-bd2aeafce113@8cdb290b-4b7e-4a51-8886-7b658cef30e5`} target={`_blank`} rel={`noreferrer`} label={`Register for Webinar`}></Button></Pop>
-                            </div>
-                        </section>
 
 
 

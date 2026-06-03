@@ -103,11 +103,11 @@ export default function Home () {
                 </div>
 
                 <div className="container center">
-                    <p className="fs-5"><strong>Thursday, 21 May</strong> | <strong>15:00 – 16:00</strong> (Egypt Standard Time)</p>
+                    <p className="fs-5"><strong>Thursday, 21 May 2026</strong> | <strong>15:00 – 16:00</strong> (Egypt Standard Time)</p>
                 </div>
 
                 <div className="container center">
-                    <Pop inline><Button decal={`fs-5`} href={`https://events.teams.microsoft.com/event/4c624ff1-c2c0-4bda-8ac7-bd2aeafce113@8cdb290b-4b7e-4a51-8886-7b658cef30e5`} target={`_blank`} rel={`noreferrer`} label={`Register for Webinar`}></Button></Pop>
+                    <Pop inline><Button decal={`fs-5`} href={`https://youtu.be/l1e0wJV3T90`} target={`_blank`} rel={`noreferrer`} label={`Watch the Webinar`}></Button></Pop>
                 </div>
             </section>
 

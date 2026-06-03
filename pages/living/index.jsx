@@ -24,6 +24,9 @@ import { SpeakerCard } from "../../ui/components/speaker-card"
 import { FhsIconKeyline } from "../../fuselage/theme/2024/global/components/logos/fhs-brand"
 import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 
+import { ThemesSlider } from "../../ui/modules/themes-slider"
+import { ThemeGraphic } from '../../fuselage/theme/2026/sa/theme/theme-graphic'
+
 import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
 import { SlideoutCard } from "../../fuselage/components/slideout-card/slideout-card"
 import { EventCardLite } from '../../fuselage/theme/2024/world/blocks/upcoming-events/upcoming-events'
@@ -91,6 +94,47 @@ const QUOTES_DATA = [
     }
 ]
 
+const THEMES_DATA = [
+    {
+        iconUrl: '/assets/img/living/homepage/asset-classes/branded-residences.svg',
+        title: 'Branded Residences',
+    },
+    {
+        iconUrl: '/assets/img/living/homepage/asset-classes/student-accommodation.svg',
+        title: 'Student Accommodation',
+    },
+    {
+        iconUrl: '/assets/img/living/homepage/asset-classes/senior-living.svg',
+        title: 'Senior Living',
+    },
+    {
+        iconUrl: '/assets/img/living/homepage/asset-classes/serviced-living.svg',
+        title: 'Serviced Living',
+    },
+    {
+        iconUrl: '/assets/img/living/homepage/asset-classes/co-living.svg',
+        title: 'Co-living',
+    },
+    {
+        iconUrl: '/assets/img/living/homepage/asset-classes/shared-ownership.svg',
+        title: 'Shared Ownership',
+    },
+    {
+        iconUrl: '/assets/img/living/homepage/asset-classes/club-concepts.svg',
+        title: 'Club Concepts',
+    },
+    {
+        iconUrl: '/assets/img/living/homepage/asset-classes/mixed-use.svg',
+        title: 'Mixed Use',
+    },
+    {
+        iconUrl: '/assets/img/living/homepage/asset-classes/hotels-and-resorts.svg',
+        title: 'Hotels & Resorts',
+    },
+    
+    
+]
+
 
 export default function Home ({ data, advisors }) {
 
@@ -120,7 +164,7 @@ export default function Home ({ data, advisors }) {
             <PageHero hero={{url: `/assets/img/living/homepage/page-hero.jpg`, width: 595, height: 335}}>    
                 <section className="">
                     <div className="container">
-                        <p className="fs-1 fw-600 caps lh-1 maxw-45">Connecting Global Capital with Europe&apos;s Living, Lifestyle &amp; Hospitality</p>
+                        <p className="fs-1 fw-600 caps lh-1 maxw-60">EUROPE&apos;S ALTERNATIVE HOSPITALITY OPPORTUNITIES MEET GLOBAL CAPITAL</p>
                         <p className="fs-5 fw-500 caps mt-sm mb-sm">Founding Edition | February 2027 | <span className="c-magenta">Paris</span>, France</p>
                     </div>
 
@@ -138,29 +182,42 @@ export default function Home ({ data, advisors }) {
                     <Card>
                         <div className="formatted center">
                             <p className="fs-1">€46.9B</p>
-                            <p className="fs-5 lh-1 balance">Invested in European living in 2025</p>
+                            <p className="fs-5 lh-1 balance c-magenta">Invested in European living in 2025</p>
                         </div>
                     </Card>
 
                     <Card>
                         <div className="formatted center">
                             <p className="fs-1">€50B</p>
-                            <p className="fs-5 lh-1 balance">Of fresh capital planned for European living over the next three years</p>
+                            <p className="fs-5 lh-1 balance c-magenta">Of fresh capital planned for European living over the next three years</p>
                         </div>
                     </Card>
 
                     <Card>
                         <div className="formatted center">
                             <p className="fs-1">9.6M</p>
-                            <p className="fs-5 lh-1 balance c-cream">Home shortfall across Europe - structural, enduring demand</p>
+                            <p className="fs-5 lh-1 balance c-magenta">Home shortfall across Europe - structural, enduring demand</p>
                         </div>
                     </Card>
+                </div>
+            </section>  
+
+            
+            {/* OPPORTUNITY */}
+            <section className="block bg-secondary">
+                <div className="container center maxw-60">
+                    <p className="fs-2 fw-500 lh-1 caps balance">Where Middle Eastern capital meets the European opportunity</p>
+                </div>
+                <div className="container columns-2 gap-md maxw-60">
+                    <p>The Bench has spent 20 years cultivating relationships with Middle Eastern investors and developers through the Future Hospitality Summit franchise. FHS Living brings this capital to Europe - with rigour and intent. Vetted, named Middle Eastern delegates, paired with European hosts, with confirmed travel and pre-event introductions arranged in advance.</p>
+
+                    <p>Sharia-compliant living assets - student accommodation, senior living and branded residences - offer a clean and increasingly attractive entry point for Gulf capital. Family offices from Qatar, the UAE and broader GCC are actively seeking deployment opportunities in Paris, Amsterdam, Madrid and Berlin. FHS Living is where those conversations begin.</p>
                 </div>
             </section>
 
 
             {/* PILLARS */}
-            <section className="block bg-secondary">
+            <section className="block bg-primary">
                 <div className="container center formatted">
                     <p className="fs-2 fw-500 caps">What defines FHS Living</p>
                     <p className="fs-6 balance">FHS Living is a high-impact initiative designed to funnel capital, especially from the Middle East, towards a carefully selected mix of living assets - addressing the growing &quot;lanyard fatigue&quot; of the European hospitality conferencing market.</p>
@@ -200,6 +257,21 @@ export default function Home ({ data, advisors }) {
             </section>
 
 
+            {/* ASSET CLASSES */}
+            <section className={`block bg-secondary`}>
+                <div className="container center pb-sm">
+                    <p className="fs-2 fw-500 caps">Asset Classes</p>
+                </div>
+
+                <ThemesSlider
+                    heading={`Asset Classes` }
+                    data={THEMES_DATA}
+                    link={''}
+                    linkLabel={''}
+                />
+            </section>
+
+
             {/* ADVISORS */}
             <section className="block bg-primary">
                 <div className="container center">
@@ -217,6 +289,8 @@ export default function Home ({ data, advisors }) {
                                     fullName={profile.title}
                                     positions={profile.positions}
                                     color={'white'}
+                                    focus={profile.focus}
+                                    geographies={profile.geographies}
                                 />
                             </Pop>
                         ))
@@ -232,7 +306,7 @@ export default function Home ({ data, advisors }) {
 
 
             {/* QUOTES */}
-            <section className="block bg-secondary">
+            <section className="block bg-secondary o-hidden">
                 <div className="container">
                     <p className="fs-2 fw-600 caps center">What the industry is saying</p>
                 </div>
@@ -345,7 +419,7 @@ export default function Home ({ data, advisors }) {
             {/* FHS EVENTS */}
             <section className="block bg-secondary">
                 <div className="container center">
-                    <p className="fs-1 fw-500 caps">FHS Around the World</p>
+                    <p className="fs-2 fw-500 caps">FHS Around the World</p>
                 </div>
 
                 <div className="container columns-3 maxw-55 gap-xs">
@@ -560,6 +634,8 @@ export async function getStaticProps() {
 									}
 								}
 								profile
+                                focus
+                                geographies
 							}
 						}
 					}

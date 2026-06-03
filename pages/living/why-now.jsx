@@ -182,19 +182,6 @@ export default function Page () {
                 </div>
             </section>
 
-            
-            {/* OPPORTUNITY */}
-            <section className="block bg-secondary">
-                <div className="container center maxw-60">
-                    <p className="fs-2 fw-500 lh-1 caps balance">Where Middle Eastern capital meets the European opportunity</p>
-                </div>
-                <div className="container columns-2 gap-md maxw-60">
-                    <p>The Bench has spent 20 years cultivating relationships with Middle Eastern investors and developers through the Future Hospitality Summit franchise. FHS Living brings this capital to Europe - with rigour and intent. Vetted, named Middle Eastern delegates, paired with European hosts, with confirmed travel and pre-event introductions arranged in advance.</p>
-
-                    <p>Sharia-compliant living assets - student accommodation, senior living and branded residences - offer a clean and increasingly attractive entry point for Gulf capital. Family offices from Qatar, the UAE and broader GCC are actively seeking deployment opportunities in Paris, Amsterdam, Madrid and Berlin. FHS Living is where those conversations begin.</p>
-                </div>
-            </section>
-
 
 
             <Footer/>

@@ -53,6 +53,7 @@
     background-color: hsl(from var(--primary) h s l / .75);
     opacity: 0;
     padding-right: 2rem;
+    color: white;
 }
 .layout:hover .overlay {
     transform: translateX(0);

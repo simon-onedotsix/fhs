@@ -1,0 +1,122 @@
+import { useState } from "react"
+
+import { useRouter } from "next/router"
+
+import { motion, useScroll, useTransform } from "framer-motion"
+
+import CSS from './themes-slider.module.css'
+
+
+
+export const ThemesSlider = ({ data }) => {
+
+	if ( !data ) return
+
+	const { locale } = useRouter()
+
+	const count = data.length
+
+	// console.log('insight-slider data:', data)
+
+	const [ currentPage, setCurrentPage ] = useState(1)
+	const [ offset, setOffset ] = useState( 50 - (100/count) /2 )
+
+    const totalPages = data.length
+
+    const nextPage = () => {
+        if ( currentPage < totalPages ) {
+			setCurrentPage( currentPage + 1 )
+			setOffset( offset - 100/count )
+		}
+	}
+	const prevPage = () => {
+		if ( currentPage > 1 ) {
+			setCurrentPage( currentPage - 1 )
+			setOffset( offset + 100/count )
+		}
+    }
+
+    return (
+		<section className={CSS.layout}>
+		
+
+			<div className={CSS.icons} dir="ltr">
+				<motion.div className={CSS.iconWrapper} style={{ x: `${offset}%` }}>
+					{
+						data.map( (theme, index) => (
+							<div key={index} className={`${CSS.iconSlide} ${index+1 === currentPage ? CSS.active : ''}`} style={{ width: `calc( 100% / ${count})`}}>
+								{
+									theme ? 
+										<motion.div 
+											initial={{ scale: 0, opacity: 0 }}
+											whileInView={{ scale: 1, opacity: 1 }}
+											transition={{ type: "spring", bounce: 0.25 }}
+										>
+											<img src={theme.iconUrl} alt="" />
+										</motion.div>
+									: undefined
+								}
+							</div>
+						))
+					}
+				</motion.div>
+			</div>
+
+
+			{
+				data.map( (slide, index) => (
+					<div key={index} className={`${CSS.headingWrapper} ${index+1 === currentPage ? CSS.active : ''}`}>
+						<div className={CSS.heading}>
+							<p className="fs-3 fw-600 c-magenta center lh-2">{ slide.title }</p>
+						</div>
+					</div>
+				))
+			}
+
+			
+
+			<nav className={CSS.nav} dir="ltr">
+				<button className={CSS.navButton} onClick={prevPage} disabled={currentPage === 1 && true}><NavChevron flipped /></button>
+				<button className={CSS.navButton} onClick={nextPage} disabled={currentPage === totalPages && true}><NavChevron /></button>
+			</nav>
+
+			
+		
+		</section>
+    )
+}
+
+
+
+
+export const ThemesExploreArrow = () => {
+    return (
+        <div className={CSS.keylineArrow}>
+            <svg width="100%" height="100%" viewBox="0 0 42 42" style={{ fillRule:'evenodd', clipRule:'evenodd', strokeMiterlimit:3 }}>
+                <g transform="matrix(1,0,0,1,0,-304)">
+                    <g id="arrow" transform="matrix(1,0,0,0.907972,0,27.4585)">
+                        <rect x="0" y="304.571" width="42.117" height="45.771" style={{ fill:'none' }}/>
+                        <clipPath id="_clip1">
+                            <rect x="0" y="304.571" width="42.117" height="45.771"/>
+                        </clipPath>
+                        <g clipPath="url(#_clip1)">
+                            <g transform="matrix(-1,-1.34877e-16,1.22465e-16,-1.10136,2598.53,1324.97)">
+                                <path vectorEffect="non-scaling-stroke" d="M2577.47,884.939L2597.97,925.943L2556.97,925.943L2577.47,884.939Z" style={{ fill:'none', stroke:'var(--accent)', strokeWidth: 1 }}/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+    )
+}
+
+const NavChevron = ({ flipped }) => {
+    return (
+        <div style={{ width: `100%`, height: `100%`, transform: flipped && `rotateY(180deg)` }}>
+            <svg width="100%" height="100%" viewBox="0 0 18 28" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeLinecap:`square`, strokeMiterlimit:3 }}>
+                <path id="nav-chevron" d="M5,23.885L15,13.885L5,3.885" style={{ fill:`none`, stroke:`white`, strokeWidth:`4px` }}/>
+            </svg>
+        </div>
+    )
+}

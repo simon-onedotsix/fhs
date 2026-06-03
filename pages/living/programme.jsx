@@ -63,7 +63,7 @@ export default function Page () {
 
 
             {/* PROGRAMME */}
-            <section className="block bg-secondary">
+            <section className="block bg-primary">
                 <div className="container columns-1 gap-sm maxw-45">
 
                     <Day title={`Pre-conference day`}>
@@ -174,20 +174,20 @@ Page.theme = 'living'
 const Day = ({ title, children }) => {
     return (
         <div
-            className="formatted"
+            className="bg-primary formatted"
             style={{
                 backgroundColor: `var(--primary)`,
                 padding: `var(--space-sm)`,
                 borderRadius: `1rem`,
-
             }}
         >
-            <h4>{title}</h4>
+            <h4 style={{ color: `white` }}>{title}</h4>
             <div
                 style={{
                     display: `grid`,
                     gridTemplateColumns: `1fr`,
-                    gap: `.5rem`
+                    gap: `.5rem`,
+                    color: `white`
                 }}
             >
                 {children}
@@ -200,11 +200,12 @@ const Session = ({ children }) => {
     return (
         <Pop>
             <div
-                className="formatted"
+                className="bg-secondary"
                 style={{
-                    backgroundColor: `var(--secondary)`,
+                    backgroundColor: `var(--burgundy)`,
                     padding: `var(--space-xs)`,
-                    borderRadius: `.5rem`
+                    borderRadius: `.5rem`,
+                    color: `white`
                 }}
             >
                 { children }

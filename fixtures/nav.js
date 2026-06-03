@@ -614,7 +614,7 @@ export const FHS_SA = {
                     {
                         "__typename": "navigation_Entry",
                         "id": "221",
-                        "title": "Live Webinar",
+                        "title": "Webinar",
                         "navUrl": "/sa/webinar",
                         "target": false
                     },

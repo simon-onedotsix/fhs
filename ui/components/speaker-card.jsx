@@ -2,24 +2,44 @@ import Image from 'next/image'
 
 import CSS from './speaker-card.module.css'
 
-export const SpeakerCard = ({ url, color, photoUrl, fullName, positions, jobTitle, company, specialField }) => {
+export const SpeakerCard = ({ url, color, photoUrl, fullName, positions, jobTitle, company, specialField, focus, geographies }) => {
     if (url) return (
         <a href={url} className={CSS.link}>
-            <Layout url={url} color={color} photoUrl={photoUrl} fullName={fullName} positions={positions} jobTitle={jobTitle} company={company} specialField={specialField} />
+            <Layout url={url} color={color} photoUrl={photoUrl} fullName={fullName} positions={positions} jobTitle={jobTitle} company={company} specialField={specialField} focus={focus} geographies={geographies} />
         </a>
     )
 
-    return <Layout url={url} color={color} photoUrl={photoUrl} fullName={fullName} positions={positions} jobTitle={jobTitle} company={company} specialField={specialField} />
+    return <Layout url={url} color={color} photoUrl={photoUrl} fullName={fullName} positions={positions} jobTitle={jobTitle} company={company} specialField={specialField} focus={focus} geographies={geographies} />
 }
 
 
 
 
-const Layout = ({ url, color, photoUrl, fullName, positions, jobTitle, company, specialField }) => {
+const Layout = ({ url, color, photoUrl, fullName, positions, jobTitle, company, specialField, focus, geographies }) => {
     return (
         <div className={CSS.layout}>
             
             <div className={CSS.photoContainer}>
+
+                {
+                    focus || geographies ?
+                        <div className={CSS.photoOverlay}>
+                        
+                            <p className='fw-600 c-accent'>Focus:</p>
+                            {
+                                focus &&
+                                focus.split('\n').map((line, i) => <p key={i}>&bull; {line}</p>)
+                            }
+                            
+                            <br />
+                            
+                            <p className='fw-600 c-accent'>Geographies:</p>
+                            {geographies}
+                        </div>
+                        : null
+                }
+                       
+
                 {
                     photoUrl ?
                         <Image className={CSS.photo} src={photoUrl} layout='fill' alt=""/>

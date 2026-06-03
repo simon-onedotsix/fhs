@@ -58,10 +58,12 @@ export default function Home ({ advisors }) {
                                 <SpeakerCard
                                     key={index}
                                     url={``}
-                                    photoUrl={profile.avatar[0]?.url}
+                                    photoUrl={profile.avatar[0].url}
                                     fullName={profile.title}
                                     positions={profile.positions}
                                     color={'white'}
+                                    focus={profile.focus}
+                                    geographies={profile.geographies}
                                 />
                             </Pop>
                         ))
@@ -113,6 +115,8 @@ export async function getStaticProps() {
                                     }
                                 }
                                 profile
+                                focus
+                                geographies
                             }
                         }
                     }

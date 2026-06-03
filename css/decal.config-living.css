@@ -10,13 +10,13 @@
 
     --primary: var(--purple);
     /* --secondary: hsl(from var(--primary) h s calc(l + 6) / 1); */
-    --secondary: var(--burgundy);
+    --secondary: var(--cream);
     --accent: var(--cream);
 
     --bg: white;
     --fg: hsl(from var(--primary) h s calc(l + 6) / 1);
 
-    --bg-global: hsl(from var(--secondary) h s calc(l - 0) / 1);
+    --bg-global: hsl(from var(--burgundy) h s calc(l - 0) / 1);
 
     --default-text-color: rgb(56, 56, 56);
     --default-heading-color: var(--magenta);

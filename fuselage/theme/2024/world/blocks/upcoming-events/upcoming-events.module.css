@@ -128,6 +128,7 @@
     padding: .5rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+    color: white;
 }
 
 .eventCardLiteContent {
@@ -138,6 +139,7 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
+    color: white;
     
 }
 

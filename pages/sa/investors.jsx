@@ -163,6 +163,88 @@ export default function Page () {
                         </Link>
                     </Pop>
                 </div>
+
+                <div className="container formatted center">
+                    <h2>Investors Attending FHS Saudi Arabia 2026 Include</h2>
+                </div>
+
+                <div className="container">
+                    <div className="container formatted">
+                        <article className={CSS.listing}>
+                            <p>
+                                Aina Hospitality<br />
+                                Ajbal Real Estate Development<br />
+                                AL FAYA Capital<br />
+                                Al Othaim Investment Company<br />
+                                Al Rajhi Capital<br />
+                                Al-Ameen Development Company<br />
+                                Almusbah<br />
+                                AlRajhi Ekhwan<br />
+                                Alrossais Group<br />
+                                AOR Group<br />
+                                AQR - Refad Real Estate<br />
+                                Arbireo Capital<br />
+                                Aseel Holding<br />
+                                Aseer Investment Company<br />
+                                Ashaad<br />
+                                BDPST Group<br />
+                                Blacksand<br />
+                                Bugshan Investment<br />
+                                Capital Partners<br />
+                                Certares<br />
+                                Courbet Heritage<br />
+                                Dan Company<br />
+                                Dhofar development<br />
+                                Eden Rock Group / Spire Insights<br />
+                                Ezdaher<br />
+                                Fifth Dimension<br />
+                                First Projects Co.<br />
+                                FL DEVELOPMENT<br />
+                                GHE Family Office<br />
+                                GLOBAL MUTUAL<br />
+                                Gulf Partners LLC<br />
+                                HAMA MEA<br />
+                                Jabal ohod holding<br />
+                                Jabal Omar Development Company<br />
+                                Jenan Real Estate<br />
+                                JP Morgan<br />
+                                Kapur &amp; Partners<br />
+                                Kema Holdings Pty LTD<br />
+                                King salman international Airport<br />
+                                Majid Al Futtaim Development<br />
+                                Millat Group<br />
+                                Naif Al Rajhi Investment Company<br />
+                                New Murabba<br />
+                                NMR Group<br />
+                                Olayan financing company<br />
+                                Orascom Development<br />
+                                Polis SGR p.A.<br />
+                                Pulse Hotels and Resorts<br />
+                                Qatar Islamic Bank (UK) plc<br />
+                                Radar Holdings<br />
+                                Rajhi Invest<br />
+                                Rawafed<br />
+                                Red Sea Global<br />
+                                RG<br />
+                                Rikaz<br />
+                                Roshn Group<br />
+                                RV Capital<br />
+                                SAB Invest
+                                Saud Alarife Group<br />
+                                SEDCO Capital<br />
+                                SHARE investment<br />
+                                Snasco Holding<br />
+                                SOBCO<br />
+                                Somnium Sales<br />
+                                Soudah Development Company<br />
+                                Thameen Real Estate<br />
+                                Twenty14 Holdings<br />
+                                Unified Real Estate Development Company<br />
+                            </p>
+                            
+                        </article>
+                    </div>
+                </div>
             </section>
 
 

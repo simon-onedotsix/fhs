@@ -69,7 +69,7 @@
 [data-theme='living'] .bg-secondary .formatted h4,
 [data-theme='living'] .bg-secondary .formatted h5,
 [data-theme='living'] .bg-secondary .formatted h6 {
-    color: white;
+    color: var(--primary);
 }
 
 [data-theme='living'] .bg-secondary {
