@@ -329,9 +329,10 @@ export default function Page ({ sessions, speakers }) {
                 </div>
                 
                 <div className="container maxw-70 pt-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
-                    <PartnerLogo logoUrl={`/assets/img/brf/jabal-omar.svg`} maxWidth={10} />
+                    <PartnerLogo logoUrl={`/assets/img/brf/jabal-omar.svg`} maxWidth={8} />
                     <PartnerLogo logoUrl={`/assets/img/brf/accor-one-living.svg`} maxWidth={16} />
                     <PartnerLogo logoUrl={`/assets/img/brf/marriott.svg`} maxWidth={12} />
+                    <PartnerLogo logoUrl={`/assets/img/brf/sectorlight-inverse.png`} maxWidth={12} />
                 </div>
             </section>
 
