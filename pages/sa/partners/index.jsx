@@ -92,16 +92,16 @@ function Partners({ partnerData, videoTestimonials }) {
 
 	
 	const CUSTOM_ORDERING = [
-		{ name: 'Host Partner', ids: ['RmllbGRWYWx1ZV8xNTAzNDczOQ==','RmllbGRWYWx1ZV8yNzc4OTQxNw=='] },
-		{ name: 'Founding Partner', ids: ['RmllbGRWYWx1ZV8yNzc4OTQ0Mw==']},
-		{ name: 'Strategic Partner', ids: ['RmllbGRWYWx1ZV8yNzc4OTQ0Mg==']},
-		{ name: 'Headline Partner', ids: ['RmllbGRWYWx1ZV8yNzc4OTQ0MQ==']},
-		{ name: 'Partners', ids: ['RmllbGRWYWx1ZV8yNzc4OTQyMQ==']},
-		{ name: 'Strategic Event Partner', ids: ['RmllbGRWYWx1ZV8yOTkwNTIzNQ==']},
-		{ name: 'Exhibitors', ids: ['RmllbGRWYWx1ZV8yNzc4OTQyMg==']},
-		{ name: 'Supporters', ids: ['RmllbGRWYWx1ZV8yNzc4OTQyMw==']},
-		{ name: 'BRF Partner', ids: ['RmllbGRWYWx1ZV8zMDY1OTMzMw==']},
-		{ name: 'Media Partners', ids: ['RmllbGRWYWx1ZV8yNzc4OTQyNA==']},
+		{ name: 'Host Partner' },
+		{ name: 'Founding Partner' },
+		{ name: 'Strategic Partner' },
+		{ name: 'Headline Partner' },
+		{ name: 'Partners' },
+		{ name: 'Strategic Event Partner' },
+		{ name: 'Exhibitors' },
+		{ name: 'Supporters' },
+		{ name: 'BRF Partner' },
+		{ name: 'Media Partners' },
 	]
 	
 
