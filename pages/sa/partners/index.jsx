@@ -71,8 +71,8 @@ function Partners({ partnerData, videoTestimonials }) {
 
 	const isDesktop = useCustomMediaQuery('(min-width: 600px)')
 
-	// programatically build array of unique types pulled from exhibitor data
-
+	
+	// programatically build array of unique types (custom type field) pulled from exhibitor data
 	const allCategoriesArray = []
 	partnerData.exhibitors?.forEach( obj => {
 		if (obj.fields) {
@@ -92,23 +92,26 @@ function Partners({ partnerData, videoTestimonials }) {
 
 	
 	const CUSTOM_ORDERING = [
-		{ name: 'Host Partner' },
-		{ name: 'Founding Partner' },
-		{ name: 'Strategic Partner' },
-		{ name: 'Headline Partner' },
-		{ name: 'Partners' },
-		{ name: 'Strategic Event Partner' },
-		{ name: 'Exhibitors' },
-		{ name: 'Supporters' },
-		{ name: 'BRF Partner' },
-		{ name: 'Media Partners' },
+		'Host Partner',
+		'Founding Partner',
+		'Strategic Partners',
+		'Headline Partners',
+		'Partners',
+		'Exhibitors',
+		'BRF Partner',
+		'Strategic Event Partner',
+		'Supporters',
+		'Media Partners',
 	]
 	
 
 	// console.log('swapcard partner data 2026:', partnerData)
-	// console.log('categories:', categoriesArray)
+	console.log('categoriesArray:', categoriesArray)
 
 
+	const indexMap = new Map(CUSTOM_ORDERING.map((item, idx) => [item, idx]))
+	const sorted = _.sortBy(categoriesArray, (item) => indexMap.get(item.name))
+	console.log('SORTED:', sorted)
 
 	return (
 		<>
@@ -169,7 +172,9 @@ function Partners({ partnerData, videoTestimonials }) {
 				<PartnerCategoryGrid>
 					{
 						partnerData &&
-						_.orderBy(categoriesArray, x => _.findIndex(CUSTOM_ORDERING, y => x.name === y.name)).map((category, index) => {
+						sorted.map((category, index) => {
+
+							// console.log('category:', category)
 							
 							const group = partnerData.exhibitors?.filter(partner => {
 								const ids = partner.fields.map(field => field.id)
