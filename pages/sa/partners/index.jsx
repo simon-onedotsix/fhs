@@ -72,31 +72,42 @@ function Partners({ partnerData, videoTestimonials }) {
 	const isDesktop = useCustomMediaQuery('(min-width: 600px)')
 
 	// programatically build array of unique types pulled from exhibitor data
+
 	const allCategoriesArray = []
 	partnerData.exhibitors?.forEach( obj => {
-		if ( obj.fields ) allCategoriesArray.push({id: obj.fields[0]?.id, name: obj.fields[0]?.translations[0].value, size: ''})
-	})
-	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.id)
+		if (obj.fields) {
 
-	// 2026 custom ordering
-	const orderedCategories = []
-	categoriesArray.forEach( category => {
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQxNw==') orderedCategories.push({ ...category, priority: 0 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0Mw==') orderedCategories.push({ ...category, priority: 1 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0Mg==') orderedCategories.push({ ...category, priority: 3 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQ0MQ==') orderedCategories.push({ ...category, priority: 4 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMQ==') orderedCategories.push({ ...category, priority: 5 })
-		if (category.id === 'RmllbGRWYWx1ZV8yOTkwNTIzNQ==') orderedCategories.push({ ...category, priority: 6 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMg==') orderedCategories.push({ ...category, priority: 7 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyMw==') orderedCategories.push({ ...category, priority: 8 })
-		if (category.id === 'RmllbGRWYWx1ZV8zMDY1OTMzMw==') orderedCategories.push({ ...category, priority: 9 })
-		if (category.id === 'RmllbGRWYWx1ZV8yNzc4OTQyNA==') orderedCategories.push({ ...category, priority: 10 })
+			const ids = obj.fields.map(field => field.id)
+			const names = obj.fields.map(field => field.translations[0].value)
+			
+			allCategoriesArray.push({
+				ids: ids,
+				name: names[0],
+				size: ''
+			})
+		}
 	})
+	const categoriesArray = _.uniqBy(allCategoriesArray, obj => obj.name)
 
+
+	
+	const CUSTOM_ORDERING = [
+		{ name: 'Host Partner', ids: ['RmllbGRWYWx1ZV8xNTAzNDczOQ==','RmllbGRWYWx1ZV8yNzc4OTQxNw=='] },
+		{ name: 'Founding Partner', ids: ['RmllbGRWYWx1ZV8yNzc4OTQ0Mw==']},
+		{ name: 'Strategic Partner', ids: ['RmllbGRWYWx1ZV8yNzc4OTQ0Mg==']},
+		{ name: 'Headline Partner', ids: ['RmllbGRWYWx1ZV8yNzc4OTQ0MQ==']},
+		{ name: 'Partners', ids: ['RmllbGRWYWx1ZV8yNzc4OTQyMQ==']},
+		{ name: 'Strategic Event Partner', ids: ['RmllbGRWYWx1ZV8yOTkwNTIzNQ==']},
+		{ name: 'Exhibitors', ids: ['RmllbGRWYWx1ZV8yNzc4OTQyMg==']},
+		{ name: 'Supporters', ids: ['RmllbGRWYWx1ZV8yNzc4OTQyMw==']},
+		{ name: 'BRF Partner', ids: ['RmllbGRWYWx1ZV8zMDY1OTMzMw==']},
+		{ name: 'Media Partners', ids: ['RmllbGRWYWx1ZV8yNzc4OTQyNA==']},
+	]
+	
 
 	// console.log('swapcard partner data 2026:', partnerData)
-	console.log('categories:', categoriesArray)
-	// console.log('orderedCategories:', orderedCategories)
+	// console.log('categories:', categoriesArray)
+
 
 
 	return (
@@ -145,8 +156,6 @@ function Partners({ partnerData, videoTestimonials }) {
 			}
 
 
-			
-
 
 
 			{/* 2025 partners */}
@@ -160,26 +169,17 @@ function Partners({ partnerData, videoTestimonials }) {
 				<PartnerCategoryGrid>
 					{
 						partnerData &&
-						_.orderBy(orderedCategories, "priority").map( category => {
-							const group = partnerData.exhibitors?.filter( partner => {
-								if (partner.fields[0]?.id === category.id ) return partner
+						_.orderBy(categoriesArray, x => _.findIndex(CUSTOM_ORDERING, y => x.name === y.name)).map((category, index) => {
+							
+							const group = partnerData.exhibitors?.filter(partner => {
+								const ids = partner.fields.map(field => field.id)
+								if (ids.some(item => category.ids.includes(item)) ) return partner
 							})
 							
-							// console.log('group:', group)
-
 							if ( group.length > 0 ) {
 
-								// console.log(`GROUP: ${category.id} - ${category.name}`)
-
-								// add single-logo category ids to make them appear on one row
-								let specialCategories = [
-									'RmllbGRWYWx1ZV8yNTg5Nzk4NA==',
-									'RmllbGRWYWx1ZV8yMzk2Njg2MA==',
-									'RmllbGRWYWx1ZV8yMzk2Njg2MQ=='
-								]
-
 								return (
-									<PartnerCategory key={category.id} width={ specialCategories.includes( category.id ) ? 1 : null }>
+									<PartnerCategory key={index}>
 
 										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{category && category.name}</h4>
 										<PartnerLogoGrid>

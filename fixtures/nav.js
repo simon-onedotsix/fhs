@@ -485,7 +485,7 @@ export const FHS_SA = {
                             },
                             {
                                 "__typename": "navigation_Entry",
-                                "id": "229",
+                                "id": "23676543",
                                 "title": "Reports",
                                 "navUrl": "/sa/content-library/category/reports",
                                 "target": false
@@ -522,7 +522,7 @@ export const FHS_SA = {
                     },
                     {
                         "__typename": "navigation_Entry",
-                        "id": "221",
+                        "id": "23556666777",
                         "title": "FHS Dealroom",
                         "navUrl": "/sa/fhs-dealroom",
                         "target": false
@@ -620,7 +620,7 @@ export const FHS_SA = {
                     },
                     {
                         "__typename": "navigation_Entry",
-                        "id": "221",
+                        "id": "237382",
                         "title": "FHS Startup Zone",
                         "navUrl": "/sa/startup-den",
                         "target": false
@@ -646,7 +646,7 @@ export const FHS_SA = {
                             },
                             {
                                 "__typename": "navigation_Entry",
-                                "id": "229",
+                                "id": "2345rtwe",
                                 "title": "Impact Leader Award",
                                 "navUrl": "/sa/impact-leader-award",
                                 "target": false
@@ -988,7 +988,7 @@ export const FHS_EGYPT = {
                         "children": [
                             {
                                 "__typename": "navigation_Entry",
-                                "id": "229",
+                                "id": "werewhbds",
                                 "title": "Videos",
                                 "navUrl": "/egypt/content-library/category/videos-and-webinars",
                                 "target": false
@@ -1009,7 +1009,7 @@ export const FHS_EGYPT = {
                             },
                             {
                                 "__typename": "navigation_Entry",
-                                "id": "229",
+                                "id": "235788",
                                 "title": "Reports",
                                 "navUrl": "/egypt/content-library/category/reports",
                                 "target": false
