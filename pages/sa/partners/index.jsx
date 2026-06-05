@@ -106,12 +106,12 @@ function Partners({ partnerData, videoTestimonials }) {
 	
 
 	// console.log('swapcard partner data 2026:', partnerData)
-	console.log('categoriesArray:', categoriesArray)
+	// console.log('categoriesArray:', categoriesArray)
 
 
 	const indexMap = new Map(CUSTOM_ORDERING.map((item, idx) => [item, idx]))
 	const sorted = _.sortBy(categoriesArray, (item) => indexMap.get(item.name))
-	console.log('SORTED:', sorted)
+	// console.log('SORTED:', sorted)
 
 	return (
 		<>

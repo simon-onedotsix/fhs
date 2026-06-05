@@ -145,7 +145,7 @@ export default function Page ({ data }) {
             {/* THREE DECADES */}
             <section className="block bg-primary">
                 <div className="container">
-                    <p className="fs-2 fw-600 caps center">Three decades of connecting capital and hospitality</p>
+                    <p className="fs-2 fw-600 caps center balance lh-1">TWO DECADES OF CONNECTING CAPITAL TO HOSPITALITY REAL ESTATE</p>
                 </div>
 
                 <div className="container columns-2 gap-md">
@@ -164,7 +164,7 @@ export default function Page ({ data }) {
             {/* FHS EVENTS */}
             <section className="block bg-secondary">
                 <div className="container center">
-                    <p className="fs-1 fw-500 caps">FHS Around the World</p>
+                    <p className="fs-1 fw-500 caps balance lh-1">OUR INVESTMENT CONFERENCES AROUND THE WORLD</p>
                 </div>
 
                 <div className="container columns-3 maxw-55 gap-xs">

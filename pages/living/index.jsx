@@ -165,7 +165,7 @@ export default function Home ({ data, advisors }) {
                 <section className="">
                     <div className="container">
                         <p className="fs-1 fw-600 caps lh-1 maxw-60">EUROPE&apos;S ALTERNATIVE HOSPITALITY OPPORTUNITIES MEET GLOBAL CAPITAL</p>
-                        <p className="fs-5 fw-500 caps mt-sm mb-sm">Founding Edition | February 2027 | <span className="c-magenta">Paris</span>, France</p>
+                        <p className="fs-5 fw-500 mt-sm mb-sm">Founding Edition | Feb 2027, <span className="c-magenta">Paris</span></p>
                     </div>
 
                     <div className="container formatted">
@@ -206,12 +206,12 @@ export default function Home ({ data, advisors }) {
             {/* OPPORTUNITY */}
             <section className="block bg-secondary">
                 <div className="container center maxw-60">
-                    <p className="fs-2 fw-500 lh-1 caps balance">Where Middle Eastern capital meets the European opportunity</p>
+                    <p className="fs-2 fw-500 lh-1 caps balance">THE MEETING POINT FOR GLOBAL CAPITAL &amp; EUROPEAN OPPORTUNITY</p>
                 </div>
                 <div className="container columns-2 gap-md maxw-60">
-                    <p>The Bench has spent 20 years cultivating relationships with Middle Eastern investors and developers through the Future Hospitality Summit franchise. FHS Living brings this capital to Europe - with rigour and intent. Vetted, named Middle Eastern delegates, paired with European hosts, with confirmed travel and pre-event introductions arranged in advance.</p>
+                    <p>The Bench has spent 20 years cultivating relationships with investors and developers across the Middle East, Africa, Asia, the Americas and beyond through the Future Hospitality Summit franchise. FHS Living brings this capital to Europe – with rigour and intent. Vetted, named delegates from key global capital sources, paired with European hosts, with confirmed travel and pre-event introductions arranged in advance.</p>
 
-                    <p>Sharia-compliant living assets - student accommodation, senior living and branded residences - offer a clean and increasingly attractive entry point for Gulf capital. Family offices from Qatar, the UAE and broader GCC are actively seeking deployment opportunities in Paris, Amsterdam, Madrid and Berlin. FHS Living is where those conversations begin.</p>
+                    <p>Sharia-compliant living assets – student accommodation, senior living and branded residences – offer a clean and increasingly attractive entry point for global capital. Middle Eastern family offices from Qatar, the UAE and the broader GCC are among the most active in seeking deployment opportunities in Paris, Amsterdam, Madrid and Berlin – alongside investors from across Europe, Asia and North America. FHS Living is where those conversations begin.</p>
                 </div>
             </section>
 
