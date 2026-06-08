@@ -42,43 +42,14 @@ function Speakers({ seomatic, speakers }) {
 	// customise order (VIP speakers to top of list)
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
 		(speaker => speaker.firstName == 'HH Sheikh' && speaker.lastName === 'Ahmed bin Saeed Al Maktoum' ? 0 : 1),
-		(speaker => speaker.firstName == 'His Excellency' && speaker.lastName === 'Abdulla bin Touq Al Marri' || speaker.id == "RXZlbnRQZW9wbGVfNDEwMzg5NzY=" ? 0 : 1),
-		(speaker => speaker.firstName == 'Naser' && speaker.lastName === 'Mohamed Ali Naser Alnuwais' || speaker.id == "RXZlbnRQZW9wbGVfNDA3MTM1NzY=" ? 0 : 1),
-		(speaker => speaker.firstName == 'Abdullah' && speaker.lastName === 'Ahmed Al Moosa' || speaker.id == "RXZlbnRQZW9wbGVfNDEyMzM5MDM=" ? 0 : 1),
-		(speaker => speaker.firstName == 'Her Excellency Shaikha' && speaker.lastName === 'Nasser Al Nowais' || speaker.id == "RXZlbnRQZW9wbGVfNDA2MDQ1NDk=" ? 0 : 1),
-		
-		(speaker => speaker.firstName == 'Alan' && speaker.lastName === 'Faena' ? 0 : 1),
-		(speaker => speaker.firstName == 'H.E. Ahmed' && speaker.lastName === 'Obaid Al Qaseer' || speaker.id == "RXZlbnRQZW9wbGVfNDIwNzM2NzA=" ? 0 : 1),
-		(speaker => speaker.firstName == 'Eleonora' && speaker.lastName === 'Srugo' ? 0 : 1),
-		(speaker => speaker.firstName == 'Nick' && speaker.lastName === 'Candy' ? 0 : 1),
-		(speaker => speaker.firstName == 'Pansy' && speaker.lastName === 'Ho' || speaker.id == "RXZlbnRQZW9wbGVfNDI1NTAwNjI=" ? 0 : 1),
-		
-		(speaker => speaker.firstName == 'Marc' && speaker.lastName === 'Dardenne' ? 0 : 1),
-		(speaker => speaker.firstName == 'Oliver' && speaker.lastName === 'Hogg' ? 0 : 1),
-		(speaker => speaker.firstName == 'Christoph' && speaker.lastName === 'Hoffmann' ? 0 : 1),
-		(speaker => speaker.firstName == 'Marc' && speaker.lastName === 'Socker' ? 0 : 1),
-		(speaker => speaker.firstName == 'Abdulla Rashed' && speaker.lastName === 'Al Abdouli' ? 0 : 1),
-		
-		(speaker => speaker.firstName == 'Thomas' && speaker.lastName === 'B. Meier' ? 0 : 1),
-		(speaker => speaker.firstName == 'Neil' && speaker.lastName === 'Benjelloun' ? 0 : 1),
-		(speaker => speaker.firstName == 'Stephen' && speaker.lastName === 'Sackur' ? 0 : 1),
-		(speaker => speaker.firstName == 'Markus' && speaker.lastName === 'Venzin' ? 0 : 1),
-		(speaker => speaker.firstName == 'Saurabh' && speaker.lastName === 'Bakshi' ? 0 : 1),
-		
-		(speaker => speaker.firstName == 'Philip' && speaker.lastName === 'Martin Barnes' ? 0 : 1),
-		(speaker => speaker.firstName == 'Faizal' && speaker.lastName === 'Kottikollon' ? 0 : 1),
-		(speaker => speaker.firstName == 'Hans' && speaker.lastName === 'Meyer' ? 0 : 1),
-		(speaker => speaker.firstName == 'Gregory' && speaker.lastName === 'Lanter' ? 0 : 1),
-		(speaker => speaker.firstName == 'Dimitris' && speaker.lastName === 'Manikis' ? 0 : 1),
-		(speaker => speaker.firstName == 'Haitham' && speaker.lastName === 'Mattar' ? 0 : 1),
 	] )
 	
 	
 	
 	// console.log('speakers:', speakers)
-	console.log('speakers found:', speakers.length)
+	// console.log('speakers found:', speakers.length)
 	// console.log('ordered:', orderedSpeakers)
-	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
+	console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 
 	const moveTaggedSpeakersToEnd = ( speakerArray ) => {
@@ -123,7 +94,8 @@ function Speakers({ seomatic, speakers }) {
 	return (
 		<>
 
-				<Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+			<Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
 				{handleSeomaticMeta(seomatic)}
@@ -143,7 +115,7 @@ function Speakers({ seomatic, speakers }) {
 
 					{/* swapcard speakers */}
 
-					<p className='fs-1 fw-600 lh-1 maxw-40'>2025 SPEAKERS</p>
+					<p className='fs-1 fw-600 lh-1 maxw-40'>2026 SPEAKERS</p>
 					
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
@@ -290,12 +262,12 @@ export async function getStaticProps() {
 						}
 					`,
 					variables: {
-						"eventId": process.env.SWAPCARD_EVENT_ID_AE_2025,
+						"eventId": process.env.SWAPCARD_EVENT_ID_AE_2026,
 						"cursor": {
 							"first": 300
 						},
 						"filters": {
-							"shouldBeInGroups": "RXZlbnRHcm91cF81ODU5ODM="
+							"shouldBeInGroups": "RXZlbnRHcm91cF82NTQ4MTQ="
 						}
 					}
 			}

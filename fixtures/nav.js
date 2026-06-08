@@ -172,13 +172,13 @@ export const FHS_WORLD = {
                         "navUrl": "/world/brf",
                         "target": false
                     },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "161",
-                        "title": "UAE Africa Tourism Investment Summit",
-                        "navUrl": "/world/ais",
-                        "target": false
-                    },
+                    // {
+                    //     "__typename": "navigation_Entry",
+                    //     "id": "161",
+                    //     "title": "UAE Africa Tourism Investment Summit",
+                    //     "navUrl": "/world/ais",
+                    //     "target": false
+                    // },
                     {
                         "__typename": "navigation_Entry",
                         "id": "163",
@@ -193,13 +193,13 @@ export const FHS_WORLD = {
                         "navUrl": "/world/projects",
                         "target": false
                     },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "167",
-                        "title": "PitchPoint",
-                        "navUrl": "/world/pitch-point",
-                        "target": false
-                    },
+                    // {
+                    //     "__typename": "navigation_Entry",
+                    //     "id": "167",
+                    //     "title": "PitchPoint",
+                    //     "navUrl": "/world/pitch-point",
+                    //     "target": false
+                    // },
                     {
                         "__typename": "navigation_Entry",
                         "id": "169",
@@ -207,20 +207,20 @@ export const FHS_WORLD = {
                         "navUrl": "/world/networking-receptions",
                         "target": false
                     },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "171",
-                        "title": "Happy Hour Networking",
-                        "navUrl": "/world/happy-hour",
-                        "target": false
-                    },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "173",
-                        "title": "Themed Socials",
-                        "navUrl": "/world/themed-socials",
-                        "target": false
-                    },
+                    // {
+                    //     "__typename": "navigation_Entry",
+                    //     "id": "171",
+                    //     "title": "Happy Hour Networking",
+                    //     "navUrl": "/world/happy-hour",
+                    //     "target": false
+                    // },
+                    // {
+                    //     "__typename": "navigation_Entry",
+                    //     "id": "173",
+                    //     "title": "Themed Socials",
+                    //     "navUrl": "/world/themed-socials",
+                    //     "target": false
+                    // },
                     {
                         "__typename": "navigation_Entry",
                         "id": "175",
@@ -235,13 +235,13 @@ export const FHS_WORLD = {
                         "navUrl": "/world/sports",
                         "target": false
                     },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "159",
-                        "title": "FHS Gathering: Business Unusual",
-                        "navUrl": "/world/business-unusual-how-are-we-coping",
-                        "target": false
-                    },
+                    // {
+                    //     "__typename": "navigation_Entry",
+                    //     "id": "159",
+                    //     "title": "FHS Gathering: Business Unusual",
+                    //     "navUrl": "/world/business-unusual-how-are-we-coping",
+                    //     "target": false
+                    // },
                     {
                         "__typename": "subsection_Entry",
                         "id": "179",

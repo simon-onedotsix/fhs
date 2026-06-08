@@ -3011,6 +3011,58 @@ export const speakerData = [
         }
     },
     {
+        "id": "RXZlbnRQZW9wbGVfNDI5NDMwMjE=",
+        "type": "Speaker",
+        "firstName": "Mr․ Saleh",
+        "lastName": "Al Habdan",
+        "jobTitle": "Chief Executive Officer",
+        "organization": "Jabal Omar Development",
+        "photoUrl": "https://static.swapcard.com/public/images/4a955f10bba74d1b8265901dca1a9f18.png",
+        "speakerOnPlannings": [
+            {
+                "id": "UGxhbm5pbmdfMzIwMTA0Mg==",
+                "title": "Where Tradition Meets Modernity: Case Study by Jabal Omar Development Company",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQ1NjkyOQ==",
+                "title": "From Reset to Returns: Deploying Capital in Saudi Arabia’s New Economics",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
+            }
+        ],
+        "withEvent": {
+            "fields": [
+                {
+                    "definition": {
+                        "name": "PREMAGIC_REGISTRATION_ID",
+                        "translations": [],
+                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
+                    },
+                    "locale": "en_US",
+                    "value": "GqqxXnJ_iBQ",
+                    "id": "RmllbGRWYWx1ZV8yODgxNjE1Nw=="
+                },
+                {
+                    "definition": {
+                        "name": "PREMAGIC_FACE_ID",
+                        "translations": [],
+                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
+                    },
+                    "locale": "en_US",
+                    "value": "f78048ff-5b01-41c5-8a09-96d80ba1083d",
+                    "id": "RmllbGRWYWx1ZV8yODgxNjE2MA=="
+                },
+                {}
+            ]
+        }
+    },
+    {
         "id": "RXZlbnRQZW9wbGVfNDIwODMyNDM=",
         "type": null,
         "firstName": "Sohail",
@@ -3377,50 +3429,6 @@ export const speakerData = [
         }
     },
     {
-        "id": "RXZlbnRQZW9wbGVfNDI5NDMwMjE=",
-        "type": null,
-        "firstName": "Saleh",
-        "lastName": "Alhabdan",
-        "jobTitle": "Chief Executive Officer",
-        "organization": "Jabal Omar Development Co.",
-        "photoUrl": "https://static.swapcard.com/public/images/4d92cfaf68a54690a26451e3fd24aa01.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMzIwMTA0Mg==",
-                "title": "Where Tradition Meets Modernity: Case Study by Jabal Omar Development Company",
-                "categories": [],
-                "fields": [
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": [
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "GqqxXnJ_iBQ",
-                    "id": "RmllbGRWYWx1ZV8yODgxNjE1Nw=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "f78048ff-5b01-41c5-8a09-96d80ba1083d",
-                    "id": "RmllbGRWYWx1ZV8yODgxNjE2MA=="
-                },
-                {}
-            ]
-        }
-    },
-    {
         "id": "RXZlbnRQZW9wbGVfNDA2NTkxNzg=",
         "type": "Speaker;Delegate",
         "firstName": "Asif",
@@ -3685,12 +3693,12 @@ export const speakerData = [
     },
     {
         "id": "RXZlbnRQZW9wbGVfNDEwNDc3NDk=",
-        "type": null,
+        "type": "Speaker",
         "firstName": "Abdulrahman",
         "lastName": "Almoayed",
-        "jobTitle": "Chief Investment & Development Officer",
-        "organization": "Legacy Hotels Holding",
-        "photoUrl": "https://static.swapcard.com/public/images/88adada7477c40b7ad1024ca1ba49ca6.jpeg",
+        "jobTitle": "CO-Founder and Chief Investment and Development Officer",
+        "organization": "Golden Tulip MENA / Louvre Hotels Group",
+        "photoUrl": "https://static.swapcard.com/public/images/6aae70412edd45ea9dda67db57fcb680.jpeg",
         "speakerOnPlannings": [
             {
                 "id": "UGxhbm5pbmdfMjcyMzAwMw==",
@@ -3713,6 +3721,14 @@ export const speakerData = [
                             }
                         ]
                     },
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQwNTgwNw==",
+                "title": "New Cities, New Guests: Capturing Demand with Midscale Hotels in Saudi Arabia",
+                "categories": [],
+                "fields": [
                     {}
                 ]
             }
@@ -3857,7 +3873,7 @@ export const speakerData = [
         "type": "Speaker",
         "firstName": "Scott",
         "lastName": "Antel",
-        "jobTitle": "Partner & Owner",
+        "jobTitle": "Founder & Owner",
         "organization": "Scotts FZ LLE",
         "photoUrl": "https://static.swapcard.com/public/images/f8adc05652d6499bb38ba9f43560f107.png",
         "speakerOnPlannings": [
@@ -4039,6 +4055,29 @@ export const speakerData = [
                 "categories": [],
                 "fields": [
                     {},
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQwNTU0MA==",
+                "title": "Who’s in Charge? Structuring Branded Residences for Long-Term Gain",
+                "categories": [
+                    "Branded Residences Forum"
+                ],
+                "fields": [
+                    {
+                        "id": "RmllbGRWYWx1ZV8yNDIzOTQ1MA==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "branded-residences-forum",
+                        "translations": [
+                            {
+                                "value": "Branded Residences Forum"
+                            }
+                        ]
+                    },
                     {}
                 ]
             }
@@ -4336,7 +4375,7 @@ export const speakerData = [
         "firstName": "Amit",
         "lastName": "Arora",
         "jobTitle": "Chief Operating Officer",
-        "organization": "Arada",
+        "organization": "Arada Hospitality and Entertainment",
         "photoUrl": "https://static.swapcard.com/public/images/cb22de0ff76c48e080aa1ad8b770b936.jpeg",
         "speakerOnPlannings": [
             {
@@ -5293,218 +5332,6 @@ export const speakerData = [
         }
     },
     {
-        "id": "RXZlbnRQZW9wbGVfNDA1OTkxMjM=",
-        "type": "Speaker",
-        "firstName": "Daniel von",
-        "lastName": "Barloewen",
-        "jobTitle": "Senior Vice President, Global Mixed-Use Development",
-        "organization": "Accor One Living",
-        "photoUrl": "https://cdn-api.swapcard.com/public/images/5cf473e2ddec40608d2edc80e017428d.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMTUzMzAyNA==",
-                "title": "Branded Residential is Booming: Upfront Planning for Making Your Project a Success",
-                "categories": [],
-                "fields": [
-                    {}
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMTgwOTM2Ng==",
-                "title": "The Future of Hospitality Investments in Branded Residences, Co-Living, and Serviced Apartments in the Kingdom",
-                "categories": [
-                    "Brand & Destination",
-                    "Investment & Development"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "brand-development",
-                        "translations": [
-                            {
-                                "value": "Brand & Destination"
-                            }
-                        ]
-                    },
-                    {
-                        "id": "RmllbGRWYWx1ZV8yMzI1MzEzNQ==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "investment",
-                        "translations": [
-                            {
-                                "value": "Investment & Development"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjAyNzgxNw==",
-                "title": "Operator Perspective - A Look at How Leading Operators of Branded Residences View their Relationship With Development Partners and Homeowner Communities",
-                "categories": [
-                    "Branded Residences Forum"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yNDIzOTQ1MA==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "branded-residences-forum",
-                        "translations": [
-                            {
-                                "value": "Branded Residences Forum"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjAyNzgyMw==",
-                "title": "Structuring Rentals Programs to Appeal to Buyers, While Protecting the Interests of Hotel Owners & Developers",
-                "categories": [
-                    "Branded Residences Forum"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yNDIzOTQ1MA==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "branded-residences-forum",
-                        "translations": [
-                            {
-                                "value": "Branded Residences Forum"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjUzMzkxNQ==",
-                "title": "Unveiling Market Trends: Insights into Branded Residences in the Kingdom",
-                "categories": [
-                    "Branded Residences"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yNDU2NzA5MQ==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "branded-residences",
-                        "translations": [
-                            {
-                                "value": "Branded Residences"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjU4NDQ5Nw==",
-                "title": "Stakeholder perspectives – How do branded residences create value for investors, homeowners and brands",
-                "categories": [
-                    "Branded Residences"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yNDU2NzA5MQ==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "branded-residences",
-                        "translations": [
-                            {
-                                "value": "Branded Residences"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjcyMjc0Mw==",
-                "title": "Maximizing Returns, Minimizing Risk: How to Optimize and Protect Value for Investors",
-                "categories": [
-                    "Branded Residences Forum"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yNDIzOTQ1MA==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "branded-residences-forum",
-                        "translations": [
-                            {
-                                "value": "Branded Residences Forum"
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": [
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "4PPtoKqwqmo",
-                    "id": "RmllbGRWYWx1ZV8yODAwMzQwNg=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "83652b3f-e10c-459f-abea-6fa09935b86f",
-                    "id": "RmllbGRWYWx1ZV8yODAwMzQwNQ=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Speaking at the Branded Residences Forum",
-                    "id": "RmllbGRWYWx1ZV8yODE3MjMyNA=="
-                }
-            ]
-        }
-    },
-    {
         "id": "RXZlbnRQZW9wbGVfNDI3MDg5NDg=",
         "type": null,
         "firstName": "Fred",
@@ -5651,14 +5478,6 @@ export const speakerData = [
                             }
                         ]
                     },
-                    {}
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfNDQwNjYyNw==",
-                "title": "Culture Creates Value: How Leadership and Engagement Drive ROI, Brand Strength and Asset Performance",
-                "categories": [],
-                "fields": [
                     {}
                 ]
             }
@@ -7307,8 +7126,8 @@ export const speakerData = [
         "type": "Moderator",
         "firstName": "Judith",
         "lastName": "Cartwright",
-        "jobTitle": "Founder & Managing Director",
-        "organization": "Black Coral Consultancy FZ LLE",
+        "jobTitle": "CEO & Founder",
+        "organization": "Black Coral Consulting",
         "photoUrl": "https://static.swapcard.com/public/images/3b16fcd6ab8a45aa862f310dd575f5a6.jpeg",
         "speakerOnPlannings": [
             {
@@ -7683,9 +7502,9 @@ export const speakerData = [
         "type": "Speaker",
         "firstName": "Hala Matar",
         "lastName": "Choufany",
-        "jobTitle": "President - Middle East, Africa and South Asia, Dubai",
-        "organization": "HVS",
-        "photoUrl": "https://static.swapcard.com/public/images/216cbc45b5614149a97902ed76005789.jpeg",
+        "jobTitle": "President Middle East & Africa",
+        "organization": "HVS MEA",
+        "photoUrl": "https://static.swapcard.com/public/images/3089081b17034fe2a54e72640f0a6a87.jpeg",
         "speakerOnPlannings": [
             {
                 "id": "UGxhbm5pbmdfOTM3MDc=",
@@ -9325,7 +9144,7 @@ export const speakerData = [
         "firstName": "Sarah",
         "lastName": "Duignan",
         "jobTitle": "Director, Client Relationships",
-        "organization": "STR, a CoStar Group company",
+        "organization": "STR, a CoStar Group Company",
         "photoUrl": "https://static.swapcard.com/public/images/d6e9b1be93184e2e860029c865367c33.jpeg",
         "speakerOnPlannings": [
             {
@@ -9989,7 +9808,7 @@ export const speakerData = [
     },
     {
         "id": "RXZlbnRQZW9wbGVfMzg0MDMxNTc=",
-        "type": "Speaker",
+        "type": "Moderator",
         "firstName": "Oussama",
         "lastName": "El Kadiri",
         "jobTitle": "Partner - Head of Hospitality, Tourism & Leisure - MENA",
@@ -10082,8 +9901,16 @@ export const speakerData = [
                 ]
             },
             {
-                "id": "UGxhbm5pbmdfNDQwNTgwOQ==",
-                "title": "FHS Intelligence Talk: Holy Cities Tourism Data",
+                "id": "UGxhbm5pbmdfNDQwNTc3Mg==",
+                "title": "From Ambition to Execution: The Playbook for Growth in Saudi Hospitality",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQwNTgwNw==",
+                "title": "New Cities, New Guests: Capturing Demand with Midscale Hotels in Saudi Arabia",
                 "categories": [],
                 "fields": [
                     {}
@@ -10163,7 +9990,7 @@ export const speakerData = [
         "type": null,
         "firstName": "Amr",
         "lastName": "El Nady",
-        "jobTitle": "Head of Hotels and Hospitality MEA and Managing Director, Global Hotel Desk",
+        "jobTitle": "Head of Hotels & Hospitality MEA and Managing Director, Global Hotel Desk",
         "organization": "JLL",
         "photoUrl": "https://static.swapcard.com/public/images/982df6695622462cb476e3a7cc2650db.jpeg",
         "speakerOnPlannings": [
@@ -10327,9 +10154,9 @@ export const speakerData = [
         "type": null,
         "firstName": "Selim",
         "lastName": "El Zein",
-        "jobTitle": "VP - Head of Asset Management",
-        "organization": "Deyaar PJSC",
-        "photoUrl": "https://static.swapcard.com/public/images/f8d1d0623efa48718f2284f20cca617d.jpeg",
+        "jobTitle": "Vice President - Head of Asset Management & Investments",
+        "organization": "Deyaar Development PJSC",
+        "photoUrl": "https://static.swapcard.com/public/images/210f46e7564649758cb2d6105c085e2c.jpeg",
         "speakerOnPlannings": [
             {
                 "id": "UGxhbm5pbmdfMjczOTg0OA==",
@@ -11053,8 +10880,8 @@ export const speakerData = [
         "type": "Speaker",
         "firstName": "Hamza",
         "lastName": "Farooqui",
-        "jobTitle": "Chief Executive Officer",
-        "organization": "Millat Global",
+        "jobTitle": "Founder & CEO",
+        "organization": "Millat Group",
         "photoUrl": "https://static.swapcard.com/public/images/4647f1b3e985405383b25e68d832ede9.jpeg",
         "speakerOnPlannings": [
             {
@@ -11156,6 +10983,24 @@ export const speakerData = [
                             }
                         ]
                     },
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjk3MzgwMA==",
+                "title": "From Capital Markets to Ownership Models: De-Risking and Scaling Hospitality Investment in Africa",
+                "categories": [],
+                "fields": [
+                    {},
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDM0MTYwOQ==",
+                "title": "Career Journeys & Lessons from the Industry",
+                "categories": [],
+                "fields": [
+                    {},
                     {}
                 ]
             },
@@ -15263,6 +15108,22 @@ export const speakerData = [
                     {},
                     {}
                 ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQwNTc2OA==",
+                "title": "Ultra-Luxury or Smart Luxury? Capital Allocation in a Changing Saudi Market",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQwNTc4NQ==",
+                "title": "Building Beyond Boundaries: Creating World-Class Tourism Destinations",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
             }
         ],
         "withEvent": {
@@ -15852,6 +15713,15 @@ export const speakerData = [
                             }
                         ]
                     },
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQwNjY0MQ==",
+                "title": "The Future of Hotel Asset Management - HAMA Asset Management Workshop - Invitation Only",
+                "categories": [],
+                "fields": [
+                    {},
                     {}
                 ]
             }
@@ -16754,6 +16624,14 @@ export const speakerData = [
                     },
                     {}
                 ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQ2NTU5MA==",
+                "title": "Living, Not Lodging: The Convergence of Residential, Extended Stay & Hospitality in KSA",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
             }
         ],
         "withEvent": {
@@ -16787,7 +16665,7 @@ export const speakerData = [
         "type": null,
         "firstName": "Costas",
         "lastName": "Livadaris",
-        "jobTitle": "Technical Director - Hotels & Hospitality",
+        "jobTitle": "Hospitality & Leisure Lead - EMEA",
         "organization": "Parsons",
         "photoUrl": "https://static.swapcard.com/public/images/794d9a4c17024aa88316e87b45d868d4.jpeg",
         "speakerOnPlannings": [
@@ -17097,6 +16975,14 @@ export const speakerData = [
                     },
                     {}
                 ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQ3NjE5Mw==",
+                "title": "Investing in Wellbeing: The ROI Case for Wellness Hospitality",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
             }
         ],
         "withEvent": {
@@ -17311,8 +17197,8 @@ export const speakerData = [
         "type": "Moderator",
         "firstName": "Ali",
         "lastName": "Manzoor",
-        "jobTitle": "Senior Director Head of Hospitality, Hotels & Tourism",
-        "organization": "CBRE MENA",
+        "jobTitle": "Senior Director",
+        "organization": "CBRE",
         "photoUrl": "https://cdn-api.swapcard.com/public/images/ee75f5da2004484ebe7a16782b1cd54b.jpeg",
         "speakerOnPlannings": [
             {
@@ -17691,7 +17577,7 @@ export const speakerData = [
         "type": "Speaker",
         "firstName": "Lindsay",
         "lastName": "McGinn",
-        "jobTitle": "Global Vice President, Residential Marketing,",
+        "jobTitle": "Global Vice President, Residential Marketing",
         "organization": "Accor One Living",
         "photoUrl": "https://static.swapcard.com/public/images/40e3583390b74ba990aac2988788e0b8.jpeg",
         "speakerOnPlannings": [
@@ -17796,9 +17682,9 @@ export const speakerData = [
         "type": null,
         "firstName": "Jaidev",
         "lastName": "Menezes",
-        "jobTitle": "RVP Mixed Use Development EMEA",
+        "jobTitle": "Regional Vice President, Mixed-Use Development EMEA",
         "organization": "Marriott International",
-        "photoUrl": "https://static.swapcard.com/public/images/8bc242289e354b44b673c23e3460a155.jpeg",
+        "photoUrl": "https://static.swapcard.com/public/images/22a5723e4e294c73987b5bee25753722.jpeg",
         "speakerOnPlannings": [
             {
                 "id": "UGxhbm5pbmdfMTUzMzAyNA==",
@@ -18016,7 +17902,7 @@ export const speakerData = [
         "type": "Speaker",
         "firstName": "Elie",
         "lastName": "Milky",
-        "jobTitle": "Chief Development Officer, Middle East, Northeast Africa, Cyprus and Greece",
+        "jobTitle": "Chief Development Officer for the Middle East, Northeast Africa, Greece, and Cyprus",
         "organization": "Radisson Hotel Group",
         "photoUrl": "https://static.swapcard.com/public/images/651d88045d184b34a984f5007f20415a.jpeg",
         "speakerOnPlannings": [
@@ -18169,6 +18055,14 @@ export const speakerData = [
                             }
                         ]
                     },
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQwNTc2OA==",
+                "title": "Ultra-Luxury or Smart Luxury? Capital Allocation in a Changing Saudi Market",
+                "categories": [],
+                "fields": [
                     {}
                 ]
             }
@@ -18401,7 +18295,7 @@ export const speakerData = [
         "type": "Speaker",
         "firstName": "Govind",
         "lastName": "Mundra",
-        "jobTitle": "Head of Development - Middle East & Africa",
+        "jobTitle": "Head of Development MEA",
         "organization": "Wyndham Hotels & Resorts",
         "photoUrl": "https://static.swapcard.com/public/images/1cec4215232f4481b23d36feadda6352.jpeg",
         "speakerOnPlannings": [
@@ -19178,7 +19072,7 @@ export const speakerData = [
         "id": "RXZlbnRQZW9wbGVfNDA1NzY0ODE=",
         "type": "Speaker",
         "firstName": "Amit",
-        "lastName": "Nayak, CHA",
+        "lastName": "Nayak",
         "jobTitle": "Vice President",
         "organization": "Hospitality Asset Managers Association Middle East and Africa",
         "photoUrl": "https://static.swapcard.com/public/images/01ac0cb07a4a436db3e273653ef38d23.png",
@@ -19432,7 +19326,7 @@ export const speakerData = [
         "type": "Delegate",
         "firstName": "Siegfried",
         "lastName": "Nierhaus",
-        "jobTitle": "Vice President & Head of Development Middle East, India and Africa",
+        "jobTitle": "Vice President & Head of Development Middle East, India & Africa",
         "organization": "H World International",
         "photoUrl": "https://static.swapcard.com/public/images/1520d185856a42d8883a3dcb4b287cd1.jpeg",
         "speakerOnPlannings": [
@@ -21256,11 +21150,11 @@ export const speakerData = [
     },
     {
         "id": "RXZlbnRQZW9wbGVfNDEyMzU2Nzk=",
-        "type": null,
+        "type": "Moderator",
         "firstName": "Dinky",
         "lastName": "Puri",
-        "jobTitle": "Founding Partner",
-        "organization": "Eagle Wing",
+        "jobTitle": "Founder & CEO",
+        "organization": "Eaglewing Hospitality Services",
         "photoUrl": "https://static.swapcard.com/public/images/29e1bb8cc3974989bd835c00fc8db9c1.jpeg",
         "speakerOnPlannings": [
             {
@@ -21284,6 +21178,14 @@ export const speakerData = [
                             }
                         ]
                     }
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQ2NTU5MA==",
+                "title": "Living, Not Lodging: The Convergence of Residential, Extended Stay & Hospitality in KSA",
+                "categories": [],
+                "fields": [
+                    {}
                 ]
             }
         ],
@@ -21489,9 +21391,9 @@ export const speakerData = [
     {
         "id": "RXZlbnRQZW9wbGVfNDEyNjkwODY=",
         "type": "Speaker",
-        "firstName": "Jean- Baptiste",
+        "firstName": "Jean-Baptiste",
         "lastName": "Recher",
-        "jobTitle": "Chief Development Officer Luxury Brands, Middle East, Africa and Turkiye",
+        "jobTitle": "Chief Development Officer Luxury Brands Middle East, Africa and Turkiye",
         "organization": "Accor",
         "photoUrl": "https://static.swapcard.com/public/images/e4e91957b92b4d7cbdea54bebe71e99d.jpeg",
         "speakerOnPlannings": [
@@ -21559,6 +21461,14 @@ export const speakerData = [
                     {},
                     {}
                 ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQwNTc2OA==",
+                "title": "Ultra-Luxury or Smart Luxury? Capital Allocation in a Changing Saudi Market",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
             }
         ],
         "withEvent": {
@@ -21611,9 +21521,9 @@ export const speakerData = [
         "id": "RXZlbnRQZW9wbGVfNDI2ODU3MDY=",
         "type": "Speaker",
         "firstName": "Julien",
-        "lastName": "Renaud-Perret",
+        "lastName": "Renaud Perret",
         "jobTitle": "Executive Director Hospitality",
-        "organization": "New Murabba Development Company",
+        "organization": "New Murabba",
         "photoUrl": "https://static.swapcard.com/public/images/1fb52e3267694691b0eca0cd3524a723.jpeg",
         "speakerOnPlannings": [
             {
@@ -21944,6 +21854,95 @@ export const speakerData = [
         }
     },
     {
+        "id": "RXZlbnRQZW9wbGVfNDE4OTA4MzA=",
+        "type": null,
+        "firstName": "Scott",
+        "lastName": "Richardson",
+        "jobTitle": "Academic Dean",
+        "organization": "Abu Dhabi Hospitality Academy - Les Roches",
+        "photoUrl": "https://static.swapcard.com/public/images/36036f397fac47529adfb5d9a50e9dd8.jpeg",
+        "speakerOnPlannings": [
+            {
+                "id": "UGxhbm5pbmdfMjYyODc3OA==",
+                "title": "Rebuilding the Workforce: Attracting and Retaining Talent in Hospitality",
+                "categories": [
+                    "NextGen"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yODMwNTgyNg==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "nextgen",
+                        "translations": [
+                            {
+                                "value": "NextGen"
+                            }
+                        ]
+                    },
+                    {}
+                ]
+            }
+        ],
+        "withEvent": {
+            "fields": [
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {
+                    "definition": {
+                        "name": "PREMAGIC_REGISTRATION_ID",
+                        "translations": [],
+                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
+                    },
+                    "locale": "en_US",
+                    "value": "TuLhQjuePbY",
+                    "id": "RmllbGRWYWx1ZV8yODQxMjM3NA=="
+                },
+                {
+                    "definition": {
+                        "name": "PREMAGIC_FACE_ID",
+                        "translations": [],
+                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
+                    },
+                    "locale": "en_US",
+                    "value": "bc9cc4a5-51eb-4579-8a8f-70fc2291e7f4",
+                    "id": "RmllbGRWYWx1ZV8yODQxMjM3Nw=="
+                },
+                {},
+                {
+                    "translations": [
+                        {
+                            "value": "Education",
+                            "language": "en_US"
+                        }
+                    ],
+                    "definition": {
+                        "id": "RmllbGREZWZpbml0aW9uXzg0NTU5OA==",
+                        "translations": [
+                            {
+                                "name": "Business Type",
+                                "language": "en_US"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    {
         "id": "RXZlbnRQZW9wbGVfNDI0OTM3NjM=",
         "type": null,
         "firstName": "Adelajda",
@@ -22033,9 +22032,9 @@ export const speakerData = [
     {
         "id": "RXZlbnRQZW9wbGVfNDI1MjAyMTY=",
         "type": null,
-        "firstName": "Steve",
+        "firstName": "Stephen",
         "lastName": "Rossouw",
-        "jobTitle": "Senior Development Director - Mukaab Residential & Mixed-use Assets",
+        "jobTitle": "Senior Development Director",
         "organization": "New Murabba",
         "photoUrl": "https://static.swapcard.com/public/images/ef410a1da7994f32b89ff2bf093a9e82.jpeg",
         "speakerOnPlannings": [
@@ -22505,6 +22504,29 @@ export const speakerData = [
                     },
                     {}
                 ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQwNTU0MA==",
+                "title": "Who’s in Charge? Structuring Branded Residences for Long-Term Gain",
+                "categories": [
+                    "Branded Residences Forum"
+                ],
+                "fields": [
+                    {
+                        "id": "RmllbGRWYWx1ZV8yNDIzOTQ1MA==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "branded-residences-forum",
+                        "translations": [
+                            {
+                                "value": "Branded Residences Forum"
+                            }
+                        ]
+                    },
+                    {}
+                ]
             }
         ],
         "withEvent": {
@@ -22658,7 +22680,7 @@ export const speakerData = [
         "type": null,
         "firstName": "Rahul",
         "lastName": "Salgia",
-        "jobTitle": "Founder and Chief Executive Officer",
+        "jobTitle": "Founder & CEO",
         "organization": "DigiValet",
         "photoUrl": "https://static.swapcard.com/public/images/e2225a6fcb174f869dec0029e844b5b7.jpeg",
         "speakerOnPlannings": [
@@ -22816,9 +22838,9 @@ export const speakerData = [
         "type": "Speaker",
         "firstName": "Jordi",
         "lastName": "Sanchís",
-        "jobTitle": "Senior Development Director of Middle East",
-        "organization": "Melia Hotels International",
-        "photoUrl": "https://static.swapcard.com/public/images/3d388c30b0914ceb90d15d174bd89ca9.jpeg",
+        "jobTitle": "Senior Development Director",
+        "organization": "Meliá Hotels International",
+        "photoUrl": "https://static.swapcard.com/public/images/addb55e23ef942df95b495c35e01720c.png",
         "speakerOnPlannings": [
             {
                 "id": "UGxhbm5pbmdfOTI5MzY=",
@@ -23188,95 +23210,6 @@ export const speakerData = [
         }
     },
     {
-        "id": "RXZlbnRQZW9wbGVfNDE4OTA4MzA=",
-        "type": null,
-        "firstName": "Professor",
-        "lastName": "Scott Richardson",
-        "jobTitle": "Academic Dean",
-        "organization": "Abu Dhabi Hospitality Academy Les Roches",
-        "photoUrl": "https://static.swapcard.com/public/images/36036f397fac47529adfb5d9a50e9dd8.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjYyODc3OA==",
-                "title": "Rebuilding the Workforce: Attracting and Retaining Talent in Hospitality",
-                "categories": [
-                    "NextGen"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODMwNTgyNg==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "nextgen",
-                        "translations": [
-                            {
-                                "value": "NextGen"
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "TuLhQjuePbY",
-                    "id": "RmllbGRWYWx1ZV8yODQxMjM3NA=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "bc9cc4a5-51eb-4579-8a8f-70fc2291e7f4",
-                    "id": "RmllbGRWYWx1ZV8yODQxMjM3Nw=="
-                },
-                {},
-                {
-                    "translations": [
-                        {
-                            "value": "Education",
-                            "language": "en_US"
-                        }
-                    ],
-                    "definition": {
-                        "id": "RmllbGREZWZpbml0aW9uXzg0NTU5OA==",
-                        "translations": [
-                            {
-                                "name": "Business Type",
-                                "language": "en_US"
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
-    },
-    {
         "id": "RXZlbnRQZW9wbGVfNDExNjc0MjY=",
         "type": "Speaker",
         "firstName": "Muin",
@@ -23375,6 +23308,14 @@ export const speakerData = [
                             }
                         ]
                     },
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQwNTc3Mg==",
+                "title": "From Ambition to Execution: The Playbook for Growth in Saudi Hospitality",
+                "categories": [],
+                "fields": [
                     {}
                 ]
             }
@@ -23579,22 +23520,6 @@ export const speakerData = [
                             }
                         ]
                     },
-                    {}
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfNDQwNTU1Mg==",
-                "title": "Welcome to FHS Saudi Arabia 2026",
-                "categories": [],
-                "fields": [
-                    {}
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfNDQwNjYzMw==",
-                "title": "Closing Remarks",
-                "categories": [],
-                "fields": [
                     {}
                 ]
             }
@@ -24300,9 +24225,9 @@ export const speakerData = [
         "type": null,
         "firstName": "Daria",
         "lastName": "Smith",
-        "jobTitle": "Portfolio Director",
+        "jobTitle": "Managing Director MEA",
         "organization": "The Bench",
-        "photoUrl": "https://static.swapcard.com/public/images/075d2422d51b4107acf37a36606914a3.webp",
+        "photoUrl": "https://static.swapcard.com/public/images/611d80cc5422499981a2a951900b2289.jpeg",
         "speakerOnPlannings": [
             {
                 "id": "UGxhbm5pbmdfMTg5Mzk3Mw==",
@@ -24830,9 +24755,9 @@ export const speakerData = [
         "type": "Speaker",
         "firstName": "Joe",
         "lastName": "Tabet",
-        "jobTitle": "CEO & Managing Director",
-        "organization": "JT&Partners",
-        "photoUrl": null,
+        "jobTitle": "Founder - Architect",
+        "organization": "JT+Partners",
+        "photoUrl": "https://static.swapcard.com/public/images/12ea8fb5d1f74560952c588cedf25515.jpeg",
         "speakerOnPlannings": [
             {
                 "id": "UGxhbm5pbmdfMTg1NjIzMA==",
@@ -25121,7 +25046,7 @@ export const speakerData = [
         "firstName": "Eddy",
         "lastName": "Tannous",
         "jobTitle": "Chief Operating Officer",
-        "organization": "Rotana",
+        "organization": "Rotana Hotels",
         "photoUrl": "https://static.swapcard.com/public/images/b883ce7dcd704266b4d35a1add04a681.jpeg",
         "speakerOnPlannings": [
             {
@@ -25196,8 +25121,8 @@ export const speakerData = [
                 ]
             },
             {
-                "id": "UGxhbm5pbmdfNDQwNTc3Mg==",
-                "title": "From Ambition to Execution: The Playbook for Growth in Saudi Hospitality",
+                "id": "UGxhbm5pbmdfNDQwNjYyNw==",
+                "title": "Culture Creates Value: How Leadership and Engagement Drive ROI, Brand Strength and Asset Performance",
                 "categories": [],
                 "fields": [
                     {}
@@ -25600,7 +25525,7 @@ export const speakerData = [
             },
             {
                 "id": "UGxhbm5pbmdfNDQwNTU0Ng==",
-                "title": "Beyond Branded Residences: The Rise of Branded Living",
+                "title": "Beyond Branded Residences: The Rise of Branded Living in Saudi Arabia",
                 "categories": [
                     "Branded Residences Forum"
                 ],
@@ -26170,6 +26095,242 @@ export const speakerData = [
                     "locale": "en_US",
                     "value": "Investor - PitchPoint",
                     "id": "RmllbGRWYWx1ZV8yODQ1NTc1MQ=="
+                }
+            ]
+        }
+    },
+    {
+        "id": "RXZlbnRQZW9wbGVfNDA1OTkxMjM=",
+        "type": "Speaker",
+        "firstName": "Daniel",
+        "lastName": "von Barloewen",
+        "jobTitle": "Senior Vice President, Global Mixed-Use Development",
+        "organization": "Accor One Living",
+        "photoUrl": "https://cdn-api.swapcard.com/public/images/5cf473e2ddec40608d2edc80e017428d.jpeg",
+        "speakerOnPlannings": [
+            {
+                "id": "UGxhbm5pbmdfMTUzMzAyNA==",
+                "title": "Branded Residential is Booming: Upfront Planning for Making Your Project a Success",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMTgwOTM2Ng==",
+                "title": "The Future of Hospitality Investments in Branded Residences, Co-Living, and Serviced Apartments in the Kingdom",
+                "categories": [
+                    "Brand & Destination",
+                    "Investment & Development"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "brand-development",
+                        "translations": [
+                            {
+                                "value": "Brand & Destination"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "RmllbGRWYWx1ZV8yMzI1MzEzNQ==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "investment",
+                        "translations": [
+                            {
+                                "value": "Investment & Development"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjAyNzgxNw==",
+                "title": "Operator Perspective - A Look at How Leading Operators of Branded Residences View their Relationship With Development Partners and Homeowner Communities",
+                "categories": [
+                    "Branded Residences Forum"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yNDIzOTQ1MA==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "branded-residences-forum",
+                        "translations": [
+                            {
+                                "value": "Branded Residences Forum"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjAyNzgyMw==",
+                "title": "Structuring Rentals Programs to Appeal to Buyers, While Protecting the Interests of Hotel Owners & Developers",
+                "categories": [
+                    "Branded Residences Forum"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yNDIzOTQ1MA==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "branded-residences-forum",
+                        "translations": [
+                            {
+                                "value": "Branded Residences Forum"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjUzMzkxNQ==",
+                "title": "Unveiling Market Trends: Insights into Branded Residences in the Kingdom",
+                "categories": [
+                    "Branded Residences"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yNDU2NzA5MQ==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "branded-residences",
+                        "translations": [
+                            {
+                                "value": "Branded Residences"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjU4NDQ5Nw==",
+                "title": "Stakeholder perspectives – How do branded residences create value for investors, homeowners and brands",
+                "categories": [
+                    "Branded Residences"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yNDU2NzA5MQ==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "branded-residences",
+                        "translations": [
+                            {
+                                "value": "Branded Residences"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjcyMjc0Mw==",
+                "title": "Maximizing Returns, Minimizing Risk: How to Optimize and Protect Value for Investors",
+                "categories": [
+                    "Branded Residences Forum"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yNDIzOTQ1MA==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "branded-residences-forum",
+                        "translations": [
+                            {
+                                "value": "Branded Residences Forum"
+                            }
+                        ]
+                    },
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQwNTUzOQ==",
+                "title": "Branded Residences 2026: From Global Trends to Saudi Opportunity",
+                "categories": [
+                    "Branded Residences Forum"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yNDIzOTQ1MA==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "branded-residences-forum",
+                        "translations": [
+                            {
+                                "value": "Branded Residences Forum"
+                            }
+                        ]
+                    },
+                    {}
+                ]
+            }
+        ],
+        "withEvent": {
+            "fields": [
+                {},
+                {
+                    "definition": {
+                        "name": "PREMAGIC_REGISTRATION_ID",
+                        "translations": [],
+                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
+                    },
+                    "locale": "en_US",
+                    "value": "4PPtoKqwqmo",
+                    "id": "RmllbGRWYWx1ZV8yODAwMzQwNg=="
+                },
+                {
+                    "definition": {
+                        "name": "PREMAGIC_FACE_ID",
+                        "translations": [],
+                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
+                    },
+                    "locale": "en_US",
+                    "value": "83652b3f-e10c-459f-abea-6fa09935b86f",
+                    "id": "RmllbGRWYWx1ZV8yODAwMzQwNQ=="
+                },
+                {},
+                {
+                    "definition": {
+                        "name": "Special Label",
+                        "translations": [
+                            {
+                                "name": "Special Label"
+                            }
+                        ],
+                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
+                    },
+                    "locale": "en_US",
+                    "value": "Speaking at the Branded Residences Forum",
+                    "id": "RmllbGRWYWx1ZV8yODE3MjMyNA=="
                 }
             ]
         }
@@ -26838,7 +26999,7 @@ export const speakerData = [
     },
     {
         "id": "RXZlbnRQZW9wbGVfNDA3OTgwODY=",
-        "type": "Speaker;Guest",
+        "type": "Speaker",
         "firstName": "Jonathan",
         "lastName": "Worsley",
         "jobTitle": "Chairman",
@@ -27462,7 +27623,6 @@ export const speakerData = [
                     "Branded Residences Forum"
                 ],
                 "fields": [
-                    {},
                     {
                         "id": "RmllbGRWYWx1ZV8yNDIzOTQ1MA==",
                         "definition": {
@@ -27475,7 +27635,8 @@ export const speakerData = [
                                 "value": "Branded Residences Forum"
                             }
                         ]
-                    }
+                    },
+                    {}
                 ]
             }
         ],
@@ -27774,11 +27935,11 @@ export const speakerData = [
     },
     {
         "id": "RXZlbnRQZW9wbGVfNDEyNjkxNjA=",
-        "type": "Speaker;Sponsor",
+        "type": "Speaker",
         "firstName": "Maya",
         "lastName": "Ziade",
         "jobTitle": "Chief Development Officer",
-        "organization": "Accor",
+        "organization": "Accor Hotels Middle East, Africa and Türkiye T",
         "photoUrl": "https://static.swapcard.com/public/images/e6002ebef3da48d58056b6d73e6d695d.jpeg",
         "speakerOnPlannings": [
             {
@@ -27849,6 +28010,15 @@ export const speakerData = [
                             }
                         ]
                     },
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQwNjYzNg==",
+                "title": "Leading Forward: Women Shaping the Future of Hospitality",
+                "categories": [],
+                "fields": [
+                    {},
                     {}
                 ]
             }
@@ -27994,1387 +28164,5 @@ export const speakerData = [
                 }
             ]
         }
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI0NjcwODM=",
-        "type": null,
-        "firstName": "Ahmed",
-        "lastName": "Alruwaithi",
-        "jobTitle": "Founder & Group CEO",
-        "organization": "Riviera Gateway",
-        "photoUrl": "https://static.swapcard.com/public/images/e7137b492b8b4d3ca30772d8f10f6f49.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjc0MTYzOA==",
-                "title": "PitchPoint: The FHS Investment Spotlight",
-                "categories": [
-                    "Investment and Real Estate"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODMwNTgzMg==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "investment-and-real-estate",
-                        "translations": [
-                            {
-                                "value": "Investment and Real Estate "
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": [
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "vi50SMBmoDI",
-                    "id": "RmllbGRWYWx1ZV8yODcxODMyMQ=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "71e109ad-9d71-4c58-b614-dc154ef31a1f",
-                    "id": "RmllbGRWYWx1ZV8yODc1NzU5Ng=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "New Brands - PitchPoint",
-                    "id": "RmllbGRWYWx1ZV8yODc5OTM4Nw=="
-                },
-                {
-                    "translations": [
-                        {
-                            "value": "Investor",
-                            "language": "en_US"
-                        }
-                    ],
-                    "definition": {
-                        "id": "RmllbGREZWZpbml0aW9uXzg0NTU5OA==",
-                        "translations": [
-                            {
-                                "name": "Business Type",
-                                "language": "en_US"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "tag": "New Brands - PitchPoint"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI3MjEyMDI=",
-        "type": null,
-        "firstName": "Rayan",
-        "lastName": "Hanna",
-        "jobTitle": "Chief Executive Officer",
-        "organization": "Next'House",
-        "photoUrl": "https://static.swapcard.com/public/images/05d06a035dbf4984a53a4d21429de5b2.png",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjc0MTYzOA==",
-                "title": "PitchPoint: The FHS Investment Spotlight",
-                "categories": [
-                    "Investment and Real Estate"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODMwNTgzMg==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "investment-and-real-estate",
-                        "translations": [
-                            {
-                                "value": "Investment and Real Estate "
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": [
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "8TmhMVv9TeI",
-                    "id": "RmllbGRWYWx1ZV8yODc1NzUwNw=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "18235f29-8b3e-42cd-8c25-72d75ed8ee54",
-                    "id": "RmllbGRWYWx1ZV8yODc1NzUyNQ=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "New Brands - PitchPoint",
-                    "id": "RmllbGRWYWx1ZV8yODc5OTM4Nw=="
-                }
-            ]
-        },
-        "tag": "New Brands - PitchPoint"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI2NzQ1MDk=",
-        "type": null,
-        "firstName": "Masa Abu",
-        "lastName": "Qura",
-        "jobTitle": "Co-Founder and  Creative Director",
-        "organization": "SUKNAYE",
-        "photoUrl": "https://static.swapcard.com/public/images/4dfb137da62d41d9a149a513816910a9.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjc0MTYzOA==",
-                "title": "PitchPoint: The FHS Investment Spotlight",
-                "categories": [
-                    "Investment and Real Estate"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODMwNTgzMg==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "investment-and-real-estate",
-                        "translations": [
-                            {
-                                "value": "Investment and Real Estate "
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": [
-                {},
-                {},
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "15Ylvbnhx4M",
-                    "id": "RmllbGRWYWx1ZV8yODczNTI2Ng=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "11df5d5f-9e31-4e11-acb5-5288ea504b1f",
-                    "id": "RmllbGRWYWx1ZV8yODgxMDgyNA=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "New Brands - PitchPoint",
-                    "id": "RmllbGRWYWx1ZV8yODc5OTM4Nw=="
-                }
-            ]
-        },
-        "tag": "New Brands - PitchPoint"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI2NzQzNjU=",
-        "type": null,
-        "firstName": "Fahid",
-        "lastName": "Ali",
-        "jobTitle": "Co-Founder and Co-Chief Executive Officer",
-        "organization": "Consoome Technologies",
-        "photoUrl": "https://static.swapcard.com/public/images/d18b6e66991643f19d7c7dfe9853cba6.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjc0MTYzNQ==",
-                "title": "PitchPoint: The FHS Investment Spotlight",
-                "categories": [
-                    "Innovation and Technology"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODMwNTgzMA==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "innovation-and-technology",
-                        "translations": [
-                            {
-                                "value": "Innovation and Technology "
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "OJ_00PxGOLM",
-                    "id": "RmllbGRWYWx1ZV8yODczNDgzNA=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "af75509f-0784-4d60-ad84-43e6ab46c647",
-                    "id": "RmllbGRWYWx1ZV8yODczNDg0MA=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Tech Startup - Pitch Point",
-                    "id": "RmllbGRWYWx1ZV8yODcxNjY5Ng=="
-                },
-                {
-                    "translations": [
-                        {
-                            "value": "Technology",
-                            "language": "en_US"
-                        }
-                    ],
-                    "definition": {
-                        "id": "RmllbGREZWZpbml0aW9uXzg0NTU5OA==",
-                        "translations": [
-                            {
-                                "name": "Business Type",
-                                "language": "en_US"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "tag": "Tech Startup - Pitch Point"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI3MjA5Mzk=",
-        "type": null,
-        "firstName": "Prashant",
-        "lastName": "Mishra",
-        "jobTitle": "Chief Executive Officer",
-        "organization": "Retvens",
-        "photoUrl": "https://static.swapcard.com/public/images/e7be07674a324360821cc872fafef469.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjc0MTYzNQ==",
-                "title": "PitchPoint: The FHS Investment Spotlight",
-                "categories": [
-                    "Innovation and Technology"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODMwNTgzMA==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "innovation-and-technology",
-                        "translations": [
-                            {
-                                "value": "Innovation and Technology "
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": [
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Tech Startup - PitchPoint",
-                    "id": "RmllbGRWYWx1ZV8yODc5OTM3Mw=="
-                }
-            ]
-        },
-        "tag": "Tech Startup - PitchPoint"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI2Mjg5ODU=",
-        "type": null,
-        "firstName": "Gleb",
-        "lastName": "Mykhailov",
-        "jobTitle": "Chief Executive Officer",
-        "organization": "Treema Tech Ltd",
-        "photoUrl": "https://static.swapcard.com/public/images/2c718a34f58b40fda405a8bfffdc9ee1.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjc0MTYzNQ==",
-                "title": "PitchPoint: The FHS Investment Spotlight",
-                "categories": [
-                    "Innovation and Technology"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODMwNTgzMA==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "innovation-and-technology",
-                        "translations": [
-                            {
-                                "value": "Innovation and Technology "
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "jtVhN_XxcuE",
-                    "id": "RmllbGRWYWx1ZV8yODcxNjUyOA=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "e375661e-75b1-4d16-b104-950e5417070b",
-                    "id": "RmllbGRWYWx1ZV8yODgzMzgwNA=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Tech Startup - PitchPoint",
-                    "id": "RmllbGRWYWx1ZV8yODc5OTM3Mw=="
-                },
-                {
-                    "translations": [
-                        {
-                            "value": "Technology",
-                            "language": "en_US"
-                        }
-                    ],
-                    "definition": {
-                        "id": "RmllbGREZWZpbml0aW9uXzg0NTU5OA==",
-                        "translations": [
-                            {
-                                "name": "Business Type",
-                                "language": "en_US"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "tag": "Tech Startup - PitchPoint"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI4Mjc2ODk=",
-        "type": null,
-        "firstName": "Daniel",
-        "lastName": "Reeves",
-        "jobTitle": "Chief Commercial Officer",
-        "organization": "roomangel",
-        "photoUrl": "https://static.swapcard.com/public/images/d9f391e7c47840d8b5d9f2374a2d5ed8.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjc0MTYzNQ==",
-                "title": "PitchPoint: The FHS Investment Spotlight",
-                "categories": [
-                    "Innovation and Technology"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODMwNTgzMA==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "innovation-and-technology",
-                        "translations": [
-                            {
-                                "value": "Innovation and Technology "
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": [
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Tech Startup - PitchPoint",
-                    "id": "RmllbGRWYWx1ZV8yODc5OTM3Mw=="
-                }
-            ]
-        },
-        "tag": "Tech Startup - PitchPoint"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI3MTAyNDI=",
-        "type": null,
-        "firstName": "Inna",
-        "lastName": "Tsareva",
-        "jobTitle": "COO",
-        "organization": "Treema Tech Ltd",
-        "photoUrl": "https://static.swapcard.com/public/images/b223eb39c4874ab5b44d50b47bd515ad.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjc0MTYzNQ==",
-                "title": "PitchPoint: The FHS Investment Spotlight",
-                "categories": [
-                    "Innovation and Technology"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODMwNTgzMA==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "innovation-and-technology",
-                        "translations": [
-                            {
-                                "value": "Innovation and Technology "
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": [
-                {},
-                {},
-                {},
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "uBJmLKEXkDk",
-                    "id": "RmllbGRWYWx1ZV8yODc0OTU3Mg=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "e7d07e27-9126-4053-9b40-f241283a51c2",
-                    "id": "RmllbGRWYWx1ZV8yODc1NzcxNw=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Tech Startup - PitchPoint",
-                    "id": "RmllbGRWYWx1ZV8yODc5OTM3Mw=="
-                },
-                {
-                    "translations": [
-                        {
-                            "value": "Technology",
-                            "language": "en_US"
-                        }
-                    ],
-                    "definition": {
-                        "id": "RmllbGREZWZpbml0aW9uXzg0NTU5OA==",
-                        "translations": [
-                            {
-                                "name": "Business Type",
-                                "language": "en_US"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "tag": "Tech Startup - PitchPoint"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI3MTIzMjM=",
-        "type": null,
-        "firstName": "Mathias",
-        "lastName": "Upton-Hansen",
-        "jobTitle": "Founder",
-        "organization": "Rook AI",
-        "photoUrl": "https://static.swapcard.com/public/images/96b2efb820b34a02907510e049f60520.png",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjc0MTYzNQ==",
-                "title": "PitchPoint: The FHS Investment Spotlight",
-                "categories": [
-                    "Innovation and Technology"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODMwNTgzMA==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "innovation-and-technology",
-                        "translations": [
-                            {
-                                "value": "Innovation and Technology "
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "9_uge7xvG2c",
-                    "id": "RmllbGRWYWx1ZV8yODc1MDE3Nw=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "18b5cb23-b93e-4d0f-9f0a-a6571985d7ee",
-                    "id": "RmllbGRWYWx1ZV8yODc1NTUyNg=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Tech Startup - PitchPoint",
-                    "id": "RmllbGRWYWx1ZV8yODc5OTM3Mw=="
-                },
-                {
-                    "translations": [
-                        {
-                            "value": "Technology",
-                            "language": "en_US"
-                        }
-                    ],
-                    "definition": {
-                        "id": "RmllbGREZWZpbml0aW9uXzg0NTU5OA==",
-                        "translations": [
-                            {
-                                "name": "Business Type",
-                                "language": "en_US"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "tag": "Tech Startup - PitchPoint"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI3MTY5MDA=",
-        "type": null,
-        "firstName": "Paulina",
-        "lastName": "Chavez",
-        "jobTitle": null,
-        "organization": null,
-        "photoUrl": "https://static.swapcard.com/public/images/897ce7ef6f2842d5a02e60bcfdd71a43.jpeg",
-        "speakerOnPlannings": [],
-        "withEvent": {
-            "fields": [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "J2yxD-325I8",
-                    "id": "RmllbGRWYWx1ZV8yODc1NTU4NA=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "7563f0a6-71e5-4bbf-84ef-9966ce5c3e97",
-                    "id": "RmllbGRWYWx1ZV8yODgyOTM1OQ=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Young Leader",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI1MA=="
-                },
-                {
-                    "translations": [
-                        {
-                            "value": "Education",
-                            "language": "en_US"
-                        }
-                    ],
-                    "definition": {
-                        "id": "RmllbGREZWZpbml0aW9uXzg0NTU5OA==",
-                        "translations": [
-                            {
-                                "name": "Business Type",
-                                "language": "en_US"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "tag": "Young Leader"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI3MjY0NDg=",
-        "type": null,
-        "firstName": "Milo",
-        "lastName": "Cuti",
-        "jobTitle": null,
-        "organization": null,
-        "photoUrl": "https://static.swapcard.com/public/images/db94a2029e07429091fab094ccc9d6f6.jpeg",
-        "speakerOnPlannings": [],
-        "withEvent": {
-            "fields": [
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "iObNpYt8-Ik",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTMwNQ=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "e021b557-408e-45f5-ae34-a0c08df4f26e",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTMwOA=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Young Leader",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI1MA=="
-                }
-            ]
-        },
-        "tag": "Young Leader"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI3MzgwNTg=",
-        "type": null,
-        "firstName": "Simon",
-        "lastName": "Galley",
-        "jobTitle": null,
-        "organization": null,
-        "photoUrl": "https://static.swapcard.com/public/images/2bfce444471b4fc68e3920c8df396a55.jpeg",
-        "speakerOnPlannings": [],
-        "withEvent": {
-            "fields": [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "1hfYqbnpK2I",
-                    "id": "RmllbGRWYWx1ZV8yODc2NDE5Mw=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "a9fc55a7-fa84-4c5e-9b69-e82b87436adf",
-                    "id": "RmllbGRWYWx1ZV8yODgyODc2Nw=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Young Leader",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI1MA=="
-                },
-                {
-                    "translations": [
-                        {
-                            "value": "Student",
-                            "language": "en_US"
-                        }
-                    ],
-                    "definition": {
-                        "id": "RmllbGREZWZpbml0aW9uXzg0NTU5OA==",
-                        "translations": [
-                            {
-                                "name": "Business Type",
-                                "language": "en_US"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "tag": "Young Leader"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI3MjYyNzc=",
-        "type": null,
-        "firstName": "Amna",
-        "lastName": "Khoory",
-        "jobTitle": null,
-        "organization": null,
-        "photoUrl": "https://static.swapcard.com/public/images/02779831e93144a6a2765884582af99a.png",
-        "speakerOnPlannings": [],
-        "withEvent": {
-            "fields": [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "7Qwb7jGMfeM",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI1Ng=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "93dd6ea1-3da1-40a7-b6d5-cbd0bf779510",
-                    "id": "RmllbGRWYWx1ZV8yODgyODc1NQ=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Young Leader",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI1MA=="
-                }
-            ]
-        },
-        "tag": "Young Leader"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI3MjY0MDA=",
-        "type": null,
-        "firstName": "Laura",
-        "lastName": "Leyva",
-        "jobTitle": "Internship Trainee",
-        "organization": "Kempinski Hotels S․A.",
-        "photoUrl": "https://static.swapcard.com/public/images/21ef9657074f4c48bfc08c0a516d49fc.jpeg",
-        "speakerOnPlannings": [],
-        "withEvent": {
-            "fields": [
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "Yl8DLPwrs8A",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI4Nw=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "b5699f3a-c8ac-44d2-bf10-366a40d70856",
-                    "id": "RmllbGRWYWx1ZV8yODg1MzY5MA=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Young Leader",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI1MA=="
-                }
-            ]
-        },
-        "tag": "Young Leader"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDMwMDI5Mzk=",
-        "type": null,
-        "firstName": "Rhianne",
-        "lastName": "Macapagal",
-        "jobTitle": null,
-        "organization": null,
-        "photoUrl": "https://static.swapcard.com/public/images/d0b263ccbc1447bdb7b06e2af2d1b098.jpeg",
-        "speakerOnPlannings": [],
-        "withEvent": {
-            "fields": [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "fpGZo6A19W8",
-                    "id": "RmllbGRWYWx1ZV8yODgyODc2MQ=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "c5f02c7f-a884-4e2c-b1b5-24641857f016",
-                    "id": "RmllbGRWYWx1ZV8yODgyOTMwMg=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Young Leader",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI1MA=="
-                }
-            ]
-        },
-        "tag": "Young Leader"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI0NDAwNTk=",
-        "type": null,
-        "firstName": "Emma",
-        "lastName": "Näpänkangas",
-        "jobTitle": null,
-        "organization": null,
-        "photoUrl": "https://static.swapcard.com/public/images/7b227e54a0414061b922faa829e7a72c.jpeg",
-        "speakerOnPlannings": [],
-        "withEvent": {
-            "fields": [
-                {},
-                {},
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "1ybVgox_tkk",
-                    "id": "RmllbGRWYWx1ZV8yODcxODI3OQ=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "b1ba490e-e665-4b2a-81c8-32cd812c7159",
-                    "id": "RmllbGRWYWx1ZV8yODc3NzY1MQ=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Young Leader",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI1MA=="
-                }
-            ]
-        },
-        "tag": "Young Leader"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI0NDAwNjI=",
-        "type": null,
-        "firstName": "Anna",
-        "lastName": "Pavlova",
-        "jobTitle": null,
-        "organization": null,
-        "photoUrl": "https://static.swapcard.com/public/images/c3245da464f6493293e15598c2bce533.jpeg",
-        "speakerOnPlannings": [],
-        "withEvent": {
-            "fields": [
-                {},
-                {},
-                {},
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "MZ9OzXouHIc",
-                    "id": "RmllbGRWYWx1ZV8yODcxODI4NA=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "6121fef6-cf24-4345-8a21-82d6697501b6",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTMxNw=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Young Leader",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI1MA=="
-                },
-                {
-                    "translations": [
-                        {
-                            "value": "Consulting/Advisor",
-                            "language": "en_US"
-                        }
-                    ],
-                    "definition": {
-                        "id": "RmllbGREZWZpbml0aW9uXzg0NTU5OA==",
-                        "translations": [
-                            {
-                                "name": "Business Type",
-                                "language": "en_US"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        "tag": "Young Leader"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI0NDAwNjg=",
-        "type": null,
-        "firstName": "Rae",
-        "lastName": "Tan",
-        "jobTitle": null,
-        "organization": null,
-        "photoUrl": "https://static.swapcard.com/public/images/3a7e8db0f5114092b67026326d5488df.jpeg",
-        "speakerOnPlannings": [],
-        "withEvent": {
-            "fields": [
-                {},
-                {},
-                {},
-                {},
-                {},
-                {},
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "U7CdInp3Dgg",
-                    "id": "RmllbGRWYWx1ZV8yODYzMzcyOQ=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "2a6ec5b6-4663-475c-a527-2bd1022e0d34",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTMxMQ=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Young Leader",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI1MA=="
-                }
-            ]
-        },
-        "tag": "Young Leader"
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDI3MjYyNTc=",
-        "type": null,
-        "firstName": "Vince Van de",
-        "lastName": "Wiele",
-        "jobTitle": null,
-        "organization": null,
-        "photoUrl": "https://static.swapcard.com/public/images/c212cec5acc544e18657871616465d34.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjYyODg3Ng==",
-                "title": "Welcome Back",
-                "categories": [
-                    "Opening / Closing Remarks"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODY2Mjc3OA==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "opening-closing-remarks",
-                        "translations": [
-                            {
-                                "value": "Opening / Closing Remarks"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": [
-                {
-                    "definition": {
-                        "name": "PREMAGIC_REGISTRATION_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0MQ=="
-                    },
-                    "locale": "en_US",
-                    "value": "cFHvgZr4xfw",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI0Ng=="
-                },
-                {
-                    "definition": {
-                        "name": "PREMAGIC_FACE_ID",
-                        "translations": [],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNDk0Mg=="
-                    },
-                    "locale": "en_US",
-                    "value": "3e45ed50-f71f-4f4b-ad6f-432c6a5d8f32",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI0OQ=="
-                },
-                {},
-                {
-                    "definition": {
-                        "name": "Special Label",
-                        "translations": [
-                            {
-                                "name": "Special Label"
-                            }
-                        ],
-                        "id": "RmllbGREZWZpbml0aW9uXzgzNzE0Mw=="
-                    },
-                    "locale": "en_US",
-                    "value": "Young Leader",
-                    "id": "RmllbGRWYWx1ZV8yODc1OTI1MA=="
-                }
-            ]
-        },
-        "tag": "Young Leader"
     }
 ]
