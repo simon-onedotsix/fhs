@@ -13,7 +13,7 @@
 @media(min-width:1200px) {
     .boxout {
         max-width: 65vw;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2fr 1.2fr;
         padding: var(--space-sm)
     }
 }
@@ -30,8 +30,8 @@
 }
 @media(min-width:600px){
     .hostSponsorLogoWrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        
         gap: var(--space-sm);
     }
     .hostSponsorLogo {

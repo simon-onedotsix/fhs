@@ -677,12 +677,24 @@ export default function Page({ seomatic, partners }) {
                                 </div>
                             </Pop>
                         </div>
+                       
+                        <div className="center">
+                            <p className="fs-4 fw-600 c-accent caps pb-xs">{locale === 'ar' ? "Strategic Enabler" : "Strategic Enabler"}</p>
+                        
+                            <Pop>
+                                <div className={`${CSS.hostSponsorLogoWrapper} mx-auto px-xs`}>
+                                    <div className={CSS.hostSponsorLogo}>
+                                        <Image src={`/assets/site/sa/ministry-of-tourism.png`} layout="fill"/>
+                                    </div>
+                                </div>
+                            </Pop>
+                        </div>
                       
 
 
                         {/* PATRONAGE */}
                     
-                        <div className="">
+                        {/* <div className="">
                             <p className="fs-4 fw-600 c-accent caps pb-xs center balance lh-1">{ locale === 'ar' ? "تحت رعاية" : "Under the Patronage of" }</p>
 
                             <div className={CSS.patronBox}>
@@ -707,11 +719,7 @@ export default function Page({ seomatic, partners }) {
                                                     <br/>
                                                         رئيس مجلس إدارة الخزامى
                                                     </p>
-                                                    {/* <p className="mt-xxs">
-                                                        <Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}>
-                                                            <a className="uLink c-accent">عرض السيرة الذاتية</a>
-                                                        </Link>
-                                                    </p> */}
+
                                                 </>
                                             :
                                                 <>
@@ -720,11 +728,7 @@ export default function Page({ seomatic, partners }) {
                                                         Secretary General King Faisal Foundation&nbsp;(KFF)<br/>
                                                         Chairman of the Board of Directors Al&nbsp;Khozama
                                                     </p>
-                                                    {/* <p className="mt-xxs">
-                                                        <Link href={'/sa/speakers/RXZlbnRQZW9wbGVfMzc0OTY5MjU='}>
-                                                            <a className="uLink c-accent">View biography</a>
-                                                        </Link>
-                                                    </p> */}
+
                                                 </>
                                         }
                                         
@@ -733,7 +737,7 @@ export default function Page({ seomatic, partners }) {
                                 </div>
                             </div>
                             
-                        </div>
+                        </div> */}
                       
 
                     </div>
