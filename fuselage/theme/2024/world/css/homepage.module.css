@@ -176,7 +176,7 @@
 }
 .patronBoxContent {
     grid-area: 2/1 / 4/2;
-    background-color: var(--primary-2);
+    background-color: var(--primary);
     border-radius: 1rem;
     padding: var(--space-sm);
     padding-top: calc(7rem + var(--space-sm));

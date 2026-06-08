@@ -272,21 +272,21 @@ export default function Page ({ sessions, speakers }) {
 
 
     // prioritise speakers in slider
-	let prioritySpeakersArray = [
-		(speaker => speaker.firstName == 'Pier Paolo' && speaker.lastName === 'Righi' ? 0 : 1),
-		(speaker => speaker.firstName == 'Charlie' && speaker.lastName === 'Walsh' ? 0 : 1),
-		(speaker => speaker.firstName == 'Husni Al' && speaker.lastName === 'Bayari' ? 0 : 1),
-		(speaker => speaker.firstName == 'George' && speaker.lastName === 'Azar' ? 0 : 1),
-		(speaker => speaker.firstName == 'Jeff' && speaker.lastName === 'Tisdall' ? 0 : 1),
-	]
+	// let prioritySpeakersArray = [
+	// 	(speaker => speaker.firstName == 'Pier Paolo' && speaker.lastName === 'Righi' ? 0 : 1),
+	// 	(speaker => speaker.firstName == 'Charlie' && speaker.lastName === 'Walsh' ? 0 : 1),
+	// 	(speaker => speaker.firstName == 'Husni Al' && speaker.lastName === 'Bayari' ? 0 : 1),
+	// 	(speaker => speaker.firstName == 'George' && speaker.lastName === 'Azar' ? 0 : 1),
+	// 	(speaker => speaker.firstName == 'Jeff' && speaker.lastName === 'Tisdall' ? 0 : 1),
+	// ]
     
     
-    // console.log('sessions:', sessions)
-    // console.log('speakers:', speakers)
+    console.log('sessions:', sessions)
+    console.log('speakers:', speakers)
     // console.log('ordered:', orderedSpeakers)
     
-    // console.dir( getSessionsByTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
-    // console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
+    console.dir( getSessionsByTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
+    console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
 	// console.log('customOrderedSpeakers:', prioritiseSpeakers( getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ), prioritySpeakersArray ))
 
 
@@ -376,32 +376,6 @@ export default function Page ({ sessions, speakers }) {
                 </Pop>
 
             </HeroUnitVideo>
-
-
-            {/* AWARDS */}
-            {/* <section className='mt-md'>
-                <Ticker speed={5}>
-                    <p className='fs-2 fw-600'>&darr; NEW for 2025 &darr; &thinsp;</p>
-                    <p className='fs-2 c-accent'>
-                        <Link href={`/world/brf/broker-award`}><a className='uLink'>Nominate now!</a></Link>&thinsp;
-                    </p>
-                </Ticker>
-            </section> */}
-
-            {/* <section className="block">
-                <div className="container formatted center maxw-50">
-                    <p className="fs-1 fw-600 lh-1">World Branded Residences Awards&nbsp;2025</p>
-                    <p className='fs-5 mt-sm'>The World Branded Residences Awards recognise excellence and outstanding achievement among brokerages and individual brokers operating in the global branded residences market.</p>
-                </div>
-                <div className="container center">
-                    <p style={{ color: '#EF3742', fontWeight: 500 }}>Nominations are now closed.</p>
-                </div>
-                <div className="container center">
-                    <Button href={'/world/brf/broker-award'}>Learn More</Button>
-                </div>
-            </section> */}
-
-
 
                
 
@@ -544,8 +518,6 @@ Page.theme = 'brf'
 
 // BRF topic id: RmllbGRWYWx1ZV8yNDIzOTQ1MA==
 
-// peir paolo righi id: "RXZlbnRQZW9wbGVfMzE4NDk5Mzg=",
-
 export async function getStaticProps() {
 
 	const eventQuery = await fetch(
@@ -568,7 +540,7 @@ export async function getStaticProps() {
 							}
 						}
 
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_AE}", page: 1, pageSize: 500) {
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}", page: 1, pageSize: 500) {
 							id
 							titleTranslations {
 								value
@@ -613,10 +585,10 @@ export async function getStaticProps() {
 								photoUrl
 								organization
 								biography
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE}") {
+								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}") {
 									eventProfile {
 										type
-										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
+										withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}") {
 											speakerOnPlannings {
 												id
 												title
@@ -632,7 +604,7 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AE,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2026,
 					"page": 1
 				}
 			})

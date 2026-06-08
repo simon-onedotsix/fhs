@@ -125,7 +125,7 @@ const photos = [
         "hero": [
             {
                 "id": "50193",
-                "url": "/assets/img/world/pages/home/fhs-world-2025-06.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2025-10.jpg",
                 "width": 1000,
                 "height": 588
             }
@@ -166,9 +166,468 @@ const photos = [
     }
 ]
 
+const SPEAKERS = [
+    {
+        "id": "RXZlbnRQZW9wbGVfNDY1MDgzNTg=",
+        "type": "Speaker",
+        "firstName": "Ho",
+        "lastName": "Kwon Ping",
+        "jobTitle": "Founder and Executive Chairman",
+        "organization": "Banyan Group",
+        "photoUrl": "https://static.swapcard.com/public/images/03a47481a1344b03a90e04c057017377.jpeg",
+        "speakerOnPlannings": [
+            {
+                "id": "UGxhbm5pbmdfMjYwMDU2Ng==",
+                "title": "A Founder’s Perspective on the Evolution of Branded Residences",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
+            }
+        ],
+        "withEvent": {
+            "fields": []
+        }
+    },
+    {
+    "id": "RXZlbnRQZW9wbGVfNDY1MDg0OTk=",
+    "type": "Speaker",
+    "firstName": "Artur",
+    "lastName": "Gerber",
+    "jobTitle": "Chief Executive Officer",
+    "organization": "TUI BLUE Hotels & Resorts",
+    "photoUrl": "https://cdn-api.swapcard.com/public/images/0f23ecf59ba442a396d3bcf6966bbcfe.png",
+    "speakerOnPlannings": [
+        {
+            "id": "UGxhbm5pbmdfMTgyOTY2OQ==",
+            "title": "What’s whetting Investors’ Appetite for Resorts?",
+            "categories": [],
+            "fields": [
+                {},
+                {}
+            ]
+        },
+        {
+            "id": "UGxhbm5pbmdfMjAyNzY0OQ==",
+            "title": "Leading with Purpose: Commitment to People, Planet and Profit",
+            "categories": [
+                "Sustainability & Innovation"
+            ],
+            "fields": [
+                {},
+                {
+                    "id": "RmllbGRWYWx1ZV8yNDU3Mjg5MQ==",
+                    "definition": {
+                        "isDefault": true,
+                        "name": "Topics"
+                    },
+                    "value": "sustainability-and-innovation",
+                    "translations": [
+                        {
+                            "value": "Sustainability & Innovation"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "UGxhbm5pbmdfMjU5MjYwNQ==",
+            "title": "Africa's Hospitality Boom: Is the Sector Growing Fast Enough to Meet Rising Demand?",
+            "categories": [],
+            "fields": [
+                {}
+            ]
+        }
+    ],
+    "withEvent": {
+        "fields": []
+    }
+    },
+    {
+        "id": "RXZlbnRQZW9wbGVfNDY1MDg1MTA=",
+        "type": null,
+        "firstName": "Selim",
+        "lastName": "El Zein",
+        "jobTitle": "Vice President - Head of Asset Management & Investments",
+        "organization": "Deyaar Development PJSC",
+        "photoUrl": "https://static.swapcard.com/public/images/210f46e7564649758cb2d6105c085e2c.jpeg",
+        "speakerOnPlannings": [
+            {
+                "id": "UGxhbm5pbmdfMjczOTg0OA==",
+                "title": "Investors with Influence: How Private Capital Shapes Hospitality Footprints",
+                "categories": [
+                    "Investment and Real Estate"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yODMwNTgzMg==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "investment-and-real-estate",
+                        "translations": [
+                            {
+                                "value": "Investment and Real Estate "
+                            }
+                        ]
+                    },
+                    {}
+                ]
+            }
+        ],
+        "withEvent": {
+            "fields": []
+        }
+    },
+    {
+        "id": "RXZlbnRQZW9wbGVfNDY4MTM0MDA=",
+        "type": null,
+        "firstName": "Jaidev",
+        "lastName": "Menezes",
+        "jobTitle": "Regional Vice President, Mixed-Use Development EMEA",
+        "organization": "Marriott International",
+        "photoUrl": "https://static.swapcard.com/public/images/22a5723e4e294c73987b5bee25753722.jpeg",
+        "speakerOnPlannings": [
+            {
+                "id": "UGxhbm5pbmdfMTUzMzAyNA==",
+                "title": "Branded Residential is Booming: Upfront Planning for Making Your Project a Success",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjcyMjc0NQ==",
+                "title": "The Perfect Fit: Selecting the Right Brand for Residential Success",
+                "categories": [
+                    "Branded Residences Forum"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yNDIzOTQ1MA==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "branded-residences-forum",
+                        "translations": [
+                            {
+                                "value": "Branded Residences Forum"
+                            }
+                        ]
+                    },
+                    {}
+                ]
+            }
+        ],
+        "withEvent": {
+            "fields": []
+        }
+    },
+    {
+        "id": "RXZlbnRQZW9wbGVfNDY4MTM4NjM=",
+        "type": null,
+        "firstName": "Ina",
+        "lastName": "Plunien",
+        "jobTitle": "Senior Vice President - Hospitality",
+        "organization": "Cain",
+        "photoUrl": "https://static.swapcard.com/public/images/f3904a243c764ec494f2fe2976dbf82c.jpeg",
+        "speakerOnPlannings": [],
+        "withEvent": {
+            "fields": []
+        }
+    },
+    {
+        "id": "RXZlbnRQZW9wbGVfNDY0NDczNDg=",
+        "type": null,
+        "firstName": "Amit",
+        "lastName": "Arora",
+        "jobTitle": "Chief Operating Officer",
+        "organization": "Arada Hospitality and Entertainment",
+        "photoUrl": "https://static.swapcard.com/public/images/cb22de0ff76c48e080aa1ad8b770b936.jpeg",
+        "speakerOnPlannings": [
+            {
+                "id": "UGxhbm5pbmdfMjAyNzcyNw==",
+                "title": "Capitalizing on the Alternative Accommodation Boom: Unveiling Realities and Global Trends",
+                "categories": [
+                    "Projects & Destinations",
+                    "Global Investments"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yNDIzNzQxMQ==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "destination-and-urban-development",
+                        "translations": [
+                            {
+                                "value": "Projects & Destinations"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "RmllbGRWYWx1ZV8yNDU3Mjg5Mg==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "global-investments",
+                        "translations": [
+                            {
+                                "value": "Global Investments"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjkwMTU4Mg==",
+                "title": "Smart Capital, Young Tenants: The Investment Case for Student Accommodation",
+                "categories": [
+                    "Investment and Real Estate"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yODMwNTgzMg==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "investment-and-real-estate",
+                        "translations": [
+                            {
+                                "value": "Investment and Real Estate "
+                            }
+                        ]
+                    },
+                    {}
+                ]
+            }
+        ],
+        "withEvent": {
+            "fields": []
+        }
+    },
+    {
+        "id": "RXZlbnRQZW9wbGVfNDY1MDgyMDA=",
+        "type": "Speaker",
+        "firstName": "Hala Matar",
+        "lastName": "Choufany",
+        "jobTitle": "President Middle East & Africa",
+        "organization": "HVS MEA",
+        "photoUrl": "https://static.swapcard.com/public/images/3089081b17034fe2a54e72640f0a6a87.jpeg",
+        "speakerOnPlannings": [
+            {
+                "id": "UGxhbm5pbmdfOTM3MDc=",
+                "title": "Arab women driving leadership",
+                "categories": [],
+                "fields": []
+            },
+            {
+                "id": "UGxhbm5pbmdfMTUzMjk4OQ==",
+                "title": "Building Hotels in a Challenging Environment: Navigating Rising Construction Costs, Funding Delays, and Higher Interest Rates for Hotel Development Projects",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMTg2OTMyMw==",
+                "title": "Brand Dilemma: Navigating the Pros and Cons of Launching New Brands – An unbiased Perspective",
+                "categories": [
+                    "Brand & Destination"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "brand-development",
+                        "translations": [
+                            {
+                                "value": "Brand & Destination"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjAyNzcxNw==",
+                "title": "Trailblazing Careers in Hospitality: Leading the Way",
+                "categories": [
+                    "Talks"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yMzI1MzEyOA==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "data-and-digital-talks",
+                        "translations": [
+                            {
+                                "value": "Talks"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjAyNzg4Ng==",
+                "title": "EAHM Leadership Series: CEO for the Day",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjY3OTkyNA==",
+                "title": "FHS Africa Excellence Award",
+                "categories": [],
+                "fields": [
+                    {},
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjcyMjk5NA==",
+                "title": "FHS Africa Excellence Award",
+                "categories": [
+                    "Awards"
+                ],
+                "fields": [
+                    {},
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yODY2Mjc2Mg==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "awards",
+                        "translations": [
+                            {
+                                "value": "Awards"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "withEvent": {
+            "fields": []
+        }
+    },
+    {
+        "id": "RXZlbnRQZW9wbGVfNDY0NDczNTI=",
+        "type": "Speaker",
+        "firstName": "Eddy",
+        "lastName": "Tannous",
+        "jobTitle": "Chief Operating Officer",
+        "organization": "Rotana Hotels",
+        "photoUrl": "https://static.swapcard.com/public/images/b883ce7dcd704266b4d35a1add04a681.jpeg",
+        "speakerOnPlannings": [
+            {
+                "id": "UGxhbm5pbmdfMTU3NjUxNw==",
+                "title": "EAHM Leadership Series - Creating Harmony: Aligning People, Planet, and Future Growth in Hospitality",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjAyNzcyMA==",
+                "title": "Company Culture and Relationships as a Competitive Advantage",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjAyNzg4Ng==",
+                "title": "EAHM Leadership Series: CEO for the Day",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjQ3NjQ5MA==",
+                "title": "From White Label Operators, Franchising to Traditional Management Agreements  - What is the Future?",
+                "categories": [
+                    "Investment & Development"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yMzI1MzEzNQ==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "investment",
+                        "translations": [
+                            {
+                                "value": "Investment & Development"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfMjYyODc3OA==",
+                "title": "Rebuilding the Workforce: Attracting and Retaining Talent in Hospitality",
+                "categories": [
+                    "NextGen"
+                ],
+                "fields": [
+                    {},
+                    {
+                        "id": "RmllbGRWYWx1ZV8yODMwNTgyNg==",
+                        "definition": {
+                            "isDefault": true,
+                            "name": "Topics"
+                        },
+                        "value": "nextgen",
+                        "translations": [
+                            {
+                                "value": "NextGen"
+                            }
+                        ]
+                    },
+                    {}
+                ]
+            },
+            {
+                "id": "UGxhbm5pbmdfNDQwNjYyNw==",
+                "title": "Culture Creates Value: How Leadership and Engagement Drive ROI, Brand Strength and Asset Performance",
+                "categories": [],
+                "fields": [
+                    {}
+                ]
+            }
+        ],
+        "withEvent": {
+            "fields": []
+        }
+    }
+]
 
 
-export default function Home ({ globals, entry, seomatic, speakerData, partnerData }) {
+
+export default function Home ({ globals, entry, seomatic, partnerData }) {
 
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState()
@@ -176,10 +635,6 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
     // console.log('entry:', entry)
     // console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
     // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))	
-    // console.log('speakerData:', speakerData)
-
-    let selectedCmsSpeakers = entry.fhisContentBlocks.find( obj => obj.__typename === 'fhisContentBlocks_profilesCarousel_BlockType')
-    // console.log('selectedCmsSpeakers:', selectedCmsSpeakers)
 
 
     // scroll animation
@@ -218,7 +673,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
             
 
-            <section className="block o-hidden pt-xs">
+            {/* <section className="block o-hidden pt-xs">
                 <Pop>
                     <div className={`${CSS.aisPromo}`}>
                         <header className={CSS.aisPromoHeader}>
@@ -278,7 +733,7 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
 
                     </div>
                 </Pop>
-            </section>
+            </section> */}
 
 
 
@@ -314,23 +769,23 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             {/* SPEAKER HIGHLIGHTS */}
 
             {
-                selectedCmsSpeakers &&
+                SPEAKERS &&
                 <section className="block bg-secondary">
 
                     <div className="container center">
-                        <p className="fs-0 fw-600 c-primary">2025 Speakers</p>
+                        <p className="fs-0 fw-600 c-primary">2026 Speakers</p>
                     </div>
                         
-                    <div className="container columns-5 gap-sm">
+                    <div className="container columns-4 gap-sm maxw-65">
                         {
-                            selectedCmsSpeakers.profiles.map((profile, index) => (
+                            SPEAKERS.map((profile, index) => (
                                 <Pop key={index}>
                                     <SpeakerCard
                                         url={`world/speakers/profile/${profile.slug}`}
-                                        photoUrl={profile.avatar[0] ? profile.avatar[0].url : null }
-                                        fullName={profile.title}
-                                        jobTitle={profile.positions[0].jobTitle}
-                                        company={profile.positions[0].organisation}
+                                        photoUrl={profile.photoUrl ? profile.photoUrl : null }
+                                        fullName={`${profile.firstName} ${profile.lastName}`}
+                                        jobTitle={profile.jobTitle}
+                                        company={profile.organization}
                                         specialField={profile.id === "247717" && "Award Winner – Lifetime Achievement Award"}
                                     />
                                 </Pop>
@@ -369,76 +824,11 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
             </div>
 
             
-            {/* LAUNCH STATEMENT */}
-
-            <section className="block bg-white o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
-                <div className="container columns-2 gap-md formatted">
-
-                    <section className="flex jc-center ai-center">
-                        <motion.div 
-                            className={CSS.fhsGraphicWrapper}
-
-                            initial={{ x: 0 , y: 0, rotate: -45, scale: 0.1, opacity: 0 }}
-                            whileInView={{ x: 0, y: 0, rotate: 0, scale: 1, opacity: 1 }}
-                            // viewport={'once'}
-                            transition={{ type: "spring", bounce: 0.25 }}
-                        >
-                            <FhsIcon />
-                        </motion.div>
-                    </section>
-
-                    <section>
-                        <Fade>
-                            <p className='fs-0 fw-600 lh-1 maxw-45 c-primary'>
-                                <span className="c-accent">Thank You</span> for Joining Us at <span className="c-accent">FHS&nbsp;World&nbsp;2025</span>
-                            </p>
-                        </Fade>
-                        <Fade>
-                            <div className="formatted fs-5 mt-sm">
-                                <p>FHS World 2025 brought the global hospitality investment community together for 3 unmissable days of learning, networking, and deal-making. We were joined by <span className="fw-600">60+ countries</span> and delegates from over <span className="fw-600">650 companies</span> attending throughout the day. Huge thank you to the <span className="fw-600">100+ sponsors and partners</span>!</p>
-                                <p className="fw-600">Registrations are open for 2026!</p>
-                            </div>
-                        </Fade>
-                            <div className="button-grid mt-sm">
-                                <Pop inline>
-                                    <Button 
-                                        href={`/world/purchase-pass`} 
-                                        theme={{ 
-                                            background: `var(--secondary-2)`, 
-                                            hover: `var(--secondary-2-dark)`, 
-                                            color: `white`
-                                        }} 
-                                        decal={`fs-5 fw-600`}
-                                        target={'_blank'}
-                                    >
-                                        Purchase Pass
-                                    </Button>
-                                </Pop>
-                                <Pop inline>
-                                    <Button 
-                                        href={`#sponsor-form`} 
-                                        theme={{ 
-                                            background: `var(--secondary-2)`, 
-                                            hover: `var(--secondary-2-dark)`, 
-                                            color: `white`
-                                        }} 
-                                        decal={`fs-5 fw-600`}
-                                    >
-                                        Become a Sponsor
-                                    </Button>
-                                </Pop>
-                            </div>
-                    </section>
-
-                </div>
-            </section>
-
-
 
 
             {/* PATRONAGE */}
             
-            <section className="block bg-primary">
+            <section className="block bg-primary-2">
                 <div className="container center">
                     <p className="fs-3 fw-600 c-secondary caps pb-sm">Under the Patronage of</p>
 
@@ -479,112 +869,6 @@ export default function Home ({ globals, entry, seomatic, speakerData, partnerDa
                 </div>
             </section>
 
-
-
-            
-            {/* AWARD-WINNER */}
-
-            <div className={CSS.themeWrapper}>
-                <div className={CSS.themeWrapperGraphics}>
-                    <div className={CSS.graphic02}>
-                        <Pop>
-                            <Tri fill={'blue'} />
-                        </Pop>
-                    </div>
-                </div>
-
-                <section className={`${CSS.themeWrapperContent} block`}>
-                        <div className="container center">
-                            <p className="fs-3 fw-600 c-secondary caps pb-sm">FHS Lifetime Achievement Award 2025 Winner</p>
-
-                            <div className={CSS.patronBox}>
-
-                                <div className={CSS.patronBoxAvatar}>
-                                    <Pop>
-                                        <div className={CSS.avatar}>
-                                            <Image src={"https://cms.thebench.com/assets/img/avatars/AAA-Chairman.jpg"} layout='fill' alt="" unoptimized />
-                                        </div>
-                                    </Pop>
-                                </div>
-
-                                <div className={CSS.patronBoxContent}>
-                                    <Pop>
-                                        <p className="fs-4 fw-600">Abdullah Ahmed Al Moosa</p>
-                                        <p className="fs-5 mt-xxs">
-                                            Founder &amp; Chairman
-                                        </p>
-                                        <p className="fs-5 mt-xxs">
-                                            A. A. Al Moosa Enterprises | ARENCO Group
-                                        </p>
-                                    </Pop>
-                                </div>
-                            </div>
-                            
-                            <p className="mt-xs caps fs-sm c-secondary"><Link href={'/world/speakers/profile/abdullah-ahmed-al-moosa'}><a className="uLink">View biography</a></Link></p>
-                        </div>
-                </section>
-            </div>
-
-
-            {/* AIS PROMO */}
-
-            {/* <section className="block bg-primary-2">
-                <div className="container maxw-60">
-                    <Callout flipped
-                        image={{ url:'/assets/img/ais/ais-02.jpg', width:2000, height:1403 }}
-                        caption={"UAE Africa Tourism Investment Summit to Host 250+ Leaders from 53 African Nations"}
-                    >
-                        <Fade>
-                            <div style={{ width: 500, maxWidth: '22rem' }}>
-                                <img src="/assets/img/ais/ais-logo-align-left-inverse.png" alt="logo" width="100%" />
-                            </div>
-
-                            <p className='fs-4 fw-600 c-white caps mt-sm'>27 October 2025 <br/>08:30–13:00</p>
-                            <p className="fs-6 mt-xs">Held as part of <strong className="fw-600">FHS World</strong>, this summit aims to enhance economic and tourism partnerships between the UAE and African nations.</p>
-
-                            <p className="mt-sm lh-1 button-grid">
-                                <Pop>
-                                    <ButtonKeyline 
-                                        href={'/world/ais'} 
-                                        decal={'fs-6 fw-600'} 
-                                        color={'var(--primary)'}
-                                    >
-                                        More Information
-                                    </ButtonKeyline>
-                                </Pop>
-                                <Pop>
-                                    <ButtonKeyline 
-                                        href={'/world/ais/register#form'} 
-                                        decal={'fs-6 fw-600'} 
-                                        color={'var(--primary)'}
-                                    >
-                                        Register Interest
-                                    </ButtonKeyline>
-                                </Pop>
-                            </p>
-                        </Fade>
-                    </Callout>
-                </div>
-            </section> */}
-
-
-
-            {/* IMPACT FIGURES */}
-
-            {/* <section className="block bg-white o-hidden">
-                <div className="container">
-                    <div className={CSS.impactFiguresGrid}>
-                        <Slide><p className="fs-0 fw-700 c-primary lh-1">2024 in Numbers</p></Slide>
-                        
-                        <div className='columns-4 gap-sm'>
-                            <ImpactFigure value={`1596`} label={`Delegates`} />
-                            <ImpactFigure value={`60`} label={`Countries`} />
-                            <ImpactFigure value={`735`} label={`Companies`} />
-                            <ImpactFigure value={`276`} label={`Speakers`} />
-                        </div>
-                    </div>
-                </div>
-            </section> */}
 
 
             {/* VIDEO + PHOTO HIGHLIGHTS */}
@@ -718,8 +1002,6 @@ export async function getStaticProps({ params, preview, previewData }) {
             globals: pageData.data.globalSet,
             entry: pageData.data.entry,
             seomatic: pageData.data.entry.seomatic,
-            // speakerData: speakerData.content, 
-            // partnerData: partnerData.content
         }
     }
 }
