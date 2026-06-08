@@ -177,12 +177,12 @@ export async function getStaticPaths() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2026,
 					"cursor": {
 						"first": 300
 					},
 					"filters": {
-						"shouldBeInGroups": "RXZlbnRHcm91cF81ODU5ODM="
+						"shouldBeInGroups": "RXZlbnRHcm91cF82NTQ4MTQ="
 					}
 				}
 			})
@@ -253,10 +253,10 @@ export async function getStaticProps({ params }) {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2026,
 					"filters": {
 						"eventPeopleIds": [ params.id ],
-						"shouldBeInGroups": "RXZlbnRHcm91cF81ODU5ODM="
+						"shouldBeInGroups": "RXZlbnRHcm91cF82NTQ4MTQ="
 					}
 				}
 			})
