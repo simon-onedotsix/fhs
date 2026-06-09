@@ -469,43 +469,42 @@ export default function Agenda ({ sessions, locations }) {
 
 	// STREAM PRIORITISING
 
-	const prioriseStreams = ( sessionsData, locationsData ) => {
+	// Summit Stage
+	// Najd Breakout Room
+	// Centre Stage
 
-		if ( !sessionsData || !locationsData ) return
+	// {id: 'RmllbGRWYWx1ZV8xOTEwNTI2NA==', name: 'Summit Stage'}
+	// {id: 'RmllbGRWYWx1ZV8yNTg4MzM4MA==', name: 'Centre Stage'}
+	// {id: 'RmllbGRWYWx1ZV8yNTk5MTYyMQ==', name: 'Najd Breakout Room'}
+	// {id: 'RmllbGRWYWx1ZV8zMDc0ODU1Mw==', name: 'The Globe'}
 
-		const sortedStreams = []
-
-		if ( sessionsData.length > 1 ) {
-
-			// console.log('sorting')
-			
-			sessionsData.forEach( session => {
-				if ( session.fields.find( (field) => field.definition.name === 'Location' ) ) {
-
-					let location = session.fields.find( (field) => field.definition.name === 'Location' )
-					session.priority = locationsData.map( i => i.id ).indexOf(location?.id)
-
-					sortedStreams.push(session)
-
+	const prioriseStreams = ( sessionsData ) => {
+	
+			if ( !sessionsData || sessionsData.length === 1 ) return sessionsData
+	
+			// knowledge station, pioneer camp, showcase den, net positive ...
+			let preferredOrder = [ "RmllbGRWYWx1ZV8xOTEwNTI2NA==", "RmllbGRWYWx1ZV8yNTk5MTYyMQ==", "RmllbGRWYWx1ZV8yNTg4MzM4MA==", 'RmllbGRWYWx1ZV8zMDc0ODU1Mw==' ]
+	
+			let prioritisedSessions = sessionsData.map( session => {
+				let location = session.fields.find( field => field.definition.name === "Location" )
+				if ( location ) {
+					let priority = _.indexOf( preferredOrder, location.id )
+					session = { ...session, priority: priority }
 				} else {
-					session.priority = 100
-					sortedStreams.push(session)
+					session = { ...session, priority: -1 }
 				}
-				
-				
+	
+				// START custom prioritisation for specific session/s
+				if (session.id === "UGxhbm5pbmdfNDI1NTEyMA==") {
+					session = { ...session, priority: 10 }
+				}
+				// END custom prioritisation for specific session/s
+	
+				return session
 			})
-			
-			// console.log('–––––––––––––––––––-')
-			// console.log( _.orderBy(sortedStreams, ['priority'], ['asc']) )
-			
-			return _.orderBy(sortedStreams, ['priority'], ['asc'])
+	
+			return _.orderBy(prioritisedSessions, ['priority'])
 		}
-
-		// console.log('passing session back unchanged')
-
-		return sessionsData
-
-	}
 
 
 	// SESSION UTILITIES
@@ -532,11 +531,11 @@ export default function Agenda ({ sessions, locations }) {
 
 	// console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
-	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
-	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
+	console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
+	console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
 	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
 	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))	
-	console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
+	// console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
 	// console.log('SEARCH:', search)
 
 

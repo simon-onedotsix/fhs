@@ -145,20 +145,25 @@ export default function Club ({ events }) {
                             topColor={"#9A72AB"}
                         />
                     </div>
-                    <p className='fs-5 maxw-55 center mx-auto mt-md'>Be part of our exclusive community, reserved for those who shape the future of hospitality. As one of our most dedicated attendees, you&apos;ll gain access to exclusive privileges, early VIP experiences, and once-in-a-lifetime opportunities that only the inner circle of FHS can enjoy. This is your gateway to the future - and it&apos;s waiting for those bold enough to seize it.</p>
+                    <p className='fs-5 maxw-55 center mx-auto mt-md'>Be part of our exclusive community, reserved for those who shape the future of hospitality. As one of our most dedicated attendees, your membership tier is now recognised both as an individual and as part of your organisation, rewarding your personal commitment as well as your company&apos;s long-standing relationship with FHS. Gain access to exclusive privileges, early VIP experiences, and once-in-a-lifetime opportunities that only the inner circle of FHS can enjoy.</p>
                 </HeroUnitImage>
 
 
                 <section className="block pt-0">
                     <div className="container center formatted">
                         <p className='fs-2 fw-600 center'>Tiers</p>
-                        <p className='fs-6 maxw-50 mx-auto mt-md'>Our loyalty programme is divided into three distinct tiers, each offering a range of exclusive benefits. Your tier is determined based on your attendance at the most recent 9 editions of FHS which for now includes:</p>
-                        <div className={CSS.eligibilityTable}>
+                        <p className='fs-6 maxw-50 mx-auto mt-md'>Our loyalty programme is divided into three distinct tiers, each offering a range of exclusive benefits.</p>
+                        <p>Your tier is determined in two ways</p>
+                        <p> &bull; <strong>Personal attendance</strong> across the most recent 9 editions of FHS <br />
+                            &bull; <strong>Company&apos;s cumulative attendance</strong> across all representatives.</p>
+                        <p>You are automatically assigned the higher of the two tiers, so your organisation&apos;s participation works in your favour even if you are attending FHS for the first time.</p>
+
+                        {/* <div className={CSS.eligibilityTable}>
                             <span>FHS Africa (2024, 2025, 2026)</span>
                             <span>FHS Saudi Arabia (2023, 2024, 2025)</span>
                             <span>FHS World (2023, 2024, 2025)</span>
                         </div>
-                        <p>Please note that membership status will reset at every FHS event to include the recent most 6 editions.</p>
+                        <p>Please note that membership status will reset at every FHS event to include the recent most 6 editions.</p> */}
                     </div>
 
                     <div className="container columns-1 gap-sm">
@@ -184,20 +189,27 @@ export default function Club ({ events }) {
                         <div className={CSS.steps}>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>1</p>
-                                <p>ATTEND TWO OR MORE OF THE RECENT SIX EDITIONS OF FUTURE HOSPITALITY SUMMIT (FHS SAUDI ARABIA, FHS WORLD) TO START EARNING YOUR PLACE IN THE FHS CLUB.</p>
+                                <p className="balance">Attend two or more of the recent six editions of Future Hospitality Summit (FHS Saudi Arabia, FHS  World, FHS  Africa) to start earning your place in the FHS Club.</p>
                             </div>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>2</p>
-                                <p>YOUR TIER IS AUTOMATICALLY ASSIGNED BASED ON YOUR ATTENDANCE RECORD. KEEP ATTENDING FHS EDITIONS TO MOVE UP THE TIERS AND UNLOCK MORE BENEFITS.</p>
+                                <p className="balance">Your tier is automatically assigned based on your attendance record or your company&apos;s cumulative attendance, whichever is higher. Keep attending FHS editions to move up the tiers and unlock more benefits.</p>
                             </div>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>3</p>
-                                <p>CHECK YOUR MEMBERSHIP STATUS BELOW AND LEARN ABOUT EXCLUSIVE BENEFITS. MEMERSHIP STATUS WILL RESET AT EVERY FHS EVENT</p>
+                                <p className="balance">Check your membership status below and learn about exclusive benefits. Memership status will reset at every FHS event.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="container maxw-30">
+                    <div className="container">
+                        <div className="formatted center balance">
+                            <p className="fs-5 fw-600">How does company-based membership work?</p>
+                            <p>In addition to individual attendance, we recognise the commitment of organisations that have consistently sent representatives to FHS. If your company qualifies for a higher tier than your personal record, you are automatically elevated to that tier.</p>
+                        </div>
+                    </div>
+
+                    <div className="container maxw-30 pt-md">
                         <HubspotForm portalId={"14527187"} formId={"975e52f2-15f8-4f34-bfd8-b251c814c288"} />
                     </div>
                 </section>

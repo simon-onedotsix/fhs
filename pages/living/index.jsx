@@ -31,7 +31,7 @@ import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quo
 import { SlideoutCard } from "../../fuselage/components/slideout-card/slideout-card"
 import { EventCardLite } from '../../fuselage/theme/2024/world/blocks/upcoming-events/upcoming-events'
 
-
+import { CapitalFlow } from "../../ui-living/graphics/capital-flow"
 
 
 
@@ -169,7 +169,7 @@ export default function Home ({ data, advisors }) {
                     </div>
 
                     <div className="container formatted">
-                        <p className="fs-6 fw-600 c-magenta">Asset Classes:</p>
+                        <p className="fs-6 fw-600 c-magenta">For those who are involved or interested in below asset classes:</p>
                         <p className="fs-5 balance">Branded Residences <span className="c-magenta">&bull;</span> Student Accommodation <span className="c-magenta">&bull;</span> Senior Living <span className="c-magenta">&bull;</span> Serviced Living <span className="c-magenta">&bull;</span> Co-Living <span className="c-magenta">&bull;</span> Shared Ownership <span className="c-magenta">&bull;</span> Club Concepts <span className="c-magenta">&bull;</span> Mixed Use <span className="c-magenta">&bull;</span> Hotels &amp; Resorts</p>
                     </div>
                 </section>
@@ -208,10 +208,16 @@ export default function Home ({ data, advisors }) {
                 <div className="container center maxw-60">
                     <p className="fs-2 fw-500 lh-1 caps balance">THE MEETING POINT FOR GLOBAL CAPITAL &amp; EUROPEAN OPPORTUNITY</p>
                 </div>
-                <div className="container columns-2 gap-md maxw-60">
-                    <p>The Bench has spent 20 years cultivating relationships with investors and developers across the Middle East, Africa, Asia, the Americas and beyond through the Future Hospitality Summit franchise. FHS Living brings this capital to Europe – with rigour and intent. Vetted, named delegates from key global capital sources, paired with European hosts, with confirmed travel and pre-event introductions arranged in advance.</p>
+                <div className="container columns-2 ai-center gap-md">
+                    <CapitalFlow />
 
-                    <p>Sharia-compliant living assets – student accommodation, senior living and branded residences – offer a clean and increasingly attractive entry point for global capital. Middle Eastern family offices from Qatar, the UAE and the broader GCC are among the most active in seeking deployment opportunities in Paris, Amsterdam, Madrid and Berlin – alongside investors from across Europe, Asia and North America. FHS Living is where those conversations begin.</p>
+                    <div className="formatted">
+                        <p>We bring vetted global capital to Europe with rigour and intent.</p>
+                        <p><strong>20 years of relationships.</strong> Investors and developers cultivated across the Middle East, Africa through the Future Hospitality Summit franchise.</p>
+                        <p><strong>Named, vetted delegates.</strong> Key global capital sources paired with European hosts - travel confirmed and introductions arranged in advance.</p>
+                        <p><strong>A clean entry point.</strong> Sharia-compliant living assets - student, senior and branded residences - offer global capital an increasingly attractive route in.</p>
+                        <p>Gulf family offices from Qatar, the UAE & the broader GCC are among the most active. FHS Living is where those conversations begin.</p>
+                    </div>
                 </div>
             </section>
 
@@ -274,8 +280,9 @@ export default function Home ({ data, advisors }) {
 
             {/* ADVISORS */}
             <section className="block bg-primary">
-                <div className="container center">
+                <div className="container center formatted">
                     <p className="fs-2 fw-500 caps">Founding Advisors</p>
+                    <p className="fs-6 balance">Senior leaders representing above 9 asset classes from living investment landscape</p>
                 </div>
 
                 <div className="container columns-5 gap-sm center">
