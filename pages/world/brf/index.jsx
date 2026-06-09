@@ -378,8 +378,8 @@ export default function Page ({ sessions, speakers }) {
                 <ThemesSlider 
                     data={THEMES_DATA} 
                     heading={"2025 Branded Residences Forum Themes"}
-                    link={'/world/brf/agenda-2024'} 
-                    linkLabel={'View 2024 Agenda'} 
+                    link={'/world/brf/agenda'} 
+                    linkLabel={'View Agenda'} 
                 />
             </section>
 
