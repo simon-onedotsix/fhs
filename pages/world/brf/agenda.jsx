@@ -132,8 +132,8 @@ export default function Page ({ sessions }) {
             
             <section className="block bg-default">
                 <div className="container maxw-70 center">
-                    <p className='fs-1 fw-600 c-secondary'>2025 Branded Residences Forum Agenda</p>
-                    <p className='fs-4 mt-sm'>Wednesday 29 October</p>
+                    <p className='fs-1 fw-600 c-secondary'>2026 Branded Residences Forum Agenda</p>
+                    <p className='fs-4 mt-sm'>Thursday 01 October</p>
                 </div>
             </section>
 
@@ -240,7 +240,7 @@ export async function getStaticProps() {
 							}
 						}
 
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2025}", page: 1, pageSize: 500) {
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}", page: 1, pageSize: 500) {
 							id
 							titleTranslations {
 								value
@@ -285,7 +285,7 @@ export async function getStaticProps() {
 								photoUrl
 								organization
 								biography
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2025}") {
+								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}") {
 									eventProfile {
 										type
 										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
@@ -304,7 +304,7 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2026,
 					"page": 1
 				}
 			})

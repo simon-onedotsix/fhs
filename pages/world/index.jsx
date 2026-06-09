@@ -175,73 +175,15 @@ const SPEAKERS = [
         "jobTitle": "Founder and Executive Chairman",
         "organization": "Banyan Group",
         "photoUrl": "https://static.swapcard.com/public/images/03a47481a1344b03a90e04c057017377.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjYwMDU2Ng==",
-                "title": "A Founder’s Perspective on the Evolution of Branded Residences",
-                "categories": [],
-                "fields": [
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": []
-        }
     },
     {
-    "id": "RXZlbnRQZW9wbGVfNDY1MDg0OTk=",
-    "type": "Speaker",
-    "firstName": "Artur",
-    "lastName": "Gerber",
-    "jobTitle": "Chief Executive Officer",
-    "organization": "TUI BLUE Hotels & Resorts",
-    "photoUrl": "https://cdn-api.swapcard.com/public/images/0f23ecf59ba442a396d3bcf6966bbcfe.png",
-    "speakerOnPlannings": [
-        {
-            "id": "UGxhbm5pbmdfMTgyOTY2OQ==",
-            "title": "What’s whetting Investors’ Appetite for Resorts?",
-            "categories": [],
-            "fields": [
-                {},
-                {}
-            ]
-        },
-        {
-            "id": "UGxhbm5pbmdfMjAyNzY0OQ==",
-            "title": "Leading with Purpose: Commitment to People, Planet and Profit",
-            "categories": [
-                "Sustainability & Innovation"
-            ],
-            "fields": [
-                {},
-                {
-                    "id": "RmllbGRWYWx1ZV8yNDU3Mjg5MQ==",
-                    "definition": {
-                        "isDefault": true,
-                        "name": "Topics"
-                    },
-                    "value": "sustainability-and-innovation",
-                    "translations": [
-                        {
-                            "value": "Sustainability & Innovation"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "UGxhbm5pbmdfMjU5MjYwNQ==",
-            "title": "Africa's Hospitality Boom: Is the Sector Growing Fast Enough to Meet Rising Demand?",
-            "categories": [],
-            "fields": [
-                {}
-            ]
-        }
-    ],
-    "withEvent": {
-        "fields": []
-    }
+        "id": "RXZlbnRQZW9wbGVfNDY1MDg0OTk=",
+        "type": "Speaker",
+        "firstName": "Artur",
+        "lastName": "Gerber",
+        "jobTitle": "Chief Executive Officer",
+        "organization": "TUI BLUE Hotels & Resorts",
+        "photoUrl": "https://cdn-api.swapcard.com/public/images/0f23ecf59ba442a396d3bcf6966bbcfe.png",
     },
     {
         "id": "RXZlbnRQZW9wbGVfNDY1MDg1MTA=",
@@ -251,35 +193,6 @@ const SPEAKERS = [
         "jobTitle": "Vice President - Head of Asset Management & Investments",
         "organization": "Deyaar Development PJSC",
         "photoUrl": "https://static.swapcard.com/public/images/210f46e7564649758cb2d6105c085e2c.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjczOTg0OA==",
-                "title": "Investors with Influence: How Private Capital Shapes Hospitality Footprints",
-                "categories": [
-                    "Investment and Real Estate"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODMwNTgzMg==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "investment-and-real-estate",
-                        "translations": [
-                            {
-                                "value": "Investment and Real Estate "
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": []
-        }
     },
     {
         "id": "RXZlbnRQZW9wbGVfNDY4MTM0MDA=",
@@ -289,43 +202,6 @@ const SPEAKERS = [
         "jobTitle": "Regional Vice President, Mixed-Use Development EMEA",
         "organization": "Marriott International",
         "photoUrl": "https://static.swapcard.com/public/images/22a5723e4e294c73987b5bee25753722.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMTUzMzAyNA==",
-                "title": "Branded Residential is Booming: Upfront Planning for Making Your Project a Success",
-                "categories": [],
-                "fields": [
-                    {}
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjcyMjc0NQ==",
-                "title": "The Perfect Fit: Selecting the Right Brand for Residential Success",
-                "categories": [
-                    "Branded Residences Forum"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yNDIzOTQ1MA==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "branded-residences-forum",
-                        "translations": [
-                            {
-                                "value": "Branded Residences Forum"
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": []
-        }
     },
     {
         "id": "RXZlbnRQZW9wbGVfNDY4MTM4NjM=",
@@ -335,10 +211,6 @@ const SPEAKERS = [
         "jobTitle": "Senior Vice President - Hospitality",
         "organization": "Cain",
         "photoUrl": "https://static.swapcard.com/public/images/f3904a243c764ec494f2fe2976dbf82c.jpeg",
-        "speakerOnPlannings": [],
-        "withEvent": {
-            "fields": []
-        }
     },
     {
         "id": "RXZlbnRQZW9wbGVfNDY0NDczNDg=",
@@ -348,72 +220,6 @@ const SPEAKERS = [
         "jobTitle": "Chief Operating Officer",
         "organization": "Arada Hospitality and Entertainment",
         "photoUrl": "https://static.swapcard.com/public/images/cb22de0ff76c48e080aa1ad8b770b936.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMjAyNzcyNw==",
-                "title": "Capitalizing on the Alternative Accommodation Boom: Unveiling Realities and Global Trends",
-                "categories": [
-                    "Projects & Destinations",
-                    "Global Investments"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yNDIzNzQxMQ==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "destination-and-urban-development",
-                        "translations": [
-                            {
-                                "value": "Projects & Destinations"
-                            }
-                        ]
-                    },
-                    {
-                        "id": "RmllbGRWYWx1ZV8yNDU3Mjg5Mg==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "global-investments",
-                        "translations": [
-                            {
-                                "value": "Global Investments"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjkwMTU4Mg==",
-                "title": "Smart Capital, Young Tenants: The Investment Case for Student Accommodation",
-                "categories": [
-                    "Investment and Real Estate"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODMwNTgzMg==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "investment-and-real-estate",
-                        "translations": [
-                            {
-                                "value": "Investment and Real Estate "
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": []
-        }
     },
     {
         "id": "RXZlbnRQZW9wbGVfNDY1MDgyMDA=",
@@ -423,112 +229,6 @@ const SPEAKERS = [
         "jobTitle": "President Middle East & Africa",
         "organization": "HVS MEA",
         "photoUrl": "https://static.swapcard.com/public/images/3089081b17034fe2a54e72640f0a6a87.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfOTM3MDc=",
-                "title": "Arab women driving leadership",
-                "categories": [],
-                "fields": []
-            },
-            {
-                "id": "UGxhbm5pbmdfMTUzMjk4OQ==",
-                "title": "Building Hotels in a Challenging Environment: Navigating Rising Construction Costs, Funding Delays, and Higher Interest Rates for Hotel Development Projects",
-                "categories": [],
-                "fields": [
-                    {}
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMTg2OTMyMw==",
-                "title": "Brand Dilemma: Navigating the Pros and Cons of Launching New Brands – An unbiased Perspective",
-                "categories": [
-                    "Brand & Destination"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "brand-development",
-                        "translations": [
-                            {
-                                "value": "Brand & Destination"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjAyNzcxNw==",
-                "title": "Trailblazing Careers in Hospitality: Leading the Way",
-                "categories": [
-                    "Talks"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yMzI1MzEyOA==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "data-and-digital-talks",
-                        "translations": [
-                            {
-                                "value": "Talks"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjAyNzg4Ng==",
-                "title": "EAHM Leadership Series: CEO for the Day",
-                "categories": [],
-                "fields": [
-                    {}
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjY3OTkyNA==",
-                "title": "FHS Africa Excellence Award",
-                "categories": [],
-                "fields": [
-                    {},
-                    {}
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjcyMjk5NA==",
-                "title": "FHS Africa Excellence Award",
-                "categories": [
-                    "Awards"
-                ],
-                "fields": [
-                    {},
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODY2Mjc2Mg==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "awards",
-                        "translations": [
-                            {
-                                "value": "Awards"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": []
-        }
     },
     {
         "id": "RXZlbnRQZW9wbGVfNDY0NDczNTI=",
@@ -538,91 +238,25 @@ const SPEAKERS = [
         "jobTitle": "Chief Operating Officer",
         "organization": "Rotana Hotels",
         "photoUrl": "https://static.swapcard.com/public/images/b883ce7dcd704266b4d35a1add04a681.jpeg",
-        "speakerOnPlannings": [
-            {
-                "id": "UGxhbm5pbmdfMTU3NjUxNw==",
-                "title": "EAHM Leadership Series - Creating Harmony: Aligning People, Planet, and Future Growth in Hospitality",
-                "categories": [],
-                "fields": [
-                    {}
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjAyNzcyMA==",
-                "title": "Company Culture and Relationships as a Competitive Advantage",
-                "categories": [],
-                "fields": [
-                    {}
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjAyNzg4Ng==",
-                "title": "EAHM Leadership Series: CEO for the Day",
-                "categories": [],
-                "fields": [
-                    {}
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjQ3NjQ5MA==",
-                "title": "From White Label Operators, Franchising to Traditional Management Agreements  - What is the Future?",
-                "categories": [
-                    "Investment & Development"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yMzI1MzEzNQ==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "investment",
-                        "translations": [
-                            {
-                                "value": "Investment & Development"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfMjYyODc3OA==",
-                "title": "Rebuilding the Workforce: Attracting and Retaining Talent in Hospitality",
-                "categories": [
-                    "NextGen"
-                ],
-                "fields": [
-                    {},
-                    {
-                        "id": "RmllbGRWYWx1ZV8yODMwNTgyNg==",
-                        "definition": {
-                            "isDefault": true,
-                            "name": "Topics"
-                        },
-                        "value": "nextgen",
-                        "translations": [
-                            {
-                                "value": "NextGen"
-                            }
-                        ]
-                    },
-                    {}
-                ]
-            },
-            {
-                "id": "UGxhbm5pbmdfNDQwNjYyNw==",
-                "title": "Culture Creates Value: How Leadership and Engagement Drive ROI, Brand Strength and Asset Performance",
-                "categories": [],
-                "fields": [
-                    {}
-                ]
-            }
-        ],
-        "withEvent": {
-            "fields": []
-        }
-    }
+    },
+    {
+        "id": "RXZlbnRQZW9wbGVfNDY0NDczNTM=",
+        "type": null,
+        "firstName": "Sonu",
+        "lastName": "Shivdasani",
+        "jobTitle": "CEO and Founder",
+        "organization": "Sosei",
+        "photoUrl": "https://static.swapcard.com/public/images/0c846e869b3e423abadf316bec97fc13.jpeg",
+    },
+    {
+        "id": "RXZlbnRQZW9wbGVfNDY0NDczNDI=",
+        "type": "Moderator",
+        "firstName": "Georgette",
+        "lastName": "Davey",
+        "jobTitle": "Managing Director",
+        "organization": "Abu Dhabi Hospitality Academy - Les Roches",
+        "photoUrl": "https://static.swapcard.com/public/images/1cbee61643fe41a0bb825740f1d57e57.jpeg",
+    },
 ]
 
 
@@ -776,7 +410,7 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
                         <p className="fs-0 fw-600 c-primary">2026 Speakers</p>
                     </div>
                         
-                    <div className="container columns-4 gap-sm maxw-65">
+                    <div className="container columns-5 gap-sm">
                         {
                             SPEAKERS.map((profile, index) => (
                                 <Pop key={index}>

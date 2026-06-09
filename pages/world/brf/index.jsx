@@ -5,6 +5,7 @@ import _ from 'lodash'
 
 import Head from 'next/head'
 import Script from 'next/script'
+import Link from 'next/link'
 
 import { motion } from "framer-motion"
 
@@ -78,46 +79,11 @@ const THEMES_DATA = [
 ]
 const CONFIRMED_SPEAKER_DATA = [
     {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDAwNjUwMTI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/41573afd40d44444bbfe98f32c26109f.jpeg',
-        fullName: 'Hans Meyer',
-        jobTitle: 'Co Founder & Managing Director',
-        company: 'Zoku',
-    },
-    {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDAzNDU2NjM=`,
-        photoUrl: 'https://static.swapcard.com/public/images/cd2f0cf8c3f8428e86d86e922f7b64fb.png',
-        fullName: 'Nick Candy',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Candy Capital',
-    },
-    {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDAxNjkwNzY=`,
-        photoUrl: 'https://static.swapcard.com/public/images/27aa2c09769341c8a333b8ab30e3d2f8.png',
-        fullName: 'Eleonora Srugo',
-        jobTitle: 'Licensed Associated Real Estate Broker, Douglas Elliman',
-        company: 'Star of Netflix’s Selling the City',
-    },
-    {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfMzg0MDMyOTQ=`,
-        photoUrl: 'https://static.swapcard.com/public/images/cb22de0ff76c48e080aa1ad8b770b936.jpeg',
-        fullName: 'Amit Arora',
-        jobTitle: 'Chief Operating Officer',
-        company: 'Arada',
-    },
-    {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDA0MjQxMDI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/9977ec1893ef4679ac9bfdd4ad74be93.jpeg',
-        fullName: 'Barry Landsberg',
-        jobTitle: 'Principal',
-        company: 'Landsberg Residential Consulting Inc.',
-    },
-    {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDA0ODY2NTM=`,
-        photoUrl: 'https://static.swapcard.com/public/images/665f0d09e03b46308f0adb0fb8011c4e.png',
-        fullName: 'Jeff Tisdall',
-        jobTitle: 'Chief Business Officer',
-        company: 'Accor One Living',
+        url: `/world/speakers/RXZlbnRQZW9wbGVfNDY1MDgzNTg=`,
+        photoUrl: "https://static.swapcard.com/public/images/03a47481a1344b03a90e04c057017377.jpeg",
+        fullName: "Ho Kwon Ping",
+        jobTitle: "Founder and Executive Chairman",
+        company: "Banyan Group",
     },
     {
         url: `/world/speakers/RXZlbnRQZW9wbGVfNDA3OTg1MTY=`,
@@ -127,41 +93,19 @@ const CONFIRMED_SPEAKER_DATA = [
         company: 'Global Branded Residences Ltd.',
     },
     {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDA1OTkxMjM=`,
-        photoUrl: 'https://cdn-api.swapcard.com/public/images/5cf473e2ddec40608d2edc80e017428d.jpeg',
-        fullName: 'Daniel von Barloewen',
-        jobTitle: 'Senior Vice President, Global Mixed-Use Development',
-        company: 'Accor',
+        url: "/world/speakers/RXZlbnRQZW9wbGVfNDY4MTM0MDA=",
+        photoUrl: "https://static.swapcard.com/public/images/22a5723e4e294c73987b5bee25753722.jpeg",
+        fullName: "Jaidev Menezes",
+        jobTitle: "RVP Mixed-Use Development EMEA",
+        company: "Marriott International",
     },
     {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfMzk0MjE1OTU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/a1f87efa02b24fe8a1f202b05b2dc5a5.jpeg',
-        fullName: 'Jaidev Menezes',
-        jobTitle: 'RVP Mixed Use Development EMEA',
-        company: 'Marriott International',
-    },
-    {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDAwNjI1NDM=`,
-        photoUrl: 'https://static.swapcard.com/public/images/192e3af65e8443a7bbaccec1513a2d08.png',
-        fullName: 'Stefano Saporetti',
-        jobTitle: 'Director of Brand Diversification',
-        company: 'Aston Martin',
-    },
-    {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfMzg0MDMzMDM=`,
-        photoUrl: 'https://static.swapcard.com/public/images/08f9fc81218941db8921678dc03d98ca.jpeg',
-        fullName: 'Rosa Piro',
-        jobTitle: 'Chief Investment Officer',
-        company: 'Arada',
-    },
-    {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDA2MzI2OTc=`,
-        photoUrl: 'https://static.swapcard.com/public/images/26ed7f8d9cf34cf8b785dd00b71ab676.jpeg',
-        fullName: 'Paul Saba',
-        jobTitle: 'Vice President and Senior Counsel - EMEA',
-        company: 'Marriott International',
-    },
-    
+        url: `/world/speakers/RXZlbnRQZW9wbGVfNDY0NDczMzk=`,
+        fullName: "Rahul Salgia",
+        jobTitle: "Founder & CEO",
+        company: "DigiValet",
+        photoUrl: "https://static.swapcard.com/public/images/e2225a6fcb174f869dec0029e844b5b7.jpeg",
+    }
 ]
 
 
@@ -281,12 +225,12 @@ export default function Page ({ sessions, speakers }) {
 	// ]
     
     
-    console.log('sessions:', sessions)
-    console.log('speakers:', speakers)
+    // console.log('sessions:', sessions)
+    // console.log('speakers:', speakers)
     // console.log('ordered:', orderedSpeakers)
     
-    console.dir( getSessionsByTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
-    console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
+    // console.dir( getSessionsByTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
+    // console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
 	// console.log('customOrderedSpeakers:', prioritiseSpeakers( getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ), prioritySpeakersArray ))
 
 
@@ -397,21 +341,17 @@ export default function Page ({ sessions, speakers }) {
 
 
             {/* FEATURED SPEAKERS */}
-            {
-                sessions &&
-                <SpeakerCarousel 
-                    heading={`2025 Speakers`} 
-                    color={'white'}
-                    text={null}
-                    decal={'bg-secondary'}
-                    ctaLink={null}
-                    ctaLabel={null}
-                    anchorId={null}
-                >
+            <section className="block bg-secondary">
+                <div className="container">
+                    <Fade><p className='fs-2 fw-600 lh-2 center'>Confirmed Speakers</p></Fade>
+                </div>
+
+                <div className="container columns-4 gap-sm maxw-65">
                     {
-                        CONFIRMED_SPEAKER_DATA.map( profile => (
+                        CONFIRMED_SPEAKER_DATA.map( (profile, i) => (
                             <Pop key={profile.id}>
                                 <SpeakerCard
+                                    key={i}
                                     url={null}
                                     photoUrl={profile.photoUrl }
                                     fullName={profile.fullName}
@@ -422,8 +362,14 @@ export default function Page ({ sessions, speakers }) {
                             </Pop>
                         ))
                     }
-                </SpeakerCarousel>
-            }
+                </div>
+
+                <div className="container center">
+                    <Pop>
+                        <Button href={'/world/speakers'}>View All Speakers</Button>
+                    </Pop>
+                </div>
+            </section>
 
             
 

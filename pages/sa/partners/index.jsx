@@ -94,6 +94,7 @@ function Partners({ partnerData, videoTestimonials }) {
 	const CUSTOM_ORDERING = [
 		'Host Partner',
 		'Founding Partner',
+		'Strategic Enabler',
 		'Strategic Partners',
 		'Headline Partners',
 		'Partners',
@@ -174,17 +175,22 @@ function Partners({ partnerData, videoTestimonials }) {
 						partnerData &&
 						sorted.map((category, index) => {
 
-							// console.log('category:', category)
+							console.log('category:', category)
 							
 							const group = partnerData.exhibitors?.filter(partner => {
 								const ids = partner.fields.map(field => field.id)
 								if (ids.some(item => category.ids.includes(item)) ) return partner
 							})
 							
-							if ( group.length > 0 ) {
+							if (group.length > 0) {
+								
+								let specialCategories = [
+									'RmllbGRWYWx1ZV8yMjM5NDE1Mg==',
+									'RmllbGRWYWx1ZV8zMDg1MjU3MQ=='
+								]
 
 								return (
-									<PartnerCategory key={index}>
+									<PartnerCategory key={category.id} width={ specialCategories.some(item => category.ids.includes(item)) ? 1 : null }>
 
 										<h4 className='fs-5 fw-600 c-accent caps pb-xs'>{category && category.name}</h4>
 										<PartnerLogoGrid>

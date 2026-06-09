@@ -42,11 +42,11 @@
     padding: 4vw;
 }
 
-.categoryGrid {
-    /* display: grid;
+/* .categoryGrid {
+    display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-md); */
-}
+    gap: var(--space-md);
+} */
 
 
 
@@ -74,7 +74,6 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-
     }
     
     .category.single {
@@ -83,7 +82,7 @@
 
     .categoryGrid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--space-md);
         row-gap: 0;
     }
