@@ -25,6 +25,11 @@ export const OTHER_EVENTS = [
         target: false
     },
     {
+        title: 'FHS Living',
+        url: '/living',
+        target: false
+    },
+    {
         title: 'Branded Residences Forum',
         url: 'https://www.brandedresidencesforum.com/',
         target: true
