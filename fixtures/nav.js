@@ -1123,11 +1123,25 @@ export const FHS_LIVING = {
     "data": {
         "mainMenu": [
             {
-                "__typename": "navigation_Entry",
-                "id": "s02487tr",
+                "__typename": "section_Entry",
+                "id": "sfgh455jj",
                 "title": "About",
-                "navUrl": '/living/about',
-                "children": []
+                "children": [
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "52sfhghs",
+                        "title": "About FHS Living",
+                        "navUrl": "/living/about",
+                        "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "dfghe5yj",
+                        "title": "Content Library",
+                        "navUrl": "/living/content-library",
+                        "target": false
+                    },
+                ]
             },
             {
                 "__typename": "navigation_Entry",
