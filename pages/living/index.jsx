@@ -140,7 +140,7 @@ const THEMES_DATA = [
 ]
 
 
-export default function Home ({ data, advisors, seomatic }) {
+export default function Home ({ data, advisors }) {
 
     // console.log(content)
     // console.log(seomatic)
@@ -154,7 +154,8 @@ export default function Home ({ data, advisors, seomatic }) {
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
                 <meta content="/assets/img/living/seo/seo-image.jpg" property="og:image"></meta>
-                {handleSeomaticMeta(seomatic)}
+                <title>FHS Living | Feb 2027, Paris | Founding Edition</title>
+                <meta name="description" content="Addressing the growing 'lanyard fatigue' of the European hospitality conferencing market"></meta>
             </Head>
         
             
@@ -654,13 +655,7 @@ export async function getStaticProps() {
 						}
 					}
                 } 
-                seo: entry(site: "${process.env.SITE_HANDLE_LIVING}", id: "314823") {
-                    id
-                    title
-                    ... on ${process.env.SITE_HANDLE_LIVING}Homepage_${process.env.SITE_HANDLE_LIVING}Homepage_Entry {
-                        ${QuerySEO}
-                    }
-                }
+
             }
           
         `
@@ -669,8 +664,7 @@ export async function getStaticProps() {
         return {
         props: {
             data: data.entry,
-            advisors: data.advisors,
-            seomatic: data.seo.seomatic
+            advisors: data.advisors
         },
     }
 }

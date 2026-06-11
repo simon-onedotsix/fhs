@@ -30,6 +30,9 @@ export default function Home () {
         <>
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
+                <meta content="/assets/img/living/seo/seo-image.jpg" property="og:image"></meta>
+                <title>FHS Living | Feb 2027, Paris | Founding Edition</title>
+                <meta name="description" content="Addressing the growing 'lanyard fatigue' of the European hospitality conferencing market"></meta>
             </Head>
         
             

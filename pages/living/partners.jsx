@@ -34,6 +34,9 @@ export default function Page ({ videoTestimonials }) {
         <>
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
+                <meta content="/assets/img/living/seo/seo-image.jpg" property="og:image"></meta>
+                <title>FHS Living | Feb 2027, Paris | Founding Edition</title>
+                <meta name="description" content="Addressing the growing 'lanyard fatigue' of the European hospitality conferencing market"></meta>
             </Head>
         
             
@@ -72,9 +75,35 @@ export default function Page ({ videoTestimonials }) {
                 <div className="container center">
                     <p className="fs-4 fw-600 c-magenta">FHS Living 2027 partners to be announced soon</p>
                 </div>
+
+                <div className="container center logoGrid">
+
+                    <div className={`mb-md`}>
+                        <p className="fs-5 fw-500 pb-xs">Supporters</p>
+                        <div className="logoGrid">
+                            <LogoBox
+                                size={250}
+                                logoUrl={`/assets/img/living/partners/logos/ISHC-Logo-Black-03.png`}
+                            />
+                        </div>
+                    </div>
+                    
+                    <div className={`mb-md`}>
+                        <p className="fs-5 fw-500 pb-xs">Media Partners</p>
+                        <div className="logoGrid">
+                            <LogoBox
+                                size={250}
+                                logoUrl={`/assets/img/living/partners/logos/ULN-round.png`}
+                            />
+                        </div>
+                    </div>
+                    
+                </div>
+
                 <div className="container">
                     <p className="fs-2 fw-500 caps center">What partnership delivers</p>
                 </div>
+                
                 <div className="container columns-4 gap-md balance">
 
                     <article className="formatted">
@@ -124,8 +153,6 @@ export default function Page ({ videoTestimonials }) {
             </section>
 
 
-            
-
 
             <section className="block bg-white">
                 <div className="container">
@@ -155,11 +182,6 @@ export default function Page ({ videoTestimonials }) {
             </section>
 
 
-            
-
-
-            
-
 
             <section className="block bg-secondary">
                 <div className="container">
@@ -183,13 +205,51 @@ export default function Page ({ videoTestimonials }) {
 
 
 
-
             <Footer/>
             <LenisScroller />
         </>
     )
 }
 Page.theme = 'living'
+
+
+
+const LogoBox = ({ logoUrl, size = 150, href }) => {
+    return (
+        <Pop inline>
+            {
+                href
+                    ? (
+                        <Link href={href}>
+                            <a>
+                                <div style={{...logoBoxStyle, width: size}} >
+                                    <img src={logoUrl} alt="" style={{ objectFit: `contain`, width: `100%`, height: `100%`}} />
+                                </div>
+                            </a>
+                        </Link>
+                    ) : (
+                        <div style={{...logoBoxStyle, width: size}} >
+                            <img src={logoUrl} alt="" style={{ objectFit: `contain`, width: `100%`, height: `100%`}} />
+                        </div>
+                    )
+            }
+            
+        </Pop>
+    )
+}
+
+const logoBoxStyle = {
+    position: `relative`,
+    aspectRatio: 19 / 9,
+    display: `flex`,
+    justifyContent: `center`,
+    alignItems: `center`,
+
+    backgroundColor: `white`,
+    padding: 20,
+    borderRadius: 10
+}
+
 
 
 
