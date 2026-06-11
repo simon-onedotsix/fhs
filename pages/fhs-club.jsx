@@ -149,10 +149,10 @@ export default function Club ({ events }) {
                 </HeroUnitImage>
 
 
-                <section className="block pt-0">
-                    <div className="container center formatted">
+                <section className="block pt-0" style={{ position: `relative`, zIndex: 2 }}>
+                    <div className="container center formatted bg-secondary p-sm rad-md">
                         <p className='fs-2 fw-600 center'>Tiers</p>
-                        <p className='fs-6 maxw-50 mx-auto mt-md'>Our loyalty programme is divided into three distinct tiers, each offering a range of exclusive benefits.</p>
+                        <p className='fs-6 maxw-50 mx-auto'>Our loyalty programme is divided into three distinct tiers, each offering a range of exclusive benefits.</p>
                         <p>Your tier is determined in two ways</p>
                         <p> &bull; <strong>Personal attendance</strong> across the most recent 9 editions of FHS <br />
                             &bull; <strong>Company&apos;s cumulative attendance</strong> across all representatives.</p>
@@ -189,7 +189,7 @@ export default function Club ({ events }) {
                         <div className={CSS.steps}>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>1</p>
-                                <p className="balance">Attend two or more of the recent six editions of Future Hospitality Summit (FHS Saudi Arabia, FHS  World, FHS  Africa) to start earning your place in the FHS Club.</p>
+                                <p className="balance">Attend two or more of the recent nine editions of Future Hospitality Summit (FHS Saudi Arabia, FHS  World, FHS  Africa) to start earning your place in the FHS Club.</p>
                             </div>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>2</p>
