@@ -10,6 +10,7 @@ import { Pop, Fade } from "../../fuselage/animation/animation"
 import _, { curry } from 'lodash'
 
 import Head from "next/head"
+import Link from "next/link"
 
 
 import { EventsBar } from "../../ui/site/eventsbar"
