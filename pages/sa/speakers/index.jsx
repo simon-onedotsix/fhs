@@ -30,12 +30,12 @@ import CSS from '../../../css/app/speakers-sa-2024.module.css'
 
 function Speakers({ seomatic, speakers }) {
 
-	console.log('speakers found:', speakers.length)
-	console.log('speakers:', speakers)
+	// console.log('speakers found:', speakers.length)
+	// console.log('speakers:', speakers)
 
 	// sort speakers by lastName
 	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
-	console.log('total ordered speakers:', orderedSpeakers.length)
+	// console.log('total ordered speakers:', orderedSpeakers.length)
 
 	// customise order (VIP speakers to top of list)
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
@@ -59,7 +59,7 @@ function Speakers({ seomatic, speakers }) {
 		
 		(speaker => speaker.firstName == 'Kholoud' && speaker.lastName === 'Almanea' ? 0 : 1),
 	] )
-	console.log('customOrderedSpeakers:', customOrderedSpeakers)
+	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 	return (
 		<div className="bg-default">

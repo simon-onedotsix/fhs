@@ -35,8 +35,8 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
         
         setNextBand(priceBands[indexOfCurrent + 1])
 
-        // console.log('currentBand:', currentBand )
-        // console.log('nextBand:', nextBand )
+        console.log('currentBand:', currentBand )
+        console.log('nextBand:', nextBand )
 
 
         
@@ -82,6 +82,7 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
                 { 
                     priceBands && currency ?
                         <p className='fs-2 fw-600 c-primary'>
+                            {/* EMERGENCY HARD-CODE PRICE (instead of 'TBA') ++++++++++++++++++++++++++++++++++++++++++++++ */}
                             { currency } { currentBand ? currentBand.value : '2600' }
                         </p>
                     : null

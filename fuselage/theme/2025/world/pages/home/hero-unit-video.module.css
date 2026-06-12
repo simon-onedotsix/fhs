@@ -1,5 +1,6 @@
 .layout {
     position: relative;
+    overflow: hidden;
 }
 
 .video {
@@ -28,6 +29,7 @@
     justify-content: flex-end;
 
     overflow-x: hidden;
+    padding: var(--space-md);
     padding-top: calc(var(--space-xl) * 3);
 }
 
@@ -37,7 +39,7 @@
         top: 0;
     }
     .overlay {
-        height: calc(100vh - 2.25rem);
+        height: calc(100vh - 8.25rem);
         padding: calc(var(--space-lg) * 2) var(--space-lg) var(--space-md);
     }
 }

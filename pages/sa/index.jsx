@@ -117,6 +117,13 @@ export const ARTICLE_DATA_AR = [
 
 const SPEAKER_DATA = [
     {
+        url: "/sa/speakers/RXZlbnRQZW9wbGVfNDY5NDA4MTE=",
+        photoUrl: "https://static.swapcard.com/public/images/f44090065da44732b82bc5f269b2bbb0.png",
+        fullName: "Mahmoud Abdulhadi",
+        jobTitle: "Deputy Minister, Destination Enablement",
+        company: "Ministry of Tourism of Saudi Arabia",
+    },
+    {
         url: `/sa/speakers/profile/khalid-saud-abu-haimed`,
         photoUrl: 'https://cms.thebench.com/assets/img/avatars/Abu-Haimed_Khalid-Saud_pic2.jpg',
         fullName: 'Khalid Saud Abu Haimed',
@@ -159,13 +166,6 @@ const SPEAKER_DATA = [
         company: 'TAIBA',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ1NTIwMTM=`,
-        photoUrl: 'https://static.swapcard.com/public/images/fc2becbdfdef4dab87bed93998b8fdfe.jpeg',
-        fullName: 'Khalid Al Gahtani',
-        jobTitle: 'Chairman & CEO',
-        company: 'Rikaz Properties',
-    },
-    {
         url: ``,
         photoUrl: 'https://cms.thebench.com/assets/img/avatars/hossam-al-basrawi.jpg',
         fullName: 'Hossam Al-Basrawi',
@@ -188,6 +188,13 @@ const SPEAKER_DATA = [
     },
 ]
 const SPEAKER_DATA_AR = [
+    {
+        url: "/sa/speakers/RXZlbnRQZW9wbGVfNDY5NDA4MTE=",
+        photoUrl: "https://static.swapcard.com/public/images/f44090065da44732b82bc5f269b2bbb0.png",
+        fullName: "Mahmoud Abdulhadi",
+        jobTitle: "Deputy Minister, Destination Enablement",
+        company: "Ministry of Tourism of Saudi Arabia",
+    },
     {
         url: `/sa/speakers/profile/khalid-saud-abu-haimed`,
         photoUrl: 'https://cms.thebench.com/assets/img/avatars/Abu-Haimed_Khalid-Saud_pic2.jpg',
@@ -229,13 +236,6 @@ const SPEAKER_DATA_AR = [
         fullName: 'سلطان بدر العتيبي',
         jobTitle: 'الرئيس التنفيذي',
         company: 'شركة طيبة',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ1NTIwMTM=`,
-        photoUrl: 'https://static.swapcard.com/public/images/fc2becbdfdef4dab87bed93998b8fdfe.jpeg',
-        fullName: 'خالد القحطاني',
-        jobTitle: 'رئيس مجلس الإدارة والرئيس التنفيذي',
-        company: 'شركة ركاز العقارية',
     },
     {
         url: ``,

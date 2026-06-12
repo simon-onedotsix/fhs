@@ -328,11 +328,18 @@ export default function Page ({ sessions, speakers }) {
                     <p className='fs-1 fw-600'>2026 Sponsors</p>
                 </div>
                 
-                <div className="container maxw-70 pt-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
+                <div className="container maxw-70 py-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
                     <PartnerLogo logoUrl={`/assets/img/brf/jabal-omar.svg`} maxWidth={8} />
                     <PartnerLogo logoUrl={`/assets/img/brf/accor-one-living.svg`} maxWidth={16} />
                     <PartnerLogo logoUrl={`/assets/img/brf/marriott.svg`} maxWidth={12} />
                     <PartnerLogo logoUrl={`/assets/img/brf/sectorlight-inverse.png`} maxWidth={12} />
+                </div>
+
+                <div className="container center">
+                    <p className='fs-4 fw-600'>Media Partner</p>
+                </div>
+                <div className="container maxw-70" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
+                    <PartnerLogo logoUrl={`/assets/img/brf/bresi.png`} maxWidth={12} />
                 </div>
             </section>
 
