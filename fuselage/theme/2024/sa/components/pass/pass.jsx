@@ -82,7 +82,7 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
                 { 
                     priceBands && currency ?
                         <p className='fs-2 fw-600 c-primary'>
-                            { currency } { currentBand ? currentBand.value : 'TBA' }
+                            { currency } { currentBand ? currentBand.value : '2600' }
                         </p>
                     : null
                 }
