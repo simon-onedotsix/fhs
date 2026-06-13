@@ -39,7 +39,7 @@ function PurchasePass({ seomatic, entry }) {
 	const specialPasses = entry.fhisContentBlocks[0].passes.filter(pass => pass.__typename === "passes_specialPass_BlockType")
 	
 	
-	// console.log('entry:', entry)
+	console.log('entry:', entry)
 	// console.log('passes:', entry.fhisContentBlocks[0].passes)
 	// console.log('regularPasses:', regularPasses)
 	// console.log('specialPasses:', specialPasses)

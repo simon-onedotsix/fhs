@@ -16,7 +16,7 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
     const [nextBand, setNextBand] = useState()
 
     useEffect(() => {
-        // console.log('priceBands:', priceBands)
+        console.log('priceBands:', priceBands)
     
         if (!priceBands) return
 
@@ -95,7 +95,7 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
                 } */}
                 
                 <a className={`${CSS.button} fs-6 fw-600 mt-xs`} href={ href } target='_blank'>{ label }</a>
-                {
+                {/* {
                     currentBand && nextBand && priceIncreaseMessage ?
                         <div className="formatted mt-xs">
                             <p className="fs-6">
@@ -103,7 +103,7 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
                             </p>
                         </div>
                     : null
-                }
+                } */}
                 
             </section>
 
