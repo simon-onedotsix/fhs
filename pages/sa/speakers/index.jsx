@@ -30,19 +30,19 @@ const speakerTags = [
 				id: 'RXZlbnRQZW9wbGVfNDYyOTMwOTg=',
 				firstName: 'Rema',
 				lastName: 'Alyahya',
-				tag: 'Startup Den'
+				tag: 'Startup Den Judge'
 			},
 			{
 				id: 'RXZlbnRQZW9wbGVfNDY1NTM3NTI=',
 				firstName: 'Yasser',
 				lastName: 'Alsharif',
-				tag: 'Startup Den'
+				tag: 'Startup Den Judge'
 			},
 			{
 				id: 'RXZlbnRQZW9wbGVfNDY2NTU1MDQ=',
 				firstName: 'Saad',
 				lastName: 'Shabbir',
-				tag: 'Startup Den'
+				tag: 'Startup Den Judge'
 			},
 			{
 				id: 'RXZlbnRQZW9wbGVfNDY3NTkyNjg=',
