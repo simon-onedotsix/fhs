@@ -27,7 +27,7 @@ import CSS from '../../../css/app/speakers.module.css'
 
 function Speaker({ speaker, sessions }) {
 
-	// console.log('speaker data:', speaker)
+	console.log('speaker data:', speaker)
 
 	const handleLinkedIn = () => {
 		if  ( speaker.linkedIn ) {

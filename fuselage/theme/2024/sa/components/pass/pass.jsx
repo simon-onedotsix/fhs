@@ -23,9 +23,9 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
         let indexOfCurrent = 0
     
         priceBands.forEach((band, index) => {
-            // if ( new Date(parseISO(band.endDate)) < Date.now() ) console.log('expired')
-            // if ( new Date(parseISO(band.startDate)) > Date.now() ) console.log('not yet available')
-            // if ( new Date(parseISO(band.startDate)) < Date.now() && new Date(parseISO(band.endDate)) > Date.now() ) console.log('current')
+            if ( new Date(parseISO(band.endDate)) < Date.now() ) console.log('expired')
+            if ( new Date(parseISO(band.startDate)) > Date.now() ) console.log('not yet available')
+            if ( new Date(parseISO(band.startDate)) < Date.now() && new Date(parseISO(band.endDate)) > Date.now() ) console.log('current')
                     
             if (new Date(parseISO(band.startDate)) < Date.now() && new Date(parseISO(band.endDate)) > Date.now()) {
                 setCurrentBand(band)
@@ -40,7 +40,7 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
 
 
         
-    }, [])
+    }, [currentBand, nextBand])
     
     
     // 10 passes in the last week + at least 5 passes on the last day
@@ -83,7 +83,7 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
                     priceBands && currency ?
                         <p className='fs-2 fw-600 c-primary'>
                             {/* EMERGENCY HARD-CODE PRICE (instead of 'TBA') ++++++++++++++++++++++++++++++++++++++++++++++ */}
-                            { currency } { currentBand ? currentBand.value : '2800' }
+                            { currency } { currentBand ? currentBand.value : 'TBA' }
                         </p>
                     : null
                 }

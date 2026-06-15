@@ -51,7 +51,7 @@ import CSS from '../../css/app/agenda-sa-2025.module.css'
 
 import { THEMES_DATA } from "./themes"
 
-const startupSpeakerTags = [
+const speakerTags = [
 			{
 				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ2MjkzMDk4LFVzZXJfMjI3OTQwODIp',
 				firstName: 'Rema',
@@ -71,10 +71,34 @@ const startupSpeakerTags = [
 				tag: 'Judge'
 			},
 			{
-				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ2NjQ4NjI2LFVzZXJfMzIzOTc4OCk=',
-				firstName: 'Sabrine',
-				lastName: 'Chennaoui',
-				tag: 'Participant'
+				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ2NzYwMzI0LFVzZXJfMjg1MjgxODAp',
+				firstName: 'Sarah',
+				lastName: 'Al-Shawwaf',
+				tag: 'Member of Women In Business'
+			},
+			{
+				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ2ODM4NzUwLFVzZXJfMTAzNDU5MDYp',
+				firstName: 'Yvonne',
+				lastName: 'Winter',
+				tag: 'Member of Women In Business'
+			},
+			{
+				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ1ODc5MjA0LFVzZXJfMjgwMDc3Mjkp',
+				firstName: 'Ragad',
+				lastName: 'Al-Nasser',
+				tag: 'Member of Women In Business'
+			},
+			{
+				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ2MjkzMDk4LFVzZXJfMjI3OTQwODIp',
+				firstName: 'Rema',
+				lastName: 'Alyahya',
+				tag: 'Judge & Member of Women In Business'
+			},
+			{
+				id: '',
+				firstName: 'Amani',
+				lastName: 'Alonaizi',
+				tag: 'Judge & Member of Women In Business'
 			},
 		]
 
@@ -174,7 +198,7 @@ export default function Agenda ({ sessions, locations }) {
 				})
 			}
 
-			console.log('current session searchContent:', searchContent)
+			// console.log('current session searchContent:', searchContent)
 
 			if ( searchContent.includes(search.toLowerCase()) ) return session
 
@@ -529,10 +553,10 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-	// console.log('sessions:', sessions)
+	console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
-	console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
-	console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
+	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
+	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
 	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
 	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))	
 	// console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
@@ -879,9 +903,7 @@ export default function Agenda ({ sessions, locations }) {
 																				}
 																				
 																				{
-																					session.id === "UGxhbm5pbmdfNDQwNjYzNw=="
-																						? sortSpeakers(tagSpeakers(session.speakers, startupSpeakerTags))
-																						: sortSpeakers(session.speakers)	
+																					sortSpeakers(tagSpeakers(session.speakers, speakerTags))	
 																				}	
 																				
 																			</div>

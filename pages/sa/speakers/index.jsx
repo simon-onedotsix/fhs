@@ -25,8 +25,72 @@ import handleSeomaticMeta from '../../../lib/seomatic'
 import CSS from '../../../css/app/speakers-sa-2024.module.css'
 
 
+const speakerTags = [
+			{
+				id: 'RXZlbnRQZW9wbGVfNDYyOTMwOTg=',
+				firstName: 'Rema',
+				lastName: 'Alyahya',
+				tag: 'Startup Den'
+			},
+			{
+				id: 'RXZlbnRQZW9wbGVfNDY1NTM3NTI=',
+				firstName: 'Yasser',
+				lastName: 'Alsharif',
+				tag: 'Startup Den'
+			},
+			{
+				id: 'RXZlbnRQZW9wbGVfNDY2NTU1MDQ=',
+				firstName: 'Saad',
+				lastName: 'Shabbir',
+				tag: 'Startup Den'
+			},
+			{
+				id: 'RXZlbnRQZW9wbGVfNDY3NTkyNjg=',
+				firstName: 'Abdu',
+				lastName: 'Joud',
+				tag: 'Startup Den'
+			},
+			{
+				id: 'RXZlbnRQZW9wbGVfNDY3NTkyODk=',
+				firstName: 'Nourah',
+				lastName: 'Alsodoon',
+				tag: 'Startup Den'
+			},
+			{
+				id: 'RXZlbnRQZW9wbGVfNDY3NTE4MDM=',
+				firstName: 'Micaela',
+				lastName: 'Johnston',
+				tag: 'Startup Den'
+			},
+			{
+				id: 'RXZlbnRQZW9wbGVfNDY2NDg2MjY=',
+				firstName: 'Sabrine',
+				lastName: 'Chennaoui',
+				tag: 'Startup Den'
+			},
+			{
+				id: 'RXZlbnRQZW9wbGVfNDY3MTgyOTQ=',
+				firstName: 'Fayaz',
+				lastName: 'Ali',
+				tag: 'Startup Den'
+			},
+			{
+				id: 'RXZlbnRQZW9wbGVfNDY5MzI3MDU=',
+				firstName: 'Juana',
+				lastName: 'Bouka',
+				tag: 'Startup Den'
+			},
+			{
+				id: 'RXZlbnRQZW9wbGVfNDcwNDc0MTk=',
+				firstName: 'Omar',
+				lastName: 'Issa',
+				tag: 'Startup Den'
+			},
+		]
 
-
+const speakerIds = [
+	'RXZlbnRQZW9wbGVfNDYyOTMwOTg=', 'RXZlbnRQZW9wbGVfNDY1NTM3NTI=', 'RXZlbnRQZW9wbGVfNDY2NTU1MDQ=', 'RXZlbnRQZW9wbGVfNDY3NTkyNjg=', 'RXZlbnRQZW9wbGVfNDY3NTkyODk=', 'RXZlbnRQZW9wbGVfNDY3NTE4MDM=', 'RXZlbnRQZW9wbGVfNDY2NDg2MjY=', 'RXZlbnRQZW9wbGVfNDY3MTgyOTQ=', 'RXZlbnRQZW9wbGVfNDY5MzI3MDU=', 'RXZlbnRQZW9wbGVfNDcwNDc0MTk=',
+]
 
 function Speakers({ seomatic, speakers }) {
 
@@ -59,7 +123,28 @@ function Speakers({ seomatic, speakers }) {
 		
 		(speaker => speaker.firstName == 'Kholoud' && speaker.lastName === 'Almanea' ? 0 : 1),
 	] )
-	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
+	console.log('customOrderedSpeakers:', customOrderedSpeakers)
+
+
+
+	const tagSpeaker = (speakerId, tags) => {
+
+		const tagObj = tags.find(tag => tag.id === speakerId)
+
+		if (tagObj) return <p className="c-accent fw-600 caps">{tagObj.tag}</p>
+
+	}
+
+
+	const moveSpeakersToEndById = (speakers, speakerIds) => {
+		const result = speakers
+			.filter(speaker => !speakerIds.includes(speaker.id))
+			.concat(speakers.filter(speaker => speakerIds.includes(speaker.id)))
+
+		return result
+	}
+	
+
 
 	return (
 		<div className="bg-default">
@@ -90,7 +175,7 @@ function Speakers({ seomatic, speakers }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
 							speakers.length ?
-							customOrderedSpeakers.map( speaker => {
+							moveSpeakersToEndById (customOrderedSpeakers, speakerIds).map( speaker => {
 								if ( speaker.type ) return (
 									<div key={speaker.id}>
 										<Link href={`/sa/speakers/${speaker.id}`}>
@@ -102,6 +187,7 @@ function Speakers({ seomatic, speakers }) {
 														width={370} 
 														height={370} 
 														alt=""
+														unoptimized
 													/>
 													: 
 													<Image 
@@ -109,12 +195,15 @@ function Speakers({ seomatic, speakers }) {
 														width={370} 
 														height={370} 
 														alt=""
+														unoptimized
 													/>
 												}
 											</a>
 										</Link>
 										<div>
 											<p className='mt-xs'>
+												{ tagSpeaker(speaker.id, speakerTags) }
+												
 												<span className='fw-600'>{speaker.firstName} {speaker.lastName}</span> 
 												<br/>{speaker.jobTitle} 
 												<br/>{speaker.organization}
