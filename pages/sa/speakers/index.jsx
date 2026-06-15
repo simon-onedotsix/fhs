@@ -84,7 +84,7 @@ const speakerTags = [
 				id: 'RXZlbnRQZW9wbGVfNDcwNDc0MTk=',
 				firstName: 'Omar',
 				lastName: 'Issa',
-				tag: 'Startup Den'
+				tag: 'Startup Den Judge'
 			},
 		]
 
