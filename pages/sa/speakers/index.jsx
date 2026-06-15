@@ -86,10 +86,16 @@ const speakerTags = [
 				lastName: 'Issa',
 				tag: 'Startup Den Judge'
 			},
+			{
+				id: 'RXZlbnRQZW9wbGVfNDcwNzQ0NzY=',
+				firstName: 'Sardar',
+				lastName: 'Mahmood',
+				tag: 'Startup Den'
+			},
 		]
 
 const speakerIds = [
-	'RXZlbnRQZW9wbGVfNDYyOTMwOTg=', 'RXZlbnRQZW9wbGVfNDY1NTM3NTI=', 'RXZlbnRQZW9wbGVfNDY2NTU1MDQ=', 'RXZlbnRQZW9wbGVfNDY3NTkyNjg=', 'RXZlbnRQZW9wbGVfNDY3NTkyODk=', 'RXZlbnRQZW9wbGVfNDY3NTE4MDM=', 'RXZlbnRQZW9wbGVfNDY2NDg2MjY=', 'RXZlbnRQZW9wbGVfNDY3MTgyOTQ=', 'RXZlbnRQZW9wbGVfNDY5MzI3MDU=', 'RXZlbnRQZW9wbGVfNDcwNDc0MTk=',
+	'RXZlbnRQZW9wbGVfNDYyOTMwOTg=', 'RXZlbnRQZW9wbGVfNDY1NTM3NTI=', 'RXZlbnRQZW9wbGVfNDY2NTU1MDQ=', 'RXZlbnRQZW9wbGVfNDY3NTkyNjg=', 'RXZlbnRQZW9wbGVfNDY3NTkyODk=', 'RXZlbnRQZW9wbGVfNDY3NTE4MDM=', 'RXZlbnRQZW9wbGVfNDY2NDg2MjY=', 'RXZlbnRQZW9wbGVfNDY3MTgyOTQ=', 'RXZlbnRQZW9wbGVfNDY5MzI3MDU=', 'RXZlbnRQZW9wbGVfNDcwNDc0MTk=', 'RXZlbnRQZW9wbGVfNDcwNzQ0NzY='
 ]
 
 function Speakers({ seomatic, speakers }) {
