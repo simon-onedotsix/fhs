@@ -12,7 +12,7 @@ import Link from "next/link"
 import Script from "next/script"
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
-
+import { Reveal } from "../../fuselage/animation/reveal"
 
 import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
@@ -61,7 +61,7 @@ import Ticker from "framer-motion-ticker"
 
 import { getAllSpecialFields } from "../../lib/swapcard/get-all-special-fields"
 
-import CSS from '../../fuselage/theme/2024/world/css/homepage.module.css'
+import CSS from '../../fuselage/theme/2026/world/css/homepage.module.css'
 
 
 const photos = [
@@ -299,76 +299,57 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
 				ctas={header.data.event.headerCtas}
             />
             
-            {/* <Header compact shim /> */}
 
-            <HeroUnitVideo video={'https://cms.thebench.com/assets/video/fhs-2025-world-opt.mp4'} poster={'https://cms.thebench.com/assets/video/fhs-2025-world-opt-poster.jpg'}>
-                <ThemeBillboard />
+
+            <HeroUnitVideo
+                video={'https://cms.thebench.com/assets/video/fhs-2025-world-opt.mp4'}
+                poster={'https://cms.thebench.com/assets/video/fhs-2025-world-opt-poster.jpg'}
+            >
+              
+                <div className={CSS.themeWrapperGraphics}>
+                    <InfiniteRotatingTriangles
+                        fill={`var(--accent)`}
+                        size={`60vw`}
+                        top={`-10rem`}
+                        left={`-20rem`}
+                        blendMode={`hard-light`}
+                    />
+                    
+                    <InfiniteRotatingTriangles
+                        size={`65vw`}
+                        right={`-20rem`}
+                        bottom={`-20rem`}
+                        blendMode={`hard-light`}
+                    />
+                </div>
+                
+                <div className={CSS.headline}>
+                    <Reveal delay={.5}>
+                        <p className={CSS.tagline}>Reinvest</p>
+                    </Reveal>
+                    <Reveal delay={.75}>
+                        <p className={CSS.tagline}>In Our Future</p>
+                    </Reveal>
+                </div>
+
+                <Fade delay={1.2}>
+                    <p className={`fs-5 fw-500 c-white mt-md`} >29 September - 1 October 2026, Madinat Jumeirah, Dubai</p>
+                </Fade>
+
+                <Fade delay={1.3}>
+                    <div className="mt-sm button-grid">
+                        <Pop inline>
+                            <Button href={`/world/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Here</Button>
+                        </Pop>
+                        <Pop inline>
+                            <Button href={`/world/download-post-event-report`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>2025 Post-event Report</Button>
+                        </Pop>
+                    </div>
+                </Fade>
+              
             </HeroUnitVideo>
 
             
-
-            {/* <section className="block o-hidden pt-xs">
-                <Pop>
-                    <div className={`${CSS.aisPromo}`}>
-                        <header className={CSS.aisPromoHeader}>
-                            <Ticker duration={6}>
-                                <p className="fs-3 fw-600">Thank you for joining us&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
-                                <p className="fs-3 fw-600">Thank you for joining us&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
-                                <p className="fs-3 fw-600">Thank you for joining us&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
-                                <p className="fs-3 fw-600">Thank you for joining us&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
-                                <p className="fs-3 fw-600">Thank you for joining us&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
-                                <p className="fs-3 fw-600">Thank you for joining us&thinsp;<span className="c-white fw-100">–</span>&thinsp;</p>
-                            </Ticker>
-                        </header>
-
-                        <section className="center">
-                            <Pop delay={.1}>
-                                <div className={CSS.aisLogo}>
-                                    <img src="/assets/img/ais/ais-logo.svg" alt="" />
-                                </div>
-                            </Pop>
-                            <Pop delay={.1}><p className="fs-5 fw-600 mt-xxs mb-xxs">27 October 2025</p></Pop>
-                            <Pop delay={.2}><p className={CSS.aisSlug}>Invitation Only</p></Pop>
-                            
-                        </section>
-
-                        <section>
-                            <div className={CSS.aisPatronBox}>
-                                <div className={CSS.aisPatronBoxAvatar}>
-                                    <Pop delay={.1}>
-                                        <div className={CSS.aisAvatar}>
-                                            <Image src={"/assets/img/ais/mohammed-bin-rashid-al-maktoum.jpg"} layout='fill' alt="" unoptimized />
-                                        </div>
-                                    </Pop>
-                                </div>
-
-                                <div className={CSS.aisPatronBoxContent}>
-                                    <Pop delay={.2}>
-                                        <p className="fs-4 fw-600 c-secondary caps pb-xs">Under the Patronage of</p>
-                                        <p className="fs-5 fw-600">His Highness Sheikh Mohammed bin Rashid Al Maktoum</p>
-                                        <p className="mt-xxs">UAE Vice President, Prime Minister and Ruler of Dubai</p>
-                                    </Pop>
-                                </div>
-                            </div>
-                        </section>
-
-                        <section className="center">
-                            <Pop delay={.3}>
-                                <ButtonKeyline 
-                                    href={'/world/ais'} 
-                                    decal={'fs-5 fw-600'} 
-                                    color={'var(--primary)'}
-                                    target={'_blank'}
-                                >
-                                    Learn More
-                                </ButtonKeyline>
-                            </Pop>
-                        </section>
-
-                    </div>
-                </Pop>
-            </section> */}
-
 
 
             {/* INVESTORS */}
@@ -445,17 +426,25 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
 
             <div className={CSS.themeWrapper}>
                 <div className={CSS.themeWrapperGraphics}>
-                    <div className={CSS.graphic01}>
-                        <Pop>
-                            <Tri fill={''} />
-                        </Pop>
-                    </div>
+                    <InfiniteRotatingTriangles
+                        fill={`var(--accent)`}
+                        size={`60vw`}
+                        top={`-10rem`}
+                        left={`-20rem`}
+                    />
+                    
+                    <InfiniteRotatingTriangles
+                        size={`65vw`}
+                        right={`-20rem`}
+                        bottom={`-20rem`}
+                    />
                 </div>
 
                 <section className={`${CSS.themeWrapperContent} block`}>
                     <ThemesSlider data={THEMES_DATA} link={'/world/themes'} linkLabel={'Learn More'} />
                 </section>
             </div>
+
 
             
 
@@ -534,8 +523,13 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
                 </div>
 
                 <motion.div className={CSS.highlightsGraphicWapper} style={{ y }}>
-                    {/* <FhsIconKeyline inverse /> */}
-                    <Tri/>
+                    
+                    <InfiniteRotatingTriangles
+                        fill={`var(--accent)`}
+                        size={`120vw`}
+                        right={`-20rem`}
+                        top={`-40rem`}
+                    />
                 </motion.div>
             </section>
 
@@ -639,3 +633,87 @@ export async function getStaticProps({ params, preview, previewData }) {
         }
     }
 }
+
+
+
+
+
+const Triangle = ({ fill = `var(--accent)` }) => {
+    return (
+        <motion.div
+            animate={{ transform: "rotate(-360deg)" }}
+            transition={{
+                duration: 90,
+                repeat: Infinity,
+                ease: "linear"
+            }}
+        >
+            <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 719 804"
+                style={{ fillRule: `evenodd`, clipRule: `evenodd`, strokeLinejoin: `round`, strokeMiterlimit: 2 }}
+            >
+                <g transform="matrix(1,0,0,1,-307,-138)">
+                    <g id="fhs-tri" transform="matrix(-717.399292,0,0,717.399292,1025.134974,539.999939)">
+                        <path
+                            d="M0.837,-0.56L1,-0.466L1,0.466L0.837,0.56L0,0.076L0,-0.076L0.837,-0.56Z"
+                            style={{ fill: fill, fillRule: `nonzero` }}
+                        />
+                    </g>
+                </g>
+            </svg>
+        </motion.div>
+    )
+}
+
+
+
+const InfiniteRotatingTriangles = ({ size = 500, amount = 10, fill = `#4BD4ED`, top, right, bottom, left, blendMode = `` }) => {
+    return (
+        <div style={{
+            aspectRatio: 1,
+            width: size,
+            position: `absolute`,
+            top: top,
+            right: right,
+            bottom: bottom,
+            left: left,
+        }}>
+            {[...Array(amount)].map((_, index) => (
+                <motion.div
+                    key={index}
+                    style={{
+                        width: size,
+                        aspectRatio: 1,
+                        scale: 1 - (index / 14) / 1.125,
+                        opacity: (0 + index / 14) / 4,
+                        position: 'absolute',
+                        mixBlendMode: blendMode
+                    }}
+                    animate={{
+                        rotate: [0 + (index * -5), -360 + (index * -5)],
+                    }}
+                    transition={{
+                        duration: 90,
+                        repeat: Infinity,
+                        ease: "linear",
+                    }}
+                >
+                    <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 719 804"
+                        style={{ fillRule: `evenodd`, clipRule: `evenodd`, strokeLinejoin: `round`, strokeMiterlimit: 2 }}
+                    >
+                        <g transform="matrix(1,0,0,1,-1078.497,-149.908243)">
+                            <g id="stubby" transform="matrix(-717.399292,0,0,717.399292,1795.89176,516.827408)">
+                                <path d="M1,0.369L1,-0.369L0.754,-0.511L0.12,-0.145L0.12,0.145L0.754,0.512L1,0.369Z" style={{ fill: fill, fillRule: `nonzero` }}/>
+                            </g>
+                        </g>
+                    </svg>
+                </motion.div>
+            ))}
+        </div>
+    );
+};
