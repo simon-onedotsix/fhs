@@ -36,7 +36,7 @@ import { partners } from "../../../data/partners"
 
 export default function Page({ videoTestimonials, partnerData }) {
     
-    console.log('parterData:', partnerData)
+    // console.log('parterData:', partnerData)
 
     // use fieldDefinitions to automate partner categorisation (requires ID of the selectFieldDefinition used to tag categories inside SC studio)
 
@@ -107,7 +107,7 @@ export default function Page({ videoTestimonials, partnerData }) {
                                 <p className="fs-4 fw-500 c-primary pb-xs">{category.group.translations[0].value}</p>
                                 <div className="logoGrid">
                                     {
-                                        category.partners.map(partner => (
+                                        _.orderBy(category.partners, 'name').map(partner => (
                                             <LogoBox
                                                 key={partner.id}
                                                 size={250}

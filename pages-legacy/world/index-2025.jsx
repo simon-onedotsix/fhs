@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client"
-import craftApolloClient from "../api/apollo"
+import craftApolloClient from "../../pages/api/apollo"
 
 import { useState, useRef } from "react"
 
@@ -49,7 +49,7 @@ import {
 
 import handleSeomaticMeta from '../../lib/seomatic'
 
-import { THEMES_DATA } from "./themes"
+import { THEMES_DATA } from "../../pages/world/themes"
 import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
 import { InvestorImpact } from "../../fuselage/components/impact-figure/impact-figure"
 import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
