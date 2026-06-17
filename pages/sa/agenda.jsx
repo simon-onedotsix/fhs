@@ -53,6 +53,12 @@ import { THEMES_DATA } from "./themes"
 
 const speakerTags = [
 			{
+				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ0MzU2NzIwLFVzZXJfMTA5NzY4Nzkp',
+				firstName: 'Ali',
+				lastName: 'Shahid',
+				tag: 'Host'
+			},
+			{
 				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ2MjkzMDk4LFVzZXJfMjI3OTQwODIp',
 				firstName: 'Rema',
 				lastName: 'Alyahya',
@@ -68,6 +74,12 @@ const speakerTags = [
 				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ2NjU1NTA0LFVzZXJfMjU1MjI0MTUp',
 				firstName: 'Saad',
 				lastName: 'Shabbir',
+				tag: 'Judge'
+			},
+			{
+				id: 'U3BlYWtlcihFdmVudF8yNzA0MTA1LEV2ZW50UGVvcGxlXzQ3MDQ3NDE5LFVzZXJfMTkzNzg1MTgp',
+				firstName: 'Omar',
+				lastName: 'Issa',
 				tag: 'Judge'
 			},
 			{
@@ -409,7 +421,8 @@ export default function Agenda ({ sessions, locations }) {
 		)
 	}
 
-	const displaySpeakers = ( speakerData ) => {
+	
+	const displaySpeakers = (speakerData) => {
 
 		if ( !speakerData ) return
 
@@ -454,7 +467,29 @@ export default function Agenda ({ sessions, locations }) {
 		)
 	}
 
+	const renderSpeakers = (speakers, sessionId) => {
+		
+		// 9:30 Welcome to FHS Saudi Arabia 2026
+		if (sessionId === 'UGxhbm5pbmdfNDQwNTU1Mg==') {
+			return (
+				<div className={CSS.sessionSpeakerGrid}>
+					{ _.orderBy(speakers, 'lastName').map( speaker => renderSpeakerCard(speaker) ) }
+				</div>
+			)
+		}
 
+		// 11:30 Startup Den
+		if (sessionId === 'UGxhbm5pbmdfNDQwNjYzNw==') {
+			console.log(tagSpeakers(speakers, speakerTags))
+			return (
+				sortSpeakers(_.orderBy(tagSpeakers(speakers, speakerTags), 'tag'))
+			)
+		}
+
+
+		// default speaker sorting
+		return sortSpeakers(tagSpeakers(speakers, speakerTags))
+	}
 
 
 	// dropdown ui classes
@@ -553,7 +588,7 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-	console.log('sessions:', sessions)
+	// console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
@@ -853,7 +888,8 @@ export default function Agenda ({ sessions, locations }) {
 
 													<div className={CSS.sessions}>
 														{
-															prioriseStreams( slot.sessions, locations ).map( (session, index) => {
+															prioriseStreams(slot.sessions, locations).map((session, index) => {
+																
 																return (
 																	<div key={index} className={CSS.sessionsWrapper}>
 																		<span className={CSS.sessionAnchor} id={session.id.slice(0, -2)}/>
@@ -903,7 +939,7 @@ export default function Agenda ({ sessions, locations }) {
 																				}
 																				
 																				{
-																					sortSpeakers(tagSpeakers(session.speakers, speakerTags))	
+																					renderSpeakers(session.speakers, session.id)	
 																				}	
 																				
 																			</div>
