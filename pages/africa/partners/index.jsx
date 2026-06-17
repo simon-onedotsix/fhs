@@ -134,7 +134,7 @@ export async function getStaticProps({ preview, previewData }) {
 			body: JSON.stringify({
 				query: `
 					query {
-						event(id: "${process.env.SWAPCARD_EVENT_ID_AFRICA_2026}") {
+						event(id: "${process.env.SWAPCARD_EVENT_ID_AFRICA_2027}") {
 							fieldDefinitions {
 								... on SelectFieldDefinition {
 									id
@@ -150,7 +150,7 @@ export async function getStaticProps({ preview, previewData }) {
 								}
 							}
 						}
-						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_AFRICA_2026}", page:1, pageSize: 200) {
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_AFRICA_2027}", page:1, pageSize: 200) {
 							id
 							name
 							logoUrl
@@ -171,7 +171,7 @@ export async function getStaticProps({ preview, previewData }) {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2027,
 					"page": 1
 				}
 			})

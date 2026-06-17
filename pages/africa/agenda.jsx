@@ -453,6 +453,7 @@ export default function Agenda({ sessions, theme }) {
 						<div className="fs-0 fw-600"><Reveal>2026 Agenda</Reveal></div>
 						<Slide>
 							<p className="mt-sm">For FHS Africa, our objective is to enhance networking opportunities by introducing innovative and engaging formats that foster meaningful connections among delegates. The program is carefully designed to encourage greater interaction between attendees and speakers, ensuring valuable discussions and insights.</p>
+							<p>Speaking opportunities are offered at the discretion of the organising team and are assessed based on relevant expertise and the value of the proposed contribution. To apply as a speaker, please contact Mala Patel at <a href="mailto:mala.patel@thebench.com">mala.patel@thebench.com</a></p>
 						</Slide>
 					</div>
 

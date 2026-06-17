@@ -823,14 +823,14 @@ export const FHS_AFRICA = {
                         "__typename": "navigation_Entry",
                         "id": "247",
                         "title": "About FHS Africa",
-                        "navUrl": "/africa/networking",
+                        "navUrl": "/africa/about-fhs-africa",
                         "target": false
                     },
                     {
                         "__typename": "navigation_Entry",
                         "id": "249",
                         "title": "Event Information",
-                        "navUrl": "/africa/venue",
+                        "navUrl": "/africa/event-information",
                         "target": false
                     },
                     {
@@ -873,13 +873,6 @@ export const FHS_AFRICA = {
                         "id": "257",
                         "title": "Awards",
                         "navUrl": "/africa/ahif-awards",
-                        "target": false
-                    },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "257r",
-                        "title": "Charity Partner",
-                        "navUrl": "/africa/our-chosen-charity",
                         "target": false
                     },
                     {
@@ -956,8 +949,8 @@ export const FHS_AFRICA = {
             "metaDescription": null,
             "headerCtas": [
                 {
-                    "label": "Register Interest for 2027",
-                    "hyperlink": "/africa/register-interest-for-2027",
+                    "label": "Purchase Pass",
+                    "hyperlink": "/africa/purchase-pass",
                     "openInNewWindow": false
                 }
             ]
