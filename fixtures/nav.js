@@ -878,8 +878,8 @@ export const FHS_AFRICA = {
                     {
                         "__typename": "navigation_Entry",
                         "id": "268",
-                        "title": "Become a Partner",
-                        "navUrl": "/africa/become-a-partner",
+                        "title": "Why Partner",
+                        "navUrl": "/africa/why-partner",
                         "target": false
                     },
                     {

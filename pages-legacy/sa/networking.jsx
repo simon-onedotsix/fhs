@@ -25,7 +25,7 @@ import { PopOverlay } from "../../fuselage/components/popoverlay/popoverlay"
 
 import CSS from '../../fuselage/theme/2025/sa/css/networking.module.css'
 
-import { ARTICLE_DATA, ARTICLE_DATA_AR } from '.'
+import { ARTICLE_DATA, ARTICLE_DATA_AR } from '../../pages/sa'
 
 export default function Page () {
 

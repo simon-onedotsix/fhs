@@ -105,29 +105,27 @@ function Speakers({ seomatic, speakers }) {
 
 	// sort speakers by lastName
 	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
-	// console.log('total ordered speakers:', orderedSpeakers.length)
+	console.log('total ordered speakers:', orderedSpeakers.length)
 
 	// customise order (VIP speakers to top of list)
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
-		(speaker => speaker.firstName == 'Phillip' && speaker.lastName === 'Jones' ? 0 : 1),
-		(speaker => speaker.firstName == 'Joanna' && speaker.lastName === 'Kurowska' ? 0 : 1),
+		(speaker => speaker.firstName == 'Prince Turki AlFaisal' && speaker.lastName === 'Bin Abdulaziz Al Saud' ? 0 : 1),
 		(speaker => speaker.firstName == 'Mahmoud' && speaker.lastName === 'Abdulhadi' ? 0 : 1),
+		(speaker => speaker.firstName == 'H․E․ Abdullah' && speaker.lastName === 'Al-Muhaisen' ? 0 : 1),
+		(speaker => speaker.firstName == 'Khalid Saud' && speaker.lastName === 'Abuhaimed' ? 0 : 1),
+		(speaker => speaker.firstName == 'Sultan Bader' && speaker.lastName === 'Al-Otaibi' ? 0 : 1),
+		
+		(speaker => speaker.firstName == 'Joanna' && speaker.lastName === 'Kurowska' ? 0 : 1),
 		(speaker => speaker.firstName == 'Elie' && speaker.lastName === 'Younes' ? 0 : 1),
 		(speaker => speaker.firstName == 'Tina' && speaker.lastName === 'Yu' ? 0 : 1),
-		
 		(speaker => speaker.firstName == 'Khalid' && speaker.lastName === 'Al Gahtani' ? 0 : 1),
 		(speaker => speaker.firstName == 'Hamza' && speaker.lastName === 'Farooqui' ? 0 : 1),
+		
 		(speaker => speaker.firstName == 'Meshari' && speaker.lastName === 'Al Nahari' ? 0 : 1),
 		(speaker => speaker.firstName == 'Serena' && speaker.lastName === 'Lim' ? 0 : 1),
 		(speaker => speaker.firstName == 'Fatih' && speaker.lastName === 'Tamince' ? 0 : 1),
-		
-		(speaker => speaker.firstName == 'Sultan Bader' && speaker.lastName === 'Al-Otaibi' ? 0 : 1),
 		(speaker => speaker.firstName == 'Jaume' && speaker.lastName === 'Tàpies-Ibern' ? 0 : 1),
-		(speaker => speaker.firstName == 'Sarmad' && speaker.lastName === 'Zok' ? 0 : 1),
-		(speaker => speaker.firstName == 'Khalid Saud' && speaker.lastName === 'Abuhaimed' ? 0 : 1),
-		(speaker => speaker.firstName == 'Neil' && speaker.lastName === 'Gallagher' ? 0 : 1),
-		
-		(speaker => speaker.firstName == 'Kholoud' && speaker.lastName === 'Almanea' ? 0 : 1),
+		(speaker => speaker.firstName == 'Sarmad' && speaker.lastName === 'Zok' ? 0 : 1),		
 	] )
 	console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
