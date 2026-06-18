@@ -637,20 +637,6 @@ export const FHS_SA = {
                                 "navUrl": "/sa/leadership-award",
                                 "target": false
                             },
-                            // {
-                            //     "__typename": "navigation_Entry",
-                            //     "id": "227",
-                            //     "title": "Future Leader Award",
-                            //     "navUrl": "/sa/future-leader-award",
-                            //     "target": false
-                            // },
-                            // {
-                            //     "__typename": "navigation_Entry",
-                            //     "id": "2345rtwe",
-                            //     "title": "Impact Leader Award",
-                            //     "navUrl": "/sa/impact-leader-award",
-                            //     "target": false
-                            // }
                         ]
                     },
                     {
@@ -660,16 +646,9 @@ export const FHS_SA = {
                         "children": [
                             {
                                 "__typename": "navigation_Entry",
-                                "id": "233",
-                                "title": "Curated Connections",
-                                "navUrl": "/sa/curated-connections",
-                                "target": false
-                            },
-                            {
-                                "__typename": "navigation_Entry",
                                 "id": "235",
-                                "title": "Networking Receptions",
-                                "navUrl": "/sa/networking-receptions",
+                                "title": "Networking",
+                                "navUrl": "/sa/networking",
                                 "target": false
                             },
                             {
