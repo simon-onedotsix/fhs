@@ -21,7 +21,7 @@
         grid-template-columns: repeat(2, 1fr);
         align-items: flex-start;
         gap: var(--space-sm);
-        padding-top: calc(var(--space-lg) * .25 )!important;
+        /* padding-top: calc(var(--space-lg) * .25 )!important; */
     }
     .column:nth-child(2) {
         margin-top: var(--space-md);

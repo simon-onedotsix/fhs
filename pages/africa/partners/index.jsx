@@ -70,7 +70,7 @@ function Partners({ partnerData }) {
 
 			<section className='block'>
 				<div className='container center formatted'>
-					<p className='fs-1 fw-600'>2026 Partners</p>
+					<p className='fs-1 fw-600'>2027 Partners</p>
 				</div>
 				
 				<div className='center'>

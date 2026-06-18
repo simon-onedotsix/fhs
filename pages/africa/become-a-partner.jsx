@@ -79,7 +79,7 @@ export async function getStaticProps() {
     const entryData = await craftApolloClient().query({
         query: gql`
             query Page {
-                entry(site: "ahif", slug: "sponsorship") {
+                entry(site: "ahif", slug: "become-a-partner") {
                     ... on ahifSponsorship_ahifSponsorship_Entry {
                         id
                         title

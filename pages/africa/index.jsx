@@ -233,12 +233,12 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                 </p>
 
                 <p className="fs-3 mt-xs"><span className="fw-600">2-3 February, 2027</span></p>
-                <p className="fs-4 balance lh-1">Speke Resort Munyonyo, Kampala, Uganda</p>
+                <p className="fs-4 balance lh-1">Speke Resort Convention Centre, Uganda</p>
 
                 <div className='mt-md'>
                     <ButtonGrid>
                         <Pop inline delay={.2}>
-                            <Button href={'/africa/register-interest-for-2027'}>Register Interest for 2027</Button>
+                            <Button href={'/africa/purchase-pass'}>Register Here</Button>
                         </Pop>
                         <Pop inline delay={.2}>
                             <Button href={'/africa/post-event-resources'}>Post Event Resources 2026</Button>

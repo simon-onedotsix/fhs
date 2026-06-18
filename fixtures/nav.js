@@ -899,8 +899,8 @@ export const FHS_AFRICA = {
                     {
                         "__typename": "navigation_Entry",
                         "id": "268",
-                        "title": "Why Partner?",
-                        "navUrl": "/africa/sponsorship",
+                        "title": "Become a Partner",
+                        "navUrl": "/africa/become-a-partner",
                         "target": false
                     },
                     {
@@ -949,10 +949,15 @@ export const FHS_AFRICA = {
             "metaDescription": null,
             "headerCtas": [
                 {
-                    "label": "Purchase Pass",
+                    "label": "Register Here",
                     "hyperlink": "/africa/purchase-pass",
                     "openInNewWindow": false
-                }
+                },
+                {
+                    "label": "Become a Partner",
+                    "hyperlink": "/africa/partner-with-fhs-africa-2027",
+                    "openInNewWindow": false
+                },
             ]
         }
     }

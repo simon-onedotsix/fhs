@@ -47,7 +47,7 @@ export default function Investors ({ articles, speakers }) {
                 </div>
             </section>
 
-            <SpeakerCarousel heading={'Investor-Speakers at FHS Africa 2025'} ctaLink={'/africa/speakers'} ctaLabel={'See all speakers'}>
+            {/* <SpeakerCarousel heading={'Investor-Speakers at FHS Africa 2025'} ctaLink={'/africa/speakers'} ctaLabel={'See all speakers'}>
                 {
                     speakers.map( speaker => (
                         <Pop key={speaker.id}>
@@ -62,83 +62,53 @@ export default function Investors ({ articles, speakers }) {
                         </Pop>
                     ))
                 }
-            </SpeakerCarousel>
+            </SpeakerCarousel> */}
 
 
-            <section className="block bg-default">
+            <section className="block bg-secondary">
                 <div className="container center">
-                    <p className='fs-1 fw-600'>SAMPLE LIST OF INVESTORS FROM 2025</p>
+                    <p className='fs-1 fw-600'>SAMPLE LIST OF INVESTORS FROM 2026</p>
                 </div>
 
                 <div className="container formatted">
                     <article className={CSS.listing}>
                         <p>
-                            Actis<br/>
-                            Brix Group<br/>
-                            Cadence<br/>
-                            Cameroon Hotels Corporation<br/>
-                            Catembe Gallery Hotel<br/>
-                            Cresta Marakanelo Limited<br/>
-                            Crestigo<br/>
+                            Blackrock Incorporation<br/>
+                            Bluebay Hotels Zanzibar<br/>
+                            CityBlue Hotels<br/>
                             Compagnie Hoteliere Et Immobiliere Du Congo<br/>
-                            DEG - Deutsche Investitions- und Entwicklungsgesellschaft mbH<br/>
-                            Elewana<br/>
-                            Enrich Network Corp/Enrich Hotels &amp; Resorts<br/>
-                            Ensemble Holdings<br/>
-                            FNB Commercial Property Finance<br/>
-                            FIT Group of Companies<br/>
-                            Fidelity Life Asset Management<br/>
-                            Fundo Soberano de Angola<br/>
-                            Grandwest Hotel &amp; Apartments Ltd<br/>
-                            V&amp;A Waterfront<br/>
-                            Hemingways Hospitality<br/>
-                            House of Chinhara (HOC)<br/>
-                            IFC<br/>
-                            Indalo hotels &amp; Leisure<br/>
+                            Eagle Asset Management Company<br/>
+                            Elewana Collection<br/>
+                            Grandwest Hotel & Apartments Ltd<br/>
+                            Hapa Developments<br/>
+                            Hemingways Hospitality Limited<br/>
+                            Ikeja Hotel Plc<br/>
+                            Industrial Development Corporation<br/>
+                            International Finance Corporation<br/>
+                            JAM Asset Management Ltd.<br/>
                             Janus Continental Group<br/>
                             Kasada Capital Management<br/>
-                            Kokobeach Hotels &amp; Resorts<br/>
-                            KTAfrica<br/>
-                            Kuriftu Resorts<br/>
-                            Le Palais d&rsquo;Akwa<br/>
-                            Lineage Invest<br/>
+                            KfW-DEG<br/>
+                            Lake Greenfield Hotel & Towers Ltd.<br/>
                             Lordship Group<br/>
-                            Magnolia Hotel &amp; Conference Center<br/>
-                            Manta Ventures<br/>
-                            Metro rez pty ltd<br/>
-                            MIGA - World Bank Group<br/>
-                            Millat Investment<br/>
-                            Nedbank<br/>
-                            Nedbank CIB<br/>
-                            National Social Security Fund Tanzania (NSSF Tanzania)<br/>
-                            Nile Hotel International Ltd<br/>
-                            Nokras Hotels<br/>
-                            Nortech Group Holdings (Pty) Ltd<br/>
-                            Nucleus Investment Management<br/>
-                            Old Mutual Zimbabwe<br/>
-                            Onomo<br/>
-                            Panchshil Realty<br/>
-                            Port of Tanit<br/>
-                            Proparco<br/>
+                            Maasai Mara Sopa Lodges<br/>
+                            Mirasi Group Ltd<br/>
+                            Millat Investments<br/>
+                            Modways<br/>
+                            Nile Hotel International Ltd.<br/>
+                            Niti Group - La Maison Royale<br/>
+                            Nungwi Dreams Resort Zanzibar<br/>
+                            One Ada<br/>
+                            Park Vega Waterpark Limited<br/>
                             Quao Realty<br/>
-                            Rainbow Tourism Group Limited<br/>
-                            RG Alliance SA Pty Ltd<br/>
-                            Rockshieldburg-city (hotel-55-africa) Flagship<br/>
-                            Root Partners<br/>
-                            Santiago<br/>
-                            Scenery Lodge<br/>
-                            Senegindia SA<br/>
-                            SHB<br/>
-                            Southern Sun Hotels<br/>
-                            Sun International<br/>
-                            TEHC Real Estate Investment Company<br/>
-                            The Cavaleros Group<br/>
-                            UAG Investments Pty Ltd - United Hospitality Management<br/>
-                            Watercress Hotel<br/>
-                            Welwitschia Property Company<br/>
-                            Westmont Hospitality<br/>
-                            WestProp Holding Limited<br/>
+                            Temple Point Resort<br/>
+                            Terra Vista Development<br/>
+                            The House of Chinhara<br/>
+                            The Merwest Company<br/>
+                            UAG Investments (Pty)-United Africa Hospitality (Pty) Ltd<br/>
+                            Westmont Hospitality Group<br/>
                         </p>
+                        <p><em>Updated 17/03/2026</em></p>
                     </article>
                 </div>
             </section>
