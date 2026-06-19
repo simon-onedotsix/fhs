@@ -780,30 +780,26 @@ export default function Page({ seomatic, partners }) {
 
             {/* OFFICIAL OPENING */}
             <section className="block bg-primary-2-dark pb-0">
-                <div className="container bg-primary px-md py-sm"
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-2 fw-600 c-white lh-1">Official Opening&nbsp;by</p>
+                    </Fade>
+                </div>
+
+                <div className="container"
                     style={{
                         position: `relative`,
                         overflow: `hidden`,
                         borderRadius: `1rem`,
-                        padding: isDesktop ? `var(--space-sm)`: `var(--space-md)`,
 
                         display: `flex`,
                         alignItems: `center`,
+                        justifyContent: `center`,
                         flexDirection: isDesktop ? `row` : `column`,
                         gap: `var(--space-md)`
                     }}
                 >
-
-                    <ThemeGraphic
-                        src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                        opacity={.25}
-                        width={ isDesktop ? "40vw" : "120vw"}
-                        coordinates={{ bottom: `-5vh`, left: `-2vw`}}
-                    />
-
-                    <Fade>
-                        <p className="fs-2 fw-600 c-white lh-1">Official Opening&nbsp;by</p>
-                    </Fade>
+                    
            
                     <Pop>
                         <img
@@ -813,14 +809,14 @@ export default function Page({ seomatic, partners }) {
                                 position: `relative`,
                                 zIndex: 2,
                                 display: `block`,
-                                maxWidth: isDesktop ? `15rem` : `100%`,
+                                maxWidth: isDesktop ? `18rem` : `100%`,
                                 borderRadius: `.5rem`,
                             }}
                         />
                     </Pop>
                     
                     <div>
-                        <p className="fs-5 fw-500 lh-2 balance">Prince Turki AlFaisal Bin Abdulaziz Al&nbsp;Saud</p>
+                        <p className="fs-5 fw-500 lh-2 balance">HRH Prince Turki AlFaisal Bin Abdulaziz Al&nbsp;Saud</p>
                         <p className="pb-sm mt-xxs">
                             Chairman of Board of Directors,<br />
                             <strong>King Faisal Center for Research and Islamic Studies</strong>
