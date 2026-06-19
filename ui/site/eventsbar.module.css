@@ -84,3 +84,9 @@
     padding: .2rem;
     border-radius: 50%;
 }
+
+@media print {
+    .layout {
+        display: none;
+    }
+}
