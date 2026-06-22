@@ -145,7 +145,7 @@ export default function Club ({ events }) {
                             topColor={"#9A72AB"}
                         />
                     </div>
-                    <p className='fs-5 maxw-55 center mx-auto mt-md'>Be part of our exclusive community, reserved for those who shape the future of hospitality. As one of our most dedicated attendees, gain access to exclusive privileges, early VIP experiences, and once-in-a-lifetime opportunities that only the inner circle of FHS can enjoy.</p>
+                    <p className='fs-5 maxw-55 center mx-auto mt-md'>Be part of our exclusive community, reserved for those who shape the future of hospitality. As one of our most dedicated attendees, gain access to exclusive privileges, early VIP experiences, and exclusive opportunities that only the inner circle of FHS can enjoy.</p>
                 </HeroUnitImage>
 
 
@@ -174,7 +174,6 @@ export default function Club ({ events }) {
                 <section className="block pt-0">
                     <div className="container">
                         <p className='fs-2 fw-600 center'>How to Join</p>
-                        <p className="center balance mt-xxs">Your tier is automatically assigned based on your attendance record. Keep attending FHS editions to move up the tiers and unlock more benefits.</p>
                         
                         <div className={CSS.steps}>
                             <div className={CSS.step}>
@@ -183,7 +182,7 @@ export default function Club ({ events }) {
                             </div>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>2</p>
-                                <p className="balance">Your tier is automatically assigned based on your attendance record or your company&apos;s cumulative attendance, whichever is higher. Keep attending FHS editions to move up the tiers and unlock more benefits.</p>
+                                <p className="balance">Your tier is automatically assigned based on your attendance record. Keep attending FHS editions to move up the tiers and unlock more benefits.</p>
                             </div>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>3</p>
