@@ -105,6 +105,7 @@ function Speakers({ speakers }) {
 														width={370} 
 														height={370} 
 														alt=""
+														unoptimized
 													/>
 													: 
 													<Image 
@@ -112,6 +113,7 @@ function Speakers({ speakers }) {
 														width={370} 
 														height={370} 
 														alt=""
+														unoptimized
 													/>
 												}
 											</a>

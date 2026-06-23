@@ -1,6 +1,6 @@
 import { useState, useRef } from "react"
 
-import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import { motion, useScroll, useTransform } from "framer-motion"
 
 import Head from "next/head"
@@ -9,24 +9,24 @@ import Link from "next/link"
 
 import Ticker from 'framer-motion-ticker'
 
-import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
+import { Pop, Slide, Fade } from "../../../fuselage/theme/2023/ae/layout/animation/animation"
 
-import { EventsBar } from "../../ui/site/eventsbar"
-import { Header } from '../../ui/site/header'
-import { FHS_EGYPT as header } from '../../fixtures/nav'
-import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_EGYPT as header } from '../../../fixtures/nav'
+import { Footer } from '../../../fuselage/theme/egypt/common/footer/footer'
 
-import { Button } from "../../fuselage/theme/2024/world/components/button/button"
-import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
-import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
+import { Button } from "../../../fuselage/theme/2024/world/components/button/button"
+import { ButtonKeyline } from "../../../fuselage/theme/egypt/components/button-keyline/button-keyline"
+import { ArrowButton } from "../../../fuselage/components/arrow-button/arrow-button"
 
-import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
-import { PopupOverlay } from "../../fuselage/components/popup-overlay/popup-overlay"
+import { SpeakerCard } from "../../../fuselage/components/speaker-card/speaker-card"
+import { PopupOverlay } from "../../../fuselage/components/popup-overlay/popup-overlay"
 
-import { HeroUnitVideo } from "../../fuselage/theme/2025/world/pages/home/hero-unit-video"
-import { ThemeBillboard, Tri } from "../../fuselage/theme/2025/world/pages/home/theme-billboard"
+import { HeroUnitVideo } from "../../../fuselage/theme/2025/world/pages/home/hero-unit-video"
+import { ThemeBillboard, Tri } from "../../../fuselage/theme/2025/world/pages/home/theme-billboard"
 
-import CSS from '../../fuselage/theme/2024/world/css/homepage.module.css'
+import CSS from '../../../fuselage/theme/2024/world/css/homepage.module.css'
 
 
 const SPEAKER_DATA = [
@@ -209,7 +209,9 @@ const SPEAKER_DATA = [
 ]
 
 
-export default function Page () {
+export default function Page({ speakers }) {
+    
+    // console.log('speakers:', speakers)
 
     return (
         <>
@@ -229,31 +231,24 @@ export default function Page () {
             <section className="block bg-default">
                 <div className="container center">
                     <h1 className="fs-0 caps">Speakers</h1>
-                    <p className="fs-5 maxw-55 mx-auto">FHS events bring together global leaders in hospitality investment, development, operations and government. Speakers for FHS Egypt will be announced soon</p>
-                </div>
-
-                <div className="container center">
-                    <Pop><p><ButtonKeyline href={`/egypt/forms/register-interest`}>Stay Updated</ButtonKeyline></p></Pop>
+                    <p className="fs-5 balance">FHS events bring together global leaders in hospitality investment, development, operations and government.</p>
                 </div>
             </section>
 
 
 
             <section className="block bg-default">
-                <div className="container">
-                    <p className="fs-1 center">Past FHS Speakers</p>
-                </div>
-
                 <div className="container columns-5 gap-sm">
                     {
-                        SPEAKER_DATA.map( (profile, index) => (
+                        speakers.length &&
+                        speakers.map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
-                                    url={profile.url}
+                                    url={`/egypt/speakers/${profile.id}`}
                                     photoUrl={profile.photoUrl}
-                                    fullName={profile.fullName}
+                                    fullName={`${profile.firstName} ${profile.lastName}`}
                                     jobTitle={profile.jobTitle}
-                                    company={profile.company}
+                                    company={profile.organization}
                                     color={'white'}
                                 />
                             </Pop>
@@ -274,3 +269,107 @@ export default function Page () {
 Page.theme = 'egypt'
 
 
+export async function getStaticProps() {
+
+	const swapcardData = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query eventPerson(
+						$eventId: ID!
+						$cursor: CursorPaginationInput
+						$filters: [EventPersonFilter!]
+					){
+						eventPerson(eventId: $eventId, cursor: $cursor, filters: $filters) {
+							nodes {
+								id
+								type
+								firstName
+								lastName
+								jobTitle
+								organization
+								photoUrl
+
+								speakerOnPlannings {
+									id
+									title
+									categories
+									fields {
+									... on MultipleSelectField {
+										id
+										definition {
+											isDefault
+											name
+										}
+										value
+										translations {
+											value
+										}
+									}
+									}
+								}
+
+								withEvent(eventId: $eventId) {
+									fields {
+										... on SelectField {
+											translations {
+												value
+												language
+											}
+											definition {
+												id
+												translations {
+													name
+													language
+												}
+											}
+										}
+										... on TextField {
+											definition {
+												name
+												translations {
+													name
+												}
+												id
+											}
+											locale
+											value
+											id
+										}
+									}
+								}
+								}
+							}
+						}
+					`,
+					variables: {
+						"eventId": process.env.SWAPCARD_EVENT_ID_EGYPT_2026,
+						"cursor": {
+							"first": 300
+						},
+						"filters": {
+							"shouldBeInGroups": "RXZlbnRHcm91cF82NjExMzE="
+						}
+					}
+			}
+			)
+		}
+	)
+
+	// console.log(swapcardData)
+	
+	const speakerData =  await swapcardData.json()
+
+
+	return {
+		props: { 
+			speakers: speakerData.data.eventPerson.nodes
+		}
+	}
+}

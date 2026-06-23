@@ -11,7 +11,7 @@ import Link from "next/link"
 import Script from "next/script"
 import { Pop } from "../../fuselage/animation/animation"
 
-import { Button } from "../../fuselage/theme/2024/sa/components/button/button"
+import { Button } from "../../ui/buttons/button"
 
 import { Passes, QuerySEO } from "../../graphql/queries"
 
@@ -39,7 +39,7 @@ function PurchasePass({ seomatic, entry }) {
 	const specialPasses = entry.fhisContentBlocks[0].passes.filter(pass => pass.__typename === "passes_specialPass_BlockType")
 	
 	
-	console.log('entry:', entry)
+	// console.log('entry:', entry)
 	// console.log('passes:', entry.fhisContentBlocks[0].passes)
 	// console.log('regularPasses:', regularPasses)
 	// console.log('specialPasses:', specialPasses)
@@ -70,38 +70,50 @@ function PurchasePass({ seomatic, entry }) {
 
 
 
-					<section className={`block pb-0`}>
+					<section className={`block bg-default pb-0`}>
 						<div
 							className="container columns-2 gap-md"
-							style={{
-								gridTemplateColumns: isDesktop ? `1fr 2fr` : `1fr`
-							}}
+							// style={{
+							// 	gridTemplateColumns: isDesktop ? `1fr 2fr` : `1fr`
+							// }}
 						>
 							<div>								
 								<p className='fs-1 fw-600 c-secondary'>Purchase Pass</p>
 								<br />
 								<p className="maxw-45">Discounted rates below are exclusively available for hotel operators, owners, developers, investors/banks, consultants, architects, lawyers, Govt. officials. If your organisation does not fall within these categories, please email <a href="hello@thebench.com">hello@thebench.com</a> to register.</p>
+
+								{
+									!regularPasses.length
+										? <div className="mt-sm">
+											<Pop inline>
+												<Button href={'/sa/register-interest'} label={'Register Interest'}>Register Interest</Button>
+											</Pop>
+										</div>
+										: null
+								}
 							</div>
 
 							<div>
 								{
-									regularPasses.length &&
-									regularPasses.map(pass => (
-										<PassPriceBands
-											key={pass.id}
-											flash={pass.passFlash}
-											title={pass.passTitle}
-											callout={pass.passCallout}
-											priceIncreaseMessage={pass.passPriceIncreases}
-											description={pass.passDescription}
-											currency={pass.passCurrency}
-											priceBands={pass.passPriceBands}
-											quantityRemaining={pass.passQuantityRemaining}
-											label={pass.passButtonLabel}
-											href={pass.passButtonUrl}
-											soldOut={pass.passSoldOut}
-										/>
-									))
+									regularPasses.length
+										? regularPasses.map(pass => (
+											<PassPriceBands
+												key={pass.id}
+												flash={pass.passFlash}
+												title={pass.passTitle}
+												callout={pass.passCallout}
+												priceIncreaseMessage={pass.passPriceIncreases}
+												description={pass.passDescription}
+												currency={pass.passCurrency}
+												priceBands={pass.passPriceBands}
+												quantityRemaining={pass.passQuantityRemaining}
+												label={pass.passButtonLabel}
+												href={pass.passButtonUrl}
+												soldOut={pass.passSoldOut}
+											/>
+										))
+										: null
+										
 								}
 							</div>
 
