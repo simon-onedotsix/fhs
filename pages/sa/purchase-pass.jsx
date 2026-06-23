@@ -77,12 +77,7 @@ function PurchasePass({ seomatic, entry }) {
 								gridTemplateColumns: isDesktop ? `1fr 2fr` : `1fr`
 							}}
 						>
-							<div>
-								<div>
-									<p className="fw-600 c-secondary lh-1">Registration Sponsor</p>
-									<img src="https://static.swapcard.com/public/images/9885a71a05aa47359fb09142449b455e.png" alt="" width={`200`} />
-								</div>
-								
+							<div>								
 								<p className='fs-1 fw-600 c-secondary'>Purchase Pass</p>
 								<br />
 								<p className="maxw-45">Discounted rates below are exclusively available for hotel operators, owners, developers, investors/banks, consultants, architects, lawyers, Govt. officials. If your organisation does not fall within these categories, please email <a href="hello@thebench.com">hello@thebench.com</a> to register.</p>

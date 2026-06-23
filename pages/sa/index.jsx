@@ -55,6 +55,7 @@ import { SlideoutCard } from "../../fuselage/components/slideout-card/slideout-c
 import { ContentCard } from '../../fuselage/components/content-card/content-card'
 import { LayoutGallery } from "../../fuselage/components/layout-gallery/layout-gallery"
 import { ContentCard as Post } from "../../fuselage/theme/2024/world/components/content-card/content-card"
+import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 
 
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
@@ -115,7 +116,16 @@ export const ARTICLE_DATA_AR = [
     }
 ]
 
+
+
 const SPEAKER_DATA = [
+    {
+        url: "/sa/speakers/RXZlbnRQZW9wbGVfNDcxMzA0NTQ=",
+        photoUrl: "https://static.swapcard.com/public/images/5ffc67d0faa04b8dadfd1fe2268b5eeb.png",
+        fullName: "HRH Prince Turki AlFaisal Bin Abdulaziz Al Saud",
+        jobTitle: "Chairman of Board of Directors",
+        company: "King Faisal Center for Research and Islamic Studies",
+    },
     {
         url: "/sa/speakers/RXZlbnRQZW9wbGVfNDY5NDA4MTE=",
         photoUrl: "https://static.swapcard.com/public/images/f44090065da44732b82bc5f269b2bbb0.png",
@@ -179,86 +189,8 @@ const SPEAKER_DATA = [
         jobTitle: 'Chief Hospitality Officer',
         company: 'Jabal Omar Development Company',
     },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDUwMDY1OTU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/3aa57389f5ad4d348d08b5ce7f27808b.jpeg',
-        fullName: 'Gregory Djerejian',
-        jobTitle: 'Group Head of Investments and Group Chief Legal Officer',
-        company: 'Red Sea Global',
-    },
 ]
-const SPEAKER_DATA_AR = [
-    {
-        url: "/sa/speakers/RXZlbnRQZW9wbGVfNDY5NDA4MTE=",
-        photoUrl: "https://static.swapcard.com/public/images/f44090065da44732b82bc5f269b2bbb0.png",
-        fullName: "Mahmoud Abdulhadi",
-        jobTitle: "Deputy Minister, Destination Enablement",
-        company: "Ministry of Tourism of Saudi Arabia",
-    },
-    {
-        url: `/sa/speakers/profile/khalid-saud-abu-haimed`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Abu-Haimed_Khalid-Saud_pic2.jpg',
-        fullName: 'خالد سعود أبو حيمد',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'شركة الخزامى للاستثمار',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDU5MjM3ODY=`,
-        photoUrl: 'https://static.swapcard.com/public/images/20c5160961534044aaa6f2f8bb4724a8.jpeg',
-        fullName: 'د. عبد الله العبد الكريم',
-        jobTitle: 'وكيل الوزارة لتنمية القدرات البشرية في وزارة النقل والخدمات اللوجستية',
-        company: '',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDYwNTk5MDI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/b8726b4ca45c4ca397593a045c5de2c7.jpeg',
-        fullName: 'عمر العبد اللطيف',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'شركة بلاك ساند',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ1NTIyMzA=`,
-        photoUrl: 'https://static.swapcard.com/public/images/e0dd7c51a08843e895efbd901a951270.jpeg',
-        fullName: 'مشاري النهاري',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'شركة أسفار وعسير للاستثمار',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDU4NzkyMDQ=`,
-        photoUrl: 'https://static.swapcard.com/public/images/712a64a2e79245bfbe56770cc0001b6b.jpeg',
-        fullName: 'رغد آل ناصر',
-        jobTitle: 'الرئيس التنفيذي للاستثمار',
-        company: 'شركة جبل أحد القابضة',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ2Mjc=`,
-        photoUrl: 'https://static.swapcard.com/public/images/7b395ba5c8d146cb970582231d498e01.jpeg',
-        fullName: 'سلطان بدر العتيبي',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'شركة طيبة',
-    },
-    {
-        url: ``,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/hossam-al-basrawi.jpg',
-        fullName: 'حسام البصراوي',
-        jobTitle: 'الرئيس التنفيذي',
-        company: 'شركة الراجحي المالية',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQxOTMxMjE=`,
-        photoUrl: 'https://static.swapcard.com/public/images/8744509ba8354d31abfb050affddc9ed.jpeg',
-        fullName: 'سامر صبرا',
-        jobTitle: 'رئيس قطاع الضيافة',
-        company: 'شركة جبل عمر للتطوير',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDUwMDY1OTU=`,
-        photoUrl: 'https://static.swapcard.com/public/images/3aa57389f5ad4d348d08b5ce7f27808b.jpeg',
-        fullName: 'غريغوري جيريجان',
-        jobTitle: 'رئيس إدارة الاستثمار والشؤون القانونية للمجموعة',
-        company: 'شركة البحر الأحمر الدولية',
-    },
-]
+
 
 const QUOTES_DATA = [
     {
@@ -603,11 +535,7 @@ export default function Page({ seomatic, partners }) {
                     transition={{ type: "spring", bounce: 0.25 }}
                     className={` fs-0 fw-600 c-white lh-1 center mx-auto`}
                 >
-                    {
-                        locale === 'ar'
-                            ? <>حيث تلتقي الفرص برأس المال</>
-                            : <>Where Opportunity Meets&nbsp;Capital</>
-                    }
+                    Thank You For Joining Us!
                 </motion.p>
                 
                 <motion.p 
@@ -616,11 +544,7 @@ export default function Page({ seomatic, partners }) {
                     transition={{ type: "spring", bounce: 0.25 }}
                     className={`fs-4 fw-300 c-white center mt-xs`} 
                 >
-                    {
-                        locale === 'ar'
-                            ? `20-22 أبريل 2026، فندق ماندارين أورينتال الفيصلية، الرياض`
-                            : `22-24 June 2026, Mandarin Oriental Al Faisaliah, Riyadh`
-                    }
+                    See you in March 2027
                 </motion.p>
 
                 <Fade>
@@ -632,15 +556,6 @@ export default function Page({ seomatic, partners }) {
                                 decal={'fs-5 fw-600'} 
                                 accent
                             >{ locale === 'ar' ? `قائمة الحضور لعام 2026` : `2026 Attendee List`}</Button>
-                        </Pop>
-
-                        <Pop inline>
-                            <Button 
-                                href={'/sa/prospectus-download'} 
-                                theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                decal={'fs-5 fw-600'} 
-                                accent
-                            >{ locale === 'ar' ? `كتيب 2026` : `2026 Prospectus`}</Button>
                         </Pop>
 
                         <Pop inline>
@@ -688,57 +603,7 @@ export default function Page({ seomatic, partners }) {
                                     </div>
                                 </div>
                             </Pop>
-                        </div>
-                      
-
-
-                        {/* PATRONAGE */}
-                    
-                        {/* <div className="">
-                            <p className="fs-4 fw-600 c-accent caps pb-xs center balance lh-1">{ locale === 'ar' ? "تحت رعاية" : "Under the Patronage of" }</p>
-
-                            <div className={CSS.patronBox}>
-
-                                <Pop>
-                                    <div className={CSS.patronBoxAvatar}>
-                                            <div className={CSS.avatar}>
-                                                <Image src={"https://static.swapcard.com/public/images/77e27e150ec94e1d8c549fbb6e6f065b.jpeg"} layout='fill' alt="" unoptimized />
-                                            </div>
-                                    </div>
-                                </Pop>
-
-                                <div className={CSS.patronBoxContent}>
-                                    <Pop>
-                                        {
-                                            locale === 'ar'
-                                            ?
-                                                <>
-                                                    <p className="fs-6 fw-600">صاحب السمو الأمير بندر بن سعود بن خالد آل سعود</p>
-                                                    <p className="mt-xxs">
-                                                        الأمين العام لمؤسسة الملك فيصل (KFF)
-                                                    <br/>
-                                                        رئيس مجلس إدارة الخزامى
-                                                    </p>
-
-                                                </>
-                                            :
-                                                <>
-                                                    <p className="fs-6 fw-600 lh-1 balance">HH Prince Bandar bin Saud bin Khalid Al Saud</p>
-                                                    <p className="mt-xxs fs-xs">
-                                                        Secretary General King Faisal Foundation&nbsp;(KFF)<br/>
-                                                        Chairman of the Board of Directors Al&nbsp;Khozama
-                                                    </p>
-
-                                                </>
-                                        }
-                                        
-
-                                    </Pop>
-                                </div>
-                            </div>
-                            
-                        </div> */}
-                      
+                        </div>                      
 
                     </div>
                 </section>
@@ -776,64 +641,6 @@ export default function Page({ seomatic, partners }) {
                 }
             </div>
 
-            
-
-            {/* OFFICIAL OPENING */}
-            <section className="block bg-primary-2-dark pb-0">
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-2 fw-600 c-white lh-1">Official Opening&nbsp;by</p>
-                    </Fade>
-                </div>
-
-                <div className="container"
-                    style={{
-                        position: `relative`,
-                        overflow: `hidden`,
-                        borderRadius: `1rem`,
-
-                        display: `flex`,
-                        alignItems: `center`,
-                        justifyContent: `center`,
-                        flexDirection: isDesktop ? `row` : `column`,
-                        gap: `var(--space-md)`
-                    }}
-                >
-                    
-           
-                    <Pop>
-                        <img
-                            src="https://static.swapcard.com/public/images/5ffc67d0faa04b8dadfd1fe2268b5eeb.png"
-                            alt=""
-                            style={{
-                                position: `relative`,
-                                zIndex: 2,
-                                display: `block`,
-                                maxWidth: isDesktop ? `18rem` : `100%`,
-                                borderRadius: `.5rem`,
-                            }}
-                        />
-                    </Pop>
-                    
-                    <div>
-                        <p className="fs-5 fw-500 lh-2 balance">HRH Prince Turki AlFaisal Bin Abdulaziz Al&nbsp;Saud</p>
-                        <p className="pb-sm mt-xxs">
-                            Chairman of Board of Directors,<br />
-                            <strong>King Faisal Center for Research and Islamic Studies</strong>
-                        </p>
-                        <Pop inline>
-                            <ArrowButton 
-                                href={ '/sa/speakers/RXZlbnRQZW9wbGVfNDcxMzA0NTQ=' } 
-                                theme={{ arrow: `white`, border: `white`, label: `white`}}
-                            >
-                                View Profile
-                            </ArrowButton>
-                        </Pop>
-                    </div>
-                </div>
-            </section>
-                
-
 
 
             {/* SPEAKERS */}
@@ -858,17 +665,13 @@ export default function Page({ seomatic, partners }) {
 
                 <div className="container center">
                     <Fade>
-                        {
-                            locale === 'ar'
-                            ? <p className="fs-2 fw-600 c-white">قادة الفكر على منصة المسرح</p>
-                            : <p className="fs-2 fw-600 c-white">Thought Leaders Taking The Stage</p>
-                        }
+                        <p className="fs-2 fw-600 c-white">2026 Speakers</p>
                     </Fade>
                 </div>
 
                 <div className="container columns-5 gap-sm" dir={ locale === 'ar' ? 'rtl' : ''}>
                     {
-                        ( locale === 'ar' ? SPEAKER_DATA_AR : SPEAKER_DATA ).map( (profile, index) => (
+                        SPEAKER_DATA.map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
                                     url={profile.url}
@@ -904,11 +707,7 @@ export default function Page({ seomatic, partners }) {
             {/* PARTNERS */}
             <section className="block">
                 <div className="container center">
-                    <Pop><p className="fs-2 fw-600 c-primary balance">{
-                        locale === 'ar'
-                            ? `تعرف على شركائنا`
-                            : `Meet Our Partners`
-                    }</p></Pop>
+                    <Pop><p className="fs-2 fw-600 c-primary balance">Thank You to Our Partners</p></Pop>
                 </div>
 
                 <div className="container mt-lg">
@@ -927,13 +726,7 @@ export default function Page({ seomatic, partners }) {
             {/* INVESTORS */}
             <section className="bg-primary">        
                 <div className="container py-md" dir={`ltr`}>
-                    <Pop>
-                        {
-                            locale === 'ar'
-                                ? <p className="fs-2 fw-600 balance center pb-sm">المستثمرون الحضور</p>
-                                : <p className="fs-2 fw-600 balance center pb-sm">Capital in the Room</p>
-                        }
-                    </Pop>
+                    <Pop><p className="fs-2 fw-600 balance center pb-sm">Investors Who Joined Us</p></Pop>
                     {
                         locale === 'ar'
                         ?
@@ -965,9 +758,7 @@ export default function Page({ seomatic, partners }) {
             {/* WHO ATTENDS */}
             <section className="block bg-primary-2">
                 <div className="container center">
-                    <p className="fs-2 fw-500">
-                        { locale === 'ar' ? `الحضور` : `Who Attends` }
-                    </p>
+                    <p className="fs-2 fw-500">Who Attended</p>
                 </div>
 
                 <div
@@ -1125,7 +916,7 @@ export default function Page({ seomatic, partners }) {
 
             
             {/* LINKEDIN POSTS */}
-            <section className="block bg-primary-2">
+            {/* <section className="block bg-primary-2">
                 <div className="container center">
                     <Pop><p className="fs-2 fw-600 balance">{ locale === 'ar' ? 'انضم إلى الحدث' : 'Join The Buzz'}</p></Pop>
                 </div>
@@ -1144,6 +935,17 @@ export default function Page({ seomatic, partners }) {
                     
                     <Pop><a href="https://www.linkedin.com/posts/ragad-al-nasser-93327945_fhssaudiarabia-saudileadstheway-share-7459910964583268352-G8K3" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-09.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)` }} /></a></Pop>
                     
+                </div>
+            </section> */}
+
+
+
+            {/* VIDEO HIGHLIGHTS */}
+
+            <section className="block bg-primary-2 o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
+                <div className={`${CSS.highlightVideoGrid} container`}>
+                    <Slide><p className='fs-1 fw-700 lh-1'>Highlights from FHS Saudi Arabia 2026</p></Slide>
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/CogYrzm02Xo`} />
                 </div>
             </section>
 
