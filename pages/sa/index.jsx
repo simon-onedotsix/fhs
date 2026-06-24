@@ -65,6 +65,18 @@ import { THEMES_DATA, THEMES_DATA_AR } from "./themes"
 
 export const ARTICLE_DATA = [
     {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/RM206283.jpg',
+        title: 'Blacksand and Marriott International Announce Landmark Deal to Open 10 Hotels in Saudi Arabia',
+        excerpt: 'Plans include the development of hotels across Marriott’s luxury, premium, select and long-stay brands.',
+        url: '/sa/content-library/blacksand-and-marriott-international-announce-landmark-deal-to-open-10-hotels-in-saudi-arabia',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/IMG_4161.jpg',
+        title: 'Shaza Hotels Expands Saudi Arabia Portfolio with Signing of Shaza Riyadh Stables Resort',
+        excerpt: 'Shaza Hotels has signed an HMA with FSM Hospitality Company for Shaza Riyadh Stables Resort, a luxury equestrian and lifestyle destination in Al Jubailah, Riyadh.',
+        url: '/sa/content-library/shaza-hotels-expands-saudi-arabia-portfolio-with-signing-of-shaza-riyadh-stables-resort',
+    },
+    {
         heroUrl: '/assets/img/sa/press-release-1.webp',
         title: 'Rua Al Madinah Holding Signs Agreement With Hilton To Open Three Hotels At Rua Al Madinah Project',
         excerpt: 'Rua Al Madinah Holding has signed an agreement with Hilton to open three hotels comprising of over 1600 keys.',
@@ -76,18 +88,18 @@ export const ARTICLE_DATA = [
         excerpt: 'Radisson Hotel Group continues to intensify its efforts in the Kingdom of Saudi Arabia, aligning with the Saudi 2030 vision for hospitality.',
         url: '/sa/content-library/radisson-hotel-group-accelerates-expansion-strategy-in-saudi-arabia-with-focus-on-holy-cities',
     },
-    {
-        heroUrl: '/assets/img/sa/press-release-3.webp',
-        title: 'Accor spearheads hospitality expansion throughout Saudi Arabia',
-        excerpt: "As the largest hotel operator in Saudi Arabia, Accor is spearheading a strategic transformation of the country's tourism sector, marking a new era of hospitality in the Kingdom.",
-        url: '/sa/content-library/accor-spearheads-hospitality-expansion-throughout-saudi-arabia-2',
-    },
-    {
-        heroUrl: '/assets/img/sa/press-release-4.webp',
-        title: 'Marriott International and Al Qimmah Hospitality Sign Agreement to Open a JW Marriott Hotel in Jeddah',
-        excerpt: 'Marriott International, Inc. and Al Qimmah Hospitality (a subsidiary of BinDawood Trading) today announced the signing of an agreement to introduce the JW Marriott brand in Jeddah. Situated on the Jeddah Corniche, JW Marriott Hotel Jeddah is anticipated to be a haven for travelers who seek a luxury escape to the waterfront destination, paired with exceptional service and holistic well-being experiences.',
-        url: '',
-    }
+    // {
+    //     heroUrl: '/assets/img/sa/press-release-3.webp',
+    //     title: 'Accor spearheads hospitality expansion throughout Saudi Arabia',
+    //     excerpt: "As the largest hotel operator in Saudi Arabia, Accor is spearheading a strategic transformation of the country's tourism sector, marking a new era of hospitality in the Kingdom.",
+    //     url: '/sa/content-library/accor-spearheads-hospitality-expansion-throughout-saudi-arabia-2',
+    // },
+    // {
+    //     heroUrl: '/assets/img/sa/press-release-4.webp',
+    //     title: 'Marriott International and Al Qimmah Hospitality Sign Agreement to Open a JW Marriott Hotel in Jeddah',
+    //     excerpt: 'Marriott International, Inc. and Al Qimmah Hospitality (a subsidiary of BinDawood Trading) today announced the signing of an agreement to introduce the JW Marriott brand in Jeddah. Situated on the Jeddah Corniche, JW Marriott Hotel Jeddah is anticipated to be a haven for travelers who seek a luxury escape to the waterfront destination, paired with exceptional service and holistic well-being experiences.',
+    //     url: '',
+    // }
 ]
 export const ARTICLE_DATA_AR = [
     {
@@ -616,7 +628,7 @@ export default function Page({ seomatic, partners }) {
 
 
             {/* RESULTS 2025 */}
-            <div className="bg-primary-2 py-xs">
+            <div className="bg-primary-2-dark py-xs">
                 {
                     locale === 'ar'
                         ?
@@ -641,6 +653,80 @@ export default function Page({ seomatic, partners }) {
                 }
             </div>
 
+            
+
+            {/* VIDEO HIGHLIGHTS */}
+            <section className="block bg-primary-2 o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
+                <div className={`${CSS.highlightVideoGrid} container`}>
+                    <Slide><p className='fs-1 fw-700 lh-1'>Highlights from FHS Saudi Arabia 2026</p></Slide>
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/EL1P5PTvyp4`} />
+                </div>
+            </section>
+
+            
+            {/* ANNOUNCEMENTS */}
+            <Section
+                backgroundClass={`bg-primary`}
+                themeGraphics={
+                    isDesktop
+                    ?   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            opacity={.4}
+                            coordinates={{ left: `-20%`, top: `-10%`}}
+                        />
+                    :   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            opacity={.4}
+                            width="150vw"
+                            coordinates={{ top: `30%`}}
+                        />
+                        
+                }
+            >
+
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-2 fw-600 c-white">
+                            {
+                                locale === 'ar'
+                                    ? `إعلانات وتوقيعات عام 2026`
+                                    : `2026 Signings & Announcements`
+                            }
+                        </p>
+                    </Fade>
+                </div>
+
+                <div className={`container columns-4 gap-xs`}>
+                    {
+                        ARTICLE_DATA.map((article, index) => (
+                            <ContentCard
+                                key={index}
+                                heroUrl={article.heroUrl}
+                                heading={article.title}
+                                excerpt={article.excerpt}
+                                url={article.url}
+                            />
+                        ))
+                    }
+                </div>
+
+                <div className="container center">
+                    <Pop>
+                        <ArrowButton 
+                            href={ '/sa/content-library/category/press-room' } 
+                            theme={{ arrow: `white`, border: `white`, label: `white` }}
+                            target={`_blank`}
+                        >
+                            {
+                                locale === 'ar'
+                                    ? `أخر الأخبار والمستجدات`
+                                    : `Latest News & Updates`
+                            }
+                            
+                        </ArrowButton>
+                    </Pop>
+                </div>
+            </Section>
 
 
             {/* SPEAKERS */}
@@ -908,8 +994,8 @@ export default function Page({ seomatic, partners }) {
                 <ThemesSlider
                     heading={locale === 'ar' ? `محاور فعالية 2026` : `2026 Event Themes` }
                     data={locale === 'ar' ? THEMES_DATA_AR : THEMES_DATA}
-                    link={'/sa/ai-session-summaries-2025'}
-                    linkLabel={locale === 'ar' ? `تحميل ملخصات جلسات بالذكاء الاصطناعي` : 'Download AI Session Summaries'}
+                    // link={'/sa/ai-session-summaries-2025'}
+                    // linkLabel={locale === 'ar' ? `تحميل ملخصات جلسات بالذكاء الاصطناعي` : 'Download AI Session Summaries'}
                 />
             </Section>
 
@@ -940,19 +1026,8 @@ export default function Page({ seomatic, partners }) {
 
 
 
-            {/* VIDEO HIGHLIGHTS */}
-
-            <section className="block bg-primary-2 o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
-                <div className={`${CSS.highlightVideoGrid} container`}>
-                    <Slide><p className='fs-1 fw-700 lh-1'>Highlights from FHS Saudi Arabia 2026</p></Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/CogYrzm02Xo`} />
-                </div>
-            </section>
-
-
-
             {/* THOUGHT LEADERSHIP */}
-            <section className="block bg-primary">
+            <section className="block bg-primary-2">
                 <div className="container center">
                     <Pop><p className="fs-2 fw-600 balance">{locale === 'ar' ? 'القيادة الفكرية في قلب الحدث' : 'Thought Leadership in Action'}</p></Pop>
                 </div>
@@ -999,7 +1074,7 @@ export default function Page({ seomatic, partners }) {
 
             {/* TESTIMONIALS */}
             <Section
-                backgroundClass={`bg-primary-2`}
+                backgroundClass={`bg-primary`}
                 themeGraphics={
                     isDesktop
                     ?   <ThemeGraphic
@@ -1045,69 +1120,7 @@ export default function Page({ seomatic, partners }) {
 
 
 
-            {/* ANNOUNCEMENTS */}
-            <Section
-                backgroundClass={`bg-primary`}
-                themeGraphics={
-                    isDesktop
-                    ?   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            opacity={.4}
-                            coordinates={{ left: `-20%`, top: `-10%`}}
-                        />
-                    :   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            opacity={.4}
-                            width="150vw"
-                            coordinates={{ top: `30%`}}
-                        />
-                        
-                }
-            >
-
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-2 fw-600 c-white">
-                            {
-                                locale === 'ar'
-                                    ? `إعلانات وتوقيعات عام 2025`
-                                    : `2025 Signings & Announcements`
-                            }
-                        </p>
-                    </Fade>
-                </div>
-
-                <div className={`container columns-4 gap-xs`}>
-                    {
-                        ( locale === 'ar' ? ARTICLE_DATA_AR : ARTICLE_DATA).map((article, index) => (
-                            <ContentCard
-                                key={index}
-                                heroUrl={article.heroUrl}
-                                heading={article.title}
-                                excerpt={article.excerpt}
-                                url={article.url}
-                            />
-                        ))
-                    }
-                </div>
-
-                <div className="container center">
-                    <Pop>
-                        <ArrowButton 
-                            href={ '/sa/content-library/category/press-room' } 
-                            theme={{ arrow: `white`, border: `white`, label: `white` }}
-                            target={`_blank`}
-                        >
-                            {
-                                locale === 'ar'
-                                    ? `أخر الأخبار والمستجدات`
-                                    : `Latest News & Updates`
-                            }
-                            
-                        </ArrowButton>
-                    </Pop>
-                </div>
-            </Section>
+            
 
 
             

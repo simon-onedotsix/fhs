@@ -103,11 +103,15 @@ export const ThemesSlider = ({ data, heading, link, linkLabel }) => {
 
 			</section>
 
-			<div className={`${CSS.footer} block pt-md center`}>
-				<Link href={link}>
-					<a className={CSS.button}>{linkLabel}</a>
-				</Link>
-			</div>
+			{
+				link &&
+				<div className={`${CSS.footer} block pt-md center`}>
+					<Link href={link}>
+						<a className={CSS.button}>{linkLabel}</a>
+					</Link>
+				</div>
+
+			}
 		</>
     )
 }
