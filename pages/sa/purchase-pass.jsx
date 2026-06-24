@@ -81,6 +81,8 @@ function PurchasePass({ seomatic, entry }) {
 								<p className='fs-1 fw-600 c-secondary'>Purchase Pass</p>
 								<br />
 								<p className="maxw-45">Discounted rates below are exclusively available for hotel operators, owners, developers, investors/banks, consultants, architects, lawyers, Govt. officials. If your organisation does not fall within these categories, please email <a href="hello@thebench.com">hello@thebench.com</a> to register.</p>
+								<br />
+								<p>Registration for 2027 will open soon.</p>
 
 								{
 									!regularPasses.length
