@@ -77,55 +77,42 @@ export const ARTICLE_DATA = [
         url: '/sa/content-library/shaza-hotels-expands-saudi-arabia-portfolio-with-signing-of-shaza-riyadh-stables-resort',
     },
     {
-        heroUrl: '/assets/img/sa/press-release-1.webp',
-        title: 'Rua Al Madinah Holding Signs Agreement With Hilton To Open Three Hotels At Rua Al Madinah Project',
-        excerpt: 'Rua Al Madinah Holding has signed an agreement with Hilton to open three hotels comprising of over 1600 keys.',
-        url: '/sa/content-library/rua-al-madinah-holding-signs-agreement-with-hilton-to-open-three-hotels-at-rua-al-madinah-project',
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/AY24762-copy.jpg.jpeg',
+        title: 'Sophos Hotels Co. and SAS Hotels Co. expand Partnership with Four Points by Sheraton Hafar Al Batin',
+        excerpt: 'Sophos Hotels Co. and SAS Hotels Co. have announced a new agreement to manage Four Points by Sheraton Hafar Al Batin, set to open in July 2026.',
+        url: '/sa/content-library/sophos-hotels-co-and-sas-hotels-co-expand-partnership-with-four-points-by-sheraton-hafar-al-batin',
     },
     {
-        heroUrl: '/assets/img/sa/press-release-2.webp',
-        title: 'Radisson Hotel Group accelerates expansion strategy in Saudi Arabia with focus on holy cities',
-        excerpt: 'Radisson Hotel Group continues to intensify its efforts in the Kingdom of Saudi Arabia, aligning with the Saudi 2030 vision for hospitality.',
-        url: '/sa/content-library/radisson-hotel-group-accelerates-expansion-strategy-in-saudi-arabia-with-focus-on-holy-cities',
-    },
-    // {
-    //     heroUrl: '/assets/img/sa/press-release-3.webp',
-    //     title: 'Accor spearheads hospitality expansion throughout Saudi Arabia',
-    //     excerpt: "As the largest hotel operator in Saudi Arabia, Accor is spearheading a strategic transformation of the country's tourism sector, marking a new era of hospitality in the Kingdom.",
-    //     url: '/sa/content-library/accor-spearheads-hospitality-expansion-throughout-saudi-arabia-2',
-    // },
-    // {
-    //     heroUrl: '/assets/img/sa/press-release-4.webp',
-    //     title: 'Marriott International and Al Qimmah Hospitality Sign Agreement to Open a JW Marriott Hotel in Jeddah',
-    //     excerpt: 'Marriott International, Inc. and Al Qimmah Hospitality (a subsidiary of BinDawood Trading) today announced the signing of an agreement to introduce the JW Marriott brand in Jeddah. Situated on the Jeddah Corniche, JW Marriott Hotel Jeddah is anticipated to be a haven for travelers who seek a luxury escape to the waterfront destination, paired with exceptional service and holistic well-being experiences.',
-    //     url: '',
-    // }
-]
-export const ARTICLE_DATA_AR = [
-    {
-        heroUrl: '/assets/img/sa/press-release-1.webp',
-        title: `رؤى المدينة القابضة توقّع اتفاقية مع هيلتون لافتتاح ثلاث فنادق ضمن مشروع رُوى المدينة`,
-        excerpt: `أعلنت شركة رؤى المدينة القابضة عن توقيع اتفاقية مع مجموعة هيلتون لافتتاح ثلاث فنادق تضم أكثر من 1600 غرفة.`,
-        url: '/sa/content-library/rua-al-madinah-holding-signs-agreement-with-hilton-to-open-three-hotels-at-rua-al-madinah-project',
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/AY24508.jpg',
+        title: 'Al Khozama to Operate Prime Club in Riyadh’s Al Nakheel District',
+        excerpt: 'Al Khozama has signed an Operating Agreement with Tharawat and Mawan Real Estate Development to operate Prime Club in Riyadh’s Al Nakheel district.',
+        url: '/sa/content-library/al-khozama-to-operate-prime-club-in-riyadhs-al-nakheel-district',
     },
     {
-        heroUrl: '/assets/img/sa/press-release-2.webp',
-        title: `مجموعة فنادق راديسون تُسرّع استراتيجية التوسع في المملكة العربية السعودية مع التركيز على مكة والمدينة المنورة.`,
-        excerpt: `تواصل مجموعة فنادق راديسون تكثيف جهودها في المملكة العربية السعودية، تماشيًا مع رؤية السعودية 2030 لقطاع الضيافة.`,
-        url: '/sa/content-library/radisson-hotel-group-accelerates-expansion-strategy-in-saudi-arabia-with-focus-on-holy-cities',
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/AY24590.jpg',
+        title: 'Al Khozama and Mishal bin Abdullah Al Rajhi Investment Company Sign an Agreement to Develop and Operate Maraya Al Faisaliah in Wadi Hanifah',
+        excerpt: 'Al Khozama has signed an agreement with Mishal bin Abdullah Al Rajhi Investment Company to develop and operate Maraya Al Faisaliah in Wadi Hanifah, Riyadh.',
+        url: '/sa/content-library/al-khozama-and-mishal-bin-abdullah-al-rajhi-investment-company-sign-an-agreement-to-develop-and-operate-maraya-al-faisaliah-in-wadi-hanifah',
     },
     {
-        heroUrl: '/assets/img/sa/press-release-3.webp',
-        title: `مجموعة أكور تتصدر توسع الضيافة في جميع أنحاء المملكة العربية السعودية`,
-        excerpt: `بصفتها أكبر مشغل فنادق في المملكة، تتصدر أكور عملية التحول الاستراتيجي لقطاع السياحة، لتعلن بذلك بداية عصر جديد للضيافة في المملكة.`,
-        url: '/sa/content-library/accor-spearheads-hospitality-expansion-throughout-saudi-arabia-2',
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/AY24474.jpg',
+        title: 'Al Khozama and Ethar Al Jawdah Develop The Mark in Riyadh’s Al Ghadeer District',
+        excerpt: 'Al Khozama, in partnership with Ethar Al Jawdah, has announced The Mark, a mixed-use destination in Riyadh’s Al Ghadeer District.',
+        url: '/sa/content-library/al-khozama-and-ethar-al-jawdah-develop-the-mark-in-riyadhs-al-ghadeer-district',
     },
     {
-        heroUrl: '/assets/img/sa/press-release-4.webp',
-        title: `ماريوت الدولية و"القمة للضيافة" يوقعان اتفاقية لافتتاح فندق جي دبليو ماريوت في جدة`,
-        excerpt: `أعلنت شركة ماريوت الدولية والقمة للضيافة (إحدى الشركات التابعة لشركة بن داود التجارية) عن توقيع اتفاقية لإطلاق علامة جي دبليو ماريوت في مدينة جدة. سويف يقام فندق جي دبليو ماريوت على كورنيش جدة، ومن المتوقع أن يكون ملاذًا فاخرًا للمسافرين الباحثين عن تجربة إقامة فاخرة على الواجهة البحرية، مع خدمات استثنائية وتجارب شاملة للعافية والرفاهية.`,
-        url: '',
-    }
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/Handwritten.jpg',
+        title: 'Accor and Amsa Hospitality Expand Handwritten Collection in Saudi Arabia with First Opening in Qassim',
+        excerpt: 'Accor and Amsa Hospitality have announced the signing of The Palm Qassim – Handwritten Collection, the first Handwritten Collection property in Saudi Arabia.',
+        url: '/sa/content-library/accor-and-amsa-hospitality-expand-handwritten-collection-in-saudi-arabia-with-first-opening-in-qassim',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/Unknown_2026-06-24-071324_vmle.jpeg',
+        title: 'Amsa Hospitality and Radisson Hotel Group Announce Hotel Apartments and Villas in Riyadh’s Diplomatic Quarte',
+        excerpt: 'Amsa Hospitality and Radisson Hotel Group have announced the signing of AMSA VUE Riyadh Diplomatic Quarter, a Member of Radisson Individuals, at FHS Saudi Arabia 2026.',
+        url: '/sa/content-library/amsa-hospitality-and-radisson-hotel-group-announce-hotel-apartments-and-villas-in-riyadhs-diplomatic-quarte',
+    },
+
 ]
 
 
