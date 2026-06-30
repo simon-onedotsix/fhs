@@ -3,6 +3,8 @@ import { useState, useRef } from "react"
 import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import { motion, useScroll, useTransform } from "framer-motion"
 
+import _ from 'lodash'
+
 import Head from "next/head"
 import Image from "next/image"
 import Link from "next/link"
@@ -241,7 +243,7 @@ export default function Page({ speakers }) {
                 <div className="container columns-5 gap-sm">
                     {
                         speakers.length &&
-                        speakers.map( (profile, index) => (
+                        _.orderBy(speakers, 'lastName').map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
                                     url={`/egypt/speakers/${profile.id}`}
