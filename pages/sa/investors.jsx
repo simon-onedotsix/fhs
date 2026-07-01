@@ -135,17 +135,17 @@ export default function Page () {
                                     {
                                         locale === 'ar'
                                         ?
-                                        "2025 بالأرقام"
+                                        "2026 بالأرقام"
                                         :
-                                        "2025 in Numbers"
+                                        "2026 in Numbers"
                                     }
                                 </p>
                             </Fade>
                             <div className="columns-4 gap-sm mt-md">
-                                <InvestorImpact figure={254} label={ locale === 'ar' ? "مستثمرًا" : "Investors"} />
-                                <InvestorImpact figure={20} unit={"%"} label={ locale === 'ar' ? "من الحضور" : "of Attendees"} />
-                                <InvestorImpact prefix={'$'} figure={1.6} unit={'B'} label={ locale === 'ar' ? "1.1 مليار دولار قيمة صفقات وفرص تجارية مُحققة في 2024" : "In business opportunities and deals volume gained"} />
-                                <InvestorImpact figure={11} label={ locale === 'ar' ? "" : "Deals Signed"} />
+                                <InvestorImpact prefix={'$'} figure={4.8} unit={'tn'} label={"in AUM"} />
+                                <InvestorImpact figure={18} unit={"%"} label={"of Total Attendees"} />
+                                <InvestorImpact figure={80} unit={`+`} label={"Meetings Facilitated"} />
+                                <InvestorImpact figure={160} unit={`+`} label={"Investors"} />
                             </div>
                         </div>
 
@@ -158,8 +158,8 @@ export default function Page () {
             <section className="block bg-primary">
                 <div className="container center formatted">
                     <Pop inline>
-                        <Link href="https://share.hsforms.com/1QE6T_8dHTi-yjWLzMytQmw8nd8z" target="_blank">
-                            <a className="button fs-5 caps">Apply for Investor Pass</a>
+                        <Link href="https://share.hsforms.com/1aIMLqXtbRs-DNR1lhYzD7g8nd8z" target="_blank">
+                            <a className="button fs-5 caps">Register Interest for 2027</a>
                         </Link>
                     </Pop>
                 </div>
@@ -320,13 +320,15 @@ export default function Page () {
 
                             <h2>FHS DEALROOM</h2>
                             <p>Publish your project on the FHS website (subject to the investor&apos;s preference) for exposure to our global network of over 113,000 engaged users, connecting you with targeted investors and industry leaders. Select projects will be featured in our exclusive DealRoom at the Investor Breakfast, where senior decision-makers from top investment firms, REITs, family offices, and financial institutions can engage directly with owners, ensuring transparent dialogue and access to active capital.</p>
-                            <p className='mt-md'>
+                            
+                            <p className='fw-600 fs-6 mt-sm'>Applications for FHS Dealroom will open soon.</p>
+                            {/* <p className='mt-md'>
                                 <Pop inline>
                                     <Link href="https://share.hsforms.com/1zaAPAyl_QL6Nl3XPCTbB_A8nd8z" target="_blank">
                                         <a className="button fs-5 caps">Submit Project</a>
                                     </Link>
                                 </Pop>
-                            </p>
+                            </p> */}
                             
                         </Slide>
                     </div>
@@ -416,7 +418,7 @@ export default function Page () {
                 heading={`Investor-Speakers at FHS Saudi Arabia 2026`} 
                 color={`c-white`}
                 text={``}
-                decal={'bg-primary'}
+                decal={'bg-primary balance'}
                 ctaLink={'/sa/speakers'}
                 ctaLabel={'View All Speakers'}
             >
@@ -555,7 +557,7 @@ export default function Page () {
 
             {/* PAST INVESTORS */}
             
-            <section className="block bg-default">
+            {/* <section className="block bg-default">
                 <div className="container center">
                     <p className='fs-1 fw-600 c-primary'>
                         {
@@ -718,7 +720,7 @@ export default function Page () {
                         
                     </article>
                 </div>
-            </section>
+            </section> */}
 
 
             <PopOverlay id={"sa2026prospectus"}>

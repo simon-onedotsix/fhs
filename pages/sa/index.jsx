@@ -467,6 +467,75 @@ const THOUGHT_LEADERSHIP_AR = [
     }
 ]
 
+const photos = [
+    {
+        "id": "13864",
+        "hero": [
+            {
+                "id": "50183",
+                "url": "/assets/img/sa/homepage/fhs-2026-01.jpg",
+                "width": 800,
+                "height": 533
+            }
+        ]
+    },
+    {
+        "id": "13865",
+        "hero": [
+            {
+                "id": "50184",
+                "url": "/assets/img/sa/homepage/fhs-2026-02.jpg",
+                "width": 800,
+                "height": 533
+            }
+        ]
+    },
+    {
+        "id": "13867",
+        "hero": [
+            {
+                "id": "50186",
+                "url": "/assets/img/sa/homepage/fhs-2026-03.jpg",
+                "width": 800,
+                "height": 533
+            }
+        ]
+    },
+    {
+        "id": "13868",
+        "hero": [
+            {
+                "id": "50187",
+                "url": "/assets/img/sa/homepage/fhs-2026-04.jpg",
+                "width": 800,
+                "height": 533
+            }
+        ]
+    },
+    {
+        "id": "50206",
+        "hero": [
+            {
+                "id": "50189",
+                "url": "/assets/img/sa/homepage/fhs-2026-05.jpg",
+                "width": 800,
+                "height": 533
+            }
+        ]
+    },
+    {
+        "id": "50207",
+        "hero": [
+            {
+                "id": "50193",
+                "url": "/assets/img/sa/homepage/fhs-2026-06.jpg",
+                "width": 800,
+                "height": 533
+            }
+        ]
+    },
+]
+
 export default function Page({ seomatic, partners }) {
     
     const { locale } = useRouter()
@@ -651,7 +720,7 @@ export default function Page({ seomatic, partners }) {
             </section>
 
             
-            {/* ANNOUNCEMENTS */}
+            {/* SIGNINGS & ANNOUNCEMENTS */}
             <Section
                 backgroundClass={`bg-primary`}
                 themeGraphics={
@@ -712,6 +781,32 @@ export default function Page({ seomatic, partners }) {
                             
                         </ArrowButton>
                     </Pop>
+                </div>
+            </Section>
+
+            
+            {/* PHOTOS */}
+            <Section backgroundClass={`bg-primary-2`}>
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-2 fw-600 c-white">2026 in Photos</p>
+                    </Fade>
+                </div>
+
+                <div className="container columns-3 gap-xs mt-md">
+                    {
+                        photos.map( (photo, index) => (
+                            <Pop key={index}>
+                                <div key={photo.id} style={{ position: `relative`}}>
+                                    <Image src={photo.hero[0].url} width={photo.hero[0].width} height={photo.hero[0].height} layout={`responsive`} alt="" style={{ borderRadius: `.5rem`}} />
+                                </div>
+                            </Pop>
+                        ))
+                    }
+                </div>
+
+                <div className="container mt-xs center">
+                    <Pop><ArrowButton href={`https://www.flickr.com/photos/benchevents/albums/`} target='_blank' theme={{ arrow: `white`, border: `white`, label: `white`}}>Event photos</ArrowButton></Pop>
                 </div>
             </Section>
 

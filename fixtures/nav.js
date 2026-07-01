@@ -450,13 +450,13 @@ export const FHS_SA = {
                         "navUrl": "/sa/sustainability",
                         "target": false
                     },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "199",
-                        "title": "Travel Guide",
-                        "navUrl": "/sa/travel-guide",
-                        "target": false
-                    },
+                    // {
+                    //     "__typename": "navigation_Entry",
+                    //     "id": "199",
+                    //     "title": "Travel Guide",
+                    //     "navUrl": "/sa/travel-guide",
+                    //     "target": false
+                    // },
                     {
                         "__typename": "subsection_Entry",
                         "id": "223",
@@ -601,8 +601,8 @@ export const FHS_SA = {
                         "__typename": "navigation_Entry",
                         "id": "217",
                         "title": "3D Virtual Tour",
-                        "navUrl": "https://my.matterport.com/show/?m=Nn3AYQrQhqz",
-                        "target": false
+                        "navUrl": "https://my.matterport.com/show/?m=n62kHSDpDKm",
+                        "target": true
                     }
                 ]
             },
