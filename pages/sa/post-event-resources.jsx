@@ -53,7 +53,7 @@ export default function PostEvent ({ cmsEntryData }) {
 
 
     useEffect( ()=> {
-        if ( localStorage.getItem("fhsSaPostEvent2025") === "true" ) {
+        if ( localStorage.getItem("fhsSaPostEvent2026") === "true" ) {
             setAllowed( true )
         } else {
             setAllowed( false )
@@ -67,7 +67,7 @@ export default function PostEvent ({ cmsEntryData }) {
         // SET HUBSPOT LIST ID BELOW
         const reqBody = {
             email: emailInputRef.current.value,
-            hubspotListId: '1237'
+            hubspotListId: '3233'
         }
 
         fetch('/api/delegate-auth', {
@@ -82,7 +82,7 @@ export default function PostEvent ({ cmsEntryData }) {
             console.log(data)
             if ( data.isOnList === true ) {
                 setAllowed( true )
-                localStorage.setItem("ahifPostEvent", "true")
+                localStorage.setItem("fhsSaPostEvent2026", "true")
             } else {
                 setAllowed( false )
                 setMessage("<p><span className='fw-500'>Email not found!</span> See below to register for access.</p>")
@@ -113,7 +113,7 @@ export default function PostEvent ({ cmsEntryData }) {
                     <div className={CSS.contentScroller}>
                         <div className={CSS.content}>
                             <div className="container center">
-                                <p className='fs-2 fw-600 lh-1 c-primary'>FHS Saudi Arabia 2025 - Resources</p>
+                                <p className='fs-2 fw-600 lh-1 c-primary'>FHS Saudi Arabia 2026 - Resources</p>
                             </div>
                             <div className="container center">
                                 <p>Please enter your email below to access.</p>
@@ -144,8 +144,8 @@ export default function PostEvent ({ cmsEntryData }) {
                     <button className={CSS.closeButton} onClick={() => setShowForm(false)}>&times;</button>
                     <div className={CSS.contentScroller}>
                         <div className={CSS.content}>
-                            <p className='mb-sm maxw-30'>Please complete the form below to register and access content and insights from FHS Saudi Arabia 2025.</p>
-                            <HubspotForm portalId={'14527187'} formId={'747f6371-f812-4f58-8fc6-a5e6d1798537'} />
+                            <p className='mb-sm maxw-30'>Please complete the form below to register and access content and insights from FHS Saudi Arabia 2026.</p>
+                            <HubspotForm portalId={'14527187'} formId={'92c29fc8-ac56-46b5-82dc-af7d75ad6173'} />
                         </div>
                     </div>
                 </section>
