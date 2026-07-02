@@ -168,13 +168,13 @@ const photos = [
 
 const SPEAKERS = [
     {
-        "id": "RXZlbnRQZW9wbGVfNDY1MDgzNTg=",
+        "id": "RXZlbnRQZW9wbGVfNDcxMDQxMzc=",
         "type": "Speaker",
-        "firstName": "Ho",
-        "lastName": "Kwon Ping",
-        "jobTitle": "Founder and Executive Chairman",
-        "organization": "Banyan Group",
-        "photoUrl": "https://static.swapcard.com/public/images/03a47481a1344b03a90e04c057017377.jpeg",
+        "firstName": "Hamza",
+        "lastName": "Farooqui",
+        "jobTitle": "Founder & CEO",
+        "organization": "Millat Group",
+        "photoUrl": "https://static.swapcard.com/public/images/4647f1b3e985405383b25e68d832ede9.jpeg",
     },
     {
         "id": "RXZlbnRQZW9wbGVfNDY1MDg0OTk=",
@@ -396,7 +396,7 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
                             SPEAKERS.map((profile, index) => (
                                 <Pop key={index}>
                                     <SpeakerCard
-                                        url={`world/speakers/profile/${profile.slug}`}
+                                        url={`world/speakers/${profile.id}`}
                                         photoUrl={profile.photoUrl ? profile.photoUrl : null }
                                         fullName={`${profile.firstName} ${profile.lastName}`}
                                         jobTitle={profile.jobTitle}

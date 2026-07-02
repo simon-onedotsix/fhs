@@ -158,11 +158,12 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 											{
 												_.orderBy( category.partners, [(p) => p.name.toLowerCase()] ).map(partner => (
 													<a key={partner.id} href={`/world/partners/${partner.id}`}>
+														{/* <span style={{ color: `lime`}}>{partner.id}</span> */}
 														{
 															partner.logoUrl &&
 															<PartnerLogo 
 																src={ partner.logoUrl } 
-																label={ partner.id === "RXhoaWJpdG9yXzIzOTI3MTI=" && 'China' }
+																label={``}
 															/>
 														}
 													</a>
