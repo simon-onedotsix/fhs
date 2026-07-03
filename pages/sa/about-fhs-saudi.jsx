@@ -244,15 +244,15 @@ export default function Page () {
                             locale  === 'ar' 
                             ? 
                                 <>
-                                    <p className='mt-sm'>Future Hospitality Summit Saudi Arabia is the Kingdom&apos;s most senior hospitality investment forum, bringing together government stakeholders, sovereign and institutional capital, leading developers, and global hotel and lifestyle operators. It is a deal-led platform focused on investment, partnerships, and delivery aligned directly with Vision 2030.</p>
+                                    <p className='mt-sm'>Future Hospitality Summit Saudi Arabia is the Kingdom&apos;s leading hospitality investment forum, bringing together government stakeholders, sovereign and institutional capital, developers, investors, and global hotel and lifestyle operators. The summit is a deal-led platform focused on investment, partnerships, and delivery in support of Vision 2030.</p>
                                     
-                                    <p>An esteemed collection of highly respected, experienced and knowledgeable local and global hospitality and tourism leaders will take to the stage at FHS Saudi Arabia 2027, where more than 1,100 global hospitality investors, innovators and decision-makers will gather to shape the future of hospitality in the Kingdom.</p>
+                                    <p>In 2026, FHS Saudi Arabia welcomed 1000+ attendees, 130+ speakers and 65+ partners. Investors made up 20% of the audience, representing approximately USD 4.8 trillion in assets under management, reinforcing the summit&apos;s role as a key meeting place for the people shaping the future of hospitality in the Kingdom.</p>
                                 </>
                             :
                                 <>
-                                    <p className='mt-sm'>Future Hospitality Summit Saudi Arabia is the Kingdom&apos;s most senior hospitality investment forum, bringing together government stakeholders, sovereign and institutional capital, leading developers, and global hotel and lifestyle operators. It is a deal-led platform focused on investment, partnerships, and delivery aligned directly with Vision 2030.</p>
+                                     <p className='mt-sm'>Future Hospitality Summit Saudi Arabia is the Kingdom&apos;s leading hospitality investment forum, bringing together government stakeholders, sovereign and institutional capital, developers, investors, and global hotel and lifestyle operators. The summit is a deal-led platform focused on investment, partnerships, and delivery in support of Vision 2030.</p>
                                     
-                                    <p>An esteemed collection of highly respected, experienced and knowledgeable local and global hospitality and tourism leaders will take to the stage at FHS Saudi Arabia 2027, where more than 1,100 global hospitality investors, innovators and decision-makers will gather to shape the future of hospitality in the Kingdom.</p>
+                                    <p>In 2026, FHS Saudi Arabia welcomed 1000+ attendees, 130+ speakers and 65+ partners. Investors made up 20% of the audience, representing approximately USD 4.8 trillion in assets under management, reinforcing the summit&apos;s role as a key meeting place for the people shaping the future of hospitality in the Kingdom.</p>
                                 </>
                         }
 

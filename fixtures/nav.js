@@ -119,11 +119,25 @@ export const FHS_WORLD = {
                 ]
             },
             {
-                "__typename": "navigation_Entry",
+                "__typename": "section_Entry",
                 "id": "12137",
                 "title": "Investors",
-                "navUrl": "/world/investors",
-                "children": []
+                "children": [
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "23556666777",
+                        "title": "Investors",
+                        "navUrl": "/world/investors",
+                        "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "23556666777",
+                        "title": "FHS Dealroom",
+                        "navUrl": "/world/fhs-dealroom",
+                        "target": false
+                    },
+                ]
             },
             {
                 "__typename": "section_Entry",
