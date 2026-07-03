@@ -72,15 +72,16 @@ function PurchasePass({ seomatic, entry }) {
 
 					<section className={`block bg-default pb-0`}>
 						<div
-							className="container columns-2 gap-md"
+							className="container columns-1 gap-md"
 							// style={{
 							// 	gridTemplateColumns: isDesktop ? `1fr 2fr` : `1fr`
 							// }}
 						>
-							<div>								
-								<p className='fs-1 fw-600 c-secondary'>Purchase Pass</p>
+							<div className="maxw-45">								
+								{/* <p className='fs-1 fw-600 c-secondary'>Purchase Pass</p> */}
+								<p className='fs-1 fw-600 c-secondary balance'>Register Interest for 2027 Edition</p>
 								<br />
-								<p className="maxw-45">Discounted rates below are exclusively available for hotel operators, owners, developers, investors/banks, consultants, architects, lawyers, Govt. officials. If your organisation does not fall within these categories, please email <a href="hello@thebench.com">hello@thebench.com</a> to register.</p>
+								<p>Discounted rates below are exclusively available for hotel operators, owners, developers, investors/banks, consultants, architects, lawyers, Govt. officials. If your organisation does not fall within these categories, please email <a href="hello@thebench.com">hello@thebench.com</a> to register.</p>
 								<br />
 								<p>Registration for 2027 will open soon.</p>
 
@@ -123,7 +124,7 @@ function PurchasePass({ seomatic, entry }) {
 					</section>
 
 
-					<section className="block">
+					<section className="block bg-default">
 						<div className="container">
 							<p className="fs-2 fw-500 c-primary">Special Passes</p>
 						</div>

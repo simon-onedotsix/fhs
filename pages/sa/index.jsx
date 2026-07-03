@@ -634,6 +634,15 @@ export default function Page({ seomatic, partners }) {
                                 accent
                             >{ locale === 'ar' ? `2026 Investor Attendees` : `2026 Investor Attendees`}</Button>
                         </Pop>
+
+                        <Pop inline>
+                            <Button 
+                                href={'/sa/post-event-resources'} 
+                                theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
+                                decal={'fs-5 fw-600'} 
+                                accent
+                            >2026 Post-event Resources</Button>
+                        </Pop>
                     </div>
                 </Fade>
 

@@ -316,13 +316,27 @@
 }
 
 
-/* LAPTOP S */
+
+/* font size adjustments ========================================== */
+
+/* SMALLER SCREENS */
+@media(max-width:1400px) {
+    .mainMenu {
+        font-size: .8rem;
+    }
+}
+/* LAPTOP S (1280 x 800) */
 @media screen and (min-width: 800px) and (max-width: 1280px) and (max-height:800px) {
+    .mainMenu {
+        font-size: .85rem;
+    }
+}
+/* NOTEBOOK (1366 x 768) */
+@media screen and (width: 1366px) and (max-height:768px) {
     .mainMenu {
         font-size: .9rem;
     }
 }
-
 
 
 

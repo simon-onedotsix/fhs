@@ -776,7 +776,7 @@ export const FHS_SA = {
             "metaDescription": null,
             "headerCtas": [
                 {
-                    "label": "Register Interest",
+                    "label": "Register Interest for 2027",
                     "hyperlink": "/sa/purchase-pass",
                     "openInNewWindow": false
                 },
