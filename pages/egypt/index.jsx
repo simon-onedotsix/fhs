@@ -13,15 +13,15 @@ import Ticker from 'framer-motion-ticker'
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Reveal } from "../../fuselage/animation/reveal"
 
-
 import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
 import { FHS_EGYPT as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/egypt/common/footer/footer'
 
+import { PageHeroVideo } from "../../ui/modules/page-hero-video"
+import { Dunes } from "../../fuselage/theme/egypt/page-hero-themed/page-hero-themed"
 import { Countdown } from "../../fuselage/theme/egypt/components/countdown/countdown"
-
-import { Button } from "../../ui/buttons/button"
+import { Button, ButtonGrid } from "../../ui/buttons/button"
 import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 import { PageHeroThemed } from "../../fuselage/theme/egypt/page-hero-themed/page-hero-themed"
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
@@ -41,20 +41,6 @@ import CSS from '../../fuselage/theme/egypt/css/homepage.module.css'
 
 const SPEAKER_DATA = [
     {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDEwMzg5NzY=`,
-        photoUrl: 'https://static.swapcard.com/public/images/42ee3cc4823e43319c9ff340311e8e79.jpeg',
-        fullName: 'HE Abdulla bin Touq Al Marri',
-        jobTitle: 'Minister of Economy and Tourism',
-        company: 'United Arab Emirates',
-    },
-    {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDI3NzY2MzM=`,
-        photoUrl: 'https://static.swapcard.com/public/images/a7e9bcb0c81141618078496f4fe860ec.jpeg',
-        fullName: 'HE Patricia De Lille',
-        jobTitle: 'Minister of Tourism',
-        company: 'Republic of South Africa',
-    },
-    {
         url: `/world/speakers/profile/h-e-mohamed-ali-rashed-alabbar`,
         photoUrl: 'https://cms.thebench.com/assets/img/avatars/Alabbar_Mohamed_sq.jpg',
         fullName: 'H.E. Mohamed Ali Rashed Alabbar',
@@ -62,40 +48,27 @@ const SPEAKER_DATA = [
         company: '',
     },
     {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDA2MDQ1NDk=`,
-        photoUrl: 'https://static.swapcard.com/public/images/a8a3eed89c99418ea55cedd0edf6ea16.jpeg',
+        url: null,
+        photoUrl: 'https://static.swapcard.com/public/images/f8635bf938934af3af21186cca1768de.jpeg',
         fullName: 'HE Shaikha Nasser Al Nowais',
-        jobTitle: 'Secretary-General Elect',
-        company: 'UN Tourism',
+         jobTitle: 'Chairman of the Board of Directors',
+        company: 'Rotana Hotel Management Corporation P.J.S.C',
     },
     {
-        url: `/world/speakers/profile/sébastien-bazin`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Bazin_Sebastien_cropped.jpg',
-        fullName: 'Sébastien Bazin',
-        jobTitle: 'Group Chairman & CEO',
-        company: 'Accor',
+        url: '/egypt/speakers/RXZlbnRQZW9wbGVfNDcyMTAzOTM=',
+        photoUrl: 'https://static.swapcard.com/public/images/651d88045d184b34a984f5007f20415a.jpeg',
+        fullName: 'Elie Milky',
+         jobTitle: 'Chief Development Officer for the Middle East, Northeast Africa, Greece, and Cyprus',
+        company: 'Radisson Hotel Group',
     },
     {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDAzNDU2NjM=`,
-        photoUrl: 'https://static.swapcard.com/public/images/cd2f0cf8c3f8428e86d86e922f7b64fb.png',
-        fullName: 'Nick Candy',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Candy Capital',
+        url: '/egypt/speakers/RXZlbnRQZW9wbGVfNDcyMTAyODI=',
+        photoUrl: 'https://cdn-api.swapcard.com/public/images/aefdd15eccd248aca1586c93329716d8.jpeg',
+        fullName: 'Dr. Ahmed Shalaby',
+         jobTitle: 'Co-Founder, President & CEO',
+        company: 'Tatweer Misr',
     },
-    {
-        url: `/sa/2025/speakers`,
-        photoUrl: 'https://static.swapcard.com/public/images/b946c29ec7c24b2091410172ac1ed515.jpeg',
-        fullName: 'Jerry Inzerillo',
-        jobTitle: 'Group CEO',
-        company: 'Diriyah Company',
-    },
-    {
-        url: `/sa/2025/speakers`,
-        photoUrl: 'https://static.swapcard.com/public/images/edfc860d7115437ab95c00263a3833b7.jpeg',
-        fullName: 'Maud Bailly',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Sofitel Legend, Sofitel, MGallery & Emblems',
-    },
+    
 ]
 
 import { WEBINAR_SPEAKER_DATA } from "./webinar"
@@ -126,31 +99,35 @@ export default function Home ({ data, content }) {
             />
 
 
+            <PageHeroVideo
+                video={'https://cms.thebench.com/assets/video/fhs-egypt-2026-video-opt.mp4'}
+                poster={'https://cms.thebench.com/assets/video/fhs-egypt-2026-video-opt-poster.jpg'}
+            >
+                
+                <Dunes />
 
-            <PageHeroThemed>
+                <h1 className="fs-0 caps lh-0"><Reveal>Where Heritage <br />Inspires Investment</Reveal></h1>
+                <h4 className="fs-4 pb-md">10-11 November 2026, Sofitel Downtown Cairo Nile</h4>
 
-                <section className="block">
-                    <div className="container" style={{ paddingTop: isDesktop ? `4.5vh` : `10rem` }}>
+                <ButtonGrid>
+                    <Pop inline>
+                        <ButtonKeyline decal={`fs-5`} href={`/egypt/forms/download-prospectus`}>
+                            Download Prospectus
+                        </ButtonKeyline>
+                    </Pop>
+                    <Pop inline>
+                        <ButtonKeyline decal={`fs-5`} href={`/egypt/forms/register-interest`} >
+                            Register Interest
+                        </ButtonKeyline>
+                    </Pop>
+                </ButtonGrid>
+            </PageHeroVideo>
 
-                        <Countdown expiryDate={'05/01/2026'}/>
-                        
-                        <h1 className="fs-0 caps lh-0 c-secondary"><Reveal>Where Heritage <br />Inspires Investment</Reveal></h1>
-                        <h4 className="fs-4 c-secondary">10-11 November 2026, Sofitel Downtown Cairo Nile</h4>
-
-                        <p className="mt-md c-secondary button-grid">
-                            <Pop inline><ButtonKeyline decal={`fs-5`} href={`/egypt/forms/download-prospectus`}>Download Prospectus</ButtonKeyline></Pop>
-                            <Pop inline><ButtonKeyline decal={`fs-5`} href={`/egypt/forms/register-interest`} >Register Interest</ButtonKeyline></Pop>
-                            <Pop inline><ButtonKeyline decal={`fs-5`} href={`https://youtu.be/l1e0wJV3T90`} target={`_blank`} >Watch the Webinar</ButtonKeyline></Pop>
-                        </p>
-                    </div>
-                </section>
-
-            </PageHeroThemed>
 
             
 
             {/* TICKER */}
-            <div className="bg-primary py-xs">
+            <div className="bg-accent py-xs">
                 <Ticker duration={20}>
                     <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$3 billion</strong>  in business opportunities and deal volume gained in 2025 conferences</p>
                     <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">95.8%</strong>  of FHS attendees achieved their networking goals last year</p>
@@ -162,8 +139,45 @@ export default function Home ({ data, content }) {
 
 
 
-            {/* NEW GROWTH CYCLE */}
+            {/* BUILDING MOMENTUM */}
+            <section className="block bg-primary">
+                <div className="container center">
+                    <p className="fs-1 fw-500 lh-1 caps balance">Building Momentum in Cairo</p>
+                </div>
+
+                <div className="container formatted center balance">
+                    <p className="fs-6">Ahead of the main summit in November, FHS Egypt hosted a launch reception in Cairo with 70+ senior hospitality investors, developers and operators. The evening featured market insights from STR and a high-level panel on investing in Egypt, drawing some of the market's most active players.</p>
+                    <p className="fs-6">The conversation has started, see you in November.</p>
+                </div>
+
+                <div className="container center">
+                    <Pop><ButtonKeyline href={`/egypt/forms/register-interest`}>Register Interest</ButtonKeyline></Pop>
+                </div>
+
+                <div className="container pt-xs" style={isDesktop ? { display: `flex`, flexWrap: `wrap`, justifyContent: `center`, gap: `var(--space-sm)` } : { display: `grid`, gap: `var(--space-sm)` }}>
+                    <div style={{width: isDesktop ? `30%` : `100%`}}>
+                        <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-01.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
+                    </div>
+                    <div style={{width: isDesktop ? `30%` : `100%`}}>
+                        <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-02.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
+                    </div>
+                    <div style={{width: isDesktop ? `30%` : `100%`}}>
+                        <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-03.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
+                    </div>
+                    <div style={{width: isDesktop ? `30%` : `100%`}}>
+                        <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-04.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
+                    </div>
+                    <div style={{width: isDesktop ? `30%` : `100%`}}>
+                        <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-05.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
+                    </div>
+
+                </div>
+            </section>
+
             
+
+
+            {/* NEW GROWTH CYCLE */}
             <section className="block bg-secondary">
                 <div className="container center">
                     <p className="fs-1 fw-500 lh-1 caps balance">Key Egypt Insights from the Hotel Chain Development Pipeline Report</p>
@@ -194,87 +208,13 @@ export default function Home ({ data, content }) {
                 </div>
             </section>
 
-
-            {/* NEW GROWTH CYCLE */}
             
-            <section className="block bg-secondary">
-                <div className="container center maxw-45">
-                    <p className="fs-1 fw-500 lh-1">EGYPT IS ENTERING A NEW GROWTH CYCLE</p>
-                </div>
-
-                <div className="container columns-3 gap-md">
-                    <div className="formatted">
-                        <Pop><img src="/assets/img/egypt/homepage/egypt-01.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
-                        <h3 className="balance">Record-Breaking Tourism Demand</h3>
-                        <p className="fs-6">Egypt welcomed 19 million tourists in 2025, setting a new inbound travel record and reinforcing strong demand across leisure and cultural destinations.</p>
-                    </div>
-                    
-                    <div className="formatted">
-                        <Pop><img src="/assets/img/egypt/homepage/egypt-02.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
-                        <h3 className="balance">Growing Hospitality Investment Market</h3>
-                        <p className="fs-6">Egypt&apos;s hospitality market is projected to reach USD 8.8 billion by 2033, supported by rising hotel revenues and continued tourism growth.</p>
-                        <small>Source: IMARC Group 2025</small>
-                    </div>
-
-                    <div className="formatted">
-                        <Pop><img src="/assets/img/egypt/homepage/africa-map.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
-                        <h3 className="balance">Strategic Gateway for Global Capital</h3>
-                        <p className="fs-6">Positioned between Africa, the Middle East, and Europe, Egypt&apos;s Vision 2030 is accelerating infrastructure and tourism investment to support long-term hospitality growth.</p>
-                    </div>
-                </div>
-            </section>
-            
-
-
-            {/* WHO YOU WILL MEET */}
-
-            <section className="block bg-secondary">
-                <div className="container center">
-                    <p className="fs-1 fw-500">WHO YOU WILL MEET</p>
-                </div>
-
-                <div className="container columns-5 gap-sm center formatted">
-                    <Card><h5>Owners, developers and master planners</h5></Card>
-                    <Card><h5>Hotel and resort operators</h5></Card>
-                    <Card><h5>Investors, banks and capital partners</h5></Card>
-                    <Card><h5>Government and tourism leadership</h5></Card>
-                    <Card><h5>Architects, designers, advisors and ecosystem partners</h5></Card>
-                </div>
-
-                <div className="container center">
-                    <p><Pop><ButtonKeyline href={`/egypt/forms/register-interest`}>Register Interest</ButtonKeyline></Pop></p>
-                </div>
-            </section>
-
-
-            
-            {/* BRF */}
-
-            <section className="block bg-medium">
-                <div className="container center">
-                    <p className="fs-1 fw-500">Branded Residences at FHS Egypt</p>
-                </div>
-
-                <div className="container columns-2 gap-md ai-center">
-                    <Pop><img src="/assets/img/egypt/homepage/brf-egypt.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}} /></Pop>
-                    
-                    <section className="formatted">
-                        <p>Egypt is rapidly emerging as a leading branded residences market, with <strong>45% of high-net-worth investors</strong> identifying the segment as a key asset class, delivering <strong>8–12% yields vs. 5–7% for traditional hotels</strong>.</p>
-                        <p>Backed by <strong>Egypt Vision 2030</strong> and expanding partnerships between leading local developers and global brands, branded residences are reshaping mixed-use and resort development across the country.</p>
-                        <br />
-                        <p><Pop inline><ButtonKeyline href={`/egypt/brf`}>Learn More</ButtonKeyline></Pop></p>
-                    </section>
-                </div>
-            </section>
-
 
             
             {/* SPEAKERS */}
-
             <section className="block bg-dark">
                 <div className="container center">
-                    <p className="fs-1 fw-500 caps">Past FHS Speakers</p>
-                    <p className="fs-5 mt-xs">Speaker line-up coming soon</p>
+                    <p className="fs-1 fw-500 caps">Envisioned Speakers</p>
                 </div>
 
                 <div className="container columns-4 gap-sm maxw-60 center">
@@ -295,14 +235,55 @@ export default function Home ({ data, content }) {
                 </div>
 
                 <div className="container center">
-                    <p><Pop><ButtonKeyline href={`/egypt/speakers`}>View Past Speakers</ButtonKeyline></Pop></p>
+                    <p><Pop><ButtonKeyline href={`/egypt/speakers`}>View Confirmed Speakers</ButtonKeyline></Pop></p>
+                </div>
+            </section>
+
+
+
+
+            {/* WHO YOU WILL MEET */}
+            <section className="block bg-accent">
+                <div className="container center">
+                    <p className="fs-1 fw-500">WHO YOU WILL MEET</p>
+                </div>
+
+                <div className="container columns-5 gap-sm center formatted">
+                    <Card><h5>Owners, developers and master planners</h5></Card>
+                    <Card><h5>Hotel and resort operators</h5></Card>
+                    <Card><h5>Investors, banks and capital partners</h5></Card>
+                    <Card><h5>Government and tourism leadership</h5></Card>
+                    <Card><h5>Architects, designers, advisors and ecosystem partners</h5></Card>
+                </div>
+
+                <div className="container center">
+                    <p><Pop><ButtonKeyline inverse color={`var(--primary)`} href={`/egypt/forms/register-interest`}>Register Interest</ButtonKeyline></Pop></p>
+                </div>
+            </section>
+
+
+            
+            {/* BRF */}
+            <section className="block bg-white">
+                <div className="container center">
+                    <p className="fs-1 fw-500">Branded Residences at FHS Egypt</p>
+                </div>
+
+                <div className="container columns-2 gap-md ai-center">
+                    <Pop><img src="/assets/img/egypt/homepage/brf-egypt.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}} /></Pop>
+                    
+                    <section className="formatted">
+                        <p>Egypt is rapidly emerging as a leading branded residences market, with <strong>45% of high-net-worth investors</strong> identifying the segment as a key asset class, delivering <strong>8–12% yields vs. 5–7% for traditional hotels</strong>.</p>
+                        <p>Backed by <strong>Egypt Vision 2030</strong> and expanding partnerships between leading local developers and global brands, branded residences are reshaping mixed-use and resort development across the country.</p>
+                        <br />
+                        <p><Pop inline><ButtonKeyline href={`/egypt/brf`}>Learn More</ButtonKeyline></Pop></p>
+                    </section>
                 </div>
             </section>
             
 
 
             {/* THEMES */}
-
             <section className="block">
                 <div className="container center">
                     <p className="fs-1 fw-500">THEMES YOU WILL EXPLORE</p>
@@ -324,8 +305,35 @@ export default function Home ({ data, content }) {
 
 
 
-            {/* FHS EVENTS */}
+            {/* CONTENT-ARTICLES */}
+            <section className="block bg-primary">
+                <div className="container center">
+                    <p className="fs-1 fw-500 caps">THOUGHT LEADERSHIP IN ACTION</p>
+                </div>
 
+                <div className="container columns-3 gap-sm">
+      
+                        {
+                            content.map( (entry, index) => (
+                                <ContentCard
+                                    key={index}
+                                    url={`/egypt/content-library/${entry.slug}`}
+                                    heroUrl={entry.contentLibraryHero && entry.contentLibraryHero[0] ? entry.contentLibraryHero[0].url : null}
+                                    heading={entry.title}
+                                    excerpt={entry.excerpt}
+                                    contentTypes={entry.contentTypes}
+                                    postDate={entry.postDate}
+                                    type={entry.contentTypes[0].slug}
+                                />
+                            ))
+                        }
+               
+                </div>
+            </section>
+
+
+
+            {/* FHS EVENTS */}
             <section className="block">
                 <div className="container center">
                     <p className="fs-1 fw-500 caps">FHS Around the World</p>
@@ -358,36 +366,6 @@ export default function Home ({ data, content }) {
                             )
                         })
                     }
-                </div>
-            </section>
-
-
-                                
-
-            {/* CONTENT-ARTICLES */}
-
-            <section className="block bg-dark">
-                <div className="container center">
-                    <p className="fs-1 fw-500 caps">THOUGHT LEADERSHIP IN ACTION</p>
-                </div>
-
-                <div className="container columns-3 gap-sm">
-      
-                        {
-                            content.map( (entry, index) => (
-                                <ContentCard
-                                    key={index}
-                                    url={`/egypt/content-library/${entry.slug}`}
-                                    heroUrl={entry.contentLibraryHero && entry.contentLibraryHero[0] ? entry.contentLibraryHero[0].url : null}
-                                    heading={entry.title}
-                                    excerpt={entry.excerpt}
-                                    contentTypes={entry.contentTypes}
-                                    postDate={entry.postDate}
-                                    type={entry.contentTypes[0].slug}
-                                />
-                            ))
-                        }
-               
                 </div>
             </section>
 

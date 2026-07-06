@@ -26,6 +26,10 @@
 	padding: .25rem 1rem;
 }
 
+.inverse {
+	border: 1px solid var(--bg);
+}
+
 .disabled {
 	pointer-events: none;
 	opacity: .5;

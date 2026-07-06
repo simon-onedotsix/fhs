@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import CSS from './button-keyline.module.css'
 
-export const ButtonKeyline = ({ children, href, target, rel, disabled, color, decal, size }) => {
+export const ButtonKeyline = ({ children, href, target, rel, disabled, color, decal, size, inverse }) => {
 
 	const [isHovered, setIsHovered] = useState(false)
 
@@ -23,6 +23,7 @@ export const ButtonKeyline = ({ children, href, target, rel, disabled, color, de
 				${CSS.button} 
 				${decal}
 				${disabled ? CSS.disabled : ''}
+				${inverse ? CSS.inverse : ''}
 				${size == 'small' ? CSS.small : ''}
 			`}
 			target={target}

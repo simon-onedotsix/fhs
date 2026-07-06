@@ -20,6 +20,16 @@ export const PageHeroThemed = ({ children }) => {
     )
 }
 
+export const Dunes = () => {
+    return (
+        <div className={CSS.dunes}>
+            <Dune color={`var(--primary)`} offset={-20} aspect={16/12}/>
+            <Dune color={`var(--accent)`} offset={-10} aspect={16/10} delay={.1} />
+            <Dune color={`var(--accent)`} offset={-0} aspect={16/8} delay={.2}/>
+        </div>
+    )
+}
+
 
 const Dune = ({ color = 'red', aspect = 16/9, offset = 0, delay = 0, amount = 20 }) => {
     return (

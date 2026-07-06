@@ -143,9 +143,9 @@ export default function Page () {
                             </Fade>
                             <div className="columns-4 gap-sm mt-md">
                                 <InvestorImpact prefix={'$'} figure={4.8} unit={'tn'} label={"in AUM"} />
-                                <InvestorImpact figure={18} unit={"%"} label={"of Total Attendees"} />
+                                <InvestorImpact figure={20} unit={"%"} label={"of Total Attendees"} />
                                 <InvestorImpact figure={80} unit={`+`} label={"Meetings Facilitated"} />
-                                <InvestorImpact figure={160} unit={`+`} label={"Investors"} />
+                                <InvestorImpact figure={170} unit={`+`} label={"Investors"} />
                             </div>
                         </div>
 

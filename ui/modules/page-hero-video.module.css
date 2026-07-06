@@ -1,0 +1,51 @@
+.layout {
+    /* position: relative; */
+    overflow: hidden;
+}
+
+.video {
+    position: absolute;
+    width: 100%;
+    opacity: .6;
+    mix-blend-mode: hard-light;
+}
+.video img {
+    width: 100%;
+}
+.videoWrapper {
+    position: relative;
+    background-color: transparent;
+    mask-image: linear-gradient(to top, transparent 5%, black 100%);
+
+}
+
+.overlay {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    overflow-x: hidden;
+    padding: var(--space-md);
+    padding-top: calc(var(--space-xl) * 3);
+}
+
+
+@media(min-width:600px){
+    .video {
+        top: 0;
+    }
+    .overlay {
+        height: calc(100vh - 8.25rem);
+        padding: calc(var(--space-lg) * 2) var(--space-lg) var(--space-md);
+    }
+}
+
+@media(min-width:600px) and (max-width:899px) {
+    .overlay {
+        height: calc(100vh / 2);
+        padding: calc(var(--space-lg) * 2) var(--space-lg) var(--space-md);
+    }
+}
