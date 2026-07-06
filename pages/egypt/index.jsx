@@ -146,7 +146,7 @@ export default function Home ({ data, content }) {
                 </div>
 
                 <div className="container formatted center balance">
-                    <p className="fs-6">Ahead of the main summit in November, FHS Egypt hosted a launch reception in Cairo with 70+ senior hospitality investors, developers and operators. The evening featured market insights from STR and a high-level panel on investing in Egypt, drawing some of the market's most active players.</p>
+                    <p className="fs-6">Ahead of the main summit in November, FHS Egypt hosted a launch reception in Cairo with 70+ senior hospitality investors, developers and operators. The evening featured market insights from STR and a high-level panel on investing in Egypt, drawing some of the market&apos;s most active players.</p>
                     <p className="fs-6">The conversation has started, see you in November.</p>
                 </div>
 
