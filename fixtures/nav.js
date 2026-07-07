@@ -601,7 +601,14 @@ export const FHS_SA = {
                         "__typename": "navigation_Entry",
                         "id": "213",
                         "title": "Why Partner?",
-                        "navUrl": "/sa/become-a-sponsor",
+                        "navUrl": "/sa/why-partner",
+                        "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "213dsgntewe",
+                        "title": "Become a Partner",
+                        "navUrl": "/sa/become-a-partner",
                         "target": false
                     },
                     {

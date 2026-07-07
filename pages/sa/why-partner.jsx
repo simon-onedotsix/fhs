@@ -1,0 +1,533 @@
+import { gql } from "@apollo/client"
+import craftApolloClient from "../api/apollo"
+
+import { useRouter } from 'next/router'
+import Image from 'next/image'
+
+import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
+
+import Link from 'next/link'
+import Script from "next/script"
+
+import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
+import { Reveal } from "../../fuselage/animation/reveal"
+import { AnimatedCounter } from "../../fuselage/theme/2024/world/components/animated-counter/animated-counter"
+
+import { EventsBar } from "../../ui/site/eventsbar"
+import { Header } from '../../ui/site/header'
+import { FHS_SA as header } from '../../fixtures/nav'
+import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
+
+import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
+import { ImpactGrid, ImpactFigure, TitleBlock, ImageBlock } from "../../fuselage/theme/2025/sa/blocks/impact-grid/impact-grid"
+import { SectionHeading } from "../../fuselage/theme/2025/sa/components/section-heading/section-heading"
+import { InvestorImpact } from "../../fuselage/components/impact-figure/impact-figure"
+import { VideoTestimonial } from '../../fuselage/theme/2025/sa/components/video-testimonial/video-testimonial'
+import { LogoTicker, Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticker/logo-ticker"
+import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
+import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
+import { Button } from '../../fuselage/theme/2024/sa/components/button/button'
+import { PopOverlay } from "../../fuselage/components/popoverlay/popoverlay"
+
+import useMasonry from "../../fuselage/layout/masonry/useMasonry"
+import Ticker from 'framer-motion-ticker'
+
+import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'
+
+
+
+import CSS from '../../fuselage/theme/2025/sa/css/become-a-sponsor.module.css'
+
+
+const BENEFITS_DATA = [
+    {
+        imageUrl: "/assets/img/sa/become-a-sponsor/global.svg",
+        heading: "Global Positioning",
+        body: "Showcase your brand to top hospitality leaders worldwide"
+    },
+    {
+        imageUrl: "/assets/img/sa/become-a-sponsor/networking.svg",
+        heading: "Exclusive Networking",
+        body: "Connect with C-level decision-makers and key stakeholders"
+    },
+    {
+        imageUrl: "/assets/img/sa/become-a-sponsor/introductions.svg",
+        heading: "Investor Introductions",
+        body: "Gain direct introductions to global hospitality investors"
+    },
+    {
+        imageUrl: "/assets/img/sa/become-a-sponsor/stage.svg",
+        heading: "Spotlight Stage Sessions",
+        body: "Share the stage with industry trailblazers"
+    },
+    {
+        imageUrl: "/assets/img/sa/become-a-sponsor/visibility.svg",
+        heading: "Brand Visibility",
+        body: "Boost visibility through curated digital campaigns"
+    }
+]
+const PHOTOS_DATA = [
+    {
+        "id": "13864",
+        "hero": [
+            {
+                "id": "50183",
+                "url": "/assets/img/sa/photos/2025-01.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "13865",
+        "hero": [
+            {
+                "id": "50184",
+                "url": "/assets/img/sa/photos/2025-02.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "13867",
+        "hero": [
+            {
+                "id": "50186",
+                "url": "/assets/img/sa/photos/2025-03.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "13868",
+        "hero": [
+            {
+                "id": "50187",
+                "url": "/assets/img/sa/photos/2025-04.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "50206",
+        "hero": [
+            {
+                "id": "50189",
+                "url": "/assets/img/sa/photos/2025-05.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "50207",
+        "hero": [
+            {
+                "id": "50193",
+                "url": "/assets/img/sa/photos/2025-06.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "13868",
+        "hero": [
+            {
+                "id": "50187",
+                "url": "/assets/img/sa/photos/2025-07.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    {
+        "id": "50206",
+        "hero": [
+            {
+                "id": "50189",
+                "url": "/assets/img/sa/photos/2025-08.jpg",
+                "width": 1379,
+                "height": 919
+            }
+        ]
+    },
+    // {
+    //     "id": "50207",
+    //     "hero": [
+    //         {
+    //             "id": "50193",
+    //             "url": "/assets/img/sa/photos/2025-09.jpg",
+    //             "width": 1379,
+    //             "height": 919
+    //         }
+    //     ]
+    // }
+]
+
+
+export default function Page ({ partners }) {
+
+    const { locale } = useRouter()
+
+    const masonryContainer = useMasonry()
+
+    return (
+        <div dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+            
+            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+
+            <EventsBar site={'/sa'} />
+            <Header
+                site={`/sa`}
+                handle={`Saudi Arabia`}
+                event={header.data.event}
+                mainMenu={header.data.mainMenu}
+                ctas={header.data.event.headerCtas}
+            />
+
+            
+
+
+            {/* intro */}
+            <div className="bg-primary o-hidden">
+                <PageHeroImage hero={{ url: '/assets/img/sa/become-a-sponsor/become-a-partner-hero.jpg', width: 2400, height: 1600 }} >
+                    <div className="container maxw-60 pb-md center">
+                        <Reveal>
+                            {
+                                locale === 'ar'
+                                ?
+                                    <h1 className='fs-0'>Let&apos;s Talk Future. <br/>Let&apos;s Talk FHS Saudi</h1>
+                                :
+                                    <h1 className='fs-0'>Let&apos;s Talk Future. <br/>Let&apos;s Talk FHS Saudi</h1>
+                            }
+                        </Reveal>
+
+                        <div className="mt-sm">
+                            <Pop inline>
+                                <Link href="/sa/get-in-touch">
+                                    <a className="button secondary fs-5">Get in Touch</a>
+                                </Link>
+                            </Pop>
+                        </div>
+                    </div>
+
+
+                    {/* key downloadables */}
+                    {/* <div className={`block ${CSS.linkGrid}`}>
+                        <div>
+                            <Pop inline>
+                                <Link href="/sa/post-event-report-2025">
+                                    <a className="button secondary fs-5">2025 Post-Event Report</a>
+                                </Link>
+                            </Pop>
+                        </div>
+                        <div>
+                            <Pop inline>
+                                <Link href="https://floorplan.live/interactive/shows/4222/views/3/plan" target="_blank">
+                                    <a className="button secondary fs-5">2026 Floor Plan</a>
+                                </Link>
+                            </Pop>
+                        </div>
+                    </div> */}
+
+                </PageHeroImage>
+
+            </div>
+
+
+
+            {/* sponsor benefits */}
+            <section className="block bg-default">
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-1 fw-600 c-primary lh-1 caps">Partner Benefits</p>
+                    </Fade>
+                </div>
+
+                <div className="container columns-5 gap-sm">
+                    {
+                        BENEFITS_DATA.map( (card, index) => <IconCard key={index} imageUrl={card.imageUrl} heading={card.heading} body={card.body} />)
+                    }
+                </div>
+            </section>
+
+
+
+            {/* impact figures */}
+            <ImpactGrid>
+                <TitleBlock>
+                    <SectionHeading heading={'2026 in Numbers'} decal={'c-secondary'} />
+                </TitleBlock>
+                <ImpactFigure decal={'bg-neutral-01'} figure={1000} unit={`+`} impact={"Attendees"}  />
+                <ImpactFigure decal={'bg-neutral-02'} figure={20} unit={"%"} impact={"Investors"}  />
+                <ImpactFigure decal={'bg-neutral-01'} prefix={"$"} figure={4.8} unit={"tn"} impact={"Assets Under Management"}  />
+                <ImpactFigure decal={'bg-neutral-02'} prefix={"$"} figure={2} unit={"bn+"} impact={"Worth of Deals Signed"}  />
+                <ImageBlock imageUrl={'/assets/img/sa/become-a-sponsor/become-a-partner-inset.jpg'} />
+            </ImpactGrid>
+
+
+
+            {/* sponsor benefits */}
+            <section className="block bg-default">
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-1 fw-600 c-primary lh-1 caps">Partner Benefits</p>
+                    </Fade>
+                </div>
+
+                <div className="container columns-5 gap-sm">
+                    {
+                        BENEFITS_DATA.map( (card, index) => <IconCard key={index} imageUrl={card.imageUrl} heading={card.heading} body={card.body} />)
+                    }
+                </div>
+            </section>
+
+
+
+            {/* testimonials */}
+            <section className='block bg-primary'>
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-1 fw-600 lh-1 caps">Hear What Our Partners Have to Say</p>
+                    </Fade>
+                </div>
+
+                <div className="container columns-3 gap-lg">
+
+                    <VideoTestimonial entry={{
+                        "id": "223023",
+                        "videoShareUrl": "https://www.youtube.com/watch?v=Ro4k0OytXig",
+                        "fullName": "Omar Al-Abdullatif",
+                        "jobTitle": "Chief Executive Officer",
+                        "organisation": "Blacksand",
+                        "testimonial": "Honestly, it's the biggest hospitality summit we know. It's a great event and very much B2B."
+                    }} />
+                   
+                    <VideoTestimonial entry={{
+                        "id": "223023",
+                        "videoShareUrl": "https://www.youtube.com/watch?v=mMAbGByBfJE",
+                        "fullName": "Marko Vucinic",
+                        "jobTitle": "Executive Director - Investment & Asset Management",
+                        "organisation": "Knowledge Economic City",
+                        "testimonial": "We love the platform. It connected us to a lot of partners that we deal with on day-to-day basis."
+                    }} />
+                   
+                    <VideoTestimonial entry={{
+                        "id": "223023",
+                        "videoShareUrl": "https://www.youtube.com/watch?v=97dsiYGJHmc",
+                        "fullName": "Khalid Saud Abuhaimed",
+                        "jobTitle": "Chief Executive Officer",
+                        "organisation": "Al Khozama Investment Company",
+                        "testimonial": "We host the Future Hospitality Summit every year because I believe the deals that shape this industry need a home, a place where opportunity meets capital."
+                    }} />
+
+                </div>
+            </section>
+
+
+
+            {/* join the conversation */}
+            {/* <section className="block bg-primary">
+                <div className="container center">
+                    <Pop inline>
+                        <p className="fs-1 fw-600 lh-1 caps ">Join the Conversation</p>
+                    </Pop>    
+                </div>
+
+                <div ref={masonryContainer} className="container center columns-3 gap-sm">
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/posts/?feedView=all`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-01.jpg`, width: 720, height: 1396 }} />
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/posts/?feedView=all`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-02.jpg`, width: 902, height: 1020 }} />
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/posts/?feedView=all`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-03.jpg`, width: 902, height: 1026 }} />                     
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/posts/?feedView=all`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-04.jpg`, width: 902, height: 744 }} />                     
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/posts/?feedView=all`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-05.jpg`, width: 902, height: 1060 }} />                     
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/posts/?feedView=all`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-06.jpg`, width: 902, height: 750 }} />                     
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/posts/?feedView=all`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-07.jpg`, width: 902, height: 1014 }} />                     
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/posts/?feedView=all`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-08.jpg`, width: 902, height: 1050 }} />                     
+                    <MediaWallPost href={`https://www.linkedin.com/showcase/future-hospitality-summit/posts/?feedView=all`} image={{ url: `/assets/img/sa/become-a-sponsor/linkedin/card-09.jpg`, width: 902, height: 854 }} />                     
+                </div>
+            </section> */}
+
+
+
+            {/* sponsors */}
+            <section className="block bg-default pb-0">
+                <div className="container center">
+                    <Fade>
+                        <p className="fs-1 fw-600 lh-1 caps c-primary pb-sm">2026 Partners</p>
+                    </Fade>
+                </div>
+            </section>
+            <Ticker duration={100}>
+                {
+                    partners &&
+                    partners.map( logo => <Logo key={logo.id} logoUrl={logo.logoUrl} />)
+                }
+            </Ticker>
+
+
+
+            {/* contacts */}
+            <section className="block bg-default">
+                <div className="container center">
+                    <Pop inline>
+                        <Link href="/sa/get-in-touch">
+                            <a className="button fs-5">Get in Touch</a>
+                        </Link>
+                    </Pop>
+                </div>
+            </section>
+
+
+
+            {/* form */}
+            {/* <section id='form' className="block bg-primary">
+                <div className="container formatted maxw-60">
+                    <p className='fs-1 fw-600 center'>We are keen to hear more about your objectives. Let&apos;s connect!</p>
+                </div>
+                <div className="container maxw-60">
+                    <HubspotForm portalId={`14527187`} formId={`34357038-0e2a-412a-95e3-a68427da15e3`} />
+                </div>
+            </section> */}
+
+
+
+            {/* see what you missed */}
+            {/* <section className="block bg-default">
+                <div className={`${CSS.photoGrid} container center`}>
+                    <Fade><p className='fs-1 fw-700 lh-1 caps c-primary'>See What You Missed</p></Fade>
+                    
+                    <div className="columns-4 gap-xs mt-md">
+                        {
+                            PHOTOS_DATA.map( (photo, index) => (
+                                <Pop key={index}>
+                                    <div key={photo.id} style={{ position: `relative`, borderRadius: '.75rem', overflow: 'hidden' }}>
+                                        <Image src={photo.hero[0].url} width={photo.hero[0].width} height={photo.hero[0].height} layout={`responsive`} alt="" />
+                                    </div>
+                                </Pop>
+                            ))
+                        }
+                    </div>
+
+                    <p className="pt-md">
+                        <ArrowButton href={`https://www.flickr.com/photos/benchevents/albums/`} target='_blank' theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>View Full Gallery</ArrowButton>
+                    </p>
+                </div>
+            </section> */}
+
+
+
+
+            <PopOverlay id={"sa2026prospectus"}>
+                <div className="formatted p-xs center">
+                    <img src="/assets/img/sa/2026-prospectus-cover.png" alt="" width={300} />
+                    <p className="fs-2 fw-600 c-primary lh-1 mt-sm">FHS Saudia Arabia 2026 Prospectus</p>
+                    <p className="mt-sm"><Button href={`/sa/prospectus-download`}>Download</Button></p>
+                </div>
+            </PopOverlay>
+
+
+
+            <Footer />
+            <LenisScroller />
+        </div>
+    )
+}
+
+Page.theme = 'sa-2025'
+
+
+
+const IconCard = ({ imageUrl, heading, body }) => {
+    return (
+        <Pop>
+            <div className={CSS.iconCard}>
+                <Pop delay={.15}>
+                    <section className={`center`}>
+                        <img src={imageUrl} alt="" style={{ width: '30%', aspectRatio: 1  }} />
+                    </section>
+                </Pop>
+
+                <section className={`formatted center`}>
+                    <h3 className='lh-1'>{heading}</h3>
+                    <p>{body}</p>
+                </section>
+            </div>
+        </Pop>
+    )
+}
+
+const MediaWallPost = ({ image, href }) => {
+    return (
+        
+        <div className={CSS.mediaWallPost} style={{ aspectRatio: image.width/image.height  }}>
+            <Pop>
+                {
+                    href
+                    ? 
+                        <a href={href} target="_blank" rel="noreferrer">
+                            <Image src={image.url} width={image.width} height={image.height} />
+                        </a>
+                    : 
+                        <Image src={image.url} width={image.width} height={image.height} />
+                }
+            </Pop>
+        </div>
+    )
+}
+
+
+
+
+export async function getStaticProps() {
+
+    const swapcardData2026 = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query {
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2026}", page:1, pageSize: 200) {
+							id
+							name
+							logoUrl
+							fields {
+								... on SelectField {
+									id
+									value
+									definition {
+										id
+										name
+									}
+									translations {
+										value
+									}
+								}
+							}
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2026,
+					"page": 1
+				}
+			})
+		}
+	)
+	const partnerData =  await swapcardData2026.json()
+
+
+    return { 
+		props: { 
+            partners: partnerData.data.exhibitors,
+		}
+	}
+}
