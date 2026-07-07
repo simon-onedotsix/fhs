@@ -49,10 +49,10 @@ const SPEAKER_DATA = [
     },
     {
         url: null,
-        photoUrl: 'https://static.swapcard.com/public/images/f8635bf938934af3af21186cca1768de.jpeg',
+        photoUrl: 'https://static.swapcard.com/public/images/a8a3eed89c99418ea55cedd0edf6ea16.jpeg',
         fullName: 'HE Shaikha Nasser Al Nowais',
-         jobTitle: 'Chairman of the Board of Directors',
-        company: 'Rotana Hotel Management Corporation P.J.S.C',
+         jobTitle: 'Secretary General',
+        company: 'UN Tourism',
     },
     {
         url: '/egypt/speakers/RXZlbnRQZW9wbGVfNDcyMTAzOTM=',
@@ -103,9 +103,6 @@ export default function Home ({ data, content }) {
                 video={'https://cms.thebench.com/assets/video/fhs-egypt-2026-video-opt.mp4'}
                 poster={'https://cms.thebench.com/assets/video/fhs-egypt-2026-video-opt-poster.jpg'}
             >
-                
-                <Dunes />
-
                 <h1 className="fs-0 caps lh-0"><Reveal>Where Heritage <br />Inspires Investment</Reveal></h1>
                 <h4 className="fs-4 pb-md">10-11 November 2026, Sofitel Downtown Cairo Nile</h4>
 
@@ -158,15 +155,11 @@ export default function Home ({ data, content }) {
                     <div style={{width: isDesktop ? `30%` : `100%`}}>
                         <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-01.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
                     </div>
-                    <div style={{width: isDesktop ? `30%` : `100%`}}>
-                        <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-02.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
-                    </div>
+
                     <div style={{width: isDesktop ? `30%` : `100%`}}>
                         <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-03.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
                     </div>
-                    <div style={{width: isDesktop ? `30%` : `100%`}}>
-                        <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-04.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
-                    </div>
+
                     <div style={{width: isDesktop ? `30%` : `100%`}}>
                         <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-05.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
                     </div>
@@ -264,12 +257,14 @@ export default function Home ({ data, content }) {
 
             
             {/* BRF */}
-            <section className="block bg-white">
-                <div className="container center">
+            <section className="block bg-white" style={{ position: `relative`, overflow: `hidden`}}>
+                <Dunes />
+                
+                <div className="container center" style={{ position: `relative`, zIndex: 2}}>
                     <p className="fs-1 fw-500">Branded Residences at FHS Egypt</p>
                 </div>
 
-                <div className="container columns-2 gap-md ai-center">
+                <div className="container columns-2 gap-md ai-center" style={{ position: `relative`, zIndex: 2}}>
                     <Pop><img src="/assets/img/egypt/homepage/brf-egypt.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}} /></Pop>
                     
                     <section className="formatted">

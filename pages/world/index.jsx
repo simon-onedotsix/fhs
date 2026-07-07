@@ -168,13 +168,13 @@ const photos = [
 
 const SPEAKERS = [
     {
-        "id": "RXZlbnRQZW9wbGVfNDcxMDQxMzc=",
+        "id": "RXZlbnRQZW9wbGVfNDczODcyODg=",
         "type": "Speaker",
-        "firstName": "Hamza",
-        "lastName": "Farooqui",
-        "jobTitle": "Founder & CEO",
-        "organization": "Millat Group",
-        "photoUrl": "https://static.swapcard.com/public/images/4647f1b3e985405383b25e68d832ede9.jpeg",
+        "firstName": "Philippe ",
+        "lastName": "Zuber",
+        "jobTitle": "Chief Executive Officer",
+        "organization": "Kerzner International Management",
+        "photoUrl": "https://static.swapcard.com/public/images/802ca11f989a409daf7c798105d5d72e.jpeg",
     },
     {
         "id": "RXZlbnRQZW9wbGVfNDY1MDg0OTk=",
