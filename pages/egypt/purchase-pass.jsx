@@ -19,7 +19,7 @@ import { PassPriceBands, Pass, SpecialPass, PassGrid, PassGridSectionHeading } f
 function PurchasePass({ entry, country }) {
 
 	// console.log('entry:', entry )
-	console.log('country:', country)
+	// console.log('country:', country)
 
 
 	return (
@@ -41,7 +41,8 @@ function PurchasePass({ entry, country }) {
 			
 			<div className={`block bg-secondary`}>
 				<div className="container">
-					<p className='fs-1 fw-600'>Purchase Pass { country ? country : 'DEFAULT' }</p>
+					<p className="fs-sm c-accent">[ country code: { country } ]</p>
+					<p className='fs-1 fw-600'>Purchase Pass</p>
 				</div>
 				<div className="container">
 					<p className="maxw-50">Discounted rates below are exclusively available for hotel operators, owners, developers, investors/banks, consultants, architects, lawyers, Govt. officials. If your organisation does not fall within these categories, please email <a href="mailto:hello@thebench.com">hello@thebench.com</a> to register.</p>
@@ -121,7 +122,7 @@ PurchasePass.theme = 'egypt'
 
 export async function getServerSideProps({ req }) {
 
-	const country = req.headers['x-vercel-ip-country'] || '[default]'
+	const country = req.headers['x-vercel-ip-country'] || 'not found'
 	console.log('serverSideProps:', country)
 
 	const cmsData = await craftApolloClient().query({
