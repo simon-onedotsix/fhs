@@ -1,10 +1,10 @@
-
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
@@ -14,9 +14,15 @@ import { PassPriceBands, Pass, SpecialPass, PassGrid, PassGridSectionHeading } f
 
 
 
-function PurchasePass({ entry }) {
+
+
+function PurchasePass({ entry, query }) {
 
 	// console.log('entry:', entry )
+	console.log('query:', query)
+
+	const router = useRouter()
+	console.log('router:', router.query)
 
 	return (
 		<>
@@ -116,7 +122,7 @@ PurchasePass.theme = 'egypt'
 
 
 
-export async function getStaticProps() {
+export async function getServerSideProps({ query }) {
 
 	const cmsData = await craftApolloClient().query({
         query: gql`
@@ -177,7 +183,8 @@ export async function getStaticProps() {
 
 	return {
 		props: { 
-			entry: cmsData.data.entry
+			entry: cmsData.data.entry,
+			query
 		}
 	}
 }
