@@ -121,7 +121,10 @@ PurchasePass.theme = 'egypt'
 
 
 
-export async function getServerSideProps({ query }) {
+export async function getServerSideProps({ req }) {
+
+	const country = req.headers['x-vercel-ip-country'] || 'US'
+	console.log('serverSideProps:', country)
 
 	const cmsData = await craftApolloClient().query({
         query: gql`
@@ -183,7 +186,7 @@ export async function getServerSideProps({ query }) {
 	return {
 		props: { 
 			entry: cmsData.data.entry,
-			query
+			country
 		}
 	}
 }
