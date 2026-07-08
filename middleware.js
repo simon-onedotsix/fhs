@@ -17,5 +17,6 @@ export function middleware (NextRequest) {
 }
 
 export const config = {
-  matcher: '/:path*',
+	runtime: "edge",
+	matcher: '/:path*',
 };
