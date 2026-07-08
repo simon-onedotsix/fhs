@@ -692,8 +692,8 @@ export default function Page({ seomatic, partners }) {
 
 
 
-            {/* RESULTS 2025 */}
-            <div className="bg-primary-2-dark py-xs">
+            {/* RESULTS 2025 TICKER */}
+            {/* <div className="bg-primary-2-dark py-xs">
                 {
                     locale === 'ar'
                         ?
@@ -716,7 +716,7 @@ export default function Page({ seomatic, partners }) {
                             </Ticker>
                         
                 }
-            </div>
+            </div> */}
 
             
 
