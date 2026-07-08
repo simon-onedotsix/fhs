@@ -270,24 +270,6 @@ export default function Page ({ partners }) {
             </ImpactGrid>
 
 
-
-            {/* sponsor benefits */}
-            <section className="block bg-default">
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-1 fw-600 c-primary lh-1 caps">Partner Benefits</p>
-                    </Fade>
-                </div>
-
-                <div className="container columns-5 gap-sm">
-                    {
-                        BENEFITS_DATA.map( (card, index) => <IconCard key={index} imageUrl={card.imageUrl} heading={card.heading} body={card.body} />)
-                    }
-                </div>
-            </section>
-
-
-
             {/* testimonials */}
             <section className='block bg-primary'>
                 <div className="container center">
