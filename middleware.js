@@ -1,21 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-export function middleware(request) {
-  // Access geolocation data provided by Vercel
-  const country = request.geo?.country ?? 'US' // Fallback to 'US' if undefined
-  const city = request.geo?.city
-  const region = request.geo?.region
-  
-  // Example: Log the data (visible in Vercel Function logs)
-  console.log(`Visitor from ${city}, ${country}`)
+export function middleware (request) {
 
-  // Example: Set a cookie for client-side access
-  const response = NextResponse.next()
-  response.cookies.set('x-user-country', country, {
-    httpOnly: true,
-    path: '/',
-    maxAge: 60 * 60 * 24, // 1 day
-  })
+	console.log('middleware running')
 
-  return response
+	if (request.nextUrl.pathname.startsWith('/egypt')) {
+		return NextResponse.rewrite(new URL('/sa', request.url))
+	}
 }

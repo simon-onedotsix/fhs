@@ -117,7 +117,6 @@ function PurchasePass({ entry, query }) {
 		</>
 	)
 }
-
 PurchasePass.theme = 'egypt'
 
 

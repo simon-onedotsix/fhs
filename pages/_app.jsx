@@ -22,8 +22,6 @@ export default function App({ Component, pageProps, globals }) {
 	const router = useRouter()
 	// console.log(router)
 
-	console.log('middleware:', pageProps.country)
-
 	const getLayout = Component.getLayout || ((page) => page)
 
 	return getLayout(
