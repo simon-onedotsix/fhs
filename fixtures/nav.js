@@ -1044,7 +1044,7 @@ export const FHS_EGYPT = {
                     },
                     {
                         "__typename": "navigation_Entry",
-                        "id": "289",
+                        "id": "289sdffds",
                         "title": "Webinar",
                         "navUrl": "/egypt/webinar",
                         "target": false
