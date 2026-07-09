@@ -4,6 +4,19 @@
 
 @media(max-width:599px) {
     .splitSection {
-    aspect-ratio: 1/2;
+        aspect-ratio: 1/2;
+    }
 }
+
+
+.highlightVideoGrid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    
+    @media(min-width: 900px) {
+        grid-template-columns: 1fr 3fr;
+    }
 }

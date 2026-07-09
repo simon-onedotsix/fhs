@@ -192,54 +192,6 @@ export default function Page ({ partners }) {
             
 
 
-            {/* intro */}
-            <div className="bg-primary o-hidden">
-                <PageHeroImage hero={{ url: '/assets/img/sa/become-a-sponsor/become-a-partner-hero.jpg', width: 2400, height: 1600 }} >
-                    <div className="container maxw-60 pb-md center">
-                        <Reveal>
-                            {
-                                locale === 'ar'
-                                ?
-                                    <h1 className='fs-0'>Let&apos;s Talk Future. <br/>Let&apos;s Talk FHS Saudi</h1>
-                                :
-                                    <h1 className='fs-0'>Let&apos;s Talk Future. <br/>Let&apos;s Talk FHS Saudi</h1>
-                            }
-                        </Reveal>
-
-                        <div className="mt-sm">
-                            <Pop inline>
-                                <Link href="/sa/get-in-touch">
-                                    <a className="button secondary fs-5">Get in Touch</a>
-                                </Link>
-                            </Pop>
-                        </div>
-                    </div>
-
-
-                    {/* key downloadables */}
-                    {/* <div className={`block ${CSS.linkGrid}`}>
-                        <div>
-                            <Pop inline>
-                                <Link href="/sa/post-event-report-2025">
-                                    <a className="button secondary fs-5">2025 Post-Event Report</a>
-                                </Link>
-                            </Pop>
-                        </div>
-                        <div>
-                            <Pop inline>
-                                <Link href="https://floorplan.live/interactive/shows/4222/views/3/plan" target="_blank">
-                                    <a className="button secondary fs-5">2026 Floor Plan</a>
-                                </Link>
-                            </Pop>
-                        </div>
-                    </div> */}
-
-                </PageHeroImage>
-
-            </div>
-
-
-
             {/* sponsor benefits */}
             <section className="block bg-default">
                 <div className="container center">
@@ -252,6 +204,14 @@ export default function Page ({ partners }) {
                     {
                         BENEFITS_DATA.map( (card, index) => <IconCard key={index} imageUrl={card.imageUrl} heading={card.heading} body={card.body} />)
                     }
+                </div>
+
+                <div className="container center">
+                    <Pop inline>
+                        <Link href="/sa/get-in-touch">
+                            <a className="button secondary fs-5">Get in Touch</a>
+                        </Link>
+                    </Pop>
                 </div>
             </section>
 

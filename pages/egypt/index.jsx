@@ -32,7 +32,9 @@ import { Billboard } from '../../fuselage/blocks/billboard/billboard'
 import { EventCardLite } from '../../fuselage/theme/2024/world/blocks/upcoming-events/upcoming-events'
 import { ContentCard } from "../../fuselage/theme/2024/world/components/content-card/content-card"
 import { Carousel } from "../../fuselage/blocks/carousel/carousel"
-
+import { ImageGallery } from "../../fuselage/components/image-gallery/image-gallery"
+import { Slider } from "../../ui/components/slider"
+import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 
 
 import CSS from '../../fuselage/theme/egypt/css/homepage.module.css'
@@ -73,12 +75,13 @@ const SPEAKER_DATA = [
 
 import { WEBINAR_SPEAKER_DATA } from "./webinar"
 
-export default function Home ({ data, content }) {
+export default function Home ({ data, content, partners }) {
 
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState()
 
     // console.log(content)
+    console.log('parterData:', partners)
 
     const isDesktop = useCustomMediaQuery('(min-width: 600px)');
 
@@ -142,7 +145,8 @@ export default function Home ({ data, content }) {
                     <p className="fs-1 fw-500 lh-1 caps balance">Building Momentum in Cairo</p>
                 </div>
 
-                <div className="container formatted center balance">
+                <div className="container formatted center maxw-70 balance">
+                    <p className="fs-6">FHS Egypt is the leading platform for hospitality investment and development, bringing together investors, developers, hotel operators, government leaders and industry innovators shaping Egypt&apos;s tourism and real estate future. The summit connects the people behind the region&apos;s most exciting opportunities, providing access to market insights, investment trends, strategic partnerships and the conversations driving the next wave of hospitality growth.</p>
                     <p className="fs-6">Ahead of the main summit in November, FHS Egypt hosted a launch reception in Cairo with 70+ senior hospitality investors, developers and operators. The evening featured market insights from STR and a high-level panel on investing in Egypt, drawing some of the market&apos;s most active players.</p>
                     <p className="fs-6">The conversation has started, see you in November.</p>
                 </div>
@@ -151,26 +155,53 @@ export default function Home ({ data, content }) {
                     <Pop><ButtonKeyline href={`/egypt/forms/register-interest`}>Register Interest</ButtonKeyline></Pop>
                 </div>
 
-                <div className="container pt-xs" style={isDesktop ? { display: `flex`, flexWrap: `wrap`, justifyContent: `center`, gap: `var(--space-sm)` } : { display: `grid`, gap: `var(--space-sm)` }}>
-                    <div style={{width: isDesktop ? `30%` : `100%`}}>
-                        <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-01.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
+                <div className="container pt-xs columns-3 gap-sm">
+                    <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-01.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
+                    <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-03.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
+                    <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-05.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
+                </div>
+            </section>
+
+
+
+            {/* USPs */}
+            <section className="block bg-white">
+
+                <div className="container columns-4 gap-sm">
+                    <div className="formatted">
+                        <Pop><img src="/assets/img/egypt/homepage/egypt-03.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <h3 className="balance">Why attend?</h3>
+                        <p className="fs-6">Connect with the leaders shaping Egypt&apos;s hospitality investment future</p>
+                    </div>
+                    
+                    <div className="formatted">
+                        <Pop><img src="/assets/img/egypt/homepage/egypt-04.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <h3 className="balance">What will I gain?</h3>
+                        <p className="fs-6">Access insights, opportunities and partnerships that drive growth</p>
                     </div>
 
-                    <div style={{width: isDesktop ? `30%` : `100%`}}>
-                        <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-03.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
+                    <div className="formatted">
+                        <Pop><img src="/assets/img/egypt/homepage/egypt-05.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <h3 className="balance">Why now?</h3>
+                        <p className="fs-6">Be part of Egypt&apos;s next wave of tourism and real estate expansion</p>
                     </div>
 
-                    <div style={{width: isDesktop ? `30%` : `100%`}}>
-                        <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-05.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
+                    <div className="formatted">
+                        <Pop><img src="/assets/img/egypt/homepage/egypt-05.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <h3 className="balance">Exceptional Growth MomentumWhat next?</h3>
+                        <p className="fs-6">Register now and join the conversation</p>
                     </div>
+                </div>
 
+                <div className="container center">
+                    <Pop><ButtonKeyline href={`/egypt/purchase-pass`} target={`_blank`} rel={`noreferrer`}>Purchase Pass</ButtonKeyline></Pop>
                 </div>
             </section>
 
             
 
 
-            {/* NEW GROWTH CYCLE */}
+            {/* PIPELINE REPORT */}
             <section className="block bg-secondary">
                 <div className="container center">
                     <p className="fs-1 fw-500 lh-1 caps balance">Key Egypt Insights from the Hotel Chain Development Pipeline Report</p>
@@ -197,7 +228,11 @@ export default function Home ({ data, content }) {
                 </div>
 
                 <div className="container center">
-                    <Pop><ButtonKeyline href={`https://share.hsforms.com/12LxArJVDTpurv9TCoLcoig8nd8z`} target={`_blank`} rel={`noreferrer`}>Download Hotel Chain Development Report</ButtonKeyline></Pop>
+                    <Pop>
+                        <ButtonKeyline href={`/egypt/forms/download-hotel-chain-development-report`}>
+                            Download Hotel Chain Development Report
+                        </ButtonKeyline>
+                    </Pop>
                 </div>
             </section>
 
@@ -234,6 +269,56 @@ export default function Home ({ data, content }) {
 
 
 
+            {/* WHY ATTEND GALLERY + SLIDER */}
+            <section className="block bg-primary">
+                <div className="container center">
+                    <p className="fs-1 fw-500 caps">Why Industry Leaders attend FHS</p>
+                </div>
+
+                <div className="container columns-2 gap-md ai-center">
+                    <div>
+                        <ImageGallery images={[
+                            { src: '/assets/img/egypt/homepage/gallery/gallery-01.jpg'},
+                            { src: '/assets/img/egypt/homepage/gallery/gallery-02.jpg'},
+                            { src: '/assets/img/egypt/homepage/gallery/gallery-03.jpg'},
+                            { src: '/assets/img/egypt/homepage/gallery/gallery-04.jpg'},
+                            { src: '/assets/img/egypt/homepage/gallery/gallery-05.jpg'},
+                            { src: '/assets/img/egypt/homepage/gallery/gallery-06.jpg'},
+                            { src: '/assets/img/egypt/homepage/gallery/gallery-07.jpg'},
+                            { src: '/assets/img/egypt/homepage/gallery/gallery-08.jpg'},
+                            { src: '/assets/img/egypt/homepage/gallery/gallery-09.jpg'},
+                            { src: '/assets/img/egypt/homepage/gallery/gallery-10.jpg'},
+                        ]} />
+                    </div>
+
+                    <div className="center">
+                        <Slider>
+                            <div>
+                                <p className="fs-4 balance">&ldquo;The event has been great. I met a lot of people that I haven&apos;t seen in quite some time. It&apos;s a great networking event.&rdquo;</p>
+                                <p className="mt-sm balance"><strong>Marcel Von Aulock</strong> <br />CEO, Southern Sun</p>
+                            </div>
+                            
+                            <div>
+                                <p className="fs-4 balance">&ldquo;It&apos;s an incredible event, it&apos;s great to have all these people brought together. For me to get this recognition in front of so many peers of mine makes me very proud.&rdquo;</p>
+                                <p className="mt-sm balance"><strong>William Heinecke</strong> <br />Founder and Chairman, Minor International</p>
+                            </div>
+                            
+                            <div>
+                                <p className="fs-4 balance">&ldquo;From meeting investors and industry leaders to exchanging ideas on Saudi Arabia&apos;s next phase of destination development, FHS Saudi Arabia once again proved the value of bringing the right people together in one room.”&rdquo;</p>
+                                <p className="mt-sm balance"><strong>Marko Vucinic FRICS</strong> <br />Executive Director - Investment &amp; Asset Management, Knowledge Economic City</p>
+                            </div>
+                            
+                            <div>
+                                <p className="fs-4 balance">&ldquo;My experience with the FHS team has been nothing short of stellar till now.”&rdquo;</p>
+                                <p className="mt-sm balance"><strong>Aseem Kapoor</strong> <br />Executive Director - Founder &amp; Chief Executive, ARK People Solutions</p>
+                            </div>
+                        </Slider>
+                    </div>
+                </div>
+            </section>
+
+
+
 
             {/* WHO YOU WILL MEET */}
             <section className="block bg-accent">
@@ -255,9 +340,39 @@ export default function Home ({ data, content }) {
             </section>
 
 
+
+            {/* PARTNERS */}
+            <section className="block bg-white">
+                <div className="container center">
+                    <h1 className="fs-1 c-secondary caps">2026 Partners</h1>
+                </div>
+
+                <div className="container" style={{ display: `flex`, flexWrap: `wrap`, gap: `4rem`, justifyContent: `center`}}>
+                    {
+                        partners.length &&
+                        _.orderBy(_.uniqBy(partners, 'name'), 'name').map(partner => (
+                            <div
+                                key={partner.id}
+                                style={{
+                                    position: `relative`,
+                                    width: 150,
+                                    aspectRatio: 19 / 9,
+                                    display: `flex`,
+                                    justifyContent: `center`,
+                                    alignItems: `center`,
+                                }}
+                            >
+                                <Pop><img src={partner.logoUrl} alt="" style={{ objectFit: `contain`, width: `100%`, height: `100%`}} /></Pop>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+
             
             {/* BRF */}
-            <section className="block bg-white" style={{ position: `relative`, overflow: `hidden`}}>
+            <section className="block bg-secondary" style={{ position: `relative`, overflow: `hidden`}}>
                 <Dunes />
                 
                 <div className="container center" style={{ position: `relative`, zIndex: 2}}>
@@ -276,6 +391,17 @@ export default function Home ({ data, content }) {
                 </div>
             </section>
             
+
+            
+            {/* VIDEO */}
+            <section className="block bg-primary o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
+                <div className={`${CSS.highlightVideoGrid} container`}>
+                    <Slide><p className='fs-1 fw-600 lh-1'>A Snapshot of the FHS Experience</p></Slide>
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/fj2Q68dkw4c`} />
+                </div>
+            </section>
+
+
 
 
             {/* THEMES */}
@@ -515,12 +641,56 @@ export async function getStaticProps() {
             }
           
         `
-        })
+    })
 
-        return {
+    const swapcardData = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query {
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_EGYPT_2026}", page:1, pageSize: 200) {
+							id
+							name
+							logoUrl
+							fields {
+								... on SelectField {
+									id
+									value
+									definition {
+										id
+										name
+									}
+									translations {
+										value
+									}
+								}
+							}
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_EGYPT_2026,
+					"page": 1
+				}
+			})
+		}
+	)
+
+	console.log(swapcardData)
+	
+    const partnerData = await swapcardData.json()
+    
+    return {
         props: {
             data: data.entry,
             content: data.podcasts,
+            partners: partnerData.data.exhibitors,
         },
     }
 }

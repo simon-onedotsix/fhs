@@ -27,6 +27,8 @@
     "graphql-request": "^6.1.0",
     "html-react-parser": "^4.2.10",
     "lodash": "^4.17.21",
+    "motion": "^12.42.2",
+    "motion-plus": "https://api.motion.dev/registry.tgz?package=motion-plus&version=2.6.1&token=6ccee797b95a6e1fe024bfdb6622b843482745837e7c089ba58065777af8fcac",
     "next": "12.1.6",
     "next-hubspot": "^2.0.0",
     "next-intl": "^4.0.2",

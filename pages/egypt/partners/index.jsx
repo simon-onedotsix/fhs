@@ -141,7 +141,7 @@ export default function Page({ videoTestimonials, partnerData }) {
 
             <section className="block bg-white">
                 <div className="container center">
-                    <h1 className="fs-1 c-primary">Our 2026 Events Sponsors & Partners</h1>
+                    <h1 className="fs-1 c-primary">Our 2026 Event Partners</h1>
                 </div>
 
                 <div className="container" style={{ display: `flex`, flexWrap: `wrap`, gap: `4rem`, justifyContent: `center`}}>
