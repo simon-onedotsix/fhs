@@ -2,6 +2,7 @@ import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
 import { useState, useRef } from "react"
+import _ from 'lodash'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import useCustomMediaQuery from '../../hooks/useCustomMediaQuery'
