@@ -906,7 +906,7 @@ export const FHS_AFRICA = {
                     {
                         "__typename": "navigation_Entry",
                         "id": "109",
-                        "title": "2026 Partners",
+                        "title": "2027 Partners",
                         "navUrl": "/africa/partners",
                         "target": false
                     }

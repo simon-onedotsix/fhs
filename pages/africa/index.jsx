@@ -164,8 +164,17 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState()
 
-    const HOST_PARTNERS = partners.find(group => group.id === "274375")
-    const STRATEGIC_PARTNERS = partners.find(group => group.id === "138675")
+    // filter partners for assigned categories
+    const HOST_PARTNERS = { group: 'Host Partners', partners: partners.filter(partner => partner.fields.find(field => field.id === "RmllbGRWYWx1ZV8xNTAzNDczOQ==")) }
+    const STRATEGIC_PARTNERS = { group: 'Strategic Partners', partners: partners.filter(partner => partner.fields.find(field => field.id === "RmllbGRWYWx1ZV8yMjM5NDE1NA==")) }
+    const HEADLINE_PARTNERS = { group: 'Headline Partners', partners: partners.filter(partner => partner.fields.find(field => field.id === "RmllbGRWYWx1ZV8yNzM1MDgyNw==")) }
+
+
+    // console.log('partners:', partners)
+    // console.log('host partners:', HOST_PARTNERS)
+    // console.log('strategic partners:', STRATEGIC_PARTNERS)
+    // console.log('headline partners:', HEADLINE_PARTNERS)
+
 
 
     let customOrderedSpeakers = _.sortBy(speakers, [
@@ -188,8 +197,8 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
     // console.log('speakerData:', speakers)
 
     // console.log('selectedCmsSpeakers:', selectedCmsSpeakers)
-    // console.log('partners:', partners)
     // console.log('announcements:', announcements)
+
 
 
 
@@ -228,9 +237,9 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                 poster={'https://cms.thebench.com/assets/video/ahif-2024-opt-poster.jpg'}
             >
                 
-                <p className={CSS.headline}>
+                <div className={CSS.headline}>
                     <span className="c-secondary"><Reveal>Together</Reveal></span> <Reveal><span className="c-secondary">we</span>&nbsp;invest</Reveal>
-                </p>
+                </div>
 
                 <p className="fs-3 mt-xs"><span className="fw-600">2-3 February, 2027</span></p>
                 <p className="fs-4 balance lh-1">Speke Resort Convention Centre, Uganda</p>
@@ -302,21 +311,6 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
 
 
-            {/* <section className="block bg-primary pt-0">
-                <Pop>
-                    <div className="container center formatted bg-white p-sm rad-sm">
-                        <p className="fs-1 fw-600  c-primary">Look who&apos;s attending FHS Africa 2026</p>
-                        <p className="fs-4 pb-xs">Is your company represented?</p>
-
-                        <Pop inline delay={.2}>
-                            <Button href={'/africa/attendee-list-2026'}>View Company List</Button>
-                        </Pop>
-                    </div>
-                </Pop>
-            </section> */}
-
-
-
             {/* THEMES */}
             <section className="block bg-secondary no-print" style={{ position: 'relative', zIndex: 2}}>
                 <ThemesSlider
@@ -331,66 +325,70 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
             
             {/* PARTNERS */}
             <section className={`block bg-default`}>
-                <div className='container center'>
+                <div className='container flex jc-center gap-md center'>
             
-                    <p className='fs-3 fw-500 lh-1 c-white mb-sm'>2026 Host Partner</p>
-                    <LogoGrid>
-                        {
-                            HOST_PARTNERS.partners.length &&
-                            HOST_PARTNERS.partners.map( partner => {
-                                if ( !partner.partnerLogo.length ) return
-                                return (
-                                    <Pop key={partner.id}>
-                                        <a className={CSS.logoContainer} href={`/africa/partners/${partner.slug}`} rel="noreferrer" aria-label="Partner logo">
-                                            <div className={CSS.logo}>
-                                                <Image 
-                                                    src={partner.partnerLogo[0].url} 
-                                                    layout='fill'
-                                                    alt=""
-                                                />
-                                            </div>
-                                        </a>
-                                    </Pop>
-                                )
-                            })
-                        }
-                    </LogoGrid>
+                    <section>
+                        <p className='fs-3 fw-500 lh-1 c-white mb-sm'>2027 Host Partner</p>
+                        <LogoGrid>
+                            {
+                                HOST_PARTNERS.partners.length &&
+                                HOST_PARTNERS.partners.map(partner => {
+                                    if ( !partner.logoUrl ) return
+                                    return (
+                                        <Pop key={partner.id}>
+                                            <a className={CSS.logoContainer} href={`/africa/partners/${partner.id}`} rel="noreferrer" aria-label="Partner logo">
+                                                <div className={CSS.logo}>
+                                                    <Image 
+                                                        src={partner.logoUrl} 
+                                                        layout='fill'
+                                                        alt=""
+                                                    />
+                                                </div>
+                                            </a>
+                                        </Pop>
+                                    )
+                                })
+                            }
+                        </LogoGrid>
+                    </section>
                     
-                    <p className='fs-3 fw-500 lh-1 c-white mb-sm mt-md'>2026 Strategic Partners</p>
-                    <LogoGrid>
-                        {
-                            STRATEGIC_PARTNERS.partners.length &&
-                            STRATEGIC_PARTNERS.partners.map( partner => {
-                                if ( !partner.partnerLogo.length ) return
-                                return (
-                                    <Pop key={partner.id}>
-                                        <a className={CSS.logoContainer} href={`/africa/partners/${partner.slug}`} rel="noreferrer" aria-label="Partner logo">
-                                            <div className={CSS.logo}>
-                                                <Image 
-                                                    src={partner.partnerLogo[0].url} 
-                                                    layout='fill'
-                                                    alt=""
-                                                />
-                                            </div>
-                                        </a>
-                                    </Pop>
-                                )
-                            })
-                        }
-                    </LogoGrid>
+                    <section>
+                        <p className='fs-3 fw-500 lh-1 c-white mb-sm'>2027 Strategic Partners</p>
+                        <LogoGrid>
+                            {
+                                STRATEGIC_PARTNERS.partners.length &&
+                                STRATEGIC_PARTNERS.partners.map( partner => {
+                                    if ( !partner.logoUrl ) return
+                                    return (
+                                        <Pop key={partner.id}>
+                                            <a className={CSS.logoContainer} href={`/africa/partners/${partner.id}`} rel="noreferrer" aria-label="Partner logo">
+                                                <div className={CSS.logo}>
+                                                    <Image 
+                                                        src={partner.logoUrl} 
+                                                        layout='fill'
+                                                        alt=""
+                                                    />
+                                                </div>
+                                            </a>
+                                        </Pop>
+                                    )
+                                })
+                            }
+                        </LogoGrid>
+                    </section>
 
-                    <div className="mt-sm center">
-                        <Pop inline><ArrowButton href={`/africa/partners`} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>See all Partners</ArrowButton></Pop>
-                    </div>
                     
+                </div>
                     
+                <div className="container center">
+                    <Pop inline><ArrowButton href={`/africa/partners`} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>See all Partners</ArrowButton></Pop>
                 </div>
             </section>
 
             
 
             {/* QUOTES */}
-            <section className="block bg-primary">
+            <section className="block bg-primary pt-0">
                 <div className={`container columns-3 gap-sm`}>
                     {
                         QUOTES_DATA.map((quote, index) => (
@@ -580,48 +578,67 @@ export async function getStaticProps({ preview, previewData }) {
 			},
 			body: JSON.stringify({
 				query: `
-					query eventPerson($eventId: ID!, $cursor: CursorPaginationInput, $filters: [EventPersonFilter!] ) {
+					query($eventId: ID!, $cursor: CursorPaginationInput, $filters: [EventPersonFilter!] ) {
 						eventPerson(eventId: $eventId, cursor: $cursor, filters:$filters ) {
-						nodes {
+                            nodes {
+                                id
+                                type
+                                firstName
+                                lastName
+                                jobTitle
+                                organization
+                                photoUrl
+                                groups {
+                                    id
+                                    name
+                                }
+                                withEvent(eventId: $eventId) {
+                                fields {
+                                    ... on SelectField {
+                                        translations {
+                                            value
+                                            language
+                                        }
+                                        definition {
+                                            id
+                                            translations {
+                                                name
+                                                language
+                                            }
+                                                }
+                                            }
+                                        }
+                                        badges {
+                                            ... on BadgeBarcode {
+                                                __typename
+                                                barcode
+                                                createdAt
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                                exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_AFRICA_2027}", page:1, pageSize: 200) {
 							id
-							type
-							firstName
-							lastName
-							jobTitle
-							organization
-							photoUrl
-							groups {
-								id
-								name
-							}
-							withEvent(eventId: $eventId) {
+							name
+							logoUrl
 							fields {
 								... on SelectField {
-									translations {
-										value
-										language
-									}
+									id
+									value
 									definition {
 										id
-										translations {
-											name
-											language
-										}
-											}
-										}
+										name
 									}
-									badges {
-										... on BadgeBarcode {
-											__typename
-											barcode
-											createdAt
-										}
+									translations {
+										value
 									}
 								}
 							}
 						}
-					}
-				`,
+                        }
+                    `,
+
 				variables: {
 					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
 					"cursor": {
@@ -654,9 +671,10 @@ export async function getStaticProps({ preview, previewData }) {
     return { 
 		props: { 
             seomatic: pageData.data.entry.seomatic,
-            partners: pageData.data.partners,
+            // partners: pageData.data.partners,
             announcements: pageData.data.announcements,
-            speakers: speakerData.data.eventPerson.nodes
+            speakers: speakerData.data.eventPerson.nodes,
+            partners: speakerData.data.exhibitors
 		}
 	}
 }

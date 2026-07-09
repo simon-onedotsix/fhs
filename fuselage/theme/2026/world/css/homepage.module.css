@@ -217,6 +217,7 @@
     position: relative;
 }
 .themeWrapperGraphics {
+    pointer-events: none;
     position: absolute;
     inset: 0;
     overflow: hidden;

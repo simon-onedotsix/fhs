@@ -178,7 +178,7 @@ export async function getStaticProps({ preview, previewData }) {
 		}
 	)
 
-	console.log(swapcardData)
+	// console.log(swapcardData)
 	
 	const partnerData =  await swapcardData.json()
 
