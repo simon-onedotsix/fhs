@@ -56,6 +56,7 @@ import { ContentCard } from '../../fuselage/components/content-card/content-card
 import { LayoutGallery } from "../../fuselage/components/layout-gallery/layout-gallery"
 import { ContentCard as Post } from "../../fuselage/theme/2024/world/components/content-card/content-card"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
+import { VideoTestimonial } from '../../fuselage/theme/2025/sa/components/video-testimonial/video-testimonial'
 
 
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
@@ -724,7 +725,7 @@ export default function Page({ seomatic, partners }) {
             <section className="block bg-primary-2 o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className={`${CSS.highlightVideoGrid} container`}>
                     <Slide><p className='fs-1 fw-700 lh-1'>Highlights from FHS Saudi Arabia 2026</p></Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/EL1P5PTvyp4`} />
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/LSqHtk9V-zg`} />
                 </div>
             </section>
 
@@ -1091,31 +1092,6 @@ export default function Page({ seomatic, partners }) {
             </Section>
 
 
-            
-            {/* LINKEDIN POSTS */}
-            {/* <section className="block bg-primary-2">
-                <div className="container center">
-                    <Pop><p className="fs-2 fw-600 balance">{ locale === 'ar' ? 'انضم إلى الحدث' : 'Join The Buzz'}</p></Pop>
-                </div>
-
-                <div className="container columns-3 gap-sm">
-   
-                    <Pop><a href="https://www.linkedin.com/posts/coachpedari_fhssaudiarabia-saudiarabia-vision2030-share-7462362617035038720-6TS2" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-02.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)`}} /></a></Pop>
-                    
-                    <Pop><a href="https://www.linkedin.com/posts/bandaradnan_fhs-futurehospitalitysummit-fhssaudiarabia-share-7459158907719073792-FE3i/" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-04.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)` }} /></a></Pop>
-                    
-                    <Pop><a href="https://www.linkedin.com/posts/huda-al-kharji-4568a8195_im-excited-to-be-attending-fhs-saudi-arabia-share-7459132983875276800-W93-/" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-05.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)` }} /></a></Pop>
-                    
-                    <Pop><a href="https://www.linkedin.com/posts/daniel-johansson-b155aa9_im-excited-to-attend-fhs-saudi-arabia-2026-share-7458116318257410049-XaBq" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-06.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)` }} /></a></Pop>
-                    
-                    <Pop><a href="https://www.linkedin.com/posts/futurehospitalitysummit-fhs-share-7459609101669597184-iH3h" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-08.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)` }} /></a></Pop>
-                    
-                    <Pop><a href="https://www.linkedin.com/posts/ragad-al-nasser-93327945_fhssaudiarabia-saudileadstheway-share-7459910964583268352-G8K3" target="_blank" rel="noreferrer"><img src="/assets/img/sa/homepage/linkedin/li-09.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem`, border: `1px solid var(--primary-2)` }} /></a></Pop>
-                    
-                </div>
-            </section> */}
-
-
 
             {/* THOUGHT LEADERSHIP */}
             <section className="block bg-primary-2">
@@ -1123,7 +1099,7 @@ export default function Page({ seomatic, partners }) {
                     <Pop><p className="fs-2 fw-600 balance">{locale === 'ar' ? 'القيادة الفكرية في قلب الحدث' : 'Thought Leadership in Action'}</p></Pop>
                 </div>
 
-                <div className="container columns-3 gap-sm" dir={`rtl`}>
+                <div className="container columns-3 gap-sm" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
                     {
                         (locale === 'ar' ? THOUGHT_LEADERSHIP_AR : THOUGHT_LEADERSHIP).map((entry, index) => (
                             <Post
@@ -1183,7 +1159,7 @@ export default function Page({ seomatic, partners }) {
                 }
             >
                 <div className={`container columns-3 gap-md`}>
-                    {
+                    {/* {
                         (locale === 'ar' ? QUOTES_DATA_AR : QUOTES_DATA).map((quote, index) => (
                             <Quotation
                                 key={index}
@@ -1193,7 +1169,33 @@ export default function Page({ seomatic, partners }) {
                                 title={quote.title}
                             />
                         ))
-                    }
+                    } */}
+                    <VideoTestimonial entry={{
+                        "id": "223023",
+                        "videoShareUrl": "https://www.youtube.com/watch?v=Ro4k0OytXig",
+                        "fullName": "Omar Al-Abdullatif",
+                        "jobTitle": "Chief Executive Officer",
+                        "organisation": "Blacksand",
+                        "testimonial": "Honestly, it's the biggest hospitality summit we know. It's a great event and very much B2B."
+                    }} />
+                   
+                    <VideoTestimonial entry={{
+                        "id": "223023",
+                        "videoShareUrl": "https://www.youtube.com/watch?v=mMAbGByBfJE",
+                        "fullName": "Marko Vucinic",
+                        "jobTitle": "Executive Director - Investment & Asset Management",
+                        "organisation": "Knowledge Economic City",
+                        "testimonial": "We love the platform. It connected us to a lot of partners that we deal with on day-to-day basis."
+                    }} />
+                   
+                    <VideoTestimonial entry={{
+                        "id": "223023",
+                        "videoShareUrl": "https://www.youtube.com/watch?v=97dsiYGJHmc",
+                        "fullName": "Khalid Saud Abuhaimed",
+                        "jobTitle": "Chief Executive Officer",
+                        "organisation": "Al Khozama Investment Company",
+                        "testimonial": "We host the Future Hospitality Summit every year because I believe the deals that shape this industry need a home, a place where opportunity meets capital."
+                    }} />
                 </div>
 
                 <div className="container center">

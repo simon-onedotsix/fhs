@@ -170,26 +170,26 @@ export default function Home ({ data, content, partners }) {
 
                 <div className="container columns-4 gap-sm">
                     <div className="formatted">
-                        <Pop><img src="/assets/img/egypt/homepage/egypt-03.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <Pop><img src="/assets/img/egypt/homepage/why-attend.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
                         <h3 className="balance">Why attend?</h3>
                         <p className="fs-6">Connect with the leaders shaping Egypt&apos;s hospitality investment future</p>
                     </div>
                     
                     <div className="formatted">
-                        <Pop><img src="/assets/img/egypt/homepage/egypt-04.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <Pop><img src="/assets/img/egypt/homepage/what-will-i-gain.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
                         <h3 className="balance">What will I gain?</h3>
                         <p className="fs-6">Access insights, opportunities and partnerships that drive growth</p>
                     </div>
 
                     <div className="formatted">
-                        <Pop><img src="/assets/img/egypt/homepage/egypt-05.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <Pop><img src="/assets/img/egypt/homepage/why-now.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
                         <h3 className="balance">Why now?</h3>
                         <p className="fs-6">Be part of Egypt&apos;s next wave of tourism and real estate expansion</p>
                     </div>
 
                     <div className="formatted">
-                        <Pop><img src="/assets/img/egypt/homepage/egypt-05.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
-                        <h3 className="balance">Exceptional Growth MomentumWhat next?</h3>
+                        <Pop><img src="/assets/img/egypt/homepage/what-next.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}}/></Pop>
+                        <h3 className="balance">What next?</h3>
                         <p className="fs-6">Register now and join the conversation</p>
                     </div>
                 </div>
@@ -295,17 +295,22 @@ export default function Home ({ data, content, partners }) {
                     <div className="center">
                         <Slider>
                             <div>
+                                <p className="fs-4 balance">&ldquo;Attending this summit was incredibly enriching experience. The insights shared, the quality of discussions and the opportunity to connect. Reconnecting with industry leaders was a great opportunity.&rdquo;</p>
+                                <p className="mt-sm balance"><strong>Majed Kayal</strong> <br />Real Estate Manager, Baraka</p>
+                            </div>
+
+                            <div>
+                                <p className="fs-4 balance">&ldquo;As in every Future Hospitality Summit, we get quality conversations rather than the big quantities that we find in other exhibitions. So, this has been a really good exhibition so far. We&apos;ve had some quality discussions.&rdquo;</p>
+                                <p className="mt-sm balance"><strong>Eddy Tannous</strong> <br />Chief Operating Officer, Rotana</p>
+                            </div>
+
+                            <div>
                                 <p className="fs-4 balance">&ldquo;The event has been great. I met a lot of people that I haven&apos;t seen in quite some time. It&apos;s a great networking event.&rdquo;</p>
                                 <p className="mt-sm balance"><strong>Marcel Von Aulock</strong> <br />CEO, Southern Sun</p>
                             </div>
                             
                             <div>
-                                <p className="fs-4 balance">&ldquo;It&apos;s an incredible event, it&apos;s great to have all these people brought together. For me to get this recognition in front of so many peers of mine makes me very proud.&rdquo;</p>
-                                <p className="mt-sm balance"><strong>William Heinecke</strong> <br />Founder and Chairman, Minor International</p>
-                            </div>
-                            
-                            <div>
-                                <p className="fs-4 balance">&ldquo;From meeting investors and industry leaders to exchanging ideas on Saudi Arabia&apos;s next phase of destination development, FHS Saudi Arabia once again proved the value of bringing the right people together in one room.”&rdquo;</p>
+                                <p className="fs-4 balance">&ldquo;From meeting investors and industry leaders to exchanging ideas on the region&apos;s next phase of destination development, FHS once again proved the value of bringing the right people together in one room.&rdquo;</p>
                                 <p className="mt-sm balance"><strong>Marko Vucinic FRICS</strong> <br />Executive Director - Investment &amp; Asset Management, Knowledge Economic City</p>
                             </div>
                             
