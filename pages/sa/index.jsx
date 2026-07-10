@@ -1252,7 +1252,6 @@ const PartnerGroup = ({ partnerData, start, end }) => {
     )
 }
 
-
 export const InvestorImpact = ({ prefix, figure, unit, label }) => {
     return (
         <Pop>
@@ -1290,7 +1289,6 @@ export const StartupPromo = () => {
 
 const TickIcon = () => <img src="/assets/ui/icon-tick.svg" alt="" style={{ height: 12, marginRight: 1 }} />
 
-
 const Card = ({ children }) => {
     return (
         <Pop>
@@ -1300,6 +1298,9 @@ const Card = ({ children }) => {
         </Pop>
     )
 }
+
+
+
 
 
 

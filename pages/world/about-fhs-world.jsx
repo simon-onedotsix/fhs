@@ -139,7 +139,7 @@ export default function AboutPage () {
 
 
             <PageHeroImage hero={{ url: '/assets/site/ae/hero-about-fhs-world.jpg', width: 6048, height: 3422 }} >
-                <div className="container maxw-50 pb-md formatted c-white center">
+                <div className="container maxw-50 p-md formatted c-white center">
                     <h1>About FHS World</h1>
 
                     <p className='fs-4'>FHS World is the hospitality industry&apos;s platform to invest in its future.</p>
@@ -179,7 +179,7 @@ export default function AboutPage () {
             </section>
 
 
-            <section className="block bg-pattern-primary-50">
+            <section className="block bg-primary o-hidden">
                 <div className="container center">
                     <p className='fs-1 fw-300 caps'>Job Seniority</p>
                 </div>

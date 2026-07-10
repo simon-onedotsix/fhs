@@ -302,7 +302,7 @@ export const FHS_WORLD = {
                         "__typename": "navigation_Entry",
                         "id": "155",
                         "title": "Why Partner?",
-                        "navUrl": "/world/why-sponsor",
+                        "navUrl": "/world/why-partner",
                         "target": false
                     }
                 ]
@@ -420,7 +420,7 @@ export const FHS_WORLD = {
                 },
                 {
                     "label": "Become a Partner",
-                    "hyperlink": "/world/why-sponsor#partner-form",
+                    "hyperlink": "/world/why-partner#partner-form",
                     "openInNewWindow": false
                 }
             ]

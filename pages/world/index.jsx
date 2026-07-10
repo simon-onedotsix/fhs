@@ -24,7 +24,8 @@ import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-
 import { ImpactFigure } from "../../fuselage/theme/2024/world/components/impact-figure/impact-figure"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
 import { Callout } from '../../fuselage/theme/2024/world/blocks/callout/callout'
-
+import { BarChart, Field } from '../../fuselage/theme/2025/world/components/bar-chart/bar-chart'
+import { GlobalMap } from '../../fuselage/theme/2025/world/components/global-map/global-map'
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
@@ -62,6 +63,8 @@ import Ticker from "framer-motion-ticker"
 import { getAllSpecialFields } from "../../lib/swapcard/get-all-special-fields"
 
 import CSS from '../../fuselage/theme/2026/world/css/homepage.module.css'
+
+
 
 
 const photos = [
@@ -259,6 +262,47 @@ const SPEAKERS = [
     },
 ]
 
+const INDUSTRY_DATA = [
+    {
+        label: 'Hotel Operator/Management',
+        value: 22
+    },
+    {
+        label: 'Investor (Equity)/Owner',
+        value: 21
+    },
+    {
+        label: 'Consultant/Advisor',
+        value: 13
+    },
+    {
+        label: 'Architecture/Design',
+        value: 10
+    },
+    {
+        label: 'Hotel Developer/Builder',
+        value: 9
+    },
+    {
+        label: 'Government/Tourism Official',
+        value: 7
+    },
+    {
+        label: 'Technology/Innovation',
+        value: 6
+    },
+    {
+        label: 'Real Estate Broker/Surveyor',
+        value: 3
+    },
+    {
+        label: 'Other',
+        value: 10
+    },
+    
+]
+
+
 
 
 export default function Home ({ globals, entry, seomatic, partnerData }) {
@@ -300,7 +344,12 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
             />
             
 
+            
 
+
+
+            
+            {/* INTRO */}
             <HeroUnitVideo
                 video={'https://cms.thebench.com/assets/video/fhs-2025-world-opt.mp4'}
                 poster={'https://cms.thebench.com/assets/video/fhs-2025-world-opt-poster.jpg'}
@@ -322,30 +371,62 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
                         blendMode={`hard-light`}
                     />
                 </div>
-                
-                <div className={CSS.headline}>
-                    <Reveal delay={.5}>
-                        <p className={CSS.tagline}>Reinvest</p>
-                    </Reveal>
-                    <Reveal delay={.75}>
-                        <p className={CSS.tagline}>In Our Future</p>
-                    </Reveal>
+
+                <div className={CSS.heroLayout}>
+
+                    {/* tagline */}
+                    <section style={{ alignSelf: 'flex-end' }}>
+                        <div className={CSS.headline}>
+                            <Reveal delay={.5}>
+                                <p className={CSS.tagline}>Reinvest</p>
+                            </Reveal>
+                            <Reveal delay={.75}>
+                                <p className={CSS.tagline}>In Our Future</p>
+                            </Reveal>
+                        </div>
+
+                        <Fade delay={1.2}>
+                            <p className={`fs-5 fw-500 c-white mt-md balance`} >29 September - 1 October 2026, Madinat Jumeirah, Dubai</p>
+                        </Fade>
+
+                        <Fade>
+                            <div className="mt-sm button-grid">
+                                <Pop inline delay={1.3}>
+                                    <Button href={`/world/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Here</Button>
+                                </Pop>
+                                <Pop inline delay={1.3}>
+                                    <Button href={`/world/download-fhs-event-brochure`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>View Event Brochure</Button>
+                                </Pop>
+                                <Pop inline delay={1.3}>
+                                    <Button href={`/world/download-post-event-report`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>2025 Post-event Report</Button>
+                                </Pop>
+                            </div>
+                        </Fade>
+                    </section>
+
+                    {/* patronage */}
+                    <section style={{ alignSelf: 'flex-end' }}>
+                        <Pop>
+                            <div className={CSS.patronBox}>
+                                <div className={CSS.patronBoxAvatar}>
+                                    <Pop inline>
+                                        <div className={CSS.avatar}>
+                                            <Image src={"https://cms.thebench.com/assets/img/avatars/H.H.-Sheikh-Ahmed-bin-Saeed-Al-Maktoum.jpeg"} layout='fill' alt="" unoptimized />
+                                        </div>
+                                    </Pop>
+                                </div>
+
+                                <div className={CSS.patronBoxContent}>
+                                    <Pop delay={.1}>
+                                        <p className="fw-600 balance">HH Sheikh Ahmed bin Saeed Al Maktoum</p>
+                                        <p className="mt-xxs balance"> Chairman Dubai Holding, Dubai Airports, Emirates Group; President, DCAA</p>
+                                    </Pop>
+                                </div>
+                            </div>
+                        </Pop>
+                    </section>
                 </div>
-
-                <Fade delay={1.2}>
-                    <p className={`fs-5 fw-500 c-white mt-md`} >29 September - 1 October 2026, Madinat Jumeirah, Dubai</p>
-                </Fade>
-
-                <Fade delay={1.3}>
-                    <div className="mt-sm button-grid">
-                        <Pop inline>
-                            <Button href={`/world/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Here</Button>
-                        </Pop>
-                        <Pop inline>
-                            <Button href={`/world/download-post-event-report`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>2025 Post-event Report</Button>
-                        </Pop>
-                    </div>
-                </Fade>
+                
               
             </HeroUnitVideo>
 
@@ -353,7 +434,6 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
 
 
             {/* INVESTORS */}
-
             <section className="block bg-primary-2-dark">
                 <div className="container center">
                     <Fade>
@@ -368,10 +448,9 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
                     <p className="mt-md">
                         <Pop>
                             <ButtonKeyline 
-                                href={'https://14527187.fs1.hubspotusercontent-na1.net/hubfs/14527187/FHS%20World%202025/Sample%20Investors.pdf?utm_campaign=FHS%20World%202025&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_ZjXU77wgbeP6Mk-gH3B2dnRljrMZNbQWuOUGEywiuegyGkftu7Da86ewwLfPW8t19fs4W'} 
+                                href={'/world/sample-list-of-attending-investors'} 
                                 decal={'fs-5 fw-600'} 
                                 color={'var(--primary)'}
-                                target={'_blank'}
                             >
                                 View Sample List of Attending Investors
                             </ButtonKeyline>
@@ -380,15 +459,15 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
                 </div>
             </section>
 
+            
 
             {/* SPEAKER HIGHLIGHTS */}
-
             {
                 SPEAKERS &&
                 <section className="block bg-secondary">
 
                     <div className="container center">
-                        <p className="fs-0 fw-600 c-primary">2026 Speakers</p>
+                        <p className="fs-1 fw-600 c-primary caps">2026 Speakers</p>
                     </div>
                         
                     <div className="container columns-5 gap-sm">
@@ -423,9 +502,8 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
 
 
             {/* THEMES */}
-
             <div className={CSS.themeWrapper}>
-                <div className={CSS.themeWrapperGraphics}>
+                {/* <div className={CSS.themeWrapperGraphics}>
                     <InfiniteRotatingTriangles
                         fill={`var(--accent)`}
                         size={`60vw`}
@@ -438,64 +516,43 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
                         right={`-20rem`}
                         bottom={`-20rem`}
                     />
-                </div>
+                </div> */}
 
                 <section className={`${CSS.themeWrapperContent} block`}>
-                    <ThemesSlider data={THEMES_DATA} link={'/world/themes'} linkLabel={'Learn More'} />
+                    <ThemesSlider data={THEMES_DATA} />
                 </section>
             </div>
 
-
             
-
-
-            {/* PATRONAGE */}
-            
-            <section className="block bg-primary-2">
+            {/* WHO ATTENDS */}
+            <section className="block bg-primary-2-dark">
                 <div className="container center">
-                    <p className="fs-3 fw-600 c-secondary caps pb-sm">Under the Patronage of</p>
+                    <Fade>
+                        <p className="fs-1 fw-600 lh-1 caps">Who Attends FHS World</p>
+                    </Fade>
+                </div>
 
-                    <div className={CSS.patronBox}>
-
-                        <div className={CSS.patronBoxAvatar}>
-                            <Pop>
-                                <div className={CSS.avatar}>
-                                    <Image src={"https://cms.thebench.com/assets/img/avatars/H.H.-Sheikh-Ahmed-bin-Saeed-Al-Maktoum.jpeg"} layout='fill' alt="" unoptimized />
-                                </div>
-                            </Pop>
-                        </div>
-
-                        <div className={CSS.patronBoxContent}>
-                            <Pop>
-                                <p className="fs-4 fw-600">His Highness Sheikh Ahmed bin Saeed Al Maktoum</p>
-                                <p className="fs-5 mt-xxs">
-                                    Founding Patron, AHIC/FHS
-                                </p>
-                                <p className="fs-5 mt-xxs">
-                                    President, Dubai Civil Aviation Authority
-                                </p>
-                                <p className="fs-5 mt-xxs">
-                                    Chairman, Dubai Airports
-                                </p>
-                                <p className="fs-5 mt-xxs">
-                                    Chairman and Chief Executive, Emirates Airline & Group
-                                </p>
-                                <p className="fs-5 mt-xxs">
-                                    Chairman, Dubai Holding
-                                </p>
-
-                            </Pop>
-                        </div>
-                    </div>
-                    
-                    <p className="mt-xs caps fs-sm c-secondary"><Link href={'/world/speakers/profile/h-h-sheikh-ahmed-bin-saeed-al-maktoum'}><a className="uLink">View biography</a></Link></p>
+                <div className="container columns-2 gap-md">
+                    <section>
+                        <p className="fs-4 fw-500 pb-sm">By Industry:</p>
+                        <BarChart>
+                            {
+                                INDUSTRY_DATA &&
+                                INDUSTRY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 3, max: 22 }} />)
+                            }
+                        </BarChart>
+                    </section>
+                   
+                    <section>
+                        <p className="fs-4 fw-500 pb-sm">By Geography:</p>
+                        <GlobalMap />
+                    </section>
                 </div>
             </section>
-
+            
 
 
             {/* VIDEO + PHOTO HIGHLIGHTS */}
-
             <section className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className={`${CSS.highlightVideoGrid} container`}>
                     <Slide><p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS World 2025</span></p></Slide>
@@ -510,7 +567,7 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
                             photos.map( (photo, index) => (
                                 <Pop key={index}>
                                     <div key={photo.id} style={{ position: `relative`}}>
-                                        <Image src={photo.hero[0].url} width={photo.hero[0].width} height={photo.hero[0].height} layout={`responsive`} alt="" />
+                                        <Image src={photo.hero[0].url} width={photo.hero[0].width} height={photo.hero[0].height} layout={`responsive`} alt="" style={{ borderRadius: '.5rem'}} />
                                     </div>
                                 </Pop>
                             ))
@@ -522,7 +579,7 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
 
                 </div>
 
-                <motion.div className={CSS.highlightsGraphicWapper} style={{ y }}>
+                {/* <motion.div className={CSS.highlightsGraphicWapper} style={{ y }}>
                     
                     <InfiniteRotatingTriangles
                         fill={`var(--accent)`}
@@ -530,12 +587,12 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
                         right={`-20rem`}
                         top={`-40rem`}
                     />
-                </motion.div>
+                </motion.div> */}
             </section>
 
+            
 
             {/* SPONSORSHIP FORM */}
-
             <section id="sponsor-form" className="block bg-white o-hidden">
                 <div className="container columns-2 gap-lg">
                     <div className="formatted">
@@ -564,6 +621,93 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
     )
 }
 Home.theme = 'world-2024'
+
+
+
+
+
+const Triangle = ({ fill = `var(--accent)` }) => {
+    return (
+        <motion.div
+            animate={{ transform: "rotate(-360deg)" }}
+            transition={{
+                duration: 90,
+                repeat: Infinity,
+                ease: "linear"
+            }}
+        >
+            <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 719 804"
+                style={{ fillRule: `evenodd`, clipRule: `evenodd`, strokeLinejoin: `round`, strokeMiterlimit: 2 }}
+            >
+                <g transform="matrix(1,0,0,1,-307,-138)">
+                    <g id="fhs-tri" transform="matrix(-717.399292,0,0,717.399292,1025.134974,539.999939)">
+                        <path
+                            d="M0.837,-0.56L1,-0.466L1,0.466L0.837,0.56L0,0.076L0,-0.076L0.837,-0.56Z"
+                            style={{ fill: fill, fillRule: `nonzero` }}
+                        />
+                    </g>
+                </g>
+            </svg>
+        </motion.div>
+    )
+}
+
+const InfiniteRotatingTriangles = ({ size = 500, amount = 10, fill = `#4BD4ED`, top, right, bottom, left, blendMode = `` }) => {
+    return (
+        <div style={{
+            aspectRatio: 1,
+            width: size,
+            position: `absolute`,
+            top: top,
+            right: right,
+            bottom: bottom,
+            left: left,
+        }}>
+            {[...Array(amount)].map((_, index) => (
+                <motion.div
+                    key={index}
+                    style={{
+                        width: size,
+                        aspectRatio: 1,
+                        scale: 1 - (index / 14) / 1.125,
+                        opacity: (0 + index / 14) / 4,
+                        position: 'absolute',
+                        mixBlendMode: blendMode
+                    }}
+                    animate={{
+                        rotate: [0 + (index * -5), -360 + (index * -5)],
+                    }}
+                    transition={{
+                        duration: 90,
+                        repeat: Infinity,
+                        ease: "linear",
+                    }}
+                >
+                    <svg
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 719 804"
+                        style={{ fillRule: `evenodd`, clipRule: `evenodd`, strokeLinejoin: `round`, strokeMiterlimit: 2 }}
+                    >
+                        <g transform="matrix(1,0,0,1,-1078.497,-149.908243)">
+                            <g id="stubby" transform="matrix(-717.399292,0,0,717.399292,1795.89176,516.827408)">
+                                <path d="M1,0.369L1,-0.369L0.754,-0.511L0.12,-0.145L0.12,0.145L0.754,0.512L1,0.369Z" style={{ fill: fill, fillRule: `nonzero` }}/>
+                            </g>
+                        </g>
+                    </svg>
+                </motion.div>
+            ))}
+        </div>
+    );
+}
+
+
+
+
+
 
 
 
@@ -634,86 +778,3 @@ export async function getStaticProps({ params, preview, previewData }) {
     }
 }
 
-
-
-
-
-const Triangle = ({ fill = `var(--accent)` }) => {
-    return (
-        <motion.div
-            animate={{ transform: "rotate(-360deg)" }}
-            transition={{
-                duration: 90,
-                repeat: Infinity,
-                ease: "linear"
-            }}
-        >
-            <svg
-                width="100%"
-                height="100%"
-                viewBox="0 0 719 804"
-                style={{ fillRule: `evenodd`, clipRule: `evenodd`, strokeLinejoin: `round`, strokeMiterlimit: 2 }}
-            >
-                <g transform="matrix(1,0,0,1,-307,-138)">
-                    <g id="fhs-tri" transform="matrix(-717.399292,0,0,717.399292,1025.134974,539.999939)">
-                        <path
-                            d="M0.837,-0.56L1,-0.466L1,0.466L0.837,0.56L0,0.076L0,-0.076L0.837,-0.56Z"
-                            style={{ fill: fill, fillRule: `nonzero` }}
-                        />
-                    </g>
-                </g>
-            </svg>
-        </motion.div>
-    )
-}
-
-
-
-const InfiniteRotatingTriangles = ({ size = 500, amount = 10, fill = `#4BD4ED`, top, right, bottom, left, blendMode = `` }) => {
-    return (
-        <div style={{
-            aspectRatio: 1,
-            width: size,
-            position: `absolute`,
-            top: top,
-            right: right,
-            bottom: bottom,
-            left: left,
-        }}>
-            {[...Array(amount)].map((_, index) => (
-                <motion.div
-                    key={index}
-                    style={{
-                        width: size,
-                        aspectRatio: 1,
-                        scale: 1 - (index / 14) / 1.125,
-                        opacity: (0 + index / 14) / 4,
-                        position: 'absolute',
-                        mixBlendMode: blendMode
-                    }}
-                    animate={{
-                        rotate: [0 + (index * -5), -360 + (index * -5)],
-                    }}
-                    transition={{
-                        duration: 90,
-                        repeat: Infinity,
-                        ease: "linear",
-                    }}
-                >
-                    <svg
-                        width="100%"
-                        height="100%"
-                        viewBox="0 0 719 804"
-                        style={{ fillRule: `evenodd`, clipRule: `evenodd`, strokeLinejoin: `round`, strokeMiterlimit: 2 }}
-                    >
-                        <g transform="matrix(1,0,0,1,-1078.497,-149.908243)">
-                            <g id="stubby" transform="matrix(-717.399292,0,0,717.399292,1795.89176,516.827408)">
-                                <path d="M1,0.369L1,-0.369L0.754,-0.511L0.12,-0.145L0.12,0.145L0.754,0.512L1,0.369Z" style={{ fill: fill, fillRule: `nonzero` }}/>
-                            </g>
-                        </g>
-                    </svg>
-                </motion.div>
-            ))}
-        </div>
-    );
-};

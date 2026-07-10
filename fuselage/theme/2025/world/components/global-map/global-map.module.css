@@ -1,10 +1,14 @@
 .layout {
     position: relative;
+    display: grid;
     width: 100%;
     aspect-ratio: 3589/1820;
+    container-type: inline-size;
 }
 
-
+.map {
+    opacity: .4;
+}
 
 
 
@@ -12,23 +16,20 @@
 
 @media(max-width:599px){
     .overlay {
+        position: relative;
         display: grid;
         grid-template-columns: 1fr;
-        gap: .25rem;
-        margin-top: var(--space-sm);
+        gap: .5rem;
     }
-
-    .region {
-        padding: .5rem 1.25rem;
-        background-color: var(--accent);
-    }
-    .region p {
-        font-size: 5vw;
+    .regionContainer div {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: row;
+        justify-content: center;
     }
-    .region p span {
+    .label {
+        font-size: 5vw;
+    }
+    .value {
         font-size: 7vw;
     }
 }
@@ -42,16 +43,18 @@
     .regionContainer {
         position: absolute;
     }
-    .region {
-        padding: .5rem 1.25rem;
-        background-color: var(--accent);
-    }
-    .region p {
-        font-size: 1.2vw;
+
+    .label {
+        font-size: 2cqw;
         display: flex;
-        align-items: center;
     }
-    .region p span {
+    .value {
+        font-size: 7cqw;
+        font-weight: 500;
+        line-height: 1;
+        container-type: inline-size;
+    }
+    .unit {
         font-size: 2vw;
     }
 }

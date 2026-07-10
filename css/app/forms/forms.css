@@ -66,6 +66,7 @@
     border: 1px var(--standard-border-color, rgb(230, 230, 230)) solid;
     border-radius: var(--standard-field-radius, 0);
     background-color: var(--standard-field-bg, rgb(247, 247, 247));
+    max-width: max-content;
 
     /* background-image: url('/assets/ui/dropdown-chevron.svg'); */
     background-size: 1rem;

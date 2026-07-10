@@ -28,6 +28,7 @@ export const Field = ({ label, value, unit, normalise }) => {
     )
 }
 
+
 const Bar = ({ value, normalise }) => {
 
     let initialWidth = 0
@@ -46,8 +47,6 @@ const Bar = ({ value, normalise }) => {
         </span>
     )
 }
-
-
 
 
 const AnimatedCounter = ({ from, to, animationOptions }) => {
