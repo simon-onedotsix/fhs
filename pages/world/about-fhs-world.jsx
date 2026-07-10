@@ -25,69 +25,42 @@ import CSS from '../../css/app/lead-wall.module.css'
 
 const INDUSTRY_DATA = [
     {
-        label: 'Hotel/Resort Operator',
-        value: 18
+        label: 'Hotel Operator/Management',
+        value: 22
     },
     {
-        label: 'Investor (Equity) / Owner',
-        value: 15
+        label: 'Investor (Equity)/Owner',
+        value: 21
     },
     {
-        label: 'Consultant / Advisor',
-        value: 11
+        label: 'Consultant/Advisor',
+        value: 13
     },
     {
-        label: 'Education / Students',
+        label: 'Architecture/Design',
         value: 10
     },
     {
-        label: 'Tourism / Government Official',
+        label: 'Hotel Developer/Builder',
         value: 9
     },
     {
-        label: 'Hotel Developer / Builder',
-        value: 9
+        label: 'Government/Tourism Official',
+        value: 7
     },
     {
-        label: 'Media',
+        label: 'Technology/Innovation',
         value: 6
     },
     {
-        label: 'Architect / Designer',
-        value: 6
+        label: 'Real Estate Broker/Surveyor',
+        value: 3
     },
     {
-        label: 'Technology / Innovation',
-        value: 5
+        label: 'Other',
+        value: 10
     },
-    {
-        label: 'F&B Investor / Operator',
-        value: 4
-    },
-    {
-        label: 'Supplier',
-        value: 2
-    },
-    {
-        label: 'Asset Manager',
-        value: 2
-    },
-    {
-        label: 'Lawyer',
-        value: 2
-    },
-    {
-        label: 'Real Estate Agent / Surveyor',
-        value: 1
-    },
-    {
-        label: 'Bank / Lender',
-        value: 0.3
-    },
-    {
-        label: 'Other (NGO, Fashion, Aviation, Wellness)',
-        value: 1
-    },
+    
 ]
 
 const SENIORITY_DATA = [
@@ -156,8 +129,8 @@ export default function AboutPage () {
             <section className="block pt-0">
                 <div className="container formatted center">
                     <p className='fs-1 fw-600'>Who Attends</p>
-                    <ImpactFigure figure={1596} impact={'attendees from across the globe'}  />
-                    <p className='mt-sm'><button className='button fs-6' onClick={() => setShowPopover(true)}>Download 2024 Post-event Report</button></p>
+                    <ImpactFigure figure={1581} impact={'attendees from across the globe'}  />
+                    <p className='mt-sm'><button className='button fs-6' onClick={() => setShowPopover(true)}>Download 2025 Post-event Report</button></p>
                 </div>
             </section>
 
@@ -171,7 +144,7 @@ export default function AboutPage () {
                     <BarChart>
                         {
                             INDUSTRY_DATA &&
-                            INDUSTRY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0.3, max: 18 }} />)
+                            INDUSTRY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 3, max: 22 }} />)
                         }
 
                     </BarChart>
@@ -218,7 +191,7 @@ export default function AboutPage () {
                     <button className={CSS.closeButton} onClick={() => setShowPopover(false)}>&times;</button>
                     <div className={CSS.contentScroller}>
                         <div className={CSS.content}>
-                            <p className='fw-500 c-primary'>Please fill out the form to download the FHS 2024 post-event report.</p>
+                            <p className='fw-500 c-primary'>Please fill out the form to download the FHS 2025 post-event report.</p>
                             <section className='mt-md'>
                                 <HubspotForm portalId='14527187' formId='e2919e90-4702-498e-8fda-35724db51ca2' />
                             </section>
