@@ -418,7 +418,7 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
 
                                 <div className={CSS.patronBoxContent}>
                                     <Pop delay={.1}>
-                                        <p className="fs-sm fw-500 c-secondary caps">Under the Patronage</p>
+                                        <p className="fs-sm fw-500 c-secondary caps">Under the Patronage of</p>
                                         <p className="fw-600 balance mt-xxs">HH Sheikh Ahmed bin Saeed Al Maktoum</p>
                                         <p className="mt-xxs balance"> Chairman Dubai Holding, Dubai Airports, Emirates Group; President, DCAA</p>
                                     </Pop>
