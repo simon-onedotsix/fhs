@@ -20,7 +20,7 @@ function PurchasePass({ entry, country }) {
 
 	// console.log('entry:', entry )
 	// console.log('country:', country)
-
+	// country = "EG"
 
 	return (
 		<>
@@ -41,7 +41,7 @@ function PurchasePass({ entry, country }) {
 			
 			<div className={`block bg-secondary`}>
 				<div className="container">
-					<p className="fs-sm c-accent">[ country code: { country } ]</p>
+					{/* <p className="fs-sm c-accent">[ country code: { country } ]</p> */}
 					<p className='fs-1 fw-600'>Purchase Pass</p>
 				</div>
 				<div className="container">
@@ -50,6 +50,47 @@ function PurchasePass({ entry, country }) {
 
 				<div className="container">
 					<PassGrid>
+
+						{/* show special pass for locals */}
+						{
+							country === 'EG' &&
+							<PassPriceBands
+								key={2345}
+								flash={``}
+								title={`Egyptian Attendee Pass`}
+								callout={``}
+								priceIncreaseMessage={`message`}
+								description={`
+									<p class="fs-6"><strong>An exclusive rate for Egyptian attendees, making the experience more accessible for local stakeholders involved.</strong></p>
+									<p><strong>Includes access to:</strong></p>
+									<ul>
+										<li>All keynote presentations, panel discussions and breakout sessions</li>
+										<li>Exhibition hall and sponsor booths</li>
+										<li>AI-powered attendee matching app for pre-scheduled meetings</li>
+										<li>Networking receptions and daily networking lunches</li>
+										<li>Post-event session recordings and presentation downloads</li>
+										<li>Site tours and local experiences (Subject to Availability)</li>
+										<li>Industry reports and investment insights from partners</li>
+									</ul>
+								`}
+								currency={`US$`}
+								priceBands={[
+									{
+										"__typename": "passPriceBands_TableRow",
+										"startDate": "2026-04-09T00:00:00+00:00",
+										"endDate": "2026-11-30T00:00:00+01:00",
+										"value": "1000"
+									}
+								]}
+								quantityRemaining={``}
+								label={`Register Here`}
+								href={`https://evbk.link/O0NFvr`}
+								soldOut={``}
+								disclaimer={`<p class="fs-sm lh-1">The local rate is reserved exclusively for Egyptian attendees and is subject to the organiser’s final approval.</p>`}
+							/>
+						}
+
+						{/* show regular cms passes + adapt title for egyptian users */}
 						{
 							entry.passes?.length &&
 							entry.passes.map( (pass, index) => {
@@ -78,7 +119,7 @@ function PurchasePass({ entry, country }) {
 									<PassPriceBands
 										key={index}
 										flash={pass.passFlash}
-										title={pass.passTitle}
+										title={ country === 'EG' ? "International Attendee Pass" : pass.passTitle }
 										callout={pass.passCallout}
 										priceIncreaseMessage={pass.passPriceIncreases}
 										description={pass.passDescription}

@@ -9,7 +9,7 @@ import CSS from './pass.module.css'
 
 
 
-export const PassPriceBands = ({ flash, title, callout, description, currency, priceBands, soldOut, priceIncreaseMessage, quantityRemaining, label, href }) => {
+export const PassPriceBands = ({ flash, title, callout, description, currency, priceBands, soldOut, priceIncreaseMessage, quantityRemaining, label, href, disclaimer }) => {
 
     const [ currentBand, setCurrentBand ] = useState()
     const [ nextBand, setNextBand ] = useState()
@@ -37,7 +37,7 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
         // console.log('currentBand:', currentBand )
         // console.log('nextBand:', nextBand )
 
-    }, [])
+    }, [currentBand, nextBand])
 
 
     
@@ -77,6 +77,11 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
             </section>
 
             <section className={CSS.actions}>
+                {
+                    disclaimer &&
+                    <div className="formatted pb-xs">{ parse(disclaimer) }</div>
+                }
+
                 { 
                     priceBands && currency ?
                         <p className='fs-2 fw-600 c-primary'>
@@ -85,12 +90,14 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
                     : null
                 }
                 
-                {
+                {/* {
                     quantityRemaining &&
                     <div className="formatted fw-600">{ quantityRemaining } passes left at this rate</div>
-                }
+                } */}
                 
-                <a className={`${CSS.button} fs-6 fw-600 mt-xs`} href={ href } target='_blank'>{ label }</a>
+                <a className={`${CSS.button} fs-6 fw-600 mt-xs`} href={href} target='_blank'>{label}</a>
+                
+                
             </section>
         </div>
     )
