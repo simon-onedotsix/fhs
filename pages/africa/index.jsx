@@ -48,22 +48,22 @@ import CSS from '../../fuselage/theme/2025/africa/css/homepage.module.css'
 
 const QUOTES_DATA = [
     {
-        avatarUrl: 'https://cdn-api.swapcard.com/public/images/8129ab6d05aa43a8817705e047b58f47.jpeg',
-        quote: "It's an incredible event, it's great to have all these people brought together. For me to get this recognition in front of so many peers of mine makes me very proud.",
-        fullName: "William Heinecke",
-        title: "Founder and Chairman, Minor International"
+        avatarUrl: 'https://static.swapcard.com/public/images/6c33755bfc764a0baae794953986c15f.png',
+        quote: "FHS Africa delivered a broad, well-balanced agenda that brought together meaningful discussions across investment, development, operations, ESG, and destination growth, making it a genuinely useful forum for the industry.",
+        fullName: "Suhail Ashok Bhatia ",
+        title: "Director - Asset management, Compagnie Hoteliere Et Immobiliere Du Congo (CHIC) – Headline Partner FHS Africa 2026"
     },
     {
-        avatarUrl: 'https://static.swapcard.com/public/images/b67ba28418764310b01256ac98de3c59.jpeg',
-        quote: "The event has been great. I met a lot of people that I haven't seen in quite some time. It's a great networking event.",
-        fullName: "Marcel Von Aulock",
-        title: "CEO, Southern Sun",
+        avatarUrl: '/assets/img/africa/homepage/altaaf-kazi.jpeg',
+        quote: "FHS Africa was hugely successful for the Millat Group. We look forward to building on the key meetings and conversations that took place - strengthening our portfolio on the continent and continuing to play our part in amplifying Africa's voice and tourism offering.",
+        fullName: "Altaaf Kazi",
+        title: "VP: Corporate Communications and Business Development, Millat Group – Education Partner FHS Africa 2026",
     },
     {
-        avatarUrl: 'https://static.swapcard.com/public/images/fbfab4a15cf74a07b9742e0c0b601c64.jpeg',
-        quote: "FHS Africa was a great platform for us to share our news with the largest hotel management portfolio deal of the continent.",
-        fullName: "Bani Haddad",
-        title: "Founder and Managing Director, Aleph Hospitality",
+        avatarUrl: '/assets/img/africa/homepage/sherif-ahmed.jpeg',
+        quote: "FHS Africa was a great experience that strengthened our industry partnerships, opened new possible opportunities with hotel owners and operators, and showcased our leadership in hospitality digital transformation.",
+        fullName: "Sherif Ahmed",
+        title: "Business Development Director, ACT Hospitality Group – Headline Partner FHS Africa 2026",
     }
 ]
 const PHOTOS_DATA = [
@@ -250,6 +250,9 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                             <Button href={'/africa/purchase-pass'}>Register Here</Button>
                         </Pop>
                         <Pop inline delay={.2}>
+                            <Button href={'/africa/download-event-brochure'}>View Event Brochure</Button>
+                        </Pop>
+                        <Pop inline delay={.2}>
                             <Button href={'/africa/post-event-resources'}>Post Event Resources 2026</Button>
                         </Pop>
                     </ButtonGrid>
@@ -261,21 +264,27 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
             {/* IMPACT FIGURES */}
             <ImpactFiguresGrid>
-                <div className="fs-0 fw-600 c-white lh-1"><Reveal delay={0.1}>In Numbers</Reveal></div>
+              
+                <div className="maxw-65">
+                    <Fade>
+                        <p className="fs-1 fw-600 c-white lh-1 balance">Be in the room where Africa&apos;s biggest hotel deals begin</p>
+                        <p className="fs-5 mt-xs">Meet hotel owners, investors, operators, developers and government leaders driving the next wave of hospitality investment across Africa. Join the conversations, partnerships and deals that won&apos;t happen anywhere else.</p>
+                    </Fade>
+                </div>
+              
 
                 <ImpactFigures>      
-                    <ImpactFigure value={450} suffix="+" label="Attendees" />
-                    <ImpactFigure value={80} suffix="+" label="Investors" />
-                    <ImpactFigure value={83} label="speakers" />
-                    <ImpactFigure value={70} suffix="%" label="Africans" />
-                    <ImpactFigure value={37} label="Countries Represented" />
+                    <ImpactFigure value={600} suffix="+" label="C-Level Audience" />
+                    <ImpactFigure value={594} prefix="$" suffix="M" label="In Business Opportunties" />
+                    <ImpactFigure value={5.9} prefix="$" suffix="M" label="Average Deal Size" />
+                    <ImpactFigure value={100} suffix="+" label="Investors" />
                     <ImpactFigure value={59.8} prefix="$" suffix="Bn" label="Assets Under Management" />
-                    <ImpactFigure value={57} label="Partners" />
-                    <ImpactFigure value={30} suffix="%" label="Internationals" />
+                    <ImpactFigure value={37} label="Countries Represented" />
                 </ImpactFigures>
 
-                <div className="container pt-sm">
-                    <Pop inline><ArrowButton href={`https://youtu.be/S7pgVStmtlU`} target={`_blank`} theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}>Watch 2026 Highlights</ArrowButton></Pop>
+                <div className="container pt-sm button-grid">
+                    <Pop inline><ArrowButton href={`https://youtu.be/kGIETQ-Cunw?si=AD5UBvJiAWmGuNqx`} target={`_blank`} theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}>Watch 2026 Highlights</ArrowButton></Pop>
+                    <Pop inline><ArrowButton href={`/africa/sample-attendee-list-download`} theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}>Access Attendee List</ArrowButton></Pop>
                 </div>
             </ImpactFiguresGrid>
 
@@ -283,9 +292,9 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
             {/* TICKER */}
             <div className="bg-secondary py-xs" dir={`ltr`}>
-                <Ticker>
-                    <p className="fs-4">&ensp;&bull;&ensp;<strong>$459 million</strong> in business opportunities and deal volume gained in 2025 edition</p>
-                    <p className="fs-4">&ensp;&bull;&ensp;<strong>$459 million</strong> in business opportunities and deal volume gained in 2025 edition</p>
+                <Ticker duration={30}>
+                    <p className="fs-4">&ensp;<strong className="fw-600">WHO YOU&apos;LL MEET:</strong> ▪ Hotel Owners ▪ Developers ▪ Investors ▪ Private Equity ▪ Sovereign Wealth Funds ▪ Banks/Lenders ▪ Government Leaders ▪ Tourism Boards ▪ Consultants & Lawyers ▪ Asset Managers</p>
+                    <p className="fs-4">&ensp;<strong className="fw-600">WHO YOU&apos;LL MEET:</strong> ▪ Hotel Owners ▪ Developers ▪ Investors ▪ Private Equity ▪ Sovereign Wealth Funds ▪ Banks/Lenders ▪ Government Leaders ▪ Tourism Boards ▪ Consultants & Lawyers ▪ Asset Managers</p>
                 </Ticker>
             </div>
 
@@ -314,7 +323,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
             {/* THEMES */}
             <section className="block bg-secondary no-print" style={{ position: 'relative', zIndex: 2}}>
                 <ThemesSlider
-                    heading={`2026 Event Themes`}
+                    heading={`2027 Event Themes`}
                     data={THEMES_DATA}
                     link={'/africa/agenda'}
                     linkLabel={'View Agenda'}
@@ -322,6 +331,44 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
             </section>
 
 
+            {/* WHY ATTEND */}
+            <section className="block bg-secondary">
+                <div className="container center">
+                    <p className="fs-1 fw-600">Why Attend FHS Africa</p>
+                </div>
+
+                <div className="container columns-3 gap-sm formatted center balance">
+                    <Card>
+                        <h4>Access</h4>
+                        <p className="fs-5 lh-2">Meet the industrys most influential decision-makers.</p>
+                    </Card>
+                    <Card>
+                        <h4>Investment</h4>
+                        <p className="fs-5 lh-2">Discover projects seeking capital.</p>
+                    </Card>
+                    <Card>
+                        <h4>Industry Intelligence</h4>
+                        <p className="fs-5 lh-2">Hear what is shaping hospitality over the next five years.</p>
+                    </Card>
+                    <Card>
+                        <h4>Partnerships</h4>
+                        <p className="fs-5 lh-2">Build relationships that lead to deals.</p>
+                    </Card>
+                    <Card>
+                        <h4>Inspiration</h4>
+                        <p className="fs-5 lh-2">Learn directly from CEOs and investors.</p>
+                    </Card>
+                    <Card>
+                        <h4>Opportunity</h4>
+                        <p className="fs-5 lh-2">Identify your next market before everyone else.</p>
+                    </Card>
+                </div>
+
+                <div className="container center">
+                    <Pop inline><ArrowButton href={`/africa/networking`} theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}>Networking at FHS Africa</ArrowButton></Pop>
+                </div>
+            </section>
+            
             
             {/* PARTNERS */}
             <section className={`block bg-default`}>
@@ -498,6 +545,18 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 }
 Home.theme = 'africa'
 
+
+
+
+const Card = ({ children }) => {
+    return (
+        <Pop>
+            <div className="bg-primary p-sm" style={{ borderRadius: `1rem`, height: `100%`, display: `flex`, flexDirection: `column`, alignItems: `center`, justifyContent: `center` }}>
+                { children }
+            </div>
+        </Pop>
+    )
+}
 
 
 

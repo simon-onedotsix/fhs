@@ -921,7 +921,7 @@ export const FHS_AFRICA = {
                         "__typename": "navigation_Entry",
                         "id": "27s2",
                         "title": "Networking Opportunities",
-                        "navUrl": "/africa/networking-receptions",
+                        "navUrl": "/africa/networking",
                         "target": false
                     },
                     {
