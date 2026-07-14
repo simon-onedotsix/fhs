@@ -106,32 +106,6 @@
 
 
 
-.investorImpact {
-    background-color: var(--secondary);
-    border-radius: 1rem;
-    padding: var(--space-sm) var(--space-md);
-}
-.investorImpactFigure {
-    font-size: 15vw;
-    font-weight: 300;
-    line-height: 1;
-}
-.investorImpactLabel {
-    font-size: 4vw;
-    color: var(--accent);
-    text-transform: uppercase;
-    line-height: 1.1;
-}
-@media(min-width:600px){
-    .investorImpactFigure {
-        font-size: 5vw;
-    }
-    .investorImpactLabel {
-        font-size: 1.25vw;
-    }
-}
-
-
 .impactFiguresGrid {
     display: grid;
     grid-template-columns: 1fr;

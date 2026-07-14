@@ -1,0 +1,37 @@
+import { AnimatedCounter } from '../../fuselage/animation/animated-counter'
+import { Pop } from '../../fuselage/animation/animation'
+
+import CSS from './global-map.module.css'
+
+export const GlobalMap = ({ children }) => {
+    return (
+        <div className={CSS.layout}>
+            <Pop>
+                <img className={CSS.map} src="/assets/ui/world-map.svg" alt="world map" />
+            </Pop>
+
+            <div className={CSS.overlay}>
+                {children}
+            </div>
+        </div>
+    )
+}
+
+export const Region = ({ label, value, unit, position, delay }) => {
+    return (
+        <div className={CSS.regionContainer} style={{ top: position.y, left: position.x }}>
+            <Pop delay={delay}>
+                <p className={CSS.value}><AnimatedCounter from={0} to={value} /><span className={CSS.unit}>{unit}</span></p>
+                <p className={CSS.label}>{ label }</p>
+            </Pop>
+        </div>
+    )
+}
+
+export const Disclaimer = ({ children }) => {
+    return(
+        <div className={CSS.disclaimer}>
+            { children }
+        </div>
+    )
+}

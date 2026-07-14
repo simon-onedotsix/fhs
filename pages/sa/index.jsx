@@ -57,6 +57,9 @@ import { LayoutGallery } from "../../fuselage/components/layout-gallery/layout-g
 import { ContentCard as Post } from "../../fuselage/theme/2024/world/components/content-card/content-card"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 import { VideoTestimonial } from '../../fuselage/theme/2025/sa/components/video-testimonial/video-testimonial'
+import { ImpactCard } from "../../ui/components/impact-card"
+import { BarChart, Field } from '../../ui/components/bar-chart'
+import { GlobalMap, Region, Disclaimer } from '../../ui/components/global-map'
 
 
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
@@ -530,7 +533,83 @@ const photos = [
         ]
     },
 ]
-
+const INDUSTRY_DATA = [
+    {
+        label: 'Hotel Operator / Management',
+        value: 23.4
+    },
+    {
+        label: 'Investors',
+        value: 20.3
+    },
+    {
+        label: 'Consultant / Advisor / Lawyer',
+        value: 10.8
+    },
+    {
+        label: 'Supplier (Technology / Wellness & Spa / FF&E)',
+        value: 5.9
+    },
+    {
+        label: 'Architecture & Design / Construction',
+        value: 5.1
+    },
+    {
+        label: 'Government / Tourism Official',
+        value: 4.1
+    },
+    {
+        label: 'Hotel Developer',
+        value: 3.6
+    },
+    {
+        label: 'Education',
+        value: 1.8
+    },
+    {
+        label: 'Branded Residences',
+        value: 1.6
+    },
+    {
+        label: 'Asset Manager',
+        value: 1.6
+    },
+    {
+        label: 'Media & PR',
+        value: 1.6
+    },
+    {
+        label: 'Tourism (Leisure / Entertainment)',
+        value: 1.2
+    },
+    {
+        label: 'Other',
+        value: 19.1
+    },
+    
+]
+const JOB_FUNCTION_DATA = [
+    {
+        label: 'Director / VP / Head / Principal',
+        value: 32.0
+    },
+    {
+        label: 'Board Level / Owner / Partner / Chair / Founder',
+        value: 18.3
+    },
+    {
+        label: 'Manager',
+        value: 18.0
+    },
+    {
+        label: 'C-Level',
+        value: 15.3
+    },    
+    {
+        label: 'Other',
+        value: 16.5
+    },
+]
 
 
 
@@ -690,41 +769,71 @@ export default function Page({ seomatic, partners }) {
 
 
 
-            {/* RESULTS 2025 TICKER */}
-            {/* <div className="bg-primary-2-dark py-xs">
-                {
-                    locale === 'ar'
-                        ?
-                            <Ticker duration={15} direction={1}>
-                                <p className="fs-4" dir="rtl">&ensp;&bull;&ensp;<strong className="fw-600">1106</strong> مشاركًا</p>
-                                <p className="fs-4" dir="rtl">&ensp;&bull;&ensp;<strong className="fw-600">$1.6B</strong> مليار دولار قيمة الفرص التجارية</p>
-                                <p className="fs-4" dir="rtl">&ensp;&bull;&ensp;<strong className="fw-600">24%</strong> نسبة الحضور من المستثمرين النشطين</p>
-                                <p className="fs-4" dir="rtl">&ensp;&bull;&ensp;<strong className="fw-600">$5.6tn</strong> تريليون دولار إجمالي الأصول المُدارة</p>
-                                <p className="fs-4" dir="rtl">&ensp;&bull;&ensp;<strong className="fw-600">81%</strong> نسبة الحضور من القيادات التنفيذية العليا</p>
-                                <p className="fs-4" dir="rtl">&ensp;&bull;&ensp;<strong className="fw-600">11</strong> صفقة محورية تم الإعلان عنها</p>
-                            </Ticker>
-                        :
-                            <Ticker duration={15}>
-                                <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">1106</strong> Attendees</p>
-                                <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$1.6B</strong> Business Opportunities</p>
-                                <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">24%</strong> Active Investors</p>
-                                <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">$5.6tn</strong> Assets Under Management (AUM)</p>
-                                <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">81%</strong> C-Level Representation</p>
-                                <p className="fs-4">&ensp;&bull;&ensp;<strong className="fw-600">11</strong> Landmark Deals Announced</p>
-                            </Ticker>
-                        
-                }
-            </div> */}
+            {/* WHO ATTENDED */}
+            <section className="block bg-primary-2-dark">
+                <div className="container center">
+                    <p className="fs-2 fw-600 c-white">Who Attended</p>
+                </div>
+
+                <div className="container columns-5 gap-sm mt-md">
+                    <ImpactCard figure={1000} label={"Attendees"} />
+                    <ImpactCard figure={20} unit={"%"} label={"Investor Audience"} />
+                    <ImpactCard figure={4.8} prefix={"$"} unit={"tn"} label={"in AUM"} />
+                    <ImpactCard figure={32} label={"Countries"} />
+                    <ImpactCard figure={2} prefix={"$"} unit={"bn+"} label={"Worth of Deals Signed"} />
+                </div>
+
+                <div className="container center">
+                    <p className="fs-2 fw-600 c-white">Attendee Breakdown</p>
+                </div>
+
+                <div className="container columns-2 gap-md">
+                    <section>
+                        <p className="fs-4 fw-500 pb-sm">By Industry:</p>
+                        <BarChart>
+                            {
+                                INDUSTRY_DATA &&
+                                INDUSTRY_DATA.map(( field, index) => <Field key={index} compact label={field.label} value={field.value} unit={'%'} normalise={{ min: 1.2, max: 23.4 }} />)
+                            }
+                        </BarChart>
+                    </section>
+                    
+                    <section>
+                        <p className="fs-4 fw-500 pb-sm">By Job Function:</p>
+                        <BarChart>
+                            {
+                                JOB_FUNCTION_DATA &&
+                                JOB_FUNCTION_DATA.map(( field, index) => <Field key={index} compact label={field.label} value={field.value} unit={'%'} normalise={{ min: 15.3, max: 32.0 }} />)
+                            }
+                        </BarChart>
+
+                        <p className="fs-4 fw-500 mt-sm pb-sm">By Geography:</p>
+                        <GlobalMap>
+                            <Region label={'Saudi Arabia'} value={67.0} unit={'%'} position={{ x: '58%', y: '50%' }} delay={0.3}/>
+                            <Region label={'Middle East'} value={22.8} unit={'%'} position={{ x: '58%', y: '27%' }} delay={0.3}/>
+                            <Region label={'Europe'} value={6.0} unit={'%'} position={{ x: '40%', y: '28%' }} delay={0.1}/>
+                            <Region label={'Asia'} value={0.6} unit={'%'} position={{ x: '80%', y: '50%' }} delay={0.5}/>
+                            <Region label={'Americas'} value={2.4} unit={'%'} position={{ x: '20%', y: '50%' }} delay={0.2}/>
+                            <Region label={'Africa'} value={5} unit={'%'} position={{ x: '45%', y: '60%' }} delay={0.4} />
+                            <Disclaimer><p className="fs-sm">Not specified: <strong>0.3%</strong></p></Disclaimer>
+                        </GlobalMap>
+                    </section>
+                </div>
+
+                <div className="container mt-xs center">
+                    <Pop><ArrowButton href={`https://youtu.be/LSqHtk9V-zg`} target='_blank' theme={{ arrow: `white`, border: `white`, label: `white`}}>Watch Highlights</ArrowButton></Pop>
+                </div>
+            </section>
 
             
 
             {/* VIDEO HIGHLIGHTS */}
-            <section className="block bg-primary-2 o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
+            {/* <section className="block bg-primary-2 o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className={`${CSS.highlightVideoGrid} container`}>
                     <Slide><p className='fs-1 fw-700 lh-1'>Highlights from FHS Saudi Arabia 2026</p></Slide>
                     <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/LSqHtk9V-zg`} />
                 </div>
-            </section>
+            </section> */}
 
             
             {/* SIGNINGS & ANNOUNCEMENTS */}
@@ -1227,17 +1336,6 @@ const PartnerGroup = ({ partnerData, start, end }) => {
                 ))
             }
         </div>
-    )
-}
-
-export const InvestorImpact = ({ prefix, figure, unit, label }) => {
-    return (
-        <Pop>
-            <div className={CSS.investorImpact}>
-                <p className={CSS.investorImpactFigure}>{prefix}<AnimatedCounter from={0} to={figure} />{unit}</p>
-                <p className={CSS.investorImpactLabel}>{label}</p>
-            </div>
-        </Pop>
     )
 }
 
