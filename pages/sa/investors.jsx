@@ -296,7 +296,7 @@ export default function Page () {
                     </Card></Pop>
                 </div>
 
-                <div className="container formatted center">
+                {/* <div className="container formatted center">
                     <p className='mt-md'>
                         <Pop inline>
                             <Link href="/sa/download-investor-prospectus" target="_blank">
@@ -304,7 +304,7 @@ export default function Page () {
                             </Link>
                         </Pop>
                     </p>
-                </div>
+                </div> */}
             </section>
 
             <section className="block bg-primary o-hidden">
