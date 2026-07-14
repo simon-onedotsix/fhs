@@ -64,6 +64,9 @@ import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
 
 import { THEMES_DATA, THEMES_DATA_AR } from "./themes"
 
+
+
+
 export const ARTICLE_DATA = [
     {
         heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-SA/RM206283.jpg',
@@ -115,9 +118,6 @@ export const ARTICLE_DATA = [
     },
 
 ]
-
-
-
 const SPEAKER_DATA = [
     {
         url: "/sa/speakers/RXZlbnRQZW9wbGVfNDcxMzA0NTQ=",
@@ -190,8 +190,6 @@ const SPEAKER_DATA = [
         company: 'Jabal Omar Development Company',
     },
 ]
-
-
 const QUOTES_DATA = [
     {
         avatarUrl: 'https://static.swapcard.com/public/images/9cf68577bdff4a38be44c9fbf2850f25.jpeg',
@@ -232,7 +230,6 @@ const QUOTES_DATA_AR = [
         title: "الرئيس التنفيذي للعمليات، روتانا",
     }
 ]
-
 const INVESTORS_AR = [
     { title: "آينا للضيافة"},
     { title: "شركة الراجحي المالية"},
@@ -311,7 +308,6 @@ const INVESTORS = [
     { title: "Thameen Real Estate"},
     { title: "Twenty14 Holdings"},
 ]
-
 const THOUGHT_LEADERSHIP = [
     {
         "__typename": "contentLibrary_article_Entry",
@@ -389,7 +385,6 @@ const THOUGHT_LEADERSHIP = [
         ]
     }
 ]
-
 const THOUGHT_LEADERSHIP_AR = [
     {
         "__typename": "contentLibrary_article_Entry",
@@ -467,7 +462,6 @@ const THOUGHT_LEADERSHIP_AR = [
         ]
     }
 ]
-
 const photos = [
     {
         "id": "13864",
@@ -536,6 +530,9 @@ const photos = [
         ]
     },
 ]
+
+
+
 
 export default function Page({ seomatic, partners }) {
     
@@ -870,9 +867,7 @@ export default function Page({ seomatic, partners }) {
                             <ArrowButton 
                                 href={ '/sa/speakers' } 
                                 theme={{ arrow: `white`, border: `white`, label: `white`}}
-                            >
-                                { locale === 'ar' ? `عرض أسماء المتحدثين 2026` : `View 2026 Speakers` }
-                            </ArrowButton>
+                            >View all 2026 Speakers</ArrowButton>
                         </Pop>
                     </div>
                 </div>
@@ -899,10 +894,63 @@ export default function Page({ seomatic, partners }) {
             </section>
 
 
+            {/* PARTNER TESTIMONIALS */}
+            <Section
+                backgroundClass={`bg-primary`}
+                themeGraphics={
+                    isDesktop
+                    ?   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            opacity={.4}
+                            coordinates={{ bottom: `-20%`, right: `-10%`}}
+                        />
+                    :   <ThemeGraphic
+                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
+                            opacity={.4}
+                            width="150vw"
+                            coordinates={{ top: `30%`}}
+                        />
+                        
+                }
+            >
+                <div className="container center">
+                    <p className="fs-1 fw-600">Partner Testimonials</p>
+                </div>
 
+                <div className={`container columns-3 gap-md`}>
+                    <VideoTestimonial entry={{
+                        "id": "223023",
+                        "videoShareUrl": "https://www.youtube.com/watch?v=Ro4k0OytXig",
+                        "fullName": "Omar Al-Abdullatif",
+                        "jobTitle": "Chief Executive Officer",
+                        "organisation": "Blacksand",
+                        "testimonial": "Honestly, it's the biggest hospitality summit we know. It's a great event and very much B2B."
+                    }} />
+                   
+                    <VideoTestimonial entry={{
+                        "id": "223023",
+                        "videoShareUrl": "https://www.youtube.com/watch?v=mMAbGByBfJE",
+                        "fullName": "Marko Vucinic",
+                        "jobTitle": "Executive Director - Investment & Asset Management",
+                        "organisation": "Knowledge Economic City",
+                        "testimonial": "We love the platform. It connected us to a lot of partners that we deal with on day-to-day basis."
+                    }} />
+                   
+                    <VideoTestimonial entry={{
+                        "id": "223023",
+                        "videoShareUrl": "https://www.youtube.com/watch?v=97dsiYGJHmc",
+                        "fullName": "Khalid Saud Abuhaimed",
+                        "jobTitle": "Chief Executive Officer",
+                        "organisation": "Al Khozama Investment Company",
+                        "testimonial": "We host the Future Hospitality Summit every year because I believe the deals that shape this industry need a home, a place where opportunity meets capital."
+                    }} />
+                </div>
+            </Section>
+
+            
 
             {/* INVESTORS */}
-            <section className="bg-primary">        
+            <section className="bg-primary-2">        
                 <div className="container py-md" dir={`ltr`}>
                     <Pop><p className="fs-2 fw-600 balance center pb-sm">Investors Who Joined Us</p></Pop>
                     {
@@ -1139,77 +1187,7 @@ export default function Page({ seomatic, partners }) {
 
 
 
-            {/* TESTIMONIALS */}
-            <Section
-                backgroundClass={`bg-primary`}
-                themeGraphics={
-                    isDesktop
-                    ?   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            opacity={.4}
-                            coordinates={{ bottom: `-20%`, right: `-10%`}}
-                        />
-                    :   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            opacity={.4}
-                            width="150vw"
-                            coordinates={{ top: `30%`}}
-                        />
-                        
-                }
-            >
-                <div className={`container columns-3 gap-md`}>
-                    {/* {
-                        (locale === 'ar' ? QUOTES_DATA_AR : QUOTES_DATA).map((quote, index) => (
-                            <Quotation
-                                key={index}
-                                avatarUrl={quote.avatarUrl}
-                                quote={quote.quote}
-                                fullName={quote.fullName}
-                                title={quote.title}
-                            />
-                        ))
-                    } */}
-                    <VideoTestimonial entry={{
-                        "id": "223023",
-                        "videoShareUrl": "https://www.youtube.com/watch?v=Ro4k0OytXig",
-                        "fullName": "Omar Al-Abdullatif",
-                        "jobTitle": "Chief Executive Officer",
-                        "organisation": "Blacksand",
-                        "testimonial": "Honestly, it's the biggest hospitality summit we know. It's a great event and very much B2B."
-                    }} />
-                   
-                    <VideoTestimonial entry={{
-                        "id": "223023",
-                        "videoShareUrl": "https://www.youtube.com/watch?v=mMAbGByBfJE",
-                        "fullName": "Marko Vucinic",
-                        "jobTitle": "Executive Director - Investment & Asset Management",
-                        "organisation": "Knowledge Economic City",
-                        "testimonial": "We love the platform. It connected us to a lot of partners that we deal with on day-to-day basis."
-                    }} />
-                   
-                    <VideoTestimonial entry={{
-                        "id": "223023",
-                        "videoShareUrl": "https://www.youtube.com/watch?v=97dsiYGJHmc",
-                        "fullName": "Khalid Saud Abuhaimed",
-                        "jobTitle": "Chief Executive Officer",
-                        "organisation": "Al Khozama Investment Company",
-                        "testimonial": "We host the Future Hospitality Summit every year because I believe the deals that shape this industry need a home, a place where opportunity meets capital."
-                    }} />
-                </div>
-
-                <div className="container center">
-                    <Pop>
-                        <ArrowButton 
-                            href={ 'https://youtu.be/JZtXoVLgCFg?si=CSrqL-V2FsoJjGFd' } 
-                            theme={{ arrow: `white`, border: `white`, label: `white` }}
-                            target={`_blank`}
-                        >
-                            { locale === 'ar' ? `اسمع من شركائنا` : `Hear from our partners` }
-                        </ArrowButton>
-                    </Pop>
-                </div>
-            </Section>
+            
 
 
 
