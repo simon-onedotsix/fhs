@@ -829,8 +829,15 @@ export const FHS_AFRICA = {
                     {
                         "__typename": "navigation_Entry",
                         "id": "249",
-                        "title": "Event Information",
-                        "navUrl": "/africa/event-information",
+                        "title": "Travel & Accommodation",
+                        "navUrl": "/africa/travel-and-accommodation",
+                        "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "24967uj",
+                        "title": "Explore Uganda",
+                        "navUrl": "/africa/explore-uganda",
                         "target": false
                     },
                     {

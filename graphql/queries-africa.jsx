@@ -239,9 +239,6 @@ export const QueryCards = `
         maxWidth
         center
         anchorId
-        layout
-        aspectRatio
-        width
         cards {
             ... on cards_card_BlockType {
                 id
@@ -339,6 +336,18 @@ export const QueryCustomQuoteImageGrid = `
         id
     }
 `
+
+export const QueryCustomFrontendModule = `
+    ... on ${blocksHandle}ContentBlocks_customModule_BlockType {
+        id
+        heading
+    }
+`
+
+
+
+
+
 
 
 export const Passes = `

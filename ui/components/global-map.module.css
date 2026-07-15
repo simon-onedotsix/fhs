@@ -1,0 +1,51 @@
+.layout {
+    position: relative;
+    display: grid;
+    width: 100%;
+    aspect-ratio: 3589/1820;
+    container-type: inline-size;
+}
+
+.map {
+    opacity: .4;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.regionContainer {
+    position: absolute;
+}
+
+.label {
+    font-size: 2cqw;
+    display: flex;
+}
+.value {
+    font-size: 7cqw;
+    font-weight: 500;
+    line-height: 1;
+    container-type: inline-size;
+}
+.unit {
+    font-size: 2vw;
+}
+
+
+
+@media(max-width:599px){
+    .label {
+        font-size: 3cqw;
+    }
+}
+
+
+/* disclaimer */
+
+.disclaimer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
