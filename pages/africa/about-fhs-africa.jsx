@@ -209,7 +209,7 @@ const Infographics = () => {
                     <BarChart>
                         {
                             SENIORITY_DATA &&
-                            SENIORITY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 14, max: 31 }} />)
+                            SENIORITY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 31 }} />)
                         }
                     </BarChart>
                 </section>
