@@ -11,7 +11,7 @@ import { Header } from '../../ui/site/header'
 import { FHS_AFRICA as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2025/africa/common/footer/footer'
 import { BarChart, Field } from '../../ui/components/bar-chart'
-import { GlobalMap } from '../../ui/components/global-map'
+import { GlobalMap, Region, Disclaimer } from '../../ui/components/global-map'
 
 import handleContentBlocks from "../../lib/content-blocks-africa"
 
@@ -49,7 +49,7 @@ export default function Page ({ entry, seomatic }) {
         return contentBocksArray.map((block, index) => {
             if (block.__typename === "ahifContentBlocks_customModule_BlockType") {
                 // add case logic here
-                return <Infographics/>
+                return <Infographics key={`custom-${index}`}/>
             } else {
                 return handleContentBlocks( [block] )
             }
@@ -90,75 +90,150 @@ Page.theme = 'africa'
 
 
 
+// CUSTOM MODULES -------------------------
+
 const Infographics = () => {
 
     const INDUSTRY_DATA = [
         {
-            label: 'Hotel Operator/Management',
+            label: 'Hotel Operator / Management',
             value: 22
         },
         {
-            label: 'Investor (Equity)/Owner',
-            value: 21
+            label: 'Investor / Owner',
+            value: 19
         },
         {
-            label: 'Consultant/Advisor',
-            value: 13
+            label: 'Consultant / Advisor',
+            value: 12
         },
         {
-            label: 'Architecture/Design',
-            value: 10
+            label: 'Technology',
+            value: 8
         },
         {
-            label: 'Hotel Developer/Builder',
-            value: 9
-        },
-        {
-            label: 'Government/Tourism Official',
+            label: 'Government / Tourism Official',
             value: 7
         },
         {
-            label: 'Technology/Innovation',
+            label: 'Hotel Developer / Builder',
+            value: 7
+        },
+        {
+            label: 'Financial Services / Banks',
             value: 6
         },
         {
-            label: 'Real Estate Broker/Surveyor',
+            label: 'Architecture & Design',
+            value: 4
+        },
+        {
+            label: 'FF&E',
             value: 3
         },
         {
-            label: 'Other',
-            value: 10
+            label: 'Education',
+            value: 2
         },
-        
+        {
+            label: 'Leisure / Entertainment',
+            value: 2
+        },
+        {
+            label: 'Real Estate Broker / Surveyor',
+            value: 2
+        },        
+        {
+            label: 'Asset Manager',
+            value: 2
+        },        
+        {
+            label: 'Lawyer',
+            value: 2
+        },        
+        {
+            label: 'Branded Residences / Extended Stays / Serviced Apartments',
+            value: 1
+        },        
+        {
+            label: 'Third Party Management Company (White Label)',
+            value: 1
+        },        
+        {
+            label: 'Aviation',
+            value: 1
+        },        
+    ]
+    const SENIORITY_DATA = [
+        {
+            label: 'Director / VP / Head / Principal',
+            value: 31
+        },
+        {
+            label: 'Manager',
+            value: 28
+        },
+        {
+            label: 'C-Level',
+            value: 26
+        },
+        {
+            label: 'Board Level / Owner / Partner / Chair / Founder',
+            value: 14
+        },
     ]
 
     return (
-        <section className="block bg-primary">
+        <section className="block bg-secondary">
             <div className="container center">
                 <Fade>
                     <p className="fs-1 fw-600 lh-1 caps">Who Attends FHS Africa</p>
                 </Fade>
             </div>
 
-            <div className="container columns-2 gap-md">
+            <div className="container maxw-50">
                 <section>
-                    <p className="fs-4 fw-500 pb-sm">By Industry:</p>
+                    <p className="fs-4 fw-500 pb-sm">By Primary Business:</p>
                     <BarChart>
                         {
                             INDUSTRY_DATA &&
-                            INDUSTRY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 3, max: 22 }} />)
+                            INDUSTRY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 1, max: 22 }} />)
                         }
                     </BarChart>
                 </section>
-                
+            </div>
+
+            <div className="container pt-sm maxw-50">
                 <section>
-                    <p className="fs-4 fw-500 pb-sm">By Geography:</p>
-                    <GlobalMap />
+                    <p className="fs-4 fw-500 pb-sm">By Seniority:</p>
+                    <BarChart>
+                        {
+                            SENIORITY_DATA &&
+                            SENIORITY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 14, max: 31 }} />)
+                        }
+                    </BarChart>
                 </section>
+            </div>
+
+                
+            <div className="container pt-sm maxw-50">
+                <p className="fs-4 fw-500 pb-sm">By Geography:</p>
+                <GlobalMap>
+                    <Region label={'Middle East'} value={14} unit={'%'} position={{ x: '58%', y: '35%' }} delay={0.3}/>
+                    <Region label={'Europe'} value={15} unit={'%'} position={{ x: '40%', y: '28%' }} delay={0.1}/>
+                    <Region label={'Asia'} value={1} unit={'%'} position={{ x: '80%', y: '50%' }} delay={0.5}/>
+                    <Region label={'Americas'} value={2} unit={'%'} position={{ x: '20%', y: '50%' }} delay={0.2}/>
+                    <Region label={'Africa'} value={68} unit={'%'} position={{ x: '45%', y: '60%' }} delay={0.4} />
+                </GlobalMap>
             </div>
         </section>
     )
 }
+
+
+// END CUSTOM MODULES ---------------------
+
+
 
 
 
