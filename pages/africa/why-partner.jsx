@@ -36,6 +36,9 @@ import {
 import handleSeomaticMeta from '../../lib/seomatic'
 
 
+import { PageHero } from "../../ui/modules/page-hero"
+
+
 
 export default function Page ({ entry, seomatic }) {
 
@@ -58,16 +61,18 @@ export default function Page ({ entry, seomatic }) {
                 ctas={header.data.event.headerCtas}
             />
 
-
-
-            {/* <section className="block bg-default">
-                <div className="container formatted">
-                    <h2>Put your brand at the centre of Africa's hospitality investment conversation.</h2>
+            
+            {/* <PageHero hero={{ url: `/assets/img/africa/why-partner/why-partner-hero.jpg`, width: 2047, height: 1149}}>
+                <div className="maxw-50 formatted">
+                    <h2>Put your brand at the centre of Africa&apos;s hospitality investment conversation.</h2>
                     <p>Partnering with FHS Africa allows you to build direct relationships with the investors, owners, developers and operators shaping hospitality across the continent.</p>
+                    
                     <h5>Why partners return year after year:</h5>
                     <p>✓ Generate qualified business opportunities<br/>✓ Meet senior decision-makers in two days rather than six months<br/>✓ Present deal signings to the industry's most influential audience<br/>✓ Position themselves as industry leaders<br/>✓ Build relationships that lead to long-term partnerships</p>
                 </div>
-            </section> */}
+            </PageHero> */}
+
+
 
             
             { handleContentBlocks( entry.ahifContentBlocks ) }

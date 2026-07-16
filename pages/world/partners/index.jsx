@@ -61,7 +61,7 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 	// console.log('swapcard partner data:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
-	console.log('swapcard partner categories:', swapcardPartnerGroups )
+	// console.log('swapcard partner categories:', swapcardPartnerGroups )
 	// console.log('PARTNERS ARRAY:', partnersArray)
 	// console.log('flags:', countryPavilions)
 

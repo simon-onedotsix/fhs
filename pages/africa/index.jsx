@@ -263,7 +263,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
 
 
             {/* IMPACT FIGURES */}
-            <ImpactFiguresGrid>
+            <section className="block bg-dark">
               
                 <div className="maxw-65">
                     <Fade>
@@ -286,7 +286,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                     <Pop inline><ArrowButton href={`https://youtu.be/kGIETQ-Cunw?si=AD5UBvJiAWmGuNqx`} target={`_blank`} theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}>Watch 2026 Highlights</ArrowButton></Pop>
                     <Pop inline><ArrowButton href={`/africa/sample-attendee-list-download`} theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}>Access Attendee List</ArrowButton></Pop>
                 </div>
-            </ImpactFiguresGrid>
+            </section>
 
 
 
