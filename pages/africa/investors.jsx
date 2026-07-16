@@ -14,6 +14,7 @@ import { SpeakerCarousel } from '../../fuselage-africa/blocks/speaker-carousel/s
 import { SpeakerCard } from "../../fuselage-africa/components/speaker-card/speaker-card"
 import { Pop } from '../../fuselage-africa/animation/animation'
 import { AnimatedCounter } from '../../fuselage-africa/animation/animated-counter'
+import { ArrowButton } from "../../fuselage-africa/components/arrow-button/arrow-button"
 
 import CSS from '../../fuselage-africa/layout/investors/css/investors.module.css'
 
@@ -40,79 +41,15 @@ export default function Investors ({ articles, speakers }) {
 
             <PageHeader/>
 
-            <section className="bg-dark p-sm">
-                <div className="cotainer maxw-40 columns-2 gap-sm mx-auto">
+            <section className="block bg-dark">
+                <div className="container maxw-40 columns-2 gap-sm mx-auto">
                     <InvestorImpact figure={100} unit={"+"} label={"Investors"} />
-                    <InvestorImpact prefix={'$'} figure={248} unit={'B'} label={"AUM"} />
+                    <InvestorImpact prefix={'$'} figure={59.8} decimals={1} unit={'B'} label={"AUM"} />
                 </div>
-            </section>
-
-            {/* <SpeakerCarousel heading={'Investor-Speakers at FHS Africa 2025'} ctaLink={'/africa/speakers'} ctaLabel={'See all speakers'}>
-                {
-                    speakers.map( speaker => (
-                        <Pop key={speaker.id}>
-                            <SpeakerCard 
-                                key={speaker.id}
-                                url={`/africa/speakers/profile/${speaker.slug}`}
-                                photoUrl={speaker.avatar[0].url}
-                                fullName={speaker.title}
-                                jobTitle={speaker.positions[0].jobTitle}
-                                company={speaker.positions[0].organisation}
-                            />
-                        </Pop>
-                    ))
-                }
-            </SpeakerCarousel> */}
-
-
-            <section className="block bg-secondary">
                 <div className="container center">
-                    <p className='fs-1 fw-600'>SAMPLE LIST OF INVESTORS FROM 2026</p>
-                </div>
-
-                <div className="container formatted">
-                    <article className={CSS.listing}>
-                        <p>
-                            Blackrock Incorporation<br/>
-                            Bluebay Hotels Zanzibar<br/>
-                            CityBlue Hotels<br/>
-                            Compagnie Hoteliere Et Immobiliere Du Congo<br/>
-                            Eagle Asset Management Company<br/>
-                            Elewana Collection<br/>
-                            Grandwest Hotel & Apartments Ltd<br/>
-                            Hapa Developments<br/>
-                            Hemingways Hospitality Limited<br/>
-                            Ikeja Hotel Plc<br/>
-                            Industrial Development Corporation<br/>
-                            International Finance Corporation<br/>
-                            JAM Asset Management Ltd.<br/>
-                            Janus Continental Group<br/>
-                            Kasada Capital Management<br/>
-                            KfW-DEG<br/>
-                            Lake Greenfield Hotel & Towers Ltd.<br/>
-                            Lordship Group<br/>
-                            Maasai Mara Sopa Lodges<br/>
-                            Mirasi Group Ltd<br/>
-                            Millat Investments<br/>
-                            Modways<br/>
-                            Nile Hotel International Ltd.<br/>
-                            Niti Group - La Maison Royale<br/>
-                            Nungwi Dreams Resort Zanzibar<br/>
-                            One Ada<br/>
-                            Park Vega Waterpark Limited<br/>
-                            Quao Realty<br/>
-                            Temple Point Resort<br/>
-                            Terra Vista Development<br/>
-                            The House of Chinhara<br/>
-                            The Merwest Company<br/>
-                            UAG Investments (Pty)-United Africa Hospitality (Pty) Ltd<br/>
-                            Westmont Hospitality Group<br/>
-                        </p>
-                        <p><em>Updated 17/03/2026</em></p>
-                    </article>
+                    <Pop inline><ArrowButton href={`/africa/sample-attendee-list-download`} theme={{ arrow: `var(--primary)`, border: `var(--primary)`, label: `white`}}>Access Attendee List</ArrowButton></Pop>
                 </div>
             </section>
-
 
 
             <NewFeatures />
@@ -152,11 +89,11 @@ export default function Investors ({ articles, speakers }) {
 Investors.theme = 'africa'
 
 
-const InvestorImpact = ({ prefix, figure, unit, label }) => {
+const InvestorImpact = ({ prefix, figure, unit, label, decimals }) => {
     return (
         <Pop>
             <div className={CSS.investorImpact}>
-                <p className={CSS.investorImpactFigure}>{prefix}<AnimatedCounter from={0} to={figure} />{unit}</p>
+                <p className={CSS.investorImpactFigure}>{prefix}<AnimatedCounter decimals={decimals} from={0} to={figure} />{unit}</p>
                 <p className={CSS.investorImpactLabel}>{label}</p>
             </div>
         </Pop>
@@ -172,7 +109,7 @@ export async function getStaticProps() {
     const { data } = await craftApolloClient().query({
         query: gql`
             query Articles {
-                entries(site: "${process.env.SITE_HANDLE_AFRICA}", section: "contentLibrary" id: [ 204140, 204009, 177023, 117582 ]) {
+                entries(site: "${process.env.SITE_HANDLE_AFRICA}", section: "contentLibrary" id: [ 305386, 305272, 305213, 305192 ]) {
                     ... on contentLibrary_article_Entry {
                         id
                         slug

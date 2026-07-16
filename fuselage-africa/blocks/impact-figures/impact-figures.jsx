@@ -9,7 +9,7 @@ import { Pop, Fade, Slide } from '../../animation/animation'
 import CSS from './impact-figures.module.css'
 
 
-export const ImpactFiguresGrid = ({ children }) => {
+export const ImpactFiguresGrid = ({ children, theme }) => {
 
     let ref = useRef(null)
 
@@ -22,15 +22,10 @@ export const ImpactFiguresGrid = ({ children }) => {
     
 
     return (
-        <section className={`${CSS.layout} block bg-secondary`}>
-            {/* <motion.div className={CSS.brandPattern}
-                style={{
-                    backgroundImage: `url(/assets/theme/africa/fhs-africa-battik-orange.png)`,
-                    backgroundPositionY: y
-                }}
-            /> */}
-
-            { children }
+        <section className={`${CSS.layout} block bg-${theme}`}>
+            <div className="container columns-4 gap-sm">
+                { children }
+            </div>
         </section>
     )
 }
@@ -51,6 +46,17 @@ export const ImpactFigure = ({value, prefix, suffix, label}) => {
         <Pop>
             <div className={CSS.impactFigure}>
                 <p className={`impactFigureValue fs-1 fw-200 c-primary`}>{prefix}<AnimatedCounter from={0} to={value} />{suffix}</p>
+                <div className={`caps c-secondary fw-600 fs-6`}><Pop inline delay={.35}>{label}</Pop></div>
+            </div>
+        </Pop>
+    )
+}
+
+export const ImpactFigureBasic = ({value, prefix, suffix, label}) => {
+    return (
+        <Pop>
+            <div className={CSS.impactFigure}>
+                <p className={`impactFigureValue fs-1 fw-200 c-primary`}>{prefix}{value}{suffix}</p>
                 <div className={`caps c-secondary fw-600 fs-6`}><Pop inline delay={.35}>{label}</Pop></div>
             </div>
         </Pop>

@@ -61,7 +61,7 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 	// console.log('swapcard partner data:', partnerData)
 	// console.log('content-blocks:', contentBlocks)
 	// console.log('vts:', videoTestimonials)
-	// console.log('swapcard partner categories:', swapcardPartnerGroups )
+	console.log('swapcard partner categories:', swapcardPartnerGroups )
 	// console.log('PARTNERS ARRAY:', partnersArray)
 	// console.log('flags:', countryPavilions)
 
@@ -75,6 +75,7 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2NA==', value: 'sponsor' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Mw==', value: 'exhibitor' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2OQ==', value: 'brf-sponsor' },
+		{ id: 'RmllbGRWYWx1ZV8zMTE3NjE2Mw==', value: 'media-partners' },
 
 	]
 
