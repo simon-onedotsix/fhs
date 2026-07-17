@@ -207,13 +207,13 @@ export const FHS_WORLD = {
                         "navUrl": "/world/projects",
                         "target": false
                     },
-                    // {
-                    //     "__typename": "navigation_Entry",
-                    //     "id": "167",
-                    //     "title": "PitchPoint",
-                    //     "navUrl": "/world/pitch-point",
-                    //     "target": false
-                    // },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "167",
+                        "title": "Startup Zone",
+                        "navUrl": "/world/startup-zone",
+                        "target": false
+                    },
                     {
                         "__typename": "navigation_Entry",
                         "id": "169",

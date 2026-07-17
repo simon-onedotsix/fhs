@@ -11,6 +11,8 @@
     --accent: #FFB600;
 
     --bg-global: var(--primary);
+    --bg: white;
+    --fg: hsl(from var(--purple) h s calc(l + 6) / 1);
 
     --default-text-color: rgb(56, 56, 56);
     --default-heading-color: var(--secondary);
