@@ -17,6 +17,7 @@ import { Footer } from '../../fuselage/theme/living/common/footer/footer'
 
 import { PageHero } from "../../ui/modules/page-hero"
 import { Button, ButtonGrid } from "../../ui/buttons/button"
+import { AgendaSessionLite } from "../../ui/components/agenda-session"
 
 
 
@@ -67,93 +68,43 @@ export default function Page () {
 
             {/* PROGRAMME */}
             <section className="block bg-primary">
+                <div className="container center">
+                    <p className="fs-2 fw-600">Schedule at a Glance</p>
+                </div>
                 <div className="container columns-1 gap-sm maxw-45">
-
-                    <Day title={`Pre-conference day`}>
-                        <p>The day is dedicated to pre-scheduled matched introductions - investor, developer and operator meetings curated by the FHS Living team based on investment criteria and development priorities submitted at registration. The day closes with the Opening Reception, welcoming all delegates to Paris.</p>
+                    
+                    <Day title={`Monday, 22 February 2027`}>
+                        <AgendaSessionLite beginsAt={'18:00'}>
+                            <h5>Welcome Reception</h5>
+                        </AgendaSessionLite>
                     </Day>
                     
-                    <Day title={`Day One`}>
-                        <Session>
-                            <h5>Opening plenary</h5>
-                            <p>Alternative hospitality investment: a new investment class emerges</p>
-                        </Session>
+                    <Day title={`Tuesday, 23 February 2027`}>
+                        <AgendaSessionLite beginsAt={'9:00'} endsAt={'12:30'}>
+                            <h5>Plenary Session</h5>
+                        </AgendaSessionLite>
                         
-                        <Session>
-                            <h5>Focus on capital allocation</h5>
-                            <p>Where capital is moving: living sectors as the next frontier</p>
-                        </Session>
+                        <AgendaSessionLite beginsAt={'12:30'} endsAt={'13:30'}>
+                            <h5>Lunch</h5>
+                        </AgendaSessionLite>
                         
-                        <Session>
-                            <h5>Investor roundtable</h5>
-                            <p>Underwriting living assets: risk, returns and platform strategies</p>
-                        </Session>
-                        
-                        <Session>
-                            <h5>Europe meets the Middle East</h5>
-                            <p>Bridging capital with opportunity across regions</p>
-                        </Session>
-                        
-                        <Session>
-                            <h5>Branded residences in focus</h5>
-                            <p>Global demand, premium pricing and scalable growth</p>
-                        </Session>
-                        
-                        <Session>
-                            <h5>Student accommodation</h5>
-                            <p>From niche to core: institutionalising a global asset class</p>
-                        </Session>
-                        
-                        <Session>
-                            <h5>Curated 1:1 meetings</h5>
-                            <p>Pre-qualified, pre-matched introductions</p>
-                        </Session>
-                        
-                        <Session>
-                            <h5>Welcome reception and networking</h5>
-                        </Session>
+                        <AgendaSessionLite beginsAt={'13:30'} endsAt={'15:00'}>
+                            <h5>Master Classes &amp; Group Discussions</h5>
+                        </AgendaSessionLite>
                     </Day>
 
-                    <Day title={`Day Two`}>
-                        <Session>
-                            <h5>Market deep dive</h5>
-                            <p>Senior living: Demographics driving long-term demand</p>
-                        </Session>
+                    <Day title={`Wednesday, 24 February 2027`}>
+                        <AgendaSessionLite beginsAt={'9:00'} endsAt={'11:00'}>
+                            <h5>Plenary Session</h5>
+                        </AgendaSessionLite>
                         
-                        <Session>
-                            <h5>Serviced living and hybrid models</h5>
-                            <p>The convergence of hospitality and residential living</p>
-                        </Session>
+                        <AgendaSessionLite beginsAt={'11:00'} endsAt={'11:30'}>
+                            <h5>Coffee Break</h5>
+                        </AgendaSessionLite>
                         
-                        <Session>
-                            <h5>Mixed-use developments</h5>
-                            <p>Hospitality as the anchor of integrated communities</p>
-                        </Session>
-                        
-                        <Session>
-                            <h5>Wellness</h5>
-                            <p>The rise of health-driven living environments</p>
-                        </Session>
-                        
-                        <Session>
-                            <h5>Deal Room</h5>
-                            <p>Live opportunities: connecting capital with projects</p>
-                        </Session>
-                        
-                        <Session>
-                            <h5>Roundtable discussions</h5>
-                            <p>Structuring partnerships across living sectors</p>
-                        </Session>
-                        
-                        <Session>
-                            <h5>Final curated 1:1 meetings</h5>
-                            <p>Deal flow sessions and final investor introductions</p>
-                        </Session>
-                        
-                        <Session>
-                            <h5>Closing plenary</h5>
-                            <p>Where capital deploys next</p>
-                        </Session>
+                        <AgendaSessionLite beginsAt={'11:30'} endsAt={'13:00'}>
+                            <h5>Master Classes &amp; Group Discussions</h5>
+                        </AgendaSessionLite>
                     </Day>
 
                 </div>
