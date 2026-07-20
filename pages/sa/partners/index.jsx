@@ -26,6 +26,7 @@ import { Fade, Pop } from '../../../fuselage/animation/animation'
 
 import { VideoSection, Section } from '../../../fuselage/theme/2026/sa/blocks/section'
 import { ThemeGraphic } from '../../../fuselage/theme/2026/sa/theme/theme-graphic'
+import { VideoTestimonial } from '../../../fuselage/theme/2025/sa/components/video-testimonial/video-testimonial'
 
 
 const AMBASSADOR_DATA = [
@@ -153,7 +154,32 @@ function Partners({ partnerData, videoTestimonials }) {
 						}
 					>
 						<div className="container columns-3 gap-md">
-							{ videoTestimonials.map( entry => <VideoTestimonialCard key={entry.id} entry={entry} /> ) }
+							<VideoTestimonial entry={{
+								"id": "223023",
+								"videoShareUrl": "https://www.youtube.com/watch?v=Ro4k0OytXig",
+								"fullName": "Omar Al-Abdullatif",
+								"jobTitle": "Chief Executive Officer",
+								"organisation": "Blacksand",
+								"testimonial": "Honestly, it's the biggest hospitality summit we know. It's a great event and very much B2B."
+							}} />
+							
+							<VideoTestimonial entry={{
+								"id": "223023",
+								"videoShareUrl": "https://www.youtube.com/watch?v=mMAbGByBfJE",
+								"fullName": "Marko Vucinic",
+								"jobTitle": "Executive Director - Investment & Asset Management",
+								"organisation": "Knowledge Economic City",
+								"testimonial": "We love the platform. It connected us to a lot of partners that we deal with on day-to-day basis."
+							}} />
+							
+							<VideoTestimonial entry={{
+								"id": "223023",
+								"videoShareUrl": "https://www.youtube.com/watch?v=97dsiYGJHmc",
+								"fullName": "Khalid Saud Abuhaimed",
+								"jobTitle": "Chief Executive Officer",
+								"organisation": "Al Khozama Investment Company",
+								"testimonial": "We host the Future Hospitality Summit every year because I believe the deals that shape this industry need a home, a place where opportunity meets capital."
+							}} />
 						</div>
 					</Section>
 				: null
