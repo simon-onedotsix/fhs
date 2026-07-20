@@ -59,7 +59,7 @@ import { VideoPlayer } from '../../fuselage/components/video-player/video-player
 import { VideoTestimonial } from '../../fuselage/theme/2025/sa/components/video-testimonial/video-testimonial'
 import { ImpactCard } from "../../ui/components/impact-card"
 import { BarChart, Field } from '../../ui/components/bar-chart'
-import { GlobalMap, Region, Disclaimer } from '../../ui/components/global-map'
+import { GlobalMap, Region, Bubble } from '../../ui/components/global-map'
 
 
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
@@ -536,78 +536,78 @@ const photos = [
 const INDUSTRY_DATA = [
     {
         label: 'Hotel Operator / Management',
-        value: 23.4
-    },
-    {
-        label: 'Investors',
-        value: 20.3
+        value: 34
     },
     {
         label: 'Consultant / Advisor / Lawyer',
-        value: 10.8
+        value: 12
     },
     {
-        label: 'Supplier (Technology / Wellness & Spa / FF&E)',
-        value: 5.9
+        label: 'Investors',
+        value: 9
     },
     {
         label: 'Architecture & Design / Construction',
-        value: 5.1
+        value: 9
     },
     {
         label: 'Government / Tourism Official',
-        value: 4.1
+        value: 7
     },
     {
         label: 'Hotel Developer',
-        value: 3.6
+        value: 7
     },
     {
-        label: 'Education',
-        value: 1.8
-    },
-    {
-        label: 'Branded Residences',
-        value: 1.6
-    },
-    {
-        label: 'Asset Manager',
-        value: 1.6
-    },
-    {
-        label: 'Media & PR',
-        value: 1.6
-    },
-    {
-        label: 'Tourism (Leisure / Entertainment)',
-        value: 1.2
+        label: 'Supplier (Technology / Wellness & Spa / FF&E)',
+        value: 7
     },
     {
         label: 'Other',
-        value: 19.1
+        value: 5
+    },
+    {
+        label: 'Asset Manager',
+        value: 3
+    },
+    {
+        label: 'Branded Residences',
+        value: 2
+    },
+    {
+        label: 'Education',
+        value: 2
+    },
+    {
+        label: 'Media & PR',
+        value: 2
+    },
+    {
+        label: 'Tourism (Leisure / Entertainment)',
+        value: 2
     },
     
 ]
 const JOB_FUNCTION_DATA = [
     {
-        label: 'Director / VP / Head / Principal',
-        value: 32.0
-    },
-    {
         label: 'Board Level / Owner / Partner / Chair / Founder',
-        value: 18.3
-    },
-    {
-        label: 'Manager',
-        value: 18.0
+        value: 18.4
     },
     {
         label: 'C-Level',
-        value: 15.3
+        value: 16.5
     },    
     {
-        label: 'Other',
-        value: 16.5
+        label: 'Director / VP / Head / Principal',
+        value: 32.6
+    },
+    {
+        label: 'Manager',
+        value: 24.1
+    },
+    {
+        label: 'Not Specified',
+        value: 8.5
     },
 ]
 
@@ -776,11 +776,11 @@ export default function Page({ seomatic, partners }) {
                 </div>
 
                 <div className="container columns-5 gap-sm mt-md">
+                    <ImpactCard figure={2} prefix={"$"} unit={"bn+"} label={"Worth of Deals Signed"} />
+                    <ImpactCard figure={4.8} prefix={"$"} unit={"tn"} label={"in AUM"} />
                     <ImpactCard figure={1000} label={"Attendees"} />
                     <ImpactCard figure={20} unit={"%"} label={"Investor Audience"} />
-                    <ImpactCard figure={4.8} prefix={"$"} unit={"tn"} label={"in AUM"} />
                     <ImpactCard figure={32} label={"Countries"} />
-                    <ImpactCard figure={2} prefix={"$"} unit={"bn+"} label={"Worth of Deals Signed"} />
                 </div>
 
                 <div className="container center">
@@ -793,7 +793,7 @@ export default function Page({ seomatic, partners }) {
                         <BarChart>
                             {
                                 INDUSTRY_DATA &&
-                                INDUSTRY_DATA.map(( field, index) => <Field key={index} compact label={field.label} value={field.value} unit={'%'} normalise={{ min: 1.2, max: 23.4 }} />)
+                                INDUSTRY_DATA.map(( field, index) => <Field key={index} compact label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 34 }} />)
                             }
                         </BarChart>
                     </section>
@@ -803,19 +803,20 @@ export default function Page({ seomatic, partners }) {
                         <BarChart>
                             {
                                 JOB_FUNCTION_DATA &&
-                                JOB_FUNCTION_DATA.map(( field, index) => <Field key={index} compact label={field.label} value={field.value} unit={'%'} normalise={{ min: 15.3, max: 32.0 }} />)
+                                JOB_FUNCTION_DATA.map(( field, index) => <Field key={index} compact label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 32.6 }} />)
                             }
                         </BarChart>
 
                         <p className="fs-4 fw-500 mt-sm pb-sm">By Geography:</p>
                         <GlobalMap>
-                            <Region label={'Saudi Arabia'} value={67.0} unit={'%'} position={{ x: '58%', y: '50%' }} delay={0.3}/>
-                            <Region label={'Middle East'} value={22.8} unit={'%'} position={{ x: '58%', y: '27%' }} delay={0.3}/>
-                            <Region label={'Europe'} value={6.0} unit={'%'} position={{ x: '40%', y: '28%' }} delay={0.1}/>
-                            <Region label={'Asia'} value={0.6} unit={'%'} position={{ x: '80%', y: '50%' }} delay={0.5}/>
-                            <Region label={'Americas'} value={2.4} unit={'%'} position={{ x: '20%', y: '50%' }} delay={0.2}/>
-                            <Region label={'Africa'} value={5} unit={'%'} position={{ x: '45%', y: '60%' }} delay={0.4} />
-                            <Disclaimer><p className="fs-sm">Not specified: <strong>0.3%</strong></p></Disclaimer>
+                            <Region label={'Middle East'} value={90} unit={'%'} position={{ x: '58%', y: '35%' }} delay={0.3}/>
+                            <Region label={'Europe'} value={6} unit={'%'} position={{ x: '40%', y: '28%' }} delay={0.1}/>
+                            <Region label={'Asia'} value={1} unit={'%'} position={{ x: '80%', y: '50%' }} delay={0.5}/>
+                            <Region label={'Americas'} value={2} unit={'%'} position={{ x: '20%', y: '50%' }} delay={0.2}/>
+                            <Region label={'Africa'} value={1} unit={'%'} position={{ x: '45%', y: '60%' }} delay={0.4} />
+                            <Bubble size={ isDesktop ? `5rem`: `2.75rem`} position={{ x: '65%', y: '17%' }}>
+                                67% from Saudi Arabia
+                            </Bubble>
                         </GlobalMap>
                     </section>
                 </div>
