@@ -69,14 +69,15 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 	const CUSTOM_ORDERING = [
 		
 		{ id: 'RmllbGRWYWx1ZV8yOTg2OTk2Mg==', value: 'host-sponsor' },
+		{ id: 'RmllbGRWYWx1ZV8zMTE5MTUzOA==', value: 'destination-partner' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Ng==', value: 'strategic-partner' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Nw==', value: 'headline-sponsor' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2OA==', value: 'country-pavilion' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2NA==', value: 'sponsor' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Mw==', value: 'exhibitor' },
 		{ id: 'RmllbGRWYWx1ZV8yOTM0Mzg2OQ==', value: 'brf-sponsor' },
+		{ id: 'RmllbGRWYWx1ZV8zMTE5MTUzNw==', value: 'supporters' },
 		{ id: 'RmllbGRWYWx1ZV8zMTE3NjE2Mw==', value: 'media-partners' },
-
 	]
 
 
