@@ -45,10 +45,12 @@ export default function Agenda () {
 
 			
 			<section className="block">
-				<div className="container">
-					
-					<FhsWorld2026Schedule />
+				<div className="container center">
+					<p className="fs-2 fw-600">2026 Schedule at a Glance</p>
+				</div>
 
+				<div className="container">
+					<FhsWorld2026Schedule />
 				</div>
 			</section>
 

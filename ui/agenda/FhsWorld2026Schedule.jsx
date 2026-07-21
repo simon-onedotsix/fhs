@@ -189,8 +189,12 @@ export default function FhsWorld2026Schedule() {
     <section className="fhs-schedule" aria-label="FHS World 2026 schedule at a glance">
       <style jsx global>{`
         .fhs-schedule {
+          --background: var(--primary);
+          --background-general: hsl(from var(--primary) h s calc(l + 6) / 1);
+          --background-networking: hsl(from var(--primary) h s calc(l + 20) / 1);
+
           --ink: #25112f;
-          --ink-2: #4e3c55;
+          --ink-2: #fffdff;
           --paper: #f8f5fa;
           --white: #ffffff;
           --purple: #2a0d3c;
@@ -200,10 +204,20 @@ export default function FhsWorld2026Schedule() {
           --blue: #8fd7ef;
           --yellow: #f3cb65;
           --pink: #cf7bb8;
-          --line: rgba(42, 13, 60, .14);
-          --muted: #75677b;
-          --shadow: 0 16px 40px rgba(42, 13, 60, .11);
-          --minute-px: 1.3px;
+          --line: rgba(255, 255, 255, 0.1);
+          --divider-line: rgba(255, 255, 255, 0.0);
+          --muted: #b9a2c3;
+
+          --font-size: 1rem;
+          --font-size-day-number: 1.5rem;
+          --font-size-day-date: .8rem;
+          --font-size-key: .75rem;
+          --font-size-event-title: 1rem;
+
+          --main-radius: 1.25rem;
+          --card-radius: calc(var(--main-radius) * 0.5);
+          --shadow: none;
+          
           width: min(1180px, 100%);
           margin-inline: auto;
           color: var(--ink);
@@ -227,15 +241,15 @@ export default function FhsWorld2026Schedule() {
         .fhs-schedule__shell {
           overflow: hidden;
           border: 1px solid var(--line);
-          border-radius: 24px;
-          background: var(--white);
-          box-shadow: var(--shadow);
+          border-radius: var(--main-radius);
+          background: var(--background);
+          box-shadow: none;
         }
 
         .fhs-schedule__controls {
-          padding: 20px;
+          padding: var(--space-xxs);
           border-bottom: 1px solid var(--line);
-          background: rgba(248, 245, 250, .82);
+          background: var(--background);
         }
 
         .fhs-schedule__days {
@@ -249,7 +263,7 @@ export default function FhsWorld2026Schedule() {
 
         .fhs-schedule__day {
           border: 0;
-          border-radius: 12px;
+          border-radius: var(--card-radius);
           padding: 13px 12px;
           color: var(--ink-2);
           background: transparent;
@@ -259,13 +273,13 @@ export default function FhsWorld2026Schedule() {
 
         .fhs-schedule__day strong {
           display: block;
-          font-size: 15px;
+          font-size: var(--font-size-day-number);
         }
 
         .fhs-schedule__day span {
           display: block;
           margin-top: 2px;
-          font-size: 12px;
+          font-size: var(--font-size-day-date);
           opacity: .7;
         }
 
@@ -281,6 +295,7 @@ export default function FhsWorld2026Schedule() {
           position: relative;
           min-width: 780px;
           padding: 0 20px 30px;
+          
           --time-col: 86px;
           --lane-gap: 12px;
           --lane-count: 3;
@@ -293,17 +308,17 @@ export default function FhsWorld2026Schedule() {
           display: grid;
           grid-template-columns: var(--time-col) repeat(var(--lane-count), minmax(190px, 1fr));
           gap: var(--lane-gap);
-          padding: 16px 0 10px;
-          background: linear-gradient(#fff 80%, rgba(255,255,255,0));
+          padding: 10px 0;
+          background: transparent;
         }
 
         .fhs-schedule__heading {
           padding: 11px 13px;
-          border-radius: 12px;
+          border-radius: var(--card-radius);
           color: var(--white);
           background: var(--purple);
-          font-size: 12px;
-          font-weight: 900;
+          font-size: var(--font-size-key);
+          font-weight: 600;
           letter-spacing: .05em;
           text-transform: uppercase;
         }
@@ -348,9 +363,9 @@ export default function FhsWorld2026Schedule() {
           top: -10px;
           width: 70px;
           color: var(--muted);
-          background: var(--white);
+          background: var(--background);
           font-size: 11px;
-          font-weight: 800;
+          font-weight: 600;
         }
 
         .fhs-schedule__hour-line--half {
@@ -365,7 +380,7 @@ export default function FhsWorld2026Schedule() {
           top: 0;
           bottom: 0;
           width: 1px;
-          background: var(--line);
+          background: var(--divider-line);
           pointer-events: none;
         }
 
@@ -376,18 +391,16 @@ export default function FhsWorld2026Schedule() {
           border: 0;
           padding: 8px 9px;
           overflow: hidden;
-          border-radius: 10px;
+          border-radius: var(--card-radius);
           color: var(--white);
           background: var(--purple);
-          box-shadow: 0 8px 18px rgba(42, 13, 60, .12);
+          box-shadow: none;
           text-align: left;
-          transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+          transition: opacity .18s ease;
         }
 
         .fhs-schedule__event:hover {
-          z-index: 8;
-          transform: translateY(-2px);
-          box-shadow: 0 14px 25px rgba(42, 13, 60, .21);
+          z-index: 3;
         }
 
         .fhs-schedule__event--band {
@@ -396,15 +409,13 @@ export default function FhsWorld2026Schedule() {
 
         .fhs-schedule__event--band:hover {
           z-index: 1;
-          transform: none;
-          box-shadow: none;
         }
 
         .fhs-schedule__event-time {
           display: block;
           margin-bottom: 3px;
-          font-size: 10px;
-          font-weight: 900;
+          font-size: calc( var(--font-size) * 0.8 );
+          font-weight: 500;
           opacity: .76;
           white-space: nowrap;
         }
@@ -414,9 +425,9 @@ export default function FhsWorld2026Schedule() {
           overflow: hidden;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 3;
-          font-size: 12px;
+          font-size: var(--font-size-event-title);
           line-height: 1.18;
-          font-weight: 850;
+          font-weight: 600;
         }
 
         .fhs-schedule__event--compact {
@@ -432,39 +443,37 @@ export default function FhsWorld2026Schedule() {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          font-size: 10px;
+          font-size: calc( var(--font-size) * 0.75 );
           line-height: 1.35;
         }
 
         .fhs-schedule__event--summit {
-          background: linear-gradient(135deg, var(--red), var(--red-dark));
+          background: var(--red);
         }
 
         .fhs-schedule__event--future {
           color: var(--purple);
-          background: linear-gradient(135deg, var(--blue), #c5f0fb);
+          background: var(--blue);
         }
 
         .fhs-schedule__event--master {
           color: var(--purple);
-          background: linear-gradient(135deg, var(--yellow), #ffe6a5);
+          background: var(--yellow);
         }
 
         .fhs-schedule__event--general {
-          color: var(--purple);
-          background: #eee8f2;
-          border: 1px solid rgba(42, 13, 60, .12);
+          color: var(--bg);
+          background: var(--background-general);
           box-shadow: none;
         }
 
         .fhs-schedule__event--networking {
-          background: linear-gradient(135deg, var(--purple-2), var(--pink));
+          background: var(--background-networking);
         }
 
         .fhs-schedule__event--food {
-          color: var(--purple);
-          background: #f5e9dc;
-          border: 1px solid rgba(42, 13, 60, .10);
+          color: var(--bg);
+          background: var(--background-general);
           box-shadow: none;
         }
 
@@ -488,7 +497,7 @@ export default function FhsWorld2026Schedule() {
           color: var(--ink);
           background: var(--white);
           text-align: left;
-          box-shadow: 0 8px 22px rgba(42,13,60,.06);
+          box-shadow: none;
         }
 
         .fhs-schedule__mobile-stage {
@@ -499,7 +508,7 @@ export default function FhsWorld2026Schedule() {
           color: var(--white);
           background: var(--purple);
           font-size: 10px;
-          font-weight: 900;
+          font-weight: 600;
           letter-spacing: .06em;
           text-transform: uppercase;
         }
@@ -655,16 +664,15 @@ export default function FhsWorld2026Schedule() {
                 }
 
                 return (
-                  <button
+                  <div
                     key={`${session.day}-${session.start}-${session.end}-${session.title}`}
-                    type="button"
                     className={`fhs-schedule__event ${sessionDuration <= 30 ? 'fhs-schedule__event--compact' : ''} fhs-schedule__event--${session.stage}`}
                     style={style}
                     aria-label={`${session.title}, ${formatTime(session.start)} to ${formatTime(session.end)}, ${labels[session.stage]}`}
                   >
                     <span className="fhs-schedule__event-time">{`${formatTime(session.start)}–${formatTime(session.end)}`}</span>
                     <span className="fhs-schedule__event-title">{session.title}</span>
-                  </button>
+                  </div>
                 );
               })}
             </div>
