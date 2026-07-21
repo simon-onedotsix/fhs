@@ -76,7 +76,8 @@ export default function Page ({ entry }) {
                         <h1>Projects & Country Pavilions</h1>
                     </Pop>
                     <Fade>
-                        <p className='fs-6 mt-sm'>FHS World features country pavilions that showcase new projects and destinations unique to each participating country. These pavilions will showcase upcoming hospitality projects unique to each country and present a plethora of investment opportunities in ventures with high ROI.</p>
+                        <p className='fs-6 mt-sm'>At FHS World, countries and destinations can have a powerful platform to position their markets on the global hospitality investment stage.</p>
+                        <p className='fs-6'>Through country pavilions, governments and destination partners can highlight upcoming developments, promote investment-ready opportunities, and connect directly with investors, developers, and operators looking to shape the future of tourism and hospitality.</p>
                     </Fade>
                     
                     <div className="mt-md">
@@ -104,33 +105,61 @@ export default function Page ({ entry }) {
                         { countryPavilions.map( (pavilion, index) => <Flag key={index} flagUrl={pavilion.flag[0].url} /> ) }
                     </Ticker>      
                 } */}
+
+
+                <section className="block pb-0">
+                    <div className="container center">
+                        <p className="fs-2 fw-600">Country Pavilion at FHS World 2026</p>
+                    </div>
+                </section>
                 
 
                 {handleContentBlocks(entry.fhisContentBlocks, null, null, 'ae')}
+
+
+                <section className="block pb-0">
+                    <div className="container columns-2 gap-md">
+                        <section>
+                            <div className="formatted">
+                                <p className="fs-2 fw-600 lh-1 pb-xs balance">Why Countries Partner with FHS&nbsp;World</p>
+                                <p>Past country pavilions have delivered tangible outcomes, from Sri Lanka generating an estimated USD 5–10 million in business opportunities and engaging over 41 potential partners, to the Maldives securing strategic hospitality partnerships for major tourism development projects.</p>
+                                <h5>Benefits of Partnering:</h5>
+                                <ul>
+                                    <li>Showcase investment-ready projects</li>
+                                    <li>Attract foreign direct investment</li>
+                                    <li>Promote destination growth</li>
+                                    <li>Convert interest into real opportunitie</li>
+                                </ul>
+                            </div>
+                        </section>
+
+                        <section>
+                            <Pop><img src="/assets/img/world/pages/country-pavilions/gallery/pav-generic-02.jpg" alt="" style={{ width: `100%`, borderRadius: `1rem` }} /></Pop>
+                        </section>
+                    </div>
+
+                </section>
                 
 
                 {/* GALLERY */}
 
-                <section className="block pt-0">
+                <section className="block">
                     <div className="container center">
                         <p className="fs-2 fw-600">Past Country Pavilions at FHS World</p>
                     </div>
 
                     <div className="container columns-3 gap-sm">
-                        <PavilionCard photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-generic-01.jpg`} />
-                        <PavilionCard photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-generic-02.jpg`} />
-                        <PavilionCard photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-generic-03.jpg`} />
-                        <PavilionCard title={`Sri Lanka`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-sri-lanka.jpg`} />
-                        <PavilionCard title={`Maldives`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-maldives.jpg`} />
                         <PavilionCard title={`Albania`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-albania.jpg`} />
-                        <PavilionCard title={`Philippines`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-philippines.jpg`} />
-                        <PavilionCard title={`Italy`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-italy.jpg`} />
-                        <PavilionCard title={`Greece`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-greece.jpg`} />
-                        <PavilionCard title={`Morocco`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-morocco.jpg`} />
-                        <PavilionCard title={`Egypt`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-egypt.jpg`} />
                         <PavilionCard title={`Cyprus`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-cyprus.png`} />
-                        <PavilionCard title={`UAE`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-uae.jpg`} />
+                        <PavilionCard title={`Egypt`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-egypt.jpg`} />
+                        <PavilionCard title={`Greece`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-greece.jpg`} />
+                        <PavilionCard title={`Italy`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-italy.jpg`} />
+                        <PavilionCard title={`Maldives`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-maldives.jpg`} />
+                        <PavilionCard title={`Morocco`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-morocco.jpg`} />
+                        <PavilionCard title={`Philippines`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-philippines.jpg`} />
                         <PavilionCard title={`Saudi Arabia`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-saudi.jpg`} />
+                        <PavilionCard title={`Sri Lanka`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-sri-lanka.jpg`} />
+                        <PavilionCard title={`United Arab Emirates`} photoUrl={`/assets/img/world/pages/country-pavilions/gallery/pav-uae.jpg`} />
                     </div>
                 </section>
 
