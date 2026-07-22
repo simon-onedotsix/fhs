@@ -128,7 +128,7 @@ export default function Page ({ entry }) {
                                     <li>Showcase investment-ready projects</li>
                                     <li>Attract foreign direct investment</li>
                                     <li>Promote destination growth</li>
-                                    <li>Convert interest into real opportunitie</li>
+                                    <li>Convert interest into real opportunities</li>
                                 </ul>
                             </div>
                         </section>
