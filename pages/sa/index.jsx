@@ -784,7 +784,7 @@ export default function Page({ seomatic, partners }) {
                 </div>
 
                 <div className="container mt-xs center">
-                    <Pop><ArrowButton href={`/sa/about-fhs-saudi`} target='_blank' theme={{ arrow: `white`, border: `white`, label: `white`}}>View Attendance Breakdown</ArrowButton></Pop>
+                    <Pop><ArrowButton href={`/sa/about-fhs-saudi`} theme={{ arrow: `white`, border: `white`, label: `white`}}>View Attendance Breakdown</ArrowButton></Pop>
                     {/* <Pop><ArrowButton href={`https://youtu.be/LSqHtk9V-zg`} target='_blank' theme={{ arrow: `white`, border: `white`, label: `white`}}>Watch Highlights</ArrowButton></Pop> */}
                 </div>
             </section>
