@@ -57,10 +57,6 @@ export default function Page () {
 
                     <div className="container formatted center">
                         <p className="fs-6 maxw-55 balance">Every session at FHS Living is built to support investment decisions. The agenda is investor-first - structured around the questions that capital allocators, developers and operators are genuinely trying to answer. On-stage 1:1 interviews with senior industry leaders. Investor roundtables on underwriting and risk. A live Deal Room running throughout Day Two. Pre-scheduled 1:1 meetings throughout both days.</p>
-
-                        <p>Programme details are in development. The full agenda will be published soon. Register your interest below to be notified.</p>
-
-                        <p className="mt-sm"><Pop><Button inverse href={`/living/register-interest`} label={`Register Interest`}/></Pop></p>
                     </div>
                 </section>
             </PageHero>
@@ -116,7 +112,7 @@ export default function Page () {
                         
                         <AgendaSessionLite beginsAt={'12:00'} endsAt={'12:30'}>
                             <h5>Investment Exchange: From the Gulf to Europe</h5>
-                            <h6 className="c-magenta">Session Format</h6>
+                            {/* <h6 className="c-magenta">Session Format</h6>
                             <h6>3 mins | Market Snapshot</h6>
                             <h6>12 mins | Europe Meets the Gulf</h6>
                             <p>Two industry leaders—one representing Europe and one the GCC—share their perspectives on:</p>
@@ -126,14 +122,14 @@ export default function Page () {
                                 <li>The barriers that still need to be overcome </li>
                             </ul>
                             <h6>15 mins | The Investment Exchange</h6>
-                            <p>The moderator presents three real-world investment scenarios </p>
+                            <p>The moderator presents three real-world investment scenarios </p> */}
                         </AgendaSessionLite>
                         
                         <AgendaSessionLite beginsAt={'12:30'} endsAt={'13:30'}>
                             <h5>Lunch</h5>
                         </AgendaSessionLite>
                         
-                        <SessionGroup beginsAt={'13:30'} endsAt={'15:00'} heading={'Master Classes & Group Discussions'}>
+                        <SessionGroup beginsAt={'13:30'} endsAt={'15:00'} heading={'Master Classes & Group Discussions'} flag={'Curated Meetings'}>
                             <AgendaSessionLite beginsAt={'13:30'} endsAt={'14:15'}>
                                 <p><span className="c-magenta">Interactive Roundtable A:</span><br/>
                                 <span className="fs-6 fw-600">The Institutionalisation of PBSA: What&apos;s Next for Student Accommodation?</span></p>
@@ -177,7 +173,7 @@ export default function Page () {
                             <AgendaSessionLite beginsAt={'10:15'} endsAt={'11:00'}>
                                 <h5>The Living Deal Room: Buyers, Sellers & the Art of Getting Deals Done</h5>
                                 <h6 className="c-magenta">Interactive Deal Room</h6>
-                                <p>The moderator presents <strong>three live investment opportunities</strong>.</p>
+                                {/* <p>The moderator presents <strong>three live investment opportunities</strong>.</p>
                                 <p className="c-magenta">For each opportunity:</p>
                                 <p>The <strong>seller</strong> has <strong>90 seconds</strong> to pitch the investment.<br />The <strong>buyer</strong> then has <strong>90 seconds</strong> to respond.</p>
                                 <p className="c-magenta">Questions include:</p>
@@ -188,7 +184,7 @@ export default function Page () {
                                     <li>What would change your mind? </li>
                                     <li>Where would negotiations begin?</li>
                                 </ul>
-                                <p>After both perspectives, the moderator opens a brief discussion on where the valuation gap lies and what it would take to close the transaction.</p>
+                                <p>After both perspectives, the moderator opens a brief discussion on where the valuation gap lies and what it would take to close the transaction.</p> */}
                             </AgendaSessionLite>
                         </SessionGroup>
                         
@@ -197,7 +193,7 @@ export default function Page () {
                             <h5>Coffee Break</h5>
                         </AgendaSessionLite>
                         
-                        <SessionGroup beginsAt={'11:30'} endsAt={'13:00'} heading={'Master Classes & Group Discussions'}>
+                        <SessionGroup beginsAt={'11:30'} endsAt={'13:00'} heading={'Master Classes & Group Discussions'} flag={'Curated Meetings'}>
                             <AgendaSessionLite beginsAt={'11:30'} endsAt={'12:15'}>
                                 <p><span className="c-magenta">Interactive Roundtable A:</span><br/>
                                 <span className="fs-6 fw-600">The Unbundled Asset: Monetising Building Amenities for Higher Returns</span></p>
@@ -223,11 +219,6 @@ export default function Page () {
                         
                     </Day>
 
-                </div>
-
-                <div className="container formatted center">
-                    <p className="fs-4">Notify me when the programme is live</p>
-                    <Pop inline><Button href={`/living/register-interest`} label={`Register Interest`}/></Pop>
                 </div>
             </section>
             
@@ -266,7 +257,7 @@ const Day = ({ title, children }) => {
     )
 }
 
-const SessionGroup = ({ beginsAt, endsAt, heading, children }) => {
+const SessionGroup = ({ beginsAt, endsAt, heading, flag, children }) => {
     return (
         <div
             style={{
@@ -286,6 +277,11 @@ const SessionGroup = ({ beginsAt, endsAt, heading, children }) => {
                 </aside>
 
                 <main>
+                    {
+                        flag &&
+                        <p style={{ display: `inline-block`, margin: 0, backgroundColor: `var(--magenta)`, padding: `5px 15px`, borderRadius: `2rem` }}>{flag}</p>
+
+                    }
                     <h5>{heading}</h5>
                 </main>
             </header>
