@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 import { motion } from "framer-motion"
->>>>>>> sa
 import { AnimatedCounter } from '../../fuselage/animation/animated-counter'
 import { Pop } from '../../fuselage/animation/animation'
 
@@ -38,8 +35,6 @@ export const Disclaimer = ({ children }) => {
             { children }
         </div>
     )
-<<<<<<< HEAD
-=======
 }
 
 export const Bubble = ({ children, size, position }) => {
@@ -55,5 +50,4 @@ export const Bubble = ({ children, size, position }) => {
             { children }
         </motion.div>
     )
->>>>>>> sa
 }

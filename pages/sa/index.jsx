@@ -772,7 +772,7 @@ export default function Page({ seomatic, partners }) {
             {/* WHO ATTENDED */}
             <section className="block bg-primary-2-dark">
                 <div className="container center">
-                    <p className="fs-2 fw-600 c-white">Who Attended</p>
+                    <p className="fs-2 fw-600 c-white">FHS Saudi Arabia 2026 in Numbers</p>
                 </div>
 
                 <div className="container columns-5 gap-sm mt-md">
@@ -783,46 +783,9 @@ export default function Page({ seomatic, partners }) {
                     <ImpactCard figure={32} label={"Countries"} />
                 </div>
 
-                <div className="container center">
-                    <p className="fs-2 fw-600 c-white">Attendee Breakdown</p>
-                </div>
-
-                <div className="container columns-2 gap-md">
-                    <section>
-                        <p className="fs-4 fw-500 pb-sm">By Industry:</p>
-                        <BarChart>
-                            {
-                                INDUSTRY_DATA &&
-                                INDUSTRY_DATA.map(( field, index) => <Field key={index} compact label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 34 }} />)
-                            }
-                        </BarChart>
-                    </section>
-                    
-                    <section>
-                        <p className="fs-4 fw-500 pb-sm">By Job Function:</p>
-                        <BarChart>
-                            {
-                                JOB_FUNCTION_DATA &&
-                                JOB_FUNCTION_DATA.map(( field, index) => <Field key={index} compact label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 32.6 }} />)
-                            }
-                        </BarChart>
-
-                        <p className="fs-4 fw-500 mt-sm pb-sm">By Geography:</p>
-                        <GlobalMap>
-                            <Region label={'Middle East'} value={90} unit={'%'} position={{ x: '58%', y: '35%' }} delay={0.3}/>
-                            <Region label={'Europe'} value={6} unit={'%'} position={{ x: '40%', y: '28%' }} delay={0.1}/>
-                            <Region label={'Asia'} value={1} unit={'%'} position={{ x: '80%', y: '50%' }} delay={0.5}/>
-                            <Region label={'Americas'} value={2} unit={'%'} position={{ x: '20%', y: '50%' }} delay={0.2}/>
-                            <Region label={'Africa'} value={1} unit={'%'} position={{ x: '45%', y: '60%' }} delay={0.4} />
-                            <Bubble size={ isDesktop ? `5rem`: `2.75rem`} position={{ x: '65%', y: '17%' }}>
-                                67% from Saudi Arabia
-                            </Bubble>
-                        </GlobalMap>
-                    </section>
-                </div>
-
                 <div className="container mt-xs center">
-                    <Pop><ArrowButton href={`https://youtu.be/LSqHtk9V-zg`} target='_blank' theme={{ arrow: `white`, border: `white`, label: `white`}}>Watch Highlights</ArrowButton></Pop>
+                    <Pop><ArrowButton href={`/sa/about-fhs-saudi`} target='_blank' theme={{ arrow: `white`, border: `white`, label: `white`}}>View Attendance Breakdown</ArrowButton></Pop>
+                    {/* <Pop><ArrowButton href={`https://youtu.be/LSqHtk9V-zg`} target='_blank' theme={{ arrow: `white`, border: `white`, label: `white`}}>Watch Highlights</ArrowButton></Pop> */}
                 </div>
             </section>
 
