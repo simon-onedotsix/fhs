@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import { motion } from "framer-motion"
+>>>>>>> sa
 import { AnimatedCounter } from '../../fuselage/animation/animated-counter'
 import { Pop } from '../../fuselage/animation/animation'
 
@@ -34,4 +38,22 @@ export const Disclaimer = ({ children }) => {
             { children }
         </div>
     )
+<<<<<<< HEAD
+=======
+}
+
+export const Bubble = ({ children, size, position }) => {
+    return(
+        <motion.div
+            className={CSS.bubble}
+            style={{ top: position.y, left: position.x, width: size }}
+            initial={{ scale: .25, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ type: "spring", bounce: 0.25, delay: .25 }}
+        >
+            { children }
+        </motion.div>
+    )
+>>>>>>> sa
 }

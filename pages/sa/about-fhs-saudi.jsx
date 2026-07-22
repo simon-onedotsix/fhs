@@ -2,6 +2,8 @@ import { useTranslations } from 'next-intl'
 
 import { useState } from 'react'
 
+import useCustomMediaQuery from "../../hooks/useCustomMediaQuery"
+
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Script from "next/script"
@@ -15,8 +17,8 @@ import HubspotForm from '../../fuselage/components/hubspot-form/hubspot-form'
 
 import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-image'
 import { ImpactFigure } from '../../fuselage/theme/2025/world/blocks/impact-grid/impact-grid'
-import { BarChart, Field } from '../../fuselage/theme/2025/sa/components/bar-chart/bar-chart'
-import { GlobalMap } from '../../fuselage/theme/2025/sa/components/global-map/global-map'
+import { BarChart, Field } from '../../ui/components/bar-chart'
+import { GlobalMap, Region, Bubble } from '../../ui/components/global-map'
 import { Quote } from '../../fuselage/theme/2025/sa/components/quote/quote'
 
 
@@ -26,143 +28,58 @@ import CSS from '../../css/app/lead-wall.module.css'
 
 export const INDUSTRY_DATA = [
     {
-        label: 'Hotel/Resort Operator',
-        value: 19.6
+        label: 'Hotel Operator / Management',
+        value: 34
     },
     {
-        label: 'Tourism / Government Official',
-        value: 11.3
+        label: 'Consultant / Advisor / Lawyer',
+        value: 12
     },
     {
-        label: 'Consultant / Advisor',
-        value: 9.5
+        label: 'Investors',
+        value: 9
     },
     {
-        label: 'Hotel Developer / Builder',
-        value: 8.7
+        label: 'Architecture & Design / Construction',
+        value: 9
     },
     {
-        label: 'Architect / Designer',
-        value: 7.4
+        label: 'Government / Tourism Official',
+        value: 7
     },
     {
-        label: 'Investor (Equity) / Owner',
-        value: 6.2
+        label: 'Hotel Developer',
+        value: 7
     },
     {
-        label: 'Media',
-        value: 5.9
+        label: 'Supplier (Technology / Wellness & Spa / FF&E)',
+        value: 7
     },
     {
-        label: 'Asset Managers',
-        value: 5.6
+        label: 'Other',
+        value: 5
     },
     {
-        label: 'F&B Investor / Operator',
-        value: 5.4
+        label: 'Asset Manager',
+        value: 3
     },
     {
-        label: 'Supplier',
-        value: 4.6
-    },
-    {
-        label: 'Real Estate Agent / Surveyor',
-        value: 2.2
-    },
-    {
-        label: 'Lawyer',
-        value: 1.9
-    },
-    {
-        label: 'Organiser',
-        value: 1.2
-    },
-    {
-        label: 'Bank / Lender',
-        value: 0.9
-    },
-    {
-        label: 'Student',
-        value: 0.3
+        label: 'Branded Residences',
+        value: 2
     },
     {
         label: 'Education',
-        value: 0.1
+        value: 2
     },
     {
-        label: 'Education, Student',
-        value: 0.1
-    },
-]
-const INDUSTRY_DATA_AR = [
-    {
-        label: 'Hotel/Resort Operator',
-        value: 19.6
+        label: 'Media & PR',
+        value: 2
     },
     {
-        label: 'Tourism / Government Official',
-        value: 11.3
+        label: 'Tourism (Leisure / Entertainment)',
+        value: 2
     },
-    {
-        label: 'Consultant / Advisor',
-        value: 9.5
-    },
-    {
-        label: 'Hotel Developer / Builder',
-        value: 8.7
-    },
-    {
-        label: 'Architect / Designer',
-        value: 7.4
-    },
-    {
-        label: 'Investor (Equity) / Owner',
-        value: 6.2
-    },
-    {
-        label: 'Media',
-        value: 5.9
-    },
-    {
-        label: 'Asset Managers',
-        value: 5.6
-    },
-    {
-        label: 'F&B Investor / Operator',
-        value: 5.4
-    },
-    {
-        label: 'Supplier',
-        value: 4.6
-    },
-    {
-        label: 'Real Estate Agent / Surveyor',
-        value: 2.2
-    },
-    {
-        label: 'Lawyer',
-        value: 1.9
-    },
-    {
-        label: 'Organiser',
-        value: 1.2
-    },
-    {
-        label: 'Bank / Lender',
-        value: 0.9
-    },
-    {
-        label: 'Student',
-        value: 0.3
-    },
-    {
-        label: 'Education',
-        value: 0.1
-    },
-    {
-        label: 'Education, Student',
-        value: 0.1
-    },
+    
 ]
 
 export const LEVEL_DATA = [
@@ -183,30 +100,26 @@ export const LEVEL_DATA = [
         value: 19
     },
 ]
-const LEVEL_DATA_AR = [
+export const JOB_FUNCTION_DATA = [
     {
-        label: 'مدير / إدارة متوسطة',
-        value: 23
+        label: 'Board Level / Owner / Partner / Chair / Founder',
+        value: 18.4
     },
     {
-        label: 'مدير',
-        value: 18
+        label: 'C-Level',
+        value: 16.5
+    },    
+    {
+        label: 'Director / VP / Head / Principal',
+        value: 32.6
     },
     {
-        label: 'مجلس الإدارة / الملاك / الشركاء / المؤسسون',
-        value: 14
+        label: 'Manager',
+        value: 24.1
     },
     {
-        label: 'المناصب التنفيذية العليا',
-        value: 26
-    },
-    {
-        label: 'نائب الرئيس / الرؤساء / المستشارون',
-        value: 17
-    },
-    {
-        label: 'أخرى',
-        value: 2
+        label: 'Not Specified',
+        value: 8.5
     },
 ]
 
@@ -219,6 +132,7 @@ export default function Page () {
 
     const [ showPopover, setShowPopover ] = useState( false )
 
+    const isDesktop = useCustomMediaQuery('(min-width: 600px)')
 
     return (
         <div dir={locale === 'ar' ? 'rtl' : 'ltr'}>
@@ -270,7 +184,7 @@ export default function Page () {
                             <p className='fs-1 fw-600'>
                                 { locale === 'ar' ? "عدد الحضور" : "Who Attends" }
                             </p>
-                            <ImpactFigure figure={1106} impact={ locale === 'ar' ? "مشاركًا من جميع أنحاء العالم" : 'attendees from across the globe' }  />
+                            <ImpactFigure figure={1000} unit={'+'} impact={ locale === 'ar' ? "مشاركًا من جميع أنحاء العالم" : 'attendees from across the globe' }  />
                             <p className='mt-sm'>
                                 <button className='button fs-6' onClick={() => setShowPopover(true)}>
                                     { locale === 'ar' ? "حمل تقرير ما بعد الحدث لعام 2025" : "Download 2025 Post-event Report" }
@@ -292,13 +206,9 @@ export default function Page () {
                 <div className="container maxw-50">
                     <BarChart>
                         {
-                            locale === 'ar'
-                            ?
-                                INDUSTRY_DATA_AR.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 22 }} />)
-                            :
-                                INDUSTRY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 22 }} />)
+                            INDUSTRY_DATA &&
+                            INDUSTRY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 34 }} />)
                         }
-
                     </BarChart>
                 </div>
             </section>
@@ -314,13 +224,9 @@ export default function Page () {
                 <div className="container maxw-50">
                     <BarChart>
                         {
-                            locale === 'ar'
-                            ?
-                                LEVEL_DATA_AR.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 42 }} />)
-                            :
-                                LEVEL_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 42 }} />)
+                            JOB_FUNCTION_DATA &&
+                            JOB_FUNCTION_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 0, max: 32.6 }} />)
                         }
-
                     </BarChart>
                 </div>
 
@@ -349,7 +255,16 @@ export default function Page () {
                 </div>
 
                 <div className="container center">
-                    <GlobalMap />
+                    <GlobalMap>
+                        <Region label={'Middle East'} value={90} unit={'%'} position={{ x: '58%', y: '35%' }} delay={0.3}/>
+                        <Region label={'Europe'} value={6} unit={'%'} position={{ x: '40%', y: '28%' }} delay={0.1}/>
+                        <Region label={'Asia'} value={1} unit={'%'} position={{ x: '80%', y: '50%' }} delay={0.5}/>
+                        <Region label={'Americas'} value={2} unit={'%'} position={{ x: '20%', y: '50%' }} delay={0.2}/>
+                        <Region label={'Africa'} value={1} unit={'%'} position={{ x: '45%', y: '60%' }} delay={0.4} />
+                        <Bubble size={ isDesktop ? `9rem`: `2.75rem`} position={{ x: '65%', y: '15%' }}>
+                            67% from Saudi Arabia
+                        </Bubble>
+                    </GlobalMap>
                 </div>
             </section>
 

@@ -49,3 +49,26 @@
     bottom: 0;
     right: 0;
 }
+<<<<<<< HEAD
+=======
+
+
+/* bubble */
+
+.bubble {
+    container-type: inline-size;
+    position: absolute;
+    aspect-ratio: 1;
+    background-color: var(--primary);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+
+    font-size: 2.25cqw;
+    text-align: center;
+    line-height: 1;
+}
+>>>>>>> sa
