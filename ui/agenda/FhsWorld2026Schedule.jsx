@@ -144,34 +144,35 @@ function calculateOverlapLayout(laneSessions) {
 }
 
 export default function FhsWorld2026Schedule() {
-  const [selectedDay, setSelectedDay] = useState(1);
-  const [bodyWidth, setBodyWidth] = useState(780);
-  const timelineBodyRef = useRef(null);
+
+  const [selectedDay, setSelectedDay] = useState(1)
+  const [bodyWidth, setBodyWidth] = useState(780)
+  const timelineBodyRef = useRef(null)
 
   useEffect(() => {
     const updateBodyWidth = () => {
       if (timelineBodyRef.current) {
-        setBodyWidth(timelineBodyRef.current.clientWidth || 780);
+        setBodyWidth(timelineBodyRef.current.clientWidth || 780)
       }
-    };
+    }
 
-    updateBodyWidth();
-    window.addEventListener('resize', updateBodyWidth);
-    return () => window.removeEventListener('resize', updateBodyWidth);
-  }, []);
+    updateBodyWidth()
+    window.addEventListener('resize', updateBodyWidth)
+    return () => window.removeEventListener('resize', updateBodyWidth)
+  }, [])
 
-  const day = useMemo(() => DAYS[selectedDay], [selectedDay]);
-  const lanes = useMemo(() => activeLanesForDay(selectedDay), [selectedDay]);
-  const dailySessions = useMemo(() => sessions.filter((session) => session.day === selectedDay), [selectedDay]);
-  const timelineHeight = Math.max(560, (toMinutes(day.end) - toMinutes(day.start)) * 1.3);
-  const timeColumn = 86;
-  const laneGap = 12;
-  const laneWidth = Math.max(0, (bodyWidth - timeColumn - laneGap * lanes.length) / lanes.length);
+  const day = useMemo(() => DAYS[selectedDay], [selectedDay])
+  const lanes = useMemo(() => activeLanesForDay(selectedDay), [selectedDay])
+  const dailySessions = useMemo(() => sessions.filter((session) => session.day === selectedDay), [selectedDay])
+  const timelineHeight = Math.max(560, (toMinutes(day.end) - toMinutes(day.start)) * 1.3)
+  const timeColumn = 86
+  const laneGap = 12
+  const laneWidth = Math.max(0, (bodyWidth - timeColumn - laneGap * lanes.length) / lanes.length)
 
   const overlapLayouts = useMemo(() => {
-    const layouts = new Map();
+    const layouts = new Map()
     lanes.forEach((lane) => {
-      const laneSessions = dailySessions.filter((session) => laneFor(session) === lane);
+      const laneSessions = dailySessions.filter((session) => laneFor(session) === lane)
       layouts.set(lane, calculateOverlapLayout(laneSessions));
     });
     return layouts;
@@ -183,10 +184,11 @@ export default function FhsWorld2026Schedule() {
       ...dailySessions.filter((session) => !isProgrammeBand(session))
     ],
     [dailySessions]
-  );
+  )
 
   return (
     <section className="fhs-schedule" aria-label="FHS World 2026 schedule at a glance">
+     
       <style jsx global>{`
         .fhs-schedule {
           --background: var(--primary);
@@ -580,6 +582,7 @@ export default function FhsWorld2026Schedule() {
       `}</style>
 
       <div className="fhs-schedule__shell">
+        
         <div className="fhs-schedule__controls">
           <div className="fhs-schedule__days" role="tablist" aria-label="Select event day">
             {Object.values(DAYS).map((dayOption) => (
@@ -703,6 +706,7 @@ export default function FhsWorld2026Schedule() {
           ))}
         </div>
       </div>
+      
     </section>
   );
 }
