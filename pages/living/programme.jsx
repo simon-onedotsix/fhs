@@ -69,42 +69,158 @@ export default function Page () {
             {/* PROGRAMME */}
             <section className="block bg-primary">
                 <div className="container center">
-                    <p className="fs-2 fw-600">Schedule at a Glance</p>
+                    <p className="fs-2 fw-600">Conference Programme</p>
                 </div>
                 <div className="container columns-1 gap-sm maxw-45">
                     
                     <Day title={`Monday, 22 February 2027`}>
+                        <h5>Social Meet</h5>
                         <AgendaSessionLite beginsAt={'18:00'}>
                             <h5>Welcome Reception</h5>
                         </AgendaSessionLite>
                     </Day>
                     
                     <Day title={`Tuesday, 23 February 2027`}>
-                        <AgendaSessionLite beginsAt={'9:00'} endsAt={'12:30'}>
-                            <h5>Plenary Session</h5>
+                        <AgendaSessionLite beginsAt={'09:00'} endsAt={'09:10'}>
+                            <h5>Welcome to FHS Living Europe 2027</h5>
+                        </AgendaSessionLite>
+
+                        <AgendaSessionLite beginsAt={'09:10'} endsAt={'09:40'}>
+                            <h5>Europe as a Safe Haven: The New Geography of Global Capital</h5>
+                            <p>Keynote Presentation by a political economist</p>
+                        </AgendaSessionLite>
+
+                        <AgendaSessionLite beginsAt={'09:40'} endsAt={'10:15'}>
+                            <h5>State of Capital: Where Investors Are Placing Their Bets Across Europe&apos;s Living Sectors</h5>
+                            <p>Panel Discussion</p>
+                        </AgendaSessionLite>
+
+                        <AgendaSessionLite beginsAt={'10:15'} endsAt={'10:30'}>
+                            <h5>Navigating Europe: The New Rules for Cross-Border Living Investment</h5>
+                            <p>Keynote Speech by a senior regulatory counsel</p>
+                        </AgendaSessionLite>
+                        
+                        <AgendaSessionLite beginsAt={'10:30'} endsAt={'11:30'}>
+                            <h5>Networking Coffee</h5>
+                        </AgendaSessionLite>
+
+                        <AgendaSessionLite beginsAt={'11:00'} endsAt={'11:20'}>
+                            <h5>The Future of Capital: Insights from a Global Investment Leader</h5>
+                            <p>Fireside Chat with a high profile investor across multiple living asset classes</p>
+                        </AgendaSessionLite>
+
+                        <AgendaSessionLite beginsAt={'11:20'} endsAt={'12:00'}>
+                            <h5>One Asset, Multiple Income Streams: The New Living Investment Model</h5>
+                            <p>Panel Discussion</p>
+                        </AgendaSessionLite>
+                        
+                        <AgendaSessionLite beginsAt={'12:00'} endsAt={'12:30'}>
+                            <h5>Investment Exchange: From the Gulf to Europe</h5>
+                            <h6 className="c-magenta">Session Format</h6>
+                            <h6>3 mins | Market Snapshot</h6>
+                            <h6>12 mins | Europe Meets the Gulf</h6>
+                            <p>Two industry leaders—one representing Europe and one the GCC—share their perspectives on:</p>
+                            <ul>
+                                <li>The biggest opportunities for collaboration </li>
+                                <li>The operational expertise each region brings </li>
+                                <li>The barriers that still need to be overcome </li>
+                            </ul>
+                            <h6>15 mins | The Investment Exchange</h6>
+                            <p>The moderator presents three real-world investment scenarios </p>
                         </AgendaSessionLite>
                         
                         <AgendaSessionLite beginsAt={'12:30'} endsAt={'13:30'}>
                             <h5>Lunch</h5>
                         </AgendaSessionLite>
                         
-                        <AgendaSessionLite beginsAt={'13:30'} endsAt={'15:00'}>
-                            <h5>Master Classes &amp; Group Discussions</h5>
-                        </AgendaSessionLite>
+                        <SessionGroup beginsAt={'13:30'} endsAt={'15:00'} heading={'Master Classes & Group Discussions'}>
+                            <AgendaSessionLite beginsAt={'13:30'} endsAt={'14:15'}>
+                                <p><span className="c-magenta">Interactive Roundtable A:</span><br/>
+                                <span className="fs-6 fw-600">The Institutionalisation of PBSA: What&apos;s Next for Student Accommodation?</span></p>
+                                
+                                <p><span className="c-magenta">Interactive Roundtable B:</span><br />
+                                <span className="fs-6 fw-600">Rethinking Senior Living: From Care to Lifestyle</span></p>
+                                
+                                <p><span className="c-magenta">Interactive Roundtable C:</span><br />
+                                <span className="fs-6 fw-600">Planning for Branded Residences: Navigating Europe&apos;s Regulatory Landscape</span></p>
+                            </AgendaSessionLite>
+                            
+                            <AgendaSessionLite beginsAt={'14:15'} endsAt={'15:00'}>
+                                <p><span className="c-magenta">Interactive Roundtable A:</span><br/>
+                                <span className="fs-6 fw-600">Underwriting Living Assets: Pricing Risk in the Operational Real Estate Era</span></p>
+                                
+                                <p><span className="c-magenta">Interactive Roundtable B:</span><br />
+                                <span className="fs-6 fw-600">Planning the Future: Policy as a Catalyst for Alternative Living</span></p>
+                                
+                                <p><span className="c-magenta">Interactive Masterclass:</span><br />
+                                <span className="fs-6 fw-600">Living Assets 101: A Hotel Investor&apos;s Guide to the Living Economy </span></p>
+                            </AgendaSessionLite>
+                        </SessionGroup>
+                        
                     </Day>
 
                     <Day title={`Wednesday, 24 February 2027`}>
-                        <AgendaSessionLite beginsAt={'9:00'} endsAt={'11:00'}>
-                            <h5>Plenary Session</h5>
-                        </AgendaSessionLite>
+                        <SessionGroup beginsAt={'9:00'} endsAt={'11:00'} heading={'Plenary Session'}>
+                            <AgendaSessionLite beginsAt={'09:00'} endsAt={'09:30'}>
+                                <h5>Work, Live, Belong: Designing the Next Generation of Mixed-Use Communities</h5>
+                            </AgendaSessionLite>
+                            
+                            <AgendaSessionLite beginsAt={'09:30'} endsAt={'09:50'}>
+                                <h5>The Art of Living: Where Hospitality Meets Home</h5>
+                                <p>Fireside Chat with an industry leader</p>
+                            </AgendaSessionLite>
+                            
+                            <AgendaSessionLite beginsAt={'09:50'} endsAt={'10:15'}>
+                                <h5>Who Pays for Sustainability? Investors, Lenders and Owners Debate the Business Case</h5>
+                            </AgendaSessionLite>
+                            
+                            <AgendaSessionLite beginsAt={'10:15'} endsAt={'11:00'}>
+                                <h5>The Living Deal Room: Buyers, Sellers & the Art of Getting Deals Done</h5>
+                                <h6 className="c-magenta">Interactive Deal Room</h6>
+                                <p>The moderator presents <strong>three live investment opportunities</strong>.</p>
+                                <p className="c-magenta">For each opportunity:</p>
+                                <p>The <strong>seller</strong> has <strong>90 seconds</strong> to pitch the investment.<br />The <strong>buyer</strong> then has <strong>90 seconds</strong> to respond.</p>
+                                <p className="c-magenta">Questions include:</p>
+                                <ul>
+                                    <li>Would you buy it? </li>
+                                    <li>What&apos;s your valuation? </li>
+                                    <li>What&apos;s your biggest concern? </li>
+                                    <li>What would change your mind? </li>
+                                    <li>Where would negotiations begin?</li>
+                                </ul>
+                                <p>After both perspectives, the moderator opens a brief discussion on where the valuation gap lies and what it would take to close the transaction.</p>
+                            </AgendaSessionLite>
+                        </SessionGroup>
+                        
                         
                         <AgendaSessionLite beginsAt={'11:00'} endsAt={'11:30'}>
                             <h5>Coffee Break</h5>
                         </AgendaSessionLite>
                         
-                        <AgendaSessionLite beginsAt={'11:30'} endsAt={'13:00'}>
-                            <h5>Master Classes &amp; Group Discussions</h5>
-                        </AgendaSessionLite>
+                        <SessionGroup beginsAt={'11:30'} endsAt={'13:00'} heading={'Master Classes & Group Discussions'}>
+                            <AgendaSessionLite beginsAt={'11:30'} endsAt={'12:15'}>
+                                <p><span className="c-magenta">Interactive Roundtable A:</span><br/>
+                                <span className="fs-6 fw-600">The Unbundled Asset: Monetising Building Amenities for Higher Returns</span></p>
+                                
+                                <p><span className="c-magenta">Interactive Roundtable B:</span><br />
+                                <span className="fs-6 fw-600">Co-Living Comes of Age: Building Communities, Not Just Buildings</span></p>
+                                
+                                <p><span className="c-magenta">Interactive Roundtable C:</span><br />
+                                <span className="fs-6 fw-600">Where Life Happens: The Rise of Work - Play Communities</span></p>
+                            </AgendaSessionLite>
+                            
+                            <AgendaSessionLite beginsAt={'12:15'} endsAt={'13:00'}>
+                                <p><span className="c-magenta">Interactive Roundtable A:</span><br/>
+                                <span className="fs-6 fw-600">Going Solo: The Rise of Standalone Branded Residences</span></p>
+                                
+                                <p><span className="c-magenta">Interactive Roundtable B:</span><br />
+                                <span className="fs-6 fw-600">The Brand Advantage: Driving Operational Excellence Across Living Assets</span></p>
+                                
+                                <p><span className="c-magenta">Interactive Roundtable C:</span><br />
+                                <span className="fs-6 fw-600">Living Longer, Living Better: The Rise of Longevity Residences</span></p>
+                            </AgendaSessionLite>
+                        </SessionGroup>
+                        
                     </Day>
 
                 </div>
@@ -146,6 +262,34 @@ const Day = ({ title, children }) => {
             >
                 {children}
             </div>
+        </div>
+    )
+}
+
+const SessionGroup = ({ beginsAt, endsAt, heading, children }) => {
+    return (
+        <div
+            style={{
+                display: `grid`,
+                gridTemplateColumns: `1fr`,
+                gap: `.5rem`,
+                color: `white`,
+
+                padding: `var(--space-xs)`,
+                border: `1px solid var(--fg)`,
+                borderRadius: `1rem`,
+            }}
+        >
+            <header style={{ display: `grid`, gridTemplateColumns: `9rem 4fr`}}>
+                <aside>
+                    <p>{beginsAt} {endsAt && `– ${endsAt}`}</p>
+                </aside>
+
+                <main>
+                    <h5>{heading}</h5>
+                </main>
+            </header>
+            { children }
         </div>
     )
 }
