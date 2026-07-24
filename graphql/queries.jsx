@@ -290,7 +290,6 @@ export const Passes = `
     ... on ${blocksHandle}ContentBlocks_passes_BlockType {
         id
         theme
-        currency
         passes {
             ... on passes_pass_BlockType {
                 id
@@ -323,6 +322,7 @@ export const Passes = `
                 passPriceIncreases
                 passDescription
                 passCurrency
+                passTaxRate
                 passPriceBands {
                     endDate
                     startDate

@@ -36,7 +36,7 @@ import handleSeomaticMeta from '../../lib/seomatic'
 
 function PurchasePass({ seomatic, entry }) {
 
-	console.log('entry:', entry )
+	// console.log('entry:', entry )
 
 	return (
 		<>

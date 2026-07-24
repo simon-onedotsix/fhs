@@ -9,7 +9,7 @@ import CSS from './pass.module.css'
 
 
 
-export const PassPriceBands = ({ flash, title, callout, description, currency, priceBands, soldOut, priceIncreaseMessage, quantityRemaining, label, href, disclaimer }) => {
+export const PassPriceBands = ({ flash, title, callout, description, currency, taxRate, priceBands, soldOut, priceIncreaseMessage, quantityRemaining, label, href, disclaimer }) => {
 
     const [ currentBand, setCurrentBand ] = useState()
     const [ nextBand, setNextBand ] = useState()
@@ -37,7 +37,17 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
         // console.log('currentBand:', currentBand )
         // console.log('nextBand:', nextBand )
 
-    }, [currentBand, nextBand])
+    }, [])
+
+
+
+
+    let priceIncTax = currentBand?.value || undefined
+    let priceExcTax = priceIncTax / (1 + taxRate / 100)
+
+    // console.log(`price: ${currency}${priceExcTax} + ${currency}${priceIncTax - priceExcTax} (${taxRate}% VAT)`)
+    // console.log('nett price: €', currentBand.value / (1 + taxRate / 100))
+    // console.log('amout of tax: €', currentBand.value - currentBand.value / (1 + 20 / 100))
 
 
     
@@ -84,9 +94,16 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, p
 
                 { 
                     priceBands && currency ?
-                        <p className='fs-2 fw-600 c-primary'>
-                            { currency } { currentBand ? currentBand.value : 'TBA' }
-                        </p>
+                        <div>
+                            <p className={`fs-2 fw-600 lh-1 c-primary`}>
+                                { currency }{ currentBand ? currentBand.value : 'TBA' }
+                            </p>
+                        
+                            {
+                                taxRate &&
+                                <p className='fw-500'>({currency}{priceExcTax} + {currency}{priceIncTax - priceExcTax} ({taxRate}% VAT))</p>
+                            }
+                        </div>                            
                     : null
                 }
                 
