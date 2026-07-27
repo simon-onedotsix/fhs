@@ -151,13 +151,13 @@ export const FHS_WORLD = {
                         "navUrl": "/world/agenda",
                         "target": false
                     },
-                    // {
-                    //     "__typename": "navigation_Entry",
-                    //     "id": "149",
-                    //     "title": "Schedule at a Glance",
-                    //     "navUrl": "/world/schedule-at-a-glance",
-                    //     "target": false
-                    // },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "149",
+                        "title": "Schedule at a Glance",
+                        "navUrl": "/world/schedule-at-a-glance",
+                        "target": false
+                    },
                     {
                         "__typename": "navigation_Entry",
                         "id": "104",
