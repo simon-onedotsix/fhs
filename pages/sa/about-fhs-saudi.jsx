@@ -19,6 +19,7 @@ import { PageHeroImage } from '../../fuselage/blocks/page-hero-image/page-hero-i
 import { ImpactFigure } from '../../fuselage/theme/2025/world/blocks/impact-grid/impact-grid'
 import { BarChart, Field } from '../../ui/components/bar-chart'
 import { GlobalMap, Region, Bubble } from '../../ui/components/global-map'
+import { VideoTestimonial } from '../../fuselage/theme/2025/sa/components/video-testimonial/video-testimonial'
 import { Quote } from '../../fuselage/theme/2025/sa/components/quote/quote'
 
 
@@ -81,7 +82,6 @@ export const INDUSTRY_DATA = [
     },
     
 ]
-
 export const LEVEL_DATA = [
     {
         label: 'Director / VP / Head / Principal',
@@ -184,12 +184,8 @@ export default function Page () {
                             <p className='fs-1 fw-600'>
                                 { locale === 'ar' ? "عدد الحضور" : "Who Attends" }
                             </p>
+                           
                             <ImpactFigure figure={1000} unit={'+'} impact={ locale === 'ar' ? "مشاركًا من جميع أنحاء العالم" : 'attendees from across the globe' }  />
-                            <p className='mt-sm'>
-                                <button className='button fs-6' onClick={() => setShowPopover(true)}>
-                                    { locale === 'ar' ? "حمل تقرير ما بعد الحدث لعام 2025" : "Download 2025 Post-event Report" }
-                                </button>
-                            </p>
                         </div>
                     </section>
                 </PageHeroImage>
@@ -214,7 +210,7 @@ export default function Page () {
             </section>
 
 
-            <section className="block bg-theme">
+            <section className="block bg-primary">
                 <div className="container center">
                     <p className='fs-1 fw-300 caps'>
                         { locale === 'ar' ? "حسب الوظيفة" : "Job Seniority" }
@@ -229,25 +225,46 @@ export default function Page () {
                         }
                     </BarChart>
                 </div>
-
-                <div className="container pt-lg maxw-40">
-                    <Quote 
-                        locale={locale}
-                        quote={
-                            locale === 'ar'
-                            ?
-                                "تمكنت القمة من توفير فرص تواصل غير مسبوقة ورؤى عميقة من خلال الجلسات النقاشية، حيث تم تسليط الضوء على قطاع السياحة المزدهر في السعودية."
-                            :
-                                `The summit provided unparalleled networking opportunities and deep insights from panel discussions, shedding light on Saudi Arabia's vibrant tourism sector.`
-                        } 
-                        name={ locale === 'ar' ? `فالح م. حجاج` : 'Falih M. Hajaj'} 
-                        title={ locale === 'ar' ? `الرئيس التنفيذي` : 'CEO'} 
-                        company={ locale === 'ar' ? `تطوير للتشييد العمراني` : 'Tashyid Urban Development'} />
-                </div>
             </section>
 
 
             <section className="block bg-secondary">
+                 <div className="container center">
+                    <p className="fs-1 fw-600">Partner Testimonials</p>
+                </div>
+
+                <div className={`container columns-3 gap-md`}>
+                    <VideoTestimonial entry={{
+                        "id": "223023",
+                        "videoShareUrl": "https://www.youtube.com/watch?v=Ro4k0OytXig",
+                        "fullName": "Omar Al-Abdullatif",
+                        "jobTitle": "Chief Executive Officer",
+                        "organisation": "Blacksand",
+                        "testimonial": "Honestly, it's the biggest hospitality summit we know. It's a great event and very much B2B."
+                    }} />
+                    
+                    <VideoTestimonial entry={{
+                        "id": "223023",
+                        "videoShareUrl": "https://www.youtube.com/watch?v=mMAbGByBfJE",
+                        "fullName": "Marko Vucinic",
+                        "jobTitle": "Executive Director - Investment & Asset Management",
+                        "organisation": "Knowledge Economic City",
+                        "testimonial": "We love the platform. It connected us to a lot of partners that we deal with on day-to-day basis."
+                    }} />
+                    
+                    <VideoTestimonial entry={{
+                        "id": "223023",
+                        "videoShareUrl": "https://www.youtube.com/watch?v=97dsiYGJHmc",
+                        "fullName": "Khalid Saud Abuhaimed",
+                        "jobTitle": "Chief Executive Officer",
+                        "organisation": "Al Khozama Investment Company",
+                        "testimonial": "We host the Future Hospitality Summit every year because I believe the deals that shape this industry need a home, a place where opportunity meets capital."
+                    }} />
+                </div>
+            </section>
+
+
+            <section className="block bg-primary-2-dark">
                 <div className="container center">
                     <p className='fs-1 fw-300 caps'>
                         { locale === 'ar' ? `حسب الموقع الجغرافي` : `By Geography` }
