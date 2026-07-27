@@ -42,9 +42,14 @@ function Speakers({ seomatic, speakers }) {
 	// customise order (VIP speakers to top of list)
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
 		(speaker => speaker.firstName == 'Sonu' && speaker.lastName === 'Shivdasani' ? 0 : 1),
+		(speaker => speaker.firstName == 'Philippe' && speaker.lastName === 'Zuber' ? 0 : 1),
+		(speaker => speaker.firstName == 'Sameh' && speaker.lastName === 'Muhtadi' ? 0 : 1),
+		(speaker => speaker.firstName == 'David' && speaker.lastName === 'Xiaoou Chen' ? 0 : 1),
 		(speaker => speaker.firstName == 'Artur' && speaker.lastName === 'Gerber' ? 0 : 1),
-		(speaker => speaker.firstName == 'Ho' && speaker.lastName === 'Kwon Ping' ? 0 : 1),
+		(speaker => speaker.firstName == 'Hamza' && speaker.lastName === 'Farooqui' ? 0 : 1),
 		(speaker => speaker.firstName == 'Ina' && speaker.lastName === 'Plunien' ? 0 : 1),
+		(speaker => speaker.firstName == 'Amit' && speaker.lastName === 'Arora' ? 0 : 1),
+		(speaker => speaker.firstName == 'Samer' && speaker.lastName === 'AlKharashi' ? 0 : 1),
 		(speaker => speaker.firstName == 'Georgette' && speaker.lastName === 'Davey' ? 0 : 1),
 	] )
 	
@@ -53,7 +58,7 @@ function Speakers({ seomatic, speakers }) {
 	// console.log('speakers:', speakers)
 	// console.log('speakers found:', speakers.length)
 	// console.log('ordered:', orderedSpeakers)
-	console.log('customOrderedSpeakers:', customOrderedSpeakers)
+	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 
 	const moveTaggedSpeakersToEnd = ( speakerArray ) => {

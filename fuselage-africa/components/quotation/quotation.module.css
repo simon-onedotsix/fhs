@@ -1,6 +1,7 @@
 .layout {
     display: inline-grid;
     grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
     align-items: flex-start;
     align-self: flex-start;
     gap: var(--space-xs);
@@ -19,12 +20,12 @@
     gap: var(--space-xs);
 }
 .layout aside {
-    display: inline-block;
+    display: inline-flex;
 }
 
 .avatarContainer {
     position: relative;
-    max-width: 30vw;
+    width: 8rem;
     aspect-ratio: 1;
     border-radius: 50%;
     overflow: hidden;
