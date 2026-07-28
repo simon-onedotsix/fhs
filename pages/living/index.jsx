@@ -173,7 +173,7 @@ export default function Home ({ data, advisors }) {
                 <section className="">
                     <div className="container">
                         <p className="fs-1 fw-600 caps lh-1 maxw-60">EUROPE&apos;S ALTERNATIVE HOSPITALITY OPPORTUNITIES MEET GLOBAL CAPITAL</p>
-                        <p className="fs-5 fw-500 mt-sm mb-sm">Founding Edition | Feb 2027, <span className="c-magenta">Paris</span></p>
+                        <p className="fs-5 fw-500 mt-sm mb-sm">Founding Edition | 23–24 February 2027, <span className="c-magenta">Pullman Paris Montparnasse</span></p>
                     </div>
 
                     <div className="container formatted">

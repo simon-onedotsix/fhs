@@ -57,7 +57,7 @@ export default function Page ({ data }) {
                     </div>
 
                     <div className="container">
-                        <p className="fs-6 maxw-55 balance">FHS Living is a new investor-led forum launching in Paris in February 2027, organised by The Bench — the team behind the Future Hospitality Summit series. It brings together global capital, European developers and operators across the full spectrum of living asset classes, in a curated, dealmaking-focused environment that the market has been calling for.</p>
+                        <p className="fs-6 maxw-55 balance">FHS Living is a new investor-led forum launching on the 23rd and 24th February 2027 at the Pullman Paris Montparnasse, organised by The Bench — the team behind the Future Hospitality Summit series. It brings together global capital, European developers and operators across the full spectrum of living asset classes, in a curated, dealmaking-focused environment that the market has been calling for.</p>
                     </div>
                 </section>
             </PageHero>

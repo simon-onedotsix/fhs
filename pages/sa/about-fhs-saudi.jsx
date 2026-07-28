@@ -149,7 +149,7 @@ export default function Page () {
             />
 
             <div className="bg-primary">
-                <PageHeroImage hero={{ url: '/assets/img/sa/about/hero-about.jpg', width: 2000, height: 1334 }} >
+                <PageHeroImage hero={{ url: '/assets/img/sa/about/hero-about-2026.jpg', width: 2400, height: 1600 }} >
                     <div className="container maxw-50 pb-md formatted c-white center">
                          
                         <h1>{ locale === 'ar' ? "حول قمة مستقبل الضيافة بالمملكة العربية السعودية" : "About FHS Saudi Arabia" }</h1>
