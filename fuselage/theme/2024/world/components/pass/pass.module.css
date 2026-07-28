@@ -109,14 +109,14 @@
 }
 .button.disabled  {
     pointer-events: none;
-    border: 1px solid var(--secondary);
+    border: 1px solid hsl(from var(--primary) h s calc(l + 15) / 1);;
     background-color: transparent;
-    color: var(--secondary);
+    color: hsl(from var(--primary) h s calc(l + 15) / 1);;
 }
 
 @media(hover:hover){
     .button:hover {
-        background-color: var(--secondary);
+        background-color: hsl(from var(--primary) h s calc(l + 15) / 1);;
         transition: all 200ms ease-in-out;
     }
 }

@@ -69,14 +69,14 @@ export default function Page () {
                 </div>
                 <div className="container columns-1 gap-sm maxw-45">
                     
-                    <Day title={`Monday, 22 February 2027`}>
+                    <Day title={`Day 1`}>
                         <h5>Social Meet</h5>
                         <AgendaSessionLite beginsAt={'18:00'}>
                             <h5>Welcome Reception</h5>
                         </AgendaSessionLite>
                     </Day>
                     
-                    <Day title={`Tuesday, 23 February 2027`}>
+                    <Day title={`Day 2`}>
                         <AgendaSessionLite beginsAt={'09:00'} endsAt={'09:10'}>
                             <h5>Welcome to FHS Living Europe 2027</h5>
                         </AgendaSessionLite>
@@ -155,7 +155,7 @@ export default function Page () {
                         
                     </Day>
 
-                    <Day title={`Wednesday, 24 February 2027`}>
+                    <Day title={`Day 3`}>
                         <SessionGroup beginsAt={'9:00'} endsAt={'11:00'} heading={'Plenary Session'}>
                             <AgendaSessionLite beginsAt={'09:00'} endsAt={'09:30'}>
                                 <h5>Work, Live, Belong: Designing the Next Generation of Mixed-Use Communities</h5>

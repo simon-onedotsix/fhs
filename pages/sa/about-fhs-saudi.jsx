@@ -192,6 +192,7 @@ export default function Page () {
             </div>
 
 
+            {/* BY INDUSTRY */}
             <section className="block bg-secondary">
                 <div className="container center">
                     <p className='fs-1 fw-300 caps'>
@@ -210,6 +211,7 @@ export default function Page () {
             </section>
 
 
+            {/* BY JOB FUNCTION */}
             <section className="block bg-primary">
                 <div className="container center">
                     <p className='fs-1 fw-300 caps'>
@@ -228,6 +230,30 @@ export default function Page () {
             </section>
 
 
+            {/* BY GEOGRAPHY */}
+            <section className="block bg-primary-2-dark">
+                <div className="container center">
+                    <p className='fs-1 fw-300 caps'>
+                        { locale === 'ar' ? `حسب الموقع الجغرافي` : `By Geography` }
+                    </p>
+                </div>
+
+                <div className="container center">
+                    <GlobalMap>
+                        <Region label={'Middle East'} value={90} unit={'%'} position={{ x: '58%', y: '35%' }} delay={0.3}/>
+                        <Region label={'Europe'} value={6} unit={'%'} position={{ x: '40%', y: '28%' }} delay={0.1}/>
+                        <Region label={'Asia'} value={1} unit={'%'} position={{ x: '80%', y: '50%' }} delay={0.5}/>
+                        <Region label={'Americas'} value={2} unit={'%'} position={{ x: '20%', y: '50%' }} delay={0.2}/>
+                        <Region label={'Africa'} value={1} unit={'%'} position={{ x: '45%', y: '60%' }} delay={0.4} />
+                        <Bubble size={ isDesktop ? `9rem`: `2.75rem`} position={{ x: '65%', y: '15%' }}>
+                            67% from Saudi Arabia
+                        </Bubble>
+                    </GlobalMap>
+                </div>
+            </section>
+
+
+            {/* TESTIMONIALS */}
             <section className="block bg-secondary">
                  <div className="container center">
                     <p className="fs-1 fw-600">Partner Testimonials</p>
@@ -260,28 +286,6 @@ export default function Page () {
                         "organisation": "Al Khozama Investment Company",
                         "testimonial": "We host the Future Hospitality Summit every year because I believe the deals that shape this industry need a home, a place where opportunity meets capital."
                     }} />
-                </div>
-            </section>
-
-
-            <section className="block bg-primary-2-dark">
-                <div className="container center">
-                    <p className='fs-1 fw-300 caps'>
-                        { locale === 'ar' ? `حسب الموقع الجغرافي` : `By Geography` }
-                    </p>
-                </div>
-
-                <div className="container center">
-                    <GlobalMap>
-                        <Region label={'Middle East'} value={90} unit={'%'} position={{ x: '58%', y: '35%' }} delay={0.3}/>
-                        <Region label={'Europe'} value={6} unit={'%'} position={{ x: '40%', y: '28%' }} delay={0.1}/>
-                        <Region label={'Asia'} value={1} unit={'%'} position={{ x: '80%', y: '50%' }} delay={0.5}/>
-                        <Region label={'Americas'} value={2} unit={'%'} position={{ x: '20%', y: '50%' }} delay={0.2}/>
-                        <Region label={'Africa'} value={1} unit={'%'} position={{ x: '45%', y: '60%' }} delay={0.4} />
-                        <Bubble size={ isDesktop ? `9rem`: `2.75rem`} position={{ x: '65%', y: '15%' }}>
-                            67% from Saudi Arabia
-                        </Bubble>
-                    </GlobalMap>
                 </div>
             </section>
 
