@@ -80,6 +80,16 @@ export default function Page ({ videoTestimonials }) {
                 <div className="container center logoGrid">
 
                     <div className={`mb-md`}>
+                        <p className="fs-5 fw-500 pb-xs">Headline Partner</p>
+                        <div className="logoGrid">
+                            <LogoBox
+                                size={250}
+                                logoUrl={`/assets/img/living/partners/logos/maslows.png`}
+                            />
+                        </div>
+                    </div>
+
+                    <div className={`mb-md`}>
                         <p className="fs-5 fw-500 pb-xs">Supporters</p>
                         <div className="logoGrid">
                             <LogoBox

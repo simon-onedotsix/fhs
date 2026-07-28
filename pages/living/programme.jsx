@@ -21,9 +21,12 @@ import { AgendaSessionLite } from "../../ui/components/agenda-session"
 
 
 
-export default function Page () {
+export default function Page ({ sessions, locations }) {
 
-    const isDesktop = useCustomMediaQuery('(min-width: 600px)');
+    const isDesktop = useCustomMediaQuery('(min-width: 600px)')
+
+    console.log('sessions:', sessions)
+	console.log('locations [swc]:', locations)
 
     return (
         <>
@@ -45,6 +48,7 @@ export default function Page () {
             />
 
 
+            {/* ABOVE THE FOLD */}
             <PageHero hero={{url: `/assets/img/living/agenda/page-hero.jpg`, width: 595, height: 335}}>
                 <section style={{
                     display: `flex`,
@@ -306,4 +310,142 @@ const Session = ({ children }) => {
             </div>
         </Pop>
     )
+}
+
+
+
+
+
+export async function getStaticProps() {
+
+	const eventQuery = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query EventById($eventId: ID!) {
+
+						event(id: $eventId) {
+							planningsPlaces {
+								id
+								name
+								value
+							}
+						}
+
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_LIVING_2026}", page: 1, pageSize: 500) {
+							id
+							titleTranslations {
+								value
+								language
+							}
+							beginsAt
+							endsAt
+							descriptionTranslations {
+								value
+								language
+							}
+							format
+							fields {
+								... on SelectField {
+									id
+									definition {
+										isDefault
+										name
+									}
+									value
+									translations {
+										value
+									}
+								}
+								... on MultipleSelectField {
+									id
+									definition {
+										isDefault
+										name
+									}
+									value
+									translations {
+										value
+									}
+								}
+									... on TextField {
+									id
+									definition {
+										id
+										name
+									}
+									value
+								}
+							}
+							speakers {
+								communityProfile {
+									id
+								}
+								firstName
+								id
+								jobTitle
+								lastName
+								photoUrl
+								organization
+								biography
+								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_LIVING_2026}") {
+									eventProfile {
+										type
+										withEvent(eventId: "RXZlbnRfMjQwNDQ3Nw==") {
+											speakerOnPlannings {
+												id
+												title
+												beginsAt
+												endsAt
+											}
+										}
+										fields {
+											... on SelectField {
+												id
+												definition {
+													name
+												}
+												value
+												translations {
+													value
+												}
+											}
+										}
+									}
+								}
+							}
+							categories
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_LIVING_2026,
+					"page": 1
+				}
+			})
+		}
+	)
+
+	const result = await eventQuery.json()
+	
+
+	// console.log('RESULT', result)
+	// console.log('TEST plannings', result.data.event.planningsPlaces)
+	// console.log('TEST sessions', result.data.plannings)
+  
+
+    if ( result.data ) return { 
+        props: { 
+            sessions: result.data.plannings,
+			locations: result.data.event.planningsPlaces
+        } 
+    }
+
+	return { props: {} }
 }
