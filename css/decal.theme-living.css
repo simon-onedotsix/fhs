@@ -147,6 +147,21 @@
     color: var(--primary);
 }
 
+[data-theme='living'] .bg-primary {
+    color: white;
+}
+[data-theme='living'] .bg-primary .formatted h1,
+[data-theme='living'] .bg-primary .formatted h2,
+[data-theme='living'] .bg-primary .formatted h3,
+[data-theme='living'] .bg-primary .formatted h4,
+[data-theme='living'] .bg-primary .formatted h5,
+[data-theme='living'] .bg-primary .formatted h6 {
+    color: var(--accent);
+}
+[data-theme='living'] .bg-primary .form input[type='submit'] {
+    color: var(--primary);
+}
+
 
 [data-theme='living'] .agenda-default{
     background-color: var(--accent);

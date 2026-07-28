@@ -1198,11 +1198,11 @@ export const FHS_LIVING = {
             "metaTitle": "FHS Living | Feb 2027, Paris | Founding Edition",
             "metaDescription": "Addressing the growing 'lanyard fatigue' of the European hospitality conferencing market",
             "headerCtas": [
-                // {
-                //     "label": "Register Interest",
-                //     "hyperlink": "/living/register-interest",
-                //     "openInNewWindow": false
-                // },
+                {
+                    "label": "Register Interest",
+                    "hyperlink": "/living/register-interest",
+                    "openInNewWindow": false
+                },
                 {
                     "label": "Purchase Pass",
                     "hyperlink": "/living/purchase-pass",
