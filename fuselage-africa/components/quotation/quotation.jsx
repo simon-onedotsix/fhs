@@ -1,14 +1,18 @@
 import Image from 'next/image'
 
+import useCustomMediaQuery from '../../../hooks/useCustomMediaQuery'
 import { Fade, Slide, Pop } from '../../animation/animation'
 
 import CSS from './quotation.module.css'
 
-export const Quotation = ({ avatarUrl, quote, fullName, title }) => {
+export const Quotation = ({ avatarUrl, quote, fullName, title, landscape }) => {
+
+    const isDesktop = useCustomMediaQuery('(min-width: 600px)')
+
     return (
 
         <Pop>
-            <div className={CSS.layout}>
+            <div className={`${CSS.layout} ${ landscape ? CSS.landscape : null}`}>
                 <aside>
                     <Pop delay={.1}>
                         <div className={CSS.avatarContainer}>
@@ -16,15 +20,15 @@ export const Quotation = ({ avatarUrl, quote, fullName, title }) => {
                         </div>
                     </Pop>
                 </aside>
+
                 <main>
                     <OpenQuote color={`var(--primary)`}/>
                     <Slide>
-                        <p className='fs-4 lh-2 quote'>{ quote }&nbsp;<CloseQuote color={`var(--primary)`}/></p>
-                        
+                        <p className='fs-4 lh-2 quote balance'>{ quote }&nbsp;<CloseQuote height={!isDesktop && `1rem`} color={`var(--primary)`}/></p>
                     </Slide>
                     <Pop delay={.1}>
                         <p className='fw-600 mt-xs'>{ fullName }</p>
-                        <p className='fw-300'>{ title }</p>
+                        <p className='fw-300 balance'>{ title }</p>
                     </Pop>
                 </main>
             </div>

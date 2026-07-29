@@ -237,25 +237,51 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                 poster={'https://cms.thebench.com/assets/video/ahif-2024-opt-poster.jpg'}
             >
                 
-                <div className={CSS.headline}>
-                    <span className="c-secondary"><Reveal>Together</Reveal></span> <Reveal><span className="c-secondary">we</span>&nbsp;invest</Reveal>
-                </div>
+                <div className={CSS.heroLayout}>
+                    {/* tagline */}
+                    <section style={{ alignSelf: 'flex-end' }}>
+                        <div className={CSS.headline}>
+                            <span className="c-secondary"><Reveal>Together</Reveal></span> <Reveal><span className="c-secondary">we</span>&nbsp;invest</Reveal>
+                        </div>
 
-                <p className="fs-3 mt-xs"><span className="fw-600">2-3 February, 2027</span></p>
-                <p className="fs-4 balance lh-1">Speke Resort Convention Centre, Uganda</p>
+                        <p className="fs-3 mt-xs"><span className="fw-600">2-3 February, 2027</span></p>
+                        <p className="fs-4 balance lh-1">Speke Resort Convention Centre, Uganda</p>
 
-                <div className='mt-md'>
-                    <ButtonGrid>
-                        <Pop inline delay={.2}>
-                            <Button href={'/africa/purchase-pass'}>Register Here</Button>
+                        <div className='mt-md'>
+                            <ButtonGrid>
+                                <Pop inline delay={.2}>
+                                    <Button href={'/africa/purchase-pass'}>Register Here</Button>
+                                </Pop>
+                                <Pop inline delay={.2}>
+                                    <Button href={'/africa/download-event-brochure'}>View Event Brochure</Button>
+                                </Pop>
+                                <Pop inline delay={.2}>
+                                    <Button href={'/africa/post-event-resources'}>Post Event Resources 2026</Button>
+                                </Pop>
+                            </ButtonGrid>
+                        </div>
+                    </section>
+
+                    {/* boxout */}
+                    <section style={{ alignSelf: 'flex-end' }}>
+                        <Pop>
+                            <div className={CSS.boxout}>
+                                <div className={CSS.image}>
+                                    <Image src={"/assets/img/africa/homepage/uganda-boxout.webp"} layout='fill' alt="" unoptimized />
+                                </div>
+      
+                                <div className={CSS.boxoutContent}>
+                                    <Pop delay={.1}>
+                                        <p className="fs-5 fw-600 lh-1">2027 Host Country:</p>
+                                        <p className="fs-2 fw-600 lh-1">Uganda</p>
+                                    </Pop>
+                                    <Pop inline delay={.2}>
+                                        <Button inverse href={'/africa/explore-uganda'}>Explore Uganda</Button>
+                                    </Pop>
+                                </div>
+                            </div>
                         </Pop>
-                        <Pop inline delay={.2}>
-                            <Button href={'/africa/download-event-brochure'}>View Event Brochure</Button>
-                        </Pop>
-                        <Pop inline delay={.2}>
-                            <Button href={'/africa/post-event-resources'}>Post Event Resources 2026</Button>
-                        </Pop>
-                    </ButtonGrid>
+                    </section>                   
                 </div>
 
             </HeroUnitVideo>

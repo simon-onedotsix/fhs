@@ -25,8 +25,8 @@ export default function Page ({ sessions, locations }) {
 
     const isDesktop = useCustomMediaQuery('(min-width: 600px)')
 
-    console.log('sessions:', sessions)
-	console.log('locations [swc]:', locations)
+    // console.log('sessions:', sessions)
+	// console.log('locations [swc]:', locations)
 
     return (
         <>

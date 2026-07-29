@@ -23,7 +23,7 @@ import { SpeakerCard } from "../../ui/components/speaker-card"
 
 export default function Home ({ advisors }) {
 
-    console.log('advisors;', advisors)
+    // console.log('advisors;', advisors)
 
     const isDesktop = useCustomMediaQuery('(min-width: 600px)');
 

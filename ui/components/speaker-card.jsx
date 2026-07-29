@@ -28,7 +28,7 @@ const Layout = ({ url, color, photoUrl, fullName, positions, jobTitle, company, 
                             <p className='fw-600 c-accent'>Focus:</p>
                             {
                                 focus &&
-                                focus.split('\n').map((line, i) => <p key={i}>&bull; {line}</p>)
+                                focus.split('\n').map((line, i) => <p key={i} className='balance'>&bull; {line}</p>)
                             }
                             
                             <br />

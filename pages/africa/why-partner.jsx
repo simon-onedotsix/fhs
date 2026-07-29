@@ -43,6 +43,8 @@ import { PageHero } from "../../ui/modules/page-hero"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 import { Quotation } from "../../fuselage-africa/components/quotation/quotation"
 import { FixedBackgroundImage } from "../../fuselage/theme/2025/africa/blocks/fixed-background-image/fixed-background-image"
+import { Button, ButtonGrid } from "../../fuselage/theme/2025/africa/components/button/button"
+import { Slider } from "../../ui/components/slider"
 
 
 const QUOTES_DATA = [
@@ -121,7 +123,11 @@ export default function Page ({ entry, seomatic, partners }) {
                     <br />
                     <br />
                     <h5>Why partners return year after year:</h5>
-                    <p>✓ Generate qualified business opportunities<br/>✓ Meet senior decision-makers in two days rather than six months<br/>✓ Present deal signings to the industry&apos;s most influential audience<br/>✓ Position themselves as industry leaders<br/>✓ Build relationships that lead to long-term partnerships</p>
+                    <p>✓ Generate qualified business opportunities<br />✓ Meet senior decision-makers in two days rather than six months<br />✓ Present deal signings to the industry&apos;s most influential audience<br />✓ Position themselves as industry leaders<br />✓ Build relationships that lead to long-term partnerships</p>
+                    
+                    <p className="pt-sm">
+                        <Pop inline><Button inverse href="/africa/partner-with-fhs-africa-2027">Get in Touch</Button></Pop>
+                    </p>
                 </div>
             </PageHero>
 
@@ -210,7 +216,7 @@ export default function Page ({ entry, seomatic, partners }) {
 
 
             {/* WHAT CAN PARTNERING ACHIEVE? */}
-             <FixedBackgroundImage
+             {/* <FixedBackgroundImage
                 backgroundImageUrl={`/assets/img/africa/why-partner/why-partner-02.jpg`}
                 overlay={`hsl(from var(--secondary) h s l / .75)`}
                 flex
@@ -233,7 +239,7 @@ export default function Page ({ entry, seomatic, partners }) {
                     <Card><p className="fs-4 lh-1 center balance">Become part of Africa&apos;s hospitality investment ecosystem</p></Card>
                 </div>
                 
-            </FixedBackgroundImage>
+            </FixedBackgroundImage> */}
 
 
 
@@ -243,18 +249,21 @@ export default function Page ({ entry, seomatic, partners }) {
                     <p className="fs-2 fw-600">Testimonials</p>
                 </div>
 
-                <div className={`container columns-3 gap-sm`}>
-                    {
-                        QUOTES_DATA.map((quote, index) => (
-                            <Quotation
-                                key={index}
-                                avatarUrl={quote.avatarUrl}
-                                quote={quote.quote}
-                                fullName={quote.fullName}
-                                title={quote.title}
-                            />
-                        ))
-                    }
+                <div className={`container maxw-60`}>
+                    <Slider>
+                        {
+                            QUOTES_DATA.map((quote, index) => (
+                                <Quotation
+                                    key={index}
+                                    avatarUrl={quote.avatarUrl}
+                                    quote={quote.quote}
+                                    fullName={quote.fullName}
+                                    title={quote.title}
+                                    landscape
+                                />
+                            ))
+                        }
+                    </Slider>
                 </div>
             </section>
 
@@ -266,7 +275,11 @@ export default function Page ({ entry, seomatic, partners }) {
                         <p className="fs-2 lh-1">Let&apos;s build a partnership around your objectives.</p>
                         <br />
                         <p>Whether you&apos;re launching into Africa, strengthening relationships or positioning your business alongside the industry&apos;s leaders, we&apos;ll design a package aligned with your commercial goals.</p>
-                        <p><a href="mailto:roy.bannister@thebench.com" className="button secondary" rel="noreferrer noopener">Get in touch for a strategy call</a></p>
+                        <br />
+                        <ButtonGrid>
+                            <Pop inline><Button inverse href="/africa/partner-with-fhs-africa-2027">Get in Touch</Button></Pop>
+                            <Pop inline><Button inverse href="mailto:roy.bannister@thebench.com" rel="noreferrer noopener">Book a Strategy Call</Button></Pop>
+                        </ButtonGrid>
                     </section>
 
                     <section className="columns-2 gap-md">
