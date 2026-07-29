@@ -43,7 +43,9 @@ function PurchasePass({ seomatic, entry }) {
 
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
-				{ handleSeomaticMeta( seomatic ) } 
+				<meta content="https://cms.thebench.com/assets/content-library/img/FHS-Living/FHS-Living-Launch-PR.jpg" property="og:image"></meta>
+                <title>FHS Living | Purchase Pass</title>
+                <meta name="description" content="Addressing the growing 'lanyard fatigue' of the European hospitality conferencing market"></meta>
             </Head>
 
             <EventsBar site={'/living'} />
