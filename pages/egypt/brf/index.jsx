@@ -87,13 +87,6 @@ const CONFIRMED_SPEAKER_DATA = [
         company: 'Candy Capital',
     },
     {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDAxNjkwNzY=`,
-        photoUrl: 'https://static.swapcard.com/public/images/27aa2c09769341c8a333b8ab30e3d2f8.png',
-        fullName: 'Eleonora Srugo',
-        jobTitle: 'Licensed Associated Real Estate Broker, Douglas Elliman',
-        company: 'Star of Netflix’s Selling the City',
-    },
-    {
         url: `/world/speakers/RXZlbnRQZW9wbGVfMzg0MDMyOTQ=`,
         photoUrl: 'https://static.swapcard.com/public/images/cb22de0ff76c48e080aa1ad8b770b936.jpeg',
         fullName: 'Amit Arora',
@@ -334,16 +327,12 @@ export default function Page ({ sessions, speakers }) {
             {/* PAST SPONSORS */}
             <section className="block">
                 <div className="container center">
-                    <p className='fs-1 fw-600'>Past BRF Sponsors</p>
+                    <p className='fs-1 fw-600'>Branded Residences Partners</p>
                 </div>
                 
                 <div className="container maxw-70 pt-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
-                    <PartnerLogo logoUrl={`/assets/img/brf/accor-one-living.svg`} maxWidth={16} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/global-branded-residences.svg`} maxWidth={8} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/digivalet.png`} maxWidth={12} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/marriott.svg`} maxWidth={12} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/new-murabba.png`} maxWidth={10} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/bresi.png`} maxWidth={12} />
+                    <PartnerLogo logoUrl={`/assets/img/brf/accor-one-living.svg`} maxWidth={17} />
+                    <PartnerLogo logoUrl={`/assets/img/brf/sectorlight.svg`} maxWidth={12} />
                 </div>
             </section>
 
