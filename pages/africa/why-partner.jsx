@@ -249,7 +249,7 @@ export default function Page ({ entry, seomatic, partners }) {
                     <p className="fs-2 fw-600">Testimonials</p>
                 </div>
 
-                <div className={`container maxw-60`}>
+                <div className={`container maxw-65`}>
                     <Slider>
                         {
                             QUOTES_DATA.map((quote, index) => (
