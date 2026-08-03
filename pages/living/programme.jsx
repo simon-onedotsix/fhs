@@ -21,7 +21,7 @@ import { AgendaSessionLite } from "../../ui/components/agenda-session"
 
 
 
-export default function Page ({ sessions, locations }) {
+export default function Page () {
 
     const isDesktop = useCustomMediaQuery('(min-width: 600px)')
 
@@ -87,17 +87,14 @@ export default function Page ({ sessions, locations }) {
 
                         <AgendaSessionLite beginsAt={'09:10'} endsAt={'09:40'}>
                             <h5>Europe as a Safe Haven: The New Geography of Global Capital</h5>
-                            <p>Keynote Presentation by a political economist</p>
                         </AgendaSessionLite>
 
                         <AgendaSessionLite beginsAt={'09:40'} endsAt={'10:15'}>
                             <h5>State of Capital: Where Investors Are Placing Their Bets Across Europe&apos;s Living Sectors</h5>
-                            <p>Panel Discussion</p>
                         </AgendaSessionLite>
 
                         <AgendaSessionLite beginsAt={'10:15'} endsAt={'10:30'}>
                             <h5>Navigating Europe: The New Rules for Cross-Border Living Investment</h5>
-                            <p>Keynote Speech by a senior regulatory counsel</p>
                         </AgendaSessionLite>
                         
                         <AgendaSessionLite beginsAt={'10:30'} endsAt={'11:30'}>
@@ -106,12 +103,10 @@ export default function Page ({ sessions, locations }) {
 
                         <AgendaSessionLite beginsAt={'11:00'} endsAt={'11:20'}>
                             <h5>The Future of Capital: Insights from a Global Investment Leader</h5>
-                            <p>Fireside Chat with a high profile investor across multiple living asset classes</p>
                         </AgendaSessionLite>
 
                         <AgendaSessionLite beginsAt={'11:20'} endsAt={'12:00'}>
                             <h5>One Asset, Multiple Income Streams: The New Living Investment Model</h5>
-                            <p>Panel Discussion</p>
                         </AgendaSessionLite>
                         
                         <AgendaSessionLite beginsAt={'12:00'} endsAt={'12:30'}>
@@ -167,7 +162,7 @@ export default function Page ({ sessions, locations }) {
                             
                             <AgendaSessionLite beginsAt={'09:30'} endsAt={'09:50'}>
                                 <h5>The Art of Living: Where Hospitality Meets Home</h5>
-                                <p>Fireside Chat with an industry leader</p>
+                                {/* <p>Fireside Chat with an industry leader</p> */}
                             </AgendaSessionLite>
                             
                             <AgendaSessionLite beginsAt={'09:50'} endsAt={'10:15'}>
@@ -176,7 +171,7 @@ export default function Page ({ sessions, locations }) {
                             
                             <AgendaSessionLite beginsAt={'10:15'} endsAt={'11:00'}>
                                 <h5>The Living Deal Room: Buyers, Sellers & the Art of Getting Deals Done</h5>
-                                <h6 className="c-magenta">Interactive Deal Room</h6>
+                                {/* <h6 className="c-magenta">Interactive Deal Room</h6> */}
                                 {/* <p>The moderator presents <strong>three live investment opportunities</strong>.</p>
                                 <p className="c-magenta">For each opportunity:</p>
                                 <p>The <strong>seller</strong> has <strong>90 seconds</strong> to pitch the investment.<br />The <strong>buyer</strong> then has <strong>90 seconds</strong> to respond.</p>
@@ -313,139 +308,3 @@ const Session = ({ children }) => {
 }
 
 
-
-
-
-export async function getStaticProps() {
-
-	const eventQuery = await fetch(
-		"https://developer.swapcard.com/event-admin/graphql",
-		{
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				"Authorization": process.env.SWAPCARD_AUTH_KEY
-			},
-			body: JSON.stringify({
-				query: `
-					query EventById($eventId: ID!) {
-
-						event(id: $eventId) {
-							planningsPlaces {
-								id
-								name
-								value
-							}
-						}
-
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_LIVING_2026}", page: 1, pageSize: 500) {
-							id
-							titleTranslations {
-								value
-								language
-							}
-							beginsAt
-							endsAt
-							descriptionTranslations {
-								value
-								language
-							}
-							format
-							fields {
-								... on SelectField {
-									id
-									definition {
-										isDefault
-										name
-									}
-									value
-									translations {
-										value
-									}
-								}
-								... on MultipleSelectField {
-									id
-									definition {
-										isDefault
-										name
-									}
-									value
-									translations {
-										value
-									}
-								}
-									... on TextField {
-									id
-									definition {
-										id
-										name
-									}
-									value
-								}
-							}
-							speakers {
-								communityProfile {
-									id
-								}
-								firstName
-								id
-								jobTitle
-								lastName
-								photoUrl
-								organization
-								biography
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_LIVING_2026}") {
-									eventProfile {
-										type
-										withEvent(eventId: "RXZlbnRfMjQwNDQ3Nw==") {
-											speakerOnPlannings {
-												id
-												title
-												beginsAt
-												endsAt
-											}
-										}
-										fields {
-											... on SelectField {
-												id
-												definition {
-													name
-												}
-												value
-												translations {
-													value
-												}
-											}
-										}
-									}
-								}
-							}
-							categories
-						}
-					}
-				`,
-				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_LIVING_2026,
-					"page": 1
-				}
-			})
-		}
-	)
-
-	const result = await eventQuery.json()
-	
-
-	// console.log('RESULT', result)
-	// console.log('TEST plannings', result.data.event.planningsPlaces)
-	// console.log('TEST sessions', result.data.plannings)
-  
-
-    if ( result.data ) return { 
-        props: { 
-            sessions: result.data.plannings,
-			locations: result.data.event.planningsPlaces
-        } 
-    }
-
-	return { props: {} }
-}
