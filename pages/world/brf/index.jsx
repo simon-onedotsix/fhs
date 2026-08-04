@@ -368,14 +368,14 @@ export default function Page ({ sessions, speakers }) {
             
 
             {/* THEMES */}
-            <section className="block bg-default">
+            {/* <section className="block bg-default">
                 <ThemesSlider 
                     data={THEMES_DATA} 
                     heading={"2025 Branded Residences Forum Themes"}
                     link={'/world/brf/agenda'} 
                     linkLabel={'View Agenda'} 
                 />
-            </section>
+            </section> */}
 
 
 
@@ -434,14 +434,14 @@ export default function Page ({ sessions, speakers }) {
 
 
             {/* FORM */}
-            <section id="form" className="block bg-secondary">
+            {/* <section id="form" className="block bg-secondary">
                 <div className="container center">
                     <p className="fs-1 fw-600">Register Your Interest</p>
                 </div>
                 <div className="container maxw-70">
                     <HubspotForm portalId='14527187' formId='8f2cb55c-9a3a-417e-a88f-d2fb7a8b68e1' />
                 </div>
-            </section>
+            </section> */}
 
 
             <Footer />
