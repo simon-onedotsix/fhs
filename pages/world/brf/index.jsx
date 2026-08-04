@@ -283,7 +283,7 @@ export default function Page ({ sessions, speakers }) {
                             </div>
                         </section>
                     </div>
-                    <div className="container pt-sm columns-4 gap-md">
+                    <div className="container pt-sm columns-3 gap-md maxw-60">
                         <section>
                             <p className='c-peach center pb-sm caps ls-2'>Strategic Partner</p>
                             <div style={{ width: 150, maxWidth: '30vw', margin: '0 auto' }}>
@@ -299,13 +299,7 @@ export default function Page ({ sessions, speakers }) {
                         <section>
                             <p className='c-peach center pb-sm caps ls-2'>Sponsor</p>
                             <div style={{ width: `100%`, maxWidth: '15rem', margin: '0 auto' }}>
-                                <img src="/assets/img/brf/marriott.svg" alt="logo" />
-                            </div>
-                        </section>
-                        <section>
-                            <p className='c-peach center pb-sm caps ls-2'>Sponsor</p>
-                            <div style={{ width: `100%`, maxWidth: '13rem', margin: '0 auto' }}>
-                                <img src="/assets/img/brf/new-murabba.png" alt="logo" width={`100%`} />
+                                <img src="/assets/img/brf/sectorlight.svg" alt="logo" />
                             </div>
                         </section>
                     </div>

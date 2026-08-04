@@ -80,7 +80,7 @@ function Speakers({ speakers }) {
 			
 			<PageHeader>
 				<div className="formatted">
-					<h1>2027 Speakers</h1>
+					<h1>2026 Speakers</h1>
 					<p>Our speakers are chosen for their industry knowledge and insight. If you would like to be considered as a speaker for FHS Africa 2027 please contact <a href="mailto:mala.patel@thebench.com" target="_blank" rel="noreferrer noopener">mala.patel@thebench.com</a></p>
 				</div>
 			</PageHeader>
