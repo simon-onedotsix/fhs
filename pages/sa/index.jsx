@@ -689,7 +689,7 @@ export default function Page({ seomatic, partners }) {
                     transition={{ type: "spring", bounce: 0.25 }}
                     className={`fs-4 fw-300 c-white center mt-xs`} 
                 >
-                    See you in March 2027
+                    See you 21-23 March 2027
                 </motion.p>
 
                 <Fade>

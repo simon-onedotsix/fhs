@@ -17,6 +17,15 @@ export const QueryText = `
     }
 `
 
+export const QueryDividers = `
+    ... on ${blocksHandle}ContentBlocks_dividerHeading_BlockType {
+        id
+        theme
+        anchorId
+        heading
+    }
+`
+
 export const QueryFlipFlops = `
     ... on ${blocksHandle}ContentBlocks_flipFlops_BlockType {
         id

@@ -1192,13 +1192,13 @@ export const FHS_LIVING = {
             "metaDescription": "Addressing the growing 'lanyard fatigue' of the European hospitality conferencing market",
             "headerCtas": [
                 {
-                    "label": "Register Interest",
-                    "hyperlink": "/living/register-interest",
+                    "label": "Purchase Pass",
+                    "hyperlink": "/living/purchase-pass",
                     "openInNewWindow": false
                 },
                 {
-                    "label": "Purchase Pass",
-                    "hyperlink": "/living/purchase-pass",
+                    "label": "Register Interest",
+                    "hyperlink": "/living/register-interest",
                     "openInNewWindow": false
                 },
             ]

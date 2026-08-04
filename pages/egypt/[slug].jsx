@@ -27,6 +27,7 @@ import {
     QueryCards,
     QueryTestimonials,
     QueryTickers,
+    QueryDividers,
     Passes
 } from "../../graphql/queries"
 
@@ -115,6 +116,7 @@ export async function getStaticProps({ params, preview, previewData }) {
                             ${QueryCards}
                             ${QueryTestimonials}
                             ${QueryTickers}
+                            ${QueryDividers}
                             ${Passes}
                         }
                         ${QuerySEO}
