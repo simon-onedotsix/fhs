@@ -171,6 +171,24 @@ const photos = [
 
 const SPEAKERS = [
     {
+        "id": "RXZlbnRQZW9wbGVfNDc3NzQwMTE=",
+        "type": null,
+        "firstName": "HE Abdulla",
+        "lastName": "bin Touq Al Marri",
+        "jobTitle": "Minister of Economy & Tourism",
+        "organization": "United Arab Emirates",
+        "photoUrl": "https://static.swapcard.com/public/images/8dae029be8ee4babbadde92e1d27201b.png",
+    },
+    {
+        "id": "RXZlbnRQZW9wbGVfNDc3NTEwMDg=",
+        "type": null,
+        "firstName": "Marc",
+        "lastName": "Dardenne",
+        "jobTitle": "CEO",
+        "organization": "Modon Holding Hospitality",
+        "photoUrl": "https://static.swapcard.com/public/images/4ba04289ac88482b8eea156243b38993.jpeg",
+    },
+    {
         "id": "RXZlbnRQZW9wbGVfNDY0NDczNTM=",
         "type": null,
         "firstName": "Sonu",
@@ -251,7 +269,6 @@ const SPEAKERS = [
         "organization": "UN Tourism Regional Office for the Middle East",
         "photoUrl": "https://static.swapcard.com/public/images/89b98ea115ea4a50a63a17ab862f0b38.jpeg",
     },
-
     {
         "id": "RXZlbnRQZW9wbGVfNDY0NDczNDI=",
         "type": "Moderator",
@@ -261,6 +278,34 @@ const SPEAKERS = [
         "organization": "Abu Dhabi Hospitality Academy - Les Roches",
         "photoUrl": "https://static.swapcard.com/public/images/571e2de0140e4a4989c82c6b26d5ece2.jpeg",
     },
+    {
+        "id": "RXZlbnRQZW9wbGVfNDc3MzI3NDE=",
+        "type": "",
+        "firstName": "Dimitris",
+        "lastName": "Manikis",
+        "jobTitle": "President EMEA",
+        "organization": "Wyndham Hotels & Resorts",
+        "photoUrl": "https://static.swapcard.com/public/images/7557dff7b09c456aa6a26d38112546af.png",
+    },
+    {
+        "id": "RXZlbnRQZW9wbGVfNDY1MDgyMDA=",
+        "type": "",
+        "firstName": "Hala Matar",
+        "lastName": "Choufany",
+        "jobTitle": "President",
+        "organization": "HVS Middle East, Africa and South Asia",
+        "photoUrl": "https://static.swapcard.com/public/images/3089081b17034fe2a54e72640f0a6a87.jpeg",
+    },
+    {
+        "id": "RXZlbnRQZW9wbGVfNDcxNTYzOTg=",
+        "type": "",
+        "firstName": "Maya",
+        "lastName": "Ziade",
+        "jobTitle": "Chief Development Officer, Premium, Midscale & Economy Division for Middle East, Africa and Türkiye",
+        "organization": "Accor",
+        "photoUrl": "https://static.swapcard.com/public/images/e6002ebef3da48d58056b6d73e6d695d.jpeg",
+    },
+
 ]
 
 const INDUSTRY_DATA = [

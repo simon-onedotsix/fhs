@@ -993,13 +993,6 @@ export const FHS_EGYPT = {
                         "children": [
                             {
                                 "__typename": "navigation_Entry",
-                                "id": "werewhbds",
-                                "title": "Videos",
-                                "navUrl": "/egypt/content-library/category/videos-and-webinars",
-                                "target": false
-                            },
-                            {
-                                "__typename": "navigation_Entry",
                                 "id": "225",
                                 "title": "Podcasts",
                                 "navUrl": "/egypt/content-library/category/podcast",

@@ -62,7 +62,7 @@ export default function Page () {
                         E: matthew.weihs@thebench.com</p>
                         
                         <h6>OPERATIONAL ENQUIRIES</h6>
-                       <Pop inline><Photo src={"https://cms.thebench.com/assets/img/avatars/Screenshot-2023-08-03-at-3.54.04-PM.png"}/></Pop>
+                       <Pop inline><Photo src={"https://cms.thebench.com/assets/img/avatars/Mala-BW-use-this.png"}/></Pop>
                         <p><strong>Mala Patel</strong><br/>
                         Event Director – Africa | COO, AviaDev, The Bench<br/>
                         E: mala.patel@thebench.com</p>

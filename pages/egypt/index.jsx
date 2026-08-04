@@ -80,9 +80,16 @@ export default function Home ({ data, content, partners }) {
 
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState()
+    
 
+    const partnersOnly = partners.filter(partner => partner.fields.some(field => field.value !== 'media-partner'))
+    const mediaPartnersOnly = partners.filter(partner => partner.fields.some(field => field.value === 'media-partner'))
+    
+    
     // console.log(content)
-    console.log('parterData:', partners)
+    // console.log('parterData:', partners)
+    // console.log('partnersOnly:', partnersOnly)
+    // console.log('mediaPartnersOnly:', mediaPartnersOnly)
 
     const isDesktop = useCustomMediaQuery('(min-width: 600px)');
 
@@ -355,8 +362,33 @@ export default function Home ({ data, content, partners }) {
 
                 <div className="container" style={{ display: `flex`, flexWrap: `wrap`, gap: `4rem`, justifyContent: `center`}}>
                     {
-                        partners.length &&
-                        _.orderBy(_.uniqBy(partners, 'name'), 'name').map(partner => (
+                        partnersOnly.length &&
+                        _.orderBy(_.uniqBy(partnersOnly, 'name'), 'name').map(partner => (
+                            <div
+                                key={partner.id}
+                                style={{
+                                    position: `relative`,
+                                    width: 150,
+                                    aspectRatio: 19 / 9,
+                                    display: `flex`,
+                                    justifyContent: `center`,
+                                    alignItems: `center`,
+                                }}
+                            >
+                                <Pop><img src={partner.logoUrl} alt="" style={{ objectFit: `contain`, width: `100%`, height: `100%`}} /></Pop>
+                            </div>
+                        ))
+                    }
+                </div>
+                
+                <div className="container center pt-md">
+                    <h1 className="fs-1 c-secondary caps">2026 Media Partners</h1>
+                </div>
+
+                <div className="container" style={{ display: `flex`, flexWrap: `wrap`, gap: `4rem`, justifyContent: `center`}}>
+                    {
+                        mediaPartnersOnly.length &&
+                        _.orderBy(_.uniqBy(mediaPartnersOnly, 'name'), 'name').map(partner => (
                             <div
                                 key={partner.id}
                                 style={{
@@ -403,7 +435,7 @@ export default function Home ({ data, content, partners }) {
             <section className="block bg-primary o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className={`${CSS.highlightVideoGrid} container`}>
                     <Slide><p className='fs-1 fw-600 lh-1'>A Snapshot of the FHS Experience</p></Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/fj2Q68dkw4c`} />
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/LSqHtk9V-zg`} />
                 </div>
             </section>
 
@@ -469,7 +501,7 @@ export default function Home ({ data, content, partners }) {
                 <div className="container columns-3 maxw-55 gap-xs">
                     {
                         data.events.map(event => {
-                            console.log(event)
+                            // console.log(event)
                             return (
                                 <div key={event.id} className={`columns-1 gap-xs`}>                                
                                     {
