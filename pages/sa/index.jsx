@@ -696,20 +696,11 @@ export default function Page({ seomatic, partners }) {
                     <div className="mt-md center button-grid w-100pc">
                         <Pop inline>
                             <Button 
-                                href={'/sa/attendee-list-2026'} 
+                                href={'/sa/post-event-report-2026'} 
                                 theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
                                 decal={'fs-5 fw-600'} 
                                 accent
-                            >{ locale === 'ar' ? `قائمة الحضور لعام 2026` : `2026 Attendee List`}</Button>
-                        </Pop>
-
-                        <Pop inline>
-                            <Button 
-                                href={'/sa/attending-investors-2026'} 
-                                theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                decal={'fs-5 fw-600'} 
-                                accent
-                            >{ locale === 'ar' ? `2026 Investor Attendees` : `2026 Investor Attendees`}</Button>
+                            >2026 Post-event Report</Button>
                         </Pop>
 
                         <Pop inline>
