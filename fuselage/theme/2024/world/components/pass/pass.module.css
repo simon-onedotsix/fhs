@@ -138,6 +138,8 @@
 }
 
 
+
+
 /* layout grid */
 
 .grid {
@@ -152,6 +154,12 @@
 }
 @media(min-width:900px){
     .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .cols2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cols3 {
         grid-template-columns: repeat(3, 1fr);
     }
 }

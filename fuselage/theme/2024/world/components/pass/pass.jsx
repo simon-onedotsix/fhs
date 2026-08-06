@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { format, parseISO } from 'date-fns'
 import parse from 'html-react-parser'
@@ -82,7 +82,7 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, t
                 {
                     currentBand && nextBand && priceIncreaseMessage ?
                         <div className="formatted">
-                            <p className="fs-6">
+                            <p className="fs-6 balance">
                                 <span className="fw-600">Only available at this rate before {format(new Date(currentBand.endDate), "d MMMM")}</span> when the price increases to <strong className="fw-600">{currency}&nbsp;{taxRate ? calculateNettValue(nextBand.value, taxRate) : nextBand.value}{taxRate && `+VAT`}</strong>
                             </p>
                         </div>
@@ -223,8 +223,16 @@ export const PassGridSectionHeading = ({ heading }) => {
 
 
 export const PassGrid = ({ children }) => {
+
+    const childCount = React.Children.count(children)
+
     return (
-        <div className={CSS.grid}>
+        <div
+            className={`
+                ${CSS.grid}
+                ${childCount < 3 ? CSS.cols2 : null}
+            `}
+        >
             { children }
         </div>
     )
