@@ -1197,7 +1197,7 @@ export const FHS_LIVING = {
                     "openInNewWindow": false
                 },
                 {
-                    "label": "Register Interest",
+                    "label": "Download Brochure",
                     "hyperlink": "/living/register-interest",
                     "openInNewWindow": false
                 },

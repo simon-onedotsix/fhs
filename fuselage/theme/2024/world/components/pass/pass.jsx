@@ -105,7 +105,7 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, t
                                 taxRate
                                 ? <div>
                                     <p className={`fs-2 fw-600 lh-1 c-primary`}>{ currency }{ currentBand ? priceExcTax : 'TBA' }</p>
-                                    <p className='fw-500'>Plus VAT at {taxRate}% of {currency}{priceIncTax - priceExcTax}</p>
+                                    <p className='fw-500'>Plus VAT at {taxRate}% - {currency}{priceIncTax - priceExcTax}</p>
                                 </div>
                                 : <div>
                                     <p className={`fs-2 fw-600 lh-1 c-primary`}>{ currency }{ currentBand ? currentBand.value : 'TBA' }</p>

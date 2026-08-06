@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 const worldPartners2026 = [
     {
         "id": "RXhoaWJpdG9yXzIzODA4MDQ=",
@@ -769,46 +771,6 @@ const saudiPartners2026 = [
         ]
     },
     {
-        "id": "RXhoaWJpdG9yXzIyMzQ1NzA=",
-        "name": "IHG Hotels & Resorts",
-        "logoUrl": "https://static.swapcard.com/public/images/a4d93087d90f4053b6e19e28c0c6ab57.png",
-        "fields": [
-            {
-                "id": "RmllbGRWYWx1ZV8yNzc4OTQ0MQ==",
-                "value": "headline-sponsor",
-                "definition": {
-                    "id": "RmllbGREZWZpbml0aW9uXzgzMTQ3MQ==",
-                    "name": "Type"
-                },
-                "translations": [
-                    {
-                        "value": "Headline Sponsor"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": "RXhoaWJpdG9yXzIyMzQ1NzE=",
-        "name": "ClubMed - All-Inclusive beach and mountain Resorts",
-        "logoUrl": "https://static.swapcard.com/public/images/be4d8703637446998610d447a7258835.png",
-        "fields": [
-            {
-                "id": "RmllbGRWYWx1ZV8yNzc4OTQ0MQ==",
-                "value": "headline-sponsor",
-                "definition": {
-                    "id": "RmllbGREZWZpbml0aW9uXzgzMTQ3MQ==",
-                    "name": "Type"
-                },
-                "translations": [
-                    {
-                        "value": "Headline Sponsor"
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "id": "RXhoaWJpdG9yXzIyMzQ1NzI=",
         "name": "Knight Frank",
         "logoUrl": "https://cdn-api.swapcard.com/public/images/97feda61a94243d0a0fd429d35d0a94f.png",
@@ -983,26 +945,6 @@ const saudiPartners2026 = [
                 "translations": [
                     {
                         "value": "Exhibitors"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": "RXhoaWJpdG9yXzIyMzg1NDc=",
-        "name": "STR, a CoStar Group Company",
-        "logoUrl": "https://static.swapcard.com/public/images/bc120e48ef7d46b9988721d7c1f7015d.png",
-        "fields": [
-            {
-                "id": "RmllbGRWYWx1ZV8yNzc4OTQyMQ==",
-                "value": "sponsors",
-                "definition": {
-                    "id": "RmllbGREZWZpbml0aW9uXzgzMTQ3MQ==",
-                    "name": "Type"
-                },
-                "translations": [
-                    {
-                        "value": "Sponsors"
                     }
                 ]
             }
@@ -1492,26 +1434,6 @@ const saudiPartners2026 = [
 
 const africaPartners2026 = [
     {
-        "id": "RXhoaWJpdG9yXzIzNTEwMTY=",
-        "name": "BWH",
-        "logoUrl": "https://static.swapcard.com/public/images/53578fe1764e43a8abc0742bca5afc31.png",
-        "fields": [
-            {
-                "id": "RmllbGRWYWx1ZV8yMjM5NDE1NA==",
-                "value": "strategic-partner",
-                "definition": {
-                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
-                    "name": "Type"
-                },
-                "translations": [
-                    {
-                        "value": "Strategic Partners"
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "id": "RXhoaWJpdG9yXzIzNTEwMTc=",
         "name": "Club Med",
         "logoUrl": "https://static.swapcard.com/public/images/94523ce7fd344bfa9978a0551fbaa56a.png",
@@ -1566,26 +1488,6 @@ const africaPartners2026 = [
                 "translations": [
                     {
                         "value": "Strategic Partners"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": "RXhoaWJpdG9yXzIzNTEwMjM=",
-        "name": "TUI",
-        "logoUrl": "https://static.swapcard.com/public/images/1d00d112b28c4452ab24080fdb219a08.png",
-        "fields": [
-            {
-                "id": "RmllbGRWYWx1ZV8yNzM1MDgyNw==",
-                "value": "headline-sponsor",
-                "definition": {
-                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
-                    "name": "Type"
-                },
-                "translations": [
-                    {
-                        "value": "Headline Partners"
                     }
                 ]
             }
@@ -1775,26 +1677,6 @@ const africaPartners2026 = [
         "id": "RXhoaWJpdG9yXzI0MjcwMTY=",
         "name": "QUO",
         "logoUrl": "https://static.swapcard.com/public/images/6cb17ebbbf0147688e5a2d01894aecff.png",
-        "fields": [
-            {
-                "id": "RmllbGRWYWx1ZV8yNzM1MDgyNw==",
-                "value": "headline-sponsor",
-                "definition": {
-                    "id": "RmllbGREZWZpbml0aW9uXzI5NjgyNg==",
-                    "name": "Type"
-                },
-                "translations": [
-                    {
-                        "value": "Headline Partners"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": "RXhoaWJpdG9yXzI0MjcwMTk=",
-        "name": "Rotana",
-        "logoUrl": "https://static.swapcard.com/public/images/5b03689fc7454301afa00324844a1375.png",
         "fields": [
             {
                 "id": "RmllbGRWYWx1ZV8yNzM1MDgyNw==",
@@ -2620,4 +2502,4 @@ const africaPartners2026 = [
 
 
 
-export const partners = [ ...worldPartners2026, ...saudiPartners2026, ...africaPartners2026 ]
+export const partners = [...worldPartners2026, ...saudiPartners2026, ...africaPartners2026]
