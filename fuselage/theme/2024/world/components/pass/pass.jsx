@@ -45,6 +45,12 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, t
     let priceIncTax = currentBand?.value || undefined
     let priceExcTax = priceIncTax / (1 + taxRate / 100)
 
+
+    const calculateNettValue = (grossValue, taxRate) => {
+        const nettValue = grossValue / (1 + taxRate / 100)
+        return nettValue
+    }
+
     // console.log(`price: ${currency}${priceExcTax} + ${currency}${priceIncTax - priceExcTax} (${taxRate}% VAT)`)
     // console.log('nett price: €', currentBand.value / (1 + taxRate / 100))
     // console.log('amout of tax: €', currentBand.value - currentBand.value / (1 + 20 / 100))
@@ -77,7 +83,7 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, t
                     currentBand && nextBand && priceIncreaseMessage ?
                         <div className="formatted">
                             <p className="fs-6">
-                                <span className="fw-600">Only available at this rate before { format( new Date(currentBand.endDate), "d MMMM" ) }</span> when the price increases to <strong className="fw-600">{ currency }&nbsp;{  nextBand.value}</strong>
+                                <span className="fw-600">Only available at this rate before {format(new Date(currentBand.endDate), "d MMMM")}</span> when the price increases to <strong className="fw-600">{currency}&nbsp;{taxRate ? calculateNettValue(nextBand.value, taxRate) : nextBand.value}{taxRate && `+VAT`}</strong>
                             </p>
                         </div>
                     : null
@@ -94,16 +100,18 @@ export const PassPriceBands = ({ flash, title, callout, description, currency, t
 
                 { 
                     priceBands && currency ?
-                        <div>
-                            <p className={`fs-2 fw-600 lh-1 c-primary`}>
-                                { currency }{ currentBand ? currentBand.value : 'TBA' }
-                            </p>
-                        
+                        <>
                             {
-                                taxRate &&
-                                <p className='fw-500'>({currency}{priceExcTax} + {currency}{priceIncTax - priceExcTax} ({taxRate}% VAT))</p>
+                                taxRate
+                                ? <div>
+                                    <p className={`fs-2 fw-600 lh-1 c-primary`}>{ currency }{ currentBand ? priceExcTax : 'TBA' }</p>
+                                    <p className='fw-500'>Plus VAT at {taxRate}% of {currency}{priceIncTax - priceExcTax}</p>
+                                </div>
+                                : <div>
+                                    <p className={`fs-2 fw-600 lh-1 c-primary`}>{ currency }{ currentBand ? currentBand.value : 'TBA' }</p>
+                                </div>
                             }
-                        </div>                            
+                        </>                            
                     : null
                 }
                 

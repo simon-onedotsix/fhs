@@ -185,6 +185,7 @@ export default function Page ({ videoTestimonials }) {
                                     alignItems: `center`,
                                 }}
                             >
+                                {/* <span style={{fontSize: 8}}>{partner.id}</span> */}
                                 <Pop><img src={partner.logoUrl} alt="" style={{ objectFit: `contain`, width: `100%`, height: `100%`}} /></Pop>
                             </div>
                         ))
