@@ -90,6 +90,16 @@ export default function Page ({ videoTestimonials }) {
                     </div>
 
                     <div className={`mb-md`}>
+                        <p className="fs-5 fw-500 pb-xs">Partner</p>
+                        <div className="logoGrid">
+                            <LogoBox
+                                size={250}
+                                logoUrl={`https://cdn-api.swapcard.com/public/images/e78a6bd0f5c440889388c5057bf38508.png`}
+                            />
+                        </div>
+                    </div>
+
+                    <div className={`mb-md`}>
                         <p className="fs-5 fw-500 pb-xs">Supporters</p>
                         <div className="logoGrid">
                             <LogoBox
