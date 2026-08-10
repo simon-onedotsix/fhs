@@ -3,6 +3,7 @@ import Image from 'next/image'
 import CSS from './speaker-card.module.css'
 
 export const SpeakerCard = ({ url, color, photoUrl, fullName, positions, jobTitle, company, specialField, focus, geographies }) => {
+
     if (url) return (
         <a href={url} className={CSS.link}>
             <Layout url={url} color={color} photoUrl={photoUrl} fullName={fullName} positions={positions} jobTitle={jobTitle} company={company} specialField={specialField} focus={focus} geographies={geographies} />
