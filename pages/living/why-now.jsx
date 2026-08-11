@@ -101,7 +101,7 @@ export default function Page () {
                         <Pop>
                             <img src="/assets/img/living/why/asset-01.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
                         </Pop>
-                        <p className="fs-4 fw-600 c-accent mt-xxs">Branded residences</p>
+                        <p className="fs-4 fw-600 mt-xxs">Branded residences</p>
                         <p>Europe&apos;s fastest-growing luxury real estate category. With more than 300 schemes projected by 2032, branded residences offer developers an efficient route to capital through presales, while delivering premium returns to investors.</p>
                     </article>
                     
@@ -109,7 +109,7 @@ export default function Page () {
                         <Pop>
                             <img src="/assets/img/living/why/asset-02.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
                         </Pop>
-                        <p className="fs-4 fw-600 c-accent mt-xxs">Student accommodation (PBSA)</p>
+                        <p className="fs-4 fw-600 mt-xxs">Student accommodation (PBSA)</p>
                         <p>97% average occupancy across Europe. Annual investment growth of 11% has made PBSA a firmly institutional category, with sovereign funds, pension funds and global asset managers leading deployment.</p>
                     </article>
                     
@@ -117,7 +117,7 @@ export default function Page () {
                         <Pop>
                             <img src="/assets/img/living/why/asset-03.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
                         </Pop>
-                        <p className="fs-4 fw-600 c-accent mt-xxs">Senior living</p>
+                        <p className="fs-4 fw-600 mt-xxs">Senior living</p>
                         <p>Care home investment in EMEA grew 165% year-on-year in 2025. Ageing demographics across Germany, the Netherlands and the Nordics are creating enduring, demographically-driven demand for well-capitalised senior living platforms.</p>
                     </article>
                     
@@ -125,7 +125,7 @@ export default function Page () {
                         <Pop>
                             <img src="/assets/img/living/why/asset-04.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
                         </Pop>
-                        <p className="fs-4 fw-600 c-accent mt-xxs">Serviced living</p>
+                        <p className="fs-4 fw-600 mt-xxs">Serviced living</p>
                         <p>The convergence of residential and hospitality is reshaping how developers, operators and capital approach yield. Serviced apartments and aparthotels are demonstrating strong income stability and attracting long-duration capital.</p>
                     </article>
                     
@@ -133,7 +133,7 @@ export default function Page () {
                         <Pop>
                             <img src="/assets/img/living/why/asset-05.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
                         </Pop>
-                        <p className="fs-4 fw-600 c-accent mt-xxs">Co-living</p>
+                        <p className="fs-4 fw-600 mt-xxs">Co-living</p>
                         <p>Institutional co-living operators are scaling across European gateway cities, supported by capital seeking contractual income streams and the operational expertise to manage them.</p>
                     </article>
                     
@@ -141,7 +141,7 @@ export default function Page () {
                         <Pop>
                             <img src="/assets/img/living/why/asset-06.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
                         </Pop>
-                        <p className="fs-4 fw-600 c-accent mt-xxs">Shared ownership</p>
+                        <p className="fs-4 fw-600 mt-xxs">Shared ownership</p>
                         <p>Accessible entry points into residential real estate at a time of tightening affordability across prime European markets - a growing category attracting both private equity and institutional capital.</p>
                     </article>
                     
@@ -149,7 +149,7 @@ export default function Page () {
                         <Pop>
                             <img src="/assets/img/living/why/asset-07.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
                         </Pop>
-                        <p className="fs-4 fw-600 c-accent mt-xxs">Club concepts and hostels</p>
+                        <p className="fs-4 fw-600 mt-xxs">Club concepts and hostels</p>
                         <p>Hybrid formats serving the social living ambitions of younger demographics at scale. A category attracting growth capital from lifestyle-focused operators and investors seeking experiential living exposure.</p>
                     </article>
                     
@@ -157,7 +157,7 @@ export default function Page () {
                         <Pop>
                             <img src="/assets/img/living/why/asset-08.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
                         </Pop>
-                        <p className="fs-4 fw-600 c-accent mt-xxs">Mixed-use developments</p>
+                        <p className="fs-4 fw-600 mt-xxs">Mixed-use developments</p>
                         <p>Hospitality as the anchor of integrated communities - hotels, branded residences, retail and wellness brought together into developments that command premium pricing and institutional-grade returns.</p>
                     </article>
                     
@@ -165,7 +165,7 @@ export default function Page () {
                         <Pop>
                             <img src="/assets/img/living/why/asset-09.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
                         </Pop>
-                        <p className="fs-4 fw-600 c-accent mt-xxs">Hotels and resorts</p>
+                        <p className="fs-4 fw-600 mt-xxs">Hotels and resorts</p>
                         <p>Operationally-managed accommodation assets with contractual income, included at FHS Living as part of the full-spectrum living and hospitality investment conversation.</p>
                     </article>
                 </div>
