@@ -484,7 +484,7 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
             <section className="block bg-primary-2-dark">
                 <div className="container center">
                     <Fade>
-                        <p className="fs-1 fw-600 lh-1 caps">Investors at FHS World</p>
+                        <p className="fs-1 fw-600 lh-1 caps">Investors at FHS World 2025</p>
                     </Fade>
                     <div className="columns-4 gap-sm mt-md">
                         <InvestorImpact figure={5.4} prefix={"$"} unit={"tn"} label={"ASSETS UNDER MANAGEMENT"} />

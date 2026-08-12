@@ -275,13 +275,13 @@ export const FHS_WORLD = {
                                 "navUrl": "/world/leadership-award",
                                 "target": false
                             },
-                            {
-                                "__typename": "navigation_Entry",
-                                "id": "185",
-                                "title": "Impact Leader Award",
-                                "navUrl": "/world/impact-leader-award",
-                                "target": false
-                            }
+                            // {
+                            //     "__typename": "navigation_Entry",
+                            //     "id": "185",
+                            //     "title": "Impact Leader Award",
+                            //     "navUrl": "/world/impact-leader-award",
+                            //     "target": false
+                            // }
                         ]
                     }
                 ]
