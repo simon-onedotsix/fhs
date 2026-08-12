@@ -335,7 +335,7 @@ export default function Page ({ sessions, speakers }) {
 
 
             {/* FEATURED SPEAKERS */}
-            <section className="block bg-secondary">
+            {/* <section className="block bg-secondary">
                 <div className="container">
                     <Fade><p className='fs-2 fw-600 lh-2 center'>Confirmed Speakers</p></Fade>
                 </div>
@@ -363,7 +363,7 @@ export default function Page ({ sessions, speakers }) {
                         <Button href={'/world/speakers'}>View All Speakers</Button>
                     </Pop>
                 </div>
-            </section>
+            </section> */}
 
             
 
