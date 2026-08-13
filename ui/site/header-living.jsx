@@ -13,7 +13,7 @@ import { Button } from "../buttons/button"
 
 import CSS from './header.module.css'
 
-export const Header = ({ site, handle, event, mainMenu, ctas, children }) => {
+export const Header = ({ site, region, event, mainMenu, ctas, children }) => {
 
     const [navActive, setNavActive] = useState(false)
 
@@ -28,7 +28,7 @@ export const Header = ({ site, handle, event, mainMenu, ctas, children }) => {
                     <section className={CSS.brand}>
                         <Link href={site ? `${site}` : `/`}>
                             <a style={{ textDecoration: `none`}}>
-                                <FhsLivingLockup region={handle}/>
+                                <FhsLivingLockup region={region}/>
                             </a>
                         </Link>
                     </section>

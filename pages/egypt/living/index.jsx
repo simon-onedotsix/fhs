@@ -3,12 +3,13 @@ import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 import _ from 'lodash'
 
+import Head from 'next/head'
 import Link from 'next/link'
 
 import { motion } from "framer-motion"
 
 import { EventsBar } from "../../../ui/site/eventsbar"
-import { HeaderBRF } from '../../../ui/site/header-brf'
+import { Header } from '../../../ui/site/header-living'
 import { BRF_FHS_EGYPT as header } from '../../../fixtures/nav'
 
 
@@ -20,6 +21,7 @@ import { Pop, Fade } from "../../../fuselage/theme/2023/ae/layout/animation/anim
 import { Callout } from '../../../fuselage/theme/2024/world/blocks/callout/callout'
 import HubspotForm from '../../../fuselage/components/hubspot-form/hubspot-form'
 
+import { Quotation } from "../../../fuselage/theme/2025/sa/components/quotation/quotation"
 import { QuoteSlider } from '../../../fuselage/theme/2024/world/components/quote-slider/quote-slider'
 import { SpeakerCarousel } from '../../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel'
 import { SpeakerCard } from '../../../fuselage/components/speaker-card/speaker-card'
@@ -151,6 +153,26 @@ const CONFIRMED_SPEAKER_DATA = [
     },
     
 ]
+const QUOTES_DATA = [
+    {
+        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/Jeff-Tisdall.jpeg',
+        quote: "The market is still fragmented. Large events are too broad, and niche ones don't have the right scale.",
+        fullName: "Jeff Tisdall",
+        title: "Chief Business Officer, Accor One Living"
+    },
+    {
+        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/Dirk-Bakker.jpg',
+        quote: "A conference that brings all of this together would be a huge success.",
+        fullName: "Dirk Bakker",
+        title: "Chief Executive Officer, Necron Hospitality",
+    },
+    {
+        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/kasper-ravn-wigen.webp',
+        quote: "I wish there was a business event that brings together key living categories across European real estate in a single place.",
+        fullName: "Kasper Ravn Wigen",
+        title: "Global Marketing Director, Yugo",
+    }
+]
 
 
 
@@ -280,11 +302,18 @@ export default function Page ({ sessions, speakers }) {
 
     return (
         <>
-            <EventsBar site={'/egypt/brf'} />
-            <HeaderBRF
-                site={`/egypt/brf`}
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
+                <meta content="https://cms.thebench.com/assets/content-library/img/FHS-Living/FHS-Living-Launch-PR.jpg" property="og:image"></meta>
+                <title>FHS Living Egypt</title>
+                <meta name="description" content="Held adjacently with FHS Egypt, this exclusive one-day forum explores the thriving sector of Branded Residences."></meta>
+            </Head>
+            
+            <EventsBar site={'/egypt/living'} />
+            <Header
+                site={`/egypt/living`}
                 parentSite={`/egypt`}
-                handle={`At FHS Egypt`}
+                region={`At FHS Egypt`}
                 parentHandle={`FHS Egypt`}
                 event={header.data.event}
                 mainMenu={header.data.mainMenu}
@@ -327,7 +356,7 @@ export default function Page ({ sessions, speakers }) {
             {/* PAST SPONSORS */}
             <section className="block">
                 <div className="container center">
-                    <p className='fs-1 fw-600'>Branded Residences Partners</p>
+                    <p className='fs-1 fw-600'>FHS Living Partners</p>
                 </div>
                 
                 <div className="container maxw-70 pt-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
@@ -339,8 +368,6 @@ export default function Page ({ sessions, speakers }) {
                
 
             {/* MARKET OVERVIEW */}
-
-
             <section className="block bg-default">
                 <div className="container formatted maxw-90">
                     <Callout image={{ url:'/assets/img/brf/brf-2024-image-08.jpg', width:2000, height:1333 }}>
@@ -395,66 +422,35 @@ export default function Page ({ sessions, speakers }) {
             
 
             {/* THEMES */}
-            <section className="block bg-default">
+            {/* <section className="block bg-default">
                 <ThemesSlider 
                     data={THEMES_DATA} 
                     heading={"2025 Branded Residences Forum Themes"}
                     link={'/egypt/agenda'} 
                     linkLabel={'View FHS Egypt Agenda'} 
                 />
-            </section>
+            </section> */}
 
 
 
-            {/* TESTIMONIALS */}
-            <section className="block bg-secondary">
-                <div className="container maxw-70">
+            {/* QUOTES */}
+            <section className="block bg-secondary o-hidden">
+                <div className="container">
+                    <p className="fs-2 fw-600 caps center">What the industry is saying</p>
+                </div>
 
-                    <QuoteSlider 
-                        color={'white'}
-                        heading={"Testimonials"}
-                        testimonials={[
-                            {
-                                quote: "Success in branded residences requires specialised expertise across multiple disciplines - which is why we see The Branded Residence Forum by Accor One Living as such an essential platform for discussion. At this trailblazing event, we will pull together key-decision makers from across the sector - including residential developers who have executed enormously successful projects, expert lawyers, branding and communication firms, architects, interior designer and other key consultants - the key players who are propelling the success of branded residences globally.",
-                                avatar: [
-                                    {
-                                        url: "/assets/img/brf/quotes/jeff.jpg",
-                                        width: "800",
-                                        height: "800"
-                                    }
-                                ],
-                                fullName: "Jeff Tisdall",
-                                jobTitle: "CBO",
-                                organisation: "Accor One Living"
-                            },
-                            {
-                                quote: "We see The Branded Residences Forum by Accor One Living as an important opportunity for the industry to gather and discuss this ever-expanding sector. Interest is now truly global and standalone branded development activity is accelerating. At the same time, exciting new brands and partnership are emerging - simply put, investors have a lot to consider and share when it comes to branded residences.",
-                                avatar: [
-                                    {
-                                        url: "/assets/img/brf/quotes/Itani.jpg",
-                                        width: "800",
-                                        height: "800"
-                                    }
-                                ],
-                                fullName: "Riyan Itani",
-                                jobTitle: "Founder",
-                                organisation: "Global Branded Residences"
-                            },
-                            {
-                                quote: "FHS World in Dubai is a key gathering for hospitality investors and it is only natural that its scope has been expanded to include a 'must-attend' day-long event for those developing, operating or exploring branded residences. We see this forum as a key opportunity for investors to delve into the key issues and trends, such as rental programs, legal structure, sales and marketing and design.",
-                                avatar: [
-                                    {
-                                        url: "/assets/img/brf/quotes/rico.jpg",
-                                        width: "800",
-                                        height: "800"
-                                    }
-                                ],
-                                fullName: "Rico Picenoni",
-                                jobTitle: "Head of Savills Global Residential Development Consultancy",
-                                organisation: ""
-                            }
-                        ]} />
-
+                <div className={`container columns-3 gap-md`}>
+                    {
+                        QUOTES_DATA.map((quote, index) => (
+                            <Quotation
+                                key={index}
+                                avatarUrl={quote.avatarUrl}
+                                quote={quote.quote}
+                                fullName={quote.fullName}
+                                title={quote.title}
+                            />
+                        ))
+                    }
                 </div>
             </section>
 
@@ -477,7 +473,7 @@ export default function Page ({ sessions, speakers }) {
     )
 }
 
-Page.theme = 'brf'
+Page.theme = 'living'
 
 
 

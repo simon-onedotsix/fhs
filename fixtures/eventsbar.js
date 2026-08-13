@@ -30,26 +30,6 @@ export const OTHER_EVENTS = [
         target: false
     },
     {
-        title: 'Branded Residences Forum',
-        url: 'https://www.brandedresidencesforum.com/',
-        target: true
-    },
-    // {
-    //     title: 'BRF @FHS World',
-    //     url: '/world/brf',
-    //     target: false
-    // },
-    // {
-    //     title: 'BRF @FHS Saudi Arabia',
-    //     url: '/sa/brf',
-    //     target: false
-    // },
-    // {
-    //     title: 'BRF @FHS Egypt',
-    //     url: '/egypt/brf',
-    //     target: false
-    // },
-    {
         title: 'AviaDev',
         url: 'https://www.aviadev.com/',
         target: true

@@ -182,17 +182,10 @@ export const FHS_WORLD = {
                     {
                         "__typename": "navigation_Entry",
                         "id": "159",
-                        "title": "Branded Residences Forum",
-                        "navUrl": "/world/brf",
+                        "title": "FHS Living",
+                        "navUrl": "/world/living",
                         "target": false
                     },
-                    // {
-                    //     "__typename": "navigation_Entry",
-                    //     "id": "161",
-                    //     "title": "UAE Africa Tourism Investment Summit",
-                    //     "navUrl": "/world/ais",
-                    //     "target": false
-                    // },
                     {
                         "__typename": "navigation_Entry",
                         "id": "163",
@@ -1080,8 +1073,8 @@ export const FHS_EGYPT = {
                     {
                         "__typename": "navigation_Entry",
                         "id": "299",
-                        "title": "Branded Residences Forum",
-                        "navUrl": "/egypt/brf",
+                        "title": "FHS Living",
+                        "navUrl": "/egypt/living",
                         "target": false
                     }
                 ]
