@@ -14,7 +14,7 @@ import { QuerySEO } from "../../graphql/queries"
 import handleSeomaticMeta from '../../lib/seomatic'
 
 
-
+import { Meta } from "../../ui/site/meta"
 import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header-living'
 import { FHS_LIVING as header } from '../../fixtures/nav'
@@ -141,7 +141,7 @@ const THEMES_DATA = [
 
 
 
-// temporary hard-coded data
+// temporary hard-coded data -----------------------------------------------
 const EVENT_DATA = [
     {
         "__typename": "events_BlockType",
@@ -193,9 +193,9 @@ const EVENT_DATA = [
                         "height": 524
                     }
                 ],
-                "heading": "Branded Residences Forum",
+                "heading": "FHS Living",
                 "purchasePassLink": null,
-                "websiteLink": "/world/brf"
+                "websiteLink": "/world/living"
             }
         ]
     },
@@ -333,9 +333,9 @@ const EVENT_DATA = [
                         "height": 524
                     }
                 ],
-                "heading": "Branded Residences Forum",
+                "heading": "FHS Living",
                 "purchasePassLink": null,
-                "websiteLink": "https://www.futurehospitality.com/world/brf"
+                "websiteLink": "https://www.futurehospitality.com/world/living"
             }
         ]
     },
@@ -386,10 +386,12 @@ export default function Home ({ data, advisors }) {
     return (
         <>
             <Head>
-                <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
-                <meta content="https://cms.thebench.com/assets/content-library/img/FHS-Living/FHS-Living-Launch-PR.jpg" property="og:image"></meta>
-                <title>FHS Living | Feb 2027, Paris | Founding Edition</title>
-                <meta name="description" content="Addressing the growing 'lanyard fatigue' of the European hospitality conferencing market"></meta>
+                <Meta
+                    faviconUrl={"/assets/favicons/living/favicon-16x16.png"}
+                    imageUrl={"https://cms.thebench.com/assets/content-library/img/FHS-Living/FHS-Living-Launch-PR.jpg"}
+                    title={"FHS Living | Feb 2027, Paris | Founding Edition"}
+                    description={"Addressing the growing 'lanyard fatigue' of the European hospitality conferencing market"}
+                />
             </Head>
         
             

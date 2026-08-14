@@ -20,7 +20,7 @@ import { BRF_FHS_WORLD as header } from '../../../fixtures/nav'
 
 import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
 import { HeroUnitVideo } from "../../../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video"
-import { Button } from "../../../fuselage/theme/2025/brf/components/button/button"
+import { Button } from "../../../ui/buttons/button"
 
 import { Pop, Fade } from "../../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Callout } from '../../../fuselage/theme/2024/world/blocks/callout/callout'
@@ -280,7 +280,7 @@ export default function Page ({ sessions, speakers }) {
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>
 
-                <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>Where brands shape the future of living</p>
+                <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>FHS Living</p>
                 <p className='fs-4 fw-600 c-white caps center mt-sm'>1st October 2026</p>
 
                 <motion.p 
@@ -289,15 +289,16 @@ export default function Page ({ sessions, speakers }) {
                     transition={{ type: "spring", bounce: 0.25 }}
                     className={`fs-5 c-white center mt-xs maxw-45 mx-auto`} 
                 >
-                    Held adjacently with <strong>FHS World</strong>, this exclusive one-day forum explores the thriving sector of Branded Residences.
+                    Held adjacently with <strong>FHS World</strong>, this exclusive one-day forum explores the alternative asset classes in the living sector.
                 </motion.p>
 
                 <div className="mt-sm center">
                     <Pop>
-                        <Button href={'/world/brf/agenda'}>View Agenda</Button>
+                        <Button href={'/world/brf/agenda'} label={`View Agenda`}/>
                     </Pop>
                 </div>
 
+                {/* SPONSORS */}
                 <Pop>
                     <div className="container pt-lg">
                         <section>
