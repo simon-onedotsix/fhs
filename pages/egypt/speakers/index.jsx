@@ -28,10 +28,19 @@ import { PopupOverlay } from "../../../fuselage/components/popup-overlay/popup-o
 import { HeroUnitVideo } from "../../../fuselage/theme/2025/world/pages/home/hero-unit-video"
 import { ThemeBillboard, Tri } from "../../../fuselage/theme/2025/world/pages/home/theme-billboard"
 
+import { orderByLastName, customOrderById } from '../../../lib/swapcard/speaker-utilities'
+
 import CSS from '../../../fuselage/theme/2024/world/css/homepage.module.css'
 
 
 const SPEAKER_DATA = [
+    {
+        url: `/world/speakers/RXZlbnRQZW9wbGVfNDc3MjUyNzA=`,
+        photoUrl: 'https://static.swapcard.com/public/images/73e89e7c31424fca892be5f0072b1d44.jpeg',
+        fullName: 'Eng. Tarek Shoukry',
+        jobTitle: 'Chairman of the Board of Directors, Real Estate Development Chamber, Federation of Egyptian Industries',
+        company: 'Arabia Holding',
+    },
     {
         url: `/world/speakers/RXZlbnRQZW9wbGVfNDEwMzg5NzY=`,
         photoUrl: 'https://static.swapcard.com/public/images/42ee3cc4823e43319c9ff340311e8e79.jpeg',
@@ -215,6 +224,26 @@ export default function Page({ speakers }) {
     
     // console.log('speakers:', speakers)
 
+    const PRIORITY_SPEAKER_IDS = [
+        'RXZlbnRQZW9wbGVfNDc3MjUyNzA=',
+        'RXZlbnRQZW9wbGVfNDc2OTA3Mzg=',
+        'RXZlbnRQZW9wbGVfNDcyMTAyODI=',
+        'RXZlbnRQZW9wbGVfNDc1NjAzNDE=',
+        'RXZlbnRQZW9wbGVfNDcyMTA0Njg=',
+
+        'RXZlbnRQZW9wbGVfNDc5NTk1NTE=',
+        'RXZlbnRQZW9wbGVfNDcyMTA0NTU=',
+        'RXZlbnRQZW9wbGVfNDc2OTA1NTU=',
+        'RXZlbnRQZW9wbGVfNDc1NjIwNzQ=',
+
+        'RXZlbnRQZW9wbGVfNDcyMjczMzU=',
+        'RXZlbnRQZW9wbGVfNDcyODc5NzY=',
+        'RXZlbnRQZW9wbGVfNDcyMTAzOTM=',
+        'RXZlbnRQZW9wbGVfNDcyMTAyNDk=',
+        'RXZlbnRQZW9wbGVfNDcyMTAyMzY=',
+    ]
+
+
     return (
         <>
             <Head>
@@ -243,7 +272,7 @@ export default function Page({ speakers }) {
                 <div className="container columns-5 gap-sm">
                     {
                         speakers.length &&
-                        _.orderBy(speakers, 'lastName').map( (profile, index) => (
+                        customOrderById( orderByLastName(speakers), PRIORITY_SPEAKER_IDS).map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
                                     url={`/egypt/speakers/${profile.id}`}
