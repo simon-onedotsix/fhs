@@ -56,7 +56,7 @@ function Speakers({ seomatic, speakers }) {
 		(speaker => speaker.firstName == 'Samer' && speaker.lastName === 'AlKharashi' ? 0 : 1),
 		(speaker => speaker.firstName == 'Georgette' && speaker.lastName === 'Davey' ? 0 : 1),
 		(speaker => speaker.firstName == 'Dimitris' && speaker.lastName === 'Manikis' ? 0 : 1),
-		(speaker => speaker.firstName == 'Hala Matar' && speaker.lastName === 'Choufany' ? 0 : 1),
+		(speaker => speaker.firstName == 'Barbara' && speaker.lastName === 'Muckermann' ? 0 : 1),
 		(speaker => speaker.firstName == 'Maya' && speaker.lastName === 'Ziade' ? 0 : 1),
 	] )
 	

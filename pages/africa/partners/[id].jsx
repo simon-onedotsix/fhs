@@ -163,7 +163,7 @@ export async function getStaticProps({ params }) {
                     }
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2027,
 					"ids": [
                         params.id
                       ]

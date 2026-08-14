@@ -850,9 +850,6 @@ export default function Agenda ({ sessions, locations }) {
 															prioriseStreams(slot.sessions, PRIORITISED_STREAMS).map((session, index) => {
 																// console.dir(session)
 
-																// hide AIS sessions
-																if ( session.categories.includes('UAE – Africa Tourism Investment Summit') ) return
-
 																return (
 																	<div key={index} className={CSS.sessionsWrapper}>
 																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
@@ -919,26 +916,36 @@ export default function Agenda ({ sessions, locations }) {
 																							}
 																						</div>
 																					: null
-																				}																		
+																				}
+																				
+																				{/* add speed networking sponsor logo */}
+																				{
+																					session.id === "UGxhbm5pbmdfNDQ0NTg3Mg==" ||
+																					session.id === "UGxhbm5pbmdfNDQ0NTkwMQ==" ||
+																					session.id === "UGxhbm5pbmdfNDUzMDc3Nw=="
+																						? <div>
+																							<p className="fs-sm caps mb-xxs">Sponsored by</p>
+																							<div style={{ display: `inline-block`, backgroundColor: `white`, padding: 10, borderRadius: 5 }}>
+																								<img src="/assets/img/world/pages/partners/FSK-Logo-Horizontal.png" alt="" width={100} />
+																							</div>
+																						  </div>
+																						: null
+																				}
+																				{/* add images to speed networking */}
+																				{
+																					session.id === "UGxhbm5pbmdfNDQ0NTg3Mg=="
+																						? <div className="columns-3 gap-xs">
+																							<img src="/assets/img/world/pages/agenda/networking-01.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+																							<img src="/assets/img/world/pages/agenda/networking-02.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+																							<img src="/assets/img/world/pages/agenda/networking-03.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+																						  </div>
+																						: null
+																				}
 
 																				{
 																					session.descriptionTranslations.length ?
 																						parse( session.descriptionTranslations[0].value )
 																					: null
-																				}
-
-																				{
-																					session.id === "UGxhbm5pbmdfMzExNDgxMg==" &&
-																					<div className="mb-xs">
-																						<Button href={'/world/ais'} decal={'fw-600'} accent>Learn More</Button>
-																					</div>
-																				}
-
-																				{
-																					session.id === "UGxhbm5pbmdfMTc1MDU5MQ==" &&
-																					<div className="mb-xs">
-																						<Button href={'mailto:rabih.feghali@hamamea.org'} decal={'fw-600'} accent>Request To Attend</Button>
-																					</div>
 																				}
 																				
 																				{/* { sortSpeakers(session.speakers) } */}
