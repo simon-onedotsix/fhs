@@ -27,7 +27,9 @@ import { Avatar } from '../../fuselage/components/avatar/avatar'
 import { partners } from "../../data/partners"
 
 
-export default function Page ({ videoTestimonials }) {
+export default function Page({ partnerData, videoTestimonials }) {
+    
+    // console.log('partners:', partnerData)
 
     const isDesktop = useCustomMediaQuery('(min-width: 600px)');
 
@@ -80,6 +82,16 @@ export default function Page ({ videoTestimonials }) {
                 <div className="container center logoGrid">
 
                     <div className={`mb-md`}>
+                        <p className="fs-5 fw-500 pb-xs">Founding Partner</p>
+                        <div className="logoGrid">
+                            <LogoBox
+                                size={250}
+                                logoUrl={`https://static.swapcard.com/public/images/d53d9c612c06447eb020f41fd59decfb.png`}
+                            />
+                        </div>
+                    </div>
+
+                    <div className={`mb-md`}>
                         <p className="fs-5 fw-500 pb-xs">Headline Partner</p>
                         <div className="logoGrid">
                             <LogoBox
@@ -112,6 +124,10 @@ export default function Page ({ videoTestimonials }) {
                     <div className={`mb-md`}>
                         <p className="fs-5 fw-500 pb-xs">Media Partners</p>
                         <div className="logoGrid">
+                            <LogoBox
+                                size={250}
+                                logoUrl={`https://static.swapcard.com/public/images/bc1de119ee8343f691d36b7d70bca55f.png`}
+                            />
                             <LogoBox
                                 size={250}
                                 logoUrl={`/assets/img/living/partners/logos/ULN-round.png`}
@@ -297,9 +313,69 @@ export async function getStaticProps() {
         `
     })
 
+    const swapcardData = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query {
+						event(id: "${process.env.SWAPCARD_EVENT_ID_LIVING_2026}") {
+							fieldDefinitions {
+								... on SelectFieldDefinition {
+									id
+									name
+									optionsValues {
+										id
+										value
+										translations {
+											language
+											value
+										}
+									}
+								}
+							}
+						}
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_LIVING_2026}", page:1, pageSize: 200) {
+							id
+							name
+							logoUrl
+							fields {
+								... on SelectField {
+									id
+									value
+									definition {
+										id
+										name
+									}
+									translations {
+										value
+									}
+								}
+							}
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_LIVING_2026,
+					"page": 1
+				}
+			})
+		}
+	)
+
+	console.log(swapcardData)
+	
+	const partnerData =  await swapcardData.json()
+
 
     return {
         props: { 
+            partnerData: partnerData.data,
             videoTestimonials: cmsData.data.entries
         }
     }
