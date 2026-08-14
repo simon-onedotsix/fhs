@@ -931,9 +931,9 @@ export default function Agenda ({ sessions, locations }) {
 																						  </div>
 																						: null
 																				}
-																				{/* add images to speed networking */}
+																				{/* add images to networking reception */}
 																				{
-																					session.id === "UGxhbm5pbmdfNDQ0NTg3Mg=="
+																					session.id === "UGxhbm5pbmdfNDQ2MzI4Mw=="
 																						? <div className="columns-3 gap-xs">
 																							<img src="/assets/img/world/pages/agenda/networking-01.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
 																							<img src="/assets/img/world/pages/agenda/networking-02.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
