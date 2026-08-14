@@ -80,6 +80,16 @@ export default function Page ({ videoTestimonials }) {
                 <div className="container center logoGrid">
 
                     <div className={`mb-md`}>
+                        <p className="fs-5 fw-500 pb-xs">Founding Partner</p>
+                        <div className="logoGrid">
+                            <LogoBox
+                                size={250}
+                                logoUrl={`https://static.swapcard.com/public/images/d53d9c612c06447eb020f41fd59decfb.png`}
+                            />
+                        </div>
+                    </div>
+
+                    <div className={`mb-md`}>
                         <p className="fs-5 fw-500 pb-xs">Headline Partner</p>
                         <div className="logoGrid">
                             <LogoBox
@@ -112,6 +122,10 @@ export default function Page ({ videoTestimonials }) {
                     <div className={`mb-md`}>
                         <p className="fs-5 fw-500 pb-xs">Media Partners</p>
                         <div className="logoGrid">
+                            <LogoBox
+                                size={250}
+                                logoUrl={`https://static.swapcard.com/public/images/bc1de119ee8343f691d36b7d70bca55f.png`}
+                            />
                             <LogoBox
                                 size={250}
                                 logoUrl={`/assets/img/living/partners/logos/ULN-round.png`}
