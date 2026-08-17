@@ -27,9 +27,12 @@ import { Avatar } from '../../fuselage/components/avatar/avatar'
 import { partners } from "../../data/partners"
 
 
-export default function Page ({ videoTestimonials }) {
+export default function Page ({ partnerData, videoTestimonials }) {
 
-    const isDesktop = useCustomMediaQuery('(min-width: 600px)');
+    console.log('partnerData:', partnerData)
+    
+    
+    const isDesktop = useCustomMediaQuery('(min-width: 600px)')
 
     return (
         <>
@@ -73,9 +76,6 @@ export default function Page ({ videoTestimonials }) {
 
 
             <section className="block bg-primary">
-                <div className="container center">
-                    <p className="fs-4 fw-600 c-magenta">FHS Living 2027 partners to be announced soon</p>
-                </div>
 
                 <div className="container center logoGrid">
 
@@ -311,9 +311,69 @@ export async function getStaticProps() {
         `
     })
 
+    const swapcardData = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query {
+						event(id: "${process.env.SWAPCARD_EVENT_ID_LIVING_2027}") {
+							fieldDefinitions {
+								... on SelectFieldDefinition {
+									id
+									name
+									optionsValues {
+										id
+										value
+										translations {
+											language
+											value
+										}
+									}
+								}
+							}
+						}
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_LIVING_2027}", page:1, pageSize: 200) {
+							id
+							name
+							logoUrl
+							fields {
+								... on SelectField {
+									id
+									value
+									definition {
+										id
+										name
+									}
+									translations {
+										value
+									}
+								}
+							}
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_LIVING_2027,
+					"page": 1
+				}
+			})
+		}
+	)
+
+	console.log(swapcardData)
+	
+	const partnerData =  await swapcardData.json()
+
 
     return {
         props: { 
+            partnerData: partnerData.data,
             videoTestimonials: cmsData.data.entries
         }
     }
