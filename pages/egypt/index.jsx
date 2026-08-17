@@ -74,6 +74,11 @@ const SPEAKER_DATA = [
     
 ]
 
+// temporary hard-code data
+import { EVENTS_DATA } from "../index"
+
+
+
 import { WEBINAR_SPEAKER_DATA } from "./webinar"
 
 export default function Home ({ data, content, partners }) {
@@ -500,7 +505,7 @@ export default function Home ({ data, content, partners }) {
 
                 <div className="container columns-3 maxw-55 gap-xs">
                     {
-                        data.events.map(event => {
+                        EVENTS_DATA.map(event => {
                             // console.log(event)
                             return (
                                 <div key={event.id} className={`columns-1 gap-xs`}>                                
