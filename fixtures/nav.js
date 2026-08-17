@@ -1085,6 +1085,20 @@ export const FHS_EGYPT = {
                         "target": false
                     }
                 ]
+            },
+            {
+                "__typename": "section_Entry",
+                "id": "29dfwerbg7",
+                "title": "Event Information",
+                "children": [
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "281fg345t",
+                        "title": "Travel & Accommodation",
+                        "navUrl": "/egypt/travel-and-accommodation",
+                        "target": false
+                    },
+                ]
             }
         ],
         "event": {
