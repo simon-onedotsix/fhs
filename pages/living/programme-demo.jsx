@@ -1126,7 +1126,7 @@ export async function getStaticProps() {
 							}
 						}
 
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_LIVING_2026}", page: 1, pageSize: 500) {
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_LIVING_2027}", page: 1, pageSize: 500) {
 							id
 							titleTranslations {
 								value
@@ -1182,7 +1182,7 @@ export async function getStaticProps() {
 								photoUrl
 								organization
 								biography
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_LIVING_2026}") {
+								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_LIVING_2027}") {
 									eventProfile {
 										type
 										withEvent(eventId: "RXZlbnRfMjQwNDQ3Nw==") {
@@ -1213,7 +1213,7 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_LIVING_2026,
+					"eventId": process.env.SWAPCARD_EVENT_ID_LIVING_2027,
 					"page": 1
 				}
 			})
