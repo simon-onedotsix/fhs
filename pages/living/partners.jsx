@@ -29,10 +29,55 @@ import { partners } from "../../data/partners"
 
 export default function Page ({ partnerData, videoTestimonials }) {
 
-    console.log('partnerData:', partnerData)
-    
-    
     const isDesktop = useCustomMediaQuery('(min-width: 600px)')
+    
+    
+
+
+
+
+    const swapcardPartnerGroups = partnerData.event.fieldDefinitions.find( arr => arr.id === "RmllbGREZWZpbml0aW9uXzI5NjgyNg==").optionsValues
+    const partnersArray = []
+	
+	swapcardPartnerGroups.map(category => {
+		const partnerGroup = []
+		
+		partnerData.exhibitors.map( partner => {
+			partner.fields.map( field => {
+				if ( field.id === category.id ) partnerGroup.push( partner )
+			})
+		})
+		
+		if (partnerGroup.length) {
+			partnersArray.push(
+				{
+					group: category,
+					partners: partnerGroup
+				}
+			)
+		}
+    })
+
+    // const CUSTOM_ORDERING = [
+    //     { id: 'RmllbGRWYWx1ZV8yMjM5NDE1Mg==', value: 'founding-partner' },
+    //     { id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Nw==', value: 'headline-sponsor' },
+    //     { id: 'RmllbGRWYWx1ZV8yOTM0Mzg2NA==', value: 'sponsor' },        
+    //     { id: 'RmllbGRWYWx1ZV8zMTE5MTUzNw==', value: 'supporters' },
+    //     { id: 'RmllbGRWYWx1ZV8zMTE3NjE2Mw==', value: 'media-partners' },        
+    // ]
+
+
+    
+    // console.log('partnerData:', partnerData)
+    // console.log('swapcard partner categories:', swapcardPartnerGroups )
+    // console.log('PARTNERS ARRAY:', partnersArray)
+    // console.log('CUSTOM_ORDERING:', CUSTOM_ORDERING)
+
+
+
+
+
+
 
     return (
         <>
@@ -76,65 +121,36 @@ export default function Page ({ partnerData, videoTestimonials }) {
 
 
             <section className="block bg-primary">
+                <div className="container center ">
 
-                <div className="container center logoGrid">
-
-                    <div className={`mb-md`}>
-                        <p className="fs-5 fw-500 pb-xs">Founding Partner</p>
-                        <div className="logoGrid">
-                            <LogoBox
-                                size={250}
-                                logoUrl={`https://static.swapcard.com/public/images/d53d9c612c06447eb020f41fd59decfb.png`}
-                            />
-                        </div>
-                    </div>
-
-                    <div className={`mb-md`}>
-                        <p className="fs-5 fw-500 pb-xs">Headline Partner</p>
-                        <div className="logoGrid">
-                            <LogoBox
-                                size={250}
-                                logoUrl={`/assets/img/living/partners/logos/maslows.png`}
-                            />
-                        </div>
-                    </div>
-
-                    <div className={`mb-md`}>
-                        <p className="fs-5 fw-500 pb-xs">Partner</p>
-                        <div className="logoGrid">
-                            <LogoBox
-                                size={250}
-                                logoUrl={`https://cdn-api.swapcard.com/public/images/e78a6bd0f5c440889388c5057bf38508.png`}
-                            />
-                        </div>
-                    </div>
-
-                    <div className={`mb-md`}>
-                        <p className="fs-5 fw-500 pb-xs">Supporters</p>
-                        <div className="logoGrid">
-                            <LogoBox
-                                size={250}
-                                logoUrl={`/assets/img/living/partners/logos/ISHC-Logo-Black-03.png`}
-                            />
-                        </div>
-                    </div>
-                    
-                    <div className={`mb-md`}>
-                        <p className="fs-5 fw-500 pb-xs">Media Partners</p>
-                        <div className="logoGrid">
-                            <LogoBox
-                                size={250}
-                                logoUrl={`https://static.swapcard.com/public/images/bc1de119ee8343f691d36b7d70bca55f.png`}
-                            />
-                            <LogoBox
-                                size={250}
-                                logoUrl={`/assets/img/living/partners/logos/ULN-round.png`}
-                            />
-                        </div>
-                    </div>
-                    
+                    {
+                        partnersArray.length &&
+                        partnersArray.map(cat => {
+                            return (
+                                <div key={cat.id} className={`mb-md`}>
+                                    <p className="fs-5 fw-500 pb-xs">{cat.group.translations[0].value}</p>
+                                    <div className="logoGrid">
+                                        {
+                                            cat.partners.length &&
+                                            cat.partners.map(partner => (
+                                                <LogoBox
+                                                    key={partner.id}
+                                                    size={250}
+                                                    logoUrl={partner.logoUrl}
+                                                />
+                                            ))
+                                        }
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
+            </section>
 
+            
+
+            <section className="block bg-primary">
                 <div className="container">
                     <p className="fs-2 fw-500 caps center">What partnership delivers</p>
                 </div>
