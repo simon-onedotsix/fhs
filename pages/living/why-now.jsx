@@ -150,7 +150,7 @@ export default function Page () {
                 <div className="container columns-3 gap-md">
                     {
                         ASSET_CLASS_DATA.map((card, index) => (
-                            <article className="formatted">
+                            <article key={index} className="formatted">
                                 <Pop>
                                     <img src={card.imageUrl} alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
                                 </Pop>
