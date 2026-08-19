@@ -651,8 +651,9 @@ export async function getStaticProps() {
                 }
                 podcasts: entries(
                     section: "contentLibrary"
-                    site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}"]
-                    id: [ 293054, 266706, 274754 ]
+                    site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}", "${process.env.SITE_HANDLE_EGYPT}"]
+                    limit: 3
+                    contentTypes: "7701"
                 ){
                     ... on contentLibrary_article_Entry {
                         id
