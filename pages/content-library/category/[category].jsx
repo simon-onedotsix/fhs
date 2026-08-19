@@ -144,7 +144,7 @@ export async function getStaticProps({ params }) {
         query: gql`
             query Articles {
                 entries(
-                    site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}"], 
+                    site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}", "${process.env.SITE_HANDLE_EGYPT}"], 
                     section: "contentLibrary", 
                     relatedToCategories: {slug: "${params.category}"} 
                 ) {

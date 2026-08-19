@@ -125,7 +125,7 @@ export async function getStaticProps() {
     const { data } = await craftApolloClient().query({
         query: gql`
             query Articles {
-                entries(site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}"], section: "contentLibrary") {
+                entries(site: ["${process.env.SITE_HANDLE}", "${process.env.SITE_HANDLE_AE}", "${process.env.SITE_HANDLE_SA}", "${process.env.SITE_HANDLE_EGYPT}"], section: "contentLibrary") {
                     ... on contentLibrary_article_Entry {
                         id
                         slug

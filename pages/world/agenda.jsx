@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react"
 import Head from "next/head"
 import Script from "next/script"
 import { useRouter } from "next/router"
+import Link from "next/link"
 
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 import { useInView } from 'react-intersection-observer'
@@ -925,9 +926,11 @@ export default function Agenda ({ sessions, locations }) {
 																					session.id === "UGxhbm5pbmdfNDUzMDc3Nw=="
 																						? <div>
 																							<p className="fs-sm caps mb-xxs">Sponsored by</p>
-																							<div style={{ display: `inline-block`, backgroundColor: `white`, padding: 10, borderRadius: 5 }}>
-																								<img src="/assets/img/world/pages/partners/FSK-Logo-Horizontal.png" alt="" width={100} />
-																							</div>
+																							<Link href={`/world/partners/RXhoaWJpdG9yXzIzODA4MjY=`}>
+																								<a style={{ display: `inline-block`, backgroundColor: `white`, padding: 10, borderRadius: 5 }}>
+																									<img src="/assets/img/world/pages/partners/FSK-Logo-Horizontal.png" alt="" width={100} />
+																								</a>
+																							</Link>
 																						  </div>
 																						: null
 																				}
