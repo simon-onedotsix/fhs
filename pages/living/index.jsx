@@ -43,66 +43,8 @@ import { CapitalFlow } from "../../ui-living/graphics/capital-flow"
 
 
 
-const SPEAKER_DATA = [
-    {
-        url: ``,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Alabbar_Mohamed_sq.jpg',
-        fullName: 'H.E. Mohamed Ali Rashed Alabbar',
-         jobTitle: 'Founder & Managing Director of Emaar Properties; Founder & Director of Noon.com; Chairman of Eagle Hills; Chairman of Americana Group',
-        company: '',
-    },
-    {
-        url: ``,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Dirk-Bakker.jpg',
-        fullName: 'Dirk Bakker',
-        jobTitle: 'CEO',
-        company: 'Necron Hospitality',
-    },
-    {
-        url: ``,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Jeff-Tisdall.jpeg',
-        fullName: 'JEFF TISDALL',
-        jobTitle: 'Chief Business Officer',
-        company: 'Accor One Living',
-    },
-    {
-        url: ``,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/robert-dobrzycki.webp',
-        fullName: 'ROBERT DOBRZYCKI',
-        jobTitle: 'CEO and Co-Owner',
-        company: 'Panattoni Europe',
-    },
-    {
-        url: ``,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/lolita-prysiazhniuk.jpeg',
-        fullName: 'LOLITA PRYSIAZHNIUK',
-        jobTitle: 'VP Hotel Development & Transactions',
-        company: 'Aroundtown SA',
-    },
-]
 
-const QUOTES_DATA = [
-    {
-        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/Jeff-Tisdall.jpeg',
-        quote: "The market is still fragmented. Large events are too broad, and niche ones don't have the right scale.",
-        fullName: "Jeff Tisdall",
-        title: "Chief Business Officer, Accor One Living"
-    },
-    {
-        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/Dirk-Bakker.jpg',
-        quote: "A conference that brings all of this together would be a huge success.",
-        fullName: "Dirk Bakker",
-        title: "Chief Executive Officer, Necron Hospitality",
-    },
-    {
-        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/kasper-ravn-wigen.webp',
-        quote: "I wish there was a business event that brings together key living categories across European real estate in a single place.",
-        fullName: "Kasper Ravn Wigen",
-        title: "Global Marketing Director, Yugo",
-    }
-]
-
-const THEMES_DATA = [
+export const THEMES_DATA = [
     {
         iconUrl: '/assets/img/living/homepage/asset-classes/branded-residences.svg',
         title: 'Branded Residences',
@@ -143,11 +85,54 @@ const THEMES_DATA = [
     
 ]
 
+export const TESTIMONIALS_DATA = [
+                            {
+                                quote: "Success in branded residences requires specialised expertise across multiple disciplines - which is why we see The Branded Residence Forum [now FHS Living] by Accor One Living as such an essential platform for discussion. At this trailblazing event, we will pull together key-decision makers from across the sector - including residential developers who have executed enormously successful projects, expert lawyers, branding and communication firms, architects, interior designer and other key consultants - the key players who are propelling the success of branded residences globally.",
+                                avatar: [
+                                    {
+                                        url: "/assets/img/brf/quotes/jeff.jpg",
+                                        width: "800",
+                                        height: "800"
+                                    }
+                                ],
+                                fullName: "Jeff Tisdall",
+                                jobTitle: "CBO",
+                                organisation: "Accor One Living"
+                            },
+                            {
+                                quote: "We see The Branded Residences Forum [now FHS Living] by Accor One Living as an important opportunity for the industry to gather and discuss this ever-expanding sector. Interest is now truly global and standalone branded development activity is accelerating. At the same time, exciting new brands and partnership are emerging - simply put, investors have a lot to consider and share when it comes to branded residences.",
+                                avatar: [
+                                    {
+                                        url: "/assets/img/brf/quotes/Itani.jpg",
+                                        width: "800",
+                                        height: "800"
+                                    }
+                                ],
+                                fullName: "Riyan Itani",
+                                jobTitle: "Founder",
+                                organisation: "Global Branded Residences"
+                            },
+                            {
+                                quote: "FHS World in Dubai is a key gathering for hospitality investors and it is only natural that its scope has been expanded to include a 'must-attend' day-long event for those developing, operating or exploring branded residences. We see this forum as a key opportunity for investors to delve into the key issues and trends, such as rental programs, legal structure, sales and marketing and design.",
+                                avatar: [
+                                    {
+                                        url: "/assets/img/brf/quotes/rico.jpg",
+                                        width: "800",
+                                        height: "800"
+                                    }
+                                ],
+                                fullName: "Rico Picenoni",
+                                jobTitle: "Head of Savills Global Residential Development Consultancy",
+                                organisation: ""
+                            }
+                        ]
 
 
 // temporary hard-coded data -----------------------------------------------
 import { EVENT_DATA } from ".."
-
+const livingEventIds = new Set(['246252', '259029', '314682', '246252333'])
+const FHS_EVENTS = EVENT_DATA.filter(event => !livingEventIds.has(event.id))
+const LIVING_EVENTS = EVENT_DATA.filter(event => livingEventIds.has(event.id))
 
 
 export default function Home ({ data, advisors }) {
@@ -156,10 +141,6 @@ export default function Home ({ data, advisors }) {
     // console.log(seomatic)
     // console.log("events:", data.events)
     // console.log("advisors:", advisors.profiles)
-    
-    const livingEventIds = new Set(['246252', '259029', '314682', '246252333'])
-    const FHS_EVENTS = EVENT_DATA.filter(event => !livingEventIds.has(event.id))
-    const LIVING_EVENTS = EVENT_DATA.filter(event => livingEventIds.has(event.id))
     
     // console.log('FHS:', FHS_EVENTS)
     // console.log('LIVING:', LIVING_EVENTS)
@@ -346,47 +327,7 @@ export default function Home ({ data, advisors }) {
                     <QuoteSlider 
                         color={'white'}
                         heading={"Testimonials"}
-                        testimonials={[
-                            {
-                                quote: "Success in branded residences requires specialised expertise across multiple disciplines - which is why we see The Branded Residence Forum [now FHS Living] by Accor One Living as such an essential platform for discussion. At this trailblazing event, we will pull together key-decision makers from across the sector - including residential developers who have executed enormously successful projects, expert lawyers, branding and communication firms, architects, interior designer and other key consultants - the key players who are propelling the success of branded residences globally.",
-                                avatar: [
-                                    {
-                                        url: "/assets/img/brf/quotes/jeff.jpg",
-                                        width: "800",
-                                        height: "800"
-                                    }
-                                ],
-                                fullName: "Jeff Tisdall",
-                                jobTitle: "CBO",
-                                organisation: "Accor One Living"
-                            },
-                            {
-                                quote: "We see The Branded Residences Forum [now FHS Living] by Accor One Living as an important opportunity for the industry to gather and discuss this ever-expanding sector. Interest is now truly global and standalone branded development activity is accelerating. At the same time, exciting new brands and partnership are emerging - simply put, investors have a lot to consider and share when it comes to branded residences.",
-                                avatar: [
-                                    {
-                                        url: "/assets/img/brf/quotes/Itani.jpg",
-                                        width: "800",
-                                        height: "800"
-                                    }
-                                ],
-                                fullName: "Riyan Itani",
-                                jobTitle: "Founder",
-                                organisation: "Global Branded Residences"
-                            },
-                            {
-                                quote: "FHS World in Dubai is a key gathering for hospitality investors and it is only natural that its scope has been expanded to include a 'must-attend' day-long event for those developing, operating or exploring branded residences. We see this forum as a key opportunity for investors to delve into the key issues and trends, such as rental programs, legal structure, sales and marketing and design.",
-                                avatar: [
-                                    {
-                                        url: "/assets/img/brf/quotes/rico.jpg",
-                                        width: "800",
-                                        height: "800"
-                                    }
-                                ],
-                                fullName: "Rico Picenoni",
-                                jobTitle: "Head of Savills Global Residential Development Consultancy",
-                                organisation: ""
-                            }
-                        ]} />
+                        testimonials={TESTIMONIALS_DATA} />
 
                 </div>
             </section>

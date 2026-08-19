@@ -32,7 +32,9 @@ import { SpeakerCarousel } from '../../../fuselage/theme/2024/world/blocks/speak
 import { SpeakerCard } from '../../../fuselage/components/speaker-card/speaker-card'
 import { AgendaSpeakerCard } from '../../../fuselage/components/agenda-speaker-card/agenda-speaker-card'
 
-import { ThemesSlider } from "../../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
+import { ThemesSlider } from "../../../ui/modules/themes-slider"
+import { EventCard } from "../../../ui/components/event-card"
+import { Slider } from '../../../ui/components/slider'
 
 import Ticker from 'framer-motion-ticker'
 
@@ -40,44 +42,7 @@ import Ticker from 'framer-motion-ticker'
 import CSS from '../../../css/app/agenda-world-2024.module.css'
 
 
-const THEMES_DATA = [
-    {
-        id: '01',
-        iconUrl: '/assets/img/brf/icons/2025/real-estate.svg',
-        title: 'Branded Real Estate Investment',
-    },
-    {
-        id: '02',
-        iconUrl: '/assets/img/brf/icons/2025/hospitality.svg',
-        title: 'Hospitality Market Spotlights',
-    },
-    {
-        id: '03',
-        iconUrl: '/assets/img/brf/icons/2025/branding-strategies.svg',
-        title: 'Brand Strategy & Residential Marketing',
-    },
-    {
-        id: '04',
-        iconUrl: '/assets/img/brf/icons/2025/legal.svg',
-        title: 'Legal & Contractual Frameworks',
-    },
-    {
-        id: '05',
-        iconUrl: '/assets/img/brf/icons/2025/sustainability.svg',
-        title: 'Design & Sustainable Development',
-    },
-    {
-        id: '06',
-        iconUrl: '/assets/img/brf/icons/2025/cross-sector.svg',
-        title: 'Cross-Sector Brand Expansion',
-    },
-    {
-        id: '07',
-        iconUrl: '/assets/img/brf/icons/2025/loyalty.svg',
-        title: 'Loyalty, Lifestyle & Living',
-    },
 
-]
 const CONFIRMED_SPEAKER_DATA = [
     {
         url: `/world/speakers/RXZlbnRQZW9wbGVfNDY1MDgzNTg=`,
@@ -128,13 +93,19 @@ const QUOTES_DATA = [
         title: "Global Marketing Director, Yugo",
     }
 ]
-
+import { THEMES_DATA } from '../../living'
+import { TESTIMONIALS_DATA } from '../../living'
+import { ASSET_CLASS_DATA } from '../../living/why-now'
+import { EVENT_DATA } from '../..'
+const livingEventIds = new Set(['246252', '259029', '314682', '246252333'])
+const FHS_EVENTS = EVENT_DATA.filter(event => !livingEventIds.has(event.id))
+const LIVING_EVENTS = EVENT_DATA.filter(event => livingEventIds.has(event.id))
 
 
 export default function Page ({ sessions, speakers }) {
 
     const lenis = useLenis()
-    
+
 
     const getSessionsByTopicID = ( sessionData, topicID ) => {
 
@@ -280,7 +251,7 @@ export default function Page ({ sessions, speakers }) {
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>
 
-                <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>FHS Living</p>
+                <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>Where brands shape the future of living</p>
                 <p className='fs-4 fw-600 c-white caps center mt-sm'>1st October 2026</p>
 
                 <motion.p 
@@ -294,11 +265,19 @@ export default function Page ({ sessions, speakers }) {
 
                 <div className="mt-sm center">
                     <Pop>
-                        <Button href={'/world/brf/agenda'} label={`View Agenda`}/>
+                        <Button href={'/world/living/agenda'} label={`View Agenda`} inverse/>
                     </Pop>
                 </div>
 
-                {/* SPONSORS */}
+
+            </HeroUnitVideo>
+
+            
+            {/* SPONSORS */}
+            <section className="block">
+                <div className="container center">
+                    <p className='fs-1 fw-600'>Partners</p>
+                </div>
                 <Pop>
                     <div className="container pt-lg">
                         <section>
@@ -337,9 +316,7 @@ export default function Page ({ sessions, speakers }) {
                         </section>
                     </div>
                 </Pop>
-
-            </HeroUnitVideo>
-
+            </section>
                
 
             {/* MARKET OVERVIEW */}
@@ -357,55 +334,61 @@ export default function Page ({ sessions, speakers }) {
                 </div>
             </section>
 
-
-
-            {/* FEATURED SPEAKERS */}
-            {/* <section className="block bg-secondary">
-                <div className="container">
-                    <Fade><p className='fs-2 fw-600 lh-2 center'>Confirmed Speakers</p></Fade>
-                </div>
-
-                <div className="container columns-4 gap-sm maxw-65">
-                    {
-                        CONFIRMED_SPEAKER_DATA.map( (profile, i) => (
-                            <Pop key={profile.id}>
-                                <SpeakerCard
-                                    key={i}
-                                    url={null}
-                                    photoUrl={profile.photoUrl }
-                                    fullName={profile.fullName}
-                                    jobTitle={profile.jobTitle}
-                                    company={profile.company}
-                                    color={'white'}
-                                />
-                            </Pop>
-                        ))
-                    }
-                </div>
-
+            
+            {/* WHY LIVING? */}
+            <section className="block bg-dark">
                 <div className="container center">
-                    <Pop>
-                        <Button href={'/world/speakers'}>View All Speakers</Button>
-                    </Pop>
+                    <p className="fs-2 fw-500 caps">Why Living?</p>
                 </div>
-            </section> */}
 
+                <div className="container maxw-55">
+                    <Slider>
+                        {
+                            ASSET_CLASS_DATA.map((slide, index) => (
+                                <Callout key={index} image={{ url: slide.imageUrl, width:1200, height:900 }}>
+                                    <div className='formatted'>
+                                        <p className='fs-4 fw-600 lh-2'>{ slide.heading }</p>
+                                        <p className='fs-6'>{ slide.body }</p>
+                                    </div>
+                                </Callout>
+                            ))
+                        }
+                    </Slider>
+                </div>
+            </section>
             
 
-            {/* THEMES */}
-            {/* <section className="block bg-default">
-                <ThemesSlider 
-                    data={THEMES_DATA} 
-                    heading={"2025 Branded Residences Forum Themes"}
-                    link={'/world/brf/agenda'} 
-                    linkLabel={'View Agenda'} 
+            {/*ASSET CLASSES */}
+            <section className={`block bg-secondary`}>
+                <div className="container center pb-sm">
+                    <p className="fs-2 fw-500 caps">Asset Classes</p>
+                </div>
+
+                <ThemesSlider
+                    heading={`Asset Classes` }
+                    data={THEMES_DATA}
+                    link={''}
+                    linkLabel={''}
                 />
-            </section> */}
+            </section>
+
+
+            {/* TESTIMONIALS */}
+            <section className="block bg-default">
+                <div className="container maxw-70">
+
+                    <QuoteSlider 
+                        color={'white'}
+                        heading={"Testimonials"}
+                        testimonials={TESTIMONIALS_DATA} />
+
+                </div>
+            </section>
 
 
 
             {/* QUOTES */}
-            <section className="block bg-secondary o-hidden">
+            {/* <section className="block bg-secondary o-hidden">
                 <div className="container">
                     <p className="fs-2 fw-600 caps center">What the industry is saying</p>
                 </div>
@@ -423,7 +406,91 @@ export default function Page ({ sessions, speakers }) {
                         ))
                     }
                 </div>
+            </section> */}
+
+
+                        
+            {/* FHS EVENTS */}
+            <section className="block bg-primary">
+
+                {/* LIVING */}
+                <div className="container center">
+                    <p className="fs-2 fw-500 caps">Upcoming FHS Living Events</p>
+                </div>
+
+                <div className="container columns-1 maxw-35 gap-xs">
+                    {
+                        _.orderBy(LIVING_EVENTS, 'startDate').map(event => {
+                            // console.log(event)
+                            return (
+                                <div key={event.id} className={`columns-1 gap-xs`}>                                
+                                    {
+                                        event.streams &&
+                                        event.streams.map( stream => (
+                                            <EventCard
+                                                key={stream.id}
+                                                heading={event.heading}
+                                                title={stream.heading}
+                                                dates={{ startDate: event.startDate, endDate: event.endDate}}
+                                                venue={event.venue}
+                                                logo={{
+                                                    "__typename": "site_Asset",
+                                                    "id": "314679",
+                                                    "url": "https://cms.thebench.com/assets/img/site/FHS/fhs-living.png",
+                                                    "width": 881,
+                                                    "height": 450
+                                                }}
+                                                passLink={stream.purchasePassLink} 
+                                                websiteLink={stream.websiteLink} 
+                                                theme={event.theme} 
+                                                dateOverride={event.dateOverride}
+                                                landscape={true}
+                                            />
+                                        ))
+                                    }
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+
+                
+                {/* OTHER FHS */}
+                <div className="container center">
+                    <p className="fs-2 fw-500 caps">FHS Around the World</p>
+                </div>
+
+                <div className="container columns-3 maxw-55 gap-xs">
+                    {
+                        FHS_EVENTS.map(event => {
+                            // console.log(event)
+                            return (
+                                <div key={event.id} className={`columns-1 gap-xs`}>                                
+                                    {
+                                        event.streams &&
+                                        event.streams.map( stream => (
+                                            <EventCard
+                                                key={stream.id}
+                                                heading={event.heading}
+                                                title={stream.heading}
+                                                dates={{ startDate: event.startDate, endDate: event.endDate}}
+                                                venue={event.venue}
+                                                logo={stream.logo[0]}
+                                                passLink={stream.purchasePassLink} 
+                                                websiteLink={stream.websiteLink} 
+                                                theme={event.theme} 
+                                                dateOverride={event.dateOverride}
+                                                landscape={false}
+                                            />
+                                        ))
+                                    }
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             </section>
+            
 
 
 

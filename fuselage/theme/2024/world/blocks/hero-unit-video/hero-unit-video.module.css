@@ -61,6 +61,6 @@
 }
 @media(min-width:1200px){
     .overlay {
-        min-height: 94vh;
+        min-height: 60vh;
     }
 }
