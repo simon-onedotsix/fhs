@@ -67,6 +67,22 @@ const nextConfig = {
 				destination: '/egypt/why-partner',
 				permanent: true,
 			},
+			
+			{
+				source: '/world/brf',
+				destination: '/world/living',
+				permanent: true,
+			},
+			{
+				source: '/sa/brf',
+				destination: '/sa/living',
+				permanent: true,
+			},
+			{
+				source: '/egypt/brf',
+				destination: '/egypt/living',
+				permanent: true,
+			},
 		  
 		]
 	}

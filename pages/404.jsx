@@ -29,13 +29,13 @@ const FHS_EVENTS = [
         title: 'FHS Egypt',
         url: '/eygpt'
     },
+    {
+        title: 'FHS Living',
+        url: '/living'
+    },
 
 ]
 const OTHER_EVENTS = [
-    {
-        title: 'Branded Residences Fourm',
-        url: 'https://www.brandedresidencesforum.com/'
-    },
     {
         title: 'Aviadev',
         url: 'https://www.aviadev.com/'
