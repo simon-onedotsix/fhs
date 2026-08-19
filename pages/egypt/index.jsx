@@ -75,7 +75,7 @@ const SPEAKER_DATA = [
 ]
 
 // temporary hard-code data
-import { EVENTS_DATA } from "../index"
+import { EVENT_DATA } from "../index"
 
 
 
@@ -505,7 +505,7 @@ export default function Home ({ data, content, partners }) {
 
                 <div className="container columns-3 maxw-55 gap-xs">
                     {
-                        EVENTS_DATA.map(event => {
+                        _.orderBy(EVENT_DATA, 'startDate').map(event => {
                             // console.log(event)
                             return (
                                 <div key={event.id} className={`columns-1 gap-xs`}>                                

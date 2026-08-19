@@ -79,7 +79,7 @@ export const EventCard = ({ heading, logo, venue, dates, dateOverride, websiteLi
                         <div className={CSS.eventCardActions}>
                                 <span className='fs-5'>
                                 <Pop delay={.1}>
-                                    <a className={CSS.websiteButton} href={websiteLink} target='_blank'>
+                                    <a className={CSS.websiteButton} href={websiteLink}>
                                         Website <ExternalLinkIcon />
                                     </a>
                                 </Pop>

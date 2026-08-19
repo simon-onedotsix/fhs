@@ -1,6 +1,8 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "./api/apollo"
 
+import _ from 'lodash'
+
 import Head from 'next/head'
 
 import { LenisScroller } from '../fuselage/animation/lenis-scroller'
@@ -25,7 +27,7 @@ import { SpeakerCard } from '../fuselage/components/speaker-card/speaker-card'
 
 
 // temporary hard-coded for demo
-export const EVENTS_DATA = [
+export const EVENT_DATA = [
     {
         "__typename": "events_BlockType",
         "id": "137901",
@@ -50,7 +52,35 @@ export const EVENTS_DATA = [
                 ],
                 "heading": "FHS World",
                 "purchasePassLink": null,
-                "websiteLink": "https://www.futurehospitality.com/world/"
+                "websiteLink": "/world/"
+            }
+        ]
+    },
+    {
+        "__typename": "events_BlockType",
+        "id": "246252333",
+        "heading": "Cairo",
+        "startDate": "2026-11-11T23:00:00+00:00",
+        "endDate": null,
+        "dateOverride": "11 November 2026",
+        "venue": "Sofitel Downtown Cairo Nile",
+        "theme": "#ffffff",
+        "streams": [
+            {
+                "__typename": "streams_stream_BlockType",
+                "id": "246253",
+                "logo": [
+                    {
+                        "__typename": "site_Asset",
+                        "id": "297123",
+                        "url": "/assets/img/living/fhs-living-inverse@egypt.png",
+                        "width": 1630,
+                        "height": 832
+                    }
+                ],
+                "heading": "FHS Living",
+                "purchasePassLink": null,
+                "websiteLink": "/egypt/living"
             }
         ]
     },
@@ -58,7 +88,7 @@ export const EVENTS_DATA = [
         "__typename": "events_BlockType",
         "id": "246252",
         "heading": "Dubai",
-        "startDate": "2026-09-30T23:00:00+00:00",
+        "startDate": "2026-10-01T23:00:00+00:00",
         "endDate": null,
         "dateOverride": "1st October 2026",
         "venue": "Madinat Jumeirah",
@@ -76,9 +106,9 @@ export const EVENTS_DATA = [
                         "height": 832
                     }
                 ],
-                "heading": "Branded Residences Forum",
+                "heading": "FHS Living",
                 "purchasePassLink": null,
-                "websiteLink": "/world/brf"
+                "websiteLink": "/world/living"
             }
         ]
     },
@@ -212,13 +242,13 @@ export const EVENTS_DATA = [
                         "__typename": "site_Asset",
                         "id": "297158",
                         "url": "/assets/img/living/fhs-living-inverse@saudi-arabia.png",
-                        "width": 1821,
+                        "width": 1630,
                         "height": 832
                     }
                 ],
-                "heading": "Branded Residences Forum",
+                "heading": "FHS Living",
                 "purchasePassLink": null,
-                "websiteLink": "https://www.futurehospitality.com/world/brf"
+                "websiteLink": "/sa/living"
             }
         ]
     },
@@ -274,7 +304,7 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
         return (
             <UpcomingEvents landscape={true}>
                 {
-                    EVENTS_DATA.map( event => {
+                    _.orderBy(EVENT_DATA, 'startDate').map( event => {
                         return (
                             <EventGroupCard
                                 key={event.id}
