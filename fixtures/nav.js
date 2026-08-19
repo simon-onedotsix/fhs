@@ -200,13 +200,13 @@ export const FHS_WORLD = {
                         "navUrl": "/world/country-pavilions",
                         "target": false
                     },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "165",
-                        "title": "Projects & Investment Opportunities",
-                        "navUrl": "/world/projects",
-                        "target": false
-                    },
+                    // {
+                    //     "__typename": "navigation_Entry",
+                    //     "id": "165",
+                    //     "title": "Projects & Investment Opportunities",
+                    //     "navUrl": "/world/projects",
+                    //     "target": false
+                    // },
                     {
                         "__typename": "navigation_Entry",
                         "id": "167",
@@ -242,13 +242,13 @@ export const FHS_WORLD = {
                         "navUrl": "/world/fhswomenpower",
                         "target": false
                     },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "177",
-                        "title": "Sports & Wellness",
-                        "navUrl": "/world/sports",
-                        "target": false
-                    },
+                    // {
+                    //     "__typename": "navigation_Entry",
+                    //     "id": "177",
+                    //     "title": "Sports & Wellness",
+                    //     "navUrl": "/world/sports",
+                    //     "target": false
+                    // },
                     // {
                     //     "__typename": "navigation_Entry",
                     //     "id": "159",
