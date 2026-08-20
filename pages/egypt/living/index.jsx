@@ -321,7 +321,7 @@ export default function Page ({ sessions, speakers }) {
 
 
             {/* PAST SPONSORS */}
-            <section className="block">
+            <section className="block" style={{ position: `relative`, zIndex: 2 }}>
                 <div className="container center">
                     <p className='fs-1 fw-600'>FHS Living Partners</p>
                 </div>
@@ -391,7 +391,7 @@ export default function Page ({ sessions, speakers }) {
             {/* ASSET CLASSES */}
             <section className={`block bg-secondary`}>
                 <div className="container center pb-sm">
-                    <p className="fs-2 fw-500 caps">Asset Classes</p>
+                    <p className="fs-1 fw-600">Asset Classes</p>
                 </div>
 
                 <ThemesSlider

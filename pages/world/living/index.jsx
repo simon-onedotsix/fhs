@@ -275,7 +275,7 @@ export default function Page ({ sessions, speakers }) {
 
             
             {/* SPONSORS */}
-            <section className="block">
+            <section className="block" style={{ position: `relative`, zIndex: 2 }}>
                 <div className="container center">
                     <p className='fs-1 fw-600'>Partners</p>
                 </div>
@@ -339,47 +339,21 @@ export default function Page ({ sessions, speakers }) {
             {/* WHY LIVING? */}
             <section className="block pt-md">
                 <div className="container center">
-                    <p className="fs-2 fw-500 caps">Why Living?</p>
+                    <p className="fs-1 fw-600">Why Living?</p>
                 </div>
 
-                <div className="container maxw-60">
-                    <Slider>
-                        {
-                            ASSET_CLASS_DATA.map((slide, index) => (
-                                <Pop  key={index}>
-                                    <div
-                                        style={
-                                            isDesktop 
-                                                ? {
-                                                    display: `grid`,
-                                                    gridTemplateColumns: `auto 18rem`,
-                                                    gap: `var(--space-md)`,
-                                                    backgroundColor: `var(--burgundy)`,
-                                                    padding: `var(--space-sm)`,
-                                                    borderRadius: `1rem`
-                                                }
-                                                : {
-                                                    display: `flex`,
-                                                    flexDirection: `column-reverse`,
-                                                    gap: `var(--space-md)`,
-                                                    backgroundColor: `var(--burgundy)`,
-                                                    padding: `var(--space-sm)`,
-                                                    borderRadius: `1rem`
-                                                }
-                                        }
-                                    >
-                                        <div className='formatted'>
-                                            <p className='fs-3 fw-600 lh-2'>{ slide.heading }</p>
-                                            <p className='fs-5'>{ slide.body }</p>
-                                        </div>
-                                        <div style={{ aspectRatio: 4/3, width: `100%` }}>
-                                            <img src={slide.imageUrl} alt="" width={`100%`} style={{ borderRadius: `.5rem`}}/>
-                                        </div>
-                                    </div>
+                <div className="container columns-3 gap-md">
+                    {
+                        ASSET_CLASS_DATA.map((card, index) => (
+                            <article key={index} className="formatted">
+                                <Pop>
+                                    <img src={card.imageUrl} alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
                                 </Pop>
-                            ))
-                        }
-                    </Slider>
+                                <p className="fs-4 fw-600 mt-xxs">{card.heading}</p>
+                                <p>{card.body}</p>
+                            </article>
+                        ))
+                    }
                 </div>
             </section>
             
@@ -387,7 +361,7 @@ export default function Page ({ sessions, speakers }) {
             {/*ASSET CLASSES */}
             <section className={`block bg-secondary`}>
                 <div className="container center pb-sm">
-                    <p className="fs-2 fw-500 caps">Asset Classes</p>
+                    <p className="fs-1 fw-600">Asset Classes</p>
                 </div>
 
                 <ThemesSlider
