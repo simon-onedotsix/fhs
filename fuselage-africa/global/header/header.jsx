@@ -19,13 +19,13 @@ const otherEvents = [
     {
         id: 1,
         title: 'FHS World',
-        url: 'https://www.futurehospitality.com/world',
+        url: 'https://futurehospitality.com/world',
         target: true
     },
     {
         id: 2,
         title: 'FHS Saudi Arabia',
-        url: 'https://www.futurehospitality.com/sa',
+        url: 'https://futurehospitality.com/sa',
         target: true
     },
     {

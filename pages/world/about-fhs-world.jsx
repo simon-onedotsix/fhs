@@ -121,7 +121,7 @@ export default function AboutPage () {
                     
                     <p>The summit connects investment opportunities and projects from the Middle East, Europe, Africa, Asia and the Americas to C-level hospitality decision-makers. Established in 2005, FHS World was formerly known as AHIC.</p>
 
-                    <p className='mt-sm'><a className="button fs-6" href="https://www.futurehospitality.com/about-fhs" target="_blank" rel="noreferrer noopener">Our Legacy</a></p>
+                    <p className='mt-sm'><a className="button fs-6" href="https://futurehospitality.com/about-fhs" target="_blank" rel="noreferrer noopener">Our Legacy</a></p>
                 </div>
             </PageHeroImage>
 

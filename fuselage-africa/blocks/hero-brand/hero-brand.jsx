@@ -64,7 +64,7 @@ export function HeroBrand ({ children, theme }) {
                     <div className="formatted my-md" style={{ borderTop: `1px solid var(--primary)`}}>
                         <p className="fs-3 fw-500 caps lh-1 c-primary pt-sm">New for 2025!</p>
                         <p className="fw-600 fs-2 lh-1">UAE Africa Tourism Investment Summit</p>
-                        <p className='mt-xs'><Button href={`https://www.futurehospitality.com/world/ais`} decal={`fw-600`}>Learn more &rarr;</Button></p>
+                        <p className='mt-xs'><Button href={`https://futurehospitality.com/world/ais`} decal={`fw-600`}>Learn more &rarr;</Button></p>
                     </div>
                 </Pop>
             </div>
