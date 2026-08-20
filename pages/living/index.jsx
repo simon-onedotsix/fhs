@@ -166,7 +166,7 @@ export default function Home ({ data, advisors }) {
     // console.log('LIVING:', LIVING_EVENTS)
     
 
-    const isDesktop = useCustomMediaQuery('(min-width: 600px)');
+    const isDesktop = useCustomMediaQuery('(min-width: 600px)')
 
     return (
         <>
