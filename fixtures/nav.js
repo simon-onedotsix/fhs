@@ -1238,16 +1238,16 @@ export const BRF_FHS_WORLD = {
             "metaTitle": null,
             "metaDescription": null,
             "headerCtas": [
-                // {
-                //     "label": "Register Here",
-                //     "hyperlink": "/world/purchase-pass",
-                //     "openInNewWindow": false
-                // },
-                // {
-                //     "label": "Become a Partner",
-                //     "hyperlink": "/world/why-sponsor#partner-form",
-                //     "openInNewWindow": false
-                // }
+                {
+                    "label": "Register Here",
+                    "hyperlink": "/world/purchase-pass",
+                    "openInNewWindow": false
+                },
+                {
+                    "label": "Become a Partner",
+                    "hyperlink": "/world/why-sponsor#partner-form",
+                    "openInNewWindow": false
+                }
             ]
         }
     }
@@ -1286,16 +1286,16 @@ export const BRF_FHS_SA = {
             "metaTitle": null,
             "metaDescription": null,
             "headerCtas": [
-                // {
-                //     "label": "Register Here",
-                //     "hyperlink": "/sa/purchase-pass",
-                //     "openInNewWindow": false
-                // },
-                // {
-                //     "label": "Become a Partner",
-                //     "hyperlink": "/sa/why-sponsor#partner-form",
-                //     "openInNewWindow": false
-                // }
+                {
+                    "label": "Register Here",
+                    "hyperlink": "/sa/purchase-pass",
+                    "openInNewWindow": false
+                },
+                {
+                    "label": "Become a Partner",
+                    "hyperlink": "/sa/why-sponsor#partner-form",
+                    "openInNewWindow": false
+                }
             ]
         }
     }
@@ -1334,16 +1334,16 @@ export const BRF_FHS_EGYPT = {
             "metaTitle": null,
             "metaDescription": null,
             "headerCtas": [
-                // {
-                //     "label": "Register Here",
-                //     "hyperlink": "/egypt/purchase-pass",
-                //     "openInNewWindow": false
-                // },
-                // {
-                //     "label": "Become a Partner",
-                //     "hyperlink": "/egypt/why-sponsor#partner-form",
-                //     "openInNewWindow": false
-                // }
+                {
+                    "label": "Register Here",
+                    "hyperlink": "/egypt/purchase-pass",
+                    "openInNewWindow": false
+                },
+                {
+                    "label": "Become a Partner",
+                    "hyperlink": "/egypt/why-sponsor#partner-form",
+                    "openInNewWindow": false
+                }
             ]
         }
     }
