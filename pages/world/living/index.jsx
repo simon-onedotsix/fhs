@@ -2,6 +2,7 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 import _ from 'lodash'
+import useCustomMediaQuery from '../../../hooks/useCustomMediaQuery'
 
 import Head from 'next/head'
 import Script from 'next/script'
@@ -105,7 +106,7 @@ const LIVING_EVENTS = EVENT_DATA.filter(event => livingEventIds.has(event.id))
 export default function Page ({ sessions, speakers }) {
 
     const lenis = useLenis()
-
+    const isDesktop = useCustomMediaQuery('(min-width: 600px)')
 
     const getSessionsByTopicID = ( sessionData, topicID ) => {
 
@@ -251,7 +252,7 @@ export default function Page ({ sessions, speakers }) {
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>
 
-                <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>Where brands shape the future of living</p>
+                <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>FHS Living</p>
                 <p className='fs-4 fw-600 c-white caps center mt-sm'>1st October 2026</p>
 
                 <motion.p 
@@ -320,7 +321,7 @@ export default function Page ({ sessions, speakers }) {
                
 
             {/* MARKET OVERVIEW */}
-            <section className="block bg-default">
+            {/* <section className="block bg-default">
                 <div className="container formatted maxw-90">
                     <Callout 
                         image={{ url:'/assets/img/brf/brf-2024-image-08.jpg', width:2000, height:1333 }}
@@ -332,25 +333,50 @@ export default function Page ({ sessions, speakers }) {
                         </Fade>
                     </Callout>
                 </div>
-            </section>
+            </section> */}
 
             
             {/* WHY LIVING? */}
-            <section className="block bg-dark">
+            <section className="block pt-md">
                 <div className="container center">
                     <p className="fs-2 fw-500 caps">Why Living?</p>
                 </div>
 
-                <div className="container maxw-55">
+                <div className="container maxw-60">
                     <Slider>
                         {
                             ASSET_CLASS_DATA.map((slide, index) => (
-                                <Callout key={index} image={{ url: slide.imageUrl, width:1200, height:900 }}>
-                                    <div className='formatted'>
-                                        <p className='fs-4 fw-600 lh-2'>{ slide.heading }</p>
-                                        <p className='fs-6'>{ slide.body }</p>
+                                <Pop  key={index}>
+                                    <div
+                                        style={
+                                            isDesktop 
+                                                ? {
+                                                    display: `grid`,
+                                                    gridTemplateColumns: `auto 18rem`,
+                                                    gap: `var(--space-md)`,
+                                                    backgroundColor: `var(--burgundy)`,
+                                                    padding: `var(--space-sm)`,
+                                                    borderRadius: `1rem`
+                                                }
+                                                : {
+                                                    display: `flex`,
+                                                    flexDirection: `column-reverse`,
+                                                    gap: `var(--space-md)`,
+                                                    backgroundColor: `var(--burgundy)`,
+                                                    padding: `var(--space-sm)`,
+                                                    borderRadius: `1rem`
+                                                }
+                                        }
+                                    >
+                                        <div className='formatted'>
+                                            <p className='fs-3 fw-600 lh-2'>{ slide.heading }</p>
+                                            <p className='fs-5'>{ slide.body }</p>
+                                        </div>
+                                        <div style={{ aspectRatio: 4/3, width: `100%` }}>
+                                            <img src={slide.imageUrl} alt="" width={`100%`} style={{ borderRadius: `.5rem`}}/>
+                                        </div>
                                     </div>
-                                </Callout>
+                                </Pop>
                             ))
                         }
                     </Slider>
@@ -456,7 +482,7 @@ export default function Page ({ sessions, speakers }) {
 
                 
                 {/* OTHER FHS */}
-                <div className="container center">
+                {/* <div className="container center">
                     <p className="fs-2 fw-500 caps">FHS Around the World</p>
                 </div>
 
@@ -488,7 +514,7 @@ export default function Page ({ sessions, speakers }) {
                             )
                         })
                     }
-                </div>
+                </div> */}
             </section>
             
 

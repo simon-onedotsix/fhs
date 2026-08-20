@@ -292,8 +292,8 @@ export default function Page ({ sessions, speakers }) {
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>
 
-                <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>Where brands shape the future of living</p>
-                <p className='fs-3 fw-600 c-white caps center mt-sm'>10-11 November 2026</p>
+                <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>FHS Living</p>
+                <p className='fs-3 fw-600 c-white caps center mt-sm'>11 November 2026</p>
                 <p className='fs-4 fw-600 center'>Sofitel Downtown Cairo Nile</p>
 
 
@@ -336,14 +336,14 @@ export default function Page ({ sessions, speakers }) {
 
             {/* MARKET OVERVIEW */}
             <section className="block bg-default">
-                <div className="container formatted maxw-90">
+                {/* <div className="container formatted maxw-90">
                     <Callout image={{ url:'/assets/img/brf/brf-2024-image-08.jpg', width:2000, height:1333 }}>
                         <Fade>
                             <p className='fs-2 fw-600 lh-2'>Market Overview</p>
                             <p className="fs-4 c-white">The branded residences sector has grown <strong>180% globally in the past decade</strong>, with 788 projects currently running and an additional <strong>900+</strong> launching globally (or in pipeline) over the next 5 to 6 years.</p>
                         </Fade>
                     </Callout>
-                </div>
+                </div> */}
 
                 <div className="container formatted maxw-90">
                     <Callout flipped image={{ url:'/assets/img/brf/brf-egypt-intro.jpg', width:1600, height:900 }} >
@@ -485,7 +485,7 @@ export default function Page ({ sessions, speakers }) {
 
                 
                 {/* OTHER FHS */}
-                <div className="container center">
+                {/* <div className="container center">
                     <p className="fs-2 fw-500 caps">FHS Around the World</p>
                 </div>
 
@@ -517,7 +517,7 @@ export default function Page ({ sessions, speakers }) {
                             )
                         })
                     }
-                </div>
+                </div> */}
             </section>
 
 
