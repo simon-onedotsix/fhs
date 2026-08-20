@@ -139,6 +139,7 @@ const QUOTES_DATA = [
 
 import { THEMES_DATA } from '../../living'
 import { TESTIMONIALS_DATA } from '../../living'
+import { ASSET_CLASS_DATA } from '../../living/why-now'
 import { EVENT_DATA } from '../..'
 const livingEventIds = new Set(['246252', '259029', '314682', '246252333'])
 const FHS_EVENTS = EVENT_DATA.filter(event => !livingEventIds.has(event.id))
@@ -329,6 +330,28 @@ export default function Page ({ sessions, speakers }) {
                 <div className="container maxw-70 pt-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
                     <PartnerLogo logoUrl={`/assets/img/brf/accor-one-living.svg`} maxWidth={17} />
                     <PartnerLogo logoUrl={`/assets/img/brf/sectorlight.svg`} maxWidth={12} />
+                </div>
+            </section>
+
+
+            {/* WHY LIVING? */}
+            <section className="block pt-md">
+                <div className="container center">
+                    <p className="fs-1 fw-600">Why Living?</p>
+                </div>
+
+                <div className="container columns-3 gap-md">
+                    {
+                        ASSET_CLASS_DATA.map((card, index) => (
+                            <article key={index} className="formatted">
+                                <Pop>
+                                    <img src={card.imageUrl} alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
+                                </Pop>
+                                <p className="fs-4 fw-600 mt-xxs">{card.heading}</p>
+                                <p>{card.body}</p>
+                            </article>
+                        ))
+                    }
                 </div>
             </section>
 

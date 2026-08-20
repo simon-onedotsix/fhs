@@ -1215,13 +1215,13 @@ export const BRF_FHS_WORLD = {
                 "navUrl": "/world/brf",
                 "children": []
             },
-            {
-                "__typename": "navigation_Entry",
-                "id": "werhjfw",
-                "title": "Agenda",
-                "navUrl": "/world/brf/agenda",
-                "children": []
-            },
+            // {
+            //     "__typename": "navigation_Entry",
+            //     "id": "werhjfw",
+            //     "title": "Agenda",
+            //     "navUrl": "/world/brf/agenda",
+            //     "children": []
+            // },
             
         ],
         "event": {
@@ -1238,16 +1238,16 @@ export const BRF_FHS_WORLD = {
             "metaTitle": null,
             "metaDescription": null,
             "headerCtas": [
-                {
-                    "label": "Register Here",
-                    "hyperlink": "/world/purchase-pass",
-                    "openInNewWindow": false
-                },
-                {
-                    "label": "Become a Partner",
-                    "hyperlink": "/world/why-sponsor#partner-form",
-                    "openInNewWindow": false
-                }
+                // {
+                //     "label": "Register Here",
+                //     "hyperlink": "/world/purchase-pass",
+                //     "openInNewWindow": false
+                // },
+                // {
+                //     "label": "Become a Partner",
+                //     "hyperlink": "/world/why-sponsor#partner-form",
+                //     "openInNewWindow": false
+                // }
             ]
         }
     }
@@ -1263,13 +1263,13 @@ export const BRF_FHS_SA = {
                 "navUrl": "/sa/brf",
                 "children": []
             },
-            {
-                "__typename": "navigation_Entry",
-                "id": "ngdrtyh",
-                "title": "Agenda",
-                "navUrl": "/sa/brf/agenda",
-                "children": []
-            },
+            // {
+            //     "__typename": "navigation_Entry",
+            //     "id": "ngdrtyh",
+            //     "title": "Agenda",
+            //     "navUrl": "/sa/brf/agenda",
+            //     "children": []
+            // },
             
         ],
         "event": {
@@ -1286,16 +1286,16 @@ export const BRF_FHS_SA = {
             "metaTitle": null,
             "metaDescription": null,
             "headerCtas": [
-                {
-                    "label": "Register Here",
-                    "hyperlink": "/sa/purchase-pass",
-                    "openInNewWindow": false
-                },
-                {
-                    "label": "Become a Partner",
-                    "hyperlink": "/sa/why-sponsor#partner-form",
-                    "openInNewWindow": false
-                }
+                // {
+                //     "label": "Register Here",
+                //     "hyperlink": "/sa/purchase-pass",
+                //     "openInNewWindow": false
+                // },
+                // {
+                //     "label": "Become a Partner",
+                //     "hyperlink": "/sa/why-sponsor#partner-form",
+                //     "openInNewWindow": false
+                // }
             ]
         }
     }
@@ -1311,13 +1311,13 @@ export const BRF_FHS_EGYPT = {
                 "navUrl": "/egypt/brf",
                 "children": []
             },
-            {
-                "__typename": "navigation_Entry",
-                "id": "dfghterthm",
-                "title": "Agenda",
-                "navUrl": "/egypt/brf/agenda",
-                "children": []
-            },
+            // {
+            //     "__typename": "navigation_Entry",
+            //     "id": "dfghterthm",
+            //     "title": "Agenda",
+            //     "navUrl": "/egypt/brf/agenda",
+            //     "children": []
+            // },
             
         ],
         "event": {
@@ -1334,16 +1334,16 @@ export const BRF_FHS_EGYPT = {
             "metaTitle": null,
             "metaDescription": null,
             "headerCtas": [
-                {
-                    "label": "Register Here",
-                    "hyperlink": "/egypt/purchase-pass",
-                    "openInNewWindow": false
-                },
-                {
-                    "label": "Become a Partner",
-                    "hyperlink": "/egypt/why-sponsor#partner-form",
-                    "openInNewWindow": false
-                }
+                // {
+                //     "label": "Register Here",
+                //     "hyperlink": "/egypt/purchase-pass",
+                //     "openInNewWindow": false
+                // },
+                // {
+                //     "label": "Become a Partner",
+                //     "hyperlink": "/egypt/why-sponsor#partner-form",
+                //     "openInNewWindow": false
+                // }
             ]
         }
     }
