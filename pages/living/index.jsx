@@ -487,13 +487,7 @@ export default function Home ({ data, advisors }) {
                                                 title={stream.heading}
                                                 dates={{ startDate: event.startDate, endDate: event.endDate}}
                                                 venue={event.venue}
-                                                logo={{
-                                                    "__typename": "site_Asset",
-                                                    "id": "314679",
-                                                    "url": "https://cms.thebench.com/assets/img/site/FHS/fhs-living.png",
-                                                    "width": 881,
-                                                    "height": 450
-                                                }}
+                                                logo={stream.logo[0]}
                                                 passLink={stream.purchasePassLink} 
                                                 websiteLink={stream.websiteLink} 
                                                 theme={event.theme} 

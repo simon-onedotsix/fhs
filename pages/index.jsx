@@ -185,7 +185,7 @@ export const EVENT_DATA = [
                     {
                         "__typename": "site_Asset",
                         "id": "314679",
-                        "url": "https://cms.thebench.com/assets/img/site/FHS/fhs-living.png",
+                        "url": "/assets/img/living/fhs-living-inverse.png",
                         "width": 881,
                         "height": 450
                     }
@@ -478,7 +478,7 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
                 </div>
 
                 <div className="container">
-                    { handleUpcomingEvents( data.events )}
+                    { handleUpcomingEvents( EVENT_DATA )}
                 </div>
 
                 <div className="container center">
