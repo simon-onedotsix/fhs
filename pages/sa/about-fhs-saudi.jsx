@@ -172,7 +172,7 @@ export default function Page () {
 
 
                         <p className='mt-sm'>
-                            <a className="button fs-6" href="https://www.futurehospitality.com/about-fhs" target="_blank" rel="noreferrer noopener">
+                            <a className="button fs-6" href="https://futurehospitality.com/about-fhs" target="_blank" rel="noreferrer noopener">
                             { locale === 'ar' ? "إرثنا" : "Our Legacy" }
                             </a>
                         </p>

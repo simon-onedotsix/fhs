@@ -231,7 +231,7 @@ const DEMO_CONTENT_BLOCKS = [
                 "__typename": "passes_specialPass_BlockType",
                 "id": "241835",
                 "specialPassTitle": "Multi-Event Pass Discounts",
-                "specialPassDescription": "<p><strong>2 Events:</strong> FHS World + one additional event, get 10% off.</p>\n<p><strong>3 Events:</strong> Any 3 events from FHS World, Saudi Arabia, Africa, or Egypt, save 15% on all passes.</p>\n<p><strong>4 Events: </strong>FHS World, Saudi Arabia, Africa and Egypt, save 20% on all passes<br /></p>\n<p><a href=\"https://www.futurehospitality.com/sa/\">FHS Saudi Arabia</a> | <a href=\"https://www.futurehospitality.com/africa/\">FHS Africa</a> | <a href=\"https://www.futurehospitality.com/egypt\" target=\"_blank\" rel=\"noreferrer noopener\">FHS Egypt</a></p>",
+                "specialPassDescription": "<p><strong>2 Events:</strong> FHS World + one additional event, get 10% off.</p>\n<p><strong>3 Events:</strong> Any 3 events from FHS World, Saudi Arabia, Africa, or Egypt, save 15% on all passes.</p>\n<p><strong>4 Events: </strong>FHS World, Saudi Arabia, Africa and Egypt, save 20% on all passes<br /></p>\n<p><a href=\"https://futurehospitality.com/sa/\">FHS Saudi Arabia</a> | <a href=\"https://futurehospitality.com/africa/\">FHS Africa</a> | <a href=\"https://futurehospitality.com/egypt\" target=\"_blank\" rel=\"noreferrer noopener\">FHS Egypt</a></p>",
                 "specialPassValue": null,
                 "specialPassAvailableFrom": null,
                 "specialPassExpires": null,
@@ -247,7 +247,7 @@ const DEMO_CONTENT_BLOCKS = [
                 "specialPassAvailableFrom": null,
                 "specialPassExpires": null,
                 "specialPassButtonLabel": "Apply here",
-                "specialPassHyperlink": "https://www.futurehospitality.com/world/fhswomenpower"
+                "specialPassHyperlink": "https://futurehospitality.com/world/fhswomenpower"
             },
             {
                 "__typename": "passes_specialPass_BlockType",
@@ -264,7 +264,7 @@ const DEMO_CONTENT_BLOCKS = [
                 "__typename": "passes_specialPass_BlockType",
                 "id": "278195",
                 "specialPassTitle": "FHS Club Members Pricing",
-                "specialPassDescription": "<p>Up to 10% discount on standard tickets for yourself and your colleagues. <a href=\"https://www.futurehospitality.com/fhs-club\">Read more about FHS Club</a></p>",
+                "specialPassDescription": "<p>Up to 10% discount on standard tickets for yourself and your colleagues. <a href=\"https://futurehospitality.com/fhs-club\">Read more about FHS Club</a></p>",
                 "specialPassValue": null,
                 "specialPassAvailableFrom": null,
                 "specialPassExpires": null,
