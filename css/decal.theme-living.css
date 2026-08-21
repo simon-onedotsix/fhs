@@ -40,6 +40,8 @@
 [data-theme='living'] .bg-secondary { background-color: var(--secondary); }
 [data-theme='living'] .bg-accent { background-color: var(--accent); }
 
+[data-theme='living'] .bg-burgundy { background-color: var(--burgundy); }
+
 [data-theme='living'] .bg-wash { background-color: var(--wash);}
 [data-theme='living'] .bg-light { background-color: var(--light);}
 [data-theme='living'] .bg-medium { background-color: var(--medium);}
