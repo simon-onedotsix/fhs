@@ -55,7 +55,7 @@ export default function Page () {
 
                 <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>Where brands shape the future of living</p>
 
-                <p className="fs-4 c-white center maxw-70 b-1 rad-sm p-sm" style={{ margin: '2rem auto 0' }}><strong className="c-white">Branded Residences Forum</strong> has been rebranded to <strong className="c-white">FHS Living</strong>. <br />Please head on over to <a className="c-white" href="/sa/egypt">FHS Living</a>.</p>
+                <p className="fs-4 c-white center maxw-70 b-1 rad-sm p-sm" style={{ margin: '2rem auto 0' }}><strong className="c-white">Branded Residences Forum</strong> has been rebranded to <strong className="c-white">FHS Living</strong>. <br />Please head on over to <a className="c-white" href="https://ui-fhs-git-transition-onedotsix.vercel.app/sa/egypt">FHS Living</a>.</p>
 
 
                 <div className="mt-sm center">
