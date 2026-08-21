@@ -288,7 +288,7 @@ export default function Page ({ sessions, speakers }) {
                 parentHandle={`FHS Egypt`}
                 event={header.data.event}
                 mainMenu={header.data.mainMenu}
-                ctas={header.data.event.headerCtas}
+                // ctas={header.data.event.headerCtas}
             />
 
 
