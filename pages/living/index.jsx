@@ -504,7 +504,7 @@ export default function Home ({ data, advisors }) {
 
                 
                 {/* OTHER FHS */}
-                <div className="container center">
+                {/* <div className="container center">
                     <p className="fs-2 fw-500 caps">FHS Around the World</p>
                 </div>
 
@@ -536,7 +536,7 @@ export default function Home ({ data, advisors }) {
                             )
                         })
                     }
-                </div>
+                </div> */}
             </section>
             
             

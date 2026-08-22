@@ -14,7 +14,7 @@ import { motion } from "framer-motion"
 // BEGIN new static nav
 import { EventsBar } from "../../../ui/site/eventsbar"
 import { Header } from '../../../ui/site/header-living'
-import { BRF_FHS_WORLD as header } from '../../../fixtures/nav'
+import { LIVING_FHS_WORLD as header } from '../../../fixtures/nav'
 
 // END new static nav
 
@@ -237,7 +237,7 @@ export default function Page ({ sessions, speakers }) {
                 <meta name="description" content="Held adjacently with FHS World, this exclusive one-day forum explores the thriving sector of Branded Residences."></meta>
             </Head>
             
-            <EventsBar site={'/world/brf'} />
+            <EventsBar site={'/world/living'} />
             <Header
                 site={`/world/living`}
                 parentSite={`/world`}
@@ -271,13 +271,27 @@ export default function Page ({ sessions, speakers }) {
                 </div>
 
 
+                {/* transition boxout */}
+                <section style={{ position: `absolute`, top: `var(--space-sm)`, left: `var(--space-sm)` }}>
+                    <Pop>
+                        <div style={{ width: `16rem`, padding: `1.5rem 2rem`, backgroundColor: `var(--burgundy)`, borderRadius: `1rem`, textAlign: `center` }}>    
+                     
+                            <Pop delay={.1}>
+                                <p className='fs-5 lh-2'><strong>Branded Residences Forum</strong> has been rebranded to <strong>FHS&nbsp;Living</strong></p>
+                            </Pop>
+                           
+                        </div>
+                    </Pop>
+                </section>
+
+
             </HeroUnitVideo>
 
             
             {/* SPONSORS */}
             <section className="block" style={{ position: `relative`, zIndex: 2 }}>
                 <div className="container center">
-                    <p className='fs-1 fw-600'>Partners</p>
+                    <p className='fs-1 fw-600'>2026 Partners</p>
                 </div>
                 <Pop>
                     <div className="container pt-lg">

@@ -13,8 +13,8 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import { Pop, Fade, Slide } from '../../../fuselage/animation/animation'
 
 import { EventsBar } from "../../../ui/site/eventsbar"
-import { HeaderBRF } from '../../../ui/site/header-brf'
-import { BRF_FHS_EGYPT as header } from '../../../fixtures/nav'
+import { Header } from '../../../ui/site/header-living'
+import { LIVING_FHS_EGYPT as header } from '../../../fixtures/nav'
 import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
 
 import { StickySidebar } from '../../../fuselage/theme/2024/global/components/sticky-sidebar/sticky-sidebar'
@@ -178,9 +178,9 @@ export default function Agenda ({ sessions, locations }) {
 				<link rel="icon" type="image/png" href="/assets/favicons/egypt/favicon-16x16.png" sizes="16x16" />
 			</Head>
 
-            <EventsBar site={'/egypt/brf'} />
-            <HeaderBRF
-                site={`/egypt/brf`}
+            <EventsBar site={'/egypt/living'} />
+            <Header
+                site={`/egypt/living`}
                 parentSite={`/egypt`}
                 handle={`At FHS Egypt`}
                 parentHandle={`FHS Egypt`}
@@ -199,7 +199,7 @@ export default function Agenda ({ sessions, locations }) {
 
 				{/* INTRO */}
                 <div className="section mb-sm" style={{ zIndex: 2, position: 'relative' }}>
-                    <p className="fs-1 fw-500 maxw-40">Branded Residences at FHS&nbsp;Saudi Arabia 2025</p>
+                    <p className="fs-1 fw-500 maxw-40">FHS Living at FHS&nbsp;Saudi Arabia 2025</p>
                 </div>
 
 
@@ -262,7 +262,7 @@ export default function Agenda ({ sessions, locations }) {
         </ReactLenis>
     )
 }
-Agenda.theme = 'brf'
+Agenda.theme = 'living'
 
 
 

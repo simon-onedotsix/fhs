@@ -10,7 +10,7 @@ import { motion } from "framer-motion"
 
 import { EventsBar } from "../../../ui/site/eventsbar"
 import { Header } from '../../../ui/site/header-living'
-import { BRF_FHS_EGYPT as header } from '../../../fixtures/nav'
+import { LIVING_FHS_EGYPT as header } from '../../../fixtures/nav'
 
 
 import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
@@ -304,6 +304,22 @@ export default function Page ({ sessions, speakers }) {
                     </Pop>
                 </div>
 
+
+
+
+                {/* transition boxout */}
+                <section style={{ position: `absolute`, top: `var(--space-sm)`, left: `var(--space-sm)` }}>
+                    <Pop>
+                        <div style={{ width: `16rem`, padding: `1.5rem 2rem`, backgroundColor: `var(--burgundy)`, borderRadius: `1rem`, textAlign: `center` }}>    
+                     
+                            <Pop delay={.1}>
+                                <p className='fs-5 lh-2'><strong>Branded Residences Forum</strong> has been rebranded to <strong>FHS&nbsp;Living</strong></p>
+                            </Pop>
+                           
+                        </div>
+                    </Pop>
+                </section>
+
             </HeroUnitVideo>
 
 
@@ -324,7 +340,7 @@ export default function Page ({ sessions, speakers }) {
             {/* PAST SPONSORS */}
             <section className="block" style={{ position: `relative`, zIndex: 2 }}>
                 <div className="container center">
-                    <p className='fs-1 fw-600'>FHS Living Partners</p>
+                    <p className='fs-1 fw-600'>2026 Partners</p>
                 </div>
                 
                 <div className="container maxw-70 pt-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>

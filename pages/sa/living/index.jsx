@@ -13,7 +13,7 @@ import { motion } from "framer-motion"
 
 import { EventsBar } from "../../../ui/site/eventsbar"
 import { Header } from '../../../ui/site/header-living'
-import { BRF_FHS_SA as header } from '../../../fixtures/nav'
+import { LIVING_FHS_SA as header } from '../../../fixtures/nav'
 
 // import { Header } from '../../../fuselage/theme/2025/brf/sa/common/header/header'
 import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
@@ -293,7 +293,7 @@ export default function Page ({ sessions, speakers }) {
                 <meta name="description" content="Held adjacently with FHS Saudi Arabia, this exclusive one-day forum explores the thriving sector of Branded Residences."></meta>
             </Head>
             
-            <EventsBar site={'/sa/brf'} />
+            <EventsBar site={'/sa/living'} />
             <Header
                 site={`/sa/living`}
                 parentSite={`/sa`}
@@ -318,6 +318,22 @@ export default function Page ({ sessions, speakers }) {
                         <Button href={'/sa/living/agenda'} label={`View FHS Living 2026 Agenda`} inverse/>
                     </Pop>
                 </div> */}
+
+
+
+
+                {/* transition boxout */}
+                <section style={{ position: `absolute`, top: `var(--space-sm)`, left: `var(--space-sm)` }}>
+                    <Pop>
+                        <div style={{ width: `16rem`, padding: `1.5rem 2rem`, backgroundColor: `var(--burgundy)`, borderRadius: `1rem`, textAlign: `center` }}>    
+                     
+                            <Pop delay={.1}>
+                                <p className='fs-5 lh-2'><strong>Branded Residences Forum</strong> has been rebranded to <strong>FHS&nbsp;Living</strong></p>
+                            </Pop>
+                           
+                        </div>
+                    </Pop>
+                </section>
 
             </HeroUnitVideo>
 

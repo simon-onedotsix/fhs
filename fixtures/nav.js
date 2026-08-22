@@ -1199,34 +1199,31 @@ export const FHS_LIVING = {
     }
 }
 
-
-// BRF sub-events
-
+// LIVING sub-events
 
 
-
-export const BRF_FHS_WORLD = {
+export const LIVING_FHS_WORLD = {
     "data": {
         "mainMenu": [
             {
                 "__typename": "navigation_Entry",
                 "id": "etrhh35",
                 "title": "About",
-                "navUrl": "/world/brf",
+                "navUrl": "/world/living",
                 "children": []
             },
-            // {
-            //     "__typename": "navigation_Entry",
-            //     "id": "werhjfw",
-            //     "title": "Agenda",
-            //     "navUrl": "/world/brf/agenda",
-            //     "children": []
-            // },
+            {
+                "__typename": "navigation_Entry",
+                "id": "werhjfw",
+                "title": "Agenda",
+                "navUrl": "/world/living/agenda",
+                "children": []
+            },
             
         ],
         "event": {
             "id": "2",
-            "title": "BRF at FHS World",
+            "title": "FHS Living at FHS World",
             "venue": "Madinat Jumeirah, Dubai",
             "startDate": "2026-10-01T07:00:00+00:00",
             "endDate": null,
@@ -1253,28 +1250,28 @@ export const BRF_FHS_WORLD = {
     }
 }
 
-export const BRF_FHS_SA = {
+export const LIVING_FHS_SA = {
     "data": {
         "mainMenu": [
             {
                 "__typename": "navigation_Entry",
                 "id": "2456346u",
                 "title": "About",
-                "navUrl": "/sa/brf",
+                "navUrl": "/sa/living",
                 "children": []
             },
-            // {
-            //     "__typename": "navigation_Entry",
-            //     "id": "ngdrtyh",
-            //     "title": "Agenda",
-            //     "navUrl": "/sa/brf/agenda",
-            //     "children": []
-            // },
+            {
+                "__typename": "navigation_Entry",
+                "id": "ngdrtyh",
+                "title": "Agenda",
+                "navUrl": "/sa/living/agenda",
+                "children": []
+            },
             
         ],
         "event": {
             "id": "2",
-            "title": "BRF at FHS World",
+            "title": "FHS Living at FHS World",
             "venue": "Madinat Jumeirah, Dubai",
             "startDate": "2026-10-01T07:00:00+00:00",
             "endDate": null,
@@ -1301,28 +1298,28 @@ export const BRF_FHS_SA = {
     }
 }
 
-export const BRF_FHS_EGYPT = {
+export const LIVING_FHS_EGYPT = {
     "data": {
         "mainMenu": [
             {
                 "__typename": "navigation_Entry",
                 "id": "279",
                 "title": "About",
-                "navUrl": "/egypt/brf",
+                "navUrl": "/egypt/living",
                 "children": []
             },
-            // {
-            //     "__typename": "navigation_Entry",
-            //     "id": "dfghterthm",
-            //     "title": "Agenda",
-            //     "navUrl": "/egypt/brf/agenda",
-            //     "children": []
-            // },
+            {
+                "__typename": "navigation_Entry",
+                "id": "dfghterthm",
+                "title": "Agenda",
+                "navUrl": "/egypt/agenda?session=UGxhbm5pbmdfNDUzNTk0Ng",
+                "children": []
+            },
             
         ],
         "event": {
             "id": "2",
-            "title": "BRF at FHS egypt",
+            "title": "FHS Living at FHS egypt",
             "venue": "Madinat Jumeirah, Dubai",
             "startDate": "2026-10-01T07:00:00+00:00",
             "endDate": null,

@@ -8,11 +8,11 @@ import HTMLReactParser from 'html-react-parser'
 import Head from 'next/head'
 import Script from 'next/script'
 
+import { Meta } from "../../../ui/site/meta"
 import { EventsBar } from "../../../ui/site/eventsbar"
-import { HeaderBRF } from '../../../ui/site/header-brf'
-import { BRF_FHS_WORLD as header } from '../../../fixtures/nav'
-
-import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
+import { Header } from '../../../ui/site/header-living'
+import { LIVING_FHS_WORLD as header } from '../../../fixtures/nav'
+import { Footer } from '../../../fuselage/theme/living/common/footer/footer'
 
 import { Button } from '../../../fuselage/theme/2025/brf/components/button/button'
 
@@ -119,11 +119,11 @@ export default function Page ({ sessions }) {
                 <link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
 			</Head>
 
-            <EventsBar site={'/world/brf'} />
-			<HeaderBRF
-				site={`/world/brf`}
+			<EventsBar site={'/world/brf'} />
+			<Header
+				site={`/world/living`}
 				parentSite={`/world`}
-				handle={`At FHS World`}
+				region={`At FHS World`}
 				parentHandle={`FHS World`}
 				event={header.data.event}
 				mainMenu={header.data.mainMenu}
@@ -132,7 +132,7 @@ export default function Page ({ sessions }) {
             
             <section className="block bg-default">
                 <div className="container maxw-70 center">
-                    <p className='fs-1 fw-600 c-secondary'>2026 Branded Residences Forum Agenda</p>
+                    <p className='fs-1 fw-600 c-secondary'>2026 FHS Living Agenda</p>
                     <p className='fs-4 mt-sm'>Thursday 01 October</p>
                 </div>
             </section>
@@ -208,7 +208,7 @@ export default function Page ({ sessions }) {
     )
 }
 
-Page.theme = 'brf'
+Page.theme = 'living'
 
 
 
