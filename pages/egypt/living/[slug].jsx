@@ -81,7 +81,7 @@ export async function getStaticPaths() {
     const entriesData = await craftApolloClient().query({
         query: gql`
             query Pages {
-                entries(site: "${process.env.SITE_HANDLE_AE}", section: "${process.env.SITE_HANDLE_AE}Pages") {
+                entries(site: "${process.env.SITE_HANDLE_LIVING}", section: "${process.env.SITE_HANDLE_LIVING}Pages") {
                     slug
                 }
             }
@@ -102,8 +102,8 @@ export async function getStaticProps({ params, preview, previewData }) {
     const entryData = await craftApolloClient( preview, previewData ).query({
         query: gql`
             query Page {
-                entry(site: "${process.env.SITE_HANDLE_AE}", slug: "${params.slug}") {
-                    ... on ${process.env.SITE_HANDLE_AE}Pages_page_Entry {
+                entry(site: "${process.env.SITE_HANDLE_LIVING}", slug: "${params.slug}") {
+                    ... on ${process.env.SITE_HANDLE_LIVING}Pages_page_Entry {
                         id
                         title
                         slug
