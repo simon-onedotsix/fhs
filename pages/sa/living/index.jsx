@@ -326,7 +326,7 @@ export default function Page ({ sessions, speakers }) {
                 </section>
 
                 <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>FHS Living</p>
-                <p className='fs-3 fw-600 c-white caps center mt-sm'>24 June 2026</p>
+                <p className='fs-3 fw-600 c-white caps center mt-sm'>23 March 2027</p>
                 <p className='fs-4 fw-600 center'>Mandarin Oriental Al Faisaliah, Saudi Arabia</p>
 
 

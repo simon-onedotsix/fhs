@@ -1304,7 +1304,7 @@ export const LIVING_FHS_SA = {
                 },
                 {
                     "label": "Become a Partner",
-                    "hyperlink": "/sa/why-sponsor#partner-form",
+                    "hyperlink": "/sa/become-a-partner",
                     "openInNewWindow": false
                 }
             ]
