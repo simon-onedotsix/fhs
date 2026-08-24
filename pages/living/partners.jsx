@@ -27,7 +27,7 @@ import { Avatar } from '../../fuselage/components/avatar/avatar'
 import { partners } from "../../data/partners"
 
 
-export default function Page({ partnerData, partnerData, videoTestimonials }) {
+export default function Page({ partnerData, videoTestimonials }) {
     
     // console.log('partners:', partnerData)
 
