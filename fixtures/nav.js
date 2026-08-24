@@ -1256,7 +1256,7 @@ export const LIVING_FHS_WORLD = {
                 },
                 {
                     "label": "Become a Partner",
-                    "hyperlink": "/world/why-sponsor#partner-form",
+                    "hyperlink": "/world/why-partner#partner-form",
                     "openInNewWindow": false
                 }
             ]

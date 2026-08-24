@@ -58,6 +58,11 @@ const nextConfig = {
 				permanent: true,
 			},
 			{
+				source: '/sa/why-sponsor',
+				destination: '/sa/why-partner',
+				permanent: true,
+			},
+			{
 				source: '/sa/become-a-sponsor',
 				destination: '/sa/become-a-partner',
 				permanent: true,
