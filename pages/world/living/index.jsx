@@ -296,7 +296,7 @@ export default function Page ({ sessions, speakers }) {
                 <Pop>
                     <div className="container pt-lg">
                         <section>
-                            <p className='c-peach center pb-sm caps ls-2'>Founder Sponsor</p>
+                            <p className='c-peach center pb-sm caps ls-2'>Founder Partner</p>
                             <div style={{ width: `100%`, maxWidth: '22rem', margin: '0 auto' }}>
                                 <img src="/assets/img/brf/accor-one-living.svg" alt="logo" width={`100%`} />
                             </div>
@@ -310,13 +310,13 @@ export default function Page ({ sessions, speakers }) {
                             </div>
                         </section>
                         <section>
-                            <p className='c-peach center pb-sm caps ls-2'>Sponsor</p>
+                            <p className='c-peach center pb-sm caps ls-2'>Partner</p>
                             <div style={{ width: `100%`, maxWidth: '15rem', margin: '0 auto' }}>
                                 <img src="/assets/img/brf/digivalet.png" alt="logo" width={`100%`} />
                             </div>
                         </section>
                         <section>
-                            <p className='c-peach center pb-sm caps ls-2'>Sponsor</p>
+                            <p className='c-peach center pb-sm caps ls-2'>Partner</p>
                             <div style={{ width: `100%`, maxWidth: '15rem', margin: '0 auto' }}>
                                 <img src="/assets/img/brf/sectorlight.svg" alt="logo" />
                             </div>
