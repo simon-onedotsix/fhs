@@ -1,6 +1,8 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
+import _ from 'lodash'
+
 import { useState, useRef } from "react"
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
@@ -14,7 +16,7 @@ import { QuerySEO } from "../../graphql/queries"
 import handleSeomaticMeta from '../../lib/seomatic'
 
 
-
+import { Meta } from "../../ui/site/meta"
 import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header-living'
 import { FHS_LIVING as header } from '../../fixtures/nav'
@@ -31,74 +33,18 @@ import HubspotForm from "../../fuselage/components/hubspot-form/hubspot-form"
 import { ThemesSlider } from "../../ui/modules/themes-slider"
 import { ThemeGraphic } from '../../fuselage/theme/2026/sa/theme/theme-graphic'
 
+import { QuoteSlider } from '../../fuselage/theme/2024/world/components/quote-slider/quote-slider'
 import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
 import { SlideoutCard } from "../../fuselage/components/slideout-card/slideout-card"
 import { EventCardLite } from '../../fuselage/theme/2024/world/blocks/upcoming-events/upcoming-events'
+import { EventCard } from "../../ui/components/event-card"
 
 import { CapitalFlow } from "../../ui-living/graphics/capital-flow"
 
 
 
-const SPEAKER_DATA = [
-    {
-        url: ``,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Alabbar_Mohamed_sq.jpg',
-        fullName: 'H.E. Mohamed Ali Rashed Alabbar',
-         jobTitle: 'Founder & Managing Director of Emaar Properties; Founder & Director of Noon.com; Chairman of Eagle Hills; Chairman of Americana Group',
-        company: '',
-    },
-    {
-        url: ``,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Dirk-Bakker.jpg',
-        fullName: 'Dirk Bakker',
-        jobTitle: 'CEO',
-        company: 'Necron Hospitality',
-    },
-    {
-        url: ``,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Jeff-Tisdall.jpeg',
-        fullName: 'JEFF TISDALL',
-        jobTitle: 'Chief Business Officer',
-        company: 'Accor One Living',
-    },
-    {
-        url: ``,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/robert-dobrzycki.webp',
-        fullName: 'ROBERT DOBRZYCKI',
-        jobTitle: 'CEO and Co-Owner',
-        company: 'Panattoni Europe',
-    },
-    {
-        url: ``,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/lolita-prysiazhniuk.jpeg',
-        fullName: 'LOLITA PRYSIAZHNIUK',
-        jobTitle: 'VP Hotel Development & Transactions',
-        company: 'Aroundtown SA',
-    },
-]
 
-const QUOTES_DATA = [
-    {
-        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/Jeff-Tisdall.jpeg',
-        quote: "The market is still fragmented. Large events are too broad, and niche ones don't have the right scale.",
-        fullName: "Jeff Tisdall",
-        title: "Chief Business Officer, Accor One Living"
-    },
-    {
-        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/Dirk-Bakker.jpg',
-        quote: "A conference that brings all of this together would be a huge success.",
-        fullName: "Dirk Bakker",
-        title: "Chief Executive Officer, Necron Hospitality",
-    },
-    {
-        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/kasper-ravn-wigen.webp',
-        quote: "I wish there was a business event that brings together key living categories across European real estate in a single place.",
-        fullName: "Kasper Ravn Wigen",
-        title: "Global Marketing Director, Yugo",
-    }
-]
-
-const THEMES_DATA = [
+export const THEMES_DATA = [
     {
         iconUrl: '/assets/img/living/homepage/asset-classes/branded-residences.svg',
         title: 'Branded Residences',
@@ -139,30 +85,104 @@ const THEMES_DATA = [
     
 ]
 
+export const TESTIMONIALS_DATA = [
+    {
+        quote: "Success in branded residences requires specialised expertise across multiple disciplines - which is why we see The Branded Residence Forum [now FHS Living] by Accor One Living as such an essential platform for discussion. At this trailblazing event, we will pull together key-decision makers from across the sector - including residential developers who have executed enormously successful projects, expert lawyers, branding and communication firms, architects, interior designer and other key consultants - the key players who are propelling the success of branded residences globally.",
+        avatar: [
+            {
+                url: "/assets/img/brf/quotes/jeff.jpg",
+                width: "800",
+                height: "800"
+            }
+        ],
+        fullName: "Jeff Tisdall",
+        jobTitle: "CBO",
+        organisation: "Accor One Living"
+    },
+    {
+        quote: "We see The Branded Residences Forum [now FHS Living] by Accor One Living as an important opportunity for the industry to gather and discuss this ever-expanding sector. Interest is now truly global and standalone branded development activity is accelerating. At the same time, exciting new brands and partnership are emerging - simply put, investors have a lot to consider and share when it comes to branded residences.",
+        avatar: [
+            {
+                url: "/assets/img/brf/quotes/Itani.jpg",
+                width: "800",
+                height: "800"
+            }
+        ],
+        fullName: "Riyan Itani",
+        jobTitle: "Founder",
+        organisation: "Global Branded Residences"
+    },
+    {
+        quote: "FHS World in Dubai is a key gathering for hospitality investors and it is only natural that its scope has been expanded to include a 'must-attend' day-long event for those developing, operating or exploring branded residences. We see this forum as a key opportunity for investors to delve into the key issues and trends, such as rental programs, legal structure, sales and marketing and design.",
+        avatar: [
+            {
+                url: "/assets/img/brf/quotes/rico.jpg",
+                width: "800",
+                height: "800"
+            }
+        ],
+        fullName: "Rico Picenoni",
+        jobTitle: "Head of Savills Global Residential Development Consultancy",
+        organisation: ""
+    }
+]
+
+const QUOTES_DATA = [
+    {
+        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/Jeff-Tisdall.jpeg',
+        quote: "The market is still fragmented. Large events are too broad, and niche ones don't have the right scale.",
+        fullName: "Jeff Tisdall",
+        title: "Chief Business Officer, Accor One Living"
+    },
+    {
+        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/Dirk-Bakker.jpg',
+        quote: "A conference that brings all of this together would be a huge success.",
+        fullName: "Dirk Bakker",
+        title: "Chief Executive Officer, Necron Hospitality",
+    },
+    {
+        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/kasper-ravn-wigen.webp',
+        quote: "I wish there was a business event that brings together key living categories across European real estate in a single place.",
+        fullName: "Kasper Ravn Wigen",
+        title: "Global Marketing Director, Yugo",
+    }
+]
+
+// temporary hard-coded data -----------------------------------------------
+import { EVENT_DATA } from ".."
+const livingEventIds = new Set(['246252', '259029', '314682', '246252333'])
+const FHS_EVENTS = EVENT_DATA.filter(event => !livingEventIds.has(event.id))
+const LIVING_EVENTS = EVENT_DATA.filter(event => livingEventIds.has(event.id))
+
 
 export default function Home ({ data, advisors }) {
 
     // console.log(content)
     // console.log(seomatic)
+    // console.log("events:", data.events)
     // console.log("advisors:", advisors.profiles)
     
+    // console.log('FHS:', FHS_EVENTS)
+    // console.log('LIVING:', LIVING_EVENTS)
+    
 
-    const isDesktop = useCustomMediaQuery('(min-width: 600px)');
+    const isDesktop = useCustomMediaQuery('(min-width: 600px)')
 
     return (
         <>
             <Head>
-                <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
-                <meta content="https://cms.thebench.com/assets/content-library/img/FHS-Living/FHS-Living-Launch-PR.jpg" property="og:image"></meta>
-                <title>FHS Living | Feb 2027, Paris | Founding Edition</title>
-                <meta name="description" content="Addressing the growing 'lanyard fatigue' of the European hospitality conferencing market"></meta>
+                <Meta
+                    faviconUrl={"/assets/favicons/living/favicon-16x16.png"}
+                    imageUrl={"https://cms.thebench.com/assets/content-library/img/FHS-Living/FHS-Living-Launch-PR.jpg"}
+                    title={"FHS Living | Feb 2027, Paris | Founding Edition"}
+                    description={"Addressing the growing 'lanyard fatigue' of the European hospitality conferencing market"}
+                />
             </Head>
         
             
             <EventsBar site={'/living'} />
             <Header
                 site={`/living`}
-                handle={`Living`}
                 event={header.data.event}
                 mainMenu={header.data.mainMenu}
                 ctas={header.data.event.headerCtas}
@@ -319,6 +339,19 @@ export default function Home ({ data, advisors }) {
                 </div>
             </section>
 
+            
+            {/* TESTIMONIALS */}
+            {/* <section className="block bg-secondary">
+                <div className="container maxw-70">
+
+                    <QuoteSlider 
+                        color={'white'}
+                        heading={"Testimonials"}
+                        testimonials={TESTIMONIALS_DATA} />
+
+                </div>
+            </section> */}
+
 
             {/* QUOTES */}
             <section className="block bg-secondary o-hidden">
@@ -432,21 +465,23 @@ export default function Home ({ data, advisors }) {
 
             
             {/* FHS EVENTS */}
-            <section className="block bg-secondary">
+            <section className="block bg-primary">
+
+                {/* LIVING */}
                 <div className="container center">
-                    <p className="fs-2 fw-500 caps">FHS Around the World</p>
+                    <p className="fs-2 fw-500 caps">Upcoming FHS Living Events</p>
                 </div>
 
-                <div className="container columns-3 maxw-55 gap-xs">
+                <div className="container columns-1 maxw-35 gap-xs">
                     {
-                        data.events.map(event => {
+                        _.orderBy(LIVING_EVENTS, 'startDate').map(event => {
                             // console.log(event)
                             return (
                                 <div key={event.id} className={`columns-1 gap-xs`}>                                
                                     {
                                         event.streams &&
                                         event.streams.map( stream => (
-                                            <EventCardLite
+                                            <EventCard
                                                 key={stream.id}
                                                 heading={event.heading}
                                                 title={stream.heading}
@@ -457,6 +492,7 @@ export default function Home ({ data, advisors }) {
                                                 websiteLink={stream.websiteLink} 
                                                 theme={event.theme} 
                                                 dateOverride={event.dateOverride}
+                                                landscape={true}
                                             />
                                         ))
                                     }
@@ -465,6 +501,42 @@ export default function Home ({ data, advisors }) {
                         })
                     }
                 </div>
+
+                
+                {/* OTHER FHS */}
+                {/* <div className="container center">
+                    <p className="fs-2 fw-500 caps">FHS Around the World</p>
+                </div>
+
+                <div className="container columns-3 maxw-55 gap-xs">
+                    {
+                        FHS_EVENTS.map(event => {
+                            // console.log(event)
+                            return (
+                                <div key={event.id} className={`columns-1 gap-xs`}>                                
+                                    {
+                                        event.streams &&
+                                        event.streams.map( stream => (
+                                            <EventCard
+                                                key={stream.id}
+                                                heading={event.heading}
+                                                title={stream.heading}
+                                                dates={{ startDate: event.startDate, endDate: event.endDate}}
+                                                venue={event.venue}
+                                                logo={stream.logo[0]}
+                                                passLink={stream.purchasePassLink} 
+                                                websiteLink={stream.websiteLink} 
+                                                theme={event.theme} 
+                                                dateOverride={event.dateOverride}
+                                                landscape={false}
+                                            />
+                                        ))
+                                    }
+                                </div>
+                            )
+                        })
+                    }
+                </div> */}
             </section>
             
             
@@ -577,9 +649,6 @@ const PartnerCard = ({ photoUrl, children }) => {
         </Pop>
     )
 }
-
-
-
 
 
 

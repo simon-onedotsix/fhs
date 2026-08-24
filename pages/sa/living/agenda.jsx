@@ -14,8 +14,8 @@ import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
 import { Pop, Fade, Slide } from '../../../fuselage/animation/animation'
 
 import { EventsBar } from "../../../ui/site/eventsbar"
-import { HeaderBRF } from '../../../ui/site/header-brf'
-import { BRF_FHS_SA as header } from '../../../fixtures/nav'
+import { Header } from '../../../ui/site/header-living'
+import { LIVING_FHS_SA as header } from '../../../fixtures/nav'
 import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
 
 import { StickySidebar } from '../../../fuselage/theme/2024/global/components/sticky-sidebar/sticky-sidebar'
@@ -101,7 +101,7 @@ export default function Agenda ({ sessions, locations }) {
 	let BRF_SESSIONS = []
 
 	sessions.map(session => {
-		if (session.fields.find( field => field.id === 'RmllbGRWYWx1ZV8yNDU2NzA5MQ==')) {
+		if (session.fields.find( field => field.id === 'RmllbGRWYWx1ZV8yNDIzOTQ1MA==')) {
 			BRF_SESSIONS.push(session)
 		}
 	})
@@ -181,9 +181,9 @@ export default function Agenda ({ sessions, locations }) {
 				<link rel="icon" type="image/png" href="/assets/favicons/sa/favicon-16x16.png" sizes="16x16" />
 			</Head>
 
-            <EventsBar site={'/sa/brf'} />
-            <HeaderBRF
-                site={`/sa/brf`}
+            <EventsBar site={'/sa/living'} />
+            <Header
+                site={`/sa/living`}
                 parentSite={`/sa`}
                 handle={`At FHS Saudi Arabia`}
                 parentHandle={`FHS Saudi Arabia`}
@@ -202,7 +202,7 @@ export default function Agenda ({ sessions, locations }) {
 
 				{/* INTRO */}
                 <div className="section mb-sm" style={{ zIndex: 2, position: 'relative' }}>
-                    <p className="fs-1 fw-500 maxw-40">Branded Residences at FHS&nbsp;Saudi Arabia 2025</p>
+                    <p className="fs-1 fw-500 maxw-40">FHS Living at FHS Saudi Arabia 2026</p>
                 </div>
 
 
@@ -216,7 +216,7 @@ export default function Agenda ({ sessions, locations }) {
 									<aside>
 										{/* <p className="fs-2">Day {index + 1}</p> */}
 										<Pop>
-											<p className={CSS.dayDivider}>{ day.day } 2025</p>
+											<p className={CSS.dayDivider}>{ day.day } 2026</p>
 										</Pop>
 									</aside>
 
@@ -265,7 +265,7 @@ export default function Agenda ({ sessions, locations }) {
         </ReactLenis>
     )
 }
-Agenda.theme = 'brf'
+Agenda.theme = 'living'
 
 
 
@@ -374,7 +374,7 @@ export const Duration = ({ startTime, endTime }) => {
 			{ startTime && format( new Date(startTime), "HH:mm" ) } { startTime && endTime && "-"} { endTime && format( new Date(endTime), "HH:mm" ) }
 			{
 				startTime &&  endTime ?
-				<span>&ensp;<StopwatchIcon fill={'var(--primary-3)'}/> { convertSeconds(parseInt(new Date(endTime).getTime() - new Date(startTime).getTime())/1000) }</span>
+				<span>&ensp;<StopwatchIcon fill={'var(--accent)'}/> { convertSeconds(parseInt(new Date(endTime).getTime() - new Date(startTime).getTime())/1000) }</span>
 				: null
 			}
 		</>
@@ -397,7 +397,7 @@ export const Location = ({ locationTitle }) => {
 	if ( !locationTitle ) return
 	
 	return (
-		<Pop><p className={CSS.tag} style={{ backgroundColor: 'white' }}><CompassIcon fill={'var(--primary'} />{ locationTitle }</p></Pop>
+		<Pop><p className={CSS.tag} style={{ backgroundColor: 'var(--accent)' }}><CompassIcon fill={'var(--primary'} />{ locationTitle }</p></Pop>
 	)
 }
 
@@ -447,9 +447,9 @@ const SpeakerCard = ({ speaker, type }) => {
 
 			<Modal onClose={() => setShowModal(false)} show={showModal}>
 				<div style={{ maxHeight: '80vh', overflowY: 'scroll', paddingRight: 10 }}>
-					<p className="fs-5 fw-600">{ modalContent.name }</p>
-					<p className="fs-sm">{ modalContent.title }<br />{ modalContent.company }</p>
-					<p className="mt-xs">{modalContent.bio}</p>
+					<p className="fs-5 fw-600 c-dark">{ modalContent.name }</p>
+					<p className="fs-sm c-dark">{ modalContent.title }<br />{ modalContent.company }</p>
+					<p className="mt-xs c-dark">{modalContent.bio}</p>
 				</div>
 			</Modal>
 		</Pop>
@@ -556,7 +556,7 @@ export async function getStaticProps() {
 							}
 						}
 
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2025}", page: 1, pageSize: 500) {
+						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2026}", page: 1, pageSize: 500) {
 							id
 							titleTranslations {
 								value
@@ -601,7 +601,7 @@ export async function getStaticProps() {
 								photoUrl
 								organization
 								biography
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2025}") {
+								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_SA_2026}") {
 									eventProfile {
 										type
 										withEvent(eventId: "RXZlbnRfMTczOTgzMg==") {
@@ -620,7 +620,7 @@ export async function getStaticProps() {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2025,
+					"eventId": process.env.SWAPCARD_EVENT_ID_SA_2026,
 					"page": 1
 				}
 			})

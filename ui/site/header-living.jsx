@@ -13,7 +13,7 @@ import { Button } from "../buttons/button"
 
 import CSS from './header.module.css'
 
-export const Header = ({ site, handle, event, mainMenu, ctas, children }) => {
+export const Header = ({ site, parentSite, parentHandle, region, event, mainMenu, ctas, children }) => {
 
     const [navActive, setNavActive] = useState(false)
 
@@ -28,15 +28,23 @@ export const Header = ({ site, handle, event, mainMenu, ctas, children }) => {
                     <section className={CSS.brand}>
                         <Link href={site ? `${site}` : `/`}>
                             <a style={{ textDecoration: `none`}}>
-                                <FhsLivingLockup region={handle}/>
+                                <FhsLivingLockup region={region}/>
                             </a>
                         </Link>
                     </section>
 
                     <section className={`${CSS.mainMenu} ${navActive && CSS.active}`}>
                         <ul>
-                            <li className={CSS.deviceOnly}><Link href={`${site && `${site}`}/`}><a>Home</a></Link></li>
+                            {/* <li className={CSS.deviceOnly}><Link href={`${site && `${site}`}/`}><a>Home</a></Link></li> */}
 
+                            {
+                                parentHandle &&
+                                <li><a href={parentSite}><Chevron direction={'left'} /> {parentHandle}</a></li>
+                            }
+                            {
+                                parentHandle &&
+                                <li><a href={`/living`}><Chevron direction={'left'} /> FHS Living</a></li>
+                            }
                             {
                                 mainMenu?.map((item, index) => {
                                     if (item.children.length) {

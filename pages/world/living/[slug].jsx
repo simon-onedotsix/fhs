@@ -7,8 +7,8 @@ import Head from "next/head"
 import Script from "next/script"
 
 import { EventsBar } from "../../../ui/site/eventsbar"
-import { HeaderBRF } from '../../../ui/site/header-brf'
-import { BRF_FHS_WORLD as header } from '../../../fixtures/nav'
+import { Header } from '../../../ui/site/header-living'
+import { LIVING_FHS_WORLD as header } from '../../../fixtures/nav'
 
 import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
 
@@ -53,11 +53,11 @@ export default function Page ({ entry, seomatic }) {
                 {handleSeomaticMeta(seomatic)}
             </Head>
 
-            <EventsBar site={'/world/brf'} />
-            <HeaderBRF
-                site={`/world/brf`}
+            <EventsBar site={'/world/living'} />
+            <Header
+                site={`/world/living`}
                 parentSite={`/world`}
-                handle={`At FHS World`}
+                region={`At FHS World`}
                 parentHandle={`FHS World`}
                 event={header.data.event}
                 mainMenu={header.data.mainMenu}
@@ -84,7 +84,7 @@ export async function getStaticPaths() {
     const entriesData = await craftApolloClient().query({
         query: gql`
             query Pages {
-                entries(site: "${process.env.SITE_HANDLE_AE}", section: "${process.env.SITE_HANDLE_AE}Pages") {
+                entries(site: "${process.env.SITE_HANDLE_LIVING}", section: "${process.env.SITE_HANDLE_LIVING}Pages") {
                     slug
                 }
             }
@@ -105,8 +105,8 @@ export async function getStaticProps({ params, preview, previewData }) {
     const entryData = await craftApolloClient( preview, previewData ).query({
         query: gql`
             query Page {
-                entry(site: "${process.env.SITE_HANDLE_AE}", slug: "${params.slug}") {
-                    ... on ${process.env.SITE_HANDLE_AE}Pages_page_Entry {
+                entry(site: "${process.env.SITE_HANDLE_LIVING}", slug: "${params.slug}") {
+                    ... on ${process.env.SITE_HANDLE_LIVING}Pages_page_Entry {
                         id
                         title
                         slug

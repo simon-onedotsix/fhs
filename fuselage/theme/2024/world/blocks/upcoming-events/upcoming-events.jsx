@@ -9,6 +9,8 @@ import { ExternalLinkIcon } from '../../../../../icons/external-link'
 
 import CSS from './upcoming-events.module.css'
 
+
+
 export const UpcomingEvents = ({ children, landscape }) => {
     return (
         <div className={`columns-1 pt-sm`}>
@@ -16,8 +18,6 @@ export const UpcomingEvents = ({ children, landscape }) => {
         </div>
     )
 }
-
-
 
 export const EventGroupCard = ({ children, theme, location, dates, dateOverride, venue }) => {
 
@@ -100,7 +100,7 @@ export const EventCard = ({ theme, title, logo, passLink, websiteLink }) => {
             {
                 websiteLink &&
                 <div className={CSS.eventCardContent}>
-                    <p className='fs-5'><a className={CSS.websiteButton} href={ websiteLink } target='_blank'>Website <ExternalLinkIcon /></a></p>
+                    <p className='fs-5'><a className={CSS.websiteButton} href={ websiteLink }>Website <ExternalLinkIcon /></a></p>
                 </div>
             }
             
@@ -174,7 +174,7 @@ export const EventCardLite = ({ heading, logo, venue, dates, dateOverride, websi
                     <div className={CSS.eventCardLiteActions}>
                             <span className='fs-5'>
                             <Pop delay={.1}>
-                                <a className={CSS.websiteButton} href={websiteLink} target='_blank'>
+                                <a className={CSS.websiteButton} href={websiteLink}>
                                     Website <ExternalLinkIcon />
                                 </a>
                             </Pop>
@@ -182,9 +182,7 @@ export const EventCardLite = ({ heading, logo, venue, dates, dateOverride, websi
                     </div>
                 }
             </div>
-                
-            
-            
+
         </motion.div>
     )
 }

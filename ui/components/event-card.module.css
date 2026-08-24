@@ -1,0 +1,93 @@
+.eventCard {
+    background-color: var(--fg);
+    border-radius: 1rem;
+    text-align: center;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.eventCardHeader {
+    background-color: hsl(from var(--fg) h s calc(l + 10) / 1);
+    padding: .5rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    color: var(--bg);
+}
+
+
+
+.eventCardLogo {
+   width: 100%;
+   margin: .5rem 0;
+}
+
+.eventCardLogo img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.eventCardContent {
+    padding: var(--space-xs) var(--space-xs) var(--space-sm);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    color: white;    
+}
+
+.eventCardContent.landscape {
+    padding: var(--space-sm);
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    align-items: center;
+    gap: var(--space-smd);
+}
+
+.eventCardActions {
+    margin-top: var(--space-xs);
+}
+
+
+
+/* button */
+
+.websiteButton {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--primary-2);
+    padding: .75rem 2rem;
+    border: 1px solid white;
+    border-radius: 3rem;
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition: all 250ms ease-in-out;
+}
+.websiteButton svg {
+    width: .9rem;
+    height: .9rem;
+    margin-left: 5px;
+    stroke: white;
+
+    transition: all 250ms ease-in-out;
+}
+
+@media(hover:hover){
+    .websiteButton:hover {
+        background-color: white;
+        color: var(--dark);
+    }
+    .websiteButton:hover svg {
+        stroke: var(--dark);
+    }
+}

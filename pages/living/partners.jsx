@@ -27,7 +27,9 @@ import { Avatar } from '../../fuselage/components/avatar/avatar'
 import { partners } from "../../data/partners"
 
 
-export default function Page ({ partnerData, videoTestimonials }) {
+export default function Page({ partnerData, partnerData, videoTestimonials }) {
+    
+    // console.log('partners:', partnerData)
 
     const isDesktop = useCustomMediaQuery('(min-width: 600px)')
     
@@ -389,6 +391,7 @@ export async function getStaticProps() {
 
     return {
         props: { 
+            partnerData: partnerData.data,
             partnerData: partnerData.data,
             videoTestimonials: cmsData.data.entries
         }

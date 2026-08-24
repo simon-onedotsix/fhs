@@ -1,6 +1,8 @@
 import { gql } from "@apollo/client"
 import craftApolloClient from "../api/apollo"
 
+
+import _ from 'lodash'
 import { useState, useRef } from "react"
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
@@ -17,10 +19,13 @@ import { FHS_LIVING as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/living/common/footer/footer'
 
 import { PageHero } from "../../ui/modules/page-hero"
-import { EventCardLite } from '../../fuselage/theme/2024/world/blocks/upcoming-events/upcoming-events'
+import { EventCard } from "../../ui/components/event-card"
 
 
-
+// temporary hard-coded data -----------------------------------------------
+import { EVENT_DATA } from ".."
+const livingEventIds = new Set(['246252', '259029', '314682', '246252333'])
+const LIVING_EVENTS = EVENT_DATA.filter(event => livingEventIds.has(event.id))
 
 
 export default function Page ({ data }) {
@@ -165,21 +170,23 @@ export default function Page ({ data }) {
  
             
             {/* FHS EVENTS */}
-            <section className="block bg-secondary">
+            <section className="block bg-primary">
+
+                {/* LIVING */}
                 <div className="container center">
-                    <p className="fs-1 fw-500 caps balance lh-1">OUR INVESTMENT CONFERENCES AROUND THE WORLD</p>
+                    <p className="fs-2 fw-500 caps">Upcoming FHS Living Events</p>
                 </div>
 
-                <div className="container columns-3 maxw-55 gap-xs">
+                <div className="container columns-1 maxw-35 gap-xs">
                     {
-                        data.events.map(event => {
-                            console.log(event)
+                        _.orderBy(LIVING_EVENTS, 'startDate').map(event => {
+                            // console.log(event)
                             return (
                                 <div key={event.id} className={`columns-1 gap-xs`}>                                
                                     {
                                         event.streams &&
                                         event.streams.map( stream => (
-                                            <EventCardLite
+                                            <EventCard
                                                 key={stream.id}
                                                 heading={event.heading}
                                                 title={stream.heading}
@@ -190,6 +197,7 @@ export default function Page ({ data }) {
                                                 websiteLink={stream.websiteLink} 
                                                 theme={event.theme} 
                                                 dateOverride={event.dateOverride}
+                                                landscape={true}
                                             />
                                         ))
                                     }

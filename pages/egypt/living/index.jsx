@@ -3,31 +3,32 @@ import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 import _ from 'lodash'
 
+import Head from 'next/head'
 import Link from 'next/link'
-import Script from "next/script"
 
 import { motion } from "framer-motion"
 
-
 import { EventsBar } from "../../../ui/site/eventsbar"
-import { HeaderBRF } from '../../../ui/site/header-brf'
-import { BRF_FHS_SA as header } from '../../../fixtures/nav'
+import { Header } from '../../../ui/site/header-living'
+import { LIVING_FHS_EGYPT as header } from '../../../fixtures/nav'
 
-// import { Header } from '../../../fuselage/theme/2025/brf/sa/common/header/header'
+
 import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
 import { HeroUnitVideo } from "../../../fuselage/theme/2024/world/blocks/hero-unit-video/hero-unit-video"
-import { Button } from "../../../fuselage/theme/2025/brf/components/button/button"
+import { Button } from "../../../ui/buttons/button"
 
 import { Pop, Fade } from "../../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Callout } from '../../../fuselage/theme/2024/world/blocks/callout/callout'
 import HubspotForm from '../../../fuselage/components/hubspot-form/hubspot-form'
 
+import { Quotation } from "../../../fuselage/theme/2025/sa/components/quotation/quotation"
 import { QuoteSlider } from '../../../fuselage/theme/2024/world/components/quote-slider/quote-slider'
 import { SpeakerCarousel } from '../../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel'
 import { SpeakerCard } from '../../../fuselage/components/speaker-card/speaker-card'
 import { AgendaSpeakerCard } from '../../../fuselage/components/agenda-speaker-card/agenda-speaker-card'
 
-import { ThemesSlider } from "../../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
+import { ThemesSlider } from "../../../ui/modules/themes-slider"
+import { EventCard } from "../../../ui/components/event-card"
 
 import Ticker from 'framer-motion-ticker'
 
@@ -35,44 +36,6 @@ import Ticker from 'framer-motion-ticker'
 import CSS from '../../../css/app/agenda-world-2024.module.css'
 
 
-const THEMES_DATA = [
-    {
-        id: '01',
-        iconUrl: '/assets/img/brf/icons/2025/real-estate.svg',
-        title: 'Branded Real Estate Investment',
-    },
-    {
-        id: '02',
-        iconUrl: '/assets/img/brf/icons/2025/hospitality.svg',
-        title: 'Hospitality Market Spotlights',
-    },
-    {
-        id: '03',
-        iconUrl: '/assets/img/brf/icons/2025/branding-strategies.svg',
-        title: 'Brand Strategy & Residential Marketing',
-    },
-    {
-        id: '04',
-        iconUrl: '/assets/img/brf/icons/2025/legal.svg',
-        title: 'Legal & Contractual Frameworks',
-    },
-    {
-        id: '05',
-        iconUrl: '/assets/img/brf/icons/2025/sustainability.svg',
-        title: 'Design & Sustainable Development',
-    },
-    {
-        id: '06',
-        iconUrl: '/assets/img/brf/icons/2025/cross-sector.svg',
-        title: 'Cross-Sector Brand Expansion',
-    },
-    {
-        id: '07',
-        iconUrl: '/assets/img/brf/icons/2025/loyalty.svg',
-        title: 'Loyalty, Lifestyle & Living',
-    },
-
-]
 const CONFIRMED_SPEAKER_DATA = [
     {
         url: `/world/speakers/RXZlbnRQZW9wbGVfNDAwNjUwMTI=`,
@@ -87,13 +50,6 @@ const CONFIRMED_SPEAKER_DATA = [
         fullName: 'Nick Candy',
         jobTitle: 'Chief Executive Officer',
         company: 'Candy Capital',
-    },
-    {
-        url: `/world/speakers/RXZlbnRQZW9wbGVfNDAxNjkwNzY=`,
-        photoUrl: 'https://static.swapcard.com/public/images/27aa2c09769341c8a333b8ab30e3d2f8.png',
-        fullName: 'Eleonora Srugo',
-        jobTitle: 'Licensed Associated Real Estate Broker, Douglas Elliman',
-        company: 'Star of Netflix’s Selling the City',
     },
     {
         url: `/world/speakers/RXZlbnRQZW9wbGVfMzg0MDMyOTQ=`,
@@ -160,9 +116,34 @@ const CONFIRMED_SPEAKER_DATA = [
     },
     
 ]
+const QUOTES_DATA = [
+    {
+        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/Jeff-Tisdall.jpeg',
+        quote: "The market is still fragmented. Large events are too broad, and niche ones don't have the right scale.",
+        fullName: "Jeff Tisdall",
+        title: "Chief Business Officer, Accor One Living"
+    },
+    {
+        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/Dirk-Bakker.jpg',
+        quote: "A conference that brings all of this together would be a huge success.",
+        fullName: "Dirk Bakker",
+        title: "Chief Executive Officer, Necron Hospitality",
+    },
+    {
+        avatarUrl: 'https://cms.thebench.com/assets/img/avatars/kasper-ravn-wigen.webp',
+        quote: "I wish there was a business event that brings together key living categories across European real estate in a single place.",
+        fullName: "Kasper Ravn Wigen",
+        title: "Global Marketing Director, Yugo",
+    }
+]
 
-
-
+import { THEMES_DATA } from '../../living'
+import { TESTIMONIALS_DATA } from '../../living'
+import { ASSET_CLASS_DATA } from '../../living/why-now'
+import { EVENT_DATA } from '../..'
+const livingEventIds = new Set(['246252', '259029', '314682', '246252333'])
+const FHS_EVENTS = EVENT_DATA.filter(event => !livingEventIds.has(event.id))
+const LIVING_EVENTS = EVENT_DATA.filter(event => livingEventIds.has(event.id))
 
 export default function Page ({ sessions, speakers }) {
 
@@ -289,76 +270,125 @@ export default function Page ({ sessions, speakers }) {
 
     return (
         <>
-            <Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
-
+            <Head>
+                <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
+                <meta content="https://cms.thebench.com/assets/content-library/img/FHS-Living/FHS-Living-Launch-PR.jpg" property="og:image"></meta>
+                <title>FHS Living Egypt</title>
+                <meta name="description" content="Held adjacently with FHS Egypt, this exclusive one-day forum explores the thriving sector of Branded Residences."></meta>
+            </Head>
             
-            <EventsBar site={'/sa/brf'} />
-            <HeaderBRF
-                site={`/sa/brf`}
-                parentSite={`/sa`}
-                handle={`At FHS Saudi Arabia`}
-                parentHandle={`FHS Saudi Arabia`}
+            <EventsBar site={'/egypt/living'} />
+            <Header
+                site={`/egypt/living`}
+                parentSite={`/egypt`}
+                region={`At FHS Egypt`}
+                parentHandle={`FHS Egypt`}
                 event={header.data.event}
                 mainMenu={header.data.mainMenu}
-				ctas={header.data.event.headerCtas}
+                ctas={header.data.event.headerCtas}
             />
 
-            
+
+
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>
 
-                <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>Where brands shape the future of living</p>
-                <p className='fs-3 fw-600 c-white caps center mt-sm'>24 June 2026</p>
-                <p className='fs-4 fw-600 center'>Mandarin Oriental Al Faisaliah, Saudi Arabia</p>
+                <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>FHS Living</p>
+                <p className='fs-3 fw-600 c-white caps center mt-sm'>11 November 2026</p>
+                <p className='fs-4 fw-600 center'>Sofitel Downtown Cairo Nile</p>
 
 
                 <div className="mt-md center">
                     <Pop>
-                        <Button href={'/sa/brf/agenda'}>View BRF 2026 Agenda</Button>
+                        <Button href={'/egypt/agenda?session=UGxhbm5pbmdfNDUzNTk0Ng'} label={`View FHS Egypt Agenda`} inverse/>
                     </Pop>
                 </div>
+
+
+
+
+                {/* transition boxout */}
+                <section style={{ position: `absolute`, top: `var(--space-sm)`, left: `var(--space-sm)` }}>
+                    <Pop>
+                        <div style={{ width: `16rem`, padding: `1.5rem 2rem`, backgroundColor: `var(--burgundy)`, borderRadius: `1rem`, textAlign: `center` }}>    
+                     
+                            <Pop delay={.1}>
+                                <p className='fs-5 lh-2'><strong>Branded Residences Forum</strong> has been rebranded to <strong>FHS&nbsp;Living</strong></p>
+                            </Pop>
+                           
+                        </div>
+                    </Pop>
+                </section>
 
             </HeroUnitVideo>
 
 
             
             {/* SPONSORS */}
-            <section className="block">
+            {/* <section className="block">
                 <div className="container center">
                     <p className='fs-1 fw-600'>2026 Sponsors</p>
                 </div>
                 
-                <div className="container maxw-70 py-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
-                    <PartnerLogo logoUrl={`/assets/img/brf/jabal-omar.svg`} maxWidth={8} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/accor-one-living.svg`} maxWidth={16} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/marriott.svg`} maxWidth={12} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/sectorlight-inverse.png`} maxWidth={12} />
+                <div className="container maxw-70 pt-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
+                    <PartnerLogo logoUrl={`/assets/img/brf/jabal-omar.svg`} maxWidth={10} />
                 </div>
+            </section> */}
 
+
+
+            {/* PAST SPONSORS */}
+            <section className="block" style={{ position: `relative`, zIndex: 2 }}>
                 <div className="container center">
-                    <p className='fs-4 fw-600'>Media Partner</p>
+                    <p className='fs-1 fw-600'>2026 Partners</p>
                 </div>
-                <div className="container maxw-70" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
-                    <PartnerLogo logoUrl={`/assets/img/brf/bresi.png`} maxWidth={12} />
+                
+                <div className="container maxw-70 pt-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
+                    <PartnerLogo logoUrl={`/assets/img/brf/accor-one-living.svg`} maxWidth={17} />
+                    <PartnerLogo logoUrl={`/assets/img/brf/sectorlight.svg`} maxWidth={12} />
                 </div>
             </section>
 
 
+            {/* WHY LIVING? */}
+            <section className="block pt-md">
+                <div className="container center">
+                    <p className="fs-1 fw-600">Why Living?</p>
+                </div>
 
-            
+                <div className="container columns-3 gap-md">
+                    {
+                        ASSET_CLASS_DATA.map((card, index) => (
+                            <article key={index} className="formatted">
+                                <Pop>
+                                    <img src={card.imageUrl} alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
+                                </Pop>
+                                <p className="fs-4 fw-600 mt-xxs">{card.heading}</p>
+                                <p>{card.body}</p>
+                            </article>
+                        ))
+                    }
+                </div>
+            </section>
 
                
 
             {/* MARKET OVERVIEW */}
             <section className="block bg-default">
-                <div className="container formatted maxw-90">
-                    <Callout 
-                        image={{ url:'/assets/img/brf/brf-2024-image-08.jpg', width:2000, height:1333 }}
-                        caption={"The Rixos Dubai Islands Residences"}
-                    >
+                {/* <div className="container formatted maxw-90">
+                    <Callout image={{ url:'/assets/img/brf/brf-2024-image-08.jpg', width:2000, height:1333 }}>
                         <Fade>
                             <p className='fs-2 fw-600 lh-2'>Market Overview</p>
                             <p className="fs-4 c-white">The branded residences sector has grown <strong>180% globally in the past decade</strong>, with 788 projects currently running and an additional <strong>900+</strong> launching globally (or in pipeline) over the next 5 to 6 years.</p>
+                        </Fade>
+                    </Callout>
+                </div> */}
+
+                <div className="container formatted maxw-90">
+                    <Callout flipped image={{ url:'/assets/img/brf/brf-egypt-intro.jpg', width:1600, height:900 }} >
+                        <Fade>
+                            <p className='fs-2 fw-600 lh-2'>Egypt in Focus</p>
+                            <p className="fs-4 c-white">As leading real estate developers partner with global hospitality brands to unlock new value across mixed-use and resort destinations. In Egypt alone, 45% of high-net-worth investors now identify branded residences as a preferred asset class within the property market.</p>
                         </Fade>
                     </Callout>
                 </div>
@@ -367,7 +397,7 @@ export default function Page ({ sessions, speakers }) {
 
 
             {/* FEATURED SPEAKERS */}
-            {/* {
+            {
                 sessions &&
                 <SpeakerCarousel 
                     heading={`2025 Speakers`} 
@@ -393,73 +423,134 @@ export default function Page ({ sessions, speakers }) {
                         ))
                     }
                 </SpeakerCarousel>
-            } */}
+            }
 
             
 
-            {/* THEMES */}
-            {/* <section className="block bg-default">
-                <ThemesSlider 
-                    data={THEMES_DATA} 
-                    heading={"2025 Branded Residences Forum Themes"}
-                    link={'/sa/brf/agenda-2025'} 
-                    linkLabel={'View 2025 Agenda'} 
+            {/* ASSET CLASSES */}
+            <section className={`block bg-secondary`}>
+                <div className="container center pb-sm">
+                    <p className="fs-1 fw-600">Asset Classes</p>
+                </div>
+
+                <ThemesSlider
+                    heading={`Asset Classes` }
+                    data={THEMES_DATA}
+                    link={''}
+                    linkLabel={''}
                 />
-            </section> */}
+            </section>
 
-
-
-
+            
             {/* TESTIMONIALS */}
-            <section className="block bg-secondary">
+            <section className="block bg-default">
                 <div className="container maxw-70">
 
                     <QuoteSlider 
                         color={'white'}
                         heading={"Testimonials"}
-                        testimonials={[
-                            {
-                                quote: "Success in branded residences requires specialised expertise across multiple disciplines - which is why we see The Branded Residence Forum by Accor One Living as such an essential platform for discussion. At this trailblazing event, we will pull together key-decision makers from across the sector - including residential developers who have executed enormously successful projects, expert lawyers, branding and communication firms, architects, interior designer and other key consultants - the key players who are propelling the success of branded residences globally.",
-                                avatar: [
-                                    {
-                                        url: "/assets/img/brf/quotes/jeff.jpg",
-                                        width: "800",
-                                        height: "800"
-                                    }
-                                ],
-                                fullName: "Jeff Tisdall",
-                                jobTitle: "CBO",
-                                organisation: "Accor One Living"
-                            },
-                            {
-                                quote: "We see The Branded Residences Forum by Accor One Living as an important opportunity for the industry to gather and discuss this ever-expanding sector. Interest is now truly global and standalone branded development activity is accelerating. At the same time, exciting new brands and partnership are emerging - simply put, investors have a lot to consider and share when it comes to branded residences.",
-                                avatar: [
-                                    {
-                                        url: "/assets/img/brf/quotes/Itani.jpg",
-                                        width: "800",
-                                        height: "800"
-                                    }
-                                ],
-                                fullName: "Riyan Itani",
-                                jobTitle: "Founder",
-                                organisation: "Global Branded Residences"
-                            },
-                            {
-                                quote: "FHS World in Dubai is a key gathering for hospitality investors and it is only natural that its scope has been expanded to include a 'must-attend' day-long event for those developing, operating or exploring branded residences. We see this forum as a key opportunity for investors to delve into the key issues and trends, such as rental programs, legal structure, sales and marketing and design.",
-                                avatar: [
-                                    {
-                                        url: "/assets/img/brf/quotes/rico.jpg",
-                                        width: "800",
-                                        height: "800"
-                                    }
-                                ],
-                                fullName: "Rico Picenoni",
-                                jobTitle: "Head of Savills Global Residential Development Consultancy",
-                                organisation: ""
-                            }
-                        ]} />
+                        testimonials={TESTIMONIALS_DATA} />
 
                 </div>
+            </section>
+
+
+
+            {/* QUOTES */}
+            {/* <section className="block bg-secondary o-hidden">
+                <div className="container">
+                    <p className="fs-2 fw-600 caps center">What the industry is saying</p>
+                </div>
+
+                <div className={`container columns-3 gap-md`}>
+                    {
+                        QUOTES_DATA.map((quote, index) => (
+                            <Quotation
+                                key={index}
+                                avatarUrl={quote.avatarUrl}
+                                quote={quote.quote}
+                                fullName={quote.fullName}
+                                title={quote.title}
+                            />
+                        ))
+                    }
+                </div>
+            </section> */}
+
+
+           {/* FHS EVENTS */}
+            <section className="block bg-primary">
+
+                {/* LIVING */}
+                <div className="container center">
+                    <p className="fs-2 fw-500 caps">Upcoming FHS Living Events</p>
+                </div>
+
+                <div className="container columns-1 maxw-35 gap-xs">
+                    {
+                        _.orderBy(LIVING_EVENTS, 'startDate').map(event => {
+                            // console.log(event)
+                            return (
+                                <div key={event.id} className={`columns-1 gap-xs`}>                                
+                                    {
+                                        event.streams &&
+                                        event.streams.map( stream => (
+                                            <EventCard
+                                                key={stream.id}
+                                                heading={event.heading}
+                                                title={stream.heading}
+                                                dates={{ startDate: event.startDate, endDate: event.endDate}}
+                                                venue={event.venue}
+                                                logo={stream.logo[0]}
+                                                passLink={stream.purchasePassLink} 
+                                                websiteLink={stream.websiteLink} 
+                                                theme={event.theme} 
+                                                dateOverride={event.dateOverride}
+                                                landscape={true}
+                                            />
+                                        ))
+                                    }
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+
+                
+                {/* OTHER FHS */}
+                {/* <div className="container center">
+                    <p className="fs-2 fw-500 caps">FHS Around the World</p>
+                </div>
+
+                <div className="container columns-3 maxw-55 gap-xs">
+                    {
+                        FHS_EVENTS.map(event => {
+                            // console.log(event)
+                            return (
+                                <div key={event.id} className={`columns-1 gap-xs`}>                                
+                                    {
+                                        event.streams &&
+                                        event.streams.map( stream => (
+                                            <EventCard
+                                                key={stream.id}
+                                                heading={event.heading}
+                                                title={stream.heading}
+                                                dates={{ startDate: event.startDate, endDate: event.endDate}}
+                                                venue={event.venue}
+                                                logo={stream.logo[0]}
+                                                passLink={stream.purchasePassLink} 
+                                                websiteLink={stream.websiteLink} 
+                                                theme={event.theme} 
+                                                dateOverride={event.dateOverride}
+                                                landscape={false}
+                                            />
+                                        ))
+                                    }
+                                </div>
+                            )
+                        })
+                    }
+                </div> */}
             </section>
 
 
@@ -481,7 +572,7 @@ export default function Page ({ sessions, speakers }) {
     )
 }
 
-Page.theme = 'brf'
+Page.theme = 'living'
 
 
 
