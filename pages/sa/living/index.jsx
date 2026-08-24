@@ -307,6 +307,23 @@ export default function Page ({ sessions, speakers }) {
             
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>
+                
+                {/* transition boxout */}
+                <section style={
+                    isDesktop
+                        ? { position: `absolute`, top: `var(--space-sm)`, left: `var(--space-sm)` }
+                        : { paddingBottom: `2rem` }
+                }>
+                    <Pop>
+                        <div style={{ width: isDesktop ? `16rem` : `100%`, padding: `1.5rem 2rem`, backgroundColor: `var(--burgundy)`, borderRadius: `1rem`, textAlign: `center` }}>    
+                        
+                            <Pop delay={.1}>
+                                <p className='fs-5 lh-2'><strong>Branded Residences Forum</strong> has been rebranded to <strong>FHS&nbsp;Living</strong></p>
+                            </Pop>
+                            
+                        </div>
+                    </Pop>
+                </section>
 
                 <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>FHS Living</p>
                 <p className='fs-3 fw-600 c-white caps center mt-sm'>24 June 2026</p>
@@ -319,21 +336,6 @@ export default function Page ({ sessions, speakers }) {
                     </Pop>
                 </div> */}
 
-
-
-
-                {/* transition boxout */}
-                <section style={{ position: `absolute`, top: `var(--space-sm)`, left: `var(--space-sm)` }}>
-                    <Pop>
-                        <div style={{ width: `16rem`, padding: `1.5rem 2rem`, backgroundColor: `var(--burgundy)`, borderRadius: `1rem`, textAlign: `center` }}>    
-                     
-                            <Pop delay={.1}>
-                                <p className='fs-5 lh-2'><strong>Branded Residences Forum</strong> has been rebranded to <strong>FHS&nbsp;Living</strong></p>
-                            </Pop>
-                           
-                        </div>
-                    </Pop>
-                </section>
 
             </HeroUnitVideo>
 

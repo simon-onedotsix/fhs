@@ -38,13 +38,13 @@ export default function Page ({ sessions }) {
 
 	// console.log(sessions)
     // console.log('topics:', getAllTopics(sessions))
-	// console.log('sessions:', filterSessionsByTopic(sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA=="))
+	// console.log('sessions:', filterSessionsByTopic(sessions, "RmllbGRWYWx1ZV8zMTQ4ODg1OA=="))
 
 
 	
 	const getBrfSessions = (sessions) => {
 		const brfSessions = []
-		filterSessionsByTopic(sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==").map(session => brfSessions.push(session))
+		filterSessionsByTopic(sessions, "RmllbGRWYWx1ZV8zMTQ4ODg1OA==").map(session => brfSessions.push(session))
 		return brfSessions
 	}
 
@@ -193,12 +193,12 @@ export default function Page ({ sessions }) {
                 </div>
 
                 <div className="container center">
-                                    <p>
-                                        <Pop>
-                                            <Button href={`/world/agenda`}>View Full FHS Agenda</Button>
-                                        </Pop>
-                                    </p>
-                                </div>
+					<p>
+						<Pop>
+							<Button href={`/world/agenda`}>View Full FHS Agenda</Button>
+						</Pop>
+					</p>
+				</div>
             </section>
 
 
@@ -213,10 +213,6 @@ Page.theme = 'living'
 
 
 
-
-// BRF topic id: RmllbGRWYWx1ZV8yNDIzOTQ1MA==
-
-// peir paolo righi id: "RXZlbnRQZW9wbGVfMzE4NDk5Mzg=",
 
 export async function getStaticProps() {
 

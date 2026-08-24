@@ -189,7 +189,26 @@ export default function Home ({ data, advisors }) {
             />
 
             {/* INTRO */}
-            <PageHero hero={{url: `/assets/img/living/homepage/page-hero.jpg`, width: 595, height: 335}}>    
+            <PageHero hero={{ url: `/assets/img/living/homepage/page-hero.jpg`, width: 595, height: 335 }}>    
+                
+                {/* transition boxout */}
+                <section style={
+                    isDesktop
+                        ? { position: `absolute`, top: `var(--space-sm)`, right: `var(--space-sm)` }
+                        : { paddingBottom: `2rem` }
+                }>
+                    <Pop>
+                        <div style={{ width: isDesktop ? `16rem` : `100%`, padding: `1.5rem 2rem`, backgroundColor: `var(--burgundy)`, borderRadius: `1rem`, textAlign: `center` }}>    
+                     
+                            <Pop delay={.1}>
+                                <p className='fs-5 lh-2'><strong>Branded Residences Forum</strong> has been rebranded to <strong>FHS&nbsp;Living</strong></p>
+                            </Pop>
+                           
+                        </div>
+                    </Pop>
+                </section>
+
+                {/* normal content */}
                 <section className="">
                     <div className="container">
                         <p className="fs-1 fw-600 caps lh-1 maxw-60">EUROPE&apos;S ALTERNATIVE HOSPITALITY OPPORTUNITIES MEET GLOBAL CAPITAL</p>
@@ -201,6 +220,7 @@ export default function Home ({ data, advisors }) {
                         <p className="fs-5 balance">Branded Residences <span className="c-magenta">&bull;</span> Student Accommodation <span className="c-magenta">&bull;</span> Senior Living <span className="c-magenta">&bull;</span> Serviced Living <span className="c-magenta">&bull;</span> Co-Living <span className="c-magenta">&bull;</span> Shared Ownership <span className="c-magenta">&bull;</span> Club Concepts <span className="c-magenta">&bull;</span> Mixed Use <span className="c-magenta">&bull;</span> Hotels &amp; Resorts</p>
                     </div>
                 </section>
+                
             </PageHero>
 
 
