@@ -460,75 +460,18 @@ export default function Page ({ sessions, speakers }) {
 
 
 
-            {/* QUOTES */}
-            {/* <section className="block bg-secondary o-hidden">
-                <div className="container">
-                    <p className="fs-2 fw-600 caps center">What the industry is saying</p>
-                </div>
-
-                <div className={`container columns-3 gap-md`}>
-                    {
-                        QUOTES_DATA.map((quote, index) => (
-                            <Quotation
-                                key={index}
-                                avatarUrl={quote.avatarUrl}
-                                quote={quote.quote}
-                                fullName={quote.fullName}
-                                title={quote.title}
-                            />
-                        ))
-                    }
-                </div>
-            </section> */}
-
 
            {/* FHS EVENTS */}
             <section className="block bg-primary">
 
                 {/* LIVING */}
                 <div className="container center">
-                    <p className="fs-2 fw-500 caps">Upcoming FHS Living Events</p>
+                    <p className="fs-2 fw-500 caps lh-1">Upcoming FHS Living Events</p>
                 </div>
 
-                <div className="container columns-1 maxw-35 gap-xs">
+                <div className="container columns-4 gap-xs">
                     {
                         _.orderBy(LIVING_EVENTS, 'startDate').map(event => {
-                            // console.log(event)
-                            return (
-                                <div key={event.id} className={`columns-1 gap-xs`}>                                
-                                    {
-                                        event.streams &&
-                                        event.streams.map( stream => (
-                                            <EventCard
-                                                key={stream.id}
-                                                heading={event.heading}
-                                                title={stream.heading}
-                                                dates={{ startDate: event.startDate, endDate: event.endDate}}
-                                                venue={event.venue}
-                                                logo={stream.logo[0]}
-                                                passLink={stream.purchasePassLink} 
-                                                websiteLink={stream.websiteLink} 
-                                                theme={event.theme} 
-                                                dateOverride={event.dateOverride}
-                                                landscape={true}
-                                            />
-                                        ))
-                                    }
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-
-                
-                {/* OTHER FHS */}
-                {/* <div className="container center">
-                    <p className="fs-2 fw-500 caps">FHS Around the World</p>
-                </div>
-
-                <div className="container columns-3 maxw-55 gap-xs">
-                    {
-                        FHS_EVENTS.map(event => {
                             // console.log(event)
                             return (
                                 <div key={event.id} className={`columns-1 gap-xs`}>                                
@@ -554,20 +497,11 @@ export default function Page ({ sessions, speakers }) {
                             )
                         })
                     }
-                </div> */}
+                </div>
+
             </section>
 
 
-
-            {/* FORM */}
-            {/* <section id="form" className="block bg-secondary">
-                <div className="container center">
-                    <p className="fs-1 fw-600">Register Your Interest</p>
-                </div>
-                <div className="container maxw-70">
-                    <HubspotForm portalId='14527187' formId='8f2cb55c-9a3a-417e-a88f-d2fb7a8b68e1' />
-                </div>
-            </section> */}
 
 
             <Footer />
