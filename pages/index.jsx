@@ -230,7 +230,7 @@ export const EVENT_DATA = [
         "heading": "Riyadh",
         "startDate": null,
         "endDate": null,
-        "dateOverride": "Mar 2027",
+        "dateOverride": "23 March 2027",
         "venue": "Mandarin Oriental Al Faisaliah",
         "theme": "#ffffff",
         "streams": [

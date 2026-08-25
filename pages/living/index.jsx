@@ -204,6 +204,47 @@ export default function Home ({ data, advisors }) {
             </PageHero>
 
 
+            {/* FHS EVENTS */}
+            <section className="block bg-primary pt-md">
+
+                {/* LIVING */}
+                <div className="container center">
+                    <p className="fs-2 fw-500 caps lh-1">Upcoming FHS Living Events</p>
+                </div>
+
+                <div className="container columns-4 gap-xs">
+                    {
+                        _.orderBy(LIVING_EVENTS, 'startDate').map(event => {
+                            // console.log(event)
+                            return (
+                                <div key={event.id} className={`columns-1 gap-xs`}>                                
+                                    {
+                                        event.streams &&
+                                        event.streams.map( stream => (
+                                            <EventCard
+                                                key={stream.id}
+                                                heading={event.heading}
+                                                title={stream.heading}
+                                                dates={{ startDate: event.startDate, endDate: event.endDate}}
+                                                venue={event.venue}
+                                                logo={stream.logo[0]}
+                                                passLink={stream.purchasePassLink} 
+                                                websiteLink={stream.websiteLink} 
+                                                theme={event.theme} 
+                                                dateOverride={event.dateOverride}
+                                                landscape={false}
+                                            />
+                                        ))
+                                    }
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+
+            </section>
+
+
             {/* IMPACT */}
             <section className="block bg-secondary">
                 <div className="container columns-3 gap-sm">
@@ -464,80 +505,7 @@ export default function Home ({ data, advisors }) {
             </section>
 
             
-            {/* FHS EVENTS */}
-            <section className="block bg-primary">
-
-                {/* LIVING */}
-                <div className="container center">
-                    <p className="fs-2 fw-500 caps">Upcoming FHS Living Events</p>
-                </div>
-
-                <div className="container columns-1 maxw-35 gap-xs">
-                    {
-                        _.orderBy(LIVING_EVENTS, 'startDate').map(event => {
-                            // console.log(event)
-                            return (
-                                <div key={event.id} className={`columns-1 gap-xs`}>                                
-                                    {
-                                        event.streams &&
-                                        event.streams.map( stream => (
-                                            <EventCard
-                                                key={stream.id}
-                                                heading={event.heading}
-                                                title={stream.heading}
-                                                dates={{ startDate: event.startDate, endDate: event.endDate}}
-                                                venue={event.venue}
-                                                logo={stream.logo[0]}
-                                                passLink={stream.purchasePassLink} 
-                                                websiteLink={stream.websiteLink} 
-                                                theme={event.theme} 
-                                                dateOverride={event.dateOverride}
-                                                landscape={true}
-                                            />
-                                        ))
-                                    }
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-
-                
-                {/* OTHER FHS */}
-                {/* <div className="container center">
-                    <p className="fs-2 fw-500 caps">FHS Around the World</p>
-                </div>
-
-                <div className="container columns-3 maxw-55 gap-xs">
-                    {
-                        FHS_EVENTS.map(event => {
-                            // console.log(event)
-                            return (
-                                <div key={event.id} className={`columns-1 gap-xs`}>                                
-                                    {
-                                        event.streams &&
-                                        event.streams.map( stream => (
-                                            <EventCard
-                                                key={stream.id}
-                                                heading={event.heading}
-                                                title={stream.heading}
-                                                dates={{ startDate: event.startDate, endDate: event.endDate}}
-                                                venue={event.venue}
-                                                logo={stream.logo[0]}
-                                                passLink={stream.purchasePassLink} 
-                                                websiteLink={stream.websiteLink} 
-                                                theme={event.theme} 
-                                                dateOverride={event.dateOverride}
-                                                landscape={false}
-                                            />
-                                        ))
-                                    }
-                                </div>
-                            )
-                        })
-                    }
-                </div> */}
-            </section>
+            
             
             
 
