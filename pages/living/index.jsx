@@ -209,13 +209,13 @@ export default function Home ({ data, advisors }) {
 
                 {/* LIVING */}
                 <div className="container center">
-                    <p className="fs-2 fw-500 caps lh-1">Upcoming FHS Living Events</p>
+                    <p className="fs-2 fw-500 caps lh-1">Upcoming FHS Living Sub-Events</p>
                 </div>
 
-                <div className="container columns-4 gap-xs">
+                <div className="container columns-3 gap-xs maxw-55">
                     {
                         _.orderBy(LIVING_EVENTS, 'startDate').map(event => {
-                            // console.log(event)
+                            if (event.id === '314682') return
                             return (
                                 <div key={event.id} className={`columns-1 gap-xs`}>                                
                                     {

@@ -397,7 +397,6 @@ export default function Page ({ sessions, speakers }) {
                 <div className="container columns-4 gap-xs">
                     {
                         _.orderBy(LIVING_EVENTS, 'startDate').map(event => {
-                            // console.log(event)
                             return (
                                 <div key={event.id} className={`columns-1 gap-xs`}>                                
                                     {
