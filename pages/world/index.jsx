@@ -173,7 +173,7 @@ const SPEAKERS = [
     {
         "id": "RXZlbnRQZW9wbGVfNDc3NzQwMTE=",
         "type": null,
-        "firstName": "HE Abdulla",
+        "firstName": "H․E. Abdulla",
         "lastName": "bin Touq Al Marri",
         "jobTitle": "Minister of Economy & Tourism",
         "organization": "United Arab Emirates",

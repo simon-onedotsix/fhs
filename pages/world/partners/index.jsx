@@ -283,7 +283,7 @@ export async function getStaticProps() {
 		}
 	)
 
-	console.log(swapcardData)
+	// console.log(swapcardData)
 	
 	const partnerData =  await swapcardData.json()
 	
