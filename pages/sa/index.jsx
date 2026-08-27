@@ -38,28 +38,20 @@ import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
-import { ButtonKeyline } from "../../fuselage/theme/egypt/components/button-keyline/button-keyline"
 import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
-import { AnimatedCounter } from "../../fuselage/theme/2025/sa/blocks/impact-grid/impact-grid"
-import { Quotation } from "../../fuselage/theme/2025/sa/components/quotation/quotation"
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
 import { Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticker/logo-ticker"
-import { ArticleScroller, Article } from "../../fuselage/theme/2025/sa/blocks/article-scroller/article-scroller"
 
 import { VideoSection, Section } from '../../fuselage/theme/2026/sa/blocks/section'
 import { ThemeGraphic } from '../../fuselage/theme/2026/sa/theme/theme-graphic'
 
-import { ImageGallery } from "../../fuselage/components/image-gallery/image-gallery"
 import { SlideoutCard } from "../../fuselage/components/slideout-card/slideout-card"
 import { ContentCard } from '../../fuselage/components/content-card/content-card'
 import { LayoutGallery } from "../../fuselage/components/layout-gallery/layout-gallery"
 import { ContentCard as Post } from "../../fuselage/theme/2024/world/components/content-card/content-card"
-import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 import { VideoTestimonial } from '../../fuselage/theme/2025/sa/components/video-testimonial/video-testimonial'
 import { ImpactCard } from "../../ui/components/impact-card"
-import { BarChart, Field } from '../../ui/components/bar-chart'
-import { GlobalMap, Region, Bubble } from '../../ui/components/global-map'
 
 
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
@@ -1273,7 +1265,7 @@ Page.theme = 'sa-2025'
 
 
 
-const PartnerGroup = ({ partnerData, start, end }) => {
+export const PartnerGroup = ({ partnerData, start, end }) => {
     return (
         <div
             style={{

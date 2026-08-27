@@ -571,7 +571,7 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
-	// console.log('sessions:', sessions)
+	console.log('sessions:', sessions)
 	// console.log('locations [swc]:', locations)
 	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
 	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )

@@ -214,20 +214,13 @@ export const FHS_WORLD = {
                         "navUrl": "/world/networking-receptions",
                         "target": false
                     },
-                    // {
-                    //     "__typename": "navigation_Entry",
-                    //     "id": "171",
-                    //     "title": "Happy Hour Networking",
-                    //     "navUrl": "/world/happy-hour",
-                    //     "target": false
-                    // },
-                    // {
-                    //     "__typename": "navigation_Entry",
-                    //     "id": "173",
-                    //     "title": "Themed Socials",
-                    //     "navUrl": "/world/themed-socials",
-                    //     "target": false
-                    // },
+                                        {
+                        "__typename": "navigation_Entry",
+                        "id": "177",
+                        "title": "Sports & Wellness",
+                        "navUrl": "/world/sports",
+                        "target": false
+                    },
                     {
                         "__typename": "navigation_Entry",
                         "id": "175",
@@ -235,20 +228,7 @@ export const FHS_WORLD = {
                         "navUrl": "/world/fhswomenpower",
                         "target": false
                     },
-                    // {
-                    //     "__typename": "navigation_Entry",
-                    //     "id": "177",
-                    //     "title": "Sports & Wellness",
-                    //     "navUrl": "/world/sports",
-                    //     "target": false
-                    // },
-                    // {
-                    //     "__typename": "navigation_Entry",
-                    //     "id": "159",
-                    //     "title": "FHS Gathering: Business Unusual",
-                    //     "navUrl": "/world/business-unusual-how-are-we-coping",
-                    //     "target": false
-                    // },
+
                     {
                         "__typename": "subsection_Entry",
                         "id": "179",
@@ -409,7 +389,8 @@ export const FHS_WORLD = {
                 {
                     "label": "Register Here",
                     "hyperlink": "/world/purchase-pass",
-                    "openInNewWindow": false
+                    "openInNewWindow": false,
+                    "alert": true
                 },
                 {
                     "label": "Become a Partner",

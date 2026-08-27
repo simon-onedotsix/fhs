@@ -84,6 +84,7 @@ export const Header = ({ site, handle, event, mainMenu, ctas, children }) => {
                                         href={cta.hyperlink}
                                         label={cta.label}
                                         target={cta.openInNewWindow}
+                                        alert={cta.alert}
                                     />
                                 ))
                             }

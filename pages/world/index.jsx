@@ -19,11 +19,7 @@ import { Header } from '../../ui/site/header'
 import { FHS_WORLD as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/2024/world/common/footer/footer'
 
-import { FhsIcon, FhsIconKeyline } from "../../fuselage/theme/2024/world/components/logos/fhs-brand"
-import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-carousel/speaker-carousel"
-import { ImpactFigure } from "../../fuselage/theme/2024/world/components/impact-figure/impact-figure"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
-import { Callout } from '../../fuselage/theme/2024/world/blocks/callout/callout'
 import { BarChart, Field } from '../../fuselage/theme/2025/world/components/bar-chart/bar-chart'
 import { GlobalMap } from '../../fuselage/theme/2025/world/components/global-map/global-map'
 import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
@@ -60,7 +56,8 @@ import { ThemeBillboard, Tri } from "../../fuselage/theme/2025/world/pages/home/
 import { AisLockup } from '../../fuselage/theme/2025/ais/ais-brand/ais-brand' 
 import Ticker from "framer-motion-ticker"
 
-import { getAllSpecialFields } from "../../lib/swapcard/get-all-special-fields"
+import { LayoutGallery } from "../../fuselage/components/layout-gallery/layout-gallery"
+import { PartnerGroup } from "../sa"
 
 import CSS from '../../fuselage/theme/2026/world/css/homepage.module.css'
 
@@ -348,18 +345,57 @@ const INDUSTRY_DATA = [
     
 ]
 
+const INVESTORS = [
+    { title: "Al Futtaim Real Estate" },
+    { title: "Al-Raya Real Estate Company" },
+    { title: "Arada Hospitality and Entertainment" },
+    { title: "Arbireo Capital" },
+    { title: "Arzan Investment Management" },
+    { title: "Cain" },
+    { title: "Cipta Graha Group" },
+    { title: "Core Investment Co." },
+    { title: "Corvus Capital" },
+    { title: "Deyaar Development PJSC" },
+    { title: "EQT – MONE Investment" },
+    { title: "Family business office grandbuild" },
+    { title: "Fields of Gold (F.O.G.) Capital & Asset Mgt Corp." },
+    { title: "First Abu Dhabi Bank" },
+    { title: "HAMA MEA - BEAUFORT" },
+    { title: "Hospitality Asset Managers Association Middle East and Africa" },
+    { title: "Jabal Omar Development Company" },
+    { title: "Kapur & Partners" },
+    { title: "Katara Hospitality" },
+    { title: "Limestone Capital" },
+    { title: "Mashreq Bank" },
+    { title: "ME & West Investments" },
+    { title: "Millat Group" },
+    { title: "Modon Holding Hospitality" },
+    { title: "Mohamed Saeed Almulla & Sons" },
+    { title: "Musstir" },
+    { title: "Pulse Hotels and Resorts" },
+    { title: "Qatar Islamic Bank UK plc" },
+    { title: "Radisson Collection, A Fridays Boracay Resort" },
+    { title: "RAK Properties" },
+    { title: "Rockshieldburg" },
+    { title: "SAMHI Hotels" },
+    { title: "Sharjah Investment and Development Authority - Shurooq" },
+    { title: "Uganda Hotel Owners Association" },
+    { title: "Uganda Investment Authority" },
+    { title: "Wasl" },
+]
 
 
-
-export default function Home ({ globals, entry, seomatic, partnerData }) {
+export default function Home ({ globals, entry, seomatic, partners }) {
 
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState()
 
     // console.log('entry:', entry)
     // console.log('SEO — title:', JSON.parse(entry.seomatic.metaTitleContainer))
-    // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))	
-
+    // console.log('SEO — tags:', JSON.parse(entry.seomatic.metaTagContainer))
+    // console.log('partners:', partners)
+    
+    
 
     // scroll animation
     let introRef = useRef(null)
@@ -438,19 +474,16 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
                         <Fade>
                             <div className="mt-sm button-grid">
                                 <Pop inline delay={1.3}>
-                                    <Button href={`/world/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Here</Button>
-                                </Pop>
-                                <Pop inline delay={1.3}>
                                     <Button href={`/world/download-fhs-event-brochure`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>View Event Brochure</Button>
                                 </Pop>
                                 <Pop inline delay={1.3}>
-                                    <Button href={`/world/download-post-event-report`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>2025 Post-event Report</Button>
+                                    <Button href={`/world/download-attendee-list`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Download Attendee List</Button>
                                 </Pop>
                             </div>
                         </Fade>
                     </section>
 
-                    {/* patronage */}
+                    {/* patronage boxout */}
                     <section style={{ alignSelf: 'flex-end' }}>
                         <Pop>
                             <div className={CSS.patronBox}>
@@ -481,28 +514,45 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
 
 
             {/* INVESTORS */}
-            <section className="block bg-primary-2-dark">
+            <section className="block bg-primary-2-dark" style={{ paddingBottom: `var(--space-md)`}}>
                 <div className="container center">
                     <Fade>
-                        <p className="fs-1 fw-600 lh-1 caps">Investors at FHS World 2025</p>
+                        <p className="fs-1 fw-600 lh-1 caps">Investors Attending FHS World 2026</p>
                     </Fade>
-                    <div className="columns-4 gap-sm mt-md">
+                    
+                    {/* <div className="columns-4 gap-sm mt-md">
                         <InvestorImpact figure={5.4} prefix={"$"} unit={"tn"} label={"ASSETS UNDER MANAGEMENT"} />
                         <InvestorImpact figure={300} unit={'+'} label={"INVESTORS"} />
                         <InvestorImpact figure={65} unit={"%"} label={"INVESTORS ATTENDING FIRST TIME"} />
                         <InvestorImpact figure={35} unit={"%"} label={"INVESTORS FROM NON-GCC COUNTRIES"} />
-                    </div>
-                    <p className="mt-md">
-                        <Pop>
-                            <ButtonKeyline 
-                                href={'/world/sample-list-of-attending-investors'} 
-                                decal={'fs-5 fw-600'} 
-                                color={'var(--primary)'}
-                            >
-                                View Sample List of Attending Investors
-                            </ButtonKeyline>
-                        </Pop>
-                    </p>
+                    </div> */}
+                </div>
+
+            </section>
+            
+            <section className="bg-primary-2-dark">
+                <Ticker duration={40}>
+                    {
+                        INVESTORS.map((investor, index) => (
+                            <div key={index} style={{ marginRight: 10 }}>
+                                <p className="fs-5 fw-500"><span className="c-accent">&bull;</span> {investor.title}</p>
+                            </div>
+                        ))
+                    }
+                </Ticker>
+            </section>
+            
+            <section className="block bg-primary-2-dark pt-md">
+                <div className="container center">
+                    <Pop>
+                        <ButtonKeyline 
+                            href={'/world/sample-list-of-attending-investors'} 
+                            decal={'fs-5 fw-600'} 
+                            color={'var(--primary)'}
+                        >
+                            View Sample List of Attending Investors
+                        </ButtonKeyline>
+                    </Pop>
                 </div>
             </section>
 
@@ -547,32 +597,9 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
                 
             }
 
-
-            {/* THEMES */}
-            <div className={CSS.themeWrapper}>
-                {/* <div className={CSS.themeWrapperGraphics}>
-                    <InfiniteRotatingTriangles
-                        fill={`var(--accent)`}
-                        size={`60vw`}
-                        top={`-10rem`}
-                        left={`-20rem`}
-                    />
-                    
-                    <InfiniteRotatingTriangles
-                        size={`65vw`}
-                        right={`-20rem`}
-                        bottom={`-20rem`}
-                    />
-                </div> */}
-
-                <section className={`${CSS.themeWrapperContent} block`}>
-                    <ThemesSlider data={THEMES_DATA} />
-                </section>
-            </div>
-
             
             {/* WHO ATTENDS */}
-            <section className="block bg-primary-2-dark">
+            <section className="block bg-primary">
                 <div className="container center">
                     <Fade>
                         <p className="fs-1 fw-600 lh-1 caps">Who Attends FHS World</p>
@@ -596,7 +623,33 @@ export default function Home ({ globals, entry, seomatic, partnerData }) {
                     </section>
                 </div>
             </section>
+
             
+
+            {/* THEMES */}
+            <section className={`block bg-primary-2-dark`}>
+                <ThemesSlider data={THEMES_DATA} />
+            </section>
+
+
+            
+            {/* PARTNERS */}
+            <section className="block bg-white">
+                <div className="container center">
+                    <Pop><p className="fs-2 fw-600 c-primary balance">Thank You to Our 2026 Partners</p></Pop>
+                </div>
+
+                <div className="container mt-lg">
+                    <LayoutGallery>
+                        <PartnerGroup partnerData={partners} start={0} end={17} />
+                        <PartnerGroup partnerData={partners} start={18} end={35} />
+                        <PartnerGroup partnerData={partners} start={36} end={53} />
+                        <PartnerGroup partnerData={partners} start={54} end={69} />
+                    </LayoutGallery>
+                </div>
+            </section>
+
+
 
 
             {/* VIDEO + PHOTO HIGHLIGHTS */}
@@ -816,11 +869,54 @@ export async function getStaticProps({ params, preview, previewData }) {
     const pageData = data
 
 
+    const swapcardData2026 = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query {
+						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}", page:1, pageSize: 200) {
+							id
+							name
+							logoUrl
+							fields {
+								... on SelectField {
+									id
+									value
+									definition {
+										id
+										name
+									}
+									translations {
+										value
+									}
+								}
+							}
+						}
+					}
+				`,
+				variables: {
+					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2026,
+					"page": 1
+				}
+			})
+		}
+	)
+    const partnerData2026 = await swapcardData2026.json()
+    
+
+
     return { 
         props: { 
             globals: pageData.data.globalSet,
             entry: pageData.data.entry,
             seomatic: pageData.data.entry.seomatic,
+            partners: partnerData2026.data.exhibitors,
         }
     }
 }

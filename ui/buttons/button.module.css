@@ -32,6 +32,11 @@
     color: var(--fg);
 }
 
+.alert {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+
 
 @media(hover:hover){
     .ui:hover {
