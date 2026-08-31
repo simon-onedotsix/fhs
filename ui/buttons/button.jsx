@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import CSS from './button.module.css'
 
-export const Button = ({ href = '/', label, target, inverse, outline, fake, alert }) => {
+export const Button = ({ href = '/', label, target, inverse, outline, fake, alert, cta }) => {
 
     if (fake) return (
         <span className={`
@@ -35,6 +35,7 @@ export const Button = ({ href = '/', label, target, inverse, outline, fake, aler
                 ${inverse ? CSS.inverse : ''}
                 ${outline ? CSS.outline : ''}
                 ${alert ? CSS.alert : ''}
+                ${cta ? CSS.cta : ''}
             `}>{label}</a>
         </Link>
     )

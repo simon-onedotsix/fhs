@@ -219,6 +219,13 @@ export default function Home ({ data, advisors }) {
                         <p className="fs-6 fw-600 c-magenta">For those who are involved or interested in below asset classes:</p>
                         <p className="fs-5 balance">Branded Residences <span className="c-magenta">&bull;</span> Student Accommodation <span className="c-magenta">&bull;</span> Senior Living <span className="c-magenta">&bull;</span> Serviced Living <span className="c-magenta">&bull;</span> Co-Living <span className="c-magenta">&bull;</span> Shared Ownership <span className="c-magenta">&bull;</span> Club Concepts <span className="c-magenta">&bull;</span> Mixed Use <span className="c-magenta">&bull;</span> Hotels &amp; Resorts</p>
                     </div>
+
+                    {
+                        !isDesktop &&
+                        <div className="container">
+                            <Button inverse href={`/living/purchase-pass`} label={`Purchase Pass`} />
+                        </div>
+                    }
                 </section>
                 
             </PageHero>

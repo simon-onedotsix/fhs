@@ -12,6 +12,7 @@
     /* --secondary: hsl(from var(--primary) h s calc(l + 6) / 1); */
     --secondary: var(--cream);
     --accent: var(--cream);
+    --cta: var(--burgundy);
 
     --bg: white;
     --fg: hsl(from var(--primary) h s calc(l + 6) / 1);
