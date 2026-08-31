@@ -203,8 +203,8 @@ export const FHS_WORLD = {
                     {
                         "__typename": "navigation_Entry",
                         "id": "167",
-                        "title": "Startup Zone",
-                        "navUrl": "/world/startup-zone",
+                        "title": "Startups",
+                        "navUrl": "/world/startups",
                         "target": false
                     },
                     {
