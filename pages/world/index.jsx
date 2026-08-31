@@ -3,6 +3,7 @@ import craftApolloClient from "../api/apollo"
 
 import { useState, useRef } from "react"
 
+import useCustomMediaQuery from "../../hooks/useCustomMediaQuery"
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { motion, useScroll, useTransform } from "framer-motion"
 
@@ -385,7 +386,9 @@ const INVESTORS = [
 ]
 
 
-export default function Home ({ globals, entry, seomatic, partners }) {
+export default function Home({ globals, entry, seomatic, partners }) {
+    
+    const isDesktop = useCustomMediaQuery('(min-width: 600px)')
 
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState()
@@ -472,9 +475,13 @@ export default function Home ({ globals, entry, seomatic, partners }) {
                         </Fade>
 
                         <Fade>
-                            <div className="mt-sm button-grid">
+                            <div className={ isDesktop ? `mt-sm button-grid` : `columns-1 gap-xs mt-sm mb-md`}>
                                 <Pop inline delay={1.3}>
-                                    <Button href={`/world/download-fhs-event-brochure`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>View Event Brochure</Button>
+                                    {
+                                        isDesktop 
+                                            ? <Button href={`/world/download-fhs-event-brochure`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white` }} decal={`fs-5 fw-600`}>View Event Brochure</Button>
+                                            : <Button href={`/world/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Here</Button>
+                                    }
                                 </Pop>
                                 <Pop inline delay={1.3}>
                                     <Button href={`/world/download-attendee-list`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Download Attendee List</Button>
