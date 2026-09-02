@@ -100,28 +100,12 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 			/>
 
 
-			{
-				videoTestimonials &&
-				<section className="block bg-default">
-					<div className="container columns-3 gap-md">
-						{ videoTestimonials.map( entry => <VideoTestimonialCard key={entry.id} entry={entry} /> ) }
-					</div>
-					<div className="container center">
-						<Button
-							href={'/world/video-testimonials'}
-							decal={`fs-5 fw-600`} 
-							theme={{ background: `var(--secondary-1)`, hover: `white`, color: `var(--primary)`}} 
-						>
-							More Testimonials
-						</Button>
-					</div>
-				</section>
-			}
+			
 
 
 			{/* PARTNERS */}
 
-			<section className='block py-0'>
+			<section className='block pb-0'>
 				<div className='container center formatted'>
 					<p className='fs-1 fw-600'>2026 Partners</p>
 				</div>
@@ -181,6 +165,24 @@ function Partners({ partnerData, videoTestimonials, flags }) {
 				</PartnerCategoryGrid>
 				
 			
+
+			{
+				videoTestimonials &&
+				<section className="block bg-default">
+					<div className="container columns-3 gap-md">
+						{ videoTestimonials.map( entry => <VideoTestimonialCard key={entry.id} entry={entry} /> ) }
+					</div>
+					<div className="container center">
+						<Button
+							href={'/world/video-testimonials'}
+							decal={`fs-5 fw-600`} 
+							theme={{ background: `var(--secondary-1)`, hover: `white`, color: `var(--primary)`}} 
+						>
+							More Testimonials
+						</Button>
+					</div>
+				</section>
+			}
 
 
 

@@ -518,6 +518,23 @@ export default function Home({ globals, entry, seomatic, partners }) {
             </HeroUnitVideo>
 
             
+            <section className="block bg-primary-2-dark" style={{ paddingBottom: `var(--space-md)` }}>
+                <div className="container center columns-2 gap-md maxw-40">
+                    <section style={{ display: `inline-block`, backgroundColor: `white`, borderRadius: `1rem`, padding: `1rem 2rem` }}>
+                        <p className='c-secondary center pb-xxs caps ls-2'>Strategic Enabler</p>
+                        <div style={{ width: `100%`, maxWidth: '18rem', margin: '0 auto' }}>
+                            <img src="https://static.swapcard.com/public/images/efee38fce437485fa6261d5124cc0bd6.png" alt="logo" width={`100%`} />
+                        </div>
+                    </section>
+                   
+                    <section style={{ display: `inline-block`, backgroundColor: `white`, borderRadius: `1rem`, padding: `1rem 2rem` }}>
+                        <p className='c-secondary center pb-xxs caps ls-2'>Host Partner</p>
+                        <div style={{ width: `100%`, maxWidth: '18rem', margin: '0 auto' }}>
+                            <img src="https://static.swapcard.com/public/images/3c4a24e94d43465f80d3051983b112a6.png" alt="logo" width={`100%`} />
+                        </div>
+                    </section>
+                </div>
+            </section>
 
 
             {/* INVESTORS */}
