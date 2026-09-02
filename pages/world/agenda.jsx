@@ -131,6 +131,7 @@ export default function Agenda ({ sessions, locations }) {
 	const [ selectedTopic, setSelectedTopic ] = useState (null)
     const [ selectedDay, setSelectedDay ] = useState (null)
     const [ selectedLocation, setSelectedLocation ] = useState(null)
+	
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: '', speakingOn: null })
 	

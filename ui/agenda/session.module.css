@@ -1,0 +1,139 @@
+/* session */
+
+.wrapper {
+    background-color: hsl(from var(--primary) h s calc(l - 5) / 1);
+    border-radius: calc(var(--ui-radius) * 0.125);
+    flex: 1;
+}
+
+.header {
+    background-color: hsl(from var(--primary) h s calc(l + 10) / 1);
+    padding: var(--space-xxs) var(--space-xs);
+    border-radius: calc(var(--ui-radius) * 0.125) calc(var(--ui-radius) * 0.125) 0 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xxs);
+    flex-wrap: wrap;
+
+    font-weight: 500;
+}
+
+.content {
+    padding: var(--space-xs);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+}
+
+
+
+/* typography */
+
+.title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
+
+
+/* tags */
+
+.tags {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+}
+.tag {
+    display: inline-block;
+    background-color: var(--accent);
+    padding: .125rem .5rem;
+    border-radius: 1rem;
+    
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+
+
+/* speaker grid */
+
+.speakerGrid {
+    container-type: inline-size;
+}
+
+.speakerGrid,
+.speakerGridSection {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+}
+.speakerTypeLable {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    font-size: .9rem;
+    color:var(--accent);
+}
+
+
+
+/* speaker card */
+
+.speakerCard {
+    width: 14rem;
+}
+.speakerAvatar {
+    width:6rem;
+    aspect-ratio: 1;
+    border-radius: 5rem;
+    overflow: hidden;
+}
+.speakerAvatar img {
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+}
+.speakerCard p:nth-of-type(1) {
+    font-weight: 600;
+    margin: 1rem 0 .5rem;
+}
+.speakerCard p:nth-of-type(2),
+.speakerCard p:nth-of-type(3) {
+    font-size: .9rem;
+    line-height: 1.2;
+    text-wrap: balance;
+}
+.speakerCard p:nth-of-type(2) {
+    font-style: italic;
+}
+.speakerCard p:nth-of-type(3) {
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+/* printer styles --------------------------------------------- */
+
+@media print {
+
+    .header {
+        border-bottom: 1px solid rgb(200, 200, 200) !important;
+        background-color: white !important;
+    }
+    .wrapper {
+        background-color: white !important;
+        border: 1px solid rgb(200, 200, 200);
+        color: black !important;
+    }
+
+}
+
+
