@@ -44,102 +44,39 @@ import {
 import DROPDOWN from '../../css/app/dropdown-world-2024.module.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
 
-import { sortSpeakersAndModerators, renderSpeakerCard } from '../../lib/agenda-utils'
+import {Session} from '../../ui/agenda/session'
 
 import CSS from '../../css/app/agenda-world-2024.module.css'
+import CSS2 from '../../ui/agenda/agenda.module.css'
 
 
-
-
-// custom topic selection and ordering
-// to revert to API-driven replace the mapped variable with:
-// groupFieldGroupsByName( sessions, 'Topics') or use TRACKS variable (set blow)
-
-
-const FILTER_TRACKS = [
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEyNg==", "name": "FHS Opening, Awards & Signings" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzNw==", "name": "Restaurant Invest (GRIF)" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEyNw==", "name": "Brand & Destination" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzMQ==", "name": "ESG & Human Capital" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzMg==", "name": "Culture & Heritage" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzNQ==", "name": "Investment & Development" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzNg==", "name": "Networking" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzOA==", "name": "Startup Den" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEyOA==", "name": "Talks" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzEzOQ==", "name": "Tech & Innovation" },
-    { "id": "RmllbGRWYWx1ZV8yMzI1MzE0MQ==", "name": "Wellness" },
+const CUSTOM_ORDER = [
+	'Summit Stage',
+	'Future Stage (Murjan A)',
+	'Workshop Room (Murjan B)',
+	'Jumeirah Racquets - Al Qasr',
+	'J Club Jumeirah Beach Hotel'
 ]
 
-// end custom topic selection and ordering
 
-
-
-// custom stream order
-
-let PRIORITISED_STREAMS = [
-    {
-        "id": "RmllbGRWYWx1ZV8xOTEwNTI2NA==",
-        "name": "Summit Stage",
-		"color": "#006f6cff"
-    },
-    {
-        "id": "RmllbGRWYWx1ZV8zMDI0NjUzNA==",
-        "name": "Workshop Room 1",
-		"color": "#0064dfff"
-    },
-    {
-        "id": "RmllbGRWYWx1ZV8zMDI0NjUzNQ==",
-        "name": "Workshop Room 2",
-		"color": "#5c00c5ff"
-    },
-	{
-		"id": "RmllbGRWYWx1ZV8yMjQ1NzUyOA==",
-		"name": "Innovation Stage",
-		"color": "#835c09"
-	},
-    {
-		"id": "RmllbGRWYWx1ZV8yMDYxOTUyNA==",
-        "name": "Exhibition Stage",
-		"color": "#093c83"
-    },
-	{
-		"id": "RmllbGRWYWx1ZV8xOTgzMTg2Nw==",
-		"name": "Workshops (Marjan)",
-		"color": "#800091ff"
-	},
-	{
-		"id": "RmllbGRWYWx1ZV8yNjk4NTkzMg==",
-		"name": "Workshops (Arena)",
-		"color": "#910041ff"
-	},
-]
-
-// end stream order
-
-
-
-export default function Agenda ({ sessions, locations }) {
+export default function Agenda({ sessions }) {
+	
 
 	const lenis = useLenis()
 	const router = useRouter()
 
-	// const lenis = useLenis(({ scroll }) => {
-	// 	console.log(scroll)
-	// })
 
-	const [ filtersActive, setFiltersActive ] = useState (false)
-	const [ selectedTopic, setSelectedTopic ] = useState (null)
-    const [ selectedDay, setSelectedDay ] = useState (null)
-    const [ selectedLocation, setSelectedLocation ] = useState(null)
+	const [selectedDay, setSelectedDay] = useState(null)
+    const [selectedCategory, setSelectedCategory] = useState(null)
+    const [selectedPlace, setSelectedPlace] = useState(null)
 	
+	const [ filtersActive, setFiltersActive ] = useState (false)
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState({ avatar: '', name: '', title: '', company: '', bio: '', speakingOn: null })
 	
 	const [ searchActive, setSearchActive ] = useState (false)
 	const [ search, setSearch ] = useState ('')
 
-
-	
 
 
 	useEffect(() => {
@@ -154,7 +91,7 @@ export default function Agenda ({ sessions, locations }) {
 		
 		// if track param is provided, set topic
 		if ( router.isReady && router.query.track ) {
-			setSelectedTopic(router.query.track)
+			setselectedCategory(router.query.track)
 			router.replace({
 				pathname: router.pathname,
 				search: new URLSearchParams(router.search).delete('track'),
@@ -174,217 +111,15 @@ export default function Agenda ({ sessions, locations }) {
 	})
 
 
-
 	// FILTER UTILS
-
 	const resetFilters = () => {
 		setSelectedDay(null)
-		setSelectedLocation(null)
-		setSelectedTopic(null)
+		setSelectedPlace(null)
+		setSelectedCategory(null)
 	}
-
-
-
-	// BUILD AGENDA
-		
-	const buildAgenda = ( sessionsData ) => {
-
-		if ( !sessionsData ) return 
-
-
-
-		// text search filtering
-
-		sessionsData = sessionsData.filter( session => {
-
-			if ( search.toLowerCase() === '' ) return session
-
-			let searchContent = session.titleTranslations[0].value.toLowerCase()
-
-			if ( session.speakers.length ) {
-				session.speakers.forEach( speaker => {
-					searchContent = searchContent + ` ${speaker.firstName.toLowerCase()}`
-					searchContent = searchContent + ` ${speaker.lastName.toLowerCase()}`
-					searchContent = searchContent + ` ${speaker.jobTitle?.toLowerCase()}`
-					searchContent = searchContent + ` ${speaker.organization?.toLowerCase()}`
-				})
-			}
-
-			if ( session.fields.length ) {
-				session.fields.forEach( field => {
-					searchContent = searchContent + ` ${field.value?.toLowerCase()} `
-				})
-			}
-
-			// console.log('current session searchContent:', searchContent)
-
-			if ( searchContent.includes(search.toLowerCase()) ) return session
-
-		})
-
-
-		
-		const timeslots = _.groupBy(sessionsData, 'beginsAt')
-		
-
-		// calculate event days
-
-		const getUniqueDays = ( sessionData ) => {
-
-			const groupedStartTimes = _.groupBy(sessionData, 'beginsAt')
-			const timeCodes = Object.keys(groupedStartTimes)
-			const eventDays = _.uniqBy( timeCodes, string => string.slice(0, 10) )
-	
-			return eventDays
-		}
-		
-		const agendaDays = []
-		getUniqueDays( sessionsData ).map((timestring, index) => {
-			agendaDays.push({ 
-				day: format( new Date(timestring), "eeee dd MMMM" ), 
-				time: timestring.slice(0, 10), 
-				timeslots: [] 
-			})
-		})
-
-
-
-		// filters
-
-		const filterTopics = ( sessionData ) => {
-		
-			const filteredSessions = []
-			
-			if ( selectedTopic ) {
-				// console.log('selectedTopic', selectedTopic)
-				sessionData.forEach( session => {
-					if ( session.fields.some( field => field.id == selectedTopic )) filteredSessions.push(session)
-				})
-			}
-	
-			// console.log('filters (topic)', filteredSessions.length ? filteredSessions.length : sessionData.length )
-			return filteredSessions.length ? filteredSessions : sessionData
-			
-			
-		}	
-		
-		const filterLocations = ( sessionData ) => {
-			
-			const filteredSessions = []
-			
-			if ( selectedLocation ) {
-				// console.log('selectedLocation', selectedLocation)
-				sessionData.forEach( session => {
-					if ( session.fields.some( field => field.id == selectedLocation )) filteredSessions.push(session)
-				})
-			}
-	
-			// console.log('locations:', filteredSessions.length ? filteredSessions.length : sessionData.length )
-			return filteredSessions.length ? filteredSessions : sessionData
-			
-			
-		}
-	
-		const filterSessions = ( sessionData ) => {
-			// console.log('filter intersection:', _.intersection( filterLocations(sessionData), filterTopics(sessionData) ))
-			return _.intersection( filterLocations(sessionData), filterTopics(sessionData) )
-		}
-
-
-		// ++++++++++++++++++++
-		
-		// inject generic sessions here
-		
-		// ++++++++++++++++++++
-		
-
-
-		// group sessions (and apply filters)
-
-		const filteredTimeslots = _.groupBy(filterSessions(sessionsData), 'beginsAt')
-		
-	
-		// build agenda
-	
-		const agenda = []
-		agendaDays.map( day => {
-			let slots = []
-			for ( const key in filteredTimeslots ) {
-				if ( key.slice(0, 10) === day.time.slice(0, 10) ) {
-					slots.push({ 
-						beginsAt: filteredTimeslots[key][0].beginsAt, 
-						endsAt: filteredTimeslots[key][0].endsAt, 
-						sessions: filteredTimeslots[key]
-					})
-				}
-			}
-	
-			agenda.push( { ...day , timeslots: slots } )
-		})
-
-		return agenda
-	}
-
-
-	
-	// HANDLE SESSION FIELDS (TAGS)
-
-	const getSessionLocation = ( sessionData ) => {
-		if ( !sessionData.fields ) return
-
-		let fieldsData = sessionData.fields.filter( (field) => field.definition?.name === 'Location' )
-
-		return fieldsData.map ( (topic, index) => (
-			<span key={index} className='sessionLocationTag fw-500'>{ topic.translations[0].value }</span> 
-		))
-	}
-
-	const getSessionFields = ( sessionData, fieldHandle ) => {
-		if ( !sessionData.fields || !fieldHandle ) return
-
-		let fieldsData = sessionData.fields.filter( (field) => field.definition?.name === fieldHandle )
-
-		return fieldsData.map ( (topic, index) => (
-			<span key={index} className={`${CSS.sessionTag} fw-500`}>{ topic.translations[0].value }</span> 
-		))
-	}
-
-	const groupFieldGroupsByName = ( sessionsData, fieldHandle ) => {
-		if ( !sessionsData || !fieldHandle ) return []
-
-		const fieldIds = []
-		const fieldObjects = []
-		const distilledFieldObjects = []
-
-		// build arrays
-		sessionsData.forEach( (session) => {
-			let topics = session.fields.filter( (field) => field.definition?.name === fieldHandle )
-			topics.forEach( (field) => {
-				fieldIds.push(field.id)
-				fieldObjects.push({ id: field.id, name: field.translations[0].value })
-			})
-		})
-
-		// for unique IDs, search the field object array to find the related name
-		_.uniq(fieldIds).forEach( (id) => {
-			distilledFieldObjects.push(fieldObjects.find( (obj) => obj.id === id ))
-		})
-
-		return distilledFieldObjects
-	}
-	
-	const getFieldGroupNameById = ( sessionData, fieldId, handle ) => {
-		if ( !fieldId ) return
-		let array = groupFieldGroupsByName( sessionData, handle )
-		let obj = array.find( topic => topic.id === fieldId)
-		return obj.name
-	}
-
-
 
 
 	// dropdown ui classes
-
 	const menuClassName = ({ state }) => (
 		state === "opening"
 		? DROPDOWN.menuOpening
@@ -416,205 +151,172 @@ export default function Agenda ({ sessions, locations }) {
 
 
 
+	// AGENDA BUSINESS LOGIC
 
-	// STREAM PRIORITISING
+    
+    // data manipulation
+    
+    function getPlaces( sessionsArray, customOrderArray ) {
+        
+        const uniquePlaces = _.uniqBy(_.filter(sessionsArray, item => item.place !== null), 'place')
+        const places = uniquePlaces.map(session => session.place)
+        
+        const orderMap = new Map(customOrderArray?.map((item, index) => [item, index]))
+            const sorted = places.sort((a, b) => {
+            const indexA = orderMap.get(a) ?? Infinity
+            const indexB = orderMap.get(b) ?? Infinity
+            return indexA - indexB
+        })
 
-	const prioriseStreams = ( sessionsData, locationsData ) => {
+        return customOrderArray ? sorted : places
+        
+    }
 
-		if ( !sessionsData || !locationsData ) return
+    function getCategories ( sessionsArray ) {
+        
+        if (!sessionsArray) return
 
-		const sortedStreams = []
+        const categories = _.uniq(sessionsArray.flatMap(session => session.categories))
+        
+        if (!categories.length) return
 
-		if ( sessionsData.length > 1 ) {
+        return categories
+        
+    }
 
-			// console.log('sorting')
-			
-			sessionsData.forEach( session => {
-				if ( session.fields.find( (field) => field.definition.name === 'Location' ) ) {
+    function getDays( sessionsArray ) {
 
-					let location = session.fields.find( (field) => field.definition.name === 'Location' )
-					session.priority = locationsData.map( i => i.id ).indexOf(location?.id)	
-					
-					let theme = PRIORITISED_STREAMS.find( i => i.id === location.id )
-					if ( theme ) { session.color = theme.color }
-
-					sortedStreams.push(session)
-
-				} else {
-					session.priority = 100
-					sortedStreams.push(session)
-				}
-				
-				
+        const getUniqueDays = ( data ) => {
+			const groupedStartTimes = _.groupBy( data , 'beginsAt')
+			const timeCodes = Object.keys(groupedStartTimes)
+			const eventDays = _.uniqBy( timeCodes, string => string.slice(0, 10) )
+            
+			return eventDays
+		}
+		
+		const agendaDays = []
+		getUniqueDays( sessionsArray ).map(timestring => {
+			agendaDays.push({ 
+				date: format( new Date(timestring), "eeee dd MMMM" ), 
+				time: timestring.slice(0, 10), 
+				timeslots: [] 
 			})
-			
-			// console.log('–––––––––––––––––––-')
-			// console.log( _.orderBy(sortedStreams, ['priority'], ['asc']) )
-			
-			return _.orderBy(sortedStreams, ['priority'], ['asc'])
-		}
+        })
+        
+        return agendaDays
+        
+    }
 
-		// console.log('passing session back unchanged')
+    function searchAgenda ( sessionsArray ) {
+        if ( !search ) return sessionsArray
 
-		return sessionsData
+        let results = sessionsArray.filter(session => {
+            
+            let searchableString = session.title.toLowerCase()
 
-	}
+            session.planningSpeakerRoles?.map(role => {
+                role.speakers?.map(speaker => {
+                    searchableString = searchableString + ` ${speaker.firstName.toLowerCase()}`
+					searchableString = searchableString + ` ${speaker.lastName.toLowerCase()}`
+					searchableString = searchableString + ` ${speaker.jobTitle?.toLowerCase()}`
+					searchableString = searchableString + ` ${speaker.organization?.toLowerCase()}`
+                })
+            })
+
+            if ( searchableString.includes(search.toLocaleLowerCase()) ) return session
+        })
+
+        return results
+    }
 
 
-	// SESSION UTILITIES
+    // filtering
 
-	const convertSeconds = (seconds) => {
-		const hours = Math.floor(seconds / 3600)
-		const minutes = Math.floor((seconds % 3600) / 60)
+    function filterDays(sessionsArray) {
+        if (!selectedDay) return sessionsArray
+        const result = sessionsArray.filter(session => format( new Date(session.beginsAt), "eeee dd MMMM" ) === selectedDay )
+        return result
+    }
+
+    function filterCategories(sessionsArray) {
+        if (!selectedCategory) return sessionsArray
+        const result = sessionsArray.filter(session => session.categories.includes(selectedCategory))
+        return result
+    }
+    
+    function filterPlaces(sessionsArray) {
+        if (!selectedPlace) return sessionsArray
+        const result = sessionsArray.filter(session => session.place === selectedPlace)
+        return result
+    }
+    
+    function filterSessions(sessionsArray) {
+        if (!selectedCategory && !selectedPlace && !selectedDay) return sessionsArray
+        return _.intersection( filterPlaces(sessionsArray), filterCategories(sessionsArray), filterDays(sessionsArray) )
+    }
+    
+
+    // build agenda
+
+    function buildAgenda(sessionsArray) {
+        // if (search === '' && !selectedDay) return sessionsArray
+        return _.intersection(filterSessions(sessionsArray), searchAgenda(sessionsArray))
+    }
+
+    // format agenda
+
+    function formatAgenda( sessionsArray ) {
+        
+        // group sessions
+
+        const timeslots = _.groupBy(sessionsArray, 'beginsAt')
+		
 	
-		const hourString = hours > 0 ? `${hours} hour${hours > 1 ? 's' : ''}` : ''
-		const minuteString = minutes > 0 ? `${minutes} minute${minutes > 1 ? 's' : ''}` : ''
+		// format agenda into days and timeslots
 	
-		if ( hours > 0 ) {
-			return `${hourString} ${ minutes > 0 ? minuteString : ''}`
-
-		} else if ( !hours && minutes > 0 ) {
-			return `${minuteString}`
-
-		}
-	
-		return
-	}
-
-
-	const TRACKS = _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc'])
-
-
-	const sortSpeakersAndModeratorAndInvestors = ( sessionData ) => {
-
-		const moderatorIDs = []
-		const moderators = []
-		const investorIDs = []
-		const investors = []
-		const speakers = []
-
-		// find moderatorIDs by targeting custom swapcard field at session-level
-		sessionData.fields.map(field => {
-			if (field.definition?.id === "RmllbGREZWZpbml0aW9uXzg0NDQ3Nw==") {
-				if (field.value.includes(", ")) {
-					const mods = field.value.split(", ")
-					mods.map(id => {
-						// target ali
-						id === "Q29tbXVuaXR5UHJvZmlsZV8zMTE2OTU2Mg=="
-							? moderatorIDs.push(id)
-							: investorIDs.push(id)
+		const agenda = []
+		getDays(sessionsArray).map( day => {
+			let slots = []
+			for ( const key in timeslots ) {
+				if ( key.slice(0, 10) === day.time.slice(0, 10) ) {
+					slots.push({ 
+						beginsAt: timeslots[key][0].beginsAt, 
+						endsAt: timeslots[key][0].endsAt, 
+						sessions: timeslots[key]
 					})
-				} else {
-					moderatorIDs.push(_.replace(field.value, ',', ''))
 				}
 			}
-		})
-
-		// map through all the speakers (sorted into alpha order) and pull out the moderator (if one exists)
-		_.orderBy(sessionData.speakers, 'lastName').map(speaker => {
-			if (moderatorIDs.includes(speaker.communityProfile.id)) {
-				moderators.push(speaker)
-			} else if (investorIDs.includes(speaker.communityProfile.id)) {
-				investors.push(speaker)
-			} else {
-				speakers.push(speaker)
-			 }
-		})
-		
-		 console.log('moderators:', moderators)
-		 console.log('investors:', investors)
-		 console.log('speakers:', speakers)
-
-		// output the speakers
-		if ( moderators.length && speakers.length ) { 
-			return (
-				<>
-					{
-						moderators.length ?
-							<div>
-								<div style={{ display: `flex`, flexWrap: `wrap`, gap: `var(--space-sm)` }}>
-									<section>
-										<p className="c-accent pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
-										<div className={CSS.sessionSpeakerGrid}>
-											{ moderators.map( moderator => renderSpeakerCard(moderator) ) }
-										</div>
-									</section>
-
-									<section>
-										<p className="c-accent pb-xs">Investors</p>
-										<div className={CSS.sessionSpeakerGrid}>
-											{ investors.map( investor => renderSpeakerCard(investor) ) }
-										</div>
-									</section>
-								</div>
-
-								{
-									speakers.length ?
-										<p style={{ color: `var(--accent)`, padding: `10px 0 0 0`}}>In conversation with</p>
-									: null
-								}
-							</div>
-						: null
-					}
-					<div className={CSS.sessionSpeakerGrid}>
-						{ speakers.map( speaker => renderSpeakerCard(speaker) ) }
-					</div>
-				</>
-			)
-		}
-
-		return (
-			<div className={CSS.sessionSpeakerGrid}>
-				{ sessionData.speakers.map( speaker => renderSpeakerCard(speaker) ) }
-			</div>
-		)
-	}
-
-
-
-	console.log('sessions:', sessions)
-	// console.log('locations [swc]:', locations)
-	// console.log('locations:', groupFieldGroupsByName( sessions, 'Location'))
-	// console.log('locations:', _.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc'])   )
-	// console.log('position based on ID (for exhibition-stage):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMDYxOTUyNA=='))
-	// console.log('position based on ID (for yanbu-workshop-room):', locations.map( i => i.id ).indexOf('RmllbGRWYWx1ZV8yMjU3Nzc5NQ=='))	
-	// console.log('topics:', _.orderBy(groupFieldGroupsByName( sessions, 'Topics'), ['id'], ['asc']) )
-	// console.log('SEARCH:', search)
-
-
-
-
-
-	// const getSessionsWithType = ( sessionData ) => {
-	// 	let array = []
-
-	// 	sessionData.forEach( session => {
-	// 		session.fields.forEach( field => { if (field.definition.name === 'Type') { array.push(session) } })
-	// 	})
-		
-	// 	console.log('generic sessions:', array )
-	// }
-
-	// getSessionsWithType( sessions )
-
-
-
 	
+			agenda.push( { ...day , timeslots: slots } )
+        })
+        
+        return agenda
+
+    }
+    
 
 
-
-
-	const breakTitle = ( trigger, titleString, splitPoint ) => {
-		if ( !titleString.includes(trigger) ) return titleString
-		let lines = titleString.split(splitPoint)
-		return `${lines[0]}:<br/>${lines[1]}`		
-	}
-
+	// console.log('total sessions:', sessions.length)
+    // console.log('sessions:', sessions)
+    // console.log('agenda:', formatAgenda(searchAgenda(sessions)))
+    // console.log('themes:', getCategories( sessions ))
+    // console.log('days:', getDays(sessions))
+    
+    // console.log('filtered categories', filterCategories(sessions))
+    // console.log('filtered places', filterPlaces(sessions))
+    // console.log('filtered by day:', filterDays(sessions).length)
+    // console.log('filtered sessions:', filterSessions(sessions).length)
+    // console.log('filtered sessions:', filterSessions(sessions))
+    // console.log('build agenda:', buildAgenda(sessions).length)
+    
+	// console.log('search results:', searchAgenda(sessions).length)
+	
+	
 
     return (
         <ReactLenis root>
 
-				<Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
+			<Script src="https://bot.leadoo.com/bot/dynamic.js?company=IqbUBErW" strategy="afterInteractive" />
 			<Head>
 				<link rel="icon" type="image/png" href="/assets/favicons/world/favicon-16x16.png" sizes="16x16" />
 			</Head>
@@ -672,7 +374,7 @@ export default function Agenda ({ sessions, locations }) {
 								<Menu 
 									menuButton={
 										<MenuButton className={DROPDOWN.button}>
-											<strong className="left">{ selectedTopic ?  getFieldGroupNameById(sessions, selectedTopic, 'Topics') : `Tracks` }</strong> <Chevron />
+											<strong className="left">{ selectedCategory ?  selectedCategory : `Tracks` }</strong> <Chevron />
 										</MenuButton>
 									} 
 									transition 
@@ -682,15 +384,15 @@ export default function Agenda ({ sessions, locations }) {
 									<div className="columns-2">
 										{
 											sessions &&
-											TRACKS.map( 
-												filter => <MenuItem key={filter.id} onClick={() => {
-													setSelectedTopic(filter.id)
+											getCategories(sessions).map((category, i) => (
+												<MenuItem key={i} onClick={() => {
+													setSelectedCategory(category)
 													lenis.scrollTo('#agenda', { duration: 1 })
-												}}>{ filter.name }</MenuItem> 
-											)
+												}}>{ category }</MenuItem> 
+											))
 										}
 										<MenuItem key={0} onClick={() => {
-											setSelectedTopic('')
+											setSelectedCategory(null)
 											lenis.scrollTo('#agenda', { duration: 1 })
 										}}>All tracks</MenuItem>
 
@@ -709,12 +411,12 @@ export default function Agenda ({ sessions, locations }) {
 								>
 									{
 										sessions &&
-										buildAgenda( sessions ).map( 
-											(day, index) => <MenuItem key={index} onClick={() => {
-												setSelectedDay(day.day)
+										getDays(sessions).map((day, i) => (
+											<MenuItem key={i} onClick={() => {
+												setSelectedDay(day.date)
 												lenis.scrollTo('#agenda', { duration: 1 })
-											}}>{ day.day }</MenuItem>
-										)
+											}}>{ day.date }</MenuItem>
+										))
 									}
 									<MenuItem key={0} onClick={() => {
 										setSelectedDay(null)
@@ -728,7 +430,7 @@ export default function Agenda ({ sessions, locations }) {
 								<Menu 
 									menuButton={
 										<MenuButton className={DROPDOWN.button}>
-											<strong className="left">{ selectedLocation ?  getFieldGroupNameById(sessions, selectedLocation, 'Location') : `Stages` }</strong> <Chevron />
+											<strong className="left">{ selectedPlace ?  selectedPlace : `Stages` }</strong> <Chevron />
 										</MenuButton>
 									} 
 									transition 
@@ -736,15 +438,15 @@ export default function Agenda ({ sessions, locations }) {
 								>
 									{
 										sessions &&
-										_.orderBy(groupFieldGroupsByName( sessions, 'Location'), ['id'], ['asc']).map( 
-											filter => <MenuItem key={filter.id} onClick={() => {
-												setSelectedLocation(filter.id)
+										getPlaces(sessions, CUSTOM_ORDER).map((place, i) => (
+											<MenuItem key={i} onClick={() => {
+												setSelectedPlace(place)
 												lenis.scrollTo('#agenda', { duration: 1 })
-											}}>{ filter.name }</MenuItem> 
-										)
+											}}>{place}</MenuItem>
+										))
 									}
 									<MenuItem key={0} onClick={() => {
-										setSelectedLocation('')
+										setSelectedPlace(null)
 										lenis.scrollTo('#agenda', { duration: 1 })
 									}}>All stages</MenuItem>
 								</Menu>
@@ -752,7 +454,7 @@ export default function Agenda ({ sessions, locations }) {
 
 							{/* reset filters */}
 							{
-								selectedDay || selectedLocation || selectedTopic ?
+								selectedDay || selectedPlace || selectedCategory ?
 									<section className={CSS.agendaFilterResetWrapper}>
 										<button className={CSS.agendaFilterReset} onClick={resetFilters}><span><Close /></span> Reset all filters</button>
 									</section>
@@ -813,173 +515,33 @@ export default function Agenda ({ sessions, locations }) {
 				
 
 				{/* AGENDA */}
-				<main className={`${CSS.agenda} section columns-1 gap-sm mt-sm`}>	
-					
+				<div className={`${CSS2.layout} mt-sm`}>
 					{
-						buildAgenda( sessions ).length 
-						? buildAgenda( sessions ).map( (day, index) => {
-
-							if ( selectedDay && selectedDay !== day.day ) return
-
+						buildAgenda(sessions).length ?
+						formatAgenda(buildAgenda(sessions))?.map((day, i) => {
+								
 							return (
-								<section key={index} className={CSS.day}>
-									<p key={index} className={CSS.dayDivider}> { day.day }</p>
+								<Day key={i} date={day.date}>
 									{
-										day.timeslots.length ?
-										day.timeslots.map( (slot, index) => {
-
-											return (
-												<div key={index}>
-
-
-													{/* INJECTED BANNERS */}
-
-													{
-														slot.sessions[0].id === 'UGxhbm5pbmdfMzExNDgxMg==' &&
-														<div className={CSS.banner}><div style={{ width: 320 }}><img src="/assets/img/ais/ais-logo.svg" alt="" /></div></div>
-													}
-													
-													{
-														slot.sessions[0].id === 'UGxhbm5pbmdfMzIwMDkyNg==' &&
-														<div className={CSS.banner}><FhsLockup inverse /></div>
-													}
-
-
-													{/* SESSIONS */}
-
-													<div className={CSS.sessions}>
-														{
-															prioriseStreams(slot.sessions, PRIORITISED_STREAMS).map((session, index) => {
-																// console.dir(session)
-
-																return (
-																	<div key={index} className={CSS.sessionsWrapper}>
-																		<span className="sessionAnchor" id={session.id.slice(0, -2)}/>
-
-																		<div
-																			className={CSS.session}
-																			style={{ display: session.categories.includes('UAE – Africa Tourism Investment Summit') ? 'none' : 'block' }}
-																		>
-
-																			{/* add to div below to colour-code headers => style={{ backgroundColor: session.color ? session.color : null }} */}
-																			<div className={`${CSS.sessionHeader} fw-500 c-white bg-medium`}>
-																				
-																				{
-																					session.beginsAt && session.endsAt ?
-																						<div className={CSS.sessionTimings}>
-																							<span>
-																								{format( new Date(session.beginsAt), "HH:mm" )} - { format( new Date(session.endsAt), "HH:mm" )}&ensp;
-																							</span>
-
-																							<span>
-																								<StopwatchIcon fill={'var(--accent)'}/> { convertSeconds(parseInt(new Date(session.endsAt).getTime() - new Date(session.beginsAt).getTime())/1000) }
-																							</span>
-																						</div>
-																					: null
-																				}
-
-																				{
-																					getSessionFields( session, 'Location').length ?
-																						<div className={CSS.sessionTagGrid}>
-																							{session.fields.length ? <LocationIcon fill={'var(--accent)'}/> : null }
-																							{getSessionLocation( session )}
-																						</div>
-																					: null
-																				}
-																			</div>
-
-																			<div className={`${CSS.sessionContent} | columns-1 gap-xs`}>
-
-																				{/* <small style={{ color: 'lime'}}>{session.id}</small> */}
-																				{/* <small style={{ color: 'lime'}}>{session.priority}</small> */}
-																				
-																				<p className={`${CSS.sessionTitle} | fs-4 fw-500 lh-1 c-white`}>
-																					{ parse(breakTitle(":", session.titleTranslations[0].value, ": ")) }
-																				</p>
-
-																				{
-																					getSessionFields( session, 'Topics').length ?
-																						<div className={CSS.sessionTagGrid}>
-																							<TagIcon fill={`var(--accent)`} />
-																							{getSessionFields(session, 'Topics')}
-																							{
-																								session.categories.includes('UAE – Africa Tourism Investment Summit')
-																									? <p className="flex ai-center fs-sm"><WarningIcon fill={`yellow`} />&ensp;Restricted Access</p>
-																									: null
-																							}
-
-																							{
-																								session.id === "UGxhbm5pbmdfMjkwMTU4Mw==" ||
-																								session.id === "UGxhbm5pbmdfMjYyODkwMQ==" ||
-																								session.id === "UGxhbm5pbmdfMjYyODkxMQ==" ||
-																								session.id === "UGxhbm5pbmdfMjYyODkwOA=="
-																									? <span className={`${CSS.sessionTag} fw-500`}>Free for BRF pass holders</span>
-																									: null
-																							}
-																						</div>
-																					: null
-																				}
-																				
-																				{/* add speed networking sponsor logo */}
-																				{
-																					session.id === "UGxhbm5pbmdfNDQ0NTg3Mg==" ||
-																					session.id === "UGxhbm5pbmdfNDQ0NTkwMQ==" ||
-																					session.id === "UGxhbm5pbmdfNDUzMDc3Nw=="
-																						? <div>
-																							<p className="fs-sm caps mb-xxs">Sponsored by</p>
-																							<Link href={`/world/partners/RXhoaWJpdG9yXzIzODA4MjY=`}>
-																								<a style={{ display: `inline-block`, backgroundColor: `white`, padding: 10, borderRadius: 5 }}>
-																									<img src="/assets/img/world/pages/partners/FSK-Logo-Horizontal.png" alt="" width={100} />
-																								</a>
-																							</Link>
-																						  </div>
-																						: null
-																				}
-																				{/* add images to networking reception */}
-																				{
-																					session.id === "UGxhbm5pbmdfNDQ2MzI4Mw=="
-																						? <div className="columns-3 gap-xs">
-																							<img src="/assets/img/world/pages/agenda/networking-01.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-																							<img src="/assets/img/world/pages/agenda/networking-02.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-																							<img src="/assets/img/world/pages/agenda/networking-03.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-																						  </div>
-																						: null
-																				}
-
-																				{
-																					session.descriptionTranslations.length ?
-																						parse( session.descriptionTranslations[0].value )
-																					: null
-																				}
-																				
-																				{/* { sortSpeakers(session.speakers) } */}
-																				
-																				{/* custom speaker sorting for pitchpoint sessions */}
-																				{
-																					session.id === "UGxhbm5pbmdfMjc0MTYzNQ==" || session.id === "UGxhbm5pbmdfMjc0MTYzOA=="
-																					? sortSpeakersAndModeratorAndInvestors(session)
-																					: sortSpeakersAndModerators(session)
-																				}
-																			</div>
-																			
-																		</div>
-																	</div>
-																)
-															})
-														}
-													</div>
-
-												</div>
-											)
-										}) : <p className="fs-5 fw-400 py-xs">No { getFieldGroupNameById( sessions, selectedTopic, 'Topics' ) } sessions available { selectedLocation  ? 'at this location' : null } on this day.</p>
+										day.timeslots.map((slot, i) => (
+											<Timeslot key={i}>
+												{
+													slot.sessions.map((session, i) => (
+														<Session key={i} session={session} />
+													))
+												}
+											</Timeslot>
+										))
 									}
-								</section>
+								</Day>
 							)
-						})
-						: <p className="fs-4 fw-600">No sessions found!</p>
+						}) :
+							<Day date={selectedDay ? selectedDay : 'All days'}>
+								<p className="fs-5 fw-500">No sessions found!</p>
+								<p>Please try a different filter combination.</p>
+							</Day>
 					}
-
-				</main>
+				</div>
 
 				
             </section>
@@ -1031,28 +593,24 @@ Agenda.theme = 'world-2024'
 
 
 
-
-
-const SpeakerCard = ({ speaker, type }) => {
-
-	return (
-		<div key={speaker.id} className={CSS.sessionSpeaker}>
-
-			<span className={CSS.speakerAvatar} style={{ cursor: speaker.biography ? 'pointer' : 'default' }}>
-				{
-					speaker.photoUrl ?
-						<img src={speaker.photoUrl} alt="" style={{ maxWidth: 100, maxHeight: 100, borderRadius: 100, marginBottom: 10 }} />
-					: 
-						<img src={`/assets/ui/avatar-fallback.png`} alt="" style={{ maxWidth: 100, maxHeight: 100, borderRadius: 100, marginBottom: 10 }} />
-
-				}
-			</span>
-
-			<p className="fw-600">{ speaker.firstName } { speaker.lastName }</p>
-			<p className="fs-sm lh-1">{ speaker.jobTitle }<br />{ speaker.organization }</p>
-		</div>
-	)
+const Day = ({ children, date }) => {
+    return (
+        <section className={CSS2.day}>
+            <div className={CSS2.divider}><p className="fs-4 fw-600">{date}</p></div>
+            { children }
+        </section>
+    )
 }
+
+const Timeslot = ({ children }) => {
+    return (
+        <div className={CSS2.timeslot}>
+            { children }
+        </div>
+    )
+}
+
+
 
 const ChevronUp = () => {
 	return (
@@ -1153,99 +711,35 @@ export async function getStaticProps() {
 			},
 			body: JSON.stringify({
 				query: `
-					query EventById($eventId: ID!) {
-
-						event(id: $eventId) {
-							planningsPlaces {
+					query PROGRAMME {
+						sessions: planningsV2(
+							communityId: "Q29tbXVuaXR5Xzc4MzM="
+							filter: {eventIds: "RXZlbnRfNDMwNzY1Mg=="}
+							cursor: {first: 300}
+						) {
+							nodes {
 								id
-								name
-								value
-							}
-						}
-
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}", page: 1, pageSize: 500) {
-							id
-							titleTranslations {
-								value
-								language
-							}
-							beginsAt
-							endsAt
-							descriptionTranslations {
-								value
-								language
-							}
-							format
-							fields {
-								... on SelectField {
-									id
-									definition {
-										isDefault
-										name
-									}
-									value
-									translations {
-										value
-									}
-								}
-								... on MultipleSelectField {
-									id
-									definition {
-										isDefault
-										name
-									}
-									value
-									translations {
-										value
-									}
-								}
-									... on TextField {
-									id
-									definition {
+								beginsAt
+								endsAt
+								title
+								categories
+								place
+								htmlDescription
+								planningSpeakerRoles {
+									speakers {
 										id
-										name
+										photoUrl
+										firstName
+										lastName
+										jobTitle
+										organization
 									}
-									value
-								}
-							}
-							speakers {
-								communityProfile {
-									id
-								}
-								firstName
-								id
-								jobTitle
-								lastName
-								photoUrl
-								organization
-								biography
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}") {
-									eventProfile {
-										type
-										withEvent(eventId: "RXZlbnRfMjQwNDQ3Nw==") {
-											speakerOnPlannings {
-												id
-												title
-												beginsAt
-												endsAt
-											}
-										}
-										fields {
-											... on SelectField {
-												id
-												definition {
-													name
-												}
-												value
-												translations {
-													value
-												}
-											}
-										}
+									role {
+										planningLabel
+										position
 									}
 								}
 							}
-							categories
 						}
 					}
 				`,
@@ -1267,8 +761,7 @@ export async function getStaticProps() {
 
     if ( result.data ) return { 
         props: { 
-            sessions: result.data.plannings,
-			locations: result.data.event.planningsPlaces
+            sessions: result.data.sessions.nodes
         } 
     }
 
