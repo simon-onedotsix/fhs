@@ -8,7 +8,7 @@ import { StopwatchIcon, LocationIcon, TagIcon } from '../icons/icons'
 
 import CSS from './session.module.css'
 
-export const Session = ({ session }) => {
+export const Session = ({ session, customContent }) => {
     
     if (!session) return
 
@@ -39,78 +39,13 @@ export const Session = ({ session }) => {
                         : null
                 }
 
-                {/* start custom content ================================================================ */}
-                {/* FHS WORLD: add speed networking sponsor logo */}
+                {/* start custom content ========================================= */}
+
                 {
-                    session.id === "UGxhbm5pbmdfNDQ0NTg3Mg==" ||
-                    session.id === "UGxhbm5pbmdfNDQ0NTkwMQ==" ||
-                    session.id === "UGxhbm5pbmdfNDUzMDc3Nw=="
-                        ? <div>
-                            <p className="fs-sm caps mb-xxs">Sponsored by</p>
-                            <Link href={`/world/partners/RXhoaWJpdG9yXzIzODA4MjY=`}>
-                                <a style={{ display: `inline-block`, backgroundColor: `white`, padding: 10, borderRadius: 5 }}>
-                                    <img src="/assets/img/world/pages/partners/FSK-Logo-Horizontal.png" alt="" width={100} />
-                                </a>
-                            </Link>
-                            </div>
-                        : null
+                    customContent && customContent
                 }
 
-                {/* FHS WORLD: add images to networking reception */}
-                {
-                    session.id === "UGxhbm5pbmdfNDQ2MzI4Mw=="
-                        ? <div className="columns-3 gap-xs">
-                            <img src="/assets/img/world/pages/agenda/networking-01.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            <img src="/assets/img/world/pages/agenda/networking-02.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            <img src="/assets/img/world/pages/agenda/networking-03.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            </div>
-                        : null
-                }
-
-                {/* FHS WORLD: add images to padel */}
-                {
-                    session.id === "UGxhbm5pbmdfNDU4NDEyMQ=="
-                        ? <div className="columns-3 gap-xs">
-                            <img src="/assets/img/world/pages/agenda/padel-1.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            <img src="/assets/img/world/pages/agenda/padel-2.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            <img src="/assets/img/world/pages/agenda/padel-3.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            </div>
-                        : null
-                }
-
-                {/* FHS WORLD: add images to beach pilates */}
-                {
-                    session.id === "UGxhbm5pbmdfNDU4NDEyMw=="
-                        ? <div className="columns-3 gap-xs">
-                            <img src="/assets/img/world/pages/agenda/beach-1.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            <img src="/assets/img/world/pages/agenda/beach-2.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            <img src="/assets/img/world/pages/agenda/beach-3.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            </div>
-                        : null
-                }
-
-                {/* FHS WORLD: add images to networking reception */}
-                {
-                    session.id === "UGxhbm5pbmdfNDQ2MzI4NA=="
-                        ? <div className="columns-3 gap-xs">
-                            <img src="/assets/img/world/pages/agenda/mcgettigans-1.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            <img src="/assets/img/world/pages/agenda/mcgettigans-2.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            <img src="/assets/img/world/pages/agenda/mcgettigans-3.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            </div>
-                        : null
-                }
-
-                {/* FHS WORLD: add images to breathwork */}
-                {
-                    session.id === "UGxhbm5pbmdfNDU4NDEyNQ=="
-                        ? <div className="columns-3 gap-xs">
-                            <img src="/assets/img/world/pages/agenda/breathwork-1.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            <img src="/assets/img/world/pages/agenda/breathwork-2.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            <img src="/assets/img/world/pages/agenda/breathwork-3.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
-                            </div>
-                        : null
-                }
-                {/* end custom content ================================================================ */}
+                {/* end custom content =========================================== */}
 
 				{
                     session.htmlDescription

@@ -44,14 +44,73 @@ import CSS from '../../css/app/agenda-world-2024.module.css'
 import CSS2 from '../../ui/agenda/agenda.module.css'
 
 
-const CUSTOM_ORDER = [
+const CUSTOM_PLACES_ORDER = [
 	'Summit Stage',
 	'Future Stage (Murjan A)',
 	'Workshop Room (Murjan B)',
 	'Jumeirah Racquets - Al Qasr',
 	'J Club Jumeirah Beach Hotel'
 ]
-
+const CUSTOM_SESSION_CONTENT = [
+	{
+		ref: "speed networking",
+		ids: ["UGxhbm5pbmdfNDQ0NTg3Mg==", "UGxhbm5pbmdfNDQ0NTkwMQ==", "UGxhbm5pbmdfNDUzMDc3Nw=="],
+		content: (
+			<div key={'cc1'}>
+				<p className="fs-sm caps mb-xxs">Sponsored by</p>
+				<Link href={`/world/partners/RXhoaWJpdG9yXzIzODA4MjY=`}>
+					<a style={{ display: `inline-block`, backgroundColor: `white`, padding: 10, borderRadius: 5 }}>
+						<img src="/assets/img/world/pages/partners/FSK-Logo-Horizontal.png" alt="" width={100} />
+					</a>
+				</Link>
+			</div>
+		)
+	},
+	{
+		ref: "padel",
+		ids: ["UGxhbm5pbmdfNDQ2MzI4Mw=="],
+		content: (
+			<div key={'cc2'} className="columns-3 gap-xs">
+				<img src="/assets/img/world/pages/agenda/padel-1.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+				<img src="/assets/img/world/pages/agenda/padel-2.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+				<img src="/assets/img/world/pages/agenda/padel-3.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+			</div>
+		)
+	},
+	{
+		ref: "beach pilates",
+		ids: ["UGxhbm5pbmdfNDU4NDEyMQ=="],
+		content: (
+			<div key={'cc2'} className="columns-3 gap-xs">
+				<img src="/assets/img/world/pages/agenda/beach-1.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+				<img src="/assets/img/world/pages/agenda/beach-2.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+				<img src="/assets/img/world/pages/agenda/beach-3.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+			</div>
+		)
+	},
+	{
+		ref: "networking reception",
+		ids: ["UGxhbm5pbmdfNDQ2MzI4NA=="],
+		content: (
+			<div key={'cc2'} className="columns-3 gap-xs">
+				<img src="/assets/img/world/pages/agenda/mcgettigans-1.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+				<img src="/assets/img/world/pages/agenda/mcgettigans-2.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+				<img src="/assets/img/world/pages/agenda/mcgettigans-3.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+			</div>
+		)
+	},
+	{
+		ref: "breathwork",
+		ids: ["UGxhbm5pbmdfNDU4NDEyNQ=="],
+		content: (
+			<div key={'cc2'} className="columns-3 gap-xs">
+				<img src="/assets/img/world/pages/agenda/breathwork-1.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+				<img src="/assets/img/world/pages/agenda/breathwork-2.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+				<img src="/assets/img/world/pages/agenda/breathwork-3.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+			</div>
+		)
+	},
+]
 
 export default function Agenda({ sessions }) {
 	
@@ -295,9 +354,11 @@ export default function Agenda({ sessions }) {
 
     // session utilities 
 
-    function handleSessionCustomContent(contentArray, sessionID) {
-        if (contentArray.map(s => s.id).includes(sessionID)) {
-            const inject = contentArray.find(s => s.id === sessionID)
+	function handleSessionCustomContent(contentArray, sessionID) {
+        if ( !contentArray ) return
+        
+        if ( contentArray.find(content => content.ids.includes(sessionID)) ) {
+            const inject = contentArray.find(content => content.ids.includes(sessionID))
             return inject.content
         }
         return
@@ -305,7 +366,7 @@ export default function Agenda({ sessions }) {
 
     function handleCustomSlotOrder(sessionsArray, customOrderArray) {
 
-        if (sessionsArray.length < 2) return sessionsArray
+        if (sessionsArray.length < 2 || !customOrderArray) return sessionsArray
 
         const sortMap = new Map(customOrderArray.map((place, i) => [place, i])) 
 
@@ -462,7 +523,7 @@ export default function Agenda({ sessions }) {
 								>
 									{
 										sessions &&
-										getPlaces(sessions, CUSTOM_ORDER).map((place, i) => (
+										getPlaces(sessions, CUSTOM_PLACES_ORDER).map((place, i) => (
 											<MenuItem key={i} onClick={() => {
 												setSelectedPlace(place)
 												lenis.scrollTo('#agenda', { duration: 1 })
@@ -550,8 +611,12 @@ export default function Agenda({ sessions }) {
 										day.timeslots.map((slot, i) => (
 											<Timeslot key={i}>
 												{
-													handleCustomSlotOrder(slot.sessions, CUSTOM_ORDER).map((session, i) => (
-														<Session key={i} session={session} />
+													handleCustomSlotOrder(slot.sessions, CUSTOM_PLACES_ORDER).map((session, i) => (
+														<Session
+															key={i}
+															session={session}
+															customContent={handleSessionCustomContent(CUSTOM_SESSION_CONTENT, session.id)}
+														/>
 													))
 												}
 											</Timeslot>
