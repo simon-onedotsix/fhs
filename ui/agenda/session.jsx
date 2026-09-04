@@ -156,11 +156,11 @@ const Speakers = ({ speakerData }) => {
     if ( !speakerData ) return
     
     // segregate speakers
-    const moderators = speakerData.find(r => r.role.planningLabel === 'Moderators').speakers
-    const speakers = speakerData.find(r => r.role.planningLabel === 'Speakers').speakers
+    const moderators = speakerData.find(r => r.role.planningLabel === 'Moderators')?.speakers
+    const speakers = speakerData.find(r => r.role.planningLabel === 'Speakers')?.speakers
 
     // check moderators or speakers exist
-    if (!moderators.length && !speakers.length) return
+    if (!moderators?.length && !speakers?.length) return
 
     return (
         <div className={CSS.speakerGrid}>

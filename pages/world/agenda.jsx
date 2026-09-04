@@ -10,8 +10,6 @@ import { useInView } from 'react-intersection-observer'
 
 import _ from 'lodash'
 import { format } from 'date-fns'
-import { formatInTimeZone } from 'date-fns-tz'
-import parse from 'html-react-parser'
 
 import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
@@ -21,15 +19,11 @@ import { FHS_WORLD as header } from '../../fixtures/nav'
 
 import { Footer } from "../../fuselage/theme/2024/world/common/footer/footer"
 
-import { TagIcon, StopwatchIcon, LocationIcon, WarningIcon } from "../../fuselage/components/icons/icons"
 
 import { Modal } from "../../fuselage/theme/2024/world/components/modal/modal"
 import { Sidebar } from "../../fuselage/layout/sidebar/sidebar"
 import { Avatar } from '../../fuselage/components/avatar/avatar'
-import { Button } from '../../fuselage/theme/2024/world/components/button/button'
 
-import { AisLockup } from "../../fuselage/theme/2025/ais/ais-brand/ais-brand"
-import { FhsLockup } from "../../fuselage/theme/2024/world/components/logos/fhs-brand"
 
 import SimpleBar from "simplebar-react"
 import 'simplebar-react/dist/simplebar.min.css'
@@ -111,12 +105,15 @@ export default function Agenda({ sessions }) {
 	})
 
 
-	// FILTER UTILS
+	// FILTERS
+
 	const resetFilters = () => {
 		setSelectedDay(null)
-		setSelectedPlace(null)
-		setSelectedCategory(null)
+		setSelectedLocation(null)
+		setSelectedTopic(null)
+		locationSelect.current.value = 'All locations'
 	}
+	
 
 
 	// dropdown ui classes
@@ -294,6 +291,33 @@ export default function Agenda({ sessions }) {
 
     }
     
+    
+
+    // session utilities 
+
+    function handleSessionCustomContent(contentArray, sessionID) {
+        if (contentArray.map(s => s.id).includes(sessionID)) {
+            const inject = contentArray.find(s => s.id === sessionID)
+            return inject.content
+        }
+        return
+    }
+
+    function handleCustomSlotOrder(sessionsArray, customOrderArray) {
+
+        if (sessionsArray.length < 2) return sessionsArray
+
+        const sortMap = new Map(customOrderArray.map((place, i) => [place, i])) 
+
+        const sortedSessions = _.sortBy(sessionsArray, (session => {
+            const index = sortMap.get(session.place)
+            return index === undefined ? Infinity : index
+        }))
+
+        return sortedSessions
+    }
+
+
 
 
 	// console.log('total sessions:', sessions.length)
@@ -526,7 +550,7 @@ export default function Agenda({ sessions }) {
 										day.timeslots.map((slot, i) => (
 											<Timeslot key={i}>
 												{
-													slot.sessions.map((session, i) => (
+													handleCustomSlotOrder(slot.sessions, CUSTOM_ORDER).map((session, i) => (
 														<Session key={i} session={session} />
 													))
 												}
@@ -714,7 +738,7 @@ export async function getStaticProps() {
 					query PROGRAMME {
 						sessions: planningsV2(
 							communityId: "Q29tbXVuaXR5Xzc4MzM="
-							filter: {eventIds: "RXZlbnRfNDMwNzY1Mg=="}
+							filter: {eventIds: "${process.env.SWAPCARD_EVENT_ID_AE_2026}"}
 							cursor: {first: 300}
 						) {
 							nodes {
@@ -742,11 +766,7 @@ export async function getStaticProps() {
 							}
 						}
 					}
-				`,
-				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2026,
-					"page": 1
-				}
+				`
 			})
 		}
 	)
