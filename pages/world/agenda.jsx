@@ -67,8 +67,19 @@ const CUSTOM_SESSION_CONTENT = [
 		)
 	},
 	{
-		ref: "padel",
+		ref: "networking reception",
 		ids: ["UGxhbm5pbmdfNDQ2MzI4Mw=="],
+		content: (
+			<div key={'cc2'} className="columns-3 gap-xs">
+				<img src="/assets/img/world/pages/agenda/networking-01.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+				<img src="/assets/img/world/pages/agenda/networking-02.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+				<img src="/assets/img/world/pages/agenda/networking-03.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
+			</div>
+		)
+	},
+	{
+		ref: "padel",
+		ids: ["UGxhbm5pbmdfNDU4NDEyMQ=="],
 		content: (
 			<div key={'cc2'} className="columns-3 gap-xs">
 				<img src="/assets/img/world/pages/agenda/padel-1.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
@@ -79,7 +90,7 @@ const CUSTOM_SESSION_CONTENT = [
 	},
 	{
 		ref: "beach pilates",
-		ids: ["UGxhbm5pbmdfNDU4NDEyMQ=="],
+		ids: ["UGxhbm5pbmdfNDU4NDEyMw=="],
 		content: (
 			<div key={'cc2'} className="columns-3 gap-xs">
 				<img src="/assets/img/world/pages/agenda/beach-1.jpg" alt="" width={`100%`} style={{ borderRadius: 5 }} />
