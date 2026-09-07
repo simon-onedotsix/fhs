@@ -845,7 +845,7 @@ export const FHS_AFRICA = {
                     {
                         "__typename": "navigation_Entry",
                         "id": "111",
-                        "title": "2026 Agenda",
+                        "title": "2027 Agenda",
                         "navUrl": "/africa/agenda",
                         "target": false
                     },

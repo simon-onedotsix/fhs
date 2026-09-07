@@ -1,7 +1,7 @@
 import { useState, useRef } from "react"
 
 import { gql } from "@apollo/client"
-import craftApolloClient from "../api/apollo"
+import craftApolloClient from "../../api/apollo"
 
 import _ from 'lodash'
 import { format } from 'date-fns'
@@ -9,20 +9,20 @@ import parse from 'html-react-parser'
 
 import Head from "next/head"
 
-import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
-import { Reveal } from '../../fuselage/animation/reveal'
-import { Pop, Fade, Slide } from '../../fuselage/animation/animation'
+import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
+import { Reveal } from '../../../fuselage/animation/reveal'
+import { Pop, Fade, Slide } from '../../../fuselage/animation/animation'
 
 
-import { EventsBar } from "../../ui/site/eventsbar"
-import { Header } from '../../ui/site/header'
-import { FHS_AFRICA as header } from '../../fixtures/nav'
-import { Footer } from '../../fuselage/theme/2025/africa/common/footer/footer'
-import { PageHeader } from '../../fuselage-africa/blocks/page-header/page-header'
+import { EventsBar } from "../../../ui/site/eventsbar"
+import { Header } from '../../../ui/site/header'
+import { FHS_AFRICA as header } from '../../../fixtures/nav'
+import { Footer } from '../../../fuselage/theme/2025/africa/common/footer/footer'
+import { PageHeader } from '../../../fuselage-africa/blocks/page-header/page-header'
 
-import { StickySidebar } from '../../fuselage/layout/sticky-sidebar/sticky-sidebar'
+import { StickySidebar } from '../../../fuselage/layout/sticky-sidebar/sticky-sidebar'
 
-import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from '../../fuselage/components/icons/icons'
+import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from '../../../fuselage/components/icons/icons'
 
 import CSS from '../../fuselage/theme/2025/africa/css/agenda-compact.module.css'
 

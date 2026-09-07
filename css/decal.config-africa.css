@@ -2,22 +2,21 @@
 
     /* colour */
 
-    --brand-1: #FC4C02;
-    --brand-2: #3C1053;
-    --brand-3: #FFB600;
+    --orange: #FC4C02;
+    --yellow: #FFB600;
+    --purple: #3C1053;
 
     --primary: #FC4C02;
     --secondary: #3C1053;
     --accent: #FFB600;
 
+    --bg-global: var(--primary);
     --bg: white;
     --fg: hsl(from var(--purple) h s calc(l + 6) / 1);
-    --accent: var(--brand-1);
-    
+
     --default-text-color: rgb(56, 56, 56);
     --default-heading-color: var(--secondary);
-    
-    --bg-global: var(--primary);
+
     --wash: #fafaf9;
     --light: #eae6e1;
     --medium: #51196f;
@@ -25,12 +24,12 @@
 
 
 
-    --agenda-bg: hsl(from var(--brand-3) calc(h - 10) calc(s + 30) calc(l + 20) / 1);
-    --agenda-fg: var(--brand-2);
-    --agenda-divider-bg: var(--brand-2);
-    --agenda-divider-fg: var(--fg);
-    --agenda-header-bg: hsl(from var(--brand-3) calc(h - 10) calc(s + 30) calc(l - 5) / 1);
-    --agenda-header-fg: var(--brand-2);
+    --agenda-bg: hsl(from var(--yellow) calc(h - 10) calc(s + 30) calc(l + 20) / 1);
+    --agenda-fg: var(--purple);
+    --agenda-divider-bg: var(--purple);
+    --agenda-divider-fg: white;
+    --agenda-header-bg: hsl(from var(--yellow) calc(h - 10) calc(s + 30) calc(l - 5) / 1);
+    --agenda-header-fg: var(--purple);
     --agenda-icons: white;
 
     --error: var(--primary);

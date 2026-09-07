@@ -73,7 +73,7 @@ const Duration = ({ startTime, endTime }) => {
 			{ format( new Date(startTime), "HH:mm" ) } - { endTime && format( new Date(endTime), "HH:mm" ) }
 			{
 				endTime &&
-				<span>&ensp;<StopwatchIcon fill={'var(--accent)'}/> { convertSeconds(parseInt(new Date(endTime).getTime() - new Date(startTime).getTime())/1000) }</span>
+				<span>&ensp;<StopwatchIcon fill={'var(--agenda-icons)'}/> { convertSeconds(parseInt(new Date(endTime).getTime() - new Date(startTime).getTime())/1000) }</span>
 			}
 		</p>
 	)
@@ -83,7 +83,7 @@ const Location = ({ location }) => {
     if ( !location ) return
 	
     return (
-		<p className={CSS.location}><LocationIcon fill={'var(--accent)'} />{ location }</p>
+		<p className={CSS.location}><LocationIcon fill={'var(--agenda-icons)'} />{ location }</p>
 	)
 }
 
