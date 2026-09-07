@@ -1057,6 +1057,13 @@ export const FHS_EGYPT = {
                         "title": "FHS Living",
                         "navUrl": "/egypt/living",
                         "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "skdjfh3948yt9hg",
+                        "title": "FHS Deal Room",
+                        "navUrl": "/egypt/fhs-dealroom",
+                        "target": false
                     }
                 ]
             },
