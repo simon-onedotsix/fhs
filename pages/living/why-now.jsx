@@ -63,11 +63,11 @@ export const ASSET_CLASS_DATA = [
         heading: "Mixed-use developments",
         body: "Hospitality as the anchor of integrated communities - hotels, branded residences, retail and wellness brought together into developments that command premium pricing and institutional-grade returns."
     },
-    // {
-    //     imageUrl: "/assets/img/living/why/asset-09.jpg",
-    //     heading: "Hotels and resorts",
-    //     body: "Operationally-managed accommodation assets with contractual income, included at FHS Living as part of the full-spectrum living and hospitality investment conversation."
-    // },
+    {
+        imageUrl: "/assets/img/living/why/asset-09.jpg",
+        heading: "Hotels and resorts",
+        body: "Operationally-managed accommodation assets with contractual income, included at FHS Living as part of the full-spectrum living and hospitality investment conversation."
+    },
 ]
 
 
