@@ -13,8 +13,8 @@ export const Session = ({ session, customContent }) => {
     if (!session) return
 
     // console.log(session)
-    // if ( session.id === 'UGxhbm5pbmdfNDQ0NTg3Mw==' ) console.log(session)
-    // if ( session.id === 'UGxhbm5pbmdfNDQ0NTg3Mw==' ) console.log(session.planningSpeakerRoles)
+    if ( session.id === 'UGxhbm5pbmdfNDQ0NTg4OA==' ) console.log(session)
+    if ( session.id === 'UGxhbm5pbmdfNDQ0NTg4OA==' ) console.log(session.planningSpeakerRoles)
 
     const breakTitle = ( trigger, titleString, splitPoint ) => {
 		if ( !titleString.includes(trigger) ) return titleString

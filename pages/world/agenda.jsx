@@ -39,6 +39,7 @@ import DROPDOWN from '../../css/app/dropdown-world-2024.module.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
 
 import {Session} from '../../ui/agenda/session'
+import {SessionStartups} from '../../ui/agenda/session-startups'
 
 import CSS from '../../css/app/agenda-world-2024.module.css'
 import CSS2 from '../../ui/agenda/agenda.module.css'
@@ -622,13 +623,24 @@ export default function Agenda({ sessions }) {
 										day.timeslots.map((slot, i) => (
 											<Timeslot key={i}>
 												{
-													handleCustomSlotOrder(slot.sessions, CUSTOM_PLACES_ORDER).map((session, i) => (
-														<Session
-															key={i}
-															session={session}
-															customContent={handleSessionCustomContent(CUSTOM_SESSION_CONTENT, session.id)}
-														/>
-													))
+													handleCustomSlotOrder(slot.sessions, CUSTOM_PLACES_ORDER).map((session, i) => {
+														
+														if (session.id === 'UGxhbm5pbmdfNDQ0NTg4OA==') return (
+															<SessionStartups
+																key={i}
+																session={session}
+																customContent={handleSessionCustomContent(CUSTOM_SESSION_CONTENT, session.id)}
+															/>
+														)
+
+														return (
+															<Session
+																key={i}
+																session={session}
+																customContent={handleSessionCustomContent(CUSTOM_SESSION_CONTENT, session.id)}
+															/>
+														)
+													})
 												}
 											</Timeslot>
 										))
