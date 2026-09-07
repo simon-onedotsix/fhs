@@ -1,13 +1,15 @@
 /* session */
 
 .wrapper {
-    background-color: hsl(from var(--primary) h s calc(l - 5) / 1);
+    color: var(--agenda-fg);
+    background-color: var(--agenda-bg, hsl(from var(--bg) h s calc(l - 2) / 1));
     border-radius: calc(var(--ui-radius) * 0.125);
     flex: 1;
 }
 
 .header {
-    background-color: hsl(from var(--primary) h s calc(l + 10) / 1);
+    color: var(--agenda-header-fg, var(--fg));
+    background-color: var(--agenda-header-bg, hsl(from var(--bg) h s calc(l + 10) / 1));
     padding: var(--space-xxs) var(--space-xs);
     border-radius: calc(var(--ui-radius) * 0.125) calc(var(--ui-radius) * 0.125) 0 0;
     display: flex;
@@ -19,7 +21,7 @@
 }
 
 .content {
-    padding: 1.5rem;
+    padding: var(--space-xs);
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-xs);
@@ -32,8 +34,6 @@
 .title {
     font-size: 1.4rem;
     font-weight: 500;
-    line-height: 1.2;
-    text-wrap: balance;
 }
 
 
@@ -47,7 +47,7 @@
 }
 .tag {
     display: inline-block;
-    background-color: var(--accent);
+    background-color: var(--agenda-icons, var(--accent));
     padding: .125rem .5rem;
     border-radius: 1rem;
     
@@ -117,23 +117,13 @@
 
 
 
-
-
-
-/* printer styles --------------------------------------------- */
-
 @media print {
-
-    .header {
-        border-bottom: 1px solid rgb(200, 200, 200) !important;
-        background-color: white !important;
-    }
     .wrapper {
-        background-color: white !important;
-        border: 1px solid rgb(200, 200, 200);
-        color: black !important;
+        border: 1px solid rgb(185, 185, 185);
+        color: black;
     }
-
+    .header {
+        border-bottom: 1px solid rgb(210, 210, 210);
+        color: black;
+    }
 }
-
-

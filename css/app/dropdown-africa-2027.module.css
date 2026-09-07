@@ -1,0 +1,153 @@
+.button {
+	cursor: pointer;
+	appearance:none;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: var(--secondary);
+	padding: .75rem 1rem;
+	border: 1px var(--secondary) solid;
+	border-radius: calc(var(--default-radius) * 0.5);
+	background-color: var(--primary);
+
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+
+	transition: all 350ms ease-in-out;
+
+}
+
+.button svg {
+	stroke: var(--secondary);
+	transition: all 350ms ease-in-out;
+}
+
+
+@media(hover: hover){
+	.button:hover {
+		background-color: var(--secondary)!important;
+		color: white!important;
+	}
+	.button:hover svg {
+		stroke: white;
+	}
+}
+
+
+
+
+
+@keyframes menuShow {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes menuHide {
+	to {
+		opacity: 0;
+	}
+}
+
+.menu {
+	-webkit-font-smoothing: antialiased;
+	box-sizing: border-box;
+	z-index: 100;
+	list-style: none;
+	user-select: none;
+	padding: 0;
+	color: white;
+	font-family: var(--default-font-family);
+	font-size: var(--default-font-size);
+	padding: 1px;
+
+	/* min-width: 32rem; */
+
+	/* max-height: 50vh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr); */
+	
+	border: 1px solid var(--secondary);
+	border-radius: calc(var(--default-radius) * 0.5);
+    background-color: var(--secondary);
+
+	overflow: hidden;
+	
+}
+@media(min-width:600px){
+	.menu {
+		min-width: max-content;
+		padding: .75rem;
+	}
+}
+
+.menuOpening {
+	composes: menu;
+	animation: menuShow 0.15s ease-out;
+}
+
+.menuClosing {
+	composes: menu;
+	animation: menuHide 0.2s ease-out forwards;
+}
+
+.menuItem {
+	cursor: pointer;
+	padding: .5rem .75rem;
+	font-weight: 400;
+	min-width: inherit;
+
+	transition: all 350ms ease-in-out;
+
+	margin: 2px;
+	border-radius: 5px;
+}
+
+.menuItemHover {
+	composes: menuItem;
+	/* color: var(--dark); */
+	background-color: var(--primary);
+}
+
+.menuItemDisabled {
+	composes: menuItem;
+	cursor: default;
+	color: #aaa;
+}
+
+.menu:focus,
+.menuItem:focus {
+	outline: none;
+}
+
+.submenuItem {
+	position: relative;
+}
+
+.submenuItem::after {
+	/* content: url("chevron-right-solid.svg"); */
+	content: '>';
+	position: absolute;
+	width: 7px;
+	right: 0.625rem;
+}
+
+.menuDivider {
+	height: 1px;
+	margin: 0.5rem 0.625rem;
+	background-color: rgba(0, 0, 0, 0.12);
+}
+
+
+@media(max-width:799px){
+	.button {
+		width: 100%;
+	}
+	.menu {
+		width: calc(100vw - var(--space-md) * 2);
+		font-size: inherit;
+	}
+}
+
+

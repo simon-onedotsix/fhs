@@ -6,6 +6,14 @@
     --secondary: #71CFEB;
     --accent: #EF3742;
 
+    --brand-1: #391c53;
+    --brand-2: #EF3742;
+    --brand-3: #71CFEB;
+
+
+
+
+
     --bg-global-ae: rgb(255, 255, 255);
 
     --default-text-color-ae: rgb(71, 71, 71);
@@ -39,5 +47,19 @@
     --base-font-weight: 300;
 
     /* end 2026 styles */
+
+
+    --bg: var(--brand-1);
+    --fg: white;
+    --accent: var(--brand-2);
+
+    --agenda-bg: hsl(from var(--bg) h s calc(l - 5) / 1);
+    --agenda-fg: var(--fg);
+    --agenda-divider-bg: var(--brand-2);
+    --agenda-divider-fg: var(--fg);
+    --agenda-header-bg: hsl(from var(--bg) h s calc(l + 10) / 1);
+    --agenda-header-fg: var(--fg);
+    --agenda-icons: var(--accent);
+
 
 }

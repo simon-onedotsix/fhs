@@ -12,9 +12,10 @@
     gap: var(--space-xs);
 
     .divider {
-        background-color: var(--accent);
+        color: var(--agenda-divider-fg, var(--fg));
+        background-color: var(--agenda-divider-bg, hsl(from var(--bg) h s calc(l - 5) / 1));
         border-radius: calc(var(--ui-radius) * 0.125);
-        padding: .5rem 1rem;
+        padding: 1rem;
 
         font-size: 1.5rem;
         font-weight: 500;
