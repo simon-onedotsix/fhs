@@ -107,6 +107,43 @@ function Speakers({ seomatic, speakers }) {
 	
 	// console.log('shuffled:', shuffledSpeakers.length)
 
+
+	const handleSpeakerLabel = (speakerId) => {
+		
+		let label
+
+		// startup den
+		const host = [
+			"RXZlbnRQZW9wbGVfNDc0OTkzMjk="
+		]
+		if (host.includes(speakerId)) label = "Startup Den Host"
+		
+		const judges = [
+			"RXZlbnRQZW9wbGVfNDg1MjE4NjY=",
+			"RXZlbnRQZW9wbGVfNDc3MzI3MDI=",
+			"RXZlbnRQZW9wbGVfNDgxMTYzNjU="
+		]
+		if (judges.includes(speakerId)) label = "Startup Den Judge"
+		
+		const participants = [
+			"RXZlbnRQZW9wbGVfNDg2MzA1NTY=",
+			"RXZlbnRQZW9wbGVfNDg2MzcyODQ=",
+			"RXZlbnRQZW9wbGVfNDg2MTQwNzg=",
+			"RXZlbnRQZW9wbGVfNDg1NzgyNTc=",
+			"RXZlbnRQZW9wbGVfNDg1NDE5MjA=",
+			"RXZlbnRQZW9wbGVfNDg2MTQxMzg=",
+			"RXZlbnRQZW9wbGVfNDg1NzgyMDI="
+		]
+		if (participants.includes(speakerId)) label = "Startup Den Participant"
+		
+
+		if (label) return <p className="fw-600 mb-xxs c-accent">{label}</p>
+
+		return
+
+	}
+
+
 	return (
 		<>
 
@@ -162,20 +199,12 @@ function Speakers({ seomatic, speakers }) {
 										</Link>
 										<div>
 											<p className='mt-xs' >
-									
-												{/* swapcard special field */}
-												{
-													getAllSpecialFields(speaker) &&
-													getAllSpecialFields(speaker).map((field, index) => (
-														<p key={index} className="fw-600 mb-xxs" style={{ color: field.color }}>
-															{field.value}
-														</p>
-													))
-												}
-												
+												{/* <p style={{ color: `lime`, fontSize: 10 }}>{speaker.id}</p> */}
 												<span className='fw-600'>{speaker.firstName} {speaker.lastName}</span> 
 												<br/>{speaker.jobTitle} 
 												<br/>{speaker.organization}
+												
+												{ handleSpeakerLabel(speaker.id)}
 											</p>
 										</div>
 									</div>
