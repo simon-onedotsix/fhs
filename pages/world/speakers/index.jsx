@@ -132,7 +132,8 @@ function Speakers({ seomatic, speakers }) {
 			"RXZlbnRQZW9wbGVfNDg1NzgyNTc=",
 			"RXZlbnRQZW9wbGVfNDg1NDE5MjA=",
 			"RXZlbnRQZW9wbGVfNDg2MTQxMzg=",
-			"RXZlbnRQZW9wbGVfNDg1NzgyMDI="
+			"RXZlbnRQZW9wbGVfNDg1NzgyMDI=",
+			"RXZlbnRQZW9wbGVfNDg1NzgzODY="
 		]
 		if (participants.includes(speakerId)) label = "Startup Den Participant"
 		

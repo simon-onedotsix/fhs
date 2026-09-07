@@ -142,6 +142,7 @@ const SpeakerCard = ({ speaker, label }) => {
                 label &&
                 <p className='c-accent fs-sm'>{label}</p>
             }
+            {/* <small style={{ color: `lime` }}>{speaker.id}</small> */}
             <p>{speaker.firstName} {speaker.lastName}</p>
             <p>{speaker.jobTitle}</p>
             <p>{speaker.organization}</p>
