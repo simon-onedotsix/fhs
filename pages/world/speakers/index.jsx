@@ -60,6 +60,16 @@ function Speakers({ seomatic, speakers }) {
 		(speaker => speaker.firstName == 'Maya' && speaker.lastName === 'Ziade' ? 0 : 1),
 	] )
 	
+
+	// filter for fhs living speakers
+	const fhsLivingSpeakerIds = []
+	speakers.filter(speaker => {
+		if (speaker.withEvent.fields.some(field => field.definition.id === "RmllbGREZWZpbml0aW9uXzg3NjU0Nw==")) {
+			fhsLivingSpeakerIds.push(speaker.id)
+		}
+	})
+	console.log('fhsLivingSpeakerIds:', fhsLivingSpeakerIds)
+
 	
 	
 	// console.log('speakers:', speakers)
@@ -113,6 +123,7 @@ function Speakers({ seomatic, speakers }) {
 		let label
 
 		// startup den
+
 		const host = [
 			"RXZlbnRQZW9wbGVfNDc0OTkzMjk="
 		]
@@ -137,6 +148,9 @@ function Speakers({ seomatic, speakers }) {
 		]
 		if (participants.includes(speakerId)) label = "Startup Den Participant"
 		
+		// fhs living
+		
+		if (fhsLivingSpeakerIds.includes(speakerId)) label = "Speaking at FHS Living"
 
 		if (label) return <p className="fw-600 mb-xxs c-accent">{label}</p>
 
