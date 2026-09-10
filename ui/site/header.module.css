@@ -35,6 +35,15 @@
     font-weight: 400;
 }
 
+.mainMenu ul li a span {
+    display: inline-block;
+    margin-left: .25rem;
+    background-color: var(--accent);
+    padding: 2px 8px;
+    border-radius: 2rem;
+    font-size: .85rem;
+    font-weight: 500;
+}
 
 
 /* TABLET + MOBILE */

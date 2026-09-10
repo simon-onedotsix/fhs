@@ -191,7 +191,8 @@ export const FHS_WORLD = {
                         "id": "16dj024gknsm3",
                         "title": "Hackathon",
                         "navUrl": "/world/hackathon",
-                        "target": false
+                        "target": false,
+                        "tag": "New"
                     },
                     {
                         "__typename": "navigation_Entry",
