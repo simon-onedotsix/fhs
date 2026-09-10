@@ -188,18 +188,18 @@ export const FHS_WORLD = {
                     },
                     {
                         "__typename": "navigation_Entry",
+                        "id": "16dj024gknsm3",
+                        "title": "Hackathon",
+                        "navUrl": "/world/hackathon",
+                        "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
                         "id": "163",
                         "title": "Country Pavilions",
                         "navUrl": "/world/country-pavilions",
                         "target": false
                     },
-                    // {
-                    //     "__typename": "navigation_Entry",
-                    //     "id": "165",
-                    //     "title": "Projects & Investment Opportunities",
-                    //     "navUrl": "/world/projects",
-                    //     "target": false
-                    // },
                     {
                         "__typename": "navigation_Entry",
                         "id": "167",
