@@ -194,13 +194,13 @@ export const FHS_WORLD = {
                         "target": false,
                         "tag": "New"
                     },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "163",
-                        "title": "Country Pavilions",
-                        "navUrl": "/world/country-pavilions",
-                        "target": false
-                    },
+                    // {
+                    //     "__typename": "navigation_Entry",
+                    //     "id": "163",
+                    //     "title": "Country Pavilions",
+                    //     "navUrl": "/world/country-pavilions",
+                    //     "target": false
+                    // },
                     {
                         "__typename": "navigation_Entry",
                         "id": "167",
