@@ -152,7 +152,13 @@ export default function Club ({ events }) {
                 <section className="block pt-0" style={{ position: `relative`, zIndex: 2 }}>
                     <div className="container center formatted">
                         <p className='fs-2 fw-600 center'>Tiers</p>
-                        <p className='fs-6 maxw-50 mx-auto'>Our loyalty programme is divided into three distinct tiers, each offering a range of exclusive benefits. Your tier is determined by your <strong>personal attendance</strong>.</p>
+                        <p className='fs-6 maxw-50 mx-auto'>Our loyalty programme is divided into three distinct tiers, each offering a range of exclusive benefits.</p>
+                        <p>Your tier is determined in to ways</p>
+                        <p>
+                            &bull; <strong>Personal attendance</strong> across the most recent 9 editions of FHS.<br />
+                            &bull; <strong>Company&apos;s cumulative attendance</strong> across all representatives.
+                        </p>
+                        <p>You are automatically assigned the higher of the two tiers, so your organisation&apos;s participation works in your favour even if you are attending FHS for the first time.</p>
                     </div>
 
                     <div className="container columns-1 gap-sm">
