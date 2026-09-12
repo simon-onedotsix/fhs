@@ -31,14 +31,14 @@ const TIER_DATA = [
         title: 'Member',
         color: 'white',
         badgeUrl: '/assets/theme/fhs-pin-member.png',
-        criteria: '<p>Attended at least 2 editions of the recent most 6 editions of FHS</p>',
+        criteria: '<p>Attended at least 2 editions of the recent most 9 editions of FHS</p>',
         benefits: '<ul><li><strong>5% Discount on Standard Tickets:</strong> Enjoy a discount on your tickets to future FHS editions.</li><li><strong>5% Discount on Colleague/Friend Tickets:</strong> Share the experience with your colleagues and friends at a reduced price.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Get early access to valuable industry insights from our partners and content from recent events.</li></ul>'
     },
     {
         title: 'Silver',
         color: '#9F9F9F',
         badgeUrl: '/assets/theme/fhs-pin-silver.png',
-        criteria: '<p>Attended 3 or more editions of the recent most 6 editions of FHS</p>',
+        criteria: '<p>Attended 3 or more editions of the recent most 9 editions of FHS</p>',
         benefits: '<ul><li><strong>7% Discount on Standard Tickets:</strong> Greater savings on your tickets to FHS events.</li><li><strong>5% Discount on Colleague/Friend Tickets:</strong> Continued discount for your colleagues and friends.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Stay ahead with priority access to exclusive content.</li><li><strong>Loyalty Pins/Badges:</strong> Receive loyalty pins or badges on-site.</li><li><strong>Hotel/Restaurant Vouchers:</strong> Free hotel nights/restaurant/activity vouchers from our sponsors/partners.</li><li><strong>Priority Access to Site Tours and On-Site Activities:</strong> Enjoy priority booking for site tours and other activities.</li><li><strong>Access to Networking Receptions:</strong> Join exclusive networking receptions at FHS and other Bench conferences.</li></ul>'
     },
     {
