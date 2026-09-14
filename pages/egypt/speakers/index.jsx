@@ -35,30 +35,33 @@ import CSS from '../../../fuselage/theme/2024/world/css/homepage.module.css'
 
 
 
+
+
+export const PRIORITY_SPEAKER_IDS = [
+	'RXZlbnRQZW9wbGVfNDc3MjUyNzA=',
+	'RXZlbnRQZW9wbGVfNDc2OTA3Mzg=',
+	'RXZlbnRQZW9wbGVfNDcyMTAyODI=',
+	'RXZlbnRQZW9wbGVfNDc1NjAzNDE=',
+	'RXZlbnRQZW9wbGVfNDgwNDEzNjE=',
+	
+	'RXZlbnRQZW9wbGVfNDc5NTk1NTE=',
+	'RXZlbnRQZW9wbGVfNDgwNzM2NTc=',
+	'RXZlbnRQZW9wbGVfNDc2OTA1NTU=',
+	'RXZlbnRQZW9wbGVfNDc1NjIwNzQ=',
+	'RXZlbnRQZW9wbGVfNDcyMjczMzU=',
+	
+	'RXZlbnRQZW9wbGVfNDcyMTA0Njg=',
+	'RXZlbnRQZW9wbGVfNDcyODc5NzY=',
+	'RXZlbnRQZW9wbGVfNDcyMTAzOTM=',
+	'RXZlbnRQZW9wbGVfNDcyMTAyNDk=',
+	'RXZlbnRQZW9wbGVfNDcyMTAyMzY=',
+]
+
+
+
 export default function Page({ speakers }) {
     
     // console.log('speakers:', speakers)
-
-    const PRIORITY_SPEAKER_IDS = [
-        'RXZlbnRQZW9wbGVfNDc3MjUyNzA=',
-        'RXZlbnRQZW9wbGVfNDc2OTA3Mzg=',
-        'RXZlbnRQZW9wbGVfNDcyMTAyODI=',
-        'RXZlbnRQZW9wbGVfNDc1NjAzNDE=',
-        'RXZlbnRQZW9wbGVfNDgwNDEzNjE=',
-        
-        'RXZlbnRQZW9wbGVfNDc5NTk1NTE=',
-        'RXZlbnRQZW9wbGVfNDgwNzM2NTc=',
-        'RXZlbnRQZW9wbGVfNDc2OTA1NTU=',
-        'RXZlbnRQZW9wbGVfNDc1NjIwNzQ=',
-        'RXZlbnRQZW9wbGVfNDcyMjczMzU=',
-        
-        'RXZlbnRQZW9wbGVfNDcyMTA0Njg=',
-        'RXZlbnRQZW9wbGVfNDcyODc5NzY=',
-        'RXZlbnRQZW9wbGVfNDcyMTAzOTM=',
-        'RXZlbnRQZW9wbGVfNDcyMTAyNDk=',
-        'RXZlbnRQZW9wbGVfNDcyMTAyMzY=',
-    ]
-
 
     return (
         <>
@@ -118,7 +121,7 @@ Page.theme = 'egypt'
 
 export async function getStaticProps() {
 
-	const swapcardData = await fetch(
+	const swapcardSpeakers = await fetch(
 		"https://developer.swapcard.com/event-admin/graphql",
 		{
 			method: "POST",
@@ -209,9 +212,9 @@ export async function getStaticProps() {
 		}
 	)
 
-	// console.log(swapcardData)
+	// console.log(swapcardSpeakers)
 	
-	const speakerData =  await swapcardData.json()
+	const speakerData =  await swapcardSpeakers.json()
 
 
 	return {

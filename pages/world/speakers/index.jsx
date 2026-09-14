@@ -70,7 +70,7 @@ function Speakers({ seomatic, speakers }) {
 	// filter for fhs living speakers
 	const fhsLivingSpeakerIds = []
 	speakers.filter(speaker => {
-		if (speaker.withEvent.fields.some(field => field.definition.id === "RmllbGREZWZpbml0aW9uXzg3NjU0Nw==")) {
+		if (speaker.withEvent.fields.some(field => field.definition?.id === "RmllbGREZWZpbml0aW9uXzg3NjU0Nw==")) {
 			fhsLivingSpeakerIds.push(speaker.id)
 		}
 	})

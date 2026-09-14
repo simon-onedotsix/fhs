@@ -37,6 +37,7 @@ import { ImageGallery } from "../../fuselage/components/image-gallery/image-gall
 import { Slider } from "../../ui/components/slider"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
 
+import { orderByLastName, customOrderById } from '../../lib/swapcard/speaker-utilities'
 
 import CSS from '../../fuselage/theme/egypt/css/homepage.module.css'
 
@@ -77,11 +78,11 @@ const SPEAKER_DATA = [
 // temporary hard-code data
 import { EVENT_DATA } from "../index"
 
+import { PRIORITY_SPEAKER_IDS } from "./speakers"
 
 
-import { WEBINAR_SPEAKER_DATA } from "./webinar"
 
-export default function Home ({ data, content, partners }) {
+export default function Home ({ data, content, partners, speakers }) {
 
     const [ showModal, setShowModal ] = useState(false)
     const [ modalContent, setModalContent ] = useState()
@@ -95,6 +96,7 @@ export default function Home ({ data, content, partners }) {
     // console.log('parterData:', partners)
     // console.log('partnersOnly:', partnersOnly)
     // console.log('mediaPartnersOnly:', mediaPartnersOnly)
+    // console.log('speakers:', speakers)
 
     const isDesktop = useCustomMediaQuery('(min-width: 600px)');
 
@@ -258,9 +260,9 @@ export default function Home ({ data, content, partners }) {
                     <p className="fs-1 fw-500 caps">Envisioned Speakers</p>
                 </div>
 
-                <div className="container columns-4 gap-sm maxw-60 center">
+                <div className="container columns-5 gap-sm maxw-70 center">
                     {
-                        SPEAKER_DATA.map( (profile, index) => (
+                        customOrderById( orderByLastName(speakers.slice(0, 10)), PRIORITY_SPEAKER_IDS).map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
                                     url={profile.url}
@@ -687,7 +689,7 @@ export async function getStaticProps() {
         `
     })
 
-    const swapcardData = await fetch(
+    const swapcardPartners = await fetch(
 		"https://developer.swapcard.com/event-admin/graphql",
 		{
 			method: "POST",
@@ -725,16 +727,112 @@ export async function getStaticProps() {
 			})
 		}
 	)
-
-	console.log(swapcardData)
-	
-    const partnerData = await swapcardData.json()
+	console.log(swapcardPartners)	
+    const partnerData = await swapcardPartners.json()
     
+
+    const swapcardSpeakers = await fetch(
+		"https://developer.swapcard.com/event-admin/graphql",
+		{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				"Authorization": process.env.SWAPCARD_AUTH_KEY
+			},
+			body: JSON.stringify({
+				query: `
+					query eventPerson(
+						$eventId: ID!
+						$cursor: CursorPaginationInput
+						$filters: [EventPersonFilter!]
+					){
+						eventPerson(eventId: $eventId, cursor: $cursor, filters: $filters) {
+							nodes {
+								id
+								type
+								firstName
+								lastName
+								jobTitle
+								organization
+								photoUrl
+
+								speakerOnPlannings {
+									id
+									title
+									categories
+									fields {
+									... on MultipleSelectField {
+										id
+										definition {
+											isDefault
+											name
+										}
+										value
+										translations {
+											value
+										}
+									}
+									}
+								}
+
+								withEvent(eventId: $eventId) {
+									fields {
+										... on SelectField {
+											translations {
+												value
+												language
+											}
+											definition {
+												id
+												translations {
+													name
+													language
+												}
+											}
+										}
+										... on TextField {
+											definition {
+												name
+												translations {
+													name
+												}
+												id
+											}
+											locale
+											value
+											id
+										}
+									}
+								}
+								}
+							}
+						}
+					`,
+					variables: {
+						"eventId": process.env.SWAPCARD_EVENT_ID_EGYPT_2026,
+						"cursor": {
+							"first": 300
+						},
+						"filters": {
+							"shouldBeInGroups": "RXZlbnRHcm91cF82NjExMzE="
+						}
+					}
+			}
+			)
+		}
+	)
+
+	// console.log(swapcardSpeakers)
+	
+    const speakerData = await swapcardSpeakers.json()
+    
+
     return {
         props: {
             data: data.entry,
             content: data.podcasts,
             partners: partnerData.data.exhibitors,
+            speakers: speakerData.data.eventPerson.nodes
         },
     }
 }
