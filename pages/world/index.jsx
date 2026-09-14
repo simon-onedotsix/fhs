@@ -168,143 +168,285 @@ const photos = [
 ]
 
 const SPEAKERS = [
-    {
-        "id": "RXZlbnRQZW9wbGVfNDc3NzQwMTE=",
-        "type": null,
-        "firstName": "H․E. Abdulla",
-        "lastName": "bin Touq Al Marri",
-        "jobTitle": "Minister of Economy & Tourism",
-        "organization": "United Arab Emirates",
-        "photoUrl": "https://static.swapcard.com/public/images/8dae029be8ee4babbadde92e1d27201b.png",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDc3NTEwMDg=",
-        "type": null,
-        "firstName": "Marc",
-        "lastName": "Dardenne",
-        "jobTitle": "CEO",
-        "organization": "Modon Holding Hospitality",
-        "photoUrl": "https://static.swapcard.com/public/images/4ba04289ac88482b8eea156243b38993.jpeg",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDY0NDczNTM=",
-        "type": null,
-        "firstName": "Sonu",
-        "lastName": "Shivdasani",
-        "jobTitle": "CEO and Founder",
-        "organization": "Sosei",
-        "photoUrl": "https://static.swapcard.com/public/images/0c846e869b3e423abadf316bec97fc13.jpeg",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDczODcyODg=",
-        "type": "Speaker",
-        "firstName": "Philippe ",
-        "lastName": "Zuber",
-        "jobTitle": "Chief Executive Officer",
-        "organization": "Kerzner International Management",
-        "photoUrl": "https://static.swapcard.com/public/images/802ca11f989a409daf7c798105d5d72e.jpeg",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDc1NjEyMDI=",
-        "type": null,
-        "firstName": "Sameh",
-        "lastName": "Muhtadi",
-        "jobTitle": "Chief Executive Officer",
-        "organization": "RAK Properties",
-        "photoUrl": "https://static.swapcard.com/public/images/dd2e95b940b94163a8b0019c3e4ad603.jpeg",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDczODczNzA=",
-        "type": null,
-        "firstName": "David",
-        "lastName": "Xiaoou Chen",
-        "jobTitle": "Chairman & CEO",
-        "organization": "Fields of Gold (F.O.G.) Capital & Asset Mgt Corp.",
-        "photoUrl": "https://static.swapcard.com/public/images/68aa19c3fca3497999700cd044c5a106.jpeg",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDY1MDg0OTk=",
-        "type": "Speaker",
-        "firstName": "Artur",
-        "lastName": "Gerber",
-        "jobTitle": "Chief Executive Officer",
-        "organization": "TUI BLUE Hotels & Resorts",
-        "photoUrl": "https://cdn-api.swapcard.com/public/images/0f23ecf59ba442a396d3bcf6966bbcfe.png",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDcxMDQxMzc=",
-        "type": "Speaker",
-        "firstName": "Hamza",
-        "lastName": "Farooqui",
-        "jobTitle": "Founder & CEO",
-        "organization": "Millat Group",
-        "photoUrl": "https://static.swapcard.com/public/images/4647f1b3e985405383b25e68d832ede9.jpeg",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDY4MTM4NjM=",
-        "type": null,
-        "firstName": "Ina",
-        "lastName": "Plunien",
-        "jobTitle": "Senior Vice President - Hospitality",
-        "organization": "Cain",
-        "photoUrl": "https://static.swapcard.com/public/images/f3904a243c764ec494f2fe2976dbf82c.jpeg",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDY0NDczNDg=",
-        "type": null,
-        "firstName": "Amit",
-        "lastName": "Arora",
-        "jobTitle": "Chief Operating Officer",
-        "organization": "Arada Hospitality and Entertainment",
-        "photoUrl": "https://static.swapcard.com/public/images/cb22de0ff76c48e080aa1ad8b770b936.jpeg",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDczNzUzODM=",
-        "type": "Speaker",
-        "firstName": "Samer",
-        "lastName": "AlKharashi",
-        "jobTitle": "Director",
-        "organization": "UN Tourism Regional Office for the Middle East",
-        "photoUrl": "https://static.swapcard.com/public/images/89b98ea115ea4a50a63a17ab862f0b38.jpeg",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDY0NDczNDI=",
-        "type": "Moderator",
-        "firstName": "Georgette",
-        "lastName": "Davey",
-        "jobTitle": "Managing Director",
-        "organization": "Abu Dhabi Hospitality Academy - Les Roches",
-        "photoUrl": "https://static.swapcard.com/public/images/571e2de0140e4a4989c82c6b26d5ece2.jpeg",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDc3MzI3NDE=",
-        "type": "",
-        "firstName": "Dimitris",
-        "lastName": "Manikis",
-        "jobTitle": "President EMEA",
-        "organization": "Wyndham Hotels & Resorts",
-        "photoUrl": "https://static.swapcard.com/public/images/7557dff7b09c456aa6a26d38112546af.png",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDc5MTQ1NjE=",
-        "type": "",
-        "firstName": "Barbara",
-        "lastName": "Muckermann",
-        "jobTitle": "Group Chief Executive Office",
-        "organization": "Kempinski Hotels",
-        "photoUrl": "https://static.swapcard.com/public/images/e4c532d0b5e942b3a4eb1683e1121eff.jpeg",
-    },
-    {
-        "id": "RXZlbnRQZW9wbGVfNDcxNTYzOTg=",
-        "type": "",
-        "firstName": "Maya",
-        "lastName": "Ziade",
-        "jobTitle": "Chief Development Officer, Premium, Midscale & Economy Division for Middle East, Africa and Türkiye",
-        "organization": "Accor",
-        "photoUrl": "https://static.swapcard.com/public/images/e6002ebef3da48d58056b6d73e6d695d.jpeg",
-    },
-
-]
+  {
+    firstName: "H․H. Sheikh Ahmed",
+    id: "RXZlbnRQZW9wbGVfNDg3ODE1MjA=",
+    jobTitle: "Chairman Dubai Holding, Dubai Airports,",
+    lastName: "bin Saeed Al Maktoum",
+    organization: "Emirates Group; President, DCAA",
+    photoUrl:
+      "https://static.swapcard.com/public/images/cef9710540734f0e8132b8e5155685cd.jpeg",
+  },
+  {
+    firstName: "H․E. Abdulla",
+    id: "RXZlbnRQZW9wbGVfNDc3NzQwMTE=",
+    jobTitle: "Minister of Economy & Tourism",
+    lastName: "bin Touq Al Marri",
+    organization: "United Arab Emirates",
+    photoUrl:
+      "https://static.swapcard.com/public/images/8dae029be8ee4babbadde92e1d27201b.png",
+  },
+  {
+    firstName: "William",
+    id: "RXZlbnRQZW9wbGVfNDg3ODExNDM=",
+    jobTitle: "Founder and Chairman",
+    lastName: "Heinecke",
+    organization: "Minor International PCL",
+    photoUrl:
+      "https://static.swapcard.com/public/images/e18c34f709d341dabb14fe98a457b65b.jpeg",
+  },
+  {
+    
+firstName
+: 
+"Alison",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg1NDI0Njg=",
+jobTitle
+: 
+"Group COO & CEO, Marjan Hospitality",
+lastName
+: 
+"Grinnell",
+organization
+: 
+"Marjan",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/cac669535261409fa510b666809927b6.jpeg"
+  },
+  {
+    
+firstName
+: 
+"René",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg4MDc0NjA=",
+jobTitle
+: 
+"Chairman of the Board of Directrors",
+lastName
+: 
+"Nijhof",
+organization
+: 
+"Kempinski Hotels SA",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/a8ac2237a28e494ca6abdded3bb2dc9e.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Rahul",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg3ODEzOTk=",
+jobTitle
+: 
+"Managing Director & CEO",
+lastName
+: 
+"Chaudhary",
+organization
+: 
+"CG Corp Global & CG Hospitality",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/c4f1b80ff5d740319df7cdb547dd3b8e.png"
+  },
+  {
+    
+firstName
+: 
+"Philippe",
+id
+: 
+"RXZlbnRQZW9wbGVfNDczODcyODg=",
+jobTitle
+: 
+"Chief Executive Officer",
+lastName
+: 
+"Zuber",
+organization
+: 
+"Kerzner International Management",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/802ca11f989a409daf7c798105d5d72e.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Sonu",
+id
+: 
+"RXZlbnRQZW9wbGVfNDY0NDczNTM=",
+jobTitle
+: 
+"CEO and Founder",
+lastName
+: 
+"Shivdasani",
+organization
+: 
+"Sosei",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/0c846e869b3e423abadf316bec97fc13.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Marc",
+id
+: 
+"RXZlbnRQZW9wbGVfNDc3NTEwMDg=",
+jobTitle
+: 
+"Chief Executive Officer",
+lastName
+: 
+"Dardenne",
+organization
+: 
+"Modon Hospitality",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/4ba04289ac88482b8eea156243b38993.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Phillipa",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg2NDE2NDk=",
+jobTitle
+: 
+"Chief Executive Officer",
+lastName
+: 
+"Harrison",
+organization
+: 
+"Ras Al Khaimah Tourism Development Authority",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/fc397ac30e224ac88067eebd8dedd9d1.jpeg"
+  },
+  {
+    firstName
+: 
+"Abdulla",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg1NDI0Njk=",
+jobTitle
+: 
+"Group CEO",
+lastName
+: 
+"Al Abdouli",
+organization
+: 
+"Marjan",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/22a04421bd994291aea73d3e313a832f.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Miltos",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg1MTgxNzM=",
+jobTitle
+: 
+"Chief Executive Officer",
+lastName
+: 
+"Bosinis",
+organization
+: 
+"H&H",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/8916ab17c1ca4bdab4ec5e9194df9834.jpeg",
+  },
+  {
+    
+firstName
+: 
+"Raki",
+id
+: 
+"RXZlbnRQZW9wbGVfNDgxMTYzNjY=",
+jobTitle
+: 
+"Regional President - Middle East, Africa & Türkiye",
+lastName
+: 
+"Phillips",
+organization
+: 
+"ACCOR",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/a81cfad726f04c4890deb52f5b1b581d.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Dr. Moath",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg2ODc0OTU=",
+jobTitle
+: 
+"Chief Executive Officer",
+lastName
+: 
+"Alyahya",
+organization
+: 
+"Knowledge Economic City",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/9b956b3026a34a23be710625678dbe19.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Dean",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg2NDIyNTE=",
+jobTitle
+: 
+"Senior Vice President of Hospitality",
+lastName
+: 
+"Rossilli",
+organization
+: 
+"DAMAC Properties",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/640f073a69774d899c075069cb339841.jpeg"
+  },
+];
 
 const INDUSTRY_DATA = [
     {

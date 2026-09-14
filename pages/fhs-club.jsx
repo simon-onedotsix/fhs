@@ -45,7 +45,7 @@ const TIER_DATA = [
         title: 'Gold',
         color: '#DFA258',
         badgeUrl: '/assets/theme/fhs-pin-gold.png',
-        criteria: '<p>Attended 5 or more editions of FHS</p>',
+        criteria: '<p>Attended 5 or more editions of the recent most 9 editions of FHS</p>',
         benefits: '<ul><li><strong>10% Discount on Delegate Tickets:</strong> Maximize your savings with the highest discount on event tickets.</li><li><strong>10% Discount on Colleague/Friend Tickets:</strong> Significant savings for your colleagues and friends.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Continue to receive exclusive industry insights and content.</li><li><strong>Loyalty Pins/Badges + Event Preparation Kits:</strong> Get special loyalty pins or badges along with event preparation kits provided on-site.</li><li><strong>Hotel/Restaurant Vouchers:</strong> Free hotel nights/restaurant/activity vouchers from our sponsors/partners.</li><li><strong>Featured on FHS Website:</strong> Prominent recognition on our website.</li><li><strong>Priority Access to Site Tours and On-Site Activities:</strong> Maintain priority booking status for all activities.</li><li><strong>Access to Networking Receptions:</strong> Full access to all networking receptions at FHS and other Bench conferences.</li></ul>'
     }
 ]
@@ -188,7 +188,7 @@ export default function Club ({ events }) {
                             </div>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>2</p>
-                                <p className="balance">Your tier is automatically assigned based on your attendance record. Keep attending FHS editions to move up the tiers and unlock more benefits.</p>
+                                <p className="balance">Your tier is automatically assigned based on your individual attendance record or your company&apos;s collective attendance record. Keep attending FHS Editions to move up through the tiers and unlock more benefits.</p>
                             </div>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>3</p>
