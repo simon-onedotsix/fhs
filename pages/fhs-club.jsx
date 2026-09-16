@@ -31,29 +31,29 @@ const TIER_DATA = [
         title: 'Member',
         color: 'white',
         badgeUrl: '/assets/theme/fhs-pin-member.png',
-        criteria: '<p>Attended at least 2 editions of the recent most 9 editions of FHS</p>',
-        benefits: '<ul><li><strong>5% Discount on Standard Tickets:</strong> Enjoy a discount on your tickets to future FHS editions.</li><li><strong>5% Discount on Colleague/Friend Tickets:</strong> Share the experience with your colleagues and friends at a reduced price.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Get early access to valuable industry insights from our partners and content from recent events.</li></ul>'
+        criteria: (<p>Attended 2 FHS editions</p>),
+        benefits: (<ul><li><strong>5% Discount on Standard Tickets:</strong> Enjoy a discount on your tickets to future FHS editions.</li><li><strong>5% Discount on Colleague/Friend Tickets:</strong> Share the experience with your colleagues and friends at a reduced price.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Get early access to valuable industry insights from our partners and content from recent events.</li></ul>)
     },
     {
         title: 'Silver',
         color: '#9F9F9F',
         badgeUrl: '/assets/theme/fhs-pin-silver.png',
-        criteria: '<p>Attended 3 or more editions of the recent most 9 editions of FHS</p>',
-        benefits: '<ul><li><strong>7% Discount on Standard Tickets:</strong> Greater savings on your tickets to FHS events.</li><li><strong>5% Discount on Colleague/Friend Tickets:</strong> Continued discount for your colleagues and friends.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Stay ahead with priority access to exclusive content.</li><li><strong>Loyalty Pins/Badges:</strong> Receive loyalty pins or badges on-site.</li><li><strong>Hotel/Restaurant Vouchers:</strong> Free hotel nights/restaurant/activity vouchers from our sponsors/partners.</li><li><strong>Priority Access to Site Tours and On-Site Activities:</strong> Enjoy priority booking for site tours and other activities.</li><li><strong>Access to Networking Receptions:</strong> Join exclusive networking receptions at FHS and other Bench conferences.</li></ul>'
+        criteria: (<p>Attended 3 or 4 FHS editions</p>),
+        benefits: (<ul><li><strong>7% Discount on Standard Tickets:</strong> Greater savings on your tickets to FHS events.</li><li><strong>5% Discount on Colleague/Friend Tickets:</strong> Continued discount for your colleagues and friends.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Stay ahead with priority access to exclusive content.</li><li><strong>Loyalty Pins/Badges:</strong> Receive loyalty pins or badges on-site.</li><li><strong>Hotel/Restaurant Vouchers:</strong> Free hotel nights/restaurant/activity vouchers from our sponsors/partners.</li><li><strong>Priority Access to Site Tours and On-Site Activities:</strong> Enjoy priority booking for site tours and other activities.</li><li><strong>Access to Networking Receptions:</strong> Join exclusive networking receptions at FHS and other Bench conferences.</li></ul>)
     },
     {
         title: 'Gold',
         color: '#DFA258',
         badgeUrl: '/assets/theme/fhs-pin-gold.png',
-        criteria: '<p>Attended 5 or more editions of the recent most 9 editions of FHS</p>',
-        benefits: '<ul><li><strong>10% Discount on Delegate Tickets:</strong> Maximize your savings with the highest discount on event tickets.</li><li><strong>10% Discount on Colleague/Friend Tickets:</strong> Significant savings for your colleagues and friends.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Continue to receive exclusive industry insights and content.</li><li><strong>Loyalty Pins/Badges + Event Preparation Kits:</strong> Get special loyalty pins or badges along with event preparation kits provided on-site.</li><li><strong>Hotel/Restaurant Vouchers:</strong> Free hotel nights/restaurant/activity vouchers from our sponsors/partners.</li><li><strong>Featured on FHS Website:</strong> Prominent recognition on our website.</li><li><strong>Priority Access to Site Tours and On-Site Activities:</strong> Maintain priority booking status for all activities.</li><li><strong>Access to Networking Receptions:</strong> Full access to all networking receptions at FHS and other Bench conferences.</li></ul>'
+        criteria: (<p>Attended 5 or more FHS editions</p>),
+        benefits: (<ul><li><strong>10% Discount on Delegate Tickets:</strong> Maximize your savings with the highest discount on event tickets.</li><li><strong>10% Discount on Colleague/Friend Tickets:</strong> Significant savings for your colleagues and friends.</li><li><strong>Exclusive Access to Industry Reports and Event Content:</strong> Continue to receive exclusive industry insights and content.</li><li><strong>Loyalty Pins/Badges + Event Preparation Kits:</strong> Get special loyalty pins or badges along with event preparation kits provided on-site.</li><li><strong>Hotel/Restaurant Vouchers:</strong> Free hotel nights/restaurant/activity vouchers from our sponsors/partners.</li><li><strong>Featured on FHS Website:</strong> Prominent recognition on our website.</li><li><strong>Priority Access to Site Tours and On-Site Activities:</strong> Maintain priority booking status for all activities.</li><li><strong>Access to Networking Receptions:</strong> Full access to all networking receptions at FHS and other Bench conferences.</li></ul>)
     }
 ]
 
 const FAQ_DATA = [
     {
         q: "What is the FHS Club?",
-        a: "The FHS Club is a loyalty programme designed to reward attendees of the Future Hospitality Summit with exclusive benefits based on their participation in the recent most 6 editions."
+        a: "The FHS Club is a loyalty programme designed to reward attendees of the Future Hospitality Summit with exclusive benefits based on their participation in the recent most 15 editions."
     },
     {
         q: "How do I become a member of the FHS Club?",
@@ -77,7 +77,7 @@ const FAQ_DATA = [
     },
     {
         q: "How long do my benefits last?",
-        a: "Membership tiers are updated at every FHS event to include recent most 6 editions. You can renew or upgrade your tier by attending more FHS editions."
+        a: "Membership tiers are updated at every FHS event to include recent most 15 editions. You can renew or upgrade your tier by attending more FHS editions."
     }
 ]
 
@@ -149,16 +149,21 @@ export default function Club ({ events }) {
                 </HeroUnitImage>
 
 
+                {/* TIERS */}
                 <section className="block pt-0" style={{ position: `relative`, zIndex: 2 }}>
                     <div className="container center formatted">
                         <p className='fs-2 fw-600 center'>Tiers</p>
                         <p className='fs-6 maxw-50 mx-auto'>Our loyalty programme is divided into three distinct tiers, each offering a range of exclusive benefits.</p>
-                        <p>Your tier is determined in to ways</p>
+                    </div>
+
+                    <div className="container center formatted">
+                        <p className='fs-5 fw-600 center'>How your tier is calculated</p>
+                        <p>Your status is based on the five most recent editions of each of our three series: FHS World, FHS Saudi Arabia and FHS Africa. Fifteen editions in total.</p>
                         <p>
-                            &bull; <strong>Personal attendance</strong> across the most recent 9 editions of FHS.<br />
-                            &bull; <strong>Company&apos;s cumulative attendance</strong> across all representatives.
+                            &bull; <strong>FHS World</strong> - FHS World 2025, FHS World 2024, FHS Abu Dhabi 2023, FHS Middle East 2022, AHIC 2021<br />
+                            &bull; <strong>FHS Saudi Arabia</strong> - 2026, 2025, 2024, 2023, 2022<br/>
+                            &bull; <strong>FHS Africa</strong> - FHS Africa 2026, FHS Africa 2025, AHIF 2024, AHIF 2023, AHIF 2022
                         </p>
-                        <p>You are automatically assigned the higher of the two tiers, so your organisation&apos;s participation works in your favour even if you are attending FHS for the first time.</p>
                     </div>
 
                     <div className="container columns-1 gap-sm">
@@ -177,6 +182,8 @@ export default function Club ({ events }) {
                     </div>
                 </section>
 
+                
+                {/* HOW TO JOIN + FORM */}
                 <section className="block pt-0">
                     <div className="container">
                         <p className='fs-2 fw-600 center'>How to Join</p>
@@ -184,15 +191,15 @@ export default function Club ({ events }) {
                         <div className={CSS.steps}>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>1</p>
-                                <p className="balance">Attend two or more of the recent nine editions of Future Hospitality Summit (FHS Saudi Arabia, FHS  World, FHS  Africa) to start earning your place in the FHS Club.</p>
+                                <p className="balance">Attend two or more of the fifteen editions listed above.</p>
                             </div>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>2</p>
-                                <p className="balance">Your tier is automatically assigned based on your individual attendance record or your company&apos;s collective attendance record. Keep attending FHS Editions to move up through the tiers and unlock more benefits.</p>
+                                <p className="balance">Your tier is assigned automatically from your own attendance record. Keep attending FHS Editions to move up through the tiers and unlock more benefits.</p>
                             </div>
                             <div className={CSS.step}>
                                 <p className={CSS.bigNumber}>3</p>
-                                <p className="balance">Check your membership status below and learn about exclusive benefits. Memership status will reset at every FHS event.</p>
+                                <p className="balance">Check your membership status below and learn about exclusive benefits. Your tier is reviewed after each FHS edition and can only go up. We will always let you know before anything changes.</p>
                             </div>
                         </div>
                     </div>
@@ -210,8 +217,8 @@ export default function Club ({ events }) {
                 </section>
 
 
-
-                <section className="block bg-dark">
+                {/* UPCOMING EVENTS */}
+                {/* <section className="block bg-dark">
                     <div className="container">
                         <p className='fs-2 fw-600 center'>Our Upcoming Events</p>
                     </div>
@@ -245,10 +252,10 @@ export default function Club ({ events }) {
                             })
                         }
                     </UpcomingEvents>
-                </section>
+                </section> */}
 
 
-
+                {/* FAQs */}
                 <section className="block">
                     <div className="container">
                         <p className='fs-2 fw-600 center'>FAQs (Frequently Asked Questions)</p>
@@ -266,8 +273,8 @@ export default function Club ({ events }) {
                 </section>
                 
                 
-                
-                <section className="block bg-dark">
+                {/* T&Cs */}
+                {/* <section className="block bg-dark">
                     <div className="container">
                         <p className='fs-2 fw-600 center'>Terms and Conditions</p>
                     </div>
@@ -281,7 +288,7 @@ export default function Club ({ events }) {
                             ))
                         }
                     </div>
-                </section>
+                </section> */}
             </div>
 
 
@@ -324,11 +331,11 @@ const Tier = ({ color, badgeUrl, title, criteria, benefits }) => {
             <main>
                 <div className='formatted'>
                     <p className={CSS.smallHeading}>Criteria:</p>
-                    { parse(criteria) }
+                    { criteria }
                 </div>
                 <div className='formatted'>
                     <p className={CSS.smallHeading}>Benefits:</p>
-                    { parse(benefits) }
+                    { benefits }
                 </div>
             </main>
         </div>
