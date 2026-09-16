@@ -285,7 +285,6 @@ export default function Page ({ speakers }) {
                                                     />
                                                 }
                                             </a>
-
                                         </Pop>
                                     </Link>
                                     <div>

@@ -464,7 +464,7 @@ export default function FhsWorld2026Schedule() {
         }
 
         .fhs-schedule__event--general {
-          color: var(--bg);
+          color: white;
           background: var(--background-general);
           box-shadow: none;
         }
@@ -474,7 +474,7 @@ export default function FhsWorld2026Schedule() {
         }
 
         .fhs-schedule__event--food {
-          color: var(--bg);
+          color: white;
           background: var(--background-general);
           box-shadow: none;
         }
@@ -609,6 +609,13 @@ export default function FhsWorld2026Schedule() {
               {lanes.map((lane) => (
                 <div key={lane} className={`fhs-schedule__heading fhs-schedule__heading--${lane}`}>
                   {laneLabels[lane]}
+                  {
+                    laneLabels[lane] === "Summit Stage" && selectedDay === 3 ?
+                      <p style={{ fontSize: `.8rem`, textTransform: `none`, fontWeight: 400, fontStyle: `italic` }}>
+                        FHS Living will take place on the Summit Stage entirely on Day 3. Access to FHS Living is limited to Premium and FHS Living Pass holders.
+                      </p>
+                      : null
+                  }
                 </div>
               ))}
             </div>

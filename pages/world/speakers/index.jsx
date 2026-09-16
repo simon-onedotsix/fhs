@@ -336,7 +336,7 @@ export async function getStaticProps() {
 							"shouldBeInGroups": "RXZlbnRHcm91cF82NTQ4MTQ="
 						}
 					}
-			}
+				}
 			)
 		}
 	)
