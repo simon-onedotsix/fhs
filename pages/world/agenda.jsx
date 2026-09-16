@@ -54,11 +54,25 @@ const CUSTOM_PLACES_ORDER = [
 ]
 const CUSTOM_SESSION_CONTENT = [
 	{
+		ref: "wellness partner",
+		ids: ["UGxhbm5pbmdfNDU5NzU5MA==", "UGxhbm5pbmdfNDU5NzU5NA=="],
+		content: (
+			<div key={'cc1'}>
+				<p className="fs-sm caps mb-xxs">WELLNESS PARTNER</p>
+				<Link href={`/world/partners/RXhoaWJpdG9yXzI1NDczMDE=`}>
+					<a style={{ display: `inline-block`, backgroundColor: `white`, padding: 10, borderRadius: 5 }}>
+						<img src="/assets/img/world/pages/partners/technogym.png" alt="" width={100} />
+					</a>
+				</Link>
+			</div>
+		)
+	},
+	{
 		ref: "speed networking",
 		ids: ["UGxhbm5pbmdfNDQ0NTg3Mg==", "UGxhbm5pbmdfNDQ0NTkwMQ==", "UGxhbm5pbmdfNDUzMDc3Nw=="],
 		content: (
 			<div key={'cc1'}>
-				<p className="fs-sm caps mb-xxs">Sponsored by</p>
+				<p className="fs-sm caps mb-xxs">SPEED NETWORKING PARTNER</p>
 				<Link href={`/world/partners/RXhoaWJpdG9yXzIzODA4MjY=`}>
 					<a style={{ display: `inline-block`, backgroundColor: `white`, padding: 10, borderRadius: 5 }}>
 						<img src="/assets/img/world/pages/partners/FSK-Logo-Horizontal.png" alt="" width={100} />

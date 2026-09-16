@@ -241,11 +241,14 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                     {/* tagline */}
                     <section style={{ alignSelf: 'flex-end' }}>
                         <div className={CSS.headline}>
-                            <span className="c-secondary"><Reveal>Together</Reveal></span> <Reveal><span className="c-secondary">we</span>&nbsp;invest</Reveal>
+                            <Reveal>CONNECTION.</Reveal>
+                            <Reveal><span className="c-secondary">INVESTMENT.</span></Reveal>
+                            <Reveal>GROWTH</Reveal>
+                                
                         </div>
 
                         <p className="fs-3 mt-xs"><span className="fw-600">2-3 February, 2027</span></p>
-                        <p className="fs-4 balance lh-1">Speke Resort Convention Centre, Uganda</p>
+                        <p className="fs-4 balance lh-1">Speke Resort Convention Centre, Munyonyo, Kampala</p>
 
                         <div className='mt-md'>
                             <ButtonGrid>
