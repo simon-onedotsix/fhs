@@ -745,6 +745,8 @@ const Timeslot = ({ children }) => {
 
 
 
+
+
 const ChevronUp = () => {
 	return (
 			<svg width="100%" height="100%" viewBox="0 0 32 20" style={{ fillRule:`evenodd`, clipRule:`evenodd`, strokeLinecap:`square`, strokeMiterlimit:1.5 }}>

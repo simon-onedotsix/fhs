@@ -56,11 +56,11 @@ const sessions = [
   { day: 2, start: '16:45', end: '17:15', stage: 'summit', title: 'The $1 Trillion Sports Tourism Economy' },
   { day: 2, start: '18:00', end: '21:00', stage: 'networking', title: 'Networking Reception' },
 
-  { day: 3, start: '10:00', end: '13:00', stage: 'summit', title: 'New Asset Classes & the Living Economy' },
+  { day: 3, start: '10:00', end: '13:00', stage: 'summit', title: 'Welcome Back & FHS Living' },
   { day: 3, start: '10:00', end: '11:30', stage: 'future', title: 'Food, Beverage & Restaurant Strategy' },
   { day: 3, start: '12:00', end: '13:00', stage: 'future', title: "Educating Tomorrow's Hospitality Leaders" },
   { day: 3, start: '13:00', end: '14:00', stage: 'food', title: 'Lunch' },
-  { day: 3, start: '14:00', end: '17:30', stage: 'summit', title: 'Branded Residences Forum' },
+  { day: 3, start: '14:00', end: '17:30', stage: 'summit', title: 'FHS Living' },
   { day: 3, start: '14:00', end: '16:00', stage: 'future', title: 'Pathways for Future Leaders' }
 ];
 
