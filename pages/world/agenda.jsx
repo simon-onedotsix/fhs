@@ -708,7 +708,14 @@ Agenda.theme = 'world-2024'
 const Day = ({ children, date }) => {
     return (
         <section className={CSS2.day}>
-            <div className={CSS2.divider}><p className="fs-4 fw-600">{date}</p></div>
+			<div className={CSS2.divider}>
+				<p className="fs-4 fw-600">{date}</p>
+				{
+					date === "Thursday 01 October" &&
+					<p className="fs-sm"><i>FHS Living will take place on the Summit Stage entirely on Day 3. Access to FHS Living is limited to Premium and FHS Living Pass holders.</i></p>
+				}
+			</div>
+
             { children }
         </section>
     )

@@ -9,8 +9,8 @@
         justify-content: flex-start;
         /* gap: .5rem; */
 
-        min-height: 4.75rem;
-        padding-top: var(--space-sm);
+        /* min-height: 4.75rem; */
+        /* padding-top: var(--space-sm); */
         /* border: 1px dashed lime; */
     }
 
@@ -80,7 +80,7 @@
     .filterToggle.fixed {
         position: fixed;
         z-index: 6;
-        top: 100px;
+        top: var(--space-sm);
         /* left: var(--space-md); */
     }
     .filterToggle.active {
@@ -126,7 +126,7 @@
     .searchToggle.fixed {
         position: fixed;
         z-index: 105;
-        top: 100px;
+        top: var(--space-sm);
         left: calc(var(--space-md) + 3.5rem);
     }
     .searchToggle.active {

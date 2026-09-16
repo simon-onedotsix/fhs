@@ -7,6 +7,7 @@ import useCustomMediaQuery from '../../../hooks/useCustomMediaQuery'
 import Head from 'next/head'
 import Script from 'next/script'
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { motion } from "framer-motion"
 
@@ -103,128 +104,26 @@ const FHS_EVENTS = EVENT_DATA.filter(event => !livingEventIds.has(event.id))
 const LIVING_EVENTS = EVENT_DATA.filter(event => livingEventIds.has(event.id))
 
 
-export default function Page ({ sessions, speakers }) {
+export default function Page ({ speakers }) {
 
     const lenis = useLenis()
     const isDesktop = useCustomMediaQuery('(min-width: 600px)')
 
-    const getSessionsByTopicID = ( sessionData, topicID ) => {
-
-        if ( !sessionData || !topicID ) return
-		
-        const filteredSessions = []
-        
-        sessionData.forEach( session => {
-            if ( session.fields.some( field => field.id == topicID )) filteredSessions.push(session)
-        })
-       
-        // console.log('BRF sessions found:', filteredSessions.length ? filteredSessions.length : sessionData.length )
-        return filteredSessions.length ? filteredSessions : sessionData
-    }
-
-    const convertSeconds = (seconds) => {
-		const hours = Math.floor(seconds / 3600)
-		const minutes = Math.floor((seconds % 3600) / 60)
-	
-		const hourString = hours > 0 ? `${hours} hour${hours > 1 ? 's' : ''}` : ''
-		const minuteString = minutes > 0 ? `${minutes} minute${minutes > 1 ? 's' : ''}` : ''
-	
-		if ( hours > 0 ) {
-			return `${hourString} ${ minutes > 0 ? minuteString : ''}`
-
-		} else if ( !hours && minutes > 0 ) {
-			return `${minuteString}`
-
-		}
-	
-		return
-	}
-
-    // sort speakers by lastName
-	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") ], ['asc'])
-	
-
-    const sortSpeakers = ( speakerData ) => {
-
-		if ( !speakerData ) return
-
-		let moderators = []
-        let speakers = []
-
-		_.orderBy(speakerData, 'lastName').forEach( speaker => {
-			speaker.withEvent.eventProfile.type === 'Moderator' ? moderators.push( speaker ) : speakers.push( speaker )
-		})
-
-
-		if ( moderators.length && speakers.length ) return (
-			<>
-				{
-					moderators.length ?
-						<div>
-							<p className="c-secondary pb-xs">{moderators.length > 1 ? 'Moderators' : 'Moderator' }</p>
-							<div className={CSS.sessionSpeakerGrid}>
-								{ moderators.map( moderator => <AgendaSpeakerCard key={moderator.id} color={'white'} speaker={moderator}/> ) }
-							</div>
-							{
-								speakers.length ?
-									<p style={{ color: `var(--secondary)`, padding: `10px 0 0 0`}}>In conversation with</p>
-								: null
-							}
-						</div>
-					: null
-				}
-				<div className={CSS.sessionSpeakerGrid}>
-					{ speakers.map( speaker => <AgendaSpeakerCard key={speaker.id} color={'white'} speaker={speaker}/> ) }
-				</div>
-			</>
-		)
-
-		return (
-			<div className={CSS.sessionSpeakerGrid}>
-				{ speakerData.map( speaker => <AgendaSpeakerCard key={speaker.id} color={'white'} speaker={speaker}/> ) }
-			</div>
-		)
-	}
-
-
-    const getSpeakersBySessionTopicID = ( sessionData, topicID ) => {
-        const speakers = []
-        getSessionsByTopicID( sessionData, topicID ).map( session => {
-            if ( session.speakers?.length ) {
-                session.speakers.forEach( speaker => speakers.push(speaker) )
-            }
-        })
-
-        let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
-        return _.uniqBy(orderedSpeakers, 'id')
-    }
-
-
-    const prioritiseSpeakers = ( speakerData, prioritySpeakersArray ) => {
-        let customOrderedSpeakers = _.sortBy( speakerData, prioritySpeakersArray )
-        // console.log('prioritisedSpeakers:', customOrderedSpeakers)
-        return customOrderedSpeakers
-    }
-
-
-    // prioritise speakers in slider
-	// let prioritySpeakersArray = [
-	// 	(speaker => speaker.firstName == 'Pier Paolo' && speaker.lastName === 'Righi' ? 0 : 1),
-	// 	(speaker => speaker.firstName == 'Charlie' && speaker.lastName === 'Walsh' ? 0 : 1),
-	// 	(speaker => speaker.firstName == 'Husni Al' && speaker.lastName === 'Bayari' ? 0 : 1),
-	// 	(speaker => speaker.firstName == 'George' && speaker.lastName === 'Azar' ? 0 : 1),
-	// 	(speaker => speaker.firstName == 'Jeff' && speaker.lastName === 'Tisdall' ? 0 : 1),
-	// ]
     
+    // filter for fhs living speakers
+	const fhsLivingSpeakers = []
+	speakers.filter(speaker => {
+		if (speaker.withEvent.fields.some(field => field.definition?.id === "RmllbGREZWZpbml0aW9uXzg3NjU0Nw==")) {
+			fhsLivingSpeakers.push(speaker)
+		}
+	})
+	// console.log('fhsLivingSpeakers:', fhsLivingSpeakers)
+
     
     // console.log('sessions:', sessions)
     // console.log('speakers:', speakers)
     // console.log('ordered:', orderedSpeakers)
     
-    // console.dir( getSessionsByTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ))
-    // console.log('BRF speakers:', getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ) )
-	// console.log('customOrderedSpeakers:', prioritiseSpeakers( getSpeakersBySessionTopicID( sessions, "RmllbGRWYWx1ZV8yNDIzOTQ1MA==" ), prioritySpeakersArray ))
-
 
     return (
         <>
@@ -279,6 +178,15 @@ export default function Page ({ sessions, speakers }) {
                     className={`fs-5 c-white center mt-xs maxw-45 mx-auto`} 
                 >
                     Held adjacently with <strong>FHS World</strong>, this exclusive one-day forum explores the alternative asset classes in the living sector.
+                </motion.p>
+                
+                <motion.p 
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ type: "spring", bounce: 0.25 }}
+                    className={`fs-5 c-white center mt-xs maxw-45 mx-auto`} 
+                >
+                    <i>FHS Living will take place on the Summit Stage entirely on Day 3. Access to FHS Living is limited to Premium and FHS Living Pass holders.</i>
                 </motion.p>
 
                 <div className="mt-sm center">
@@ -343,6 +251,57 @@ export default function Page ({ sessions, speakers }) {
             </section>
                
 
+            {/* SPEAKERS */}
+            <section className="block bg-secondary">
+                <div className="container center">
+                    <p className="fs-1 fw-600">2026 Speakers</p>
+                </div>
+
+                <div className="container columns-5 gap-sm">
+                    {
+                        fhsLivingSpeakers.map( speaker => {
+
+                            return (
+                                <div key={speaker.id}>
+                                    <Link href={`/world/speakers/${speaker.id}`}>
+                                        <Pop>
+                                            <a className={CSS.avatar} >
+                                                {
+                                                    speaker.photoUrl ? 
+                                                    <Image 
+                                                        src={speaker.photoUrl} 
+                                                        width={370} 
+                                                        height={370} 
+                                                        alt=""
+                                                        style={{ borderRadius: `1rem`, overflow: `hidden` }}
+                                                    />
+                                                    : 
+                                                    <Image 
+                                                        src='/assets/ui/avatar-fallback.png' 
+                                                        width={370} 
+                                                        height={370} 
+                                                        alt=""
+                                                        style={{ borderRadius: `1rem`, overflow: `hidden` }}
+                                                    />
+                                                }
+                                            </a>
+
+                                        </Pop>
+                                    </Link>
+                                    <div>
+                                        <p className='mt-xs' >
+                                            {/* <p style={{ color: `lime`, fontSize: 10 }}>{speaker.id}</p> */}
+                                            <span className='fw-600'>{speaker.firstName} {speaker.lastName}</span> 
+                                            <br/>{speaker.jobTitle} 
+                                            <br/>{speaker.organization}
+                                        </p>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+            </section>
 
             
             {/* WHY LIVING? */}
@@ -446,11 +405,9 @@ Page.theme = 'living'
 
 
 
-// BRF topic id: RmllbGRWYWx1ZV8yNDIzOTQ1MA==
-
 export async function getStaticProps() {
 
-	const eventQuery = await fetch(
+	const swapcardData = await fetch(
 		"https://developer.swapcard.com/event-admin/graphql",
 		{
 			method: "POST",
@@ -460,101 +417,91 @@ export async function getStaticProps() {
 			},
 			body: JSON.stringify({
 				query: `
-					query EventById($eventId: ID!) {
-
-						event(id: $eventId) {
-							planningsPlaces {
+					query eventPerson(
+						$eventId: ID!
+						$cursor: CursorPaginationInput
+						$filters: [EventPersonFilter!]
+					){
+						eventPerson(eventId: $eventId, cursor: $cursor, filters: $filters) {
+							nodes {
 								id
-								name
-								value
-							}
-						}
-
-						plannings(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}", page: 1, pageSize: 500) {
-							id
-							titleTranslations {
-								value
-								language
-							}
-							beginsAt
-							endsAt
-							descriptionTranslations {
-								value
-								language
-							}
-							format
-							fields {
-								... on SelectField {
-									id
-									definition {
-										isDefault
-										name
-									}
-									value
-									translations {
-										value
-									}
-								}
-								... on MultipleSelectField {
-									id
-									definition {
-										isDefault
-										name
-									}
-									value
-									translations {
-										value
-									}
-								}
-							}
-							speakers {
+								type
 								firstName
-								id
-								jobTitle
 								lastName
-								photoUrl
+								jobTitle
 								organization
-								biography
-								withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}") {
-									eventProfile {
-										type
-										withEvent(eventId: "${process.env.SWAPCARD_EVENT_ID_AE_2026}") {
-											speakerOnPlannings {
-												id
-												title
-												beginsAt
-												endsAt
+								photoUrl
+
+								speakerOnPlannings {
+									id
+									title
+									categories
+									fields {
+									... on MultipleSelectField {
+										id
+										definition {
+											isDefault
+											name
+										}
+										value
+										translations {
+											value
+										}
+									}
+									}
+								}
+
+								withEvent(eventId: $eventId) {
+									fields {
+										... on SelectField {
+											translations {
+												value
+												language
 											}
+											definition {
+												id
+												translations {
+													name
+													language
+												}
+											}
+										}
+										... on TextField {
+											definition {
+												name
+												translations {
+													name
+												}
+												id
+											}
+											locale
+											value
+											id
 										}
 									}
 								}
+								}
 							}
-							categories
 						}
-					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AE_2026,
-					"page": 1
-				}
+						"eventId": process.env.SWAPCARD_EVENT_ID_AE_2026,
+						"cursor": {
+							"first": 300
+						},
+						"filters": {
+							"shouldBeInGroups": "RXZlbnRHcm91cF82NTQ4MTQ="
+						}
+					}
 			})
 		}
 	)
-	const event = await eventQuery.json()
-	
-	
-
-	// console.log('RESULT', result)
-	// console.log('TEST plannings', result.data.event.planningsPlaces)
-	// console.log('TEST sessions', result.data.plannings)
-	// console.log('SC speakers', speakers.data.eventPerson.nodes)
+	const speakerData =  await swapcardData.json()
   
 
-    if ( event.data ) return { 
+    if ( speakerData ) return { 
         props: { 
-            sessions: event.data.plannings,
-			locations: event.data.event.planningsPlaces,
-            // speakers: [ ...speakers.data.eventPerson.nodes, ...speakers2.data.eventPerson.nodes]
+            speakers: speakerData.data.eventPerson.nodes,
         } 
     }
 

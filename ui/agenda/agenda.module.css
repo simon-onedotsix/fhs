@@ -4,23 +4,44 @@
     gap: var(--space-xs);
 }
 
-
-
 .day {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-xs);
 
     .divider {
+        position: sticky;
+        top: 80px;
+        z-index: 1;
         color: var(--agenda-divider-fg, var(--fg));
         background-color: var(--agenda-divider-bg, hsl(from var(--bg) h s calc(l - 5) / 1));
         border-radius: calc(var(--ui-radius) * 0.125);
-        padding: 1rem;
+        padding: .5rem 1rem;
 
         font-size: 1.5rem;
         font-weight: 500;
     }
+
+    .divider.pinned {
+        position: fixed;
+        top: 0;
+        left: var(--space-lg);
+        right: var(--space-lg);
+        z-index: 2;
+    }
+    
 }
+
+@media(max-width:599px){
+    .day {
+        .divider {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+
 
 
 .timeslot {
@@ -33,3 +54,4 @@
         flex-direction: column;
     }
 }
+
