@@ -59,7 +59,9 @@ import Ticker from "framer-motion-ticker"
 
 import { LayoutGallery } from "../../fuselage/components/layout-gallery/layout-gallery"
 import { PartnerGroup } from "../sa"
+
 import { FhsLivingLockup } from "../../ui/brand/fhs-brand"
+import { FixedBackgroundImage } from "../../ui/modules/fixed-background-image"
 
 import CSS from '../../fuselage/theme/2026/world/css/homepage.module.css'
 
@@ -767,8 +769,13 @@ export default function Home({ globals, entry, seomatic, partners }) {
 
 
             {/* FHS LIVING PROMO */}
-            <section className="block bg-dark" style={{ backgroundColor: `#7F0A64`, position: `relative` }}>
-
+            <FixedBackgroundImage
+                minHeight="80vh"
+                backgroundImageUrl={'/assets/img/living/why/page-hero.jpg'}
+                overlay={'hsl(from #3C1A53 h s l / .9)'}
+                flex={'center'}
+            >
+             
                 <div style={
                     isDesktop ?
                         {
@@ -782,25 +789,28 @@ export default function Home({ globals, entry, seomatic, partners }) {
                             marginBottom: `var(--space-md)`,
                         }
                 }>
-                    <FhsLivingLockup region={"At FHS World"}/>
+                    <FhsLivingLockup/>
                 </div>
 
                 <div className="container center">
-                    <Fade>
-                        <p className="fs-1 fw-600 lh-1 caps">FHS Living at FHS&nbsp;World</p>
-                    </Fade>
+                    <Pop>
+                        <p className="fs-1 fw-600 lh-1 caps">FHS Living</p>
+                        <p className="fs-5 fw-600 lh-1 caps">1 October 2026</p>
+                    </Pop>
                 </div>
 
-                <div className="container center columns-1 gap-xs maxw-65">
+                <div className="container center columns-1 gap-xs maxw-60">
                     <p className="fs-4">Held adjacently with FHS World, this exclusive one-day forum will explore the hotelisation of real-estate assets, focusing on eight asset classes.</p>
                     <p className="fs-5 balance">Branded&nbsp;Residences <span className="c-accent">&bull;</span>&nbsp;Student&nbsp;Accommodation <span className="c-accent">&bull;</span>&nbsp;Senior&nbsp;Living <span className="c-accent">&bull;</span>&nbsp;Serviced&nbsp;Living <span className="c-accent">&bull;</span>&nbsp;Co-Living <span className="c-accent balance">&bull;</span>&nbsp;Shared Ownership <span className="c-accent">&bull;</span>&nbsp;Club&nbsp;Concepts <span className="c-accent">&bull;</span>&nbsp;Mixed&nbsp;Use</p>
-                    <p className="balance c-accent"><i>FHS Living will take place on the Summit Stage entirely on Day 3. Access to FHS Living is limited to Premium and FHS Living Pass holders.</i></p>
+                    <p className="balance c-accent"><i>FHS Living will take place on the Summit Stage entirely on Day 3. <br/>Access to FHS Living is limited to Premium and FHS Living Pass holders.</i></p>
                 </div>
 
                 <div className="container center">
                     <Pop><ButtonKeyline href={`/world/living`} decal={`fs-5 fw-600`} >Learn more</ButtonKeyline></Pop>
                 </div>
-            </section>
+       
+
+            </FixedBackgroundImage>
 
             
 
