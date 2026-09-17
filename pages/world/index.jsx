@@ -59,6 +59,7 @@ import Ticker from "framer-motion-ticker"
 
 import { LayoutGallery } from "../../fuselage/components/layout-gallery/layout-gallery"
 import { PartnerGroup } from "../sa"
+import { FhsLivingLockup } from "../../ui/brand/fhs-brand"
 
 import CSS from '../../fuselage/theme/2026/world/css/homepage.module.css'
 
@@ -763,16 +764,33 @@ export default function Home({ globals, entry, seomatic, partners }) {
             }
 
 
-            <section className="block bg-dark">
+            <section className="block bg-dark" style={{ backgroundColor: `#7F0A64`, position: `relative` }}>
+
+                <div style={
+                    isDesktop ?
+                        {
+                            position: 'absolute',
+                            top: `var(--space-sm)`,
+                            left: `var(--space-sm)`
+                        }
+                        :
+                        {
+                            justifySelf: `center`,
+                            marginBottom: `var(--space-md)`,
+                        }
+                }>
+                    <FhsLivingLockup region={"At FHS World"}/>
+                </div>
+
                 <div className="container center">
                     <Fade>
-                        <p className="fs-1 fw-600 lh-1 caps">FHS Living at FHS World</p>
+                        <p className="fs-1 fw-600 lh-1 caps">FHS Living at FHS&nbsp;World</p>
                     </Fade>
                 </div>
 
                 <div className="container center columns-1 gap-xs maxw-65">
-                    <p className="fs-4">Held adjacently with FHS World, this exclusive one-day forum will explore the hotelisation of real-estate assets, focusing on nine asset classes.</p>
-                    <p className="fs-5 balance">Branded Residences <span className="c-accent">&bull;</span> Student Accommodation <span className="c-accent">&bull;</span> Senior Living <span className="c-accent">&bull;</span> Serviced Living <span className="c-accent">&bull;</span> Co-Living <span className="c-accent balance">&bull;</span> Shared Ownership <span className="c-accent">&bull;</span> Club Concepts <span className="c-accent">&bull;</span> Mixed Use <span className="c-accent">&bull;</span> Hotels &amp; Resorts</p>
+                    <p className="fs-4">Held adjacently with FHS World, this exclusive one-day forum will explore the hotelisation of real-estate assets, focusing on eight asset classes.</p>
+                    <p className="fs-5 balance">Branded&nbsp;Residences <span className="c-accent">&bull;</span>&nbsp;Student&nbsp;Accommodation <span className="c-accent">&bull;</span>&nbsp;Senior&nbsp;Living <span className="c-accent">&bull;</span>&nbsp;Serviced&nbsp;Living <span className="c-accent">&bull;</span>&nbsp;Co-Living <span className="c-accent balance">&bull;</span>&nbsp;Shared Ownership <span className="c-accent">&bull;</span>&nbsp;Club&nbsp;Concepts <span className="c-accent">&bull;</span>&nbsp;Mixed&nbsp;Use</p>
                     <p className="balance c-accent"><i>FHS Living will take place on the Summit Stage entirely on Day 3. Access to FHS Living is limited to Premium and FHS Living Pass holders.</i></p>
                 </div>
 
