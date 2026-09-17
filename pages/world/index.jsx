@@ -763,7 +763,10 @@ export default function Home({ globals, entry, seomatic, partners }) {
                 </section>
             }
 
+            
 
+
+            {/* FHS LIVING PROMO */}
             <section className="block bg-dark" style={{ backgroundColor: `#7F0A64`, position: `relative` }}>
 
                 <div style={
