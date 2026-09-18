@@ -34,6 +34,8 @@ function Speakers({ seomatic, speakers }) {
 	const [ filter, setFilter ] = useState( null )
 
 	
+	// console.log('total speakers:', speakers.length)
+		
 
 	// sort speakers by lastName
 	let orderedSpeakers = _.orderBy( speakers, [ speaker => speaker.lastName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") ], ['asc'])
@@ -74,55 +76,49 @@ function Speakers({ seomatic, speakers }) {
 			fhsLivingSpeakerIds.push(speaker.id)
 		}
 	})
-	console.log('fhsLivingSpeakerIds:', fhsLivingSpeakerIds)
+	// console.log('fhsLivingSpeakerIds:', fhsLivingSpeakerIds)
 
 	
 	
 	// console.log('speakers:', speakers)
 	// console.log('speakers found:', speakers.length)
 	// console.log('ordered:', orderedSpeakers)
-	console.log('customOrderedSpeakers:', customOrderedSpeakers)
+	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 
 	const moveTaggedSpeakersToEnd = ( speakerArray ) => {
 
-		if ( !speakerArray ) return
+		if (!speakerArray) return
+
+		const speakers = []
 
 		const targettedSpeakers = []
 
-		speakerArray.map( speaker => {
-			speaker.withEvent.fields.map(field => {
-				// target the special field
-				if ( field.definition?.id === "RmllbGREZWZpbml0aW9uXzgzNzE0Mw==" ) {
-					// target young leader && tech startup && new brands (allow for typo duplicates in swapcard)
-					if ( field.id === "RmllbGRWYWx1ZV8yODc1OTI1MA==" || field.id === "RmllbGRWYWx1ZV8yODcxNjY5Ng==" || field.id === "RmllbGRWYWx1ZV8yODc5OTM4Nw==" || field.id === "RmllbGRWYWx1ZV8yODc5OTM3Mw==" ) {
-						
-						// cut from speakerArray and push to targettedSpeakers
-						const index = speakerArray.indexOf(speaker)
-						if (index > -1) {
-							speakerArray.splice(index, 1)
-							targettedSpeakers.push({ ...speaker, tag: field.value })
-						}
-					}
-				}
-			})
+		const targetIds = [
+			"RXZlbnRQZW9wbGVfNDg2MzA1NTY=",
+			"RXZlbnRQZW9wbGVfNDg2MzcyODQ=",
+			"RXZlbnRQZW9wbGVfNDg2MTQwNzg=",
+			"RXZlbnRQZW9wbGVfNDg1NzgyNTc=",
+			"RXZlbnRQZW9wbGVfNDg1NDE5MjA=",
+			"RXZlbnRQZW9wbGVfNDg2MTQxMzg=",
+			"RXZlbnRQZW9wbGVfNDg1NzgyMDI=",
+			"RXZlbnRQZW9wbGVfNDg1NzgzODY=",
+		]
+
+		speakerArray.map(speaker => {
+			targetIds.includes(speaker.id) ? targettedSpeakers.push(speaker) : speakers.push(speaker)
 		})
+
 		// console.log('speakers to move to end:', targettedSpeakers.length)
-		// console.log('remaining speakers:', speakerArray.length)
-		// console.log('speakers:', _.orderBy(targettedSpeakers, (i) => i.tag))
+		// console.log('remaining speakers:', speakers.length)
 
-		const reorderedSpeakers = _.orderBy(targettedSpeakers, (i) => i.tag)
-		
-		return [...speakerArray, ...reorderedSpeakers]
-
+		return [...speakers, ...targettedSpeakers]
 	}
 
 	// moveTaggedSpeakersToEnd( customOrderedSpeakers )
 
 	const shuffledSpeakers = moveTaggedSpeakersToEnd( customOrderedSpeakers )
 	
-	// console.log('shuffled:', shuffledSpeakers.length)
-
 
 	const handleSpeakerLabel = (speakerId) => {
 		
