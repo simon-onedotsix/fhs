@@ -775,28 +775,13 @@ export default function Home({ globals, entry, seomatic, partners }) {
                 overlay={'hsl(from #3C1A53 h s l / .9)'}
                 flex={'center'}
             >
-             
-                <div style={
-                    isDesktop ?
-                        {
-                            position: 'absolute',
-                            top: `var(--space-sm)`,
-                            left: `var(--space-sm)`
-                        }
-                        :
-                        {
-                            justifySelf: `center`,
-                            marginBottom: `var(--space-md)`,
-                        }
-                }>
-                    <FhsLivingLockup/>
-                </div>
-
                 <div className="container center">
-                    <Pop>
-                        <p className="fs-1 fw-600 lh-1 caps">FHS Living</p>
-                        <p className="fs-5 fw-600 lh-1 caps">1 October 2026</p>
+                    <Pop inline>
+                        <div style={{ height: 60, width: 125, transform: `scale(1.8)`}}>
+                            <FhsLivingLockup/>
+                        </div>
                     </Pop>
+                    <Pop delay={.125}><p className="fs-5 fw-600 lh-1 caps mt-sm">1 October 2026</p></Pop>
                 </div>
 
                 <div className="container center columns-1 gap-xs maxw-60">

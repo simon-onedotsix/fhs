@@ -9,12 +9,14 @@
     font-weight: 500;
     font-size: 2rem;
     line-height: 1;
+    text-align: left;
 }
 .sector {
     text-transform: uppercase;
     font-weight: 500;
     font-size: 1.1rem;
     line-height: 1;
+    text-align: left;
 }
 
 @media(max-width:599px){
