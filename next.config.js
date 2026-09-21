@@ -14,6 +14,7 @@ const nextConfig = {
 
 	images: {
 		domains: ['cms.thebench.com', 'res.cloudinary.com', 'cdn-api.swapcard.com', 'static.swapcard.com'],
+		minimumCacheTTL: 15552000, // 6 months in seconds
 	},
 	
 	webpack(config) {
