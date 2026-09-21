@@ -190,6 +190,15 @@ const SPEAKERS = [
       "https://static.swapcard.com/public/images/8dae029be8ee4babbadde92e1d27201b.png",
   },
   {
+    firstName: "Sir Tim",
+    id: "RXZlbnRQZW9wbGVfNDkwNzY4MTc=",
+    jobTitle: "President",
+    lastName: "Clark",
+    organization: "Emirates Airline",
+    photoUrl:
+      "https://static.swapcard.com/public/images/befe92706fe24f3ebca62ff2f3bd9c22.jpeg",
+  },
+  {
     firstName: "William",
     id: "RXZlbnRQZW9wbGVfNDg3ODExNDM=",
     jobTitle: "Founder and Chairman",
@@ -428,27 +437,27 @@ photoUrl
 : 
 "https://static.swapcard.com/public/images/9b956b3026a34a23be710625678dbe19.jpeg"
   },
-  {
+//   {
     
-firstName
-: 
-"Dean",
-id
-: 
-"RXZlbnRQZW9wbGVfNDg2NDIyNTE=",
-jobTitle
-: 
-"Senior Vice President of Hospitality",
-lastName
-: 
-"Rossilli",
-organization
-: 
-"DAMAC Properties",
-photoUrl
-: 
-"https://static.swapcard.com/public/images/640f073a69774d899c075069cb339841.jpeg"
-  },
+// firstName
+// : 
+// "Dean",
+// id
+// : 
+// "RXZlbnRQZW9wbGVfNDg2NDIyNTE=",
+// jobTitle
+// : 
+// "Senior Vice President of Hospitality",
+// lastName
+// : 
+// "Rossilli",
+// organization
+// : 
+// "DAMAC Properties",
+// photoUrl
+// : 
+// "https://static.swapcard.com/public/images/640f073a69774d899c075069cb339841.jpeg"
+//   },
 ];
 
 const INDUSTRY_DATA = [

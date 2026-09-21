@@ -45,27 +45,28 @@ function Speakers({ seomatic, speakers }) {
 	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
 		(speaker => speaker.firstName == 'H․H. Sheikh Ahmed' && speaker.lastName === 'bin Saeed Al Maktoum' ? 0 : 1),
 		(speaker => speaker.firstName == 'H․E. Abdulla' && speaker.lastName === 'bin Touq Al Marri' ? 0 : 1),
+		(speaker => speaker.firstName == 'Sir Tim' && speaker.lastName === 'Clark' ? 0 : 1),
 		(speaker => speaker.firstName == 'Abdulla' && speaker.lastName === 'Al Abdouli' ? 0 : 1),
 		(speaker => speaker.firstName == 'William' && speaker.lastName === 'Heinecke' ? 0 : 1),
-		(speaker => speaker.firstName == 'Alison' && speaker.lastName === 'Grinnell' ? 0 : 1),
 		
+		(speaker => speaker.firstName == 'Alison' && speaker.lastName === 'Grinnell' ? 0 : 1),
 		(speaker => speaker.firstName == 'René' && speaker.lastName === 'Nijhof' ? 0 : 1),
 		(speaker => speaker.firstName == 'Rahul' && speaker.lastName === 'Chaudhary' ? 0 : 1),
 		(speaker => speaker.firstName == 'Philippe' && speaker.lastName === 'Zuber' ? 0 : 1),
 		(speaker => speaker.firstName == 'Sonu' && speaker.lastName === 'Shivdasani' ? 0 : 1),
-		(speaker => speaker.firstName == 'Marc' && speaker.lastName === 'Dardenne' ? 0 : 1),
 		
+		(speaker => speaker.firstName == 'Marc' && speaker.lastName === 'Dardenne' ? 0 : 1),
 		(speaker => speaker.firstName == 'Phillipa' && speaker.lastName === 'Harrison' ? 0 : 1),
 		(speaker => speaker.firstName == 'Miltos' && speaker.lastName === 'Bosinis' ? 0 : 1),
 		(speaker => speaker.firstName == 'Raki' && speaker.lastName === 'Phillips' ? 0 : 1),
 		(speaker => speaker.firstName == 'Dr. Moath' && speaker.lastName === 'Alyahya' ? 0 : 1),
-		(speaker => speaker.firstName == 'Dean' && speaker.lastName === 'Rossilli' ? 0 : 1),
 		
+		(speaker => speaker.firstName == 'Dean' && speaker.lastName === 'Rossilli' ? 0 : 1),
 		(speaker => speaker.firstName == 'Oliver' && speaker.lastName === 'Hogg' ? 0 : 1),
 		(speaker => speaker.firstName == 'Benjamin' && speaker.lastName === 'Habbel' ? 0 : 1),
 		(speaker => speaker.firstName == 'David' && speaker.lastName === 'Xiaoou Chen' ? 0 : 1),
 		(speaker => speaker.firstName == 'Hamza' && speaker.lastName === 'Farooqui' ? 0 : 1),
-		(speaker => speaker.firstName == 'Alfredo' && speaker.lastName === 'Bataller' ? 0 : 1),
+		// (speaker => speaker.firstName == 'Alfredo' && speaker.lastName === 'Bataller' ? 0 : 1),
 	] )
 	
 
@@ -126,10 +127,7 @@ function Speakers({ seomatic, speakers }) {
 
 		// startup den
 
-		// const host = [
-		// 	"RXZlbnRQZW9wbGVfNDc0OTkzMjk="
-		// ]
-		// if (host.includes(speakerId)) label = "Startup Den Host"
+
 		
 		const judges = [
 			"RXZlbnRQZW9wbGVfNDg1MjE4NjY=",
@@ -154,7 +152,13 @@ function Speakers({ seomatic, speakers }) {
 		
 		if (fhsLivingSpeakerIds.includes(speakerId)) label = "Speaking at FHS Living"
 
-		if (label) return <p className="fw-600 mb-xxs c-accent">{label}</p>
+		// awards
+
+		if (speakerId === "RXZlbnRQZW9wbGVfNDkwNzY4MTc=") label = "Award Winner – Lifetime Achievement Award 2026"
+		if (speakerId === "RXZlbnRQZW9wbGVfNDc3NzQwMTE=") label = "Award Winner – Leadership Award 2026"
+
+
+		if (label) return <p className="fw-600 mb-xxs c-accent balance">{label}</p>
 
 		return
 
