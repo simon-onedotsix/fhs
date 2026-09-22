@@ -104,6 +104,8 @@ function Speakers({ seomatic, speakers }) {
 			"RXZlbnRQZW9wbGVfNDg2MTQxMzg=",
 			"RXZlbnRQZW9wbGVfNDg1NzgyMDI=",
 			"RXZlbnRQZW9wbGVfNDg1NzgzODY=",
+			"RXZlbnRQZW9wbGVfNDg5NTgzMjI=",
+			"RXZlbnRQZW9wbGVfNDkwMjIwODA="
 		]
 
 		speakerArray.map(speaker => {
@@ -144,7 +146,9 @@ function Speakers({ seomatic, speakers }) {
 			"RXZlbnRQZW9wbGVfNDg1NDE5MjA=",
 			"RXZlbnRQZW9wbGVfNDg2MTQxMzg=",
 			"RXZlbnRQZW9wbGVfNDg1NzgyMDI=",
-			"RXZlbnRQZW9wbGVfNDg1NzgzODY="
+			"RXZlbnRQZW9wbGVfNDg1NzgzODY=",
+			"RXZlbnRQZW9wbGVfNDg5NTgzMjI=",
+			"RXZlbnRQZW9wbGVfNDkwMjIwODA="
 		]
 		if (participants.includes(speakerId)) label = "Startup Den Participant"
 		
