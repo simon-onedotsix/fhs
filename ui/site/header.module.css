@@ -195,6 +195,15 @@
         z-index: 10;
     }
 
+    .actionsWrapper {
+        padding-right: 4rem;
+    }
+
+    .actions {
+        display: flex;
+        gap: .5rem;
+    }
+
 
 }
 
@@ -208,6 +217,9 @@
     }
     .mainMenu.active {
         left: 0vw;
+    }
+    .actionsWrapper {
+        display: none;
     }
 }
 

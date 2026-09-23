@@ -93,6 +93,24 @@ export const Header = ({ site, handle, event, mainMenu, ctas, children }) => {
 
                     {/* mobile toggle button */}
                     <button className={CSS.toggle} onClick={() => setNavActive(!navActive)}><MenuToggle active={navActive}/></button>
+                
+                    <div className={`${CSS.deviceOnly} ${CSS.actionsWrapper}`}>
+                        <section className={CSS.actions}>
+                           { children }
+                            {
+                                ctas?.map((cta, index) => (
+                                    <Button
+                                        key={index}
+                                        href={cta.hyperlink}
+                                        label={cta.label}
+                                        target={cta.openInNewWindow}
+                                        alert={cta.alert}
+                                    />
+                                ))
+                            }
+                        </section>
+                    </div>
+
                 </nav>
 
 
