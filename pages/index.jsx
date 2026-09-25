@@ -201,7 +201,7 @@ export const EVENT_DATA = [
         "id": "109270",
         "heading": "Riyadh",
         "startDate": "2027-03-21T00:00:00+00:00",
-        "endDate": "2027-03-23T00:00:00+00:00",
+        "endDate": "2027-03-22T00:00:00+00:00",
         "dateOverride": null,
         "venue": "Mandarin Oriental Al Faisaliah",
         "theme": "#dfa46e",
