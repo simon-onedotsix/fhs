@@ -7,8 +7,8 @@ import Head from "next/head"
 import Script from "next/script"
 
 import { EventsBar } from "../../../ui/site/eventsbar"
-import { HeaderBRF } from '../../../ui/site/header-brf'
-import { BRF_FHS_SA as header } from '../../../fixtures/nav'
+import { Header } from '../../../ui/site/header-living'
+import { LIVING_FHS_SA as header } from '../../../fixtures/nav'
 import { Footer } from '../../../fuselage/theme/2025/brf/common/footer/footer'
 
 import handleContentBlocks from "../../../lib/content-blocks"
@@ -53,7 +53,7 @@ export default function Page ({ entry, seomatic }) {
             </Head>
 
             <EventsBar site={'/sa/brf'} />
-            <HeaderBRF
+            <Header
                 site={`/sa/brf`}
                 parentSite={`/sa`}
                 handle={`At FHS Saudi Arabia`}
@@ -72,7 +72,7 @@ export default function Page ({ entry, seomatic }) {
     )
 }
 
-Page.theme = 'brf'
+Page.theme = 'living'
 
 
 
