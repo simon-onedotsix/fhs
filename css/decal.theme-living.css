@@ -146,6 +146,9 @@
 [data-theme='living'] .bg-default .formatted h4,
 [data-theme='living'] .bg-default .formatted h5,
 [data-theme='living'] .bg-default .formatted h6 {
+    color: white;
+}
+[data-theme='living'] .bg-default .button {
     color: var(--primary);
 }
 

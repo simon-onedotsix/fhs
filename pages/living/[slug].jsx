@@ -64,7 +64,7 @@ export default function Page ({ entry, seomatic }) {
     )
 }
 
-Page.theme = 'egypt'
+Page.theme = 'living'
 
 
 

@@ -1130,6 +1130,13 @@ export const FHS_LIVING = {
                     },
                     {
                         "__typename": "navigation_Entry",
+                        "id": "52sfhghs",
+                        "title": "Travel & Accommodation",
+                        "navUrl": "/living/travel-and-accommodation",
+                        "target": false
+                    },
+                    {
+                        "__typename": "navigation_Entry",
                         "id": "dfghe5yj",
                         "title": "Content Library",
                         "navUrl": "/living/content-library",
