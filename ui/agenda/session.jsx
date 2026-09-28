@@ -1,5 +1,6 @@
 import { format } from 'date-fns'
 import parse from 'html-react-parser'
+import _ from 'lodash'
 import convertSeconds from '../../lib/convertSeconds'
 
 import Link from 'next/link'
@@ -104,7 +105,7 @@ const Speakers = ({ speakerData }) => {
                 <div>
                     <p className={CSS.speakerTypeLable}>{moderators.length > 1 ? `Moderators` : `Moderator`}</p>
                     <div className={CSS.speakerGridSection}>
-                        { moderators.map( (speaker, index) => <SpeakerCard key={index} speaker={speaker} />) }
+                        { _.orderBy(moderators, "lastName").map( (speaker, index) => <SpeakerCard key={index} speaker={speaker} />) }
                     </div>
                 </div>
                 : null
@@ -114,7 +115,7 @@ const Speakers = ({ speakerData }) => {
                 <div>
                     { moderators.length ? <p className={CSS.speakerTypeLable}>In conversation with</p> : null }
                     <div className={CSS.speakerGridSection}>
-                        { speakers.map( (speaker, index) => <SpeakerCard key={index} speaker={speaker} />) }
+                        { _.orderBy(speakers, "lastName").map( (speaker, index) => <SpeakerCard key={index} speaker={speaker} />) }
                     </div>
                 </div>
                 : null
