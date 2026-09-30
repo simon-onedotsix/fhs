@@ -57,8 +57,8 @@ function Speakers({ speakers }) {
 	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 	// console.log('contentBlocks:', contentBlocks)
-	console.log('speakers found:', speakers.length)
-	console.log('speaker data:', speakers)
+	// console.log('speakers found:', speakers.length)
+	// console.log('speaker data:', speakers)
 	// console.log('ordered speaker data:', orderedSpeakers)
 
 
@@ -80,7 +80,7 @@ function Speakers({ speakers }) {
 			
 			<PageHeader>
 				<div className="formatted">
-					<h1>2026 Speakers</h1>
+					<h1>2027 Speakers</h1>
 					<p>Our speakers are chosen for their industry knowledge and insight. If you would like to be considered as a speaker for FHS Africa 2027 please contact <a href="mailto:mala.patel@thebench.com" target="_blank" rel="noreferrer noopener">mala.patel@thebench.com</a></p>
 				</div>
 			</PageHeader>
@@ -92,7 +92,7 @@ function Speakers({ speakers }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
 							speakers.length &&
-							customOrderedSpeakers.map( speaker => {
+							_.orderBy(speakers, 'lastName').map( speaker => {
 
 								return (
 									<div key={speaker.id}>
@@ -236,12 +236,12 @@ export async function getStaticProps() {
 						}
 					`,
 					variables: {
-						"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
+						"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2027,
 						"cursor": {
 							"first": 300
 						},
 						"filters": {
-							"shouldBeInGroups": "RXZlbnRHcm91cF82NDI4ODI="
+							"shouldBeInGroups": "RXZlbnRHcm91cF82NzYyNzk="
 						}
 					}
 			}
