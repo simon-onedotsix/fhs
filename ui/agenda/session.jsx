@@ -9,7 +9,7 @@ import { StopwatchIcon, LocationIcon, TagIcon } from '../icons/icons'
 
 import CSS from './session.module.css'
 
-export const Session = ({ session, customContent }) => {
+export const Session = ({ session, customContent, theme }) => {
     
     if (!session) return
 
@@ -24,7 +24,7 @@ export const Session = ({ session, customContent }) => {
 	}
 
     return (
-        <div className={CSS.wrapper}>
+        <div className={CSS.wrapper} style={{ backgroundColor: theme ? theme : undefined }}>
 			<header className={CSS.header}>
 				<Duration startTime={session.beginsAt} endTime={session.endsAt} />
                 { session.place && <Location location={session.place} /> }

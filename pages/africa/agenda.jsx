@@ -63,7 +63,7 @@ const CUSTOM_ORDER = [
 
 export default function Agenda({ sessions, theme }) {
 
-	console.log('sessions:', sessions)
+	// console.log('sessions:', sessions)
 	
 	const lenis = useLenis()
 	const router = useRouter()
@@ -544,9 +544,21 @@ export default function Agenda({ sessions, theme }) {
 											day.timeslots.map((slot, i) => (
 												<Timeslot key={i}>
 													{
-														slot.sessions.map((session, i) => (
-															<Session key={i} session={session} />
-														))
+														slot.sessions.map((session, i) => {
+
+															let theme = null
+															if ( session.place === 'Pioneer Camp' ) theme = '#4bd1ec'
+															if ( session.place === 'Knowledge Station' ) theme = '#ae6ddf'
+
+
+															return (
+																<Session
+																	key={i}
+																	session={session}
+																	theme={theme}
+																/>
+															)
+														})
 													}
 												</Timeslot>
 											))

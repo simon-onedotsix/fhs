@@ -112,7 +112,6 @@ function Speakers({ seomatic, speakers }) {
 		(speaker => speaker.firstName == 'Prince Turki AlFaisal' && speaker.lastName === 'Bin Abdulaziz Al Saud' ? 0 : 1),
 		(speaker => speaker.firstName == 'Mahmoud' && speaker.lastName === 'Abdulhadi' ? 0 : 1),
 		(speaker => speaker.firstName == 'H․E․ Abdullah' && speaker.lastName === 'Al-Muhaisen' ? 0 : 1),
-		(speaker => speaker.firstName == 'Khalid Saud' && speaker.lastName === 'Abuhaimed' ? 0 : 1),
 		(speaker => speaker.firstName == 'Sultan Bader' && speaker.lastName === 'Al-Otaibi' ? 0 : 1),
 		
 		(speaker => speaker.firstName == 'Joanna' && speaker.lastName === 'Kurowska' ? 0 : 1),

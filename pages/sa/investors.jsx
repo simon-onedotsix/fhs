@@ -477,15 +477,7 @@ export default function Page () {
                         company={'Aseer Investment'}
                     />
                 </Pop>
-                <Pop>
-                    <SpeakerCard
-                    color={'c-accent'}
-                        photoUrl={'https://cdn-api.swapcard.com/public/images/047feab9eb2745eb9cc8cbfdd1cd09e2.jpeg'}
-                        fullName={'Khalid Saud Abuhaimed'}
-                        jobTitle={'Chief Executive Officer'}
-                        company={'Al Khozama Investment Company'}
-                    />
-                </Pop>
+
                 <Pop>
                     <SpeakerCard
                     color={'c-accent'}

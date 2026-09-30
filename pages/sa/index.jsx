@@ -129,13 +129,6 @@ const SPEAKER_DATA = [
         company: "Ministry of Tourism of Saudi Arabia",
     },
     {
-        url: `/sa/speakers/profile/khalid-saud-abu-haimed`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Abu-Haimed_Khalid-Saud_pic2.jpg',
-        fullName: 'Khalid Saud Abu Haimed',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Al Khozama Investment Company',
-    },
-    {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDU5MjM3ODY=`,
         photoUrl: 'https://static.swapcard.com/public/images/20c5160961534044aaa6f2f8bb4724a8.jpeg',
         fullName: 'Dr. Abdullah Alabdulkarim',
@@ -973,7 +966,7 @@ export default function Page({ seomatic, partners }) {
                     <p className="fs-1 fw-600">Partner Testimonials</p>
                 </div>
 
-                <div className={`container columns-3 gap-md`}>
+                <div className={`container columns-2 maxw-60 gap-md`}>
                     <VideoTestimonial entry={{
                         "id": "223023",
                         "videoShareUrl": "https://www.youtube.com/watch?v=Ro4k0OytXig",
@@ -991,15 +984,7 @@ export default function Page({ seomatic, partners }) {
                         "organisation": "Knowledge Economic City",
                         "testimonial": "We love the platform. It connected us to a lot of partners that we deal with on day-to-day basis."
                     }} />
-                   
-                    <VideoTestimonial entry={{
-                        "id": "223023",
-                        "videoShareUrl": "https://www.youtube.com/watch?v=97dsiYGJHmc",
-                        "fullName": "Khalid Saud Abuhaimed",
-                        "jobTitle": "Chief Executive Officer",
-                        "organisation": "Al Khozama Investment Company",
-                        "testimonial": "We host the Future Hospitality Summit every year because I believe the deals that shape this industry need a home, a place where opportunity meets capital."
-                    }} />
+
                 </div>
             </Section>
 
