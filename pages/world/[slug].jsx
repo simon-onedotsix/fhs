@@ -5,6 +5,7 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 
 import Head from "next/head"
 import Script from "next/script"
+import { useRouter } from 'next/router'
 
 import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
@@ -40,9 +41,13 @@ import handleSeomaticMeta from '../../lib/seomatic'
 
 
 
-export default function Page ({ entry, seomatic }) {
+export default function Page({ entry, seomatic }) {
 
-    // console.log('entry:', entry) 
+    const router = useRouter()
+
+    if(!entry) { router.push('/404')}
+
+    console.log('entry:', entry) 
   
     return (
         <>
@@ -75,14 +80,19 @@ Page.theme = 'world-2024'
 
 
 
-
+// id: (['not', 287751])
+// slug: (['not', 'post-event'])
 
 export async function getStaticPaths() {
 
     const entriesData = await craftApolloClient().query({
         query: gql`
             query Pages {
-                entries(site: "${process.env.SITE_HANDLE_AE}", section: "${process.env.SITE_HANDLE_AE}Pages") {
+                entries(
+                    site: "${process.env.SITE_HANDLE_AE}", 
+                    section: "${process.env.SITE_HANDLE_AE}Pages",
+                    
+                ) {
                     slug
                 }
             }
@@ -90,6 +100,8 @@ export async function getStaticPaths() {
     })
 
     const entries = await entriesData.data.entries
+
+    console.log('ENTRIES', entries)
 
     return {
         paths: entries.map( entry => ({ params: { slug: entry.slug } })),
@@ -99,6 +111,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, preview, previewData }) {
+
+    console.log('PARAMS', params)
 
     const entryData = await craftApolloClient( preview, previewData ).query({
         query: gql`
@@ -134,6 +148,8 @@ export async function getStaticProps({ params, preview, previewData }) {
             }
         `
     })
+
+    console.log(entryData)
 
     return { 
         props: { 

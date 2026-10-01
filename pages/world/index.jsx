@@ -327,16 +327,17 @@ export default function Home({ globals, entry, seomatic, partners }) {
                 <div style={{ position: `relative`, zIndex: 5, display: `flex`, flexDirection: `column`, alignItems: `center` }}>
                     <Fade>
                         <p className="fs-0 fw-600 lh-1 center balance">THANK YOU FOR JOINING FHS WORLD</p>
+                        <p className="fs-2 center mt-xs">See you in 2027!</p>
                     </Fade>
 
                     <Fade delay={.25}>
-                        <p className={`fs-5 fw-500 c-white mt-md balance center`} >29 September - 1 October 2026, Madinat Jumeirah, Dubai</p>
+                        <p className={`fs-5 fw-500 c-white mt-md balance center`} >November 2027 | Wynn Al Marjan Island, Ras Al Khaimah</p>
                     </Fade>
 
                    
                     <div className={ isDesktop ? `mt-sm button-grid` : `py-md button-grid`}>
                         <Pop inline delay={.5}>
-                            <Button href={`/world/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Here</Button>
+                            <Button href={`https://www.eventbooking.uk.com/FHS-2027`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register for 2027</Button>
                         </Pop>
                         <Pop inline delay={.5}>
                             <Button href={`/world/download-attendee-list`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Download Attendee List</Button>
