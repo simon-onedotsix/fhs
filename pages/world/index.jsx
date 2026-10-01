@@ -47,21 +47,17 @@ import {
 
 import handleSeomaticMeta from '../../lib/seomatic'
 
-import { THEMES_DATA } from "./themes"
-import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
-import { InvestorImpact } from "../../fuselage/components/impact-figure/impact-figure"
-import { ButtonKeyline } from "../../fuselage/theme/2024/world/components/button-keyline/button-keyline"
+
 
 import { HeroUnitVideo } from "../../fuselage/theme/2025/world/pages/home/hero-unit-video"
-import { ThemeBillboard, Tri } from "../../fuselage/theme/2025/world/pages/home/theme-billboard"
-import { AisLockup } from '../../fuselage/theme/2025/ais/ais-brand/ais-brand' 
+
 import Ticker from "framer-motion-ticker"
 
-import { LayoutGallery } from "../../fuselage/components/layout-gallery/layout-gallery"
-import { PartnerGroup } from "../sa"
+import { ImpactCard } from "../../ui/components/impact-card"
 
-import { FhsLivingLockup } from "../../ui/brand/fhs-brand"
-import { FixedBackgroundImage } from "../../ui/modules/fixed-background-image"
+import { VideoSection, Section } from '../../fuselage/theme/2026/sa/blocks/section'
+import { ContentCard } from '../../fuselage/components/content-card/content-card'
+import { Quotation } from "../../fuselage/theme/2026/world/components/quotation/quotation"
 
 import CSS from '../../fuselage/theme/2026/world/css/homepage.module.css'
 
@@ -74,9 +70,9 @@ const photos = [
         "hero": [
             {
                 "id": "50183",
-                "url": "/assets/img/world/pages/home/fhs-world-2025-05.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2026-05.jpg",
                 "width": 1000,
-                "height": 588
+                "height": 600
             }
         ]
     },
@@ -85,9 +81,9 @@ const photos = [
         "hero": [
             {
                 "id": "50184",
-                "url": "/assets/img/world/pages/home/fhs-world-2025-03.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2026-03.jpg",
                 "width": 1000,
-                "height": 588
+                "height": 600
             }
         ]
     },
@@ -96,9 +92,9 @@ const photos = [
         "hero": [
             {
                 "id": "50186",
-                "url": "/assets/img/world/pages/home/fhs-world-2025-02.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2026-02.jpg",
                 "width": 1000,
-                "height": 588
+                "height": 600
             }
         ]
     },
@@ -107,20 +103,9 @@ const photos = [
         "hero": [
             {
                 "id": "50187",
-                "url": "/assets/img/world/pages/home/fhs-world-2025-04.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2026-04.jpg",
                 "width": 1000,
-                "height": 588
-            }
-        ]
-    },
-    {
-        "id": "50206",
-        "hero": [
-            {
-                "id": "50189",
-                "url": "/assets/img/world/pages/home/fhs-world-2025-01.jpg",
-                "width": 1000,
-                "height": 588
+                "height": 600
             }
         ]
     },
@@ -129,9 +114,31 @@ const photos = [
         "hero": [
             {
                 "id": "50193",
-                "url": "/assets/img/world/pages/home/fhs-world-2025-10.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2026-09.jpg",
                 "width": 1000,
-                "height": 588
+                "height": 600
+            }
+        ]
+    },
+    {
+        "id": "50206",
+        "hero": [
+            {
+                "id": "50189",
+                "url": "/assets/img/world/pages/home/fhs-world-2026-01.jpg",
+                "width": 1000,
+                "height": 600
+            }
+        ]
+    },
+    {
+        "id": "50207",
+        "hero": [
+            {
+                "id": "50193",
+                "url": "/assets/img/world/pages/home/fhs-world-2026-10.jpg",
+                "width": 1000,
+                "height": 600
             }
         ]
     },
@@ -140,9 +147,9 @@ const photos = [
         "hero": [
             {
                 "id": "50187",
-                "url": "/assets/img/world/pages/home/fhs-world-2025-07.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2026-07.jpg",
                 "width": 1000,
-                "height": 588
+                "height": 600
             }
         ]
     },
@@ -151,394 +158,100 @@ const photos = [
         "hero": [
             {
                 "id": "50189",
-                "url": "/assets/img/world/pages/home/fhs-world-2025-08.jpg",
+                "url": "/assets/img/world/pages/home/fhs-world-2026-08.jpg",
                 "width": 1000,
-                "height": 588
+                "height": 600
             }
         ]
     },
+    
+]
+const QUOTES_DATA = [
     {
-        "id": "50207",
-        "hero": [
-            {
-                "id": "50193",
-                "url": "/assets/img/world/pages/home/fhs-world-2025-09.jpg",
-                "width": 1000,
-                "height": 588
-            }
-        ]
+        avatarUrl: 'https://static.swapcard.com/public/images/84e0a74e61c14ef6b28ba60093774c1b.png',
+        quote: "When the storm hits, the world thought that The UAE would stumble. We stood our grounds. We weathered the storm standing.",
+        fullName: "H.E. Abdulla bin Touq Al Marri",
+        title: "Minister of Economy & Tourism, United Arab Emirates"
+    },
+    {
+        avatarUrl: 'https://static.swapcard.com/public/images/802ca11f989a409daf7c798105d5d72e.jpeg',
+        quote: "The definition of luxury has changed. Before, it was status. Now, it's very different. Now it's time, privacy, experience, innovation and longevity.",
+        fullName: "Philippe Zuber",
+        title: "Chief Executive Officer, Kerzner International Management",
+    },
+    {
+        avatarUrl: 'https://static.swapcard.com/public/images/b4063bd5c6ca4d73a854e17f4fc78bbd.jpeg',
+        quote: "... the big difference will not be the technology. Technology is a commodity. It will be in the people, the culture that you are creating around your asset or your brand.",
+        fullName: "Carlos Diez de la Lastra",
+        title: "Chief Executive Officer, Les Roches Global Hospitality Education",
+    },
+    {
+        avatarUrl: 'https://static.swapcard.com/public/images/f7a9ac0103334727a51732bce1127546.png',
+        quote: "This country and this part of the world isn't run on a four year term. Their vision is forty years and beyond.",
+        fullName: "Raki Phillips",
+        title: "Regional President - Middle East, Africa & Türkiye, ACCOR",
     }
 ]
 
-const SPEAKERS = [
-  {
-    firstName: "H․H. Sheikh Ahmed",
-    id: "RXZlbnRQZW9wbGVfNDg3ODE1MjA=",
-    jobTitle: "Chairman Dubai Holding, Dubai Airports,",
-    lastName: "bin Saeed Al Maktoum",
-    organization: "Emirates Group; President, DCAA",
-    photoUrl:
-      "https://static.swapcard.com/public/images/cef9710540734f0e8132b8e5155685cd.jpeg",
-  },
-  {
-    firstName: "H․E. Abdulla",
-    id: "RXZlbnRQZW9wbGVfNDc3NzQwMTE=",
-    jobTitle: "Minister of Economy & Tourism",
-    lastName: "bin Touq Al Marri",
-    organization: "United Arab Emirates",
-    photoUrl:
-      "https://static.swapcard.com/public/images/8dae029be8ee4babbadde92e1d27201b.png",
-  },
-  {
-    firstName: "Sir Tim",
-    id: "RXZlbnRQZW9wbGVfNDkwNzY4MTc=",
-    jobTitle: "President",
-    lastName: "Clark",
-    organization: "Emirates Airline",
-    photoUrl:
-      "https://static.swapcard.com/public/images/befe92706fe24f3ebca62ff2f3bd9c22.jpeg",
-  },
-  {
-    firstName: "William",
-    id: "RXZlbnRQZW9wbGVfNDg3ODExNDM=",
-    jobTitle: "Founder and Chairman",
-    lastName: "Heinecke",
-    organization: "Minor International PCL",
-    photoUrl:
-      "https://static.swapcard.com/public/images/e18c34f709d341dabb14fe98a457b65b.jpeg",
-  },
-  {
+export const ARTICLE_DATA = [
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-World/Mo%CC%88venpick-Grand-Al-Bustan-Dubai.jpeg',
+        title: 'Aleph Hospitality accelerates Dubai expansion with the management of the landmark Mövenpick Grand Al Bustan',
+        url: '/world/content-library/aleph-hospitality-accelerates-dubai-expansion-with-the-management-of-the-landmark-mövenpick-grand-al-bustan',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-World/Khalil_Landscape.jpg',
+        title: 'Oman to deliver 700 new hotel rooms by year end with winter season expected to boost tourism recovery – Cavendish Maxwell',
+        url: '/world/content-library/oman-to-deliver-700-new-hotel-rooms-by-year-end-with-winter-season-expected-to-boost-tourism-recovery-cavendish-maxwell',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-World/Pullman-Residences-Offices-Dubai-Meydan.jpg',
+        title: 'Accor and CITYVIEW Developments expand their partnership with Pullman Residences & Offices Dubai Meydan',
+        url: '/world/content-library/accor-and-cityview-developments-expand-their-partnership-with-pullman-residences-offices-dubai-meydan',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-World/Mo%CC%88venpick-Erbil-Gomaspan-Resort.jpg',
+        title: 'Accor and KRD Holding sign Mövenpick Erbil Gomaspan Resort, a Landmark Lakefront Destination in Iraq',
+        url: '/world/content-library/accor-and-krd-holding-sign-mövenpick-erbil-gomaspan-resort-a-landmark-lakefront-destination-in-iraq',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-World/Garner-Launch-ME.png',
+        title: 'IHG Hotels & Resorts to bring its midscale brand, Garner Hotels to the Middle East with a dual signing in the UAE',
+        url: '/world/content-library/ihg-hotels-resorts-to-bring-its-midscale-brand-garner-hotels-to-the-middle-east-with-a-dual-signing-in-the-uae',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-World/Radisson-Residences-Al-Reem-Island-Abu-Dhabi-_-lobby-render.jpeg',
+        title: 'Radisson Hotel Group strengthens Middle East and Northeast Africa growth with landmark signings, openings, and branded residences',
+        url: '/world/content-library/radisson-hotel-group-strengthens-middle-east-and-northeast-africa-growth-with-landmark-signings-openings-and-branded-residences',
+    },
+    // {
+    //     heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-World/FHS-Lifetime-Achievement-Award.jpeg',
+    //     title: 'FHS WORLD 2026 OFFICIALLY OPENS IN DUBAI',
+    //     url: '/world/content-library/fhs-world-2026-officially-opens-in-dubai',
+    // },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-World/AMSA-VUE-a-member-of-Radisson-Individuals-_-render.jpg',
+        title: 'Radisson Hotel Group strengthens Middle East and Northeast Africa growth with landmark signings, openings, and branded residences',
+        url: '/world/content-library/radisson-hotel-group-strengthens-middle-east-and-northeast-africa-growth-with-landmark-signings-openings-and-branded-residences-2',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-World/Vidhi_Landscape.jpg',
+        title: 'GCC set to deliver nearly 126,000 new hotel rooms by 2030, taking total supply to 616,000 keys – Cavendish Maxwell',
+        url: '/world/content-library/gcc-set-to-deliver-nearly-126-000-new-hotel-rooms-by-2030-taking-total-supply-to-616-000-keys-cavendish-maxwell',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-World/Aleph-Hospitality-signs-nine-hotels-with-over-1300-keys-year-to-date.jpg',
+        title: 'Aleph Hospitality signs nine hotels with over 1,300 keys year to date',
+        url: '/world/content-library/aleph-hospitality-signs-nine-hotels-with-over-1-300-keys-year-to-date',
+    },
+    {
+        heroUrl: 'https://cms.thebench.com/assets/content-library/img/FHS-World/Zacky_Landscape.jpg',
+        title: 'Student accommodation and senior living among key assets shaping GCC’s future real estate market – Cavendish Maxwell',
+        url: '/world/content-library/student-accommodation-and-senior-living-among-key-assets-shaping-gccs-future-real-estate-market-cavendish-maxwell',
+    },
     
-firstName
-: 
-"Alison",
-id
-: 
-"RXZlbnRQZW9wbGVfNDg1NDI0Njg=",
-jobTitle
-: 
-"Group COO & CEO, Marjan Hospitality",
-lastName
-: 
-"Grinnell",
-organization
-: 
-"Marjan",
-photoUrl
-: 
-"https://static.swapcard.com/public/images/cac669535261409fa510b666809927b6.jpeg"
-  },
-  {
-    
-firstName
-: 
-"René",
-id
-: 
-"RXZlbnRQZW9wbGVfNDg4MDc0NjA=",
-jobTitle
-: 
-"Chairman of the Board of Directrors",
-lastName
-: 
-"Nijhof",
-organization
-: 
-"Kempinski Hotels SA",
-photoUrl
-: 
-"https://static.swapcard.com/public/images/a8ac2237a28e494ca6abdded3bb2dc9e.jpeg"
-  },
-  {
-    
-firstName
-: 
-"Rahul",
-id
-: 
-"RXZlbnRQZW9wbGVfNDg3ODEzOTk=",
-jobTitle
-: 
-"Managing Director & CEO",
-lastName
-: 
-"Chaudhary",
-organization
-: 
-"CG Corp Global & CG Hospitality",
-photoUrl
-: 
-"https://static.swapcard.com/public/images/c4f1b80ff5d740319df7cdb547dd3b8e.png"
-  },
-  {
-    
-firstName
-: 
-"Philippe",
-id
-: 
-"RXZlbnRQZW9wbGVfNDczODcyODg=",
-jobTitle
-: 
-"Chief Executive Officer",
-lastName
-: 
-"Zuber",
-organization
-: 
-"Kerzner International Management",
-photoUrl
-: 
-"https://static.swapcard.com/public/images/802ca11f989a409daf7c798105d5d72e.jpeg"
-  },
-  {
-    
-firstName
-: 
-"Sonu",
-id
-: 
-"RXZlbnRQZW9wbGVfNDY0NDczNTM=",
-jobTitle
-: 
-"CEO and Founder",
-lastName
-: 
-"Shivdasani",
-organization
-: 
-"Sosei",
-photoUrl
-: 
-"https://static.swapcard.com/public/images/0c846e869b3e423abadf316bec97fc13.jpeg"
-  },
-  {
-    
-firstName
-: 
-"Marc",
-id
-: 
-"RXZlbnRQZW9wbGVfNDc3NTEwMDg=",
-jobTitle
-: 
-"Chief Executive Officer",
-lastName
-: 
-"Dardenne",
-organization
-: 
-"Modon Hospitality",
-photoUrl
-: 
-"https://static.swapcard.com/public/images/4ba04289ac88482b8eea156243b38993.jpeg"
-  },
-  {
-    
-firstName
-: 
-"Phillipa",
-id
-: 
-"RXZlbnRQZW9wbGVfNDg2NDE2NDk=",
-jobTitle
-: 
-"Chief Executive Officer",
-lastName
-: 
-"Harrison",
-organization
-: 
-"Ras Al Khaimah Tourism Development Authority",
-photoUrl
-: 
-"https://static.swapcard.com/public/images/fc397ac30e224ac88067eebd8dedd9d1.jpeg"
-  },
-  {
-    firstName
-: 
-"Abdulla",
-id
-: 
-"RXZlbnRQZW9wbGVfNDg1NDI0Njk=",
-jobTitle
-: 
-"Group CEO",
-lastName
-: 
-"Al Abdouli",
-organization
-: 
-"Marjan",
-photoUrl
-: 
-"https://static.swapcard.com/public/images/22a04421bd994291aea73d3e313a832f.jpeg"
-  },
-  {
-    
-firstName
-: 
-"Miltos",
-id
-: 
-"RXZlbnRQZW9wbGVfNDg1MTgxNzM=",
-jobTitle
-: 
-"Chief Executive Officer",
-lastName
-: 
-"Bosinis",
-organization
-: 
-"H&H",
-photoUrl
-: 
-"https://static.swapcard.com/public/images/8916ab17c1ca4bdab4ec5e9194df9834.jpeg",
-  },
-  {
-    
-firstName
-: 
-"Raki",
-id
-: 
-"RXZlbnRQZW9wbGVfNDgxMTYzNjY=",
-jobTitle
-: 
-"Regional President - Middle East, Africa & Türkiye",
-lastName
-: 
-"Phillips",
-organization
-: 
-"ACCOR",
-photoUrl
-: 
-"https://static.swapcard.com/public/images/a81cfad726f04c4890deb52f5b1b581d.jpeg"
-  },
-  {
-    
-firstName
-: 
-"Dr. Moath",
-id
-: 
-"RXZlbnRQZW9wbGVfNDg2ODc0OTU=",
-jobTitle
-: 
-"Chief Executive Officer",
-lastName
-: 
-"Alyahya",
-organization
-: 
-"Knowledge Economic City",
-photoUrl
-: 
-"https://static.swapcard.com/public/images/9b956b3026a34a23be710625678dbe19.jpeg"
-  },
-//   {
-    
-// firstName
-// : 
-// "Dean",
-// id
-// : 
-// "RXZlbnRQZW9wbGVfNDg2NDIyNTE=",
-// jobTitle
-// : 
-// "Senior Vice President of Hospitality",
-// lastName
-// : 
-// "Rossilli",
-// organization
-// : 
-// "DAMAC Properties",
-// photoUrl
-// : 
-// "https://static.swapcard.com/public/images/640f073a69774d899c075069cb339841.jpeg"
-//   },
-];
 
-const INDUSTRY_DATA = [
-    {
-        label: 'Hotel Operator/Management',
-        value: 22
-    },
-    {
-        label: 'Investor (Equity)/Owner',
-        value: 21
-    },
-    {
-        label: 'Consultant/Advisor',
-        value: 13
-    },
-    {
-        label: 'Architecture/Design',
-        value: 10
-    },
-    {
-        label: 'Hotel Developer/Builder',
-        value: 9
-    },
-    {
-        label: 'Government/Tourism Official',
-        value: 7
-    },
-    {
-        label: 'Technology/Innovation',
-        value: 6
-    },
-    {
-        label: 'Real Estate Broker/Surveyor',
-        value: 3
-    },
-    {
-        label: 'Other',
-        value: 10
-    },
-    
 ]
-
-const INVESTORS = [
-    { title: "Al Futtaim Real Estate" },
-    { title: "Al-Raya Real Estate Company" },
-    { title: "Arada Hospitality and Entertainment" },
-    { title: "Arbireo Capital" },
-    { title: "Arzan Investment Management" },
-    { title: "Cain" },
-    { title: "Cipta Graha Group" },
-    { title: "Core Investment Co." },
-    { title: "Corvus Capital" },
-    { title: "Deyaar Development PJSC" },
-    { title: "EQT – MONE Investment" },
-    { title: "Family business office grandbuild" },
-    { title: "Fields of Gold (F.O.G.) Capital & Asset Mgt Corp." },
-    { title: "First Abu Dhabi Bank" },
-    { title: "HAMA MEA - BEAUFORT" },
-    { title: "Hospitality Asset Managers Association Middle East and Africa" },
-    { title: "Jabal Omar Development Company" },
-    { title: "Kapur & Partners" },
-    { title: "Katara Hospitality" },
-    { title: "Limestone Capital" },
-    { title: "Mashreq Bank" },
-    { title: "ME & West Investments" },
-    { title: "Millat Group" },
-    { title: "Modon Holding Hospitality" },
-    { title: "Mohamed Saeed Almulla & Sons" },
-    { title: "Musstir" },
-    { title: "Pulse Hotels and Resorts" },
-    { title: "Qatar Islamic Bank UK plc" },
-    { title: "Radisson Collection, A Fridays Boracay Resort" },
-    { title: "RAK Properties" },
-    { title: "Rockshieldburg" },
-    { title: "SAMHI Hotels" },
-    { title: "Sharjah Investment and Development Authority - Shurooq" },
-    { title: "Uganda Hotel Owners Association" },
-    { title: "Uganda Investment Authority" },
-    { title: "Wasl" },
-]
-
 
 export default function Home({ globals, entry, seomatic, partners }) {
     
@@ -586,15 +299,14 @@ export default function Home({ globals, entry, seomatic, partners }) {
             
 
 
-
             
             {/* INTRO */}
             <HeroUnitVideo
-                video={'https://cms.thebench.com/assets/video/fhs-2025-world-opt.mp4'}
-                poster={'https://cms.thebench.com/assets/video/fhs-2025-world-opt-poster.jpg'}
+                video={'https://cms.thebench.com/assets/video/fhs-world-2026-1ay-1-highlights-opt.mp4'}
+                poster={'https://cms.thebench.com/assets/video/fhs-world-2026-1ay-1-highlights-opt.jpg'}
             >
               
-                <div className={CSS.themeWrapperGraphics}>
+                {/* <div className={CSS.themeWrapperGraphics}>
                     <InfiniteRotatingTriangles
                         fill={`var(--accent)`}
                         size={`60vw`}
@@ -609,314 +321,142 @@ export default function Home({ globals, entry, seomatic, partners }) {
                         bottom={`-20rem`}
                         blendMode={`hard-light`}
                     />
-                </div>
+                </div> */}
 
-                <div className={CSS.heroLayout}>
 
-                    {/* tagline */}
-                    <section style={{ alignSelf: 'flex-end' }}>
-                        <div className={CSS.headline}>
-                            <Reveal delay={.5}>
-                                <p className={CSS.tagline}>Reinvest</p>
-                            </Reveal>
-                            <Reveal delay={.75}>
-                                <p className={CSS.tagline}>In Our Future</p>
-                            </Reveal>
-                        </div>
+                <div style={{ position: `relative`, zIndex: 5, display: `flex`, flexDirection: `column`, alignItems: `center` }}>
+                    <Fade>
+                        <p className="fs-0 fw-600 lh-1 center balance">THANK YOU FOR JOINING FHS WORLD</p>
+                    </Fade>
 
-                        <Fade delay={1.2}>
-                            <p className={`fs-5 fw-500 c-white mt-md balance`} >29 September - 1 October 2026, Madinat Jumeirah, Dubai</p>
-                        </Fade>
+                    <Fade delay={.25}>
+                        <p className={`fs-5 fw-500 c-white mt-md balance center`} >29 September - 1 October 2026, Madinat Jumeirah, Dubai</p>
+                    </Fade>
 
-                        <Fade>
-                            <div className={ isDesktop ? `mt-sm button-grid` : `columns-1 gap-xs mt-sm mb-md`}>
-                                <Pop inline delay={1.3}>
-                                    {
-                                        isDesktop 
-                                            ? <Button href={`/world/download-fhs-event-brochure`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white` }} decal={`fs-5 fw-600`}>View Event Brochure</Button>
-                                            : <Button href={`/world/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Here</Button>
-                                    }
-                                </Pop>
-                                <Pop inline delay={1.3}>
-                                    <Button href={`/world/download-attendee-list`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Download Attendee List</Button>
-                                </Pop>
-                            </div>
-                        </Fade>
-                    </section>
-
-                    {/* patronage boxout */}
-                    <section style={{ alignSelf: 'flex-end' }}>
-                        <Pop>
-                            <div className={CSS.patronBox}>
-                                <div className={CSS.patronBoxAvatar}>
-                                    <Pop inline>
-                                        <div className={CSS.avatar}>
-                                            <Image src={"https://cms.thebench.com/assets/img/avatars/H.H.-Sheikh-Ahmed-bin-Saeed-Al-Maktoum.jpeg"} layout='fill' alt="" unoptimized />
-                                        </div>
-                                    </Pop>
-                                </div>
-
-                                <div className={CSS.patronBoxContent}>
-                                    <Pop delay={.1}>
-                                        <p className="fs-sm fw-500 c-secondary caps">Under the Patronage of</p>
-                                        <p className="fw-600 balance mt-xxs">HH Sheikh Ahmed bin Saeed Al Maktoum</p>
-                                        <p className="mt-xxs balance"> Chairman Dubai Holding, Dubai Airports, Emirates Group; President, DCAA</p>
-                                    </Pop>
-                                </div>
-                            </div>
+                   
+                    <div className={ isDesktop ? `mt-sm button-grid` : `py-md button-grid`}>
+                        <Pop inline delay={.5}>
+                            <Button href={`/world/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register Here</Button>
                         </Pop>
-                    </section>
+                        <Pop inline delay={.5}>
+                            <Button href={`/world/download-attendee-list`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Download Attendee List</Button>
+                        </Pop>
+                        <Pop inline delay={.5}>
+                            <Button href={`/world/post-event`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Access Post Event Resources</Button>
+                        </Pop>
+                    </div>
+                   
+            
                 </div>
                 
               
             </HeroUnitVideo>
 
+
             
-            <section className="block bg-primary-2-dark" style={{ paddingBottom: `var(--space-md)` }}>
-                <div className="container center columns-2 gap-md maxw-40">
-                    <section style={{ display: `inline-block`, backgroundColor: `white`, borderRadius: `1rem`, padding: `1rem 2rem` }}>
-                        <p className='c-secondary center pb-xxs caps ls-2'>Strategic Enabler</p>
-                        <div style={{ width: `100%`, maxWidth: '18rem', margin: '0 auto' }}>
-                            <img src="https://static.swapcard.com/public/images/efee38fce437485fa6261d5124cc0bd6.png" alt="logo" width={`100%`} />
-                        </div>
-                    </section>
-                   
-                    <section style={{ display: `inline-block`, backgroundColor: `white`, borderRadius: `1rem`, padding: `1rem 2rem` }}>
-                        <p className='c-secondary center pb-xxs caps ls-2'>Host Partner</p>
-                        <div style={{ width: `100%`, maxWidth: '18rem', margin: '0 auto' }}>
-                            <img src="https://static.swapcard.com/public/images/3c4a24e94d43465f80d3051983b112a6.png" alt="logo" width={`100%`} />
-                        </div>
-                    </section>
+            {/* 2026 IN NUMBERS */}
+            <section className="block bg-primary-2-dark">
+                <div className="container center">
+                    <p className="fs-1 fw-400 c-white">FHS World 2026 in Numbers</p>
                 </div>
+
+                <div className="container columns-4 gap-sm mt-md">
+                    <ImpactCard figure={9999} label={"Delegates"} />
+                    <ImpactCard figure={50} unit={"+"} label={"Countries"} />
+                    <ImpactCard figure={200} label={"Investors"} />
+                    <ImpactCard figure={8.7} prefix={"$"} unit={"tn"} label={"in AUM"} />
+                </div>
+
             </section>
 
+            
 
-            {/* INVESTORS */}
-            <section className="block bg-primary-2-dark" style={{ paddingBottom: `var(--space-md)`}}>
+
+            {/* SIGNINGS & ANNOUNCEMENTS */}
+            <Section backgroundClass={`bg-primary`}>
+
                 <div className="container center">
                     <Fade>
-                        <p className="fs-1 fw-600 lh-1 caps">Investors Attending FHS World 2026</p>
+                        <p className="fs-1 fw-400 c-white">2026 Signings & Announcements</p>
                     </Fade>
-                    
-                    {/* <div className="columns-4 gap-sm mt-md">
-                        <InvestorImpact figure={5.4} prefix={"$"} unit={"tn"} label={"ASSETS UNDER MANAGEMENT"} />
-                        <InvestorImpact figure={300} unit={'+'} label={"INVESTORS"} />
-                        <InvestorImpact figure={65} unit={"%"} label={"INVESTORS ATTENDING FIRST TIME"} />
-                        <InvestorImpact figure={35} unit={"%"} label={"INVESTORS FROM NON-GCC COUNTRIES"} />
-                    </div> */}
                 </div>
 
-            </section>
-            
-            <section className="bg-primary-2-dark">
-                <Ticker duration={40}>
+                <div className={`container columns-5 gap-xs`}>
                     {
-                        INVESTORS.map((investor, index) => (
-                            <div key={index} style={{ marginRight: 10 }}>
-                                <p className="fs-5 fw-500"><span className="c-accent">&bull;</span> {investor.title}</p>
-                            </div>
+                        ARTICLE_DATA.map((article, index) => (
+                            <ContentCard
+                                key={index}
+                                heroUrl={article.heroUrl}
+                                heading={article.title}
+                                excerpt={article.excerpt}
+                                url={article.url}
+                            />
                         ))
                     }
-                </Ticker>
-            </section>
-            
-            <section className="block bg-primary-2-dark pt-md">
+                </div>
+
                 <div className="container center">
                     <Pop>
-                        <ButtonKeyline 
-                            href={'/world/sample-list-of-attending-investors'} 
-                            decal={'fs-5 fw-600'} 
-                            color={'var(--primary)'}
+                        <ArrowButton 
+                            href={ '/sa/content-library/category/press-room' } 
+                            theme={{ arrow: `white`, border: `white`, label: `white` }}
+                            target={`_blank`}
                         >
-                            View Sample List of Attending Investors
-                        </ButtonKeyline>
+                            Latest News &amp; Updates
+                        </ArrowButton>
                     </Pop>
                 </div>
-            </section>
-
-            
-
-            {/* SPEAKER HIGHLIGHTS */}
-            {
-                SPEAKERS &&
-                <section className="block bg-secondary">
-
-                    <div className="container center">
-                        <p className="fs-1 fw-600 c-primary caps">2026 Speakers</p>
-                    </div>
-                        
-                    <div className="container columns-5 gap-sm">
-                        {
-                            SPEAKERS.map((profile, index) => (
-                                <Pop key={index}>
-                                    <SpeakerCard
-                                        url={`world/speakers/${profile.id}`}
-                                        photoUrl={profile.photoUrl ? profile.photoUrl : null }
-                                        fullName={`${profile.firstName} ${profile.lastName}`}
-                                        jobTitle={profile.jobTitle}
-                                        company={profile.organization}
-                                        specialField={profile.id === "247717" && "Award Winner – Lifetime Achievement Award"}
-                                    />
-                                </Pop>
-                            ))
-                        }
-                    </div>
-                    
-
-                    <div className="block bg-secondary">
-                        <div className='container center'>
-                            <div className="button-grid">
-                                <ArrowButton href={`/world/speakers`} theme={{ arrow: "c-primary", border: "c-primary", label: "c-primary"}} >View All Speakers</ArrowButton>
-                                <ArrowButton href={`/world/agenda`} theme={{ arrow: "c-primary", border: "c-primary", label: "c-primary"}} >View Agenda</ArrowButton>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            }
-
-            
-
-
-            {/* FHS LIVING PROMO */}
-            <FixedBackgroundImage
-                minHeight="80vh"
-                backgroundImageUrl={'/assets/img/living/why/page-hero.jpg'}
-                overlay={'hsl(from #3C1A53 h s l / .9)'}
-                flex={'center'}
-            >
-                <div className="container center">
-                    <Pop inline>
-                        <div style={{ height: 60, width: 125, transform: `scale(1.8)`}}>
-                            <FhsLivingLockup/>
-                        </div>
-                    </Pop>
-                    <Pop delay={.125}><p className="fs-5 fw-600 lh-1 caps mt-sm">1 October 2026</p></Pop>
-                </div>
-
-                <div className="container center columns-1 gap-xs maxw-60">
-                    <p className="fs-4">Held adjacently with FHS World, this exclusive one-day forum will explore the hotelisation of real-estate assets, focusing on eight asset classes.</p>
-                    <p className="fs-5 balance">Branded&nbsp;Residences <span className="c-accent">&bull;</span>&nbsp;Student&nbsp;Accommodation <span className="c-accent">&bull;</span>&nbsp;Senior&nbsp;Living <span className="c-accent">&bull;</span>&nbsp;Serviced&nbsp;Living <span className="c-accent">&bull;</span>&nbsp;Co-Living <span className="c-accent balance">&bull;</span>&nbsp;Shared Ownership <span className="c-accent">&bull;</span>&nbsp;Club&nbsp;Concepts <span className="c-accent">&bull;</span>&nbsp;Mixed&nbsp;Use</p>
-                    <p className="balance c-accent"><i>FHS Living will take place on the Summit Stage entirely on Day 3. <br/>Access to FHS Living is limited to Premium and FHS Living Pass holders.</i></p>
-                </div>
-
-                <div className="container center">
-                    <Pop><ButtonKeyline href={`/world/living`} decal={`fs-5 fw-600`} >Learn more</ButtonKeyline></Pop>
-                </div>
-       
-
-            </FixedBackgroundImage>
-
-            
-
-            {/* WHO ATTENDS */}
-            <section className="block bg-primary">
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-1 fw-600 lh-1 caps">Who Attends FHS World</p>
-                    </Fade>
-                </div>
-
-                <div className="container columns-2 gap-md">
-                    <section>
-                        <p className="fs-4 fw-500 pb-sm">By Industry:</p>
-                        <BarChart>
-                            {
-                                INDUSTRY_DATA &&
-                                INDUSTRY_DATA.map(( field, index) => <Field key={index} label={field.label} value={field.value} unit={'%'} normalise={{ min: 3, max: 22 }} />)
-                            }
-                        </BarChart>
-                    </section>
-                   
-                    <section>
-                        <p className="fs-4 fw-500 pb-sm">By Geography:</p>
-                        <GlobalMap />
-                    </section>
-                </div>
-            </section>
-
-            
-
-            {/* THEMES */}
-            <section className={`block bg-primary-2-dark`}>
-                <ThemesSlider data={THEMES_DATA} />
-            </section>
-
-
-            
-            {/* PARTNERS */}
-            <section className="block bg-white">
-                <div className="container center">
-                    <Pop><p className="fs-2 fw-600 c-primary balance">Thank You to Our 2026 Partners</p></Pop>
-                </div>
-
-                <div className="container mt-lg">
-                    <LayoutGallery>
-                        <PartnerGroup partnerData={partners} start={0} end={17} />
-                        <PartnerGroup partnerData={partners} start={18} end={35} />
-                        <PartnerGroup partnerData={partners} start={36} end={53} />
-                        <PartnerGroup partnerData={partners} start={54} end={69} />
-                    </LayoutGallery>
-                </div>
-            </section>
+            </Section>
 
 
 
 
-            {/* VIDEO + PHOTO HIGHLIGHTS */}
-            <section className="block o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
-                <div className={`${CSS.highlightVideoGrid} container`}>
-                    <Slide><p className='fs-0 fw-700 lh-1'>Highlights from <span className='c-secondary'>FHS World 2025</span></p></Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/fj2Q68dkw4c`} />
-                </div>
-
+            {/* 2026 PHOTO HIGHLIGHTS */}
+            <section className="block bg-primary-2-dark o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className={`${CSS.photoGrid} container`}>
-                    <Slide><p className='fs-0 fw-700 lh-1 mt-lg'>2025 in <span className='c-secondary'>Photos</span></p></Slide>
+                    <Fade><p className='fs-1 fw-400 lh-1 center'>2026 in <span className='c-secondary'>Photos</span></p></Fade>
                     
                     <div className="columns-3 gap-xs mt-md">
                         {
                             photos.map( (photo, index) => (
                                 <Pop key={index}>
-                                    <div key={photo.id} style={{ position: `relative`}}>
+                                    <div  key={index} style={{ position: `relative`}}>
                                         <Image src={photo.hero[0].url} width={photo.hero[0].width} height={photo.hero[0].height} layout={`responsive`} alt="" style={{ borderRadius: '.5rem'}} />
                                     </div>
                                 </Pop>
                             ))
                         }
-                        <p className="mt-xs">
+                        {/* <p className="mt-xs">
                             <ArrowButton href={`https://www.flickr.com/photos/benchevents/albums/`} target='_blank' theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `var(--secondary)`}}>View all photos</ArrowButton>
-                        </p>
+                        </p> */}
                     </div>
 
                 </div>
 
-                {/* <motion.div className={CSS.highlightsGraphicWapper} style={{ y }}>
-                    
-                    <InfiniteRotatingTriangles
-                        fill={`var(--accent)`}
-                        size={`120vw`}
-                        right={`-20rem`}
-                        top={`-40rem`}
-                    />
-                </motion.div> */}
             </section>
 
+           
             
-
-            {/* SPONSORSHIP FORM */}
-            <section id="sponsor-form" className="block bg-white o-hidden">
-                <div className="container columns-2 gap-lg">
-                    <div className="formatted">
-                        <Slide><h1>Become a <span className='c-secondary'>Partner</span></h1></Slide>
-                        <Fade><p>For over two decades - government leaders, tourism ministries, global travel &amp; tourism associations, the world&apos;s most influential hospitality brands, hotel owners &amp; investors, renowned restaurant groups, airlines &amp; aviation authorities, destination developers, asset managers, financial groups and consultants - have been participating in The Bench&apos;s events for their respective objectives. These include AHIF, GRIF, FHS, AHF, IDEEA, AviaDev and RENEW - where industry players showcase their brands, position themselves as thought leaders or innovators, and connect with the right opportunities and knowledge. Speak with one of our sales team members to understand how you can make the most of this unique opportunity!<br /></p></Fade>
-                    </div>
-
-                    <div>
-                        <HubspotForm portalId={`14527187`} formId={`65f4705e-45dc-4e1f-8d89-858947d3ac40`} />
-                    </div>
+            {/* 2026 QUOTES */}
+            <section className="block bg-primary">
+                <div className="container">
+                    <Fade><p className='fs-1 fw-400 lh-1 center'>2026 in <span className='c-secondary'>Quotes</span></p></Fade>
+                </div>
+                    
+                <div className={`container columns-4 gap-sm`}>
+                    {
+                        QUOTES_DATA.map((quote, index) => (
+                            <Quotation
+                                key={index}
+                                avatarUrl={quote.avatarUrl}
+                                quote={quote.quote}
+                                fullName={quote.fullName}
+                                title={quote.title}
+                            />
+                        ))
+                    }
                 </div>
             </section>
-
-
 
 
             <Footer />

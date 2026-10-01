@@ -29,7 +29,7 @@ export const ContentCard = ({ url, heroUrl, heading, excerpt, type, background }
             </Link>
 
             <div className='formatted pt-xs' dir={ locale === 'ar' ? 'rtl' : '' }>
-                <Link href={url}><a className={`${CSS.titleLink} h fs-4 fw-600 lh-2 mt-xxs`}>{ heading }</a></Link>
+                <Link href={url}><a className={`${CSS.titleLink} h fs-5 fw-400 lh-2 mt-xxs`}>{ heading }</a></Link>
                 <p className='mt-xxs'>{ excerpt }</p>
                                 
                 <p className='fw-500'>

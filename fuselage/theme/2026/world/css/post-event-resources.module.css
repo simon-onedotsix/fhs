@@ -1,0 +1,82 @@
+.overlay, 
+.formOverlay {
+    position: fixed;
+    z-index: 20;
+    inset: 0;    
+    background-color: rgba(9, 18, 40, 0.707) !important;
+    backdrop-filter: blur(0px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-sm);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 350ms ease-in-out;
+}
+
+.formOverlay {
+    z-index: 150;
+    background-color: var(--dark) !important;
+}
+
+.overlay.active, 
+.formOverlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+.formOverlay {
+    z-index: 2000;
+}
+
+
+/* popup box */
+
+.container {
+    position: relative;
+    border-radius: var(--default-radius);
+    background-color: white;
+    color: var(--dark);
+
+    max-height: 90vh;
+    overflow-y: hidden;
+    width: 40rem;
+}
+
+.contentScroller {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.content {
+    padding: var(--space-md);
+}
+
+
+
+
+/* close button */
+
+.closeButton {
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: 0;
+    line-height: 1;
+    background: transparent;
+    font-size: 2rem;
+    color: var(--primary);
+
+    transition: all 350ms ease-in-out;
+}
+.closeButton:hover {
+    color: var(--primary-2);
+}

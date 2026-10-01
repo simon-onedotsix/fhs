@@ -250,6 +250,7 @@
 
 .themeWrapper {
     position: relative;
+    z-index: 1;
 }
 .themeWrapperGraphics {
     pointer-events: none;

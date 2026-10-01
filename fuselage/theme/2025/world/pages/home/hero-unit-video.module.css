@@ -22,15 +22,15 @@
 
 .overlay {
     position: relative;
-    z-index: 2;
+    z-index: 5;
 
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
 
     overflow-x: hidden;
-    padding: var(--space-md);
-    padding-top: calc(var(--space-xl) * 3);
+    padding: 10rem var(--space-md) 0;
 }
 
 
@@ -40,6 +40,6 @@
     }
     .overlay {
         height: calc(100vh - 8.25rem);
-        padding: calc(var(--space-lg) * 2) var(--space-lg) var(--space-md);
+        padding: calc(var(--space-lg) * 3) var(--space-lg) var(--space-md);
     }
 }
