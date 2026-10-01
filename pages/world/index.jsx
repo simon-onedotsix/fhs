@@ -362,7 +362,7 @@ export default function Home({ globals, entry, seomatic, partners }) {
                 </div>
 
                 <div className="container columns-4 gap-sm mt-md">
-                    <ImpactCard figure={9999} label={"Delegates"} />
+                    <ImpactCard figure={1000} unit={`+`} label={"Delegates"} />
                     <ImpactCard figure={50} unit={"+"} label={"Countries"} />
                     <ImpactCard figure={200} label={"Investors"} />
                     <ImpactCard figure={8.7} prefix={"$"} unit={"tn"} label={"in AUM"} />

@@ -79,10 +79,6 @@ export default function Page({ entry, seomatic }) {
 Page.theme = 'world-2024'
 
 
-
-// id: (['not', 287751])
-// slug: (['not', 'post-event'])
-
 export async function getStaticPaths() {
 
     const entriesData = await craftApolloClient().query({
@@ -91,7 +87,7 @@ export async function getStaticPaths() {
                 entries(
                     site: "${process.env.SITE_HANDLE_AE}", 
                     section: "${process.env.SITE_HANDLE_AE}Pages",
-                    
+                    slug : ["not", "post-event"]
                 ) {
                     slug
                 }
@@ -117,7 +113,10 @@ export async function getStaticProps({ params, preview, previewData }) {
     const entryData = await craftApolloClient( preview, previewData ).query({
         query: gql`
             query Page {
-                entry(site: "${process.env.SITE_HANDLE_AE}", slug: "${params.slug}") {
+                entry(
+                    site: "${process.env.SITE_HANDLE_AE}", 
+                    slug: "${params.slug}",
+                ) {
                     ... on ${process.env.SITE_HANDLE_AE}Pages_page_Entry {
                         id
                         title
