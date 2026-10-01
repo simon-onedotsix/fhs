@@ -343,7 +343,7 @@ export default function Home({ globals, entry, seomatic, partners }) {
                             <Button href={`/world/download-attendee-list`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Download Attendee List</Button>
                         </Pop>
                         <Pop inline delay={.5}>
-                            <Button href={`/world/post-event`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Access Post Event Resources</Button>
+                            <Button href={`/world/post-event-resources`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Access Post Event Resources</Button>
                         </Pop>
                     </div>
                    
