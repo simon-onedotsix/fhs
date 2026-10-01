@@ -66,7 +66,7 @@ export default function Page ({ seomatic, entry }) {
         // SET HUBSPOT LIST ID BELOW
         const reqBody = {
             email: emailInputRef.current.value,
-            hubspotListId: '2875'
+            hubspotListId: '3804'
         }
 
         fetch('/api/delegate-auth', {
