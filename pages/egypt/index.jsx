@@ -262,14 +262,14 @@ export default function Home ({ data, content, partners, speakers }) {
 
                 <div className="container columns-5 gap-sm maxw-70 center">
                     {
-                        customOrderById( orderByLastName(speakers.slice(0, 10)), PRIORITY_SPEAKER_IDS).map( (profile, index) => (
+                        customOrderById( orderByLastName(speakers), PRIORITY_SPEAKER_IDS).slice(0, 10).map( (profile, index) => (
                             <Pop key={index}>
                                 <SpeakerCard
-                                    url={profile.url}
+                                    url={`/egypt/speakers/${profile.id}`}
                                     photoUrl={profile.photoUrl}
-                                    fullName={profile.fullName}
+                                    fullName={`${profile.firstName} ${profile.lastName}`}
                                     jobTitle={profile.jobTitle}
-                                    company={profile.company}
+                                    company={profile.organization}
                                     color={'white'}
                                 />
                             </Pop>
