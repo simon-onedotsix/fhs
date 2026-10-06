@@ -257,7 +257,7 @@ export default function Home ({ data, content, partners, speakers }) {
             {/* SPEAKERS */}
             <section className="block bg-dark">
                 <div className="container center">
-                    <p className="fs-1 fw-500 caps">Envisioned Speakers</p>
+                    <p className="fs-1 fw-500 caps">Confirmed Speakers</p>
                 </div>
 
                 <div className="container columns-5 gap-sm maxw-70 center">
