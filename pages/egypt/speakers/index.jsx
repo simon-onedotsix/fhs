@@ -55,6 +55,10 @@ export const PRIORITY_SPEAKER_IDS = [
 	'RXZlbnRQZW9wbGVfNDcyMTAzOTM=',
 	'RXZlbnRQZW9wbGVfNDcyMTAyNDk=',
 	'RXZlbnRQZW9wbGVfNDcyMTAyMzY=',
+
+	'RXZlbnRQZW9wbGVfNDc5MTIyMjE=',
+	'RXZlbnRQZW9wbGVfNDk1OTYzODk=',
+	'RXZlbnRQZW9wbGVfNDk2MTI2OTE='
 ]
 
 
