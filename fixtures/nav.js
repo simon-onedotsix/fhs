@@ -968,13 +968,6 @@ export const FHS_EGYPT = {
                         "children": [
                             {
                                 "__typename": "navigation_Entry",
-                                "id": "dsf2444",
-                                "title": "Industry News",
-                                "navUrl": "/egypt/content-library/category/industry-news",
-                                "target": false
-                            },
-                            {
-                                "__typename": "navigation_Entry",
                                 "id": "225",
                                 "title": "Podcasts",
                                 "navUrl": "/egypt/content-library/category/podcast",
@@ -985,6 +978,13 @@ export const FHS_EGYPT = {
                                 "id": "227",
                                 "title": "Press Room",
                                 "navUrl": "/egypt/content-library/category/press-room",
+                                "target": false
+                            },
+                            {
+                                "__typename": "navigation_Entry",
+                                "id": "dsf2444",
+                                "title": "Industry News",
+                                "navUrl": "/egypt/content-library/category/industry-news",
                                 "target": false
                             },
                             {
