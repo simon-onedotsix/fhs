@@ -614,7 +614,7 @@ export default function Home({ globals, entry, seomatic, partners }) {
                     </Fade>
 
                     <Fade delay={.25}>
-                        <p className={`fs-5 fw-500 c-white mt-md balance center`} >9-11 November 2027 | Wynn Al Marjan Island, Ras Al Khaimah</p>
+                        <p className={`fs-5 fw-500 c-white mt-md balance center`} >November 2027 | Wynn Al Marjan Island, Ras Al Khaimah</p>
                     </Fade>
 
                    
