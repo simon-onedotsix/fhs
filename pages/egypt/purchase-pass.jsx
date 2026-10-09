@@ -62,7 +62,7 @@ function PurchasePass({ entry, country }) {
 								priceIncreaseMessage={`message`}
 								description={`
 									<p class="fs-6"><strong>An exclusive rate for Egyptian attendees, making the summit more accessible for local stakeholders involved.</strong></p>
-									<div class="formatted"><p class="fs-6 balance"><span class="fw-600">Only available at this rate before 12 October</span> when the price increases to <strong class="fw-600">US$&nbsp;1250</strong></p></div>
+									<div class="formatted"><p class="fs-6 balance"><span class="fw-600">Only available at this rate until 12 October</span> when the price increases to <strong class="fw-600">US$&nbsp;1250</strong></p></div>
 									<p class="mt-xs"><strong>Includes access to:</strong></p>
 									<ul>
 										<li>All keynote presentations, panel discussions and breakout sessions</li>
