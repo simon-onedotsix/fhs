@@ -30,8 +30,11 @@ export const Session = ({ session, customContent, theme }) => {
                 { session.place && <Location location={session.place} /> }
 			</header>
 
-			<div className={CSS.content} >
-                <p className={CSS.title}>{parse(breakTitle(":", session.title, ": "))}</p>
+            <div className={CSS.content} >
+                {
+                    session.title &&
+                    <p className={CSS.title}>{parse(breakTitle(":", session.title, ": "))}</p>
+                }
                 {/* <small style={{ color: `lime` }}>{session.id}</small> */}
 
                 {
@@ -101,7 +104,7 @@ const Speakers = ({ speakerData }) => {
     return (
         <div className={CSS.speakerGrid}>
             {
-                moderators.length ?
+                moderators?.length ?
                 <div>
                     <p className={CSS.speakerTypeLable}>{moderators.length > 1 ? `Moderators` : `Moderator`}</p>
                     <div className={CSS.speakerGridSection}>
@@ -113,7 +116,7 @@ const Speakers = ({ speakerData }) => {
             {
                 speakers.length ?
                 <div>
-                    { moderators.length ? <p className={CSS.speakerTypeLable}>In conversation with</p> : null }
+                    { moderators?.length ? <p className={CSS.speakerTypeLable}>In conversation with</p> : null }
                     <div className={CSS.speakerGridSection}>
                         { _.orderBy(speakers, "lastName").map( (speaker, index) => <SpeakerCard key={index} speaker={speaker} />) }
                     </div>
@@ -141,6 +144,6 @@ const SpeakerCard = ({ speaker }) => {
 
 const Tags = ({ tagArray }) => {
     return (
-        <div className={CSS.tags}><TagIcon fill={`var(--accent)`}/> {tagArray.map((category, i) => <span key={i} className={CSS.tag}>{category}</span>)}</div>
+        <div className={CSS.tags}><TagIcon fill={`var(--agenda-icons)`}/> {tagArray.map((category, i) => <span key={i} className={CSS.tag}>{category}</span>)}</div>
     )
 }

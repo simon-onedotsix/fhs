@@ -13,6 +13,15 @@
     --bg: white;
     --fg: var(--secondary);
 
+
+    --ui-ease: cubic-bezier(.7, .1, .2, 1);
+    --ui-radius: 3rem;
+
+    --base-font-size: 1rem;
+    --base-line-height: 1.6;
+    --base-font-weight: 300;
+
+
     --bg-global: hsl(from var(--secondary) h s calc(l - 0) / 1);
 
     --default-text-color: rgb(56, 56, 56);
@@ -26,6 +35,8 @@
     --error: rgb(255, 68, 0);
     --success: rgb(121, 173, 0);
     --warning: rgb(255, 166, 0);
+
+
 
 
     /* spacing */
@@ -69,6 +80,23 @@
     --header-height-compact: 6.875rem;
     --header-height-mobile: 8.5rem;
     --header-height-compact-mobile: 8.5rem;
+
+
+
+
+    /* AGENDA */
+
+    --bg: var(--brand-1);
+    --fg: white;
+
+
+    --agenda-bg: hsl(from var(--bg) h s calc(l - 5) / 1);
+    --agenda-fg: var(--fg);
+    --agenda-divider-bg: #F5812B;
+    --agenda-divider-fg: white;
+    --agenda-header-bg: hsl(from var(--bg) h s calc(l + 10) / 1);
+    --agenda-header-fg: var(--fg);
+    --agenda-icons: #F5812B;
 
 }
 

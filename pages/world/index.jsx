@@ -59,6 +59,9 @@ import { VideoSection, Section } from '../../fuselage/theme/2026/sa/blocks/secti
 import { ContentCard } from '../../fuselage/components/content-card/content-card'
 import { Quotation } from "../../fuselage/theme/2026/world/components/quotation/quotation"
 
+import { LayoutGallery } from "../../fuselage/components/layout-gallery/layout-gallery"
+import { PartnerGroup } from "../sa"
+
 import CSS from '../../fuselage/theme/2026/world/css/homepage.module.css'
 
 
@@ -165,6 +168,286 @@ const photos = [
         ]
     },
     
+]
+const SPEAKERS = [
+  {
+    firstName: "H․H. Sheikh Ahmed",
+    id: "RXZlbnRQZW9wbGVfNDg3ODE1MjA=",
+    jobTitle: "Chairman Dubai Holding, Dubai Airports,",
+    lastName: "bin Saeed Al Maktoum",
+    organization: "Emirates Group; President, DCAA",
+    photoUrl:
+      "https://static.swapcard.com/public/images/cef9710540734f0e8132b8e5155685cd.jpeg",
+  },
+  {
+    firstName: "H․E. Abdulla",
+    id: "RXZlbnRQZW9wbGVfNDc3NzQwMTE=",
+    jobTitle: "Minister of Economy & Tourism",
+    lastName: "bin Touq Al Marri",
+    organization: "United Arab Emirates",
+    photoUrl:
+      "https://static.swapcard.com/public/images/8dae029be8ee4babbadde92e1d27201b.png",
+  },
+  {
+    firstName: "William",
+    id: "RXZlbnRQZW9wbGVfNDg3ODExNDM=",
+    jobTitle: "Founder and Chairman",
+    lastName: "Heinecke",
+    organization: "Minor International PCL",
+    photoUrl:
+      "https://static.swapcard.com/public/images/e18c34f709d341dabb14fe98a457b65b.jpeg",
+  },
+  {
+    
+firstName
+: 
+"Alison",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg1NDI0Njg=",
+jobTitle
+: 
+"Group COO & CEO, Marjan Hospitality",
+lastName
+: 
+"Grinnell",
+organization
+: 
+"Marjan",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/cac669535261409fa510b666809927b6.jpeg"
+  },
+  {
+    
+firstName
+: 
+"René",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg4MDc0NjA=",
+jobTitle
+: 
+"Chairman of the Board of Directrors",
+lastName
+: 
+"Nijhof",
+organization
+: 
+"Kempinski Hotels SA",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/a8ac2237a28e494ca6abdded3bb2dc9e.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Rahul",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg3ODEzOTk=",
+jobTitle
+: 
+"Managing Director & CEO",
+lastName
+: 
+"Chaudhary",
+organization
+: 
+"CG Corp Global & CG Hospitality",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/c4f1b80ff5d740319df7cdb547dd3b8e.png"
+  },
+  {
+    
+firstName
+: 
+"Philippe",
+id
+: 
+"RXZlbnRQZW9wbGVfNDczODcyODg=",
+jobTitle
+: 
+"Chief Executive Officer",
+lastName
+: 
+"Zuber",
+organization
+: 
+"Kerzner International Management",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/802ca11f989a409daf7c798105d5d72e.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Sonu",
+id
+: 
+"RXZlbnRQZW9wbGVfNDY0NDczNTM=",
+jobTitle
+: 
+"CEO and Founder",
+lastName
+: 
+"Shivdasani",
+organization
+: 
+"Sosei",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/0c846e869b3e423abadf316bec97fc13.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Marc",
+id
+: 
+"RXZlbnRQZW9wbGVfNDc3NTEwMDg=",
+jobTitle
+: 
+"Chief Executive Officer",
+lastName
+: 
+"Dardenne",
+organization
+: 
+"Modon Hospitality",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/4ba04289ac88482b8eea156243b38993.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Phillipa",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg2NDE2NDk=",
+jobTitle
+: 
+"Chief Executive Officer",
+lastName
+: 
+"Harrison",
+organization
+: 
+"Ras Al Khaimah Tourism Development Authority",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/fc397ac30e224ac88067eebd8dedd9d1.jpeg"
+  },
+  {
+    firstName
+: 
+"Abdulla",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg1NDI0Njk=",
+jobTitle
+: 
+"Group CEO",
+lastName
+: 
+"Al Abdouli",
+organization
+: 
+"Marjan",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/22a04421bd994291aea73d3e313a832f.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Miltos",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg1MTgxNzM=",
+jobTitle
+: 
+"Chief Executive Officer",
+lastName
+: 
+"Bosinis",
+organization
+: 
+"H&H",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/8916ab17c1ca4bdab4ec5e9194df9834.jpeg",
+  },
+  {
+    
+firstName
+: 
+"Raki",
+id
+: 
+"RXZlbnRQZW9wbGVfNDgxMTYzNjY=",
+jobTitle
+: 
+"Regional President - Middle East, Africa & Türkiye",
+lastName
+: 
+"Phillips",
+organization
+: 
+"ACCOR",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/a81cfad726f04c4890deb52f5b1b581d.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Dr. Moath",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg2ODc0OTU=",
+jobTitle
+: 
+"Chief Executive Officer",
+lastName
+: 
+"Alyahya",
+organization
+: 
+"Knowledge Economic City",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/9b956b3026a34a23be710625678dbe19.jpeg"
+  },
+  {
+    
+firstName
+: 
+"Dean",
+id
+: 
+"RXZlbnRQZW9wbGVfNDg2NDIyNTE=",
+jobTitle
+: 
+"Senior Vice President of Hospitality",
+lastName
+: 
+"Rossilli",
+organization
+: 
+"DAMAC Properties",
+photoUrl
+: 
+"https://static.swapcard.com/public/images/640f073a69774d899c075069cb339841.jpeg"
+  },
 ]
 const QUOTES_DATA = [
     {
@@ -331,7 +614,7 @@ export default function Home({ globals, entry, seomatic, partners }) {
                     </Fade>
 
                     <Fade delay={.25}>
-                        <p className={`fs-5 fw-500 c-white mt-md balance center`} >November 2027 | Wynn Al Marjan Island, Ras Al Khaimah</p>
+                        <p className={`fs-5 fw-500 c-white mt-md balance center`} >9-11 November 2027 | Wynn Al Marjan Island, Ras Al Khaimah</p>
                     </Fade>
 
                    
@@ -364,13 +647,14 @@ export default function Home({ globals, entry, seomatic, partners }) {
                 <div className="container columns-4 gap-sm mt-md">
                     <ImpactCard figure={1000} unit={`+`} label={"Delegates"} />
                     <ImpactCard figure={50} unit={"+"} label={"Countries"} />
-                    <ImpactCard figure={200} label={"Investors"} />
+                    <ImpactCard figure={143} label={"Investors"} />
                     <ImpactCard figure={8.7} prefix={"$"} unit={"tn"} label={"in AUM"} />
                 </div>
 
             </section>
 
-            
+
+
 
 
             {/* SIGNINGS & ANNOUNCEMENTS */}
@@ -408,6 +692,68 @@ export default function Home({ globals, entry, seomatic, partners }) {
                     </Pop>
                 </div>
             </Section>
+
+
+
+
+           {/* SPEAKER HIGHLIGHTS */}
+            {
+                SPEAKERS &&
+                <section className="block bg-secondary pb-0">
+
+                    <div className="container center">
+                        <p className="fs-1 fw-600 c-primary caps">2026 Speakers</p>
+                    </div>
+                        
+                    <div className="container columns-5 gap-sm">
+                        {
+                            SPEAKERS.map((profile, index) => (
+                                <Pop key={index}>
+                                    <SpeakerCard
+                                        url={`world/speakers/${profile.id}`}
+                                        photoUrl={profile.photoUrl ? profile.photoUrl : null }
+                                        fullName={`${profile.firstName} ${profile.lastName}`}
+                                        jobTitle={profile.jobTitle}
+                                        company={profile.organization}
+                                        specialField={profile.id === "247717" && "Award Winner – Lifetime Achievement Award"}
+                                    />
+                                </Pop>
+                            ))
+                        }
+                    </div>
+                    
+
+                    <div className="block bg-secondary">
+                        <div className='container center'>
+                            <div className="button-grid">
+                                <ArrowButton href={`/world/speakers`} theme={{ arrow: "c-primary", border: "c-primary", label: "c-primary"}} >View All Speakers</ArrowButton>
+                                <ArrowButton href={`/world/agenda`} theme={{ arrow: "c-primary", border: "c-primary", label: "c-primary"}} >View Agenda</ArrowButton>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+            }
+
+            
+
+
+            {/* PARTNERS */}
+            <section className="block bg-white">
+                <div className="container center">
+                    <Pop><p className="fs-2 fw-600 c-primary balance">Thank You to Our 2026 Partners</p></Pop>
+                </div>
+
+                <div className="container mt-lg">
+                    <LayoutGallery>
+                        <PartnerGroup partnerData={partners} start={0} end={17} />
+                        <PartnerGroup partnerData={partners} start={18} end={35} />
+                        <PartnerGroup partnerData={partners} start={36} end={53} />
+                        <PartnerGroup partnerData={partners} start={54} end={69} />
+                    </LayoutGallery>
+                </div>
+            </section>
+
 
 
 
