@@ -131,8 +131,8 @@ export default function Home ({ data, content, partners, speakers }) {
                         </ButtonKeyline>
                     </Pop>
                     <Pop inline>
-                        <ButtonKeyline decal={`fs-5`} href={`/egypt/forms/register-interest`} >
-                            Register Interest
+                        <ButtonKeyline decal={`fs-5`} href={`/egypt/2026-attendee-list-download`} >
+                            View 2026 Attendee List
                         </ButtonKeyline>
                     </Pop>
                 </ButtonGrid>
