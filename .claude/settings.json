@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(./pages/world/**)",
+      "Write(./pages/world/**)",
+      "Edit(./pages/sa/**)",
+      "Write(./pages/sa/**)",
+      "Edit(./pages/egypt/**)",
+      "Write(./pages/egypt/**)",
+      "Edit(./pages/africa/**)",
+      "Write(./pages/africa/**)"
+    ]
+  }
+}
