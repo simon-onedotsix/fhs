@@ -36,6 +36,7 @@ import { Carousel } from "../../fuselage/blocks/carousel/carousel"
 import { ImageGallery } from "../../fuselage/components/image-gallery/image-gallery"
 import { Slider } from "../../ui/components/slider"
 import { VideoPlayer } from '../../fuselage/components/video-player/video-player'
+import { Boxout } from "../../ui/components/boxout"
 
 import { orderByLastName, customOrderById } from '../../lib/swapcard/speaker-utilities'
 
@@ -136,6 +137,13 @@ export default function Home ({ data, content, partners, speakers }) {
                         </ButtonKeyline>
                     </Pop>
                 </ButtonGrid>
+
+                <Boxout padding={`1rem`}>
+                    <p className="fs-5 fw-600 lh-1 center pb-xs">Under the Patronage of</p>
+                    <Pop delay={.1}>
+                        <img src={"https://cms.thebench.com/assets/img/logos/ministry-of-housing-utilities-and-urban-communities.png"} width={`100%`} alt="" />
+                    </Pop>
+                </Boxout>  
             </PageHeroVideo>
 
 
