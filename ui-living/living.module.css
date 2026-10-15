@@ -5,8 +5,7 @@
    sentence-case headlines; purple once per page as the statement band, while photo and video sections may sit
    on purple or ink as media frames. Two weights (500 structural, 400 body). Zero radius. Flat fields.
    The faceted diamond is the only shape: photo windows, map dots, chart markers, bullets. */
-@font-face { font-family: "Neue Haas"; src: url("/assets/fonts/living/NeueHaasDisplayMedium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
-@font-face { font-family: "Neue Haas"; src: url("/assets/fonts/living/NeueHaasDisplayLight.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+/* port: no webfont until the Neue Haas web licence is confirmed: --font falls back to Helvetica Neue / Arial */
 /* port: the app's global type rules (decal: p size and line-height; heading margin, weight 600, line-height)
    are reset here, before our own rules, so Living pages render exactly as the prototype */
 .root p { font-size: inherit; line-height: inherit; }
@@ -647,6 +646,7 @@
 .root .faq details[open] summary::after { transform: rotate(90deg); }
 .root .faq details p { margin: 0 0 22px; color: var(--ink-soft); font-size: var(--fs-small); }
 .root .rail-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
+.root .rail-filter[hidden] { display: none; } /* port: server HTML hides the filter until JavaScript runs */
 .root .rail-filter button { font: inherit; font-size: 13px; font-weight: 500; padding: 9px 14px; border: 1px solid var(--purple); background: transparent; color: var(--purple); cursor: pointer; transition: background .2s var(--ease), color .2s var(--ease); }
 .root .rail-filter button:hover { background: var(--cream-light); }
 .root .rail-filter button[aria-pressed="true"] { background: var(--purple); color: var(--white); }

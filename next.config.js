@@ -90,46 +90,47 @@ const nextConfig = {
 				permanent: true,
 			},
 
-			// FHS Living v3 (October 2026): the old Living pages moved
+			// FHS Living v3 (October 2026): the old Living pages moved. Temporary (307) for the launch window, so a
+			// rollback leaves no redirect cached in browsers; set permanent: true once Living has run cleanly.
 			{
 				source: '/living/why-now',
 				destination: '/living/about',
-				permanent: true,
+				permanent: false,
 			},
 			{
 				source: '/living/founding-advisors',
 				destination: '/living/who-is-in-the-room',
-				permanent: true,
+				permanent: false,
 			},
 			{
 				source: '/living/programme',
 				destination: '/living/paris/programme',
-				permanent: true,
+				permanent: false,
 			},
 			{
 				source: '/living/programme-demo',
 				destination: '/living/paris/programme',
-				permanent: true,
+				permanent: false,
 			},
 			{
 				source: '/living/purchase-pass',
 				destination: '/living/paris/passes',
-				permanent: true,
+				permanent: false,
 			},
 			{
 				source: '/living/register-interest',
 				destination: '/living/register',
-				permanent: true,
+				permanent: false,
 			},
 			{
 				source: '/living/contact-us',
 				destination: '/living/contact',
-				permanent: true,
+				permanent: false,
 			},
 			{
 				source: '/living/travel-and-accommodation',
 				destination: '/living/paris/venue',
-				permanent: true,
+				permanent: false,
 			},
 		  
 		]
