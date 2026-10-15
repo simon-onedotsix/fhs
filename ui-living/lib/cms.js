@@ -105,19 +105,21 @@ export const loadPartners = loader('partners', async () => {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json', Authorization: process.env.SWAPCARD_AUTH_KEY },
 		body: JSON.stringify({ query: `{
-			event(id: "${event}") { fieldDefinitions { ... on SelectFieldDefinition { id optionsValues { id value } } } }
+			event(id: "${event}") { fieldDefinitions { ... on SelectFieldDefinition { id optionsValues { id value translations { language value } } } } }
 			exhibitors(eventId: "${event}", page: 1, pageSize: 200) { name logoUrl fields { ... on SelectField { id } } }
 		}` }),
 	})
 	const { data } = await res.json()
 	const groups = data.event.fieldDefinitions.find(f => f.id === 'RmllbGREZWZpbml0aW9uXzI5NjgyNg==').optionsValues
 	const saved = Object.fromEntries(partnersSaved.tiers.flatMap(t => t.items).map(i => [i.name.toLowerCase(), i]))
-	const tiers = groups.map(g => ({
-		tier: g.value,
-		items: data.exhibitors.filter(x => x.fields.some(f => f.id === g.id))
+	const tiers = groups.map(g => {
+		const items = data.exhibitors.filter(x => x.fields.some(f => f.id === g.id))
 			// our trimmed, optically sized logo where we have one; a new partner shows its Swapcard logo
-			.map(x => saved[x.name.toLowerCase()] || { name: x.name, logo: x.logoUrl, w: 160, h: 64 }),
-	})).filter(t => t.items.length)
+			.map(x => saved[x.name.toLowerCase()] || { name: x.name, logo: x.logoUrl, w: 160, h: 64 })
+		// the group's English name in Swapcard ("Headline Partners"), singular when it holds one partner
+		const label = ((g.translations || []).find(t => t.language === 'en_US') || {}).value?.trim() || g.value
+		return { tier: items.length === 1 ? label.replace(/([^s])s$/, '$1') : label, items }
+	}).filter(t => t.items.length)
 	if (!tiers.length) throw new Error('no partner groups')
 	return { tiers }
 }, partnersSaved)
