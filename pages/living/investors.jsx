@@ -12,8 +12,7 @@ import { passOffer } from '../../ui-living/sections/passes'
 
 import facts from '../../ui-living/data/facts.json'
 import flows from '../../ui-living/data/flows.json'
-import advisors from '../../ui-living/data/advisors.json'
-import passes from '../../ui-living/data/passes.json'
+import { loadAdvisors, loadPasses } from '../../ui-living/lib/cms'
 import { HIGH } from '../../ui-living/lib/attrs'
 
 const TYPES = ['Sovereign wealth funds', 'Pension funds and insurers', 'Asset managers and owners', 'Private equity', 'Family offices', 'REITs and lenders']
@@ -113,6 +112,7 @@ export default function Investors({ f, flows, investor, nAdv }) {
 Investors.theme = 'living'
 
 export async function getStaticProps() {
+	const [advisors, passes] = await Promise.all([loadAdvisors(), loadPasses()])
 	return {
 		props: {
 			f: facts,

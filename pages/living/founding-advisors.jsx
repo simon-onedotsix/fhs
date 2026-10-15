@@ -8,7 +8,7 @@ import { R } from '../../ui-living/lib/routes'
 import { MixBar } from '../../ui-living/sections/mix-bar'
 
 import facts from '../../ui-living/data/facts.json'
-import advisors from '../../ui-living/data/advisors.json'
+import { loadAdvisors } from '../../ui-living/lib/cms'
 import { HIGH } from '../../ui-living/lib/attrs'
 
 const LINES = {
@@ -106,5 +106,5 @@ export default function WhoIsInTheRoom({ f, adv }) {
 WhoIsInTheRoom.theme = 'living'
 
 export async function getStaticProps() {
-	return { props: { f: facts, adv: advisors } }
+	return { props: { f: facts, adv: await loadAdvisors() } }
 }

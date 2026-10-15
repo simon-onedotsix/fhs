@@ -90,36 +90,17 @@ const nextConfig = {
 				permanent: true,
 			},
 
-			// FHS Living v3 (October 2026): the old Living pages moved. Temporary (307) for the launch window, so a
-			// rollback leaves no redirect cached in browsers; set permanent: true once Living has run cleanly.
+			// FHS Living v3 (October 2026). Temporary (307) for the launch window, so a rollback leaves no redirect
+			// cached in browsers; set permanent: true once Living has run cleanly.
+			// Old Living pages that moved
 			{
 				source: '/living/why-now',
 				destination: '/living/about',
 				permanent: false,
 			},
 			{
-				source: '/living/founding-advisors',
-				destination: '/living/who-is-in-the-room',
-				permanent: false,
-			},
-			{
-				source: '/living/programme',
-				destination: '/living/paris/programme',
-				permanent: false,
-			},
-			{
 				source: '/living/programme-demo',
-				destination: '/living/paris/programme',
-				permanent: false,
-			},
-			{
-				source: '/living/purchase-pass',
-				destination: '/living/paris/passes',
-				permanent: false,
-			},
-			{
-				source: '/living/register-interest',
-				destination: '/living/register',
+				destination: '/living/programme',
 				permanent: false,
 			},
 			{
@@ -127,9 +108,30 @@ const nextConfig = {
 				destination: '/living/contact',
 				permanent: false,
 			},
+			// Addresses the v3 pages used for their first hour live (15 Oct 2026)
 			{
-				source: '/living/travel-and-accommodation',
-				destination: '/living/paris/venue',
+				source: '/living/paris/programme',
+				destination: '/living/programme',
+				permanent: false,
+			},
+			{
+				source: '/living/paris/passes',
+				destination: '/living/purchase-pass',
+				permanent: false,
+			},
+			{
+				source: '/living/paris/venue',
+				destination: '/living/travel-and-accommodation',
+				permanent: false,
+			},
+			{
+				source: '/living/who-is-in-the-room',
+				destination: '/living/founding-advisors',
+				permanent: false,
+			},
+			{
+				source: '/living/register',
+				destination: '/living/register-interest',
 				permanent: false,
 			},
 		  

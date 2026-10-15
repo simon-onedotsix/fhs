@@ -2,7 +2,8 @@ const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 
 // Prototype asset path ('assets/img/dubai/x.jpg', 'dubai/x.jpg', 'assets/brand/x.svg') -> the app's public URL.
 // Every JPG was shipped as its WebP twin.
-export const img = path => '/assets/img/living/v3/' + path.replace(/^assets\//, '').replace(/^img\//, '').replace(/\.jpg$/, '.webp')
+// our optimised copies; a full address (a photo or logo straight from Craft or Swapcard) passes through
+export const img = path => /^https?:/.test(path) ? path : '/assets/img/living/v3/' + path.replace(/^assets\//, '').replace(/^img\//, '').replace(/\.jpg$/, '.webp')
 
 export const mins = t => {
 	const [h, m] = t.split(':').map(Number)

@@ -1,16 +1,16 @@
 import Link from 'next/link'
 
-import { LivingPage } from '../../../ui-living/site/page'
-import { c } from '../../../ui-living/lib/c'
-import { ampm, img, trange } from '../../../ui-living/lib/format'
-import { R } from '../../../ui-living/lib/routes'
-import { Glance } from '../../../ui-living/sections/glance'
-import { Passes, passOffer, bookBefore } from '../../../ui-living/sections/passes'
+import { LivingPage } from '../../ui-living/site/page'
+import { c } from '../../ui-living/lib/c'
+import { ampm, img, trange } from '../../ui-living/lib/format'
+import { R } from '../../ui-living/lib/routes'
+import { Glance } from '../../ui-living/sections/glance'
+import { Passes, passOffer, bookBefore } from '../../ui-living/sections/passes'
 
-import facts from '../../../ui-living/data/facts.json'
-import programme from '../../../ui-living/data/programme.json'
-import passes from '../../../ui-living/data/passes.json'
-import { HIGH } from '../../../ui-living/lib/attrs'
+import facts from '../../ui-living/data/facts.json'
+import programme from '../../ui-living/data/programme.json'
+import { loadPasses } from '../../ui-living/lib/cms'
+import { HIGH } from '../../ui-living/lib/attrs'
 
 const byStart = (a, b) => (a.start > b.start) - (a.start < b.start)
 
@@ -80,8 +80,9 @@ export default function Programme({ f, programme, delegate, investor }) {
 }
 Programme.theme = 'living'
 
-const pass = title => passes.passes.find(x => x.title.startsWith(title))
+const pass = (passes, title) => passes.passes.find(x => x.title.startsWith(title))
 
 export async function getStaticProps() {
-	return { props: { f: facts, programme, delegate: passOffer(pass('Delegate')), investor: passOffer(pass('Investor')) } }
+	const passes = await loadPasses()
+	return { props: { f: facts, programme, delegate: passOffer(pass(passes, 'Delegate')), investor: passOffer(pass(passes, 'Investor')) } }
 }

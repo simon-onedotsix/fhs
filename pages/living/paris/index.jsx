@@ -16,14 +16,12 @@ import { Quote } from '../../../ui-living/sections/quote'
 import { PartnerStrip } from '../../../ui-living/sections/partner-strip'
 
 import facts from '../../../ui-living/data/facts.json'
-import advisors from '../../../ui-living/data/advisors.json'
 import flows from '../../../ui-living/data/flows.json'
 import programme from '../../../ui-living/data/programme.json'
 import dubai from '../../../ui-living/data/dubai.json'
 import concl from '../../../ui-living/data/conclusions.json'
 import linkedin from '../../../ui-living/data/linkedin.json'
-import passes from '../../../ui-living/data/passes.json'
-import partners from '../../../ui-living/data/partners.json'
+import { loadAdvisors, loadPartners, loadPasses } from '../../../ui-living/lib/cms'
 import { HIGH } from '../../../ui-living/lib/attrs'
 
 const COMES = {
@@ -116,9 +114,10 @@ export default function Paris(p) {
 }
 Paris.theme = 'living'
 
-const pass = title => passes.passes.find(x => x.title.startsWith(title))
+const pass = (passes, title) => passes.passes.find(x => x.title.startsWith(title))
 
 export async function getStaticProps() {
+	const [advisors, partners, passes] = await Promise.all([loadAdvisors(), loadPartners(), loadPasses()])
 	return {
 		props: {
 			f: facts,
@@ -129,8 +128,8 @@ export async function getStaticProps() {
 			concl,
 			linkedin,
 			partners,
-			delegate: passOffer(pass('Delegate')),
-			investor: passOffer(pass('Investor')),
+			delegate: passOffer(pass(passes, 'Delegate')),
+			investor: passOffer(pass(passes, 'Investor')),
 		},
 	}
 }

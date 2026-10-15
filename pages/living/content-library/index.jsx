@@ -2,7 +2,7 @@ import { LivingPage } from '../../../ui-living/site/page'
 import { c } from '../../../ui-living/lib/c'
 import { img } from '../../../ui-living/lib/format'
 
-import library from '../../../ui-living/data/library.json'
+import { loadLibrary } from '../../../ui-living/lib/cms'
 import { NEW_TAB } from '../../../ui-living/lib/attrs'
 
 export default function ContentLibrary({ items }) {
@@ -37,5 +37,6 @@ export default function ContentLibrary({ items }) {
 ContentLibrary.theme = 'living'
 
 export async function getStaticProps() {
-	return { props: { items: library.items } }
+	const library = await loadLibrary()
+	return { props: { items: library.items, source: library.source } }
 }

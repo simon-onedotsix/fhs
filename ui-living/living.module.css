@@ -75,12 +75,12 @@
   .root .head { grid-template-columns: minmax(0, 1fr); align-items: start; }
 }
 /* ---------- buttons and links ---------- */
-.root .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 52px; padding: 0 26px; background: var(--magenta); color: var(--white);
+.root .btn, .root .cms :global(a.button) { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 52px; padding: 0 26px; background: var(--magenta); color: var(--white);
   text-decoration: none; font-weight: 500; font-size: 16px; letter-spacing: .005em; border: 1px solid var(--magenta); white-space: nowrap;
   transition: background .24s var(--ease), border-color .24s var(--ease), color .24s var(--ease); }
-.root .btn::after { content: ""; width: 9px; height: 10px; background: currentColor; clip-path: var(--facet); transition: transform .24s var(--ease); }
-.root .btn:hover { background: var(--purple); border-color: var(--purple); }
-.root .btn:hover::after { transform: translateX(3px); }
+.root .btn::after, .root .cms :global(a.button)::after { content: ""; width: 9px; height: 10px; background: currentColor; clip-path: var(--facet); transition: transform .24s var(--ease); }
+.root .btn:hover, .root .cms :global(a.button):hover { background: var(--purple); border-color: var(--purple); }
+.root .btn:hover::after, .root .cms :global(a.button):hover::after { transform: translateX(3px); }
 .root .btn--ghost { background: transparent; color: var(--purple); border-color: var(--purple); }
 .root .btn--ghost:hover { background: var(--purple); color: var(--white); }
 .root .btn--light { background: var(--white); color: var(--purple); border-color: var(--white); }
@@ -645,6 +645,9 @@
 .root .faq summary::after { content: ""; position: absolute; right: 4px; top: 30px; width: 12px; height: 13px; background: var(--magenta); clip-path: var(--facet); transition: transform .24s var(--ease); }
 .root .faq details[open] summary::after { transform: rotate(90deg); }
 .root .faq details p { margin: 0 0 22px; color: var(--ink-soft); font-size: var(--fs-small); }
+/* port: text the team writes in Craft (Where to stay), rendered in the Living type */
+.root .cms h3 { margin: 0 0 8px; font-size: 17px; font-weight: 500; }
+.root .cms p:has(> br:only-child) { display: none; }
 .root .rail-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; }
 .root .rail-filter[hidden] { display: none; } /* port: server HTML hides the filter until JavaScript runs */
 .root .rail-filter button { font: inherit; font-size: 13px; font-weight: 500; padding: 9px 14px; border: 1px solid var(--purple); background: transparent; color: var(--purple); cursor: pointer; transition: background .2s var(--ease), color .2s var(--ease); }

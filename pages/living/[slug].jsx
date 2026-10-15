@@ -11,6 +11,7 @@ import { FHS_LIVING as header } from '../../fixtures/nav'
 import { Footer } from '../../fuselage/theme/living/common/footer/footer'
 
 import handleContentBlocks from "../../lib/content-blocks"
+import { R } from '../../ui-living/lib/routes'
 
 import { 
     QueryText, 
@@ -84,8 +85,12 @@ export async function getStaticPaths() {
 
     const entries = await entriesData.data.entries
 
+    // FHS Living v3 pages own some of these addresses (travel-and-accommodation): a CMS page with the same
+    // slug would stop the whole build ("conflicting paths"), so the Living page wins and the entry is skipped
+    const owned = Object.values(R)
+
     return {
-        paths: entries.map( entry => ({ params: { slug: entry.slug } })),
+        paths: entries.filter( entry => !owned.includes(`/living/${entry.slug}`) ).map( entry => ({ params: { slug: entry.slug } })),
         fallback: false
     }
 

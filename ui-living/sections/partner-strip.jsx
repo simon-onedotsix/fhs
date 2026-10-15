@@ -6,7 +6,7 @@ export function PartnerStrip({ partners, style }) {
 	return (
 		<ul className={c('strip')} style={style}>
 			{partners.tiers.flatMap(t => t.items.map(it => (
-				<li key={it.logo}><img src={img(`partners/${it.logo}`)} alt={`${it.name}, ${t.tier}`} width={Math.round(it.w * 0.8)} height={Math.round(it.h * 0.8)} loading="lazy" /></li>
+				<li key={it.logo}><img src={img(/^https?:/.test(it.logo) ? it.logo : `partners/${it.logo}`)} alt={`${it.name}, ${t.tier}`} width={Math.round(it.w * 0.8)} height={Math.round(it.h * 0.8)} loading="lazy" /></li>
 			)))}
 		</ul>
 	)

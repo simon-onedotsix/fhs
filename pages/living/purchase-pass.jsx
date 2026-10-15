@@ -1,14 +1,14 @@
 import Link from 'next/link'
 
-import { LivingPage } from '../../../ui-living/site/page'
-import { c } from '../../../ui-living/lib/c'
-import { dayBefore, humanDate, img, money } from '../../../ui-living/lib/format'
-import { R } from '../../../ui-living/lib/routes'
-import { useInView } from '../../../ui-living/lib/use-in-view'
-import { Passes, passOffer } from '../../../ui-living/sections/passes'
+import { LivingPage } from '../../ui-living/site/page'
+import { c } from '../../ui-living/lib/c'
+import { dayBefore, humanDate, img, money } from '../../ui-living/lib/format'
+import { R } from '../../ui-living/lib/routes'
+import { useInView } from '../../ui-living/lib/use-in-view'
+import { Passes, passOffer } from '../../ui-living/sections/passes'
 
-import facts from '../../../ui-living/data/facts.json'
-import passes from '../../../ui-living/data/passes.json'
+import facts from '../../ui-living/data/facts.json'
+import { loadPasses } from '../../ui-living/lib/cms'
 
 // The Delegate Pass staircase: the band that closed, the one on sale, the next one. Only while a rise is scheduled.
 function Rate({ delegate }) {
@@ -79,8 +79,9 @@ export default function PassesPage({ f, delegate, investor }) {
 }
 PassesPage.theme = 'living'
 
-const pass = title => passes.passes.find(x => x.title.startsWith(title))
+const pass = (passes, title) => passes.passes.find(x => x.title.startsWith(title))
 
 export async function getStaticProps() {
-	return { props: { f: facts, delegate: passOffer(pass('Delegate')), investor: passOffer(pass('Investor')) } }
+	const passes = await loadPasses()
+	return { props: { f: facts, delegate: passOffer(pass(passes, 'Delegate')), investor: passOffer(pass(passes, 'Investor')) } }
 }

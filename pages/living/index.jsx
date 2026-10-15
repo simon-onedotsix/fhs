@@ -11,13 +11,11 @@ import { PartnersReads } from '../../ui-living/sections/partners-reads'
 import { Closer } from '../../ui-living/sections/closer'
 
 import facts from '../../ui-living/data/facts.json'
-import advisors from '../../ui-living/data/advisors.json'
 import atlas from '../../ui-living/data/atlas.json'
 import editions from '../../ui-living/data/editions.json'
 import dubai from '../../ui-living/data/dubai.json'
 import concl from '../../ui-living/data/conclusions.json'
-import partners from '../../ui-living/data/partners.json'
-import passes from '../../ui-living/data/passes.json'
+import { loadAdvisors, loadPartners, loadPasses } from '../../ui-living/lib/cms'
 import { HIGH } from '../../ui-living/lib/attrs'
 
 // FHS World, Saudi Arabia and Egypt's Living pages import these from here (see ui-living/data/legacy.js)
@@ -64,6 +62,7 @@ export default function Living(p) {
 Living.theme = 'living'
 
 export async function getStaticProps() {
+	const [advisors, partners, passes] = await Promise.all([loadAdvisors(), loadPartners(), loadPasses()])
 	return {
 		props: {
 			classes: facts.classes,

@@ -1,15 +1,16 @@
 import Link from 'next/link'
 
-import { LivingPage } from '../../../ui-living/site/page'
-import { c } from '../../../ui-living/lib/c'
-import { ampm, img } from '../../../ui-living/lib/format'
-import { R } from '../../../ui-living/lib/routes'
+import { LivingPage } from '../../ui-living/site/page'
+import { c } from '../../ui-living/lib/c'
+import { ampm, img } from '../../ui-living/lib/format'
+import { R } from '../../ui-living/lib/routes'
 
-import facts from '../../../ui-living/data/facts.json'
-import programme from '../../../ui-living/data/programme.json'
-import { HIGH } from '../../../ui-living/lib/attrs'
+import facts from '../../ui-living/data/facts.json'
+import programme from '../../ui-living/data/programme.json'
+import { HIGH } from '../../ui-living/lib/attrs'
+import { loadTravel } from '../../ui-living/lib/cms'
 
-export default function Venue({ f, programme }) {
+export default function Venue({ f, programme, stay }) {
 	const reception = ampm(programme.day_zero.time)
 	return (
 		<LivingPage page="venue" title="FHS Living | Venue and travel" description="FHS Living Paris takes place at Pullman Paris Montparnasse, 23–24 February 2027, with a welcome reception on 22 February.">
@@ -37,7 +38,9 @@ export default function Venue({ f, programme }) {
 					<h2 className={c('ruled')} id="travel-h">Getting there and staying.</h2>
 					<div className={c('faq')}>
 						<details open><summary>Getting there</summary><p>The hotel sits beside Gare Montparnasse. The Eurostar from London arrives at Gare du Nord. Paris Charles de Gaulle and Orly airports both connect to central Paris by train and taxi.</p></details>
-						<details><summary>Where to stay</summary><p>A room block is reserved at {f.event.venue} for the event. Ask the team for the booking link at {f.contact.email}.</p></details>
+						<details open><summary>Where to stay</summary>{stay
+							? <div className={c('cms')} dangerouslySetInnerHTML={{ __html: stay }} />
+							: <p>A room block is reserved at {f.event.venue} for the event. Ask the team for the booking link at {f.contact.email}.</p>}</details>
 						<details><summary>When to arrive</summary><p>The welcome reception is on Monday 22 February at {reception} at the venue. The programme runs on Tuesday 23 and Wednesday 24 February.</p></details>
 					</div>
 				</div>
@@ -54,5 +57,5 @@ export default function Venue({ f, programme }) {
 Venue.theme = 'living'
 
 export async function getStaticProps() {
-	return { props: { f: facts, programme } }
+	return { props: { f: facts, programme, stay: (await loadTravel()).html } }
 }
