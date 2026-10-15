@@ -138,11 +138,18 @@ export default function Home ({ data, content, partners, speakers }) {
                     </Pop>
                 </ButtonGrid>
 
-                <Boxout padding={`1rem`} maxWidth={`26rem`}>
-                    <p className="fs-5 fw-600 lh-1 center pb-xs">Under the Patronage of</p>
-                    <Pop delay={.1}>
-                        <img src={"https://cms.thebench.com/assets/img/logos/ministry-of-housing-utilities-and-urban-communities.png"} width={`100%`} alt="" />
-                    </Pop>
+                <Boxout padding={`1rem`} maxWidth={`28rem`} minHeight={`16rem`}>
+                    <div style={{
+                        display: `flex`,
+                        flexDirection: `column`,
+                        justifyContent: `center`,
+                        flex: 1
+                    }}>
+                        <p className="fs-5 fw-600 lh-1 center pb-xs">Under the Patronage of</p>
+                        <Pop delay={.1}>
+                            <img src={"https://cms.thebench.com/assets/img/logos/ministry-of-housing-utilities-and-urban-communities.png"} width={`100%`} style={{ maxWidth: `24rem`, display: `block`, margin: `0 auto` }} alt="" />
+                        </Pop>
+                    </div>
                 </Boxout>  
             </PageHeroVideo>
 

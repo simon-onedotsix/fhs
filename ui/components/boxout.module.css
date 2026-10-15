@@ -14,5 +14,7 @@
         position: absolute;
         bottom: var(--space-sm);
         right: var(--space-sm);
+
+        display: flex;
     }
 }

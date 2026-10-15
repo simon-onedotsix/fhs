@@ -4,9 +4,9 @@ import { Fade } from '../../fuselage/animation/animation'
 
 import CSS from './boxout.module.css'
 
-export const Boxout = ({ children, bg = 'white', fg = 'var(--primary)', padding = 0, maxWidth =`20rem` }) => {
+export const Boxout = ({ children, bg = 'white', fg = 'var(--primary)', padding = 0, maxWidth =`20rem`, minHeight = `auto` }) => {
 
-    const isDesktop = useCustomMediaQuery('(min-width: 600px)')
+    const isDesktop = useCustomMediaQuery('(min-width: 900px)')
 
     return (
         <Fade>
@@ -16,7 +16,8 @@ export const Boxout = ({ children, bg = 'white', fg = 'var(--primary)', padding 
                     backgroundColor: bg,
                     color: fg,
                     padding,
-                    maxWidth: isDesktop ? maxWidth : 'auto'
+                    maxWidth: isDesktop ? maxWidth : '100%',
+                    minHeight: isDesktop ? minHeight : 'auto',
                 }}>
                 {children}
             </div>
