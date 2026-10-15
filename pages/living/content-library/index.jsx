@@ -1,170 +1,41 @@
-import { gql } from "@apollo/client"
-import craftApolloClient from "../../api/apollo"
+import { LivingPage } from '../../../ui-living/site/page'
+import { c } from '../../../ui-living/lib/c'
+import { img } from '../../../ui-living/lib/format'
 
-import { LenisScroller } from '../../../fuselage/animation/lenis-scroller'
+import library from '../../../ui-living/data/library.json'
+import { NEW_TAB } from '../../../ui-living/lib/attrs'
 
-import Head from "next/head"
-
-import { EventsBar } from "../../../ui/site/eventsbar"
-import { Header } from '../../../ui/site/header-living'
-import { FHS_LIVING as header } from '../../../fixtures/nav'
-import { Footer } from '../../../fuselage/theme/living/common/footer/footer'
-
-import { ArrowButton } from "../../../fuselage/components/arrow-button/arrow-button"
-
-import { StickySidebar } from "../../../fuselage/layout/sticky-sidebar/sticky-sidebar"
-import { ContentCard } from "../../../fuselage/components/content-card/content-card"
-
-export default function ContentLibrary ({ articles, categories }) {
-
-    // console.log('categories:', categories)
-    // console.log('articles:', articles.map(article => article.contentTypes[0]))
-
-
-    const handleCategoryMenu = () => {        
-        if ( categories.length ) {
-            return (
-                categories.map( category => {
-                    return (
-                        <section key={category.id} id={category.slug} className="mb-xxs">
-                            <a className="uLink fs-6 fw-600" href={`/living/content-library/category/${category.slug}`}>{category.title}</a>
-                        </section>
-                    )
-                })
-            )
-        }
-    }
-
-    const handleCategorisedArticles = () => {
-        return (
-            categories.map( category => {
-
-                let entries = []
-                
-                articles.map( article => {
-                    article.contentTypes.find( cat => {
-                        if (cat.id === category.id) {
-                            entries.push(article)
-                        }
-                    } )
-                })
-
-                if ( entries.length ) {
-
-                    return (
-                        <section key={category.id} id={category.slug} className="p-md pt-0">
-                            <p className="fs-2 fw-600 caps c-secondary">{category.title}</p>
-                            
-                            <div className="columns-3 gap-sm mt-sm">
-                                {
-                                    entries.slice(0, 3).map( entry => (
-                                        <ContentCard
-                                            key={entry.id}
-                                            url={`/living/content-library/${entry.slug}`}
-                                            heroUrl={entry.contentLibraryHero && entry.contentLibraryHero[0] ? entry.contentLibraryHero[0].url : null}
-                                            heading={entry.title}
-                                            excerpt={entry.excerpt}
-                                            postDate={entry.postDate}
-                                            type={entry.contentTypes[0].slug}
-                                        />
-                                    ))
-                                }
-                            </div>
-    
-                            <p className="mt-sm"><ArrowButton href={`/living/content-library/category/${category.slug}`} theme={{ arrow: `var(--secondary)`, border: `var(--secondary)`, label: `white`}}>See all in {category.title}</ArrowButton></p>
-                            
-                        </section>
-                    )
-                }
-            })
-        )
-    }
-
-    return (
-        <>
-            <Head>
-                <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
-            </Head>
-
-            <EventsBar site={'/living'} />
-            <Header
-                site={`/living`}
-                handle={`Living`}
-                event={header.data.event}
-                mainMenu={header.data.mainMenu}
-                ctas={header.data.event.headerCtas}
-            />
-
-            <section className="block flush pt-0">
-                <StickySidebar size='small'>
-                    <aside>
-                        <div className="p-md pt-0">
-                            <p className="fs-6 fw-600 c-secondary mb-sm">Filter</p>
-                            { handleCategoryMenu() }
-                        </div>
-                    </aside>
-
-                    <main>
-                        <div className="p-md pt-0">
-                            <p className="fs-0 fw-600">Content Library</p>
-                        </div>
-
-                        { handleCategorisedArticles() }
-                    </main>
-                </StickySidebar>
-            </section>
-
-            <Footer />
-            <LenisScroller />
-        </>
-    )
-    
+export default function ContentLibrary({ items }) {
+	return (
+		<LivingPage page="content-library" title="FHS Living | Content library" description="Articles, press releases and session reports from FHS Living, Future Hospitality Summit's platform for the hotelisation of real estate.">
+			<section className={c('page-hero')} aria-labelledby="hero-h">
+				<div className={c('wrap')}>
+					<h1 id="hero-h">The thinking behind <span className={c('accent')}>FHS Living.</span></h1>
+					<p className={c('lede')}>Articles, press releases and reports, from the first Advisory Board in London to the day on the stage in Dubai.</p>
+				</div>
+			</section>
+			<section className={c('section section--tight')} aria-labelledby="lib-h">
+				<div className={c('wrap')}>
+					<h2 className={c('sr')} id="lib-h">Articles and reports</h2>
+					<ul className={c('library')}>
+						{items.map((it, i) => (
+							<li key={it.url}>
+								<a className={c('read')} href={it.url} {...(it.pdf ? NEW_TAB : {})}>
+									<figure className={c(it.contain && 'read__plate')}><img src={img(it.image)} width={it.w} height={it.h} alt="" loading={i ? 'lazy' : undefined} /></figure>
+									<span className={c('read__meta')}>{it.category}, {it.date}</span>
+									<h3>{it.title}</h3>
+									<p>{it.excerpt}</p>
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			</section>
+		</LivingPage>
+	)
 }
-
 ContentLibrary.theme = 'living'
 
-
-
 export async function getStaticProps() {
-    const { data } = await craftApolloClient().query({
-        query: gql`
-            query Articles {
-                entries(site: "${process.env.SITE_HANDLE_LIVING}", section: "contentLibrary") {
-                    ... on contentLibrary_article_Entry {
-                        id
-                        slug
-                        title
-                        postDate
-                        excerpt
-                        contentLibraryHero {
-                            id
-                            url
-                            width
-                            height
-                        }
-                        contentTypes {
-                            ... on contentLibrary_Category {
-                                id
-                                title
-                                slug
-                            }
-                        }
-                    }
-                }
-                categories (group: "contentLibrary", id: [7700, 7701, 7702, 7704, 121314]) {
-                    id
-                    title
-                    slug
-                }
-            }
-          
-        `
-        })
-
-        return {
-        props: {
-            articles: data.entries,
-            categories: data.categories
-        },
-    }
+	return { props: { items: library.items } }
 }

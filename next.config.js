@@ -89,6 +89,48 @@ const nextConfig = {
 				destination: '/egypt/living/:path*',
 				permanent: true,
 			},
+
+			// FHS Living v3 (October 2026): the old Living pages moved
+			{
+				source: '/living/why-now',
+				destination: '/living/about',
+				permanent: true,
+			},
+			{
+				source: '/living/founding-advisors',
+				destination: '/living/who-is-in-the-room',
+				permanent: true,
+			},
+			{
+				source: '/living/programme',
+				destination: '/living/paris/programme',
+				permanent: true,
+			},
+			{
+				source: '/living/programme-demo',
+				destination: '/living/paris/programme',
+				permanent: true,
+			},
+			{
+				source: '/living/purchase-pass',
+				destination: '/living/paris/passes',
+				permanent: true,
+			},
+			{
+				source: '/living/register-interest',
+				destination: '/living/register',
+				permanent: true,
+			},
+			{
+				source: '/living/contact-us',
+				destination: '/living/contact',
+				permanent: true,
+			},
+			{
+				source: '/living/travel-and-accommodation',
+				destination: '/living/paris/venue',
+				permanent: true,
+			},
 		  
 		]
 	}

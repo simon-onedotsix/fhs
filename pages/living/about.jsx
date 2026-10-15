@@ -1,273 +1,83 @@
-import { gql } from "@apollo/client"
-import craftApolloClient from "../api/apollo"
+import Link from 'next/link'
 
+import { LivingPage } from '../../ui-living/site/page'
+import { c } from '../../ui-living/lib/c'
+import { img } from '../../ui-living/lib/format'
+import { R } from '../../ui-living/lib/routes'
+import { Market } from '../../ui-living/sections/market'
+import { EditionsRail } from '../../ui-living/sections/atlas'
 
-import _ from 'lodash'
-import { useState, useRef } from "react"
+import facts from '../../ui-living/data/facts.json'
+import editions from '../../ui-living/data/editions.json'
+import { HIGH } from '../../ui-living/lib/attrs'
 
-import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
-import useCustomMediaQuery from '../../hooks/useCustomMediaQuery'
-import { Pop, Fade } from "../../fuselage/animation/animation"
+export default function About({ f, editions }) {
+	return (
+		<LivingPage page="about" title="FHS Living | About" description="Future Hospitality Summit's platform for the hotelisation of real estate, organised by The Bench. A letter from the Chairman, Jonathan Worsley.">
+			<section className={c('page-hero')} aria-labelledby="hero-h">
+				<div className={c('wrap')}>
+					<div>
+						<h1 id="hero-h">Built by Future Hospitality Summit. <span className={c('accent')}>Built for living.</span></h1>
+						<p className={c('lede')}>FHS Living is organised by The Bench, the team behind Future Hospitality Summit in Dubai, Riyadh, Cairo and Africa. It grew out of the Branded Residences Forum and now covers nine asset classes where hospitality meets real estate.</p>
+					</div>
+					<figure className={c('page-hero__fig')}><div className={c('diamond')}><img src={img('photo/auditorium-diamond.jpg')} width="894" height="630" alt="The plenary room at a Future Hospitality Summit event" {...HIGH} /></div></figure>
+				</div>
+			</section>
 
-import Head from "next/head"
+			<Market hid="why-h" title="Why now." intro={`${f.largest.text}. Demand is structural, and capital is following it.`} bg="tint" shortfall={f.shortfall} />
 
+			<section className={c('section')} aria-labelledby="letter-h">
+				<div className={c('wrap split split--top')}>
+					<figure style={{ margin: 0 }}>
+						<div className={c('window')} style={{ aspectRatio: '4/5', maxWidth: 440 }}><img src={img('photo/chairman.jpg')} width="900" height="872" alt="Jonathan Worsley, Chairman, The Bench" loading="lazy" style={{ objectPosition: 'center top' }} /></div>
+						<figcaption className={c('cap')}><strong style={{ color: 'var(--ink)' }}>Jonathan Worsley</strong><br />Chairman, The Bench</figcaption>
+					</figure>
+					<div className={c('prose')}>
+						<h2 className={c('ruled')} id="letter-h" style={{ marginBottom: 28 }}>Hospitality is no longer a standalone asset class.</h2>
+						<p className={c('lede')}>It is becoming a layer of value across real estate, influencing how people live, work and experience space.</p>
+						<p>Investors are allocating capital into living sectors such as branded residences, student housing, senior living and serviced apartments, and these have become core components of their portfolios. Yet the industry lacks a single platform that brings these asset classes together across Europe in a focused, investment-led environment.</p>
+						<p>FHS Living has been created to address this gap. It is designed as a curated forum where global capital meets developers and operators across the full spectrum of living and hospitality assets. A place where operational expertise and real estate ownership converge. A place where deals are initiated, partnerships are formed and new models of living are defined.</p>
+					</div>
+				</div>
+			</section>
 
+			<section className={c('section tint')} aria-labelledby="record-h">
+				<div className={c('wrap')}>
+					<div className={c('head')}><h2 className={c('ruled')} id="record-h">Three decades of hospitality investment forums.</h2><p>{f.heritage.text}. Across the 2025 Future Hospitality Summit series:</p></div>
+					<ul className={c('facts')}>
+						{f.credentials.map(x => <li key={x.label}><b>{x.value}</b><span>{x.label}</span></li>)}
+					</ul>
+				</div>
+			</section>
 
-import { EventsBar } from "../../ui/site/eventsbar"
-import { Header } from '../../ui/site/header-living'
-import { FHS_LIVING as header } from '../../fixtures/nav'
-import { Footer } from '../../fuselage/theme/living/common/footer/footer'
+			<section className={c('section')} aria-labelledby="story-h">
+				<div className={c('wrap split')}>
+					<div>
+						<h2 className={c('ruled')} id="story-h">From one asset class to nine.</h2>
+						<p className={c('lede')} style={{ marginTop: 20 }}>The Branded Residences Forum began with a simple idea: bring the people shaping branded residences into one room. The capital and developers behind those projects moved into student housing, senior living and co-living. In August 2026 the forum became FHS Living, one platform for all of it. Branded residences remain a core pillar.</p>
+					</div>
+					<div className={c('photo photo--wide')}><img src={img('photo/brf-stage.jpg')} width="1200" height="900" alt="The Branded Residences Forum stage" loading="lazy" /></div>
+				</div>
+			</section>
 
-import { PageHero } from "../../ui/modules/page-hero"
-import { EventCard } from "../../ui/components/event-card"
+			<section className={c('section tint section--tight')} aria-labelledby="ed-h">
+				<div className={c('wrap')}>
+					<div className={c('head')}><h2 className={c('ruled')} id="ed-h">One platform. Four cities.</h2><p>A dedicated programme inside FHS events in Dubai, Cairo and Riyadh, and a standalone Founding Edition in Paris.</p></div>
+					<EditionsRail editions={editions} />
+				</div>
+			</section>
 
-
-// temporary hard-coded data -----------------------------------------------
-import { EVENT_DATA } from ".."
-const livingEventIds = new Set(['246252', '259029', '314682', '246252333'])
-const LIVING_EVENTS = EVENT_DATA.filter(event => livingEventIds.has(event.id))
-
-
-export default function Page ({ data }) {
-
-    // console.log(content)
-
-    const isDesktop = useCustomMediaQuery('(min-width: 600px)');
-
-    return (
-        <>
-            <Head>
-                <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
-                <meta content="https://cms.thebench.com/assets/content-library/img/FHS-Living/FHS-Living-Launch-PR.jpg" property="og:image"></meta>
-                <title>FHS Living | Feb 2027, Paris | Founding Edition</title>
-                <meta name="description" content="Addressing the growing 'lanyard fatigue' of the European hospitality conferencing market"></meta>
-            </Head>
-        
-            
-            <EventsBar site={'/living'} />
-            <Header
-                site={`/living`}
-                handle={`Living`}
-                event={header.data.event}
-                mainMenu={header.data.mainMenu}
-                ctas={header.data.event.headerCtas}
-            />
-
-
-            {/* INTRO */}
-            <PageHero hero={{url: `/assets/img/living/about/about-hero.jpg`, width: 595, height: 335}}>
-                <section className="">
-                    <div className="container">
-                        <p className="fs-1 fw-400 lh-1 maxw-50">Built by the architects of global hospitality investment platforms. Built for what comes next.</p>
-                    </div>
-
-                    <div className="container">
-                        <p className="fs-6 maxw-55 balance">FHS Living is a new investor-led forum launching on the 23rd and 24th February 2027 at the Pullman Paris Montparnasse, organised by The Bench — the team behind the Future Hospitality Summit series. It brings together global capital, European developers and operators across the full spectrum of living asset classes, in a curated, dealmaking-focused environment that the market has been calling for.</p>
-                    </div>
-                </section>
-            </PageHero>
-
-
-
-            {/* CHAIRMAN LETTER */}
-            <section className="block bg-wash">
-                <div
-                    className="container"
-                    style={
-                        isDesktop ?
-                        {
-                            display: `grid`,
-                            gridTemplateColumns: `3fr 1fr`,
-                            gap: `var(--space-md)`
-                        }:{
-                            display: `flex`,
-                            flexDirection: `column-reverse`,
-                            gap: `var(--space-md)`,
-                            textAlign: `center`
-                        }
-                    }
-                >
-                    <div className="formatted">
-                        <p className="fs-2 fw-600 c-primary caps lh-1">Letter from the Chairman</p>
-                        <p>Hospitality is no longer a standalone asset class. It is becoming a layer of value across how people live, work and experience space. The industry needs a platform that reflects this - and we have built it.</p>
-                        <p><strong>FHS Living</strong> has been designed as a curated forum where global capital meets developers and operators across the full spectrum of living and hospitality assets. A place where operational expertise and real estate ownership converge. A place where deals are initiated, partnerships are formed, and new models of living are defined.</p>
-                        <p>We believe this is one of those moments, and we look forward to building it together… with you.</p>
-                        <p>Jonathan Worsley, Chairman, <strong>The Bench</strong></p>
-                    </div>
-
-                    <Pop>
-                        <img src="https://cms.thebench.com/assets/img/site/The-Bench/image-16.png" alt="" width={ isDesktop ? `100%` : `60%`} style={{ borderRadius: `30rem`}} />
-                    </Pop>
-                </div>
-            </section>
-
-
-            {/* DEDICATED PLATFORM */}
-            <section className="block bg-secondary">
-                <div className="container center">
-                    <p className="fs-2 fw-500 caps">A market ready for a dedicated platform</p>
-                </div>
-
-                <div className="container columns-3 gap-md">
-                    <div className="formatted balance">
-                        <Pop inline><p className="fs-xl fw-600 lh-1 c-primary">01</p></Pop>
-                        <h5>The scale of European living investment</h5>
-                        <p>Living has become Europe&apos;s largest real estate investment class, drawing €46.9 billion in 2025 alone. Capital is moving toward operationally-managed assets that generate stable, contractual income streams - branded residences, student accommodation, senior living and serviced apartments are now core institutional categories.</p>
-                    </div>
-                    
-                    <div className="formatted balance">
-                        <Pop inline><p className="fs-xl fw-600 lh-1 c-primary">02</p></Pop>
-                        <h5>The demand for cross-category dealmaking</h5>
-                        <p>The growth of the living sector across Europe has created a need for a forum that brings its constituent asset classes together in a single, investment-led environment. FHS Living aggregates the full living spectrum - giving capital allocators, developers and operators a single curated point of access to cross-category opportunity.</p>
-                    </div>
-                    
-                    <div className="formatted balance">
-                        <Pop inline><p className="fs-xl fw-600 lh-1 c-primary">03</p></Pop>
-                        <h5>The platform the industry has validated</h5>
-                        <p>Conversations with senior industry leaders confirmed the same message: the European living investment community needs a dedicated forum, built for dealmaking, bringing together the right people at the right moment.</p>
-                    </div>
-                </div>
-            </section>
-
-
-            {/* GEOPOLITICS */}
-            {/* <section className="block bg-primary">
-                <div className="container">
-                    <p className="fs-2 fw-600 caps center">The geopolitical moment</p>
-                </div>
-
-                <div className="container columns-2 gap-md">
-                    <Pop>
-                        <img src="/assets/img/living/about/geopolitics-01.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem` }} />
-                    </Pop>
-        
-                    <div className="formatted" style={{ alignSelf: `center`}}>
-                        <p>Geopolitical shifts across the Middle East have accelerated the movement of global capital toward European real estate. Middle Eastern and Asian family offices - historically focused on hotel assets are increasingly directing capital toward European cities including Paris, Amsterdam and Madrid, where long-duration stability and premium returns converge.</p>
-                        <p>Sharia-compliant living assets - student accommodation, senior living and branded residences offer a particularly attractive entry point: stable income, long-duration yield, and exposure to the operational performance of Europe&apos;s most structurally undersupplied real estate categories.</p>
-                        <p>FHS Living sits at the intersection of this capital shift. Paris in February 2027 is the year-opening capital deployment moment - post-Davos, ahead of the major spring conferences, at the point when institutional capital is setting its strategy for the year ahead.</p>
-                    </div>
-                </div>
-            </section> */}
-            
-
-            {/* THREE DECADES */}
-            <section className="block bg-primary">
-                <div className="container">
-                    <p className="fs-2 fw-600 caps center balance lh-1">TWO DECADES OF CONNECTING CAPITAL TO HOSPITALITY REAL ESTATE</p>
-                </div>
-
-                <div className="container columns-2 gap-md">
-                    <div className="formatted" style={{ alignSelf: `center`}}>
-                        <p>The Bench has spent three decades building the infrastructure of global hospitality investment. The FHS franchise - Future Hospitality Summit World, Saudi Arabia, Africa, Egypt and Branded Residences Forum gives FHS Living a global network spanning the Middle East, Africa, Asia and Europe. That network, built over 20 years, is the foundation FHS Living is built on.</p>
-                        <p>Across our 2025 FHS conferences, we brought together more than 3,000 C-level decision-makers, including 621 investors representing over USD 11 trillion in assets under management, and facilitated USD 3 billion in business opportunities. FHS Living carries that same convening power, focused on the living sector and anchored in Europe.</p>
-                    </div>
-        
-                    <Pop>
-                        <img src="/assets/img/living/about/fhs-01.jpg" width={`100%`} alt="" style={{ borderRadius: `1rem` }} />
-                    </Pop>
-                </div>
-            </section>
- 
-            
-            {/* FHS EVENTS */}
-            <section className="block bg-primary">
-
-                {/* LIVING */}
-                <div className="container center">
-                    <p className="fs-2 fw-500 caps">Upcoming FHS Living Events</p>
-                </div>
-
-                <div className="container columns-1 maxw-35 gap-xs">
-                    {
-                        _.orderBy(LIVING_EVENTS, 'startDate').map(event => {
-                            // console.log(event)
-                            return (
-                                <div key={event.id} className={`columns-1 gap-xs`}>                                
-                                    {
-                                        event.streams &&
-                                        event.streams.map( stream => (
-                                            <EventCard
-                                                key={stream.id}
-                                                heading={event.heading}
-                                                title={stream.heading}
-                                                dates={{ startDate: event.startDate, endDate: event.endDate}}
-                                                venue={event.venue}
-                                                logo={stream.logo[0]}
-                                                passLink={stream.purchasePassLink} 
-                                                websiteLink={stream.websiteLink} 
-                                                theme={event.theme} 
-                                                dateOverride={event.dateOverride}
-                                                landscape={true}
-                                            />
-                                        ))
-                                    }
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-            </section>
-            
-            
-            
-
-            <Footer/>
-            <LenisScroller />
-        </>
-    )
+			<section className={c('section band section--tight')} aria-labelledby="tag-h">
+				<div className={c('wrap split')}>
+					<h2 id="tag-h">{f.tagline.text}</h2>
+					<div className={c('actions')}><Link href={R.paris} prefetch={false}><a className={c('btn btn--light')}>The Paris edition</a></Link><Link href={R.contact} prefetch={false}><a className={c('btn btn--line-light')}>Contact the team</a></Link></div>
+				</div>
+			</section>
+		</LivingPage>
+	)
 }
-Page.theme = 'living'
-
-
-
-
-
+About.theme = 'living'
 
 export async function getStaticProps() {
-
-    const { data } = await craftApolloClient().query({
-        query: gql`
-            query LandingPage {
-                entry(site: "${process.env.SITE_HANDLE}", id: "77020") {
-                    ... on ${process.env.SITE_HANDLE}Homepage_${process.env.SITE_HANDLE}Homepage_Entry {
-                        id
-                        title
-                        theme
-                        events {
-                            ... on events_BlockType {
-                                id
-                                heading
-                                startDate
-                                endDate
-                                dateOverride
-                                venue
-                                theme
-                                streams {
-                                    ... on streams_stream_BlockType {
-                                        id
-                                        logo {
-                                            id
-                                            url
-                                            width
-                                            height
-                                        }
-                                        heading
-                                        purchasePassLink
-                                        websiteLink
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }                
-            }
-          
-        `
-        })
-
-        return {
-        props: {
-            data: data.entry,
-        },
-    }
+	return { props: { f: facts, editions } }
 }

@@ -1,399 +1,79 @@
-import { gql } from "@apollo/client"
-import craftApolloClient from "../api/apollo"
+import Link from 'next/link'
 
-import { useState, useRef } from "react"
+import { LivingPage } from '../../ui-living/site/page'
+import { c } from '../../ui-living/lib/c'
+import { img } from '../../ui-living/lib/format'
+import { R } from '../../ui-living/lib/routes'
+import { Quote } from '../../ui-living/sections/quote'
 
-import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
-import useCustomMediaQuery from '../../hooks/useCustomMediaQuery'
-import { Pop, Fade } from "../../fuselage/animation/animation"
+import facts from '../../ui-living/data/facts.json'
+import partners from '../../ui-living/data/partners.json'
+import { HIGH } from '../../ui-living/lib/attrs'
 
-import _, { curry } from 'lodash'
+const MAIL = 'mailto:matthew.weihs@thebench.com?subject=FHS%20Living%20partnership'
 
-import Head from "next/head"
-import Link from "next/link"
+export default function Partners({ f, partners }) {
+	const q = f.quote_partner
+	return (
+		<LivingPage page="partners" title="FHS Living | Partners" description="The partners behind the FHS Living Founding Edition, led by Founding Partner Accor One Living, and how to join them in Paris.">
+			<section className={c('page-hero')} aria-labelledby="hero-h">
+				<div className={c('wrap')}>
+					<div>
+						<h1 id="hero-h">The companies <span className={c('accent')}>behind the room.</span></h1>
+						<p className={c('lede')}>Partners of the Founding Edition keep Founding Partner status for future editions while they stay with us, and appear at FHS Living inside FHS events too.</p>
+						<div className={c('actions')}><a className={c('btn')} href={MAIL}>Talk to Matthew Weihs</a><a className={c('btn btn--ghost')} href="#deliver-h">What partners get</a></div>
+					</div>
+					<figure className={c('page-hero__fig')}><div className={c('diamond')}><img src={img('dubai/roundtable.jpg')} width="1600" height="900" alt="A roundtable at FHS World, Dubai" {...HIGH} /></div></figure>
+				</div>
+			</section>
 
+			<section className={c('section')} aria-labelledby="tiers-h">
+				<div className={c('wrap')}>
+					<h2 className={c('sr')} id="tiers-h">Partners by tier</h2>
+					<div className={c('tiers')}>
+						{partners.tiers.map(t => (
+							<div key={t.tier} className={c('tier')}>
+								<p className={c('label accent')}>{t.tier}</p>
+								<ul className={c('tier__logos')}>
+									{t.items.map(it => <li key={it.logo}><img src={img(`partners/${it.logo}`)} alt={it.name} width={it.w} height={it.h} loading="lazy" /></li>)}
+								</ul>
+							</div>
+						))}
+					</div>
+					<Quote text={q.text} photo="advisors/jeff-tisdall.jpg" name={q.name} role={`${q.role}, ${q.note}`} style={{ marginTop: 'clamp(64px,7vw,112px)' }} />
+				</div>
+			</section>
 
-import { EventsBar } from "../../ui/site/eventsbar"
-import { Header } from '../../ui/site/header-living'
-import { FHS_LIVING as header } from '../../fixtures/nav'
-import { Footer } from '../../fuselage/theme/living/common/footer/footer'
+			<section className={c('section tint')} aria-labelledby="deliver-h">
+				<div className={c('wrap')}>
+					<div className={c('head')}><h2 className={c('ruled')} id="deliver-h">A seat at the table, not a logo on a wall.</h2><p>Packages run from a working session to the Investors Lounge.</p></div>
+					<ul className={c('steps steps--4')}>
+						<li className={c('step')}><figure><img src={img('photo/meeting-gulf.jpg')} width="1600" height="1066" alt="An investor meeting at a Future Hospitality Summit event" loading="lazy" /></figure><h3>Meetings with capital</h3><p>Hosted investor meetings matched to your criteria, and guest passes for the investors you bring.</p></li>
+						<li className={c('step')}><figure><img src={img('dubai/800/stage-fireside.jpg')} width="1600" height="900" alt="Accor One Living on the FHS Living stage at FHS World, Dubai" loading="lazy" /></figure><h3>A voice in the programme</h3><p>Lead a roundtable or host a private workshop on the questions your business cares about.</p></li>
+						<li className={c('step')}><figure><img src={img('photo/exhibition.jpg')} width="1600" height="958" alt="Partner stands on the exhibition floor at a Future Hospitality Summit event" loading="lazy" /></figure><h3>Presence across the platform</h3><p>Branding in Paris and at FHS Living at FHS World, with a seat on the Advisory Board for lead partners.</p></li>
+						<li className={c('step')}><figure><img src={img('photo/ab-reception.jpg')} width="800" height="533" alt="The reception after the FHS Living Advisory Board, Maslow's Kensington, London" loading="lazy" /></figure><h3>Hospitality on your terms</h3><p>Host a private dinner, a reception or a networking lounge for the people you want in the room.</p></li>
+					</ul>
+				</div>
+			</section>
 
-import { PageHero } from "../../ui/modules/page-hero"
-import { Button, ButtonGrid } from "../../ui/buttons/button"
-import { VideoTestimonialCard } from "../sa/video-testimonials"
-import { Avatar } from '../../fuselage/components/avatar/avatar'
-
-
-import { partners } from "../../data/partners"
-
-
-export default function Page({ partnerData, videoTestimonials }) {
-    
-    // console.log('partners:', partnerData)
-
-    const isDesktop = useCustomMediaQuery('(min-width: 600px)')
-    
-    
-
-
-
-
-    const swapcardPartnerGroups = partnerData.event.fieldDefinitions.find( arr => arr.id === "RmllbGREZWZpbml0aW9uXzI5NjgyNg==").optionsValues
-    const partnersArray = []
-	
-	swapcardPartnerGroups.map(category => {
-		const partnerGroup = []
-		
-		partnerData.exhibitors.map( partner => {
-			partner.fields.map( field => {
-				if ( field.id === category.id ) partnerGroup.push( partner )
-			})
-		})
-		
-		if (partnerGroup.length) {
-			partnersArray.push(
-				{
-					group: category,
-					partners: partnerGroup
-				}
-			)
-		}
-    })
-
-    // const CUSTOM_ORDERING = [
-    //     { id: 'RmllbGRWYWx1ZV8yMjM5NDE1Mg==', value: 'founding-partner' },
-    //     { id: 'RmllbGRWYWx1ZV8yOTM0Mzg2Nw==', value: 'headline-sponsor' },
-    //     { id: 'RmllbGRWYWx1ZV8yOTM0Mzg2NA==', value: 'sponsor' },        
-    //     { id: 'RmllbGRWYWx1ZV8zMTE5MTUzNw==', value: 'supporters' },
-    //     { id: 'RmllbGRWYWx1ZV8zMTE3NjE2Mw==', value: 'media-partners' },        
-    // ]
-
-
-    
-    // console.log('partnerData:', partnerData)
-    // console.log('swapcard partner categories:', swapcardPartnerGroups )
-    // console.log('PARTNERS ARRAY:', partnersArray)
-    // console.log('CUSTOM_ORDERING:', CUSTOM_ORDERING)
-
-
-
-
-
-
-
-    return (
-        <>
-            <Head>
-                <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
-                <meta content="https://cms.thebench.com/assets/content-library/img/FHS-Living/FHS-Living-Launch-PR.jpg" property="og:image"></meta>
-                <title>FHS Living | Feb 2027, Paris | Founding Edition</title>
-                <meta name="description" content="Addressing the growing 'lanyard fatigue' of the European hospitality conferencing market"></meta>
-            </Head>
-        
-            
-            <EventsBar site={'/living'} />
-            <Header
-                site={`/living`}
-                handle={`Living`}
-                event={header.data.event}
-                mainMenu={header.data.mainMenu}
-                ctas={header.data.event.headerCtas}
-            />
-
-
-
-            <PageHero hero={{url: `/assets/img/living/agenda/page-hero.jpg`, width: 595, height: 335}}>
-                <section style={{
-                    display: `flex`,
-                    flexDirection: `column`,
-                    alignItems: `center`
-                }}>
-                    <div className="container center">
-                        <p className="fs-1 fw-400 lh-1 maxw-50">Partners and Supporters</p>
-                    </div>
-
-                    <div className="container formatted center">
-                        <p className="fs-6 maxw-55 balance">Our partners help shape the conversation and connect the market - supporting an environment designed for meaningful introductions and high, quality deal flow.</p>            
-                    </div>
-
-                    <p className="mt-sm"><Pop inline><Button inverse href={`/living/register-interest`} label={`Download Brochure`}/></Pop></p>
-                </section>
-            </PageHero>
-
-
-
-            <section className="block bg-primary">
-                <div className="container center ">
-
-                    {
-                        partnersArray.length &&
-                        partnersArray.map(cat => {
-                            return (
-                                <div key={cat.id} className={`mb-md`}>
-                                    <p className="fs-5 fw-500 pb-xs">{cat.group.translations[0].value}</p>
-                                    <div className="logoGrid">
-                                        {
-                                            cat.partners.length &&
-                                            cat.partners.map(partner => (
-                                                <LogoBox
-                                                    key={partner.id}
-                                                    size={250}
-                                                    logoUrl={partner.logoUrl}
-                                                />
-                                            ))
-                                        }
-                                    </div>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-            </section>
-
-            
-
-            <section className="block bg-primary">
-                <div className="container">
-                    <p className="fs-2 fw-500 caps center">What partnership delivers</p>
-                </div>
-                
-                <div className="container columns-4 gap-md balance">
-
-                    <article className="formatted">
-                        <Pop>
-                            <img src="/assets/img/living/partners/partners-01.jpg" width="100%" alt="" style={{ borderRadius: `1rem`, marginBottom: 20 }}/>
-                        </Pop>
-                        <h4 className="c-magenta lh-2">A curated room of capital allocators</h4>
-                        <p>FHS Living partners are introduced to a room of pre-qualified capital allocators - LPs, sovereign wealth funds, family offices and pension funds actively deploying into European living assets.</p>
-                    </article>
-
-                    <article className="formatted">
-                        <Pop>
-                            <img src="/assets/img/living/partners/partners-02.jpg" width="100%" alt="" style={{ borderRadius: `1rem`, marginBottom: 20 }}/>
-                        </Pop>
-                        <h4 className="c-magenta lh-2">Pre-scheduled 1:1 investor meetings</h4>
-                        <p>Partners receive curated, pre-scheduled introductions with investors matched to their specific criteria - arranged by the FHS Living investor relations team in advance of the event.</p>
-                    </article>
-
-                    <article className="formatted">
-                        <Pop>
-                            <img src="/assets/img/living/partners/partners-03.jpg" width="100%" alt="" style={{ borderRadius: `1rem`, marginBottom: 20 }}/>
-                        </Pop>
-                        <h4 className="c-magenta lh-2">Thought leadership and programme presence</h4>
-                        <p>FHS Living is built around investor-first content and curated conversations. Partners could receive speaker positions, Advisory Board seats, project announcement opportunities and sustained marketing presence throughout the campaign leading to Paris (depending on the package).</p>
-                    </article>
-
-                    <article className="formatted">
-                        <Pop>
-                            <img src="/assets/img/living/partners/partners-04.jpg" width="100%" alt="" style={{ borderRadius: `1rem`, marginBottom: 20 }}/>
-                        </Pop>
-                        <h4 className="c-magenta lh-2">Exhibition and showcase presence</h4>
-                        <p>Partners have a dedicated physical presence on the exhibition floor. Your stand is your base of operations for two days: a space to host conversations, display projects, and engage the delegate community as it moves through the event. (depending on the package).</p>
-                    </article>
-
-                </div>
-            </section>
-
-
-
-            <section className="block bg-secondary">
-                <div className="container">
-                    <p className="fs-2 fw-500 caps center"> Hear Directly From FHS Partners</p>
-                </div>
-                <div className="container columns-3 gap-md">
-                    { videoTestimonials.map( (entry, index) => <Pop key={index}><VideoTestimonialCard entry={entry} /></Pop> ) }
-                </div>
-            </section>
-
-
-
-            <section className="block bg-white">
-                <div className="container">
-                    <p className="fs-2 fw-500 caps center c-primary">PARTNERS - 2026 FHS EVENTS</p>
-                </div>
-
-                <div className="container" style={{ display: `flex`, flexWrap: `wrap`, gap: `4rem`, justifyContent: `center`}}>
-                    {
-                        partners.length &&
-                        _.orderBy(_.uniqBy(partners, 'name'), 'name').map(partner => (
-                            <div
-                                key={partner.id}
-                                style={{
-                                    position: `relative`,
-                                    width: 150,
-                                    aspectRatio: 19 / 9,
-                                    display: `flex`,
-                                    justifyContent: `center`,
-                                    alignItems: `center`,
-                                }}
-                            >
-                                {/* <span style={{fontSize: 8}}>{partner.id}</span> */}
-                                <Pop><img src={partner.logoUrl} alt="" style={{ objectFit: `contain`, width: `100%`, height: `100%`}} /></Pop>
-                            </div>
-                        ))
-                    }
-                </div>
-            </section>
-
-
-
-            <section className="block bg-secondary">
-                <div className="container">
-                    <p className="fs-2 fw-500 caps center">Let&apos;s build your partnership together</p>
-                </div>
-
-                <div className="container center">
-                    <Avatar src={`https://cms.thebench.com/assets/img/avatars/matt-weihs_2026-05-17-075235_bmsy.png`} />
-
-                    <p className="fs-6 mt-xxs">
-                        <strong>Matthew Weihs</strong><br />Chief Development Officer, The Bench <br />
-                        <a href="mailto:matthew.weihs@thebench.com">matthew.weihs@thebench.com</a>
-                    </p>
-                </div>
-
-                <div className="container center">
-                    <p className="mt-sm"><Pop inline><Button href={`/living/register-interest`} label={`Download Brochure`}/></Pop></p>
-                </div>
-            </section>
-            
-
-
-
-            <Footer/>
-            <LenisScroller />
-        </>
-    )
+			<section className={c('section band')} aria-labelledby="join-h">
+				<div className={c('wrap split split--top')}>
+					<div>
+						<h2 className={c('ruled')} id="join-h">Talk to Matthew Weihs.</h2>
+						<p style={{ marginTop: 20 }}>Matthew leads partnerships for FHS Living. Tell him what you want from the room and he will build the package around it.</p>
+						<div className={c('actions')} style={{ marginTop: 28 }}><a className={c('btn btn--light')} href={MAIL}>Email Matthew</a><Link href={R.register} prefetch={false}><a className={c('btn btn--line-light')}>Register partner interest</a></Link></div>
+					</div>
+					<figure className={c('person')} style={{ maxWidth: 320, margin: 0 }}>
+						<div className={c('window')} style={{ aspectRatio: '4/5' }}><img src={img('team/matthew.jpg')} width="600" height="750" alt="Matthew Weihs" loading="lazy" /></div>
+						<figcaption style={{ paddingTop: 12 }}><b>Matthew Weihs</b><span style={{ color: 'var(--on-dark-soft)' }}>Chief Development Officer, The Bench</span></figcaption>
+					</figure>
+				</div>
+			</section>
+		</LivingPage>
+	)
 }
-Page.theme = 'living'
-
-
-
-const LogoBox = ({ logoUrl, size = 150, href }) => {
-    return (
-        <Pop inline>
-            {
-                href
-                    ? (
-                        <Link href={href}>
-                            <a>
-                                <div style={{...logoBoxStyle, width: size}} >
-                                    <img src={logoUrl} alt="" style={{ objectFit: `contain`, width: `100%`, height: `100%`}} />
-                                </div>
-                            </a>
-                        </Link>
-                    ) : (
-                        <div style={{...logoBoxStyle, width: size}} >
-                            <img src={logoUrl} alt="" style={{ objectFit: `contain`, width: `100%`, height: `100%`}} />
-                        </div>
-                    )
-            }
-            
-        </Pop>
-    )
-}
-
-const logoBoxStyle = {
-    position: `relative`,
-    aspectRatio: 19 / 9,
-    display: `flex`,
-    justifyContent: `center`,
-    alignItems: `center`,
-
-    backgroundColor: `white`,
-    padding: 20,
-    borderRadius: 10
-}
-
-
-
-
+Partners.theme = 'living'
 
 export async function getStaticProps() {
-
-    const cmsData = await craftApolloClient().query({
-        query: gql`
-            query Page {
-                entries(site: "${process.env.SITE_HANDLE_SA}", section: "videoTestimonials", limit: 3) {
-                    ... on videoTestimonials_videoTestimonial_Entry {
-                        id
-                        slug
-                        title
-                        videoShareUrl
-                        fullName
-                        jobTitle
-                        organisation
-                        testimonial
-                    }
-                }
-            }
-        `
-    })
-
-    const swapcardData = await fetch(
-		"https://developer.swapcard.com/event-admin/graphql",
-		{
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-				"Authorization": process.env.SWAPCARD_AUTH_KEY
-			},
-			body: JSON.stringify({
-				query: `
-					query {
-						event(id: "${process.env.SWAPCARD_EVENT_ID_LIVING_2027}") {
-							fieldDefinitions {
-								... on SelectFieldDefinition {
-									id
-									name
-									optionsValues {
-										id
-										value
-										translations {
-											language
-											value
-										}
-									}
-								}
-							}
-						}
-						exhibitors(eventId: "${process.env.SWAPCARD_EVENT_ID_LIVING_2027}", page:1, pageSize: 200) {
-							id
-							name
-							logoUrl
-							fields {
-								... on SelectField {
-									id
-									value
-									definition {
-										id
-										name
-									}
-									translations {
-										value
-									}
-								}
-							}
-						}
-					}
-				`,
-				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_LIVING_2027,
-					"page": 1
-				}
-			})
-		}
-	)
-
-	console.log(swapcardData)
-	
-	const partnerData =  await swapcardData.json()
-
-
-    return {
-        props: { 
-            partnerData: partnerData.data,
-            partnerData: partnerData.data,
-            videoTestimonials: cmsData.data.entries
-        }
-    }
+	return { props: { f: facts, partners } }
 }
