@@ -41,8 +41,6 @@ export function LivingPage({ page, title, description, head, children }) {
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="theme-color" content="#FBD4CD" />
 				<link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
-				<link rel="preload" href="/assets/fonts/living/NeueHaasDisplayMedium.woff2" as="font" type="font/woff2" crossOrigin="" />
-				<link rel="preload" href="/assets/fonts/living/NeueHaasDisplayLight.woff2" as="font" type="font/woff2" crossOrigin="" />
 				{head}
 			</Head>
 			<div id="lv-root" ref={root} className={c('root nojs')} suppressHydrationWarning>
