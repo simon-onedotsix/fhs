@@ -1,0 +1,83 @@
+{
+ "crop_box": [
+  226,
+  58,
+  516,
+  240.8
+ ],
+ "pins": [
+  {
+   "city": "Dubai",
+   "label": "FHS Living at FHS World",
+   "dates": "1 October 2026",
+   "venue": "Madinat Jumeirah",
+   "state": "past",
+   "state_label": "Took place",
+   "note": "A one-day FHS Living programme on Day Three of FHS World.",
+   "url": "/world/living",
+   "link_label": "What Dubai said",
+   "px": 80.89,
+   "py": 70.02,
+   "side": "right",
+   "x": 643.4,
+   "y": 226.6,
+   "id": "dubai"
+  },
+  {
+   "city": "Cairo",
+   "label": "FHS Living at FHS Egypt",
+   "dates": "11 November 2026",
+   "venue": "Sofitel Downtown Cairo Nile",
+   "state": "next",
+   "state_label": "Next",
+   "note": "A day of living-sector sessions inside FHS Egypt.",
+   "url": "/egypt/living",
+   "link_label": "FHS Egypt",
+   "px": 67.64,
+   "py": 63.75,
+   "side": "left",
+   "x": 575.0,
+   "y": 211.5,
+   "id": "cairo"
+  },
+  {
+   "city": "Paris",
+   "label": "FHS Living",
+   "dates": "23–24 February 2027",
+   "venue": "Pullman Paris Montparnasse",
+   "state": "founding",
+   "state_label": "Founding Edition",
+   "note": "Two days, the full platform, all nine asset classes.",
+   "url": "/living/paris",
+   "link_label": "The Founding Edition",
+   "px": 51.61,
+   "py": 37.42,
+   "side": "right",
+   "x": 492.3,
+   "y": 148.1,
+   "id": "paris"
+  },
+  {
+   "city": "Riyadh",
+   "label": "FHS Living at FHS Saudi Arabia",
+   "dates": "2027",
+   "venue": "Details to follow",
+   "state": "tbc",
+   "state_label": "2027",
+   "note": "Dates and venue to be announced.",
+   "url": "/sa/living",
+   "link_label": "FHS Saudi Arabia",
+   "px": 76.18,
+   "py": 70.56,
+   "side": "left",
+   "x": 619.1,
+   "y": 227.9,
+   "id": "saudi"
+  }
+ ],
+ "route": [
+  "M643.4 226.6Q612.5 204.0 575.0 211.5",
+  "M575.0 211.5Q547.6 161.6 492.3 148.1",
+  "M492.3 148.1Q573.3 160.1 619.1 227.9"
+ ]
+}

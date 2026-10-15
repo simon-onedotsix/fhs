@@ -1,0 +1,181 @@
+{
+ "_source": "Live /living/programme page (12 Oct 2026) + FHS Living Brochure agenda + 'Programme detail 23 09 2026 tm.docx'. Networking coffee corrected to 10:30-11:00 (live page overlapped). No speakers by decision (Jonathan Worsley).",
+ "status": "Developing programme. Details to be confirmed.",
+ "day_zero": {
+  "date": "Monday 22 February",
+  "time": "18:00",
+  "title": "Welcome reception",
+  "format": "Reception"
+ },
+ "days": [
+  {
+   "n": "01",
+   "date": "Tuesday 23 February",
+   "theme": "Where capital is moving",
+   "items": [
+    {
+     "start": "09:00",
+     "end": "09:10",
+     "title": "Welcome to FHS Living",
+     "format": "Plenary"
+    },
+    {
+     "start": "09:10",
+     "end": "09:40",
+     "title": "Europe as a Safe Haven: The New Geography of Global Capital",
+     "format": "Keynote"
+    },
+    {
+     "start": "09:40",
+     "end": "10:15",
+     "title": "State of Capital: Where Investors Are Placing Their Bets Across Europe's Living Sectors",
+     "format": "Panel"
+    },
+    {
+     "start": "10:15",
+     "end": "10:30",
+     "title": "Navigating Europe: The New Rules for Cross-Border Living Investment",
+     "format": "Keynote"
+    },
+    {
+     "start": "10:30",
+     "end": "11:00",
+     "title": "Networking coffee",
+     "format": "Break"
+    },
+    {
+     "start": "11:00",
+     "end": "11:20",
+     "title": "The Future of Capital: Insights from a Global Investment Leader",
+     "format": "Fireside"
+    },
+    {
+     "start": "11:20",
+     "end": "12:00",
+     "title": "One Asset, Multiple Income Streams: The New Living Investment Model",
+     "format": "Panel"
+    },
+    {
+     "start": "12:00",
+     "end": "12:30",
+     "title": "Investment Exchange: From the Gulf to Europe",
+     "format": "Deal Room"
+    },
+    {
+     "start": "12:30",
+     "end": "13:30",
+     "title": "Lunch",
+     "format": "Break"
+    },
+    {
+     "start": "13:30",
+     "end": "14:15",
+     "title": "Roundtables",
+     "format": "Roundtable",
+     "parallel": [
+      "The Institutionalisation of PBSA: What's Next for Student Accommodation?",
+      "Rethinking Senior Living: From Care to Lifestyle",
+      "Planning for Branded Residences: Navigating Europe's Regulatory Landscape"
+     ]
+    },
+    {
+     "start": "14:15",
+     "end": "15:00",
+     "title": "Roundtables and masterclass",
+     "format": "Roundtable",
+     "parallel": [
+      "Underwriting Living Assets: Pricing Risk in the Operational Real Estate Era",
+      "Planning the Future: Policy as a Catalyst for Alternative Living",
+      "Masterclass: Living Assets 101, A Hotel Investor's Guide to the Living Economy"
+     ]
+    },
+    {
+     "start": "13:30",
+     "end": "17:00",
+     "title": "Hosted investor meetings",
+     "format": "Meetings",
+     "note": "Pre-scheduled 1:1s, matched on investment criteria, alongside the afternoon sessions."
+    },
+    {
+     "start": "20:30",
+     "end": null,
+     "title": "Curated private dinners",
+     "format": "Reception",
+     "note": "Tables of 10: capital allocators, operators and brands, developers, advisors and financiers."
+    }
+   ]
+  },
+  {
+   "n": "02",
+   "date": "Wednesday 24 February",
+   "theme": "How deals get done",
+   "items": [
+    {
+     "start": "09:00",
+     "end": "09:30",
+     "title": "Work, Live, Belong: Designing the Next Generation of Mixed-Use Communities",
+     "format": "Panel"
+    },
+    {
+     "start": "09:30",
+     "end": "09:50",
+     "title": "The Art of Living: Where Hospitality Meets Home",
+     "format": "Fireside"
+    },
+    {
+     "start": "09:50",
+     "end": "10:15",
+     "title": "Who Pays for Sustainability? Investors, Lenders and Owners Debate the Business Case",
+     "format": "Panel"
+    },
+    {
+     "start": "10:15",
+     "end": "11:00",
+     "title": "The Living Deal Room: Buyers, Sellers and the Art of Getting Deals Done",
+     "format": "Deal Room"
+    },
+    {
+     "start": "11:00",
+     "end": "11:30",
+     "title": "Coffee",
+     "format": "Break"
+    },
+    {
+     "start": "11:30",
+     "end": "12:15",
+     "title": "Roundtables",
+     "format": "Roundtable",
+     "parallel": [
+      "The Unbundled Asset: Monetising Building Amenities for Higher Returns",
+      "Co-Living Comes of Age: Building Communities, Not Just Buildings",
+      "Where Life Happens: The Rise of Work-Play Communities"
+     ]
+    },
+    {
+     "start": "12:15",
+     "end": "13:00",
+     "title": "Roundtables",
+     "format": "Roundtable",
+     "parallel": [
+      "Going Solo: The Rise of Standalone Branded Residences",
+      "The Brand Advantage: Driving Operational Excellence Across Living Assets",
+      "Living Longer, Living Better: The Rise of Longevity Residences"
+     ]
+    },
+    {
+     "start": "11:00",
+     "end": "13:00",
+     "title": "Hosted investor meetings, final session",
+     "format": "Meetings",
+     "note": "The last round of matched 1:1s."
+    },
+    {
+     "start": "13:00",
+     "end": "14:00",
+     "title": "Closing lunch",
+     "format": "Break"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+{
+ "_source": "FHS Living LinkedIn page (organisation 122204098), read via the team LinkedIn MCP list_page_posts, 12 Oct 2026",
+ "page": "https://www.linkedin.com/showcase/fhs-living",
+ "posts": [
+  {
+   "date": "8 October 2026",
+   "kind": "Video",
+   "text": "Dimitris Manikis, President EMEA, Wyndham Hotels & Resorts, attended the FHS Living Advisory Board as one of our Founding Advisors.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7513930096852910080/",
+   "image": "advisors/dimitris-manikis.jpg",
+   "alt": "Dimitris Manikis"
+  },
+  {
+   "date": "9 September 2026",
+   "kind": "Photos",
+   "text": "The FHS Living Advisory Board met for the first time on 7 September at Maslow's Kensington.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7503425746183553024/",
+   "image": "library/hotelisation.jpg",
+   "alt": "The FHS Living Advisory Board at Maslow's Kensington"
+  },
+  {
+   "date": "9 September 2026",
+   "kind": "Founding Advisor",
+   "text": "Lauren Okada Young, Managing Director in Brookfield's Real Estate Group, has joined FHS Living as a Founding Advisor.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:share:7503398994794930176/",
+   "image": "advisors/lauren-okada-young.jpg",
+   "alt": "Lauren Okada Young"
+  },
+  {
+   "date": "26 August 2026",
+   "kind": "Founding Partner",
+   "text": "Accor One Living, which helped launch the Branded Residences Forum, joins FHS Living as Founding Partner.",
+   "url": "https://www.linkedin.com/feed/update/urn:li:share:7498381361058168832/",
+   "image": "partners/accor-one-living-p.png",
+   "alt": "Accor One Living",
+   "logo": true
+  }
+ ]
+}

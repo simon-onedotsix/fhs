@@ -1,0 +1,61 @@
+{
+ "read": "2026-10-14",
+ "cms_entry": 321756,
+ "passes": [
+  {
+   "title": "Delegate Pass",
+   "url": "https://www.eventbooking.uk.com/FHS-LIVING-2027/",
+   "vat_rate": 20,
+   "bands": [
+    {
+     "start": "2026-07-01",
+     "end": "2026-10-10",
+     "ex_vat": 1200
+    },
+    {
+     "start": "2026-10-10",
+     "end": "2026-11-14",
+     "ex_vat": 1450
+    },
+    {
+     "start": "2026-11-14",
+     "end": "2027-01-29",
+     "ex_vat": 1700
+    },
+    {
+     "start": "2027-01-29",
+     "end": "2027-03-02",
+     "ex_vat": 1625
+    }
+   ],
+   "current": {
+    "start": "2026-10-10",
+    "end": "2026-11-14",
+    "ex_vat": 1450
+   },
+   "next": {
+    "start": "2026-11-14",
+    "end": "2027-01-29",
+    "ex_vat": 1700
+   }
+  },
+  {
+   "title": "Investor Pass",
+   "url": "https://www.eventbooking.uk.com/FHS-LIVING-2027/investor.php",
+   "vat_rate": 20,
+   "bands": [
+    {
+     "start": "2026-07-01",
+     "end": "2027-02-28",
+     "ex_vat": 800
+    }
+   ],
+   "current": {
+    "start": "2026-07-01",
+    "end": "2027-02-28",
+    "ex_vat": 800
+   },
+   "next": null
+  }
+ ]
+}

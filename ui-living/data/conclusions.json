@@ -1,0 +1,69 @@
+{
+ "_source": "FHS Living Dubai recap email 'What Dubai said about Living', sent 8 Oct 2026 (HubSpot, FHS Living list). Figures are as reported from the FHS Living stage at FHS World, 1 Oct 2026.",
+ "edition": "FHS Living at FHS World",
+ "date": "1 October 2026",
+ "venue": "Madinat Jumeirah, Dubai",
+ "idea": "The assets that perform are built around how people actually want to live.",
+ "numbers": [
+  {
+   "value": "2,000+",
+   "label": "branded residence projects completed or in the pipeline worldwide"
+  },
+  {
+   "value": "45–50%",
+   "label": "EBITDA margins reported on hospitality-led workspace"
+  },
+  {
+   "value": "60%+",
+   "label": "of F&B revenue can come from external guests"
+  }
+ ],
+ "conclusions": [
+  {
+   "class": "Branded Residences",
+   "headline": "The premium has to be earned.",
+   "who": "Louis Harding, Knight Frank",
+   "image": "dubai/stage-fireside.jpg",
+   "number": {
+    "value": "2,000+",
+    "label": "branded residence projects completed or in the pipeline worldwide"
+   }
+  },
+  {
+   "class": "Mixed Use",
+   "headline": "The hotel is the engine.",
+   "who": "Eddy Tannous, Rotana",
+   "image": "dubai/stage-mixeduse.jpg",
+   "number": {
+    "value": "60%+",
+    "label": "of F&B revenue can come from external guests"
+   }
+  },
+  {
+   "class": "Co-Living and Serviced Living",
+   "headline": "Hotelisation goes mainstream.",
+   "who": "The New Living Economy panel",
+   "image": "dubai/stage-living-economy.jpg",
+   "number": null
+  },
+  {
+   "class": "Club Concepts",
+   "headline": "Community is the asset.",
+   "who": "",
+   "image": "dubai/audience-room.jpg",
+   "number": null
+  },
+  {
+   "class": "Wellness and multigenerational living",
+   "headline": "Wellness moves into the core.",
+   "who": "",
+   "image": "dubai/stage-conversation.jpg",
+   "number": null
+  }
+ ],
+ "quote": {
+  "text": "Gone are the days when a brand or a hospitality asset is defined by the coffee and the bed. They want to be inspired.",
+  "name": "Abdulla Binhabtoor",
+  "role": "Chief Executive Officer, Shamal Holding"
+ }
+}

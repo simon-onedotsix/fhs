@@ -1,0 +1,504 @@
+{
+ "_source": "Deals reported 2023-2026 in hotels, branded residences, residential, build-to-rent and student housing, researched 12 Oct 2026. Not exhaustive and not a market-share measure: no source sizes Middle East capital in European living as a whole. Israel (Fattal/Leonardo) and Iceland (ADQ, Reykjavik EDITION 2023) left off deliberately. x/y = Miller projection written by tools/make_flows_map.py.",
+ "box": [
+  -12,
+  72,
+  18,
+  61
+ ],
+ "stat": {
+  "value": "€540m",
+  "text": "of European hotels bought by Middle Eastern investors in 2025, up 254% on 2024",
+  "source": "HVS, 2025 European Hotel Transactions, 23 March 2026",
+  "url": "https://www.hvs.com/article/10411-2025-european-hotel-transactions"
+ },
+ "origins": [
+  {
+   "id": "uae",
+   "label": "UAE",
+   "lat": 24.8,
+   "lon": 54.8,
+   "x": 642.3,
+   "y": 227.6,
+   "side": "col",
+   "px": 79.54,
+   "py": 86.3,
+   "to": [
+    "UK",
+    "Spain",
+    "Italy",
+    "Germany",
+    "Austria",
+    "Serbia",
+    "Greece",
+    "Latvia"
+   ],
+   "lx": 86.21,
+   "ly": 90.52,
+   "leader": "M643.5 227.6L657.3 233.9",
+   "ly_m": 93.61,
+   "leader_m": "M643.5 227.6L657.3 238.4"
+  },
+  {
+   "id": "saudi",
+   "label": "Saudi Arabia",
+   "lat": 24.71,
+   "lon": 46.68,
+   "x": 619.1,
+   "y": 227.9,
+   "side": "below",
+   "px": 69.88,
+   "py": 86.5,
+   "to": [
+    "UK",
+    "Spain",
+    "Italy"
+   ]
+  },
+  {
+   "id": "qatar",
+   "label": "Qatar",
+   "lat": 25.29,
+   "lon": 51.53,
+   "x": 632.9,
+   "y": 226.2,
+   "side": "col",
+   "px": 75.62,
+   "py": 85.36,
+   "to": [
+    "France",
+    "Italy"
+   ],
+   "lx": 86.21,
+   "ly": 85.8,
+   "leader": "M634.1 226.2L657.3 226.9",
+   "ly_m": 86.52,
+   "leader_m": "M634.1 226.2L657.3 227.9"
+  },
+  {
+   "id": "kuwait",
+   "label": "Kuwait",
+   "lat": 29.38,
+   "lon": 47.98,
+   "x": 622.8,
+   "y": 213.6,
+   "side": "col",
+   "px": 71.42,
+   "py": 76.86,
+   "to": [
+    "UK"
+   ],
+   "lx": 86.21,
+   "ly": 74.53,
+   "leader": "M624.0 213.6L657.3 210.2",
+   "ly_m": 72.35,
+   "leader_m": "M624.0 213.6L657.3 206.9"
+  },
+  {
+   "id": "bahrain",
+   "label": "Bahrain",
+   "lat": 26.23,
+   "lon": 50.59,
+   "x": 630.3,
+   "y": 223.3,
+   "side": "col",
+   "px": 74.54,
+   "py": 83.4,
+   "to": [
+    "UK"
+   ],
+   "lx": 86.21,
+   "ly": 81.07,
+   "leader": "M631.5 223.3L657.3 219.9",
+   "ly_m": 79.44,
+   "leader_m": "M631.5 223.3L657.3 217.4"
+  }
+ ],
+ "destinations": [
+  {
+   "id": "uk",
+   "label": "UK",
+   "lat": 51.51,
+   "lon": -0.13,
+   "side": "left",
+   "x": 485.3,
+   "y": 138.2,
+   "px": 14.13,
+   "py": 25.98
+  },
+  {
+   "id": "france",
+   "label": "France",
+   "lat": 48.85,
+   "lon": 2.35,
+   "side": "left",
+   "x": 492.4,
+   "y": 148.1,
+   "px": 17.08,
+   "py": 32.66
+  },
+  {
+   "id": "spain",
+   "label": "Spain",
+   "lat": 40.42,
+   "lon": -3.7,
+   "x": 475.1,
+   "y": 177.8,
+   "px": 9.88,
+   "py": 52.7
+  },
+  {
+   "id": "italy",
+   "label": "Italy",
+   "lat": 41.9,
+   "lon": 12.5,
+   "x": 521.4,
+   "y": 172.8,
+   "px": 29.17,
+   "py": 49.33
+  },
+  {
+   "id": "germany",
+   "label": "Germany",
+   "lat": 48.14,
+   "lon": 11.58,
+   "side": "below",
+   "x": 518.8,
+   "y": 150.7,
+   "px": 28.08,
+   "py": 34.41
+  },
+  {
+   "id": "austria",
+   "label": "Austria",
+   "lat": 48.21,
+   "lon": 16.37,
+   "x": 532.5,
+   "y": 150.5,
+   "px": 33.79,
+   "py": 34.28
+  },
+  {
+   "id": "serbia",
+   "label": "Serbia",
+   "lat": 44.79,
+   "lon": 20.45,
+   "x": 544.1,
+   "y": 162.7,
+   "px": 38.63,
+   "py": 42.51
+  },
+  {
+   "id": "greece",
+   "label": "Greece",
+   "lat": 37.98,
+   "lon": 23.73,
+   "x": 553.5,
+   "y": 186.0,
+   "px": 42.54,
+   "py": 58.23
+  },
+  {
+   "id": "latvia",
+   "label": "Latvia",
+   "lat": 56.95,
+   "lon": 24.11,
+   "x": 554.6,
+   "y": 116.8,
+   "px": 43.0,
+   "py": 11.54
+  }
+ ],
+ "deals": [
+  {
+   "from": "uae",
+   "to": "spain",
+   "who": "ADIA, with Meliá",
+   "what": "24 hotels with 4,918 rooms",
+   "year": "2023",
+   "src": "Hospitality Investor",
+   "url": "https://www.hospitalityinvestor.com/investment/adia-completes-deal-two-spanish-hotel-portfolios",
+   "route": "UAE to Spain"
+  },
+  {
+   "from": "uae",
+   "to": "uk",
+   "who": "Aldar",
+   "what": "London Square, a residential and build-to-rent developer, £230m",
+   "year": "2023",
+   "src": "IPE Real Assets",
+   "url": "https://realassets.ipe.com/news/aldar-properties-acquires-developer-london-square-in-230m-deal/10070415.article",
+   "route": "UAE to UK"
+  },
+  {
+   "from": "uae",
+   "to": "uk",
+   "who": "Emirates NBD and Abu Dhabi Islamic Bank",
+   "what": "a £140m loan for 353 student beds in London",
+   "year": "2024",
+   "src": "Emirates NBD",
+   "url": "https://www.emiratesnbd.com/en/media-center/emirates-nbd-and-abu-dhabi-islamic-bank-close-140-million-pounds-club-deal",
+   "route": "UAE to UK"
+  },
+  {
+   "from": "uae",
+   "to": "latvia",
+   "who": "Eagle Hills",
+   "what": "a €3bn Riga waterfront scheme with 8,000 homes",
+   "year": "2024",
+   "src": "AGBI",
+   "url": "https://www.agbi.com/construction/2025/06/eagle-hills-and-italian-partner-to-restore-venice-hotel/",
+   "route": "UAE to Latvia"
+  },
+  {
+   "from": "uae",
+   "to": "italy",
+   "who": "Emaar",
+   "what": "Grand Hotel Imperiale, Forte dei Marmi, €40m",
+   "year": "2024",
+   "src": "IPE Real Assets",
+   "url": "https://realassets.ipe.com/propertyeu/emaar-properties-acquires-grand-hotel-imperiale-in-forte-dei-marmi/10113397.article",
+   "route": "UAE to Italy"
+  },
+  {
+   "from": "uae",
+   "to": "serbia",
+   "who": "Eagle Hills",
+   "what": "a residential-led expansion of Belgrade Waterfront",
+   "year": "2025",
+   "src": "SeeNews",
+   "url": "https://seenews.com/news/eagle-hills-to-expand-belgrade-waterfront-project-1269544",
+   "route": "UAE to Serbia"
+  },
+  {
+   "from": "uae",
+   "to": "austria",
+   "who": "Mohamed Alabbar",
+   "what": "The Ritz-Carlton, Vienna",
+   "year": "2025",
+   "src": "HVS",
+   "url": "https://www.hotelnewsresource.com/article135957.html",
+   "route": "UAE to Austria"
+  },
+  {
+   "from": "uae",
+   "to": "italy",
+   "who": "Eagle Hills and COIMA",
+   "what": "a €200m fund to restore the Grand Hôtel des Bains, Venice",
+   "year": "2025",
+   "src": "AGBI",
+   "url": "https://www.agbi.com/construction/2025/06/eagle-hills-and-italian-partner-to-restore-venice-hotel/",
+   "route": "UAE to Italy"
+  },
+  {
+   "from": "uae",
+   "to": "germany",
+   "who": "Eagle Hills",
+   "what": "an agreement to buy Mandarin Oriental, Munich",
+   "year": "2025",
+   "src": "Eagle Hills",
+   "url": "https://eaglehills.com/eagle-hills-enters-into-agreement-to-acquire-mandarin-oriental-munich-expanding-its-global-hospitality-portfolio/",
+   "route": "UAE to Germany"
+  },
+  {
+   "from": "uae",
+   "to": "greece",
+   "who": "Vivium Holding, a UAE family office",
+   "what": "a future 65-room hotel in Athens, €18.6m",
+   "year": "2025",
+   "src": "HVS",
+   "url": "https://www.hotelnewsresource.com/article137994.html",
+   "route": "UAE to Greece"
+  },
+  {
+   "from": "uae",
+   "to": "italy",
+   "who": "Eagle Hills and COIMA",
+   "what": "Guido Reni, Rome: housing, student beds and hospitality, a €400m project",
+   "year": "2025",
+   "src": "IPE Real Assets",
+   "url": "https://realassets.ipe.com/news/coima-wins-tender-for-400m-redevelopment-of-romes-guido-reni/10133950.article",
+   "route": "UAE to Italy"
+  },
+  {
+   "from": "uae",
+   "to": "spain",
+   "who": "Dubai Holding",
+   "what": "Jumeirah Port Sóller, Mallorca",
+   "year": "2026",
+   "src": "Hospitality Investor",
+   "url": "https://www.hospitalityinvestor.com/investment/dubai-holding-checks-spanish-luxury-hotel",
+   "route": "UAE to Spain"
+  },
+  {
+   "from": "uae",
+   "to": "uk",
+   "who": "Select Group",
+   "what": "three Delta Hotels golf resorts",
+   "year": "2026",
+   "src": "HVS",
+   "url": "https://www.hotelnewsresource.com/article141409.html",
+   "route": "UAE to UK"
+  },
+  {
+   "from": "uae",
+   "to": "italy",
+   "who": "ADIA",
+   "what": "citizenM Roma Isola Tiberina",
+   "year": "2026",
+   "src": "HVS",
+   "url": "https://hvshwe.com/industry-news/petra-am-acquires-citizenm-rome-for-adia/",
+   "route": "UAE to Italy"
+  },
+  {
+   "from": "uae",
+   "to": "italy",
+   "who": "Mubadala",
+   "what": "up to €600m for ADD Capital's housing, build-to-rent and student funds",
+   "year": "2026",
+   "src": "IREI",
+   "url": "https://irei.com/news/mubadala-commits-up-to-e600m-to-add-capital-managed-european-real-estate-funds/",
+   "route": "UAE to Italy"
+  },
+  {
+   "from": "saudi",
+   "to": "spain",
+   "who": "Dar Global",
+   "what": "Tierra Viva branded villas with Automobili Lamborghini, Benahavís, a €282m project",
+   "year": "2023",
+   "src": "PR Newswire",
+   "url": "https://www.prnewswire.com/news-releases/exceptional-luxury-living-redefined-dar-global-and-automobili-lamborghini-present-tierra-viva-villas-in-the-highly-exclusive-benahavis-301856389.html",
+   "route": "Saudi Arabia to Spain"
+  },
+  {
+   "from": "saudi",
+   "to": "uk",
+   "also": "italy",
+   "who": "PIF",
+   "what": "49% of Rocco Forte Hotels, 14 hotels valued at £1.2bn",
+   "year": "2023",
+   "src": "Hospitality Investor",
+   "url": "https://www.hospitalityinvestor.com/investment/saudi-arabias-pif-buys-49-cent-rocco-forte",
+   "route": "Saudi Arabia to UK and Italy"
+  },
+  {
+   "from": "saudi",
+   "to": "italy",
+   "who": "Red Sea Global",
+   "what": "90% of Santo Stefano Resort, Sardinia",
+   "year": "2025",
+   "src": "AGBI",
+   "url": "https://www.agbi.com/tourism/2026/07/red-sea-global-picks-sardinia-for-first-non-saudi-project/",
+   "route": "Saudi Arabia to Italy"
+  },
+  {
+   "from": "qatar",
+   "to": "france",
+   "who": "Maybourne",
+   "what": "Maybourne Saint-Germain, Paris: a hotel with 23 branded residences, over €300m",
+   "year": "opens 2027",
+   "src": "Paris Select Book",
+   "url": "https://www.parisselectbook.com/en/2026/08/21/at-231-boulevard-saint-germain-qatar-secures-a-parisian-gem-for-e300m/",
+   "route": "Qatar to France"
+  },
+  {
+   "from": "qatar",
+   "to": "italy",
+   "who": "QIA",
+   "what": "refits across its Costa Smeralda hotels and a new hotel, Sardinia",
+   "year": "2025",
+   "src": "Il Sole 24 Ore",
+   "url": "https://en.ilsole24ore.com/art/sardinia-qatar-runway-northeast-focus-tourism-AHWjc38B",
+   "route": "Qatar to Italy"
+  },
+  {
+   "from": "kuwait",
+   "to": "uk",
+   "who": "Al-Bahar Group",
+   "what": "raised its stake in Yotel to more than 95%",
+   "year": "2025",
+   "src": "YOTEL",
+   "url": "https://www.yotel.com/en/press/al-bahar-group-increases-investment-in-yotel",
+   "route": "Kuwait to UK"
+  },
+  {
+   "from": "bahrain",
+   "to": "uk",
+   "who": "Investcorp",
+   "what": "about 1,250 student beds across the UK",
+   "year": "2025",
+   "src": "Investcorp",
+   "url": "https://www.investcorp.com/what-we-do/real-assets/europe-real-estate/",
+   "route": "Bahrain to UK"
+  }
+ ],
+ "box_world": [
+  451.4,
+  99.7,
+  240.0,
+  148.2
+ ],
+ "arcs": [
+  {
+   "o": "uae",
+   "d": "M642.3 227.6Q581.7 151.5 485.3 138.2"
+  },
+  {
+   "o": "uae",
+   "d": "M642.3 227.6Q568.7 169.3 475.1 177.8"
+  },
+  {
+   "o": "uae",
+   "d": "M642.3 227.6Q592.8 176.0 521.4 172.8"
+  },
+  {
+   "o": "uae",
+   "d": "M642.3 227.6Q595.9 164.4 518.8 150.7"
+  },
+  {
+   "o": "uae",
+   "d": "M642.3 227.6Q602.8 167.1 532.5 150.5"
+  },
+  {
+   "o": "uae",
+   "d": "M642.3 227.6Q606.2 175.5 544.1 162.7"
+  },
+  {
+   "o": "uae",
+   "d": "M642.3 227.6Q606.2 189.0 553.5 186.0"
+  },
+  {
+   "o": "uae",
+   "d": "M642.3 227.6Q620.6 154.7 554.6 116.8"
+  },
+  {
+   "o": "saudi",
+   "d": "M619.1 227.9Q570.1 156.3 485.3 138.2"
+  },
+  {
+   "o": "saudi",
+   "d": "M619.1 227.9Q557.1 174.1 475.1 177.8"
+  },
+  {
+   "o": "saudi",
+   "d": "M619.1 227.9Q581.3 180.8 521.4 172.8"
+  },
+  {
+   "o": "qatar",
+   "d": "M632.9 226.2Q578.3 159.0 492.4 148.1"
+  },
+  {
+   "o": "qatar",
+   "d": "M632.9 226.2Q587.8 177.2 521.4 172.8"
+  },
+  {
+   "o": "kuwait",
+   "d": "M622.8 213.6Q569.1 148.4 485.3 138.2"
+  },
+  {
+   "o": "bahrain",
+   "d": "M630.3 223.3Q574.8 151.8 485.3 138.2"
+  }
+ ],
+ "n_dest": "nine"
+}

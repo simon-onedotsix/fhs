@@ -1,0 +1,916 @@
+{
+ "sessions": [
+  {
+   "start": "10:05",
+   "end": "10:20",
+   "title": "When You’ve Seen It All: What Does It Take to Impress the World’s Most Traveled People?",
+   "speakers": [
+    {
+     "name": "Luis Amaral",
+     "role": "Speaker"
+    },
+    {
+     "name": "Fritz Dickamp",
+     "role": "Moderator"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/201.pdf",
+   "left": 1.149,
+   "width": 3.198,
+   "low": false,
+   "start_label": "10:05am",
+   "time_label": "10:05–10:20am",
+   "people_line": "Luis Amaral (Most Traveled People (MTP)) · moderated by Fritz Dickamp (Studio 49)",
+   "faces": [
+    "assets/img/speakers/luis-amaral.jpg",
+    "assets/img/speakers/fritz-dickamp.jpg"
+   ]
+  },
+  {
+   "start": "10:20",
+   "end": "10:55",
+   "title": "The New Hospitality Map: Defining the Hospitality Asset Classes",
+   "speakers": [
+    {
+     "name": "Michael Aldridge",
+     "role": "Speaker"
+    },
+    {
+     "name": "Elie Milky",
+     "role": "Speaker"
+    },
+    {
+     "name": "Adeline Phua",
+     "role": "Speaker"
+    },
+    {
+     "name": "Adil Jabrayilov",
+     "role": "Speaker"
+    },
+    {
+     "name": "Dinky Puri",
+     "role": "Moderator"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/202.pdf",
+   "left": 4.598,
+   "width": 7.796,
+   "low": true,
+   "start_label": "10:20am",
+   "time_label": "10:20–10:55am",
+   "people_line": "Michael Aldridge (KOFISI), Elie Milky (Radisson Hotel Group), Adeline Phua (The Ascott Limited), Adil Jabrayilov (Legacy Hotels Holding) · moderated by Dinky Puri (Eaglewing Hospitality Services)",
+   "faces": [
+    "assets/img/speakers/michael-aldridge.jpg",
+    "assets/img/speakers/elie-milky.jpg",
+    "assets/img/speakers/adeline-phua.jpg",
+    "assets/img/speakers/adil-jabrayilov.jpg",
+    "assets/img/speakers/dinky-puri.jpg"
+   ]
+  },
+  {
+   "start": "10:55",
+   "end": "11:30",
+   "title": "The Anchor Asset: Why Hotels Matter in Mixed-Use",
+   "speakers": [
+    {
+     "name": "Selim El Zein",
+     "role": "Speaker"
+    },
+    {
+     "name": "Dean Rossilli",
+     "role": "Speaker"
+    },
+    {
+     "name": "Eddy Tannous",
+     "role": "Speaker"
+    },
+    {
+     "name": "Oussama El Kadiri",
+     "role": "Moderator"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/205.pdf",
+   "left": 12.644,
+   "width": 7.796,
+   "low": false,
+   "start_label": "10:55am",
+   "time_label": "10:55–11:30am",
+   "people_line": "Selim El Zein (Deyaar), Dean Rossilli (DAMAC Properties), Eddy Tannous (Rotana) · moderated by Oussama El Kadiri (Knight Frank)",
+   "faces": [
+    "assets/img/speakers/selim-el-zein.jpg",
+    "assets/img/speakers/dean-rossilli.jpg",
+    "assets/img/speakers/eddy-tannous.jpg",
+    "assets/img/speakers/oussama-el-kadiri.jpg"
+   ]
+  },
+  {
+   "start": "11:30",
+   "end": "11:50",
+   "title": "The Next Chapter of Lifestyle: New Markets, New Models, New Assets",
+   "speakers": [
+    {
+     "name": "Louis Abi Abboud",
+     "role": "Speaker"
+    },
+    {
+     "name": "Judith Cartwright",
+     "role": "Moderator"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/208.pdf",
+   "left": 20.69,
+   "width": 4.348,
+   "low": true,
+   "start_label": "11:30am",
+   "time_label": "11:30–11:50am",
+   "people_line": "Louis Abi Abboud (Ennismore) · moderated by Judith Cartwright (Black Coral Consulting)",
+   "faces": [
+    "assets/img/speakers/louis-abi-abboud.jpg",
+    "assets/img/speakers/judith-cartwright.jpg"
+   ]
+  },
+  {
+   "start": "11:50",
+   "end": "12:10",
+   "title": "The Rise of Hospitality-Driven Workspaces: Why the Best Offices Now Feel Like Hotels",
+   "speakers": [
+    {
+     "name": "Michael Aldridge",
+     "role": "Speaker"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/209.pdf",
+   "left": 25.287,
+   "width": 4.348,
+   "low": false,
+   "start_label": "11:50am",
+   "time_label": "11:50am–12:10pm",
+   "people_line": "Michael Aldridge (KOFISI)",
+   "faces": [
+    "assets/img/speakers/michael-aldridge.jpg"
+   ]
+  },
+  {
+   "start": "12:10",
+   "end": "12:35",
+   "title": "The New Living Economy: Investing Beyond Traditional Hotels",
+   "speakers": [
+    {
+     "name": "Oliver Hogg",
+     "role": "Speaker"
+    },
+    {
+     "name": "Pekka Hirvi",
+     "role": "Speaker"
+    },
+    {
+     "name": "Ina Plunien",
+     "role": "Speaker"
+    },
+    {
+     "name": "Tea Ros",
+     "role": "Moderator"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/212.pdf",
+   "left": 29.885,
+   "width": 5.497,
+   "low": true,
+   "start_label": "12:10pm",
+   "time_label": "12:10–12:35pm",
+   "people_line": "Oliver Hogg (Arzan Investment Management), Pekka Hirvi (The Ascott Limited), Ina Plunien (Cain) · moderated by Tea Ros (Strategic Hotel Consulting)",
+   "faces": [
+    "assets/img/speakers/oliver-hogg.jpg",
+    "assets/img/speakers/pekka-hirvi.jpg",
+    "assets/img/speakers/ina-plunien.jpg",
+    "assets/img/speakers/tea-ros.jpg"
+   ]
+  },
+  {
+   "start": "12:35",
+   "end": "12:50",
+   "title": "The Hospitality Effect: Transforming Residential into Lifestyle Destinations",
+   "speakers": [
+    {
+     "name": "Miltos Bosinis",
+     "role": "Speaker"
+    },
+    {
+     "name": "Ben Baseley-Walker",
+     "role": "Moderator"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/213.pdf",
+   "left": 35.632,
+   "width": 3.198,
+   "low": false,
+   "start_label": "12:35pm",
+   "time_label": "12:35–12:50pm",
+   "people_line": "Miltos Bosinis (H&H) · moderated by Ben Baseley-Walker (Andart Global)",
+   "faces": [
+    "assets/img/speakers/miltos-bosinis.jpg",
+    "assets/img/speakers/ben-baseley-walker.jpg"
+   ]
+  },
+  {
+   "start": "14:10",
+   "end": "14:30",
+   "title": "The State of the Global Branded Residences Market",
+   "speakers": [
+    {
+     "name": "Jeff Tisdall",
+     "role": "Speaker"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/214.pdf",
+   "left": 57.471,
+   "width": 4.348,
+   "low": true,
+   "start_label": "2:10pm",
+   "time_label": "2:10–2:30pm",
+   "people_line": "Jeff Tisdall (Accor)",
+   "faces": [
+    "assets/img/speakers/jeff-tisdall.jpg"
+   ]
+  },
+  {
+   "start": "14:30",
+   "end": "14:45",
+   "title": "Branded Residences Uncovered: Global Performance Review & Insights",
+   "speakers": [
+    {
+     "name": "Riyan Itani",
+     "role": "Speaker"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/216.pdf",
+   "left": 62.069,
+   "width": 3.198,
+   "low": false,
+   "start_label": "2:30pm",
+   "time_label": "2:30–2:45pm",
+   "people_line": "Riyan Itani (Global Branded Residences)",
+   "faces": [
+    "assets/img/speakers/riyan-itani.jpg"
+   ]
+  },
+  {
+   "start": "14:45",
+   "end": "15:05",
+   "title": "The Hospitality of Living: Redefining Real Estate Through Experience",
+   "speakers": [
+    {
+     "name": "Abdulla Binhabtoor",
+     "role": "Speaker"
+    },
+    {
+     "name": "Jonathan Worsley",
+     "role": "Moderator"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/217.pdf",
+   "left": 65.517,
+   "width": 4.348,
+   "low": true,
+   "start_label": "2:45pm",
+   "time_label": "2:45–3:05pm",
+   "people_line": "Abdulla Binhabtoor (Shamal Holding) · moderated by Jonathan Worsley (The Bench)",
+   "faces": [
+    "assets/img/speakers/abdulla-binhabtoor.jpg",
+    "assets/img/speakers/jonathan-worsley.jpg"
+   ]
+  },
+  {
+   "start": "15:05",
+   "end": "15:35",
+   "title": "Terms, Tensions & Trade-Offs: Getting the Branded Residence Deal Done",
+   "speakers": [
+    {
+     "name": "Elias Hayek",
+     "role": "Speaker"
+    },
+    {
+     "name": "Govind Mundra",
+     "role": "Speaker"
+    },
+    {
+     "name": "Yagna Prathap Chandra Sekaran",
+     "role": "Speaker"
+    },
+    {
+     "name": "Louis Harding",
+     "role": "Speaker"
+    },
+    {
+     "name": "Ben Baseley-Walker",
+     "role": "Moderator"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/220.pdf",
+   "left": 70.115,
+   "width": 6.647,
+   "low": false,
+   "start_label": "3:05pm",
+   "time_label": "3:05–3:35pm",
+   "people_line": "Elias Hayek (Greenberg Traurig), Govind Mundra (Wyndham Hotels & Resorts), Yagna Prathap Chandra Sekaran (Golden Sands Hotels), Louis Harding (Knight Frank) · moderated by Ben Baseley-Walker (Andart Global)",
+   "faces": [
+    "assets/img/speakers/elias-hayek.jpg",
+    "assets/img/speakers/govind-mundra.jpg",
+    "assets/img/speakers/yagna-prathap-chandra-sekaran.jpg",
+    "assets/img/speakers/louis-harding.jpg",
+    "assets/img/speakers/ben-baseley-walker.jpg"
+   ]
+  },
+  {
+   "start": "15:35",
+   "end": "15:50",
+   "title": "Beyond the Handover: How Smart Technology Protects and Enhances Branded Residence Value",
+   "speakers": [
+    {
+     "name": "Rahul Salgia",
+     "role": "Speaker"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/219.pdf",
+   "left": 77.011,
+   "width": 3.198,
+   "low": true,
+   "start_label": "3:35pm",
+   "time_label": "3:35–3:50pm",
+   "people_line": "Rahul Salgia (DigiValet)",
+   "faces": [
+    "assets/img/speakers/rahul-salgia.jpg"
+   ]
+  },
+  {
+   "start": "15:50",
+   "end": "16:10",
+   "title": "From Concept to Value Creation: The Branded Residences Playbook",
+   "speakers": [
+    {
+     "name": "Daniel von Barloewen",
+     "role": "Speaker"
+    },
+    {
+     "name": "Richard Stevens",
+     "role": "Moderator"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/218.pdf",
+   "left": 80.46,
+   "width": 4.348,
+   "low": false,
+   "start_label": "3:50pm",
+   "time_label": "3:50–4:10pm",
+   "people_line": "Daniel von Barloewen (Accor) · moderated by Richard Stevens (Sectorlight)",
+   "faces": [
+    "assets/img/speakers/daniel-von-barloewen.jpg",
+    "assets/img/speakers/richard-stevens.jpg"
+   ]
+  },
+  {
+   "start": "16:10",
+   "end": "16:35",
+   "title": "The Next Chapter: Can Dubai Sustain Its Branded Residence Momentum?",
+   "speakers": [
+    {
+     "name": "Alice Targett",
+     "role": "Speaker"
+    },
+    {
+     "name": "Paul Bridger",
+     "role": "Speaker"
+    },
+    {
+     "name": "Jackie Johns",
+     "role": "Speaker"
+    },
+    {
+     "name": "Piers Brown",
+     "role": "Moderator"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/221.pdf",
+   "left": 85.057,
+   "width": 5.497,
+   "low": true,
+   "start_label": "4:10pm",
+   "time_label": "4:10–4:35pm",
+   "people_line": "Alice Targett (Accor), Paul Bridger (Rove Hotels), Jackie Johns (Christie's International Real Estate) · moderated by Piers Brown (International Hospitality Media)",
+   "faces": [
+    "assets/img/speakers/alice-targett.jpg",
+    "assets/img/speakers/paul-bridger.jpg",
+    "assets/img/speakers/jackie-johns.jpg",
+    "assets/img/speakers/piers-brown.jpg"
+   ]
+  },
+  {
+   "start": "16:35",
+   "end": "17:10",
+   "title": "The Next Big Bet: What Will Define the Future of Branded Residences?",
+   "speakers": [
+    {
+     "name": "Christopher Sanderson",
+     "role": "Speaker"
+    },
+    {
+     "name": "Raj Shroff",
+     "role": "Speaker"
+    },
+    {
+     "name": "Jurgen Hautmann",
+     "role": "Speaker"
+    },
+    {
+     "name": "Alfredo Bataller",
+     "role": "Speaker"
+    },
+    {
+     "name": "Riyan Itani",
+     "role": "Moderator"
+    }
+   ],
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/222.pdf",
+   "left": 90.805,
+   "width": 7.796,
+   "low": false,
+   "start_label": "4:35pm",
+   "time_label": "4:35–5:10pm",
+   "people_line": "Christopher Sanderson (The Future Laboratory), Raj Shroff (Signature Developers), Jurgen Hautmann (RAK Properties), Alfredo Bataller (SHA Wellness) · moderated by Riyan Itani (Global Branded Residences)",
+   "faces": [
+    "assets/img/speakers/christopher-sanderson.jpg",
+    "assets/img/speakers/raj-shroff.jpg",
+    "assets/img/speakers/jurgen-hautmann.jpg",
+    "assets/img/speakers/alfredo-bataller.jpg",
+    "assets/img/speakers/riyan-itani.jpg"
+   ]
+  }
+ ],
+ "people": [
+  {
+   "name": "Luis Amaral",
+   "title": "Community leader and Innovator",
+   "org": "Most Traveled People (MTP)",
+   "photo": "https://static.swapcard.com/public/images/a3d89d7af9ea44bebd1f6795f0cfee90.jpeg",
+   "sessions": [
+    "When You’ve Seen It All: What Does It Take to Impress the World’s Most Traveled People?"
+   ],
+   "slug": "luis-amaral",
+   "file": "luis-amaral.jpeg"
+  },
+  {
+   "name": "Fritz Dickamp",
+   "title": "Managing Director",
+   "org": "Studio 49",
+   "photo": "https://static.swapcard.com/public/images/bec5d4872ae247eda6413599ffdce247.jpeg",
+   "sessions": [
+    "When You’ve Seen It All: What Does It Take to Impress the World’s Most Traveled People?"
+   ],
+   "slug": "fritz-dickamp",
+   "file": "fritz-dickamp.jpeg"
+  },
+  {
+   "name": "Michael Aldridge",
+   "title": "CEO & Founder",
+   "org": "KOFISI",
+   "photo": "https://static.swapcard.com/public/images/f0dd65faca8448f494c8d15cec73640a.jpeg",
+   "sessions": [
+    "The New Hospitality Map: Defining the Hospitality Asset Classes",
+    "The Rise of Hospitality-Driven Workspaces: Why the Best Offices Now Feel Like Hotels"
+   ],
+   "slug": "michael-aldridge",
+   "file": "michael-aldridge.jpeg"
+  },
+  {
+   "name": "Elie Milky",
+   "title": "Chief Development Officer for the Middle East, Northeast Africa, Greece, and Cyprus",
+   "org": "Radisson Hotel Group",
+   "photo": "https://static.swapcard.com/public/images/651d88045d184b34a984f5007f20415a.jpeg",
+   "sessions": [
+    "The New Hospitality Map: Defining the Hospitality Asset Classes"
+   ],
+   "slug": "elie-milky",
+   "file": "elie-milky.jpeg"
+  },
+  {
+   "name": "Adeline Phua",
+   "title": "Managing Director, Lyf, & Vice President of Business Development",
+   "org": "The Ascott Limited",
+   "photo": "https://static.swapcard.com/public/images/a6ff7f5ed285423b83e57430f186da36.png",
+   "sessions": [
+    "The New Hospitality Map: Defining the Hospitality Asset Classes"
+   ],
+   "slug": "adeline-phua",
+   "file": "adeline-phua.png"
+  },
+  {
+   "name": "Adil Jabrayilov",
+   "title": "Development Director",
+   "org": "Legacy Hotels Holding",
+   "photo": "https://static.swapcard.com/public/images/1eb5829f1be541e0ab8ed5d6b51b3fa2.png",
+   "sessions": [
+    "The New Hospitality Map: Defining the Hospitality Asset Classes"
+   ],
+   "slug": "adil-jabrayilov",
+   "file": "adil-jabrayilov.png"
+  },
+  {
+   "name": "Dinky Puri",
+   "title": "Founder & CEO",
+   "org": "Eaglewing Hospitality Services",
+   "photo": "https://static.swapcard.com/public/images/f34e51f6791f40b19d4fe22450a0ae7c.png",
+   "sessions": [
+    "The New Hospitality Map: Defining the Hospitality Asset Classes"
+   ],
+   "slug": "dinky-puri",
+   "file": "dinky-puri.png"
+  },
+  {
+   "name": "Selim El Zein",
+   "title": "Vice President - Head of Asset Management & Investments",
+   "org": "Deyaar Development PJSC",
+   "photo": "https://static.swapcard.com/public/images/210f46e7564649758cb2d6105c085e2c.jpeg",
+   "sessions": [
+    "The Anchor Asset: Why Hotels Matter in Mixed-Use"
+   ],
+   "slug": "selim-el-zein",
+   "file": "selim-el-zein.jpeg"
+  },
+  {
+   "name": "Dean Rossilli",
+   "title": "Senior Vice President of Hospitality",
+   "org": "DAMAC Properties",
+   "photo": "https://static.swapcard.com/public/images/640f073a69774d899c075069cb339841.jpeg",
+   "sessions": [
+    "The Anchor Asset: Why Hotels Matter in Mixed-Use"
+   ],
+   "slug": "dean-rossilli",
+   "file": "dean-rossilli.jpeg"
+  },
+  {
+   "name": "Eddy Tannous",
+   "title": "Chief Operating Officer",
+   "org": "Rotana Hotel Management Corporation PJSC",
+   "photo": "https://static.swapcard.com/public/images/b883ce7dcd704266b4d35a1add04a681.jpeg",
+   "sessions": [
+    "The Anchor Asset: Why Hotels Matter in Mixed-Use"
+   ],
+   "slug": "eddy-tannous",
+   "file": "eddy-tannous.jpeg"
+  },
+  {
+   "name": "Oussama El Kadiri",
+   "title": "Partner Head of Hospitality, Tourism & Leisure Advisory MENA",
+   "org": "Knight Frank",
+   "photo": "https://static.swapcard.com/public/images/6c8e0d359b4941cc82e2347f545ec9b9.jpeg",
+   "sessions": [
+    "The Anchor Asset: Why Hotels Matter in Mixed-Use"
+   ],
+   "slug": "oussama-el-kadiri",
+   "file": "oussama-el-kadiri.jpeg"
+  },
+  {
+   "name": "Louis Abi Abboud",
+   "title": "Group Chief Growth Officer& COO Middle East, Africa & Asia Pacific",
+   "org": "Ennismore",
+   "photo": "https://static.swapcard.com/public/images/dee4309fd681471894aaaf94f67bf114.jpeg",
+   "sessions": [
+    "The Next Chapter of Lifestyle: New Markets, New Models, New Assets"
+   ],
+   "slug": "louis-abi-abboud",
+   "file": "louis-abi-abboud.jpeg"
+  },
+  {
+   "name": "Judith Cartwright",
+   "title": "CEO & Founder",
+   "org": "Black Coral Consulting",
+   "photo": "https://static.swapcard.com/public/images/3b16fcd6ab8a45aa862f310dd575f5a6.jpeg",
+   "sessions": [
+    "The Next Chapter of Lifestyle: New Markets, New Models, New Assets"
+   ],
+   "slug": "judith-cartwright",
+   "file": "judith-cartwright.jpeg"
+  },
+  {
+   "name": "Oliver Hogg",
+   "title": "Chief Executive Officer",
+   "org": "Arzan Investment Management",
+   "photo": "https://static.swapcard.com/public/images/44e8694015c14e23be9b006a20d3b074.jpeg",
+   "sessions": [
+    "The New Living Economy: Investing Beyond Traditional Hotels"
+   ],
+   "slug": "oliver-hogg",
+   "file": "oliver-hogg.jpeg"
+  },
+  {
+   "name": "Pekka Hirvi",
+   "title": "Assistant Vice President - Business Development, Middle East, Africa & Turkey",
+   "org": "The Ascott Limited",
+   "photo": "https://static.swapcard.com/public/images/e528457516c34f40bb9f8e8de10a11a3.jpeg",
+   "sessions": [
+    "The New Living Economy: Investing Beyond Traditional Hotels"
+   ],
+   "slug": "pekka-hirvi",
+   "file": "pekka-hirvi.jpeg"
+  },
+  {
+   "name": "Ina Plunien",
+   "title": "Senior Vice President - Hospitality",
+   "org": "Cain",
+   "photo": "https://static.swapcard.com/public/images/662df73b4e89472e9c13f587f4b350d5.jpeg",
+   "sessions": [
+    "The New Living Economy: Investing Beyond Traditional Hotels"
+   ],
+   "slug": "ina-plunien",
+   "file": "ina-plunien.jpeg"
+  },
+  {
+   "name": "Tea Ros",
+   "title": "Managing Director",
+   "org": "Strategic Hotel Consulting",
+   "photo": "https://cdn-api.swapcard.com/public/images/65375f6abdde46f9b8eb7c15e2b80dcf.jpeg",
+   "sessions": [
+    "The New Living Economy: Investing Beyond Traditional Hotels"
+   ],
+   "slug": "tea-ros",
+   "file": "tea-ros.jpeg"
+  },
+  {
+   "name": "Miltos Bosinis",
+   "title": "Chief Executive Officer",
+   "org": "H&H",
+   "photo": "https://static.swapcard.com/public/images/8916ab17c1ca4bdab4ec5e9194df9834.jpeg",
+   "sessions": [
+    "The Hospitality Effect: Transforming Residential into Lifestyle Destinations"
+   ],
+   "slug": "miltos-bosinis",
+   "file": "miltos-bosinis.jpeg"
+  },
+  {
+   "name": "Ben Baseley-Walker",
+   "title": "Founder & Managing Partner",
+   "org": "Andart Global",
+   "photo": "https://static.swapcard.com/public/images/4173ca3f01b14b9cbed5bf413c10fc67.png",
+   "sessions": [
+    "The Hospitality Effect: Transforming Residential into Lifestyle Destinations",
+    "Terms, Tensions & Trade-Offs: Getting the Branded Residence Deal Done"
+   ],
+   "slug": "ben-baseley-walker",
+   "file": "ben-baseley-walker.png"
+  },
+  {
+   "name": "Jeff Tisdall",
+   "title": "Chief Business Officer, Accor One Living, Global Head of Mixed-Use",
+   "org": "Accor",
+   "photo": "https://static.swapcard.com/public/images/665f0d09e03b46308f0adb0fb8011c4e.png",
+   "sessions": [
+    "The State of the Global Branded Residences Market"
+   ],
+   "slug": "jeff-tisdall",
+   "file": "jeff-tisdall.png"
+  },
+  {
+   "name": "Riyan Itani",
+   "title": "Founder",
+   "org": "Global Branded Residences Ltd.",
+   "photo": "https://static.swapcard.com/public/images/0a8fedf8c19444388ccf07bf5208b2c7.jpeg",
+   "sessions": [
+    "Branded Residences Uncovered: Global Performance Review & Insights",
+    "The Next Big Bet: What Will Define the Future of Branded Residences?"
+   ],
+   "slug": "riyan-itani",
+   "file": "riyan-itani.jpeg"
+  },
+  {
+   "name": "Abdulla Binhabtoor",
+   "title": "Chief Executive Officer",
+   "org": "Shamal Holding",
+   "photo": "https://static.swapcard.com/public/images/29103c068fb74069ad2cd45aa1957d36.jpeg",
+   "sessions": [
+    "The Hospitality of Living: Redefining Real Estate Through Experience"
+   ],
+   "slug": "abdulla-binhabtoor",
+   "file": "abdulla-binhabtoor.jpeg"
+  },
+  {
+   "name": "Jonathan Worsley",
+   "title": "Chairman",
+   "org": "The Bench",
+   "photo": "https://static.swapcard.com/public/images/d4d5a2e5cd3c42e2b852b32b4a928309.jpeg",
+   "sessions": [
+    "The Hospitality of Living: Redefining Real Estate Through Experience"
+   ],
+   "slug": "jonathan-worsley",
+   "file": "jonathan-worsley.jpeg"
+  },
+  {
+   "name": "Elias Hayek",
+   "title": "Shareholder & Co-Chair of the Middle East and European Hospitality Group",
+   "org": "Greenberg Traurig",
+   "photo": "https://static.swapcard.com/public/images/84b85ac5647f486dac63e63334e9bae2.jpeg",
+   "sessions": [
+    "Terms, Tensions & Trade-Offs: Getting the Branded Residence Deal Done"
+   ],
+   "slug": "elias-hayek",
+   "file": "elias-hayek.jpeg"
+  },
+  {
+   "name": "Govind Mundra",
+   "title": "Head of Development – Middle East & Africa",
+   "org": "Wyndham Hotels & Resorts",
+   "photo": "https://static.swapcard.com/public/images/1cec4215232f4481b23d36feadda6352.jpeg",
+   "sessions": [
+    "Terms, Tensions & Trade-Offs: Getting the Branded Residence Deal Done"
+   ],
+   "slug": "govind-mundra",
+   "file": "govind-mundra.jpeg"
+  },
+  {
+   "name": "Yagna Prathap Chandra Sekaran",
+   "title": "General Manager Operations",
+   "org": "Golden Sands Hotels Co. LLC.",
+   "photo": "https://static.swapcard.com/public/images/bcd0ae82d7e74b48854d9841d82fb4e6.png",
+   "sessions": [
+    "Terms, Tensions & Trade-Offs: Getting the Branded Residence Deal Done"
+   ],
+   "slug": "yagna-prathap-chandra-sekaran",
+   "file": "yagna-prathap-chandra-sekaran.png"
+  },
+  {
+   "name": "Louis Harding",
+   "title": "Partner - Head of UAE Residential",
+   "org": "Knight Frank",
+   "photo": "https://static.swapcard.com/public/images/4126cad63ea0427db767d8fd8223b933.png",
+   "sessions": [
+    "Terms, Tensions & Trade-Offs: Getting the Branded Residence Deal Done"
+   ],
+   "slug": "louis-harding",
+   "file": "louis-harding.png"
+  },
+  {
+   "name": "Rahul Salgia",
+   "title": "Founder & CEO",
+   "org": "DigiValet",
+   "photo": "https://static.swapcard.com/public/images/e2225a6fcb174f869dec0029e844b5b7.jpeg",
+   "sessions": [
+    "Beyond the Handover: How Smart Technology Protects and Enhances Branded Residence Value"
+   ],
+   "slug": "rahul-salgia",
+   "file": "rahul-salgia.jpeg"
+  },
+  {
+   "name": "Daniel von Barloewen",
+   "title": "Senior Vice President, Global Mixed-Use Development",
+   "org": "Accor One Living, Accor",
+   "photo": "https://cdn-api.swapcard.com/public/images/5cf473e2ddec40608d2edc80e017428d.jpeg",
+   "sessions": [
+    "From Concept to Value Creation: The Branded Residences Playbook"
+   ],
+   "slug": "daniel-von-barloewen",
+   "file": "daniel-von-barloewen.jpeg"
+  },
+  {
+   "name": "Richard Stevens",
+   "title": "Group CEO",
+   "org": "Sectorlight",
+   "photo": "https://static.swapcard.com/public/images/b9975db8f5b840c89803ea7a02ec590c.jpeg",
+   "sessions": [
+    "From Concept to Value Creation: The Branded Residences Playbook"
+   ],
+   "slug": "richard-stevens",
+   "file": "richard-stevens.jpeg"
+  },
+  {
+   "name": "Alice Targett",
+   "title": "Director - Marketing & Brand Advisory Services, EMEA, Accor One Living",
+   "org": "Accor",
+   "photo": "https://static.swapcard.com/public/images/08a574c269ae4c7980a39bd3c04d06b5.jpeg",
+   "sessions": [
+    "The Next Chapter: Can Dubai Sustain Its Branded Residence Momentum?"
+   ],
+   "slug": "alice-targett",
+   "file": "alice-targett.jpeg"
+  },
+  {
+   "name": "Paul Bridger",
+   "title": "Chief Operating Officer",
+   "org": "Rove Hotels",
+   "photo": "https://static.swapcard.com/public/images/0ab5a32d92a64212b93d412ab6cff4c7.jpeg",
+   "sessions": [
+    "The Next Chapter: Can Dubai Sustain Its Branded Residence Momentum?"
+   ],
+   "slug": "paul-bridger",
+   "file": "paul-bridger.jpeg"
+  },
+  {
+   "name": "Jackie Johns",
+   "title": "Managing Partner",
+   "org": "Christie's International Real Estate Dubai",
+   "photo": "https://static.swapcard.com/public/images/ce9ffd3ddc5b4b23b8545dd2e497e2c4.jpeg",
+   "sessions": [
+    "The Next Chapter: Can Dubai Sustain Its Branded Residence Momentum?"
+   ],
+   "slug": "jackie-johns",
+   "file": "jackie-johns.jpeg"
+  },
+  {
+   "name": "Piers Brown",
+   "title": "Chief Executive Officer",
+   "org": "International Hospitality Media Limited",
+   "photo": "https://static.swapcard.com/public/images/9c087c5fa63643478ba87d1addd69890.jpeg",
+   "sessions": [
+    "The Next Chapter: Can Dubai Sustain Its Branded Residence Momentum?"
+   ],
+   "slug": "piers-brown",
+   "file": "piers-brown.jpeg"
+  },
+  {
+   "name": "Christopher Sanderson",
+   "title": "Co-Founder & Chief Creative Officer",
+   "org": "The Future Laboratory",
+   "photo": "https://static.swapcard.com/public/images/a87844799f8e4808ac9ea42fcabe0c82.jpeg",
+   "sessions": [
+    "The Next Big Bet: What Will Define the Future of Branded Residences?"
+   ],
+   "slug": "christopher-sanderson",
+   "file": "christopher-sanderson.jpeg"
+  },
+  {
+   "name": "Raj Shroff",
+   "title": "Director",
+   "org": "Signature Developers",
+   "photo": "https://static.swapcard.com/public/images/3d086d7a305946e3ac56a1878f996d6e.jpeg",
+   "sessions": [
+    "The Next Big Bet: What Will Define the Future of Branded Residences?"
+   ],
+   "slug": "raj-shroff",
+   "file": "raj-shroff.jpeg"
+  },
+  {
+   "name": "Jurgen Hautmann",
+   "title": "Senior Director, Hospitality & Asset Management",
+   "org": "RAK Properties",
+   "photo": "https://static.swapcard.com/public/images/172ab4837003457d802b4394e1be7c1a.jpeg",
+   "sessions": [
+    "The Next Big Bet: What Will Define the Future of Branded Residences?"
+   ],
+   "slug": "jurgen-hautmann",
+   "file": "jurgen-hautmann.jpeg"
+  },
+  {
+   "name": "Alfredo Bataller",
+   "title": "Chief Executive Officer",
+   "org": "SHA Wellness / AB Living Group",
+   "photo": "https://static.swapcard.com/public/images/509eeddbe8b74354aae72ee37a5535ed.jpeg",
+   "sessions": [
+    "The Next Big Bet: What Will Define the Future of Branded Residences?"
+   ],
+   "slug": "alfredo-bataller",
+   "file": "alfredo-bataller.jpeg"
+  }
+ ],
+ "report": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/daily-2026-10-01.pdf",
+ "summaries_index": "https://ai.futurehospitality.com/public/fhs-world-2026",
+ "summaries_source": "ai.futurehospitality.com/public/fhs-world-2026, read 12 Oct 2026",
+ "lunch": {
+  "left": 39.08,
+  "width": 18.39
+ },
+ "axis": [
+  {
+   "label": "10:00am",
+   "left": 0.0
+  },
+  {
+   "label": "11:00am",
+   "left": 13.79
+  },
+  {
+   "label": "12:00pm",
+   "left": 27.59
+  },
+  {
+   "label": "1:00pm",
+   "left": 41.38
+  },
+  {
+   "label": "2:00pm",
+   "left": 55.17
+  },
+  {
+   "label": "3:00pm",
+   "left": 68.97
+  },
+  {
+   "label": "4:00pm",
+   "left": 82.76
+  },
+  {
+   "label": "5:00pm",
+   "left": 96.55
+  }
+ ],
+ "orgs_line": "Most Traveled People (MTP), Studio 49, KOFISI, Radisson Hotel Group, The Ascott Limited, Legacy Hotels Holding, Eaglewing Hospitality Services, Deyaar, DAMAC Properties, Rotana, Knight Frank, Ennismore, Black Coral Consulting, Arzan Investment Management, Cain, Strategic Hotel Consulting, H&H, Andart Global, Accor, Global Branded Residences, Shamal Holding, Greenberg Traurig, Wyndham Hotels & Resorts, Golden Sands Hotels, DigiValet, Sectorlight, Rove Hotels, Christie's International Real Estate, International Hospitality Media, The Future Laboratory, Signature Developers, RAK Properties and SHA Wellness",
+ "n_orgs": 33,
+ "orgs_short": "Accor, Radisson Hotel Group, The Ascott Limited, DAMAC Properties, Rotana, Knight Frank, Ennismore and Christie's International Real Estate"
+}

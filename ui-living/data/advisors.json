@@ -1,0 +1,663 @@
+{
+ "people": [
+  {
+   "name": "Amit Arora",
+   "slug": "amit-arora",
+   "title": "Chief Operating Officer",
+   "company": "Arada Hospitality & Entertainment",
+   "focus": [
+    "Branded Residences",
+    "Student Accommodation (PBSA)",
+    "Club Concepts",
+    "Mixed Use"
+   ],
+   "geographies": "UAE (Primary), Saudi Arabia",
+   "photo": "assets/img/advisors/amit-arora.jpg"
+  },
+  {
+   "name": "Dirk Bakker",
+   "slug": "dirk-bakker",
+   "title": "CEO Hospitality",
+   "company": "Necron Group",
+   "focus": [
+    "Hotels & Resorts",
+    "Mixed Use",
+    "Branded Residences"
+   ],
+   "geographies": "Europe",
+   "photo": "assets/img/advisors/dirk-bakker.jpg"
+  },
+  {
+   "name": "Navneet Bali",
+   "slug": "navneet-bali",
+   "title": "Founder and CEO",
+   "company": "LyvInn",
+   "focus": [
+    "Hotels & Resorts",
+    "Co-Living",
+    "Serviced Living"
+   ],
+   "geographies": "Germany",
+   "photo": "assets/img/advisors/navneet-bali.jpg"
+  },
+  {
+   "name": "Brad Berry",
+   "slug": "brad-berry",
+   "title": "Global Head of Residences & Homes",
+   "company": "Mandarin Oriental",
+   "focus": [
+    "Branded Residences",
+    "Hotels & Resorts"
+   ],
+   "geographies": "Global",
+   "photo": "assets/img/advisors/brad-berry.jpg"
+  },
+  {
+   "name": "Carine Bonnejean",
+   "slug": "carine-bonnejean",
+   "title": "Managing Director - Hotels",
+   "company": "Christie & Co",
+   "focus": [
+    "Hotels & Resorts"
+   ],
+   "geographies": "UK, Europe",
+   "photo": "assets/img/advisors/carine-bonnejean.jpg"
+  },
+  {
+   "name": "James Dunne",
+   "slug": "james-dunne",
+   "title": "Head of UK Living & Operational Capital Markets",
+   "company": "Cushman & Wakefield",
+   "focus": [
+    "Student Accommodation (PBSA)",
+    "Senior Living",
+    "Co-Living",
+    "Serviced Living"
+   ],
+   "geographies": "UK (Primary), Europe",
+   "photo": "assets/img/advisors/james-dunne.jpg"
+  },
+  {
+   "name": "Dr Peter Ebertz",
+   "slug": "dr-peter-ebertz",
+   "title": "Managing Director and Head of Hotels",
+   "company": "Art-Invest Real Estate Management GmbH & Co.",
+   "focus": [],
+   "geographies": "",
+   "photo": "assets/img/advisors/dr-peter-ebertz.jpg"
+  },
+  {
+   "name": "Alicia Edgar",
+   "slug": "alicia-edgar",
+   "title": "Senior Director",
+   "company": "Invesco",
+   "focus": [
+    "Student Accommodation (PBSA)",
+    "Senior Living",
+    "Co-Living"
+   ],
+   "geographies": "Europe",
+   "photo": "assets/img/advisors/alicia-edgar.jpg"
+  },
+  {
+   "name": "Larissa Esser",
+   "slug": "larissa-esser",
+   "title": "Senior Advisor",
+   "company": "Colliers",
+   "focus": [
+    "Hotels & Resorts"
+   ],
+   "geographies": "Europe",
+   "photo": "assets/img/advisors/larissa-esser.jpg"
+  },
+  {
+   "name": "Yuan Fang",
+   "slug": "yuan-fang",
+   "title": "SVP Development Europe and Americas",
+   "company": "Minor Hotels",
+   "focus": [
+    "Hotels & Resorts",
+    "Serviced Living",
+    "Mixed Use"
+   ],
+   "geographies": "Europe (Primary), Americas",
+   "photo": "assets/img/advisors/yuan-fang.jpg"
+  },
+  {
+   "name": "Jan Garde",
+   "slug": "jan-garde",
+   "title": "Founder & Chairman",
+   "company": "The Embassies",
+   "focus": [
+    "Club Concepts",
+    "Serviced Living",
+    "Co-Living"
+   ],
+   "geographies": "Global",
+   "photo": "assets/img/advisors/jan-garde.jpg"
+  },
+  {
+   "name": "Jasper Gilbey",
+   "slug": "jasper-gilbey",
+   "title": "Head of Housing and Alternatives, Europe",
+   "company": "nuveen",
+   "focus": [],
+   "geographies": "",
+   "photo": "assets/img/advisors/jasper-gilbey.jpg"
+  },
+  {
+   "name": "Alexander Garrod",
+   "slug": "alexander-garrod",
+   "title": "Managing Director, Hospitality Asset Management",
+   "company": "Pro-invest Group",
+   "focus": [
+    "Co-Living",
+    "Mixed Use",
+    "Hotels & Resorts"
+   ],
+   "geographies": "UK, Europe",
+   "photo": "assets/img/advisors/alexander-garrod.jpg"
+  },
+  {
+   "name": "Pippa Harrison",
+   "slug": "pippa-harrison",
+   "title": "Executive Partner, Head of Hospitality & Extended Living",
+   "company": "Rapleys",
+   "focus": [
+    "Hotels & Resorts",
+    "Serviced Living"
+   ],
+   "geographies": "UK",
+   "photo": "assets/img/advisors/pippa-harrison.jpg"
+  },
+  {
+   "name": "Riyan Itani",
+   "slug": "riyan-itani",
+   "title": "Director & Founder",
+   "company": "Global Branded Residences",
+   "focus": [
+    "Branded Residences",
+    "Mixed Use"
+   ],
+   "geographies": "Global",
+   "photo": "assets/img/advisors/riyan-itani.jpg"
+  },
+  {
+   "name": "Guy Ivesha",
+   "slug": "guy-ivesha",
+   "title": "Founder & CEO",
+   "company": "Maslow’s",
+   "focus": [
+    "Co-Living",
+    "Club Concepts"
+   ],
+   "geographies": "UK",
+   "photo": "assets/img/advisors/guy-ivesha.jpg"
+  },
+  {
+   "name": "Laurence Geller CBE",
+   "slug": "laurence-geller-cbe",
+   "title": "Co-Founder, Chairman and Chief Executive",
+   "company": "Loveday & Co",
+   "focus": [
+    "Senior Living",
+    "Serviced Living"
+   ],
+   "geographies": "United Kingdom",
+   "photo": "assets/img/advisors/laurence-geller-cbe.jpg"
+  },
+  {
+   "name": "Jagdish Johal",
+   "slug": "jagdish-johal",
+   "title": "Managing Partner",
+   "company": "YOO",
+   "focus": [
+    "Branded Residences",
+    "Mixed Use",
+    "Hotels & Resorts"
+   ],
+   "geographies": "Global",
+   "photo": "assets/img/advisors/jagdish-johal.jpg"
+  },
+  {
+   "name": "Michael Kandarakis",
+   "slug": "michael-kandarakis",
+   "title": "Managing Partner",
+   "company": "Aureon Partners",
+   "focus": [
+    "Mixed Use",
+    "Hotels & Resorts",
+    "Branded Residences"
+   ],
+   "geographies": "Global",
+   "photo": "assets/img/advisors/michael-kandarakis.jpg"
+  },
+  {
+   "name": "Paul Kapiris",
+   "slug": "paul-kapiris",
+   "title": "Head of Hospitality for Middle East",
+   "company": "Eastdil Secured",
+   "focus": [
+    "Hotels & Resorts"
+   ],
+   "geographies": "Middle East",
+   "photo": "assets/img/advisors/paul-kapiris.jpg"
+  },
+  {
+   "name": "David Keen",
+   "slug": "david-keen",
+   "title": "Founder & CEO",
+   "company": "QUO",
+   "focus": [
+    "Branded Residences",
+    "Hotels & Resorts",
+    "Mixed Use"
+   ],
+   "geographies": "Middle East, Asia",
+   "photo": "assets/img/advisors/david-keen.jpg"
+  },
+  {
+   "name": "Louis Keighley",
+   "slug": "louis-keighley",
+   "title": "Head of Global Residential Development Consultancy",
+   "company": "Savills",
+   "focus": [
+    "Branded Residences",
+    "Mixed Use",
+    "Hotels & Resorts"
+   ],
+   "geographies": "Global",
+   "photo": "assets/img/advisors/louis-keighley.jpg"
+  },
+  {
+   "name": "Russell Kett",
+   "slug": "russell-kett",
+   "title": "Chairman",
+   "company": "HVS",
+   "focus": [
+    "Hotels & Resorts",
+    "Branded Residences",
+    "Mixed Use"
+   ],
+   "geographies": "UK, EMEA",
+   "photo": "assets/img/advisors/russell-kett.jpg"
+  },
+  {
+   "name": "Marloes Knippenberg",
+   "slug": "marloes-knippenberg",
+   "title": "Chief Executive Officer",
+   "company": "Kerten Hospitality",
+   "focus": [
+    "Hotels & Resorts",
+    "Mixed Use",
+    "Serviced Living",
+    "Club Concepts"
+   ],
+   "geographies": "Middle East, Europe, Africa",
+   "photo": "assets/img/advisors/marloes-knippenberg.jpg"
+  },
+  {
+   "name": "Theodor Kubak",
+   "slug": "theodor-kubak",
+   "title": "Managing Partner",
+   "company": "Arbireo Capital",
+   "focus": [
+    "Student Accommodation (PBSA)",
+    "Senior Living",
+    "Co-Living"
+   ],
+   "geographies": "Europe",
+   "photo": "assets/img/advisors/theodor-kubak.jpg"
+  },
+  {
+   "name": "Asli Kutlucan",
+   "slug": "asli-kutlucan",
+   "title": "Chief Executive Officer Europe",
+   "company": "TFE Hotels",
+   "focus": [
+    "Hotels & Resorts",
+    "Serviced Living"
+   ],
+   "geographies": "Europe",
+   "photo": "assets/img/advisors/asli-kutlucan.jpg"
+  },
+  {
+   "name": "Philip Lassman",
+   "slug": "philip-lassman",
+   "title": "Managing Director",
+   "company": "NUMA",
+   "focus": [
+    "Serviced Living",
+    "Co-Living"
+   ],
+   "geographies": "UK, Europe",
+   "photo": "assets/img/advisors/philip-lassman.jpg"
+  },
+  {
+   "name": "Alyshia Mangalji",
+   "slug": "alyshia-mangalji",
+   "title": "Board Member & SVP Europe & Africa",
+   "company": "Westmont Hospitality",
+   "focus": [
+    "Hotels & Resorts",
+    "Mixed Use"
+   ],
+   "geographies": "North America, Europe, Asia & Africa",
+   "photo": "assets/img/advisors/alyshia-mangalji.jpg"
+  },
+  {
+   "name": "Dimitris Manikis",
+   "slug": "dimitris-manikis",
+   "title": "President EMEA",
+   "company": "Wyndham Hotels & Resorts",
+   "focus": [
+    "Hotels & Resorts",
+    "Serviced Living"
+   ],
+   "geographies": "EMEA",
+   "photo": "assets/img/advisors/dimitris-manikis.jpg"
+  },
+  {
+   "name": "Jaidev Menezes",
+   "slug": "jaidev-menezes",
+   "title": "Regional Vice President EMEA, Mixed-Use Development",
+   "company": "Marriott International",
+   "focus": [
+    "Mixed Use",
+    "Hotels & Resorts"
+   ],
+   "geographies": "EMEA",
+   "photo": "assets/img/advisors/jaidev-menezes.jpg"
+  },
+  {
+   "name": "Hans Meyer",
+   "slug": "hans-meyer",
+   "title": "Co-founder",
+   "company": "Zoku",
+   "focus": [
+    "Co-Living",
+    "Serviced Living"
+   ],
+   "geographies": "Europe, North America",
+   "photo": "assets/img/advisors/hans-meyer.jpg"
+  },
+  {
+   "name": "Amit Nayak, CHA",
+   "slug": "amit-nayak-cha",
+   "title": "Vice President",
+   "company": "HAMA - Hospitality Asset Managers Association Middle East and Africa",
+   "focus": [
+    "Branded Residences",
+    "Mixed Use",
+    "Hotels & Resorts"
+   ],
+   "geographies": "UAE (Primary), Middle East",
+   "photo": "assets/img/advisors/amit-nayak-cha.jpg"
+  },
+  {
+   "name": "Helena Amaral Neto",
+   "slug": "helena-amaral-neto",
+   "title": "Founder & Managing Partner",
+   "company": "LUXULTING",
+   "focus": [
+    "Mixed Use",
+    "Branded Residences"
+   ],
+   "geographies": "Europe",
+   "photo": "assets/img/advisors/helena-amaral-neto.jpg"
+  },
+  {
+   "name": "Tina Necrason",
+   "slug": "tina-necrason",
+   "title": "Global Head of Branded Residential",
+   "company": "Hyatt",
+   "focus": [
+    "Branded Residences"
+   ],
+   "geographies": "Global",
+   "photo": "assets/img/advisors/tina-necrason.jpg"
+  },
+  {
+   "name": "Edgar Ollé",
+   "slug": "edgar-ollé",
+   "title": "Global Vice President Development Hotels & Branded Residences",
+   "company": "Jumeirah",
+   "focus": [],
+   "geographies": "",
+   "photo": "assets/img/advisors/edgar-olle.jpg"
+  },
+  {
+   "name": "Joanne Owen",
+   "slug": "joanne-owen",
+   "title": "Partner",
+   "company": "DLA Piper",
+   "focus": [
+    "Serviced Living",
+    "Student Accommodation (PBSA)",
+    "Hotels & Resorts",
+    "Mixed Use"
+   ],
+   "geographies": "UK",
+   "photo": "assets/img/advisors/joanne-owen.jpg"
+  },
+  {
+   "name": "Thomas Page",
+   "slug": "thomas-page",
+   "title": "Partner and Global Head of Hotels and Leisure Group",
+   "company": "CMS Cameron McKenna LLP",
+   "focus": [
+    "Branded Residences",
+    "Mixed Use",
+    "Hotels & Resorts"
+   ],
+   "geographies": "Europe, Middle East",
+   "photo": "assets/img/advisors/thomas-page.jpg"
+  },
+  {
+   "name": "Simon Price",
+   "slug": "simon-price",
+   "title": "Partner & International Head of Hotels, Hospitality and Leisure",
+   "company": "Bird & Bird",
+   "focus": [
+    "Branded Residences",
+    "Mixed Use",
+    "Hotels & Resorts"
+   ],
+   "geographies": "Europe, Middle East",
+   "photo": "assets/img/advisors/simon-price.jpg"
+  },
+  {
+   "name": "Jacob Rasin",
+   "slug": "jacob-rasin",
+   "title": "Senior Vice President - Transactions",
+   "company": "Pandox",
+   "focus": [
+    "Hotels & Resorts",
+    "Mixed Use"
+   ],
+   "geographies": "Europe",
+   "photo": "assets/img/advisors/jacob-rasin.jpg"
+  },
+  {
+   "name": "Laurence Salmon",
+   "slug": "laurence-salmon",
+   "title": "Investment Director",
+   "company": "Pygmalion Capital Advisers LLP",
+   "focus": [
+    "Hotels & Resorts",
+    "Serviced Living"
+   ],
+   "geographies": "Europe",
+   "photo": "assets/img/advisors/laurence-salmon.jpg"
+  },
+  {
+   "name": "Andrew Sangster",
+   "slug": "andrew-sangster",
+   "title": "Editorial Director",
+   "company": "Hotel Analyst",
+   "focus": [
+    "Hotels & Resorts",
+    "Serviced Living"
+   ],
+   "geographies": "Europe",
+   "photo": "assets/img/advisors/andrew-sangster.jpg"
+  },
+  {
+   "name": "Khalid Saud Abuhaimed",
+   "slug": "khalid-saud-abuhaimed",
+   "title": "Chief Executive Officer",
+   "company": "Al Khozama Investments",
+   "focus": [
+    "Hotels & Resorts",
+    "Mixed Use",
+    "Branded Residences"
+   ],
+   "geographies": "Saudi Arabia, Middle East",
+   "photo": "assets/img/advisors/khalid-saud-abuhaimed.jpg"
+  },
+  {
+   "name": "Clemens Schranz",
+   "slug": "clemens-schranz",
+   "title": "Senior Director, Lodging & Living Funds, Europe",
+   "company": "CapitaLand",
+   "focus": [],
+   "geographies": "",
+   "photo": "assets/img/advisors/clemens-schranz.jpg"
+  },
+  {
+   "name": "Simon Scott",
+   "slug": "simon-scott",
+   "title": "Lead Director - Living Capital Markets",
+   "company": "JLL",
+   "focus": [
+    "Student Accommodation (PBSA)",
+    "Senior Living",
+    "Co-Living",
+    "Serviced Living"
+   ],
+   "geographies": "UK (Primary), Europe",
+   "photo": "assets/img/advisors/simon-scott.jpg"
+  },
+  {
+   "name": "Shafi Syed",
+   "slug": "shafi-syed",
+   "title": "Global Head Development/Acquisitions",
+   "company": "Equinox Hotels",
+   "focus": [
+    "Branded Residences",
+    "Hotels & Resorts",
+    "Club Concepts"
+   ],
+   "geographies": "North America, Middle East",
+   "photo": "assets/img/advisors/shafi-syed.jpg"
+  },
+  {
+   "name": "Jeff Tisdall",
+   "slug": "jeff-tisdall",
+   "title": "Chief Business Officer",
+   "company": "Accor One Living",
+   "focus": [
+    "Branded Residences",
+    "Mixed Use",
+    "Serviced Living"
+   ],
+   "geographies": "Global, Middle East",
+   "photo": "assets/img/advisors/jeff-tisdall.jpg"
+  },
+  {
+   "name": "Wytze Van Den Berg",
+   "slug": "wytze-van-den-berg",
+   "title": "Vice President International Operations EMEA",
+   "company": "BWH Hotels",
+   "focus": [
+    "Hotels & Resorts",
+    "Serviced Living"
+   ],
+   "geographies": "Europe, Middle East, Africa",
+   "photo": "assets/img/advisors/wytze-van-den-berg.jpg"
+  },
+  {
+   "name": "Michael Widmann",
+   "slug": "michael-widmann",
+   "title": "Global CEO",
+   "company": "PKF hospitality group",
+   "focus": [
+    "Hotels & Resorts",
+    "Branded Residences",
+    "Mixed Use"
+   ],
+   "geographies": "Europe, Middle East",
+   "photo": "assets/img/advisors/michael-widmann.jpg"
+  },
+  {
+   "name": "Oliver Winter",
+   "slug": "oliver-winter",
+   "title": "CEO & Founder",
+   "company": "a&o Hostels",
+   "focus": [],
+   "geographies": "",
+   "photo": "assets/img/advisors/oliver-winter.jpg"
+  },
+  {
+   "name": "Elie Younes",
+   "slug": "elie-younes",
+   "title": "Global Chief Commercial Officer",
+   "company": "Radisson Hotel Group",
+   "focus": [
+    "Hotels & Resorts",
+    "Branded Residences",
+    "Serviced Living"
+   ],
+   "geographies": "Europe, Middle East, Africa",
+   "photo": "assets/img/advisors/elie-younes.jpg"
+  },
+  {
+   "name": "Lauren Okada Young",
+   "slug": "lauren-okada-young",
+   "title": "Managing Director - Real Estate",
+   "company": "Brookfield",
+   "focus": [
+    "Hotels & Resorts",
+    "Mixed Use"
+   ],
+   "geographies": "UK, Europe",
+   "photo": "assets/img/advisors/lauren-okada-young.jpg"
+  }
+ ],
+ "counts": {
+  "Branded Residences": 19,
+  "Student Accommodation (PBSA)": 6,
+  "Senior Living": 5,
+  "Serviced Living": 18,
+  "Co-Living": 10,
+  "Shared Ownership": 0,
+  "Club Concepts": 5,
+  "Mixed Use": 23,
+  "Hotels & Resorts": 32
+ },
+ "order": [
+  "Branded Residences",
+  "Student Accommodation (PBSA)",
+  "Senior Living",
+  "Serviced Living",
+  "Co-Living",
+  "Shared Ownership",
+  "Club Concepts",
+  "Mixed Use",
+  "Hotels & Resorts"
+ ],
+ "featured": [
+  "dirk-bakker",
+  "alicia-edgar",
+  "jeff-tisdall",
+  "marloes-knippenberg",
+  "jasper-gilbey",
+  "guy-ivesha",
+  "lauren-okada-young",
+  "laurence-geller-cbe",
+  "khalid-saud-abuhaimed",
+  "louis-keighley",
+  "clemens-schranz",
+  "jan-garde"
+ ]
+}

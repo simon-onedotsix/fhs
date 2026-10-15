@@ -1,0 +1,231 @@
+{
+ "_note": "Single source of truth for every number, date and claim on the site. verified=true means checked against the named source on the date given. Prices live in passes.json (fetched from the CMS).",
+ "event": {
+  "name": "FHS Living",
+  "edition": "Founding Edition",
+  "dates": "23–24 February 2027",
+  "dates_short": "23–24 Feb 2027",
+  "start_iso": "2027-02-23",
+  "reception": "Monday 22 February 2027, 6:00pm, welcome reception",
+  "venue": "Pullman Paris Montparnasse",
+  "address": "19 Rue du Commandant Mouchotte, 75014 Paris",
+  "city": "Paris",
+  "organiser": "The Bench",
+  "verified": true,
+  "source": "Pullman signed quotation 21 Jul 2026; live site 12 Oct 2026"
+ },
+ "tagline": {
+  "text": "Where hospitality reimagines real estate.",
+  "verified": true,
+  "source": "Ali Shahid 28 Sep 2026; Lyza Rashid one-pager 8 Oct 2026"
+ },
+ "size_claim": {
+  "text": "500 C-level decision-makers",
+  "verified": true,
+  "source": "Ahmed approved 12 Oct 2026"
+ },
+ "mix": [
+  {
+   "group": "Capital",
+   "pct": 25
+  },
+  {
+   "group": "Developers",
+   "pct": 35
+  },
+  {
+   "group": "Operators and owners",
+   "pct": 20
+  },
+  {
+   "group": "Enablers",
+   "pct": 20
+  }
+ ],
+ "mix_source": "FHS Living sales materials 2026",
+ "stats": [
+  {
+   "value": "€62.2bn",
+   "count": 62.2,
+   "prefix": "€",
+   "suffix": "bn",
+   "decimals": 1,
+   "label": "invested in European living real estate in 2025, up 22% on 2024",
+   "source": "JLL 2026"
+  },
+  {
+   "value": "€70bn+",
+   "count": 70,
+   "prefix": "€",
+   "suffix": "bn+",
+   "decimals": 0,
+   "label": "forecast for European living investment in 2026",
+   "source": "JLL 2026"
+  },
+  {
+   "value": "96%",
+   "count": 96,
+   "prefix": "",
+   "suffix": "%",
+   "decimals": 0,
+   "label": "of institutional investors in the sector plan to raise their allocation",
+   "source": "Cushman & Wakefield European Living Investor Survey 2026"
+  }
+ ],
+ "stats_verified": true,
+ "stats_note": "Ahmed approved the advisory-board stat set 12 Oct 2026",
+ "credentials": [
+  {
+   "value": "3,000+",
+   "label": "C-level decision-makers across the 2025 FHS series"
+  },
+  {
+   "value": "621",
+   "label": "investors in the room"
+  },
+  {
+   "value": "USD 11TN",
+   "label": "assets under management represented"
+  },
+  {
+   "value": "USD 3BN",
+   "label": "in business opportunities facilitated"
+  }
+ ],
+ "credentials_source": "FHS Living launch press release, 10 June 2026",
+ "asset_classes": [
+  {
+   "name": "Branded Residences",
+   "line": "Homes sold or let under a hotel or lifestyle brand, run to hospitality standards."
+  },
+  {
+   "name": "Student Accommodation (PBSA)",
+   "line": "Purpose-built student homes, operated at scale with hotel-style services."
+  },
+  {
+   "name": "Senior Living",
+   "line": "Independent and assisted living where care meets hospitality."
+  },
+  {
+   "name": "Serviced Living",
+   "line": "Furnished apartments let by the night, month or year, fully serviced."
+  },
+  {
+   "name": "Co-Living",
+   "line": "Private rooms with shared space and a programmed community."
+  },
+  {
+   "name": "Shared Ownership",
+   "line": "Fractional and shared models that widen who can own."
+  },
+  {
+   "name": "Club Concepts",
+   "line": "Members' clubs and residences built around community and access."
+  },
+  {
+   "name": "Mixed Use",
+   "line": "Living, work and leisure in one place, often anchored by a hotel."
+  },
+  {
+   "name": "Hotels & Resorts",
+   "line": "Hotels and resorts: the operating model the other eight classes learn from."
+  }
+ ],
+ "quote_partner": {
+  "text": "The market is still fragmented. Large events are too broad, and niche ones don't have the right scale.",
+  "name": "Jeff Tisdall",
+  "role": "Chief Business Officer, Accor One Living",
+  "note": "Founding Partner"
+ },
+ "quote_brookfield": {
+  "text": "The conference is the crossroads between traditional real estate and hospitality.",
+  "name": "Brookfield",
+  "role": "FHS Living at FHS World, Dubai, October 2026",
+  "verified": true,
+  "source": "Matthew Weihs 7 Oct 2026; Ahmed approved attribution 12 Oct 2026"
+ },
+ "contact": {
+  "email": "hello@thebench.com"
+ },
+ "social": {
+  "linkedin": "https://www.linkedin.com/showcase/fhs-living",
+  "instagram": "https://www.instagram.com/fhs.living",
+  "youtube": "https://www.youtube.com/@futurehospitalitysummit"
+ },
+ "booking": {
+  "delegate": "https://www.eventbooking.uk.com/FHS-LIVING-2027/",
+  "investor": "https://www.eventbooking.uk.com/FHS-LIVING-2027/investor.php"
+ },
+ "hubspot": {
+  "portal": "14527187",
+  "region": "na1",
+  "register_interest_form": "87149330-f9a0-44cd-af58-6f0d18c31a42",
+  "investor_form": "f20439cb-9f46-4226-804e-be08e3cb5bb9",
+  "keep_updated_form": "75dd4427-66c0-4df9-8a20-6f80a27024ac",
+  "_note": "form GUIDs from /marketing/v3/forms, 12 Oct 2026"
+ },
+ "largest": {
+  "text": "Living is Europe's largest real estate investment class",
+  "source": "FHS Living marketing emails sent via HubSpot in 2026, citing JLL"
+ },
+ "relationships": {
+  "years": 20,
+  "text": "20 years of relationships with Gulf capital, built across AHIC, AHIF, FHS Saudi Arabia, FHS World, FHS Egypt and FHS Africa",
+  "source": "FHS Living positioning, SharePoint 'FHS Living 2027' (01_Website/_research/2026-10-12/research_sharepoint.md)"
+ },
+ "heritage": {
+  "text": "The Bench has spent three decades building hospitality investment platforms",
+  "source": "futurehospitality.com/living/about, read 12 Oct 2026; FHS Living LinkedIn, 10 June 2026 (Jonathan Worsley launched his first European investment conference thirty years ago)"
+ },
+ "shortfall": {
+  "text": "9.6 million homes",
+  "source": "CBRE, as cited in FHS Living's LinkedIn post of 8 October 2026 and Ali Shahid's 23 September 2026 deck"
+ },
+ "classes": [
+  {
+   "name": "Branded Residences",
+   "line": "Homes sold or let under a hotel or lifestyle brand, run to hospitality standards.",
+   "slug": "branded-residences"
+  },
+  {
+   "name": "Student Accommodation (PBSA)",
+   "line": "Purpose-built student homes, operated at scale with hotel-style services.",
+   "slug": "student-accommodation"
+  },
+  {
+   "name": "Senior Living",
+   "line": "Independent and assisted living where care meets hospitality.",
+   "slug": "senior-living"
+  },
+  {
+   "name": "Serviced Living",
+   "line": "Furnished apartments let by the night, month or year, fully serviced.",
+   "slug": "serviced-living"
+  },
+  {
+   "name": "Co-Living",
+   "line": "Private rooms with shared space and a programmed community.",
+   "slug": "co-living"
+  },
+  {
+   "name": "Shared Ownership",
+   "line": "Fractional and shared models that widen who can own.",
+   "slug": "shared-ownership"
+  },
+  {
+   "name": "Club Concepts",
+   "line": "Members' clubs and residences built around community and access.",
+   "slug": "club-concepts"
+  },
+  {
+   "name": "Mixed Use",
+   "line": "Living, work and leisure in one place, often anchored by a hotel.",
+   "slug": "mixed-use"
+  },
+  {
+   "name": "Hotels & Resorts",
+   "line": "Hotels and resorts: the operating model the other eight classes learn from.",
+   "slug": "hotels-resorts"
+  }
+ ]
+}

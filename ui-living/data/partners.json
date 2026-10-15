@@ -1,0 +1,78 @@
+{
+ "_source": "Live /living/partners page, read 12 Oct 2026 (names from __NEXT_DATA__). Logos from 03_Social/assets/partners-living.",
+ "tiers": [
+  {
+   "tier": "Founding Partner",
+   "items": [
+    {
+     "name": "Accor One Living",
+     "logo": "accor-one-living-p.png",
+     "h": 13,
+     "w": 260
+    }
+   ]
+  },
+  {
+   "tier": "Headline Partner",
+   "items": [
+    {
+     "name": "Maslow's",
+     "logo": "maslows.png",
+     "h": 45,
+     "w": 257
+    }
+   ]
+  },
+  {
+   "tier": "Partners",
+   "items": [
+    {
+     "name": "Landsberg Residential Consulting",
+     "logo": "landsberg.png",
+     "h": 81,
+     "w": 189
+    },
+    {
+     "name": "QUO",
+     "logo": "quo.png",
+     "h": 62,
+     "w": 159
+    }
+   ]
+  },
+  {
+   "tier": "Supporter",
+   "items": [
+    {
+     "name": "ISHC",
+     "logo": "ishc.png",
+     "h": 47,
+     "w": 189
+    }
+   ]
+  },
+  {
+   "tier": "Media Partners",
+   "items": [
+    {
+     "name": "BRESI",
+     "logo": "bresi.png",
+     "h": 32,
+     "w": 166
+    },
+    {
+     "name": "Urban Living News",
+     "logo": "urban-living-news.png",
+     "h": 65,
+     "w": 65
+    },
+    {
+     "name": "Smack Hospitality",
+     "logo": "smack-hospitality.png",
+     "h": 88,
+     "w": 98
+    }
+   ]
+  }
+ ]
+}

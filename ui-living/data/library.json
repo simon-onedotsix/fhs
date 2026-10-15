@@ -1,0 +1,67 @@
+{
+ "_source": "futurehospitality.com/living/content-library, read 12 Oct 2026; reports from ai.futurehospitality.com",
+ "items": [
+  {
+   "category": "Blog",
+   "date": "September 2026",
+   "title": "The Hotelisation of Real Estate: Inside the FHS Living Advisory Board at Maslow's Kensington",
+   "excerpt": "The first FHS Living Advisory Board met at Maslow's Kensington to shape the Founding Edition in Paris. Investors, operators and developers from across European living debated one idea: the projects that outperform are run like hospitality.",
+   "url": "/living/content-library/the-hotelisation-of-real-estate-inside-the-fhs-living-advisory-board-at-maslows-kensington",
+   "image": "library/hotelisation.jpg",
+   "w": 1200,
+   "h": 800
+  },
+  {
+   "category": "Report",
+   "date": "1 October 2026",
+   "title": "FHS Living at FHS World: the day report",
+   "excerpt": "AI summaries of every session on the Summit Stage on FHS Living's day at FHS World, Dubai.",
+   "url": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-world-2026/daily-2026-10-01.pdf",
+   "image": "dubai/800/stage-mc.jpg",
+   "w": 1600,
+   "h": 900,
+   "pdf": true
+  },
+  {
+   "category": "Press room",
+   "date": "August 2026",
+   "title": "The Bench Rebrands 'Branded Residences Forum' as 'FHS Living'",
+   "excerpt": "Branded Residences Forum is being rebranded to FHS Living, effective with the edition running alongside FHS World in Dubai this October.",
+   "url": "/living/content-library/the-bench-rebrands-branded-residences-forum-as-fhs-living",
+   "image": "library/rebrand.jpg",
+   "w": 1200,
+   "h": 675
+  },
+  {
+   "category": "Press room",
+   "date": "September 2026",
+   "title": "From Real Estate to Lifestyle: The Evolution of Branded Living",
+   "excerpt": "In the run up to FHS Living, co-located with FHS World, industry experts share their thoughts on the key factors driving this ever-growing asset class, how brands can differentiate themselves in the market and where the best investment opportunities are.",
+   "url": "/living/content-library/from-real-estate-to-lifestyle-the-evolution-of-branded-living",
+   "image": "library/real-estate-to-lifestyle.jpg",
+   "w": 1200,
+   "h": 528,
+   "contain": true
+  },
+  {
+   "category": "Blog",
+   "date": "June 2026",
+   "title": "The Bench Launches 'FHS Living' in Paris: Future Hospitality Summit's First European Investment Platform Uniting Capital Across Key Living Asset Classes",
+   "excerpt": "A new investor-led forum dedicated to connecting Europe's living assets with global capital makes its debut in February 2027.",
+   "url": "/living/content-library/the-bench-launches-fhs-living-in-paris-future-hospitality-summits-first-european-investment-platform-uniting-capital-across-key-living-asset-classes",
+   "image": "library/launch.jpg",
+   "w": 1200,
+   "h": 750
+  },
+  {
+   "category": "Report",
+   "date": "29 September to 1 October 2026",
+   "title": "FHS World 2026: every talk, summarised",
+   "excerpt": "Sessions from the Future Stage and the Summit Stage, summarised from the live talk, with daily reports and a full event report.",
+   "url": "https://ai.futurehospitality.com/public/fhs-world-2026",
+   "image": "dubai/800/audience-room.jpg",
+   "w": 1600,
+   "h": 900
+  }
+ ]
+}
