@@ -15,18 +15,28 @@ import flows from '../../ui-living/data/flows.json'
 import { loadAdvisors, loadPasses } from '../../ui-living/lib/cms'
 import { HIGH } from '../../ui-living/lib/attrs'
 
-const TYPES = ['Sovereign wealth funds', 'Pension funds and insurers', 'Asset managers and owners', 'Private equity', 'Family offices', 'REITs and lenders']
+// Investor mix by type (Marina Franolic, 16 Oct 2026, modelled on FHS World); HNWI (1%) folded into family offices.
+const MIX = [
+	['Investment companies', 23], ['Developers', 15], ['Private equity', 13], ['Investment funds', 12], ['REITs', 8],
+	['Sovereign wealth and pension funds', 7], ['Family offices and private investors', 7], ['Asset managers', 6],
+	['Owner-operators', 5], ['Banks and financial services', 4],
+]
 
-// The six kinds of capital as the layered building, which settles into the stack when it comes into view.
-function Capstack() {
+// The mix as rows of faceted diamonds, one per cent each, largest first; they fill in when the chart comes into view.
+function InvestorMix() {
 	const [ref, inView] = useInView()
 	return (
-		<div ref={ref} className={c('capstack__fig', inView && 'is-in')} data-inview>
-			<div className={c('stack stack--capital')} role="img" aria-label={`The capital in the room: ${TYPES.join(', ')}`}>
-				{TYPES.map(n => <div key={n} className={c('stack__layer')}></div>)}
-				<ul className={c('stack__tags')}>{TYPES.map(n => <li key={n} className={c('stack__tag')}>{n}</li>)}</ul>
-			</div>
-		</div>
+		<figure ref={ref} className={c('imix', inView && 'is-in')} data-inview>
+			<ol>
+				{MIX.map(([type, pct], i) => (
+					<li key={type} style={{ '--i': i }}>
+						<span>{type}</span><span className={c('imix__val')}>{pct}%</span>
+						<span className={c('imix__units')} aria-hidden="true">{Array.from({ length: pct }, (_, k) => <span key={k} style={{ '--k': k }}></span>)}</span>
+					</li>
+				))}
+			</ol>
+			<figcaption>Each diamond is 1% of investors. Expected mix for Paris, modelled on FHS World 2026.</figcaption>
+		</figure>
 	)
 }
 
@@ -55,7 +65,7 @@ export default function Investors({ f, flows, investor, nAdv }) {
 						<h2 className={c('ruled')} id="types-h">Every layer of the capital stack.</h2>
 						<p className={c('lede')} style={{ marginTop: 20 }}>From sovereign wealth funds to lenders, from Europe and the Middle East. FHS Living puts every layer of capital in one room with the operators and developers who make hospitality-led real estate perform.</p>
 					</div>
-					<Capstack />
+					<InvestorMix />
 				</div>
 			</section>
 
