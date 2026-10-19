@@ -623,7 +623,7 @@ export default function Home({ globals, entry, seomatic, partners }) {
                             <Button href={`https://www.eventbooking.uk.com/FHS-2027`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register for 2027</Button>
                         </Pop>
                         <Pop inline delay={.5}>
-                            <Button href={`/world/download-attendee-list`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Download Attendee List</Button>
+                            <Button href={`/world/download-post-event-report`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>2026 Post-event Report</Button>
                         </Pop>
                         <Pop inline delay={.5}>
                             <Button href={`/world/post-event-resources`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Access Post Event Resources</Button>
