@@ -98,7 +98,17 @@ export default function Page({ videoTestimonials, partnerData }) {
 
 
             <section className="block bg-default">
-                <div className="container center maxw-60">
+				<div className="container center maxw-60">
+					
+					<div className={`mb-md`}>
+						<p className="fs-4 fw-500 c-primary pb-xs">Patron</p>
+						<div className="logoGrid">
+							<LogoBox
+								size={300}
+								logoUrl={`https://cms.thebench.com/assets/img/logos/ministry-of-housing-utilities-and-urban-communities.png`}
+							/>
+						</div>
+					</div>
 
                     {
                         partnersArray.length &&
@@ -190,7 +200,7 @@ const LogoBox = ({ logoUrl, size = 150, href }) => {
                             </div>
                         </Link>
                     ) : (
-                        <div style={{...logoBoxStyle, width: size}} >
+                        <div style={{...logoBoxStyle, width: size, cursor: `default`}} >
                             <img src={logoUrl} alt="" style={{ objectFit: `contain`, width: `100%`, height: `100%`}} />
                         </div>
                     )
