@@ -30,12 +30,12 @@ function InvestorMix() {
 			<ol>
 				{MIX.map(([type, pct], i) => (
 					<li key={type} style={{ '--i': i }}>
-						<span>{type}</span><span className={c('imix__val')}>{pct}%</span>
+						<span>{type}</span>
 						<span className={c('imix__units')} aria-hidden="true">{Array.from({ length: pct }, (_, k) => <span key={k} style={{ '--k': k }}></span>)}</span>
 					</li>
 				))}
 			</ol>
-			<figcaption>Each diamond is 1% of investors. Expected mix for Paris, modelled on FHS World 2026.</figcaption>
+			<figcaption>Investors by type, largest first. Expected mix for Paris, modelled on FHS World 2026.</figcaption>
 		</figure>
 	)
 }
