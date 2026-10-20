@@ -31,7 +31,11 @@ async function handler (req, res) {
             )
 
         } catch (error) {
-            console.log('error!')
+            // 404 = email not in HubSpot; anything else (e.g. 401 bad token) is our problem, not the user's
+            if (error.code !== 404) {
+                console.error('HubSpot contact lookup failed:', error.code, error.message)
+                return res.status(500).json({ email, error: 'HubSpot lookup failed' })
+            }
 
         } finally {
             console.log(contact ? 'found contact' : 'no contact found') 
@@ -65,6 +69,10 @@ async function handler (req, res) {
                 method: 'GET',
                 path: `/crm/v3/lists/records/0-1/${contact.id}/memberships`
             })
+            if (!response.ok) {
+                console.error('HubSpot list memberships lookup failed:', response.status)
+                return res.status(500).json({ email, error: 'HubSpot lookup failed' })
+            }
             const data = await response.json()
             // console.log('data:', data)
             

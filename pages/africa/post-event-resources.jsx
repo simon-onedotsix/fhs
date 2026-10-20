@@ -51,7 +51,7 @@ export default function Page ({ seomatic, entry }) {
 
 
     useEffect( ()=> {
-        if ( !localStorage.getItem("ahifPostEvent") === "true" ) {
+        if ( localStorage.getItem("ahifPostEvent") === "true" ) {
             setAllowed( true )
         } else {
             setAllowed( false )
@@ -75,7 +75,10 @@ export default function Page ({ seomatic, entry }) {
                 'Content-Type': 'application/json'
             }
         })
-        .then( response => response.json() )
+        .then( response => {
+            if ( !response.ok ) throw new Error( response.status )
+            return response.json()
+        })
         .then( (data) => {
             console.log(data)
             if ( data.isOnList === true ) {
@@ -86,6 +89,7 @@ export default function Page ({ seomatic, entry }) {
                 setMessage("<p><span className='fw-500'>Email not found!</span> See below to register for access.</p>")
             }
         })
+        .catch( () => setMessage("<p><span className='fw-500'>Something went wrong.</span> Please try again later.</p>") )
     }
 
     return (
