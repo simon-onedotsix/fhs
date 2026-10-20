@@ -39,28 +39,27 @@ import CSS from '../../../fuselage/theme/2024/world/css/homepage.module.css'
 
 export const PRIORITY_SPEAKER_IDS = [
 	'RXZlbnRQZW9wbGVfNDc3MjUyNzA=',
-	'RXZlbnRQZW9wbGVfNDc2OTA3Mzg=',
-	'RXZlbnRQZW9wbGVfNDcyMTAyODI=',
 	'RXZlbnRQZW9wbGVfNDc1NjAzNDE=',
 	'RXZlbnRQZW9wbGVfNDg2NTIwNTU=',
-	
 	'RXZlbnRQZW9wbGVfNDc5NTk1NTE=',
 	'RXZlbnRQZW9wbGVfNDgwNzM2NTc=',
+	
 	'RXZlbnRQZW9wbGVfNDc2OTA1NTU=',
 	'RXZlbnRQZW9wbGVfNDc1NjIwNzQ=',
 	'RXZlbnRQZW9wbGVfNDk3Njg0Njk=',
-	
 	'RXZlbnRQZW9wbGVfNDcyMTA0Njg=',
 	'RXZlbnRQZW9wbGVfNDcyODc5NzY=',
+	
 	'RXZlbnRQZW9wbGVfNDcyMjczMzU=',
 	'RXZlbnRQZW9wbGVfNDcyMTAyNDk=',
 	'RXZlbnRQZW9wbGVfNDcyMTAyMzY=',
-
 	'RXZlbnRQZW9wbGVfNDc5MTIyMjE=',
 	'RXZlbnRQZW9wbGVfNDk1OTYzODk=',
+
 	'RXZlbnRQZW9wbGVfNDk2MTI2OTE=',
-	'RXZlbnRQZW9wbGVfNDk2MTQ0OTM=',
-	'RXZlbnRQZW9wbGVfNDgwNDEzNjE='
+	'RXZlbnRQZW9wbGVfNDgwNDEzNjE=',
+	'RXZlbnRQZW9wbGVfNDk1OTU3NzM='
+
 ]
 
 
@@ -98,7 +97,8 @@ export default function Page({ speakers }) {
                     {
                         speakers.length &&
                         customOrderById( orderByLastName(speakers), PRIORITY_SPEAKER_IDS).map( (profile, index) => (
-                            <Pop key={index}>
+							<Pop key={index}>
+								{/* <p style={{ fontSize: 10, color: 'lime'}}>{profile.id}</p> */}
                                 <SpeakerCard
                                     url={`/egypt/speakers/${profile.id}`}
                                     photoUrl={profile.photoUrl}

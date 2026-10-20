@@ -15,7 +15,7 @@ export const SpeakerCard = ({ url, color, photoUrl, fullName, jobTitle, company,
                 }
             </div>
 
-            <div className={`pt-xs ${color ? color : 'c-primary'}`}>
+			<div className={`pt-xs ${color ? color : 'c-primary'}`}>
                 {
                     specialField &&
                     <p className='fw-600 c-primary-2 lh-1 mb-xxs'>{specialField}</p>
