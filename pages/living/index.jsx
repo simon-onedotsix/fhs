@@ -9,13 +9,14 @@ import { DubaiProof } from '../../ui-living/sections/dubai-proof'
 import { AdvisorsWall } from '../../ui-living/sections/advisors-wall'
 import { PartnersReads } from '../../ui-living/sections/partners-reads'
 import { Closer } from '../../ui-living/sections/closer'
+import { CaseStrip } from '../../ui-living/sections/case-studies'
 
 import facts from '../../ui-living/data/facts.json'
 import atlas from '../../ui-living/data/atlas.json'
 import editions from '../../ui-living/data/editions.json'
 import dubai from '../../ui-living/data/dubai.json'
 import concl from '../../ui-living/data/conclusions.json'
-import { loadAdvisors, loadPartners, loadPasses } from '../../ui-living/lib/cms'
+import { loadAdvisors, loadCases, loadPartners, loadPasses } from '../../ui-living/lib/cms'
 import { HIGH } from '../../ui-living/lib/attrs'
 
 // FHS World, Saudi Arabia and Egypt's Living pages import these from here (see ui-living/data/legacy.js)
@@ -54,6 +55,7 @@ export default function Living(p) {
 
 			<DubaiProof dubai={p.dubai} concl={p.concl} collage={COLLAGE} />
 			<AdvisorsWall advisors={p.advisors} />
+			{p.cases.length > 0 && <CaseStrip cases={p.cases} />}
 			<PartnersReads partners={p.partners} report={p.dubai.report} />
 			<Closer price={p.price} />
 		</LivingPage>
@@ -62,7 +64,7 @@ export default function Living(p) {
 Living.theme = 'living'
 
 export async function getStaticProps() {
-	const [advisors, partners, passes] = await Promise.all([loadAdvisors(), loadPartners(), loadPasses()])
+	const [advisors, partners, passes, { cases }] = await Promise.all([loadAdvisors(), loadPartners(), loadPasses(), loadCases()])
 	return {
 		props: {
 			classes: facts.classes,
@@ -73,6 +75,7 @@ export async function getStaticProps() {
 			dubai,
 			concl,
 			partners,
+			cases: cases.length >= 3 ? cases.slice(0, 3) : [],  // the strip shows once three cases are published
 			price: priceBand(passes.passes.find(x => x.title.startsWith('Delegate'))).current,
 		},
 	}

@@ -1,0 +1,367 @@
+{
+	"lead": "Projects led by FHS Living Founding Advisors, from serviced living in Amsterdam to care residences in London. Each one answers a question the sector will put on the table in Paris.",
+	"cases": [
+		{
+			"slug": "zoku",
+			"project": "Zoku",
+			"classes": [
+				"Serviced Living",
+				"Hotels & Resorts"
+			],
+			"where": "Amsterdam, Copenhagen, Vienna and Paris",
+			"stage": "Operating",
+			"advisor": {
+				"name": "Hans Meyer",
+				"role": "Co-founder and Managing Director",
+				"photo": "assets/img/advisors/hans-meyer.jpg"
+			},
+			"what": "A home-office hybrid for people staying days or months. The Zoku Loft lifts the bed onto a raised platform and frees the floor for a kitchen, storage and a four-seat table for working or hosting. Rooftop social spaces replace the lobby, with coworking, a restaurant and a community programme.",
+			"gap": "Before drawing a plan, the founders interviewed 150 travelling professionals. Two problems kept coming up: hotel rooms are built around the bed and fail anyone staying more than a few nights, and weeks away from home are lonely.",
+			"answer": "Private space downstairs, social space upstairs and a team whose job is to connect guests with each other and the city. Every Zoku is B Corp certified, and Zoku Amsterdam was among the first hotels in the world to certify, in 2018.",
+			"figure": {
+				"value": "533",
+				"label": "lofts across four buildings"
+			},
+			"conversation": "Work, Live, Belong: Designing the Next Generation of Mixed-Use Communities",
+			"image": {
+				"card": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x900_crop_center-center_none/case-study-zoku.jpg",
+				"tile": "https://cms.thebench.com/assets/img/site/FHS-Living/_800x1000_crop_center-center_none/case-study-zoku.jpg",
+				"og": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x630_crop_center-center_none/case-study-zoku.jpg"
+			}
+		},
+		{
+			"slug": "loveday-and-co",
+			"project": "Loveday & Co",
+			"classes": [
+				"Senior Living",
+				"Club Concepts"
+			],
+			"where": "London – Belgravia, Kensington, Abbey Road and Chelsea",
+			"stage": "Operating",
+			"advisor": {
+				"name": "Laurence Geller CBE",
+				"role": "Co-founder, Chairman and Chief Executive",
+				"photo": "assets/img/advisors/laurence-geller-cbe.jpg"
+			},
+			"what": "Luxury care residences that pair 24-hour residential, nursing and dementia care with hotel-grade dining, wellness and service. The Loveday Club extends the offer to seniors who still live independently. Loveday Kensington was rated Outstanding by the Care Quality Commission on its first inspection.",
+			"gap": "Geller lost both parents to dementia and struggled to find personalised, compassionate care for them. The UK care system is under strain, and that standard of care is hard to deliver at mass-market scale.",
+			"answer": "A former hotel chief executive's model puts clinical teams inside hospitality settings. Dementia-informed design includes circadian lighting and acoustic monitoring, and staffing runs well above the sector norm. Care standards draw on research funded through the Geller Institute of Ageing and Memory.",
+			"figure": {
+				"value": "114",
+				"label": "suites across four London residences"
+			},
+			"conversation": "The Art of Living: Where Hospitality Meets Home",
+			"image": {
+				"card": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x900_crop_center-center_none/case-study-loveday-and-co.jpg",
+				"tile": "https://cms.thebench.com/assets/img/site/FHS-Living/_800x1000_crop_center-center_none/case-study-loveday-and-co.jpg",
+				"og": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x630_crop_center-center_none/case-study-loveday-and-co.jpg"
+			}
+		},
+		{
+			"slug": "the-embassies",
+			"project": "The Embassies",
+			"classes": [
+				"Senior Living",
+				"Serviced Living",
+				"Club Concepts"
+			],
+			"where": "Hamburg, Germany, open since early 2025; headquartered in Zurich",
+			"stage": "Operating",
+			"advisor": {
+				"name": "Jan Garde",
+				"role": "Founder and Chairman",
+				"photo": "assets/img/advisors/jan-garde.jpg"
+			},
+			"what": "Serviced living and a members' club for lifestyle-driven grown-ups, inside Hamburg's listed Hindenburghaus. The building holds 45 serviced apartments above around 1,200 sq m of club and wellbeing space, with a public café, bakery and bookshop at street level. Membership opens a network of partner clubs.",
+			"gap": "Demographic change is driving demand for later-life housing the market has not met, and what exists tends to separate older people from city life. Garde set out to rewrite what growing older looks like, without the scheduled bingo nights.",
+			"answer": "Design-led apartments come with hotel services. The club is open to non-residents, so the building never becomes age-segregated, and the street-level café ties it to the neighbourhood. Applicants for Hamburg ranged from 46 to 81 years old.",
+			"figure": {
+				"value": "46–81",
+				"label": "the age range of applicants for Hamburg"
+			},
+			"conversation": "The Art of Living: Where Hospitality Meets Home",
+			"image": {
+				"card": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x900_crop_center-center_none/case-study-the-embassies.jpg",
+				"tile": "https://cms.thebench.com/assets/img/site/FHS-Living/_800x1000_crop_center-center_none/case-study-the-embassies.jpg",
+				"og": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x630_crop_center-center_none/case-study-the-embassies.jpg"
+			}
+		},
+		{
+			"slug": "maslows",
+			"project": "Maslow's",
+			"classes": [
+				"Club Concepts"
+			],
+			"where": "London – Mortimer House in Fitzrovia, 1 Warwick in Soho and Maslow's Kensington, opened June 2026",
+			"stage": "Operating",
+			"advisor": {
+				"name": "Guy Ivesha",
+				"role": "Founder and CEO",
+				"photo": "assets/img/advisors/guy-ivesha.jpg"
+			},
+			"what": "Members' houses that put work, fitness, wellbeing, food and social life under one membership. Each sits in a restored heritage building with private studies for 4–40 people, meeting rooms, gyms, studios and restaurants, some open to the public. Kensington adds 30,000 sq ft and a BREEAM Excellent rating.",
+			"gap": "Ivesha argues the traditional office no longer fits how people work, while many London members' clubs are purely social and exclusive. Wellbeing usually sits outside the working day rather than inside it.",
+			"answer": "An inclusive but selective members' house with no dress code, where wellbeing sessions of 15–60 minutes fit between meetings. Ivesha founded the group in 2016 and opened Mortimer House in 2017.",
+			"figure": {
+				"value": "30,000 sq ft",
+				"label": "at Maslow's Kensington, rated BREEAM Excellent"
+			},
+			"conversation": "Work, Live, Belong: Designing the Next Generation of Mixed-Use Communities",
+			"image": {
+				"card": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x900_crop_center-center_none/case-study-maslows.jpg",
+				"tile": "https://cms.thebench.com/assets/img/site/FHS-Living/_800x1000_crop_center-center_none/case-study-maslows.jpg",
+				"og": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x630_crop_center-center_none/case-study-maslows.jpg"
+			}
+		},
+		{
+			"slug": "ao-hostels",
+			"project": "a&o Hostels",
+			"classes": [
+				"Hotels & Resorts"
+			],
+			"where": "46 properties in 32 cities across 10 European countries; headquartered in Berlin",
+			"stage": "Operating",
+			"advisor": {
+				"name": "Oliver Winter",
+				"role": "Founder and CEO",
+				"photo": "assets/img/advisors/oliver-winter.jpg"
+			},
+			"what": "Europe's largest hostel group, with hotel-standard private rooms and dorm beds under one roof. Almost every room has its own bathroom, and buildings add shared kitchens, bars, lounges and work areas. Guests range from school groups and students to families and independent travellers.",
+			"gap": "Winter founded a&o in Berlin in 2000 on an idea from his own travels: affordable, professionally run beds in city centres for young people. Hostels then meant shared bathrooms and basic rooms.",
+			"answer": "A lean model with more beds per room, fewer staff and a cheaper fit-out than a budget hotel, which put break-even occupancy at around 30% (company figure, 2023). Most properties are conversions of offices, hotels and commercial buildings, and a premium sister brand, Schulz, is growing.",
+			"figure": {
+				"value": "31,600",
+				"label": "beds across the group, 2025 figures published July 2026"
+			},
+			"conversation": "One Asset, Multiple Income Streams: The New Living Investment Model",
+			"image": {
+				"card": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x900_crop_center-center_none/case-study-ao-hostels.jpg",
+				"tile": "https://cms.thebench.com/assets/img/site/FHS-Living/_800x1000_crop_center-center_none/case-study-ao-hostels.jpg",
+				"og": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x630_crop_center-center_none/case-study-ao-hostels.jpg"
+			}
+		},
+		{
+			"slug": "lyvinn",
+			"project": "LyvInn",
+			"classes": [
+				"Serviced Living",
+				"Hotels & Resorts"
+			],
+			"where": "Frankfurt, Germany (164 rooms, opened May 2023). Berlin, Paris, Vienna, Dublin and London are in development, with a target of 14 hotels by 2029.",
+			"stage": "Operating",
+			"advisor": {
+				"name": "Navneet Bali",
+				"role": "Founder and CEO",
+				"photo": "assets/img/advisors/navneet-bali.jpg"
+			},
+			"what": "A hybrid of lifestyle budget hotel and hostel, designed by Studio Aisslinger. Private and multi-bed rooms share one building with co-working, round-the-clock food, a bar and a regular events programme. The name joins \"Lyv\" for extended stays and \"Inn\" for short ones.",
+			"gap": "Graduates, first-jobbers and digital nomads want affordable, sociable places to live and work on the move, and few brands serve them. Bali, who built Meininger, says institutional capital now wants hybrid accommodation but has too few options to buy.",
+			"answer": "Short and extended stays under one roof, with social spaces open to locals as well as guests. Growth comes through conversions of hotels, hostels and offices of 100–350 rooms, backed by Blantyre Capital.",
+			"figure": {
+				"value": "14",
+				"label": "hotels targeted by 2029"
+			},
+			"conversation": "One Asset, Multiple Income Streams: The New Living Investment Model",
+			"image": {
+				"card": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x900_crop_center-center_none/case-study-lyvinn.jpg",
+				"tile": "https://cms.thebench.com/assets/img/site/FHS-Living/_800x1000_crop_center-center_none/case-study-lyvinn.jpg",
+				"og": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x630_crop_center-center_none/case-study-lyvinn.jpg"
+			}
+		},
+		{
+			"slug": "adina-apartment-hotels",
+			"project": "Adina Apartment Hotels",
+			"classes": [
+				"Serviced Living",
+				"Hotels & Resorts"
+			],
+			"where": "Germany, Austria, Denmark, Switzerland, Hungary and the UK – around 22 properties (December 2025); European base in Berlin",
+			"stage": "Operating",
+			"advisor": {
+				"name": "Asli Kutlucan",
+				"role": "CEO Europe, TFE Hotels",
+				"photo": "assets/img/advisors/asli-kutlucan.jpg"
+			},
+			"what": "Apartment hotels with a full kitchen in every unit, from studios to three-bedroom apartments, plus hotel services, hosts and long-stay rates. The European business also runs A by Adina, a premium tier, and the MM:NT Berlin Lab, a six-room micro hotel that tests ideas on real guests before roll-out.",
+			"gap": "Extended-stay hospitality is still under-supplied in Europe compared with other markets. Younger guests raised on Airbnb, co-living and student housing expect flexibility and service at every life stage, and for many, convenience now matters more than ownership.",
+			"answer": "What Kutlucan calls casual living: hotel comfort with the freedom of a home. New supply increasingly comes from adaptive reuse of offices and retail, including a 161-unit A by Adina in Berlin's FÜRST quarter due in 2027.",
+			"figure": {
+				"value": "161",
+				"label": "units in an A by Adina at Berlin's FÜRST quarter, due 2027"
+			},
+			"conversation": "The Art of Living: Where Hospitality Meets Home",
+			"image": {
+				"card": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x900_crop_center-center_none/case-study-adina-apartment-hotels.jpg",
+				"tile": "https://cms.thebench.com/assets/img/site/FHS-Living/_800x1000_crop_center-center_none/case-study-adina-apartment-hotels.jpg",
+				"og": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x630_crop_center-center_none/case-study-adina-apartment-hotels.jpg"
+			}
+		},
+		{
+			"slug": "native-by-numa",
+			"project": "Native by Numa",
+			"classes": [
+				"Serviced Living",
+				"Hotels & Resorts"
+			],
+			"where": "London, Manchester, Edinburgh and Glasgow. NUMA Group runs more than 11,000 units in 40+ cities across 16 European countries (October 2026).",
+			"stage": "Operating",
+			"advisor": {
+				"name": "Philip Lassman",
+				"role": "Managing Director UK & Ireland, NUMA Group",
+				"photo": "assets/img/advisors/philip-lassman.jpg"
+			},
+			"what": "NUMA runs design-led rooms and apartments with no front desk, no keycard and round-the-clock messaging support, for short or long stays. Native by Numa, launched in October 2025, is its premium lifestyle brand, with studios to two-bedroom apartments in central buildings such as a converted convent in Fitzrovia.",
+			"gap": "Hotel chains struggle to serve digital, time-poor guests because of legacy systems and slow cultures, while short-term rentals face tightening city rules. Guests who wanted apartment space with hotel reliability had to pick one.",
+			"answer": "Hotel-grade licensing, quality and service with the space and kitchens of a rental, run on NUMA's own technology platform. Lassman leads the UK and Ireland business, with four UK openings totalling 188 units scheduled for 2026.",
+			"figure": {
+				"value": "11,000+",
+				"label": "units run by NUMA Group in 40+ cities"
+			},
+			"conversation": "One Asset, Multiple Income Streams: The New Living Investment Model",
+			"image": {
+				"card": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x900_crop_center-center_none/case-study-native-by-numa.jpg",
+				"tile": "https://cms.thebench.com/assets/img/site/FHS-Living/_800x1000_crop_center-center_none/case-study-native-by-numa.jpg",
+				"og": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x630_crop_center-center_none/case-study-native-by-numa.jpg"
+			}
+		},
+		{
+			"slug": "cloud-7-residence",
+			"project": "Cloud 7 Residence and The House Residence",
+			"classes": [
+				"Serviced Living",
+				"Mixed Use"
+			],
+			"where": "AlUla and Jeddah, Saudi Arabia",
+			"stage": "Operating in AlUla; in development in Jeddah",
+			"advisor": {
+				"name": "Marloes Knippenberg",
+				"role": "CEO, Kerten Hospitality",
+				"photo": "assets/img/advisors/marloes-knippenberg.jpg"
+			},
+			"what": "Two serviced-living brands from Kerten Hospitality. Cloud 7 Residence offers affordable, modern living spaces for social, connected residents. The House Residence pairs upscale apartments and villas with hotel services. Both take short and long stays. Kerten runs Cloud 7 Residence AlUla and signed The House Residence in Jeddah's Al Salam District at Future Hospitality Summit Saudi Arabia in May 2025.",
+			"gap": "The Royal Commission for AlUla (RCU) spent 2018 to 2023 building AlUla as a luxury destination. It targets more than 5,000 keys by 2030, for diverse guest segments and accommodation needs. Film AlUla needed beds and offices for visiting crews. Across the Middle East and North Africa, Kerten reports owners seeking flexible concepts and rising demand for community-rooted hospitality.",
+			"answer": "RCU built lodgings for visiting film crews, then chose Kerten in 2023 to run them as Cloud 7 Residence AlUla. It has 301 bungalows and suites with kitchenettes, a pool, sports courts and Ouspace workspaces, open to crews, tourists and long-stay guests. In Jeddah, The House Residence will add 113 apartments and villas inside Baraka's 45,000 sq m Al Salam District.",
+			"figure": {
+				"value": "301",
+				"label": "bungalows and suites at Cloud 7 Residence AlUla"
+			},
+			"conversation": "The Art of Living: Where Hospitality Meets Home",
+			"image": {
+				"card": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x900_crop_center-center_none/case-study-cloud-7-residence.jpg",
+				"tile": "https://cms.thebench.com/assets/img/site/FHS-Living/_800x1000_crop_center-center_none/case-study-cloud-7-residence.jpg",
+				"og": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x630_crop_center-center_none/case-study-cloud-7-residence.jpg"
+			}
+		},
+		{
+			"slug": "accor-one-living",
+			"project": "Accor One Living",
+			"classes": [
+				"Branded Residences",
+				"Mixed Use"
+			],
+			"where": "Global. Flagships include The OWO Residences by Raffles in London and SO/ Uptown Dubai Residences",
+			"stage": "Operating",
+			"advisor": {
+				"name": "Jeff Tisdall",
+				"role": "Chief Business Officer, Accor One Living",
+				"photo": "assets/img/advisors/jeff-tisdall.jpg"
+			},
+			"what": "Accor's platform for branded residences and mixed-use projects, launched on 17 January 2023. It spans more than 25 Accor brands, from Raffles and Fairmont to lifestyle, premium and midscale names, and adds coworking, extended-stay hotels and private clubs to schemes that Accor hotels anchor.",
+			"gap": "Most of the new hotel opportunities Accor sees are mixed-use, Tisdall said in April 2024. Investors want operators who can run the hotel and extend the brand to homes, coworking and private clubs. Buyers want turnkey second homes, cared for and let while they are away.",
+			"answer": "One integrated team covers every phase, from planning and design to sales, pre-opening and operation. The hotel gives owners round-the-clock on-demand services while design protects their privacy. Shared amenities, facilities and infrastructure let investors extend management across several parts of one scheme, and an Apartments and Villas channel markets owners' homes for rent.",
+			"figure": {
+				"value": "7,000+",
+				"label": "homeowners at close to 50 communities, March 2025"
+			},
+			"conversation": "One Asset, Multiple Income Streams: The New Living Investment Model",
+			"image": {
+				"card": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x900_crop_center-center_none/case-study-accor-one-living.jpg",
+				"tile": "https://cms.thebench.com/assets/img/site/FHS-Living/_800x1000_crop_center-center_none/case-study-accor-one-living.jpg",
+				"og": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x630_crop_center-center_none/case-study-accor-one-living.jpg"
+			}
+		},
+		{
+			"slug": "nest-hotel",
+			"project": "Nest Hotel",
+			"classes": [
+				"Student Accommodation (PBSA)",
+				"Hotels & Resorts"
+			],
+			"where": "Aljada, Sharjah, UAE",
+			"stage": "Operating",
+			"advisor": {
+				"name": "Amit Arora",
+				"role": "COO, Arada Hospitality & Entertainment",
+				"photo": "assets/img/advisors/amit-arora.jpg"
+			},
+			"what": "Arada's first homegrown hotel brand: midscale, tech-led and built around coworking lounges. It sits beside the Nest Campus student housing cluster, was shaped with input from students and offers them part-time jobs, serving students, faculty, families and event visitors alike.",
+			"gap": "Sharjah was short of affordable rooms as airport traffic rose 11% to 17m passengers in 2024 and Aljada drew 8m visitors.",
+			"answer": "An affordable, community-designed hotel that works with the student campus rather than apart from it. Future Nest Hotels may sit beside further Nest Campus sites.",
+			"figure": {
+				"value": "395",
+				"label": "rooms, opened in December 2025"
+			},
+			"conversation": "Work, Live, Belong: Designing the Next Generation of Mixed-Use Communities",
+			"image": {
+				"card": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x900_crop_center-center_none/case-study-nest-hotel.jpg",
+				"tile": "https://cms.thebench.com/assets/img/site/FHS-Living/_800x1000_crop_center-center_none/case-study-nest-hotel.jpg",
+				"og": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x630_crop_center-center_none/case-study-nest-hotel.jpg"
+			}
+		},
+		{
+			"slug": "al-faisaliah-district",
+			"project": "Al Faisaliah District",
+			"classes": [
+				"Branded Residences",
+				"Mixed Use"
+			],
+			"where": "King Fahad Road, Riyadh, Saudi Arabia",
+			"stage": "In development",
+			"advisor": {
+				"name": "Khalid Saud Abuhaimed",
+				"role": "CEO, Al Khozama Investments",
+				"photo": "assets/img/advisors/khalid-saud-abuhaimed.jpg"
+			},
+			"what": "A mixed-use destination beside Al Faisaliah Tower, developed by Al Khozama with GFH Capital at a cost of around SAR 1.5bn. It brings branded apartments, hotel residences, Grade-A offices, retail and wellness together. Al Khozama is also behind The Mark in Al Ghadeer, whose 171-key Al Faisaliah Hotel includes 130 studio residences.",
+			"gap": "The partners want a new benchmark for integrated mixed-use development in Riyadh as it grows into a global capital.",
+			"answer": "Living, work, hospitality and wellness gathered around one of the city's landmark addresses, from the investment arm of the King Faisal Foundation.",
+			"figure": {
+				"value": "SAR 1.5bn",
+				"label": "approximate development cost, with GFH Capital"
+			},
+			"conversation": "Work, Live, Belong: Designing the Next Generation of Mixed-Use Communities",
+			"image": {
+				"card": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x900_crop_center-center_none/case-study-al-faisaliah-district.jpg",
+				"tile": "https://cms.thebench.com/assets/img/site/FHS-Living/_800x1000_crop_center-center_none/case-study-al-faisaliah-district.jpg",
+				"og": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x630_crop_center-center_none/case-study-al-faisaliah-district.jpg"
+			}
+		},
+		{
+			"slug": "nomiloft",
+			"project": "NomiLoft",
+			"classes": [
+				"Co-Living"
+			],
+			"where": "Europe first. Amsterdam, Eindhoven, Berlin, London and Paris are among the cities in the brand's vision; no site is announced yet.",
+			"stage": "Concept",
+			"advisor": {
+				"name": "Dirk Bakker",
+				"role": "Partner, NomiLoft; CEO Hospitality, Necron Group",
+				"photo": "assets/img/advisors/dirk-bakker.jpg"
+			},
+			"what": "A smart co-living brand for young professionals, creatives and internationals. Furnished lofts of around 50 sq m use a fold-away bed to double the living space, in modular buildings with a gym, coworking, a bar and a rooftop. One app runs keys, bookings and moves between cities.",
+			"gap": "Young people and essential workers are being priced out of the cities they work in, and conventional development is too slow and carbon-heavy to catch up. Moving city also means rebuilding a social life from scratch.",
+			"answer": "Prefab lofts the team says go up 40% faster with 60% less CO₂, a hotel-style resident experience and a membership that moves with residents from one NomiLoft city to the next.",
+			"figure": {
+				"value": "40%",
+				"label": "faster to build, with 60% less CO₂, the team says"
+			},
+			"conversation": "Who Pays for Sustainability? Investors, Lenders and Owners Debate the Business Case",
+			"image": {
+				"card": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x900_crop_center-center_none/case-study-nomiloft.jpg",
+				"tile": "https://cms.thebench.com/assets/img/site/FHS-Living/_800x1000_crop_center-center_none/case-study-nomiloft.jpg",
+				"og": "https://cms.thebench.com/assets/img/site/FHS-Living/_1200x630_crop_center-center_none/case-study-nomiloft.jpg"
+			}
+		}
+	]
+}

@@ -11,6 +11,7 @@ const NAV = [
 	['paris', 'Paris 2027'],
 	['programme', 'Programme'],
 	['who-is-in-the-room', "Who's in the room"],
+	['case-studies', 'Case studies'],
 	['investors', 'Investors'],
 	['partners', 'Partners'],
 	['content-library', 'Content library'],

@@ -13,8 +13,9 @@ const useIsoLayoutEffect = typeof window === 'undefined' ? useEffect : useLayout
 // before the first paint, so visitors with JavaScript never see the fallback layout flash.
 const swap = `(function(r){r.classList.remove('${s.nojs}');r.classList.add('${s.js}')})(document.getElementById('lv-root'))`
 
-// The shell every FHS Living page shares: head tags, events bar, header, footer.
-export function LivingPage({ page, title, description, head, children }) {
+// The shell every FHS Living page shares: head tags, events bar, header, footer. `path` and `image` override the
+// canonical URL and share image for pages under a section (a case study page sits under page "case-studies").
+export function LivingPage({ page, path, image, title, description, head, children }) {
 	const root = useRef(null)
 
 	useIsoLayoutEffect(() => {  // client-side navigation does not run the inline script
@@ -32,12 +33,12 @@ export function LivingPage({ page, title, description, head, children }) {
 			<Head>
 				<title>{title}</title>
 				<meta name="description" content={description} />
-				<link rel="canonical" href={SITE + R[page]} />
+				<link rel="canonical" href={SITE + (path || R[page])} />
 				<meta property="og:type" content="website" />
 				<meta property="og:site_name" content="FHS Living" />
 				<meta property="og:title" content={title} />
 				<meta property="og:description" content={description} />
-				<meta property="og:image" content={`${SITE}/assets/img/living/v3/og.jpg`} />
+				<meta property="og:image" content={image || `${SITE}/assets/img/living/v3/og.jpg`} />
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="theme-color" content="#FBD4CD" />
 				<link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />

@@ -12,6 +12,8 @@ export const R = {
 	about: '/living/about',
 	contact: '/living/contact',
 	'content-library': '/living/content-library',
+	// also the slug of the Craft page that holds the cases: listing it here keeps pages/living/[slug].jsx off it
+	'case-studies': '/living/case-studies',
 }
 
 export const SITE = 'https://futurehospitality.com'

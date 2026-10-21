@@ -1,13 +1,15 @@
-// What the FHS Living team edits outside the code: the Founding Advisors, pass prices, articles and the travel page
-// in Craft, partners in Swapcard. Read at build time like the rest of the app, so "Deploy FHS frontend" publishes an
-// edit. Each loader returns the shape of its saved snapshot in ui-living/data plus `source`, and falls back to that
-// snapshot when its source cannot be read, so an outage never stops the build for every event.
+// What the FHS Living team edits outside the code: the Founding Advisors, pass prices, articles, the travel page and
+// the case studies in Craft, partners in Swapcard. Read at build time like the rest of the app, so "Deploy FHS
+// frontend" publishes an edit. Each loader returns the shape of its saved snapshot in ui-living/data plus `source`,
+// and falls back to that snapshot when its source cannot be read, so an outage never stops the build for every event.
 import { gql } from '@apollo/client'
 import craftApolloClient from '../../pages/api/apollo'
+import { parseCases } from './cases'
 import advisorsSaved from '../data/advisors.json'
 import passesSaved from '../data/passes.json'
 import librarySaved from '../data/library.json'
 import partnersSaved from '../data/partners.json'
+import casesSaved from '../data/cases.json'
 
 const SITE = process.env.SITE_HANDLE_LIVING || 'fhsLiving'
 // the editorial rules the prototype applies to the roster (site/tools/build.py)
@@ -133,3 +135,21 @@ export const loadTravel = loader('travel page', async () => {
 	if (!html.trim()) throw new Error('no text')
 	return { html: tidy(html).replace(/https:\/\/[a-z0-9]+\.safelinks\.protection\.outlook\.com\/\?url=([^&"]+)[^"]*/g, (_, u) => decodeURIComponent(u)) }
 }, { html: null })
+
+// The case studies: Craft's "Case studies" Living page (slug case-studies), one Flip Flops module per case, written,
+// hidden and reordered there (format in ./cases.js). Until that page is published, previews and local review show
+// the saved drafts; production shows only what Craft publishes.
+const DRAFTS_OK = process.env.VERCEL_ENV === 'preview' || process.env.NODE_ENV === 'development'
+export const loadCases = loader('case studies', async () => {
+	const [{ people }, d] = await Promise.all([loadAdvisors(), craft(`{ entry(site: "${SITE}", slug: "case-studies") {
+		... on ${SITE}Pages_page_Entry { fhisContentBlocks {
+			... on fhisContentBlocks_text_BlockType { textBlocks { ... on textBlocks_BlockType { body } } }
+			... on fhisContentBlocks_flipFlops_BlockType { anchorId flipFlops { ... on flipFlops_BlockType { caption body hero {
+				card: url @transform(width: 1200, height: 900, mode: "crop") tile: url @transform(width: 800, height: 1000, mode: "crop")
+				og: url @transform(width: 1200, height: 630, mode: "crop") } } } } } } } }`)])
+	if (!d.entry) {
+		if (DRAFTS_OK) throw new Error('the Craft page is not published yet')
+		return { lead: null, cases: [] }
+	}
+	return parseCases(d.entry.fhisContentBlocks, people, CLASSES, tidy)
+}, casesSaved)
