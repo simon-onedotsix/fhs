@@ -620,7 +620,7 @@ export default function Home({ globals, entry, seomatic, partners }) {
                    
                     <div className={ isDesktop ? `mt-sm button-grid` : `py-md button-grid`}>
                         <Pop inline delay={.5}>
-                            <Button href={`https://www.eventbooking.uk.com/FHS-2027`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register for 2027</Button>
+                            <Button href={`/world/purchase-pass`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>Register for 2027</Button>
                         </Pop>
                         <Pop inline delay={.5}>
                             <Button href={`/world/download-post-event-report`} theme={{ background: `var(--secondary-2)`, hover: `var(--secondary-2-dark)`, color: `white`}} decal={`fs-5 fw-600`}>2026 Post-event Report</Button>

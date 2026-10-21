@@ -389,8 +389,8 @@ export const FHS_WORLD = {
             "headerCtas": [
                 {
                     "label": "Register for 2027",
-                    "hyperlink": "https://www.eventbooking.uk.com/FHS-2027",
-                    "openInNewWindow": true,
+                    "hyperlink": "/world/purchase-pass",
+                    "openInNewWindow": false,
                     "alert": true
                 },
                 {
