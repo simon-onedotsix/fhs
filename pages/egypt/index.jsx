@@ -127,6 +127,11 @@ export default function Home ({ data, content, partners, speakers }) {
 
                 <ButtonGrid>
                     <Pop inline>
+                        <ButtonKeyline decal={`fs-5`} href={`/egypt/purchase-pass`}>
+                            Register Now
+                        </ButtonKeyline>
+                    </Pop>
+                    <Pop inline>
                         <ButtonKeyline decal={`fs-5`} href={`/egypt/forms/download-prospectus`}>
                             Download Prospectus
                         </ButtonKeyline>
@@ -182,7 +187,7 @@ export default function Home ({ data, content, partners, speakers }) {
                 </div>
 
                 <div className="container center">
-                    <Pop><ButtonKeyline href={`/egypt/forms/register-interest`}>Register Interest</ButtonKeyline></Pop>
+                    <Pop><Button href={`/egypt/forms/purchase-pass`} label={`Register Now`} /></Pop>
                 </div>
 
                 <div className="container pt-xs columns-3 gap-sm">
