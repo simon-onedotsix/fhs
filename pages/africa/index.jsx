@@ -247,7 +247,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                                 
                         </div>
 
-                        <p className="fs-3 mt-xs"><span className="fw-600">2-3 February, 2027</span></p>
+                        <p className="fs-3 mt-xs"><span className="fw-600">20-21 April, 2027</span></p>
                         <p className="fs-4 balance lh-1">Speke Resort Convention Centre, Munyonyo, Kampala</p>
 
                         <div className='mt-md'>
