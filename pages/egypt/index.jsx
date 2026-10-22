@@ -125,12 +125,14 @@ export default function Home ({ data, content, partners, speakers }) {
                 <h1 className="fs-0 caps lh-0"><Reveal>Where Heritage <br />Inspires Investment</Reveal></h1>
                 <h4 className="fs-4 pb-md">10-11 November 2026, Sofitel Downtown Cairo Nile</h4>
 
-                <ButtonGrid>
-                    <Pop inline>
-                        <ButtonKeyline decal={`fs-5`} href={`/egypt/purchase-pass`}>
-                            Register Now
-                        </ButtonKeyline>
-                    </Pop>
+				<ButtonGrid>
+					<div style={{ display: isDesktop ? 'none' : 'block'}}>
+						<Pop inline>
+							<ButtonKeyline decal={`fs-5`} href={`/egypt/purchase-pass`}>
+								Register Now
+							</ButtonKeyline>
+						</Pop>
+					</div>
                     <Pop inline>
                         <ButtonKeyline decal={`fs-5`} href={`/egypt/forms/download-prospectus`}>
                             Download Prospectus
