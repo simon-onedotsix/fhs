@@ -12,7 +12,7 @@ import { passOffer } from '../../ui-living/sections/passes'
 
 import facts from '../../ui-living/data/facts.json'
 import flows from '../../ui-living/data/flows.json'
-import { loadAdvisors, loadPasses } from '../../ui-living/lib/cms'
+import { loadAdvisors, loadPasses, REVALIDATE } from '../../ui-living/lib/cms'
 import { HIGH } from '../../ui-living/lib/attrs'
 
 // Investor mix by type (Marina Franolic, 16 Oct 2026, modelled on FHS World); HNWI (1%) folded into family offices.
@@ -124,6 +124,7 @@ Investors.theme = 'living'
 export async function getStaticProps() {
 	const [advisors, passes] = await Promise.all([loadAdvisors(), loadPasses()])
 	return {
+		revalidate: REVALIDATE,
 		props: {
 			f: facts,
 			flows,

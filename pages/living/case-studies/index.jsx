@@ -6,7 +6,7 @@ import { priceBand } from '../../../ui-living/lib/format'
 import { HIGH } from '../../../ui-living/lib/attrs'
 import { CaseRow } from '../../../ui-living/sections/case-studies'
 import { Closer } from '../../../ui-living/sections/closer'
-import { loadAdvisors, loadCases, loadPasses } from '../../../ui-living/lib/cms'
+import { loadAdvisors, loadCases, loadPasses, REVALIDATE } from '../../../ui-living/lib/cms'
 
 const LEAD = 'Projects led by FHS Living Founding Advisors, from serviced living in Amsterdam to care residences in London. Each one answers a question the sector will put on the table in Paris.'
 
@@ -62,6 +62,7 @@ CaseStudies.theme = 'living'
 export async function getStaticProps() {
 	const [{ lead, cases }, advisors, passes] = await Promise.all([loadCases(), loadAdvisors(), loadPasses()])
 	return {
+		revalidate: REVALIDATE,
 		props: {
 			lead,
 			cases,

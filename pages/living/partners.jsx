@@ -7,7 +7,7 @@ import { R } from '../../ui-living/lib/routes'
 import { Quote } from '../../ui-living/sections/quote'
 
 import facts from '../../ui-living/data/facts.json'
-import { loadPartners } from '../../ui-living/lib/cms'
+import { loadPartners, REVALIDATE } from '../../ui-living/lib/cms'
 import { HIGH } from '../../ui-living/lib/attrs'
 
 const MAIL = 'mailto:matthew.weihs@thebench.com?subject=FHS%20Living%20partnership'
@@ -75,5 +75,5 @@ export default function Partners({ f, partners }) {
 Partners.theme = 'living'
 
 export async function getStaticProps() {
-	return { props: { f: facts, partners: await loadPartners() } }
+	return { props: { f: facts, partners: await loadPartners() }, revalidate: REVALIDATE }
 }

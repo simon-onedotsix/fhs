@@ -17,11 +17,10 @@ import { PartnerStrip } from '../../../ui-living/sections/partner-strip'
 
 import facts from '../../../ui-living/data/facts.json'
 import flows from '../../../ui-living/data/flows.json'
-import programme from '../../../ui-living/data/programme.json'
 import dubai from '../../../ui-living/data/dubai.json'
 import concl from '../../../ui-living/data/conclusions.json'
 import linkedin from '../../../ui-living/data/linkedin.json'
-import { loadAdvisors, loadPartners, loadPasses } from '../../../ui-living/lib/cms'
+import { loadAdvisors, loadPartners, loadPasses, loadProgramme, REVALIDATE } from '../../../ui-living/lib/cms'
 import { HIGH } from '../../../ui-living/lib/attrs'
 
 const COMES = {
@@ -48,6 +47,7 @@ function Room({ f }) {
 
 export default function Paris(p) {
 	const { f, delegate } = p
+	const theme = n => (p.programme.days.find(d => d.n === n) || {}).theme
 	return (
 		<LivingPage page="paris" title="FHS Living Paris | Founding Edition, 23–24 February 2027" description="The Founding Edition of FHS Living: two days at Pullman Paris Montparnasse where capital from Europe and the Middle East meets hospitality-led real estate.">
 			<section className={c('page-hero')} aria-labelledby="hero-h">
@@ -75,7 +75,7 @@ export default function Paris(p) {
 				<div className={c('wrap')}>
 					<div className={c('head')}><h2 className={c('ruled')} id="fmt-h">See it. Work it. Meet.</h2><p>The stage opens each day. Roundtables and hosted investor meetings follow.</p></div>
 					<ol className={c('steps')}>
-						<li className={c('step')}><figure><img src={img('dubai/800/stage-panel.jpg')} width="1600" height="792" alt="A panel on the FHS Living stage" loading="lazy" /></figure><h3>Keynotes and panels</h3><p>Where capital is moving on day one, how deals get done on day two, from the people doing them.</p></li>
+						<li className={c('step')}><figure><img src={img('dubai/800/stage-panel.jpg')} width="1600" height="792" alt="A panel on the FHS Living stage" loading="lazy" /></figure><h3>Keynotes and panels</h3><p>{theme('01')} on day one. {theme('02')} on day two.</p></li>
 						<li className={c('step')}><figure><img src={img('photo/roundtable-room.jpg')} width="1600" height="1065" alt="A roundtable at a Future Hospitality Summit event" loading="lazy" /></figure><h3>Roundtables and masterclasses</h3><p>Underwriting, regulation and operations, in small rooms rather than panels watched from row nine.</p></li>
 						<li className={c('step')}><figure><img src={img('dubai/800/lounge-meeting.jpg')} width="1600" height="900" alt="Delegates in 1:1 meetings at FHS World" loading="lazy" /></figure><h3>Matched 1:1 meetings</h3><p>AI-powered matchmaking books your meetings on your investment criteria. Hosted investor meetings run on both days.</p></li>
 					</ol>
@@ -117,8 +117,9 @@ Paris.theme = 'living'
 const pass = (passes, title) => passes.passes.find(x => x.title.startsWith(title))
 
 export async function getStaticProps() {
-	const [advisors, partners, passes] = await Promise.all([loadAdvisors(), loadPartners(), loadPasses()])
+	const [advisors, partners, passes, programme] = await Promise.all([loadAdvisors(), loadPartners(), loadPasses(), loadProgramme()])
 	return {
+		revalidate: REVALIDATE,
 		props: {
 			f: facts,
 			advisors: advisors.people,

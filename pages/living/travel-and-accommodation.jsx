@@ -6,14 +6,14 @@ import { ampm, img } from '../../ui-living/lib/format'
 import { R } from '../../ui-living/lib/routes'
 
 import facts from '../../ui-living/data/facts.json'
-import programme from '../../ui-living/data/programme.json'
 import { HIGH } from '../../ui-living/lib/attrs'
-import { loadTravel } from '../../ui-living/lib/cms'
+import { loadProgramme, loadTravel, REVALIDATE } from '../../ui-living/lib/cms'
 
 export default function Venue({ f, programme, stay }) {
-	const reception = ampm(programme.day_zero.time)
+	const [one, two] = programme.days
+	const opens = ampm(one.items[0].start)
 	return (
-		<LivingPage page="venue" title="FHS Living | Venue and travel" description="FHS Living Paris takes place at Pullman Paris Montparnasse, 23–24 February 2027, with a welcome reception on 22 February.">
+		<LivingPage page="venue" title="FHS Living | Venue and travel" description="FHS Living Paris takes place at Pullman Paris Montparnasse on 23–24 February 2027. How to get there, where to stay and when to arrive.">
 			<section className={c('fullbleed fullbleed--hero')} aria-labelledby="hero-h">
 				<img src={img('photo/paris.jpg')} width="1600" height="1116" alt="Paris from above, the Eiffel Tower and the Seine" {...HIGH} />
 				<div className={c('fullbleed__card')}>
@@ -24,11 +24,10 @@ export default function Venue({ f, programme, stay }) {
 			</section>
 			<section className={c('section')} aria-labelledby="plan-h">
 				<div className={c('wrap')}>
-					<div className={c('head')}><h2 className={c('ruled')} id="plan-h">Plan your three days.</h2><p>Arrive on Monday evening for the welcome reception. The programme runs Tuesday and Wednesday.</p></div>
+					<div className={c('head')}><h2 className={c('ruled')} id="plan-h">Plan your two days.</h2><p>The programme runs on Tuesday and Wednesday at the venue. All times are Paris time.</p></div>
 					<ul className={c('facts')}>
-						<li><b>22 Feb</b><span>Welcome reception at {reception}, at the venue</span></li>
-						<li><b>23 Feb</b><span>Day one: {programme.days[0].theme.toLowerCase()}</span></li>
-						<li><b>24 Feb</b><span>Day two: {programme.days[1].theme.toLowerCase()}</span></li>
+						<li><b>23 Feb</b><span>Day one: {one.theme.toLowerCase()}</span></li>
+						<li><b>24 Feb</b><span>Day two: {two.theme.toLowerCase()}</span></li>
 						<li><b>75014</b><span>Montparnasse, beside the station</span></li>
 					</ul>
 				</div>
@@ -41,7 +40,7 @@ export default function Venue({ f, programme, stay }) {
 						<details open><summary>Where to stay</summary>{stay
 							? <div className={c('cms')} dangerouslySetInnerHTML={{ __html: stay }} />
 							: <p>A room block is reserved at {f.event.venue} for the event. Ask the team for the booking link at {f.contact.email}.</p>}</details>
-						<details><summary>When to arrive</summary><p>The welcome reception is on Monday 22 February at {reception} at the venue. The programme runs on Tuesday 23 and Wednesday 24 February.</p></details>
+						<details><summary>When to arrive</summary><p>The first session starts at {opens} on {one.date}. Arrive the evening before to be in the room when it opens. The programme runs until {two.date}.</p></details>
 					</div>
 				</div>
 			</section>
@@ -57,5 +56,6 @@ export default function Venue({ f, programme, stay }) {
 Venue.theme = 'living'
 
 export async function getStaticProps() {
-	return { props: { f: facts, programme, stay: (await loadTravel()).html } }
+	const [programme, travel] = await Promise.all([loadProgramme(), loadTravel()])
+	return { props: { f: facts, programme, stay: travel.html }, revalidate: REVALIDATE }
 }

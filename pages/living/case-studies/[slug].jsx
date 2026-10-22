@@ -7,7 +7,7 @@ import { R } from '../../../ui-living/lib/routes'
 import { HIGH } from '../../../ui-living/lib/attrs'
 import { CaseBy, CaseFacts, CaseFoot, CaseStory, CaseStrip, casePath } from '../../../ui-living/sections/case-studies'
 import { Closer } from '../../../ui-living/sections/closer'
-import { loadCases, loadPasses } from '../../../ui-living/lib/cms'
+import { loadCases, loadPasses, REVALIDATE } from '../../../ui-living/lib/cms'
 
 // One case study on its own URL, so it can be shared with its own title and photo.
 export default function CaseStudy({ k, more, price }) {
@@ -45,15 +45,16 @@ CaseStudy.theme = 'living'
 
 export async function getStaticPaths() {
 	const { cases } = await loadCases()
-	return { paths: cases.map(k => ({ params: { slug: k.slug } })), fallback: false }
+	// a case added in Craft gets its page on the first visit; a hidden one goes on the next refresh
+	return { paths: cases.map(k => ({ params: { slug: k.slug } })), fallback: 'blocking' }
 }
 
 export async function getStaticProps({ params }) {
 	const [{ cases }, passes] = await Promise.all([loadCases(), loadPasses()])
 	const k = cases.find(x => x.slug === params.slug)
-	if (!k) return { notFound: true }
+	if (!k) return { notFound: true, revalidate: REVALIDATE }
 	// three more: same asset class first, then in Craft's order
 	const others = cases.filter(x => x !== k)
 	const more = [...others.filter(x => x.classes.some(cl => k.classes.includes(cl))), ...others].filter((x, i, a) => a.indexOf(x) === i).slice(0, 3)
-	return { props: { k, more, price: priceBand(passes.passes.find(x => x.title.startsWith('Delegate'))).current } }
+	return { props: { k, more, price: priceBand(passes.passes.find(x => x.title.startsWith('Delegate'))).current }, revalidate: REVALIDATE }
 }

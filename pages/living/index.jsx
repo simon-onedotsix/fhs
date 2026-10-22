@@ -16,7 +16,7 @@ import atlas from '../../ui-living/data/atlas.json'
 import editions from '../../ui-living/data/editions.json'
 import dubai from '../../ui-living/data/dubai.json'
 import concl from '../../ui-living/data/conclusions.json'
-import { loadAdvisors, loadCases, loadPartners, loadPasses } from '../../ui-living/lib/cms'
+import { loadAdvisors, loadCases, loadPartners, loadPasses, REVALIDATE } from '../../ui-living/lib/cms'
 import { HIGH } from '../../ui-living/lib/attrs'
 
 // FHS World, Saudi Arabia and Egypt's Living pages import these from here (see ui-living/data/legacy.js)
@@ -66,6 +66,7 @@ Living.theme = 'living'
 export async function getStaticProps() {
 	const [advisors, partners, passes, { cases }] = await Promise.all([loadAdvisors(), loadPartners(), loadPasses(), loadCases()])
 	return {
+		revalidate: REVALIDATE,
 		props: {
 			classes: facts.classes,
 			counts: advisors.counts,

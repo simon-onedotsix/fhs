@@ -501,15 +501,12 @@
 .root .slot time { font-size: 13.5px; color: var(--ink-soft); padding-top: 3px; font-variant-numeric: tabular-nums; }
 .root .slot h3, .root .slot h4 { font-size: 17px; line-height: 1.35; font-weight: 500; letter-spacing: -.005em; }
 .root .slot .fmt { display: inline-block; margin-top: 8px; font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; padding: 3px 7px; border: 1px solid var(--purple); color: var(--purple); }
-.root .slot .fmt--hot { background: var(--magenta); border-color: var(--magenta); color: var(--white); }
 .root .slot--break h3, .root .slot--break h4 { font-weight: 400; color: var(--ink-soft); }
 .root .slot--meet { background: var(--white); padding-inline: 12px; box-shadow: inset 3px 0 0 var(--magenta); grid-template-columns: 96px minmax(0, 1fr); }
 /* time column narrowed by the padding so titles stay on the shared line */
 .root .slot ul { margin: 10px 0 0; padding: 0; list-style: none; display: grid; gap: 7px; }
 .root .slot ul li { font-size: 15px; line-height: 1.4; padding-left: 18px; position: relative; }
 .root .slot ul li::before { content: ""; position: absolute; left: 0; top: 6px; width: 8px; height: 9px; background: var(--magenta); clip-path: var(--facet); }
-.root .slot p { margin: 6px 0 0; font-size: 14px; color: var(--ink-soft); }
-.root .dayzero { max-width: none; display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; padding: 16px 20px; background: var(--white); box-shadow: inset 3px 0 0 var(--magenta); margin-bottom: 40px; font-size: var(--fs-small); }
 @media (max-width: 900px) {
   .root .prog { grid-template-columns: minmax(0, 1fr); }
   .root .slot { grid-template-columns: 90px minmax(0, 1fr); }
@@ -835,7 +832,6 @@
 /* ---------- round 3 ---------- */
 .root .page-hero__when { margin: -6px 0 22px; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.2; font-weight: 500; color: var(--purple); letter-spacing: -.01em; }
 .root .page-hero__when span { display: block; margin-top: 4px; font-size: var(--fs-small); font-weight: 400; color: var(--ink-soft); letter-spacing: 0; }
-.root .glance__bar--eve { height: 44px; }
 .root .day__detail .link { display: inline-block; margin-top: 10px; font-size: 14px; }
 .root .day__list .link { display: block; width: fit-content; margin-top: 6px; font-size: 13px; }
 .root .day__more { display: none; }

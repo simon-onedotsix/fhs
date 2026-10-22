@@ -2,20 +2,17 @@ import Link from 'next/link'
 
 import { LivingPage } from '../../ui-living/site/page'
 import { c } from '../../ui-living/lib/c'
-import { ampm, img, trange } from '../../ui-living/lib/format'
+import { img, trange } from '../../ui-living/lib/format'
 import { R } from '../../ui-living/lib/routes'
 import { Glance } from '../../ui-living/sections/glance'
 import { Passes, passOffer, bookBefore } from '../../ui-living/sections/passes'
 
-import facts from '../../ui-living/data/facts.json'
-import programme from '../../ui-living/data/programme.json'
-import { loadPasses } from '../../ui-living/lib/cms'
+import { loadPasses, loadProgramme, REVALIDATE } from '../../ui-living/lib/cms'
 import { HIGH } from '../../ui-living/lib/attrs'
 
 const byStart = (a, b) => (a.start > b.start) - (a.start < b.start)
 
-export default function Programme({ f, programme, delegate, investor }) {
-	const z = programme.day_zero
+export default function Programme({ programme, delegate, investor }) {
 	return (
 		<LivingPage page="programme" title="FHS Living | Programme, 23–24 February 2027" description="The FHS Living Paris running order: keynotes and panels in the mornings, then roundtables, masterclasses and hosted investor meetings.">
 			<section className={c('page-hero')} aria-labelledby="hero-h">
@@ -33,8 +30,7 @@ export default function Programme({ f, programme, delegate, investor }) {
 
 			<section className={c('section')} id="running-order" aria-labelledby="ro-h">
 				<div className={c('wrap')}>
-					<div className={c('head')}><h2 className={c('ruled')} id="ro-h">The running order.</h2><p>Deal Room sessions are marked. Hosted investor meetings run alongside the roundtables on both days.</p></div>
-					<p className={c('dayzero')}><b>{z.date}, {ampm(z.time)}</b><span>{z.title} at {f.event.venue}</span></p>
+					<div className={c('head')}><h2 className={c('ruled')} id="ro-h">The running order.</h2><p>All times are Paris time. Hosted investor meetings run alongside the sessions on both days.</p></div>
 					<div className={c('prog')}>
 						{programme.days.map(d => (
 							<div key={d.n}>
@@ -46,8 +42,7 @@ export default function Programme({ f, programme, delegate, investor }) {
 											<div>
 												<h4>{it.title}</h4>
 												{it.parallel && <ul>{it.parallel.map(x => <li key={x}>{x}</li>)}</ul>}
-												{it.note && <p>{it.note}</p>}
-												{it.format !== 'Break' && <span className={c('fmt', it.format === 'Deal Room' && 'fmt--hot')}>{it.format}</span>}
+												{it.format !== 'Break' && <span className={c('fmt')}>{it.format}</span>}
 											</div>
 										</li>
 									))}
@@ -83,6 +78,6 @@ Programme.theme = 'living'
 const pass = (passes, title) => passes.passes.find(x => x.title.startsWith(title))
 
 export async function getStaticProps() {
-	const passes = await loadPasses()
-	return { props: { f: facts, programme, delegate: passOffer(pass(passes, 'Delegate')), investor: passOffer(pass(passes, 'Investor')) } }
+	const [programme, passes] = await Promise.all([loadProgramme(), loadPasses()])
+	return { props: { programme, delegate: passOffer(pass(passes, 'Delegate')), investor: passOffer(pass(passes, 'Investor')) }, revalidate: REVALIDATE }
 }

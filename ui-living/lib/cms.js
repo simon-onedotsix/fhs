@@ -1,15 +1,23 @@
 // What the FHS Living team edits outside the code: the Founding Advisors, pass prices, articles, the travel page and
-// the case studies in Craft, partners in Swapcard. Read at build time like the rest of the app, so "Deploy FHS
-// frontend" publishes an edit. Each loader returns the shape of its saved snapshot in ui-living/data plus `source`,
-// and falls back to that snapshot when its source cannot be read, so an outage never stops the build for every event.
+// the case studies in Craft, partners and the programme in Swapcard. Read when the app is built ("Deploy FHS
+// frontend"), and again by each Living page on the live site at most every REVALIDATE seconds, so an edit shows within
+// about 5 minutes without a deploy. Each loader returns the shape of its saved snapshot in ui-living/data plus `source`.
+// When a source cannot be read, the build falls back to that snapshot, so an outage never stops the build for every
+// event, and a refresh on the live site fails, so Next keeps serving the page's last good version.
 import { gql } from '@apollo/client'
 import craftApolloClient from '../../pages/api/apollo'
 import { parseCases } from './cases'
+import { parseProgramme } from './programme'
 import advisorsSaved from '../data/advisors.json'
 import passesSaved from '../data/passes.json'
 import librarySaved from '../data/library.json'
 import partnersSaved from '../data/partners.json'
 import casesSaved from '../data/cases.json'
+import programmeSaved from '../data/programme.json'
+
+// seconds between a Living page's refreshes on the live site (Next's incremental static regeneration)
+export const REVALIDATE = 300
+const BUILDING = process.env.NEXT_PHASE === 'phase-production-build'
 
 const SITE = process.env.SITE_HANDLE_LIVING || 'fhsLiving'
 // the editorial rules the prototype applies to the roster (site/tools/build.py)
@@ -23,16 +31,29 @@ async function craft(query) {
 	return data
 }
 
-// one read per build worker, shared by every page that needs it
+// At build: one read per build worker, shared by every page that needs it. On the live site: a fresh read each refresh.
 function loader(name, read, saved) {
+	const live = () => read().then(data => ({ ...data, source: 'live' }))
+	if (process.env.NODE_ENV === 'production' && !BUILDING) return live
 	let pending
-	return () => pending || (pending = read().then(
-		data => ({ ...data, source: 'live' }),
-		e => {
-			console.warn(`FHS Living: ${name} from the saved snapshot (${e.message})`)
-			return { ...saved, source: 'snapshot' }
-		},
-	))
+	return () => pending || (pending = live().catch(e => {
+		console.warn(`FHS Living: ${name} from the saved snapshot (${e.message})`)
+		return { ...saved, source: 'snapshot' }
+	}))
+}
+
+// Swapcard's organiser API; `query` is given the Living 2027 event's id
+async function swapcard(query) {
+	const event = process.env.SWAPCARD_EVENT_ID_LIVING_2027
+	if (!event || !process.env.SWAPCARD_AUTH_KEY) throw new Error('Swapcard is not configured in this environment')
+	const res = await fetch('https://developer.swapcard.com/event-admin/graphql', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json', Authorization: process.env.SWAPCARD_AUTH_KEY },
+		body: JSON.stringify({ query: query(event) }),
+	})
+	const { data, errors } = await res.json()
+	if (errors) throw new Error(errors[0].message)
+	return data
 }
 
 export const loadAdvisors = loader('Founding Advisors', async () => {
@@ -101,17 +122,10 @@ export const loadLibrary = loader('content library', async () => {
 
 // Partner tiers in the order of the Swapcard partner-group field, as Simon's original page grouped them
 export const loadPartners = loader('partners', async () => {
-	const event = process.env.SWAPCARD_EVENT_ID_LIVING_2027
-	if (!event || !process.env.SWAPCARD_AUTH_KEY) throw new Error('Swapcard is not configured in this environment')
-	const res = await fetch('https://developer.swapcard.com/event-admin/graphql', {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json', Authorization: process.env.SWAPCARD_AUTH_KEY },
-		body: JSON.stringify({ query: `{
-			event(id: "${event}") { fieldDefinitions { ... on SelectFieldDefinition { id optionsValues { id value translations { language value } } } } }
-			exhibitors(eventId: "${event}", page: 1, pageSize: 200) { name logoUrl fields { ... on SelectField { id } } }
-		}` }),
-	})
-	const { data } = await res.json()
+	const data = await swapcard(event => `{
+		event(id: "${event}") { fieldDefinitions { ... on SelectFieldDefinition { id optionsValues { id value translations { language value } } } } }
+		exhibitors(eventId: "${event}", page: 1, pageSize: 200) { name logoUrl fields { ... on SelectField { id } } }
+	}`)
 	const groups = data.event.fieldDefinitions.find(f => f.id === 'RmllbGREZWZpbml0aW9uXzI5NjgyNg==').optionsValues
 	const saved = Object.fromEntries(partnersSaved.tiers.flatMap(t => t.items).map(i => [i.name.toLowerCase(), i]))
 	const tiers = groups.map(g => {
@@ -125,6 +139,13 @@ export const loadPartners = loader('partners', async () => {
 	if (!tiers.length) throw new Error('no partner groups')
 	return { tiers }
 }, partnersSaved)
+
+// The Paris running order as the programme team keeps it in Swapcard (rules in ./programme.js)
+export const loadProgramme = loader('programme', async () => {
+	const d = await swapcard(event => `{ event(id: "${event}") { beginsAt }
+		plannings(eventId: "${event}", page: 1, pageSize: 500) { title place beginsAt endsAt isPrivate } }`)
+	return parseProgramme(d.plannings, d.event.beginsAt, programmeSaved)
+}, programmeSaved)
 
 // The "Where to stay" text the team keeps on Craft's Travel & Accommodation page. Outlook SafeLinks wrappers,
 // pasted from email, are unwrapped to the real address so no mailbox details reach the public page.

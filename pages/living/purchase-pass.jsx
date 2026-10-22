@@ -8,7 +8,7 @@ import { useInView } from '../../ui-living/lib/use-in-view'
 import { Passes, passOffer } from '../../ui-living/sections/passes'
 
 import facts from '../../ui-living/data/facts.json'
-import { loadPasses } from '../../ui-living/lib/cms'
+import { loadPasses, REVALIDATE } from '../../ui-living/lib/cms'
 
 // The Delegate Pass staircase: the band that closed, the one on sale, the next one. Only while a rise is scheduled.
 function Rate({ delegate }) {
@@ -83,5 +83,5 @@ const pass = (passes, title) => passes.passes.find(x => x.title.startsWith(title
 
 export async function getStaticProps() {
 	const passes = await loadPasses()
-	return { props: { f: facts, delegate: passOffer(pass(passes, 'Delegate')), investor: passOffer(pass(passes, 'Investor')) } }
+	return { props: { f: facts, delegate: passOffer(pass(passes, 'Delegate')), investor: passOffer(pass(passes, 'Investor')) }, revalidate: REVALIDATE }
 }
