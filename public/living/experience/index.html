@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FHS Living | Where hospitality reimagines real estate</title>
+<meta name="description" content="FHS Living is Future Hospitality Summit's platform for the hotelisation of real estate, across nine asset classes. Dubai, Cairo, Paris and Riyadh.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://futurehospitality.com/living/experience">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://futurehospitality.com/living/experience">
+<meta property="og:title" content="FHS Living | Where hospitality reimagines real estate">
+<meta property="og:description" content="FHS Living is Future Hospitality Summit's platform for the hotelisation of real estate, across nine asset classes. Dubai, Cairo, Paris and Riyadh.">
+<meta property="og:image" content="https://futurehospitality.com/assets/img/living/v3/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FBD4CD">
+<link rel="icon" href="/living/experience/favicon.svg" type="image/svg+xml">
+<script>
+  // Decide the mode before first paint so nobody sees the other one flash: the 3D world for WebGL browsers without
+  // reduced motion, the static stacked page otherwise (and with JS off). boot.ts drops the class if the world fails.
+  (function () {
+    var d = document.documentElement
+    if ('WebGLRenderingContext' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) d.className = 'is-motion'
+    // watchdog: if the page's script never runs (a stale cached page asking for a file a later deploy removed, a
+    // blocked script), drop back to the static page instead of leaving a frozen scene; boot.ts sets the flag
+    setTimeout(function () { if (!window.__fhsBoot) d.classList.remove('is-motion') }, 10000)
+  })()
+</script>
+  <script type="module" crossorigin src="/living/experience/assets/index-C-W5o_jy.js"></script>
+  <link rel="stylesheet" crossorigin href="/living/experience/assets/boot-D98Q-j_L.css">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MNM37BX');</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNM37BX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<header class="top">
+  <a class="top__logo" href="/living"><img src="/living/experience/brand/logo-rev-warm-cream.svg" width="103" height="52" alt="FHS Living"></a>
+  <nav class="top__cities" aria-label="FHS Living editions"><a href="https://futurehospitality.com/world/living">Dubai</a><span class="sep" aria-hidden="true"> · </span><a href="https://futurehospitality.com/egypt/living">Cairo</a><span class="sep" aria-hidden="true"> · </span><a href="https://futurehospitality.com/living/paris">Paris</a><span class="sep" aria-hidden="true"> · </span><a href="https://futurehospitality.com/sa/living">Riyadh</a></nav>
+  <a class="btn btn--small" href="https://futurehospitality.com/living/purchase-pass">Register to attend</a>
+</header>
+<!-- The header's purple clone (dusk.ts): its wrapper is clipped by the same chevron as the band and moves with it, the
+     clone counter-moves inside, so the header matches the field under it at every pixel while the chevron rises.
+     Never in the accessibility tree or the Tab order. -->
+<div id="dusk-hdr" aria-hidden="true" inert hidden><div class="top top--clone">
+  <span class="top__logo"><img src="/living/experience/brand/logo-rev-principal-purple.svg" width="103" height="52" alt=""></span>
+  <span class="top__cities"><span>Dubai</span><span class="sep"> · </span><span>Cairo</span><span class="sep"> · </span><span>Paris</span><span class="sep"> · </span><span>Riyadh</span></span>
+  <span class="btn btn--small">Register to attend</span>
+</div></div>
+
+<!-- The world (motion mode only): the purple dusk band behind a transparent canvas, the DOM type layer over it, and
+     the scroll runway that drives t. The B01 block is here as text so the first paint is the headline on the field;
+     the copy layer replaces it with the live block (same zone, same type) when the world starts. -->
+<div id="dusk" aria-hidden="true" hidden></div>
+<canvas id="world" aria-hidden="true"></canvas>
+<div id="stage" role="main">
+  <div class="zones">
+    <section class="blk z-left pz-top is-pre" data-id="B01.h1">
+      <h1 class="rv t-h1">Real estate owns the building.<br><span class="accent">Hospitality knows how to run it.</span></h1>
+      <p class="rv t-lede pre-full">FHS Living is Future Hospitality Summit's platform for the hotelisation of real estate, across nine asset classes from branded residences and student housing to mixed use, hotels and resorts.</p>
+    </section>
+  </div>
+</div>
+<div id="runway" aria-hidden="true"></div>
+
+<!-- The static page (reduced motion, JavaScript off, lost WebGL), STORYBOARD 6: every word of the world, from the same
+     data, on the same grid and type, purple only in the closing band. Not displayed in motion mode, where the stage is
+     the one copy. Stills are rendered from the live scene (tools/stills.py). -->
+<main id="top" class="static">
+  <section class="s s--hero">
+    <h1>Real estate owns the building. <span class="accent">Hospitality knows how to run it.</span></h1>
+    <p class="lede">FHS Living is Future Hospitality Summit's platform for the hotelisation of real estate, across nine asset classes from branded residences and student housing to mixed use, hotels and resorts.</p>
+    <img class="still" src="/living/experience/media/stills/object-1600.a9c941ad.webp" srcset="/living/experience/media/stills/object-800.cf664ec7.webp 800w, /living/experience/media/stills/object-1600.a9c941ad.webp 1600w" sizes="(max-width: 1023px) 100vw, 50vw" width="1600" height="900" alt="" loading="eager">
+  </section>
+  <section class="s">
+    <h2>Nine asset classes. One room.</h2>
+    <ol class="list"><li><b>Branded Residences</b> Homes sold or let under a hotel or lifestyle brand, run to hospitality standards.</li><li><b>Student Accommodation (PBSA)</b> Purpose-built student homes, operated at scale with hotel-style services.</li><li><b>Senior Living</b> Independent and assisted living where care meets hospitality.</li><li><b>Serviced Living</b> Furnished apartments let by the night, month or year, fully serviced.</li><li><b>Co-Living</b> Private rooms with shared space and a programmed community.</li><li><b>Shared Ownership</b> Fractional and shared models that widen who can own.</li><li><b>Club Concepts</b> Members' clubs and residences built around community and access.</li><li><b>Mixed Use</b> Living, work and leisure in one place, often anchored by a hotel.</li><li><b>Hotels &amp; Resorts</b> Hotels and resorts: the operating model the other eight classes learn from.</li></ol>
+  </section>
+  <section class="s">
+    <ul class="list list--stats"><li><b>€62.2bn</b> invested in European living real estate in 2025, up 22% on 2024. <span class="src">JLL 2026</span></li><li><b>€540m</b> of European hotels bought by Middle Eastern investors in 2025, up 254% on 2024. <span class="src">HVS, 2025 European Hotel Transactions</span></li></ul>
+  </section>
+  <section class="s">
+    <h2>The same building, operated.</h2>
+    <p class="big">This is the hotelisation of real estate.</p>
+    <img class="still" src="/living/experience/media/stills/tower-1600.530f1328.webp" srcset="/living/experience/media/stills/tower-800.714faa8b.webp 800w, /living/experience/media/stills/tower-1600.530f1328.webp 1600w" sizes="(max-width: 1023px) 100vw, 50vw" width="1600" height="900" alt="" loading="lazy">
+  </section>
+  <section class="s">
+    <h2>Dubai proved the room.</h2>
+    <p>15 sessions. 38 speakers. 1 October 2026, Madinat Jumeirah.</p>
+    <a class="poster" href="https://futurehospitality.com/world/living" aria-label="What Dubai said"><img src="/living/experience/media/film/poster-1600.e15513ca.webp" srcset="/living/experience/media/film/poster-960.f09c71f8.webp 960w, /living/experience/media/film/poster-1600.e15513ca.webp 1600w" sizes="(max-width: 1023px) 100vw, 50vw" width="1600" height="900" alt="" loading="lazy"></a>
+    <h3>What the room concluded.</h3>
+    <ol class="list"><li><b>The premium has to be earned.</b> <span class="src">Branded Residences · Louis Harding, Knight Frank</span></li><li><b>The hotel is the engine.</b> <span class="src">Mixed Use · Eddy Tannous, Rotana</span></li><li><b>Hotelisation goes mainstream.</b> <span class="src">Co-Living and Serviced Living · The New Living Economy panel</span></li><li><b>Community is the asset.</b> <span class="src">Club Concepts</span></li><li><b>Wellness moves into the core.</b> <span class="src">Wellness and multigenerational living</span></li></ol>
+    <p><a href="https://futurehospitality.com/world/living">What Dubai said</a></p>
+  </section>
+  <section class="s">
+    <h2>51 Founding Advisors shape the platform.</h2>
+    <ul class="list list--names"><li><img src="/living/experience/media/advisors/amit-arora.3db408e5.webp" width="60" height="60" alt="" loading="lazy"><span><b>Amit Arora</b> Chief Operating Officer, Arada Hospitality &amp; Entertainment</span></li><li><img src="/living/experience/media/advisors/dirk-bakker.f144a814.webp" width="60" height="60" alt="" loading="lazy"><span><b>Dirk Bakker</b> CEO Hospitality, Necron Group</span></li><li><img src="/living/experience/media/advisors/navneet-bali.9eb1d04e.webp" width="60" height="60" alt="" loading="lazy"><span><b>Navneet Bali</b> Founder and CEO, LyvInn</span></li><li><img src="/living/experience/media/advisors/brad-berry.151dbf38.webp" width="60" height="60" alt="" loading="lazy"><span><b>Brad Berry</b> Global Head of Residences &amp; Homes, Mandarin Oriental</span></li><li><img src="/living/experience/media/advisors/carine-bonnejean.c9d4b0f2.webp" width="60" height="60" alt="" loading="lazy"><span><b>Carine Bonnejean</b> Managing Director – Hotels, Christie &amp; Co</span></li><li><img src="/living/experience/media/advisors/james-dunne.74a79ed5.webp" width="60" height="60" alt="" loading="lazy"><span><b>James Dunne</b> Head of UK Living &amp; Operational Capital Markets, Cushman &amp; Wakefield</span></li><li><img src="/living/experience/media/advisors/dr-peter-ebertz.104bf2e1.webp" width="60" height="60" alt="" loading="lazy"><span><b>Dr Peter Ebertz</b> Managing Director and Head of Hotels, Art-Invest Real Estate Management GmbH &amp; Co.</span></li><li><img src="/living/experience/media/advisors/alicia-edgar.2cd8d2b0.webp" width="60" height="60" alt="" loading="lazy"><span><b>Alicia Edgar</b> Senior Director, Invesco</span></li><li><img src="/living/experience/media/advisors/larissa-esser.d4e0959f.webp" width="60" height="60" alt="" loading="lazy"><span><b>Larissa Esser</b> Senior Advisor, Colliers</span></li><li><img src="/living/experience/media/advisors/yuan-fang.8d6f40f5.webp" width="60" height="60" alt="" loading="lazy"><span><b>Yuan Fang</b> SVP Development Europe and Americas, Minor Hotels</span></li><li><img src="/living/experience/media/advisors/jan-garde.4f3cefd3.webp" width="60" height="60" alt="" loading="lazy"><span><b>Jan Garde</b> Founder &amp; Chairman, The Embassies</span></li><li><img src="/living/experience/media/advisors/jasper-gilbey.7d4ed382.webp" width="60" height="60" alt="" loading="lazy"><span><b>Jasper Gilbey</b> Head of Housing and Alternatives, Europe, nuveen</span></li><li><img src="/living/experience/media/advisors/alexander-garrod.ffef20b2.webp" width="60" height="60" alt="" loading="lazy"><span><b>Alexander Garrod</b> Managing Director, Hospitality Asset Management, Pro-invest Group</span></li><li><img src="/living/experience/media/advisors/pippa-harrison.bacd3aa7.webp" width="60" height="60" alt="" loading="lazy"><span><b>Pippa Harrison</b> Executive Partner, Head of Hospitality &amp; Extended Living, Rapleys</span></li><li><img src="/living/experience/media/advisors/riyan-itani.21530837.webp" width="60" height="60" alt="" loading="lazy"><span><b>Riyan Itani</b> Director &amp; Founder, Global Branded Residences</span></li><li><img src="/living/experience/media/advisors/guy-ivesha.04fac287.webp" width="60" height="60" alt="" loading="lazy"><span><b>Guy Ivesha</b> Founder &amp; CEO, Maslow’s</span></li><li><img src="/living/experience/media/advisors/laurence-geller-cbe.25027168.webp" width="60" height="60" alt="" loading="lazy"><span><b>Laurence Geller CBE</b> Co-Founder, Chairman and Chief Executive, Loveday &amp; Co</span></li><li><img src="/living/experience/media/advisors/jagdish-johal.7cb1540a.webp" width="60" height="60" alt="" loading="lazy"><span><b>Jagdish Johal</b> Managing Partner, YOO</span></li><li><img src="/living/experience/media/advisors/michael-kandarakis.de3b1872.webp" width="60" height="60" alt="" loading="lazy"><span><b>Michael Kandarakis</b> Managing Partner, Aureon Partners</span></li><li><img src="/living/experience/media/advisors/paul-kapiris.6e69d3d5.webp" width="60" height="60" alt="" loading="lazy"><span><b>Paul Kapiris</b> Head of Hospitality for Middle East, Eastdil Secured</span></li><li><img src="/living/experience/media/advisors/david-keen.38a9873a.webp" width="60" height="60" alt="" loading="lazy"><span><b>David Keen</b> Founder &amp; CEO, QUO</span></li><li><img src="/living/experience/media/advisors/louis-keighley.1e84aa9b.webp" width="60" height="60" alt="" loading="lazy"><span><b>Louis Keighley</b> Head of Global Residential Development Consultancy, Savills</span></li><li><img src="/living/experience/media/advisors/russell-kett.cc3f6f8b.webp" width="60" height="60" alt="" loading="lazy"><span><b>Russell Kett</b> Chairman, HVS</span></li><li><img src="/living/experience/media/advisors/marloes-knippenberg.78f18097.webp" width="60" height="60" alt="" loading="lazy"><span><b>Marloes Knippenberg</b> Chief Executive Officer, Kerten Hospitality</span></li><li><img src="/living/experience/media/advisors/theodor-kubak.bc092056.webp" width="60" height="60" alt="" loading="lazy"><span><b>Theodor Kubak</b> Managing Partner, Arbireo Capital</span></li><li><img src="/living/experience/media/advisors/asli-kutlucan.c79e2303.webp" width="60" height="60" alt="" loading="lazy"><span><b>Asli Kutlucan</b> Chief Executive Officer Europe, TFE Hotels</span></li><li><img src="/living/experience/media/advisors/philip-lassman.69e8324e.webp" width="60" height="60" alt="" loading="lazy"><span><b>Philip Lassman</b> Managing Director, NUMA</span></li><li><img src="/living/experience/media/advisors/alyshia-mangalji.0ebebe85.webp" width="60" height="60" alt="" loading="lazy"><span><b>Alyshia Mangalji</b> Board Member &amp; SVP Europe &amp; Africa, Westmont Hospitality</span></li><li><img src="/living/experience/media/advisors/dimitris-manikis.b02fe706.webp" width="60" height="60" alt="" loading="lazy"><span><b>Dimitris Manikis</b> President EMEA, Wyndham Hotels &amp; Resorts</span></li><li><img src="/living/experience/media/advisors/jaidev-menezes.f79423e9.webp" width="60" height="60" alt="" loading="lazy"><span><b>Jaidev Menezes</b> Regional Vice President EMEA, Mixed-Use Development, Marriott International</span></li><li><img src="/living/experience/media/advisors/hans-meyer.30545add.webp" width="60" height="60" alt="" loading="lazy"><span><b>Hans Meyer</b> Co-founder, Zoku</span></li><li><img src="/living/experience/media/advisors/amit-nayak-cha.3a52bad5.webp" width="60" height="60" alt="" loading="lazy"><span><b>Amit Nayak, CHA</b> Vice President, HAMA – Hospitality Asset Managers Association Middle East and Africa</span></li><li><img src="/living/experience/media/advisors/helena-amaral-neto.8db48bc7.webp" width="60" height="60" alt="" loading="lazy"><span><b>Helena Amaral Neto</b> Founder &amp; Managing Partner, LUXULTING</span></li><li><img src="/living/experience/media/advisors/tina-necrason.389c8861.webp" width="60" height="60" alt="" loading="lazy"><span><b>Tina Necrason</b> Global Head of Branded Residential, Hyatt</span></li><li><img src="/living/experience/media/advisors/edgar-olle.aecea8df.webp" width="60" height="60" alt="" loading="lazy"><span><b>Edgar Ollé</b> Global Vice President Development Hotels &amp; Branded Residences, Jumeirah</span></li><li><img src="/living/experience/media/advisors/joanne-owen.7b9d18e9.webp" width="60" height="60" alt="" loading="lazy"><span><b>Joanne Owen</b> Partner, DLA Piper</span></li><li><img src="/living/experience/media/advisors/thomas-page.efeff8b1.webp" width="60" height="60" alt="" loading="lazy"><span><b>Thomas Page</b> Partner and Global Head of Hotels and Leisure Group, CMS Cameron McKenna LLP</span></li><li><img src="/living/experience/media/advisors/simon-price.154f2118.webp" width="60" height="60" alt="" loading="lazy"><span><b>Simon Price</b> Partner &amp; International Head of Hotels, Hospitality and Leisure, Bird &amp; Bird</span></li><li><img src="/living/experience/media/advisors/jacob-rasin.27e0be01.webp" width="60" height="60" alt="" loading="lazy"><span><b>Jacob Rasin</b> Senior Vice President – Transactions, Pandox</span></li><li><img src="/living/experience/media/advisors/laurence-salmon.a15d72ca.webp" width="60" height="60" alt="" loading="lazy"><span><b>Laurence Salmon</b> Investment Director, Pygmalion Capital Advisers LLP</span></li><li><img src="/living/experience/media/advisors/andrew-sangster.f4f9dacd.webp" width="60" height="60" alt="" loading="lazy"><span><b>Andrew Sangster</b> Editorial Director, Hotel Analyst</span></li><li><img src="/living/experience/media/advisors/khalid-saud-abuhaimed.0b36cdc5.webp" width="60" height="60" alt="" loading="lazy"><span><b>Khalid Saud Abuhaimed</b> Chief Executive Officer, Al Khozama Investments</span></li><li><img src="/living/experience/media/advisors/clemens-schranz.9f54c79d.webp" width="60" height="60" alt="" loading="lazy"><span><b>Clemens Schranz</b> Senior Director, Lodging &amp; Living Funds, Europe, CapitaLand</span></li><li><img src="/living/experience/media/advisors/simon-scott.06e65961.webp" width="60" height="60" alt="" loading="lazy"><span><b>Simon Scott</b> Lead Director – Living Capital Markets, JLL</span></li><li><img src="/living/experience/media/advisors/shafi-syed.b31b7fe1.webp" width="60" height="60" alt="" loading="lazy"><span><b>Shafi Syed</b> Global Head Development/Acquisitions, Equinox Hotels</span></li><li><img src="/living/experience/media/advisors/jeff-tisdall.4c2d4b55.webp" width="60" height="60" alt="" loading="lazy"><span><b>Jeff Tisdall</b> Chief Business Officer, Accor One Living</span></li><li><img src="/living/experience/media/advisors/wytze-van-den-berg.1cb47e4b.webp" width="60" height="60" alt="" loading="lazy"><span><b>Wytze Van Den Berg</b> Vice President International Operations EMEA, BWH Hotels</span></li><li><img src="/living/experience/media/advisors/michael-widmann.dead0da5.webp" width="60" height="60" alt="" loading="lazy"><span><b>Michael Widmann</b> Global CEO, PKF hospitality group</span></li><li><img src="/living/experience/media/advisors/oliver-winter.5ea53a34.webp" width="60" height="60" alt="" loading="lazy"><span><b>Oliver Winter</b> CEO &amp; Founder, a&amp;o Hostels</span></li><li><img src="/living/experience/media/advisors/elie-younes.70d656bd.webp" width="60" height="60" alt="" loading="lazy"><span><b>Elie Younes</b> Global Chief Commercial Officer, Radisson Hotel Group</span></li><li><img src="/living/experience/media/advisors/lauren-okada-young.5496c8a9.webp" width="60" height="60" alt="" loading="lazy"><span><b>Lauren Okada Young</b> Managing Director – Real Estate, Brookfield</span></li></ul>
+    <p><a href="https://futurehospitality.com/living/founding-advisors">Who's in the room</a></p>
+  </section>
+  <section class="s">
+    <h2>Paris, the Founding Edition.</h2>
+    <p>23–24 February 2027. Pullman Paris Montparnasse.</p><p>500 C-level decision-makers.</p><p>Pre-scheduled 1:1s, matched on investment criteria.</p>
+    <img class="still" src="/living/experience/media/stills/seat-1600.572909ba.webp" srcset="/living/experience/media/stills/seat-800.ceabd319.webp 800w, /living/experience/media/stills/seat-1600.572909ba.webp 1600w" sizes="(max-width: 1023px) 100vw, 50vw" width="1600" height="900" alt="" loading="lazy">
+    <h3>Your seat is in Paris.</h3>
+    <p class="ctas"><a class="btn" href="https://futurehospitality.com/living/purchase-pass">Register to attend</a> <a class="btn btn--ghost" href="https://futurehospitality.com/living/register-interest">Register your interest</a></p>
+  </section>
+  <section class="s">
+    <blockquote class="quote"><p>The conference is the crossroads between traditional real estate and hospitality.</p><footer>Brookfield, FHS Living at FHS World, Dubai, October 2026</footer></blockquote>
+  </section>
+  <section class="s s--close">
+    <img class="close__logo" src="/living/experience/brand/logo-rev-principal-purple.svg" width="300" height="153" alt="FHS Living">
+    <h2>Where hospitality reimagines real estate.</h2>
+    <ul class="list list--editions"><li><a href="https://futurehospitality.com/world/living">Dubai · 1 October 2026 · <span class="ed-state" data-iso="2026-10-01">Took place</span></a></li><li><a href="https://futurehospitality.com/egypt/living">Cairo · 11 November 2026 · <span class="ed-state" data-iso="2026-11-11">Next</span></a></li><li><a href="https://futurehospitality.com/living/paris">Paris · 23–24 February 2027 · <span class="ed-state">Founding Edition</span></a></li><li><a href="https://futurehospitality.com/sa/living">Riyadh · 2027 · <span class="ed-state">Details to follow</span></a></li></ul>
+    <p class="ctas"><a class="btn btn--white" href="https://futurehospitality.com/living/purchase-pass">Register to attend</a> <a class="btn btn--ghost" href="https://futurehospitality.com/living/register-interest">Register your interest</a></p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p class="foot__org">Brought to you by The Bench · <a href="https://www.thebench.com/privacy">Privacy policy</a></p>
+</footer>
+</body>
+</html>

@@ -134,7 +134,19 @@ const nextConfig = {
 				destination: '/living/register-interest',
 				permanent: false,
 			},
-		  
+
+		]
+	},
+
+	// FHS Living: /living/experience is the 3D site, a static build kept in public/living/experience. With i18n and
+	// locale: false the source names the locale: /en/... matches the default locale's unprefixed URL
+	async rewrites() {
+		return [
+			{
+				source: '/en/living/experience',
+				destination: '/living/experience/index.html',
+				locale: false,
+			},
 		]
 	}
 

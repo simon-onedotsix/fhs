@@ -14,6 +14,8 @@ export const R = {
 	'content-library': '/living/content-library',
 	// also the slug of the Craft page that holds the cases: listing it here keeps pages/living/[slug].jsx off it
 	'case-studies': '/living/case-studies',
+	// the 3D site (01_Website/living3), a static page behind a rewrite in next.config.js: link to it with a plain <a>
+	experience: '/living/experience',
 }
 
 export const SITE = 'https://futurehospitality.com'
