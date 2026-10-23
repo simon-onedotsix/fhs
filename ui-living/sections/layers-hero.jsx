@@ -84,7 +84,7 @@ export function LayersHero() {
 				<div>
 					<h1 id="hero-h">Where hospitality <span className={c('accent')}>reimagines real&nbsp;estate.</span></h1>
 					<p className={c('lede')}>FHS Living is Future Hospitality Summit&apos;s platform for the hotelisation of real estate, across nine asset classes from branded residences and student housing to mixed use, hotels and resorts.</p>
-					<div className={c('actions')}><Link href={R.paris}><a className={c('btn btn--light')}>The Paris edition</a></Link><a className={c('btn btn--line-light')} href="#concept">What is FHS Living?</a></div>
+					<div className={c('actions')}><Link href={R.paris}><a className={c('btn btn--light')}>The Paris edition</a></Link><a className={c('btn btn--line-light')} href="#concept">What is FHS Living?</a><a className={c('btn btn--line-light')} href={R.experience}>Explore in 3D</a></div>
 				</div>
 				<div ref={stack} className={c('stack')} aria-label="Six of the nine asset classes, stacked in the FHS Living diamond">
 					{LAYERS.map(([slug, name], i) => (

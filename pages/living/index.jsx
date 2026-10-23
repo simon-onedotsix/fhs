@@ -10,6 +10,7 @@ import { AdvisorsWall } from '../../ui-living/sections/advisors-wall'
 import { PartnersReads } from '../../ui-living/sections/partners-reads'
 import { Closer } from '../../ui-living/sections/closer'
 import { CaseStrip } from '../../ui-living/sections/case-studies'
+import { ExperienceTeaser } from '../../ui-living/sections/experience'
 
 import facts from '../../ui-living/data/facts.json'
 import atlas from '../../ui-living/data/atlas.json'
@@ -40,6 +41,7 @@ export default function Living(p) {
 		>
 			<LayersHero />
 			<Idea />
+			<ExperienceTeaser />
 			<Classdex classes={p.classes} counts={p.counts} bg="tint" />
 
 			<section className={c('atlas')} aria-labelledby="ed-h">

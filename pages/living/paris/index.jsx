@@ -56,7 +56,7 @@ export default function Paris(p) {
 						<h1 id="hero-h">Where hospitality <span className={c('accent')}>reimagines real&nbsp;estate.</span></h1>
 						<p className={c('page-hero__when')}>Paris, {f.event.dates}<span>{f.event.venue}</span></p>
 						<p className={c('lede')}>The Founding Edition of FHS Living: two days where real estate capital from Europe and the Middle East meets the operators and developers who make hospitality-led real estate perform.</p>
-						<div className={c('actions')}><Link href={R.passes} prefetch={false}><a className={c('btn')}>Register to attend</a></Link><Link href={R.investors} prefetch={false}><a className={c('btn btn--ghost')}>Investor? Start here</a></Link></div>
+						<div className={c('actions')}><Link href={R.passes} prefetch={false}><a className={c('btn')}>Register to attend</a></Link><Link href={R.investors} prefetch={false}><a className={c('btn btn--ghost')}>Investor? Start here</a></Link><a className={c('link')} href={R.experience}>Explore FHS Living in 3D</a></div>
 					</div>
 					<figure className={c('page-hero__fig')}><div className={c('diamond')}><img src={img('photo/paris-diamond.jpg')} width="1220" height="860" alt="Paris from above, the Eiffel Tower and the Seine" {...HIGH} /></div></figure>
 				</div>

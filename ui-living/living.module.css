@@ -103,7 +103,8 @@
 .root .brand { display: flex; align-items: center; gap: 18px; text-decoration: none; flex-shrink: 0; }
 .root .brand img { height: 46px; width: auto; transition: height .24s var(--ease); }
 .root .is-compact .brand img { height: 38px; }
-.root .brand__line { border-left: 1px solid var(--line); padding-left: 18px; font-size: 12px; line-height: 1.45; color: var(--purple); }
+.root .brand__line { border-left: 1px solid var(--line); padding-left: 18px; font-size: 12px; line-height: 1.45; color: var(--purple); text-decoration: none; transition: color .2s var(--ease); }
+.root .brand__line:hover, .root .brand__line:hover b { color: var(--magenta); }
 .root .brand__line b { display: block; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; font-size: 11px; color: var(--magenta); }
 .root .nav { margin-left: auto; display: flex; align-items: center; gap: 4px; }
 .root .nav__list { display: flex; list-style: none; margin: 0; padding: 0; gap: 2px; }
@@ -118,9 +119,10 @@
 .root .menu__panel a:not(.btn) { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); text-decoration: none; font-size: 20px; font-weight: 500; color: var(--purple); }
 .root .menu__panel .btn { margin-top: 20px; width: 100%; }
 .root .mcta { display: none; }
-/* breakpoints measured with the eight menu items: the lockup and the full menu fit together from 1341px */
-@media (max-width: 1340px) {
-  .root .brand__line { display: none; }
+/* breakpoints measured with the menus (23 Oct 2026): the Paris pages' seven items and the lockup fit together from 1280px
+   (38px between them there); the four FHS Living items leave room for the lockup at every desktop width */
+@media (max-width: 1279px) {
+  .root .site-header--paris .brand__line { display: none; }
 }
 @media (min-width: 901px) and (max-width: 1180px) {
   .root .layershero .stack { width: min(56%, 400px); }
@@ -591,6 +593,9 @@
 /* ---------- shared layout pieces ---------- */
 .root .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
 .root .split--top { align-items: start; }
+/* the way into the 3D site (sections/experience.jsx): the still on the page's own cream */
+.root .xp__fig { display: block; }
+.root .xp__fig img { display: block; width: 100%; height: auto; }
 @media (min-width: 901px) {
   .root .split--top > :first-child { position: sticky; top: 112px; }
 }
