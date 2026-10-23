@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/boot-C15bjMLV.css","assets/world-Cp_gnitY.css"])))=>i.map(i=>d[i]);
+import{n as e,t}from"./boot-CCrG2qQq.js";e(()=>t(()=>import(`./world-DzQUTNd5.js`).then(e=>e.t),__vite__mapDeps([0,1])));
