@@ -28,90 +28,8 @@ import { SpeakerCard } from '../fuselage/components/speaker-card/speaker-card'
 
 // temporary hard-coded for demo
 export const EVENT_DATA = [
-    {
-        "__typename": "events_BlockType",
-        "id": "137901",
-        "heading": "Dubai",
-        "startDate": "2026-09-28T23:00:00+00:00",
-        "endDate": "2026-09-30T23:00:00+00:00",
-        "dateOverride": null,
-        "venue": "Madinat Jumeirah",
-        "theme": "#ef3742",
-        "streams": [
-            {
-                "__typename": "streams_stream_BlockType",
-                "id": "137902",
-                "logo": [
-                    {
-                        "__typename": "site_Asset",
-                        "id": "172516",
-                        "url": "https://cms.thebench.com/assets/img/site/FHS/FHS-world-lockup@2x_2024-02-27-112915_vrgw.png",
-                        "width": 412,
-                        "height": 196
-                    }
-                ],
-                "heading": "FHS World",
-                "purchasePassLink": null,
-                "websiteLink": "/world/"
-            }
-        ]
-    },
-    {
-        "__typename": "events_BlockType",
-        "id": "246252333",
-        "heading": "Cairo",
-        "startDate": "2026-11-11T23:00:00+00:00",
-        "endDate": null,
-        "dateOverride": "11 November 2026",
-        "venue": "Sofitel Downtown Cairo Nile",
-        "theme": "#ffffff",
-        "streams": [
-            {
-                "__typename": "streams_stream_BlockType",
-                "id": "246253",
-                "logo": [
-                    {
-                        "__typename": "site_Asset",
-                        "id": "297123",
-                        "url": "/assets/img/living/fhs-living-inverse@egypt.png",
-                        "width": 1630,
-                        "height": 832
-                    }
-                ],
-                "heading": "FHS Living",
-                "purchasePassLink": null,
-                "websiteLink": "/egypt/living"
-            }
-        ]
-    },
-    {
-        "__typename": "events_BlockType",
-        "id": "246252",
-        "heading": "Dubai",
-        "startDate": "2026-10-01T23:00:00+00:00",
-        "endDate": null,
-        "dateOverride": "1st October 2026",
-        "venue": "Madinat Jumeirah",
-        "theme": "#ffffff",
-        "streams": [
-            {
-                "__typename": "streams_stream_BlockType",
-                "id": "246253",
-                "logo": [
-                    {
-                        "__typename": "site_Asset",
-                        "id": "297123",
-                        "url": "/assets/img/living/fhs-living-inverse@world.png",
-                        "width": 1630,
-                        "height": 832
-                    }
-                ],
-                "heading": "FHS Living",
-                "purchasePassLink": null,
-                "websiteLink": "/world/living"
-            }
-        ]
-    },
+    
+    
     {
         "__typename": "events_BlockType",
         "id": "298271",
@@ -139,35 +57,36 @@ export const EVENT_DATA = [
                 "websiteLink": "/egypt"
             }
         ]
-    },
-    {
+	},
+	{
         "__typename": "events_BlockType",
-        "id": "231345",
-        "heading": "Kampala",
-        "startDate": "2027-04-28T00:00:00+00:00",
-        "endDate": "2027-04-29T00:00:00+00:00",
-        "dateOverride": null,
-        "venue": "Kampala",
-        "theme": "#ff5d00",
+        "id": "246252333",
+        "heading": "Cairo",
+        "startDate": "2026-11-11T23:00:00+00:00",
+        "endDate": null,
+        "dateOverride": "11 November 2026",
+        "venue": "Sofitel Downtown Cairo Nile",
+        "theme": "#ffffff",
         "streams": [
             {
                 "__typename": "streams_stream_BlockType",
-                "id": "231346",
+                "id": "246253",
                 "logo": [
                     {
                         "__typename": "site_Asset",
-                        "id": "275629",
-                        "url": "https://cms.thebench.com/assets/img/site/FHS/fhs-africa-inverse_2025-09-08-082253_zfsw.png",
-                        "width": 800,
-                        "height": 409
+                        "id": "297123",
+                        "url": "/assets/img/living/fhs-living-inverse@egypt.png",
+                        "width": 1630,
+                        "height": 832
                     }
                 ],
-                "heading": "FHS Africa",
+                "heading": "FHS Living",
                 "purchasePassLink": null,
-                "websiteLink": "/africa"
+                "websiteLink": "/egypt/living"
             }
         ]
     },
+    
     {
         "__typename": "events_BlockType",
         "id": "314682",
@@ -251,8 +170,93 @@ export const EVENT_DATA = [
                 "websiteLink": "/sa/living"
             }
         ]
+	},
+	{
+        "__typename": "events_BlockType",
+        "id": "231345",
+        "heading": "Kampala",
+        "startDate": "2027-04-28T00:00:00+00:00",
+        "endDate": "2027-04-29T00:00:00+00:00",
+        "dateOverride": null,
+        "venue": "Kampala",
+        "theme": "#ff5d00",
+        "streams": [
+            {
+                "__typename": "streams_stream_BlockType",
+                "id": "231346",
+                "logo": [
+                    {
+                        "__typename": "site_Asset",
+                        "id": "275629",
+                        "url": "https://cms.thebench.com/assets/img/site/FHS/fhs-africa-inverse_2025-09-08-082253_zfsw.png",
+                        "width": 800,
+                        "height": 409
+                    }
+                ],
+                "heading": "FHS Africa",
+                "purchasePassLink": null,
+                "websiteLink": "/africa"
+            }
+        ]
     },
-    {
+    
+	{
+        "__typename": "events_BlockType",
+        "id": "137901",
+        "heading": "UAE",
+        "startDate": "2027-11-28T23:00:00+00:00",
+        "endDate": "2027-11-30T23:00:00+00:00",
+        "dateOverride": "November 2027",
+        "venue": "Wynn Al Marjan Island, Ras Al Khaimah",
+        "theme": "#ef3742",
+        "streams": [
+            {
+                "__typename": "streams_stream_BlockType",
+                "id": "137902",
+                "logo": [
+                    {
+                        "__typename": "site_Asset",
+                        "id": "172516",
+                        "url": "https://cms.thebench.com/assets/img/site/FHS/FHS-world-lockup@2x_2024-02-27-112915_vrgw.png",
+                        "width": 412,
+                        "height": 196
+                    }
+                ],
+                "heading": "FHS World",
+                "purchasePassLink": null,
+                "websiteLink": "/world/"
+            }
+        ]
+	},
+	// {
+    //     "__typename": "events_BlockType",
+    //     "id": "246252",
+    //     "heading": "Dubai",
+    //     "startDate": "2026-10-01T23:00:00+00:00",
+    //     "endDate": null,
+    //     "dateOverride": "1st October 2026",
+    //     "venue": "Madinat Jumeirah",
+    //     "theme": "#ffffff",
+    //     "streams": [
+    //         {
+    //             "__typename": "streams_stream_BlockType",
+    //             "id": "246253",
+    //             "logo": [
+    //                 {
+    //                     "__typename": "site_Asset",
+    //                     "id": "297123",
+    //                     "url": "/assets/img/living/fhs-living-inverse@world.png",
+    //                     "width": 1630,
+    //                     "height": 832
+    //                 }
+    //             ],
+    //             "heading": "FHS Living",
+    //             "purchasePassLink": null,
+    //             "websiteLink": "/world/living"
+    //         }
+    //     ]
+	// },
+	{
         "__typename": "events_BlockType",
         "id": "314402",
         "heading": "Latin America",
@@ -279,7 +283,8 @@ export const EVENT_DATA = [
                 "websiteLink": "https://www.sahic.com/"
             }
         ]
-    }
+	},
+    
 ]
 
 
@@ -304,7 +309,7 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
         return (
             <UpcomingEvents landscape={true}>
                 {
-                    _.orderBy(EVENT_DATA, 'startDate').map( event => {
+                    EVENT_DATA.map( event => {
                         return (
                             <EventGroupCard
                                 key={event.id}
