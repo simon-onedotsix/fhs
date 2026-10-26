@@ -189,7 +189,7 @@ export default function Home ({ data, content, partners, speakers }) {
                 </div>
 
                 <div className="container center">
-                    <Pop><Button href={`/egypt/forms/purchase-pass`} label={`Register Now`} /></Pop>
+                    <Pop><Button href={`/egypt/purchase-pass`} label={`Register Now`} /></Pop>
                 </div>
 
                 <div className="container pt-xs columns-3 gap-sm">

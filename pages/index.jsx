@@ -482,7 +482,7 @@ export default function Home ({ data, seomatic, podcasts, industryNews }) {
                     <p className='fs-0 fw-700 center'>Upcoming FHS&nbsp;events</p>
                 </div>
 
-                <div className="container">
+                <div className="container" style={{ position: 'relative', zIndex: 2 }}>
                     { handleUpcomingEvents( EVENT_DATA )}
                 </div>
 
