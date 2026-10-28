@@ -20,7 +20,7 @@ function PurchasePass({ entry, country }) {
 
 	// console.log('entry:', entry )
 	// console.log('country:', country)
-	// country = "EG"
+	country = "EG"
 
 	return (
 		<>
@@ -76,20 +76,23 @@ function PurchasePass({ entry, country }) {
 										<li>Industry reports and investment insights from partners</li>
 									</ul>
 								`}
-								currency={`US$`}
-								priceBands={[
-									{
-										"__typename": "passPriceBands_TableRow",
-										"startDate": "2026-04-09T00:00:00+00:00",
-										"endDate": "2026-11-30T00:00:00+01:00",
-										"value": "1250"
-									}
-								]}
+								// currency={`US$`}
+								// priceBands={[
+								// 	{
+								// 		"__typename": "passPriceBands_TableRow",
+								// 		"startDate": "2026-04-09T00:00:00+00:00",
+								// 		"endDate": "2026-11-30T00:00:00+01:00",
+								// 		"value": "1250"
+								// 	}
+								// ]}
 								quantityRemaining={``}
-								label={`Register Here`}
-								href={`https://evbk.link/O0NFvr`}
+								label={`Request Local pass price`}
+								href={`https://share.hsforms.com/1FmGDj9J2Raia1Yx8soPBxw8nd8z`}
 								soldOut={``}
-								disclaimer={`<p class="fs-sm lh-1">The local rate is reserved exclusively for Egyptian attendees and is subject to the organiser’s final approval.</p>`}
+								disclaimer={`
+									<p class="fs-sm lh-1">The local rate is reserved exclusively for Egyptian attendees and is subject to the organiser’s final approval.</p>
+									<h5>To attend the summit, fill out the form below and we will send you the delegate pass price (USD).</h5>
+								`}
 							/>
 						}
 
