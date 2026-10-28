@@ -1087,6 +1087,13 @@ export const FHS_EGYPT = {
                         "navUrl": "/egypt/travel-and-accommodation",
                         "target": false
                     },
+                    {
+                        "__typename": "navigation_Entry",
+                        "id": "28dgferhdfhg",
+                        "title": "Visa Information",
+                        "navUrl": "/egypt/visa-information",
+                        "target": false
+                    },
                 ]
             }
         ],

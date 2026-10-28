@@ -15,7 +15,8 @@
 .formatted h4, 
 .formatted h5, 
 .formatted h6 { 
-    margin-bottom: calc(var(--default-line-height, 1.2) * 0.75rem);
+    margin-bottom: calc(var(--default-line-height, 1.2) * 0.25rem);
+    margin-top: calc(var(--default-line-height, 1.2) * 0.75rem);
 }
 
 .formatted h6 {
