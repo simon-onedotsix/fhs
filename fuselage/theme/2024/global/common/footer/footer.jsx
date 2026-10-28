@@ -49,6 +49,7 @@ export const Footer = () => {
                             <p><Link href='/ae/contact-us'><a className='uLink'>Contact us</a></Link></p>
                             <p><Link href='https://www.thebench.com/privacy'><a className='uLink' target='_blank'>Privacy Policy</a></Link></p>
                             <p><Link href='/code-of-conduct'><a className='uLink' >Code of Conduct</a></Link></p>
+                            <p><Link href='/fhs-advisory-board-terms'><a className='uLink' >Advisory Board Terms</a></Link></p>
                             <p><Link href='/terms-and-conditions'><a className='uLink' >Terms &amp; Conditions</a></Link></p>
                         </div>
                     </section>
