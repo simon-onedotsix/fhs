@@ -11,105 +11,105 @@ export default function Page() {
     return (
 		<>
 			
-			<style jsx>{`
+			<style>{`
 				.fhs-tor {
-				--tor-bg: #3c1a52;
-				--tor-deep: #270b3a;
-				--tor-purple: #6e439a;
-				--tor-lilac: #9972ab;
-				--tor-text: #ffffff;
-				--tor-soft: rgba(255,255,255,.78);
-				--tor-rule: rgba(255,255,255,.14);
-				font-family: Roboto, sans-serif;
-				color: var(--tor-text);
-				background: var(--tor-bg);
-				line-height: 1.65;
-				font-size: 17px;
-			}
-			.fhs-tor *, .fhs-tor *::before, .fhs-tor *::after { box-sizing: border-box; }
-			.fhs-tor a { color: var(--tor-text); }
+					--tor-bg: #3c1a52;
+					--tor-deep: #270b3a;
+					--tor-purple: #6e439a;
+					--tor-lilac: #9972ab;
+					--tor-text: #ffffff;
+					--tor-soft: rgba(255,255,255,.78);
+					--tor-rule: rgba(255,255,255,.14);
+					font-family: Roboto, sans-serif;
+					color: var(--tor-text);
+					background: var(--tor-bg);
+					line-height: 1.65;
+					font-size: 17px;
+				}
+				.fhs-tor *, .fhs-tor *::before, .fhs-tor *::after { box-sizing: border-box; }
+				.fhs-tor a { color: var(--tor-text); }
 
-			/* Hero, echoing the diagonal shape used across the FHS site */
-			.fhs-tor .tor-hero {
-				position: relative; overflow: hidden;
-				padding: 96px 20px 72px;
-				background: var(--tor-bg);
-			}
-			.fhs-tor .tor-hero::after {
-				content: ""; position: absolute; right: 0; bottom: 0;
-				width: 55%; height: 100%;
-				background: var(--tor-purple); opacity: .45;
-				clip-path: polygon(100% 0, 100% 100%, 0 100%);
-				pointer-events: none;
-			}
-			.fhs-tor .tor-wrap { max-width: 880px; margin: 0 auto; position: relative; z-index: 1; }
-			.fhs-tor .tor-eyebrow {
-				color: var(--tor-lilac); font-size: 14px; font-weight: 600;
-				letter-spacing: .12em; text-transform: uppercase; margin: 0 0 14px;
-			}
-			.fhs-tor h1 {
-				font-size: clamp(34px, 6vw, 56px); line-height: 1.1; font-weight: 700;
-				color: var(--tor-lilac); margin: 0 0 20px;
-			}
-			.fhs-tor .tor-lead { font-size: 20px; color: var(--tor-soft); max-width: 640px; margin: 0 0 32px; font-weight: 300; }
-			.fhs-tor .tor-meta { display: flex; flex-wrap: wrap; gap: 10px; }
-			.fhs-tor .tor-pill {
-				font-size: 14px; font-weight: 500; padding: 7px 14px; border-radius: 999px;
-				background: rgba(255,255,255,.08); border: 1px solid var(--tor-rule);
-			}
+				/* Hero, echoing the diagonal shape used across the FHS site */
+				.fhs-tor .tor-hero {
+					position: relative; overflow: hidden;
+					padding: 96px 20px 72px;
+					background: var(--tor-bg);
+				}
+				.fhs-tor .tor-hero::after {
+					content: ""; position: absolute; right: 0; bottom: 0;
+					width: 55%; height: 100%;
+					background: var(--tor-purple); opacity: .45;
+					clip-path: polygon(100% 0, 100% 100%, 0 100%);
+					pointer-events: none;
+				}
+				.fhs-tor .tor-wrap { max-width: 880px; margin: 0 auto; position: relative; z-index: 1; }
+				.fhs-tor .tor-eyebrow {
+					color: var(--tor-lilac); font-size: 14px; font-weight: 600;
+					letter-spacing: .12em; text-transform: uppercase; margin: 0 0 14px;
+				}
+				.fhs-tor h1 {
+					font-size: clamp(34px, 6vw, 56px); line-height: 1.1; font-weight: 700;
+					color: var(--tor-lilac); margin: 0 0 20px;
+				}
+				.fhs-tor .tor-lead { font-size: 20px; color: var(--tor-soft); max-width: 640px; margin: 0 0 32px; font-weight: 300; }
+				.fhs-tor .tor-meta { display: flex; flex-wrap: wrap; gap: 10px; }
+				.fhs-tor .tor-pill {
+					font-size: 14px; font-weight: 500; padding: 7px 14px; border-radius: 999px;
+					background: rgba(255,255,255,.08); border: 1px solid var(--tor-rule);
+				}
 
-			.fhs-tor .tor-body { padding: 56px 20px 80px; background: var(--tor-deep); }
+				.fhs-tor .tor-body { padding: 56px 20px 80px; background: var(--tor-deep); }
 
-			.fhs-tor nav.tor-toc {
-				background: var(--tor-bg); border-left: 4px solid var(--tor-purple);
-				padding: 22px 26px; margin-bottom: 52px;
-			}
-			.fhs-tor nav.tor-toc p { margin: 0 0 10px; font-weight: 600; font-size: 15px; color: var(--tor-lilac); text-transform: uppercase; letter-spacing: .08em; }
-			.fhs-tor nav.tor-toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 36px; font-size: 16px; }
-			.fhs-tor nav.tor-toc li { margin-bottom: 6px; break-inside: avoid; }
-			.fhs-tor nav.tor-toc a { text-decoration: none; font-weight: 500; }
-			.fhs-tor nav.tor-toc a:hover { color: var(--tor-lilac); }
+				.fhs-tor nav.tor-toc {
+					background: var(--tor-bg); border-left: 4px solid var(--tor-purple);
+					padding: 22px 26px; margin-bottom: 52px;
+				}
+				.fhs-tor nav.tor-toc p { margin: 0 0 10px; font-weight: 600; font-size: 15px; color: var(--tor-lilac); text-transform: uppercase; letter-spacing: .08em; }
+				.fhs-tor nav.tor-toc ol { margin: 0; padding-left: 20px; columns: 2; column-gap: 36px; font-size: 16px; }
+				.fhs-tor nav.tor-toc li { margin-bottom: 6px; break-inside: avoid; }
+				.fhs-tor nav.tor-toc a { text-decoration: none; font-weight: 500; }
+				.fhs-tor nav.tor-toc a:hover { color: var(--tor-lilac); }
 
-			.fhs-tor .tor-intro { color: var(--tor-soft); margin: 0 0 40px; }
+				.fhs-tor .tor-intro { color: var(--tor-soft); margin: 0 0 40px; }
 
-			.fhs-tor section { margin-bottom: 52px; scroll-margin-top: 100px; }
-			.fhs-tor h2 { font-size: 28px; line-height: 1.25; font-weight: 600; margin: 0 0 18px; }
-			.fhs-tor h2 span { color: var(--tor-purple); font-weight: 400; margin-right: 10px; }
-			.fhs-tor h3 { font-size: 18px; font-weight: 600; margin: 24px 0 6px; color: var(--tor-lilac); }
-			.fhs-tor p { margin: 0 0 14px; color: var(--tor-soft); }
-			.fhs-tor ul { margin: 0 0 16px; padding-left: 0; list-style: none; }
-			.fhs-tor ul li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--tor-soft); }
-			.fhs-tor ul li::before {
-				content: ""; position: absolute; left: 0; top: .62em;
-				width: 8px; height: 8px; background: var(--tor-purple);
-				clip-path: polygon(0 0, 100% 50%, 0 100%);
-			}
+				.fhs-tor section { margin-bottom: 52px; scroll-margin-top: 100px; }
+				.fhs-tor h2 { font-size: 28px; line-height: 1.25; font-weight: 600; margin: 0 0 18px; }
+				.fhs-tor h2 span { color: var(--tor-purple); font-weight: 400; margin-right: 10px; }
+				.fhs-tor h3 { font-size: 18px; font-weight: 600; margin: 24px 0 6px; color: var(--tor-lilac); }
+				.fhs-tor p { margin: 0 0 14px; color: var(--tor-soft); }
+				.fhs-tor ul { margin: 0 0 16px; padding-left: 0; list-style: none; }
+				.fhs-tor ul li { position: relative; padding-left: 22px; margin-bottom: 10px; color: var(--tor-soft); }
+				.fhs-tor ul li::before {
+					content: ""; position: absolute; left: 0; top: .62em;
+					width: 8px; height: 8px; background: var(--tor-purple);
+					clip-path: polygon(0 0, 100% 50%, 0 100%);
+				}
 
-			.fhs-tor .tor-two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0 20px; }
-			.fhs-tor .tor-card { background: var(--tor-bg); padding: 20px 22px; border-top: 3px solid var(--tor-purple); }
-			.fhs-tor .tor-card h3 { margin-top: 0; }
-			.fhs-tor .tor-card p { margin: 0; font-size: 16px; }
+				.fhs-tor .tor-two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0 20px; }
+				.fhs-tor .tor-card { background: var(--tor-bg); padding: 20px 22px; border-top: 3px solid var(--tor-purple); }
+				.fhs-tor .tor-card h3 { margin-top: 0; }
+				.fhs-tor .tor-card p { margin: 0; font-size: 16px; }
 
-			.fhs-tor .tor-foot {
-				margin-top: 16px; padding: 26px 28px; background: var(--tor-bg);
-				display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
-			}
-			.fhs-tor .tor-foot p { margin: 0; color: var(--tor-text); font-weight: 500; }
-			.fhs-tor .tor-btn {
-				display: inline-block; background: var(--tor-purple); color: #fff; text-decoration: none;
-				font-weight: 600; padding: 12px 22px; border-radius: 999px;
-			}
-			.fhs-tor .tor-btn:hover { background: var(--tor-lilac); }
+				.fhs-tor .tor-foot {
+					margin-top: 16px; padding: 26px 28px; background: var(--tor-bg);
+					display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+				}
+				.fhs-tor .tor-foot p { margin: 0; color: var(--tor-text); font-weight: 500; }
+				.fhs-tor .tor-btn {
+					display: inline-block; background: var(--tor-purple); color: #fff; text-decoration: none;
+					font-weight: 600; padding: 12px 22px; border-radius: 999px;
+				}
+				.fhs-tor .tor-btn:hover { background: var(--tor-lilac); }
 
-			@media (max-width: 640px) {
-				.fhs-tor { font-size: 16px; }
-				.fhs-tor .tor-hero { padding: 64px 16px 48px; }
-				.fhs-tor .tor-hero::after { width: 80%; height: 60%; }
-				.fhs-tor .tor-body { padding: 40px 16px 56px; }
-				.fhs-tor nav.tor-toc ol { columns: 1; }
-				.fhs-tor .tor-two { grid-template-columns: 1fr; }
-				.fhs-tor h2 { font-size: 24px; }
-			}
+				@media (max-width: 640px) {
+					.fhs-tor { font-size: 16px; }
+					.fhs-tor .tor-hero { padding: 64px 16px 48px; }
+					.fhs-tor .tor-hero::after { width: 80%; height: 60%; }
+					.fhs-tor .tor-body { padding: 40px 16px 56px; }
+					.fhs-tor nav.tor-toc ol { columns: 1; }
+					.fhs-tor .tor-two { grid-template-columns: 1fr; }
+					.fhs-tor h2 { font-size: 24px; }
+				}
 			`}</style>
             
             
@@ -130,7 +130,7 @@ export default function Page() {
 							<div className="tor-wrap">
 							<p className="tor-eyebrow">Future Hospitality Summit</p>
 							<h1>Advisory Board Terms of Reference</h1>
-							<p className="tor-lead">How the Advisory Boards of every FHS edition work: what they do, who sits on them, and how we treat our members' names, time and interests.</p>
+							<p className="tor-lead">How the Advisory Boards of every FHS edition work: what they do, who sits on them, and how we treat our members&apos; names, time and interests.</p>
 							<div className="tor-meta">
 								<span className="tor-pill">Organiser: The Bench Conference LLC</span>
 								<span className="tor-pill">Applies to all FHS editions</span>
@@ -218,14 +218,14 @@ export default function Page() {
 
 							<section id="tor-names">
 								<h2><span>05</span>Use of names, logos and images</h2>
-								<p>The Bench uses a member's name, title, photo and short biography only to identify them as an Advisory Board member, on:</p>
+								<p>The Bench uses a member&apos;s name, title, photo and short biography only to identify them as an Advisory Board member, on:</p>
 								<ul>
-								<li>The edition website's Advisory Board page</li>
+								<li>The edition website&apos;s Advisory Board page</li>
 								<li>The event programme, app and on-site Advisory Board signage</li>
 								<li>Press releases and social media posts announcing the Board</li>
 								</ul>
 								<h3>Institutional names and emblems</h3>
-								<p>An organisation's name, logo or emblem is used only with its prior written approval of each format, and in line with its own brand rules. It will never be presented in a way that implies sponsorship, endorsement, partnership or co-organisation.</p>
+								<p>An organisation&apos;s name, logo or emblem is used only with its prior written approval of each format, and in line with its own brand rules. It will never be presented in a way that implies sponsorship, endorsement, partnership or co-organisation.</p>
 								<h3>Separation from sponsorship</h3>
 								<p>Advisory Board listings are kept separate from sponsor and partner listings.</p>
 								<h3>Withdrawal</h3>
@@ -243,7 +243,7 @@ export default function Page() {
 								<h3>Confidentiality</h3>
 								<p>Draft programmes and unannounced speaker or partner names shared with the Board stay confidential until The Bench publishes them. Individual comments are not attributed publicly without consent.</p>
 								<h3>Data</h3>
-								<p>Personal data is handled under The Bench's <a href="https://www.thebench.com/privacy">privacy policy</a> and UK GDPR.</p>
+								<p>Personal data is handled under The Bench&apos;s <a href="https://www.thebench.com/privacy">privacy policy</a> and UK GDPR.</p>
 							</section>
 
 							<section id="tor-costs">
