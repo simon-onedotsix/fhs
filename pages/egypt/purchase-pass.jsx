@@ -20,7 +20,7 @@ function PurchasePass({ entry, country }) {
 
 	// console.log('entry:', entry )
 	// console.log('country:', country)
-	country = "EG"
+	// country = "EG"
 
 	return (
 		<>
