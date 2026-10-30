@@ -615,7 +615,7 @@ export default function Agenda({ sessions, locations }) {
 										day.timeslots.map((slot, i) => (
 											<Timeslot key={i}>
 												{
-													slot.sessions.map((session, i) => {
+													_.orderBy(slot.sessions, ['beginsAt', 'endsAt']).map((session, i) => {
 
 														return (
 															<Session
