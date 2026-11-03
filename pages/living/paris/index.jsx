@@ -70,9 +70,10 @@ export default function Paris(p) {
 
 			<Room f={f} />
 
-			<AdvisorsWall advisors={p.advisors} />
+			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} />}
+			<AdvisorsWall advisors={p.advisors} bg="tint" />
 
-			<section className={c('section tint')} aria-labelledby="fmt-h">
+			<section className={c('section')} aria-labelledby="fmt-h">
 				<div className={c('wrap')}>
 					<div className={c('head')}><h2 className={c('ruled')} id="fmt-h">See it. Work it. Meet.</h2><p>The stage opens each day. Roundtables and hosted investor meetings follow.</p></div>
 					<ol className={c('steps')}>
@@ -83,7 +84,6 @@ export default function Paris(p) {
 				</div>
 			</section>
 
-			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} />}
 			<Glance programme={p.programme} link={R.programme} linkLabel="The full running order" bg="tint" />
 			<DubaiTeaser dubai={p.dubai} concl={p.concl} />
 			<LinkedinStrip linkedin={p.linkedin} />
