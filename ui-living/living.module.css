@@ -562,7 +562,7 @@
 /* a logo is drawn whole inside its box, never stretched (Simon's rule on /world/partners; Hobden Jones was 25% too wide,
    3 Nov 2026); each opens the partner's page */
 .root .tier__logos img { object-fit: contain; }
-.root .tier__logos a { display: block; transition: opacity .2s var(--ease); }
+.root .tier__logos a { display: flex; align-items: center; min-height: 24px; transition: opacity .2s var(--ease); } /* a 24 px tap target: Accor's logo is 13 px tall */
 .root .tier__logos a:hover { opacity: .7; }
 @media (max-width: 760px) {
   .root .tier { grid-template-columns: minmax(0, 1fr); }
