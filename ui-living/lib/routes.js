@@ -16,6 +16,8 @@ export const R = {
 	'case-studies': '/living/case-studies',
 	// the 3D site (01_Website/living3), a static page behind a rewrite in next.config.js: link to it with a plain <a>
 	experience: '/living/experience',
+	// Swapcard's Speakers group; a speaker's page is /living/speakers/<name>, a partner's /living/partners/<name>
+	speakers: '/living/speakers',
 }
 
 export const SITE = 'https://futurehospitality.com'

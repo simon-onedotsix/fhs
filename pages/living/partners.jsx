@@ -9,6 +9,7 @@ import { Quote } from '../../ui-living/sections/quote'
 import facts from '../../ui-living/data/facts.json'
 import { loadPartners, REVALIDATE } from '../../ui-living/lib/cms'
 import { HIGH } from '../../ui-living/lib/attrs'
+import { slugify } from '../../ui-living/lib/cases'
 
 const MAIL = 'mailto:matthew.weihs@thebench.com?subject=FHS%20Living%20partnership'
 
@@ -35,7 +36,11 @@ export default function Partners({ f, partners }) {
 							<div key={t.tier} className={c('tier')}>
 								<p className={c('label accent')}>{t.tier}</p>
 								<ul className={c('tier__logos')}>
-									{t.items.map(it => <li key={it.logo}><img src={img(/^https?:/.test(it.logo) ? it.logo : `partners/${it.logo}`)} alt={it.name} width={it.w} height={it.h} loading="lazy" /></li>)}
+									{t.items.map(it => (
+										<li key={it.logo}><Link href={`${R.partners}/${it.slug || slugify(it.name)}`} prefetch={false}><a title={it.name}>
+											<img src={img(/^https?:/.test(it.logo) ? it.logo : `partners/${it.logo}`)} alt={it.name} width={it.w} height={it.h} loading="lazy" />
+										</a></Link></li>
+									))}
 								</ul>
 							</div>
 						))}

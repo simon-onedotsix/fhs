@@ -9,6 +9,7 @@ import facts from '../data/facts.json'
 
 // Two menus (Ahmed, 23 Oct 2026): FHS Living as a whole, and the Paris edition's own pages. A Paris page has no
 // "Paris 2027" tab: the edition line beside the logo goes there. Case studies and the content library are in both.
+// Speakers took Venue's tab (3 Nov 2026); the venue page stays, linked from the Paris page and the footer.
 const LIVING_NAV = [
 	['paris', 'Paris 2027'],
 	['case-studies', 'Case studies'],
@@ -17,14 +18,14 @@ const LIVING_NAV = [
 ]
 const PARIS_NAV = [
 	['programme', 'Programme'],
+	['speakers', 'Speakers'],
 	['who-is-in-the-room', "Who's in the room"],
 	['investors', 'Investors'],
 	['partners', 'Partners'],
-	['venue', 'Venue'],
 	['case-studies', 'Case studies'],
 	['content-library', 'Content library'],
 ]
-const PARIS = ['paris', 'programme', 'passes', 'venue', 'investors', 'who-is-in-the-room', 'partners', 'register']
+const PARIS = ['paris', 'programme', 'speakers', 'passes', 'venue', 'investors', 'who-is-in-the-room', 'partners', 'register']
 
 export function Header({ page }) {
 	const ref = useRef(null)

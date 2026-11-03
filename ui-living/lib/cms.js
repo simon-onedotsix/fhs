@@ -6,7 +6,7 @@
 // event, and a refresh on the live site fails, so Next keeps serving the page's last good version.
 import { gql } from '@apollo/client'
 import craftApolloClient from '../../pages/api/apollo'
-import { parseCases } from './cases'
+import { parseCases, slugify } from './cases'
 import { parseProgramme } from './programme'
 import advisorsSaved from '../data/advisors.json'
 import passesSaved from '../data/passes.json'
@@ -14,6 +14,7 @@ import librarySaved from '../data/library.json'
 import partnersSaved from '../data/partners.json'
 import casesSaved from '../data/cases.json'
 import programmeSaved from '../data/programme.json'
+import speakersSaved from '../data/speakers.json'
 
 // seconds between a Living page's refreshes on the live site (Next's incremental static regeneration)
 export const REVALIDATE = 300
@@ -25,6 +26,8 @@ const FOCUS_FIX = { 'Co-living': 'Co-Living', 'Hotel & Resorts': 'Hotels & Resor
 const CLASSES = Object.keys(advisorsSaved.counts)
 // house style for text written in the CMS: no em dashes, a spaced en dash instead
 const tidy = s => s.replace(/\s*—\s*/g, ' – ')
+const fold = s => s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '')
+const byName = (a, b) => fold(a.name).localeCompare(fold(b.name), 'en')
 
 async function craft(query) {
 	const { data } = await craftApolloClient().query({ query: gql(query), fetchPolicy: 'no-cache' })
@@ -124,14 +127,24 @@ export const loadLibrary = loader('content library', async () => {
 export const loadPartners = loader('partners', async () => {
 	const data = await swapcard(event => `{
 		event(id: "${event}") { fieldDefinitions { ... on SelectFieldDefinition { id optionsValues { id value translations { language value } } } } }
-		exhibitors(eventId: "${event}", page: 1, pageSize: 200) { name logoUrl fields { ... on SelectField { id } } }
+		exhibitors(eventId: "${event}", page: 1, pageSize: 200) { name logoUrl websiteUrl htmlDescription socialNetworks { type profile }
+			fields { ... on SelectField { id } } }
 	}`)
 	const groups = data.event.fieldDefinitions.find(f => f.id === 'RmllbGREZWZpbml0aW9uXzI5NjgyNg==').optionsValues
 	const saved = Object.fromEntries(partnersSaved.tiers.flatMap(t => t.items).map(i => [i.name.toLowerCase(), i]))
 	const tiers = groups.map(g => {
 		const items = data.exhibitors.filter(x => x.fields.some(f => f.id === g.id))
-			// our trimmed, optically sized logo where we have one; a new partner shows its Swapcard logo
-			.map(x => saved[x.name.toLowerCase()] || { name: x.name, logo: x.logoUrl, w: 160, h: 64 })
+			.map(x => ({
+				name: x.name.trim(), slug: slugify(x.name),
+				url: x.websiteUrl ? (/^https?:\/\//.test(x.websiteUrl) ? x.websiteUrl : `https://${x.websiteUrl}`) : null,
+				about: x.htmlDescription && x.htmlDescription.replace(/<[^>]+>/g, '').trim() ? tidy(clean(x.htmlDescription)) : null,
+				linkedin: (x.socialNetworks || []).find(s => s.type === 'LINKEDIN')?.profile || null,
+				// a new partner shows its Swapcard logo, drawn whole inside a 160 x 64 box (object-fit, living.module.css)
+				logo: x.logoUrl, w: 160, h: 64,
+				// our trimmed, optically sized logo where we have one
+				...saved[x.name.toLowerCase()],
+			}))
+			.sort(byName) // alphabetical within a tier (Sally, 3 Nov 2026)
 		// the group's English name in Swapcard ("Headline Partners"), singular when it holds one partner
 		const label = ((g.translations || []).find(t => t.language === 'en_US') || {}).value?.trim() || g.value
 		return { tier: items.length === 1 ? label.replace(/([^s])s$/, '$1') : label, items }
@@ -140,12 +153,45 @@ export const loadPartners = loader('partners', async () => {
 	return { tiers }
 }, partnersSaved)
 
+// every partner once, with its tier in the singular ("Media Partner") and the slug of its page /living/partners/<slug>
+export const partnerList = ({ tiers }) => tiers.flatMap(t => t.items.map(x => ({ ...x, slug: x.slug || slugify(x.name), tier: t.tier.replace(/([^s])s$/, '$1') })))
+
+// Swapcard's profile text is the partner's own HTML: keep the text and its formatting, drop anything that could run
+function clean(html) {
+	return html.replace(/<(script|style|iframe|object|embed|form)\b[\s\S]*?<\/\1>/gi, '').replace(/<(script|iframe|object|embed|link|meta)\b[^>]*>/gi, '')
+		.replace(/\son\w+\s*=\s*("[^"]*"|'[^']*'|[^\s>]+)/gi, '').replace(/(href|src)\s*=\s*(["'])\s*javascript:[^"']*\2/gi, '$1="#"')
+}
+
 // The Paris running order as the programme team keeps it in Swapcard (rules in ./programme.js)
 export const loadProgramme = loader('programme', async () => {
 	const d = await swapcard(event => `{ event(id: "${event}") { beginsAt }
-		plannings(eventId: "${event}", page: 1, pageSize: 500) { title place beginsAt endsAt isPrivate } }`)
+		plannings(eventId: "${event}", page: 1, pageSize: 500) { title place beginsAt endsAt isPrivate
+			planningSpeakerRoles { speakers { firstName lastName organization } } } }`)
 	return parseProgramme(d.plannings, d.event.beginsAt, programmeSaved)
 }, programmeSaved)
+
+// The people in the Living 2027 event's "Speakers" group in Swapcard, by surname as on Simon's speaker pages, each with
+// the Paris sessions they are on (Swapcard lists a person's sessions across every event, so only this event's count)
+export const loadSpeakers = loader('speakers', async () => {
+	const g = await swapcard(event => `{ event(id: "${event}") { groups { id name } } plannings(eventId: "${event}", page: 1, pageSize: 500) { id isPrivate } }`)
+	const group = g.event.groups.find(x => /^speakers$/i.test(x.name.trim()))
+	if (!group) throw new Error('no Speakers group')
+	const ours = new Set(g.plannings.filter(p => !p.isPrivate).map(p => p.id))
+	const d = await swapcard(event => `{ eventPerson(eventId: "${event}", cursor: { first: 500 }, filters: [{ shouldBeInGroups: "${group.id}" }]) {
+		nodes { firstName lastName jobTitle organization photoUrl biography speakerOnPlannings { id title beginsAt endsAt } } } }`)
+	const people = d.eventPerson.nodes.filter(p => p.firstName || p.lastName).map(p => {
+		const name = `${(p.firstName || '').trim()} ${(p.lastName || '').trim()}`.trim()
+		return {
+			name, slug: slugify(name), surname: (p.lastName || '').trim(),
+			title: tidy((p.jobTitle || '').trim()), company: tidy((p.organization || '').trim()), photo: p.photoUrl || null,
+			bio: (p.biography || '').trim() ? tidy(p.biography.trim()) : null,
+			sessions: (p.speakerOnPlannings || []).filter(s => ours.has(s.id)).sort((a, b) => (a.beginsAt > b.beginsAt) - (a.beginsAt < b.beginsAt))
+				.map(s => ({ title: s.title.trim(), date: s.beginsAt.slice(0, 10), start: s.beginsAt.slice(11, 16), end: s.endsAt.slice(11, 16) })),
+		}
+	})
+	if (!people.length) throw new Error('no speakers')
+	return { people: people.sort((a, b) => fold(a.surname).localeCompare(fold(b.surname), 'en') || byName(a, b)) }
+}, speakersSaved)
 
 // The "Where to stay" text the team keeps on Craft's Travel & Accommodation page. Outlook SafeLinks wrappers,
 // pasted from email, are unwrapped to the real address so no mailbox details reach the public page.

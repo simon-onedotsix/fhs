@@ -509,6 +509,8 @@
 .root .slot ul { margin: 10px 0 0; padding: 0; list-style: none; display: grid; gap: 7px; }
 .root .slot ul li { font-size: 15px; line-height: 1.4; padding-left: 18px; position: relative; }
 .root .slot ul li::before { content: ""; position: absolute; left: 0; top: 6px; width: 8px; height: 9px; background: var(--magenta); clip-path: var(--facet); }
+.root .slot__who { margin: 6px 0 0; font-size: 14px; line-height: 1.4; color: var(--ink-soft); }
+.root .slot ul li .slot__who { display: block; margin-top: 2px; }
 @media (max-width: 900px) {
   .root .prog { grid-template-columns: minmax(0, 1fr); }
   .root .slot { grid-template-columns: 90px minmax(0, 1fr); }
@@ -557,6 +559,11 @@
 .root .tiers { border-top: 2px solid var(--purple); }
 .root .tier { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 24px; padding: 30px 0; border-bottom: 1px solid var(--line); align-items: center; }
 .root .tier__logos { display: flex; flex-wrap: wrap; gap: 28px 56px; align-items: center; list-style: none; margin: 0; padding: 0; }
+/* a logo is drawn whole inside its box, never stretched (Simon's rule on /world/partners; Hobden Jones was 25% too wide,
+   3 Nov 2026); each opens the partner's page */
+.root .tier__logos img { object-fit: contain; }
+.root .tier__logos a { display: block; transition: opacity .2s var(--ease); }
+.root .tier__logos a:hover { opacity: .7; }
 @media (max-width: 760px) {
   .root .tier { grid-template-columns: minmax(0, 1fr); }
 }
@@ -648,6 +655,8 @@
 .root .person span { display: block; font-size: 13px; line-height: 1.4; color: var(--ink-soft); }
 .root .person .focus { margin-top: 8px; font-size: 12px; letter-spacing: .06em; color: var(--magenta); }
 .root .person[hidden] { display: none; }
+.root .person > a { display: block; color: inherit; text-decoration: none; }
+.root .person > a:hover b { color: var(--magenta); }
 @media (max-width: 1060px) {
   .root .directory { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
@@ -1037,3 +1046,20 @@
 .root [id] { scroll-margin-top: 100px; }
 /* port: the app's global reset sets font smoothing on every element; keep the prototype's rendering */
 .root, .root * { -webkit-font-smoothing: auto; -moz-osx-font-smoothing: auto; }
+
+/* ---------- profile pages: /living/speakers/<name>, /living/partners/<name> (3 Nov 2026) ---------- */
+.root .cs-hero__fig.pr-portrait { aspect-ratio: 4 / 5; max-width: 420px; justify-self: end; width: 100%; }
+.root .pr-logo { margin: 0; aspect-ratio: 2 / 1; display: flex; align-items: center; justify-content: center; padding: 10%; background: var(--cream-deep); border-top: 3px solid var(--magenta); }
+.root .pr-logo img { width: 100%; height: 100%; object-fit: contain; }
+.root .pr-about { max-width: 68ch; }
+.root .pr-about p { margin: 0 0 1em; font-size: clamp(17px, 1.3vw, 19px); line-height: 1.6; }
+.root .pr-about :is(h2, h3, h4) { font-size: 20px; font-weight: 500; margin: 1.4em 0 .5em; }
+.root .pr-about :is(ul, ol) { margin: 0 0 1em; padding-left: 1.2em; }
+.root .pr-sessions { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 18px; }
+.root .pr-sessions li { border-top: 1px solid var(--line); padding-top: 12px; }
+.root .pr-sessions span { display: block; font-size: 13px; color: var(--ink-soft); margin-bottom: 4px; }
+.root .pr-sessions a { font-weight: 500; color: inherit; text-decoration: none; }
+.root .pr-sessions a:hover { color: var(--magenta); }
+@media (max-width: 900px) {
+  .root .cs-hero__fig.pr-portrait { justify-self: start; max-width: 320px; }
+}
