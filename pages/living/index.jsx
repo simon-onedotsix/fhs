@@ -11,13 +11,14 @@ import { PartnersReads } from '../../ui-living/sections/partners-reads'
 import { Closer } from '../../ui-living/sections/closer'
 import { CaseStrip } from '../../ui-living/sections/case-studies'
 import { ExperienceTeaser } from '../../ui-living/sections/experience'
+import { SpeakerStrip } from '../../ui-living/sections/speakers'
 
 import facts from '../../ui-living/data/facts.json'
 import atlas from '../../ui-living/data/atlas.json'
 import editions from '../../ui-living/data/editions.json'
 import dubai from '../../ui-living/data/dubai.json'
 import concl from '../../ui-living/data/conclusions.json'
-import { loadAdvisors, loadCases, loadPartners, loadPasses, REVALIDATE } from '../../ui-living/lib/cms'
+import { loadAdvisors, loadCases, loadPartners, loadPasses, loadSpeakers, REVALIDATE } from '../../ui-living/lib/cms'
 import { HIGH } from '../../ui-living/lib/attrs'
 
 // FHS World, Saudi Arabia and Egypt's Living pages import these from here (see ui-living/data/legacy.js)
@@ -55,6 +56,7 @@ export default function Living(p) {
 				<div className={c('wrap')}><EditionsRail editions={p.editions} /></div>
 			</section>
 
+			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} />}
 			<DubaiProof dubai={p.dubai} concl={p.concl} collage={COLLAGE} />
 			<AdvisorsWall advisors={p.advisors} />
 			{p.cases.length > 0 && <CaseStrip cases={p.cases} />}
@@ -66,13 +68,14 @@ export default function Living(p) {
 Living.theme = 'living'
 
 export async function getStaticProps() {
-	const [advisors, partners, passes, { cases }] = await Promise.all([loadAdvisors(), loadPartners(), loadPasses(), loadCases()])
+	const [advisors, partners, passes, { cases }, { people: speakers }] = await Promise.all([loadAdvisors(), loadPartners(), loadPasses(), loadCases(), loadSpeakers()])
 	return {
 		revalidate: REVALIDATE,
 		props: {
 			classes: facts.classes,
 			counts: advisors.counts,
 			advisors: advisors.people,
+			speakers,
 			atlas,
 			editions,
 			dubai,

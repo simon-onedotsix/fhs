@@ -15,6 +15,7 @@ import partnersSaved from '../data/partners.json'
 import casesSaved from '../data/cases.json'
 import programmeSaved from '../data/programme.json'
 import speakersSaved from '../data/speakers.json'
+import speakerOrder from '../data/speaker-order.json'
 
 // seconds between a Living page's refreshes on the live site (Next's incremental static regeneration)
 export const REVALIDATE = 300
@@ -172,7 +173,7 @@ export const loadProgramme = loader('programme', async () => {
 
 // The people in the Living 2027 event's "Speakers" group in Swapcard, by surname as on Simon's speaker pages, each with
 // the Paris sessions they are on (Swapcard lists a person's sessions across every event, so only this event's count)
-export const loadSpeakers = loader('speakers', async () => {
+const readSpeakers = loader('speakers', async () => {
 	const g = await swapcard(event => `{ event(id: "${event}") { groups { id name } } plannings(eventId: "${event}", page: 1, pageSize: 500) { id isPrivate } }`)
 	const group = g.event.groups.find(x => /^speakers$/i.test(x.name.trim()))
 	if (!group) throw new Error('no Speakers group')
@@ -192,6 +193,14 @@ export const loadSpeakers = loader('speakers', async () => {
 	if (!people.length) throw new Error('no speakers')
 	return { people: people.sort((a, b) => fold(a.surname).localeCompare(fold(b.surname), 'en') || byName(a, b)) }
 }, speakersSaved)
+
+// the team's running order (data/speaker-order.json) first, then everyone else by surname; live or from the snapshot
+const RANK = new Map(speakerOrder.order.map((n, i) => [fold(n), i]))
+const rank = p => (RANK.has(fold(p.name)) ? RANK.get(fold(p.name)) : RANK.size)
+export const loadSpeakers = async () => {
+	const d = await readSpeakers()
+	return { ...d, people: [...d.people].sort((a, b) => rank(a) - rank(b)) } // a stable sort keeps the surname order among the rest
+}
 
 // The "Where to stay" text the team keeps on Craft's Travel & Accommodation page. Outlook SafeLinks wrappers,
 // pasted from email, are unwrapped to the real address so no mailbox details reach the public page.

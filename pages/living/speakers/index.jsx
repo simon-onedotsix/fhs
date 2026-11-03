@@ -5,11 +5,12 @@ import { c } from '../../../ui-living/lib/c'
 import { img } from '../../../ui-living/lib/format'
 import { R } from '../../../ui-living/lib/routes'
 import { HIGH } from '../../../ui-living/lib/attrs'
+import { SpeakerGrid } from '../../../ui-living/sections/speakers'
 
 import facts from '../../../ui-living/data/facts.json'
 import { loadSpeakers, REVALIDATE } from '../../../ui-living/lib/cms'
 
-// The Swapcard "Speakers" group for Paris, refreshed like every Living page, each card leading to the speaker's page.
+// The Swapcard "Speakers" group for Paris in the team's order, refreshed like every Living page.
 export default function Speakers({ f, speakers }) {
 	const n = speakers.people.length
 	return (
@@ -27,21 +28,8 @@ export default function Speakers({ f, speakers }) {
 
 			<section className={c('section')} aria-labelledby="sp-h">
 				<div className={c('wrap')}>
-					<div className={c('head')}><h2 className={c('ruled')} id="sp-h">{n} speakers confirmed.</h2><p>Investors, operators, developers and advisors, listed by surname.</p></div>
-					<ul className={c('directory')}>
-						{speakers.people.map(p => (
-							<li key={p.slug} className={c('person')}>
-								<Link href={`${R.speakers}/${p.slug}`} prefetch={false}>
-									<a>
-										<figure>
-											<div className={c('window')}>{p.photo && <img src={p.photo} width="360" height="440" alt={p.name} loading="lazy" />}</div>
-											<figcaption><b>{p.name}</b><span>{p.title}</span><span>{p.company}</span></figcaption>
-										</figure>
-									</a>
-								</Link>
-							</li>
-						))}
-					</ul>
+					<div className={c('head')}><h2 className={c('ruled')} id="sp-h">{n} speakers confirmed.</h2><p>Investors, operators, developers and advisors.</p></div>
+					<SpeakerGrid people={speakers.people} />
 				</div>
 			</section>
 		</LivingPage>

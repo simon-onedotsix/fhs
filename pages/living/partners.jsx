@@ -51,7 +51,7 @@ export default function Partners({ f, partners }) {
 
 			<section className={c('section tint')} aria-labelledby="deliver-h">
 				<div className={c('wrap')}>
-					<div className={c('head')}><h2 className={c('ruled')} id="deliver-h">A seat at the table, not a logo on a wall.</h2><p>Packages run from a working session to the Investors Lounge.</p></div>
+					<div className={c('head')}><h2 className={c('ruled')} id="deliver-h">A seat at the table.</h2><p>Packages run from a working session to the Investors Lounge.</p></div>
 					<ul className={c('steps steps--4')}>
 						<li className={c('step')}><figure><img src={img('photo/meeting-gulf.jpg')} width="1600" height="1066" alt="An investor meeting at a Future Hospitality Summit event" loading="lazy" /></figure><h3>Meetings with capital</h3><p>Hosted investor meetings matched to your criteria, and guest passes for the investors you bring.</p></li>
 						<li className={c('step')}><figure><img src={img('dubai/800/stage-fireside.jpg')} width="1600" height="900" alt="Accor One Living on the FHS Living stage at FHS World, Dubai" loading="lazy" /></figure><h3>A voice in the programme</h3><p>Lead a roundtable or host a private workshop on the questions your business cares about.</p></li>
