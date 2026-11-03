@@ -142,8 +142,9 @@ export const loadPartners = loader('partners', async () => {
 				linkedin: (x.socialNetworks || []).find(s => s.type === 'LINKEDIN')?.profile || null,
 				// a new partner shows its Swapcard logo, drawn whole inside a 160 x 64 box (object-fit, living.module.css)
 				logo: x.logoUrl, w: 160, h: 64,
-				// our trimmed, optically sized logo where we have one
-				...saved[x.name.toLowerCase()],
+				// our trimmed logo, sized to equal visual weight (site/tools/size_partner_logos.py), where we have one; a copy cut
+				// from a Swapcard file (`from`) gives way when the partner uploads a new logo there
+				...(s => (s && (!s.from || s.from === x.logoUrl) ? s : {}))(saved[x.name.toLowerCase()]),
 			}))
 			.sort(byName) // alphabetical within a tier (Sally, 3 Nov 2026)
 		// the group's English name in Swapcard ("Headline Partners"), singular when it holds one partner

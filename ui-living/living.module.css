@@ -556,6 +556,7 @@
 }
 /* ---------- partners, reads, closer ---------- */
 .root .strip { display: flex; flex-wrap: wrap; gap: 26px 56px; align-items: center; list-style: none; margin: 0; padding: 32px 0 0; border-top: 1px solid var(--line); }
+.root .strip img { object-fit: contain; } /* a logo is never drawn out of shape (as .tier__logos) */
 .root .tiers { border-top: 2px solid var(--purple); }
 .root .tier { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 24px; padding: 30px 0; border-bottom: 1px solid var(--line); align-items: center; }
 .root .tier__logos { display: flex; flex-wrap: wrap; gap: 28px 56px; align-items: center; list-style: none; margin: 0; padding: 0; }

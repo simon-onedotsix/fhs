@@ -1,5 +1,5 @@
 {
- "_source": "Live /living/partners page, read 12 Oct 2026 (names from __NEXT_DATA__). Logos from 03_Social/assets/partners-living. Melia Hotels International added 15 Oct 2026 from Swapcard (logo trimmed from its Swapcard file). Tiers and order re-read from Swapcard 2026-11-03 (site/tools/snapshot_swapcard_people.py).",
+ "_source": "Live /living/partners page, read 12 Oct 2026 (names from __NEXT_DATA__). Logos from 03_Social/assets/partners-living. Melia Hotels International added 15 Oct 2026 from Swapcard (logo trimmed from its Swapcard file). Tiers and order re-read from Swapcard 2026-11-03 (site/tools/snapshot_swapcard_people.py). Logo files trimmed to their ink and sized to equal visual weight by site/tools/size_partner_logos.py. Tiers and order re-read from Swapcard 2026-11-03 (site/tools/snapshot_swapcard_people.py). Logo files trimmed to their ink and sized to equal visual weight by site/tools/size_partner_logos.py. Logo files trimmed to their ink and sized to equal visual weight by site/tools/size_partner_logos.py. Logo files trimmed to their ink and sized to equal visual weight by site/tools/size_partner_logos.py.",
  "tiers": [
   {
    "tier": "Founding Partner",
@@ -7,19 +7,26 @@
     {
      "name": "Accor One Living",
      "logo": "accor-one-living-p.png",
-     "h": 13,
-     "w": 260
+     "h": 14,
+     "w": 280
     }
    ]
   },
   {
-   "tier": "Headline Partner",
+   "tier": "Headline Partners",
    "items": [
+    {
+     "name": "Brookfield",
+     "logo": "brookfield.png",
+     "w": 176,
+     "h": 26,
+     "from": "https://static.swapcard.com/public/images/6b79527476e0449eb83d495e001fe414.png"
+    },
     {
      "name": "Melia Hotels International",
      "logo": "melia.png",
-     "h": 39,
-     "w": 254
+     "h": 43,
+     "w": 280
     }
    ]
   },
@@ -27,28 +34,50 @@
    "tier": "Partners",
    "items": [
     {
+     "name": "Generator",
+     "logo": "generator.png",
+     "w": 131,
+     "h": 84,
+     "from": "https://static.swapcard.com/public/images/90d4c540f42548619890ef87045c6acc.png"
+    },
+    {
      "name": "Hobden Jones",
-     "logo": "https://static.swapcard.com/public/images/3750fc3e59d541ce9ce47c5ac5da3e3c.png",
-     "w": 160,
-     "h": 64
+     "logo": "hobden-jones.png",
+     "w": 133,
+     "h": 38,
+     "from": "https://static.swapcard.com/public/images/3750fc3e59d541ce9ce47c5ac5da3e3c.png"
     },
     {
      "name": "Landsberg Residential Consulting",
      "logo": "landsberg.png",
-     "h": 81,
-     "w": 189
+     "h": 79,
+     "w": 183
+    },
+    {
+     "name": "Locke",
+     "logo": "locke.png",
+     "w": 168,
+     "h": 29,
+     "from": "https://static.swapcard.com/public/images/39fa6556354b4b8192783b60ed6e7716.png"
     },
     {
      "name": "Maslow's",
      "logo": "maslows.png",
-     "h": 45,
-     "w": 257
+     "h": 37,
+     "w": 210
     },
     {
      "name": "QUO",
      "logo": "quo.png",
-     "h": 62,
-     "w": 159
+     "h": 48,
+     "w": 122
+    },
+    {
+     "name": "UXCO Group",
+     "logo": "uxco-group.png",
+     "w": 168,
+     "h": 66,
+     "from": "https://static.swapcard.com/public/images/ca2a8dbb60b64294845e3b6501c1c82d.png"
     }
    ]
   },
@@ -58,8 +87,8 @@
     {
      "name": "ISHC",
      "logo": "ishc.png",
-     "h": 47,
-     "w": 189
+     "h": 48,
+     "w": 194
     }
    ]
   },
@@ -69,20 +98,20 @@
     {
      "name": "BRESI",
      "logo": "bresi.png",
-     "h": 32,
-     "w": 166
+     "h": 29,
+     "w": 151
     },
     {
      "name": "Smack Hospitality",
      "logo": "smack-hospitality.png",
-     "h": 88,
-     "w": 98
+     "h": 77,
+     "w": 86
     },
     {
      "name": "Urban Living News",
      "logo": "urban-living-news.png",
-     "h": 65,
-     "w": 65
+     "h": 53,
+     "w": 53
     }
    ]
   }

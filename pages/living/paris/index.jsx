@@ -14,13 +14,14 @@ import { LinkedinStrip } from '../../../ui-living/sections/linkedin-strip'
 import { Passes, passOffer, bookBefore } from '../../../ui-living/sections/passes'
 import { Quote } from '../../../ui-living/sections/quote'
 import { PartnerStrip } from '../../../ui-living/sections/partner-strip'
+import { SpeakerStrip } from '../../../ui-living/sections/speakers'
 
 import facts from '../../../ui-living/data/facts.json'
 import flows from '../../../ui-living/data/flows.json'
 import dubai from '../../../ui-living/data/dubai.json'
 import concl from '../../../ui-living/data/conclusions.json'
 import linkedin from '../../../ui-living/data/linkedin.json'
-import { loadAdvisors, loadPartners, loadPasses, loadProgramme, REVALIDATE } from '../../../ui-living/lib/cms'
+import { loadAdvisors, loadPartners, loadPasses, loadProgramme, loadSpeakers, REVALIDATE } from '../../../ui-living/lib/cms'
 import { HIGH } from '../../../ui-living/lib/attrs'
 
 const COMES = {
@@ -82,7 +83,8 @@ export default function Paris(p) {
 				</div>
 			</section>
 
-			<Glance programme={p.programme} link={R.programme} linkLabel="The full running order" bg="" />
+			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} />}
+			<Glance programme={p.programme} link={R.programme} linkLabel="The full running order" bg="tint" />
 			<DubaiTeaser dubai={p.dubai} concl={p.concl} />
 			<LinkedinStrip linkedin={p.linkedin} />
 
@@ -117,12 +119,13 @@ Paris.theme = 'living'
 const pass = (passes, title) => passes.passes.find(x => x.title.startsWith(title))
 
 export async function getStaticProps() {
-	const [advisors, partners, passes, programme] = await Promise.all([loadAdvisors(), loadPartners(), loadPasses(), loadProgramme()])
+	const [advisors, partners, passes, programme, { people: speakers }] = await Promise.all([loadAdvisors(), loadPartners(), loadPasses(), loadProgramme(), loadSpeakers()])
 	return {
 		revalidate: REVALIDATE,
 		props: {
 			f: facts,
 			advisors: advisors.people,
+			speakers,
 			flows,
 			programme,
 			dubai,
