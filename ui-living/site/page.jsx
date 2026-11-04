@@ -42,6 +42,11 @@ export function LivingPage({ page, path, image, title, description, head, childr
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="theme-color" content="#FBD4CD" />
 				<link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
+				{/* Neue Haas Grotesk Text, the brand font, from The Bench's Adobe Fonts web kit (Adobe hosts the files under its
+				    licence, so none sit in this public repo). Living pages only; the kit's p.typekit.net call counts page views */}
+				<link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
+				<link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
+				<link rel="stylesheet" href="https://use.typekit.net/xjp3jcj.css" />
 				{head}
 			</Head>
 			<div id="lv-root" ref={root} className={c('root nojs')} suppressHydrationWarning>
