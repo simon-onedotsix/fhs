@@ -44,37 +44,6 @@ import CSS from '../../fuselage/theme/egypt/css/homepage.module.css'
 
 
 
-const SPEAKER_DATA = [
-    {
-        url: `/world/speakers/profile/h-e-mohamed-ali-rashed-alabbar`,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/Alabbar_Mohamed_sq.jpg',
-        fullName: 'H.E. Mohamed Ali Rashed Alabbar',
-         jobTitle: 'Founder & Managing Director of Emaar Properties; Founder & Director of Noon.com; Chairman of Eagle Hills; Chairman of Americana Group',
-        company: '',
-    },
-    {
-        url: null,
-        photoUrl: 'https://static.swapcard.com/public/images/a8a3eed89c99418ea55cedd0edf6ea16.jpeg',
-        fullName: 'HE Shaikha Nasser Al Nowais',
-         jobTitle: 'Secretary General',
-        company: 'UN Tourism',
-    },
-    {
-        url: '/egypt/speakers/RXZlbnRQZW9wbGVfNDcyMTAzOTM=',
-        photoUrl: 'https://static.swapcard.com/public/images/651d88045d184b34a984f5007f20415a.jpeg',
-        fullName: 'Elie Milky',
-         jobTitle: 'Chief Development Officer for the Middle East, Northeast Africa, Greece, and Cyprus',
-        company: 'Radisson Hotel Group',
-    },
-    {
-        url: '/egypt/speakers/RXZlbnRQZW9wbGVfNDcyMTAyODI=',
-        photoUrl: 'https://cdn-api.swapcard.com/public/images/aefdd15eccd248aca1586c93329716d8.jpeg',
-        fullName: 'Dr. Ahmed Shalaby',
-         jobTitle: 'Co-Founder, President & CEO',
-        company: 'Tatweer Misr',
-    },
-    
-]
 
 // temporary hard-code data
 import { EVENT_DATA } from "../index"
@@ -239,7 +208,7 @@ export default function Home ({ data, content, partners, speakers }) {
 
 
             {/* PIPELINE REPORT */}
-            <section className="block bg-secondary">
+            {/* <section className="block bg-secondary">
                 <div className="container center">
                     <p className="fs-1 fw-500 lh-1 caps balance">Key Egypt Insights from the Hotel Chain Development Pipeline Report</p>
                 </div>
@@ -271,7 +240,7 @@ export default function Home ({ data, content, partners, speakers }) {
                         </ButtonKeyline>
                     </Pop>
                 </div>
-            </section>
+            </section> */}
 
             
 
@@ -279,7 +248,7 @@ export default function Home ({ data, content, partners, speakers }) {
             {/* SPEAKERS */}
             <section className="block bg-dark">
                 <div className="container center">
-                    <p className="fs-1 fw-500 caps">Confirmed Speakers</p>
+                    <p className="fs-1 fw-500 caps">Confirmed Speakers Include</p>
                 </div>
 
                 <div className="container columns-5 gap-sm maxw-70 center">
@@ -300,9 +269,84 @@ export default function Home ({ data, content, partners, speakers }) {
                 </div>
 
                 <div className="container center">
-                    <p><Pop><ButtonKeyline href={`/egypt/speakers`}>View Confirmed Speakers</ButtonKeyline></Pop></p>
+                    <p><Pop><ButtonKeyline href={`/egypt/speakers`}>View all Speakers</ButtonKeyline></Pop></p>
                 </div>
-            </section>
+			</section>
+			
+
+
+			{/* SAMPLE INVESTORS */}
+			<section className="block bg-default">
+				<div className="container center">
+                    <p className="fs-1 fw-500 lh-1 caps balance">Sample Investors Confirmed for FHS Egypt 2026</p>
+				</div>
+				
+				<div className="container formatted">
+					<ul style={{ columns: isDesktop ? 3 : 1, columnGap: '2rem'  }}>
+						<li>Abu Dhabi Tourism Investment Company</li>
+						<li>ACUD (Administrative Capital for Urban Development)</li>
+						<li>ADD Properties – Hospitality Division</li>
+						<li>Al Borolosy Developments</li>
+						<li>Al Ismaelia for Real Estate Investment</li>
+						<li>Apache Developments</li>
+						<li>Arab Company for Hotels &amp; Tourism Investments (ACHTI)</li>
+						<li>Arabia Holding</li>
+						<li>Azimut Investments Egypt</li>
+						<li>City Edge Developments</li>
+						<li>Contact Developments</li>
+						<li>Coral Sea Resorts</li>
+						<li>Coral Sea Sensatori</li>
+						<li>Credence Hospitality Developments</li>
+						<li>Egyptian Engineers Group (Zaghloul Holdings)</li>
+						<li>El Hazek Group</li>
+						<li>El Sayyad Group</li>
+						<li>Emtelaak Investment</li>
+						<li>Esterel Capital</li>
+						<li>European Bank for Reconstruction and Development (EBRD)</li>
+						<li>Grova Developments (Hassan Allam Holding)</li>
+						<li>Gulf Egypt for Hotels &amp; Tourism</li>
+						<li>Habitat Group</li>
+						<li>Hassan Allam Holding</li>
+						<li>IGI Holding</li>
+						<li>Impact Hospitality Group</li>
+						<li>Integrated Group for Real Estate Development (IGRED)</li>
+						<li>International Company for Touristic Investments (ICTI)</li>
+						<li>Jeddah Central Development Company</li>
+						<li>Katara Hospitality</li>
+						<li>Legacy Development &amp; Management / Hassan Allam Holding</li>
+						<li>Masar</li>
+						<li>Misr Abu Dhabi for Real Estate Investments</li>
+						<li>Misr Italia Properties</li>
+						<li>Misr Real Estate Assets Management Company</li>
+						<li>Modon Hospitality</li>
+						<li>Mountain View Developments</li>
+						<li>Nations of Sky</li>
+						<li>One of One</li>
+						<li>Orascom Development Egypt (El Gouna)</li>
+						<li>PARAGON | ADEER</li>
+						<li>People &amp; Places</li>
+						<li>Pharos Holding</li>
+						<li>Premier Wealth Management</li>
+						<li>Reliance Egypt</li>
+						<li>Saudi Egyptian Developers</li>
+						<li>SIVAST</li>
+						<li>Somabay</li>
+						<li>Sovereign Fund of Egypt</li>
+						<li>Tameer</li>
+						<li>The Code</li>
+						<li>The Diar Group (CityBlue Hotels)</li>
+						<li>The Egyptian General Company for Tourism &amp; Hotels</li>
+						<li>The Harv (DAL Developments)</li>
+						<li>VIE Development</li>
+						<li>Westmont Hospitality Group</li>
+						<li>Wings for Tourism Investment (WTI)</li>
+					</ul>
+				</div>
+
+                <div className="container center">
+                    <p><Pop><ButtonKeyline href={`/egypt/2026-attendee-list-download`}>View all Attendees</ButtonKeyline></Pop></p>
+                </div>
+			</section>
 
 
 
@@ -438,7 +482,7 @@ export default function Home ({ data, content, partners, speakers }) {
 
 
             
-            {/* BRF */}
+            {/* LIVING */}
             <section className="block bg-secondary" style={{ position: `relative`, overflow: `hidden`}}>
                 <Dunes />
                 
@@ -464,7 +508,7 @@ export default function Home ({ data, content, partners, speakers }) {
             <section className="block bg-primary o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
                 <div className={`${CSS.highlightVideoGrid} container`}>
                     <Slide><p className='fs-1 fw-600 lh-1'>A Snapshot of the FHS Experience</p></Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/LSqHtk9V-zg`} />
+                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://www.youtube.com/watch?v=Z-O3j56FKT0`} />
                 </div>
             </section>
 
