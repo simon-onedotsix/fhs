@@ -487,17 +487,18 @@ export default function Home ({ data, content, partners, speakers }) {
                 <Dunes />
                 
                 <div className="container center" style={{ position: `relative`, zIndex: 2}}>
-                    <p className="fs-1 fw-500">Branded Residences at FHS Egypt</p>
+                    <p className="fs-1 fw-500">FHS Living at FHS Egypt</p>
                 </div>
 
                 <div className="container columns-2 gap-md ai-center" style={{ position: `relative`, zIndex: 2}}>
                     <Pop><img src="/assets/img/egypt/homepage/brf-egypt.jpg" alt="" width={`100%`} style={{ borderRadius: `1rem`, marginBottom: `1rem`}} /></Pop>
                     
-                    <section className="formatted">
+					<section className="formatted">
+						<p>FHS Living is Future Hospitality Summit&apos;s platform for the hotelisation of real estate, across nine asset classes from branded residences and student housing to mixed use, hotels and resorts.</p>
                         <p>Egypt is rapidly emerging as a leading branded residences market, with <strong>45% of high-net-worth investors</strong> identifying the segment as a key asset class, delivering <strong>8–12% yields vs. 5–7% for traditional hotels</strong>.</p>
                         <p>Backed by <strong>Egypt Vision 2030</strong> and expanding partnerships between leading local developers and global brands, branded residences are reshaping mixed-use and resort development across the country.</p>
                         <br />
-                        <p><Pop inline><ButtonKeyline href={`/egypt/brf`}>Learn More</ButtonKeyline></Pop></p>
+                        <p><Pop inline><ButtonKeyline href={`/egypt/living`}>Learn More</ButtonKeyline></Pop></p>
                     </section>
                 </div>
             </section>
