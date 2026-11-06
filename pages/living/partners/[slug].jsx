@@ -14,13 +14,13 @@ import { loadPartners, partnerList, REVALIDATE } from '../../../ui-living/lib/cm
 export default function Partner({ f, x }) {
 	return (
 		<LivingPage page="partners" path={`${R.partners}/${x.slug}`} title={`${x.name} | FHS Living`}
-			description={`${x.name}, ${x.tier} of the FHS Living Founding Edition, Paris, ${f.event.dates}.`}>
+			description={`${x.name}, ${x.tier} of the FHS Living Europe Edition, Paris, ${f.event.dates}.`}>
 			<section className={c('page-hero cs-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>
 						<p className={c('label accent')}>{x.tier}</p>
 						<h1 id="hero-h">{x.name}</h1>
-						<p className={c('lede')}>{x.tier} of the FHS Living Founding Edition, Paris, {f.event.dates}.</p>
+						<p className={c('lede')}>{x.tier} of the FHS Living Europe Edition, Paris, {f.event.dates}.</p>
 						<div className={c('actions')}>
 							{x.url && <a className={c('btn')} href={x.url} {...NEW_TAB}>Visit website</a>}
 							{x.linkedin && <a className={c('btn btn--ghost')} href={x.linkedin} {...NEW_TAB}>LinkedIn</a>}

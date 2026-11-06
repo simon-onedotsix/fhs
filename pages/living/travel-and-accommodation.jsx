@@ -18,7 +18,7 @@ export default function Venue({ f, programme, stay }) {
 				<img src={img('photo/paris.jpg')} width="1600" height="1116" alt="Paris from above, the Eiffel Tower and the Seine" {...HIGH} />
 				<div className={c('fullbleed__card')}>
 					<h1 id="hero-h">{f.event.venue}.</h1>
-					<p>{f.event.address}. An Accor property, hosting the Founding Edition with Accor One Living as Founding Partner.</p>
+					<p>{f.event.address}. An Accor property, hosting the Europe Edition with Accor One Living as Founding Partner.</p>
 					<div className={c('actions')}><Link href={R.passes} prefetch={false}><a className={c('btn')}>Register to attend</a></Link><a className={c('link')} href="https://www.google.com/maps/search/?api=1&query=Pullman+Paris+Montparnasse">Open in Google Maps</a></div>
 				</div>
 			</section>

@@ -13,7 +13,7 @@ import { HIGH } from '../../ui-living/lib/attrs'
 
 export default function About({ f, editions }) {
 	return (
-		<LivingPage page="about" title="FHS Living | About" description="Future Hospitality Summit's platform for the hotelisation of real estate, organised by The Bench. A letter from the Chairman, Jonathan Worsley.">
+		<LivingPage page="about" title="FHS Living | About" description="Future Hospitality Summit's conference for the hotelisation of real estate, organised by The Bench. A letter from the Chairman, Jonathan Worsley.">
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>
@@ -54,7 +54,7 @@ export default function About({ f, editions }) {
 				<div className={c('wrap split')}>
 					<div>
 						<h2 className={c('ruled')} id="story-h">From one asset class to nine.</h2>
-						<p className={c('lede')} style={{ marginTop: 20 }}>The Branded Residences Forum began with a simple idea: bring the people shaping branded residences into one room. The capital and developers behind those projects moved into student housing, senior living and co-living. In August 2026 the forum became FHS Living, one platform for all of it. Branded residences remain a core pillar.</p>
+						<p className={c('lede')} style={{ marginTop: 20 }}>The Branded Residences Forum began with a simple idea: bring the people shaping branded residences into one room. The capital and developers behind those projects moved into student housing, senior living and co-living. In August 2026 the forum became FHS Living, one conference for all of it. Branded residences remain a core pillar.</p>
 					</div>
 					<div className={c('photo photo--wide')}><img src={img('photo/brf-stage.jpg')} width="1200" height="900" alt="The Branded Residences Forum stage" loading="lazy" /></div>
 				</div>
@@ -62,7 +62,7 @@ export default function About({ f, editions }) {
 
 			<section className={c('section tint section--tight')} aria-labelledby="ed-h">
 				<div className={c('wrap')}>
-					<div className={c('head')}><h2 className={c('ruled')} id="ed-h">One platform. Four cities.</h2><p>A dedicated programme inside FHS events in Dubai, Cairo and Riyadh, and a standalone Founding Edition in Paris.</p></div>
+					<div className={c('head')}><h2 className={c('ruled')} id="ed-h">One conference. Four cities.</h2><p>A dedicated programme inside FHS events in Dubai, Cairo and Riyadh, and a standalone Europe Edition in Paris.</p></div>
 					<EditionsRail editions={editions} />
 				</div>
 			</section>
@@ -70,7 +70,7 @@ export default function About({ f, editions }) {
 			<section className={c('section band section--tight')} aria-labelledby="tag-h">
 				<div className={c('wrap split')}>
 					<h2 id="tag-h">{f.tagline.text}</h2>
-					<div className={c('actions')}><Link href={R.paris} prefetch={false}><a className={c('btn btn--light')}>The Paris edition</a></Link><Link href={R.contact} prefetch={false}><a className={c('btn btn--line-light')}>Contact the team</a></Link></div>
+					<div className={c('actions')}><Link href={R.paris} prefetch={false}><a className={c('btn btn--light')}>The Europe Edition</a></Link><Link href={R.contact} prefetch={false}><a className={c('btn btn--line-light')}>Contact the team</a></Link></div>
 				</div>
 			</section>
 		</LivingPage>

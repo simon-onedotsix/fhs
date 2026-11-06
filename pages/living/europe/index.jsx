@@ -10,7 +10,6 @@ import { CapitalMap } from '../../../ui-living/sections/capital-map'
 import { AdvisorsWall } from '../../../ui-living/sections/advisors-wall'
 import { Glance } from '../../../ui-living/sections/glance'
 import { DubaiTeaser } from '../../../ui-living/sections/dubai-teaser'
-import { LinkedinStrip } from '../../../ui-living/sections/linkedin-strip'
 import { Passes, passOffer, bookBefore } from '../../../ui-living/sections/passes'
 import { Quote } from '../../../ui-living/sections/quote'
 import { PartnerStrip } from '../../../ui-living/sections/partner-strip'
@@ -20,7 +19,6 @@ import facts from '../../../ui-living/data/facts.json'
 import flows from '../../../ui-living/data/flows.json'
 import dubai from '../../../ui-living/data/dubai.json'
 import concl from '../../../ui-living/data/conclusions.json'
-import linkedin from '../../../ui-living/data/linkedin.json'
 import { loadAdvisors, loadPartners, loadPasses, loadProgramme, loadSpeakers, REVALIDATE } from '../../../ui-living/lib/cms'
 import { HIGH } from '../../../ui-living/lib/attrs'
 
@@ -34,7 +32,7 @@ const COMES = {
 function Room({ f }) {
 	const claim = f.size_claim.text
 	return (
-		<section className={c('section tint')} aria-labelledby="room-h">
+		<section className={c('section')} aria-labelledby="room-h">
 			<div className={c('wrap')}>
 				<div className={c('head')}><h2 className={c('ruled')} id="room-h">Who you&apos;ll meet.</h2><p>{claim[0].toUpperCase() + claim.slice(1)}, with capital at the centre of the room.</p></div>
 				<MixBar mix={f.mix} />
@@ -50,30 +48,24 @@ export default function Paris(p) {
 	const { f, delegate } = p
 	const theme = n => (p.programme.days.find(d => d.n === n) || {}).theme
 	return (
-		<LivingPage page="paris" title="FHS Living Paris | Founding Edition, 23–24 February 2027" description="The Founding Edition of FHS Living: two days at Pullman Paris Montparnasse where capital from Europe and the Middle East meets hospitality-led real estate.">
+		<LivingPage page="paris" title="FHS Living Paris | Europe Edition, 23–24 February 2027" description="The Europe Edition of FHS Living: two days at Pullman Paris Montparnasse where capital from Europe and the Middle East meets hospitality-led real estate.">
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>
 						<h1 id="hero-h">Where hospitality <span className={c('accent')}>reimagines real&nbsp;estate.</span></h1>
 						<p className={c('page-hero__when')}>Paris, {f.event.dates}<span>{f.event.venue}</span></p>
-						<p className={c('lede')}>The Founding Edition of FHS Living: two days where real estate capital from Europe and the Middle East meets the operators and developers who make hospitality-led real estate perform.</p>
+						<p className={c('lede')}>The Europe Edition of FHS Living: two days where real estate capital from Europe and the Middle East meets the operators and developers who make hospitality-led real estate perform.</p>
 						<div className={c('actions')}><Link href={R.passes} prefetch={false}><a className={c('btn')}>Register to attend</a></Link><Link href={R.investors} prefetch={false}><a className={c('btn btn--ghost')}>Investor? Start here</a></Link><a className={c('link')} href={R.experience}>Explore FHS Living in 3D</a></div>
 					</div>
 					<figure className={c('page-hero__fig')}><div className={c('diamond')}><img src={img('photo/paris-diamond.jpg')} width="1220" height="860" alt="Paris from above, the Eiffel Tower and the Seine" {...HIGH} /></div></figure>
 				</div>
 			</section>
 
-			<Market hid="mkt-h" title={`${f.largest.text}.`} intro="Investment rose 22% in 2025, and almost every institutional investor in the sector plans to put more in." bg="tint" />
-
-			<CapitalMap flows={p.flows} hid="flow-h" title="Middle East capital, flowing into Europe."
-				intro={`Since 2023, investors from the UAE, Saudi Arabia, Qatar, Kuwait and Bahrain have backed hotels, branded residences, housing and student beds in ${p.flows.n_dest} European countries. Future Hospitality Summit has spent ${f.relationships.years} years building relationships with Gulf capital.`} />
-
+			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} bg="tint" />}
 			<Room f={f} />
-
-			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} />}
-			<AdvisorsWall advisors={p.advisors} bg="tint" />
-
-			<section className={c('section')} aria-labelledby="fmt-h">
+			<Glance programme={p.programme} link={R.programme} linkLabel="The full running order" cta="View Agenda" bg="tint" />
+			<AdvisorsWall advisors={p.advisors} />
+			<section className={c('section tint')} aria-labelledby="fmt-h">
 				<div className={c('wrap')}>
 					<div className={c('head')}><h2 className={c('ruled')} id="fmt-h">See it. Work it. Meet.</h2><p>The stage opens each day. Roundtables and hosted investor meetings follow.</p></div>
 					<ol className={c('steps')}>
@@ -84,9 +76,12 @@ export default function Paris(p) {
 				</div>
 			</section>
 
-			<Glance programme={p.programme} link={R.programme} linkLabel="The full running order" bg="tint" />
+			<Market hid="mkt-h" title={`${f.largest.text}.`} intro="Investment rose 22% in 2025, and almost every institutional investor in the sector plans to put more in." />
+
+			<CapitalMap flows={p.flows} hid="flow-h" title="Middle East capital, flowing into Europe."
+				intro={`Since 2023, investors from the UAE, Saudi Arabia, Qatar, Kuwait and Bahrain have backed hotels, branded residences, housing and student beds in ${p.flows.n_dest} European countries. Future Hospitality Summit has spent ${f.relationships.years} years building relationships with Gulf capital.`} bg="tint" />
+
 			<DubaiTeaser dubai={p.dubai} concl={p.concl} />
-			<LinkedinStrip linkedin={p.linkedin} />
 
 			<section className={c('section band')} aria-labelledby="pass-h">
 				<div className={c('wrap')}>
@@ -130,7 +125,6 @@ export async function getStaticProps() {
 			programme,
 			dubai,
 			concl,
-			linkedin,
 			partners,
 			delegate: passOffer(pass(passes, 'Delegate')),
 			investor: passOffer(pass(passes, 'Investor')),

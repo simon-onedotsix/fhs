@@ -19,7 +19,7 @@ const LIVING_NAV = [
 const PARIS_NAV = [
 	['programme', 'Programme'],
 	['speakers', 'Speakers'],
-	['who-is-in-the-room', "Who's in the room"],
+	['who-is-in-the-room', 'Founding Advisors'],
 	['investors', 'Investors'],
 	['partners', 'Partners'],
 	['case-studies', 'Case studies'],
@@ -51,8 +51,8 @@ export function Header({ page }) {
 		<header ref={ref} className={c('site-header', paris && 'site-header--paris')} id="top">
 			<div className={c('wrap')}>
 				<div className={c('brand')}>
-					<Link href={R.index} prefetch={false}>
-						<a aria-label="FHS Living home"><img src={img('assets/brand/logo-rev-warm-cream.svg')} alt="FHS Living" width="91" height="46" /></a>
+					<Link href={paris ? R.paris : R.index} prefetch={false}>
+						<a aria-label={paris ? 'FHS Living Paris home' : 'FHS Living home'}><img src={img('assets/brand/logo-rev-warm-cream.svg')} alt="FHS Living" width="91" height="46" /></a>
 					</Link>
 					<Link href={R.paris} prefetch={false}>
 						<a className={c('brand__line')} aria-current={page === 'paris' ? 'page' : undefined}><b>{ev.edition}</b>{ev.dates}<br />{ev.venue}</a>

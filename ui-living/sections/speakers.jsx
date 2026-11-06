@@ -24,13 +24,13 @@ export function SpeakerGrid({ people }) {
 }
 
 // The homepage's first look at Paris: the first 10 speakers and the way to all of them.
-export function SpeakerStrip({ people, total }) {
+export function SpeakerStrip({ people, total, bg }) {
 	return (
-		<section className={c('section')} aria-labelledby="spk-h">
+		<section className={c('section', bg)} aria-labelledby="spk-h">
 			<div className={c('wrap')}>
-				<div className={c('head')}><h2 className={c('ruled')} id="spk-h">Speaking in Paris.</h2><p>The first speakers confirmed for the Founding Edition, 23–24 February 2027.</p></div>
+				<div className={c('head')}><h2 className={c('ruled')} id="spk-h">Speaking in Paris.</h2><p>The first speakers confirmed for the Europe Edition, 23–24 February 2027.</p></div>
 				<SpeakerGrid people={people} />
-				<div className={c('actions')} style={{ marginTop: 32 }}><Link href={R.speakers} prefetch={false}><a className={c('btn')}>All {total} speakers</a></Link></div>
+				<div className={c('actions')} style={{ marginTop: 32 }}><Link href={R.speakers} prefetch={false}><a className={c('btn')}>View All Speakers</a></Link></div>
 			</div>
 		</section>
 	)

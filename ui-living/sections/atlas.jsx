@@ -1,7 +1,7 @@
 import { c } from '../lib/c'
 import { img } from '../lib/format'
 
-const pinLine = p => p.state === 'founding' ? `Founding Edition, ${p.dates}` : p.state !== 'tbc' ? p.dates : `${p.dates}, details to follow`
+const pinLine = p => p.state === 'founding' ? `Europe Edition, ${p.dates}` : p.state !== 'tbc' ? p.dates : `${p.dates}, details to follow`
 
 // The editions map: diamond-dot landmass, the route between the cities in calendar order, one pin per edition.
 export function MapLayer({ atlas }) {

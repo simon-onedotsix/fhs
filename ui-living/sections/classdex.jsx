@@ -5,7 +5,7 @@ import { img } from '../lib/format'
 import { R } from '../lib/routes'
 
 // The nine asset classes as an index; pointing at a class shows its photo (CSS only).
-export function Classdex({ classes, counts, bg }) {
+export function Classdex({ classes, bg }) {
 	return (
 		<section className={c('section', bg)} id="classes" aria-labelledby="classes-h">
 			<div className={c('wrap')}>
@@ -15,20 +15,16 @@ export function Classdex({ classes, counts, bg }) {
 				</div>
 				<div className={c('classdex')}>
 					<ul className={c('classdex__list')}>
-						{classes.map(cl => {
-							const n = counts[cl.name] || 0
-							return (
+						{classes.map(cl => (
 								<li key={cl.slug} className={c('classdex__item')}>
 									<Link href={`${R['who-is-in-the-room']}#directory`} prefetch={false}>
 										<a>
 											<span className={c('classdex__name')}>{cl.name}</span>
-											{n > 0 && <span className={c('classdex__adv')}>{n} advisor{n !== 1 && 's'}</span>}
 											<span className={c('classdex__line')}>{cl.line}</span>
 										</a>
 									</Link>
 								</li>
-							)
-						})}
+						))}
 					</ul>
 					<div className={c('classdex__media')} aria-hidden="true">
 						{classes.map((cl, i) => (

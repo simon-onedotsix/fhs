@@ -9,7 +9,7 @@ import editions from '../data/editions.json'
 const PAGES = [
 	['paris', 'Paris 2027'],
 	['programme', 'Programme'],
-	['who-is-in-the-room', "Who's in the room"],
+	['who-is-in-the-room', 'Founding Advisors'],
 	['investors', 'Investors'],
 	['partners', 'Partners'],
 	['content-library', 'Content library'],
@@ -25,7 +25,7 @@ export function Footer() {
 				<div className={c('footer__top')}>
 					<div>
 						<img src={img('assets/brand/logo-rev-principal-purple.svg')} alt="FHS Living" width="103" height="52" />
-						<p className={c('footer__line')}>{`${facts.tagline.text} Future Hospitality Summit's platform for the hotelisation of real estate, with editions in Dubai, Cairo, Paris and Riyadh.`}</p>
+						<p className={c('footer__line')}>{`${facts.tagline.text} Future Hospitality Summit's conference for the hotelisation of real estate, with editions in Dubai, Cairo, Paris and Riyadh.`}</p>
 					</div>
 					<div>
 						<h2>FHS Living</h2>

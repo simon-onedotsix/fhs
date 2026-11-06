@@ -300,7 +300,6 @@
 .root .classdex__item > a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 18px; align-items: baseline; padding: 15px 0 16px; text-decoration: none; }
 .root .classdex__name { font-size: clamp(22px, 2.2vw, 32px); font-weight: 500; letter-spacing: -.02em; line-height: 1.12; transition: color .2s var(--ease), transform .3s var(--ease); }
 .root .classdex__line { grid-column: 1 / -1; font-size: 14.5px; color: var(--ink-soft); line-height: 1.45; max-height: 0; overflow: hidden; transition: max-height .36s var(--ease), margin .36s var(--ease); }
-.root .classdex__adv { font-size: 12.5px; color: var(--ink-soft); white-space: nowrap; }
 .root .classdex__media { position: sticky; top: 112px; aspect-ratio: 4 / 3.1; }
 .root .classdex__photo { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity .42s var(--ease); overflow: hidden; }
 .root .classdex__photo img { width: 100%; height: 100%; object-fit: cover; }
@@ -603,8 +602,6 @@
 .root .split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
 .root .split--top { align-items: start; }
 /* the way into the 3D site (sections/experience.jsx): the still on the page's own cream */
-.root .xp__fig { display: block; }
-.root .xp__fig img { display: block; width: 100%; height: auto; }
 @media (min-width: 901px) {
   .root .split--top > :first-child { position: sticky; top: 112px; }
 }
@@ -873,28 +870,10 @@
 @media (max-width: 900px) {
   .root .teaser { grid-template-columns: minmax(0, 1fr); }
 }
-/* LinkedIn strip */
-.root .social { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
-.root .social__post { display: flex; flex-direction: column; height: 100%; text-decoration: none; }
-.root .social__post figure { margin: 0 0 14px; aspect-ratio: 4 / 3; overflow: hidden; background: var(--cream-light); position: relative; }
-.root .social__post figure::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--magenta); z-index: 1; }
-.root .social__post img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; transition: transform .8s var(--ease); }
-.root .social__post:hover img { transform: scale(1.04); }
-.root .social__post .social__logo { display: grid; place-items: center; }
-.root .social__post .social__logo img { width: 70%; height: auto; object-fit: contain; }
-.root .social__post p { margin: 0 0 10px; font-size: 15px; line-height: 1.45; color: var(--ink); transition: color .2s var(--ease); }
-.root .social__post:hover p { color: var(--magenta); }
-.root .social__meta { margin-top: auto; font-size: 13px; color: var(--ink-soft); }
-@media (max-width: 1000px) {
-  .root .social { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 560px) {
-  .root .social { grid-template-columns: minmax(0, 1fr); }
-}
 /* phones: card strips swipe sideways (next card peeks) instead of stacking four or more full cards */
 @media (max-width: 560px) {
-  .root .social, .root .reads { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 80%; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }
-  .root .social > li, .root .reads > li { scroll-snap-align: start; }
+  .root .reads { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 80%; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }
+  .root .reads > li { scroll-snap-align: start; }
 }
 /* contact card, large (programme) */
 .root .contact-card--lg img { width: 120px; height: 150px; }

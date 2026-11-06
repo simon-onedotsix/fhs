@@ -11,11 +11,11 @@ export function Closer({ price }) {
 			<div className={c('wrap closer')}>
 				<div>
 					<h2 className={c('ruled')} id="close-h">Choose your room.</h2>
-					<p className={c('lede')} style={{ marginTop: 22 }}>Four editions, one platform. The Founding Edition opens in Paris on 23 February 2027.</p>
+					<p className={c('lede')} style={{ marginTop: 22 }}>Four editions, one conference. The Europe Edition opens in Paris on 23 February 2027.</p>
 				</div>
 				<div className={c('closer__ways')}>
 					<div>
-						<h3>Paris, the Founding Edition</h3>
+						<h3>Paris, the Europe Edition</h3>
 						<p>Delegate Pass {money(price.ex_vat)} + VAT until {dayBefore(price.end)}.</p>
 						<Link href={R.passes} prefetch={false}><a className={c('btn btn--light')}>Register to attend</a></Link>
 					</div>

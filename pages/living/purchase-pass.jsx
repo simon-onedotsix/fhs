@@ -32,7 +32,7 @@ function Rate({ delegate }) {
 
 export default function PassesPage({ f, delegate, investor }) {
 	return (
-		<LivingPage page="passes" title="FHS Living | Register to attend" description="Delegate and Investor Passes for the FHS Living Founding Edition, Paris, 23–24 February 2027. Prices, what is included and when the rate rises.">
+		<LivingPage page="passes" title="FHS Living | Register to attend" description="Delegate and Investor Passes for the FHS Living Europe Edition, Paris, 23–24 February 2027. Prices, what is included and when the rate rises.">
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>

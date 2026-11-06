@@ -10,7 +10,7 @@ const WORD = { Meetings: 'Investor meetings', Reception: 'Reception', 'Site visi
 
 // Every day of the programme on one axis, from the hour of the first session to the hour after the last, each block
 // at its true length.
-export function Glance({ programme, link, linkLabel, bg = 'tint' }) {
+export function Glance({ programme, link, linkLabel, cta, bg = 'tint' }) {
 	const [ref, inView] = useInView()
 	const all = programme.days.flatMap(d => d.items)
 	const t0 = Math.floor(Math.min(...all.map(it => mins(it.start))) / 60) * 60
@@ -49,6 +49,7 @@ export function Glance({ programme, link, linkLabel, bg = 'tint' }) {
 						<span><i style={{ background: 'var(--rose)' }}></i>Reception and site visits</span>
 					</p>
 				</div>
+				{cta && <div className={c('actions')} style={{ marginTop: 32 }}><Link href={link} prefetch={false}><a className={c('btn')}>{cta}</a></Link></div>}
 			</div>
 		</section>
 	)

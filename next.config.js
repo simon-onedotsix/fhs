@@ -108,6 +108,12 @@ const nextConfig = {
 				destination: '/living/contact',
 				permanent: false,
 			},
+			// The Paris home became the Europe Edition's home (6 Nov 2026)
+			{
+				source: '/living/paris',
+				destination: '/living/europe',
+				permanent: false,
+			},
 			// Addresses the v3 pages used for their first hour live (15 Oct 2026)
 			{
 				source: '/living/paris/programme',

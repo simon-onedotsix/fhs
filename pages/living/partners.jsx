@@ -16,12 +16,12 @@ const MAIL = 'mailto:matthew.weihs@thebench.com?subject=FHS%20Living%20partnersh
 export default function Partners({ f, partners }) {
 	const q = f.quote_partner
 	return (
-		<LivingPage page="partners" title="FHS Living | Partners" description="The partners behind the FHS Living Founding Edition, led by Founding Partner Accor One Living, and how to join them in Paris.">
+		<LivingPage page="partners" title="FHS Living | Partners" description="The partners behind the FHS Living Europe Edition, led by Founding Partner Accor One Living, and how to join them in Paris.">
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>
 						<h1 id="hero-h">The companies <span className={c('accent')}>behind the room.</span></h1>
-						<p className={c('lede')}>Partners of the Founding Edition keep Founding Partner status for future editions while they stay with us, and appear at FHS Living inside FHS events too.</p>
+						<p className={c('lede')}>Partners of the Europe Edition keep Founding Partner status for future editions while they stay with us, and appear at FHS Living inside FHS events too.</p>
 						<div className={c('actions')}><a className={c('btn')} href={MAIL}>Talk to Matthew Weihs</a><a className={c('btn btn--ghost')} href="#deliver-h">What partners get</a></div>
 					</div>
 					<figure className={c('page-hero__fig')}><div className={c('diamond')}><img src={img('dubai/roundtable.jpg')} width="1600" height="900" alt="A roundtable at FHS World, Dubai" {...HIGH} /></div></figure>
@@ -55,7 +55,7 @@ export default function Partners({ f, partners }) {
 					<ul className={c('steps steps--4')}>
 						<li className={c('step')}><figure><img src={img('photo/meeting-gulf.jpg')} width="1600" height="1066" alt="An investor meeting at a Future Hospitality Summit event" loading="lazy" /></figure><h3>Meetings with capital</h3><p>Hosted investor meetings matched to your criteria, and guest passes for the investors you bring.</p></li>
 						<li className={c('step')}><figure><img src={img('dubai/800/stage-fireside.jpg')} width="1600" height="900" alt="Accor One Living on the FHS Living stage at FHS World, Dubai" loading="lazy" /></figure><h3>A voice in the programme</h3><p>Lead a roundtable or host a private workshop on the questions your business cares about.</p></li>
-						<li className={c('step')}><figure><img src={img('photo/exhibition.jpg')} width="1600" height="958" alt="Partner stands on the exhibition floor at a Future Hospitality Summit event" loading="lazy" /></figure><h3>Presence across the platform</h3><p>Branding in Paris and at FHS Living at FHS World, with a seat on the Advisory Board for lead partners.</p></li>
+						<li className={c('step')}><figure><img src={img('photo/exhibition.jpg')} width="1600" height="958" alt="Partner stands on the exhibition floor at a Future Hospitality Summit event" loading="lazy" /></figure><h3>Presence across the editions</h3><p>Branding in Paris and at FHS Living at FHS World, with a seat on the Advisory Board for lead partners.</p></li>
 						<li className={c('step')}><figure><img src={img('photo/ab-reception.jpg')} width="800" height="533" alt="The reception after the FHS Living Advisory Board, Maslow's Kensington, London" loading="lazy" /></figure><h3>Hospitality on your terms</h3><p>Host a private dinner, a reception or a networking lounge for the people you want in the room.</p></li>
 					</ul>
 				</div>

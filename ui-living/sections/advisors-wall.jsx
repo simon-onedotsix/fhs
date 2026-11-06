@@ -13,7 +13,7 @@ export function AdvisorsWall({ advisors, bg }) {
 		<section className={c('section', bg)} id="advisors" aria-labelledby="adv-h">
 			<div className={c('wrap')}>
 				<div className={c('head')}>
-					<h2 className={c('ruled')} id="adv-h">{advisors.length} Founding Advisors shape the platform.</h2>
+					<h2 className={c('ruled')} id="adv-h">{advisors.length} Founding Advisors shape the conference.</h2>
 					<p>Investors, developers, operators and advisors from across hospitality and real estate. <Link href={R['who-is-in-the-room']} prefetch={false}><a className={c('link')}>See everyone, by asset class</a></Link></p>
 				</div>
 			</div>

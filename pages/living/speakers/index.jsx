@@ -14,12 +14,12 @@ import { loadSpeakers, REVALIDATE } from '../../../ui-living/lib/cms'
 export default function Speakers({ f, speakers }) {
 	const n = speakers.people.length
 	return (
-		<LivingPage page="speakers" title="FHS Living | Speakers" description={`The speakers at the FHS Living Founding Edition, Paris, ${f.event.dates}.`}>
+		<LivingPage page="speakers" title="FHS Living | Speakers" description={`The speakers at the FHS Living Europe Edition, Paris, ${f.event.dates}.`}>
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>
 						<h1 id="hero-h">The voices <span className={c('accent')}>in the room.</span></h1>
-						<p className={c('lede')}>Speakers at the FHS Living Founding Edition, Paris, {f.event.dates}. More are announced as they are confirmed.</p>
+						<p className={c('lede')}>Speakers at the FHS Living Europe Edition, Paris, {f.event.dates}. More are announced as they are confirmed.</p>
 						<div className={c('actions')}><Link href={R.passes} prefetch={false}><a className={c('btn')}>Register to attend</a></Link><Link href={R.programme} prefetch={false}><a className={c('btn btn--ghost')}>See the programme</a></Link></div>
 					</div>
 					<figure className={c('page-hero__fig')}><div className={c('diamond')}><img src={img('dubai/stage-living-economy.jpg')} width="1600" height="783" alt="The New Living Economy panel on the FHS Living stage at FHS World, Dubai" {...HIGH} /></div></figure>

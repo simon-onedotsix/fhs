@@ -53,7 +53,7 @@ export default function WhoIsInTheRoom({ f, adv }) {
 	const n = adv.people.length
 	const claim = f.size_claim.text
 	return (
-		<LivingPage page="who-is-in-the-room" title="FHS Living | Who's in the room" description={`Who you will meet at FHS Living: capital, developers, operators and enablers, and the ${n} Founding Advisors who shaped the Founding Edition.`}>
+		<LivingPage page="who-is-in-the-room" title="FHS Living | Founding Advisors" description={`Who you will meet at FHS Living: capital, developers, operators and enablers, and the ${n} Founding Advisors who shaped the Europe Edition.`}>
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>
@@ -78,7 +78,7 @@ export default function WhoIsInTheRoom({ f, adv }) {
 
 			<section className={c('section tint')} id="directory" aria-labelledby="fa-h">
 				<div className={c('wrap')}>
-					<div className={c('head')}><h2 className={c('ruled')} id="fa-h">{n} Founding Advisors shaped the Founding Edition.</h2><p>Investors, developers, operators and advisors from across hospitality and real estate. Filter by the asset classes they focus on.</p></div>
+					<div className={c('head')}><h2 className={c('ruled')} id="fa-h">{n} Founding Advisors shaped the Europe Edition.</h2><p>Investors, developers, operators and advisors from across hospitality and real estate. Filter by the asset classes they focus on.</p></div>
 					<Directory people={adv.people} order={adv.order} counts={adv.counts} />
 				</div>
 			</section>

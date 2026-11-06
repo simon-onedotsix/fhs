@@ -10,7 +10,6 @@ import { AdvisorsWall } from '../../ui-living/sections/advisors-wall'
 import { PartnersReads } from '../../ui-living/sections/partners-reads'
 import { Closer } from '../../ui-living/sections/closer'
 import { CaseStrip } from '../../ui-living/sections/case-studies'
-import { ExperienceTeaser } from '../../ui-living/sections/experience'
 import { SpeakerStrip } from '../../ui-living/sections/speakers'
 
 import facts from '../../ui-living/data/facts.json'
@@ -37,28 +36,27 @@ export default function Living(p) {
 		<LivingPage
 			page="index"
 			title="FHS Living | Where hospitality reimagines real estate"
-			description="FHS Living is Future Hospitality Summit's platform for the hotelisation of real estate, with editions in Dubai, Cairo, Paris and Riyadh."
+			description="FHS Living is Future Hospitality Summit's conference for the hotelisation of real estate, with editions in Dubai, Cairo, Paris and Riyadh."
 			head={<link rel="preload" href={FILM_POSTER} as="image" {...HIGH} />}
 		>
 			<LayersHero />
 			<Idea />
-			<ExperienceTeaser />
-			<Classdex classes={p.classes} counts={p.counts} bg="tint" />
+			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} bg="tint" />}
+			<Classdex classes={p.classes} />
+			<AdvisorsWall advisors={p.advisors} bg="tint" />
 
 			<section className={c('atlas')} aria-labelledby="ed-h">
 				<div className={c('atlas__stage')}>
 					<div className={c('atlas__copy')}>
-						<h2 className={c('ruled')} id="ed-h">One platform. Four cities.</h2>
-						<p className={c('lede')} style={{ marginTop: 22 }}>A dedicated FHS Living programme inside Future Hospitality Summit events in Dubai, Cairo and Riyadh, and a standalone Founding Edition in Paris.</p>
+						<h2 className={c('ruled')} id="ed-h">One conference. Four cities.</h2>
+						<p className={c('lede')} style={{ marginTop: 22 }}>A dedicated FHS Living programme inside Future Hospitality Summit events in Dubai, Cairo and Riyadh, and a standalone Europe Edition in Paris.</p>
 					</div>
 					<MapLayer atlas={p.atlas} />
 				</div>
 				<div className={c('wrap')}><EditionsRail editions={p.editions} /></div>
 			</section>
 
-			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} />}
 			<DubaiProof dubai={p.dubai} concl={p.concl} collage={COLLAGE} />
-			<AdvisorsWall advisors={p.advisors} />
 			{p.cases.length > 0 && <CaseStrip cases={p.cases} />}
 			<PartnersReads partners={p.partners} report={p.dubai.report} />
 			<Closer price={p.price} />
@@ -73,7 +71,6 @@ export async function getStaticProps() {
 		revalidate: REVALIDATE,
 		props: {
 			classes: facts.classes,
-			counts: advisors.counts,
 			advisors: advisors.people,
 			speakers,
 			atlas,

@@ -1,7 +1,7 @@
 // Production URLs of the FHS Living pages, keyed by the prototype's page names (HANDOVER §1).
 export const R = {
 	index: '/living',
-	paris: '/living/paris',
+	paris: '/living/europe',
 	programme: '/living/programme',
 	passes: '/living/purchase-pass',
 	venue: '/living/travel-and-accommodation',
