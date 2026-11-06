@@ -55,7 +55,7 @@ export function Header({ page }) {
 						<a aria-label={paris ? 'FHS Living Paris home' : 'FHS Living home'}><img src={img('assets/brand/logo-rev-warm-cream.svg')} alt="FHS Living" width="91" height="46" /></a>
 					</Link>
 					<Link href={R.paris} prefetch={false}>
-						<a className={c('brand__line')} aria-current={page === 'paris' ? 'page' : undefined}><b>{ev.edition}</b>{ev.dates}<br />{ev.venue}</a>
+						<a className={c('brand__line')} aria-current={page === 'paris' ? 'page' : undefined}>{ev.dates}<br />{ev.venue}</a>
 					</Link>
 				</div>
 				<nav className={c('nav')} aria-label="Main">

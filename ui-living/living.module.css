@@ -105,8 +105,7 @@
 .root .brand img { height: 46px; width: auto; transition: height .24s var(--ease); }
 .root .is-compact .brand img { height: 38px; }
 .root .brand__line { border-left: 1px solid var(--line); padding-left: 18px; font-size: 12px; line-height: 1.45; color: var(--purple); text-decoration: none; transition: color .2s var(--ease); }
-.root .brand__line:hover, .root .brand__line:hover b { color: var(--magenta); }
-.root .brand__line b { display: block; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; font-size: 11px; color: var(--magenta); }
+.root .brand__line:hover { color: var(--magenta); }
 .root .nav { margin-left: auto; display: flex; align-items: center; gap: 4px; }
 .root .nav__list { display: flex; list-style: none; margin: 0; padding: 0; gap: 2px; }
 .root .nav__list a { display: block; padding: 10px 8px; font-size: 14px; text-decoration: none; color: var(--ink); white-space: nowrap; border-bottom: 2px solid transparent; transition: color .2s var(--ease), border-color .2s var(--ease); }

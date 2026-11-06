@@ -2,7 +2,6 @@
  "_note": "Single source of truth for every number, date and claim on the site. verified=true means checked against the named source on the date given. Prices live in passes.json (fetched from the CMS).",
  "event": {
   "name": "FHS Living",
-  "edition": "Europe Edition",
   "dates": "23–24 February 2027",
   "dates_short": "23–24 Feb 2027",
   "start_iso": "2027-02-23",
