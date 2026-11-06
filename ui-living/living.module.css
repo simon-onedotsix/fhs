@@ -39,6 +39,10 @@
 .root a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; }
 .root p { margin: 0 0 1em; max-width: 66ch; }
 .root h1, .root h2, .root h3, .root h4 { margin: 0; font-weight: 500; letter-spacing: -.02em; text-wrap: balance; }
+/* no single word alone on a last line (Ahmed, 6 Nov 2026): intros even out their lines, body text avoids orphans.
+   Longhands only, so nothing that is nowrap starts wrapping; browsers without support simply ignore them */
+.root p, .root li, .root dd, .root figcaption, .root blockquote { text-wrap-style: pretty; }
+.root .lede, .root .head p { text-wrap-style: balance; }
 .root h1 { font-size: var(--fs-mega); line-height: .95; letter-spacing: -.032em; }
 .root h2 { font-size: var(--fs-h2); line-height: 1.0; letter-spacing: -.026em; }
 .root h3 { font-size: var(--fs-h3); line-height: 1.16; }
@@ -910,9 +914,9 @@
 .root .cs__facts dd { margin: 0; font-size: 14px; line-height: 1.4; }
 .root .cs__dl { margin: 0; display: grid; gap: 18px; }
 .root .cs__dl dd { margin: 0; font-size: 16px; line-height: 1.55; max-width: 62ch; }
-.root .cs__num { display: flex; align-items: baseline; gap: 14px; margin: 28px 0 0; }
+.root .cs__num { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin: 28px 0 0; }
 .root .cs__num b { font-size: clamp(40px, 4.2vw, 58px); font-weight: 500; letter-spacing: -.03em; line-height: 1; color: var(--magenta); white-space: nowrap; }
-.root .cs__num span { font-size: 14px; line-height: 1.35; color: var(--ink-soft); max-width: 26ch; }
+.root .cs__num span { flex: 1 1 18ch; font-size: 14px; line-height: 1.35; color: var(--ink-soft); max-width: 26ch; }  /* below the figure when there is no room beside it */
 .root .cs__talk { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin: 22px 0 0; font-size: var(--fs-small); }
 .root .cs__share { margin: 22px 0 0; font-size: var(--fs-small); }
 .root .cs-hero__fig { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; background: var(--cream-deep); border-top: 3px solid var(--magenta); }

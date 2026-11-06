@@ -28,6 +28,32 @@ export function LivingPage({ page, path, image, title, description, head, childr
 		return () => { [html.backgroundColor, body.backgroundColor] = prev }
 	}, [])
 
+	useEffect(() => {  // no single word alone on a last line (Ahmed, 6 Nov 2026): join each block's last two words with a
+		// no-break space (the space may end the text before a link) and keep a hyphenated last word whole (a word joiner
+		// after its hyphens: Firefox breaks there). A join that makes its box overflow more than before goes back
+		// (reads, writes, reads: two reflows)
+		const blocks = [...root.current.querySelectorAll('p, li, dd, figcaption, blockquote, h1, h2, h3, h4')]
+		const wide = blocks.map(el => el.scrollWidth)
+		const done = []
+		blocks.forEach((el, i) => {
+			const tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT)
+			const nodes = []
+			for (let n; (n = tw.nextNode());) if (n.data.trim()) nodes.push(n)
+			const last = nodes[nodes.length - 1], prev = nodes[nodes.length - 2]
+			if (!last) return
+			const edits = []
+			let text = last.data
+			if (/\S[ \t\n]+\S+\s*$/.test(text)) text = text.replace(/[ \t\n]+(\S+\s*)$/, '\u00A0$1')
+			else if (prev && /[ \t\n]$/.test(prev.data) && !/\s/.test(text.trim())) edits.push([prev, prev.data.replace(/[ \t\n]+$/, '\u00A0')])
+			else return
+			text = text.replace(/(\S+)(\s*)$/, (m, w, s) => w.replace(/-(?!\u2060)/g, '-\u2060') + s)
+			if (text !== last.data) edits.push([last, text])
+			done.push([el, wide[i], edits.map(([n]) => [n, n.data])])
+			for (const [n, t] of edits) n.data = t
+		})
+		for (const [el, w, before] of done) if (el.scrollWidth > Math.max(w, el.clientWidth) + 1) for (const [n, t] of before) n.data = t
+	}, [])
+
 	return (
 		<>
 			<Head>
