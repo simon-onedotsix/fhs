@@ -51,14 +51,13 @@ function Directory({ people, order, counts }) {
 
 export default function WhoIsInTheRoom({ f, adv }) {
 	const n = adv.people.length
-	const claim = f.size_claim.text
 	return (
 		<LivingPage page="who-is-in-the-room" title="FHS Living | Founding Advisors" description={`Who you will meet at FHS Living: capital, developers, operators and enablers, and the ${n} Founding Advisors who shaped the Europe Edition.`}>
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>
 						<h1 id="hero-h">Who <span className={c('accent')}>you&apos;ll meet.</span></h1>
-						<p className={c('lede')}>{claim[0].toUpperCase() + claim.slice(1)} across four groups, with capital at the centre of the room.</p>
+						<p className={c('lede')}>Four groups, with capital at the centre of the room.</p>
 						<div className={c('actions')}><Link href={R.passes} prefetch={false}><a className={c('btn')}>Register to attend</a></Link><a className={c('btn btn--ghost')} href="#directory">The Founding Advisors</a></div>
 					</div>
 					<figure className={c('page-hero__fig')}><div className={c('diamond')}><img src={img('photo/auditorium.jpg')} width="1200" height="630" alt="The plenary room at a Future Hospitality Summit event" {...HIGH} /></div></figure>

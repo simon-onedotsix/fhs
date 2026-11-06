@@ -30,11 +30,10 @@ const COMES = {
 }
 
 function Room({ f }) {
-	const claim = f.size_claim.text
 	return (
 		<section className={c('section')} aria-labelledby="room-h">
 			<div className={c('wrap')}>
-				<div className={c('head')}><h2 className={c('ruled')} id="room-h">Who you&apos;ll meet.</h2><p>{claim[0].toUpperCase() + claim.slice(1)}, with capital at the centre of the room.</p></div>
+				<div className={c('head')}><h2 className={c('ruled')} id="room-h">Who you&apos;ll meet.</h2><p>Four groups, with capital at the centre of the room.</p></div>
 				<MixBar mix={f.mix} />
 				<div className={c('groups')}>
 					{f.mix.map(g => <div key={g.group} className={c('group')}><h3><i aria-hidden="true"></i>{g.group}<span className={c('group__n')}> {g.pct}%</span></h3><p>{COMES[g.group]}</p></div>)}
