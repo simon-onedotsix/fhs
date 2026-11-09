@@ -167,7 +167,7 @@ function clean(html) {
 // The Paris running order as the programme team keeps it in Swapcard (rules in ./programme.js)
 export const loadProgramme = loader('programme', async () => {
 	const d = await swapcard(event => `{ event(id: "${event}") { beginsAt }
-		plannings(eventId: "${event}", page: 1, pageSize: 500) { title place beginsAt endsAt isPrivate
+		plannings(eventId: "${event}", page: 1, pageSize: 500) { title place beginsAt endsAt isPrivate description
 			planningSpeakerRoles { speakers { firstName lastName organization } } } }`)
 	return parseProgramme(d.plannings, d.event.beginsAt, programmeSaved)
 }, programmeSaved)

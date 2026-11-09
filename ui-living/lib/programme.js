@@ -14,6 +14,8 @@ function kind(s) {
 }
 
 const hm = t => t.slice(11, 16) // '2027-02-23 09:30:00' -> '09:30'
+// Swapcard's session description as one plain paragraph ('' when there is none)
+const plain = t => (t || '').replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim()
 // the session's speakers in Swapcard's order, "First Last"
 const names = s => (s.planningSpeakerRoles || []).flatMap(r => r.speakers || []).map(p => `${(p.firstName || '').trim()} ${(p.lastName || '').trim()}`.trim()).filter(Boolean)
 const byStart = (a, b) => (a.start > b.start) - (a.start < b.start)
@@ -28,7 +30,7 @@ function commonEnd(ends) {
 export function parseProgramme(sessions, firstDay, { status, themes }) {
 	const open = sessions.filter(s => !s.isPrivate && s.beginsAt && s.endsAt).map(s => ({
 		date: s.beginsAt.slice(0, 10), start: hm(s.beginsAt), end: hm(s.endsAt), title: s.title.trim(), place: s.place || '', format: kind(s),
-		speakers: names(s),
+		speakers: names(s), description: plain(s.description),
 	}))
 	if (!open.length) throw new Error('no public sessions')
 	const day1 = Date.parse(firstDay.slice(0, 10))
@@ -36,18 +38,18 @@ export function parseProgramme(sessions, firstDay, { status, themes }) {
 		status,
 		days: [...new Set(open.map(s => s.date))].sort().map(date => {
 			const mine = open.filter(s => s.date === date)
-			const items = mine.filter(s => s.format !== 'Workshops').map(({ start, end, title, format, speakers }) => ({ start, end, title, format, speakers }))
+			const items = mine.filter(s => s.format !== 'Workshops').map(({ start, end, title, format, speakers, description }) => ({ start, end, title, format, speakers, description }))
 			// workshops that start together are one slot of parallel sessions, listed by room
 			const workshops = mine.filter(s => s.format === 'Workshops')
 			for (const start of new Set(workshops.map(s => s.start))) {
 				const group = workshops.filter(s => s.start === start).sort((a, b) => a.place.localeCompare(b.place, 'en', { numeric: true }))
 				if (group.length === 1) {
-					const { end, title, format, speakers } = group[0]
-					items.push({ start, end, title, format, speakers })
+					const { end, title, format, speakers, description } = group[0]
+					items.push({ start, end, title, format, speakers, description })
 					continue
 				}
 				const end = commonEnd(group.map(s => s.end))
-				items.push({ start, end, title: 'Parallel sessions', format: 'Workshops', parallel: group.map(s => (s.end === end ? s.title : `${s.title} (until ${ampm(s.end)})`)), parallelSpeakers: group.map(s => s.speakers) })
+				items.push({ start, end, title: 'Parallel sessions', format: 'Workshops', parallel: group.map(s => (s.end === end ? s.title : `${s.title} (until ${ampm(s.end)})`)), parallelSpeakers: group.map(s => s.speakers), parallelDescriptions: group.map(s => s.description) })
 			}
 			return {
 				n: String(Math.round((Date.parse(date) - day1) / 864e5) + 1).padStart(2, '0'),

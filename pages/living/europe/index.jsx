@@ -12,7 +12,7 @@ import { Glance } from '../../../ui-living/sections/glance'
 import { DubaiTeaser } from '../../../ui-living/sections/dubai-teaser'
 import { Passes, passOffer, bookBefore } from '../../../ui-living/sections/passes'
 import { Quote } from '../../../ui-living/sections/quote'
-import { PartnerStrip } from '../../../ui-living/sections/partner-strip'
+import { PartnerSection } from '../../../ui-living/sections/partner-strip'
 import { SpeakerStrip } from '../../../ui-living/sections/speakers'
 
 import facts from '../../../ui-living/data/facts.json'
@@ -63,8 +63,11 @@ export default function Paris(p) {
 			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} bg="tint" />}
 			<Room f={f} />
 			<Glance programme={p.programme} link={R.programme} linkLabel="The full running order" cta="View Agenda" bg="tint" />
-			<AdvisorsWall advisors={p.advisors} />
-			<section className={c('section tint')} aria-labelledby="fmt-h">
+			<PartnerSection partners={p.partners}>
+				<Quote text={f.quote_partner.text} photo="advisors/jeff-tisdall.jpg" name={f.quote_partner.name} role={`${f.quote_partner.role}, ${f.quote_partner.note}`} style={{ marginTop: 'clamp(56px,6vw,88px)' }} />
+			</PartnerSection>
+			<AdvisorsWall advisors={p.advisors} bg="tint" />
+			<section className={c('section')} aria-labelledby="fmt-h">
 				<div className={c('wrap')}>
 					<div className={c('head')}><h2 className={c('ruled')} id="fmt-h">See it. Work it. Meet.</h2><p>The stage opens each day. Roundtables and hosted investor meetings follow.</p></div>
 					<ol className={c('steps')}>
@@ -75,10 +78,10 @@ export default function Paris(p) {
 				</div>
 			</section>
 
-			<Market hid="mkt-h" title={`${f.largest.text}.`} intro="Investment rose 22% in 2025, and almost every institutional investor in the sector plans to put more in." />
+			<Market hid="mkt-h" bg="tint" title={`${f.largest.text}.`} intro="Investment rose 22% in 2025, and almost every institutional investor in the sector plans to put more in." />
 
 			<CapitalMap flows={p.flows} hid="flow-h" title="Middle East capital, flowing into Europe."
-				intro={`Since 2023, investors from the UAE, Saudi Arabia, Qatar, Kuwait and Bahrain have backed hotels, branded residences, housing and student beds in ${p.flows.n_dest} European countries. Future Hospitality Summit has spent ${f.relationships.years} years building relationships with Gulf capital.`} bg="tint" />
+				intro={`Since 2023, investors from the UAE, Saudi Arabia, Qatar, Kuwait and Bahrain have backed hotels, branded residences, housing and student beds in ${p.flows.n_dest} European countries. Future Hospitality Summit has spent ${f.relationships.years} years building relationships with Gulf capital.`} />
 
 			<DubaiTeaser dubai={p.dubai} concl={p.concl} />
 
@@ -86,14 +89,6 @@ export default function Paris(p) {
 				<div className={c('wrap')}>
 					<div className={c('head')}><h2 className={c('ruled')} id="pass-h">One price. One date it rises.</h2><p>{bookBefore(delegate)}</p></div>
 					<Passes delegate={delegate} investor={p.investor} />
-				</div>
-			</section>
-
-			<section className={c('section')} aria-labelledby="partners-h">
-				<div className={c('wrap')}>
-					<Quote text={f.quote_partner.text} photo="advisors/jeff-tisdall.jpg" name={f.quote_partner.name} role={`${f.quote_partner.role}, ${f.quote_partner.note}`} />
-					<h2 className={c('sr')} id="partners-h">Partners</h2>
-					<PartnerStrip partners={p.partners} style={{ marginTop: 56 }} />
 				</div>
 			</section>
 

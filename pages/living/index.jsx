@@ -5,9 +5,10 @@ import { LayersHero, FILM_POSTER } from '../../ui-living/sections/layers-hero'
 import { Idea } from '../../ui-living/sections/idea'
 import { Classdex } from '../../ui-living/sections/classdex'
 import { MapLayer, EditionsRail } from '../../ui-living/sections/atlas'
-import { DubaiProof } from '../../ui-living/sections/dubai-proof'
+import { BrfStory } from '../../ui-living/sections/brf-story'
 import { AdvisorsWall } from '../../ui-living/sections/advisors-wall'
 import { PartnersReads } from '../../ui-living/sections/partners-reads'
+import { PartnerSection } from '../../ui-living/sections/partner-strip'
 import { Closer } from '../../ui-living/sections/closer'
 import { CaseStrip } from '../../ui-living/sections/case-studies'
 import { SpeakerStrip } from '../../ui-living/sections/speakers'
@@ -17,19 +18,12 @@ import atlas from '../../ui-living/data/atlas.json'
 import editions from '../../ui-living/data/editions.json'
 import dubai from '../../ui-living/data/dubai.json'
 import concl from '../../ui-living/data/conclusions.json'
+import brf from '../../ui-living/data/brf.json'
 import { loadAdvisors, loadCases, loadPartners, loadPasses, loadSpeakers, REVALIDATE } from '../../ui-living/lib/cms'
 import { HIGH } from '../../ui-living/lib/attrs'
 
 // FHS World, Saudi Arabia and Egypt's Living pages import these from here (see ui-living/data/legacy.js)
 export { THEMES_DATA, TESTIMONIALS_DATA } from '../../ui-living/data/legacy'
-
-const COLLAGE = [
-	['stage-oneone', 'A conversation on the FHS Living stage, FHS World, Dubai, 1 October 2026'],
-	['stage-podium', 'A speaker at the FHS Living podium, FHS World, Dubai'],
-	['audience-gulf', 'Delegates in the FHS Living session room'],
-	['stage-panel', 'A panel on the FHS Living stage'],
-	['lounge-meeting', 'A meeting in a lounge at FHS World, Dubai'],
-]
 
 export default function Living(p) {
 	return (
@@ -43,7 +37,8 @@ export default function Living(p) {
 			<Idea />
 			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} bg="tint" />}
 			<Classdex classes={p.classes} />
-			<AdvisorsWall advisors={p.advisors} bg="tint" />
+			<PartnerSection partners={p.partners} bg="tint" />
+			<AdvisorsWall advisors={p.advisors} />
 
 			<section className={c('atlas')} aria-labelledby="ed-h">
 				<div className={c('atlas__stage')}>
@@ -56,9 +51,9 @@ export default function Living(p) {
 				<div className={c('wrap')}><EditionsRail editions={p.editions} /></div>
 			</section>
 
-			<DubaiProof dubai={p.dubai} concl={p.concl} collage={COLLAGE} />
+			<BrfStory brf={p.brf} dubai={p.dubai} concl={p.concl} />
 			{p.cases.length > 0 && <CaseStrip cases={p.cases} />}
-			<PartnersReads partners={p.partners} report={p.dubai.report} />
+			<PartnersReads report={p.dubai.report} />
 			<Closer price={p.price} />
 		</LivingPage>
 	)
@@ -77,6 +72,7 @@ export async function getStaticProps() {
 			editions,
 			dubai,
 			concl,
+			brf,
 			partners,
 			cases: cases.length >= 3 ? cases.slice(0, 3) : [],  // the strip shows once three cases are published
 			price: priceBand(passes.passes.find(x => x.title.startsWith('Delegate'))).current,

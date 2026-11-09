@@ -41,8 +41,9 @@ export default function Programme({ programme, delegate, investor }) {
 											<time>{trange(it.start, it.end)}</time>
 											<div>
 												<h4>{it.title}</h4>
+												{it.description && <p className={c('slot__desc')}>{it.description}</p>}
 												{it.speakers?.length > 0 && <p className={c('slot__who')}>{it.speakers.join(', ')}</p>}
-												{it.parallel && <ul>{it.parallel.map((x, i) => <li key={x}>{x}{it.parallelSpeakers?.[i]?.length > 0 && <span className={c('slot__who')}>{it.parallelSpeakers[i].join(', ')}</span>}</li>)}</ul>}
+												{it.parallel && <ul>{it.parallel.map((x, i) => <li key={x}>{x}{it.parallelDescriptions?.[i] && <span className={c('slot__desc')}>{it.parallelDescriptions[i]}</span>}{it.parallelSpeakers?.[i]?.length > 0 && <span className={c('slot__who')}>{it.parallelSpeakers[i].join(', ')}</span>}</li>)}</ul>}
 												{it.format !== 'Break' && <span className={c('fmt')}>{it.format}</span>}
 											</div>
 										</li>

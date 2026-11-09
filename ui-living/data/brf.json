@@ -1,0 +1,37 @@
+{
+ "_source": "Branded Residences Forum before FHS Living, researched 8 Nov 2026: brandedresi.com (BRF returns to FHS, 23 Sep 2025; BRF Saudi Arabia 2026; Bangkok to host BRF Asia 2025), Hospitality Net 4127571 (BRF Asia 2025), futurehospitality.com content library (the rebrand, 24 Aug 2026). The 2024 edition's exact day is not published: keep the year only.",
+ "editions": [
+  {
+   "when": "2024",
+   "city": "Dubai",
+   "line": "The first Branded Residences Forum, at FHS World, Madinat Jumeirah."
+  },
+  {
+   "when": "June 2025",
+   "city": "Bangkok",
+   "line": "Branded Residences Forum Asia, with C9 Hotelworks, at The Athenee Hotel."
+  },
+  {
+   "when": "October 2025",
+   "city": "Dubai",
+   "line": "Back at FHS World, with the first World Branded Residences Awards."
+  },
+  {
+   "when": "June 2026",
+   "city": "Riyadh",
+   "line": "Branded Residences Forum Saudi Arabia, on the closing day of FHS Saudi Arabia."
+  },
+  {
+   "when": "August 2026",
+   "city": "FHS Living",
+   "line": "The forum takes a new name and nine asset classes.",
+   "now": true
+  },
+  {
+   "when": "October 2026",
+   "city": "Dubai",
+   "line": "The first FHS Living, at FHS World, Madinat Jumeirah.",
+   "now": true
+  }
+ ]
+}

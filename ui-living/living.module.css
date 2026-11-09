@@ -156,7 +156,7 @@
 .root .cap { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
 .root .dark .cap, .root .band .cap { color: var(--on-dark-faint); }
 /* ---------- edition map: pins and routes ---------- */
-.root .atlas { position: relative; background: var(--cream); overflow: hidden; border-bottom: 1px solid var(--line); }
+.root .atlas { position: relative; background: var(--cream); overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .root .atlas__stage { position: relative; width: 100%; }
 .root .atlas__map { position: relative; aspect-ratio: 516 / 240.8; width: 100%; }
 .root .atlas__dots, .root .atlas__svg { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -514,6 +514,8 @@
 .root .slot ul li::before { content: ""; position: absolute; left: 0; top: 6px; width: 8px; height: 9px; background: var(--magenta); clip-path: var(--facet); }
 .root .slot__who { margin: 6px 0 0; font-size: 14px; line-height: 1.4; color: var(--ink-soft); }
 .root .slot ul li .slot__who { display: block; margin-top: 2px; }
+.root .slot__desc { margin: 6px 0 0; max-width: 68ch; font-size: 15px; line-height: 1.5; color: var(--ink); }
+.root .slot ul li .slot__desc { display: block; margin-top: 4px; font-size: 14px; }
 @media (max-width: 900px) {
   .root .prog { grid-template-columns: minmax(0, 1fr); }
   .root .slot { grid-template-columns: 90px minmax(0, 1fr); }
@@ -522,11 +524,12 @@
 .root .glance__row { display: grid; grid-template-columns: 116px minmax(0, 1fr); gap: 18px; align-items: start; margin-bottom: 26px; }
 .root .glance__day { font-weight: 500; font-size: 15px; padding-top: 4px; }
 .root .glance__day span { display: block; font-size: 12.5px; font-weight: 400; color: var(--ink-soft); }
-.root .glance__bar { position: relative; height: 92px; }
+.root .glance__bar { position: relative; height: 92px; } /* the chart sets each day's height from its lanes */
 .root .glance__seg { position: absolute; display: flex; align-items: center; padding: 0 10px; font-size: 12.5px; font-weight: 500; overflow: hidden; white-space: nowrap; color: var(--white); height: 44px; top: 0; transform-origin: left; transition: transform .9s var(--ease-out); }
 .root .glance__seg--stage { background: var(--purple); }
 .root .glance__seg--table { background: var(--magenta); }
-.root .glance__seg--meet { background: var(--burgundy); top: 48px; height: 36px; font-size: 12px; }
+.root .glance__seg--meet { background: var(--burgundy); }
+.root .glance__seg--sub { height: 36px; font-size: 12px; }
 .root .glance__seg--social { background: var(--rose); color: var(--ink); }
 .root .glance__seg--break { background: var(--cream-deep); color: var(--ink-soft); font-weight: 400; }
 @media (prefers-reduced-motion: no-preference) {
@@ -865,13 +868,31 @@
 .root .teaser__photos figure { margin: 0; aspect-ratio: 16 / 10; overflow: hidden; }
 .root .teaser__photos figure:first-child { grid-column: span 2; aspect-ratio: 16 / 8; }
 .root .teaser__photos img { width: 100%; height: 100%; object-fit: cover; }
-.root .teaser__h { color: var(--white); font-size: 21px; margin-bottom: 8px; }
-.root .teaser__list { list-style: none; margin: 0 0 28px; padding: 0; border-top: 1px solid var(--line-dark); }
-.root .teaser__list li { padding: 16px 0; border-bottom: 1px solid var(--line-dark); display: grid; gap: 4px; }
-.root .teaser__list b { color: var(--white); font-weight: 500; font-size: clamp(20px, 1.9vw, 26px); line-height: 1.15; }
-.root .teaser__list span { font-size: 14px; color: var(--on-dark-soft); }
+.root .teaser .quote p { font-size: clamp(22px, 2.1vw, 30px); }
 @media (max-width: 900px) {
   .root .teaser { grid-template-columns: minmax(0, 1fr); }
+}
+/* Branded Residences Forum before FHS Living (homepage, dark section): one row of faceted markers, a column per edition */
+.root .brf { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0 clamp(14px, 1.6vw, 24px); border-top: 1px solid var(--line-dark); }
+.root .brf__item { position: relative; padding-top: 28px; }
+.root .brf__item i { position: absolute; top: -8px; left: 0; width: 16px; height: 16px; background: var(--rose); clip-path: var(--facet); }
+.root .brf__item--now i { background: var(--white); }
+.root .brf__item b { display: block; font-size: var(--fs-label); font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--on-dark-faint); }
+.root .brf__item--now b { color: var(--rose); }
+.root .brf__item h3 { margin: 8px 0; font-size: var(--fs-h3); line-height: 1.1; color: var(--white); }
+.root .brf__item p { margin: 0; font-size: var(--fs-small); line-height: 1.45; }
+.root .brf__day { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(20px, 4vw, 64px); align-items: end; margin: clamp(56px, 6vw, 88px) 0 clamp(24px, 2.5vw, 36px); padding-top: 28px; border-top: 1px solid var(--line-dark); }
+.root .brf__day-h { margin: 0; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.08; letter-spacing: -.02em; color: var(--white); }
+.root .brf__day p { margin: 0; font-size: var(--fs-small); line-height: 1.45; }
+@media (max-width: 1000px) {
+  .root .brf { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 36px; border-top: 0; }
+  .root .brf__item { border-top: 1px solid var(--line-dark); }
+}
+@media (max-width: 600px) {
+  .root .brf { grid-template-columns: minmax(0, 1fr); row-gap: 0; margin-left: 8px; border-left: 1px solid var(--line-dark); }
+  .root .brf__item { border-top: 0; padding: 0 0 26px 26px; }
+  .root .brf__item i { top: 2px; left: -8px; }
+  .root .brf__day { grid-template-columns: minmax(0, 1fr); }
 }
 /* phones: card strips swipe sideways (next card peeks) instead of stacking four or more full cards */
 @media (max-width: 560px) {
