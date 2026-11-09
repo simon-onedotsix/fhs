@@ -44,7 +44,8 @@ import {
 import DROPDOWN from '../../css/app/dropdown-world-2024.module.css'
 import '@szhsin/react-menu/dist/transitions/slide.css'
 
-import {Session} from '../../ui/agenda/session'
+import { Session } from '../../ui/agenda/session'
+import { SessionCustomSpeakerOrder } from "../../ui/agenda/session-custom-speaker-order"
 import {SessionStartups} from '../../ui/agenda/session-startups'
 
 import CSS from '../../css/app/agenda-egypt-2026.module.css'
@@ -616,6 +617,28 @@ export default function Agenda({ sessions, locations }) {
 											<Timeslot key={i}>
 												{
 													_.orderBy(slot.sessions, ['beginsAt', 'endsAt']).map((session, i) => {
+
+														if (session.id === "UGxhbm5pbmdfNDQzNTU4Mg==") return (
+															<SessionCustomSpeakerOrder
+																key={i}
+																session={session}
+																theme={`hsl(from var(--secondary) h s calc(l - 4))`}
+																speakerIds={[
+																	'U3BlYWtlcihFdmVudF80MzM1NzAwLEV2ZW50UGVvcGxlXzQ5MDM4Mzg3LFVzZXJfMTU5NTQ0MjUp', 'U3BlYWtlcihFdmVudF80MzM1NzAwLEV2ZW50UGVvcGxlXzQ4OTEzMjg2LFVzZXJfMjM0MDI0MjQp'
+																]}
+															/>
+														)
+
+														if (session.id === "UGxhbm5pbmdfNDY2OTc0Mw==") return (
+															<SessionCustomSpeakerOrder
+																key={i}
+																session={session}
+																theme={`hsl(from var(--secondary) h s calc(l - 4))`}
+																speakerIds={[
+																	'U3BlYWtlcihFdmVudF80MzM1NzAwLEV2ZW50UGVvcGxlXzQ3NzI1MjcwLFVzZXJfMjIxMjQ1ODUp', 'U3BlYWtlcihFdmVudF80MzM1NzAwLEV2ZW50UGVvcGxlXzUwNDgwODE5LFVzZXJfMzA0NjQ0MjYp'
+																]}
+															/>
+														)
 
 														return (
 															<Session
