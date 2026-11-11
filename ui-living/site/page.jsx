@@ -30,8 +30,9 @@ export function LivingPage({ page, path, image, title, description, head, childr
 
 	useEffect(() => {  // no single word alone on a last line (Ahmed, 6 Nov 2026): join each block's last two words with a
 		// no-break space (the space may end the text before a link) and keep a hyphenated last word whole (a word joiner
-		// after its hyphens: Firefox breaks there). A join that makes its box overflow more than before goes back
-		// (reads, writes, reads: two reflows)
+		// after its hyphens: Firefox breaks there). A join goes back when its box overflows more than before, or when the
+		// joined pair cannot fit on one line, where the browser would break INSIDE a word ("Hobden Jone / s" on a partner
+		// page, 11 Nov 2026). Reads, writes, reads: two reflows
 		const blocks = [...root.current.querySelectorAll('p, li, dd, figcaption, blockquote, h1, h2, h3, h4')]
 		const wide = blocks.map(el => el.scrollWidth)
 		const done = []
@@ -42,16 +43,26 @@ export function LivingPage({ page, path, image, title, description, head, childr
 			const last = nodes[nodes.length - 1], prev = nodes[nodes.length - 2]
 			if (!last) return
 			const edits = []
-			let text = last.data
+			let text = last.data, glue = last
 			if (/\S[ \t\n]+\S+\s*$/.test(text)) text = text.replace(/[ \t\n]+(\S+\s*)$/, '\u00A0$1')
-			else if (prev && /[ \t\n]$/.test(prev.data) && !/\s/.test(text.trim())) edits.push([prev, prev.data.replace(/[ \t\n]+$/, '\u00A0')])
+			else if (prev && /[ \t\n]$/.test(prev.data) && !/\s/.test(text.trim())) { edits.push([prev, prev.data.replace(/[ \t\n]+$/, '\u00A0')]); glue = prev }
 			else return
 			text = text.replace(/(\S+)(\s*)$/, (m, w, s) => w.replace(/-(?!\u2060)/g, '-\u2060') + s)
 			if (text !== last.data) edits.push([last, text])
-			done.push([el, wide[i], edits.map(([n]) => [n, n.data])])
+			done.push([el, wide[i], edits.map(([n]) => [n, n.data]), glue, last])
 			for (const [n, t] of edits) n.data = t
 		})
-		for (const [el, w, before] of done) if (el.scrollWidth > Math.max(w, el.clientWidth) + 1) for (const [n, t] of before) n.data = t
+		const pairSplits = (glue, last) => {  // the glued pair (word before the no-break space to the end) spans two lines
+			const head = glue.data.slice(0, glue.data.lastIndexOf('\u00A0'))
+			const r = document.createRange()
+			r.setStart(glue, Math.max(0, head.search(/\S+$/)))
+			r.setEnd(last, last.data.length)
+			const rs = [...r.getClientRects()].filter(x => x.width > 1)
+			return rs.length > 1 && Math.max(...rs.map(x => x.top)) - Math.min(...rs.map(x => x.top)) > Math.min(...rs.map(x => x.height)) * 0.6
+		}
+		for (const [el, w, before, glue, last] of done) {
+			if (el.scrollWidth > Math.max(w, el.clientWidth) + 1 || pairSplits(glue, last)) for (const [n, t] of before) n.data = t
+		}
 	}, [])
 
 	return (

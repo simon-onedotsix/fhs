@@ -7,7 +7,7 @@ import facts from '../data/facts.json'
 import editions from '../data/editions.json'
 
 const PAGES = [
-	['paris', 'Paris 2027'],
+	['paris', 'Europe 2027'],
 	['programme', 'Programme'],
 	['who-is-in-the-room', 'Founding Advisors'],
 	['investors', 'Investors'],

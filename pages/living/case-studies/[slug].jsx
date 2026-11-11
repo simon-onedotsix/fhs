@@ -2,15 +2,14 @@ import Link from 'next/link'
 
 import { LivingPage } from '../../../ui-living/site/page'
 import { c } from '../../../ui-living/lib/c'
-import { priceBand } from '../../../ui-living/lib/format'
 import { R } from '../../../ui-living/lib/routes'
 import { HIGH } from '../../../ui-living/lib/attrs'
 import { CaseBy, CaseFacts, CaseFoot, CaseStory, CaseStrip, casePath } from '../../../ui-living/sections/case-studies'
 import { Closer } from '../../../ui-living/sections/closer'
-import { loadCases, loadPasses, REVALIDATE } from '../../../ui-living/lib/cms'
+import { loadCases, REVALIDATE } from '../../../ui-living/lib/cms'
 
 // One case study on its own URL, so it can be shared with its own title and photo.
-export default function CaseStudy({ k, more, price }) {
+export default function CaseStudy({ k, more }) {
 	const desc = k.what && (k.what.length > 155 ? k.what.slice(0, k.what.lastIndexOf(' ', 152)) + '…' : k.what)
 	return (
 		<LivingPage page="case-studies" path={casePath(k)} image={k.image && k.image.og} title={`${k.project} | FHS Living`}
@@ -37,7 +36,7 @@ export default function CaseStudy({ k, more, price }) {
 			</section>
 
 			{more.length > 0 && <CaseStrip cases={more} id="more-h" title="More case studies." bg="tint" />}
-			<Closer price={price} />
+			<Closer />
 		</LivingPage>
 	)
 }
@@ -50,11 +49,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const [{ cases }, passes] = await Promise.all([loadCases(), loadPasses()])
+	const { cases } = await loadCases()
 	const k = cases.find(x => x.slug === params.slug)
 	if (!k) return { notFound: true, revalidate: REVALIDATE }
 	// three more: same asset class first, then in Craft's order
 	const others = cases.filter(x => x !== k)
 	const more = [...others.filter(x => x.classes.some(cl => k.classes.includes(cl))), ...others].filter((x, i, a) => a.indexOf(x) === i).slice(0, 3)
-	return { props: { k, more, price: priceBand(passes.passes.find(x => x.title.startsWith('Delegate'))).current }, revalidate: REVALIDATE }
+	return { props: { k, more }, revalidate: REVALIDATE }
 }

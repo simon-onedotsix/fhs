@@ -589,6 +589,11 @@
 .root .closer__ways { display: grid; gap: 22px; }
 .root .closer__ways > div { padding-top: 18px; border-top: 1px solid var(--line-dark); }
 .root .closer__ways p { margin: 6px 0 14px; color: var(--on-dark-soft); font-size: var(--fs-small); }
+.root .closer__eds { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line-dark); }
+.root .closer__eds a { display: grid; gap: 4px; padding: 16px 0; border-top: 1px solid var(--line-dark); color: var(--white); text-decoration: none; transition: color .2s var(--ease); }
+.root .closer__eds b { font-size: clamp(20px, 1.9vw, 26px); font-weight: 500; line-height: 1.15; }
+.root .closer__eds span { font-size: var(--fs-small); color: var(--on-dark-soft); }
+.root .closer__eds a:hover b, .root .closer__eds a:focus-visible b { color: var(--rose); }
 .root .closer__ways h3 { color: var(--white); font-size: 21px; }
 @media (max-width: 860px) {
   .root .closer { grid-template-columns: minmax(0, 1fr); }

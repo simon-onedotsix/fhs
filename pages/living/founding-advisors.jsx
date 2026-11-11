@@ -86,7 +86,7 @@ export default function WhoIsInTheRoom({ f, adv }) {
 				<div className={c('wrap split')}>
 					<div className={c('photo photo--wide')}><img src={img('photo/ab-talk.jpg')} width="800" height="533" alt="Founding Advisors at the FHS Living Advisory Board in London" loading="lazy" /></div>
 					<div>
-						<h2 className={c('ruled')} id="ab-h">The board met at Maslow&apos;s Kensington.</h2>
+						<h2 className={c('ruled')} id="ab-h">Maslow&apos;s Kensington hosted the board.</h2>
 						<p className={c('lede')} style={{ marginTop: 20 }}>London, September 2026. Their conclusion shaped the programme: real estate has a great deal to learn from how hospitality operates, and hospitality from how real estate underwrites.</p>
 						<Link href="/living/content-library/the-hotelisation-of-real-estate-inside-the-fhs-living-advisory-board-at-maslows-kensington" prefetch={false}><a className={c('link')}>Read what the board concluded</a></Link>
 					</div>

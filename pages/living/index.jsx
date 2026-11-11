@@ -1,6 +1,5 @@
 import { LivingPage } from '../../ui-living/site/page'
 import { c } from '../../ui-living/lib/c'
-import { priceBand } from '../../ui-living/lib/format'
 import { LayersHero, FILM_POSTER } from '../../ui-living/sections/layers-hero'
 import { Idea } from '../../ui-living/sections/idea'
 import { Classdex } from '../../ui-living/sections/classdex'
@@ -19,7 +18,7 @@ import editions from '../../ui-living/data/editions.json'
 import dubai from '../../ui-living/data/dubai.json'
 import concl from '../../ui-living/data/conclusions.json'
 import brf from '../../ui-living/data/brf.json'
-import { loadAdvisors, loadCases, loadPartners, loadPasses, loadSpeakers, REVALIDATE } from '../../ui-living/lib/cms'
+import { loadAdvisors, loadCases, loadPartners, loadSpeakers, REVALIDATE } from '../../ui-living/lib/cms'
 import { HIGH } from '../../ui-living/lib/attrs'
 
 // FHS World, Saudi Arabia and Egypt's Living pages import these from here (see ui-living/data/legacy.js)
@@ -35,12 +34,9 @@ export default function Living(p) {
 		>
 			<LayersHero />
 			<Idea />
-			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} bg="tint" />}
-			<Classdex classes={p.classes} />
-			<PartnerSection partners={p.partners} bg="tint" />
-			<AdvisorsWall advisors={p.advisors} />
+			<Classdex classes={p.classes} bg="tint" />
 
-			<section className={c('atlas')} aria-labelledby="ed-h">
+			<section className={c('atlas')} id="editions" aria-labelledby="ed-h">
 				<div className={c('atlas__stage')}>
 					<div className={c('atlas__copy')}>
 						<h2 className={c('ruled')} id="ed-h">One conference. Four cities.</h2>
@@ -52,16 +48,19 @@ export default function Living(p) {
 			</section>
 
 			<BrfStory brf={p.brf} dubai={p.dubai} concl={p.concl} />
+			<AdvisorsWall advisors={p.advisors} bg="tint" />
+			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} />}
+			<PartnerSection partners={p.partners} bg="tint" />
 			{p.cases.length > 0 && <CaseStrip cases={p.cases} />}
 			<PartnersReads report={p.dubai.report} />
-			<Closer price={p.price} />
+			<Closer />
 		</LivingPage>
 	)
 }
 Living.theme = 'living'
 
 export async function getStaticProps() {
-	const [advisors, partners, passes, { cases }, { people: speakers }] = await Promise.all([loadAdvisors(), loadPartners(), loadPasses(), loadCases(), loadSpeakers()])
+	const [advisors, partners, { cases }, { people: speakers }] = await Promise.all([loadAdvisors(), loadPartners(), loadCases(), loadSpeakers()])
 	return {
 		revalidate: REVALIDATE,
 		props: {
@@ -75,7 +74,6 @@ export async function getStaticProps() {
 			brf,
 			partners,
 			cases: cases.length >= 3 ? cases.slice(0, 3) : [],  // the strip shows once three cases are published
-			price: priceBand(passes.passes.find(x => x.title.startsWith('Delegate'))).current,
 		},
 	}
 }

@@ -90,7 +90,7 @@ export function CaseStrip({ cases, id = 'cases-h', title = 'Living, in practice.
 			<div className={c('wrap')}>
 				<div className={c('head')}>
 					<h2 className={c('ruled')} id={id}>{title}</h2>
-					<p>Projects led by FHS Living Founding Advisors, and the questions they bring to Paris.</p>
+					<p>Projects led by FHS Living Founding Advisors, and the questions they bring to the room.</p>
 				</div>
 				<ul className={c('cases')}>{cases.map(k => <li key={k.slug}><CaseTile k={k} /></li>)}</ul>
 				<div className={c('actions cases__all')}>

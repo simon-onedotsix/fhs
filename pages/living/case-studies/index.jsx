@@ -2,17 +2,16 @@ import { useEffect, useState } from 'react'
 
 import { LivingPage } from '../../../ui-living/site/page'
 import { c } from '../../../ui-living/lib/c'
-import { priceBand } from '../../../ui-living/lib/format'
 import { HIGH } from '../../../ui-living/lib/attrs'
 import { CaseRow } from '../../../ui-living/sections/case-studies'
 import { Closer } from '../../../ui-living/sections/closer'
-import { loadAdvisors, loadCases, loadPasses, REVALIDATE } from '../../../ui-living/lib/cms'
+import { loadAdvisors, loadCases, REVALIDATE } from '../../../ui-living/lib/cms'
 
 const LEAD = 'Projects led by FHS Living Founding Advisors, from serviced living in Amsterdam to care residences in London. Each one answers a question the sector will put on the table in Paris.'
 
 // The case studies, filterable by asset class. The filter needs JavaScript, so it stays hidden until the page is
 // running; without it every case is listed.
-export default function CaseStudies({ lead, cases, order, price }) {
+export default function CaseStudies({ lead, cases, order }) {
 	const [ready, setReady] = useState(false)
 	const [filter, setFilter] = useState('*')
 	useEffect(() => setReady(true), [])
@@ -53,21 +52,20 @@ export default function CaseStudies({ lead, cases, order, price }) {
 				</div>
 			</section>
 
-			<Closer price={price} />
+			<Closer />
 		</LivingPage>
 	)
 }
 CaseStudies.theme = 'living'
 
 export async function getStaticProps() {
-	const [{ lead, cases }, advisors, passes] = await Promise.all([loadCases(), loadAdvisors(), loadPasses()])
+	const [{ lead, cases }, advisors] = await Promise.all([loadCases(), loadAdvisors()])
 	return {
 		revalidate: REVALIDATE,
 		props: {
 			lead,
 			cases,
 			order: advisors.order,
-			price: priceBand(passes.passes.find(x => x.title.startsWith('Delegate'))).current,
 		},
 	}
 }
