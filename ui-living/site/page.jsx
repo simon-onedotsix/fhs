@@ -52,10 +52,12 @@ export function LivingPage({ page, path, image, title, description, head, childr
 			done.push([el, wide[i], edits.map(([n]) => [n, n.data]), glue, last])
 			for (const [n, t] of edits) n.data = t
 		})
-		const pairSplits = (glue, last) => {  // the glued pair (word before the no-break space to the end) spans two lines
+		// the glued pair spans two lines; measured from after the last hyphen of the word before the no-break space, since a
+		// break at that hyphen is allowed ("Mixed- / Use Developments." in Firefox)
+		const pairSplits = (glue, last) => {
 			const head = glue.data.slice(0, glue.data.lastIndexOf('\u00A0'))
 			const r = document.createRange()
-			r.setStart(glue, Math.max(0, head.search(/\S+$/)))
+			r.setStart(glue, Math.max(0, head.search(/[^\s-]+$/)))
 			r.setEnd(last, last.data.length)
 			const rs = [...r.getClientRects()].filter(x => x.width > 1)
 			return rs.length > 1 && Math.max(...rs.map(x => x.top)) - Math.min(...rs.map(x => x.top)) > Math.min(...rs.map(x => x.height)) * 0.6
