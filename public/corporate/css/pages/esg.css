@@ -1,0 +1,26 @@
+/* FHS corporate pages. Generated from the design sample by tools/port/sync_app.py, then edited here.
+   Every rule sits under #cp, the wrapper in ui-corporate/site/page.jsx. */
+/* ESG impact. Initiatives read on white, alternating photo side; the carbon pledge closes on Violet.
+   Photo frames 4:3 with a 60 degree cut (rise 24% of h = .18w, run = .18w x .577 = 10.4%). */
+#cp .esg { background: #fff; color: var(--ink); padding-block: var(--section); }
+#cp .esg__list { display: grid; gap: clamp(4rem, 8vw, 7.5rem); }
+#cp .esg__item { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 6rem); align-items: center; }
+#cp .esg__img { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; background: var(--fhs-neutral-100); clip-path: polygon(0 0, 100% 0, 100% 100%, 10.4% 100%, 0 76%); }
+#cp .esg__img img { width: 100%; height: 100%; object-fit: cover; }
+#cp .esg__item--flip { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+#cp .esg__item--flip .esg__img { order: 2; clip-path: polygon(0 0, 100% 0, 100% 76%, 89.6% 100%, 0 100%); }
+/* the title never outgrows its column: a 14-letter word (COLLABORATIONS) is 9.9 title ems wide */
+#cp .esg__text { container-type: inline-size; }
+#cp .esg__title { font-size: min(clamp(2rem, 1.3rem + 2.4vw, 3.5rem), 9.9cqi); line-height: .965; letter-spacing: .01em; text-transform: uppercase; color: var(--violet); text-wrap: balance; }
+#cp .esg__body { margin-top: clamp(1.25rem, 2.5vw, 2rem); max-width: 34em; font-size: clamp(1.0625rem, 1rem + .3vw, 1.25rem); line-height: 1.5; }
+#cp .esg__body p + p { margin-top: 1em; }
+#cp .pledge { background: var(--violet); padding-block: var(--section); }
+#cp .pledge__grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: 2rem 4rem; align-items: start; }
+#cp .pledge__body { max-width: 36em; font-size: clamp(1.125rem, 1rem + .5vw, 1.5rem); line-height: 1.38; color: var(--on-violet); }
+#cp .pledge__body p + p { margin-top: 1em; }
+#cp .pledge__body p:first-child { color: #fff; }
+@media (max-width: 860px) {
+  #cp .esg__item, #cp .esg__item--flip { grid-template-columns: 1fr; gap: 1.5rem; }
+  #cp .esg__item--flip .esg__img { order: 0; }
+  #cp .pledge__grid { grid-template-columns: 1fr; gap: 1.25rem; }
+}

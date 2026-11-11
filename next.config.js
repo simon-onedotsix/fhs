@@ -141,6 +141,32 @@ const nextConfig = {
 				permanent: false,
 			},
 
+			// FHS corporate pages (November 2026). Temporary (307) for the launch window, as for Living above.
+			// Craft pages the new pages replace
+			{
+				source: '/fhs-cub',
+				destination: '/fhs-club',
+				permanent: false,
+			},
+			{
+				source: '/fhs-marketing-opportunities-cms',
+				destination: '/fhs-marketing-opportunities',
+				permanent: false,
+			},
+			{
+				source: '/why-attend',
+				destination: '/about-fhs',
+				permanent: false,
+			},
+			// The corporate pages have no Arabic version. Not /ar itself: Next sends Arabic-language browsers from / to
+			// /ar, so that redirect would loop; /ar shows the English home with its canonical on /
+			{
+				source: '/ar/:page(about-fhs|award-winners|content-library|contact|esg|fhs-advisory-board-terms|fhs-club|fhs-marketing-opportunities)',
+				destination: '/:page',
+				permanent: false,
+				locale: false,
+			},
+
 		]
 	},
 

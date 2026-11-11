@@ -1,0 +1,84 @@
+/* FHS corporate pages. Generated from the design sample by tools/port/sync_app.py, then edited here.
+   Every rule sits under #cp, the wrapper in ui-corporate/site/page.jsx. */
+/* Content library index and article pages. Reads on white, like the homepage's Between summits section;
+   the FHS Podcast runs as a Deep Purple band. Tokens and type come from main.css. */
+#cp .lib { background: #fff; color: var(--ink); padding-block: var(--section); }
+#cp .lib .h2 { color: var(--violet); }
+#cp .meta { display: flex; flex-wrap: wrap; gap: .25rem 1rem; font-size: .8125rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+#cp .meta > span:first-child { color: var(--violet); font-weight: 600; }
+#cp :is(.lib, .art) :focus-visible { outline-color: var(--violet); }
+/* the lead: one release, large, 60 degree cut on the photo's lower left (16:9: run = .225 x .5625w x .577) */
+#cp .lib__lead { margin-bottom: var(--section); }
+#cp .lead { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 4vw, 4.5rem); align-items: end; }
+#cp .lead__img { margin: 0; aspect-ratio: 16 / 9; overflow: hidden; background: var(--deep); clip-path: polygon(0 0, 100% 0, 100% 100%, 7.3% 100%, 0 77.5%); }
+#cp .lead__img img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--mid) var(--ease); }
+#cp .lead:hover .lead__img img { transform: scale(1.02); }
+#cp .lead__title { margin-top: 1rem; font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.75rem); line-height: 1.08; font-weight: 600; color: var(--deep); text-wrap: balance; transition: color var(--fast) var(--ease); }
+#cp .lead:hover .lead__title { color: var(--violet); }
+#cp .lead__ex { margin-top: 1rem; font-size: clamp(1.0625rem, 1rem + .25vw, 1.25rem); color: var(--ink-soft); max-width: 32em; }
+#cp .lead__go { display: inline-flex; align-items: center; gap: .6em; margin-top: 1.5rem; padding-block: .35em; font-weight: 600; color: var(--violet); border-bottom: 1px solid currentColor; }
+/* the FHS Podcast: episode numbers in the agency's big Roman numerals */
+#cp .pod { background: var(--deep); color: #fff; padding-block: var(--section); margin-bottom: var(--section); }
+#cp .pod .h2 { color: #fff; }
+#cp .pod__head { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: 2rem 4rem; align-items: end; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+#cp .pod__intro { max-width: 36em; font-size: clamp(1.0625rem, 1rem + .3vw, 1.3125rem); color: var(--lav-soft); }
+#cp .pod__track {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--lav) var(--deep);
+  padding-inline: max(var(--gutter), calc((100vw - 1680px) / 2 + var(--gutter))); scroll-padding-inline: max(var(--gutter), calc((100vw - 1680px) / 2 + var(--gutter)));
+  padding-bottom: 1.25rem;
+}
+#cp .pod__ep { flex: 0 0 clamp(15rem, 21vw, 19rem); scroll-snap-align: start; padding-right: 1.75rem; border-top: 1px solid var(--rule-dark); }
+#cp .pod__ep a { display: grid; gap: .9rem; padding-top: 1.5rem; }
+#cp .pod__no { font-weight: 500; font-size: clamp(3rem, 2rem + 2.6vw, 4.75rem); line-height: 1; color: var(--lav); font-variant-numeric: tabular-nums; transition: color var(--fast) var(--ease); }
+#cp .pod__img { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--deeper); }
+#cp .pod__img img { width: 100%; height: 100%; object-fit: cover; }
+#cp .pod__t { font-weight: 600; line-height: 1.32; }
+#cp .pod__ep time { font-size: .875rem; color: var(--lav-soft); }
+#cp .pod__ep a:hover .pod__no { color: #fff; }
+/* everything else: hairline-ruled rows, filterable */
+#cp .lib__bar { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1.5rem 2rem; margin-bottom: clamp(1.75rem, 3vw, 2.5rem); }
+#cp .filters { display: flex; flex-wrap: wrap; gap: .5rem; }
+#cp .filters button {
+  font-size: .9375rem; padding: .55rem .9rem; border: 1px solid var(--rule-light); border-radius: 2px; background: #fff; color: var(--ink); cursor: pointer;
+  transition: background-color var(--fast) var(--ease), color var(--fast) var(--ease), border-color var(--fast) var(--ease);
+}
+#cp .filters button span { color: var(--ink-soft); margin-left: .3rem; font-variant-numeric: tabular-nums; }
+#cp .filters button:hover { border-color: var(--violet); }
+#cp .filters button[aria-pressed="true"] { background: var(--violet); border-color: var(--violet); color: #fff; }
+#cp .filters button[aria-pressed="true"] span { color: var(--on-violet); }
+#cp .rows { border-bottom: 1px solid var(--rule-light); }
+#cp .row a { display: grid; grid-template-columns: clamp(9rem, 16vw, 15rem) minmax(0, 1fr); gap: 1.5rem clamp(1.25rem, 2.5vw, 2.5rem); align-items: start; padding-block: 1.4rem; border-top: 1px solid var(--rule-light); }
+#cp .row a:not(:has(.row__img)) .row__text { grid-column: 1 / -1; }
+#cp .row__img { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--fhs-neutral-100); }
+#cp .row__img img { width: 100%; height: 100%; object-fit: cover; }
+#cp .row__text { display: grid; gap: .5rem; }
+#cp .row__t { font-weight: 600; font-size: clamp(1.0625rem, 1rem + .3vw, 1.3125rem); line-height: 1.3; transition: color var(--fast) var(--ease); }
+#cp .row__ex { color: var(--ink-soft); max-width: 60ch; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+#cp .row a:hover .row__t { color: var(--violet); }
+#cp .row[hidden] { display: none; }
+#cp .lib__more { margin-top: 2.5rem; }
+/* article */
+#cp .art { margin-top: var(--top-h); background: #fff; color: var(--ink); padding-block: clamp(2.5rem, 5vw, 4.5rem); }
+#cp .lib--related { padding-top: 0; }
+#cp .art__head { max-width: calc(58rem + 2 * var(--gutter)); margin-inline: 0; }
+#cp .art__back a { display: inline-flex; align-items: center; gap: .5rem; font-size: .9375rem; color: var(--violet); padding-block: .3rem; border-bottom: 1px solid transparent; }
+#cp .art__back a:hover { border-bottom-color: currentColor; }
+#cp .art__head .meta { margin-top: 2rem; }
+#cp .art__title { margin-top: 1rem; font-size: clamp(2rem, 1.3rem + 2.6vw, 3.75rem); line-height: 1.05; font-weight: 600; color: var(--deep); text-wrap: balance; }
+#cp .art__stand { margin-top: 1.25rem; font-size: clamp(1.125rem, 1rem + .5vw, 1.5rem); line-height: 1.35; color: var(--ink-soft); max-width: 36em; }
+#cp .art__img { margin-block: clamp(2rem, 4vw, 3.5rem); }
+#cp .art__img picture, #cp .art__img img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; clip-path: polygon(0 0, 100% 0, 100% 100%, 7.3% 100%, 0 77.5%); }
+#cp .art__body { max-width: calc(42rem + 2 * var(--gutter)); margin-inline: 0; font-size: clamp(1.0625rem, 1rem + .25vw, 1.1875rem); line-height: 1.6; }
+#cp .art__body p { margin-block: 0 1.15em; }
+#cp .art__body a { color: var(--violet); text-decoration: underline; text-underline-offset: .2em; }
+#cp .art__src { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule-light); font-size: .9375rem; color: var(--ink-soft); }
+#cp .lib--related .lib__h { margin-bottom: 2rem; }
+@media (max-width: 900px) {
+  #cp .lead { grid-template-columns: 1fr; }
+  #cp .pod__head { grid-template-columns: 1fr; gap: 1.25rem; }
+}
+@media (max-width: 560px) {
+  #cp .row a { grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; }
+  #cp .row__ex { display: none; }
+  #cp .filters button { font-size: .875rem; padding: .5rem .7rem; }
+}

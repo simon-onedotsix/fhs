@@ -1,0 +1,153 @@
+{
+ "_sources": {
+  "figures": "The Bench, FHS Living launch release, Hospitality Net, June 2026: https://www.hospitalitynet.org/news/4132884/",
+  "summits": "Dates and venues as on the homepage (Craft homepage entry 77020, event pages, thebench.com/events); partner URLs checked 21 Oct 2026, each HTTP 200",
+  "options": "Craft entry 292503 (live /fhs-marketing-opportunities, updated 28 Jan 2026), data/partner/craft-292503.json. Names verbatim; descriptions edited to the FHS house style only (British English, numbers, no 'unique'); example links verbatim",
+  "contact": "hello@thebench.com, thebench.com/about (Get in touch)",
+  "option_images": "YouTube thumbnails of FHS's own films (i3LFNwS1UHY, NWIGjqBBucM, 7s5Zx8fwYmw), the Craft hero of 'Four questions with Mohamed Amer', and the FHS World 2026 speaker card for Dr Ghada Shalaby (FHS World/03_Social/Artworks)"
+ },
+ "figures": [
+  {
+   "value": "3,000+",
+   "label": "C-level decision-makers across the 2025 series"
+  },
+  {
+   "value": "621",
+   "label": "investors, representing over USD 11tn in assets under management"
+  },
+  {
+   "value": "USD 3bn",
+   "label": "in business opportunities facilitated"
+  },
+  {
+   "value": "29",
+   "label": "hotel signings announced on stage"
+  }
+ ],
+ "summits": [
+  {
+   "name": "FHS Egypt",
+   "logo": "fhs-egypt.png",
+   "w": 392,
+   "city": "Cairo",
+   "date": "10–11 November 2026",
+   "url": "https://futurehospitality.com/egypt/why-partner",
+   "ends": "2026-11-11"
+  },
+  {
+   "name": "FHS Living",
+   "logo": "fhs-living.png",
+   "w": 392,
+   "city": "Paris",
+   "date": "23–24 February 2027",
+   "url": "https://futurehospitality.com/living/partners",
+   "ends": "2027-02-24"
+  },
+  {
+   "name": "BRAHIC",
+   "logo": "brahic.png",
+   "w": 816,
+   "city": "Rio de Janeiro",
+   "date": "15–16 March 2027",
+   "url": "https://brahic.com/seja-um-patrocinador",
+   "ends": "2027-03-16"
+  },
+  {
+   "name": "FHS Saudi Arabia",
+   "logo": "fhs-saudi-arabia-madinah.png",
+   "w": 562,
+   "city": "Madinah",
+   "date": "13–14 April 2027",
+   "url": "https://futurehospitality.com/sa/why-partner",
+   "ends": "2027-04-14"
+  },
+  {
+   "name": "FHS Africa",
+   "logo": "fhs-africa.png",
+   "w": 392,
+   "city": "Kampala",
+   "date": "28–29 April 2027",
+   "url": "https://futurehospitality.com/africa/partner-with-fhs-africa-2027",
+   "ends": "2027-04-29"
+  },
+  {
+   "name": "FHS World",
+   "logo": "fhs-world.png",
+   "w": 392,
+   "city": "Ras Al Khaimah",
+   "date": "November 2027",
+   "url": "https://futurehospitality.com/world/why-partner",
+   "ends": "2027-11-30"
+  }
+ ],
+ "options": [
+  {
+   "name": "Online Podcast",
+   "text": "A 10 to 30 minute one-to-one conversation with a senior Bench representative on an agreed topic, capturing your insights, positioning and value proposition.",
+   "examples": [
+    [
+     "Online podcasts",
+     "https://www.futurehospitality.com/sa/content-library/category/podcast"
+    ],
+    [
+     "In-person podcast",
+     "https://www.youtube.com/watch?v=i3LFNwS1UHY"
+    ]
+   ],
+   "img": "opt-podcast",
+   "img_alt": "An FHS Podcast episode card with its guest"
+  },
+  {
+   "name": "Thought Leadership Insights",
+   "text": "Short digital or written insights from your company’s thought leader, published on FHS social media channels.",
+   "examples": [
+    [
+     "Written insights",
+     "https://www.linkedin.com/posts/future-hospitality-summit_hassan-ahdab-at-fhs-world-2024-activity-7244966922419621889-_dLr"
+    ],
+    [
+     "Video insights",
+     "https://www.linkedin.com/posts/future-hospitality-summit_alain-debare-hvs-at-fhs-world-2024-activity-7242784372414660608-tBhQ"
+    ]
+   ],
+   "img": "opt-insight",
+   "img_alt": "A Four questions with insight card for FHS Egypt"
+  },
+  {
+   "name": "Speaker Profiling",
+   "text": "A dedicated social media post on your company’s speaker on the FHS agenda, showcasing their expertise and promoting their session.",
+   "examples": [
+    [
+     "Speaker post",
+     "https://www.linkedin.com/posts/future-hospitality-summit_futurehospitalitysummit-fhssaudiarabia2025-activity-7291055731863150592-_KNY"
+    ]
+   ],
+   "img": "opt-speaker",
+   "img_alt": "An FHS World 2026 speaker card"
+  },
+  {
+   "name": "On-site Video Interview",
+   "text": "A video interview with your company’s speaker or representative during the event, published on social media as part of the post-event campaign. Questions are agreed in advance.",
+   "examples": [
+    [
+     "Video interview",
+     "https://www.linkedin.com/posts/future-hospitality-summit_fhssaudiarabia-sustainability-futurehospitalitysummit-activity-7269326724855648256-jql6"
+    ]
+   ],
+   "img": "opt-interview",
+   "img_alt": "A video interview recorded on the FHS World exhibition floor"
+  },
+  {
+   "name": "Stage Session Snippet",
+   "text": "A one to three minute snippet cut from the recording of your speaker’s stage session, published on social media as part of the post-event campaign.",
+   "examples": [
+    [
+     "Session snippet",
+     "https://www.linkedin.com/posts/future-hospitality-summit_fhs-fhsworld-fhsksa-activity-7354476768445005824-IQTr"
+    ]
+   ],
+   "img": "opt-snippet",
+   "img_alt": "A speaker on the FHS World stage, from a session recording"
+  }
+ ]
+}

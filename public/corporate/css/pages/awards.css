@@ -1,0 +1,57 @@
+/* FHS corporate pages. Generated from the design sample by tools/port/sync_app.py, then edited here.
+   Every rule sits under #cp, the wrapper in ui-corporate/site/page.jsx. */
+/* Award winners: the latest honours large on Deep Purple, then every honour since 2005 on white, by year. */
+#cp .aw-latest { background: var(--deep); padding-block: var(--section); }
+#cp .aw-latest__list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(2rem, 4vw, 4rem); }
+#cp .aw-star__photo img {
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; background: var(--deeper);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 17.3% 100%, 0 76%);  /* 60 degree cut: run = .24h x .577 on 4:5 */
+}
+#cp .aw-star__award { margin-top: 1.4rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; font-size: .9375rem; color: var(--lav-soft); }
+#cp .aw-star__name { margin-top: .5rem; font-weight: 600; font-size: clamp(1.375rem, 1.1rem + 1vw, 2rem); line-height: 1.12; }
+#cp .aw-star__role { margin-top: .5rem; color: var(--lav-soft); max-width: 26em; }
+#cp .aw-star__at { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--rule-dark); font-size: .8125rem; letter-spacing: .06em; text-transform: uppercase; color: var(--lav-soft); }
+@media (max-width: 800px) {
+  #cp .aw-latest__list { grid-template-columns: 1fr; max-width: 26rem; }
+}
+#cp .aw-index { background: #fff; color: var(--ink); padding-block: var(--section); }
+#cp .aw-index .h2 { color: var(--violet); }
+#cp .aw-filter { display: grid; gap: .9rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
+#cp .aw-filter__group { display: flex; flex-wrap: wrap; gap: .5rem; }
+#cp .aw-filter button {
+  font-size: .9375rem; padding: .55rem .95rem; cursor: pointer; border-radius: 2px;
+  background: #fff; color: var(--ink); border: 1px solid var(--rule-light);
+  transition: background-color var(--fast) var(--ease), color var(--fast) var(--ease), border-color var(--fast) var(--ease);
+}
+#cp .aw-filter button:hover { border-color: var(--violet); color: var(--violet); }
+#cp .aw-filter button[aria-pressed="true"] { background: var(--violet); border-color: var(--violet); color: #fff; }
+#cp .aw-filter__count { font-size: .875rem; color: var(--ink-soft); }
+#cp .aw-year { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: 1rem 4rem; border-top: 1px solid var(--rule-light); padding-block: 1.5rem; }
+#cp .aw-year:last-child { border-bottom: 1px solid var(--rule-light); }
+#cp .aw-year__n {
+  font-weight: 500; font-size: clamp(2.75rem, 2rem + 2.6vw, 4.75rem); line-height: 1; color: var(--violet);
+  font-variant-numeric: tabular-nums; align-self: start; position: sticky; top: calc(var(--top-h) + 1.5rem);
+}
+#cp .aw-year__list { display: grid; }
+#cp .aw-row { display: grid; grid-template-columns: 4rem minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr); gap: .25rem 1.5rem; align-items: center; padding-block: .9rem; }
+#cp .aw-row + .aw-row { border-top: 1px solid var(--rule-light); }
+#cp .aw-row__photo img { width: 4rem; aspect-ratio: 4 / 5; object-fit: cover; background: var(--fhs-neutral-100); }
+#cp .aw-row__name { font-weight: 600; font-size: 1.0625rem; line-height: 1.3; }
+#cp .aw-row__role { margin-top: .2rem; font-size: .875rem; line-height: 1.35; color: var(--ink-soft); }
+#cp .aw-row__award { font-weight: 600; color: var(--violet); line-height: 1.3; }
+#cp .aw-row__at { font-size: .875rem; color: var(--ink-soft); }
+@media (max-width: 900px) {
+  #cp .aw-year { grid-template-columns: 1fr; gap: .5rem; }
+  #cp .aw-year__n { position: static; }
+  #cp .aw-row { grid-template-columns: 3.5rem minmax(0, 1fr); align-items: start; }
+  #cp .aw-row__photo { grid-row: 1 / span 3; }
+  #cp .aw-row__photo img { width: 3.5rem; }
+  #cp .aw-row__award, #cp .aw-row__at { grid-column: 2; }
+}
+#cp .aw-close { background: var(--deep); padding-block: clamp(4rem, 7vw, 7rem); }
+#cp .aw-close__grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: 2rem 4rem; align-items: end; }
+#cp .aw-close__copy { font-size: clamp(1.0625rem, 1rem + .3vw, 1.3125rem); color: var(--lav-soft); display: grid; gap: 1rem; justify-items: start; }
+#cp .aw-close__copy .link { color: #fff; }
+@media (max-width: 800px) {
+  #cp .aw-close__grid { grid-template-columns: 1fr; }
+}

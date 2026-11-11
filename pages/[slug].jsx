@@ -31,6 +31,9 @@ import {
 
 import handleSeomaticMeta from '../lib/seomatic'
 
+// addresses owned by the FHS corporate pages in code (pages/esg.jsx, pages/contact.jsx)
+import { OWNED } from '../ui-corporate/lib/routes'
+
 
 
 export default function Page ({ entry, seomatic }) {
@@ -84,7 +87,7 @@ export async function getStaticPaths() {
     const entries = await entriesData.data.entries
 
     return {
-        paths: entries.map( entry => ({ params: { slug: entry.slug } })),
+        paths: entries.filter( entry => !OWNED.includes(entry.slug) ).map( entry => ({ params: { slug: entry.slug } })),
         fallback: false
     }
 

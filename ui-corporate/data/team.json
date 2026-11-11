@@ -1,0 +1,219 @@
+[
+ {
+  "label": "Leadership",
+  "people": [
+   {
+    "slug": "jonathan-worsley",
+    "name": "Jonathan Worsley",
+    "title": "Chairman",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "ali-shahid",
+    "name": "Ali Shahid",
+    "title": "Chief Executive Officer",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "matthew-weihs",
+    "name": "Matthew Weihs",
+    "title": "Chief Development Officer",
+    "w": 480,
+    "h": 600
+   }
+  ]
+ },
+ {
+  "label": "Partnerships",
+  "people": [
+   {
+    "slug": "michelle-turney",
+    "name": "Michelle Turney",
+    "title": "Global Head of Strategic Partnerships",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "roy-bannister",
+    "name": "Roy Bannister",
+    "title": "Head of Strategic Partnerships – Africa",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "sunita-mahay",
+    "name": "Sunita Mahay",
+    "title": "Senior Partnerships Manager",
+    "w": 480,
+    "h": 600
+   }
+  ]
+ },
+ {
+  "label": "Investor relations",
+  "people": [
+   {
+    "slug": "marina-franolic",
+    "name": "Marina Franolic",
+    "title": "Investor Relations Director",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "joan-calimpong",
+    "name": "Joan Calimpong",
+    "title": "Investor Relations Manager",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "mulaika-qureshi",
+    "name": "Mulaika Qureshi",
+    "title": "Investor Relations Trainee",
+    "w": 126,
+    "h": 156
+   }
+  ]
+ },
+ {
+  "label": "Marketing and PR",
+  "people": [
+   {
+    "slug": "muhammad-ahmed",
+    "name": "Muhammad Ahmed",
+    "title": "Head of Marketing",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "abdur-raffey",
+    "name": "Abdur Raffey",
+    "title": "Senior Marketing Manager",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "lyza-rashid",
+    "name": "Lyza Rashid",
+    "title": "Marketing Manager",
+    "w": 316,
+    "h": 394
+   },
+   {
+    "slug": "innara-perwaiz",
+    "name": "Innara Perwaiz",
+    "title": "Marketing Lead",
+    "w": 293,
+    "h": 365
+   },
+   {
+    "slug": "muhammad-ibrahim-mohsin",
+    "name": "Muhammad Ibrahim Mohsin",
+    "title": "Marketing Lead",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "anne-bleeker",
+    "name": "Anne Bleeker",
+    "title": "Managing Partner, In2 Consulting (PR partner)",
+    "w": 395,
+    "h": 494
+   }
+  ]
+ },
+ {
+  "label": "Operations",
+  "people": [
+   {
+    "slug": "sally-marwaha",
+    "name": "Sally Marwaha",
+    "title": "Operations Director",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "mala-patel",
+    "name": "Mala Patel",
+    "title": "Event Director – Africa | COO, AviaDev",
+    "w": 232,
+    "h": 290
+   },
+   {
+    "slug": "asma-eladaoui",
+    "name": "Asma Eladaoui",
+    "title": "Account Manager",
+    "w": 480,
+    "h": 600
+   }
+  ]
+ },
+ {
+  "label": "Programme",
+  "people": [
+   {
+    "slug": "tanja-millner",
+    "name": "Tanja Millner",
+    "title": "Production Director",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "fatimah-ilahi",
+    "name": "Fatimah Ilahi",
+    "title": "Production Manager",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "felipe-recaman",
+    "name": "Felipe Recaman",
+    "title": "Production Manager",
+    "w": 474,
+    "h": 592
+   },
+   {
+    "slug": "melissa-ordonez",
+    "name": "Melissa Ordonez",
+    "title": "Production Assistant",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "louis-garthwaite",
+    "name": "Louis Garthwaite",
+    "title": "Production Assistant",
+    "w": 480,
+    "h": 600
+   }
+  ]
+ },
+ {
+  "label": "Finance",
+  "people": [
+   {
+    "slug": "daniya-mcnulty",
+    "name": "Daniya McNulty",
+    "title": "Global Finance Manager",
+    "w": 467,
+    "h": 585
+   },
+   {
+    "slug": "laura-james",
+    "name": "Laura James",
+    "title": "Finance",
+    "w": 480,
+    "h": 600
+   },
+   {
+    "slug": "melody-brown",
+    "name": "Melody Brown",
+    "title": "Senior Accountant",
+    "w": 451,
+    "h": 564
+   }
+  ]
+ }
+]
