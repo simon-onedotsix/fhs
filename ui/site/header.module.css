@@ -10,6 +10,17 @@
     align-items: center;
 }
 
+.logo {
+    display: block;
+    height: 4.5rem;
+    width: auto;
+}
+@media(max-width:599px) {
+    .logo {
+        height: 2.75rem;
+    }
+}
+
 .venue {
     font-size: .9rem;
     line-height: 1.2;

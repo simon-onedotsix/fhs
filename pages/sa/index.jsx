@@ -38,23 +38,14 @@ import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { Pop, Slide, Fade } from "../../fuselage/theme/2023/ae/layout/animation/animation"
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
-import { ArrowButton } from "../../fuselage/components/arrow-button/arrow-button"
-import { SpeakerCard } from "../../fuselage/components/speaker-card/speaker-card"
 import { ThemesSlider } from "../../fuselage/theme/2024/world/components/themes-slider/themes-slider"
 import { Logo } from "../../fuselage/theme/2025/sa/blocks/logo-ticker/logo-ticker"
 
-import { VideoSection, Section } from '../../fuselage/theme/2026/sa/blocks/section'
-import { ThemeGraphic } from '../../fuselage/theme/2026/sa/theme/theme-graphic'
 
-import { SlideoutCard } from "../../fuselage/components/slideout-card/slideout-card"
-import { ContentCard } from '../../fuselage/components/content-card/content-card'
-import { LayoutGallery } from "../../fuselage/components/layout-gallery/layout-gallery"
-import { ContentCard as Post } from "../../fuselage/theme/2024/world/components/content-card/content-card"
-import { VideoTestimonial } from '../../fuselage/theme/2025/sa/components/video-testimonial/video-testimonial'
-import { ImpactCard } from "../../ui/components/impact-card"
 
 
 import CSS from '../../fuselage/theme/2025/sa/css/homepage.module.css'
+import M from '../../fuselage/theme/2027/sa/css/homepage.module.css'
 
 
 import { THEMES_DATA, THEMES_DATA_AR } from "./themes"
@@ -129,32 +120,11 @@ const SPEAKER_DATA = [
         company: "Ministry of Tourism of Saudi Arabia",
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDU5MjM3ODY=`,
-        photoUrl: 'https://static.swapcard.com/public/images/20c5160961534044aaa6f2f8bb4724a8.jpeg',
-        fullName: 'Dr. Abdullah Alabdulkarim',
-        jobTitle: 'Deputy Minister for Sectorial Human Capability Development',
-        company: 'Ministry of Transport and Logistics Services',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDYwNTk5MDI=`,
-        photoUrl: 'https://static.swapcard.com/public/images/b8726b4ca45c4ca397593a045c5de2c7.jpeg',
-        fullName: 'Omar Alabdullatif',
+        url: ``,
+        photoUrl: 'https://cms.thebench.com/assets/img/avatars/hossam-al-basrawi.jpg',
+        fullName: 'Hossam Al-Basrawi',
         jobTitle: 'Chief Executive Officer',
-        company: 'Blacksand',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQ1NTIyMzA=`,
-        photoUrl: 'https://static.swapcard.com/public/images/e0dd7c51a08843e895efbd901a951270.jpeg',
-        fullName: 'Meshari Al Nahari',
-        jobTitle: 'Chief Executive Officer',
-        company: 'ASFAR & Aseer Investment Company',
-    },
-    {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDU4NzkyMDQ=`,
-        photoUrl: 'https://static.swapcard.com/public/images/712a64a2e79245bfbe56770cc0001b6b.jpeg',
-        fullName: 'Ragad Al-Nasser',
-        jobTitle: 'Chief Investment Officer',
-        company: 'Jabal Ohod Holding',
+        company: 'Alrajhi Capital',
     },
     {
         url: `/sa/speakers/RXZlbnRQZW9wbGVfNDM5NTQ2Mjc=`,
@@ -164,18 +134,46 @@ const SPEAKER_DATA = [
         company: 'TAIBA',
     },
     {
-        url: ``,
-        photoUrl: 'https://cms.thebench.com/assets/img/avatars/hossam-al-basrawi.jpg',
-        fullName: 'Hossam Al-Basrawi',
-        jobTitle: 'Chief Executive Officer',
-        company: 'Alrajhi Capital',
+        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDU4NzkyMDQ=`,
+        photoUrl: 'https://static.swapcard.com/public/images/712a64a2e79245bfbe56770cc0001b6b.jpeg',
+        fullName: 'Ragad Al-Nasser',
+        jobTitle: 'Chief Investment Officer',
+        company: 'Jabal Ohod Holding',
     },
     {
-        url: `/sa/speakers/RXZlbnRQZW9wbGVfNDQxOTMxMjE=`,
-        photoUrl: 'https://static.swapcard.com/public/images/8744509ba8354d31abfb050affddc9ed.jpeg',
-        fullName: 'Samer Sabra',
-        jobTitle: 'Chief Hospitality Officer',
-        company: 'Jabal Omar Development Company',
+        url: "/sa/speakers/RXZlbnRQZW9wbGVfNDQ4NDEzNDk=",
+        photoUrl: "https://static.swapcard.com/public/images/f227dbf17e4d4d29b4b9356884540bf6.jpeg",
+        fullName: "Elie Younes",
+        jobTitle: "Global Chief Development Officer",
+        company: "Radisson Hotel Group",
+    },
+    {
+        url: "/sa/speakers/RXZlbnRQZW9wbGVfNDQ1MjQzNzQ=",
+        photoUrl: "https://static.swapcard.com/public/images/d88108daca3e4bc9a44a4cbe24dedf7e.jpeg",
+        fullName: "Neil Gallagher",
+        jobTitle: "Chief Executive Officer",
+        company: "Soneva",
+    },
+    {
+        url: "/sa/speakers/RXZlbnRQZW9wbGVfNDQ3OTY2NjE=",
+        photoUrl: "https://static.swapcard.com/public/images/7d34e14c50844c798e3f50bbe5d8412d.jpeg",
+        fullName: "Amin Ismail",
+        jobTitle: "Managing Director",
+        company: "Certares",
+    },
+    {
+        url: "/sa/speakers/RXZlbnRQZW9wbGVfNDQ3NzcwMjA=",
+        photoUrl: "https://static.swapcard.com/public/images/db4f3f2f6e1c4593a93f44e02468e4a6.jpeg",
+        fullName: "Dr. Stephan Hungeling",
+        jobTitle: "Chief Executive Officer",
+        company: "H World International",
+    },
+    {
+        url: "/sa/speakers/RXZlbnRQZW9wbGVfNDU1NTg2NDA=",
+        photoUrl: "https://static.swapcard.com/public/images/f3093718477246cf8be606a2b027aea4.jpeg",
+        fullName: "Michael Levie",
+        jobTitle: "Co-Founder",
+        company: "citizenM",
     },
 ]
 const QUOTES_DATA = [
@@ -598,6 +596,45 @@ const JOB_FUNCTION_DATA = [
 
 
 
+const AUDIENCE_DATA = [
+    {
+        title: `Developers`,
+        titleAr: `المطورون`,
+        image: `/assets/img/sa/homepage/attends-01.jpg`,
+        items: [`Mega-project development companies`, `Secondary cities development teams`, `Branded residences developers`, `Mixed-use and masterplan developers`],
+        itemsAr: [`شركات تطوير المشاريع العملاقة`, `فرق تطوير المدن الثانوية`, `مطورو الوحدات السكنية ذات العلامات الفندقية`, `مطورو المشاريع متعددة الاستخدامات والمخططات الرئيسية`],
+    },
+    {
+        title: `Investors`,
+        titleAr: `المستثمرون`,
+        image: `/assets/img/sa/homepage/attends-investors.jpg`,
+        items: [`Institutional hotel investors`, `Banks`, `Family offices`, `Private equity funds`, `Sovereign wealth funds`],
+        itemsAr: [`المستثمرون في قطاع الفنادق من المؤسسات`, `البنوك`, `المكاتب العائلية`, `صناديق الأسهم الخاصة`, `صناديق الثروة السيادية`],
+    },
+    {
+        title: `Operators`,
+        titleAr: `المشغّلون`,
+        image: `/assets/img/sa/homepage/attends-03.jpg`,
+        items: [`Saudi-owned hotel operators`, `International hotel chains`, `Boutique and lifestyle brands`, `Wellness and spa brands`],
+        itemsAr: [`مشغلو الفنادق السعوديون`, `سلاسل الفنادق الدولية`, `فنادق البوتيك والعلامات التجارية الخاصة بأسلوب الحياة`, `العلامات التجارية في مجال العافية والسبا`],
+    },
+    {
+        title: `Government officials`,
+        titleAr: `الجهات الحكومية`,
+        image: `/assets/img/sa/homepage/attends-govt.jpg`,
+        items: [`Ministry of Tourism`, `Ministry of Investment`, `Saudi Tourism Authority`, `Royal Commissions`],
+        itemsAr: [`وزارة السياحة`, `وزارة الاستثمار`, `الهيئة السعودية للسياحة`, `الهيئات الملكية`],
+    },
+    {
+        title: `Enablers and advisors`,
+        titleAr: `مُمكّنو القطاع والمستشارون`,
+        image: `/assets/img/sa/homepage/attends-enablers.jpg`,
+        items: [`Lawyers`, `Consultants`, `Designers`],
+        itemsAr: [`المحامون`, `المستشارون`, `المصممون`],
+    },
+]
+
+
 export default function Page({ seomatic, partners }) {
     
     const { locale } = useRouter()
@@ -619,6 +656,7 @@ export default function Page({ seomatic, partners }) {
             <Header
 				site={`/sa`}
                 handle={`Saudi Arabia`}
+                logo={`/assets/site/sa/fhs-sa-madinah-edition-logo.png`}
                 event={header.data.event}
 				mainMenu={header.data.mainMenu}
 				ctas={header.data.event.headerCtas}
@@ -627,615 +665,372 @@ export default function Page({ seomatic, partners }) {
             
 
 
-            {/* INTRO */}
-            <VideoSection
-                backgroundClass={`bg-primary`}
-                video={'https://cms.thebench.com/assets/video/fhs-2025-sa-wrap-up-opt.mp4'}
-                poster={'/assets/video/fhs-2025-sa-wrap-up-poster.jpg'}
-                minHeight={isDesktop ? `100vh` : `50vh`}
-                themeGraphics={
-                    <div>
-                        {
-                            isDesktop
-                            ?
-                                <ThemeGraphic
-                                    src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                                    width={`45vw`}
-                                    coordinates={{ top: `50vh` }}
-                                />
-                            :
-                                <ThemeGraphic
-                                    src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                                    width={`50vw`}
-                                    coordinates={{ top: `33vh` }}
-                                />
-                        }
-                    </div>
-                }
-            >
+            {/* HERO */}
+            <section className={M.hero}>
+                <video className={M.heroImage} poster="/assets/video/fhs-2025-sa-wrap-up-poster.jpg" autoPlay muted loop playsInline>
+                    <source src="https://cms.thebench.com/assets/video/fhs-2025-sa-wrap-up-opt.mp4" type="video/mp4" />
+                </video>
 
-                {/* <div className="bg-white p-xs center balance" style={{ position: `absolute`, top: 0, right: 0, left: 0 }}>
-                    <p><strong>FHS Saudi Arabia is currently going ahead as scheduled.</strong> We place the utmost importance on the safety and wellbeing of our customers, partners and colleagues. The situation in the region is under close review, and we will provide updates here should circumstances change.</p>
-                </div> */}
-               
-                <div style={{ height: isDesktop ? `20vh` : `30vh`}}/>
-                <motion.p 
-                    initial={{ y: 100, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ type: "spring", bounce: 0.25 }}
-                    className={` fs-0 fw-600 c-white lh-1 center mx-auto`}
-                >
-                    Thank You For Joining Us!
-                </motion.p>
-                
-                <motion.p 
-                    initial={{ y: 100, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ type: "spring", bounce: 0.25 }}
-                    className={`fs-4 fw-300 c-white center mt-xs`} 
-                >
-                    See you 21-22 March 2027
-                </motion.p>
+                <div className={`${M.wrap} ${M.heroContent}`}>
+                    <p className={M.heroKicker}>Future Hospitality Summit Saudi Arabia</p>
+                    <h1 className={M.heroTitle}>The Kingdom’s hospitality investment forum comes to Madinah</h1>
 
-                <Fade>
-                    <div className="mt-md center button-grid w-100pc">
-                        <Pop inline>
-                            <Button 
-                                href={'/sa/post-event-report-2026'} 
-                                theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                decal={'fs-5 fw-600'} 
-                                accent
-                            >2026 Post-event Report</Button>
-                        </Pop>
-
-                        <Pop inline>
-                            <Button 
-                                href={'/sa/post-event-resources'} 
-                                theme={{ background: `var(--secondary)`, hover: `var(--secondary-dark)`, color: `white`}} 
-                                decal={'fs-5 fw-600'} 
-                                accent
-                            >2026 Post-event Resources</Button>
-                        </Pop>
-                    </div>
-                </Fade>
-
-                
-
-
-
-                <section className="mt-lg">
-                    <div className={CSS.boxout}>
-
-                        {/* HOST SPONSOR */}
-                       
-                        <div className="center">
-                            <p className="fs-4 fw-600 c-accent caps pb-xs">{locale === 'ar' ? "الجهات الراعية المستضيفة" : "Host Partners"}</p>
-                        
-                            <Pop>
-                                <div className={`${CSS.hostSponsorLogoWrapper} mx-auto px-xs`}>
-                                    <div className={CSS.hostSponsorLogo}>
-                                        <Image src={`/assets/site/sa/mandarin-oriental-al-faisaliah-logo-update.png`} layout="fill"/>
-                                    </div>
-                                    <div className={CSS.hostSponsorLogo}>
-                                        <Image src={`/assets/site/sa/al-khozama-logo-2025.png`} layout="fill"/>
-                                    </div>
-                                </div>
-                            </Pop>
+                    <div className={M.heroMeta}>
+                        <div>
+                            <p className={M.heroDate}>13-14 April 2027</p>
+                            <p className={M.heroPlace}>Madinah, Saudi Arabia</p>
                         </div>
-                       
-                        <div className="center">
-                            <p className="fs-4 fw-600 c-accent caps pb-xs">{locale === 'ar' ? "Strategic Enabler" : "Strategic Enabler"}</p>
-                        
-                            <Pop>
-                                <div className={`${CSS.hostSponsorLogoWrapper} mx-auto px-xs`}>
-                                    <div className={CSS.hostSponsorLogo}>
-                                        <Image src={`/assets/site/sa/ministry-of-tourism.png`} layout="fill"/>
-                                    </div>
-                                </div>
-                            </Pop>
-                        </div>                      
 
+                        <div className={M.heroHost}>
+                            <p>{locale === 'ar' ? 'الشريك المستضيف' : 'Host Partner'}</p>
+                            <img src="/assets/site/sa/knowledge-economic-city-logo.png" alt="Knowledge Economic City" />
+                        </div>
+
+                        <div className={M.heroActions}>
+                            <Link href="/sa/register-interest"><a className={M.buttonSolid}>Register interest</a></Link>
+                            <Link href="/sa/become-a-partner"><a className={M.buttonGhost}>Become a partner</a></Link>
+                        </div>
                     </div>
-                </section>
-
-
-
-
-            </VideoSection>
-
-
-
-            {/* WHO ATTENDED */}
-            <section className="block bg-primary-2-dark">
-                <div className="container center">
-                    <p className="fs-2 fw-600 c-white">FHS Saudi Arabia 2026 in Numbers</p>
-                </div>
-
-                <div className="container columns-5 gap-sm mt-md">
-                    <ImpactCard figure={2} prefix={"$"} unit={"bn+"} label={"Worth of Deals Signed"} />
-                    <ImpactCard figure={4.8} prefix={"$"} unit={"tn"} label={"in AUM"} />
-                    <ImpactCard figure={1000} label={"Attendees"} />
-                    <ImpactCard figure={20} unit={"%"} label={"Investor Audience"} />
-                    <ImpactCard figure={32} label={"Countries"} />
-                </div>
-
-                <div className="container mt-xs center">
-                    <Pop><ArrowButton href={`/sa/about-fhs-saudi`} theme={{ arrow: `white`, border: `white`, label: `white`}}>View Attendance Breakdown</ArrowButton></Pop>
-                    {/* <Pop><ArrowButton href={`https://youtu.be/LSqHtk9V-zg`} target='_blank' theme={{ arrow: `white`, border: `white`, label: `white`}}>Watch Highlights</ArrowButton></Pop> */}
                 </div>
             </section>
 
-            
 
-            {/* VIDEO HIGHLIGHTS */}
-            {/* <section className="block bg-primary-2 o-hidden" style={{ position: `relative`, overflow: 'hidden' }}>
-                <div className={`${CSS.highlightVideoGrid} container`}>
-                    <Slide><p className='fs-1 fw-700 lh-1'>Highlights from FHS Saudi Arabia 2026</p></Slide>
-                    <VideoPlayer theme={`dark`} maxWidth={`100`} videoUrl={`https://youtu.be/LSqHtk9V-zg`} />
+
+            {/* WHY MADINAH */}
+            <section className={M.why}>
+                <div className={`${M.wrap} ${M.whyGrid}`}>
+                    <figure className={M.whyFigure}>
+                        <img src="/assets/img/sa/madinah/madinah-gate-day.jpg" alt="Madinah Gate beside the Haramain High-Speed Rail station" />
+                        <figcaption className={M.caption}>Madinah Gate, Knowledge Economic City, beside the Haramain High-Speed Rail station</figcaption>
+                    </figure>
+
+                    <div>
+                        <h2 className={M.heading}>Why Madinah, and why now</h2>
+                        <p className={M.lede}>For the first time, FHS Saudi Arabia meets in Madinah. Investors, developers and operators will see the opportunity where it is being built.</p>
+
+                        <ul className={M.reasons}>
+                            <li>
+                                <p className={M.reasonTitle}>Ownership has opened</p>
+                                <p className={M.reasonText}>Knowledge Economic City has been designated as one of Madinah’s zones for non-Saudi real estate ownership, subject to the applicable eligibility requirements.</p>
+                            </li>
+                            <li>
+                                <p className={M.reasonTitle}>Demand is proven</p>
+                                <p className={M.reasonText}>Madinah welcomed 10.4 million visitors in the first half of 2025, and hotel occupancy stood at 76% in early 2026.</p>
+                            </li>
+                            <li>
+                                <p className={M.reasonTitle}>Delivery is under way</p>
+                                <p className={M.reasonText}>SAR 24bn is committed across the masterplan, with 13 hotels and 5,142 keys signed with Hilton, Marriott, IHG, Radisson and Archipelago.</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </section> */}
+            </section>
 
-            
+
+
+            {/* HOST PARTNER */}
+            <section className={M.host}>
+                <img className={M.hostImage} src="/assets/img/sa/madinah/kec-masterplan.jpg" alt="Knowledge Economic City masterplan in Madinah at night" loading="lazy" />
+
+                <div className={M.hostIntro}>
+                    <div className={M.wrap}>
+                        <h2 className={M.heading}>Inside Knowledge Economic City</h2>
+                        <p className={M.lede}>Our Host Partner is building a 6.8 million sqm city within Madinah. Its four destinations are the setting for the summit.</p>
+                    </div>
+                </div>
+
+                <div className={M.wrap}>
+                    <ul className={M.districts}>
+                        <li>
+                            <p className={M.districtName}>Madinah Gate</p>
+                            <p className={M.districtText}>A transit-oriented development linked to the Haramain High-Speed Rail station, with a 325-room DoubleTree by Hilton now open.</p>
+                        </li>
+                        <li>
+                            <p className={M.districtName}>Multaqa AlMadinah</p>
+                            <p className={M.districtText}>A SAR 2.2bn mixed-use centre for the city. Phase one includes a 390-room Hilton and a 750-seat conference hall.</p>
+                        </li>
+                        <li>
+                            <p className={M.districtName}>Islamic World District</p>
+                            <p className={M.districtText}>980,000 sqm planned for more than 20,000 hotel rooms, with the first 13 hotels signed to five operators.</p>
+                        </li>
+                        <li>
+                            <p className={M.districtName}>Al Alyaa</p>
+                            <p className={M.districtText}>A SAR 2.6bn residential-led district with a 177-room hotel and 480 serviced apartments.</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+
+            {/* RIYADH EDITIONS */}
+            <section className={M.riyadh}>
+                <div className={`${M.wrap} ${M.riyadhGrid}`}>
+                    <div className={M.mosaic}>
+                        <img src="/assets/img/sa/homepage/sa-03.jpg" alt="Guests outside Al Faisaliah in Riyadh during FHS Saudi Arabia" />
+                        <img src="/assets/img/sa/homepage/fhs-2025-04.jpg" alt="The Summit Stage at FHS Saudi Arabia" />
+                        <img src="/assets/img/sa/homepage/fhs-2025-05.jpg" alt="Delegates networking at FHS Saudi Arabia" />
+                    </div>
+
+                    <div>
+                        <ul className={M.years}>
+                            <li>2023</li>
+                            <li>2024</li>
+                            <li>2025</li>
+                            <li>2026</li>
+                        </ul>
+                        <h2 className={M.heading}>Four editions in Riyadh</h2>
+                        <p className={M.lede}>Since 2023, FHS Saudi Arabia has brought the Kingdom’s hospitality investment community together in Riyadh. Investors, developers, operators and government leaders have met here to turn Saudi Arabia’s tourism pipeline into partnerships and investment.</p>
+
+                        <div className={M.thanks}>
+                            <img src="/assets/site/sa/al-khozama-logo-2025.png" alt="Al Khozama Investment Company" />
+                            <p>Our thanks to Al Khozama Investment Company, Host Partner of FHS Saudi Arabia in Riyadh, for its support.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            {/* 2026 IN NUMBERS */}
+            <section className={M.numbers}>
+                <div className={M.wrap}>
+                    <div className={M.sectionHead}>
+                        <h2 className={M.heading}>The 2026 edition in numbers</h2>
+                        <div className={M.links}>
+                            <Link href="/sa/about-fhs-saudi"><a className={M.link}>Attendance breakdown</a></Link>
+                            <Link href="/sa/post-event-report-2026"><a className={M.link}>Post-event report</a></Link>
+                            <Link href="/sa/post-event-resources"><a className={M.link}>Post-event resources</a></Link>
+                        </div>
+                    </div>
+
+                    <ul className={M.figures}>
+                        <li><p className={M.figure}>$2bn+</p><p className={M.figureLabel}>worth of deals signed</p></li>
+                        <li><p className={M.figure}>$4.8tn</p><p className={M.figureLabel}>in assets under management</p></li>
+                        <li><p className={M.figure}>1,000+</p><p className={M.figureLabel}>attendees</p></li>
+                        <li><p className={M.figure}>20%</p><p className={M.figureLabel}>investor audience</p></li>
+                        <li><p className={M.figure}>32</p><p className={M.figureLabel}>countries</p></li>
+                    </ul>
+                </div>
+            </section>
+
+
+
             {/* SIGNINGS & ANNOUNCEMENTS */}
-            <Section
-                backgroundClass={`bg-primary`}
-                themeGraphics={
-                    isDesktop
-                    ?   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            opacity={.4}
-                            coordinates={{ left: `-20%`, top: `-10%`}}
-                        />
-                    :   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            opacity={.4}
-                            width="150vw"
-                            coordinates={{ top: `30%`}}
-                        />
-                        
-                }
-            >
+            <section className={`${M.section} ${M.dark}`}>
+                <div className={M.wrap}>
+                    <div className={M.sectionHead}>
+                        <h2 className={M.heading}>{locale === 'ar' ? `إعلانات وتوقيعات عام 2026` : `Signed on stage in 2026`}</h2>
+                        <div className={M.links}>
+                            <Link href="/sa/content-library/category/press-room"><a className={M.link}>{locale === 'ar' ? `أخر الأخبار والمستجدات` : `Latest news and updates`}</a></Link>
+                        </div>
+                    </div>
 
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-2 fw-600 c-white">
-                            {
-                                locale === 'ar'
-                                    ? `إعلانات وتوقيعات عام 2026`
-                                    : `2026 Signings & Announcements`
-                            }
-                        </p>
-                    </Fade>
+                    <ul className={M.news}>
+                        {
+                            ARTICLE_DATA.map((article, index) => (
+                                <li key={index}>
+                                    <Link href={article.url}>
+                                        <a className={M.newsItem}>
+                                            <img src={article.heroUrl} alt="" loading="lazy" />
+                                            <p className={M.newsTitle}>{article.title}</p>
+                                        </a>
+                                    </Link>
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
+            </section>
 
-                <div className={`container columns-4 gap-xs`}>
-                    {
-                        ARTICLE_DATA.map((article, index) => (
-                            <ContentCard
-                                key={index}
-                                heroUrl={article.heroUrl}
-                                heading={article.title}
-                                excerpt={article.excerpt}
-                                url={article.url}
-                            />
-                        ))
-                    }
-                </div>
 
-                <div className="container center">
-                    <Pop>
-                        <ArrowButton 
-                            href={ '/sa/content-library/category/press-room' } 
-                            theme={{ arrow: `white`, border: `white`, label: `white` }}
-                            target={`_blank`}
-                        >
-                            {
-                                locale === 'ar'
-                                    ? `أخر الأخبار والمستجدات`
-                                    : `Latest News & Updates`
-                            }
-                            
-                        </ArrowButton>
-                    </Pop>
-                </div>
-            </Section>
 
-            
             {/* PHOTOS */}
-            <Section backgroundClass={`bg-primary-2`}>
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-2 fw-600 c-white">2026 in Photos</p>
-                    </Fade>
-                </div>
+            <section className={`${M.section} ${M.darker}`}>
+                <div className={M.wrap}>
+                    <div className={M.sectionHead}>
+                        <h2 className={M.heading}>2026 in photos</h2>
+                        <div className={M.links}>
+                            <a className={M.link} href="https://www.flickr.com/photos/benchevents/albums/" target="_blank" rel="noreferrer">All event photos</a>
+                        </div>
+                    </div>
 
-                <div className="container columns-3 gap-xs mt-md">
-                    {
-                        photos.map( (photo, index) => (
-                            <Pop key={index}>
-                                <div key={photo.id} style={{ position: `relative`}}>
-                                    <Image src={photo.hero[0].url} width={photo.hero[0].width} height={photo.hero[0].height} layout={`responsive`} alt="" style={{ borderRadius: `.5rem`}} />
-                                </div>
-                            </Pop>
-                        ))
-                    }
+                    <div className={M.photoGrid}>
+                        {
+                            photos.map((photo, index) => (
+                                <img key={index} src={photo.hero[0].url} alt="" loading="lazy" />
+                            ))
+                        }
+                    </div>
                 </div>
+            </section>
 
-                <div className="container mt-xs center">
-                    <Pop><ArrowButton href={`https://www.flickr.com/photos/benchevents/albums/`} target='_blank' theme={{ arrow: `white`, border: `white`, label: `white`}}>Event photos</ArrowButton></Pop>
-                </div>
-            </Section>
 
 
             {/* SPEAKERS */}
-            <Section
-                backgroundClass={`bg-primary-2-dark`}
-                themeGraphics={
-                    isDesktop
-                    ?   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            width={`60vw`}
-                            opacity={.4}
-                            coordinates={{ bottom: 0, right: `-30vh`}}
-                        />
-                    :   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            opacity={.4}
-                            width="180vw"
-                            coordinates={{ top: `30%`}}
-                        />
-                }
-            > 
-
-                <div className="container center">
-                    <Fade>
-                        <p className="fs-2 fw-600 c-white">2026 Speakers</p>
-                    </Fade>
-                </div>
-
-                <div className="container columns-5 gap-sm" dir={ locale === 'ar' ? 'rtl' : ''}>
-                    {
-                        SPEAKER_DATA.map( (profile, index) => (
-                            <Pop key={index}>
-                                <SpeakerCard
-                                    url={profile.url}
-                                    photoUrl={profile.photoUrl}
-                                    fullName={profile.fullName}
-                                    jobTitle={profile.jobTitle}
-                                    company={profile.company}
-                                    color={'white'}
-                                />
-                            </Pop>
-                        ))
-                    }
-                </div>
-
-                <div className="container center">
-                    <div className="button-grid">
-                        <Pop>
-                            <ArrowButton 
-                                href={ '/sa/speakers' } 
-                                theme={{ arrow: `white`, border: `white`, label: `white`}}
-                            >View all 2026 Speakers</ArrowButton>
-                        </Pop>
+            <section className={`${M.section} ${M.mid}`}>
+                <div className={M.wrap}>
+                    <div className={M.sectionHead}>
+                        <div>
+                            <h2 className={M.heading}>On stage in 2026</h2>
+                            <p className={M.lede}>Saudi government and capital, alongside international operators and investors.</p>
+                        </div>
+                        <div className={M.links}>
+                            <Link href="/sa/speakers"><a className={M.link}>All 2026 speakers</a></Link>
+                        </div>
                     </div>
+
+                    <ul className={M.speakers} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+                        {
+                            SPEAKER_DATA.map((profile, index) => (
+                                <li key={index}>
+                                    <Link href={profile.url}>
+                                        <a className={M.speaker}>
+                                            <img src={profile.photoUrl} alt="" loading="lazy" />
+                                            <p className={M.speakerName}>{profile.fullName}</p>
+                                            <p className={M.speakerRole}>{profile.jobTitle}</p>
+                                            <p className={M.speakerCompany}>{profile.company}</p>
+                                        </a>
+                                    </Link>
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
-    
-                
-            </Section>
+            </section>
 
 
 
             {/* PARTNERS */}
-            <section className="block">
-                <div className="container center">
-                    <Pop><p className="fs-2 fw-600 c-primary balance">Thank You to Our Partners</p></Pop>
-                </div>
+            <section className={`${M.section} ${M.light}`}>
+                <div className={M.wrap}>
+                    <div className={M.sectionHead}>
+                        <h2 className={M.heading}>Thank you to our 2026 partners</h2>
+                        <div className={M.links}>
+                            <Link href="/sa/become-a-partner"><a className={M.link}>Become a partner</a></Link>
+                        </div>
+                    </div>
 
-                <div className="container mt-lg">
-                    <LayoutGallery>
-                        <PartnerGroup partnerData={partners} start={0} end={15} />
-                        <PartnerGroup partnerData={partners} start={16} end={30} />
-                        <PartnerGroup partnerData={partners} start={31} end={45} />
-                        <PartnerGroup partnerData={partners} start={46} end={60} />
-                    </LayoutGallery>
+                    <ul className={M.logos}>
+                        {
+                            partners.filter(partner => partner.logoUrl).map(partner => (
+                                <li key={partner.id}><img src={partner.logoUrl} alt={partner.name} loading="lazy" /></li>
+                            ))
+                        }
+                    </ul>
                 </div>
             </section>
+
 
 
             {/* PARTNER TESTIMONIALS */}
-            <Section
-                backgroundClass={`bg-primary`}
-                themeGraphics={
-                    isDesktop
-                    ?   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            opacity={.4}
-                            coordinates={{ bottom: `-20%`, right: `-10%`}}
-                        />
-                    :   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            opacity={.4}
-                            width="150vw"
-                            coordinates={{ top: `30%`}}
-                        />
-                        
-                }
-            >
-                <div className="container center">
-                    <p className="fs-1 fw-600">Partner Testimonials</p>
-                </div>
+            <section className={`${M.section} ${M.dark}`}>
+                <div className={`${M.wrap} ${M.quotes}`}>
+                    <figure className={M.quote}>
+                        <blockquote>“Honestly, it’s the biggest hospitality summit we know. It’s a great event and very much B2B.”</blockquote>
+                        <figcaption>
+                            <p className={M.quoteName}>Omar Al-Abdullatif</p>
+                            <p className={M.quoteRole}>Chief Executive Officer, Blacksand</p>
+                            <a className={M.link} href="https://www.youtube.com/watch?v=Ro4k0OytXig" target="_blank" rel="noreferrer">Watch the interview</a>
+                        </figcaption>
+                    </figure>
 
-                <div className={`container columns-2 maxw-60 gap-md`}>
-                    <VideoTestimonial entry={{
-                        "id": "223023",
-                        "videoShareUrl": "https://www.youtube.com/watch?v=Ro4k0OytXig",
-                        "fullName": "Omar Al-Abdullatif",
-                        "jobTitle": "Chief Executive Officer",
-                        "organisation": "Blacksand",
-                        "testimonial": "Honestly, it's the biggest hospitality summit we know. It's a great event and very much B2B."
-                    }} />
-                   
-                    <VideoTestimonial entry={{
-                        "id": "223023",
-                        "videoShareUrl": "https://www.youtube.com/watch?v=mMAbGByBfJE",
-                        "fullName": "Marko Vucinic",
-                        "jobTitle": "Executive Director - Investment & Asset Management",
-                        "organisation": "Knowledge Economic City",
-                        "testimonial": "We love the platform. It connected us to a lot of partners that we deal with on day-to-day basis."
-                    }} />
-
-                </div>
-            </Section>
-
-            
-
-            {/* INVESTORS */}
-            <section className="bg-primary-2">        
-                <div className="container py-md" dir={`ltr`}>
-                    <Pop><p className="fs-2 fw-600 balance center pb-sm">Investors Who Joined Us</p></Pop>
-                    {
-                        locale === 'ar'
-                        ?
-                            <Ticker duration={40} direction={1}>
-                                {
-                                    INVESTORS_AR.map((investor, index) => (
-                                        <div key={index} style={{ marginRight: 10 }}>
-                                            <p className="fs-5 fw-500"><span className="c-accent">&bull;</span> {investor.title}</p>
-                                        </div>
-                                    ))
-                                }
-                            </Ticker>
-                        :
-                            <Ticker duration={40}>
-                                {
-                                    INVESTORS.map((investor, index) => (
-                                        <div key={index} style={{ marginRight: 10 }}>
-                                            <p className="fs-5 fw-500"><span className="c-accent">&bull;</span> {investor.title}</p>
-                                        </div>
-                                    ))
-                                }
-                            </Ticker>
-                    }
+                    <figure className={M.quote}>
+                        <blockquote>“We love the platform. It connected us to a lot of partners that we deal with on day-to-day basis.”</blockquote>
+                        <figcaption>
+                            <p className={M.quoteName}>Marko Vucinic</p>
+                            <p className={M.quoteRole}>Executive Director - Investment & Asset Management, Knowledge Economic City</p>
+                            <a className={M.link} href="https://www.youtube.com/watch?v=mMAbGByBfJE" target="_blank" rel="noreferrer">Watch the interview</a>
+                        </figcaption>
+                    </figure>
                 </div>
             </section>
-     
 
-            
+
+
             {/* WHO ATTENDS */}
-            <section className="block bg-primary-2">
-                <div className="container center">
-                    <p className="fs-2 fw-500">Who Attended</p>
+            <section className={`${M.section} ${M.mid}`}>
+                <div className={M.wrap}>
+                    <h2 className={M.heading}>Who was in the room in 2026</h2>
+                    <p className={M.tickerLabel}>Investors who joined us</p>
                 </div>
 
-                <div
-                    className="container"
-                    dir={locale === 'ar' ? 'rtl' : ''}
-                    style={{
-                        display: `flex`,
-                        gap: `var(--space-sm)`,
-                        flexWrap: `wrap`,
-                        justifyContent: `center`
-                    }}
-                >
+                <div className={M.ticker} dir={`ltr`}>
+                    <Ticker duration={40} direction={locale === 'ar' ? 1 : -1}>
+                        {
+                            (locale === 'ar' ? INVESTORS_AR : INVESTORS).map((investor, index) => (
+                                <p key={index} className={M.tickerItem}>{investor.title}</p>
+                            ))
+                        }
+                    </Ticker>
+                </div>
 
-                    <SlideoutCard title={locale === 'ar' ? `المطورون` : `Developers`} imageSrc={`/assets/img/sa/homepage/attends-01.jpg`}>
-                        <div className="formatted">
-                            {
-                                locale === 'ar'
-                                    ?
+                <div className={M.wrap}>
+                    <ul className={M.audience} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+                        {
+                            AUDIENCE_DATA.map((group, index) => (
+                                <li key={index}>
+                                    <img src={group.image} alt="" loading="lazy" />
+                                    <p className={M.audienceTitle}>{locale === 'ar' ? group.titleAr : group.title}</p>
                                     <ul>
-                                        <li>شركات تطوير المشاريع العملاقة</li>
-                                        <li>فرق تطوير المدن الثانوية</li>
-                                        <li>مطورو الوحدات السكنية ذات العلامات الفندقية</li>
-                                        <li>مطورو المشاريع متعددة الاستخدامات والمخططات الرئيسية</li>
+                                        {
+                                            (locale === 'ar' ? group.itemsAr : group.items).map((item, index) => (
+                                                <li key={index}>{item}</li>
+                                            ))
+                                        }
                                     </ul>
-                                    :
-                                    <ul>
-                                        <li>Mega-Project Development Companies</li>
-                                        <li>Secondary Cities Development Teams</li>
-                                        <li>Branded Residences Developers</li>
-                                        <li>Mixed-Use & Masterplan Developers</li>
-                                    </ul>   
-                            }
-                        </div>
-                    </SlideoutCard>
-
-                    <SlideoutCard title={locale === 'ar' ? `المستثمرون` : `Investors`} imageSrc={`/assets/img/sa/homepage/attends-investors.jpg`}>
-                        <div className="formatted">
-                            {
-                                locale === 'ar'
-                                    ?
-                                    <ul>
-                                        <li>المستثمرون في قطاع الفنادق من المؤسسات</li>
-                                        <li>البنوك</li>
-                                        <li>المكاتب العائلية</li>
-                                        <li>صناديق الأسهم الخاصة</li>
-                                        <li>صناديق الثروة السيادية</li>
-                                    </ul>
-                                    :
-                                    <ul>
-                                        <li>Institutional Hotel Investors</li>
-                                        <li>Banks</li>
-                                        <li>Family Offices</li>
-                                        <li>Private Equity Funds</li>
-                                        <li>Sovereign Wealth Funds</li>
-                                    </ul>
-                            }
-                        </div>
-                    </SlideoutCard>
-
-                    <SlideoutCard title={locale === 'ar' ? `المشغّلون` : `Operators`} imageSrc={`/assets/img/sa/homepage/attends-03.jpg`}>
-                        <div className="formatted">
-                            {
-                                locale === 'ar'
-                                    ?
-                                    <ul>
-                                        <li>مشغلو الفنادق السعوديون</li>
-                                        <li>سلاسل الفنادق الدولية</li>
-                                        <li>فنادق البوتيك والعلامات التجارية الخاصة بأسلوب الحياة</li>
-                                        <li>العلامات التجارية في مجال العافية والسبا</li>
-                                    </ul>
-                                    :
-                                    <ul>
-                                        <li>Saudi-Owned Hotel Operators</li>
-                                        <li>International Hotel Chains</li>
-                                        <li>Boutique & Lifestyle Brands</li>
-                                        <li>Wellness & Spa Brands</li>
-                                    </ul>
-                            }
-                        </div>
-                    </SlideoutCard>
-
-                    <SlideoutCard title={locale === 'ar' ? `الجهات الحكومية` : `Government Officials`} imageSrc={`/assets/img/sa/homepage/attends-govt.jpg`}>
-                        <div className="formatted">
-                            {
-                                locale === 'ar'
-                                    ?
-                                    <ul>
-                                        <li>وزارة السياحة</li>
-                                        <li>وزارة الاستثمار</li>
-                                        <li>الهيئة السعودية للسياحة</li>
-                                        <li>الهيئات الملكية</li>
-                                    </ul>
-                                    :
-                                    <ul>
-                                        <li>Ministry of Tourism</li>
-                                        <li>Ministry of Investment</li>
-                                        <li>Saudi Tourism Authority</li>
-                                        <li>Royal Commissions</li>
-                                    </ul>
-                            }
-                        </div>
-                    </SlideoutCard>
-
-                    <SlideoutCard title={locale === 'ar' ? `مُمكّنو القطاع والمستشارون` : `Enablers & Advisors`} imageSrc={`/assets/img/sa/homepage/attends-enablers.jpg`}>
-                        <div className="formatted">
-                            {
-                                locale === 'ar'
-                                    ?
-                                    <ul>
-                                        <li>المحامون</li>
-                                        <li>المستشارون</li>
-                                        <li>المصممون</li>
-                                    </ul>
-                                    :
-                                    <ul>
-                                        <li>Lawyers</li>
-                                        <li>Consultant</li>
-                                        <li>Designers</li>
-                                    </ul>
-                            }
-                        </div>
-                    </SlideoutCard>
-                    
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
             </section>
 
 
 
             {/* THEMES */}
-            <Section
-                backgroundClass={`bg-primary`}
-                themeGraphics={
-                    isDesktop
-                    ?   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            coordinates={{ top: `-20vh` }}
-                            opacity={.25}
-                        />
-                    :   <ThemeGraphic
-                            src={`/assets/theme/sa-2026/fhs-sa-2026-theme.svg`}
-                            opacity={.4}
-                            width="50vw"
-                            coordinates={{ top: `-5vh`}}
-                        />
-                }
-            >
+            <section className={`block bg-primary ${M.themes}`}>
                 <ThemesSlider
                     heading={locale === 'ar' ? `محاور فعالية 2026` : `2026 Event Themes` }
                     data={locale === 'ar' ? THEMES_DATA_AR : THEMES_DATA}
-                    // link={'/sa/ai-session-summaries-2025'}
-                    // linkLabel={locale === 'ar' ? `تحميل ملخصات جلسات بالذكاء الاصطناعي` : 'Download AI Session Summaries'}
                 />
-            </Section>
-
-
-
-            {/* THOUGHT LEADERSHIP */}
-            <section className="block bg-primary-2">
-                <div className="container center">
-                    <Pop><p className="fs-2 fw-600 balance">{locale === 'ar' ? 'القيادة الفكرية في قلب الحدث' : 'Thought Leadership in Action'}</p></Pop>
-                </div>
-
-                <div className="container columns-3 gap-sm" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
-                    {
-                        (locale === 'ar' ? THOUGHT_LEADERSHIP_AR : THOUGHT_LEADERSHIP).map((entry, index) => (
-                            <Post
-                                key={index}
-                                url={`/egypt/content-library/${entry.slug}`}
-                                heroUrl={entry.contentLibraryHero && entry.contentLibraryHero[0] ? entry.contentLibraryHero[0].url : null}
-                                heading={entry.title}
-                                // excerpt={entry.excerpt}
-                                contentTypes={entry.contentTypes}
-                                postDate={entry.postDate}
-                                type={entry.contentTypes[0].slug}
-                            />
-                        ))
-                    }
-                </div>
-
-                <div className="container center">
-                    <div className="button-grid">
-                        <Pop>
-                            <ArrowButton href={ '/sa/content-library/category/industry-news' } theme={{ arrow: `white`, border: `white`, label: `white`}} >
-                                {locale === 'ar' ? 'أخبار القطاع' : 'Industry News'}
-                            </ArrowButton>
-                        </Pop>
-                        <Pop>
-                            <ArrowButton href={ '/sa/content-library/category/podcast' } theme={{ arrow: `white`, border: `white`, label: `white`}} >
-                                {locale === 'ar' ? 'البودكاست' : 'Podcasts'}
-                            </ArrowButton>
-                        </Pop>
-                        <Pop>
-                            <ArrowButton href={ '/sa/content-library/category/press-room' } theme={{ arrow: `white`, border: `white`, label: `white`}} >
-                                {locale === 'ar' ? 'غرفة المؤتمرات الصحفية' : 'Press Room'}
-                            </ArrowButton>
-                        </Pop>
-                    </div>
-                </div>
             </section>
 
 
 
-            
+            {/* THOUGHT LEADERSHIP */}
+            <section className={`${M.section} ${M.mid}`}>
+                <div className={M.wrap}>
+                    <div className={M.sectionHead}>
+                        <h2 className={M.heading}>{locale === 'ar' ? 'القيادة الفكرية في قلب الحدث' : 'Thought leadership in action'}</h2>
+                        <div className={M.links}>
+                            <Link href="/sa/content-library/category/industry-news"><a className={M.link}>{locale === 'ar' ? 'أخبار القطاع' : 'Industry news'}</a></Link>
+                            <Link href="/sa/content-library/category/podcast"><a className={M.link}>{locale === 'ar' ? 'البودكاست' : 'Podcasts'}</a></Link>
+                            <Link href="/sa/content-library/category/press-room"><a className={M.link}>{locale === 'ar' ? 'غرفة المؤتمرات الصحفية' : 'Press room'}</a></Link>
+                        </div>
+                    </div>
 
+                    <ul className={M.posts} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+                        {
+                            (locale === 'ar' ? THOUGHT_LEADERSHIP_AR : THOUGHT_LEADERSHIP).map((entry, index) => (
+                                <li key={index}>
+                                    <Link href={`/sa/content-library/${entry.slug}`}>
+                                        <a className={M.newsItem}>
+                                            {
+                                                entry.contentLibraryHero && entry.contentLibraryHero[0] &&
+                                                <img src={entry.contentLibraryHero[0].url} alt="" loading="lazy" />
+                                            }
+                                            <p className={M.postType}>{entry.contentTypes[0].slug === 'podcast' ? 'Listen' : 'Read'}</p>
+                                            <p className={M.newsTitle}>{entry.title}</p>
+                                        </a>
+                                    </Link>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </section>
 
-
-            
-
-
-            
 
 
             <Footer/>

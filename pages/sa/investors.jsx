@@ -21,7 +21,6 @@ import { SpeakerCarousel } from "../../fuselage/theme/2024/world/blocks/speaker-
 import { SpeakerCard } from '../../fuselage/components/speaker-card/speaker-card'
 import { BarChart, Field } from '../../fuselage/theme/2025/sa/components/bar-chart/bar-chart'
 import { Button } from "../../fuselage/theme/2024/world/components/button/button"
-import { PopOverlay } from "../../fuselage/components/popoverlay/popoverlay"
 
 
 
@@ -715,13 +714,6 @@ export default function Page () {
             </section> */}
 
 
-            <PopOverlay id={"sa2026prospectus"}>
-                <div className="formatted p-xs center">
-                    <img src="/assets/img/sa/2026-prospectus-cover.png" alt="" width={300} />
-                    <p className="fs-2 fw-600 c-primary lh-1 mt-sm">FHS Saudia Arabia 2026 Prospectus</p>
-                    <p className="mt-sm"><Button href={`/sa/prospectus-download`}>Download</Button></p>
-                </div>
-            </PopOverlay>
 
 
             <Footer />

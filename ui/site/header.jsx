@@ -13,7 +13,7 @@ import { Button } from "../buttons/button"
 
 import CSS from './header.module.css'
 
-export const Header = ({ site, handle, event, mainMenu, ctas, children }) => {
+export const Header = ({ site, handle, logo, event, mainMenu, ctas, children }) => {
 
     const [navActive, setNavActive] = useState(false)
 
@@ -28,12 +28,16 @@ export const Header = ({ site, handle, event, mainMenu, ctas, children }) => {
                     <section className={CSS.brand}>
                         <Link href={site ? `${site}` : `/`}>
                             <a style={{ textDecoration: `none`}}>
-                                <FhsLockup
-                                    region={handle}
-                                    leftColor={`white`}
-                                    topColor={`var(--secondary)`}
-                                    bottomColor={`var(--accent)`}
-                                />
+                                {
+                                    logo
+                                        ? <img src={logo} alt={`FHS ${handle}`} className={CSS.logo} />
+                                        : <FhsLockup
+                                            region={handle}
+                                            leftColor={`white`}
+                                            topColor={`var(--secondary)`}
+                                            bottomColor={`var(--accent)`}
+                                        />
+                                }
                             </a>
                         </Link>
                     </section>

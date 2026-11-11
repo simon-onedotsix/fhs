@@ -179,7 +179,7 @@ function Speakers({ seomatic, speakers }) {
 						{
 							speakers.length ?
 							moveSpeakersToEndById (customOrderedSpeakers, speakerIds).map( speaker => {
-								if ( speaker.type ) return (
+								return (
 									<div key={speaker.id}>
 										<Link href={`/sa/speakers/${speaker.id}`}>
 											<a className={CSS.avatar}>
