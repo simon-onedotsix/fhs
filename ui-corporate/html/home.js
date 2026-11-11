@@ -141,7 +141,7 @@ const html = String.raw`<a class="skip" href="#main">Skip to content</a>
           <span class="index__meta">
             <img class="index__logo" src="/corporate/assets/logos/events/fhs-saudi-arabia-madinah.png" alt="FHS Saudi Arabia Madinah Edition" width="562" height="200" loading="lazy">
             <time datetime="2027-04-13">13–14 April 2027</time>
-            <span class="index__venue">DoubleTree by Hilton at Madinah Gate</span>
+            <span class="index__venue">DoubleTree by Hilton at Madinah&nbsp;Gate</span>
           </span>
           <span class="index__note">The Kingdom’s hospitality investment summit comes to Madinah for the first time.</span>
           <span class="index__go">Visit FHS Saudi Arabia <svg class="chev" viewBox="0 0 10 16" aria-hidden="true"><path d="M2 1l6 7-6 7"/></svg></span>
