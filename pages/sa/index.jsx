@@ -667,7 +667,7 @@ export default function Page({ seomatic, partners }) {
 
             {/* HERO */}
             <section className={M.hero}>
-                <video className={M.heroImage} poster="/assets/video/fhs-2025-sa-wrap-up-poster.jpg" autoPlay muted loop playsInline>
+                <video className={M.heroImage} poster="/assets/img/sa/madinah/hero-poster.jpg" autoPlay muted loop playsInline>
                     <source src="https://cms.thebench.com/assets/video/fhs-2025-sa-wrap-up-opt.mp4" type="video/mp4" />
                 </video>
 
