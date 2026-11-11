@@ -6458,10 +6458,10 @@ const QUOTES_DATA = [
     },
     
     {
-        avatarUrl: 'https://static.swapcard.com/public/images/136d76e425474e319018d787ca327ebc.jpeg',
-        quote: "Greater Cairo is 18% of the entire African pipeline.",
-        fullName: "Trevor Ward",
-        title: "Managing Director, W Hospitality Group"
+        avatarUrl: 'https://static.swapcard.com/public/images/636cd02601f74bec870cd89b0b3698b5.jpeg',
+        quote: "You can build buildings in months or years. But if you wanna develop communities, that will take decades.",
+        fullName: "Mohamed Amer",
+        title: "CEO of El Gouna & Managing Director at Orascom Development Egypt"
     },
     
     {
