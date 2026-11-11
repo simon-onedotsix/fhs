@@ -1111,11 +1111,11 @@ export const FHS_EGYPT = {
             "metaTitle": null,
             "metaDescription": null,
             "headerCtas": [
-                {
-                    "label": "Register Here",
-                    "hyperlink": "/egypt/purchase-pass",
-                    "openInNewWindow": false
-                },
+                // {
+                //     "label": "Register Here",
+                //     "hyperlink": "/egypt/purchase-pass",
+                //     "openInNewWindow": false
+                // },
                 {
                     "label": "Become a Partner",
                     "hyperlink": "/egypt/forms/become-a-partner",

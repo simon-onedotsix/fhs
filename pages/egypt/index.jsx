@@ -157,9 +157,9 @@ export default function Home ({ data, content, partners, speakers }) {
                     <p className="fs-6">The conversation has started, see you in November.</p>
                 </div>
 
-                <div className="container center">
+                {/* <div className="container center">
                     <Pop><Button href={`/egypt/purchase-pass`} label={`Register Now`} /></Pop>
-                </div>
+                </div> */}
 
                 <div className="container pt-xs columns-3 gap-sm">
                     <Pop><img src="/assets/img/egypt/homepage/FHS-2026-06-prelaunch-01.jpg" alt="" style={{ width: `100%`, borderRadius: `.5rem`}} /></Pop>
@@ -199,9 +199,9 @@ export default function Home ({ data, content, partners, speakers }) {
                     </div>
                 </div>
 
-                <div className="container center">
+                {/* <div className="container center">
                     <Pop><ButtonKeyline href={`/egypt/purchase-pass`} target={`_blank`} rel={`noreferrer`}>Purchase Pass</ButtonKeyline></Pop>
-                </div>
+                </div> */}
             </section>
 
             
