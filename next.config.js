@@ -171,6 +171,13 @@ const nextConfig = {
 				permanent: false,
 				locale: false,
 			},
+			// FHS Saudi Arabia: no Arabic version for now, every /ar/sa URL goes to the English homepage
+			{
+				source: '/ar/sa/:path*',
+				destination: '/sa',
+				permanent: false,
+				locale: false,
+			},
 
 		]
 	},
