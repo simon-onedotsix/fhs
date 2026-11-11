@@ -5,14 +5,19 @@ import { Fade, Slide, Pop } from '../../../../../animation/animation'
 
 import CSS from './quotation.module.css'
 
-export const Quotation = ({ avatarUrl, quote, fullName, title, landscape }) => {
+export const Quotation = ({ avatarUrl, quote, fullName, title, landscape, background }) => {
 
     const isDesktop = useCustomMediaQuery('(min-width: 600px)')
 
     return (
 
         <Pop>
-            <div className={`${CSS.layout} ${ landscape ? CSS.landscape : null}`}>
+			<div
+				className={`${CSS.layout} ${landscape ? CSS.landscape : null}`}
+				style={{
+					background: background ? `hsl( from ${background} h s calc(l - 4) )` : 'hsl( from var(--primary) h s calc(l - 4) )' 
+				}}
+			>
                 <aside>
                     <Pop delay={.1}>
                         <div className={CSS.avatarContainer}>

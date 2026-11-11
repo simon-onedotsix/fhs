@@ -662,7 +662,7 @@ export default function Home({ globals, entry, seomatic, partners }) {
 
                 <div className="container center">
                     <Fade>
-                        <p className="fs-1 fw-400 c-white">2026 Signings & Announcements</p>
+                        <p className="fs-1 fw-400 c-white">2026 Signings &amp; Announcements</p>
                     </Fade>
                 </div>
 
@@ -683,7 +683,7 @@ export default function Home({ globals, entry, seomatic, partners }) {
                 <div className="container center">
                     <Pop>
                         <ArrowButton 
-                            href={ '/sa/content-library/category/press-room' } 
+                            href={ '/world/content-library/category/press-room' } 
                             theme={{ arrow: `white`, border: `white`, label: `white` }}
                             target={`_blank`}
                         >

@@ -26,7 +26,7 @@ export const ContentCard = ({ url, heroUrl, heading, excerpt, type }) => {
 
             <div className='formatted pt-xs'>
                 <Link href={url}>
-                    <a className={`${CSS.titleLink} h fs-4 fw-600 lh-2 mt-xxs`}>{heading}</a>
+                    <a className={`${CSS.titleLink} h fs-5 fw-600 lh-2 mt-xxs`}>{heading}</a>
                 </Link>
 
                 {
