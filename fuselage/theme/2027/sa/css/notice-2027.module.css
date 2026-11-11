@@ -1,0 +1,46 @@
+.notice {
+    position: relative;
+    z-index: 3;
+    background-color: #1c0a2b;
+    color: white;
+}
+.inner {
+    width: min(100% - 3rem, 82rem);
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 3rem;
+    padding-block: 1.25rem;
+}
+.text {
+    flex: 1 1 28rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.text a {
+    display: inline-block;
+    padding-block: .6rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: underline;
+}
+.host {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: .875rem;
+}
+.host img {
+    display: block;
+    height: 3.5rem;
+    width: auto;
+}
+
+/* the agenda's filter and search buttons float at the top left on small screens */
+@media (max-width: 799px) {
+    .agenda .inner {
+        padding-top: 5.5rem;
+    }
+}

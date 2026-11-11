@@ -54,6 +54,11 @@ const nextConfig = {
 				permanent: true,
 			},
 			{
+				source: '/sa/purchase-pass',
+				destination: '/sa/register-interest',
+				permanent: false,
+			},
+			{
 				source: '/sa/grif',
 				destination: '/sa/',
 				permanent: true,

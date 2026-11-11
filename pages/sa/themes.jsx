@@ -10,6 +10,7 @@ import parse from 'html-react-parser'
 import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
 import { FHS_SA as header } from '../../fixtures/nav'
+import { Notice2027 } from '../../fuselage/theme/2027/sa/notice-2027'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { HeroUnitImage } from '../../fuselage/theme/2024/world/blocks/hero-unit-image/hero-unit-image'
@@ -179,6 +180,7 @@ export default function Themes ({ sessions }) {
                     mainMenu={header.data.mainMenu}
                     ctas={header.data.event.headerCtas}
                 />
+                <Notice2027 />
 
 
                 <HeroUnitImage imageUrl={'/assets/site/ae/hero-about-fhs-world.jpg'}>

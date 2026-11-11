@@ -586,85 +586,85 @@ export const FHS_SA = {
                         "navUrl": "/sa/become-a-partner",
                         "target": false
                     },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "215",
-                        "title": "Floor Plan",
-                        "navUrl": "https://floorplan.live/interactive/shows/4222/views/3/plan",
-                        "target": true
-                    },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "217",
-                        "title": "3D Virtual Tour",
-                        "navUrl": "https://my.matterport.com/show/?m=n62kHSDpDKm",
-                        "target": true
-                    }
+                    // {
+                        // "__typename": "navigation_Entry",
+                        // "id": "215",
+                        // "title": "Floor Plan",
+                        // "navUrl": "https://floorplan.live/interactive/shows/4222/views/3/plan",
+                        // "target": true
+                    // },
+                    // {
+                        // "__typename": "navigation_Entry",
+                        // "id": "217",
+                        // "title": "3D Virtual Tour",
+                        // "navUrl": "https://my.matterport.com/show/?m=n62kHSDpDKm",
+                        // "target": true
+                    // }
                 ]
             },
-            {
-                "__typename": "section_Entry",
-                "id": "219",
-                "title": "Event Features",
-                "children": [
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "221",
-                        "title": "Webinar",
-                        "navUrl": "/sa/webinar",
-                        "target": false
-                    },
-                    {
-                        "__typename": "navigation_Entry",
-                        "id": "237382",
-                        "title": "FHS Startup Zone",
-                        "navUrl": "/sa/startup-den",
-                        "target": false
-                    },
-                    {
-                        "__typename": "subsection_Entry",
-                        "id": "223",
-                        "title": "Awards",
-                        "children": [
-                            {
-                                "__typename": "navigation_Entry",
-                                "id": "225",
-                                "title": "Leadership Award",
-                                "navUrl": "/sa/leadership-award",
-                                "target": false
-                            },
-                        ]
-                    },
-                    {
-                        "__typename": "subsection_Entry",
-                        "id": "231",
-                        "title": "Experiences",
-                        "children": [
-                            {
-                                "__typename": "navigation_Entry",
-                                "id": "235",
-                                "title": "Networking",
-                                "navUrl": "/sa/networking",
-                                "target": false
-                            },
-                            {
-                                "__typename": "navigation_Entry",
-                                "id": "237",
-                                "title": "Sports & Wellness",
-                                "navUrl": "/sa/sports-and-wellness",
-                                "target": false
-                            },
-                            {
-                                "__typename": "navigation_Entry",
-                                "id": "239",
-                                "title": "FHSWomenPower",
-                                "navUrl": "/sa/fhswomenpower",
-                                "target": false
-                            }
-                        ]
-                    }
-                ]
-            },
+            // {
+                // "__typename": "section_Entry",
+                // "id": "219",
+                // "title": "Event Features",
+                // "children": [
+                    // {
+                        // "__typename": "navigation_Entry",
+                        // "id": "221",
+                        // "title": "Webinar",
+                        // "navUrl": "/sa/webinar",
+                        // "target": false
+                    // },
+                    // {
+                        // "__typename": "navigation_Entry",
+                        // "id": "237382",
+                        // "title": "FHS Startup Zone",
+                        // "navUrl": "/sa/startup-den",
+                        // "target": false
+                    // },
+                    // {
+                        // "__typename": "subsection_Entry",
+                        // "id": "223",
+                        // "title": "Awards",
+                        // "children": [
+                            // {
+                                // "__typename": "navigation_Entry",
+                                // "id": "225",
+                                // "title": "Leadership Award",
+                                // "navUrl": "/sa/leadership-award",
+                                // "target": false
+                            // },
+                        // ]
+                    // },
+                    // {
+                        // "__typename": "subsection_Entry",
+                        // "id": "231",
+                        // "title": "Experiences",
+                        // "children": [
+                            // {
+                                // "__typename": "navigation_Entry",
+                                // "id": "235",
+                                // "title": "Networking",
+                                // "navUrl": "/sa/networking",
+                                // "target": false
+                            // },
+                            // {
+                                // "__typename": "navigation_Entry",
+                                // "id": "237",
+                                // "title": "Sports & Wellness",
+                                // "navUrl": "/sa/sports-and-wellness",
+                                // "target": false
+                            // },
+                            // {
+                                // "__typename": "navigation_Entry",
+                                // "id": "239",
+                                // "title": "FHSWomenPower",
+                                // "navUrl": "/sa/fhswomenpower",
+                                // "target": false
+                            // }
+                        // ]
+                    // }
+                // ]
+            // },
             {
                 "__typename": "section_Entry",
                 "id": "519",
@@ -772,8 +772,8 @@ export const FHS_SA = {
             "metaDescription": null,
             "headerCtas": [
                 {
-                    "label": "Register Interest for 2027",
-                    "hyperlink": "/sa/purchase-pass",
+                    "label": "Register Interest",
+                    "hyperlink": "/sa/register-interest",
                     "openInNewWindow": false
                 },
                 {

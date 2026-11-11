@@ -158,7 +158,7 @@ export default function Page () {
                 <div className="container center formatted">
                     <Pop inline>
                         <Link href="https://share.hsforms.com/1aIMLqXtbRs-DNR1lhYzD7g8nd8z" target="_blank">
-                            <a className="button fs-5 caps">Register Interest for 2027</a>
+                            <a className="button fs-5 caps">Register Interest</a>
                         </Link>
                     </Pop>
                 </div>

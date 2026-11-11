@@ -17,6 +17,7 @@ import { LenisScroller } from '../../fuselage/animation/lenis-scroller'
 import { EventsBar } from "../../ui/site/eventsbar"
 import { Header } from '../../ui/site/header'
 import { FHS_SA as header } from '../../fixtures/nav'
+import { Notice2027 } from '../../fuselage/theme/2027/sa/notice-2027'
 import { Footer } from '../../fuselage/theme/2025/sa/common/footer/footer'
 
 import { TagIcon, CompassIcon, StopwatchIcon, LocationIcon } from "../../fuselage/components/icons/icons"
@@ -667,6 +668,7 @@ export default function Agenda ({ sessions, locations }) {
 				mainMenu={header.data.mainMenu}
 				ctas={header.data.event.headerCtas}
 			/>
+			<Notice2027 agenda />
 
 
 			{/* THEMES */}

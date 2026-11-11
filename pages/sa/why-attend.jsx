@@ -119,7 +119,7 @@ export default function WhyAttend () {
                             <div className="formatted mt-sm">
                                 <p className="fw-600">FHS Saudi Arabia offers investors personalised access to local and cross-border partnerships. Investors gain exclusive access to the Investor Lounge built for curated, private meetings and investor-only gatherings during the summit. </p>
                                 <p className='mt-sm'>
-                                    <a className='button fs-6' href={`/sa/purchase-pass`}>
+                                    <a className='button fs-6' href={`/sa/register-interest`}>
                                         Register as Investor
                                     </a>
                                 </p>

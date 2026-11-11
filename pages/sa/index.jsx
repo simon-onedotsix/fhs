@@ -678,7 +678,7 @@ export default function Page({ seomatic, partners }) {
                     <div className={M.heroMeta}>
                         <div>
                             <p className={M.heroDate}>13-14 April 2027</p>
-                            <p className={M.heroPlace}>Madinah, Saudi Arabia</p>
+                            <p className={M.heroPlace}>DoubleTree by Hilton at Madinah Gate, Madinah</p>
                         </div>
 
                         <div className={M.heroHost}>
