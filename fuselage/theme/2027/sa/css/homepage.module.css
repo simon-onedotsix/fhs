@@ -363,6 +363,11 @@
     padding-left: 1.25rem;
     border-left: 1px solid rgba(255, 255, 255, .3);
 }
+/* five years have to fit a 360px phone */
+@media (max-width: 479px) {
+    .years { gap: .7rem; font-size: 1rem; }
+    .years li + li { padding-left: .7rem; }
+}
 .thanks {
     display: flex;
     align-items: center;

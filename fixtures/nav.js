@@ -1287,7 +1287,7 @@ export const LIVING_FHS_SA = {
             {
                 "__typename": "navigation_Entry",
                 "id": "ngdrtyh",
-                "title": "Agenda",
+                "title": "2026 Agenda",
                 "navUrl": "/sa/living/agenda",
                 "children": []
             },
@@ -1308,8 +1308,8 @@ export const LIVING_FHS_SA = {
             "metaDescription": null,
             "headerCtas": [
                 {
-                    "label": "Register Here",
-                    "hyperlink": "/sa/purchase-pass",
+                    "label": "Register Interest",
+                    "hyperlink": "/sa/register-interest",
                     "openInNewWindow": false
                 },
                 {

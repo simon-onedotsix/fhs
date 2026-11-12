@@ -30,7 +30,6 @@ import { SpeakerCarousel } from '../../../fuselage/theme/2024/world/blocks/speak
 import { SpeakerCard } from '../../../fuselage/components/speaker-card/speaker-card'
 import { AgendaSpeakerCard } from '../../../fuselage/components/agenda-speaker-card/agenda-speaker-card'
 
-import { ThemesSlider } from "../../../ui/modules/themes-slider"
 import { EventCard } from "../../../ui/components/event-card"
 import { Slider } from '../../../ui/components/slider'
 
@@ -148,11 +147,24 @@ const QUOTES_DATA = [
     }
 ]
 
-import { THEMES_DATA } from '../../living'
 import { TESTIMONIALS_DATA } from '../../living'
-import { ASSET_CLASS_DATA } from '../../living/why-now'
 import { EVENT_DATA } from '../..'
-const livingEventIds = new Set(['246252', '259029', '314682', '246252333'])
+import L from '../../../fuselage/theme/2027/sa/css/living-sa.module.css'
+
+const TESTIMONIALS = TESTIMONIALS_DATA.filter(testimonial => testimonial.fullName !== 'Rico Picenoni')
+
+const ASSET_CLASSES = [
+    { image: '/assets/img/living/why/asset-01.jpg', title: 'Branded residences', text: 'Homes sold under a hotel or lifestyle brand, often funding the wider development through presales.' },
+    { image: '/assets/img/living/why/asset-02.jpg', title: 'Student accommodation', text: 'Purpose-built student housing, run as an operating business.' },
+    { image: '/assets/img/living/why/asset-03.jpg', title: 'Senior living', text: 'Housing and care for later life, managed by specialist operators.' },
+    { image: '/assets/img/living/why/asset-04.jpg', title: 'Serviced living', text: 'Serviced apartments and aparthotels, where residential meets hospitality.' },
+    { image: '/assets/img/living/why/asset-05.jpg', title: 'Co-living', text: 'Private rooms with shared space and services, operated at scale.' },
+    { image: '/assets/img/living/why/asset-06.jpg', title: 'Shared ownership', text: 'Part-ownership models that widen access to residential property.' },
+    { image: '/assets/img/living/why/asset-07.jpg', title: 'Club concepts and hostels', text: 'Membership clubs and social hostels built around community.' },
+    { image: '/assets/img/living/why/asset-08.jpg', title: 'Mixed-use developments', text: 'Hotels, residences, retail and wellness planned as one community.' },
+]
+
+const livingEventIds = new Set(['246252', '259029', '314682'])
 const FHS_EVENTS = EVENT_DATA.filter(event => !livingEventIds.has(event.id))
 const LIVING_EVENTS = EVENT_DATA.filter(event => livingEventIds.has(event.id))
 
@@ -289,10 +301,10 @@ export default function Page ({ sessions, speakers }) {
             <Head>
                 <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
                 <meta content="https://cms.thebench.com/assets/content-library/img/FHS-Living/FHS-Living-Launch-PR.jpg" property="og:image"></meta>
-                <title>FHS Living Saudi Arabia</title>
-                <meta name="description" content="Held adjacently with FHS Saudi Arabia, this exclusive one-day forum explores the thriving sector of Branded Residences."></meta>
+                <title>FHS Living at FHS Saudi Arabia | 14 April 2027, Madinah</title>
+                <meta name="description" content="FHS Living at FHS Saudi Arabia Madinah Edition, 14 April 2027, DoubleTree by Hilton at Madinah Gate. The forum for branded residences, serviced living and mixed-use communities."></meta>
             </Head>
-            
+
             <EventsBar site={'/sa/living'} />
             <Header
                 site={`/sa/living`}
@@ -304,195 +316,176 @@ export default function Page ({ sessions, speakers }) {
 				ctas={header.data.event.headerCtas}
             />
 
-            
 
             <HeroUnitVideo video={'https://cms.thebench.com/assets/video/brf-2025-asia.mp4'} poster={'/assets/video/brf-2025-asia.jpg'}>
-                
-                {/* transition boxout */}
-                <section style={
-                    isDesktop
-                        ? { position: `absolute`, top: `var(--space-sm)`, left: `var(--space-sm)` }
-                        : { paddingBottom: `2rem` }
-                }>
-                    <Pop>
-                        <div style={{ width: isDesktop ? `16rem` : `100%`, padding: `1.5rem 2rem`, backgroundColor: `var(--burgundy)`, borderRadius: `1rem`, textAlign: `center` }}>    
-                        
-                            <Pop delay={.1}>
-                                <p className='fs-5 lh-2'><strong>Branded Residences Forum</strong> has been rebranded to <strong>FHS&nbsp;Living</strong></p>
-                            </Pop>
-                            
-                        </div>
-                    </Pop>
-                </section>
-
-                <p className='fs-0 fw-600 caps lh-1 center maxw-50 mx-auto'>FHS Living</p>
-                <p className='fs-3 fw-600 c-white caps center mt-sm'>23 March 2027</p>
-                <p className='fs-4 fw-600 center'>Mandarin Oriental Al Faisaliah, Saudi Arabia</p>
-
-
-                {/* <div className="mt-md center">
-                    <Pop>
-                        <Button href={'/sa/living/agenda'} label={`View FHS Living 2026 Agenda`} inverse/>
-                    </Pop>
-                </div> */}
-
-
+                <div className={L.heroText}>
+                    <p className={L.heroPart}>At FHS Saudi Arabia Madinah Edition</p>
+                    <h1 className={L.heroTitle}>FHS Living</h1>
+                    <p className={L.heroDate}>14 April 2027</p>
+                    <p className={L.heroPlace}>DoubleTree by Hilton at Madinah Gate, Madinah</p>
+                    <div className={L.heroActions}>
+                        <Button href={'/sa/register-interest'} label={`Register Interest`} inverse />
+                        <Link href="/sa/living/agenda"><a className={L.ghost}>View the 2026 agenda</a></Link>
+                    </div>
+                </div>
             </HeroUnitVideo>
 
 
-            
-            {/* SPONSORS */}
-            <section className="block" style={{ position: `relative`, zIndex: 2}}>
-                <div className="container center">
-                    <p className='fs-1 fw-600'>2026 Partners</p>
-                </div>
-                
-                <div className="container maxw-70 py-md" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
-                    <PartnerLogo logoUrl={`/assets/img/brf/jabal-omar.svg`} maxWidth={8} />
-                    <PartnerLogo logoUrl={`/assets/img/brf/accor-one-living.svg`} maxWidth={16} />
-                    {/* <PartnerLogo logoUrl={`/assets/img/brf/marriott.svg`} maxWidth={12} /> */}
-                    <PartnerLogo logoUrl={`/assets/img/brf/sectorlight-inverse.png`} maxWidth={12} />
-                </div>
+            {/* ABOUT */}
+            <section className={L.section} style={{ position: `relative`, zIndex: 2 }}>
+                <div className={`${L.wrap} ${L.aboutGrid}`}>
+                    <div>
+                        <h2 className={L.heading}>The living sectors, on day two of FHS Saudi Arabia</h2>
+                        <p className={L.lede}>FHS Living is the forum for branded residences, serviced living and mixed-use communities. On 14 April 2027 it meets in Madinah for the first time, as part of FHS Saudi Arabia Madinah Edition.</p>
+                        <p className={L.lede}>Developers, investors, operators and brands share the room with the Kingdom’s hospitality investment community. The 2027 programme and speakers will be announced soon.</p>
+                    </div>
 
-                <div className="container center">
-                    <p className='fs-4 fw-600'>Media Partner</p>
+                    <dl className={L.facts}>
+                        <div>
+                            <dt>Date</dt>
+                            <dd>14 April 2027, day two of the summit</dd>
+                        </div>
+                        <div>
+                            <dt>Venue</dt>
+                            <dd>DoubleTree by Hilton at Madinah Gate, Madinah</dd>
+                        </div>
+                        <div>
+                            <dt>Part of</dt>
+                            <dd>FHS Saudi Arabia Madinah Edition, 13-14 April 2027</dd>
+                        </div>
+                        <div>
+                            <dt>Host Partner of FHS Saudi Arabia</dt>
+                            <dd><img src="/assets/site/sa/knowledge-economic-city-logo.png" alt="Knowledge Economic City" /></dd>
+                        </div>
+                    </dl>
                 </div>
-                <div className="container maxw-70" style={{ display: `flex`, gap: `var(--space-md)`, justifyContent: `center`, flexWrap: `wrap` }}>
-                    <PartnerLogo logoUrl={`/assets/img/brf/bresi.png`} maxWidth={12} />
+            </section>
+
+
+            {/* KNOWLEDGE ECONOMIC CITY */}
+            <section className={`${L.section} ${L.cream}`}>
+                <div className={`${L.wrap} ${L.kecGrid}`}>
+                    <figure className={L.kecFigure}>
+                        <img src="/assets/img/sa/madinah/kec-masterplan.jpg" alt="Knowledge Economic City masterplan in Madinah at night" loading="lazy" />
+                        <figcaption>Knowledge Economic City, Madinah</figcaption>
+                    </figure>
+
+                    <div>
+                        <h2 className={L.heading}>Living, where it is being built</h2>
+                        <p className={L.lede}>The forum takes place inside Knowledge Economic City, a 6.8 million sqm city within Madinah where homes, serviced apartments and hotels are planned side by side.</p>
+                        <ul className={L.points}>
+                            <li>
+                                <p className={L.pointTitle}>Ownership has opened</p>
+                                <p className={L.pointText}>Knowledge Economic City has been designated as one of Madinah’s zones for non-Saudi real estate ownership, subject to the applicable eligibility requirements.</p>
+                            </li>
+                            <li>
+                                <p className={L.pointTitle}>A residential-led district</p>
+                                <p className={L.pointText}>Al Alyaa is a SAR 2.6bn residential-led district with a 177-room hotel and 480 serviced apartments.</p>
+                            </li>
+                            <li>
+                                <p className={L.pointTitle}>Mixed use at the centre</p>
+                                <p className={L.pointText}>Multaqa AlMadinah is a SAR 2.2bn mixed-use centre for the city. Phase one includes a 390-room Hilton and a 750-seat conference hall.</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
 
-            {/* WHY LIVING? */}
-            <section className="block pt-md">
-                <div className="container center">
-                    <p className="fs-1 fw-600">Why Living?</p>
-                </div>
+            {/* ASSET CLASSES */}
+            <section className={L.section}>
+                <div className={L.wrap}>
+                    <h2 className={L.heading}>What the forum covers</h2>
+                    <p className={L.lede}>Eight asset classes where residential real estate and hospitality meet.</p>
 
-                <div className="container columns-3 gap-md">
-                    {
-                        ASSET_CLASS_DATA.map((card, index) => (
-                            <article key={index} className="formatted">
-                                <Pop>
-                                    <img src={card.imageUrl} alt="" width={`100%`} style={{ borderRadius: `1rem`}} />
-                                </Pop>
-                                <p className="fs-4 fw-600 mt-xxs">{card.heading}</p>
-                                <p>{card.body}</p>
-                            </article>
-                        ))
-                    }
+                    <ul className={L.assets}>
+                        {
+                            ASSET_CLASSES.map(asset => (
+                                <li key={asset.title}>
+                                    <img src={asset.image} alt="" loading="lazy" />
+                                    <h3 className={L.assetTitle}>{asset.title}</h3>
+                                    <p className={L.assetText}>{asset.text}</p>
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
             </section>
 
-               
 
-            {/* MARKET OVERVIEW */}
-            {/* <section className="block bg-default">
-                <div className="container formatted maxw-90">
-                    <Callout 
-                        image={{ url:'/assets/img/brf/brf-2024-image-08.jpg', width:2000, height:1333 }}
-                        caption={"The Rixos Dubai Islands Residences"}
-                    >
-                        <Fade>
-                            <p className='fs-2 fw-600 lh-2'>Market Overview</p>
-                            <p className="fs-4 c-white">The branded residences sector has grown <strong>180% globally in the past decade</strong>, with 788 projects currently running and an additional <strong>900+</strong> launching globally (or in pipeline) over the next 5 to 6 years.</p>
-                        </Fade>
-                    </Callout>
+            {/* 2026 FORUM */}
+            <section className={`${L.section} ${L.deep}`}>
+                <div className={`${L.wrap} ${L.pastGrid}`}>
+                    <div>
+                        <h2 className={L.heading}>The 2026 forum in Riyadh</h2>
+                        <p className={L.lede}>FHS Living was part of FHS Saudi Arabia 2026 in Riyadh. See who spoke and what was discussed.</p>
+                        <div className={L.pastActions}>
+                            <Button href={'/sa/living/agenda'} label={`View the 2026 agenda`} inverse />
+                        </div>
+                    </div>
+
+                    <div>
+                        <div className={L.logoGroup}>
+                            <p className={L.logoLabel}>2026 Partners</p>
+                            <ul className={L.logos}>
+                                <li><img src="/assets/img/brf/jabal-omar.svg" alt="Jabal Omar" /></li>
+                                <li><img src="/assets/img/brf/accor-one-living.svg" alt="Accor One Living" /></li>
+                                <li><img src="/assets/img/brf/sectorlight-inverse.png" alt="Sectorlight" /></li>
+                            </ul>
+                        </div>
+                        <div className={L.logoGroup}>
+                            <p className={L.logoLabel}>2026 Media Partner</p>
+                            <ul className={L.logos}>
+                                <li><img src="/assets/img/brf/bresi.png" alt="BRESI" /></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </section> */}
-
-
-
-            {/* ASSET CLASSES? */}
-            <section className={`block bg-secondary`}>
-                <div className="container center pb-sm">
-                    <p className="fs-1 fw-600">Asset Classes</p>
-                </div>
-
-                <ThemesSlider
-                    heading={`Asset Classes` }
-                    data={THEMES_DATA}
-                    link={''}
-                    linkLabel={''}
-                />
             </section>
 
-            
+
             {/* TESTIMONIALS */}
             <section className="block bg-default">
                 <div className="container maxw-70">
 
-                    <QuoteSlider 
+                    <QuoteSlider
                         color={'white'}
                         heading={"Testimonials"}
-                        testimonials={TESTIMONIALS_DATA} />
+                        testimonials={TESTIMONIALS} />
 
                 </div>
             </section>
 
 
-
-
-            {/* QUOTES */}
-            {/* <section className="block bg-secondary o-hidden">
-                <div className="container">
-                    <p className="fs-2 fw-600 caps center">What the industry is saying</p>
+            {/* FHS LIVING EVENTS */}
+            <section className={`${L.section} ${L.deep}`}>
+                <div className={`${L.wrap} ${L.eventsHead}`}>
+                    <h2 className={L.heading}>Upcoming FHS Living events</h2>
                 </div>
 
-                <div className={`container columns-3 gap-md`}>
+                <div className={`${L.wrap} ${L.events}`}>
                     {
-                        QUOTES_DATA.map((quote, index) => (
-                            <Quotation
-                                key={index}
-                                avatarUrl={quote.avatarUrl}
-                                quote={quote.quote}
-                                fullName={quote.fullName}
-                                title={quote.title}
-                            />
+                        _.orderBy(LIVING_EVENTS, 'startDate').map(event => (
+                            event.streams &&
+                            event.streams.map( stream => (
+                                <div key={stream.id}>
+                                    <EventCard
+                                        heading={event.heading}
+                                        title={stream.heading}
+                                        dates={{ startDate: event.startDate, endDate: event.endDate}}
+                                        venue={event.venue}
+                                        logo={stream.logo[0]}
+                                        passLink={stream.purchasePassLink}
+                                        websiteLink={stream.websiteLink}
+                                        theme={event.theme}
+                                        dateOverride={event.dateOverride}
+                                        landscape={false}
+                                    />
+                                </div>
+                            ))
                         ))
                     }
                 </div>
-            </section> */}
-            
-
-           {/* FHS EVENTS */}
-            <section className="block bg-primary">
-
-                {/* LIVING */}
-                <div className="container center">
-                    <p className="fs-2 fw-500 caps lh-1">Upcoming FHS Living Events</p>
-                </div>
-
-                <div className="container columns-4 gap-xs">
-                    {
-                        _.orderBy(LIVING_EVENTS, 'startDate').map(event => {
-                            // console.log(event)
-                            return (
-                                <div key={event.id} className={`columns-1 gap-xs`}>                                
-                                    {
-                                        event.streams &&
-                                        event.streams.map( stream => (
-                                            <EventCard
-                                                key={stream.id}
-                                                heading={event.heading}
-                                                title={stream.heading}
-                                                dates={{ startDate: event.startDate, endDate: event.endDate}}
-                                                venue={event.venue}
-                                                logo={stream.logo[0]}
-                                                passLink={stream.purchasePassLink} 
-                                                websiteLink={stream.websiteLink} 
-                                                theme={event.theme} 
-                                                dateOverride={event.dateOverride}
-                                                landscape={false}
-                                            />
-                                        ))
-                                    }
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-
             </section>
 
             <Footer />

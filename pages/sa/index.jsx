@@ -774,13 +774,14 @@ export default function Page({ seomatic, partners }) {
 
                     <div>
                         <ul className={M.years}>
+                            <li>2022</li>
                             <li>2023</li>
                             <li>2024</li>
                             <li>2025</li>
                             <li>2026</li>
                         </ul>
-                        <h2 className={M.heading}>Four editions in Riyadh</h2>
-                        <p className={M.lede}>Since 2023, FHS Saudi Arabia has brought the Kingdom’s hospitality investment community together in Riyadh. Investors, developers, operators and government leaders have met here to turn Saudi Arabia’s tourism pipeline into partnerships and investment.</p>
+                        <h2 className={M.heading}>Five editions in Riyadh</h2>
+                        <p className={M.lede}>Since 2022, FHS Saudi Arabia has brought the Kingdom’s hospitality investment community together in Riyadh. Investors, developers, operators and government leaders have met here to turn Saudi Arabia’s tourism pipeline into partnerships and investment.</p>
 
                         <div className={M.thanks}>
                             <img src="/assets/site/sa/al-khozama-logo-2025.png" alt="Al Khozama Investment Company" />

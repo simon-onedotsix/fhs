@@ -120,11 +120,11 @@ export const EVENT_DATA = [
     {
         "__typename": "events_BlockType",
         "id": "259029",
-        "heading": "Riyadh",
-        "startDate": null,
+        "heading": "Madinah",
+        "startDate": "2027-04-14T00:00:00+00:00",
         "endDate": null,
-        "dateOverride": "23 March 2027",
-        "venue": "Mandarin Oriental Al Faisaliah",
+        "dateOverride": "14 April 2027",
+        "venue": "DoubleTree by Hilton at Madinah Gate",
         "theme": "#ffffff",
         "streams": [
             {

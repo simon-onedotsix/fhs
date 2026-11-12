@@ -1,0 +1,255 @@
+/* FHS Living at FHS Saudi Arabia (pages/sa/living). Colours and type come from the living theme. */
+
+.wrap {
+    width: min(100% - 3rem, 76rem);
+    margin-inline: auto;
+}
+.section {
+    padding-block: clamp(3.5rem, 8vw, 6.5rem);
+}
+.cream {
+    background-color: var(--cream);
+    color: var(--purple);
+}
+.deep {
+    background-color: hsl(from var(--purple) h s calc(l - 5));
+}
+
+.heading {
+    margin: 0 0 1.25rem;
+    max-width: 24ch;
+    font-size: clamp(1.9rem, 3.6vw, 3rem);
+    font-weight: 600;
+    line-height: 1.1;
+    color: inherit;
+}
+.lede {
+    margin: 0;
+    max-width: 58ch;
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    line-height: 1.5;
+}
+.lede + .lede {
+    margin-top: 1rem;
+}
+
+/* hero */
+.heroText {
+    text-align: center;
+}
+.heroPart {
+    margin: 0 0 .75rem;
+    font-size: clamp(1rem, 1.6vw, 1.35rem);
+    font-weight: 500;
+    color: var(--cream);
+}
+.heroTitle {
+    margin: 0;
+    font-size: clamp(3rem, 9vw, 6.5rem);
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    color: white;
+}
+.heroDate {
+    margin: 1.25rem 0 0;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.1;
+}
+.heroPlace {
+    margin: .5rem 0 0;
+    font-size: clamp(1rem, 1.6vw, 1.35rem);
+    font-weight: 500;
+}
+.heroActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.ghost {
+    display: inline-flex;
+    align-items: center;
+    padding: .75rem 1.5rem;
+    border: 1px solid white;
+    border-radius: var(--ui-radius);
+    color: white;
+    font-weight: 650;
+    text-decoration: none;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+.ghost:hover,
+.ghost:focus-visible {
+    background-color: white;
+    color: var(--purple);
+}
+
+/* about */
+.aboutGrid {
+    display: grid;
+    gap: 2.5rem;
+}
+.facts {
+    margin: 0;
+    padding: .5rem 1.75rem;
+    border-radius: 1rem;
+    background-color: hsl(from var(--purple) h s calc(l + 7));
+}
+.facts div {
+    padding-block: 1.1rem;
+}
+.facts div + div {
+    border-top: 1px solid rgba(255, 255, 255, .18);
+}
+.facts dt {
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--cream);
+}
+.facts dd {
+    margin: .2rem 0 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+.facts img {
+    display: block;
+    width: 11rem;
+    margin-top: .6rem;
+}
+
+/* Knowledge Economic City */
+.kecGrid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+}
+.kecFigure {
+    margin: 0;
+}
+.kecFigure img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+.kecFigure figcaption {
+    margin-top: .6rem;
+    font-size: .9rem;
+}
+.points {
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+.points li {
+    padding-block: 1.1rem;
+    border-top: 1px solid hsl(from var(--purple) h s l / .25);
+}
+.pointTitle {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--burgundy);
+}
+.pointText {
+    margin: .3rem 0 0;
+    max-width: 52ch;
+}
+
+/* asset classes */
+.assets {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 2rem 1.5rem;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+.assets img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+.assetTitle {
+    margin: .9rem 0 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.assetText {
+    margin: .3rem 0 0;
+    color: rgba(255, 255, 255, .85);
+}
+
+/* 2026 forum */
+.pastGrid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+}
+.pastActions {
+    margin-top: 1.75rem;
+}
+.logoGroup + .logoGroup {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, .18);
+}
+.logoLabel {
+    margin: 0 0 1.25rem;
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--cream);
+}
+.logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 3rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.logos img {
+    display: block;
+    width: auto;
+    max-width: 13rem;
+    height: 3.25rem;
+    object-fit: contain;
+}
+
+/* events */
+.eventsHead {
+    text-align: center;
+}
+.eventsHead .heading {
+    margin-inline: auto;
+}
+.events {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+.events > div {
+    width: min(100%, 19rem);
+}
+
+@media (min-width: 900px) {
+    .aboutGrid {
+        grid-template-columns: 1.25fr 1fr;
+        gap: 5rem;
+        align-items: start;
+    }
+    .kecGrid,
+    .pastGrid {
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
+}
