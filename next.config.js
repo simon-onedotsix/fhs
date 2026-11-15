@@ -191,6 +191,12 @@ const nextConfig = {
 				destination: '/living/experience/index.html',
 				locale: false,
 			},
+			// FHS Living: the "Who would you like to network with?" block's searches, to our server (who-to-meet on KVM8)
+			{
+				source: '/en/living/meet-api/:path*',
+				destination: 'https://meet.futurehospitality.com/api/:path*',
+				locale: false,
+			},
 		]
 	}
 

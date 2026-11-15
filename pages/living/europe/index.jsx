@@ -14,6 +14,7 @@ import { Passes, passOffer, bookBefore } from '../../../ui-living/sections/passe
 import { Quote } from '../../../ui-living/sections/quote'
 import { PartnerSection } from '../../../ui-living/sections/partner-strip'
 import { SpeakerStrip } from '../../../ui-living/sections/speakers'
+import { MeetBlock } from '../../../ui-living/sections/meet'
 
 import facts from '../../../ui-living/data/facts.json'
 import flows from '../../../ui-living/data/flows.json'
@@ -61,6 +62,7 @@ export default function Paris(p) {
 			</section>
 
 			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} bg="tint" />}
+			<MeetBlock />
 			<Room f={f} />
 			<Glance programme={p.programme} link={R.programme} linkLabel="The full running order" cta="View Agenda" bg="tint" />
 			<PartnerSection partners={p.partners}>
