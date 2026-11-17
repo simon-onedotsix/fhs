@@ -1,0 +1,174 @@
+{
+ "_source": "FHS Living at FHS Egypt, 11 November 2026 (Ahmed, 17 Nov 2026). Sessions from futurehospitality.com/egypt/agenda (Swapcard category 'FHS Living', Summit Stage); summaries from ai.futurehospitality.com/public/fhs-egypt-2026; photos from the Day Two album flickr.com/photos/benchevents/albums/72177720336914268 (Flickr ids in 'flickr').",
+ "date": "11 November 2026",
+ "venue": "Sofitel Downtown Cairo Nile",
+ "url": "/egypt/living",
+ "sessions": [
+  {
+   "start": "14:00",
+   "title": "Branded Residences Explained: Understanding the Concept and Its Global Rise",
+   "people": [
+    "Daniel von Barloewen, Accor One Living"
+   ],
+   "photo": "cairo/von-barloewen.jpg",
+   "alt": "Daniel von Barloewen of Accor One Living on the Summit Stage at FHS Egypt",
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-egypt-2026/265.pdf",
+   "flickr": "55656150305"
+  },
+  {
+   "start": "14:20",
+   "title": "The Branded Living Opportunity: Market Growth, Buyer Demand & What Comes Next",
+   "people": [
+    "Richard Stevens, Sectorlight"
+   ],
+   "photo": "cairo/stevens.jpg",
+   "alt": "Richard Stevens of Sectorlight presenting at FHS Egypt",
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-egypt-2026/267.pdf",
+   "flickr": "55655861748"
+  },
+  {
+   "start": "14:35",
+   "title": "The Power of the Brand: Marketing Branded Residences in a Competitive Holiday Home Market",
+   "people": [
+    "Richard Stevens, Sectorlight",
+    "Govind Mundra, Wyndham Hotels & Resorts",
+    "Olivier Badard, Millennium Hotels & Resorts MEA",
+    "Amr Rostom, Brandinc (moderator)"
+   ],
+   "photo": "cairo/brand-panel.jpg",
+   "alt": "Olivier Badard of Millennium Hotels & Resorts MEA on the branded residences marketing panel at FHS Egypt",
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-egypt-2026/268.pdf",
+   "flickr": "55652423941"
+  },
+  {
+   "start": "15:00",
+   "title": "Navigating the Legal and Regulatory Landscape in Egypt",
+   "people": [
+    "Elias Hayek, Greenberg Traurig"
+   ],
+   "photo": "cairo/hayek.jpg",
+   "alt": "Elias Hayek of Greenberg Traurig presenting at FHS Egypt",
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-egypt-2026/269.pdf",
+   "flickr": "55655861533"
+  },
+  {
+   "start": "15:15",
+   "title": "Stakeholder Perspectives: Creating Value Through Branded Residences",
+   "people": [
+    "Antony Doucet, Kerten Hospitality",
+    "Jack Cloke, Accor One Living",
+    "Ibrahim El Missiri, Somabay",
+    "Yasmine I. Shihata, Enigma Magazine & Venus PR (moderator)"
+   ],
+   "photo": "cairo/stakeholder-panel.jpg",
+   "alt": "The stakeholder panel on branded residences on the Summit Stage at FHS Egypt",
+   "summary": "https://ai.futurehospitality.com/api/storage/public-objects/reports/fhs-egypt-2026/270.pdf",
+   "flickr": "55652845375"
+  }
+ ],
+ "summaries_index": "https://ai.futurehospitality.com/public/fhs-egypt-2026",
+ "agenda": "/egypt/agenda",
+ "hero": {
+  "photo": "cairo/hero.jpg",
+  "alt": "The FHS Living session in the Summit Stage hall at FHS Egypt, the room full of delegates",
+  "flickr": "55652424046"
+ },
+ "people": [
+  {
+   "name": "Olivier Badard",
+   "title": "Chief Executive Officer",
+   "company": "Millennium Hotels & Resorts MEA",
+   "photo": "https://static.swapcard.com/public/images/04b062f7ada8401aa05c5491f7a97d2a.jpeg",
+   "url": "/egypt/speakers/RXZlbnRQZW9wbGVfNTAyMTk3NDI="
+  },
+  {
+   "name": "Daniel von Barloewen",
+   "title": "Senior Vice President, Global Mixed-Use Development",
+   "company": "Accor One Living, Accor",
+   "photo": "https://cdn-api.swapcard.com/public/images/5cf473e2ddec40608d2edc80e017428d.jpeg",
+   "url": "/egypt/speakers/RXZlbnRQZW9wbGVfNDk1OTYzODk="
+  },
+  {
+   "name": "Jack Cloke",
+   "title": "Development Manager",
+   "company": "Accor One Living",
+   "photo": "https://static.swapcard.com/public/images/f4e30c70fba349dca9708e55f125e268.jpeg",
+   "url": "/egypt/speakers/RXZlbnRQZW9wbGVfNDk3OTk1MzI="
+  },
+  {
+   "name": "Antony Doucet",
+   "title": "Chief Experience Officer",
+   "company": "Kerten Hospitality",
+   "photo": "https://static.swapcard.com/public/images/60bdecb61caa46cebf0fadd1decd310e.jpeg",
+   "url": "/egypt/speakers/RXZlbnRQZW9wbGVfNDkxNzM3MjI="
+  },
+  {
+   "name": "Elias Hayek",
+   "title": "Shareholder & Co-Chair of the Middle East and European Hospitality Group",
+   "company": "Greenberg Traurig",
+   "photo": "https://static.swapcard.com/public/images/30a56f7a355a4656954a24ce2c673c22.jpeg",
+   "url": "/egypt/speakers/RXZlbnRQZW9wbGVfNTAzMzA4NzU="
+  },
+  {
+   "name": "Ibrahim El Missiri",
+   "title": "Group CEO",
+   "company": "Somabay",
+   "photo": "https://static.swapcard.com/public/images/c834ba13f35f4529b7296ecb67b3d93d.jpeg",
+   "url": "/egypt/speakers/RXZlbnRQZW9wbGVfNTAyMDY0Njk="
+  },
+  {
+   "name": "Govind Mundra",
+   "title": "Head of Development Middle East & Africa",
+   "company": "Wyndham Hotels & Resorts",
+   "photo": "https://static.swapcard.com/public/images/1cec4215232f4481b23d36feadda6352.jpeg",
+   "url": "/egypt/speakers/RXZlbnRQZW9wbGVfNDk4MzkxMzI="
+  },
+  {
+   "name": "Amr Rostom",
+   "title": "Founder & Managing Director",
+   "company": "Brandinc",
+   "photo": "https://static.swapcard.com/public/images/e6ab17cdb1874de1b2b795d0f64cdb41.png",
+   "url": "/egypt/speakers/RXZlbnRQZW9wbGVfNTAxNDE4NjI="
+  },
+  {
+   "name": "Yasmine I. Shihata",
+   "title": "Founder & CEO",
+   "company": "Enigma Magazine & Venus PR",
+   "photo": "https://static.swapcard.com/public/images/9679196f14054dc3a2d27af010097fb7.jpeg",
+   "url": "/egypt/speakers/RXZlbnRQZW9wbGVfNDk2ODI2OTA="
+  },
+  {
+   "name": "Richard Stevens",
+   "title": "Group CEO",
+   "company": "Sectorlight",
+   "photo": "https://static.swapcard.com/public/images/b9975db8f5b840c89803ea7a02ec590c.jpeg",
+   "url": "/egypt/speakers/RXZlbnRQZW9wbGVfNDcyMTAyMzY="
+  }
+ ],
+ "gallery": [
+  {
+   "photo": "cairo/g-shihata.jpg",
+   "alt": "Yasmine I. Shihata moderating the stakeholder panel at FHS Egypt"
+  },
+  {
+   "photo": "cairo/g-rostom.jpg",
+   "alt": "Amr Rostom of Brandinc moderating the branded residences marketing panel"
+  },
+  {
+   "photo": "cairo/g-cloke.jpg",
+   "alt": "Jack Cloke of Accor One Living speaking at FHS Egypt"
+  },
+  {
+   "photo": "cairo/g-doucet.jpg",
+   "alt": "Antony Doucet of Kerten Hospitality on the stakeholder panel"
+  },
+  {
+   "photo": "cairo/g-stakeholder-group.jpg",
+   "alt": "The stakeholder panel together on the Summit Stage at FHS Egypt"
+  },
+  {
+   "photo": "cairo/g-mundra.jpg",
+   "alt": "Govind Mundra of Wyndham Hotels & Resorts on stage at FHS Egypt"
+  }
+ ]
+}

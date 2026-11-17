@@ -1,5 +1,6 @@
 import { c } from '../lib/c'
 import { TeaserBody } from './dubai-teaser'
+import { CairoRow } from './cairo'
 
 // Where FHS Living comes from (Ahmed, 8 Nov 2026: "we have been doing Branded Residences Forum for a while now"): the BRF
 // editions as one timeline, then a short look at the first FHS Living day in Dubai. Keeps the old #dubai anchor.
@@ -26,6 +27,7 @@ export function BrfStory({ brf, dubai, concl }) {
 					<p>The first FHS Living, {concl.venue}, {concl.date.replace(/ /g, '\u00A0')}.</p>
 				</div>
 				<TeaserBody dubai={dubai} concl={concl} />
+				<CairoRow />
 			</div>
 		</section>
 	)

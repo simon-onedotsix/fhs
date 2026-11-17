@@ -12,7 +12,6 @@ import { loadSpeakers, REVALIDATE } from '../../../ui-living/lib/cms'
 
 // The Swapcard "Speakers" group for Paris in the team's order, refreshed like every Living page.
 export default function Speakers({ f, speakers }) {
-	const n = speakers.people.length
 	return (
 		<LivingPage page="speakers" title="FHS Living | Speakers" description={`The speakers at the FHS Living Europe Edition, Paris, ${f.event.dates}.`}>
 			<section className={c('page-hero')} aria-labelledby="hero-h">
@@ -28,7 +27,7 @@ export default function Speakers({ f, speakers }) {
 
 			<section className={c('section')} aria-labelledby="sp-h">
 				<div className={c('wrap')}>
-					<div className={c('head')}><h2 className={c('ruled')} id="sp-h">{n} speakers confirmed.</h2><p>Investors, operators, developers and advisors.</p></div>
+					<div className={c('head')}><h2 className={c('ruled')} id="sp-h">Confirmed speakers.</h2><p>Investors, operators, developers and advisors.</p></div>
 					<SpeakerGrid people={speakers.people} />
 				</div>
 			</section>
