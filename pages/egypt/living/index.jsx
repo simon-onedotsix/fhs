@@ -37,6 +37,7 @@ export default function Page () {
                 <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
                 <meta content="https://futurehospitality.com/assets/img/living/v3/cairo/hero.webp" property="og:image"></meta>
                 <title>FHS Living at FHS Egypt | 11 November 2026, Cairo</title>
+                <link rel="canonical" href="https://futurehospitality.com/egypt/living" />
                 <meta name="description" content="Five FHS Living sessions on branded residences on the Summit Stage at FHS Egypt, 11 November 2026: the speakers, the photos and a summary of every session."></meta>
             </Head>
 

@@ -1362,7 +1362,7 @@ export const LIVING_FHS_EGYPT = {
                 },
                 {
                     "label": "Become a Partner",
-                    "hyperlink": "/egypt/why-sponsor#partner-form",
+                    "hyperlink": "/egypt/forms/become-a-partner",
                     "openInNewWindow": false
                 }
             ]

@@ -68,6 +68,7 @@ export default function Page ({ speakers }) {
                 <link rel="icon" type="image/png" href="/assets/favicons/living/favicon-16x16.png" sizes="16x16" />
                 <meta content="https://futurehospitality.com/assets/img/living/v3/dubai/audience-room.webp" property="og:image"></meta>
                 <title>FHS Living at FHS World | 1 October 2026, Dubai</title>
+                <link rel="canonical" href="https://futurehospitality.com/world/living" />
                 <meta name="description" content="FHS Living took over the Summit Stage at FHS World on 1 October 2026: 15 sessions, 38 speakers and what the room concluded, with every session summary."></meta>
             </Head>
 
