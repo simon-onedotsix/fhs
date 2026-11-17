@@ -651,7 +651,7 @@ function confirmProfile(){
     S.role = v.role; S.assets = v.assets; S.intent = v.intent;
     S.parse = {...S.parse, types:v.types, asset_classes:v.assets, geographies:v.geos};
     if (changed) S.parse.summary = S.text = cap(list(v.types.map(plain))) + (v.assets.length ? ` in ${list(v.assets.map(plain))}` : "")
-                                            + (v.geos.length ? `, active in ${list(v.geos.map(plain))}` : " across Europe");
+                                            + (v.geos.length ? `, active in ${list(v.geos.map(g => SHORT[g] || g))}` : " across Europe");
     answered(S.parse.summary); lightLayer();
     try {
       if (changed) runWeb();                     // replaces the search that started on what we found

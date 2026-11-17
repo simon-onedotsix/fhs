@@ -29,7 +29,7 @@ export function MeetBlock({ bg }) {
 			<div className={c('wrap')}>
 				<div className={c('head')}><h2 className={c('ruled')} id="meet-h">Who would you like to network with?</h2><p>Two minutes. A shortlist of who to meet, then your plan for both days.</p></div>
 				<MeetWidget page={MEET_PATH} />
-				<p style={{ marginTop: 20, textAlign: 'center' }}><a className={c('link')} href={`${MEET_PATH}?flow=profile`}>Or start from your role and company</a></p>
+				<p style={{ margin: '0 auto', maxWidth: 'none', textAlign: 'center' }}><a className={c('link')} href={`${MEET_PATH}?flow=profile`}>Or start from your role and company</a></p>
 			</div>
 		</section>
 	)
