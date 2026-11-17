@@ -2,6 +2,7 @@ import { c } from '../lib/c'
 import { img } from '../lib/format'
 import { NEW_TAB } from '../lib/attrs'
 import { Quote } from './quote'
+import { CairoRow } from './cairo'
 
 // FHS World's own Living page carries the full Dubai day (to be revamped there, Ahmed 9 Nov 2026)
 const WORLD_LIVING = '/world/living'
@@ -28,8 +29,9 @@ export function DubaiTeaser({ dubai, concl }) {
 	return (
 		<section className={c('section dark')} aria-labelledby="dxb-h">
 			<div className={c('wrap')}>
-				<div className={c('head')}><h2 className={c('ruled')} id="dxb-h">FHS Living in Dubai.</h2><p>On {concl.date.replace(/ /g, '\u00A0')} the first FHS Living took over the Summit Stage at FHS World for a full day.</p></div>
+				<div className={c('head')}><h2 className={c('ruled')} id="dxb-h">FHS Living in Dubai and Cairo.</h2><p>On {concl.date.replace(/ /g, '\u00A0')} the first FHS Living took over the Summit Stage at FHS World for a full day. Five sessions followed at FHS Egypt on 11{'\u00A0'}November.</p></div>
 				<TeaserBody dubai={dubai} concl={concl} />
+				<CairoRow />
 			</div>
 		</section>
 	)

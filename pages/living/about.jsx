@@ -62,7 +62,7 @@ export default function About({ f, editions }) {
 
 			<section className={c('section tint section--tight')} aria-labelledby="ed-h">
 				<div className={c('wrap')}>
-					<div className={c('head')}><h2 className={c('ruled')} id="ed-h">One conference. Four cities.</h2><p>A dedicated programme inside FHS events in Dubai, Cairo and Riyadh, and a standalone Europe Edition in Paris.</p></div>
+					<div className={c('head')}><h2 className={c('ruled')} id="ed-h">One conference. Four cities.</h2><p>A dedicated programme inside FHS events in Dubai, Cairo and Madinah, and a standalone Europe Edition in Paris.</p></div>
 					<EditionsRail editions={editions} />
 				</div>
 			</section>

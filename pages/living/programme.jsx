@@ -4,7 +4,6 @@ import { LivingPage } from '../../ui-living/site/page'
 import { c } from '../../ui-living/lib/c'
 import { img, trange } from '../../ui-living/lib/format'
 import { R } from '../../ui-living/lib/routes'
-import { Glance } from '../../ui-living/sections/glance'
 import { Passes, passOffer, bookBefore } from '../../ui-living/sections/passes'
 
 import { loadPasses, loadProgramme, REVALIDATE } from '../../ui-living/lib/cms'
@@ -25,8 +24,6 @@ export default function Programme({ programme, delegate, investor }) {
 					<figure className={c('page-hero__fig')}><div className={c('diamond')}><img src={img('dubai/stage-panel.jpg')} width="1600" height="792" alt="A panel on the FHS Living stage at FHS World, Dubai" {...HIGH} /></div></figure>
 				</div>
 			</section>
-
-			<Glance programme={programme} link="#running-order" linkLabel="The running order" />
 
 			<section className={c('section')} id="running-order" aria-labelledby="ro-h">
 				<div className={c('wrap')}>

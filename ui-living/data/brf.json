@@ -32,6 +32,12 @@
    "city": "Dubai",
    "line": "The first FHS Living, at FHS World, Madinat Jumeirah.",
    "now": true
+  },
+  {
+   "when": "November 2026",
+   "city": "Cairo",
+   "line": "Five FHS Living sessions at FHS Egypt, Sofitel Downtown Cairo Nile.",
+   "now": true
   }
  ]
 }

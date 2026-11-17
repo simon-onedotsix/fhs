@@ -29,7 +29,7 @@ export default function Living(p) {
 		<LivingPage
 			page="index"
 			title="FHS Living | Where hospitality reimagines real estate"
-			description="FHS Living is Future Hospitality Summit's conference for the hotelisation of real estate, with editions in Dubai, Cairo, Paris and Riyadh."
+			description="FHS Living is Future Hospitality Summit's conference for the hotelisation of real estate, with editions in Dubai, Cairo, Paris and Madinah."
 			head={<link rel="preload" href={FILM_POSTER} as="image" {...HIGH} />}
 		>
 			<LayersHero />
@@ -40,7 +40,7 @@ export default function Living(p) {
 				<div className={c('atlas__stage')}>
 					<div className={c('atlas__copy')}>
 						<h2 className={c('ruled')} id="ed-h">One conference. Four cities.</h2>
-						<p className={c('lede')} style={{ marginTop: 22 }}>A dedicated FHS Living programme inside Future Hospitality Summit events in Dubai, Cairo and Riyadh, and a standalone Europe Edition in Paris.</p>
+						<p className={c('lede')} style={{ marginTop: 22 }}>A dedicated FHS Living programme inside Future Hospitality Summit events in Dubai, Cairo and Madinah, and a standalone Europe Edition in Paris.</p>
 					</div>
 					<MapLayer atlas={p.atlas} />
 				</div>

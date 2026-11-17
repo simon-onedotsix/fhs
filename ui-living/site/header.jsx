@@ -59,7 +59,7 @@ export function Header({ page }) {
 					</Link>
 					{paris
 						? <Link href={R.paris} prefetch={false}><a className={c('brand__line')} aria-current={page === 'paris' ? 'page' : undefined}>{ev.dates}<br />{ev.venue}</a></Link>
-						: <Link href={`${R.index}#editions`} prefetch={false}><a className={c('brand__line')}>Four editions<br />Dubai · Cairo · Paris · Riyadh</a></Link>}
+						: <Link href={`${R.index}#editions`} prefetch={false}><a className={c('brand__line')}>Four editions<br />Dubai · Cairo · Paris · Madinah</a></Link>}
 				</div>
 				<nav className={c('nav')} aria-label="Main">
 					<ul className={c('nav__list')}>

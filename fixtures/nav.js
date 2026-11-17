@@ -1239,7 +1239,7 @@ export const LIVING_FHS_WORLD = {
             {
                 "__typename": "navigation_Entry",
                 "id": "werhjfw",
-                "title": "Agenda",
+                "title": "2026 Agenda",
                 "navUrl": "/world/living/agenda",
                 "children": []
             },
@@ -1260,7 +1260,7 @@ export const LIVING_FHS_WORLD = {
             "metaDescription": null,
             "headerCtas": [
                 {
-                    "label": "Register Here",
+                    "label": "Register for 2027",
                     "hyperlink": "/world/purchase-pass",
                     "openInNewWindow": false
                 },
@@ -1335,7 +1335,7 @@ export const LIVING_FHS_EGYPT = {
             {
                 "__typename": "navigation_Entry",
                 "id": "dfghterthm",
-                "title": "Agenda",
+                "title": "2026 Agenda",
                 "navUrl": "/egypt/agenda?session=UGxhbm5pbmdfNDUzNTk0Ng",
                 "children": []
             },
@@ -1343,7 +1343,7 @@ export const LIVING_FHS_EGYPT = {
         ],
         "event": {
             "id": "2",
-            "title": "FHS Living at FHS egypt",
+            "title": "FHS Living at FHS Egypt",
             "venue": "Madinat Jumeirah, Dubai",
             "startDate": "2026-10-01T07:00:00+00:00",
             "endDate": null,

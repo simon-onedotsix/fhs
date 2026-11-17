@@ -525,7 +525,7 @@
 .root .glance__day { font-weight: 500; font-size: 15px; padding-top: 4px; }
 .root .glance__day span { display: block; font-size: 12.5px; font-weight: 400; color: var(--ink-soft); }
 .root .glance__bar { position: relative; height: 92px; } /* the chart sets each day's height from its lanes */
-.root .glance__seg { position: absolute; display: flex; align-items: center; padding: 0 10px; font-size: 12.5px; font-weight: 500; overflow: hidden; white-space: nowrap; color: var(--white); height: 44px; top: 0; transform-origin: left; transition: transform .9s var(--ease-out); }
+.root .glance__seg { position: absolute; display: flex; align-items: center; padding: 0 10px; font-size: 12.5px; font-weight: 500; line-height: 1.15; overflow: hidden; color: var(--white); height: 44px; top: 0; transform-origin: left; transition: transform .9s var(--ease-out); }
 .root .glance__seg--stage { background: var(--purple); }
 .root .glance__seg--table { background: var(--magenta); }
 .root .glance__seg--meet { background: var(--burgundy); }
@@ -536,7 +536,13 @@
   .root.js .glance:not(.is-in) .glance__seg { transform: scaleX(0); }
 }
 .root .glance__axis { position: relative; height: 22px; margin-left: 134px; border-top: 1px solid var(--line); }
-.root .glance__axis span { position: absolute; top: 6px; transform: translateX(-50%); font-size: 12px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.root .glance__axis { height: 44px; }
+.root .glance__axis span { position: absolute; top: 9px; transform: translateX(-50%); font-size: 12px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.root .glance__axis span::before { content: ''; position: absolute; top: -9px; left: 50%; height: 6px; border-left: 1px solid var(--ink-soft); }
+.root .glance__axis span.glance__t--low { top: 26px; }
+.root .glance__axis span.glance__t--low::before { top: -26px; height: 23px; }
+.root .glance__guide { position: absolute; top: -13px; bottom: -13px; border-left: 1px dashed var(--line); }
+.root .glance__seg { z-index: 1; }
 .root .glance__key { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 28px; font-size: 14px; color: var(--ink-soft); }
 .root .glance__key i { display: inline-block; width: 13px; height: 14px; margin-right: 8px; vertical-align: -2px; clip-path: var(--facet); }
 @media (max-width: 760px) {
@@ -843,8 +849,11 @@
   .root .idea__fig svg { margin-block: -8px -26px; }
 }
 @media (max-width: 760px) {
-  .root .glance__axis span:nth-child(even) { display: none; }
+  .root .glance__axis span.glance__minor { display: none; }
   .root .glance__axis span:first-child { transform: none; }
+  .root .glance__axis span:first-child::before { left: 0; }
+  .root .glance__axis { height: 26px; }
+  .root .glance__guide.glance__minor { display: none; }
   .root .glance__seg.glance__seg--wide { font-size: 11px; padding: 0 6px; white-space: normal; line-height: 1.15; }
 }
 @media (max-width: 600px) {
@@ -878,7 +887,7 @@
   .root .teaser { grid-template-columns: minmax(0, 1fr); }
 }
 /* Branded Residences Forum before FHS Living (homepage, dark section): one row of faceted markers, a column per edition */
-.root .brf { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0 clamp(14px, 1.6vw, 24px); border-top: 1px solid var(--line-dark); }
+.root .brf { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 0 clamp(14px, 1.6vw, 24px); border-top: 1px solid var(--line-dark); }
 .root .brf__item { position: relative; padding-top: 28px; }
 .root .brf__item i { position: absolute; top: -8px; left: 0; width: 16px; height: 16px; background: var(--rose); clip-path: var(--facet); }
 .root .brf__item--now i { background: var(--white); }
@@ -889,7 +898,7 @@
 .root .brf__day { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(20px, 4vw, 64px); align-items: end; margin: clamp(56px, 6vw, 88px) 0 clamp(24px, 2.5vw, 36px); padding-top: 28px; border-top: 1px solid var(--line-dark); }
 .root .brf__day-h { margin: 0; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.08; letter-spacing: -.02em; color: var(--white); }
 .root .brf__day p { margin: 0; font-size: var(--fs-small); line-height: 1.45; }
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {  /* seven editions since Cairo (17 Nov 2026): too narrow for one row below 1200px */
   .root .brf { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 36px; border-top: 0; }
   .root .brf__item { border-top: 1px solid var(--line-dark); }
 }
@@ -899,6 +908,31 @@
   .root .brf__item i { top: 2px; left: -8px; }
   .root .brf__day { grid-template-columns: minmax(0, 1fr); }
 }
+/* FHS Living at FHS Egypt (17 Nov 2026): the five sessions as one sideways row under the Dubai day, arrows on wide screens */
+.root .cairo__row { list-style: none; margin: 0; padding: 0 0 4px; display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 2 * 22px) / 3.25); gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.root .cairo__row::-webkit-scrollbar { display: none; }
+.root .cairo__row > li { scroll-snap-align: start; display: flex; flex-direction: column; align-items: flex-start; }
+.root .cairo__row figure { margin: 0 0 18px; width: 100%; aspect-ratio: 3 / 2; overflow: hidden; }
+.root .cairo__row img { width: 100%; height: 100%; object-fit: cover; }
+.root .dark .cairo__time { margin: 0 0 8px; font-size: var(--fs-label); font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--rose); }
+.root .cairo__row h4 { margin: 0 0 12px; font-size: 19px; line-height: 1.2; font-weight: 500; color: var(--white); }
+.root .cairo__who { list-style: none; margin: 0 0 16px; padding: 0; font-size: var(--fs-small); line-height: 1.45; color: var(--on-dark-soft); }
+.root .cairo__row .link { margin-top: auto; }
+.root .cairo__nav { display: flex; gap: 10px; margin-top: 24px; }
+.root .cairo__nav button { width: 48px; height: 48px; border: 1px solid rgba(255, 255, 255, .6); background: transparent; color: var(--white); font: inherit; font-size: 20px; cursor: pointer; transition: background .2s var(--ease), color .2s var(--ease); }
+.root .cairo__nav button:hover:not(:disabled) { background: var(--white); color: var(--purple); }
+.root .cairo__nav button:disabled { opacity: .3; cursor: default; }
+@media (max-width: 900px) {
+  .root .cairo__row { grid-auto-columns: 46%; }
+}
+@media (max-width: 560px) {
+  .root .cairo__row { grid-auto-columns: 80%; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }
+  .root .cairo__nav { display: none; }
+  .root .cairo__row .link { margin-top: 0; }
+}
+/* recap pages inside other events (/world/living, /egypt/living, 17 Nov 2026): partner tiers on a dark ground */
+.root .tiers--dark { border-top-color: var(--rose); }
+.root .tiers--dark .tier { border-bottom-color: var(--line-dark); }
 /* phones: card strips swipe sideways (next card peeks) instead of stacking four or more full cards */
 @media (max-width: 560px) {
   .root .reads { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 80%; overflow-x: auto; scroll-snap-type: x mandatory; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }

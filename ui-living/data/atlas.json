@@ -58,26 +58,26 @@
    "id": "paris"
   },
   {
-   "city": "Riyadh",
+   "city": "Madinah",
    "label": "FHS Living at FHS Saudi Arabia",
-   "dates": "2027",
-   "venue": "Details to follow",
-   "state": "tbc",
-   "state_label": "2027",
-   "note": "Dates and venue to be announced.",
+   "dates": "14 April 2027",
+   "venue": "DoubleTree by Hilton at Madinah Gate",
+   "state": "upcoming",
+   "state_label": "14 April 2027",
+   "note": "Day two of FHS Saudi Arabia Madinah Edition.",
    "url": "/sa/living",
    "link_label": "FHS Saudi Arabia",
-   "px": 76.18,
-   "py": 70.56,
+   "px": 72.23,
+   "py": 70.85,
    "side": "left",
-   "x": 619.1,
-   "y": 227.9,
+   "x": 598.7,
+   "y": 228.6,
    "id": "saudi"
   }
  ],
  "route": [
   "M643.4 226.6Q612.5 204.0 575.0 211.5",
   "M575.0 211.5Q547.6 161.6 492.3 148.1",
-  "M492.3 148.1Q573.3 160.1 619.1 227.9"
+  "M492.3 148.1Q560.0 162.0 598.7 228.6"
  ]
 }
