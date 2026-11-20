@@ -24,42 +24,29 @@ import handleSeomaticMeta from '../../../lib/seomatic'
 import { getFieldValueByID } from "../../../lib/swapcard/get-custom-field-by-id"
 import { getAllSpecialFields } from '../../../lib/swapcard/get-all-special-fields'
 
+import { orderByLastName, customOrderById } from '../../../lib/swapcard/speaker-utilities'
+
 import CSS from '../../../css/app/speakers.module.css'
 
 
 
+const PRIORITY_SPEAKER_IDS = [
+	'RXZlbnRQZW9wbGVfNDkzODk4NzM=',
+	'RXZlbnRQZW9wbGVfNDkzODk2NzE=',
+	'RXZlbnRQZW9wbGVfNDkzODkyODc=',
+	'RXZlbnRQZW9wbGVfNDk1MDIzOTY=',
+	'RXZlbnRQZW9wbGVfNDkzOTAzOTQ='
+]
+
 
 function Speakers({ speakers }) {
 
-	const filteredSpeakers = []
-	speakers.map( speaker => {
-		if ( speaker.type === "Moderator" || speaker.type === "Speaker" || speaker.type === "Investor" || speaker.id === 
-"RXZlbnRQZW9wbGVfNDU0MTM5MTM=" ) filteredSpeakers.push(speaker)
-	})
 
-	// sort speakers by lastName
-	let orderedSpeakers = _.orderBy( filteredSpeakers, [ speaker => speaker.lastName.toLowerCase()], ['asc'])
-	// console.log('ordered:', orderedSpeakers)
-
-	// customise order (VIP speakers to top of list)
-	let customOrderedSpeakers = _.sortBy(orderedSpeakers, [
-		(speaker => speaker.firstName === "Augusto" && speaker.lastName === 'Kalikemala' ? 0 : 1),
-		(speaker => speaker.firstName === "Ashish" && speaker.lastName === 'Sharma' ? 0 : 1),
-		(speaker => speaker.firstName === "Juliana" && speaker.lastName === 'Kagwa' ? 0 : 1),
-		(speaker => speaker.firstName === "Vimbai" && speaker.lastName === 'Masiyiwa' ? 0 : 1),
-
-		(speaker => speaker.firstName === "Jameel" && speaker.lastName === 'Verjee' ? 0 : 1),
-		(speaker => speaker.firstName === "Rosco" && speaker.lastName === 'Wendover' ? 0 : 1),
-		(speaker => speaker.firstName === "Artur" && speaker.lastName === 'Gerber' ? 0 : 1),
-		(speaker => speaker.firstName === "Buhle" && speaker.lastName === 'Ndlovu' ? 0 : 1),
-		(speaker => speaker.firstName === "Mutheu" && speaker.lastName === 'Muna-Mwaniki' ? 0 : 1),
-	] )
-	// console.log('customOrderedSpeakers:', customOrderedSpeakers)
 
 	// console.log('contentBlocks:', contentBlocks)
 	// console.log('speakers found:', speakers.length)
 	// console.log('speaker data:', speakers)
-	// console.log('ordered speaker data:', orderedSpeakers)
+
 
 
 	return (
@@ -92,7 +79,7 @@ function Speakers({ speakers }) {
 					<SpeakerGrid decal="gap-sm mt-md">
 						{
 							speakers.length &&
-							_.orderBy(speakers, 'lastName').map( speaker => {
+							customOrderById( orderByLastName(speakers), PRIORITY_SPEAKER_IDS).map( speaker => {
 
 								return (
 									<div key={speaker.id}>
@@ -130,7 +117,7 @@ function Speakers({ speakers }) {
 														</p>
 													))
 												}
-												
+												{/* <p><small style={{ fontSize: 10}}>{speaker.id}</small></p> */}
 												<span className='fw-600'>{speaker.firstName} {speaker.lastName}</span> 
 												<br/>{speaker.jobTitle} 
 												<br/>{speaker.organization}

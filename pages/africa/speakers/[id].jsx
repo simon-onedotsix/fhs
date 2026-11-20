@@ -246,10 +246,10 @@ export async function getStaticProps({ params }) {
 					}
 				`,
 				variables: {
-					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2026,
+					"eventId": process.env.SWAPCARD_EVENT_ID_AFRICA_2027,
 					"filters": {
 						"eventPeopleIds": [params.id],
-						"shouldBeInGroups": "RXZlbnRHcm91cF82NDI4ODI="
+						"shouldBeInGroups": "RXZlbnRHcm91cF82NzYyNzk="
 					}
 				}
 			})

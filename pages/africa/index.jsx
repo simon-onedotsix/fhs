@@ -243,7 +243,7 @@ export default function Home ({ seomatic, partners, announcements, speakers }) {
                         <div className={CSS.headline}>
                             <Reveal>CONNECTION.</Reveal>
                             <Reveal><span className="c-secondary">INVESTMENT.</span></Reveal>
-                            <Reveal>GROWTH</Reveal>
+                            <Reveal>GROWTH.</Reveal>
                                 
                         </div>
 
