@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { LivingPage } from '../../../ui-living/site/page'
 import { c } from '../../../ui-living/lib/c'
+import { FitTitle } from '../../../ui-living/sections/fit'
 import { img } from '../../../ui-living/lib/format'
 import { R } from '../../../ui-living/lib/routes'
 import { Market } from '../../../ui-living/sections/market'
@@ -51,12 +52,12 @@ export default function Paris(p) {
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>
-						<h1 id="hero-h">Where hospitality <span className={c('accent')}>reimagines real&nbsp;estate.</span></h1>
+						<FitTitle strict em={10.05} lines={['Where hospitality', <span key="2" className={c('accent')}>reimagines real estate.</span>]} />
 						<p className={c('page-hero__when')}>Paris, {f.event.dates}<span>{f.event.venue}</span></p>
 						<p className={c('lede')}>The Europe Edition of FHS Living: two days where real estate capital from Europe and the Middle East meets the operators and developers who make hospitality-led real estate perform.</p>
 						<div className={c('actions')}><Link href={R.register} prefetch={false}><a className={c('btn')}>Register Interest</a></Link><Link href={R.investors} prefetch={false}><a className={c('btn btn--ghost')}>Investor? Start here</a></Link></div>
 					</div>
-					<figure className={c('page-hero__fig')}><div className={c('diamond')}><img src={img('photo/paris-diamond.jpg')} width="1220" height="860" alt="Paris from above, the Eiffel Tower and the Seine" {...HIGH} /></div></figure>
+					<figure className={c('page-hero__fig')}><div className={c('diamond')}><img src={img('photo/auditorium-diamond.jpg')} width="894" height="630" alt="The plenary room at a Future Hospitality Summit event" {...HIGH} /></div></figure>
 				</div>
 			</section>
 

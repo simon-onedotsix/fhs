@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { LivingPage } from '../../ui-living/site/page'
 import { c } from '../../ui-living/lib/c'
+import { FitTitle } from '../../ui-living/sections/fit'
 import { img } from '../../ui-living/lib/format'
 import { R } from '../../ui-living/lib/routes'
 import { Market } from '../../ui-living/sections/market'
@@ -17,7 +18,7 @@ export default function About({ f, editions }) {
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>
-						<h1 id="hero-h">Built by Future Hospitality Summit. <span className={c('accent')}>Built for living.</span></h1>
+						<FitTitle em={11.45} lines={['Built by Future Hospitality', <>Summit. <span className={c('accent')}>Built for living.</span></>]} />
 						<p className={c('lede')}>FHS Living is organised by The Bench, the team behind Future Hospitality Summit in Dubai, Riyadh, Cairo and Africa. It grew out of the Branded Residences Forum and now covers nine asset classes where hospitality meets real estate.</p>
 					</div>
 					<figure className={c('page-hero__fig')}><div className={c('diamond')}><img src={img('photo/auditorium-diamond.jpg')} width="894" height="630" alt="The plenary room at a Future Hospitality Summit event" {...HIGH} /></div></figure>

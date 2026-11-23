@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 
 import { c } from '../lib/c'
+import { FitTitle } from './fit'
 import { img } from '../lib/format'
 import { R } from '../lib/routes'
 
@@ -82,7 +83,7 @@ export function LayersHero() {
 			</div>
 			<div className={c('wrap')}>
 				<div>
-					<h1 id="hero-h">Where hospitality <span className={c('accent')}>reimagines real&nbsp;estate.</span></h1>
+					<FitTitle strict em={10.05} lines={['Where hospitality', <span key="2" className={c('accent')}>reimagines real estate.</span>]} />
 					<p className={c('lede')}>FHS Living is Future Hospitality Summit&apos;s conference for the hotelisation of real estate, across nine asset classes from branded residences and student housing to mixed use, hotels and resorts.</p>
 					<div className={c('actions')}><Link href={R.register} prefetch={false}><a className={c('btn btn--light')}>Register Interest</a></Link><a className={c('btn btn--line-light')} href="#editions">The editions</a><a className={c('btn btn--line-light')} href={R.experience}>Explore in 3D</a></div>
 				</div>

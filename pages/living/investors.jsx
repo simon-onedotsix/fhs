@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { LivingPage } from '../../ui-living/site/page'
 import { HubspotForm } from '../../ui-living/site/hubspot-form'
 import { c } from '../../ui-living/lib/c'
+import { FitTitle } from '../../ui-living/sections/fit'
 import { img, money } from '../../ui-living/lib/format'
 import { R } from '../../ui-living/lib/routes'
 import { useInView } from '../../ui-living/lib/use-in-view'
@@ -47,7 +48,7 @@ export default function Investors({ f, flows, investor, nAdv }) {
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>
-						<h1 id="hero-h">Built around the capital <span className={c('accent')}>in the room.</span></h1>
+						<FitTitle em={8.45} lines={['Built around the', <>capital <span className={c('accent')}>in the room.</span></>]} />
 						<p className={c('lede')}>You meet the operators and developers who make hospitality-led real estate perform, in meetings matched to what you invest in. Then you decide what to underwrite.</p>
 						<div className={c('actions')}><a className={c('btn')} href={investor.url}>Apply for an Investor Pass</a><a className={c('btn btn--ghost')} href="#talk">Talk to us first</a></div>
 						<p className={c('page-hero__facts')}><span><b>Investor Pass {price}</b> refunded once your meetings take place</span></p>

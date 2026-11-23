@@ -1,5 +1,6 @@
 import { LivingPage } from '../../../ui-living/site/page'
 import { c } from '../../../ui-living/lib/c'
+import { FitTitle } from '../../../ui-living/sections/fit'
 import { img } from '../../../ui-living/lib/format'
 
 import { loadLibrary, REVALIDATE } from '../../../ui-living/lib/cms'
@@ -10,7 +11,7 @@ export default function ContentLibrary({ items }) {
 		<LivingPage page="content-library" title="FHS Living | Content library" description="Articles, press releases and session reports from FHS Living, Future Hospitality Summit's conference for the hotelisation of real estate.">
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
-					<h1 id="hero-h">The thinking behind <span className={c('accent')}>FHS Living.</span></h1>
+					<FitTitle em={8.32} lines={['The thinking', <>behind <span className={c('accent')}>FHS Living.</span></>]} />
 					<p className={c('lede')}>Articles, press releases and reports, from the first Advisory Board in London to the day on the stage in Dubai.</p>
 				</div>
 			</section>

@@ -197,10 +197,19 @@ const readSpeakers = loader('speakers', async () => {
 
 // the team's running order (data/speaker-order.json) first, then everyone else by surname; live or from the snapshot
 const RANK = new Map(speakerOrder.order.map((n, i) => [fold(n), i]))
+// A company name typed in capitals in Swapcard reads as shouting (design principles rule 7: no all caps on anything over
+// about four words; Ahmed, 23 Nov 2026): three or more words in capitals are set in title case, short words like AG stay.
+const SMALL = new Set(['of', 'and', 'the', 'for', 'at', 'in', 'on', 'by', 'to'])
+export const orgCase = s => {
+	if (!s) return s
+	const w = s.split(' ')
+	if (w.length < 3 || /[a-z]/.test(s) || !/[A-Z]{2}/.test(s)) return s
+	return w.map((x, i) => (x.length <= 2 && !SMALL.has(x.toLowerCase())) ? x : (i > 0 && SMALL.has(x.toLowerCase())) ? x.toLowerCase() : x.charAt(0) + x.slice(1).toLowerCase()).join(' ')
+}
 const rank = p => (RANK.has(fold(p.name)) ? RANK.get(fold(p.name)) : RANK.size)
 export const loadSpeakers = async () => {
 	const d = await readSpeakers()
-	return { ...d, people: [...d.people].sort((a, b) => rank(a) - rank(b)) } // a stable sort keeps the surname order among the rest
+	return { ...d, people: [...d.people].sort((a, b) => rank(a) - rank(b)).map(p => ({ ...p, company: orgCase(p.company) })) } // a stable sort keeps the surname order among the rest
 }
 
 // The "Where to stay" text the team keeps on Craft's Travel & Accommodation page. Outlook SafeLinks wrappers,

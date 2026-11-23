@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { LivingPage } from '../../ui-living/site/page'
 import { c } from '../../ui-living/lib/c'
+import { FitTitle } from '../../ui-living/sections/fit'
 import { img, trange } from '../../ui-living/lib/format'
 import { R } from '../../ui-living/lib/routes'
 import { Passes, passOffer, bookBefore } from '../../ui-living/sections/passes'
@@ -17,7 +18,7 @@ export default function Programme({ programme, delegate, investor }) {
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>
-						<h1 id="hero-h">Built around capital <span className={c('accent')}>deployment.</span></h1>
+						<FitTitle em={8.75} lines={['Built around', <>capital <span className={c('accent')}>deployment.</span></>]} />
 						<p className={c('lede')}>Every session answers a question capital allocators, developers and operators are working on now. The stage opens each day. Roundtables and matched meetings follow.</p>
 						<div className={c('actions')}><Link href={R.passes} prefetch={false}><a className={c('btn')}>Register to attend</a></Link><a className={c('btn btn--ghost')} href="#running-order">The running order</a></div>
 					</div>

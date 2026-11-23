@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { LivingPage } from '../../ui-living/site/page'
 import { c } from '../../ui-living/lib/c'
+import { FitTitle } from '../../ui-living/sections/fit'
 import { img } from '../../ui-living/lib/format'
 import { R } from '../../ui-living/lib/routes'
 import { Quote } from '../../ui-living/sections/quote'
@@ -20,7 +21,7 @@ export default function Partners({ f, partners }) {
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>
-						<h1 id="hero-h">The companies <span className={c('accent')}>behind the room.</span></h1>
+						<FitTitle em={7.55} lines={['The companies', <span key="2" className={c('accent')}>behind the room.</span>]} />
 						<p className={c('lede')}>Partners of the Europe Edition keep Founding Partner status for future editions while they stay with us, and appear at FHS Living inside FHS events too.</p>
 						<div className={c('actions')}><a className={c('btn')} href={MAIL}>Talk to Matthew Weihs</a><a className={c('btn btn--ghost')} href="#deliver-h">What partners get</a></div>
 					</div>
@@ -31,6 +32,7 @@ export default function Partners({ f, partners }) {
 			<section className={c('section')} aria-labelledby="tiers-h">
 				<div className={c('wrap')}>
 					<h2 className={c('sr')} id="tiers-h">Partners by tier</h2>
+					<p className={c('note-line')} style={{ marginTop: 0, marginBottom: 16 }}>Partners confirmed so far. More to be announced.</p>
 					<div className={c('tiers')}>
 						{partners.tiers.map(t => (
 							<div key={t.tier} className={c('tier')}>

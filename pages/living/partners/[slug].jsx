@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { LivingPage } from '../../../ui-living/site/page'
 import { c } from '../../../ui-living/lib/c'
+import { FitTitle, twoLines } from '../../../ui-living/sections/fit'
 import { img } from '../../../ui-living/lib/format'
 import { R } from '../../../ui-living/lib/routes'
 import { NEW_TAB } from '../../../ui-living/lib/attrs'
@@ -19,7 +20,7 @@ export default function Partner({ f, x }) {
 				<div className={c('wrap')}>
 					<div>
 						<p className={c('label accent')}>{x.tier}</p>
-						<h1 id="hero-h">{x.name}</h1>
+						{twoLines(x.name) ? <FitTitle {...twoLines(x.name)} /> : <h1 id="hero-h">{x.name}</h1>}
 						<p className={c('lede')}>{x.tier} of the FHS Living Europe Edition, Paris, {f.event.dates}.</p>
 						<div className={c('actions')}>
 							{x.url && <a className={c('btn')} href={x.url} {...NEW_TAB}>Visit website</a>}
