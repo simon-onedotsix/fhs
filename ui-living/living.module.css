@@ -814,7 +814,8 @@
 .root .rate { margin: 0; }
 .root .rate__bars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: end; height: clamp(260px, 26vw, 360px); border-bottom: 2px solid var(--purple); }
 .root .rate__bar { height: var(--h); display: flex; flex-direction: column; padding: 16px; background: var(--purple); transform-origin: bottom; transition: transform .9s var(--ease-out); }
-.root .rate__bar b { font-size: var(--fs-h2); line-height: 1; font-weight: 500; letter-spacing: -.02em; color: var(--white); }
+.root .rate__bar { container-type: inline-size; }
+.root .rate__bar b { font-size: min(var(--fs-h2), calc(100cqi / 3.4)); line-height: 1; font-weight: 500; letter-spacing: -.02em; color: var(--white); }
 .root .rate__bar span { margin-top: 8px; font-size: var(--fs-meta); line-height: 1.35; color: var(--on-dark-soft); }
 .root .rate__bar.is-past { background: var(--cream-deep); }
 .root .rate__bar.is-past b { color: var(--ink-soft); text-decoration: line-through; text-decoration-thickness: 2px; }
@@ -949,6 +950,7 @@
 .root .contact-card--lg img { width: 120px; height: 150px; }
 .root .contact-card--lg span { display: grid; gap: 4px; font-size: var(--fs-body); color: var(--ink-soft); }
 .root .contact-card--lg b { font-size: var(--fs-body); color: var(--ink); }
+@media (max-width: 480px) { .root .contact-card a { font-size: var(--fs-meta); } }  /* an email cannot wrap without splitting a word (rule 2) */
 /* investors: the capital stack section, text beside the investor mix as rows of faceted diamonds (one per cent each,
    25 to a row) that fill in when the chart comes into view. */
 .root .capstack { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 96px); align-items: center; }
