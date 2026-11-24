@@ -95,7 +95,7 @@ export default function WhoIsInTheRoom({ f, adv }) {
 
 			<section className={c('section band section--tight')} aria-labelledby="meet-h">
 				<div className={c('wrap split')}>
-					<h2 id="meet-h">Meet them in Paris, {f.event.dates}.</h2>
+					<h2 id="meet-h">Meet them in the room.</h2>
 					<div className={c('actions')}><Link href={R.passes} prefetch={false}><a className={c('btn btn--light')}>Register to attend</a></Link><Link href={R.register} prefetch={false}><a className={c('btn btn--line-light')}>Register your interest</a></Link></div>
 				</div>
 			</section>

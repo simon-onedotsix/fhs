@@ -5,6 +5,7 @@ import { c } from '../../ui-living/lib/c'
 import { dayBefore, humanDate, img, money } from '../../ui-living/lib/format'
 import { R } from '../../ui-living/lib/routes'
 import { useInView } from '../../ui-living/lib/use-in-view'
+import { FitTitle } from '../../ui-living/sections/fit'
 import { Passes, passOffer } from '../../ui-living/sections/passes'
 
 import facts from '../../ui-living/data/facts.json'
@@ -36,7 +37,7 @@ export default function PassesPage({ f, delegate, investor }) {
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>
-						<h1 id="hero-h">Book your place in <span className={c('accent')}>Paris.</span></h1>
+						<FitTitle em={4.8} lines={['Book your', <span key="2" className={c('accent')}>place.</span>]} />
 						<p className={c('lede')}>Two days at {f.event.venue}, {f.event.dates}.{delegate.next && ` The Delegate Pass rises on ${humanDate(delegate.next.start)}.`}</p>
 						<div className={c('actions')}><a className={c('btn')} href={delegate.url}>Book a Delegate Pass</a><a className={c('btn btn--ghost')} href={investor.url}>Apply for an Investor Pass</a></div>
 					</div>
