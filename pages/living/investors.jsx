@@ -57,7 +57,7 @@ export default function Investors({ f, flows, investor, nAdv }) {
 				</div>
 			</section>
 
-			<CapitalMap flows={flows} hid="corr-h" title="Where Middle East capital is going." bg="tint"
+			<CapitalMap flows={flows} hid="corr-h" title={<>Where Middle&nbsp;East<br />capital is going.</>} bg="tint"
 				intro={`Sovereign funds, family offices, developers and banks from five Gulf states have backed hotels, branded residences, housing and student beds across Europe since 2023. Future Hospitality Summit has spent ${f.relationships.years} years building relationships with Gulf capital.`} />
 
 			<section className={c('section')} aria-labelledby="types-h">

@@ -15,6 +15,7 @@ import { Passes, passOffer, bookBefore } from '../../../ui-living/sections/passe
 import { Quote } from '../../../ui-living/sections/quote'
 import { PartnerSection } from '../../../ui-living/sections/partner-strip'
 import { SpeakerStrip } from '../../../ui-living/sections/speakers'
+import { MeetBlock } from '../../../ui-living/sections/meet'
 
 import facts from '../../../ui-living/data/facts.json'
 import flows from '../../../ui-living/data/flows.json'
@@ -61,6 +62,7 @@ export default function Paris(p) {
 				</div>
 			</section>
 
+			<MeetBlock />
 			{p.speakers.length > 0 && <SpeakerStrip people={p.speakers.slice(0, 10)} total={p.speakers.length} bg="tint" />}
 			<Room f={f} />
 			<Glance programme={p.programme} link={R.programme} linkLabel="The full running order" cta="View Agenda" bg="tint" />
@@ -81,7 +83,7 @@ export default function Paris(p) {
 
 			<Market hid="mkt-h" bg="tint" title={`${f.largest.text}.`} intro="Investment rose 22% in 2025, and almost every institutional investor in the sector plans to put more in." />
 
-			<CapitalMap flows={p.flows} hid="flow-h" title="Middle East capital, flowing into Europe."
+			<CapitalMap flows={p.flows} hid="flow-h" title={'Middle East capital, flowing into Europe.'}
 				intro={`Since 2023, investors from the UAE, Saudi Arabia, Qatar, Kuwait and Bahrain have backed hotels, branded residences, housing and student beds in ${p.flows.n_dest} European countries. Future Hospitality Summit has spent ${f.relationships.years} years building relationships with Gulf capital.`} />
 
 			<DubaiTeaser dubai={p.dubai} concl={p.concl} />

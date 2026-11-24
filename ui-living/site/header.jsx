@@ -27,7 +27,7 @@ const PARIS_NAV = [
 	['case-studies', 'Case studies'],
 	['content-library', 'Content library'],
 ]
-const PARIS = ['paris', 'programme', 'speakers', 'passes', 'venue', 'investors', 'who-is-in-the-room', 'partners', 'register']
+const PARIS = ['paris', 'programme', 'speakers', 'passes', 'venue', 'investors', 'who-is-in-the-room', 'partners', 'register', 'who-to-meet']
 
 export function Header({ page }) {
 	const ref = useRef(null)

@@ -11,6 +11,7 @@ import { PartnerSection } from '../../ui-living/sections/partner-strip'
 import { Closer } from '../../ui-living/sections/closer'
 import { CaseStrip } from '../../ui-living/sections/case-studies'
 import { SpeakerStrip } from '../../ui-living/sections/speakers'
+import { MeetBlock } from '../../ui-living/sections/meet'
 
 import facts from '../../ui-living/data/facts.json'
 import atlas from '../../ui-living/data/atlas.json'
@@ -33,6 +34,7 @@ export default function Living(p) {
 			head={<link rel="preload" href={FILM_POSTER} as="image" {...HIGH} />}
 		>
 			<LayersHero />
+			<MeetBlock bg="tint" />
 			<Idea />
 			<Classdex classes={p.classes} bg="tint" />
 
