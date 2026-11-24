@@ -30,7 +30,7 @@ export default function Living(p) {
 		<LivingPage
 			page="index"
 			title="FHS Living | Where hospitality reimagines real estate"
-			description="FHS Living is Future Hospitality Summit's conference for the hotelisation of real estate, with editions in Dubai, Cairo, Paris and Madinah."
+			description="FHS Living by Future Hospitality Summit is a conference for the hotelisation of real estate, with editions in Dubai, Cairo, Paris and Madinah."
 			head={<link rel="preload" href={FILM_POSTER} as="image" {...HIGH} />}
 		>
 			<LayersHero />

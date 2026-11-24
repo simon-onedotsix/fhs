@@ -8,7 +8,7 @@ import { NEW_TAB } from '../../../ui-living/lib/attrs'
 
 export default function ContentLibrary({ items }) {
 	return (
-		<LivingPage page="content-library" title="FHS Living | Content library" description="Articles, press releases and session reports from FHS Living, Future Hospitality Summit's conference for the hotelisation of real estate.">
+		<LivingPage page="content-library" title="FHS Living | Content library" description="Articles, press releases and session reports from FHS Living by Future Hospitality Summit, a conference for the hotelisation of real estate.">
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<FitTitle em={8.32} lines={['The thinking', <>behind <span className={c('accent')}>FHS Living.</span></>]} />

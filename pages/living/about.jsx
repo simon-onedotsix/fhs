@@ -14,7 +14,7 @@ import { HIGH } from '../../ui-living/lib/attrs'
 
 export default function About({ f, editions }) {
 	return (
-		<LivingPage page="about" title="FHS Living | About" description="Future Hospitality Summit's conference for the hotelisation of real estate, organised by The Bench. A letter from the Chairman, Jonathan Worsley.">
+		<LivingPage page="about" title="FHS Living | About" description="FHS Living by Future Hospitality Summit is a conference for the hotelisation of real estate. A letter from the Chairman, Jonathan Worsley.">
 			<section className={c('page-hero')} aria-labelledby="hero-h">
 				<div className={c('wrap')}>
 					<div>

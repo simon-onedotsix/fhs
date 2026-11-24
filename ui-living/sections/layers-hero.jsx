@@ -84,7 +84,7 @@ export function LayersHero() {
 			<div className={c('wrap')}>
 				<div>
 					<FitTitle strict em={10.05} lines={['Where hospitality', <span key="2" className={c('accent')}>reimagines real estate.</span>]} />
-					<p className={c('lede')}>FHS Living is Future Hospitality Summit&apos;s conference for the hotelisation of real estate, across nine asset classes from branded residences and student housing to mixed use, hotels and resorts.</p>
+					<p className={c('lede')}>FHS Living by Future Hospitality Summit is a conference for the hotelisation of real estate, across nine asset classes from branded residences and student housing to mixed use, hotels and resorts.</p>
 					<div className={c('actions')}><Link href={R.register} prefetch={false}><a className={c('btn btn--light')}>Register Interest</a></Link><a className={c('btn btn--line-light')} href="#editions">The editions</a><a className={c('btn btn--line-light')} href={R.experience}>Explore in 3D</a></div>
 				</div>
 				<div ref={stack} className={c('stack')} aria-label="Six of the nine asset classes, stacked in the FHS Living diamond">
