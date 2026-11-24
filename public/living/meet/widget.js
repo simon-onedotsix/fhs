@@ -322,6 +322,7 @@ async function handleRequest(text){
         S.costs.push(["Typed markets", m._ms, m._cost]); g = m.geographies || [];
       } else answered(g ? g.join(", ") : "Anywhere in Europe");
       S.parse.geographies = g || []; readout();
+    if ((g || []).length) S.parse.summary = `${String(S.parse.summary || S.text).replace(/[.\s]+$/, "")}, in ${list(g.map(x => SHORT[x] || x))}`;   // the market they picked shows in the summary
     }
     S.skipSectors = !!((S.followSectors || []).length || (S.parse.asset_classes || []).length);
     await understood();
@@ -767,7 +768,8 @@ async function startEdit(){                   // ?edit=<plan id>: the saved answ
     role: p.role || null, assets: p.asset_classes || [], intent: p.intent || null, attending: p.attending || null, deal: p.deal_size || null,
     lead: {name: p.name, title: p.title, company: p.company}, who: {title: p.title, company: p.company},
     parse: {types: p.types || [], asset_classes: p.asset_classes || [], geographies: p.geographies || [], keywords: p.keywords || [],
-            named_company: null, specific_company: false, summary: p.summary || ""}});
+            named_company: null, specific_company: false, summary: p.summary || ""},
+    web: (p.companies || []).length ? {companies: p.companies.map(c => ({name: c.name, country: c.country, why: c.text, website: c.domain})), market_note: null} : null});   // the saved list: no new search unless an answer changes
   $("#module").classList.add("open"); $("#room").hidden = false;
   answered(p.name ? `Plan for ${p.name}` : "Your plan");
   try {
