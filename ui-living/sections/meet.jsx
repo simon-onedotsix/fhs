@@ -27,7 +27,7 @@ export function MeetBlock({ bg }) {
 	return (
 		<section className={c('section', bg)} aria-labelledby="meet-h" id="meet">
 			<div className={c('wrap')}>
-				<div className={c('head')}><h2 className={c('ruled')} id="meet-h">Who would you like to network with?</h2><p>Two minutes. A shortlist of who to meet, then your plan for both days.</p></div>
+				<div className={c('head')}><h2 className={c('ruled')} id="meet-h">Who should you meet?</h2><p>Tell us your brief. We shortlist the companies worth your time and plan both days around them.</p></div>
 				<MeetWidget page={MEET_PATH} />
 				<p style={{ margin: '0 auto', maxWidth: 'none', textAlign: 'center' }}><a className={c('link')} href={`${MEET_PATH}?flow=profile`}>Or start from your role and company</a></p>
 			</div>
