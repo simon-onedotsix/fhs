@@ -5,6 +5,7 @@ import { c } from '../lib/c'
 import { R } from '../lib/routes'
 import { HubspotForm } from '../site/hubspot-form'
 import { HIGH, NEW_TAB } from '../lib/attrs'
+import facts from '../data/facts.json'
 
 // A Craft page in the Living design (data from ../lib/craft-page.js). Every Content Blocks module the team can add in
 // Craft has a Living drawing here, so a new page never falls back to the old theme. Layout: the title (with the
@@ -153,7 +154,8 @@ export function CraftPage({ page }) {
 				<div className={c('wrap')}>
 					<div>
 						<h1 id="hero-h">{page.title}</h1>
-						{page.hero && <Body html={page.hero.body} className="cmsbody--hero" />}
+						<p className={c('page-hero__when')}>{facts.event.city}, {facts.event.dates}<span>{facts.event.venue}</span></p>
+						{page.hero &&<Body html={page.hero.body} className="cmsbody--hero" />}
 					</div>
 					{page.hero?.photo && (
 						<figure className={c('page-hero__fig')}>
@@ -187,7 +189,7 @@ export function CraftPage({ page }) {
 			<section className={c('section band section--tight')} aria-labelledby="ask-h">
 				<div className={c('wrap split')}>
 					<h2 id="ask-h">Questions?<br />Talk to the team.</h2>
-					<div className={c('actions')}><Link href={R.contact} prefetch={false}><a className={c('btn btn--light')}>Contact the team</a></Link></div>
+					<div className={c('actions')}><Link href={R.contact} prefetch={false}><a className={c('btn btn--light')}>Contact the team</a></Link><Link href={R.passes} prefetch={false}><a className={c('btn btn--line-light')}>Register to attend</a></Link></div>
 				</div>
 			</section>
 		</>

@@ -9,7 +9,7 @@ import { R } from '../../ui-living/lib/routes'
 // ui-living/sections/craft-blocks.jsx. A new or edited page shows within about 5 minutes, no deploy needed.
 export default function Page({ page }) {
 	return (
-		<LivingPage path={`/living/${page.slug}`} title={page.seoTitle} description={page.description}
+		<LivingPage page="craft" path={`/living/${page.slug}`} title={page.seoTitle} description={page.description}
 			head={page.noindex ? <meta name="robots" content="noindex" /> : null}>
 			<CraftPage page={page} />
 		</LivingPage>
