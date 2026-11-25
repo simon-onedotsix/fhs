@@ -245,7 +245,11 @@ export function shapePage(entry) {
 	const t = seo(entry, 'metaTitleContainer').title?.title
 	const tags = seo(entry, 'metaTagContainer')
 	const first = text(hero?.body.replace(/<h\d[\s\S]*?<\/h\d>/gi, '') || '') || text(sections.flatMap(s => [s.intro, ...s.blocks.flatMap(b => b.items || [])]).join(' '))
-	const description = first.length > 158 ? first.slice(0, 158).replace(/\s+\S*$/, '') + '…' : first
+	// whole sentences that fit Google's 160 characters; a cut mid-phrase ("sponsorship of FHS…") only when one is too long
+	let whole = ''
+	for (const x of first.match(/[^.!?]+[.!?]+(\s|$)/g) || []) { if ((whole + x).trim().length > 158) break; whole += x }
+	whole = whole.trim()
+	const description = first.length <= 158 ? first : whole || first.slice(0, 158).replace(/\s+\S*$/, '') + '…'
 	return {
 		slug: entry.slug,
 		title: entry.title,
